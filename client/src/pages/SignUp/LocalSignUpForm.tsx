@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useReducer, Reducer } from "react";
-import { Form, FormProps, Button, Message, Loader } from "semantic-ui-react";
+import {Form, FormProps, Button, Message, Loader, Container} from "semantic-ui-react";
 import CryptoJS from "crypto-js";
 
 type FormValues = {
@@ -100,85 +100,88 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 	);
 
 	return (
-		<Form
-			error={formState.requestError !== undefined}
-			loading={formState.loading}
-			onSubmit={(event, data) => onSubmit(data)}
-			success={formState.success}
-		>
-			<Form.Input
-				id="name"
-				label="Name"
-				onChange={(event, data) => setFormValues({ ...formValues, name: data.value })}
-				required
-			/>
-			<Form.Input
-				id="email"
-				label="Email"
-				onChange={(event, data) => setFormValues({ ...formValues, email: data.value })}
-				required
-				type="email"
-			/>
-			<Form.Input
-				error={
-					formState.confirmEmailError
-						? { content: "Email addresses do not match", pointing: "below" }
-						: undefined
-				}
-				id="confirmEmail"
-				label="Confirm Email"
-				onChange={(event, data) => {
-					formStateDispatch({
-						type: "CONFIRM_EMAIL_ERROR",
-						payload: data.value !== formValues.email
-					});
-					setFormValues({ ...formValues, confirmedEmail: data.value });
-				}}
-				required
-			/>
-			<Form.Input
-				id="password"
-				label="Password"
-				onChange={(event, data) => setFormValues({ ...formValues, password: data.value })}
-				required
-				type="password"
-			/>
-			<Form.Input
-				error={
-					formState.confirmPasswordError
-						? { content: "Passwords do not match", pointing: "below" }
-						: false
-				}
-				id="confirmPassword"
-				label="Confirm Password"
-				onChange={(event, data) => {
-					formStateDispatch({
-						type: "CONFIRM_PASSWORD_ERROR",
-						payload: data.value !== formValues.password
-					});
-					setFormValues({ ...formValues, confirmedPassword: data.value });
-				}}
-				required
-				type="password"
-			/>
-			<Form.Checkbox id="termsAndConditions" label="I agree to the terms and conditions" required />
-			<Message
-				content="Your account has been successfully created. Please login to your email to confirm your account."
-				header="SUCCESS"
-				success
-			/>
-			<Message content={formState.requestError} error header="Error" />
-			<Button
-				active={
-					!formState.success && !formState.confirmEmailError && !formState.confirmPasswordError
-				}
-				color="green"
-				fluid
-				type="submit"
+		<Container>
+			<Form
+				error={formState.requestError !== undefined}
+				loading={formState.loading}
+				onSubmit={(event, data) => onSubmit(data)}
+				success={formState.success}
 			>
-				{formState.loading ? <Loader active inline="centered" /> : "Sign up"}
-			</Button>
-		</Form>
+				<Form.Input
+					id="name"
+					label="Name"
+					onChange={(event, data) => setFormValues({ ...formValues, name: data.value })}
+					required
+				/>
+				<Form.Input
+					id="email"
+					label="Email"
+					onChange={(event, data) => setFormValues({ ...formValues, email: data.value })}
+					required
+					type="email"
+				/>
+				<Form.Input
+					error={
+						formState.confirmEmailError
+							? { content: "Email addresses do not match", pointing: "below" }
+							: undefined
+					}
+					id="confirmEmail"
+					label="Confirm Email"
+					onChange={(event, data) => {
+						formStateDispatch({
+							type: "CONFIRM_EMAIL_ERROR",
+							payload: data.value !== formValues.email
+						});
+						setFormValues({ ...formValues, confirmedEmail: data.value });
+					}}
+					required
+				/>
+				<Form.Input
+					id="password"
+					label="Password"
+					onChange={(event, data) => setFormValues({ ...formValues, password: data.value })}
+					required
+					type="password"
+				/>
+				<Form.Input
+					error={
+						formState.confirmPasswordError
+							? { content: "Passwords do not match", pointing: "below" }
+							: false
+					}
+					id="confirmPassword"
+					label="Confirm Password"
+					onChange={(event, data) => {
+						formStateDispatch({
+							type: "CONFIRM_PASSWORD_ERROR",
+							payload: data.value !== formValues.password
+						});
+						setFormValues({ ...formValues, confirmedPassword: data.value });
+					}}
+					required
+					type="password"
+				/>
+				<Form.Checkbox id="termsAndConditions" label="I agree to the terms and conditions" required />
+				<Message
+					content="Your account has been successfully created. Please login to your email to confirm your account."
+					header="SUCCESS"
+					success
+				/>
+				<Message content={formState.requestError} error header="Error" />
+				<Button
+					active={
+						!formState.success && !formState.confirmEmailError && !formState.confirmPasswordError
+					}
+					color="green"
+					fluid
+					type="submit"
+				>
+					{formState.loading ? <Loader active inline="centered" /> : "Sign up"}
+				</Button>
+			</Form>
+		</Container>
+
 	);
 };
 

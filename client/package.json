@@ -2,7 +2,7 @@
 	"name": "client",
 	"version": "0.1.0",
 	"private": true,
-	"proxy": "localhost:4396",
+	"proxy": "http://localhost:6324",
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
@@ -25,6 +25,7 @@
 		]
 	},
 	"dependencies": {
+		"@nestjs/typeorm": "^9.0.1",
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^12.1.2",
 		"@testing-library/user-event": "^13.5.0",
@@ -33,11 +34,13 @@
 		"@types/react": "^17.0.38",
 		"@types/react-dom": "^17.0.11",
 		"gapi-script": "^1.2.0",
+		"mariadb": "^3.1.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-google-login": "^5.2.2",
 		"react-scripts": "5.0.0",
 		"selenium-webdriver": "^4.8.1",
+		"typeorm": "^0.3.12",
 		"typescript": "^4.5.4",
 		"web-vitals": "^2.1.2"
 	},
