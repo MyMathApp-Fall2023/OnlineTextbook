@@ -1,15 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Req} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import {IncomingMessage} from "http";
+import {User} from "./entities/user.entity";
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
+  @Post("local-signup")
+  create(@Body() user:User) {
+    console.log(user)
+    return this.userService.create(user);
   }
 
   @Get()
@@ -30,5 +33,17 @@ export class UserController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.userService.remove(+id);
+  }
+
+
+  @Post("local/sign-up")
+
+  public async localSignUp(@Req() req: IncomingMessage & Request): Promise<void> {
+    // const user = req.user as User;
+    console.log(req)
+    // This shouldn't be necessary but why not check for it anyway
+    // if (!user.activatedAccount) {
+    //   return this.emailService.activateAccount(user);
+    // }
   }
 }

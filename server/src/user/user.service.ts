@@ -1,11 +1,22 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import {InjectRepository} from "@nestjs/typeorm";
+import {User} from "./entities/user.entity";
+import {Repository} from "typeorm";
 
 @Injectable()
 export class UserService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+
+  constructor(
+      @InjectRepository(User)
+      private readonly userRepo: Repository<User>,  // 使用泛型注入对应类型的存储库实例
+  ) {}
+
+  create(createUser: User) {
+    console.log('CREATE')
+    console.log(createUser)
+    return this.userRepo.save(createUser)
   }
 
   findAll() {

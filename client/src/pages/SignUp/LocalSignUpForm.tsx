@@ -66,7 +66,7 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 	const onSubmit = useCallback(
 		(data: FormProps) => {
 			formStateDispatch({ type: "LOADING" });
-			fetch("/api/authentication/local/sign-up", {
+			fetch("/api/user/local-signup", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
@@ -74,9 +74,7 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 				body: JSON.stringify({
 					name: formValues.name,
 					email: formValues.email,
-					hashedPassword: CryptoJS.SHA256(formValues.password + formValues.email).toString(
-						CryptoJS.enc.Base64
-					)
+					password: formValues.password
 				})
 			})
 				.then((res) =>

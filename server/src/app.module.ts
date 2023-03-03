@@ -6,6 +6,7 @@ import {ConfigModule} from "@nestjs/config";
 import {Cat} from "./cat/entities/cat.entity";
 import { CatModule } from './cat/cat.module';
 import { UserModule } from './user/user.module';
+import {User} from "./user/entities/user.entity";
 
 let envFilePath = ['.env'];
 export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
@@ -28,7 +29,7 @@ if (IS_DEV) {
             username: process.env.DB_Username,
             password: process.env.DB_Password,
             database: process.env.DB_Database,
-            autoLoadEntities: true,
+            entities:[User],
             synchronize: true,
         }),
         CatModule,
