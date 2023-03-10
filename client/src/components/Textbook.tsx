@@ -17,15 +17,16 @@ const Textbook: React.FC<TextbookProps> = (props): JSX.Element => {
 		fetch(url, { method: "GET" }).then((res) => res.json())
 	);
 
-	if (!data) {
-		return <Loader active inline="centered" />;
-	}
+	// if (!data) {
+	// 	return <Loader active inline="centered" />;
+	// }
 
 	return (
 		<>
-			<ProductHeader hasSample image={props.image} product={data} />
+			{/*<ProductHeader hasSample image={props.image} product={data} />*/}
 			<Divider></Divider>
 			{props.child}
+
 			<p>
 				<img
 					alt="The National Science Foundation"

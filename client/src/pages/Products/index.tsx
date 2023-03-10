@@ -11,9 +11,9 @@ const Products: React.FC = (): JSX.Element => {
 		fetch(url, { method: "GET", headers: { Accept: "application/json" } }).then((res) => res.json())
 	);
 
-	if (!data) {
-		return <Loader active inline="centered" />;
-	}
+	// if (!data) {
+	// 	return <Loader active inline="centered" />;
+	// }
 
 	return (
 		<Container>
@@ -29,11 +29,11 @@ const Products: React.FC = (): JSX.Element => {
 							{"Currently Owned Products"}
 						</Header>
 					</Divider>
-					<Card.Group itemsPerRow={4} stackable>
-						{data.products.map((product) => (
-							<ProductCard key={product.id} product={product} />
-						))}
-					</Card.Group>
+					{/*<Card.Group itemsPerRow={4} stackable>*/}
+					{/*	{data.products.map((product) => (*/}
+					{/*		<ProductCard key={product.id} product={product} />*/}
+					{/*	))}*/}
+					{/*</Card.Group>*/}
 				</div>
 			)}
 			<div>
@@ -43,11 +43,11 @@ const Products: React.FC = (): JSX.Element => {
 						{"Currently Owned Products"}
 					</Header>
 				</Divider>
-				<Card.Group itemsPerRow={4} stackable>
-					{data.products.map((product) => (
-						<ProductCard key={product.id} product={product} />
-					))}
-				</Card.Group>
+				{/*<Card.Group itemsPerRow={4} stackable>*/}
+				{/*	{data.products.map((product) => (*/}
+				{/*		<ProductCard key={product.id} product={product} />*/}
+				{/*	))}*/}
+				{/*</Card.Group>*/}
 			</div>
 			<div>
 				<Divider horizontal>

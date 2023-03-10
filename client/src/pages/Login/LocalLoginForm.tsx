@@ -45,7 +45,7 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 	const onSubmit = useCallback(
 		(data: FormProps) => {
 			formStateDispatch({ type: "LOADING" });
-			fetch("/api/authentication/local/login", {
+			fetch("/api/user/local/login", {
 				method: "POST",
 				headers: {
 					Accept: "application/json",
@@ -53,15 +53,22 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 				},
 				body: JSON.stringify({
 					email: formValues.email,
-					hashedPassword: CryptoJS.SHA256(formValues.password + formValues.email).toString(
-						CryptoJS.enc.Base64
-					)
+					password: formValues.password
 				})
 			})
 				.then(async (res) => {
-					const user = (await res.json()) as User;
-					ctx.setUser!(user);
-					history.push("/");
+					if (res.status == 409) {
+						formStateDispatch({
+							type: "ERROR",
+							payload:
+								"Unable to login. Please ensure your email and password are correct and try again."
+						})
+					} else {
+						const user = (await res.json()) as User;
+						ctx.setUser!(user);
+						history.push("/");
+					}
+
 				})
 				.catch((err) =>
 					formStateDispatch({
