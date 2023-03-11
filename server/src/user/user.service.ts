@@ -19,6 +19,13 @@ export class UserService {
     return this.userRepo.save(createUser)
   }
 
+  async  authenticate(loginUser:User):Promise<User> {
+    const email = loginUser.email
+    const password = loginUser.password
+    const user = await this.userRepo.findOne({ where:{email,password} });
+    return user || null;
+  }
+
   findAll() {
     return `This action returns all user`;
   }

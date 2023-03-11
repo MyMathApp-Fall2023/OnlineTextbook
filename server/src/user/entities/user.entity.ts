@@ -9,6 +9,7 @@ export class User {
     @Column()
     public readonly name: string;
 
+
     @Column({unique: true})
     public readonly email: string;
 

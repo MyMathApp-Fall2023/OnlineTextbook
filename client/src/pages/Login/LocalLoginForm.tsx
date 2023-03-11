@@ -57,7 +57,7 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 				})
 			})
 				.then(async (res) => {
-					if (res.status == 409) {
+					if (res.status != 200) {
 						formStateDispatch({
 							type: "ERROR",
 							payload:

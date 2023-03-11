@@ -1,4 +1,16 @@
-import {Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Req, ConflictException} from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+  Req,
+  ConflictException,
+  UnauthorizedException, HttpCode
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -8,7 +20,7 @@ import {User} from "./entities/user.entity";
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-
+  @HttpCode(200)
   @Post("local/signup")
   create(@Body() user:User) {
     console.log(user)
@@ -16,11 +28,14 @@ export class UserController {
   }
 
   @Post("local/login")
+  @HttpCode(200)
   public async localLogin(@Body() loginUser:User): Promise<User> {
-    if (loginUser.password !=='ncc') {
-      throw new ConflictException("Incorrect password");
+
+    const authenticatedUser = await this.userService.authenticate(loginUser)
+
+    if (!authenticatedUser) {
+      throw new UnauthorizedException("Email or password is not correct");
     }
-    // const user = req.user as User;
     // if (!user.activatedAccount) {
     //   throw new ConflictException("User has not activated the account");
     // }
@@ -38,7 +53,7 @@ export class UserController {
     //   }
     // ] as CookieSettings[];
     // /* eslint-enable */
-    return loginUser;
+    return authenticatedUser;
   }
 
   @Get()
