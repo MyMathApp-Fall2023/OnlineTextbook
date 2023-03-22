@@ -22,6 +22,11 @@ import SignUp from "./pages/SignUp";
 import RequestPasswordReset from "./pages/RequestPasswordReset";
 import ResetPassword from "./pages/ResetPassword";
 
+import AdminUserInfo from "./pages/Admin/UserInfo"
+
+
+
+
 const App: React.FC = (): JSX.Element => {
 	// eslint-disable-next-line
 	const [cookies, setCookie, removeCookie] = useCookies(["jwt"]);
@@ -58,6 +63,7 @@ const App: React.FC = (): JSX.Element => {
 				<ApplicationContext.Provider value={{ user, setUser, cart, setCart }}>
 					<div className="App" style={{ display: "flex", flexDirection: "column" }}>
 						<Header />
+						<br></br>
 						<main style={{ flexGrow: 1 }}>
 							<Switch>
 								<Route exact path="/">
@@ -101,6 +107,9 @@ const App: React.FC = (): JSX.Element => {
 								</Route>
 								<Route exact path="/request-password-reset">
 									<RequestPasswordReset />
+								</Route>
+								<Route exact path="/admin/user">
+									<AdminUserInfo />
 								</Route>
 							</Switch>
 						</main>
