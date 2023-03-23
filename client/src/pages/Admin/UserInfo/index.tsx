@@ -48,7 +48,6 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                 {"name":"yasskin","email":"yasskin@me.com"},
                 {"name":"yasskin","email":"yasskin@me.com"},
                 {"name":"yasskin","email":"yasskin@me.com"},
-
                 {"name":"yasskin","email":"yasskin@me.com"},
                 {"name":"yasskin","email":"yasskin@me.com"},
                 {"name":"yasskin","email":"yasskin@me.com"},

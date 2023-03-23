@@ -8,3 +8,5 @@ Scenario: Successful Login with Valid entries
     When I type 'yushuang@me.com' and 'yushuang' as email and password
     And I click on 'login'
     Then login must be successful.
+
+
