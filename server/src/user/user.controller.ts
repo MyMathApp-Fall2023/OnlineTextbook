@@ -23,9 +23,9 @@ export class UserController {
   @HttpCode(200)
   @Post("local/signup")
   create(@Body() user:User) {
-    console.log(user)
     return this.userService.create(user);
   }
+
 
   @Post("local/login")
   @HttpCode(200)
@@ -36,12 +36,12 @@ export class UserController {
     if (!authenticatedUser) {
       throw new UnauthorizedException("Email or password is not correct");
     }
-    // if (!user.activatedAccount) {
+    // if (!authenticatedUser.activatedAccount) {
     //   throw new ConflictException("User has not activated the account");
     // }
-    //
-    // /* eslint-disable  @typescript-eslint/ban-ts-comment, require-atomic-updates */
-    // // @ts-ignore 2551
+
+    /* eslint-disable  @typescript-eslint/ban-ts-comment, require-atomic-updates */
+    // @ts-ignore 2551
     // req._cookies = [
     //   {
     //     name: "jwt",
@@ -52,18 +52,13 @@ export class UserController {
     //     }
     //   }
     // ] as CookieSettings[];
-    // /* eslint-enable */
+    // // /* eslint-enable
     return authenticatedUser;
   }
 
-  @Get()
+  @Get("getAll")
   findAll() {
     return this.userService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
   }
 
   @Patch(':id')

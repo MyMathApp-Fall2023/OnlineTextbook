@@ -14,8 +14,7 @@ export class UserService {
   ) {}
 
   create(createUser: User) {
-    console.log('CREATE')
-    console.log(createUser)
+    //ToDO if user already exist
     return this.userRepo.save(createUser)
   }
 
@@ -26,12 +25,20 @@ export class UserService {
     return user || null;
   }
 
-  findAll() {
-    return `This action returns all user`;
+  async findAll() {
+    const users = await this.userRepo.find({
+      select:{
+        name: true,
+        email: true
+      }
+    })
+    return users
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+
+  async findOne(email: string):Promise<User |　undefined> {
+    const user = await this.userRepo.findOne({where: {email}});
+    return user || null;
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
