@@ -66,7 +66,7 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 	const onSubmit = useCallback(
 		(data: FormProps) => {
 			formStateDispatch({ type: "LOADING" });
-			fetch("/api/user/local-signup", {
+			fetch("/api/user/local/signup", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
@@ -78,7 +78,7 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 				})
 			})
 				.then((res) =>
-					res.status === 201
+					res.status === 200
 						? formStateDispatch({ type: "SUCCESS" })
 						: formStateDispatch({
 								type: "REQUEST_ERROR",
