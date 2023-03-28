@@ -6,7 +6,7 @@ export class AdminController {
     constructor(private readonly userService:UserService) {}
 
     @Get("user/data")
-    findAllUserg() {
+    findAllUser() {
         return this.userService.findAll();
     }
 
