@@ -4,6 +4,7 @@ import CryptoJS from "crypto-js";
 import { useHistory } from "react-router-dom";
 import { ApplicationContext } from "../../context";
 import { User } from "../../entities";
+import {localLoginApi} from "../../api/auth";
 
 type FormValues = {
 	email: string;
@@ -45,30 +46,16 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 	const onSubmit = useCallback(
 		(data: FormProps) => {
 			formStateDispatch({ type: "LOADING" });
-			fetch("/api/user/local/login", {
-				method: "POST",
-				headers: {
-					Accept: "application/json",
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({
-					email: formValues.email,
-					password: formValues.password
-				})
-			})
-				.then(async (res) => {
-					if (res.status != 200) {
-						formStateDispatch({
-							type: "ERROR",
-							payload:
-								"Unable to login. Please ensure your email and password are correct and try again."
-						})
-					} else {
-						const user = (await res.json()) as User;
-						ctx.setUser!(user);
-						history.push("/");
-					}
-
+			localLoginApi({
+				email:formValues.email,
+				password: formValues.password
+			}).then(async (res) => {
+				const user = res.data.user
+				const token = res.data.access_token
+				localStorage.setItem('user', JSON.stringify(user));
+				localStorage.setItem('token', token);
+				ctx.setUser!(user);
+				history.push("/");
 				})
 				.catch((err) =>
 					formStateDispatch({

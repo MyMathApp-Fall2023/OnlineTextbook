@@ -8,15 +8,15 @@ const Cart: React.FC = () => {
 
 	return (
 		<Menu.Item>
-			<Button as="div" labelPosition="right">
-				<Button as={Link} color="green" to="/checkout">
-					<Icon name="shopping cart" />
-					{"Cart"}
-				</Button>
-				<Label as={Link} basic color="green" pointing="left" to="/checkout">
-					{ctx.cart.length}
-				</Label>
-			</Button>
+			{/*<Button as="div" labelPosition="right">*/}
+			{/*	<Button as={Link} color="green" to="/checkout">*/}
+			{/*		<Icon name="shopping cart" />*/}
+			{/*		{"Cart"}*/}
+			{/*	</Button>*/}
+			{/*	<Label as={Link} basic color="green" pointing="left" to="/checkout">*/}
+			{/*		{ctx.cart.length}*/}
+			{/*	</Label>*/}
+			{/*</Button>*/}
 		</Menu.Item>
 	);
 };

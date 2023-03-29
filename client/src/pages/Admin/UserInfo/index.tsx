@@ -20,12 +20,7 @@ import axios from "axios";
 import AdminMenu from "../../../components/AdminMenu";
 //const [APIData, setAPIData] = useState([]);
 
-// useEffect(() => {
-//     axios.get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
-//         .then((response) => {
-//             setAPIData(response.data);
-//         })
-// }, [])
+
 
 
 // function TableRow({ row }) {

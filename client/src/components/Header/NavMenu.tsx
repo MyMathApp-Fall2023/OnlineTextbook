@@ -49,13 +49,14 @@ const NavMenu: React.FC = (): JSX.Element => {
 				<Menu.Item as={Link} to="/contact">
 					{"Contact"}
 				</Menu.Item>
-				{ctx.user ?
+				{ctx.user && (
 				<Menu.Item as={Link} to="/products/MYMACalc1">
 					{"Read Book"}
 				</Menu.Item>
-				:<div/>}
+				)}
 				<Menu.Item fitted position="right">
-					<Cart />
+					{/*<Cart />*/}
+
 					{ctx.user ? <Profile /> : <LoginSignUp />}
 				</Menu.Item>
 			</Menu>
