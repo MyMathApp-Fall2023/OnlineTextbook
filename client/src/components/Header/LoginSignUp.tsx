@@ -12,7 +12,10 @@ const LoginSignUp: React.FC = (props): JSX.Element => {
 					Sign Up
 				</Button>
 				<Button.Or />
-				<Button onClick={(event, data) => history.push("/login")}>Login</Button>
+				<Button onClick={(event, data) => history.push({
+					pathname:"/login",
+					state: { prevPath: window.location.pathname }
+				})}>Login</Button>
 			</Button.Group>
 		</Menu.Item>
 	);

@@ -1,10 +1,14 @@
 import React, { useCallback, useState, useContext, useReducer, Reducer } from "react";
 import { Form, Button, FormProps, Message, Loader, Segment, Icon, Header } from "semantic-ui-react";
 import CryptoJS from "crypto-js";
-import { useHistory } from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import { ApplicationContext } from "../../context";
 import { User } from "../../entities";
 import {localLoginApi} from "../../api/auth";
+
+type LocationState = {
+	prevPath?:string
+};
 
 type FormValues = {
 	email: string;
@@ -42,6 +46,7 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 	const [formValues, setFormValues] = useState<FormValues>({ email: "", password: "" });
 	const ctx = useContext(ApplicationContext);
 	const history = useHistory();
+	const location = useLocation<LocationState>();
 
 	const onSubmit = useCallback(
 		(data: FormProps) => {
@@ -55,7 +60,8 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 				localStorage.setItem('user', JSON.stringify(user));
 				localStorage.setItem('token', token);
 				ctx.setUser!(user);
-				history.push("/");
+				history.replace(location.state?.prevPath || '/');
+
 				})
 				.catch((err) =>
 					formStateDispatch({
@@ -69,8 +75,6 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 	);
 
 	return (
-
-
 		<Form
 			error={formState.error !== undefined}
 			loading={formState.loading}
