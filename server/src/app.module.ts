@@ -1,14 +1,16 @@
+/* eslint-disable prettier/prettier */
 import {Module} from '@nestjs/common';
 import {DataSource} from 'typeorm'
 import {TypeOrmModule} from '@nestjs/typeorm';
-import {BookController} from './book/book.controller';
 import {ConfigModule} from "@nestjs/config";
-import {Cat} from "./cat/entities/cat.entity";
-import { CatModule } from './cat/cat.module';
 import { UserModule } from './user/user.module';
 import {User} from "./user/entities/user.entity";
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
+import { TransactionModule } from './transaction/transaction.module';
+import { RecordModule } from './record/record.module';
+import { ItemModule } from './item/item.module';
+import { PurchaseCodeModule } from './purchase-code/purchase-code.module';
 
 let envFilePath = ['.env'];
 export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
@@ -34,13 +36,15 @@ if (IS_DEV) {
             entities:[User],
             synchronize: true,
         }),
-        CatModule,
         UserModule,
         AuthModule,
         AdminModule,
+        TransactionModule,
+        RecordModule,
+        ItemModule,
+        PurchaseCodeModule,
 
     ],
-    controllers: [BookController],
     providers: [],
 })
 
