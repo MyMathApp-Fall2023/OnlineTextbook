@@ -18,25 +18,8 @@ import Page from "../../../components/Page";
 import PropTypes from 'prop-types';
 import axios from "axios";
 import AdminMenu from "../../../components/AdminMenu";
-//const [APIData, setAPIData] = useState([]);
+import {getAllUserData} from "../../../api/admin";
 
-
-
-
-// function TableRow({ row }) {
-//   return (
-//     <Table.Row>
-//       <Table.Cell>{row.name}</Table.Cell>
-//       <Table.Cell>{row.email}</Table.Cell>
-//     </Table.Row>
-//   );
-// }
-
-// TableRow.propTypes = {
-//     row: PropTypes.object.isRequired,
-//     // name: PropTypes.string.isRequired,
-//     // email: PropTypes.string.isRequired
-// };
 
 interface UserData {
     user_id: number;
@@ -54,13 +37,12 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
     const [userData, setUserData] = useState<UserData[]>([]);
 
     useEffect(() => {
-        fetch('/api/admin/user/data')
-            .then(response => response.json())
-            .then(data => setUserData(data))
+        getAllUserData()
+            .then(res => {
+                setUserData(res.data)
+            })
             .catch(error => console.error(error));
     }, []);
-
-
 
     return (
 

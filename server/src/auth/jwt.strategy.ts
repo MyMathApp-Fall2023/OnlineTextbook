@@ -15,6 +15,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     //Validate first verifies the JWT's signature and decodes the JSON
     //Then invokes validate()
     async validate(payload: any) {
-        return { user_id: payload.sub, email: payload.email };
+        return { user_id: payload.sub, email: payload.email, role:payload.role };
     }
 }

@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 const service = axios.create({
-    baseURL:process.env.BASE_URL,
+    baseURL:process.env.REACT_APP_SERVER_DOMAIN,
     timeout:10000,
 })
 
@@ -36,6 +36,8 @@ service.interceptors.response.use(
 )
 
 export function request(config:AxiosRequestConfig):Promise<AxiosResponse> {
+    console.log(process.env.BASE_URL)
+    console.log(process.env)
     return service(config)
 }
 

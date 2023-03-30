@@ -52,11 +52,16 @@ const NavMenu: React.FC = (): JSX.Element => {
 				{ctx.user && (
 				<Menu.Item as={Link} to="/products/MYMACalc1">
 					{"Read Book"}
-				</Menu.Item>
+				</Menu.Item >
 				)}
-				<Menu.Item fitted position="right">
-					{/*<Cart />*/}
 
+
+				<Menu.Item fitted position="right">
+					{ctx.user?.role === 1 ?
+						<Menu.Item as={Link} to="/admin/user">
+							{"Admin"}
+						</Menu.Item>: null}
+					{/*<Cart />*/}
 					{ctx.user ? <Profile /> : <LoginSignUp />}
 				</Menu.Item>
 			</Menu>

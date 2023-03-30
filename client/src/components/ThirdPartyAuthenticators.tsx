@@ -18,7 +18,8 @@ const ThirdPartyAuthenticators: React.FC<ThirdPartyAuthenticatorsProps> = (props
 		const user: User = {
 			id: res.profileObj.googleId,
 			name: res.profileObj.name,
-			email: res.profileObj.email
+			email: res.profileObj.email,
+			role:res.profileObj.role
 		};
 		ctx.setUser!(user);
 	};
