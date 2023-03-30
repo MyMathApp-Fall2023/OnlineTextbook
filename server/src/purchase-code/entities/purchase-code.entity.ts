@@ -11,6 +11,6 @@ export class PurchaseCode {
     public readonly name: string;
 
     @Column()
-    public readonly priceOff: Double;
+    public readonly priceOff: number;
 
 }

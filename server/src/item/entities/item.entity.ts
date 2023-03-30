@@ -11,6 +11,6 @@ export class Item {
     public readonly name: string;
 
     @Column()
-    public readonly price: Double;
+    public readonly price: number;
 
 }

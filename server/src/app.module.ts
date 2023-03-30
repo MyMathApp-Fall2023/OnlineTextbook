@@ -11,6 +11,10 @@ import { TransactionModule } from './transaction/transaction.module';
 import { RecordModule } from './record/record.module';
 import { ItemModule } from './item/item.module';
 import { PurchaseCodeModule } from './purchase-code/purchase-code.module';
+import {Item} from "./item/entities/item.entity";
+import {PurchaseCode} from "./purchase-code/entities/purchase-code.entity";
+import {Transaction} from "./transaction/entities/transaction.entity";
+import {Record} from "./record/entities/record.entity";
 
 let envFilePath = ['.env'];
 export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
@@ -33,7 +37,7 @@ if (IS_DEV) {
             username: process.env.DB_Username,
             password: process.env.DB_Password,
             database: process.env.DB_Database,
-            entities:[User],
+            entities:[User,Item,PurchaseCode,Record,Transaction],
             synchronize: true,
         }),
         UserModule,

@@ -11,7 +11,7 @@ export class Transaction {
     @Column()
     public readonly item_id: number;
 
-    @Exclude()  
+    @Exclude()
     @Column()
     public readonly code_id: number;
 
@@ -20,7 +20,7 @@ export class Transaction {
     public readonly user_id: number;
 
     @Column()
-    public readonly price: Double;
+    public readonly price: number;
 
     @CreateDateColumn({name: "created_at"})
     public readonly createdAt: Date;
