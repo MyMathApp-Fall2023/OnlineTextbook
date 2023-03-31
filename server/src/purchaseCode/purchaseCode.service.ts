@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {PurchaseCode} from "./purchaseCode.entity";
 import {Repository} from "typeorm";
+import { ConflictException } from '@nestjs/common';
 
 @Injectable()
 export class PurchaseCodeService {
@@ -38,6 +39,22 @@ export class PurchaseCodeService {
   async findOne(name: string):Promise<PurchaseCode |　undefined> {
     const purchaseCode = await this.purchaseCodeRepo.findOne({where: {name}});
     return purchaseCode || null;
+  }
+
+  async addOne(name: string, priceOff: number):Promise<PurchaseCode> {
+
+    const newCode = new PurchaseCode();
+    newCode.name = name;
+    newCode.priceOff = priceOff;
+    const oldCode = await this.purchaseCodeRepo.findOne({where: {name}});
+    console.log(oldCode);
+    if (oldCode == null){
+      const purchaseCode = await this.purchaseCodeRepo.save(newCode);
+      return purchaseCode;
+    }
+    else{
+      throw new ConflictException("Purchase code already exist!");
+    }
   }
 
 }

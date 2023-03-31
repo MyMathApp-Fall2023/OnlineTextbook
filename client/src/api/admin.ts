@@ -13,3 +13,11 @@ export function getAllPurchaseCodeData():Promise<any>{
         url: 'api/admin/purchaseCode',
     })
 }
+
+export function addCodeApi(data:any):Promise<any> {
+    return request({
+        method: 'post',
+        url: `api/admin/add-code`,
+        data:data
+    })
+}

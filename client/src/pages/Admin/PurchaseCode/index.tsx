@@ -19,6 +19,7 @@ import PropTypes from 'prop-types';
 import axios from "axios";
 import AdminMenu from "../../../components/AdminMenu";
 import { getAllPurchaseCodeData } from "../../../api/admin";
+import CodeForm from "./codeForm";
 
 
 interface PurchaseCode {
@@ -26,6 +27,7 @@ interface PurchaseCode {
     name: string;
     priceOff: number;
 }
+
 
 const AdminUserInfo: React.FC = (props): JSX.Element => {
     // const ctx = useContext(ApplicationContext);
@@ -47,7 +49,6 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
 
 
     return (
-
         <Container className="container-fluid" fluid style={{padding: "2"}}>
             <Grid columns={2}>
                 <Grid.Row>
@@ -74,6 +75,9 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                                 ))}
                             </Table.Body>
                         </Table>
+                        
+                        Add new purchase code:
+                        <CodeForm />
                     </GridColumn>
                 </Grid.Row>
             </Grid>
