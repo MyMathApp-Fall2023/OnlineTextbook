@@ -13,7 +13,7 @@ export class AuthController {
 
 
     @HttpCode(200)
-    @Post("signup")
+    @Post("local-signup")
     create(@Body() user:User) {
         return this.userService.create(user);
     }

@@ -7,3 +7,11 @@ export function localLoginApi(data:any):Promise<any> {
         data:data
     })
 }
+
+export function localSignupApi(data:any):Promise<any> {
+    return request ({
+        method : 'post',
+        url: `api/auth/local-signup`,
+        data:data
+    })
+}
