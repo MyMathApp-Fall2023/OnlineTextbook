@@ -69,11 +69,24 @@ export class PurchaseCodeService {
     }
   }
 
-  async validavalidateCode(name:string):Promise<number>{
+  async validateCode(name:string):Promise<number>{
     const findCode = await this.purchaseCodeRepo.findOne({where: {name}});
     console.log(findCode);
-    if (findCode != null){ //delete that code
+    if (findCode != null){ // return price off
       return findCode.priceOff;
+    }
+    else{ //code doesn't exist
+      throw new ConflictException("Purchase code doesn't exist!");
+    }
+  }
+
+  async updateCode(code_id: number,priceOff:number):Promise<PurchaseCode>{
+    const findCode = await this.purchaseCodeRepo.findOne({where: {code_id}});
+    console.log(findCode);
+    if (findCode != null){ //update that code
+      findCode.priceOff = priceOff;
+      await this.purchaseCodeRepo.save(findCode);
+      return findCode;
     }
     else{ //code doesn't exist
       throw new ConflictException("Purchase code doesn't exist!");
