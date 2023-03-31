@@ -21,3 +21,11 @@ export function addCodeApi(data:any):Promise<any> {
         data:data
     })
 }
+
+export function deleteCodeApi(data:any):Promise<any> {
+    return request({
+        method: 'post',
+        url: `api/admin/delete-code`,
+        data:data
+    })
+}

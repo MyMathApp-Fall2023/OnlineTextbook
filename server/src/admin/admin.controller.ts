@@ -36,4 +36,12 @@ export class AdminController {
         return this.PurchaseCodeService.addOne(newPurchaseCode.name, newPurchaseCode.priceOff)
     }
 
+    @Post("delete-code")
+    @HttpCode(200)
+    public async deleteCode(code_id:number){
+        console.log(code_id);
+        return this.PurchaseCodeService.deleteCode(code_id)
+
+    }
+
 }

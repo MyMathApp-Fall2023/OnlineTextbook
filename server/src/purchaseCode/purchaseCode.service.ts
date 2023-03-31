@@ -57,4 +57,16 @@ export class PurchaseCodeService {
     }
   }
 
+  async deleteCode(code_id: number):Promise<PurchaseCode>{
+    const findCode = await this.purchaseCodeRepo.findOne({where: {code_id}});
+    console.log(findCode);
+    if (findCode != null){ //delete that code
+      await this.purchaseCodeRepo.remove(findCode);
+      return findCode;
+    }
+    else{ //code doesn't exist
+      throw new ConflictException("Purchase code doesn't exist!");
+    }
+  }
+
 }

@@ -27,10 +27,10 @@ const Checkout: React.FC = (): JSX.Element => {
 				</Table.Header>
 				<Table.Body>
 					<Table.Row >
-						<Table.Cell>title</Table.Cell>
+						<Table.Cell>Calculus 1</Table.Cell>
 						<Table.Cell>name</Table.Cell>
-						<Table.Cell>length</Table.Cell>
-						<Table.Cell>pric</Table.Cell>
+						<Table.Cell>5 months</Table.Cell>
+						<Table.Cell>20</Table.Cell>
 						<Table.Cell>
 							<Input type="text" placeholder=""></Input>
 						</Table.Cell>
