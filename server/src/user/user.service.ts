@@ -18,6 +18,7 @@ export class UserService {
       throw new ConflictException("User email already exists")
     }
     else {
+      createUser.role = 2
       return this.userRepo.save(createUser)
     }
   }
