@@ -1,14 +1,19 @@
 import {Module} from '@nestjs/common';
 import {DataSource} from 'typeorm'
 import {TypeOrmModule} from '@nestjs/typeorm';
-import {BookController} from './book/book.controller';
 import {ConfigModule} from "@nestjs/config";
-import {Cat} from "./cat/entities/cat.entity";
-import { CatModule } from './cat/cat.module';
-import { UserModule } from './user/user.module';
+import {UserModule } from './user/user.module';
 import {User} from "./user/entities/user.entity";
-import { AuthModule } from './auth/auth.module';
-import { AdminModule } from './admin/admin.module';
+import {AuthModule } from './auth/auth.module';
+import {AdminModule } from './admin/admin.module';
+import {TransactionModule } from './transaction/transaction.module';
+import {RecordModule } from './record/record.module';
+import {ItemModule } from './item/item.module';
+import {PurchaseCodeModule } from './purchaseCode/purchaseCode.module';
+import {Item} from "./item/entities/item.entity";
+import {PurchaseCode} from "./purchaseCode/purchaseCode.entity";
+import {Transaction} from "./transaction/entities/transaction.entity";
+import {Record} from "./record/entities/record.entity";
 
 let envFilePath = ['.env'];
 export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
@@ -31,16 +36,18 @@ if (IS_DEV) {
             username: process.env.DB_Username,
             password: process.env.DB_Password,
             database: process.env.DB_Database,
-            entities:[User],
+            entities:[User,Item,PurchaseCode,Record,Transaction],
             synchronize: true,
         }),
-        CatModule,
         UserModule,
         AuthModule,
         AdminModule,
+        TransactionModule,
+        RecordModule,
+        ItemModule,
+        PurchaseCodeModule,
 
     ],
-    controllers: [BookController],
     providers: [],
 })
 

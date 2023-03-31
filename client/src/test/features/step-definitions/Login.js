@@ -24,16 +24,18 @@ After(function () {
 
 //场景
 Given("user navigates to the website to login", async () => {
- await driver.get("http://localhost:3000/login");
- await driver.sleep(3 * 1000);
- //setTimeout(myFunction, 10000);
+	await driver.get("http://localhost:3000/login");
+	await driver.sleep(3 * 1000);
+	//setTimeout(myFunction, 10000);
 });
 
-When('I type {string} and {string} as email and password', async (email,password) => {
+
+
+When("I type {string} and {string} as email and password",  async (email, password) => {
 //When("the user enters their email and password", async () => {
     driver.findElement(webdriver.By.id("email")).sendKeys(email);
     driver.findElement(webdriver.By.id("password")).sendKeys(password);
- await driver.sleep(6 * 1000);
+	await driver.sleep(6 * 1000);
 });
 
 When("I click on 'login'", async () => {
@@ -50,17 +52,17 @@ Then("login must be successful.", async () => {
     //expect(curURL).to.equal("http://localhost:3000/");
 });
 
-//Scenario 2: Unsuccessful Login with Invalid Passwordcd
-Then("login failed due to invalid password.", async () => {
- let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
- expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
+//Scenario 2: Unsuccessful Login with Invalid Password
+Then("unsuccessful login due to an invalid password.", async () => {
+	let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
+	expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
 });
 
 //Scenario 3: Unsuccessful Login with Invalid email
 //Pages -》 Login ——》 LocalLoginForm ---
 //js Find element , 找到页面上面的元素
-Then("login failed due to invalid email.", async () => {
- let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
- expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
+Then("unsuccessful login due to an invalid email.", async () => {
+	let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
+	expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
 });
 

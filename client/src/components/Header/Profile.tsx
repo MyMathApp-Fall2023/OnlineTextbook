@@ -15,7 +15,8 @@ const Profile: React.FC = (): JSX.Element => {
 			<Dropdown.Menu>
 				<Dropdown.Item
 					onClick={(event, data) => {
-						removeCookie("jwt");
+						localStorage.removeItem('user');
+						localStorage.removeItem('token');
 						ctx.setUser!(undefined);
 						history.push("/");
 					}}

@@ -23,32 +23,24 @@ import RequestPasswordReset from "./pages/RequestPasswordReset";
 import ResetPassword from "./pages/ResetPassword";
 
 import AdminUserInfo from "./pages/Admin/UserInfo"
+import AdminPurchaseCode from "./pages/Admin/PurchaseCode"
 
 
 
 
 const App: React.FC = (): JSX.Element => {
 	// eslint-disable-next-line
-	const [cookies, setCookie, removeCookie] = useCookies(["jwt"]);
 	const [user, setUser] = useState<User | undefined>();
 	const [cart, setCart] = useState<Subscription[]>([]);
 
 	useEffect(() => {
-		if (cookies.jwt !== undefined) {
-			const jwtLogin = async (): Promise<void> => {
-				const res = await fetch("/api/authentication/jwt/login", {
-					method: "GET",
-					headers: { Accept: "application/json", Authorization: `Bearer ${cookies.jwt}` }
-				});
+		const storedUser = localStorage.getItem('user');
+		const storedToken = localStorage.getItem('token');
 
-				if (res.status === 200) {
-					setUser((await res.json()) as User);
-				}
-			};
-
-			jwtLogin();
+		if (storedUser && storedToken) {
+			setUser(JSON.parse(storedUser));
 		}
-	}, [cookies.jwt]);
+	}, []);
 
 	return (
 		<BrowserRouter>
@@ -110,6 +102,9 @@ const App: React.FC = (): JSX.Element => {
 								</Route>
 								<Route exact path="/admin/user">
 									<AdminUserInfo />
+								</Route>
+								<Route exact path="/admin/purchase-code">
+									<AdminPurchaseCode />
 								</Route>
 							</Switch>
 						</main>

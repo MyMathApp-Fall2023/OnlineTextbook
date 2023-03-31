@@ -1,9 +1,14 @@
 import React, { useCallback, useState, useContext, useReducer, Reducer } from "react";
 import { Form, Button, FormProps, Message, Loader, Segment, Icon, Header } from "semantic-ui-react";
 import CryptoJS from "crypto-js";
-import { useHistory } from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import { ApplicationContext } from "../../context";
 import { User } from "../../entities";
+import {localLoginApi} from "../../api/auth";
+
+type LocationState = {
+	prevPath?:string
+};
 
 type FormValues = {
 	email: string;
@@ -41,33 +46,21 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 	const [formValues, setFormValues] = useState<FormValues>({ email: "", password: "" });
 	const ctx = useContext(ApplicationContext);
 	const history = useHistory();
+	const location = useLocation<LocationState>();
 
 	const onSubmit = useCallback(
 		(data: FormProps) => {
 			formStateDispatch({ type: "LOADING" });
-			fetch("/api/user/local/login", {
-				method: "POST",
-				headers: {
-					Accept: "application/json",
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({
-					email: formValues.email,
-					password: formValues.password
-				})
-			})
-				.then(async (res) => {
-					if (res.status != 200) {
-						formStateDispatch({
-							type: "ERROR",
-							payload:
-								"Unable to login. Please ensure your email and password are correct and try again."
-						})
-					} else {
-						const user = (await res.json()) as User;
-						ctx.setUser!(user);
-						history.push("/");
-					}
+			localLoginApi({
+				email:formValues.email,
+				password: formValues.password
+			}).then(async (res) => {
+				const user = res.data.user
+				const token = res.data.access_token
+				localStorage.setItem('user', JSON.stringify(user));
+				localStorage.setItem('token', token);
+				ctx.setUser!(user);
+				history.replace(location.state?.prevPath || '/');
 
 				})
 				.catch((err) =>
@@ -82,8 +75,6 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 	);
 
 	return (
-
-
 		<Form
 			error={formState.error !== undefined}
 			loading={formState.loading}

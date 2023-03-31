@@ -46,4 +46,8 @@ export class User {
 
     @UpdateDateColumn({name: "updated_at"})
     public readonly updatedAt: Date;
+
+    @Column({ default: 2 })
+    public role: number;
+
 }
