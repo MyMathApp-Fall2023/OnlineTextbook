@@ -4,21 +4,19 @@ So that I can read the textbook that I purchased.
 I want to be recognized as a user who has purchased the textbooks and be able to read them before expiration. 
 
 Scenario: Successfully Accessing purchased textbook
-    Given user is logged in and their status is valid
-    When I clicked the 
-    And 
+    Given user is logged in
+    When I clicked the read book button
     Then I should see the purchased book
 
-Scenario: Accessing purchased textbook not successful
-    Given user is not logged in and their status is not valid
-    When I clicked the 
-    And 
+Scenario: Accessing purchased textbook without logging in
+    Given user is not logged in
+    When I clicked the read book button
     Then I should be directed to login page
 
-Scenario: Successful Login with Valid entries
-    Given user navigates to the website lo login
-    When I type 'yushuang@me.com' and 'yushuang' as email and password
-    And I click on 'login'
-    Then login must be successful.
+Scenario: Accessing purchased textbook not successful
+    Given user is logged in but status is not valid
+    When I clicked the read book button
+    Then I should be directed to purchase book page
+
 
 
