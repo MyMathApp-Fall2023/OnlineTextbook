@@ -6,3 +6,10 @@ export function getAllUserData():Promise<any> {
         url: `api/admin/user`,
     })
 }
+
+export function getAllPurchaseCodeData():Promise<any>{
+    return request({
+        method: 'get',
+        url: 'api/admin/purchaseCode',
+    })
+}
