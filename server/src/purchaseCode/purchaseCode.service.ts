@@ -58,6 +58,7 @@ export class PurchaseCodeService {
   }
 
   async deleteCode(code_id: number):Promise<PurchaseCode>{
+    console.log(code_id);
     const findCode = await this.purchaseCodeRepo.findOne({where: {code_id}});
     console.log(findCode);
     if (findCode != null){ //delete that code
@@ -82,9 +83,13 @@ export class PurchaseCodeService {
 
   async updateCode(code_id: number,priceOff:number):Promise<PurchaseCode>{
     const findCode = await this.purchaseCodeRepo.findOne({where: {code_id}});
+    console.log("Update");
+    console.log(code_id);
     console.log(findCode);
     if (findCode != null){ //update that code
       findCode.priceOff = priceOff;
+      console.log("After updating");
+      console.log(findCode);
       await this.purchaseCodeRepo.save(findCode);
       return findCode;
     }

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState, useCallback} from "react";
+import React, {useContext, useEffect, useState, useCallback,} from "react";
 import {
     Header,
     Divider,
@@ -22,7 +22,7 @@ import AdminMenu from "../../../components/AdminMenu";
 import { deleteCodeApi, getAllPurchaseCodeData } from "../../../api/admin";
 
 import CodeForm from "./codeForm";
-
+import UpdateCodeForm from "./updateCodeForm";
 
 interface PurchaseCode {
     readonly code_id: number;
@@ -102,6 +102,10 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                         
                         Add new purchase code:
                         <CodeForm />
+
+                        
+                        Update purchase code:
+                        <UpdateCodeForm />
                     </GridColumn>
                 </Grid.Row>
             </Grid>

@@ -38,10 +38,18 @@ export class AdminController {
 
     @Post("delete-code")
     @HttpCode(200)
-    public async deleteCode(code_id:number){
-        console.log(code_id);
-        return this.PurchaseCodeService.deleteCode(code_id)
+    public async deleteCode(@Body() newPurchaseCode:PurchaseCode){
+        console.log("server admin");
+        console.log(newPurchaseCode.code_id);
+        return this.PurchaseCodeService.deleteCode(newPurchaseCode.code_id)
 
+    }
+
+    @Post("update-code")
+    @HttpCode(200)
+    public async updateCode( @Body() newPurchaseCode:PurchaseCode){
+        console.log(newPurchaseCode.code_id);
+        return this.PurchaseCodeService.updateCode(newPurchaseCode.code_id, newPurchaseCode.priceOff)
     }
 
 }
