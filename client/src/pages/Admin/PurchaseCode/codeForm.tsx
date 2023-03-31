@@ -14,7 +14,7 @@ type FormAction = {
 
 type FormActionState = {
 	loading: boolean;
-	alreadyExistError: boolean;
+	alreadyExistError?: string;
 	requestError?: string;
 	success: boolean;
 };
@@ -22,19 +22,19 @@ type FormActionState = {
 const formStateReducer = (state: FormActionState, action: FormAction): FormActionState => {
 	switch (action.type) {
 		case "ALREADY_EXIST_ERROR":
-			return { ...state, alreadyExistError: action.payload as boolean };
+			return { ...state, alreadyExistError: action.payload as string, loading: false };
 		case "LOADING":
 			return {
 				loading: (action.payload as boolean) ?? true,
 				success: false,
-				alreadyExistError: false,
+				alreadyExistError: undefined,
 				requestError: undefined
 			};
 		case "SUCCESS":
 			return {
 				loading: false,
 				success: (action.payload as boolean) ?? true,
-				alreadyExistError: false,
+				alreadyExistError: undefined,
 				requestError: undefined
 			};
 		default:
@@ -49,7 +49,7 @@ const CodeForm: React.FC = (props): JSX.Element => {
 	});
 	const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormAction>>(
 		formStateReducer,
-		{ loading: false, success: false, alreadyExistError: false }
+		{ loading: false, success: false, alreadyExistError: undefined }
 	);
 
 	const onSubmit = useCallback(
@@ -78,7 +78,7 @@ const CodeForm: React.FC = (props): JSX.Element => {
 	return (
 		<Container>
 			<Form
-				error={formState.requestError !== undefined}
+				error={formState.alreadyExistError !== undefined}
 				loading={formState.loading}
 				onSubmit={(event, data) => onSubmit(data)}
 				success={formState.success}
@@ -101,7 +101,7 @@ const CodeForm: React.FC = (props): JSX.Element => {
 					header="SUCCESS"
 					success
 				/>
-				<Message content={formState.requestError} error header="Error" />
+				<Message content={formState.alreadyExistError} error header="Error" />
 				<Button
 					active={
 						!formState.success && !formState.alreadyExistError 
