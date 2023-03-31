@@ -70,7 +70,7 @@ const UpdateCodeForm: React.FC = (props): JSX.Element => {
 							"This code doesn't exist."
 					})
 				);
-                
+
 		},
 		[formStateDispatch, formValues]
 	);
@@ -104,7 +104,7 @@ const UpdateCodeForm: React.FC = (props): JSX.Element => {
 				<Message content={formState.alreadyExistError} error header="Error" />
 				<Button
 					active={
-						!formState.success && !formState.alreadyExistError 
+						!formState.success && !formState.alreadyExistError
 					}
 					color="green"
 					fluid
