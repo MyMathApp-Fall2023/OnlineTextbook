@@ -11,6 +11,9 @@ export class Item {
     public readonly name: string;
 
     @Column()
+    public readonly length: number;
+
+    @Column()
     public readonly price: number;
 
 }
