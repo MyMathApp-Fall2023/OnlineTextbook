@@ -9,9 +9,9 @@ import {AdminModule } from './admin/admin.module';
 import {TransactionModule } from './transaction/transaction.module';
 import {RecordModule } from './record/record.module';
 import {ItemModule } from './item/item.module';
-import {PurchaseCodeModule } from './purchase-code/purchase-code.module';
+import {PurchaseCodeModule } from './purchaseCode/purchaseCode.module';
 import {Item} from "./item/entities/item.entity";
-import {PurchaseCode} from "./purchase-code/entities/purchase-code.entity";
+import {PurchaseCode} from "./purchaseCode/purchaseCode.entity";
 import {Transaction} from "./transaction/entities/transaction.entity";
 import {Record} from "./record/entities/record.entity";
 
