@@ -7,7 +7,7 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"cucumber-test": "node_modules/.bin/cucumber-js -f @cucumber/pretty-formatter ./src/test/features",
+		"cucumber-test": "node_modules/.bin/cucumber-js -f @cucumber/pretty-formatter ./src/test/features/SignUp.feature ",
 		"eject": "react-scripts eject",
 		"lint": "eslint 'src/**/*.ts' && prettier --config ../.prettierrc.yml --list-different 'src/**/*.ts'",
 		"lint:fix": "eslint --fix 'src/**/*.ts' && prettier --config ../.prettierrc.yml --write 'src/**/*.ts'"
