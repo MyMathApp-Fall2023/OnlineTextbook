@@ -32,6 +32,7 @@ Given("I am at the login page of the website", async () => {
 When("I click Google button", async () => {
 	await driver.findElement(webdriver.By.xpath(`//*[@id="root"]/div/main/div/button`)).click();
 
+
 	await driver.sleep(6 * 1000);
 });
 
