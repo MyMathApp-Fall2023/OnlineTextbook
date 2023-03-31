@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { Table, Container, Header, Button } from "semantic-ui-react";
+import { Table, Container, Header, Button,Input, Icon } from "semantic-ui-react";
 import { formatter } from "../../utils";
 import { ApplicationContext } from "../../context";
 import PayPalSmartPaymentButtons from "./PayPalSmartPaymentButtons";
+import { title } from "process";
 
 const Checkout: React.FC = (): JSX.Element => {
 	const ctx = useContext(ApplicationContext);
@@ -13,35 +14,30 @@ const Checkout: React.FC = (): JSX.Element => {
 
 	return (
 		<Container>
-			<Table celled striped>
+			<Table>
 				<Table.Header>
 					<Table.Row>
-						<Table.HeaderCell>Product</Table.HeaderCell>
-						<Table.HeaderCell>Publisher</Table.HeaderCell>
-						<Table.HeaderCell collapsing>Length (days)</Table.HeaderCell>
-						<Table.HeaderCell collapsing>Price (USD)</Table.HeaderCell>
-						<Table.HeaderCell collapsing />
+						<Table.HeaderCell width={2}>Product</Table.HeaderCell>
+						<Table.HeaderCell width={2}>Publisher</Table.HeaderCell>
+						<Table.HeaderCell collapsing width={2}>Length (days)</Table.HeaderCell>
+						<Table.HeaderCell collapsing width={2}>Original Price (USD)</Table.HeaderCell>
+						<Table.HeaderCell collapsing width={2}>Purchase Code</Table.HeaderCell>
+						<Table.HeaderCell collapsing width={2}></Table.HeaderCell>
 					</Table.Row>
 				</Table.Header>
 				<Table.Body>
-					{ctx.cart.map((value, index) => {
-						return (
-							<Table.Row key={value.id}>
-								<Table.Cell>{value.product!.title}</Table.Cell>
-								<Table.Cell>{value.product!.company.name}</Table.Cell>
-								<Table.Cell>{value.length}</Table.Cell>
-								<Table.Cell>{formatter.format(value.cost / 100)}</Table.Cell>
-								<Table.Cell>
-									<Button
-										color="red"
-										fluid
-										icon="delete"
-										onClick={(event, data) => ctx.setCart!(ctx.cart.filter((v, i) => i !== index))}
-									/>
-								</Table.Cell>
-							</Table.Row>
-						);
-					})}
+					<Table.Row >
+						<Table.Cell>Calculus 1</Table.Cell>
+						<Table.Cell>name</Table.Cell>
+						<Table.Cell>5 months</Table.Cell>
+						<Table.Cell>20</Table.Cell>
+						<Table.Cell>
+							<Input type="text" placeholder=""></Input>
+						</Table.Cell>
+						<Table.Cell>
+						<button className="positive ui button">Apply</button>
+						</Table.Cell>
+					</Table.Row>
 				</Table.Body>
 				<Table.Footer>
 					<Table.Row>
@@ -51,6 +47,13 @@ const Checkout: React.FC = (): JSX.Element => {
 						<Table.HeaderCell colSpan={2} collapsing>
 							<b>{total}</b>
 						</Table.HeaderCell>
+						<Table.HeaderCell>
+						<button className="positive ui button">
+						<i className="credit card icon"></i>
+						Pay
+						</button>
+						</Table.HeaderCell>
+						
 					</Table.Row>
 				</Table.Footer>
 			</Table>
