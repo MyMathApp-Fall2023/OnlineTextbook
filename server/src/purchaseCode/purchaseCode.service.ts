@@ -69,4 +69,15 @@ export class PurchaseCodeService {
     }
   }
 
+  async validavalidateCode(name:string):Promise<number>{
+    const findCode = await this.purchaseCodeRepo.findOne({where: {name}});
+    console.log(findCode);
+    if (findCode != null){ //delete that code
+      return findCode.priceOff;
+    }
+    else{ //code doesn't exist
+      throw new ConflictException("Purchase code doesn't exist!");
+    }
+  }
+
 }
