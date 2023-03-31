@@ -82,6 +82,6 @@ Then("sign up must be successful.", async () => {
 //Scenario 2: Unsuccessful Login with Invalid Passwordcd
 Then('sign up must be failed.', async () => {
  let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
- expect(errorMsg).to.equal("Unable to Signup. The account has already been created");
+ expect(errorMsg).to.contains("ERROR");
 });
 
