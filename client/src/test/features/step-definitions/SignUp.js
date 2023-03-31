@@ -52,7 +52,7 @@ When('I type conflict entities like email which exists in database', async () =>
 
 When('I type valid entities including Name and Email and password', async () => {
 //When("the user enters their email and password", async () => {
-    const randomName = generateRandomString(5); // generates a random string of length 10
+    const randomName = generateRandomString(10); // generates a random string of length 10
     const randomEmail = randomName + '@me.com'
 
     driver.findElement(webdriver.By.id("name")).sendKeys(randomName);
@@ -82,6 +82,6 @@ Then("sign up must be successful.", async () => {
 //Scenario 2: Unsuccessful Login with Invalid Passwordcd
 Then('sign up must be failed.', async () => {
  let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
- expect(errorMsg).to.contains("ERROR");
+ expect(errorMsg).to.contains("Error");
 });
 
