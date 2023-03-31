@@ -59,13 +59,15 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                         <Table>
                             <Table.Header>
                                 <Table.Row>
+                                <Table.HeaderCell>Code ID</Table.HeaderCell>
                                     <Table.HeaderCell>Code</Table.HeaderCell>
-                                    <Table.HeaderCell>Price Off</Table.HeaderCell>
+                                    <Table.HeaderCell>Percent Off</Table.HeaderCell>
                                 </Table.Row>
                             </Table.Header>
                             <Table.Body>
                                 {purchaseData.map(purchaseCode => (
                                     <Table.Row key={purchaseCode.code_id}>
+                                        <Table.Cell>{purchaseCode.code_id}</Table.Cell>
                                         <Table.Cell>{purchaseCode.name}</Table.Cell>
                                         <Table.Cell>{purchaseCode.priceOff}</Table.Cell>
                                     </Table.Row>

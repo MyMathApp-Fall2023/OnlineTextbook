@@ -26,6 +26,7 @@ export class PurchaseCodeService {
   async findAll() {
     const purchaseCodes = await this.purchaseCodeRepo.find({
       select:{
+        code_id: true,
         name: true,
         priceOff: true
       }
