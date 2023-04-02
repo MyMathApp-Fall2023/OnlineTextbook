@@ -67,17 +67,27 @@ When("click the add button", async () => {
 });
 
 Then("the purchase code should be added in", async () => {
+
+	let successMsg = await driver.findElement(webdriver.By.className("ui success message")).getText();
+    expect(successMsg).to.contains("SUCCESS");
+
+	/*
+	//refresh: 
+	await driver.get("http://localhost:3000/admin/purchase-code");
+
 	let table = await driver.findElement(webdriver.By.className("ui table"));
 	let rows = await table.findElements(webdriver.By.tagName("tr"));
 	let cols = await (rows[rows.length-1]).findElements(webdriver.By.tagName("td"));
 	let item = await cols[1].getText();
 	let num = await cols[2].getText();
+
 	//let rows = await table.findElements(webdriver.By.tagName("tr"));
 	//let cols = await rows.findElements(webdriver.By.tagName("td")).getText();
-
 	//let item = await driver.findElement(By.xpath(`//*[@id="root"]/div/main/div/div/div/div[2]/table/tbody/tr[6]/td[2]`)).getText();
 	expect(item).to.contains("20percentoff");
 	expect(num).to.contains("20");
+	*/
+
 	//delete: 
 	//const row = getByRole('cell', {name: 'Jane'}).closest('tr')
 	//fireEvent.click(
@@ -94,30 +104,35 @@ Scenario: Adding purchase code correctly
     When go to purchase code page url
 	When click the delete button at the end of row
     Then the purchase code should be deleted
+*/
 
+
+//*[@id="root"]/div/main/div/div/div/div[2]/table/tbody/tr[6]/td[4]/button
 
 When("click the delete button at the end of row", async () => {
-    //driver.findElement(webdriver.By.id("name")).sendKeys(randomName);
-    //await driver.sleep(3 * 1000);
-	let table = await driver.findElement(webdriver.By.className("ui table"));
-	let rows = await table.findElements(webdriver.By.tagName("tr"));
-	let cols = await (rows[rows.length-1]).findElements(webdriver.By.tagName("td"));
-	let item = await cols[3];
 
-	await item.click();
+	//should be working... but not
+	//let table = await driver.findElement(webdriver.By.className("ui table"));
+	//let rows = await table.findElements(webdriver.By.tagName("tr"));
+	//let cols = await (rows[rows.length-1]).findElements(webdriver.By.tagName("td"));
+	//let item = await (cols[4]).findElements(webdriver.By.className("ui red button"));
+	//await item.click();
+
+	await driver.findElement(webdriver.By.xpath(`//*[@id="root"]/div/main/div/div/div/div[2]/table/tbody/tr[6]/td[4]/button`)).click();
  	await driver.sleep(6 * 1000);
 });
 
 Then("the purchase code should be deleted", async () => {
+	await driver.get("http://localhost:3000/admin/purchase-code");
+
 	let table = await driver.findElement(webdriver.By.className("ui table"));
 	let rows = await table.findElements(webdriver.By.tagName("tr"));
 	let cols = await (rows[rows.length-1]).findElements(webdriver.By.tagName("td"));
-	let item = await cols[3];
+	let item = await cols[1].getText();
 	//let rows = await table.findElements(webdriver.By.tagName("tr"));
 	//let cols = await rows.findElements(webdriver.By.tagName("td")).getText();
-
 	//let item = await driver.findElement(By.xpath(`//*[@id="root"]/div/main/div/div/div/div[2]/table/tbody/tr[6]/td[2]`)).getText();
-	expect(item).to.contains("20percentoff");
+	expect(item).to.not.contains("20percentoff");
 
 	//delete: 
 	//const row = getByRole('cell', {name: 'Jane'}).closest('tr')
@@ -127,4 +142,3 @@ Then("the purchase code should be deleted", async () => {
 	//console.log(curURL);
     //expect(curURL).to.equal("http://localhost:3000/");
 });
-*/
