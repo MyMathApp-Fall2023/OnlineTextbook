@@ -123,7 +123,7 @@ When("click the delete button at the end of row", async () => {
 });
 
 Then("the purchase code should be deleted", async () => {
-	await driver.get("http://localhost:3000/admin/purchase-code");
+	//await driver.get("http://localhost:3000/admin/purchase-code");
 
 	let table = await driver.findElement(webdriver.By.className("ui table"));
 	let rows = await table.findElements(webdriver.By.tagName("tr"));

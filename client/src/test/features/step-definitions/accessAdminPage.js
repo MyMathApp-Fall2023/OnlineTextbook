@@ -52,7 +52,7 @@ When("not login as admin",  async () => {
 
 
 When("go to the admin url",  async () => {
-    await driver.get("http://localhost:3000/admin");
+    await driver.get("http://localhost:3000/admin/user");
     await driver.sleep(3 * 1000);
         //When("the user enters their email and password", async () => {
         });
@@ -60,7 +60,7 @@ When("go to the admin url",  async () => {
 // Scenario 1: Successful Login with Valid Entries
 Then("the user should be at admin page and see info.", async () => {
  let curURL =  await driver.getCurrentUrl();
-    expect(curURL).to.equal("http://localhost:3000/admin");
+    expect(curURL).to.equal("http://localhost:3000/admin/user");
 
  //console.log(curURL);
     //expect(curURL).to.equal("http://localhost:3000/");
