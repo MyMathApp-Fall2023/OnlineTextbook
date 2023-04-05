@@ -9,8 +9,8 @@ Before run you need:
 
 To Run Backend Server:
 1. Enter server folder
-2. `npm install`
-3. `npm run dev`
+2. `yarn install`
+3. `yarn start`
 
 To Run Frontend Client:
 1. Enter client folder

@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useReducer, Reducer } from "react";
 import {Form, FormProps, Button, Message, Loader, Container} from "semantic-ui-react";
 import CryptoJS from "crypto-js";
+import {localSignupApi} from "../../api/auth";
 
 type FormValues = {
 	name: string;
@@ -8,6 +9,7 @@ type FormValues = {
 	confirmedEmail: string;
 	password: string;
 	confirmedPassword: string;
+
 };
 
 type FormAction = {
@@ -21,6 +23,7 @@ type FormActionState = {
 	confirmPasswordError: boolean;
 	requestError?: string;
 	success: boolean;
+	error?:string;
 };
 
 const formStateReducer = (state: FormActionState, action: FormAction): FormActionState => {
@@ -45,6 +48,14 @@ const formStateReducer = (state: FormActionState, action: FormAction): FormActio
 				confirmPasswordError: false,
 				requestError: undefined
 			};
+		case "REQUEST_ERROR":
+			return {
+				loading: false,
+				success: false,
+				confirmEmailError: false,
+				confirmPasswordError: false,
+				requestError: (action.payload as string)
+			}
 		default:
 			throw new Error(`Unknown action: ${action.type}`);
 	}
@@ -66,31 +77,18 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 	const onSubmit = useCallback(
 		(data: FormProps) => {
 			formStateDispatch({ type: "LOADING" });
-			fetch("/api/user/local/signup", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({
-					name: formValues.name,
-					email: formValues.email,
-					password: formValues.password
-				})
+			localSignupApi({
+				name:formValues.name,
+				email:formValues.email,
+				password : formValues.password
 			})
 				.then((res) =>
-					res.status === 200
-						? formStateDispatch({ type: "SUCCESS" })
-						: formStateDispatch({
-								type: "REQUEST_ERROR",
-								payload:
-									"Unable to create your account. Please try again. In the case that you continue to be unable to create an account, please contact us using the tab at the top of the page."
-						})
+					formStateDispatch({ type: "SUCCESS" })
 				)
 				.catch((err) =>
 					formStateDispatch({
 						type: "REQUEST_ERROR",
-						payload:
-							"Unable to create your account. Please try again. In the case that you continue to be unable to create an account, please contact us using the tab at the top of the page."
+						payload:"Unable to Signup. The account has already been created."
 					})
 				);
 		},
@@ -160,7 +158,8 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 					required
 					type="password"
 				/>
-				<Form.Checkbox id="termsAndConditions" label="I agree to the terms and conditions" required />
+				{/*<Form.Checkbox id="termsAndConditions" label="I agree to the terms and conditions" required />*/}
+
 				<Message
 					content="Your account has been successfully created. Please login to your email to confirm your account."
 					header="SUCCESS"

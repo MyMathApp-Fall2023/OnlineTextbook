@@ -19,6 +19,7 @@ import PropTypes from 'prop-types';
 import axios from "axios";
 import AdminMenu from "../../../components/AdminMenu";
 import {getAllUserData} from "../../../api/admin";
+import {useHistory} from "react-router-dom";
 
 
 interface UserData {
@@ -27,12 +28,24 @@ interface UserData {
     name: string;
 }
 
-const AdminUserInfo: React.FC = (props): JSX.Element => {
+interface localUser {
+    role: number;
+}
+
+const AdminUserInfo: React.FC = (props): JSX.Element | null => {
     const ctx = useContext(ApplicationContext);
     const [name, setName] = useState<string>(ctx.user?.name ?? "");
     const userName = ctx.user?.name;
     const userEmail = ctx.user?.email;
+    const history = useHistory()
+    const user: localUser | null = JSON.parse(localStorage.getItem('user') || 'null');
 
+
+    if (!user || user.role !== 1) {
+        // Redirect to main page
+        history.push('/');
+        return null;
+    }
 
     const [userData, setUserData] = useState<UserData[]>([]);
 

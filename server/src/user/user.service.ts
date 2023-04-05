@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import {ConflictException, Injectable} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {User} from "./entities/user.entity";
 import {Repository} from "typeorm";
@@ -11,9 +11,16 @@ export class UserService {
       private readonly userRepo: Repository<User>,  // 使用泛型注入对应类型的存储库实例
   ) {}
 
-  create(createUser: User) {
-    //ToDO if user already exist
-    return this.userRepo.save(createUser)
+  async create(createUser: User) {
+    const email = createUser.email
+    const user = await this.userRepo.findOne({where:{email}})
+    if (user != null) {
+      throw new ConflictException("User email already exists")
+    }
+    else {
+      createUser.role = 2
+      return this.userRepo.save(createUser)
+    }
   }
 
   async authenticate(loginUser:User):Promise<User> {
