@@ -15,7 +15,7 @@ export class AuthController {
     @HttpCode(200)
     @Post("local-signup")
     create(@Body() user:User) {
-        return this.userService.create(user);
+        return this.userService.localSignUp(user);
     }
 
     @Post("local-login")

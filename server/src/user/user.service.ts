@@ -23,6 +23,19 @@ export class UserService {
     }
   }
 
+  async localSignUp(createUser: User) {
+    const email = createUser.email
+    const user = await this.userRepo.findOne({where:{email}})
+    if (user != null) {
+      throw new ConflictException("User email address already exists")
+    }
+    else {
+      createUser.role = 2
+      createUser.activatedAccount = false
+      return this.userRepo.save(createUser)
+    }
+  }
+
   async authenticate(loginUser:User):Promise<User> {
     const email = loginUser.email
     const password = loginUser.password
