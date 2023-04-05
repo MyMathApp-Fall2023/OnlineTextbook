@@ -10,7 +10,7 @@ Scenario: Adding purchase code correctly
 	When click the add button
     Then the purchase code should be added in
 
-Scenario: Adding purchase code correctly
+Scenario: Deleting purchase code correctly
     Given user is logged in as admin 
     When go to purchase code page url
 	When click the delete button at the end of row
