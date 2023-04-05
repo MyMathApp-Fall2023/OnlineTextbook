@@ -115,6 +115,7 @@ When("click the delete button at the end of row", async () => {
 	//let table = await driver.findElement(webdriver.By.className("ui table"));
 	//let rows = await table.findElements(webdriver.By.tagName("tr"));
 	//let cols = await (rows[rows.length-1]).findElements(webdriver.By.tagName("td"));
+	//await cols[3].click();
 	//let item = await (cols[4]).findElements(webdriver.By.className("ui red button"));
 	//await item.click();
 
@@ -123,7 +124,7 @@ When("click the delete button at the end of row", async () => {
 });
 
 Then("the purchase code should be deleted", async () => {
-	await driver.get("http://localhost:3000/admin/purchase-code");
+	//await driver.get("http://localhost:3000/admin/purchase-code");
 
 	let table = await driver.findElement(webdriver.By.className("ui table"));
 	let rows = await table.findElements(webdriver.By.tagName("tr"));
