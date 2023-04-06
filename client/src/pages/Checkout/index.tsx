@@ -24,6 +24,7 @@ const Checkout: React.FC = (props): JSX.Element => {
             getCurrentItem(item_id)
             .then(res => {
                 setItemData([res.data]);
+				settotalPrice(res.data.price)
             })
             .catch(error => console.error(error));
     }, []);
@@ -43,7 +44,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 			async (res) => {
 				//console.log("discount");
 				//console.log(res.data);
-				const discounted = res.data * 0.01 * ItemData[0].price;
+				const discounted = (1 - res.data * 0.01) * ItemData[0].price;
 				settotalPrice(discounted)
 				formStateDispatch({ type: "SUCCESS" })
 				})
