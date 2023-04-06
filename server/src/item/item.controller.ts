@@ -18,8 +18,8 @@ export class ItemController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.itemService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.itemService.findOne(id);
   }
 
   @Patch(':id')
