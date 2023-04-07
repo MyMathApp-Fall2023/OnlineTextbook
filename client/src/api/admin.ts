@@ -14,6 +14,13 @@ export function getAllPurchaseCodeData():Promise<any>{
     })
 }
 
+export function getTransactionRecordData():Promise<any>{
+    return request({
+        method: 'get',
+        url: 'api/admin/transactionRecord',
+    })
+}
+
 export function addCodeApi(data:any):Promise<any> {
     return request({
         method: 'post',
