@@ -17,7 +17,7 @@ export function getAllPurchaseCodeData():Promise<any>{
 export function getTransactionRecordData():Promise<any>{
     return request({
         method: 'get',
-        url: 'api/admin/transactionRecord',
+        url: 'api/admin/transaction',
     })
 }
 
