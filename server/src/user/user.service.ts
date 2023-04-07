@@ -1,7 +1,8 @@
-import {ConflictException, Injectable} from '@nestjs/common';
+import {ConflictException, forwardRef, Inject, Injectable} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {User} from "./entities/user.entity";
 import {Repository} from "typeorm";
+import {EmailService} from "../email/email.service";
 
 @Injectable()
 export class UserService {
@@ -9,6 +10,7 @@ export class UserService {
   constructor(
       @InjectRepository(User)
       private readonly userRepo: Repository<User>,  // 使用泛型注入对应类型的存储库实例
+      private readonly emailService: EmailService
   ) {}
 
   async create(createUser: User) {
@@ -19,8 +21,14 @@ export class UserService {
     }
     else {
       createUser.role = 2
-      return this.userRepo.save(createUser)
+      createUser.activationCode = this.generateActivationCode()
+      const createResult = await this.userRepo.save(createUser)
+      return await this.emailService.sendActivateAccountEmail(createResult)
     }
+  }
+
+  generateActivationCode() : string {
+      return 'Naomi2049-'+ Date.now().toString()
   }
 
   async authenticate(loginUser:User):Promise<User> {

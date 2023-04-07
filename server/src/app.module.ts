@@ -14,6 +14,7 @@ import {Item} from "./item/entities/item.entity";
 import {PurchaseCode} from "./purchaseCode/purchaseCode.entity";
 import {Transaction} from "./transaction/entities/transaction.entity";
 import {Record} from "./record/entities/record.entity";
+import { EmailModule } from './email/email.module';
 
 let envFilePath = ['.env'];
 export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
@@ -46,6 +47,7 @@ if (IS_DEV) {
         RecordModule,
         ItemModule,
         PurchaseCodeModule,
+        EmailModule,
 
     ],
     providers: [],
