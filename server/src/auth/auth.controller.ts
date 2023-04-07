@@ -34,4 +34,10 @@ export class AuthController {
         return req.user;
     }
 
+    @HttpCode(200)
+    @Post("activate")
+    activateAccount(@Body() body: {activationCode: string}) {
+        return this.userService.activateAccount(body.activationCode);
+    }
+
 }

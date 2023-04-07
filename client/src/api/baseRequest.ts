@@ -23,21 +23,15 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
     response => {
-        // const res = response.data
-        if (response.status!=200) {
-            console.log(response)
-        }
         return response
     },
     error => {
-        console.log('err' + error) // for debug
+        console.log(error) // for debug
         return Promise.reject(error)
     }
 )
 
 export function request(config:AxiosRequestConfig):Promise<AxiosResponse> {
-    console.log(process.env.BASE_URL)
-    console.log(process.env)
     return service(config)
 }
 
