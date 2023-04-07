@@ -85,12 +85,15 @@ const LocalSignUpForm: React.FC = (props): JSX.Element => {
 				.then((res) =>
 					formStateDispatch({ type: "SUCCESS" })
 				)
-				.catch((err) =>
-					formStateDispatch({
-						type: "REQUEST_ERROR",
-						payload:"Unable to Signup. The account has already been created."
-					})
-				);
+				.catch((err) => {
+						if (err.response.status == 409) {
+							formStateDispatch({
+								type: "REQUEST_ERROR",
+								payload:"Unable to Signup. The account has already been created."
+							})
+						}
+
+				});
 		},
 		[formStateDispatch, formValues]
 	);
