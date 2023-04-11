@@ -18,8 +18,16 @@ export class ItemService {
     return 'This action adds a new item';
   }
 
-  findAll() {
-    return `This action returns all item`;
+  async findAll() {
+    const items = await this.ItemRepo.find({
+      select:{
+        id: true,
+        name: true,
+        length: true,
+        price: true
+      }
+    })
+    return items;
   }
 
   async findOne(id: number):Promise<Item |　undefined> {

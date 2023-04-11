@@ -5,6 +5,7 @@ import useSWR from "swr";
 import { Loader, Divider } from "semantic-ui-react";
 import { Product } from "../entities";
 import ProductHeader from "./ProductHeader";
+import TextbookHeader from "./TextbookHeader";
 
 type TextbookProps = {
 	child: React.ReactNode;
@@ -23,8 +24,9 @@ const Textbook: React.FC<TextbookProps> = (props): JSX.Element => {
 
 	return (
 		<>
-			{/*<ProductHeader hasSample image={props.image} product={data} />*/}
-			<Divider></Divider>
+		<TextbookHeader></TextbookHeader>
+			{/* {<ProductHeader hasSample image={props.image} product={data}/>} */}
+			{/* <Divider></Divider> */}
 			{props.child}
 
 			<p>

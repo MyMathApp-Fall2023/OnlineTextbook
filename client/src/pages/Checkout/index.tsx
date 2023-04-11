@@ -5,7 +5,12 @@ import { ApplicationContext } from "../../context";
 import PayPalSmartPaymentButtons from "./PayPalSmartPaymentButtons";
 import { title } from "process";
 import {getCurrentItem, checkPurchaseCode} from "../../api/checkout"
-
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	useLocation
+  } from "react-router-dom"
 interface Item {
     readonly item_id: number;
     name: string;
@@ -15,12 +20,14 @@ interface Item {
 
 const Checkout: React.FC = (props): JSX.Element => {
 	const ctx = useContext(ApplicationContext);
-	//item
-	const item_id = 5;
+  
+//Then inside your component
+	const queryParams = new URLSearchParams(window.location.search)
+	const item_id = queryParams.get("id");
     const [ItemData, setItemData] = useState<Item[]>([]);
 
     useEffect(() => {
-		console.log("client try to get item data");
+		
             getCurrentItem(item_id)
             .then(res => {
                 setItemData([res.data]);
@@ -42,8 +49,6 @@ const Checkout: React.FC = (props): JSX.Element => {
 		console.log(currentCode);
 		checkPurchaseCode(currentCode).then(
 			async (res) => {
-				//console.log("discount");
-				//console.log(res.data);
 				const discounted = (1 - res.data * 0.01) * ItemData[0].price;
 				settotalPrice(discounted)
 				formStateDispatch({ type: "SUCCESS" })
