@@ -1,8 +1,9 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request } from '@nestjs/common';
 import { RecordService } from './record.service';
 import { CreateRecordDto } from './dto/create-record.dto';
 import { UpdateRecordDto } from './dto/update-record.dto';
 import { User } from 'src/user/entities/user.entity';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @Controller('record')
 export class RecordController {
@@ -13,9 +14,11 @@ export class RecordController {
     return this.recordService.create(createRecordDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('record')
-  findAll(@Body() newUser: User) {
-    return this.recordService.findAll(newUser.id);
+  findAll(@Request() req) {
+    console.log(req.user);
+    return this.recordService.findAll(req.user.user_id);
   }
 
   @Get(':id')

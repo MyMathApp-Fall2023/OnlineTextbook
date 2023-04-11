@@ -1,12 +1,12 @@
 import { request } from "./baseRequest"
 
-export function getRecords(data:any):Promise<any> {
+export function getRecords():Promise<any> {
     return request({
         method: 'get',
-        url: `api/record/record`,
-        data:data
+        url: `api/record/record`
     })
 }
+
 
 export function getProfileApi():Promise<any> {
     return request ({

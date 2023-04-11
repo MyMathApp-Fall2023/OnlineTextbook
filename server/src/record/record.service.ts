@@ -16,6 +16,7 @@ export class RecordService {
   }
 
   async findAll(user_id:number) {
+    console.log("For records, server: "+ user_id);
     const records = await this.recordRepo.find({
       where:{
         user_id: user_id

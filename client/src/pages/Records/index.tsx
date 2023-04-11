@@ -20,7 +20,7 @@ import {useHistory} from "react-router-dom";
 interface Records {
     record_id: number;
     item_id: number;
-    expirationDate: number;
+    expirationDate: string;
 }
 
 interface localUser {
@@ -36,10 +36,10 @@ const AdminUserInfo: React.FC = (props): JSX.Element | null => {
     // const user: localUser | null = JSON.parse(localStorage.getItem('user') || 'null');
 
     const [Records, setRecords] = useState<Records[]>([]);
-    const userid = getProfileApi();
+    // const userid = getProfileApi();
     useEffect(() => {
-        getRecords(userid)
-            .then((res: { data: React.SetStateAction<Records[]>; }) => {
+        getRecords()
+            .then(res => {
                 setRecords(res.data)
             })
             .catch((error: any) => console.error(error));
@@ -63,7 +63,7 @@ const AdminUserInfo: React.FC = (props): JSX.Element | null => {
                                 {Records.map(record => (
                                     <Table.Row key={record.record_id}>
                                         <Table.Cell>{record.item_id}</Table.Cell>
-                                        <Table.Cell>{record.expirationDate}</Table.Cell>
+                                        <Table.Cell>{record.expirationDate.split("T")[0]}</Table.Cell>
                                     </Table.Row>
                                 ))}
                             </Table.Body>
