@@ -66,3 +66,13 @@ Then("unsuccessful login due to an invalid email.", async () => {
 	expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
 });
 
+/*Scenario4: Unsuccessful Login with unconfirmed email
+Given user navigates to the website to login
+When I type 'dddddddd@me.com' and 'yushuang' as email and password
+And I click on 'login'
+Then unsuccessful login due to an email address unconfirmed.*/
+
+Then("unsuccessful login due to an email address unconfirmed.", async () => {
+    let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
+    expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
+});
