@@ -15,7 +15,7 @@ export class AuthController {
     @HttpCode(200)
     @Post("local-signup")
     create(@Body() user:User) {
-        return this.userService.create(user);
+        return this.userService.localSignUp(user);
     }
 
     @Post("local-login")
@@ -32,6 +32,12 @@ export class AuthController {
     @Get('profile')
     getProfile(@Request() req) {
         return req.user;
+    }
+
+    @HttpCode(200)
+    @Post("activate")
+    activateAccount(@Body() body: {activationCode: string}) {
+        return this.userService.activateAccount(body.activationCode);
     }
 
 }
