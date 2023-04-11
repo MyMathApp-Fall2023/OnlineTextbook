@@ -15,8 +15,6 @@ export class AuthService {
     async validateUserByEmail(email: string, password: string): Promise<any> {
         const user = await this.userService.findOne(email);
         // todo fix @exclude
-        // console.log('validate')
-        // console.log(user)
         if (user && user.password === password) {
            const { password, googleAccessToken, temporaryPassword, activationCode, ...result} = user
             return result
