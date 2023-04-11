@@ -24,6 +24,7 @@ import ResetPassword from "./pages/ResetPassword";
 
 import AdminUserInfo from "./pages/Admin/UserInfo"
 import AdminPurchaseCode from "./pages/Admin/PurchaseCode"
+import Records from "./pages/Records";
 
 
 
@@ -105,6 +106,9 @@ const App: React.FC = (): JSX.Element => {
 								</Route>
 								<Route exact path="/admin/purchase-code">
 									<AdminPurchaseCode />
+								</Route>
+								<Route exact path="/records">
+									<Records />
 								</Route>
 							</Switch>
 						</main>

@@ -5,7 +5,7 @@ import {Exclude} from '@nestjs/class-transformer'
 @Entity()
 export class Record {
     @PrimaryGeneratedColumn({name: "record_id"})
-    public readonly id: number;
+    public readonly record_id: number;
 
     @Exclude()
     @Column()
@@ -13,4 +13,7 @@ export class Record {
 
     @Column()
     public readonly expirationDate: Date;
+
+    @Column()
+    public readonly item_id: number;
 }

@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { RecordService } from './record.service';
 import { CreateRecordDto } from './dto/create-record.dto';
 import { UpdateRecordDto } from './dto/update-record.dto';
+import { User } from 'src/user/entities/user.entity';
 
 @Controller('record')
 export class RecordController {
@@ -12,9 +13,9 @@ export class RecordController {
     return this.recordService.create(createRecordDto);
   }
 
-  @Get()
-  findAll() {
-    return this.recordService.findAll();
+  @Get('record')
+  findAll(@Body() newUser: User) {
+    return this.recordService.findAll(newUser.id);
   }
 
   @Get(':id')
