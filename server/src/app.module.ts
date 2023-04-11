@@ -31,7 +31,7 @@ if (IS_DEV) {
             envFilePath: envFilePath
         }),
         TypeOrmModule.forRoot({
-            type: 'mariadb',
+            type: 'mysql',
             host: process.env.DB_Host,
             port: Number(process.env.DB_Port),
             username: process.env.DB_Username,

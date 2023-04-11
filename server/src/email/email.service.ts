@@ -1,6 +1,6 @@
 import {readFileSync} from 'fs'
 import {join} from "path";
-import { Injectable, Logger, OnModuleDestroy } from "@nestjs/common";
+import {forwardRef, Inject, Injectable, Logger, OnModuleDestroy} from "@nestjs/common";
 import { createTransport } from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 import Handlebars from "handlebars";
@@ -25,7 +25,9 @@ export class EmailService implements OnModuleDestroy {
     private readonly activateAccountTemplateDelegate: HandlebarsTemplateDelegate<ActivateAccountParams>;
     private readonly from?: string;
 
-    constructor() {
+    constructor(
+        @Inject (forwardRef(() => UserService)) private readonly userService: UserService
+    ) {
         {
             const appDirectory = process.cwd();
             if (process.env.EMAIL_ENABLE) {
@@ -57,11 +59,11 @@ export class EmailService implements OnModuleDestroy {
     }
 
     public async sendActivateAccountEmail(user: User): Promise<void> {
-        // if (!process.env["EMAIL_ENABLE "]) {
-        //     await this.userService.activateAccount(user.activationCode!);
-        //     console.log("enabled");
-        //     return;
-        // }
+        if (!process.env.EMAIL_ENABLE) {
+            await this.userService.activateAccount(user.activationCode!);
+            console.log("enabled");
+            return;
+        }
         console.log("already enabled");
         const text = this.activateAccountTemplateDelegate({
             name: user.name,
