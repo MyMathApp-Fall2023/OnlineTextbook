@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Table, Container, Header, Button,Input, Icon } from "semantic-ui-react";
 import { formatter } from "../../utils";
 import { ApplicationContext } from "../../context";
-import PayPalSmartPaymentButtons from "./PayPalSmartPaymentButtons";
+import PayPalButtons from "./PayPalButtons";
 import { title } from "process";
 
 const Checkout: React.FC = (): JSX.Element => {
@@ -60,7 +60,7 @@ const Checkout: React.FC = (): JSX.Element => {
 			{ctx.user === undefined ? (
 				<Header as="h3">You must be signed in to complete your purchase.</Header>
 			) : (
-				<PayPalSmartPaymentButtons total={total} />
+				<PayPalButtons total={total} />
 			)}
 		</Container>
 	);
