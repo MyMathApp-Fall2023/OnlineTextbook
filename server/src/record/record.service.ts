@@ -16,7 +16,6 @@ export class RecordService {
   }
 
   async findAll(user_id:number) {
-    console.log("For records, server: "+ user_id);
     // const records = await this.recordRepo.find({
     //   where:{
     //     user_id: user_id
@@ -34,13 +33,25 @@ export class RecordService {
 
 
 
-
   findOne(id: number) {
     return `This action returns a #${id} record`;
   }
 
-  update(id: number, updateRecordDto: UpdateRecordDto) {
-    return `This action updates a #${id} record`;
+  async update(user_id: number, expirationDate: Date, item_id: number) {
+    const records = await this.recordRepo.find({
+      where: {
+        user_id:user_id,
+        item_id:item_id
+      }
+    })
+    if (records == null){//add a new record
+      const newrecord = new Record();
+      
+    }
+    else{//update old record
+
+    }
+    //return `This action updates a #${id} record`;
   }
 
   remove(id: number) {

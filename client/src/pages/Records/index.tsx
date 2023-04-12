@@ -17,6 +17,7 @@ import { getItem, getProfileApi, getRecords } from "../../api/user";
 import {useHistory} from "react-router-dom";
 
 
+
 interface Records {
     [x: string]: any;
     record_id: number;
@@ -35,6 +36,15 @@ const AdminUserInfo: React.FC = (props): JSX.Element | null => {
     // const userEmail = ctx.user?.email;
     // const history = useHistory()
     // const user: localUser | null = JSON.parse(localStorage.getItem('user') || 'null');
+
+    const history = useHistory()
+    const user: localUser | null = JSON.parse(localStorage.getItem('user') || 'null');
+
+    if (!user) {
+        // Redirect to main page
+        history.push('/');
+        return null;
+    }
 
     const [Records, setRecords] = useState<Records[]>([]);
     // const userid = getProfileApi();

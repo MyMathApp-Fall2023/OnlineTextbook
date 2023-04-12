@@ -4,6 +4,7 @@ import { CreateRecordDto } from './dto/create-record.dto';
 import { UpdateRecordDto } from './dto/update-record.dto';
 import { User } from 'src/user/entities/user.entity';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { Record } from './entities/record.entity';
 
 @Controller('record')
 export class RecordController {
@@ -27,8 +28,8 @@ export class RecordController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateRecordDto: UpdateRecordDto) {
-    return this.recordService.update(+id, updateRecordDto);
+  update(@Param('id') id: string, @Body() newRecord: Record) {
+    return this.recordService.update(newRecord.user_id, newRecord.expirationDate, newRecord.item_id);
   }
 
   @Delete(':id')
