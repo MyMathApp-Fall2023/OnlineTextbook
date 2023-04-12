@@ -17,13 +17,23 @@ export class RecordService {
 
   async findAll(user_id:number) {
     console.log("For records, server: "+ user_id);
+    // const records = await this.recordRepo.find({
+    //   where:{
+    //     user_id: user_id
+    //   }
+    // })
     const records = await this.recordRepo.find({
-      where:{
-        user_id: user_id
-      }
+    relations: ["item"],
+    where: {
+      user_id: user_id
+    }
     })
+    console.log(records)
     return records;
   }
+
+
+
 
   findOne(id: number) {
     return `This action returns a #${id} record`;

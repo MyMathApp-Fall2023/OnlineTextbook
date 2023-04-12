@@ -15,4 +15,10 @@ export function getProfileApi():Promise<any> {
     })
 }
 
-
+export function getItem(data:any):Promise<any> {
+    return request ({
+        method : 'get',
+        url: `api/item/id`,
+        data: data
+    })
+}

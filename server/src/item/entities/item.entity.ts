@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
-import {Column, CreateDateColumn, Double, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import {Column, CreateDateColumn, Double, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 import {Exclude} from '@nestjs/class-transformer'
+import { Record } from "src/record/entities/record.entity";
 
 @Entity()
 export class Item {
@@ -15,5 +16,8 @@ export class Item {
 
     @Column()
     public readonly price: number;
+
+    @OneToMany(() => Record, record => record.item)
+    records: Record[]
 
 }

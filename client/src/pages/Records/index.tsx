@@ -13,11 +13,12 @@ import {
     Pagination
 } from "semantic-ui-react";
 import axios from "axios";
-import { getProfileApi, getRecords } from "../../api/user";
+import { getItem, getProfileApi, getRecords } from "../../api/user";
 import {useHistory} from "react-router-dom";
 
 
 interface Records {
+    [x: string]: any;
     record_id: number;
     item_id: number;
     expirationDate: string;
@@ -62,7 +63,7 @@ const AdminUserInfo: React.FC = (props): JSX.Element | null => {
                             <Table.Body>
                                 {Records.map(record => (
                                     <Table.Row key={record.record_id}>
-                                        <Table.Cell>{record.item_id}</Table.Cell>
+                                        <Table.Cell>{record.item.name}</Table.Cell>
                                         <Table.Cell>{record.expirationDate.split("T")[0]}</Table.Cell>
                                     </Table.Row>
                                 ))}
