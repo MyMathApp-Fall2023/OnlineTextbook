@@ -63,13 +63,23 @@ const LocalLoginForm: React.FC = (): JSX.Element => {
 				history.replace(location.state?.prevPath || '/');
 
 				})
-				.catch((err) =>
-					formStateDispatch({
-						type: "ERROR",
-						payload:
-							"Unable to login. Please ensure your email and password are correct and try again."
-					})
-				);
+				.catch((err) => {
+						if(err.response.status == 403) {
+							formStateDispatch({
+								type: "ERROR",
+								payload:
+									"Account is not activated. Please check your email to confirm your account."
+							})
+						}
+						if (err.response.status == 401) {
+							formStateDispatch({
+								type: "ERROR",
+								payload:
+									"Incorrect email or password. Please ensure your email and password are correct and try again."
+							})
+						}
+
+				});
 		},
 		[formStateDispatch, ctx.setUser, formValues, history]
 	);
