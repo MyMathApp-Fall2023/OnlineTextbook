@@ -42,7 +42,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 		// },
 		// Sets up the transaction when a payment button is clicked
 		createOrder: function () {
-			return fetch("/my-server/create-paypal-order", {
+			return fetch("/api/payment/create-paypal-order", {
 			method: "post",
 			headers: {
 				"Content-Type": "application/json",
@@ -65,7 +65,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 		// Finalize the transaction after payer approval
 		// @ts-ignore
 		onApprove: function (data) {
-			return fetch("/my-server/capture-paypal-order", {
+			return fetch("/api/payment/capture-paypal-order", {
 			method: "post",
 			headers: {
 				"Content-Type": "application/json",

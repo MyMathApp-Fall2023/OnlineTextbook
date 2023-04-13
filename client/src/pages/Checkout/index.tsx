@@ -60,7 +60,8 @@ const Checkout: React.FC = (): JSX.Element => {
 			{ctx.user === undefined ? (
 				<Header as="h3">You must be signed in to complete your purchase.</Header>
 			) : (
-				<PayPalButtons purchaseCode={0} sku={'Calculus1'} amount={total} />
+				// <PayPalButtons purchaseCode={0} sku={'Calculus1'} amount={parseFloat(total)} />
+				<PayPalButtons purchaseCode={0} sku={'Calculus1'} amount={1} />
 			)}
 		</Container>
 	);
