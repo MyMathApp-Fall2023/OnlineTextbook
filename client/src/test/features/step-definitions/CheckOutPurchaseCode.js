@@ -21,8 +21,8 @@ After(function () {
 // When I click the apply button
 //场景
 Given("I am on the checkout page", async () => {
-	await driver.get("http://localhost:3000/checkout");
-	await driver.sleep(3 * 1000);
+	await driver.get("http://localhost:3000/checkout/?id=0");
+	await driver.sleep(6 * 1000);
 });
 
 
@@ -32,9 +32,9 @@ When("I enter a valid purchase code",  async () => {
 	//*[@id="root"]/div/main/div/table/tbody/tr/td[4]/div/input
 	//await driver.findElement(webdriver.By.name("purchasecode")).sendKeys("FUCKGIT");
 	//let temp = await driver.findElement(webdriver.By.className("ui input"));
-	let temp = await driver.findElement(webdriver.By.tagName("li"));
-	await temp.findElement(webdriver.By.name("purchasecode")).sendKeys("FUCKGIT");
-	//List<WebElement> elements = driver.findElements(By.tagName("li"));
+	//let temp = await driver.findElement(webdriver.By.tagName("li"));
+	//await temp.findElement(webdriver.By.name("purchasecode")).sendKeys("FUCKGIT");
+	List<WebElement> elements = driver.findElements(By.tagName("input"));
 	//*[@id="root"]/div/main/div/table/tbody/tr/td[4]/div/input
 	await driver.sleep(3 * 1000);
 });
