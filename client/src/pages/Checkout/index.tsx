@@ -9,7 +9,8 @@ import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
-	useLocation
+	useLocation,
+	useParams
   } from "react-router-dom"
 interface Item {
     readonly item_id: number;
@@ -18,12 +19,21 @@ interface Item {
 	price: number;
 }
 
+interface RouteParams {
+	id: string
+}
+
 const Checkout: React.FC = (props): JSX.Element => {
 	const ctx = useContext(ApplicationContext);
   
 //Then inside your component
-	const queryParams = new URLSearchParams(window.location.search)
-	const item_id = queryParams.get("id");
+	// const queryParams = new URLSearchParams(window.location.search)
+	// //const item_id = queryParams.get("id");
+	const { id } = useParams<{ id: string }>();
+	console.log("get id from url");
+	console.log(id);
+	
+	const item_id = id;
     const [ItemData, setItemData] = useState<Item[]>([]);
 
     useEffect(() => {

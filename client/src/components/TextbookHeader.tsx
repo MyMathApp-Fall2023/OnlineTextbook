@@ -62,7 +62,7 @@ const TextbookHeader = (): JSX.Element => {
             <Table.Cell>{Item.price}</Table.Cell>
             <Table.Cell>
             <Link to={{
-                pathname: `/checkout/?id=${Item.id}`,
+                pathname: `/checkout/${Item.id}`,
            //pathname: `/checkout/${Item.item_id}`,
           }}>
                 <Button  className="positive ui button">Purchase</Button> 
