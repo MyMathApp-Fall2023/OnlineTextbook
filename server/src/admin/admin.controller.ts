@@ -6,7 +6,8 @@ import {RolesGuard} from "../auth/guards/roles.guard";
 import {AuthGuard} from "@nestjs/passport";
 import {PurchaseCodeService} from '../purchaseCode/purchaseCode.service';
 import { PurchaseCode } from 'src/purchaseCode/purchaseCode.entity';
-
+import { ItemService } from 'src/item/item.service';
+import { Item } from 'src/item/entities/item.entity';
 @UseGuards(AuthGuard('jwt'),RolesGuard)
 @Controller('admin')
 @NeedRole(Role.Admin)
@@ -27,6 +28,8 @@ export class AdminController {
     findAllPurchaseCode() {
         return this.PurchaseCodeService.findAll();
     }
+
+
 
     @Post("add-code")
     @HttpCode(200)

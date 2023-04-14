@@ -85,7 +85,7 @@ const App: React.FC = (): JSX.Element => {
 								<Route exact path="/products/finance-with-maple">
 									<FinancePreview />
 								</Route>
-								<Route exact path="/checkout">
+								<Route  path="/checkout/:id">
 									<Checkout />
 								</Route>
 								<Route exact path="/contact">

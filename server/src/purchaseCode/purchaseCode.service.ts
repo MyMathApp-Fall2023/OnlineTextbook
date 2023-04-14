@@ -72,7 +72,6 @@ export class PurchaseCodeService {
 
   async validateCode(name:string):Promise<number>{
     const findCode = await this.purchaseCodeRepo.findOne({where: {name}});
-    console.log(findCode);
     if (findCode != null){ // return price off
       return findCode.priceOff;
     }
