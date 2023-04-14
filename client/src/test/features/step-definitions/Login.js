@@ -55,7 +55,7 @@ Then("login must be successful.", async () => {
 //Scenario 2: Unsuccessful Login with Invalid Password
 Then("unsuccessful login due to an invalid password.", async () => {
 	let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
-	expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
+	expect(errorMsg).to.equal("Incorrect email or password. Please ensure your email and password are correct and try again.");
 });
 
 //Scenario 3: Unsuccessful Login with Invalid email
@@ -63,7 +63,7 @@ Then("unsuccessful login due to an invalid password.", async () => {
 //js Find element , 找到页面上面的元素
 Then("unsuccessful login due to an invalid email.", async () => {
 	let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
-	expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
+	expect(errorMsg).to.equal("Incorrect email or password. Please ensure your email and password are correct and try again.");
 });
 
 /*Scenario4: Unsuccessful Login with unconfirmed email
@@ -74,5 +74,5 @@ Then unsuccessful login due to an email address unconfirmed.*/
 
 Then("unsuccessful login due to an email address unconfirmed.", async () => {
     let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
-    expect(errorMsg).to.equal("Unable to login. Please ensure your email and password are correct and try again.");
+    expect(errorMsg).to.equal("Account is not activated. Please check your email to confirm your account.");
 });

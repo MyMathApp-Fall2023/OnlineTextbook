@@ -24,6 +24,6 @@ Scenario: Unsuccessful Login with Invalid Email
 
 Scenario: Unsuccessful Login with unconfirmed email
     Given user navigates to the website to login
-    When I type 'dddddddd@me.com' and 'yushuang' as email and password
+    When I type 'sw@me.com' and 'sw' as email and password
     And I click on 'login'
     Then unsuccessful login due to an email address unconfirmed.
