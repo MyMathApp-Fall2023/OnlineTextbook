@@ -2,13 +2,13 @@ import React, {useContext,useRef, useEffect, useState, useCallback, useReducer,R
 import { Table, Container, Header, Button,Input, Icon, Item, Message , Form} from "semantic-ui-react";
 import { formatter } from "../../utils";
 import { ApplicationContext } from "../../context";
-import PayPalButtons from "./PayPalButtons";
 import { title } from "process";
 import {getCurrentItem, checkPurchaseCode} from "../../api/checkout"
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
+	Link,
 	useLocation
   } from "react-router-dom"
 interface Item {
@@ -108,6 +108,11 @@ const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormA
 );
 
 	//const ItemData1 = [{item_id: 1, name: 'Calculus 1(5 months)', length: 0, price: 20}]
+	const payment_url = 
+		"/payment?sku=" + item_id + 
+		"&purchaseCode=" + currentCode + 
+		"&amount=" + totalPrice;
+		
 	return (
 		<Container>
 			<Table>
@@ -144,10 +149,15 @@ const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormA
 							<b>{totalPrice}</b>
 						</Table.HeaderCell>
 						<Table.HeaderCell>
-						{/* <button className="positive ui button"> */}
-						{/* <i className="credit card icon"></i> */}
-						{/* Pay */}
-						{/* </button> */}
+						{ctx.user === undefined ? (
+							<Header as="h3">You must be signed in to complete your purchase.</Header>
+						) : (
+							<button className="positive ui button" type="submit">
+								<i className="credit card icon"></i>
+								<Link to={payment_url}>Pay</Link>
+							</button>
+							
+						)}
 						</Table.HeaderCell>
 						
 					</Table.Row>
@@ -173,12 +183,6 @@ const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormA
 			/>
 
 			</Form>
-			{ctx.user === undefined ? (
-				<Header as="h3">You must be signed in to complete your purchase.</Header>
-			) : (
-				// <PayPalButtons purchaseCode={0} sku={'Calculus1'} amount={parseFloat(total)} />
-				<PayPalButtons purchaseCode={0} sku={'Calculus1'} amount={1} />
-			)}
 		</Container>
 	);
 };

@@ -1,41 +1,28 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
-import React, { useEffect, useState, useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useContext } from "react";
+import { Table, Container, Header, Button,Input, Icon, ModalActions } from "semantic-ui-react";
 import { formatter } from "../../utils";
 import { ApplicationContext } from "../../context";
-import {Helmet} from "react-helmet";
 
 
-type PayPalButtonsProps = {
-	purchaseCode: number;
-	sku: string;
-	amount: number;
-};
+const Payment: React.FC = (props): JSX.Element => {
+	const ctx = useContext(ApplicationContext);
 
-const PayPalButtons: React.FC<PayPalButtonsProps> = (
-	props
-): JSX.Element => {
-	
-	// const [loaded, setLoaded] = useState(false);
-	// useEffect(() => {
-	// 	console.log('loaded', loaded);
-	// 	console.log('script', document.body.contains(document.getElementById("paypal-script")));
+    // const queryParams = new URLSearchParams(window.location.search)
+	// const purchaseCode = queryParams.get("purchaseCode");
+	// const sku = queryParams.get("sku");
+	// const amount = queryParams.get("amount");
 
-	// 	if (!loaded && !document.body.contains(document.getElementById("paypal-script"))) {
-	// 		setLoaded(true);
-	// 		console.log('set')
-	// 		const script = document.createElement('script');
-		
-	// 		// Replace the client-id with your own sandbox Business account app client ID 
-	// 		script.src = "https://www.paypal.com/sdk/js?client-id=AWuJ4TbTs8TF4PCyNsC3nZo-gJNpUTvebNbns0AvJWuAirsC3BRoTs4lW4_okNlpb0OQNtSZmada8Qtm&currency=USD";
-	// 		// script.id = "paypal-script"
-	// 		script.async = true;
-	// 		document.body.appendChild(script);
-	// 	}
-	// }, []);
+    const purchaseCode = '123';
+	const sku = '123';
+	const amount = 50;
 
-	// @ts-ignore
+
+	// const total = formatter.format(
+	// 	ctx.cart.map((value) => value.cost).reduce((accum, value) => accum + value, 0) / 100
+	// );
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
 	paypal.Buttons({
 		// style: {
 		// 	layout: "horizontal"
@@ -52,9 +39,9 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 			body: JSON.stringify({
 				cart: [
 					{
-						sku: props.sku,
-						purchaseCode: props.purchaseCode,
-						amount: props.amount,
+						sku: sku,
+						purchaseCode: purchaseCode,
+						amount: amount,
 					},
 				],
 			}),
@@ -63,8 +50,10 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 			.then((order) => order.id);
 		},
 		// Finalize the transaction after payer approval
-		// @ts-ignore
-		onApprove: function (data) {
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        onApprove: function (data) {
 			return fetch("/api/payment/capture-paypal-order", {
 			method: "post",
 			headers: {
@@ -91,21 +80,23 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 					"\n\nSee console for all available details"
 				);
 				// When ready to go live, remove the alert and show a success message within this page. For example:
-				// var element = document.getElementById('paypal-button-container');
+				// const element = document.getElementById('paypal-button-container');
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
 				// element.innerHTML = '<h3>Thank you for your payment!</h3>';
 				// Or go to another URL:  actions.redirect('thank_you.html');
 			});
 		},
-	// }).render("#paypal-button-container");
-	});
+	}).render("#paypal-button-container");
+	// });
 	
 
 	return (
 		<>
-			<div id="paypal-button-container"></div>
 			<script src="https://www.paypal.com/sdk/js?client-id=AWuJ4TbTs8TF4PCyNsC3nZo-gJNpUTvebNbns0AvJWuAirsC3BRoTs4lW4_okNlpb0OQNtSZmada8Qtm&currency=USD"></script>
+            <div id="paypal-button-container"></div>
 		</>
 	);
 };
 
-export default PayPalButtons;
+export default Payment;
