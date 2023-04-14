@@ -4,6 +4,8 @@ import { formatter } from "../../utils";
 import { ApplicationContext } from "../../context";
 import { title } from "process";
 import {getCurrentItem, checkPurchaseCode} from "../../api/checkout"
+import PayPalButtons from "./PayPalButtons"
+
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -11,111 +13,108 @@ import {
 	Link,
 	useLocation
   } from "react-router-dom"
-interface Item {
-    readonly item_id: number;
-    name: string;
-	length: number;
-	price: number;
-}
+
+
+
+// interface Item {
+//     readonly item_id: number;
+//     name: string;
+// 	length: number;
+// 	price: number;
+// }
 
 const Checkout: React.FC = (props): JSX.Element => {
 	const ctx = useContext(ApplicationContext);
   
-//Then inside your component
-	const queryParams = new URLSearchParams(window.location.search)
-	const item_id = queryParams.get("id");
-    const [ItemData, setItemData] = useState<Item[]>([]);
+	// //Then inside your component
+	// const queryParams = new URLSearchParams(window.location.search)
+	// const item_id = queryParams.get("id");
+    // const [ItemData, setItemData] = useState<Item[]>([]);
 
-    useEffect(() => {
+    // useEffect(() => {
 		
-            getCurrentItem(item_id)
-            .then(res => {
-                setItemData([res.data]);
-				settotalPrice(res.data.price)
-            })
-            .catch(error => console.error(error));
-    }, []);
+    //         getCurrentItem(item_id)
+    //         .then(res => {
+    //             setItemData([res.data]);
+	// 			settotalPrice(res.data.price)
+    //         })
+    //         .catch(error => console.error(error));
+    // }, []);
 
-	//for purchase code
-	const [currentCode, setcurrentCode] = useState('');
-	const [totalPrice, settotalPrice] = useState(0);
+	// //for purchase code
+	// const [currentCode, setcurrentCode] = useState('');
+	// const [totalPrice, settotalPrice] = useState(0);
 
-	const updateCode = (event: React.FormEvent<HTMLInputElement>) =>{
-		setcurrentCode((event.target as HTMLInputElement).value)
-	}
-	const hadnleApply = () => {
-		formStateDispatch({ type: "LOADING" });
-		console.log("current input");
-		console.log(currentCode);
-		checkPurchaseCode(currentCode).then(
-			async (res) => {
-				const discounted = (1 - res.data * 0.01) * ItemData[0].price;
-				settotalPrice(discounted)
-				formStateDispatch({ type: "SUCCESS" })
-				})
-		.catch((err)=>{
-			//console.log("err")
-			//console.log(err);
-			formStateDispatch({
-				type: "REQUEST_ERROR",
-				payload:"Unable to apply. The account has already been created."
-			})
-		})
-	//}
-	
-};
+	// const updateCode = (event: React.FormEvent<HTMLInputElement>) =>{
+	// 	setcurrentCode((event.target as HTMLInputElement).value)
+	// }
+	// const hadnleApply = () => {
+	// 	formStateDispatch({ type: "LOADING" });
+	// 	console.log("current input");
+	// 	console.log(currentCode);
+	// 	checkPurchaseCode(currentCode).then(
+	// 		async (res) => {
+	// 			const discounted = (1 - res.data * 0.01) * ItemData[0].price;
+	// 			settotalPrice(discounted)
+	// 			formStateDispatch({ type: "SUCCESS" })
+	// 			})
+	// 	.catch((err)=>{
+	// 		//console.log("err")
+	// 		//console.log(err);
+	// 		formStateDispatch({
+	// 			type: "REQUEST_ERROR",
+	// 			payload:"Unable to apply. The account has already been created."
+	// 		})
+	// 	})
+	// };
 
-//form 
-const formStateReducer = (state: FormActionState, action: FormAction): FormActionState => {
-	switch (action.type) {
-		case "LOADING":
-			return {
-				loading: (action.payload as boolean) ?? true,
-				success: false,
-				requestError: undefined
-			};
-		case "SUCCESS":
-			return {
-				loading: false,
-				success: (action.payload as boolean) ?? true,
-				requestError: undefined
-			};
-		case "REQUEST_ERROR":
-			return {
-				loading: false,
-				success: false,
-				requestError: (action.payload as string)
-			}
-		default:
-			throw new Error(`Unknown action: ${action.type}`);
-	}
-};
+	// //form 
+	// const formStateReducer = (state: FormActionState, action: FormAction): FormActionState => {
+	// 	switch (action.type) {
+	// 		case "LOADING":
+	// 			return {
+	// 				loading: (action.payload as boolean) ?? true,
+	// 				success: false,
+	// 				requestError: undefined
+	// 			};
+	// 		case "SUCCESS":
+	// 			return {
+	// 				loading: false,
+	// 				success: (action.payload as boolean) ?? true,
+	// 				requestError: undefined
+	// 			};
+	// 		case "REQUEST_ERROR":
+	// 			return {
+	// 				loading: false,
+	// 				success: false,
+	// 				requestError: (action.payload as string)
+	// 			}
+	// 		default:
+	// 			throw new Error(`Unknown action: ${action.type}`);
+	// 	}
+	// };
 
-type FormAction = {
-	type: "LOADING" | "SUCCESS" | "REQUEST_ERROR";
-	payload?: boolean | string;
-};
+	// type FormAction = {
+	// 	type: "LOADING" | "SUCCESS" | "REQUEST_ERROR";
+	// 	payload?: boolean | string;
+	// };
 
-type FormActionState = {
-	loading: boolean;
-	requestError?: string;
-	success: boolean;
-	error?:string;
-};
-const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormAction>>(
-	formStateReducer,
-	{ loading: false, success: false }
-);
+	// type FormActionState = {
+	// 	loading: boolean;
+	// 	requestError?: string;
+	// 	success: boolean;
+	// 	error?:string;
+	// };
+	// const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormAction>>(
+	// 	formStateReducer,
+	// 	{ loading: false, success: false }
+	// );
 
 	//const ItemData1 = [{item_id: 1, name: 'Calculus 1(5 months)', length: 0, price: 20}]
-	const payment_url = 
-		"/payment?sku=" + item_id + 
-		"&purchaseCode=" + currentCode + 
-		"&amount=" + totalPrice;
 		
 	return (
 		<Container>
-			<Table>
+			{/* <Table>
 				<Table.Header>
 					<Table.Row>
 						<Table.HeaderCell width={4}>Product</Table.HeaderCell>
@@ -149,22 +148,14 @@ const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormA
 							<b>{totalPrice}</b>
 						</Table.HeaderCell>
 						<Table.HeaderCell>
-						{ctx.user === undefined ? (
-							<Header as="h3">You must be signed in to complete your purchase.</Header>
-						) : (
-							<button className="positive ui button" type="submit">
-								<i className="credit card icon"></i>
-								<Link to={payment_url}>Pay</Link>
-							</button>
-							
-						)}
+						
 						</Table.HeaderCell>
 						
 					</Table.Row>
 				</Table.Footer>
-			</Table>
+			</Table> */}
 
-			<Form
+			{/* <Form
 				error={formState.requestError !== undefined}
 				loading={formState.loading}
 				success={formState.success}
@@ -182,7 +173,14 @@ const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormA
 					error	
 			/>
 
-			</Form>
+			</Form> */}
+
+			{/* {ctx.user === undefined ? (
+				<Header as="h3">You must be signed in to complete your purchase.</Header>
+			) : ( */}
+				{/* <PayPalButtons purchaseCode={currentCode} sku={String(item_id)} amount={totalPrice} /> */}
+				<PayPalButtons purchaseCode="23" sku="aa" amount={10} />
+			{/* )} */}
 		</Container>
 	);
 };
