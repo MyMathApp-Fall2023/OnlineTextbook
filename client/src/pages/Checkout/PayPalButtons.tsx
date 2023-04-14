@@ -96,7 +96,8 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 				// Or go to another URL:  actions.redirect('thank_you.html');
 			});
 		},
-	}).render("#paypal-button-container");
+	// }).render("#paypal-button-container");
+	});
 	
 
 	return (
