@@ -25,6 +25,23 @@ interface RouteParams {
 	id: string
 }
 
+function updatePurchaseBtn(currentCode: string, item_id: string, totalPrice: number) {
+	console.log('call update', totalPrice);
+	if (totalPrice == 0) {
+		return (
+			<div style={{textAlign: 'left'}}>
+				<button className="positive ui button" >Complete</button>
+			</div>
+		);
+	} else {
+		return (
+			<div style={{textAlign: 'center'}}>
+				<PayPalButtons purchaseCode={currentCode} sku={String(item_id)} amount={totalPrice} /> 
+			</div>
+		);
+	}
+}
+
 const Checkout: React.FC = (props): JSX.Element => {
 	const ctx = useContext(ApplicationContext);
   
@@ -48,9 +65,13 @@ const Checkout: React.FC = (props): JSX.Element => {
             .catch(error => console.error(error));
     }, []);
 
+	
+
 	//for purchase code
 	const [currentCode, setcurrentCode] = useState('');
 	const [totalPrice, settotalPrice] = useState(0);
+
+	let purchaseBtn = updatePurchaseBtn(currentCode, item_id, totalPrice);
 
 	const updateCode = (event: React.FormEvent<HTMLInputElement>) =>{
 		setcurrentCode((event.target as HTMLInputElement).value)
@@ -62,8 +83,9 @@ const Checkout: React.FC = (props): JSX.Element => {
 		checkPurchaseCode(currentCode).then(
 			async (res) => {
 				const discounted = (1 - res.data * 0.01) * ItemData[0].price;
-				settotalPrice(discounted)
-				formStateDispatch({ type: "SUCCESS" })
+				settotalPrice(discounted);
+				purchaseBtn = updatePurchaseBtn(currentCode, item_id, totalPrice);
+				formStateDispatch({ type: "SUCCESS" });
 				})
 		.catch((err)=>{
 			//console.log("err")
@@ -118,7 +140,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 	);
 
 	//const ItemData1 = [{item_id: 1, name: 'Calculus 1(5 months)', length: 0, price: 20}]
-		
+
 	return (
 		<Container>
 			<Table>
@@ -185,9 +207,8 @@ const Checkout: React.FC = (props): JSX.Element => {
 			{ctx.user === undefined ? (
 				<Header as="h3">You must be signed in to complete your purchase.</Header>
 			) : (
-				//<PayPalButtons purchaseCode={currentCode} sku={String(item_id)} amount={totalPrice} /> */}
-				<PayPalButtons purchaseCode="23" sku="aa" amount={10} />
-			 )}
+				purchaseBtn
+			)}
 		</Container>
 	);
 };
