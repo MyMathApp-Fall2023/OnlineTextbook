@@ -17,7 +17,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 	props
 ): JSX.Element => {
 	
-	const [loaded, setLoaded] = useState(false);
+	// const [loaded, setLoaded] = useState(false);
 	// useEffect(() => {
 	// 	console.log('loaded', loaded);
 	// 	console.log('script', document.body.contains(document.getElementById("paypal-script")));
@@ -101,8 +101,8 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
 
 	return (
 		<>
-			<script defer src="https://www.paypal.com/sdk/js?client-id=AWuJ4TbTs8TF4PCyNsC3nZo-gJNpUTvebNbns0AvJWuAirsC3BRoTs4lW4_okNlpb0OQNtSZmada8Qtm&currency=USD"></script>
 			<div id="paypal-button-container"></div>
+			<script src="https://www.paypal.com/sdk/js?client-id=AWuJ4TbTs8TF4PCyNsC3nZo-gJNpUTvebNbns0AvJWuAirsC3BRoTs4lW4_okNlpb0OQNtSZmada8Qtm&currency=USD"></script>
 		</>
 	);
 };
