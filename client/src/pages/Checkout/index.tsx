@@ -173,7 +173,7 @@ const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormA
 			/>
 
 			</Form>
-			{/* {ctx.user === undefined ? (
+			{ctx.user === undefined ? (
 				<Header as="h3">You must be signed in to complete your purchase.</Header>
 			) : (
 				// <PayPalButtons purchaseCode={0} sku={'Calculus1'} amount={parseFloat(total)} />
