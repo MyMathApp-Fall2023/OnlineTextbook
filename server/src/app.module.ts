@@ -1,5 +1,4 @@
 import {Module} from '@nestjs/common';
-import {DataSource} from 'typeorm'
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {ConfigModule} from "@nestjs/config";
 import {UserModule } from './user/user.module';
@@ -15,6 +14,7 @@ import {PurchaseCode} from "./purchaseCode/purchaseCode.entity";
 import {Transaction} from "./transaction/entities/transaction.entity";
 import {Record} from "./record/entities/record.entity";
 import { EmailModule } from './email/email.module';
+import { BookModule } from './book/book.module';
 
 let envFilePath = ['.env'];
 export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
@@ -38,7 +38,7 @@ if (IS_DEV) {
             password: process.env.DB_Password,
             database: process.env.DB_Database,
             entities:[User,Item,PurchaseCode,Record,Transaction],
-            synchronize: true,
+            synchronize: false,
         }),
         UserModule,
         AuthModule,
@@ -48,12 +48,13 @@ if (IS_DEV) {
         ItemModule,
         PurchaseCodeModule,
         EmailModule,
+        BookModule,
 
     ],
     providers: [],
 })
 
 export class AppModule {
-    constructor(private dataSource: DataSource) {
+    constructor() {
     }
 }

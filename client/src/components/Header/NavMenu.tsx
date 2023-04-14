@@ -50,7 +50,7 @@ const NavMenu: React.FC = (): JSX.Element => {
 					{"Contact"}
 				</Menu.Item>
 				{ctx.user && (
-				<Menu.Item as={Link} to="/products/MYMACalc1">
+				<Menu.Item as={Link} to="/read">
 					{"Read Book"}
 				</Menu.Item >
 				)}
