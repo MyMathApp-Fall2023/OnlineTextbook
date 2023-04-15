@@ -1,7 +1,6 @@
-import {Controller, Get, Post, HttpCode, Request, UseGuards} from '@nestjs/common';
+import {Controller, Get, Post, HttpCode, Request, UseGuards,Body, Patch, Param, Delete} from '@nestjs/common';
 import {PurchaseCodeService} from "./purchaseCode.service";
-
-
+import { ConflictException } from '@nestjs/common';
 @Controller('purchaseCode')
 export class PurchaseCodeController {
     constructor(private readonly PurchaseCodeService:PurchaseCodeService) {}
@@ -9,6 +8,14 @@ export class PurchaseCodeController {
     @Get("purchaseCode")
     findAllUser() {
         return this.PurchaseCodeService.findAll();
+    }
+
+
+    @Get(":name")
+    async checkValidPurchaseCode(@Param('name') name: string) {
+
+        const validateResult = await this.PurchaseCodeService.validateCode(name);
+        return {priceOff:validateResult}
     }
 
 }

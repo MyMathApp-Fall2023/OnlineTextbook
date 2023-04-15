@@ -30,7 +30,8 @@ export class EmailService implements OnModuleDestroy {
     ) {
         {
             const appDirectory = process.cwd();
-            if (process.env.EMAIL_ENABLE) {
+
+            if (process.env.EMAIL_ENABLE === 'true') {
                 this.activateAccountTemplateDelegate = Handlebars.compile(
                     readFileSync(path.resolve(appDirectory,"src","email","templates","activate-account.template.txt")).toString()
                 );
@@ -59,12 +60,19 @@ export class EmailService implements OnModuleDestroy {
     }
 
     public async sendActivateAccountEmail(user: User): Promise<void> {
-        if (!process.env.EMAIL_ENABLE) {
+
+        if (process.env.EMAIL_ENABLE!=='true') {
             await this.userService.activateAccount(user.activationCode!);
-            console.log("enabled");
+            console.log("not enable mail. User already activate");
             return;
         }
-        console.log("already enabled");
+
+        else if (process.env.Email_ENABLE === 'test') {
+            console.log("For test. not send email but also not activate user")
+            return;
+        }
+
+        console.log("mail enabled");
         const text = this.activateAccountTemplateDelegate({
             name: user.name,
             email: user.email,
