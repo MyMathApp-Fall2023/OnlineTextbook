@@ -13,6 +13,10 @@ const Profile: React.FC = (): JSX.Element => {
 	return (
 		<Dropdown as={Menu.Item} item text={ctx.user!.name}>
 			<Dropdown.Menu>
+			<Dropdown.Item
+					onClick={(event, data) => history.push("/records")} primary>
+					Record
+				</Dropdown.Item>
 				<Dropdown.Item
 					onClick={(event, data) => {
 						localStorage.removeItem('user');

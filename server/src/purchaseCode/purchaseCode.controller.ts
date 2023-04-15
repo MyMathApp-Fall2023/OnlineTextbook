@@ -12,15 +12,10 @@ export class PurchaseCodeController {
 
 
     @Get(":name")
-    checkValidPurchaseCode(@Param('name') name: string){
+    async checkValidPurchaseCode(@Param('name') name: string) {
 
-        return this.PurchaseCodeService.validateCode(name).then(async (res) => {
-            return res;
-            })
-            .catch((err) => {
-                throw new ConflictException("Purchase code doesn't exist!");
-            }
-            );
+        const validateResult = await this.PurchaseCodeService.validateCode(name);
+        return {priceOff:validateResult}
     }
 
 }
