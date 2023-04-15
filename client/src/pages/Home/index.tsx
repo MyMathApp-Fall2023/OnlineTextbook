@@ -262,8 +262,8 @@ const Home: React.FC = (): JSX.Element => {
 						height: "180px",
 						position: "relative",
 						display: "flex",
-						"justify-content": "center",
-						"align-items": "center"
+						"justifyContent": "center",
+						"alignItems": "center"
 					}}
 				>
 					<Grid className="middle aligned">

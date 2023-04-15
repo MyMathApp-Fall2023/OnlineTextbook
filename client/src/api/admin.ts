@@ -21,6 +21,13 @@ export function getTransactionRecordData():Promise<any>{
     })
 }
 
+export function getAllItemData():Promise<any>{
+    return request({
+        method: 'get',
+        url: 'api/item',
+    })
+}
+
 export function addCodeApi(data:any):Promise<any> {
     return request({
         method: 'post',
