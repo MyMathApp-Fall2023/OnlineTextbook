@@ -118,6 +118,7 @@ When("I type in email and password",  async () => {
 });
 
 Then("unsuccessful login due to an email address unconfirmed", async () => {
+    await driver.sleep(6 * 1000);
     let errorMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
     expect(errorMsg).to.equal("Account is not activated. Please check your email to confirm your account.");
 });
@@ -150,7 +151,7 @@ Given("user sign up", async () => {
 
     //setTimeout(myFunction, 10000);
 });
-When("user go to the activate url",  async () => {
+When("user go to the activate url from email",  async () => {
     //confirm:
     await driver.get("http://localhost:3000/activate?activationCode=naomi2049"+randomName+"114514");
     await driver.sleep(6 * 1000);

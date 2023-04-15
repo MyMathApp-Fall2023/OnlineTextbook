@@ -30,5 +30,10 @@ Scenario: Unsuccessful Login with unconfirmed email
 
 Scenario: Successful activation
     Given user sign up
-    When user go to the activate url
+    When user go to the activate url from email
     Then account is activated in activate link
+
+Scenario: Unsuccessful activation due to wrong url
+    Given user sign up
+    When user go to wrong activate url
+    Then account is not activated in activate link
