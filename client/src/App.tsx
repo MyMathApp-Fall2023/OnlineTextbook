@@ -25,6 +25,7 @@ import ReadBook from "./pages/Book/index"
 
 import AdminUserInfo from "./pages/Admin/UserInfo"
 import AdminPurchaseCode from "./pages/Admin/PurchaseCode"
+import Records from "./pages/Records";
 
 
 
@@ -109,6 +110,9 @@ const App: React.FC = (): JSX.Element => {
 								</Route>
 								<Route exact path="/read">
 									<ReadBook />
+								</Route>
+								<Route exact path="/records">
+									<Records />
 								</Route>
 							</Switch>
 						</main>

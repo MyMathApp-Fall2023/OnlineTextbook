@@ -16,6 +16,7 @@ import {Record} from "./record/entities/record.entity";
 import { EmailModule } from './email/email.module';
 import { BookModule } from './book/book.module';
 
+
 let envFilePath = ['.env'];
 export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
 if (IS_DEV) {
