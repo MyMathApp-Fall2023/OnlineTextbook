@@ -36,7 +36,7 @@ function updatePurchaseBtn(currentCode: string, item_id: string, totalPrice: num
 	} else {
 		return (
 			<div style={{textAlign: 'center'}}>
-				<PayPalButtons purchaseCode={currentCode} sku={String(item_id)} amount={totalPrice} /> 
+				<PayPalButtons purchaseCode={currentCode} sku={String(item_id)} amount={totalPrice} />
 			</div>
 		);
 	}
@@ -44,19 +44,19 @@ function updatePurchaseBtn(currentCode: string, item_id: string, totalPrice: num
 
 const Checkout: React.FC = (props): JSX.Element => {
 	const ctx = useContext(ApplicationContext);
-  
+
 //Then inside your component
 	// const queryParams = new URLSearchParams(window.location.search)
 	// //const item_id = queryParams.get("id");
 	const { id } = useParams<{ id: string }>();
 	console.log("get id from url");
 	console.log(id);
-	
+
 	const item_id = id;
     const [ItemData, setItemData] = useState<Item[]>([]);
 
     useEffect(() => {
-		
+
             getCurrentItem(item_id)
             .then(res => {
                 setItemData([res.data]);
@@ -65,7 +65,7 @@ const Checkout: React.FC = (props): JSX.Element => {
             .catch(error => console.error(error));
     }, []);
 
-	
+
 
 	//for purchase code
 	const [currentCode, setcurrentCode] = useState('');
@@ -76,13 +76,13 @@ const Checkout: React.FC = (props): JSX.Element => {
 	const updateCode = (event: React.FormEvent<HTMLInputElement>) =>{
 		setcurrentCode((event.target as HTMLInputElement).value)
 	}
-	const hadnleApply = () => {
+	const handleApply = () => {
 		formStateDispatch({ type: "LOADING" });
 		console.log("current input");
 		console.log(currentCode);
 		checkPurchaseCode(currentCode).then(
 			async (res) => {
-				const discounted = (1 - res.data * 0.01) * ItemData[0].price;
+				const discounted = (1 - res.data.priceOff * 0.01) * ItemData[0].price;
 				settotalPrice(discounted);
 				purchaseBtn = updatePurchaseBtn(currentCode, item_id, totalPrice);
 				formStateDispatch({ type: "SUCCESS" });
@@ -97,7 +97,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 		})
 	};
 
-	//form 
+	//form
 	const formStateReducer = (state: FormActionState, action: FormAction): FormActionState => {
 		switch (action.type) {
 			case "LOADING":
@@ -163,7 +163,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 						<Input type="text" name = "purchasecode" onChange={updateCode} value = {currentCode}></Input>
 						</Table.Cell>
 						<Table.Cell>
-						<button className="positive ui button" onClick={hadnleApply} >Apply</button>
+						<button className="positive ui button" onClick={handleApply} >Apply</button>
 						</Table.Cell>
                                     </Table.Row>
                                 ))}
@@ -177,9 +177,9 @@ const Checkout: React.FC = (props): JSX.Element => {
 							<b>{totalPrice}</b>
 						</Table.HeaderCell>
 						<Table.HeaderCell>
-						
+
 						</Table.HeaderCell>
-						
+
 					</Table.Row>
 				</Table.Footer>
 			</Table>
@@ -193,13 +193,13 @@ const Checkout: React.FC = (props): JSX.Element => {
 			<Message
 					content="You have successfully applied current purchase code"
 					header="SUCCESS"
-					success	
+					success
 			/>
 
 			<Message
 					content="Current purchase code is invalid"
 					header="ERROR"
-					error	
+					error
 			/>
 
 			</Form>

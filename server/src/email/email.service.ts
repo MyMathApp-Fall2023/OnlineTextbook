@@ -66,6 +66,12 @@ export class EmailService implements OnModuleDestroy {
             console.log("not enable mail. User already activate");
             return;
         }
+
+        else if (process.env.Email_ENABLE === 'test') {
+            console.log("For test. not send email but also not activate user")
+            return;
+        }
+
         console.log("mail enabled");
         const text = this.activateAccountTemplateDelegate({
             name: user.name,
