@@ -156,12 +156,9 @@ When("user go to the activate url",  async () => {
     await driver.sleep(6 * 1000);
 });
 Then("account is activated in activate link", async () => {
-    let successMsg = await driver.findElement(webdriver.By.className("ui error message")).getText();
-    expect(successMsg).to.equal("Account is activated.");
+    let successMsg = await driver.findElement(webdriver.By.className("ui segment")).getText();
+    expect(successMsg).to.equal("Your account has been activated. Please login with the email and password of your account.");
 });
-
-
-
 
 
 
@@ -170,9 +167,14 @@ Scenario 6: Unsuccessful activation due to wrong url
     Given user sign up
     When user go to wrong activate url
     Then account is not activated in activate link
-
-Scenario 7: Unsuccessful activation due to used url
-    Given user sign up
-    When user go to a used activate url
-    Then account is not activated in activate link
 */
+When("user go to wrong activate url",  async () => {
+    //confirm:
+    await driver.get("http://localhost:3000/activate?activationCode=h234234");
+    await driver.sleep(6 * 1000);
+});
+Then("account is not activated in activate link", async () => {
+    let Msg = await driver.findElement(webdriver.By.className("ui segment")).getText();
+    expect(Msg).to.equal("This activation code is not associated with any account. Please sign up.");
+});
+
