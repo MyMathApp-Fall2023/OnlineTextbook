@@ -23,7 +23,12 @@ Scenario: Unsuccessful Login with Invalid Email
     Then unsuccessful login due to an invalid email.
 
 Scenario: Unsuccessful Login with unconfirmed email
-    Given user navigates to the website to login
-    When I type 'sw@me.com' and 'sw' as email and password
+    Given user sign up and navigates to the website to login without confirming
+    When I type in email and password
     And I click on 'login'
-    Then unsuccessful login due to an email address unconfirmed.
+    Then unsuccessful login due to an email address unconfirmed
+
+Scenario: Successful activation
+    Given user sign up
+    When user go to the activate url
+    Then account is activated in activate link

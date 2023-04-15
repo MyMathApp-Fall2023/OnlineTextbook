@@ -66,7 +66,7 @@ When('I type valid entities including Name and Email and password', async () => 
 When("I click on 'sign up'", async () => {
     await driver.findElement(webdriver.By.className("ui green active fluid button")).click();
     //await driver.findElement(webdriver.By.xpath(`//*[@id="root"]/div/main/div/form/button`)).click();
- await driver.sleep(6 * 1000);
+    await driver.sleep(6 * 1000);
 });
 
 // Scenario 1: Successful Login with Valid Entries
