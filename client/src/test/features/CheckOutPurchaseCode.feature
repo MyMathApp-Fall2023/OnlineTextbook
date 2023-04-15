@@ -14,4 +14,4 @@ Scenario: Checking out with an invalid purchase code
 Given I am on the checkout page
 When I enter an invalid purchase code
 When I click the apply button
-Then an error message should be displaye
+Then an error message should be displayed
