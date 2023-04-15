@@ -27,6 +27,7 @@ import AdminUserInfo from "./pages/Admin/UserInfo"
 import AdminPurchaseCode from "./pages/Admin/PurchaseCode"
 import Records from "./pages/Records";
 
+import AdminTransactionRecord from "./pages/Admin/TransactionRecord"
 
 
 
@@ -107,6 +108,9 @@ const App: React.FC = (): JSX.Element => {
 								</Route>
 								<Route exact path="/admin/purchase-code">
 									<AdminPurchaseCode />
+								</Route>
+								<Route exact path="/admin/transaction">
+									<AdminTransactionRecord />
 								</Route>
 								<Route exact path="/read">
 									<ReadBook />
