@@ -19,7 +19,6 @@ After(function () {
 // Given I am on the checkout page
 // When I enter a valid purchase code
 // When I click the apply button
-//场景
 Given("I am on the checkout page", async () => {
 	await driver.get("http://localhost:3000/checkout/0");
 	await driver.sleep(6 * 1000);
@@ -51,6 +50,13 @@ When("I click the apply button", async () => {
 Then("the purchase code should be applied", async () => {
 	let successMsg = await driver.findElement(webdriver.By.className("ui success message")).getText();
 	expect(successMsg).to.contains("SUCCESS");
+});
+
+//Then the discount should be reflected in the total amount to be paid
+Then("the discount should be reflected in the total amount to be paid", async () => {
+	let expectedTotal = 12; // assume the expected total amount is $50 after the discount is applied
+	let actualTotal = await driver.findElement(webdriver.By.id("totalPrice")).getText();
+	expect(Number(actualTotal)).to.equal(expectedTotal);
 });
 
 

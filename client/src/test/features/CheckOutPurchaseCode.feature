@@ -9,6 +9,7 @@ Given I am on the checkout page
 When I enter a valid purchase code
 When I click the apply button
 Then the purchase code should be applied
+Then the discount should be reflected in the total amount to be paid
 
 Scenario: Checking out with an invalid purchase code
 Given I am on the checkout page

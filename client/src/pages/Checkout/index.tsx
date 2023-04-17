@@ -174,7 +174,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 							<b>Total</b>
 						</Table.HeaderCell>
 						<Table.HeaderCell colSpan={2} collapsing>
-							<b>{totalPrice}</b>
+							<b id = "totalPrice">{totalPrice}</b>
 						</Table.HeaderCell>
 						<Table.HeaderCell>
 
