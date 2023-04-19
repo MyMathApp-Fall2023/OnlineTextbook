@@ -29,15 +29,15 @@ const Checkout: React.FC = (props): JSX.Element => {
 //Then inside your component
 	// const queryParams = new URLSearchParams(window.location.search)
 	// //const item_id = queryParams.get("id");
-	const { id } = useParams<{ id: string }>();
-	console.log("get id from url");
-	console.log(id);
+	console.log("test render");
 	
+	const { id } = useParams<{ id: string }>();
 	const item_id = id;
     const [ItemData, setItemData] = useState<Item[]>([]);
 
     useEffect(() => {
-		
+
+		console.log("test item id");
             getCurrentItem(item_id)
             .then(res => {
                 setItemData([res.data]);
@@ -183,11 +183,6 @@ const [formState, formStateDispatch] = useReducer<Reducer<FormActionState, FormA
 			/>
 
 			</Form>
-			{/* {ctx.user === undefined ? (
-				<Header as="h3">You must be signed in to complete your purchase.</Header>
-			) : (
-				<PayPalSmartPaymentButtons total={total} />
-			)} */}
 		</Container>
 	);
 };

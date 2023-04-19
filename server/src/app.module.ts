@@ -38,7 +38,7 @@ if (IS_DEV) {
             password: process.env.DB_Password,
             database: process.env.DB_Database,
             entities:[User,Item,PurchaseCode,Record,Transaction],
-            synchronize: true,
+            synchronize: false,
         }),
         UserModule,
         AuthModule,
