@@ -17,8 +17,8 @@ const NavMenu: React.FC = (): JSX.Element => {
 				</Menu.Item>
 				<Dropdown item text="Products">
 					<Dropdown.Menu>
-						<Dropdown.Item as={Link} to="/products">
-							{"Overview"}
+						<Dropdown.Item as={Link} to="/price">
+							{"Price"}
 						</Dropdown.Item>
 						<Dropdown.Divider />
 						<Dropdown className="link item" pointing="left" text="Calculus">

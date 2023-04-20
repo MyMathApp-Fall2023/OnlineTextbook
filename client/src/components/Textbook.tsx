@@ -24,9 +24,8 @@ const Textbook: React.FC<TextbookProps> = (props): JSX.Element => {
 
 	return (
 		<>
-		<TextbookHeader></TextbookHeader>
-			{/* {<ProductHeader hasSample image={props.image} product={data}/>} */}
-			{/* <Divider></Divider> */}
+		
+
 			{props.child}
 
 			<p>
