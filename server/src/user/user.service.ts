@@ -22,15 +22,16 @@ export class UserService {
     } else {
       createUser.role = 2
       createUser.activatedAccount = false
-      createUser.activationCode = this.generateActivationCode()
+      createUser.activationCode = this.generateActivationCode(createUser.name)
       const createResult = await this.userRepo.save(createUser)
       return await this.emailService.sendActivateAccountEmail(createResult)
 
     }
   }
 
-  generateActivationCode() : string {
-      return 'Naomi2049'+ Date.now().toString()+'ncclovekk'
+  generateActivationCode(username:string) : string {
+      return 'naomi2049'+ username + '114514'
+      //return 'Naomi2049'+ Date.now().toString()+'ncclovekk'
   }
 
   async authenticate(loginUser:User):Promise<User> {

@@ -21,11 +21,15 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import RequestPasswordReset from "./pages/RequestPasswordReset";
 import ResetPassword from "./pages/ResetPassword";
+import ReadBook from "./pages/Book/index"
+import Payment from "./pages/Payment";
 
 import AdminUserInfo from "./pages/Admin/UserInfo"
 import AdminPurchaseCode from "./pages/Admin/PurchaseCode"
 import Records from "./pages/Records";
 
+import AdminTransactionRecord from "./pages/Admin/TransactionRecord"
+import Prices from "./pages/Price";
 
 
 
@@ -71,8 +75,8 @@ const App: React.FC = (): JSX.Element => {
 								<Route exact path="/about">
 									<About />
 								</Route>
-								<Route exact path="/products">
-									<Products />
+								<Route exact path="/price">
+									<Prices />
 								</Route>
 								<Route exact path="/products/MYMACalc1">
 									<MYMACalc1 />
@@ -86,7 +90,7 @@ const App: React.FC = (): JSX.Element => {
 								<Route exact path="/products/finance-with-maple">
 									<FinancePreview />
 								</Route>
-								<Route exact path="/checkout">
+								<Route  path="/checkout/:id">
 									<Checkout />
 								</Route>
 								<Route exact path="/contact">
@@ -106,6 +110,15 @@ const App: React.FC = (): JSX.Element => {
 								</Route>
 								<Route exact path="/admin/purchase-code">
 									<AdminPurchaseCode />
+								</Route>
+								<Route exact path="/payment">
+									<Payment />
+								</Route>
+								<Route exact path="/admin/transaction">
+									<AdminTransactionRecord />
+								</Route>
+								<Route exact path="/read">
+									<ReadBook />
 								</Route>
 								<Route exact path="/records">
 									<Records />

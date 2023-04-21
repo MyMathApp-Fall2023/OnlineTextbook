@@ -6,12 +6,19 @@ import {RolesGuard} from "../auth/guards/roles.guard";
 import {AuthGuard} from "@nestjs/passport";
 import {PurchaseCodeService} from '../purchaseCode/purchaseCode.service';
 import { PurchaseCode } from 'src/purchaseCode/purchaseCode.entity';
+import { ItemService } from 'src/item/item.service';
+import { Item } from 'src/item/entities/item.entity';
+import {TransactionService} from '../transaction/transaction.service';
+import { Transaction } from 'src/transaction/entities/transaction.entity';
+
 
 @UseGuards(AuthGuard('jwt'),RolesGuard)
 @Controller('admin')
 @NeedRole(Role.Admin)
 export class AdminController {
-    constructor(private readonly userService:UserService, private readonly PurchaseCodeService:PurchaseCodeService) {}
+    constructor(private readonly userService:UserService,
+        private readonly PurchaseCodeService:PurchaseCodeService,
+        private readonly transactionService:TransactionService) {}
 
     @Get("user")
     findAllUser() {
@@ -20,13 +27,15 @@ export class AdminController {
 
     @Get("transaction")
     findAllTransaction() {
-        return 'here return this.transactionService.findAll()'
+        return this.transactionService.findAll()
     }
 
     @Get("purchaseCode")
     findAllPurchaseCode() {
         return this.PurchaseCodeService.findAll();
     }
+
+
 
     @Post("add-code")
     @HttpCode(200)

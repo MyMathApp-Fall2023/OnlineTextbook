@@ -7,11 +7,16 @@ import App from "./App";
 import { unregister } from "./serviceWorker";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+
+	// according to this PayPal issue, remove the strict mode
+	// https://github.com/Luehang/react-paypal-button-v2/issues/126
+	
+	// <React.StrictMode>
+		<App />,
+	// </React.StrictMode>,
 	document.getElementById("root")
 );
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

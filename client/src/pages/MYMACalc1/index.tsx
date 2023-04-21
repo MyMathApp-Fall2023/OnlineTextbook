@@ -1,15 +1,29 @@
 /* eslint-disable react/no-multi-comp */
 
 import React, {useContext} from "react";
-import { Container, Image } from "semantic-ui-react";
+import { Container, Image ,Button} from "semantic-ui-react";
 import Textbook from "../../components/Textbook";
 import thumbnail from "../../resources/images/MYMACalc1/thumbnail.gif";
 import {ApplicationContext} from "../../context";
-
+import TextbookHeader from "../../components/TextbookHeader";
 const MYMACalc1: React.FC = (): JSX.Element => {
 
 	const ctx = useContext(ApplicationContext);
 	return (
+
+
+		<>
+		<Container style={{ marginTop: 10,marginBottom: 30 }}>
+			{/* <Image centered size="medium" src={'https://www.mymathapps.com/bundles/mfcproduct/images/thumbnail.gif'} /> */}
+
+        <div style = {{display:'flex'}}>
+        <h1>MYMathApps Calculus 1: Differential Calculus</h1>
+        <a href = "https://mymathapps.com/mymacalc-sample" style={{ marginBottom: 10, marginLeft: 'auto' }}>
+        <Button color="blue"  >{`Sample Chapter`}</Button>
+        </a>
+        </div>
+		</Container>
+
 
 		<Container textAlign="left">
 
@@ -118,6 +132,8 @@ const MYMACalc1: React.FC = (): JSX.Element => {
 
 
 		</Container>
+		
+		</>
 	);
 };
 
