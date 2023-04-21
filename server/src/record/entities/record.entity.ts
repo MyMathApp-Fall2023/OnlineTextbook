@@ -10,13 +10,13 @@ export class Record {
 
     @Exclude()
     @Column()
-    public readonly user_id: number;
+    public user_id: number;
 
     @Column()
-    public readonly expirationDate: Date;
+    public expirationDate: Date;
 
     @Column()
-    public readonly item_id: number;
+    public item_id: number;
 
 
     @ManyToOne(() => Item, item => item.records)

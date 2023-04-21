@@ -73,7 +73,7 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                     </GridColumn>
 
                     <GridColumn width={12}>
-                        <Table>
+                        <Table HEIGHT = {200}>
                             <Table.Header>
                                 <Table.Row>
                                 <Table.HeaderCell>Code ID</Table.HeaderCell>

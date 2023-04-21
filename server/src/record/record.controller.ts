@@ -29,7 +29,7 @@ export class RecordController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() newRecord: Record) {
-    return this.recordService.update(newRecord.user_id, newRecord.expirationDate, newRecord.item_id);
+    return this.recordService.update(newRecord.user_id, newRecord.item_id);
   }
 
   @Delete(':id')
