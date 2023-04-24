@@ -6,12 +6,8 @@
   "scripts": {
     "postinstall": "cd client && yarn && yarn build && cd ../server && yarn && yarn build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nathan-folsom/nest-react-heroku.git"
-  },
   "engines": {
-    "node": "10.19.0"
+    "node": "16.10.0"
   },
   "cacheDirectories": [
     "client/node_modules",
