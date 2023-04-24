@@ -29,6 +29,7 @@ import AdminPurchaseCode from "./pages/Admin/PurchaseCode"
 import Records from "./pages/Records";
 
 import AdminTransactionRecord from "./pages/Admin/TransactionRecord"
+import Prices from "./pages/Price";
 
 
 
@@ -74,8 +75,8 @@ const App: React.FC = (): JSX.Element => {
 								<Route exact path="/about">
 									<About />
 								</Route>
-								<Route exact path="/products">
-									<Products />
+								<Route exact path="/price">
+									<Prices />
 								</Route>
 								<Route exact path="/products/MYMACalc1">
 									<MYMACalc1 />

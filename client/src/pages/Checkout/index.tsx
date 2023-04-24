@@ -161,7 +161,7 @@ const Checkout: React.FC = (props): JSX.Element => {
                                         <Table.Cell>{item.length}</Table.Cell>
                                         <Table.Cell>{item.price}</Table.Cell>
 										<Table.Cell>
-						<Input type="text" name = "purchasecode" onChange={updateCode} value = {currentCode}></Input>
+						<Input type="text" name = "purchasecode" id = "purchasecode" onChange={updateCode} value = {currentCode}></Input>
 						</Table.Cell>
 						<Table.Cell>
 						<button className="positive ui button" onClick={handleApply} >Apply</button>

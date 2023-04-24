@@ -1,12 +1,26 @@
 /* eslint-disable react/no-multi-comp */
 
 import React from "react";
-import { Container, Image } from "semantic-ui-react";
+import { Container, Image,Button } from "semantic-ui-react";
 import Textbook from "../../components/Textbook";
 import thumbnail from "../../resources/images/MYMACalc1/thumbnail.gif";
 
 const MYMACalc2: React.FC = (): JSX.Element => {
 	return (
+		<>
+		<Container style={{ marginTop: 10,marginBottom: 30 }}>
+			{/* <Image centered size="medium" src={'https://www.mymathapps.com/bundles/mfcproduct/images/thumbnail.gif'} /> */}
+
+        <div style = {{display:'flex'}}>
+        <h1>MYMathApps Calculus 2: Integral Calculus
+</h1>
+        <a href = "https://mymathapps.com/mymacalc-sample" style={{ marginBottom: 10, marginLeft: 'auto' }}>
+        <Button color="blue"  >{`Sample Chapter`}</Button>
+        </a>
+        </div>
+		</Container>
+
+		
 		<Container textAlign="left">
 			<Image
 				alt="Algebraic shapes within a three axis"
@@ -162,6 +176,7 @@ const MYMACalc2: React.FC = (): JSX.Element => {
 				</li>
 			</ul>
 		</Container>
+		</>
 	);
 };
 

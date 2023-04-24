@@ -60,14 +60,15 @@ export class EmailService implements OnModuleDestroy {
     }
 
     public async sendActivateAccountEmail(user: User): Promise<void> {
+        //console.log(process.env.EMAIL_ENABLE);
 
-        if (process.env.EMAIL_ENABLE!=='true') {
+        if (process.env.EMAIL_ENABLE === 'false') {
             await this.userService.activateAccount(user.activationCode!);
             console.log("not enable mail. User already activate");
             return;
         }
 
-        else if (process.env.Email_ENABLE === 'test') {
+        else if (process.env.EMAIL_ENABLE === 'test') {
             console.log("For test. not send email but also not activate user")
             return;
         }
