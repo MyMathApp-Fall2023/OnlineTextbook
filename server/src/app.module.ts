@@ -18,11 +18,14 @@ import { BookModule } from './book/book.module';
 
 import { PaymentModule } from './payment/payment.module';
 
-let envFilePath = ['.env'];
-export const IS_DEV = process.env.RUNNING_ENV !== 'prod';
-if (IS_DEV) {
+let envFilePath = [];
+if (process.env.RUNNING_ENV === 'dev') {
     envFilePath.unshift('.env.dev');
-} else {
+}
+if (process.env.RUNNING_ENV === 'heroku') {
+    envFilePath.unshift('.env.heroku');
+}
+if (process.env.RUNNING_ENV === 'prod') {
     envFilePath.unshift('.env.prod');
 }
 

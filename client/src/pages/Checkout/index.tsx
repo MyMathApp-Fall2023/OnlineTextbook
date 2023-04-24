@@ -76,16 +76,17 @@ const Checkout: React.FC = (props): JSX.Element => {
 	const updateCode = (event: React.FormEvent<HTMLInputElement>) =>{
 		setcurrentCode((event.target as HTMLInputElement).value)
 	}
-	const handleApply = () => {
+	const handleApply              = () => {
 		formStateDispatch({ type: "LOADING" });
 		console.log("current input");
 		console.log(currentCode);
-		checkPurchaseCode(currentCode).then(
-			async (res) => {
+		checkPurchaseCode(currentCode).then(           (res) => {
 				const discounted = (1 - res.data.priceOff * 0.01) * ItemData[0].price;
 				settotalPrice(discounted);
 				purchaseBtn = updatePurchaseBtn(currentCode, item_id, totalPrice);
-				formStateDispatch({ type: "SUCCESS" });
+				formStateDispatch({
+					type: "SUCCESS"
+					});
 				})
 		.catch((err)=>{
 			//console.log("err")
