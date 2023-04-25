@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 const service = axios.create({
-    baseURL:process.env.REACT_APP_SERVER_DOMAIN,
+    baseURL:process.env.REACT_APP_SERVER_DOMAIN + ":" + process.env.PORT,
     timeout:10000,
 })
 
