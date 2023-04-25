@@ -1,5 +1,3 @@
-import "semantic-ui-css/semantic.min.css";
-
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -10,7 +8,7 @@ ReactDOM.render(
 
 	// according to this PayPal issue, remove the strict mode
 	// https://github.com/Luehang/react-paypal-button-v2/issues/126
-	
+
 	// <React.StrictMode>
 		<App />,
 	// </React.StrictMode>,
