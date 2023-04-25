@@ -7,7 +7,7 @@
     "postinstall": "cd client && yarn && yarn build && cd ../server && yarn && yarn build"
   },
   "engines": {
-    "node": "16.10.0"
+    "node": "18.10.0"
   },
   "cacheDirectories": [
     "client/node_modules",
