@@ -1,6 +1,8 @@
 import {Module} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {ConfigModule} from "@nestjs/config";
+import {ServeStaticModule} from "@nestjs/serve-static";
+
 import {UserModule } from './user/user.module';
 import {User} from "./user/entities/user.entity";
 import {AuthModule } from './auth/auth.module';
@@ -15,6 +17,8 @@ import {Transaction} from "./transaction/entities/transaction.entity";
 import {Record} from "./record/entities/record.entity";
 import { EmailModule } from './email/email.module';
 import { BookModule } from './book/book.module';
+import {join} from 'path';
+
 
 import { PaymentModule } from './payment/payment.module';
 
@@ -31,6 +35,9 @@ if (process.env.RUNNING_ENV === 'prod') {
 
 @Module({
     imports: [
+        ServeStaticModule.forRoot({
+            rootPath: join(__dirname, '../..', 'client/build')
+        }),
         ConfigModule.forRoot({
             isGlobal: true,
             envFilePath: envFilePath
