@@ -1,7 +1,7 @@
 {
   "name": "mymath-project-2023-spring",
-  "version": "1.0.0",
-  "description": "my math ",
+  "version": "2.0.0",
+  "description": "my math app ",
   "main": "server/dist/main.js",
   "scripts": {
     "postinstall": "cd client && yarn && yarn build && cd ../server && yarn && yarn build"
