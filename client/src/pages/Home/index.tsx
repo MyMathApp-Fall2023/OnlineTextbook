@@ -512,7 +512,7 @@ const Home: React.FC = (): JSX.Element => {
 						textAlign: "center"
 					}}
 				>
-					Copyright © 2011–19 P. B. Yasskin and D. B. Meade. All rights reserved.
+					Copyright © 2011–23 P. B. Yasskin and D. B. Meade. All rights reserved.
 				</Container>
 			</Container>
 		</Container>
