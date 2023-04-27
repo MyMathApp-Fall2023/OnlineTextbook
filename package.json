@@ -4,7 +4,7 @@
   "description": "my math app ",
   "main": "server/dist/main.js",
   "scripts": {
-    "postinstall": "cd client && yarn && yarn build && cp -R build/* ../server/public/ && cd ../server && yarn && yarn build"
+    "postinstall": "cd client && npm install && npm run build && cp -R build/* ../server/public/ && cd ../server && npm install && npm run build"
   },
   "engines": {
     "node": "18.10.0"

@@ -1,1 +1,1 @@
-web: cd server && yarn start:heroku
+web: cd server && npm run start:heroku
