@@ -16,10 +16,7 @@ export class Record {
     public expirationDate: Date;
 
     @Column()
-    public item_id: number;
+    public item_name: string;
 
 
-    @ManyToOne(() => Item, item => item.records)
-    @JoinColumn({name: 'item_id'})
-    item: Item;
 }
