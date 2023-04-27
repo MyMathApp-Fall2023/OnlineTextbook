@@ -8,24 +8,36 @@ import {Helmet} from "react-helmet";
 
 
 type PayPalButtonsProps = {
-	purchaseCode: string;
+	purchaseCode: number;
 	sku: string;
 	amount: number;
+    userId: number;
 };
 
 const PayPalButtons: React.FC<PayPalButtonsProps> = (
 	props
 ): JSX.Element => {
 	
+    // console.log('userid',  props.userId, 'purchasecode', props.purchaseCode, 'sku', props.sku, 'amount', props.amount, typeof(props.amount));
+    const cartFromProps = [
+        {
+            sku: props.sku,
+            purchaseCode: props.purchaseCode,
+            amount: props.amount,
+            user_id: props.userId
+        },
+    ];
+    const [cart, setCart] = useState(cartFromProps);
+    setCart(cartFromProps);
+
 	useEffect(() => {
 
-        let purchaseCode = props.purchaseCode;
-        if (props.purchaseCode == '') {
-            purchaseCode = 'None';
-        }
-
-        console.log('purchasecode', purchaseCode, 'sku', props.sku, 'amount', props.amount, typeof(props.amount));
-
+        
+        // if (props.amount <= 0) {
+        //     return;
+        // }
+        
+        
         // @ts-ignore
         paypal.Buttons({
             // style: {
@@ -41,13 +53,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
                 // use the "body" param to optionally pass additional order information
                 // like product skus and quantities
                 body: JSON.stringify({
-                    cart: [
-                        {
-                            sku: props.sku,
-                            purchaseCode: purchaseCode,
-                            amount: props.amount
-                        },
-                    ],
+                    cart: cart,
                 }),
                 })
                 .then((response) => response.json())
@@ -63,14 +69,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
                 },
                 body: JSON.stringify({
                     orderID: data.orderID,
-                    cart: [
-                        {
-                            sku: props.sku,
-                            purchaseCode: purchaseCode,
-                            amount: props.amount,
-                            
-                        },
-                    ],
+                    cart: cart,
                 }),
                 })
                 .then((response) => response.json())

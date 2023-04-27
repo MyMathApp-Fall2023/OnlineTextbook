@@ -12,7 +12,11 @@ export class PaymentService {
 
     async create(req, res) {
         const amount = req.body['cart'][0]['amount'];
-        console.log('Create an order with amount', amount);
+        // const item_id = req.body['cart'][0]['sku'];
+        // const purchase_code = req.body['cart'][0]['purchaseCode'];
+        // const user_id = req.body['cart'][0]['user_id'];
+        // console.log('Create an order:', amount, item_id, purchase_code, user_id);
+
         try {
             const order = await paypal.createOrder(amount);
             res.json(order);
@@ -23,9 +27,11 @@ export class PaymentService {
 
     async capture(req, res) {
         const { orderID } = req.body;
+        const amount = req.body['cart'][0]['amount'];
         const item_id = req.body['cart'][0]['sku'];
         const purchase_code = req.body['cart'][0]['purchaseCode'];
-        const user_id = req.user.user_id;
+        const user_id = req.body['cart'][0]['user_id'];
+        console.log('Finish an order:', amount, item_id, purchase_code, user_id);
 
         try {
             const captureData = await paypal.capturePayment(orderID);

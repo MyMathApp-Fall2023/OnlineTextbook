@@ -9,7 +9,7 @@ export class PaymentController {
 
     constructor(private readonly paymentService: PaymentService) {}
 
-    @UseGuards(JwtAuthGuard)
+    // @UseGuards(JwtAuthGuard)
     @Post('create-paypal-order')
     async create(@Req() req: Request, @Res() res: Response) {
         this.paymentService.create(req, res);
