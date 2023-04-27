@@ -45,7 +45,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
                         {
                             sku: props.sku,
                             purchaseCode: purchaseCode,
-                            amount: props.amount,
+                            amount: props.amount
                         },
                     ],
                 }),
@@ -63,6 +63,14 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = (
                 },
                 body: JSON.stringify({
                     orderID: data.orderID,
+                    cart: [
+                        {
+                            sku: props.sku,
+                            purchaseCode: purchaseCode,
+                            amount: props.amount,
+                            
+                        },
+                    ],
                 }),
                 })
                 .then((response) => response.json())
