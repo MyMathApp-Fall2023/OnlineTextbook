@@ -14,10 +14,16 @@ interface IframeProps {
 
 const ReadBookPage: React.FC = (props): JSX.Element | null => {
 
+    const [src, setSrc] = useState<string|undefined>("");
+    useEffect(()=> {
+        readBook().then((res)=>{
+            setSrc(res.data.bookURL)
+        })
+    },[])
 
     return (
         <div>
-            <iframe style={{width:'100vw', height:'90vh', overflowY:'auto',border:'0px'}} src="http://localhost:3000"></iframe>
+            <iframe style={{width:'100vw', height:'90vh', overflowY:'auto',border:'0px'}} src={src}></iframe>
         </div>
 
     );

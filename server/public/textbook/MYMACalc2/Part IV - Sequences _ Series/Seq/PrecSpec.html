@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e2. Precise Special Limits | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PrecDef.html" title="Previous">&lArr;</a></li>
+      <li><a href="PrecLaws.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  \(\displaystyle \lim_{n\to\infty}a_n=L\) &emsp; means
+  <span class="center">
+    For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </span>
+  <span class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon\).
+  </span>
+  \(\displaystyle \lim_{n\to\infty}a_n=\infty\) &emsp; means
+  <span class="center">
+    For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </span>
+  <span class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(a_n \gt M\).
+  </span>
+</p>
+
+
+      
+      <h2>e2. Precise Special Limits</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We now use the <span class="hl">precise definition of a limit</span> to
+  prove the various theorems involving limits. We start with the four
+  special limits.
+</p>
+
+        <div class="rule" id="identity"></div>
+
+<p class="prop" data-title="Identity Sequence">
+	\[
+	(1) \qquad \lim_{n\to\infty}n=\infty
+	\]
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+	<p>
+		<span class="hl">Identity Sequence</span> &emsp;
+    Since \(a_n=n\) and we want to show the limit is infinite, we need to show:
+	</p>
+  <p class="center">
+    For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(n \gt M\).
+  </p>
+	<p>
+		So given an arbitrary number \(M \gt 0\), we let \(N\) be any integer
+    bigger than \(M\), i.e. \(N \gt M\). Then, trivally,
+	</p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(n \gt N \gt M\).
+  </p>
+</div>
+
+        <div class="rule" id="constant"></div>
+
+<p class="prop" data-title="Constant Sequences">
+	For any number \(c\),
+	\[
+	(2) \qquad \lim_{n\to\infty}c=c
+	\]
+  <button class="toggle" data-toggle="Proof2">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof2">
+	<p>
+		<span class="hl">Constant Sequences</span> &emsp;
+		Since \(a_n=c\) and we want to show the limit is the finite number
+    \(L=c\), we need to show:
+	</p>
+  <p class="center">
+    For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(|c-c| \lt \varepsilon\).
+  </p>
+	<p>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let \(N=1\).
+    Then, trivally,
+	</p>
+  <p class="center">
+    if &ensp; \(n \gt 1\) &ensp; then &ensp; \(|c-c|=0 \lt \varepsilon\).
+  </p>
+</div>
+
+        <div class="rule" id="power"></div>
+
+<p class="prop" data-title="Power Sequences">
+	If \(p>0\), then
+	\[
+	(3a) \qquad \lim_{n\to\infty}n^p=\infty
+	\qquad \text{and} \qquad
+	(3b) \qquad \lim_{n\to\infty}\dfrac{1}{n^p}=0.
+	\]
+	If \(p<0\), then
+	\[
+	(3c) \qquad \lim_{n\to\infty}n^p=0
+	\qquad \text{and} \qquad
+	(3d) \qquad \lim_{n\to\infty}\dfrac{1}{n^p}=\infty.
+	\]
+  <button class="toggle" data-toggle="Proof3a">Proof of (3a)</button>
+  <button class="toggle" data-toggle="Proof3b">Proof of (3b)</button>
+  <br>
+  (3c) is the same as (3b). (3d) is the same as (3a).
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof3a">
+	<p>
+		<span class="hl">Power Sequences (3a)</span> &emsp;
+		Since \(a_n=n^p\) with \(p \gt 0\) and we want to show the limit is
+    infinite, we need to show:
+	</p>
+  <p class="center">
+    For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(n^p \gt M\).
+  </p>
+	<p>
+		So given an arbitrary number \(M \gt 0\), we let \(N\) be any integer
+    bigger than \(M^{1/p}\), i.e. \(N \gt M^{1/p}\). Then,
+	</p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(n^p \gt N^p \gt \left(M^{1/p}\right)^p=M\).
+  </p>
+	<p>
+		<span class="redbig">How did we know to take \(N \gt M^{1/p}\)?</span>
+		<span class="greenbig">Answer: We work backwards from what we want:</span>
+    \[
+    n^p \gt M
+    \quad \Longleftarrow \quad
+    n \gt M^{1/p}
+    \]
+    which will follow if \(n \gt N\) and \(N \gt  M^{1/p}\).
+	</p>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof3b">
+	<p>
+		<span class="hl">Power Sequences (3b)</span> &emsp;
+		Since \(a_n=\dfrac{1}{n^p}\) with \(p \gt 0\) and we want to show the
+    limit is the finite number \(L=0\), we need to show:
+	</p>
+  <p class="center">
+    For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(\left|\dfrac{1}{n^p}\right| \lt \varepsilon\).
+  </p>
+	<p>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let \(N\) be any
+    integer bigger than \(\varepsilon^{-1/p}\), i.e. \(N \gt \varepsilon^{-1/p}\).
+    Then,
+	</p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp;
+    \(|n^p| \gt |N^p| \gt \left(\varepsilon^{-1/p}\right)^p=\varepsilon^{-1}\)
+    &ensp; and so &ensp;
+    \(\left|\dfrac{1}{n^p}\right| \lt \varepsilon\).
+  </p>
+	<p>
+		<span class="redbig">How did we know to take \(N \gt \varepsilon^{-1/p}\)?</span>
+		<span class="greenbig">Answer: We work backwards from what we want:</span>
+    \[
+    \left|\dfrac{1}{n^p}\right| \lt \varepsilon
+    \quad \Longleftarrow \quad
+    |n^p| \gt \varepsilon^{-1}
+    \quad \Longleftarrow \quad
+    |n| \gt \varepsilon^{-1/p}
+    \]
+    which will follow if \(n \gt N\) and \(N \gt \varepsilon^{-1/p}\).
+	</p>
+</div>
+
+        <div class="rule" id="exp"></div>
+
+<p class="prop" data-title="Exponential Sequences">
+	If \(b>1\), then
+	\[
+	(4a) \qquad \lim_{n\to\infty}b^n=\infty
+	\qquad \text{and} \qquad
+	(4b) \qquad \lim_{n\to\infty}\dfrac{1}{b^n}=0.
+	\]
+	If \(0 < b < 1\), then
+	\[
+	(4c) \qquad \lim_{n\to\infty}b^n=0
+	\qquad \text{and} \qquad
+	(4d) \qquad \lim_{n\to\infty}\dfrac{1}{b^n}=\infty.
+	\]
+  <button class="toggle" data-toggle="Proof4a">Proof of (4a)</button>
+  <button class="toggle" data-toggle="Proof4b">Proof of (4b)</button>
+  <br>
+  (4c) is the same as (4b). (4d) is the same as (4a).
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof4a">
+	<p>
+		<span class="hl">Exponential Sequences (4a)</span> &emsp;
+		Since \(a_n=b^n\) with \(b \gt 1\) and we want to show the limit is
+    infinite, we need to show:
+	</p>
+  <p class="center">
+    For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(b^n \gt M\).
+  </p>
+	<p>
+		So given an arbitrary number \(M \gt 0\), we let \(N\) be any integer
+    bigger than \(\log_b(M)\), i.e. \(N \gt \log_b(M)\). Then,
+	</p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(b^n \gt b^N \gt b^{\log_b(M)}=M\).
+  </p>
+	<p>
+		<span class="redbig">How did we know to take \(N \gt \log_b(M)\)?</span>
+		<span class="greenbig">Answer: We work backwards from what we want:</span>
+    \[
+    b^n \gt M
+    \quad \Longleftarrow \quad
+    n \gt \log_b(M)
+    \]
+    which will follow if \(n \gt N\) and \(N \gt \log_b(M)\).
+	</p>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof4b">
+	<p>
+		<span class="hl">Exponential Sequences (4b)</span> &emsp;
+		Since \(a_n=\dfrac{1}{b^n}\) with \(b \gt 1\) and we want to show the
+    limit is the finite number \(L=0\), we need to show:
+	</p>
+  <p class="center">
+    For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(\left|\dfrac{1}{b^n}\right| \lt \varepsilon\).
+  </p>
+	<p>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let \(N\) be any
+    integer bigger than \(\log_b(\varepsilon^{-1})\), i.e. \(N \gt \log_b(\varepsilon^{-1})\).
+    Then,
+	</p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp;
+    \(|b^n| \gt |b^N| \gt b^{\log_b(\varepsilon^{-1})}=\varepsilon^{-1}\)
+    &ensp; and so &ensp;
+    \(\left|\dfrac{1}{b^n}\right| \lt \varepsilon\).
+  </p>
+	<p>
+		<span class="redbig">How did we know to take \(N \gt \log_b(\varepsilon^{-1})\)?</span>
+		<span class="greenbig">Answer: We work backwards from what we want:</span>
+    \[
+    \left|\dfrac{1}{b^n}\right| \lt \varepsilon
+    \quad \Longleftarrow \quad
+    |b^n| \gt \varepsilon^{-1}
+    \quad \Longleftarrow \quad
+    n \gt \log_b(\varepsilon^{-1})
+    \]
+    which will follow if \(n \gt N\) and \(N \gt \log_b(\varepsilon^{-1})\).
+	</p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

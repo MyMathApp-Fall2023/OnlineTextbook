@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Mass, Center of Mass and Centroid | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ScalarInt.html" title="Previous">&lArr;</a></li>
+      <li><a href="Ave.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Applications of Scalar Line Integrals</h2>
+
+
+      
+      <h2>1. Mass, Center of Mass and Centroid</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In Calculus 2, we learned how to compute
+</p>
+<ol>
+  <li>
+    the <a href="../../../MYMACalc2/Part II - Applications of Integration/Mass/CMdiscrete.html"
+    title="Return using the Back button.">
+    mass and center of mass of a discrete collection of masses</a>
+  </li>
+  <li>
+    the <a href="../../../MYMACalc2/Part II - Applications of Integration/Mass/CMbar.html"
+    title="Return using the Back button.">
+    mass and center of mass of a straight bar</a> with linear density
+    \(\delta(x)\) (with units of \(\dfrac{\text{mass}}{\text{length}}\))
+  </li>
+</ol>
+<p>
+  This can be generalized to a curved bar or wire by using line integrals of
+  scalars.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Total Mass and Center of Mass</h3>
+<div class="greybox">
+  <p class="def" data-title="Total Mass and Center of Mass of a Wire">
+    If a wire has the shape of the curve \(\vec r(t)\) with linear
+    density \(\delta(x,y,z)\) between \(A=\vec r(a)\) and \(B=\vec r(b)\) then
+  </p>
+  <ol>
+    <li>
+      The <span class="defword">total mass</span> of the wire is
+      \[
+      M=\int_A^B \delta\,ds
+      =\int_a^b \delta(r(t))|\vec v|\,dt
+      \]
+    </li>
+    <li>
+      The <span class="defword">first moments of the mass</span> of the wire
+      in the \(x\), \(y\) and \(z\) directions are
+      \[\begin{aligned}
+      M_x&=\int_A^B x\delta\,ds
+      =\int_a^b x(t)\,\delta(r(t))\,|\vec v|\,dt \\
+      M_y&=\int_A^B y\delta\,ds
+      =\int_a^b y(t)\,\delta(r(t))\,|\vec v|\,dt \\
+      M_z&=\int_A^B z\delta\,ds
+      =\int_a^b z(t)\,\delta(r(t))\,|\vec v|\,dt
+      \end{aligned}\]
+    </li>
+    <li>
+      And the <span class="defword">center of mass</span> is
+      \[
+      (\bar{x},\bar{y},\bar{z})=\left(\dfrac{M_x}{M},\dfrac{M_y}{M},\dfrac{M_z}{M}\right)
+      \]
+    </li>
+  </ol>
+  <br>
+</div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    Find the mass and center of mass of a wire in the shape of the semicircle
+    \(y=\sqrt{4-x^2}\) if its linear density is given by \(\delta(x,y)=x^2y\).
+  </p>
+  <div class="center">
+    <img src="graphics/eg_Mass_semicirc.jpg" alt="eg_Mass_semicirc">
+  </div>
+</div>
+<p class="sol">
+  The semicircle may be parametrized by
+  \(\vec r(\theta)=(2\cos\theta,2\sin\theta)\) for \(0 \le \theta \le \pi\).
+  Its velocity is
+  \(\vec v=(-2\sin\theta,2\cos\theta)\) whose length is
+  \(|\vec v|=\sqrt{4\sin^2\theta+4\cos^2\theta}=2\). So the mass is
+  \[\begin{aligned}
+  M&=\int_A^B \delta\,ds
+  =\int_0^\pi x^2y|\vec v|\,d\theta \\
+  &=\int_0^\pi 4\cos^2\theta\,2\sin\theta\,2\,d\theta
+  =16\left[\dfrac{-\cos^3\theta}{3}\right]_0^\pi
+  =\dfrac{32}{3}
+  \end{aligned}\]
+  The first moments are
+  \[\begin{aligned}
+  M_{1x}&=\int_A^B x\delta\,ds
+  =\int_0^\pi x^3y|\vec v|\,d\theta \\
+  &=\int_0^\pi 8\cos^3\theta\,2\sin\theta\,2\,d\theta
+  =32\left[\dfrac{-\cos^4\theta}{4}\right]_0^\pi=0 \\
+  M_{1y}&=\int_A^B y\delta\,ds
+  =\int_0^\pi x^2y^2|\vec v|\,d\theta \\
+  &=\int_0^\pi 4\cos^2\theta\,4\sin^2\theta\,2\,d\theta
+  =8\int_0^\pi \sin^2(2\theta)\,d\theta \\
+  &=8\int_0^\pi \dfrac{1-\cos(4\theta)}{2}\,d\theta=4
+  \left[\theta-\,\dfrac{\sin(4\theta)}{4}\right]_0^\pi=4\pi
+  \end{aligned}\]
+  where we used the identities
+  \(\sin(2\theta)=2\sin\theta\cos\theta\) and \(\sin^2 A=\dfrac{1-\cos(2A)}{2}\).
+  So the center of mass is
+  \[
+  (\bar{x},\bar{y})
+  =\left(\dfrac{0}{32/3},\dfrac{4\pi}{32/3}\right)
+  =\left(0,\dfrac{3\pi}{8}\right)
+  \]
+</p>
+<div class="column">
+  <p class="check">
+    This answer makes sense since the wire and the density
+    are symmetric about the \(y\)-axis which implies \(\bar{x}=0\).
+    Further, \(\bar{y}\approx 1.2\) which is within the range of the wire
+    which is \(0 \le y \le 2\). Here is a plot with an \(\times\) at the
+    center of mass.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_CM_semicirc.jpg" alt="eg_CM_semicirc">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Find the mass and the \(x\)-component of the center of mass of the
+      quartic curve:
+      \[
+      \vec r(t)=\left(\dfrac{1}{2}t^2,\dfrac{2}{3}t^3,\dfrac{1}{2}t^4\right)
+      \quad \text{for} \quad
+      0 \le t \le 1
+      \]
+      if the linear density is \(\delta=x\).
+  	</p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX2"></button>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+      <button class="toggle has-rem" data-toggle="RemX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <x3d width='250px' height='250px'>
+      <scene>
+        <inline url="graphics/ex_Mass_quartic.x3d"> </inline>
+      </scene>
+    </x3d>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The quantity in the square root is a perfect square.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(M=\dfrac{7}{24}\)&emsp;&emsp;
+    \(M_x=\dfrac{5}{48}\)&emsp;&emsp;
+    \(\bar{x}=\dfrac{5}{14}\approx0.36\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The velocity is \(\vec v=\langle t,2t^2,2t^3\rangle\) and its magnitude is:
+    \[
+    |\vec v|=\sqrt{t^2+4t^4+4t^6}=\sqrt{(t+2t^3)^2}=t+2t^3
+    \]
+    The density is \(\delta=x=\dfrac{1}{2}t^2\). So the mass is
+    \[\begin{aligned}
+    M&=\int_A^B \delta\,ds
+    =\int_0^1 \dfrac{1}{2}t^2(t+2t^3)\,dt \\
+    &=\left[\dfrac{1}{8}t^4+\dfrac{1}{6}t^6\right]_0^1
+    =\dfrac{1}{8}+\dfrac{1}{6}=\dfrac{7}{24}
+    \end{aligned}\]
+    For the \(x\) moment, we multiply by \(x=\dfrac{1}{2}t^2\) in the integrand:
+    \[\begin{aligned}
+    M_x
+    &=\int_A^B x\delta\,ds
+    =\int_0^1 \dfrac{1}{2}t^2\dfrac{1}{2}t^2(t+2t^3)\,dt \\
+    &=\left[\dfrac{1}{24}t^6+\dfrac{1}{16}t^8\right]_0^1
+    =\dfrac{1}{24}+\dfrac{1}{16}=\dfrac{5}{48}
+    \end{aligned}\]
+    Finally, we divide the moment by the mass to get the \(x\)-component of the
+    center of mass:
+    \[
+    \bar x=\dfrac{M_x}{M}=\dfrac{5}{48}\dfrac{24}{7}=\dfrac{5}{14}\approx0.36
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <div class="column">
+    <p>
+      Similarly, we can find the \(y\)- and \(z\)-moments and the \(y\)- and
+      \(z\)-components of the center of mass:
+      \[\begin{aligned}
+      M_y&=\dfrac{23}{189} \quad
+      &\bar y&=\dfrac{184}{441}\approx0.42 \\
+      M_z&=\dfrac{13}{160} \quad
+      &\bar z&=\dfrac{39}{140}\approx0.28
+      \end{aligned}\]
+      This appears to be near the center of the wire as shown in the plot.
+    </p>
+    <div class="center">
+      <x3d width='250px' height='250px'>
+        <scene>
+          <inline url="graphics/ex_CM_quartic.x3d"> </inline>
+        </scene>
+      </x3d>
+      <!-- <img src="graphics/ex_CM_quartic.jpg" alt="ex_CM_quartic"> -->
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Centroid</h3>
+<div class="greybox">
+  <p class="def" data-title="Centroid of a Curve">
+    If the linear density along a curve is a constant, which we will take as
+    \(\delta=1\), then
+  </p>
+  <ol>
+    <li>
+      The <span class="hl">total mass</span> of the curve is just its
+      <span class="hl">arclength</span>:
+      \[
+      M=\int_A^B \delta\,ds=\int_A^B 1\,ds=L
+      \]
+    </li>
+    <li>
+      The <span class="hl">first moments of the mass</span> are called the
+      <span class="defword">first moments of arc length</span>:
+      \[\begin{aligned}
+      M_x&=\int_A^B x\delta\,ds=\int_A^B x\,ds=L_x \\
+      M_y&=\int_A^B y\delta\,ds=\int_A^B y\,ds=L_y \\
+      M_z&=\int_A^B z\delta\,ds=\int_A^B z\,ds=L_z
+      \end{aligned}\]
+    </li>
+    <li>
+      And the <span class="hl">center of mass</span> is called the
+      <span class="defword">centroid</span>:
+      \[
+      (\bar{x},\bar{y},\bar{z})
+      =\left(\dfrac{L_x}{L},\dfrac{L_y}{L},\dfrac{L_z}{L}\right)
+      \]
+    </li>
+  </ol>
+  <br>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="3">
+    Find the centroid of one and a half loops of the helix
+    \(\vec r(\theta)=(4\cos\theta,4\sin\theta,3\theta)\)
+    for \(0 \le \theta \le 3\pi\). Rotate the plot with your mouse.
+  </p>
+  <div class="center">
+    <x3d width='200px' height='300px'>
+      <scene>
+        <inline url="graphics/eg_centroid_helix.x3d"> </inline>
+      </scene>
+    </x3d>
+  </div>
+</div>
+<p class="sol">
+  The velocity is \(\vec v=(-4\sin\theta,4\cos\theta,3)\) and its length is
+  \(|\vec v|=\sqrt{16\sin^2\theta+16\cos^2\theta+9}=5\). So the length is
+  \[
+  L=\int_A^B\,ds=\int_0^{3\pi} |\vec v|\,d\theta
+  =\int_0^{3\pi} 5\,d\theta=\left[5\theta\right]_0^{3\pi}=15\pi
+  \]
+  The first moments are
+  \[\begin{aligned}
+  L_x&=\int_A^B x\,ds
+  =\int_0^{3\pi} 4\cos\theta\,5\,dt
+  =\left[20\sin\theta\rule{0pt}{10pt}\right]_0^{3\pi}=0 \\
+  L_y&=\int_A^B y\,ds
+  =\int_0^{3\pi} 4\sin\theta\,5\,dt
+  =\left[-20\cos\theta\rule{0pt}{10pt}\right]_0^{3\pi} \\
+  &=-20(-1)--20(1)=40 \\
+  L_z&=\int_A^B z\,ds=
+  \int_0^{3\pi} 3\theta\,5\,dt
+  =\left[15\dfrac{\theta^2}{2}\right]_0^{3\pi}=\dfrac{135}{2}\pi^2
+  \end{aligned}\]
+  And so the center of mass is
+  \[\begin{aligned}
+  (\bar{x},\bar{y},\bar{z})
+  &=\left(\dfrac{L_x}{L},\dfrac{L_y}{L},\dfrac{L_z}{L}\right) \\
+  &=\left(0,\dfrac{40}{15\pi},\dfrac{135\pi^2}{2\cdot15\pi}\right)
+  =\left(0,\dfrac{8}{3\pi},\dfrac{9\pi}{2}\right)
+  \end{aligned}\]
+  </p>
+
+<p>
+  It is no surprise that \(\bar{x}=0\) since half of the helix has positive
+  \(x\)'s and half has negative \(x\)'s.
+  <br>
+  It is no surprise that \(\bar{z}=\dfrac{9\pi}{2}\) since this is half of
+  the height of the helix which is \(9\pi\).
+  <br>
+  Further, \(\bar{y}=\dfrac{8}{3\pi}\approx 0.85\) makes sense since there
+  is more helix for positive than negative \(y\)'s and this is within the
+  bounds \(-4 \le y \le 4\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the centroid of the twisted cubic
+    \(\vec r(t)=\left(t,t^2,\dfrac{2}{3}t^3\right)\) from \(t=0\) to \(t=1\).
+	</p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX4"></button>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    Use the <span class="hl">first moments of arc length</span>:
+    \[
+    L_x=\int_A^B x\,ds \qquad
+    L_y=\int_A^B y\,ds \qquad
+    L_z=\int_A^B z\,ds
+    \]
+    to find the <span class="hl">centroid</span>:
+    \[
+    (\bar{x},\bar{y},\bar{z})
+    =\left(\dfrac{L_x}{L},\dfrac{L_y}{L},\dfrac{L_z}{L}\right)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \((\bar{x},\bar{y},\bar{z})
+    =\left(\dfrac{3}{5},\dfrac{11}{25},\dfrac{7}{30}\right)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    First, we have already found the magnitude of the velocity vector is
+    \(|\vec v|=1+2t^2\). The arc length is
+    \[
+    L=\int_A^B\,ds=\int_0^1 (1+2t^2)\,dt
+    =\left[t+2\dfrac{t^3}{3}\right]_0^1=\dfrac{5}{3}
+    \]
+    For the \(x\) moment of arc length, we we multiply by \(x=t\)
+    in the integrand:
+    \[
+    L_x=\int_A^B x\,ds=\int_0^1 t(1+2t^2)\,dt
+    =\left[\dfrac{t^2}{2}+2\dfrac{t^4}{4}\right]_0^1=1
+    \]
+    Next, for the \(y\) moment of arc length, we multiply by \(y=t^2\)
+    in the integrand:
+    \[
+    L_y=\int_A^B y\,ds=\int_0^1 t^2(1+2t^2)\,dt
+    =\left[\dfrac{t^3}{3}+2\dfrac{t^5}{5}\right]_0^1=\dfrac{11}{15}
+    \]
+    Finally, for the \(z\) moment of arc length, we we multiply by \(z=\dfrac{2}{3}t^3\)
+    in the integrand:
+    \[
+    L_z=\int_A^B z\,ds=\int_0^1 \dfrac{2}{3}t^3(1+2t^2)\,dt
+    =\dfrac{2}{3}\left[\dfrac{t^4}{4}+2\dfrac{t^6}{6}
+    \right]_0^1=\dfrac{7}{18}
+    \]
+    Now we divide each moment by the arc length:
+    \[
+    \bar{x}=1\cdot\dfrac{3}{5}=\dfrac{3}{5} \qquad
+    \bar{y}=\dfrac{11}{15}\dfrac{3}{5}=\dfrac{11}{25} \qquad
+    \bar{z}=\dfrac{7}{18}\dfrac{3}{5}=\dfrac{7}{30}
+    \]
+    (Notice how we divide by the arc length by multiplying by its reciprocal.)
+    So the centroid is
+    \[
+    (\bar{x},\bar{y},\bar{z})
+    =\left(\dfrac{3}{5},\dfrac{11}{25},\dfrac{7}{30}\right)
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

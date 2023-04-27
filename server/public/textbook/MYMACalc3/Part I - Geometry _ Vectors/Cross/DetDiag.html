@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Method of Diagonals | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="DetExpn.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Determinants</h2>
+<p>
+	The easiest way to remember the cross product involves determinants.
+  If you are comfortable taking the determinants of	\(2\times2\) and
+  \(3\times3\) matrices including the method of expanding on a row or
+  column, skip ahead three pages. If not, use these pages to review.
+</p>
+<p>
+  There are several ways to compute determinants. We will review the
+	method of diagonals, the method of expansion on a row or column, and the
+	use of properties frequently called row and column operations.
+</p>
+
+
+      
+      <h2>1. Method of Diagonals</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The simplest way to compute \(2\times2\) and \(3\times3\) determinants
+	is the method of diagonals.
+</p>
+<p class="center">
+  <span class="redbig">Caution: This method does not work with matrices
+		larger than \(3\times3\).</span>
+</p>
+<br/>
+
+<h3>\(2\times2\) Matrices</h3>
+<p>
+  The <span class="defword">determinant of a \(2\times2\) matrix</span>
+	is defined as:
+	\[
+	\det\begin{pmatrix}
+	a & c \\
+	b & d
+	\end{pmatrix}
+	=\begin{vmatrix}
+	a & c \\
+	b & d
+	\end{vmatrix}
+	=ad-bc
+	\]
+  The entries \(a\) and \(d\) are called the
+	<span class="defword">principle diagonal</span> entries,
+  while the entries \(b\) and \(c\) are called the off diagonal entries.
+  So the determinant is the product of the principal diagonal entries
+  minus the product of the off diagonal entries.
+</p>
+<p class="example" data-number="1">
+  Find the determinant of the matrix
+  \(\begin{pmatrix}
+  2 & 4 \\
+  1 & 3
+  \end{pmatrix}\).
+</p>
+<p class="sol">
+  \(
+	\begin{vmatrix}
+  2 & 4 \\
+  1 & 3
+  \end{vmatrix}
+  =2\cdot3-1\cdot4=6-4=2
+	\)
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  	Find the determinant of the matrix
+  	\(\begin{pmatrix}
+  	7 & 6 \\
+  	3 & 4
+  	\end{pmatrix}\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    The determinant is \(
+		\begin{vmatrix}
+  	7 & 6 \\
+  	3 & 4
+	  \end{vmatrix}=10\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+		The determinant is the product of the principle diagonal entries minus
+		the product of the off diagonal entries:
+  	\[
+		\begin{vmatrix}
+  	7 & 6 \\
+  	3 & 4
+  	\end{vmatrix}
+  	=7\cdot4-6\cdot3=28-18=10
+		\]
+  </p>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="3">
+	Find the determinant of the matrix
+	\(\begin{pmatrix}
+	4 & 10 \\
+	2 & 5
+	\end{pmatrix}\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    The determinant is \(
+		\begin{vmatrix}
+		4 & 10 \\
+		2 & 5
+	  \end{vmatrix}=0\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The determinant is the product of the principle diagonal entries minus
+    the product of the off diagonal entries:
+    \[
+    \begin{vmatrix}
+    4 & 10 \\
+    2 & 5
+    \end{vmatrix}
+    =4\cdot5-10\cdot2=20-20=0
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>\(3\times3\) Matrices</h3>
+<p>
+	The <span class="defword">determinant of a \(3\times3\) matrix</span>
+	is defined as follows: Copy its first two columns to the right, add
+	the products of the entries on each diagonal which is down and to the right
+	and subtract the products of the entries on each diagonal which is down
+	and to the left:
+	\[\begin{aligned}
+	\begin{vmatrix}
+	a & d & g \\
+	b & e & h \\
+	c & f & i
+	\end{vmatrix}
+  &=\begin{vmatrix}
+	a & d & g \\
+	b & e & h \\
+	c & f & i
+	\end{vmatrix}\;
+	\begin{matrix}
+	a & d \\
+	b & e \\
+	c & f
+	\end{matrix} \\
+	&=(aei+dhc+gbf)-(gec+ahf+dbi)
+	\end{aligned}\]
+</p>
+<a id="det=-85"></a>
+
+<p class="example" data-number="4">
+	\[\begin{aligned}
+  \begin{vmatrix}
+	2 & 4 & 1 \\
+	3 & 1 & 5 \\
+	-2 & 1 & 4
+	\end{vmatrix}
+  &=\begin{vmatrix}
+	2 & 4 & 1 \\
+	3 & 1 & 5 \\
+	-2 & 1 & 4
+	\end{vmatrix}\,
+	\begin{matrix}
+	2 & 4 \\
+	3 & 1 \\
+	-2 & 1
+	\end{matrix} \\
+	&=(8+-40+3)-(-2+10+48)=-85
+	\end{aligned}\]
+</p>
+<a id="det=-48"></a>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+  	Find the determinant of the matrix
+    \(\begin{pmatrix}
+  	1 & 4 & 7 \\
+  	2 & 2 & 1 \\
+  	3 & 0 & 3
+  	\end{pmatrix}\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+    <button class="toggle has-sol" data-toggle="SolX5"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    The determinant is \(
+		\begin{vmatrix}
+  	1 & 4 & 7 \\
+  	2 & 2 & 1 \\
+  	3 & 0 & 3
+	  \end{vmatrix}=-48\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol"data-toggle="SolX5">
+  <p>
+    \[\begin{aligned}
+    \begin{vmatrix}
+    1 & 4 & 7 \\
+    2 & 2 & 1 \\
+    3 & 0 & 3
+    \end{vmatrix}
+    &=\begin{vmatrix}
+    1 & 4 & 7 \\
+    2 & 2 & 1 \\
+    3 & 0 & 3
+    \end{vmatrix}\;
+    \begin{matrix}
+    1 & 4 \\
+    2 & 2 \\
+    3 & 0
+    \end{matrix} \\
+    &=(1\cdot2\cdot3)+(4\cdot1\cdot3)+(7\cdot2\cdot0) \\
+    &\quad-(7\cdot2\cdot3)-(1\cdot1\cdot0)-(4\cdot2\cdot3) \\
+    &=6+12+0-42-0-24 \\
+    &=-48
+    \end{aligned}\]
+  </p>
+</div>
+<a id="det=0"></a>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="6">
+	Find the determinant of the matrix
+  \(\begin{pmatrix}
+	3 & 1 & 1 \\
+	1 & 0 & 0 \\
+	0 & 1 & 1
+	\end{pmatrix}\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX6"></button>
+    <button class="toggle has-sol" data-toggle="SolX6"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <p>
+    The determinant is \(
+    \begin{vmatrix}
+  	3 & 1 & 1 \\
+  	1 & 0 & 0 \\
+  	0 & 1 & 1
+    \end{vmatrix}=0\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <p>
+    \[\begin{aligned}
+    \begin{vmatrix}
+  	3 & 1 & 1 \\
+  	1 & 0 & 0 \\
+  	0 & 1 & 1
+    \end{vmatrix}
+    &=\begin{vmatrix}
+  	3 & 1 & 1 \\
+  	1 & 0 & 0 \\
+  	0 & 1 & 1
+    \end{vmatrix}\;
+    \begin{matrix}
+  	3 & 1 \\
+  	1 & 0 \\
+  	0 & 1
+    \end{matrix} \\
+  	&=(3\cdot0\cdot1)+(1\cdot0\cdot0)+(1\cdot1\cdot1) \\
+    &\quad-(1\cdot0\cdot0)-(3\cdot0\cdot1)-(1\cdot1\cdot1) \\
+  	&=0+0+1-0-0-1 \\
+  	&=0
+  	\end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  This is a legitimate way of finding the determinant of a \(3\times3\)
+  matrix, but it does \(not\) generalize to larger matrices.
+  It is a sheer coincidence that the method of diagonals works on
+  \(2\times2\) and \(3\times3\) matrices. However, we can use this
+  method to derive a more robust method for taking the determinant of a
+  \(3\times3\) matrix which does generalize to larger matrices.
+  This will be explored on the <a href="DetExpn.html">next page</a>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  But first we look at
+</p>
+
+<h3>\(4\times4\) Matrices</h3>
+<p>
+  It is tempting to define the determinant of a \(4\times4\) matrix to be
+</p>
+<p class="center"><span class="redbig">WRONG!</span></p>
+<p>
+  \[\begin{aligned}
+	\begin{vmatrix}
+  a & e & i & m \\
+  b & f & j & n \\
+  c & g & k & o \\
+  d & h & l & p
+	\end{vmatrix}
+	&=\begin{vmatrix}
+  a & e & i & m \\
+  b & f & j & n \\
+  c & g & k & o \\
+  d & h & l & p
+	\end{vmatrix}\;
+	\begin{matrix}
+  a & e & i \\
+  b & f & j \\
+  c & g & k \\
+  d & h & l
+	\end{matrix} \\
+  &=(afkp+ejod+inch+mbgl) \\
+  &\qquad-(mjgd+ankh+ebol+ifcp)
+  \end{aligned}\]
+</p>
+<p class="center"><span class="redbig">WRONG!</span></p>
+<p>
+	This incorrect formula says the determinant of a \(4\times4\) matrix
+  is the sum (and difference) of \(8\) diagonal products whereas the correct
+  formula (as we will see later) has \(24\) terms. Further, the signs
+  of \(4\) of these \(8\) terms are wrong. The method discussed on the
+  <a href="DetExpn.html">next page</a>
+  will generalize to \(4\times4\) and larger matrices.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

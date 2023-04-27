@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Surface Area | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ScalSurfInt.html" title="Previous">&lArr;</a></li>
+      <li><a href="AveVal.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Applications of Scalar Surface Integrals</h2>
+
+
+      
+      <h2>1. Surface Area</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Finding surface area of any given surface, \(S\), is straightforward now
+  that we have found \(dS\). We integrate \(dS\) over the entire surface to
+  find the total area.
+  \[
+  A=\iint_S \,dS
+   =\iint_S |\vec{N}|\,du\,dv
+  \]
+</p>
+
+        <div class="rule" id="icecap"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    Find the area of the polar ice cap, \(P\), on a planet of radius \(2\).
+    Assume the arctic circle is at \(30\) degrees. The plot shows the ice
+    cap in grey.
+    <br/>
+    <big>PY: Redo plot so cap does not look flat.</big>
+	</p>
+  <div class="center">
+    <img src="graphics/Polaricecap.jpg" alt="Polaricecap">
+  </div>
+</div>
+<p class="sol">
+  We need to know \(dS\) for spherical coordinates for a sphere of radius 2.
+  Then we need the surface area of the piece of the sphere from \(\phi=0\) to
+  \(\phi=30^\circ\).
+</p>
+<p>
+  The parametric equation for a sphere of radius \(2\) is
+  \[
+  \vec R(\phi,\theta)
+  =\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+  \]
+  From this equation we can find \(\vec{e}_\phi\) and \(\vec{e}_\theta\)
+  (the radius \(\rho\) is not changing)
+  \[
+  \begin{matrix}
+  \quad \\
+  \vec{e}_\phi= \\
+  \vec{e}_\theta=
+  \end{matrix}
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  \left\langle 2\cos\phi\cos\theta\right. & 2\cos\phi\sin\theta & \left. -2\sin\phi\right\rangle \\
+  \left\langle -2\sin\phi\sin\theta\right. & 2\sin\phi\cos\theta & \left. \quad0\quad\right\rangle
+  \end{vmatrix}
+  =\vec{N}
+  \]
+  Notice how we added the \(\hat{\imath}\), \(\hat{\jmath}\), \(\hat{k}\) and
+  the vertical bars to compute \(\vec N\):
+  \[\begin{aligned}
+  \vec{N} &=\vec{e}_\theta\times\vec{e}_\phi \\
+  &=\hat{\imath}(0--4\sin^2\phi\cos\theta)
+   -\hat{\jmath}(0-4\sin^2\phi\sin\theta) \\
+  &\quad+\hat{k}(4\sin\phi\cos\phi\cos^2\theta--4\sin\phi\cos\phi\sin^2\theta) \\
+  &=\left\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\right\rangle
+  \end{aligned}\]
+</p>
+<p class="check">
+  The normal vector for a sphere <em>must be</em>
+  <span class="hl">radially</span> inward or outward. In other words, it is
+  a multiple of the position vector. In particular, the vector, \(\vec{N}\), in
+  our example can be rewritten as:
+  \[
+  \vec{N}=2\sin\phi\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+  \]
+  which is a multiple of the position vector. This is a useful mental check when
+  integrating over the surface of a sphere.
+</p>
+<p>
+  To find \(dS\), we need the length of the normal:
+  \[\begin{aligned}
+  |\vec{N}|
+  &=\sqrt{16\sin^4\phi\cos^2\theta+16\sin^4\phi\sin^2\theta+16\sin^2\phi\cos^2\phi} \\
+  &=\sqrt{16\sin^4\phi+16\sin^2\phi\cos^2\phi}
+  =\sqrt{16\sin^2\phi}
+  =4\sin\phi
+  \end{aligned}\]
+  Not coincidentally, this is the same thing you would get if you calculated
+  the spherical Jacobian for volume, \(\rho^2\sin\phi\). Using the length of
+  the normal, we have the scalar differential of surface area is:
+  \[
+  dS=|\vec{N}|\,d\phi\,d\theta=4\sin\phi\,d\phi\,d\theta
+  \]
+   So we can now compute the integral for the area:
+  \[\begin{aligned}
+  A&=\iint_P \,dS
+    =\iint_P |\vec{N}|\,d\phi\,d\theta
+  =\int_0^{2\pi}\int_0^{\pi/6} 4\sin\phi\,d\phi\,d\theta \\
+  &=2\pi\left[-4\cos\phi\dfrac{}{}\right]_0^{\pi/6}
+  =8\pi\left(-\cos\dfrac{\pi}{6}+\cos0\right)
+  =8\pi\left(1-\,\dfrac{\sqrt{3}}{2}\right)
+  \end{aligned}\]
+</p>
+
+        <div class="rule" id="ellipparab"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the area of the piece of the elliptic paraboloid \(z=x^2+y^2\) below
+    \(z=4\).
+    The length of the normal vector was found in a
+    <a href="ScalSurfInt.html#ellipparab" title="Return using the Back button.">
+    previous exercise</a>.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle
+    A=\iint_S 1\,dS=\dfrac{\pi}{6}\left(17^{3/2}-1\right)
+    \approx36.2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The paraboloid is parametrized by:
+    \[
+    \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+    \]
+    From the
+    <a href="TanVecs.html#ellipparab" title="Return using the Back button.">
+    previous exercise</a>, the length of the normal is:
+    \[
+    |\vec N|=r\sqrt{4r^2+1}
+    \]
+    So the area is:
+    \[
+    A=\iint_S 1\,dS
+    =\int_0^{2\pi}\int_0^2 r\sqrt{4r^2+1}\,dr\,d\theta
+    \]
+  </p>
+  <p class="remark">
+    Notice that there is NO extra \(r\) in the integrand before the
+    \(dr\,d\theta\)! This is because \(r\) and \(\theta\) are not actually
+    polar or cylindrical coordinates. They are the parameters for a surface
+    which just happen to have the same names. The \(|\vec N|\) plays the roll
+    of the Jacobian and already contains an \(r\).
+  </p>
+  <p>
+    We continue the computation of the integral by making the substitution
+    \(u=4r^2+1\) and \(du=8r\,dr\):
+    \[\begin{aligned}
+    A&=\dfrac{\pi}{4}\int_1^{17} \sqrt{u}\,du
+    =\dfrac{\pi}{4}\left[\dfrac{2u^{3/2}}{3}\right]_1^{17} \\
+    &=\dfrac{\pi}{6}\left(17^{3/2}-1\right)
+    \approx36.2
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

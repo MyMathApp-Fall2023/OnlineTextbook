@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a2. General Decompositions | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Intro.html" title="Previous">&lArr;</a></li>
+      <li><a href="Coeffs1.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Partial Fractions</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  If this page is confusing, read it briefly and then reread it after the examples.
+</p>
+
+
+      
+      <h2>a2. General Decompositions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the <a href="Intro.html">previous page</a> we were able to integrate
+  the rational function \(\dfrac{x^4+2x-16}{x^3+4x}\) because we were
+  able to rewrite it as
+  \[
+  \dfrac{x^4+2x-16}{x^3+4x}=x-\dfrac{4}{x}+\dfrac{2}{x^2+4}
+  \]
+  where the first term is a polynomial, \(x\), and the remaining terms,
+  \(-\dfrac{4}{x}\) and \(\dfrac{2}{x^2+4}\), are rational functions whose
+  denominators, \(x\) and \(x^2+4\), are the factors of the original
+  denominator, \(x^3+4x\). Each of the three terms, \(x\),
+  \(\dfrac{4}{x}\) and \(\dfrac{2}{x^2+4}\) could then be integrated using
+  previous techniques. The same process will work (in principle) for any
+  rational function \(\dfrac{p(x)}{q(x)}\). Here are the steps:
+</p>
+<ol id="LongDiv">
+  <li>
+    <strong>Remove any Polynomial Part:</strong>
+    <br>
+    If the degree of \(p(x)\) is greater than or equal to the degree of
+    \(q(x)\), then we can write the fraction as
+    \[
+    \dfrac{p(x)}{q(x)}=r(x)+\dfrac{s(x)}{q(x)}
+    \]
+    where \(r(x)\) and \(s(x)\) are polynomials with the degree of \(s(x)\)
+    being less than the degree of \(q(x)\). Here \(p(x)\) is called the
+    <span class="defword">dividend</span>, \(q(x)\) is the
+    <span class="defword">divisor</span>, \(r(x)\) is the
+    <span class="defword">quotient</span>, and \(s(x)\) is the
+    <span class="defword">remainder</span>. You can find \(r(x)\) and \(s(x)\)
+    by <a href="LongDivPoly.html">Long Division of Polynomials</a>. From now on
+    we will assume this has been done so that the degree of \(p(x)\) is less
+    than the degree of \(q(x)\).
+  </li>
+  <li>
+    <strong>Cancel Common Factors:</strong>
+    <br>
+    Factor \(p(x)\) and \(q(x)\) and cancel any common factors. From now on
+    we will assume this has been done so that \(p(x)\) and \(q(x)\) have no
+    common factors.
+  </li>
+  <li>
+    <strong>Factor the Denominator \(q(x)\):</strong>
+    <br>
+    The <span class="hl">Unique Factorization Theorem</span> from algebra
+    says you can always factor a polynomial with <em>real</em> coefficients
+    into a product of <span class="hl">linear</span> factors, \((x-a)\), and
+    <span class="hl">irreducible quadratic</span> factors, \((x^2+rx+s)\)
+    and one <span class="hl">constant</span> factor, all with <em>real</em>
+    coefficients. The linear and quadratic factors may be repeated.
+    If a factor is repeated \(n\) times, \(n\) is called the
+    <span class="defword">multiplicity</span> of the factor.
+  </li>
+	<p class="remark">
+    A quadratic polynomial is <span class="defword">irreducible</span>
+    if it <strong>cannot</strong> be written as the product of two
+    <em>linear</em> factors with real coefficients. As a consequence,
+    by completing the square, an irreducible quadratic polynomial
+    \(x^2+rx+s\) can always be written as \((x-b)^2+c^2\).
+    <button class="toggle btn" data-toggle="Drop1">How and Why?</button>
+  </p>
+  <div class="toBeToggled" data-toggle="Drop1">
+    <p>
+      To complete the square on \(x^2+rx+s\), let \(b=-\dfrac{r}{2}\) and
+      add and subtract \(b^2\). Then
+      \[\begin{aligned}
+      x^2+rx+s&=x^2-2bx+s\\
+              &=x^2-2bx+b^2+s-b^2\\
+              &=(x-b)^2+e
+      \end{aligned}\]
+      where \(e=s-b^2\). Since \(x^2+rx+s\) is irreducible, \(e\) must be
+      positive.
+    </p>
+    <p>
+      <em>Why?</em> Because, if \(e\) is negative or zero, we
+      write it as \(e=-c^2\). Then
+      \[\begin{aligned}
+      x^2+rx+s&=(x-b)^2+e=(x-b)^2-c^2\\
+              &=(x-b-c)(x-b+c)
+      \end{aligned}\]
+      by factoring the difference of two squares. This expresses
+      \(x^2+rx+s\) as a product of two linear factors which is impossible
+      since it is irreducible. So \(e\) cannot be negative or zero.
+    </p>
+    <p>
+      Since \(e\) is positive, we write it as \(e=c^2\). Then
+      \[
+      x^2+rx+s=(x-b)^2+e=(x-b)^2+c^2
+      \]
+      as claimed.
+    </p>
+  </div>
+  <p>
+    It is useful to complete the square in these quadratic polynomials
+    because
+    <br>
+    (1) it will help us complete the partial fraction expansion and
+    <br>
+    (2) it will help us compute the resulting integrals.
+  </p>
+  <li>
+    <strong>Write out the General Partial Fraction Expansion for
+    \(\dfrac{p(x)}{q(x)}\):</strong>
+    <br>
+    The <span class="hl">Partial Fraction Theorem</span> from algebra says
+    \(\dfrac{p(x)}{q(x)}\)
+    can be uniquely written as a sum of terms which depend on the factors of
+    \(q(x)\): Here are the types of factors of \(q(x)\) and the correspond
+    terms in the expansion:
+    <ol>
+      <li>
+        <strong>Non-Repeated Linear Factors:</strong>
+        <br>
+        For each non-repeated linear factor \((x-a)\),
+        include a term of the form:
+        \[
+        \dfrac{A}{x-a}
+        \]
+      </li>
+      <li>
+        <strong>Repeated Linear Factors:</strong>
+        <br>
+        For each repeated linear factor \((x-a)^n\),
+        include terms of the form:
+        \[
+        \dfrac{A_1}{x-a}+\dfrac{A_2}{(x-a)^2}+\cdots+\dfrac{A_n}{(x-a)^n}
+        \]
+      </li>
+      <li>
+        <strong>Non-Repeated Quadratic Factors:</strong>
+        <br>
+        For each non-repeated quadratic factor \((x-b)^2+c^2\),
+        include a term of the form:
+        \[
+        \dfrac{B(x-b)+C}{(x-b)^2+c^2}
+        \]
+        <button class="toggle btn" data-toggle="Drop2">
+        Why write \(B(x-b)+C\) instead of \(Bx+C\)?</button>
+        <div class="toBeToggled note" data-toggle="Drop2">
+          <p>
+            We write the quadratic term in the form
+            \(\dfrac{B(x-b)+C}{(x-b)^2+c^2}\) instead of
+            \(\dfrac{Bx+C}{x^2+rx+s}\)for two reasons:
+            <br>
+            (1) We will use the number \(x=b\) in solving for the
+            coefficients \(B\) and \(C\), and
+            <br>
+            (2) It is easier to integrate
+            \(\dfrac{B(x-b)}{(x-b)^2+c^2}\) than \(\dfrac{Bx}{(x-b)^2+c^2}\).
+          </p>
+        </div>
+      </li>
+      <li>
+        <strong>Repeated Quadratic Factors:</strong>
+        <br>
+        For each repeated quadratic factor \(\left((x-b)^2+c^2\right)^n\)
+        include terms of the form:
+        \[
+         \dfrac{B_1(x-b)+C_1}{(x-b)^2+c^2}
+        +\dfrac{B_2(x-b)+C_2}{\left((x-b)^2+c^2\right)^2}
+        +\cdots
+        +\dfrac{B_n(x-b)+C_n}{\left((x-b)^2+c^2\right)^n}
+        \]
+      </li>
+    </ol>
+    <p class="example" data-number="1">
+      For example, the general partial fraction decomposition of
+      \(\dfrac{x^3-4x^2+1}{(x-5)(x-2)^3((x-1)^2+4)(x^2+9)^2}\) is:
+      \[\begin{aligned}
+      &\dfrac{x^3-4x^2+1}{(x-5)(x-2)^3((x-1)^2+4)(x^2+9)^2} \\
+      &\quad=\dfrac{A_1}{x-5}+\dfrac{A_2}{x-2}+\dfrac{A_3}{(x-2)^2}+\dfrac{A_4}{(x-2)^3} \\
+      &\qquad+\dfrac{B_1(x-1)+C_1}{(x-1)^2+4}+\dfrac{B_2x+C_2}{x^2+9}+\dfrac{B_3x+C_3}{(x^2+9)^2}
+      \end{aligned}\]
+      In practice, we don't use subscripts; instead we use different capital letters.
+    </p>
+  </li>
+  <li>
+    <strong>Find the Coefficients \(A_i\), \(B_i\) and \(C_i\):</strong>
+    <br>
+    There are various techniques for finding the coefficients \(A_i\),
+    \(B_i\) and \(C_i\). Some are discussed in the examples below and
+    more are discussed on the <a href="Coeffs1.html">next two pages</a>.
+  </li>
+</ol>
+
+        <div class="rule" id="examples"></div>
+
+<p>
+  We are now ready for examples. The first shows how to remove the
+  polynomial part. The others show how to handle each type of factor in the
+  factorization of \(q(x)\) and a little about finding the coefficients.
+</p>
+<ol>
+  <li><a href="Poly.html">Removing a Polynomial Part</a></li>
+  <li><a href="Lin.html">Non-Repeated Linear Factors</a></li>
+  <li><a href="Lin2.html">Repeated Linear Factors</a></li>
+  <li><a href="Quad.html">Non-Repeated Quadratic Factors</a></li>
+  <li><a href="Quad2.html">Repeated Quadratic Factors</a></li>
+</ol>
+<p>
+  On the <a href="Coeffs1.html">next two pages</a> we will summarize the
+  techniques for finding the coefficients in a partial fraction expansion.
+</p>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice finding General Partial Fraction Expansions
+  by using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ParFracGenDecomp.maplet" download>Partial Fractions: General Decomposition</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p class="maplet-ref"></p>
+<p>
+  A Maplet on finding the coefficients is on the next page.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

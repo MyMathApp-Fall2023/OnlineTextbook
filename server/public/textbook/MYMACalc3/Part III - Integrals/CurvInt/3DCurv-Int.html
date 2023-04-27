@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Ellipsoid Example | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="3DCurv-Jac.html" title="Previous">&lArr;</a></li>
+      <li><a href="3DCurv-Appl.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Integrating in 3D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>4. Ellipsoid Example</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Below is an example of using 3D curvilinear coordinates to compute an
+  integral over an ellipsoid.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    Compute \(\displaystyle\iiint\limits_R z^2\,dV\), where \(R\) is the region bounded
+    by the ellipsoid \(x^2+4y^2+9z^2=36\).
+  </p>
+  <div class="center">
+    <img src="graphics/3Dcurvint-example.jpg" alt="3Dcurvint-example">
+  </div>
+</div>
+<p class="sol">
+  We first write the ellipsoid in standard form:
+  \[
+  \dfrac{x^2}{36}+\dfrac{y^2}{9}+\dfrac{z^2}{4}=1
+  \]
+  There are two reasonable coordinate systems to use:
+</p>
+<p class="meth" data-number="1">
+  Use the coordinate system given by the component
+  equations \(x=6u\), \(y=3v\) and \(z=2w\) or the vector equation
+  \((x,y,z)=\vec{R}(u,v,w)=(6u,3v,2w)\). The
+  benefit of this coordinate system is that it converts the equation of the
+  ellipsoid into the equation for the sphere
+  \[
+  u^2+v^2+w^2=1
+  \]
+  So the region of integration changes from \(R\), the interior of an ellipsoid
+  in the \(xyz\)-space, to \(R'\), the interior of a sphere in the
+  \(uvw\)-space which can be integrated in spherical coordinates. For this
+  coordinate system, the Jacobian is
+  \[
+  J=\left|\dfrac{\partial(x,y,z) }{\partial(u,v,w) }\right|
+  =\left|
+  \begin{vmatrix}
+  \dfrac{\partial x}{\partial u}&\dfrac{\partial y}{\partial u}&\dfrac{\partial z}{\partial u} \\[6pt]
+  \dfrac{\partial x}{\partial v}&\dfrac{\partial y}{\partial v}&\dfrac{\partial z}{\partial v} \\[6pt]
+  \dfrac{\partial x}{\partial w}&\dfrac{\partial y}{\partial w}&\dfrac{\partial z}{\partial w}
+  \end{vmatrix}
+  \right|=\left|
+  \begin{vmatrix}
+  6 & 0 & 0 \\
+  0 & 3 & 0 \\
+  0 & 0 & 2
+  \end{vmatrix}
+  \right|=36
+  \]
+  So the integral becomes
+  \[
+  \iiint\limits_R z^2\,dV
+  =\iiint\limits_{R'} z^2\,J\,du\,dv\,dw
+  =\iiint\limits_{u^2+v^2+w^2 \le 1}(2w)^2 36\,du\,dv\,dw
+  \]
+  We now switch to spherical coordinates,
+  \[
+  u=\rho\sin\phi\cos\theta \qquad v=\rho\sin\phi\sin\theta
+  \qquad \text{and} \qquad w=\rho\cos\phi
+  \]
+  for which the differential of volume is
+  \(du\,dv\,dw=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\). So the integral becomes
+  \[\begin{aligned}
+  \iiint\limits_R z^2\,dV
+  &=144\int_0^{2\pi}\int_0^\pi\int_0^1
+  (\rho\cos\phi)^2\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  &=144\int_0^{2\pi} 1\,d\theta\int_0^\pi \cos^2\phi\sin\phi\,d\phi\int_0^1\rho^4 \,d\rho \\
+  &=144(2\pi) \left[-\,\dfrac{\cos^3\theta}{3}\right]_0^\pi
+  \left[\dfrac{\rho^5}{5}\right]_0^1 \\
+  &=96\pi(-(-1)^3+(1)^3) \left(\dfrac{1}{5}\right)
+  =\dfrac{192\pi}{5}
+  \end{aligned}\]
+</p>
+
+<hr width="80%">
+
+<p class="meth" data-number="2">
+  Rather than do two successive coordinate transformations,
+  from \((x,y,z)\) to \((u,v,w)\) to
+  \((\rho,\phi,\theta)\), we can do it all at once. We use an <span class="hl">
+  ellipsoidal spherical coordinate system</span>, given by the component equations,
+  \[
+  x=6\rho\sin\phi\cos\theta \qquad y=3\rho\sin\phi\sin\theta
+  \qquad \text{and} \qquad z=2\rho\cos\phi
+  \]
+  or by the vector equation
+  \[
+  (x,y,w)=\vec{R}(\rho,\phi,\theta)
+  =(6\rho\sin\phi\cos\theta,3\rho\sin\phi\sin\theta,2\rho\cos\phi)
+  \]
+  The Jacobian is
+  \[
+  J=\left|\dfrac{\partial(x,y,z) }{\partial(\rho,\phi,\theta) }\right|
+  =\left|
+  \begin{vmatrix}
+  \dfrac{\partial x}{\partial\rho}  &\dfrac{\partial y}{\partial\rho}  &\dfrac{\partial z}{\partial\rho} \\[6pt]
+  \dfrac{\partial x}{\partial\phi}  &\dfrac{\partial y}{\partial\phi}  &\dfrac{\partial z}{\partial\phi} \\[6pt]
+  \dfrac{\partial x}{\partial\theta}&\dfrac{\partial y}{\partial\theta}&\dfrac{\partial z}{\partial\theta}
+  \end{vmatrix}
+  \right|=\cdots=36\rho^2\sin\phi
+  \]
+  So the integral is
+  \[\begin{aligned}
+  \iiint_R &z^2\,dV
+  =\iiint\limits_R z^2\,dV
+  =\iiint_R z^2\,J\,d\rho\,d\phi\,d\theta \\
+  &=\int_0^{2\pi}\int_0^\pi\int_0^1
+  (2\rho\cos\phi)^2 36\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  &=\cdots=\dfrac{192\pi}{5}
+  \end{aligned}\]
+</p>
+<p class="remark">
+  Obviously, method 1 is easier since we don't need to compute a hard Jacobian.
+  However, it is important to know it can be done the other way.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Notice that while we used the letters \(\rho\), \(\phi\) and \(\theta\) in both
+  methods, they do NOT measure the radius, polar angle and the azimuthal angle
+  in the \(xyz\)-space.
+</p>
+<div class="column">
+  <p class="remark">
+    The coordinate system
+    \[
+    (x,y,z)=\vec{R}(\rho,\phi,\theta)
+    =(6\rho\sin\phi\cos\theta,3\rho\sin\phi\sin\theta,2\rho\cos\phi)
+    \]
+    is called an <span class="defword">ellipsoidal spherical coordinate system</span>.
+    Here is its coordinate grid. For each value of \(\rho\), there is an
+    ellipsoid, for each value of \(\phi\) there is an elliptical cone and for
+    each value of \(\theta\) there is a vertical half plane through the \(z\)-axis.
+  </p>
+  <div class="center">
+    <img src="graphics/3Dcurvgrid-ellipsoidal_spherical_coordplot.jpg"
+    alt="3Dcurvgrid-ellipsoidal_spherical_coordplot">
+  </div>
+</div>
+<p>
+  There are more exercises using ellipsoidal spherical coordinates on the
+  <a href="3DCurv-Appl.html#ex_ellipsoid">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a1. Volume by Slicing | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Rev.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a1. Volume by Slicing</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+  Integrals can also be used to find volumes! We start with a method which
+  slices the volume perpendicular to an axis. This time we begin with an
+  example.
+</p>
+<p class="example" data-number="1">
+  Find the volume of the solid whose base is the semicircle
+	\(0 \le y \le \sqrt{9-x^2}\) and whose cross-sections perpendicular to
+	the \(x\)-axis are squares. Here are pictures of the base, the solid and a
+  cross-sectional slice through the solid at position \(x\) so we can
+  see the square cross-section:
+</p>
+<div class="center">
+  <figure>
+    <img src="graphics/eg_sqrt(9-x^2)_sq_base.jpg" alt="eg_sqrt(9-x^2)_sq_base">
+    <figcaption>The Base</figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/eg_sqrt(9-x^2)_sq_solid.jpg" alt="eg_sqrt(9-x^2)_sq_solid">
+    <figcaption>The Solid</figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/eg_sqrt(9-x^2)_sq_sliced.jpg" alt="eg_sqrt(9-x^2)_sq_sliced">
+    <figcaption>The Solid Sliced at \(x\)</figcaption>
+  </figure>
+</div>
+<p>
+  <span class="redbig">Caution:</span> &emsp;
+  The base here is standing up at the back of the solid, since that is
+	where we usually draw the \(xy\)-plane.
+</p>
+<p class="sol">
+  As with all integrals, to compute the volume, we cut the volume up into
+  small pieces, find the volume of each piece, add them up and take the limit
+  as the number of pieces becomes large (\(n\rightarrow\infty\))
+  and the size of each piece gets small (\(\Delta x\rightarrow0\)).
+	In this case, the pieces are slices perpendicular to the \(x\)-axis,
+	each of thickness \(\Delta x\). So the above picture should be regarded
+	as a <span class="hl">loaf of bread which has been sliced</span>. Below
+  is a picture of one slice, the slice at \(x\), and an animation showing
+	the slices being added up to form the solid:
+</p>
+<div class="center">
+	<figure>
+    <img src="graphics/eg_sqrt(9-x^2)_sq_slice.jpg" alt="eg_sqrt(9-x^2)_sq_slice">
+		<figcaption>A Slices</figcaption>
+	</figure>
+  <figure>
+    <img src="graphics/eg_sqrt(9-x^2)_sq_anim.gif" alt="eg_sqrt(9-x^2)_sq_anim">
+    <!-- <video src="graphics/scircanimate.mp4" autoplay controls loop></video> -->
+    <figcaption>The volume is formed by adding up slices.</figcaption>
+  </figure>
+</div>
+<p>
+  The volume of one slice is approximately the area of the square face times
+  the thickness \(\Delta x\). To find the area of the square, we need to know
+  the length of a side. But this is just the height of the semicircle at the
+  position \(x\) of the slice. So the side is
+	\(\displaystyle s=y=\sqrt{9-x^2}\) and the area is:
+	\[
+	A(x)=s^2=\sqrt{9-x^2}^2=9-x^2
+	\]
+	Hence the volume of the slice is approximately:
+	\[
+	\Delta V
+	\approx A(x)\Delta x
+	=(9-x^2)\Delta x
+	\]
+	We now add up these volumes and take the limit as the number of slices
+	becomes large. The result gives the volume as an integral which we evaluate:
+  \[\begin{aligned}
+  V&=\lim_{n\rightarrow\infty}\sum_{i=1}^n\Delta V
+	=\lim_{n\rightarrow\infty}\sum_{i=1}^n(9-x^2)\,\Delta x \\
+  &=\int_{-3}^3 (9-x^2)\,dx
+	=\left[9x-\dfrac{x^3}{3}\right]_{-3}^3 \\
+  &=(27-9)-(-27+9)=36
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  In other volume by slicing problems, the shape of the base may change and
+  the shape of the cross-sections may change, but in all such problems, we
+  slice the volume perpendicular to some axis, compute the cross-sectional
+  area (This is the hard part.) and integrate over the length of the solid.
+</p>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Volume by Slicing">
+  If a solid extends from \(x=a\) to \(x=b\) and the cross-sections perpendicular
+  to the \(x\)-axis have area \(A(x)\), then the volume is:
+  \[
+	V=\int_a^b A(x)\,dx
+	\]
+  If a solid extends from \(y=a\) to \(y=b\) and the cross-sections perpendicular
+  to the \(y\)-axis have area \(A(y)\), then the volume is:
+  \[
+	V=\int_a^b A(y)\,dy
+	\]
+</p>
+
+        <div class="rule" id="slice_eg1"></div>
+
+<p class="remark">
+  In practice, you do not need to go back to first principles as in the
+  example. Rather you will need to work to find a formula for the
+  cross-sectional area. Draw the base; draw a cross section; find the length
+  of the base of the cross section and find the area of the cross section.
+</p>
+<p>
+  Here is another example in which the cross-sections are perpendicular to
+  the \(y\)-axis.
+</p>
+<div class="center">
+  <a href="Slice_eg1.html">Example</a>
+</div>
+
+				<div class="rule" id="slice_ex1"></div>
+
+<p>
+  Now you try some:
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the volume of the solid whose base is the semicircle
+		\(0 \le x \le \sqrt{9-y^2}\) and whose cross-sections perpendicular
+		to the \(x\)-axis are rectangles whose height is half of the base.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1a"></button>
+    <button class="toggle has-hint" data-toggle="HintX1b"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1a">
+  <p>
+    Draw the base and one cross-section.
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1b">
+  <p>
+    Here are the base with one cross-section and an accumulation of cross
+    sections to form the final solid:
+  </p>
+  <div class="center">
+    <figure>
+      <img src="graphics/ex_sqrt(9-y^2)_rect_base.jpg" alt="ex_sqrt(9-y^2)_rect_base">
+      <figcaption class="center">
+        The Base with
+        <br> one Cross Section
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/ex_sqrt(9-y^2)_rect_anim.gif" alt="ex_sqrt(9-y^2)_rect_anim">
+      <figcaption>
+        Accumulating Cross Sections
+        <br> and the Solid
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(V=36\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    See the second hint for pictures of the base with one cross-section and
+    an accumulation of cross sections to form the final solid:
+  </p>
+  <p>
+    The equation of the circle is \(x^2+y^2=9\). The cross section sits on
+    the base on the line segment from \(y_-=-\sqrt{9-x^2}\) to
+    \(y_+=\sqrt{9-x^2}\). So its length is \(b=y_+-y_-=2\sqrt{9-x^2}\).
+    The height is half the length, \(h=\dfrac{1}{2}b=\sqrt{9-x^2}\).
+    So the cross-sectional area is
+		\[
+    A=bh=2(9-x^2)
+		\]
+		and the volume is
+    \[\begin{aligned}
+    V&=\int_0^3 2(9-x^2)\,dx
+		=2\left[9x-\dfrac{x^3}{3}\right]_0^3 \\[3pt]
+    &=2(27-9)=36
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the volume of the solid whose base is the circle \(x^2+y^2=4\), and
+    whose cross-sections perpendicular to the \(x\)-axis are equilateral triangles.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <div class="column">
+    <p>
+      Here are the base and a crosssection at position \(x\):
+    </p>
+    <div class="center">
+      <img src="graphics/ex_x^2+y^2=4_equitri_base.jpg" alt="ex_x^2+y^2=4_equitri_base">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(V=\dfrac{32}{3}\sqrt{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Here are the base with one cross-section and an accumulation of cross
+    sections to form the final solid:
+  </p>
+  <div class="center">
+    <figure>
+      <img src="graphics/ex_x^2+y^2=4_equitri_base.jpg" alt="ex_x^2+y^2=4_equitri_base">
+      <figcaption class="center">
+        The Base with
+        <br> one Cross Section
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/ex_x^2+y^2=4_equitri_anim.gif" alt="ex_x^2+y^2=4_equitri_anim">
+      <figcaption>
+        Accumulating Cross Sections
+        <br> and the Solid
+      </figcaption>
+    </figure>
+  </div>:
+  <div class="column">
+  	<p data-col-width="60%">
+      The circle is \(x^2+y^2=4\). So the endpoints of the base of the
+      triangle are at \(y_\pm=\pm\sqrt{4-x^2}\). So its length is
+      \(b=y_+-y_-=2\sqrt{4-x^2}\). The altitude is \(\sqrt{3}\) times half
+      the base: \(h=\sqrt{3}\sqrt{4-x^2}\).
+      <br>
+      (Think about the \(30^\circ-60^\circ-90^\circ\) which is half of an
+      equilateral triangle.)
+      <br>
+      So the area of the equilateral triangle is
+      \[\begin{aligned}
+      A&=\dfrac{1}{2}bh
+      =\dfrac{1}{2}2\sqrt{4-x^2}\sqrt{3}\sqrt{4-x^2} \\
+      &=\sqrt{3}(4-x^2)
+      \end{aligned}\]
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_equitri_dim.jpg" alt="ex_equitri_dim">
+    </div>
+  </div>
+  <p>
+    Integrating this crosssectional area gives the volume:
+    \[\begin{aligned}
+    V&=\int_{-2}^2 A(x)\,dx
+    =\int_{-2}^2 \sqrt{3}(4-x^2)\,dx \\
+    &=\sqrt{3}\left[ 4x-\dfrac{x^3}{3}\right]_{-2}^2 \\
+    &=\sqrt{3}\left[ 8-\dfrac{8}{3}\right]-\sqrt{3}\left[-8+\dfrac{8}{3}\right]
+    =\dfrac{32}{3}\sqrt{3}
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can practice computing Volumes by Slicing by using the following Maplet (requires Maple
+  on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/VolBySlicing.maplet" download>Volume by Slicing</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Line Integrals of Scalars | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ArcLength.html" title="Previous">&lArr;</a></li>
+      <li><a href="MassCM.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+<p>
+  The arc length integral can be generalized to the <span class="hl">integral of any
+  function</span>.
+</p>
+
+      
+      <h2>b. Line Integrals of Scalars</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def" data-title="Line Integral of a Scalar Function">
+  The <span class="defword">line integral of a function</span>, \(f(x,y,z)\),
+  along a parametric curve, \(\vec r(t)=\left(x(t),y(t),z(t)\right)\), between
+  \(A=\vec r(a)\) and \(B=\vec r(b)\) is given by
+  \[
+  \int_A^B f\,ds
+  =\int_a^b f(\vec r(t))|\vec v|\,dt
+  \]
+  where \(f(\vec r(t))\) is the composition of \(f\) and \(\vec r\),
+  i.e. the function \(f(x,y,z)\) with \(x\), \(y\) and \(z\) replaced by
+  \(x(t)\), \(y(t)\) and \(z(t)\). The composition \(f(\vec r(t))\) is
+  called the <span class="defword">value of the function along the curve</span>
+  or the <span class="defword">restriction of the function to the curve</span>.
+</p>
+
+<p class="remark">
+  We sometimes write \(f(t)\) to mean \(f(\vec r(t))\), the value of \(f\) at
+  time \(t\), even though this is not mathematically correct. Consequently,
+  this is sometimes called <span class="hl">abuse of notation</span>.
+</p>
+<p class="remark">
+  Notice that we again switch the limits on the integral from the abstract
+  points \(A\) and \(B\) to the values \(a\) and \(b\) of the parameter \(t\) when we
+  switch from the integral with the general differential \(ds\) to the integral
+  with the parameter differential \(dt\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int_{(0,0,0)}^{(1,1,2/3)} (3xz+y^2)\,ds\) along the
+  twisted cubic \(\vec r(t)=\left(t,t^2,\dfrac{2}{3}t^3\right)\).
+</p>
+<p class="sol">
+  The value of the function along the curve is
+  \[
+  f(\vec r(t))
+  =3x(t)z(t)+y(t)^2
+  =3(t)\left(\dfrac{2}{3}t^3\right)+(t^2)^2=3t^4
+  \]
+  The velocity is \(\vec v=(1,2t,2t^2)\) and its length is
+  \(|\vec v|=\sqrt{1+4t^2+4t^4}=\sqrt{(1+2t^2)^2}=1+2t^2\).
+  Finally, the endpoints are:
+  \[
+  (0,0,0)=\vec r(0) \qquad \left(1,1,\dfrac{2}{3}\right)=\vec r(1)
+  \]
+  So
+  \[\begin{aligned}
+  \int_{(0,0,0)}^{(1,1,2/3)} (3xz+y^2)\,ds
+  &=\int_0^1 f(\vec r(t))|\vec v|\,dt
+  =\int_0^1 3t^4(1+2t^2)\,dt \\
+  &=\left[\dfrac{3}{5}t^5+\dfrac{6}{7}t^7\right]_0^1
+  =\dfrac{3}{5}+\dfrac{6}{7}=\dfrac{51}{35}
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+    <div class="dotfillex">
+      <p class="exercise" data-number="2" data-col-width="60%">
+        Compute \(\displaystyle \int x^2\,ds\) along the helix
+        \(x=4\cos\dfrac{z}{3},\quad y=4\sin\dfrac{z}{3}\)
+        between \(z=0\) and \(z=6\pi\). You can rotate this plot with your mouse.
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2"></button>
+        <button class="toggle has-ans" data-toggle="AnsX2"></button>
+        <button class="toggle has-sol" data-toggle="SolX2"></button>
+      </p>
+    </div>
+  </div>
+  <div class="center" data-col-width="40%">
+    <x3d width='250px' height='250px'>
+      <scene>
+        <inline url="graphics/eg_LineIntScal_helix.x3d"> </inline>
+      </scene>
+    </x3d>
+  </div>
+</div>
+<!-- <img src="graphics/eg_LineIntScal_helix.jpg" alt="eg_LineIntScal_helix"> -->
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    For functions of \(z\), the differential of arc length is
+    \[
+    ds=\sqrt{\left(\dfrac{dx}{dz}\right)^2+\left(\dfrac{dy}{dz}\right)^2+1}\,dz
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \int x^2\,ds=80\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The derivatives are:
+    \[
+    \dfrac{dx}{dz}=-\,\dfrac{4}{3}\sin\dfrac{z}{3}
+    \qquad \text{and} \qquad
+    \dfrac{dy}{dz}=\dfrac{4}{3}\cos\dfrac{z}{3}
+    \]
+    So the differential of arc length is
+    \[\begin{aligned}
+    ds&=\sqrt{\left(\dfrac{dx}{dz}\right)^2+\left(\dfrac{dy}{dz}\right)^2+1}\,dz \\
+    &=\sqrt{\left(-\,\dfrac{4}{3}\sin\dfrac{z}{3}\right)^2
+           +\left(\dfrac{4}{3}\cos\dfrac{z}{3}\right)^2+1}\,dz \\
+    &=\sqrt{\dfrac{16}{9}+1}\,dz=\dfrac{5}{3}\,dz
+    \end{aligned}\]
+    Thus, using the identity \(\cos^2A=\dfrac{1+\cos2A}{2}\):
+    \[\begin{aligned}
+    \int x^2\,ds
+    &=\int_0^{6\pi} 16\cos^2\left(\dfrac{z}{3}\right)\dfrac{5}{3}\,dz
+    =\dfrac{80}{3}\int_0^{6\pi} \dfrac{1+\cos\dfrac{2z}{3}}{2}\,dz \\
+    &=\dfrac{40}{3}\left[z+\dfrac{3}{2}\sin\dfrac{2z}{3}\right]_0^{6\pi}
+    =80\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="column">
+  <div>
+    <div class="dotfillex">
+      <p class="exercise" data-number="3" data-col-width="60%">
+        Compute \(\displaystyle \int_{(4,0,0)}^{(4,0,6\pi)} (x^2+y^2+z^2)\,ds\)
+        along the helix \(\vec r(t)=(4\cos t,4\sin t,3t)\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX3"></button>
+        <button class="toggle has-sol" data-toggle="SolX3"></button>
+      </p>
+    </div>
+    <br>
+    <p class="remark">
+      Notice this is the same helix as in the previous exercise, except written
+      in parametric form.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_LineIntScal_helix.jpg" alt="eg_LineIntScal_helix">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\displaystyle \int_{(4,0,0)}^{(4,0,6\pi)} (x^2+y^2+z^2)\,ds
+    =160\pi+120\pi^3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    We first identify the integrand and evaluate it on the curve:
+    \[\begin{aligned}
+    f&=x^2+y^2+z^2 \\
+    f(\vec r(t))&=16\cos^2t+16\sin^2t+9t^2=16+9t^2
+    \end{aligned}\]
+    The velocity is \(\vec v(t)=(-4\sin t,4\cos t,3)\) and its length is
+    \(|\vec v|=5\).
+    Also, the point \((4,0,0)\) occurs at \(t=0\) and the point \((4,0,6\pi)\)
+    occurs at \(t=2\pi\). So the integral becomes:
+    \[\begin{aligned}
+    \int_{(4,0,0)}^{(4,0,6\pi)} &(x^2+y^2+z^2)\,ds
+    =\int_0^{2\pi} (16+9t^2)5\,dt \\
+    &=5\left[\rule{0pt}{10pt}16t+3t^3\right]_0^{2\pi}=160\pi+120\pi^3
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  We look at applications starting on the <a href="MassCM.html">
+  next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

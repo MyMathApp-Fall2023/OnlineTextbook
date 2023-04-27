@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Average Value on a Surface | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="SurfArea.html" title="Previous">&lArr;</a></li>
+      <li><a href="Centroid.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Applications of Scalar Surface Integrals</h2>
+
+
+      
+      <h2>2. Average Value on a Surface</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Just as we can find the average value of a function over a region in a plane
+  or a region in space or on a curve, we can also find the average value of a
+  function over a surface. For example, we may wish to find the average
+  temperature of a plate or a bowl given the temperature function or find the
+  average density of a surface if we are given its mass density function. In
+  such cases, we first calculate the total value of the quantity by integrating
+  the quantity over the region. Then we divide by the total surface area to
+  find the amount of the quantity per unit area (on average).
+  \[
+  f_\text{ave}=\dfrac{1}{A}\iint_S f\,dS
+  =\dfrac{\displaystyle\iint_S f(\vec R(u,v))\,|\vec{N}|\,du\,dv}
+         {\displaystyle\iint_S |\vec{N}|\,du\,dv}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  For example, suppose we want to find the average temperature on a plate,
+  \(P\), lying in the plane \(3x+2y-z=5\) over the region \(0 \le x \le 3\)
+  and \(1 \le y \le 4\) if the temperature at any point on the plate is
+  \(T=2x^2y\), as shown in the plots.
+</p>
+<div class="center">
+  <figure>
+    <figcaption>Plane in \(\mathbb{R}^3\)</figcaption>
+    <img src="graphics/AvgVal_example2.jpg" alt="AvgVal_example2">
+  </figure>
+  &emsp;
+  <figure>
+    <figcaption>Temperature on the Plane</figcaption>
+    <img src="graphics/AvgVal_example.jpg" alt="AvgVal_example">
+  </figure>
+</div>
+<big>PY: Check the 3D plot. Make y axis go down to 0.
+Make Temp constrained scaling.</big>
+<p class="sol">
+  Since the plane is given as a graph, we may parametrize it by
+  \(\vec R(x,y)=\left\langle x,y,3x+2y-5\right\rangle\). Then
+  \[\begin{aligned}
+  \vec{e}_x&=\left\langle 1,0,3\right\rangle \\
+  \vec{e}_y&=\left\langle 0,1,2\right\rangle \\
+  \vec{N}&=\vec{e}_x\times\vec{e}_y=\left\langle -3,-2,1\right\rangle \\
+  |\vec{N}|&=\sqrt{9+4+1}=\sqrt{14}
+  \end{aligned}\]
+  We can now find the surface area of the section of the plane we are
+  interested in:
+  \[\begin{aligned}
+  A&=\iint_P \,dS
+  =\iint_P |\vec{N}|\,du\,dv \\
+  &=\int_1^4\int_0^3 \sqrt{14}\,dx\,dy
+  =\sqrt{14}\cdot3\cdot3=9\sqrt{14}
+  \end{aligned}\]
+  Now we need to integrate the temperature function over the region:
+  \[\begin{aligned}
+  \iint_P &T\,dS
+  =\iint_P T|\vec{N}|\,du\,dv \\
+  &=\int_1^4\int_0^3 2x^2y\sqrt{14}\,dx\,dy
+  =\sqrt{14}\left[\dfrac{x^3}{3}\right]_{x=0}^3\left[y^2\dfrac{}{}\right]_{y=1}^4 \\
+  &=\sqrt{14}(9)(16-1)\,dy
+  =135\sqrt{14}
+  \end{aligned}\]
+  Finally, we can find \(T_\text{ave}\):
+  \[
+  T_\text{ave}=\dfrac{1}{A}\iint_P T\,dS
+  =\dfrac{135\sqrt{14}}{9\sqrt{14}}=15
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the average value of the function \(f=\sqrt{4x^2+4y^2+1}\) on
+    the piece of the elliptic paraboloid \(z=x^2+y^2\) below \(z=4\).
+    The length of the
+    <a href="ScalSurfInt.html#ellipparab" title="Return using the Back button.">
+    normal vector</a> and the
+    <a href="SurfArea.html#ellipparab" title="Return using the Back button.">
+    area</a> were found in previous exercises.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle f_\text{ave}=\dfrac{216}{\left(17^{3/2}-1\right)}
+  \approx3.13\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The elliptic paraboloid is parametrized by:
+    \[
+    \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+    \]
+    In a
+    <a href="SurfArea.html#hyperparab" title="Return using the Back button.">
+    previous exercise</a> the area was found to be:
+    \[
+    A=\int_0^{2\pi}\int_0^2 r\sqrt{4r^2+1}\,dr\,d\theta
+    =\dfrac{\pi}{6}\left(17^{3/2}-1\right)
+    \approx36.2
+    \]
+    We want to compute the average of the function
+    \[
+    f=\sqrt{4x^2+4y^2+1}=\sqrt{4r^2+1}
+    \]
+    Its integral is:
+    \[\begin{aligned}
+    \iint_S f\,dS
+    &=\int_0^{2\pi}\int_0^2 \sqrt{4r^2+1}\,r\sqrt{4r^2+1}\,dr\,d\theta \\
+    &=2\pi\int_0^2 (4r^3+r)\,dr
+    =2\pi\left[r^4+\dfrac{r^2}{2}\right]_0^2 \\
+    &=2\pi\left(16+2\right)
+    =36\pi
+    \end{aligned}\]
+    So the average value of \(f\) is:
+    \[\begin{aligned}
+    f_\text{ave}&=\dfrac{1}{A}\iint_S f\,dS
+    =\dfrac{6}{\left(17^{3/2}-1\right)\pi}36\pi \\
+    &=\dfrac{216}{\left(17^{3/2}-1\right)}
+    \approx3.13
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

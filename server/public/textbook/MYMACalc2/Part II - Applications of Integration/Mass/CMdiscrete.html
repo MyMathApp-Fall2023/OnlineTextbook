@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Discrete Masses | 11. Mass and Center of Mass</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MassBar.html" title="Previous">&lArr;</a></li>
+      <li><a href="CMBar.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Mass and Center of Mass</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Center of Mass</h2>
+
+<p>
+  This page is not calculus, but provides the background physics for the
+  subsequent pages.
+</p>
+
+
+      
+      <h2>1. Discrete Masses</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p class="genexample" data-number="1">
+    Consider a balance beam with several weights (here \(3\)) at various
+    positions. Find the <span class="defword">center of mass</span>,
+    \(\bar{x}\), which is the position for the pivot at which the weights
+    are exactly balanced.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_balance.jpg" alt="eg_balance">
+  </div>
+</div>
+<p class="gensol">
+  From physics we know that the balance condition is that the torques
+  (the product of the weight and the lever arm) are exactly balanced.
+  With \(3\) masses arranged as in the picture, this says
+  \[
+  m_1g(\bar{x}-x_1)=m_2g(x_2-\bar{x})+m_3g(x_3-\bar{x})
+  \]
+  Notice that the lever arms are all <em>positive</em>, since for the mass
+  to the left of the pivot \(\bar{x}-x_1 \gt 0\) while for the masses to the
+  right of the pivot \(x_2-\bar{x} \gt 0\) and \(x_3-\bar{x} \gt 0\).
+  Also notice that we have assumed that there are two masses to the right
+  of the pivot and one to the left.
+  However, this is not important since we can rewrite the balance equation as
+  \[
+  m_1g(\bar{x}-x_1)+m_2g(\bar{x}-x_2)+m_3g(\bar{x}-x_3)=0
+  \]
+  so that there is no distinction between masses on the left and masses on the
+  right. We wish to solve this equation for the position of the pivot, the
+  center of mass \(\bar{x}\). So we cancel \(g\)'s, collect terms involving
+  \(\bar{x}\) and take the remaining terms to the other side:
+  \[
+  (m_1+m_2+m_3)\bar{x}=m_1x_1+m_2x_2+m_3x_3
+  \]
+  So the center of mass is at:
+  \[
+  \bar{x}=\dfrac{m_1x_1+m_2x_2+m_3x_3}{m_1+m_2+m_3}
+  \]
+  Notice that the same derivation would work for any number of masses, say
+  \(n\), and the result would be:
+  \[
+  \bar{x}
+  =\dfrac{m_1x_1+m_2x_2+\cdots+m_nx_n}{m_1+m_2+\cdots+m_n}
+  =\dfrac{\sum\limits_{i=1}^n m_ix_i}{\sum\limits_{i=1}^n m_i}
+  \]
+  where we have rewritten the result using summation notation. The
+  denominator is just the <span class="defword">total mass</span>:
+  \[
+  M=\sum_{i=1}^n m_i=m_1+m_2+\cdots+m_n
+  \]
+  The numerator is called the <span class="defword">first moment of the mass</span>:
+  \[
+  M_1=\sum_{i=1}^n m_ix_i=m_1x_1+m_2x_2+\cdots+m_nx_n
+  \]
+  In terms of these, the <span class="defword">center of mass</span> is:
+  \[
+  \bar{x}=\dfrac{M_1}{M}
+  \]
+  <button class="toggle" data-toggle="Note1">Are there higher moments?</button>
+</p>
+
+<div class="toBeToggled note" data-toggle="Note1">
+  <p>
+    When you hear the word <strong>first</strong> moment, you naturally ask:
+    "What are the second and higher moments?""
+    <br><br>
+    The <span class="defword">second moment of the mass</span> is:
+    \[
+    M_2=\sum_{i=1}^n m_ix_i^2
+    \]
+    and similarly, the
+    <span class="defword">\(k^\text{th}\) moment of the mass</span> is:
+    \[
+    M_k=\sum_{i=1}^n m_ix_i^k
+    \]
+    These are used in various physical applications, for example, the second
+    moment occurs in the formulas for moment of inertia on a
+    <a href="MomInertia.html"
+    title="Return using the Back button.">later page</a>.
+  </p>
+</div>
+<p>
+  In terms of these, the <em>center of mass</em> is
+  \[\bar{x}=\displaystyle\frac{M_{1}}{M}\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Center of Mass for Discrete Masses">
+  The <span class="defword">center of mass</span> of \(n\) masses
+  \(m_1,m_2,\ldots m_n\) located at \(x_1,x_2,\ldots x_n\) respectively is:
+  \[
+  \bar{x}=\dfrac{M_1}{M}
+  \]
+  where the <span class="defword">total mass</span> is:
+  \[
+  M=\sum_{i=1}^n m_i
+  \]
+  and the <span class="defword">first moment of the mass</span> is:
+  \[
+  M_1=\sum_{i=1}^n m_ix_i
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <div>
+    	<p class="exercise" data-number="2">
+        Find the total mass and the center of mass of four masses whose masses and
+        locations are
+      </p>
+      <table class="center">
+        <tbody>
+          <tr>
+            <th style="border: 1px solid black">\(i=\)</th>
+            <td style="border: 1px solid black">\(1\)</td>
+            <td style="border: 1px solid black">\(2\)</td>
+            <td style="border: 1px solid black">\(3\)</td>
+            <td style="border: 1px solid black">\(4\)</td>
+          </tr>
+          <tr>
+            <th style="border: 1px solid black">\(m_i=\)</th>
+            <td style="border: 1px solid black">\(5\,\text{gm}\)</td>
+            <td style="border: 1px solid black">\(2\,\text{gm}\)</td>
+            <td style="border: 1px solid black">\(4\,\text{gm}\)</td>
+            <td style="border: 1px solid black">\(3\,\text{gm}\)</td>
+          </tr>
+          <tr>
+            <th style="border: 1px solid black">\(x_i=\)</th>
+            <td style="border: 1px solid black">\(2\,\text{cm}\)</td>
+            <td style="border: 1px solid black">\(-1\,\text{cm}\)</td>
+            <td style="border: 1px solid black">\(3\,\text{cm}\)</td>
+            <td style="border: 1px solid black">\(5\,\text{cm}\)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="center">
+      <img src="graphics/ex_balance_prob.jpg" alt="ex_balance_prob">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(M=14\,\text{gm}\)
+    <br>
+    \(bar{x}=\dfrac{5}{2}=2.5\,\text{cm}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <div class="column">
+    <p>
+      \[
+      M=\sum_{i=1}^4 m_i=5+2+4+3=14\,\text{gm}
+      \]
+      \[
+       M_1=\sum_{i=1}^4 m_ix_i
+      =5\cdot2+2\cdot(-1)+4\cdot3+3\cdot5=35\,\text{gm-cm}
+      \]
+      \[
+      \bar{x}=\dfrac{M_1}{M}
+      =\dfrac{35}{14}=\dfrac{5}{2}=2.5\,\text{cm}
+      \]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_balance_sol.jpg" alt="ex_balance_sol">
+    </div>
+  </div>
+  <p>
+    Notice that the center of mass at \(\bar x=2.5\) is within the range of the
+    objects which stretch from \(x=-1\) to \(x=5\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  On the <a href="CMbar.html">next page</a>, we will find the center of mass
+  of a bar for which the mass is not uniformly distributed.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

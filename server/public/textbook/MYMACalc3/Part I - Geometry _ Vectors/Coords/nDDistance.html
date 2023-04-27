@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Distance Formula in Higher Dimensions (Optional) | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="3DDistance.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DPolarCoord.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Distance Formula - 2D, 3D and nD</h2>
+
+
+      
+      <h2>3. Distance Formula in Higher Dimensions (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The Pythagorean Theorem can be generalized to \(n\) dimensions and then	used
+  to find the distance between two points in \(\mathbb{R}^n\). Consider a
+  \(n\) dimensional rectangular box with sides \(a_1,a_2,\cdots,a_n\).
+</p>
+
+        <div class="rule"> </div>
+
+<p class="thm" data-title="Pythagorean Theorem in \(\mathbb{R}^n\)">
+	In \(\mathbb{R}^n\) the main diagonal of a rectangular box with sides
+	\(a_1, a_2,\cdots,a_n\) is
+  \[
+  d=\sqrt{a_1^2+a_2^2+\cdots+a_n^2}
+  \]
+  which is the square root of the sum of the squares of the sides.
+</p>
+
+        <div class="rule"> </div>
+
+<p> Now consider two points \(P=(p_1,p_2,\cdots,p_3)\) and \(Q=(q_1,q_2,\cdots,q_3)\).
+The changes in the coordinates are \(|q_1-p_1|,|q_2-p_2|,\cdots,|q_n-p_n|\).
+These are the edges of an \(n\) dimensional rectangular box whose main diagonal
+is the distance between the points \(P\) and \(Q\).
+</p>
+<p class="formula" data-title="Distance Formula in \(\mathbb{R}^n\)">
+  By the Pythagorean Theorem:
+  \[
+  d(P,Q)=\sqrt{(q_1-p_1)^2+(q_2-p_2)^2+\cdots+(q_n-p_n)^2}
+  \]
+</p>
+
+        <div class="rule"> </div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the distance between the points \(A=(6,1,3,5)\) and
+		\(B=(2,3,7,-3)\) in \(\mathbb{R}^4\)
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(d(A,B)=10\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    \(A=(6,1,3,5)\) and \(B=(2,3,7,-3)\)
+    \[\begin{aligned}
+    d(A,B)&=\sqrt{(b_1-a_1)^2+(b_2-a_2)^2+(b_3-a_3)^2+(b_4-a_4)^2} \\
+    &=\sqrt{(2-6)^2+(3-1)^2+(7-3)^2+(-3-5)^2} \\
+    &=\sqrt{16+4+16+64}=\sqrt{100}=10
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"> </div>
+
+<h3> Equation of an \(n\)-Sphere in \(\mathbb{R}^n\)</h3>
+
+<p>
+  By definition, the \(n\)-sphere of radius \(R\)
+	centered at a point \(C=(a_1,a_2,\cdots,a_n)\) is the set of all
+	points \(X=(x_1,x_2,\cdots,x_n)\) whose distance from \(C\)
+	is \(R\). Using the distance formula, the \(n\)-sphere is the set of
+  all points \(X=(x_1,x_2,\cdots,x_n)\) satisfying the equation
+  \[
+  d(C,X)=R
+  \]
+	or
+	\[
+  \sqrt{(x_1-a_1)^2+(x_2-a_2)^2+\cdots+(x_n-a_n)^2}=R.
+  \]
+</p>
+</p>
+<p class="formula" data-title="Equation of an \(n\)-Sphere in \(\mathbb{R}^n\)">
+	The sphere of radius \(R\) centered at a point \(C=(a_1,a_2,\cdots,a_n)\) is
+	\[
+	(x_1-a_1)^2+(x_2-a_2)^2+\cdots+(x_n-a_n)^2=R^2.
+	\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the equation of the \(4\)-sphere for which \(A=(6,1,3,5)\)
+		and \(B=(2,3,7,-3)\) are endpoints of a diagonal.
+		Take the coordinates to be \((w,x,y,z)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The diameter is the distance from \(A\) to \(B\).
+  </p>
+  <p>
+    The center is the midpoint of the segment from \(A\) to \(B\). This is found by
+    averaging the coordinates of \(A\) and \(B\), i.e. \(C=\dfrac{A+B}{2}\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \((w-4)^2+(x-2)^2+(y-5)^2+(z-1)^2=25\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The distance from \(A=(6,1,3,5)\) to \(B=(2,3,7,-3)\).
+    was found in the previous exercise to be \(10\). So the radius is \(5\).
+  </p>
+  <p>
+    The center is the average of \(A\) to \(B\):
+    \[
+    C=\dfrac{A+B}{2}
+    =\left(\dfrac{6+2}{2},\dfrac{1+3}{2},\dfrac{3+7}{2},\dfrac{5-3}{2}\right)
+    =(4,2,5,1)
+    \]
+    So the equation of the \(4\)-sphere is
+    \[
+    (w-4)^2+(x-2)^2+(y-5)^2+(z-1)^2=25
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

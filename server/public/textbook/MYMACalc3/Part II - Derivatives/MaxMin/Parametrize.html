@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Parametrization Method (Optional) | 16. Max-Min Problems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Lagrange.html" title="Previous">&lArr;</a></li>
+      <li><a href="Global.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>16. Max-Min Problems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Constrained Max-Min Problems</h2>
+
+<p>
+  This topic is optional. It uses parametric curves and parametric surfaces
+  which were introduced in the chapter on
+  <a href="../../Part I - Geometry & Vectors/CurveSurface/ChContents.html"
+  title="Return using the Back button.">Curves and Surfaces</a>
+  <br>
+  Parametric curves were discussed in more detail in the chapter on
+  <a href="../../Part I - Geometry & Vectors/CurveProps/ChContents.html"
+  title="Return using the Back button.">Properties of Curves</a>
+  <br>
+  Parametric surfaces will be discussed in more detail in the chapter on
+  <a href="../../Part III - Integrals/SurfInt/ChContents.html"
+  title="Return using the Back button.">Parametric Surfaces and Surface Integrals</a>
+  <br>
+  It may be better to delay this topic until after parametric surfaces.
+
+
+      
+      <h2>3. Parametrization Method (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We can also optimize a function that is constrained on a curve (or
+  surface) by parametrizing the curve (or surface). The first step is to
+  write out the parametrization. Plugging the parametrization into the
+  extremal function reduces the number of variables to \(1\) for curves
+  and \(2\) for surfaces.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  First we look at a problem which is constrained to a curve.
+<p class="example" data-number="1">
+  Find the maximum and minimum values of the function \(f=3x+y+3z\)
+  on the ellipse which is the intersection of the plane \(x=y\) and the
+  cylinder \(x^2+z^2=1\). This ellipse may be parametrized by
+  \(\vec r(\theta)=(\cos\theta,\cos\theta,\sin\theta)\).
+  <br>
+  <big>PY: Add a plot</big>
+</p>
+<p class="sol">
+  We substitute the curve into the extremal:
+  \[
+  f=3x+y+3z=3\cos\theta+\cos\theta+3\sin\theta=4\cos\theta+3\sin\theta
+  \]
+</p>
+<div class="column">
+  <p>
+    We differentiate and set this equal to zero:
+    \[
+    f_\theta=-4\sin\theta+3\cos\theta=0
+    \]
+    This says \(\tan\theta=\dfrac{3}{4}\). There are two angles that satisfy
+    this: \(\theta_1\) in the first quadrant and \(\theta_2\) in the third
+    quadrant. If you draw a right triangle with opposite side \(3\) and
+    adjacent side \(4\), then the tangent is \(\dfrac{3}{4}\). The same ratio
+    occurs in the third quadrant. Further, the hypotenuse is \(5\).
+    Consequently, the two solutions satisfy:
+  </p>
+  <div class="center">
+    <img src="graphics/eg_345tri.jpg" alt="eg_345tri">
+  </div>
+</div>
+<p>
+  \[
+  \sin\theta_1=\dfrac{3}{5}
+  \qquad \text{and} \qquad
+  \cos\theta_1=\dfrac{4}{5}
+  \]
+  and
+  \[
+  \sin\theta_2=\dfrac{-3}{5}
+  \qquad \text{and} \qquad
+  \cos\theta_2=\dfrac{-4}{5}
+  \]
+  So the two points are
+  \[
+  r(\theta_1)=\left(\dfrac{4}{5},\dfrac{4}{5},\dfrac{3}{5}\right)
+  \qquad \text{and} \qquad
+  r(\theta_2)=\left(\dfrac{-4}{5},\dfrac{-4}{5},\dfrac{-3}{5}\right)
+  \]
+  The values of the function \(f=3x+y+3z\) are
+  \[
+  f\left(\dfrac{4}{5},\dfrac{4}{5},\dfrac{3}{5}\right)
+  =3\cdot\dfrac{4}{5}+\dfrac{4}{5}+3\cdot\dfrac{3}{5}=5
+  \]
+  and
+  \[
+  f\left(\dfrac{-4}{5},\dfrac{-4}{5},\dfrac{-3}{5}\right)
+  =3\cdot\dfrac{-4}{5}+\dfrac{-4}{5}+3\cdot\dfrac{-3}{5}=-5
+  \]
+  So the maximum is \(5\) and the minimum is \(-5\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  We now look at an example where the constraint is a surface.
+</p>
+<p class="example" data-number="2">
+  Find the maximum value of the function \(f=8x+6y+z\)
+  on the paraboloid \(z=30-x^2-y^2\)
+</p>
+<p class="sol">
+  First we can parametrize the surface as
+  \[
+  (x,y,z)=\vec R(r,\theta)=(r\cos\theta,r\sin\theta,30-r^2)
+  \]
+  Substituting this into the function gives
+  \[
+  f=8r\cos\theta+6r\sin\theta+(30-r^2)
+  \]
+  We set the partial derivatives equal to \(0\):
+  \[\begin{aligned}
+  \dfrac{\partial f}{\partial r}
+  &=8\cos\theta+6\sin\theta-2r=0 \qquad \text{(1)} \\
+  \dfrac{\partial f}{\partial \theta}
+  &=-8r\sin\theta+6r\cos\theta=0 \qquad \text{(2)}
+  \end{aligned}\]
+  <!-- \dfrac{\partial f}{\partial r}
+  &=8\cos\theta+6\sin\theta-2r=0 \tag{1} \\
+  \dfrac{\partial f}{\partial \theta}
+  &=-8r\sin\theta+6r\cos\theta=0 \tag{2} -->
+  The equation (2) says either \(r=0\) or
+  \(\tan\theta=\dfrac{6}{8}=\dfrac{3}{4}\).
+</p>
+<ul>
+  <li>
+    Case 1: \(r=0\): Then \((x,y,z)=\vec R(0,\theta)=(0,0,30)\) and
+    \(f(0,0,30)=30\).
+  </li>
+  <li>
+    Case 2: \(\tan\theta=\dfrac{3}{4}\): As in the previous example, there
+    are two solutions \(\theta_1\) and \(\theta_2\) satisfying:
+    \[
+    \sin\theta_1=\dfrac{3}{5}
+    \qquad \text{and} \qquad
+    \cos\theta_1=\dfrac{4}{5}
+    \]
+    and
+    \[
+    \sin\theta_2=\dfrac{-3}{5}
+    \qquad \text{and} \qquad
+    \cos\theta_2=\dfrac{-4}{5}
+    \]
+    Equation (1) says \(r=4\cos\theta+3\sin\theta\). So the corresponding
+    values of \(r\) are
+    \[
+    r_1=4\cos\theta_1+3\sin\theta_1=4\cdot\dfrac{4}{5}+3\cdot\dfrac{3}{5}=5
+    \]
+    and
+    \[
+    r_2=4\cos\theta_2+3\sin\theta_2=4\cdot\dfrac{-4}{5}+3\cdot\dfrac{-3}{5}=-5
+    \]
+    and the corresponding points are
+    \[
+    (x,y,z)=\vec R(r_1,\theta_1)
+    =\left(5\cdot\dfrac{4}{5},5\cdot\dfrac{3}{5},30-25\right)=(4,3,5)
+    \]
+    and
+    \[
+    (x,y,z)=\vec R(r_2,\theta_2)
+    =\left(-5\cdot\dfrac{-4}{5},-5\cdot\dfrac{-3}{5},30-25\right)=(4,3,5)
+    \]
+    Notice that the two points are the same (because in the second solution
+    \(r\) is negative and we go backwards). The value of the function,
+    \(f=8x+6y+z\), is
+    \[
+    f(4,3,5)=8\cdot4+6\cdot3+5=55
+    \]
+    So the maximum is \(55\) at \((4,3,5)\).
+  </li>
+</ul>
+
+    		<div class="rule" id="ex_rectell"></div>
+
+<p>
+  Finally, we redo an exercise which was done twice previously, once by
+  <a href="Constraint.html#ex_rectell" title="Return using the Back button.">
+  eliminating the constraint</a>
+  and once by
+  <a href="Lagrange.html#ex_rectell" title="Return using the Back button.">
+  Lagrange multipliers</a>.
+  That way we can see the difference in the three methods.
+</p>
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="3">
+      Find the dimensions and volume of the largest rectangular box
+      inscribed in the ellipsoid \(x^2+\dfrac{y^2}{4}+\dfrac{z^2}{16}=1\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX1"></button>
+      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+      <button class="toggle has-sol" data-toggle="SolX1"></button>
+    </p>
+  </div>
+  <div  class="center">
+    <video autoplay controls loop>
+      <source src="graphics/ellipex.mp4" alt="ellipex">
+    </video>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    The ellipsoid may be parametrized using elliptic coordinates given by:
+    \[\begin{aligned}
+    x&=\sin(\phi)\cos(\theta) \\
+    y&=2\sin(\phi)\sin(\theta) \\
+    z&=4\cos(\phi)
+    \end{aligned}\]
+    These generalize spherical coordinates but have a different radius
+    in each direction.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    The length, width and height are:
+    \[
+    L=\dfrac{2}{\sqrt{3}} \qquad W=\dfrac{4}{\sqrt{3}} \qquad H=\dfrac{8}{\sqrt{3}}
+    \]
+    So the volume is:
+    \[
+    V=\dfrac{64}{3\sqrt{3}}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The ellipsoid may be parametrized using elliptic coordinates given by:
+    \[\begin{aligned}
+    x&=\sin(\phi)\cos(\theta) \\
+    y&=2\sin(\phi)\sin(\theta) \\
+    z&=4\cos(\phi)
+    \end{aligned}\]
+    These generalize spherical coordinates but have a different radius
+    in each direction. We substitute these into the formula for the volume.
+    \[
+    V=LWH=(2x)(2y)(2z)=8xyz=64\sin^2(\phi)\cos(\phi)\sin(\theta)\cos(\theta)
+    \]
+    We find the partial derivatives and set them equal to \(0\):
+    \[\begin{aligned}
+    \dfrac{\partial V}{\partial\phi}
+    &=\left(128\sin(\phi)\cos^2(\phi)-64\sin^3(\phi)\right)\sin(\theta)\cos(\theta)=0 \\
+    \dfrac{\partial V}{\partial\theta}
+    &=64\sin^2(\phi)\cos(\phi)\left(\cos^2(\theta)-\sin^2(\theta)\right)=0 \\
+    \end{aligned}\]
+    Now, the maximum volume cannot be \(0\). So \(x\), \(y\) and \(z\) cannot
+    be \(0\). So \(\sin(\phi)\), \(\cos(\phi)\), \(\sin(\theta)\) and
+    \(\cos(\theta)\) cannot be \(0\). So the partial derivative equations
+    reduce to:
+    \[\begin{aligned}
+    &2\cos^2(\phi)-\sin^2(\phi)=0 \\
+    &\cos^2(\theta)-\sin^2(\theta)=0 \\
+    \end{aligned}\]
+    In other words, \(\tan(\phi)=\sqrt{2}\) and \(\tan(\theta)=1\).
+    The condition on \(\theta\) says \(\theta=\dfrac{\pi}{4}\). So:
+    \[
+    \sin(\theta)=\cos(\theta)=\dfrac{1}{\sqrt{2}}
+    \]
+  </p>
+  <div class="column">
+    <p>
+      To understand the condition on \(\phi\), think of a right triangle
+      with sides \(1\) and \(\sqrt{2}\) and hypotenuse \(\sqrt{3}\). Then:
+      \[
+      \sin(\phi)=\dfrac{\sqrt{2}}{\sqrt{3}}
+      \qquad \text{and} \qquad
+      \cos(\phi)=\dfrac{1}{\sqrt{3}}
+      \]
+      <br>
+      <big>PY: Add plot.</big>
+    </p>
+    <div class="center">
+      <img src="graphics/ex_1s2s3tri.jpg" alt="ex_1s2s3tri">
+    </div>
+  </div>
+  <p>
+    Consequently:
+    \[\begin{aligned}
+    x&=\dfrac{\sqrt{2}}{\sqrt{3}}\cdot\dfrac{1}{\sqrt{2}}
+    =\dfrac{1}{\sqrt{3}} \\
+    y&=2\cdot\dfrac{\sqrt{2}}{\sqrt{3}}\cdot\dfrac{1}{\sqrt{2}}
+    =\dfrac{2}{\sqrt{3}} \\
+    z&=4\cdot\dfrac{1}{\sqrt{3}}=\dfrac{4}{\sqrt{3}}
+    \end{aligned}\]
+    So, the length, width and height are:
+    \[
+    L=2x=\dfrac{2}{\sqrt{3}} \qquad W=2y=\dfrac{4}{\sqrt{3}}
+    \qquad H=2z=\dfrac{8}{\sqrt{3}}
+    \]
+    and the volume is:
+    \[
+    V=LWH=\dfrac{64}{3\sqrt{3}}
+    \]
+  </p>
+</div>
+<p>
+  Comparing the three methods of solving this problem, Lagrange multipliers
+  is probably easiest, then parametrizing the surface (We need to parametrize
+  the surface.) and finally eliminating a variable (We need to deal with
+  ugly square roots.).
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

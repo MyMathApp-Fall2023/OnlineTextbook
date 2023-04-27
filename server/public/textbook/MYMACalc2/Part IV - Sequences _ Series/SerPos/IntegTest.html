@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b.1. The Integral Test | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Overview.html" title="Previous">&lArr;</a></li>
+      <li><a href="pSerTest.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b.1. The Integral Test</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="prop" data-title="The Integral Test">
+  If \(a_n=f(n)\) where \(f(x)\) is a continuous, positive, decreasing function on
+  \([n_o,\infty)\), then
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent if and
+  only if \(\displaystyle \int_{n_o}^\infty f(x)\,dx\) is convergent.
+  <br>
+	<a href="IntegPf.html">
+  <button class= 'btn'>Proof</button></a> \(\Longleftarrow\) Read this! It's easy.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Determine if \(\displaystyle \sum_{n=0}^\infty \dfrac{1}{1+n^2}\) is convergent
+  or divergent.
+</p>
+<div class="column">
+  <p class="sol" data-col-width="60%">
+    The function \(f(x)=\dfrac{1}{1+x^2}\) is
+    continuous, positive and decreasing, and
+    \[\begin{aligned}
+    \int_0^\infty &\dfrac{1}{1+x^2}\,dx
+    =\left.\arctan x\rule{0pt}{10pt}\right|_0^\infty \\
+    &=\lim_{b\to\infty}\arctan b-\arctan 0
+    =\dfrac{\pi}{2}
+    \end{aligned}\]
+    which is finite. So \(\displaystyle \sum_{n=0}^\infty \dfrac{1}{1+n^2}\) is
+    also convergent.
+  </p>
+  <div class="center" data-col-width="40%">
+    <figure>
+      <img src="graphics/eg_arctan.jpg" alt="eg_arctan">
+      <figcaption>
+        \[
+        \lim_{x\to\infty}\arctan x=\dfrac{\pi}{2}
+        \]
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<p class="remark">
+  In practice, we do not bother to change the variable from \(n\) to \(x\), and
+  simply compute
+  \[
+  \int_0^\infty \dfrac{1}{1+n^2}\,dn
+  =\left. \arctan n\rule{0pt}{10pt}\right|_0^\infty
+  =\lim_{b\to\infty}\arctan b-\arctan 0
+  =\dfrac{\pi}{2}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Determine if \(\displaystyle \sum_{n=1}^\infty ne^{-n^2}\) is
+    convergent or divergent or that the integral test does not apply.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    The function \(f(n)=ne^{-n^2}\) is decreasing for \(n \ge 1\) because
+    \[
+    f'(n)=e^{-n^2}+ne^{-n^2}(-2n)=(1-2n^2)e^{-n^2} \lt 0
+    \]
+    for \(n \ge 1\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty ne^{-n^2}\) is convergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    The function \(f(n)=ne^{-n^2}\) is continuous and positive. It is also
+    decreasing because
+    \[
+    f'(n)=e^{-n^2}+ne^{-n^2}(-2n)=(1-2n^2)e^{-n^2} \lt 0
+    \]
+    for \(n \ge 1\). Further, its integral is:
+    \[\begin{aligned}
+    \int_1^\infty &ne^{-n^2}\,dn
+    =\left.-\,\dfrac{1}{2}e^{-n^2}\right|_1^\infty \\[10pt]
+    &=\lim_{b\to\infty}\left[-\,\dfrac{1}{2}e^{-b^2}\right]-\left[-\,\dfrac{1}{2}e^{-1}\right]
+    =\dfrac{1}{2e}
+    \end{aligned}\]
+    which is finite. So \(\displaystyle \sum_{n=1}^\infty ne^{-n^2}\) is convergent.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Determine if \(\displaystyle \sum_{n=1}^\infty e^{-n}\sin n\) is
+    convergent or divergent or that the integral test does not apply.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint2"></button>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint2">
+  <p>
+    The integral test requires that the funciton being tested is positive,
+    continuous and decreasing.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    The integral test does not apply because the terms are not strictly
+    positive nor decreasing.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    The function \(f(x)=e^{-x}\sin x\) oscillates between
+    positive and negative values. Therefore the intergral test does not apply
+    since the function is not strictly positive nor decreasing.
+  </p>
+</div>
+
+        <div class="rule" id="harmonic"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n}\) is
+    convergent or divergent or that the integral test does not apply.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans3"></button>
+    <button class="toggle has-sol" data-toggle="Sol3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans3">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n}\) is divergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol3">
+  <p>
+    The function \(f(x)=\dfrac{1}{x}\) is continuous, positive and
+    decreasing and
+    \[\begin{aligned}
+    \int_1^\infty &\dfrac{1}{x}\,dx
+    =\left.\ln x\rule{0pt}{10pt}\right|_1^\infty \\
+    &=\lim_{b\to\infty}[\ln b]-[\ln 1]
+    =\infty-0=\infty
+    \end{aligned}\]
+    So \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n}\) is divergent.
+  </p>
+</div>
+<p>
+  The series \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n}\) is
+  so important, it has a special name.
+</p>
+
+<p class="def" data-title="The Harmonic Series">
+   The series \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n}\) is called the
+  <span class="defword">harmonic series</span>.
+</p>
+<p class="remark">
+  The harmonic series is the primary example of a divergent series.
+  It is the special case of a <span class="defword">\(p\)-series</span>
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^p}\) for which \(p=1\).
+  The convergence of the other \(p\)-series is determined on the
+  <a href="pSerTest.html">Next Page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

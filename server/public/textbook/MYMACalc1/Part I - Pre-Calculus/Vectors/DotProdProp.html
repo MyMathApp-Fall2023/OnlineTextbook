@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Properties | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DotProdAlg.html" title="Previous">&lArr;</a></li>
+      <li><a href="DotProdGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Dot Product</h2>
+
+
+      
+      <h2>2. Properties</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	We here list the algebraic properties of the dot product and its relation
+  to magnitude, vector addition and scalar multiplication.
+</p>
+<p>
+  In the following, the <span class="defword">zero vector</span>, denoted by
+  \(\vec 0\), is the vector whose components are all zero and the
+	<span class="defword">negative of a vector \(\vec v\)</span>, denoted by
+  \(-\vec v\), is the vector whose components are the negatives of those of
+  \(\vec v\).
+</p>
+<p>
+  First, there is one property involving just the dot product.
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Dot Product Commutativity">
+    Let \(\vec u\) and \(\vec v\) be arbitrary vectors. Then,
+  </p>
+  <ol>
+  	<li>
+    	The Dot Product is Commutative: &emsp;
+      \(\vec u\cdot\vec v=\vec v\cdot\vec u\) &emsp;
+    	<button class="toggle" data-toggle="Proof1">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+	<p>
+		\[
+		\vec u\cdot\vec v=u_1v_1+u_2v_2
+		=v_1u_1+v_2u_2=\vec v\cdot\vec u
+		\]
+	</p>
+</div>
+<p>
+	Second, there is one relation between the dot product and magnitude.
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Dot Product Square Property">
+	  Let \(\vec v\) be an arbitrary vector. Then,
+  </p>
+  <ol start="2">
+  	<li>
+    	Square Property: &emsp;
+      \(\vec v\cdot\vec v=|\vec v|^2\) &emsp;
+			<button class="toggle" data-toggle="Proof2">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof2">
+	<p>
+		\[
+		\vec v\cdot\vec v
+		=v_1v_1+v_2v_2
+		=|\vec v|^2
+		\]
+	</p>
+</div>
+<p>
+  Third, there are two properties relating the dot product and vector addition.
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Dot Product Distributivity and Zero">
+    Let \(\vec u\), \(\vec v\) and \(\vec w\) be arbitrary vectors. Then,
+  </p>
+  <ol start="3">
+  	<li>
+    	The Dot Product Distributes over Vector Addition: &emsp;
+      \(\vec u\cdot(\vec v+\vec w)
+      =\vec u\cdot\vec v+\vec u\cdot\vec w\) &emsp;
+      <button class="toggle" data-toggle="Proof3">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof3">
+	<p>
+		\[\begin{aligned}
+		\vec u\cdot(\vec v+\vec w)
+		&=\left\langle u_1,u_2\right\rangle\cdot
+		  \left\langle v_1+w_1,v_2+w_2\right\rangle \\
+		&=u_1(v_1+w_1)+u_2(v_2+w_2) \\
+		&=u_1v_1+u_2v_2+u_1w_1+u_2w_2 \\
+		&=\vec u\cdot\vec v+\vec u\cdot\vec w
+		\end{aligned}\]
+	</p>
+</div>
+<div class="greybox">
+  <ol start="4">
+  	<li>
+    	The Dot Product of \(\vec 0\) and any vector is \(0\): &emsp;
+      \(\vec 0\cdot\vec v=0\) &emsp;
+      <button class="toggle" data-toggle="Proof4">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof4">
+	<p>
+		\[
+		\vec 0\cdot\vec v
+		=0v_1+0v_2=0
+		\]
+	</p>
+</div>
+<p class="remark">
+  Since the dot product is commutative, it  follows that in these two formulas
+	the dot products can be done in the opposite order:
+  \[
+  (\vec v+\vec w)\cdot\vec u
+  =\vec v\cdot\vec u+\vec w\cdot\vec u
+  \]
+  \[
+  \vec v\cdot\vec 0=0
+  \]
+</p>
+<p>
+  Finally, we have two relations between the dot product and scalar multiplication.
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Dot Product and Scalar Multiplication Associate and Commute">
+  	Let \(\vec u\) and \(\vec v\) be arbitrary vectors and \(a\) be an
+    arbitrary scalar. Then,
+  </p>
+  <ol start="5">
+  	<li>
+    	The Dot Product Associates with Scalar Multiplication: &emsp;
+      \((a\vec u)\cdot\vec v=a(\vec u\cdot\vec v)\) &emsp;
+			<button class="toggle" data-toggle="Proof5">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof5">
+	<p>
+		\[\begin{aligned}
+		(a\vec u)\cdot\vec v
+		&=\left\langle au_1,au_2\right\rangle\cdot
+		  \left\langle v_1,v_2\right\rangle \\
+		&=au_1v_1+au_2v_2 \\
+		&=a(u_1v_1+u_2v_2)
+		=a(\vec u\cdot\vec v)
+		\end{aligned}\]
+	</p>
+</div>
+<div class="greybox">
+  <ol start="6">
+  	<li>
+    	The Dot Product Commutes with Scalar Multiplication: &emsp;
+      \((a\vec u)\cdot\vec v=\vec u\cdot(a\vec v)\) &emsp;
+			<button class="toggle" data-toggle="Proof6">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof6">
+	<p class="meth" data-number="1">
+		Use components.
+		\[\begin{aligned}
+		(a\vec u)\cdot\vec v
+		&=\left\langle au_1,au_2\right\rangle\cdot
+		\left\langle v_1,v_2\right\rangle \\
+		&=au_1v_1+au_2v_2 \\
+		&=u_1av_1+u_2av_2 \\
+		&=\left\langle u_1,u_2\right\rangle\cdot
+		\left\langle	av_1,av_2\right\rangle \\
+		&=\vec u\cdot(a\vec v)
+		\end{aligned}\]
+	</p>
+	<p class="meth" data-number="2">
+	  Use previous properties.
+		\[\begin{aligned}
+		(a\vec u)\cdot\vec v
+		&=a(\vec u\cdot\vec v) &\quad&\text{Associative}\\
+		&=a(\vec v\cdot\vec u) &\quad&\text{Commutative}\\
+		&=(a\vec v)\cdot\vec u &\quad&\text{Associative}\\
+		&=\vec u\cdot(a\vec v) &\quad&\text{Commutative}\\
+		\end{aligned}\]
+	</p>
+</div>
+
+      	<div class="rule"></div>
+
+<p class="example" data-number="1">
+  <button class="toggle" data-toggle="Drop1">Verify</button>
+	the dot product is commutative using the vectors
+  \(\vec u=\left\langle 2,11\right\rangle\) and
+	\(\vec v=\left\langle -3,1\right\rangle\).
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+<p>
+	<span class="defword">Verify</span> means to check that a property works
+	for specific vectors. It is not a proof!
+</p>
+</div>
+<p class="sol">
+	We compute both sides of the equation: \(\vec u\cdot\vec v=\vec v\cdot\vec u\).
+  \[\begin{aligned}
+	\vec u\cdot\vec v
+	&=\left\langle 2,11\right\rangle\cdot\left\langle -3,1\right\rangle
+  =2(-3)+11(1)=5 \\
+	\vec v\cdot\vec u
+	&=\left\langle -3,1\right\rangle\cdot\left\langle 2,11\right\rangle
+  =(-3)2+1(11)=5
+	\end{aligned}\]
+	Since both sides give the same answer, the commutative property is verified
+	(not proved).
+</p>
+
+      	<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  	Verify the dot product is distributive using the vectors
+		\(\vec u=\left\langle 2,11\right\rangle\),
+    \(\vec v=\left\langle -3,1\right\rangle\), and
+		\(\vec w=\left\langle  1,2\right\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Compute the left and right sides of the identity:
+    \[
+  	\vec u\cdot(\vec v+\vec w)=\vec u\cdot\vec v+\vec u\cdot\vec w
+  	\]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We first compute the left side:
+    \[\begin{aligned}
+    \vec u\cdot(\vec v+\vec w)
+    &=\left\langle 2,11\right\rangle\cdot
+		\big(\left\langle -3,1\right\rangle+\left\langle 1,2\right\rangle\big) \\
+    &=\left\langle 2,11\right\rangle\cdot\left\langle -2,3\right\rangle \\
+    &=-4+33
+    =29
+    \end{aligned}\]
+    Second we compute the right said:
+    \[\begin{aligned}
+    \vec u\cdot\vec v+\vec u\cdot\vec w
+    &=\left\langle 2,11\right\rangle\cdot\left\langle -3,1\right\rangle
+     +\left\langle 2,11\right\rangle\cdot\left\langle 1,2\right\rangle \\
+    &=(-6+11)+(2+22) \\
+    &=5+24
+    =29
+    \end{aligned}\]
+    Since both sides give the same answer, the distributive property is verified.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

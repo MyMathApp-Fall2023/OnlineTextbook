@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>g. Tangential and Normal Acceleration | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Torsion.html" title="Previous">&lArr;</a></li>
+      <li><a href="CurveSummary.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic7">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>g. Tangential and Normal Acceleration</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The acceleration of a curve, \(\vec{a}\), measures the rate of change of the
+  velocity, \(\vec{v}\), which has a <span class="hl">magnitude</span> and a
+  <span class="hl">direction</span>. The magnitude of the velocity,
+  \(|\vec{v}|\), is the <span class="hl">speed</span> the curve,
+  \(speed=\dfrac{ds}{dt}=|\vec{v}|\), while the
+  <span class="hl">direction</span> of the velocity, \(\hat{v}\),
+  is the <span class="hl">unit tangent vector</span>, \(\hat{T}=\hat{v}\).
+  There is a way to split up the acceleration so that one part measures
+  the rate of change of the <span class="hl">speed</span> while the other
+  part measures the rate of change of the
+  <span class="hl">unit tangent vector</span>.
+</p>
+<div class="greybox">
+  <p class="def" data-title="Tangential and Normal Acceleration">
+    Since \(\vec{a}\) lies in the plane of \(\hat{T}\) and \(\hat{N}\), we
+    know \(\vec{a}\) can be written as a linear combination of \(\hat{T}\)
+    and \(\hat{N}\):
+    \[
+    \vec{a}=a_T\,\hat{T}+a_N\,\hat{N}
+    \]
+    The coefficient \(a_T\) is called the <span class="defword">tangential
+    acceleration</span> and the coefficient \(a_N\) is called the
+    <span class="defword">normal acceleration</span>. These are the scalar
+    projections (components) of \(\vec{a}\) parallel and perpendicular to
+    \(\vec{v}\):
+    \[\begin{aligned}
+    a_T\hat{T}=\text{proj}_{\vec{v}}\vec{a}
+    =\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}
+    &\qquad \text{and} \qquad
+    a_N\hat{N}=\text{proj}_{\bot\vec{v}}\vec{a}
+    =\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec v|^2}\vec{v} \\
+    a_T=\text{comp}_{\vec{v}}\vec{a}
+    =\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|}
+    &\qquad \text{and} \qquad
+    a_N=\text{comp}_{\bot\vec{v}}\vec{a}
+    =\left|\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec v|^2}\vec{v}\right|
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  As with all scalar projections, \(a_T=\text{comp}_{\vec{v}}\vec{a}\) can be
+  positive or negative depending on whether the angle between \(\vec{a}\) and
+  \(\vec{v}\) is acute or obtuse, resp. On the other hand,
+  \(a_N=\text{comp}_{\bot\vec{v}}\vec{a}\) is always positive, because
+  \(\text{proj}_{\bot\vec{v}}\vec{a}\) is always on the same side of
+  \(\vec{v}\) as \(\vec{a}\).
+</p>
+<div class="column">
+  <p class="remark" data-col-width="40%">
+    Notice that \(a_T\) can be:<br><br>
+    1) <span class="hl">positive</span> when the angle \(\theta\)
+    between \(\vec{a}\) and \(\vec{v}\) is acute
+    and the speed is increasing, as in the first figure, or<br><br>
+    2) <span class="hl">negative</span> when the angle \(\theta\)
+    between \(\vec{a}\) and \(\vec{v}\) is obtuse
+    and the speed is decreasing, as in the second figure.
+    <br><br>
+    However, \(a_N\) is always <span class="hl">positive</span>, because
+    \(\vec{a}\) is always on the same side of \(\vec{v}\) as \(\hat{N}\) by
+    definition of \(\hat{N}\) (and this is the side the curve is turning toward).
+  </p>
+  <div class="center data-col-width="60%"">
+    <figure>
+      <img src="graphics/eg_aTaN_acute.jpg" alt="eg_aTaN_acute">
+      <figcaption>\(\theta\) is acute</figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/eg_aTaN_obtuse.jpg" alt="eg_aTaN_obtuse">
+      <figcaption>\(\theta\) is obtuse</figcaption>
+    </figure>
+  </div>
+</div>
+<p>
+  The simplest formulas for \(a_T\) and \(a_N\) use the fact that \(\hat{T}\)
+  and \(\hat{N}\) are orthogonal unit vectors to write:
+</p>
+<p class="formula" data-title="Dot Product Formulas for Tangential and Normal Accelerations">
+  \[
+  a_T=\vec{a}\cdot\hat{T}
+  \qquad \text{and} \qquad
+  a_N=\vec{a}\cdot\hat{N}
+  \]
+  <button class="toggle" data-toggle="Proof1">Justification</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    We work backwards. Since \(\hat{T}\) and \(\hat{N}\) are orthogonal
+    unit vectors:
+    \[\begin{aligned}
+    \vec{a}\cdot\hat{T}
+    &=(a_T\,\hat{T}+a_N\,\hat{N})\cdot\hat{T} \\
+    &=a_T\,\hat{T}\cdot\hat{T}+ a_N\,\hat{N}\cdot\hat{T}
+    =a_T(1)+a_N(0)=a_T
+    \end{aligned}\]
+    \[\begin{aligned}
+    \vec{a}\cdot\hat{N}
+    &=(a_T\,\hat{T}+a_N\,\hat{N})\cdot\hat{N} \\
+    &=a_T\,\hat{T}\cdot\hat{N}+ a_N\,\hat{N}\cdot\hat{N}
+    =a_T(0)+a_N(1)=a_N
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Tangential Acceleration</h3>
+<p>
+  Since \(\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}\), the formula
+  \(a_T=\text{comp}_{\vec{v}}\vec{a}=\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|}\)
+  gives nothing more than \(a_T=\vec{a}\cdot\hat{T}\).
+</p>
+<p>
+  However, there is another formula for \(a_T\) which is computationally
+  useful and gives its interpretation:
+</p>
+<p class="formula" data-title="Speed Formula for Tangential Acceleration">
+  The tangential acceleration is the
+  <span class="hl">rate of change of the speed</span>
+  or the second derivative of the arc length parameter:
+  \[
+  a_T=\dfrac{d|\vec{v}|}{dt}=\dfrac{d^2s}{dt^2}
+  \]
+  <button class="toggle" data-toggle="Proof2">Justification</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof2">
+  <p>
+    We work backwards:
+    \[\begin{aligned}
+    \dfrac{d|\vec{v}|}{dt}
+    &=\dfrac{d}{dt}\sqrt{\vec{v}\cdot\vec{v}}
+    =\dfrac{1}{2\sqrt{\vec{v}\cdot\vec{v}}}\dfrac{d}{dt}(\vec{v}\cdot\vec{v}) \\
+    &=\dfrac{1}{2|\vec{v}|}
+    \left(\dfrac{d\vec{v}}{dt}\cdot\vec{v}+\vec{v}\cdot\dfrac{d\vec{v}}{dt}\right)
+    =\dfrac{1}{|\vec{v}|}\dfrac{d\vec{v}}{dt}\cdot\vec{v}=
+    \vec{a}\cdot\hat{T}=a_T
+    \end{aligned}\]
+    <button class="toggle" data-toggle="ProofDetail">More Detail</button>
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="ProofDetail">
+  <p>
+    \[\begin{aligned}
+    \dfrac{d|\vec{v}|}{dt}
+    &=\dfrac{d}{dt}\sqrt{\vec{v}\cdot\vec{v}}
+    &&\text{Definition of}\,|\vec v| \\
+    &=\dfrac{1}{2\sqrt{\vec{v}\cdot\vec{v}}}\dfrac{d}{dt}(\vec{v}\cdot\vec{v})
+    &&\text{Power and Chain Rules} \\
+    &=\dfrac{1}{2|\vec{v}|}\left(\dfrac{d\vec{v}}{dt}\cdot\vec{v}
+                                +\vec{v}\cdot\dfrac{d\vec{v}}{dt}\right)
+    &&\text{Product Rule} \\
+    &=\dfrac{1}{|\vec{v}|}\dfrac{d\vec{v}}{dt}\cdot\vec{v}
+    &&\text{Dot is Commutative} \\
+    &=\vec{a}\cdot\hat{T}=a_T
+    &&\text{since}\,\vec{a}=\dfrac{d\vec{v}}{dt}\,\text{and}\,
+     \hat{T}=\dfrac{\vec{v}}{|\vec{v}|}
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  This formula makes sense. If the acceleration points in the same direction
+  as the velocity, you speed up and \(a_T>0\).<br>
+  If the acceleration points in the direction opposite to the velocity, you
+  slow down and \(a_T < 0\).
+</p>
+
+        <div class="rule"></div>
+
+<h3>Normal Acceleration</h3>
+<p>
+  The normal acceleration is the scalar projection of \(\vec{a}\)
+  perpendicular to the \(\vec{v}\), i.e.
+  \(a_N=\text{comp}_{\bot\vec{v}}\vec{a}
+  =\left|\text{proj}_{\bot\vec{v}}\vec{a}\right|\).
+</p>
+<p>
+  However, there are several other formulas for \(a_N\) which are
+  computationally useful or give its interpretation:
+</p>
+<p class="formula" data-title="Curvature Formula for Normal Acceleration">
+  The normal acceleration is the
+  <span class="defword">centripetal acceleration</span> of the curve which
+  measures the rate of change of the direction of the curve:
+  \[
+  a_N
+  =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|}
+  =\kappa|\vec{v}|^2=\dfrac{|\vec{v}|^2}{R}
+  =|\vec{v}|\left|\dfrac{d\hat T}{dt}\right|
+  \]
+  where \(\kappa\) is the <span class="hl">curvature</span> of the curve and
+  \(R\) is its <span class="hl">radius of curvature</span>.
+  <br>
+  <button class="toggle" data-toggle="Proof3">Justification</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof3">
+  <p>
+    We previously found a
+    <a href="TNBFormulas.html#UnitNormal" title="Return using the Back button.">
+    formula</a> for \(\left|\text{proj}_{\bot\vec{v}}\vec{a}\right|\). So:
+    \[
+    a_N=\left|\text{proj}_{\bot\vec{v}}\vec{a}\right|
+    =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|}
+    \]
+    On the other hand, we also have several
+    <a href="Curvature.html#CurvatureFormula" title="Return using the Back button.">
+    formulas</a> for the curvature:
+    \[
+    \kappa=\dfrac{1}{|\vec{v}|}\left|\dfrac{d\hat{T}}{dt}\right|
+    =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}
+    \]
+    Putting these together, we conclude:
+    \[
+    a_N=\kappa|\vec{v}|^2=\dfrac{|\vec{v}|^2}{R}
+    =|\vec{v}|\left|\dfrac{d\hat T}{dt}\right|
+    \]
+  </p>
+</div>
+<p class="remark">
+  These formulas make sense for two reasons:
+    <br><br>
+  1) \(\left|\dfrac{d\hat T}{dt}\right|\) measures the turning of the unit
+  tangent, \(\hat{T}\), with respect to time, \(t\), while the curvature
+  \(\kappa=\left|\dfrac{d\hat T}{ds}\right|\) measures the bending of
+  \(\hat{T}\) with respect to arc length, \(s\). The normal acceleration
+  is proportional to both of these  with proportionality factors \(|\vec{v}|\)
+  and \(|\vec{v}|^2\) which get the units right.
+    <br><br>
+  2) For uniform circular motion, the speed is constant. So there is no
+  tangential acceleration and the normal acceleration is the centripetal
+  acceleration \(\dfrac{|\vec{v}|^2}{R}\) which is well-known in physics.
+  Even if the motion does not have constant speed, the normal acceleration
+  is the centripetal acceleration \(\dfrac{|\vec{v}|^2}{R}\) which means
+  that instantaneously it is moving along a circle (the osculating circle)
+  whose radius is the radius of curvature.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    For the circle,
+    \(\vec{r}(\theta)=\langle R\cos\theta,R\sin\theta,0\rangle\),
+    find the tangential acceleration, \(a_T\), in \(2\) ways using the dot
+    product and speed formulas and find the normal acceleration, \(a_N\),
+    in \(2\) ways using the dot product and curvature formulas.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(a_T=0 \qquad a_N=R\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+	  In a
+		<a href="TNB.html#circle" title="Return using the Back button.">
+    previous exercise</a>,
+		on finding \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) for this
+		circle, and a
+		<a href="Curvature.html#circle" title="Return using the Back button.">
+    previous exercise</a>,
+    on finding its curvature, we found:
+	  \[
+	  \vec{v}=\langle -R\sin\theta,R\cos\theta,0\rangle
+	  \qquad
+	  \vec{a}=\langle -R\cos\theta,-R\sin\theta,0\rangle
+	  \]
+	  \[
+	  \hat{T}=\langle -\sin\theta,\cos\theta,0\rangle
+		\qquad
+	  \hat{N}=\langle -\cos\theta,-\sin\theta,0\rangle
+	  \]
+	  \[
+	  |\vec{v}|=R
+		\qquad
+	  \kappa=\dfrac{1}{R}
+	  \]
+    For the tangential acceleration, the dot product formula gives:
+    \[\begin{aligned}
+    a_T&=\vec{a}\cdot\hat{T} \\
+    &=R\cos\theta\sin\theta-R\sin\theta\cos\theta+0=0
+    \end{aligned}\]
+    and the speed formula gives:
+    \[
+    a_T=\dfrac{d|\vec{v}|}{d\theta}=\dfrac{d}{d\theta}R=0
+    \]
+    For the normal acceleration, the dot product formula gives:
+    \[
+    a_N=\vec{a}\cdot\hat{N}=R\cos^2\theta+R\sin^2\theta=R
+    \]
+    and the curvature formula gives:
+    \[
+    a_N=\kappa|\vec{v}|^2=\dfrac{1}{R}R^2=R
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    For the helix,
+    \(\vec{r}(\theta)=\langle 4\cos\theta,4\sin\theta,3\theta\rangle\),
+    find the tangential acceleration, \(a_T\), in \(2\) ways using the dot
+    product and speed formulas and find the normal acceleration, \(a_N\),
+    in \(2\) ways using the dot product and curvature formulas.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-rem" data-toggle="RemX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(a_T=0 \qquad a_N=4\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+	  In a
+		<a href="TNB.html#helix" title="Return using the Back button.">
+    previous exercise</a>,
+		on finding \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) for this
+		helix, and a
+		<a href="Curvature.html#helix" title="Return using the Back button.">
+    previous exercise</a>,
+    on finding its curvature, we found:
+	  \[
+	  \vec{v}=\langle -4\sin\theta,4\cos\theta,3\rangle
+	  \qquad
+	  \vec{a}=\langle -4\cos\theta,-4\sin\theta,0\rangle
+	  \]
+	  \[
+	  \hat{T}=\left\langle -\,\dfrac{4}{5}\sin\theta,\dfrac{4}{5}\cos\theta,\dfrac{3}{5}\right\rangle
+		\qquad
+	  \hat{N}=\langle -\cos\theta,-\sin\theta,0\rangle
+	  \]
+	  \[
+	  |\vec{v}|=5
+		\qquad
+	  \kappa=\dfrac{4}{25}
+	  \]
+    For the tangential acceleration, the dot product formula gives:
+    \[\begin{aligned}
+    a_T&=\vec{a}\cdot\hat{T} \\
+    &=\dfrac{16}{5}\cos\theta\sin\theta-\,\dfrac{16}{5}\sin\theta\cos\theta+0=0
+    \end{aligned}\]
+    and the speed formula gives:
+    \[
+    a_T=\dfrac{d|\vec{v}|}{d\theta}=\dfrac{d}{d\theta}5=0
+    \]
+    For the normal acceleration, the dot product formula gives:
+    \[
+    a_N=\vec{a}\cdot\hat{N}=4\cos^2\theta+4\sin^2\theta=4
+    \]
+    and the curvature formula gives:
+    \[
+    a_N=\kappa|\vec{v}|^2=\dfrac{4}{25}25=4
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    Notice that the circle of radius \(4\) and the helix of radius \(4\)
+    have the same tangential and normal accelerations. The constant velocity
+    parallel to the axis of the helix has no effect on either acceleration.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    For the twisted cubic,
+    \(\vec{r}(t)=\left\langle t,t^2,\dfrac{2}{3}t^{3}\right\rangle\),
+    find the tangential acceleration, \(a_T\), in \(2\) ways using the dot
+    product and speed formulas and find the normal acceleration, \(a_N\),
+    in \(2\) ways using the dot product and curvature formulas.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(a_T=4t \qquad a_N=2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+	  In a
+		<a href="TNBFormulas.html#cubic" title="Return using the Back button.">
+    previous example</a>,
+		on finding \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) for this
+		twisted cubic, and a
+		<a href="Curvature.html#cubic" title="Return using the Back button.">
+    previous example</a>,
+    on finding its curvature, we found:
+	  \[
+	  \vec{v}=\langle 1,2t,2t^2\rangle
+	  \qquad
+	  \vec{a}=\langle 0,2,4t\rangle
+	  \]
+	  \[
+	  \hat{T}=\left\langle \dfrac{1}{1+2t^2},\dfrac{2t}{1+2t^2},\dfrac{2t^2}{1+2t^2}\right\rangle
+		\qquad
+	  \hat{N}=\left\langle \dfrac{-2t}{1+2t^2},\dfrac{1-2t^2}{1+2t^2},\dfrac{2t}{1+2t^2}\right\rangle
+	  \]
+	  \[
+	  |\vec{v}|=1+2t^2
+		\qquad
+	  \kappa=\dfrac{2}{(1+2t^2)^2}
+	  \]
+    For the tangential acceleration, the dot product formula gives:
+    \[\begin{aligned}
+    a_T&=\vec{a}\cdot\hat{T} \\
+    &=0+\dfrac{4t}{1+2t^2}+\dfrac{8t^{3}}{1+2t^2}=4t
+    \end{aligned}\]
+    and the speed formula gives:
+    \[
+    a_T=\dfrac{d|\vec{v}|}{dt}=\dfrac{d}{dt}(1+2t^2)=4t
+    \]
+    For the normal acceleration, the dot product formula gives:
+    \[\begin{aligned}
+    a_N=\vec{a}\cdot\hat{N}
+    &=0+\dfrac{2-4t^2}{1+2t^2}+\dfrac{8t^2}{1+2t^2}=2
+    \end{aligned}\]
+    and the curvature formula gives:
+    \[
+    a_N=\kappa|\vec{v}|^2=\dfrac{2}{(1+2t^2)^2}(1+2t^2)^2=2
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

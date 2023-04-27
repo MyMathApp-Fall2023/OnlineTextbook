@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Integral over a Polar Rectangle | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Polar-Grid.html" title="Previous">&lArr;</a></li>
+      <li><a href="Polar-Int2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Integrating in Polar Coordinates</h2>
+
+
+      
+      <h2>2. Integral over a Polar Rectangle</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Recall the <a href="../RiemInt/2DRiem.html" title="Return using the Back button.">
+  Riemann sum definition of a double integral</a>, and its formulation for a
+  <a href="../RiemInt/2DRect.html" title="Return using the Back button.">
+  rectangle in rectangular coordinates</a>.
+  We now formulate it for a polar rectangle in polar coordinates.
+</p>
+
+        <div class="rule" id="Fubini"></div>
+
+<p class="thm" data-title="Fubini's Theorem for a Polar Rectangle">
+  If \(R\) is the polar rectangle \([a,b]\times[\alpha,\beta]\), then
+  \[
+  \iint\limits_R f(x,y)\,dA
+  =\int_\alpha^\beta\int_a^b f(r,\theta)\,r\,dr\,d\theta
+  =\int_a^b\int_\alpha^\beta f(r,\theta)\,r\,d\theta\,dr
+  \]
+  In particular, for a polar rectangle, the iterated integral is independent
+  of the order of integration.
+  <br>
+  <a href="Polar-IntDerive.html"><button>Derivation</button></a>
+</p>
+<p class="remark">
+  (1) These are just the iterated integrals computed by holding the outer variable
+  fixed while doing the inner integral and then completing the outer integral.
+  <br/>
+  (2) In these formulas, the important thing to remember is that the differential
+  of area is
+  \[
+  dA=r\,dr\,d\theta
+  \]
+  and \(r\) becomes part of the integrand when we compute the \(r\) integral.
+  <br/>
+  (3) If we reverse the order of the differentials, we must also reverse
+  the limits on the integrals.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the volume under the piece of the paraboloid \(z=x^2+y^2\) above
+    the circle \(x^2+y^2 \le 9\).
+  </p>
+  <div class="center">
+    <img src="graphics/2DPolarInt-ex.jpg" alt="2DPolarInt-ex">
+  </div>
+</div>
+<p class="sol">
+  The volume is the double integral:
+  \[
+  V=\iint\limits_R (x^2+y^2)\,dA
+  \]
+  To compute it, we write \(dA\) and \(x\)
+  and \(y\) in polar coordinates:
+  \[
+  dA=r\,dr\,d\theta \qquad x=r\cos\theta \qquad y=r\sin\theta
+  \]
+  So the volume may be computed as the
+  iterated integral:
+  \[\begin{aligned}
+  V&=\int_0^{2\pi}\int_0^3 (x^2+y^2)\,r\,dr\,d\theta
+  =\int_0^{2\pi}\int_0^3 r^3\,dr\,d\theta \\
+  &=\int_0^{2\pi} 1\,d\theta\int_0^3 r^3\,dr
+  =2\pi\left[\dfrac{r^4}{4}\right]_0^3
+  =\dfrac{81\pi}{2}
+  \end{aligned}\]
+</p>
+<p class="remark">
+  In rectangular coordinates, this would be:
+  \[
+  V=\int_{-3}^3\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} (x^2+y^2)\,dy\,dx
+  \]
+  which would be much harder to compute.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the volume under the hyperboloid \(z=xy\) above the quarter circle
+    \(x^2+y^2 \le 9\) in the first quadrant.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle
+    V=\int_0^{\pi/2}\int_0^3 r^3\sin\theta\cos\theta\,dr\,d\theta
+     =\dfrac{81}{8}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The quarter circle in the first quadrant satisfies
+    \(0 \le \theta \le \dfrac{\pi}{2}\). So the volume is:
+    \[\begin{aligned}
+    V&=\int_0^{\pi/2}\int_0^3 (xy)\,r\,dr\,d\theta
+    =\int_0^{\pi/2}\int_0^3 r^3\sin\theta\cos\theta\,dr\,d\theta \\
+    &=\int_0^3 r^3\,dr\int_0^{\pi/2} \sin\theta\cos\theta\,\,d\theta
+    =\left[\dfrac{r^4}{4}\right]_0^3\left[\dfrac{\sin^2\theta}{2}\right]_0^{\pi/2} \\
+    &=\dfrac{81}{4}\left(\dfrac{1}{2}\right)=\dfrac{81}{8}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

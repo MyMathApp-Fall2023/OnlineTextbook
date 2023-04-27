@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a1. Substitutions for \(x^2+1\) - Tangent Substitutions | 7. Trigonometric Substitutions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Sin.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Trigonometric Substitutions</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a1. Substitutions for \(x^2+1\) - Tangent Substitutions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Recall the derivative and integral formulas for \(\arctan x\):
+  \[
+	\dfrac{d}{dx}\arctan x=\dfrac{1}{x^2+1}
+  \qquad \qquad \qquad
+	\int \dfrac{1}{x^2+1}\,dx=\arctan x+C
+	\]
+  and the second Pythagorean trig identity:
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+  \[
+  \tan^2\theta+1=\sec^2\theta
+  \]
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    Begin with the basic Pythagorean identity:
+    \[
+    \sin^2\theta+\cos^2\theta=1
+    \]
+    Divide by \(\cos^2\theta\):
+    \[
+    \left(\dfrac{\sin\theta}{\cos\theta}\right)^2
+    +\left(\dfrac{\cos\theta}{\cos\theta}\right)^2
+    =\left(\dfrac{1}{\cos\theta}\right)^2
+    \]
+    However:
+    \[
+    \dfrac{\sin\theta}{\cos\theta}=\tan\theta
+    \qquad \text{and} \qquad
+    \dfrac{1}{\cos\theta}=\sec\theta\qquad
+    \]
+    So:
+    \[
+    \tan^2\theta+1=\sec^2\theta
+    \]
+  </p>
+</div>
+<p>
+These formulas motivate the following integration technique:
+</p>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="proc" data-title="Tangent Substitution">
+    If the integrand involves the quantity \(x^2+1\) then it may be
+    useful to make the substitution \(x=\tan\theta\). Then
+    \(dx=\sec^2\theta\,d\theta\) and \(x^2+1=\tan^2\theta+1=\sec^2\theta\).
+    So it may be possible to re-express the integrand in terms of \(\tan\theta\)
+    and \(\sec\theta\) only.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Here are some examples:
+</p>
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int \dfrac{1}{\sqrt{x^2+1}}\,dx\).
+</p>
+<p class="sol">
+  We substitute \(x=\tan\theta\). Then \(dx=\sec^2\theta\,d\theta\) and so
+  \[\begin{aligned}
+  \int \dfrac{1}{\sqrt{x^2+1}}\,dx
+  &=\int \dfrac{1}{\sqrt{\tan^2\theta+1}}\,\sec^2\theta\,d\theta \\
+  &=\int \dfrac{1}{\sqrt{\sec^2\theta}}\,\sec^2\theta\,d\theta
+  =\int \sec\theta\,d\theta \\
+  &=\ln|\sec\theta+\tan\theta|+C
+  \end{aligned}\]
+  <span class="redbig center">Don't forget to substitute for the differential!</span>
+  <span class="greenbig center">Don't forget to substitute back!</span>
+  We already know that \(\tan\theta=x\) from the definition of the substitution.
+  We also need a formula for \(\sec\theta\) in terms of \(x\).
+  There are two ways to find this formula:
+</p>
+<ol class="list-outside">
+  <li>
+		We can use the Pythagorean identity \(\tan^2\theta+1=\sec^2\theta\). Then:
+  	\[
+    \sec\theta=\sqrt{\tan^2\theta+1}=\sqrt{x^2+1}
+    \]
+	</li>
+	or
+	<li>
+    <div class="column">
+      <div data-col-width="50%">
+        <p>
+          We can draw a right triangle with an angle \(\theta\)
+          whose opposite side is \(x\) and whose adjacent is \(1\).
+          These sides are chosen so that \(\tan\theta=\dfrac{x}{1}=x\).
+          Then the hypotenuse is \(\sqrt{x^2+1}\) and so:
+          \[
+          \sec\theta=\dfrac{\text{HYP}}{\text{ADJ}}
+          =\dfrac{\sqrt{x^2+1}}{1}=\sqrt{x^2+1}
+          \]
+        </p>
+      </div>
+      <div data-col-width="50%" class="center">
+      	<img src="graphics/tritan.jpg" alt="tritan" style="width: 200; height: 150;"/>
+      </div>
+    </div>
+	</li>
+</ol>
+<p>
+  Returning to the problem at hand, we conclude:
+  \[
+  \int \dfrac{1}{\sqrt{x^2+1}}\,dx
+  =\ln\left|\sqrt{x^2+1}+x\right|+C
+  \]
+</p>
+<p class="check">
+  We check by differentiating.
+  If \(f(x)=\ln\left|\sqrt{x^2+1}+x\right|\) then
+  \[\begin{aligned}
+  f'(x)
+  &=\dfrac{1}{\sqrt{x^2+1}+x}\left(\dfrac{1}{2}\dfrac{2x}{\sqrt{x^2+1}}+1\right) \\
+  &=\dfrac{1}{\sqrt{x^2+1}+x}\left(\dfrac{x+\sqrt{x^2+1}}{\sqrt{x^2+1}}\right)
+  =\dfrac{1}{\sqrt{x^2+1}}
+  \end{aligned}\]
+  which is the integrand we started with.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Compute \(\displaystyle \int \dfrac{x}{\sqrt{x^2+1}}\,dx\).
+</p>
+<p class="sol" data-title="METHOD 1:">
+  We substitute \(x=\tan\theta\). Then \(dx=\sec^2\theta\,d\theta\) and so:
+  \[\begin{aligned}
+  \int \dfrac{x}{\sqrt{x^2+1}}\,dx
+	&=\int \dfrac{\tan\theta}{\sqrt{\tan^2\theta+1}}\sec^2\theta\,d\theta
+  =\int \dfrac{\tan\theta}{\sqrt{\sec^2\theta}}\sec^2\theta\,d\theta \\
+  &=\int \tan\theta\sec\theta\,d\theta=\sec\theta+C
+  =\sqrt{x^2+1}+C
+  \end{aligned}\]
+  This solution was unnecessarily complicated. Always look for an ordinary substitution first:
+</p>
+<p class="sol" data-title="METHOD 2:">
+  Let \(u=x^2+1\). Then \(du=2x\,dx\) or \(\dfrac{1}{2}\,du=x\,dx\). So:
+  \[
+  \int \dfrac{x}{\sqrt{x^2+1}}\,dx
+	=\dfrac{1}{2}\int \dfrac{1}{\sqrt{u}}\,du
+	=\sqrt{u}+C=\sqrt{x^2+1}+C
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Now it's your turn:
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+  Compute \(\displaystyle \int \dfrac{1}{(x^2+1)^{3/2}}\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+    <button class="toggle has-check" data-toggle="CkX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Let \(x=\tan\theta\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\displaystyle \int \dfrac{1}{(x^2+1)^{3/2}}\,dx
+    =\dfrac{x}{\sqrt{1+x^2}}+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    We substitute \(x=\tan\theta\). Then \(dx=\sec^2\theta\,d\theta\) and so:
+    \[\begin{aligned}
+    \int \dfrac{1}{(x^2+1)^{3/2}}\,dx
+    &=\int \dfrac{1}{(1+\tan^2\theta)^{3/2}}\sec^2\theta\,d\theta \\
+    &=\int \dfrac{1}{\sec^3\theta}\sec^2\theta\,d\theta
+    =\int \dfrac{1}{\sec\theta}\,d\theta \\
+    &=\int \cos\theta\,d\theta=\sin\theta+C
+    \end{aligned}\]
+    Examining the triangle, we see
+    \(\sin\theta=\dfrac{\text{OPP}}{\text{HYP}}=\dfrac{x}{\sqrt{1+x^2}}\).
+    So:
+    \[
+    \int \dfrac{1}{(x^2+1)^{3/2}}\,dx
+    =\dfrac{x}{\sqrt{1+x^2}}+C
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX3">
+  <p>
+    We check by differentiating.
+    If \(f(x)=\dfrac{x}{\sqrt{1+x^2}}\), then
+    \[\begin{aligned}
+    f'(x)
+    &=\dfrac{\sqrt{1+x^2}(1)-x\dfrac{2x}{2\sqrt{1+x^2}}}{x^2+1} \\
+    &=\dfrac{(1+x^2)-x^2}{(x^2+1)^{3/2}} \\
+    &=\dfrac{1}{(x^2+1)^{3/2}}
+    \end{aligned}\]
+    which is the integrand we started with.
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+  Compute \(\displaystyle \int_0^1 \dfrac{x^3}{(x^2+1)^{3/2}}\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX4"></button>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    Use the ordinary substitution \(u=x^2+1\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(\displaystyle \int_0^1 \dfrac{x^3}{(x^2+1)^{3/2}}\,dx
+    =\dfrac{3}{2}\sqrt{2}-2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    We use the ordinary substitution \(u=x^2+1\). Then \(du=2x\,dx\) or
+    \(\dfrac{1}{2}\,du=x\,dx\) and \(x^2=u-1\). Further,
+    \[\begin{aligned}
+    \text{If} \quad x=1 \quad & \text{then} \quad u=2. \\
+    \text{If} \quad x=0 \quad & \text{then} \quad u=1.
+    \end{aligned}\]
+    So:
+    \[\begin{aligned}
+    \int_0^1 \dfrac{x^3}{(x^2+1)^{3/2}}\,dx
+    &=\dfrac{1}{2}\int_1^2 \dfrac{u-1}{u^{3/2}}\,du
+    =\dfrac{1}{2}\int_1^2 (u^{-1/2}-u^{-3/2})\,du \\
+    &=\dfrac{1}{2}\left[\dfrac{}{}2u^{1/2}+2u^{-1/2}\right]_1^2
+    =\left[\dfrac{}{}u^{1/2}+u^{-1/2}\right]_1^2 \\
+    &=\left(\sqrt{2}+\dfrac{1}{\sqrt{2}}\right)-(1+1)
+    =\dfrac{3}{2}\sqrt{2}-2
+    \end{aligned}\]
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e4. Precise Bounded Monotonic Sequence Theorem | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PrecLaws.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  \(\displaystyle \lim_{n\to\infty}a_n=L\) &emsp; means
+  <span class="center">
+    For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </span>
+  <span class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon\).
+  </span>
+  \(\displaystyle \lim_{n\to\infty}a_n=\infty\) &emsp; means
+  <span class="center">
+    For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </span>
+  <span class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(a_n \gt M\).
+  </span>
+</p>
+
+
+      
+      <h2>e4. Precise Bounded Monotonic Sequence Theorem</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="thm" data-title="Bounded, Monotonic Sequence Theorem">
+  <br>
+  1) Every <span class="hl">increasing</span> sequence which is
+  <span class="hl">bounded above</span> is <span class="hl">convergent</span>
+  to the <span class="hl">least upper bound</span>.
+  <br>
+  2) Every <span class="hl">decreasing</span> sequence which is
+  <span class="hl">bounded below</span> is <span class="hl">convergent</span>
+  to the <span class="hl">greatest lower bound</span>.
+  <br><br>
+  3) Every <span class="hl">bounded, monotonic</span> sequence is
+  <span class="hl">convergent</span>.
+  <br><br>
+  4) Every <span class="hl">unbounded, increasing</span> sequence is
+  <span class="hl">divergent to</span> \(\infty\).
+  <br>
+  5) Every <span class="hl">unbounded, decreasing</span> sequence is
+  <span class="hl">divergent to</span> \(-\infty\).
+  <br><br>
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+	<p>
+		<span class="hl">Proof of (1):</span> <br/>
+    Let \(a_n\) be an increasing sequence which is bounded above
+    and let \(L\) be its least upper bound. Then we need to show
+    \(\displaystyle \lim_{n\to\infty}a_n=L\) which means:
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon\).
+    </span>
+		So given an arbitrary number \(\varepsilon \gt 0\), we claim there is an
+    index \(N\) with \(a_N \gt L-\varepsilon\). If not, then every \(a_n\)
+    satisfies \(a_n \lt L-\varepsilon\) and \(L-\varepsilon\) would be an
+    upper bound. But this is impossible because \(L\) is the least upper
+    bound. Consequently, there is an \(N\) for which \(a_N \gt L-\varepsilon\).
+    Now suppose \(n \gt N\). Then \(a_n \gt a_N\) because the sequence is
+    increasing. So:
+    \[
+    a_n \gt a_N \gt L-\varepsilon
+    \quad \text{or} \quad
+    \varepsilon \gt L-a_n=|a_n-L|
+    \]
+  </p>
+	<p>
+		<span class="hl">Proof of (2):</span> <br/>
+		The proof is totally analogous to that for (1), reversing some signs and some
+    inequalities.
+  </p>
+	<p>
+		<span class="hl">Proof of (3):</span> <br/>
+		If the sequence if bounded and monotonic, then it is either increasing and
+    bounded above or decreasing and bounded below. In either case it converges.
+  </p>
+	<p>
+		<span class="hl">Proof of (4):</span> <br/>
+    Let \(a_n\) be an increasing sequence which is unbounded. We need to show
+    \(\displaystyle \lim_{n\to\infty}a_n=\infty\) which means:
+    <span class="center">
+      For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(a_n \gt M\).
+    </span>
+    Since the sequence \(a_n\) is increasing it is bounded below by \(a_1\).
+    Since it is unbounded, it must be unbounded above. That means it gets
+    bigger than any given number. In particular, given an arbitrary number
+    \(M \gt 0\), there is a number \(N\) for which \(a_N \gt M\). Then
+    if \(n \gt N\) then \(a_n \gt a_N\) because the sequence is increasing
+    and so \(a_n \gt a_N \gt M\).
+  </p>
+	<p>
+		<span class="hl">Proof of (5):</span> <br/>
+		The proof is totally analogous to that for (4), reversing some signs and some
+    inequalities.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

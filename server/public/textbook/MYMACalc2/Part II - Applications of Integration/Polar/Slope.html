@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Slope of a Polar Graph | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Intersect.html" title="Previous">&lArr;</a></li>
+      <li><a href="Area.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>Polar Curve as a Parametric Curve</h2>
+
+<p>
+	Notice that any <span class="hl">polar curve</span> \(r=f(\theta)\) can be
+	regarded as a <span class="hl">parametric curve</span> with parameter \(\theta\) and
+	coordinate functions:
+	\[
+	x(\theta)=r\cos\theta=f(\theta)\cos\theta
+	\qquad \qquad y(\theta)=r\sin\theta=f(\theta)\sin\theta
+	\]
+	Normally, we remove the reference to \(f\), writing \(r=r(\theta)\) and:
+	\[
+	x(\theta)=r(\theta)\cos\theta
+	\qquad \qquad
+	y(\theta)=r(\theta)\sin\theta
+	\]
+	Then the position vector of the curve is
+	\[
+	\vec{r}(\theta)=(x(\theta),y(\theta))
+	=(r(\theta)\cos\theta,r(\theta)\sin\theta)
+	\]
+	<button class="toggle" data-toggle="Note1">
+	Note on \(r(\theta)\) vs. \(\vec r(\theta)\)</button>
+</p>
+<div class="toBeToggled note" data-toggle="Note1">
+  <p>
+    \(\vec r(\theta)\) is the position vector (Notice the arrow over the
+		\(\vec r\).) telling us the position in the	plane for each value of the
+		parameter \(\theta\),	whereas \(r(\theta)\)	is simply the function
+		defining the polar curve.	Don't get confused.
+  </p>
+</div>
+<p>
+	We will use this formulation in two of our applications of polar curves:
+	slope and arclength.
+</p>
+
+
+      
+      <h2>c. Slope of a Polar Graph</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	Recall that the slope of a parametric curve
+	\(\vec{r}(\theta)=(x(\theta),y(\theta))\) is:
+	\[
+	\dfrac{dy}{dx}
+	=\dfrac
+	{\;\dfrac{dy}{d\theta}\;}
+	{\;\dfrac{dx}{d\theta}\;}
+	\]
+	<!-- \genfrac{}{}{1.5pt}{0} -->
+	In fact, applying the product rule to a polar curve gives:
+	\[\begin{aligned}
+	\dfrac{dx}{d\theta}
+	&=\dfrac{dr}{d\theta}\cos\theta-r(\theta)\sin\theta\\
+	\dfrac{dy}{d\theta}
+	&=\dfrac{dr}{d\theta}\sin\theta+r(\theta)\cos\theta
+	\end{aligned}\]
+	Consequently:
+</p>
+<p class="formula" data-title="Slope of a Polar Curve">
+	The <span class="defword">slope of a polar curve</span> \(r=r(\theta)\) is
+  \[
+  \dfrac{dy}{dx}
+	=\dfrac
+	{\;\dfrac{dr}{d\theta}\sin\theta+r(\theta)\cos\theta\;}
+	{\;\dfrac{dr}{d\theta}\cos\theta-r(\theta)\sin\theta\;}
+  \]
+  <!-- =\genfrac{}{}{1.5pt}{0} -->
+	provided the denominator is non-zero.
+</p>
+<p>
+	<span class="redbig">Caution:</span> Remember, \(\dfrac{dy}{d\theta}\) is
+	in the numerator and \(\dfrac{dx}{d\theta}\) is in the denominator.
+	It is easy to get these backwards.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<div data-col-width="50%">
+	  <p class="example" data-number="1">
+	    Find the slope of the limacon \(r=1+2\cos\theta\) at:
+	  </p>
+	  <ol>
+	    <li>
+	      \(\theta=\dfrac{\pi}{3}\)
+	    </li>
+	    <li>
+	      \(\theta=\dfrac{2\pi}{3}\)
+	    </li>
+	  </ol>
+	  <p>
+	    Notice that \(\theta=\dfrac{2\pi}{3}\) is a point where the curve
+	    passes through the origin since \(\cos\dfrac{2\pi}{3}=\dfrac{-1}{2}\)
+	    and \(r=1+2\left(\dfrac{-1}{2}\right)=0\).
+	  </p>
+	</div>
+	<div class="center" data-col-width="50%">
+	  <img src="graphics/slopelimacon.jpg" alt="slopelimacon">
+	</div>
+</div>
+<p class="sol">
+	Since \(\dfrac{dr}{d\theta}=-2\sin\theta\), the slope is
+	\[\begin{aligned}
+	\dfrac{dy}{dx}
+	&=\dfrac{-2\sin\theta\sin\theta+(1+2\cos\theta)\cos\theta}
+	         {-2\sin\theta\cos\theta-(1+2\cos\theta)\sin\theta} \\
+	\end{aligned}\]
+</p>
+<ol>
+	<li>
+	  At \(\theta=\dfrac{\pi}{3}=60^\circ\), \(\sin\theta=\dfrac{\sqrt{3}}{2}\)
+		and \(\cos\theta=\dfrac{1}{2}\). So:
+		\[\begin{aligned}
+		\left.\dfrac{dy}{dx}\right|_{\theta=\pi/3}
+	  &=\dfrac{\;-2\left(\frac{\sqrt{3}}{2}\right)\left(\frac{\sqrt{3}}{2}\right)
+		+\left(1+2\left(\frac{1}{2}\right)\right)\left(\frac{1}{2}\right)\;}
+		{\;-2\left(\frac{\sqrt{3}}{2}\right)\left(\frac{1}{2}\right)
+		-\left(1+2\left(\frac{1}{2}\right)\right)\left(\frac{\sqrt{3}}{2}\right)\;} \\
+		&=\dfrac{\;-\,\frac{3}{2}+1\;}{\;-\,\frac{\sqrt{3}}{2}-\sqrt{3}\;}
+		=\dfrac{-\,\frac{1}{2}}{-\,\frac{3\sqrt{3}}{2}}=\dfrac{1}{3\sqrt{3}}
+		\end{aligned}\]
+	</li>
+	<li>
+	  At \(\theta=\dfrac{2\pi}{3}=120^\circ\), \(\sin\theta=\dfrac{\sqrt{3}}{2}\)
+		and \(\cos\theta=\dfrac{-1}{2}\). So:
+		\[\begin{aligned}
+		\left.\dfrac{dy}{dx}\right|_{\theta=2\pi/3}
+		&=\dfrac{\;-2\left(\frac{\sqrt{3}}{2}\;\right)\left(\frac{\sqrt{3}}{2}\right)
+		+\left(1+2\left(-\,\frac{1}{2}\right)\right)\left(-\,\frac{1}{2}\right)\;}
+		{\;-2\left(\frac{\sqrt{3}}{2}\right)\left(-\,\frac{1}{2}\right)
+		-\left(1+2\left(-\,\frac{1}{2}\right)\right)\left(\frac{\sqrt{3}}{2}\right)\;} \\
+		&=\dfrac{\;-\frac{3}{2}+0\;}{\;\frac{\sqrt{3}}{2}-0\;}
+		=\dfrac{-3}{\sqrt{3}}=-\sqrt{3}
+		\end{aligned}\]
+	</li>
+</ol>
+
+				<div class="rule"></div>
+
+<p class="remark">
+	In this example, notice that \(\tan\dfrac{2\pi}{3}=-\sqrt{3}\) which is the
+	slope at \(\theta=\dfrac{2\pi}{3}\). This is no coincidence. Look at the
+	figure. Notice that the curve comes into the origin tangent to the line
+	\(\theta=\dfrac{2\pi}{3}\) and the slope of that line is \(\tan\dfrac{2\pi}{3}\).
+</p>
+
+<p class="prop">
+	If \(\theta=\theta_o\) is a point where the polar curve \(r=r(\theta)\)
+	passes through the origin, i.e. \(r(\theta_o)=0\), then the slope at
+	\(\theta=\theta_o\) is:
+	\[
+	\left.\dfrac{dy}{dx}\right|_{\theta=\theta_o}=\tan\theta_o
+	\]
+	<button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+	<p>
+		At \(\theta=\theta_o\), \(r(\theta_o)=0\). So
+		\[\begin{aligned}
+		\left.\dfrac{dy}{dx}\right|_{\theta=\theta_o}
+		&=\dfrac
+		{\;\dfrac{dr}{d\theta}(\theta_o)\sin\theta_o+r(\theta_o)\cos\theta_o\;}
+		{\;\dfrac{dr}{d\theta}(\theta_o)\cos\theta_o-r(\theta_o)\sin\theta_o\;} \\
+		&=\dfrac
+		{\;\dfrac{dr}{d\theta}(\theta_o)\sin\theta_o\;}
+		{\;\dfrac{dr}{d\theta}(\theta_o)\cos\theta_o\;}
+		=\tan\theta_o
+		\end{aligned}\]
+		<!-- &=\genfrac{}{}{1.5pt}{0} -->
+	</p>
+</div>
+
+				<div class="rule"></div>
+
+<div class="column">
+	<div>
+		<p class="exercise" data-number="2">
+		  Find the slope of the 3-leaf rose \(r=\sin3\theta\) at:
+		</p>
+		<ol class="list-outside" type="a">
+		  <li class="dotfillex">
+				<p>
+					\(\theta=\dfrac{\pi}{6}\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1"></button>
+					<button class="toggle has-sol" data-toggle="SolX1"></button>
+				</p>
+			</li>
+		  <li class="dotfillex">
+				<p>
+					\(\theta=\dfrac{\pi}{3}\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2"></button>
+					<button class="toggle has-sol" data-toggle="SolX2"></button>
+				</p>
+			</li>
+		</ol>
+	</div>
+	<div class="center">
+	  <img src="graphics/slope3rose.jpg" alt="slope3rose">
+	</div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\left.\dfrac{dy}{dx}\right|_{\theta=\pi/6}=-\sqrt{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Since \(\dfrac{dr}{d\theta}=3\cos3\theta\), the slope is:
+		\[
+		\dfrac{dy}{dx}
+		=\dfrac{3\cos3\theta\sin\theta+\sin3\theta\cos\theta}
+		       {3\cos3\theta\cos\theta-\sin3\theta\sin\theta}
+		\]
+    At \(\theta=\dfrac{\pi}{6}=30^\circ\):
+		\[
+    \sin\theta=\dfrac{1}{2}, \qquad \cos\theta=\dfrac{\sqrt{3}}{2},
+    \qquad \sin3\theta=1, \qquad \cos3\theta=0
+		\]
+    So:
+		\[
+		\left.\dfrac{dy}{dx}\right|_{\theta=\pi/6}
+		=\dfrac{\cos\theta}{-\sin\theta}
+		=\dfrac
+		{\;\dfrac{\sqrt{3}}{2}\;}{\;\dfrac{-1}{2}\;}
+		=-\sqrt{3}
+		\]
+		<!-- =\genfrac{}{}{1.5pt}{0} -->
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Notice that \(\theta=\dfrac{\pi}{3}\) is a point where the curve passes
+    through the origin.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\left.\dfrac{dy}{dx}\right|_{\theta=\pi/3}=\sqrt{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Since \(\theta=\dfrac{\pi}{3}\) is a point where the curve passes through
+    the origin:
+		\[
+		\left.\dfrac{dy}{dx}\right|_{\theta=\pi/3}
+		=\tan\dfrac{\pi}{3}=\sqrt{3}
+		\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d. Put Terms over a Common Denominator | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html#tricks" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>7. Computing Limits</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>b. When Limit Laws Don't Apply</h2>
+<h2>1. Limit Tricks</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="FactorCancel.html">Factor and Cancel</a></li>
+    <li><a href="ExpandCancel.html">Expand and Cancel</a></li>
+    <br>
+    <li><a href="DivLargeTerm.html">Divide by the Largest Term in the Denominator</a></li>
+    <br>
+    <li><a href="CommDenom.html" class="active">Put Terms over a Common Denominator</a></li>
+    <br>
+    <li><a href="MultConj.html">Multiply by the Conjugate</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>d. Put Terms over a Common Denominator</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  This trick says to put all terms over a common denominator whether they
+  appear in a numerator or denominator or not in a fraction at all.
+  It is most appropriate for the indeterminate forms \(\dfrac{0}{0}\),
+  \(\dfrac{\infty}{\infty}\), \(0\cdot\infty\) or \(\infty-\infty\).
+</p>
+<p class="example" data-number="1">
+  Compute \(\displaystyle
+  \lim_{x\to0}\left(\dfrac{1}{x^2}-\dfrac{1}{x^2+x^4}\right)\).
+</p>
+<p class="sol">
+  If we plug in \(x=0\), we see this has the indeterminate form
+  \(\infty-\infty\). We put it over a common denominator:
+  \[\begin{aligned}
+  \lim_{x\to0}\left(\dfrac{1}{x^2}-\dfrac{1}{x^2+x^4}\right)
+  &=\lim_{x\to0}\dfrac{(x^2+x^4)-x^2}{x^2(x^2+x^4)} \\
+  &=\lim_{x\to0}\dfrac{x^4}{x^4+x^6}
+  \end{aligned}\]
+  This now has the form \(\dfrac{0}{0}\). So we divide numerator and
+  denominator by the largest term in the denominator which is \(x^4\).
+  <button class="toggle" data-toggle="Drop1">Why?</button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    For \(x\) close to \(0\), which is larger: \(x^4\) or \(x^6\)?
+    At \(x=\dfrac{1}{2}\), \(x^4=\dfrac{1}{16}\) and \(x^6=\dfrac{1}{64}\).
+    So \(x^4\) is larger.
+  </p>
+</div>
+<p>
+  \[\begin{aligned}
+  \lim_{x\to0}\left(\dfrac{1}{x^2}-\dfrac{1}{x^2+x^4}\right)
+  &=\lim_{x\to0}\dfrac{x^4\dfrac{}{}}{(x^4+x^6)\dfrac{}{}}
+  \,\dfrac{\dfrac{1}{x^4}}{\dfrac{1}{x^4}} \\
+  &=\lim_{x\to0}\dfrac{1}{1+x^2}=1
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\displaystyle
+    \lim_{x\to4}\dfrac{\dfrac{1}{x}-\dfrac{1}{4}}{x-4}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle
+  \lim_{x\to4}\dfrac{\dfrac{1}{x}-\dfrac{1}{4}}{x-4}=-\,\dfrac{1}{16}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    If we plug in \(x=4\), we see this has the indeterminate form
+    \(\dfrac{0}{0}\). We put it over a common denominator:
+    \[\begin{aligned}
+    \lim_{x\to4}\dfrac{\dfrac{1}{x}-\dfrac{1}{4}}{x-4}
+    &=\lim_{x\to4}\dfrac{1}{x-4}\left(\dfrac{1}{x}-\dfrac{1}{4}\right) \\
+    &=\lim_{x\to4}\dfrac{1}{x-4}\dfrac{4-x}{4x} \\
+    &=\lim_{x\to4}\dfrac{-1}{4x}=-\,\dfrac{1}{16}
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The following exercise is the same limit as in the last exercise on the
+  <a href="DivLargeTerm#CommDenom.html" title="Return using the Back button.">
+  page</a> on dividing by the largest term in the denominator. This time you
+  should put it over a common denominator.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\displaystyle
+    \lim_{x\to0}\dfrac{\dfrac{3}{x^3}}{\dfrac{4}{x^2}+\dfrac{2}{x^4}}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle
+  \lim_{x\to0}\dfrac{\dfrac{3}{x^3}}{\dfrac{4}{x^2}+\dfrac{2}{x^4}}
+  =0\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    If we plug \(x=0\) into the numerator and denominator, we see this has the
+    indeterminate form \(\dfrac{\infty}{\infty}\). To simplify this, we put
+    it over a common denominator:
+    \[\begin{aligned}
+    \lim_{x\to0}&\dfrac{\dfrac{3}{x^3}}{\dfrac{4}{x^2}+\dfrac{2}{x^4}}
+    =\lim_{x\to0}\dfrac{3}{x^3}\dfrac{1}{\dfrac{4x^2+2}{x^4}} \\
+    &=\lim_{x\to0}\dfrac{3}{x^3}\dfrac{x^4}{4x^2+2}
+    =\lim_{x\to0}\dfrac{3x}{4x^2+2}=0
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

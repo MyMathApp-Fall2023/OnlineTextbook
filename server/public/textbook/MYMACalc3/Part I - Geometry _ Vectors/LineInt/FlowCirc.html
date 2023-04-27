@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Flow and Circulation | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Work.html" title="Previous">&lArr;</a></li>
+      <li><a href="NormalInt.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Applications of Vector Line Integrals</h2>
+
+
+      
+      <h2>2. Flow and Circulation</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="greybox">
+  <p class="def" data-title="Flow and Circulation">
+  </p>
+  <div class="column">
+    <p>
+      Let \(\vec V(x,y,z)\) be the <span class="hl">velocity of a fluid</span>
+      at the point \((x,y,z)\). The integral
+      \[
+      \int_A^B \vec V\cdot d\vec s
+      =\int_a^b \vec V\cdot\hat v\,ds
+      \]
+      is called the <span class="defword">flow of the fluid</span> along the
+      curve \(\vec r(t)\) from \(A=\vec r(a)\) to \(B=\vec r(b)\).
+    </p>
+    <div class="center">
+      <img src="graphics/def_flow.jpg" alt="def_flow">
+    </div>
+  </div>
+  <div class="column">
+  	<p>
+      If \(\vec r(t)\) is a <em>closed</em> curve, (i.e. \(A=B\)) then the flow
+      is called the <span class="defword">circulation of the fluid</span>. We
+      frequently write
+      \[
+      \oint_{\vec r} \vec V\cdot d\vec s
+      =\oint_{\vec r} \vec V\cdot\hat v\,ds
+      \]
+      for the circulation to indicate that the curve is closed and we don't
+      need to specify the initial and final points.
+    </p>
+    <div class="center">
+      <img src="graphics/def_circ_ccw.jpg" alt="def_circ_ccw" id="img_def_circ">
+    </div>
+  </div>
+  <div class="column">
+    <p data-col-width="100%">
+      More generally, for any vector field \(\vec F\) the integral
+      \(\displaystyle \int_A^B \vec F\cdot d\vec s\) is called the
+      <span class="defword">flow of the vector field</span> along the curve
+      \(\vec r(t)\) from \(A=\vec r(a)\) to \(B=\vec r(b)\), and the integral
+      \(\displaystyle \oint \vec F\cdot d\vec s\) is called the
+      <span class="defword">circulation of the vector field</span> around a
+      <em>closed</em> curve.
+    </p>
+  </div>
+</div>
+<p class="remark">
+  <span class="redbig">Caution:</span>
+  Even though you don't need to specify the endpoints for a closed curve,
+  you still need to specify the
+  <span class="defword">orientation of the curve</span>, i.e. the direction
+  the curve is traversed. Click here to update the plot for
+  <span class="center">
+  <button id="button_circ_cw">Clockwise</button>
+  &ensp;
+  or
+  &ensp;
+  <button id="button_circ_ccw">Counterclockwise</button>
+  </span>
+  If you reverse the orientation, then the integral
+  will change sign because the sign of the velocity will change. For a
+  parametrized curve, the orientation is usually the direction in which
+  the parameter increases.
+</p>
+<p class="remark">
+  <span class="redbig">Caution:</span>
+  There may be two velocities in many of these problems: The velocity field
+  of the fluid, \(\vec V(x,y,z)\), and the velocity of the curve, \(\vec v(t)\).
+  For this reason, we will refer to the velocity to the curve as the tangent vector.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the flow of the fluid velocity field
+  \(\vec V=\langle -yz,xz,2z\rangle\) along the helix
+  \(\vec r(\theta)=(2\cos\theta,2\sin\theta,3\theta)\) from \((2,0,0)\)
+  to \((2,0,6\pi)\).
+</p>
+<p class="sol">
+  The tangent vector to the curve is
+  \(\vec v=\langle -2\sin\theta,2\cos\theta,3\rangle\).
+  The fluid velocity field along the curve is
+  \[
+  \vec V(\vec r(\theta))=(-yz,xz,2z)
+  =(-6\,\theta\sin\theta,6\,\theta\cos\theta,6\,\theta)
+  \]
+  Their dot product is:
+  \[
+  \vec V\cdot\vec v
+  =12\,\theta\sin^2\theta+12\,\theta\cos^2\theta+18\theta
+  =30\,\theta
+  \]
+  So the flow is
+  \[\begin{aligned}
+  \text{Flow}&
+  =\int_0^{2\pi} \vec V\cdot\vec v\,d\theta
+  =\int_0^{2\pi} 30\,\theta\,d\theta \\
+  &=\left[15\theta^2\right]_0^{2\pi}=60\pi^2
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="2">
+    The magnetic field produced by the current in a straight wire along the
+    \(z\)-axis is:
+    \[
+    \vec B=\left\langle \dfrac{-y}{(x^2+y^2)^{3/2}},
+    \dfrac{x}{(x^2+y^2)^{3/2}},0\right\rangle
+    \]
+    (shown as red arrows). Find the circulation of the magnetic field
+    counterclockwise around the circle \(x^2+y^2=4\) in the \(xy\)-plane
+    (shown in blue). The curve's tangent vectors (shown in orange) point
+    counterclockwise.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_magnetic_circ.jpg" alt="Circ-Example-B" height="300" width="300">
+  </div>
+</div>
+<p class="sol">
+  The circle may be parametrized by
+  \(\vec r(\theta)=(2\cos\theta,2\sin\theta,0)\). Notice, this is
+  <button class="toggle" data-toggle="Drop1">traversed counterclockwise</button>.
+</p>
+<div class="toBeToggled drop-just" data-toggle="Drop1">
+  <p>
+    Look at the points
+    \[\begin{aligned}
+    \vec r(0)&=(2,0,0)&
+    \vec r\left(\dfrac{\pi}{2}\right)&=(0,2,0) \\
+    \vec r(\pi)&=(-2,0,0) &
+    \vec r\left(\dfrac{3\pi}{2}\right)&=(0,-2,0) \\
+    \end{aligned}\]
+    As \(\theta\) increases, the points move counterclockwise around the circle.
+  </p>
+  <p>
+    Alternatively, look at the tangent vectors
+    \(\vec v=\langle -2\sin\theta,2\cos\theta,0\rangle\). They point counterclockwise.
+  </p>
+</div>
+<p>
+   Its tangent vector is
+  \(\vec v=\langle -2\sin\theta,2\cos\theta,0\rangle\).
+  The value of the magnetic field on the circle is
+  \[
+  \vec B=\left\langle \dfrac{-2\sin\theta}{(4)^{3/2}},
+  \dfrac{2\cos\theta}{(4)^{3/2}},0\right\rangle
+  =\left\langle -\,\dfrac{1}{4}\sin\theta,\dfrac{1}{4}\cos\theta,0\right\rangle
+  \]
+  Their dot product is:
+  \[
+  \vec B\cdot\vec v
+  =\dfrac{1}{2}\sin^2\theta+\dfrac{1}{2}\cos^2\theta
+  =\dfrac{1}{2}
+  \]
+  So the circulation is
+  \[
+  \text{Circ}
+  =\int_0^{2\pi} \vec B\cdot\vec v\,d\theta
+  =\int_0^{2\pi} \dfrac{1}{2}\,d\theta=\pi
+  \]
+</p>
+<p class="remark">
+  Ampere's Law in Physics says this circulation is equal to \(4\pi\) times the
+  current flowing through the circle. So this magnetic field is produced by a
+  current \(I=\dfrac{1}{4}\). We will learn about this as an
+  application of
+  <a href="../../Part IV - Theorems/ThmStokes/ApplAmpere.html"
+  title="Return using the Back button.">
+  Stokes' Theorem</a>.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    A small ball is pushed by flowing water through a pipe along a path
+    described by the twisted cubic \(\vec r(t)=(t,t^2,t^3)\) from \((0,0,0)\)
+    to \((2,4,8)\). Suppose the fluid velocity of the water is
+    \(\vec V=\left\langle 2z,\dfrac{3}{2}y,kx\right\rangle\)
+    for some number \(k\). If the flow of the water along the
+    path is \(80\), find \(k\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(k=5\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The flow of the water along the twisted cubic \(\vec r(t)=(t,t^2,t^3)\)
+    is given by
+    \[
+    Flow=\int_A^B \vec V\cdot d\vec s
+    =\int_{(0,0,0)}^{(2,4,8)}
+    \vec V(\vec r(t))\cdot\vec v\,dt
+    \]
+    First, we identify the points \(A=(0,0,0)\) and \(B=(2,4,8)\) as the
+    points where \(t=0\) and \(t=2\), respectively. The fluid velocity,
+    evaluated on the curve, is:
+    \[
+    \vec V(\vec r(t))=\left\langle 2t^3,\dfrac{3}{2}t^2,kt\right\rangle
+    \]
+    and the tangent vector to the curve is:
+    \[
+    \vec v=\langle 1,2t,3t^2\rangle
+    \]
+    Their dot product is:
+    \[
+    \vec V\cdot\vec v=2t^3+3t^3+3kt^3=(5+3k)t^3
+    \]
+    So the flow is
+    \[\begin{aligned}
+    Flow&=\int_0^2 (5+3k)t^3\,dt
+    =\left[(5+3k)\dfrac{t^4}{4}\right]_0^2 \\
+    &=4(5+3k)
+    \end{aligned}\]
+    From the problem statement, the flow is \(80\). So
+    \[
+    4(5+3k)=80 \quad \Rightarrow \quad 3k=15 \quad \Rightarrow \quad k=5
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+  <script>
+    function changeImageSourceOnClick(imgId, buttonId, imgSrc) {
+      const img = document.getElementById(imgId);
+      const button = document.getElementById(buttonId);
+      button.addEventListener("click", () => {
+        img.setAttribute("src", imgSrc);
+      });
+    }
+    changeImageSourceOnClick("img_def_circ", "button_circ_ccw", "graphics/def_circ_ccw.jpg");
+    changeImageSourceOnClick("img_def_circ", "button_circ_cw", "graphics/def_circ_cw.jpg");
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d. The First Derivative Test for Maxima and Minima | 10. Derivatives and Tangent Lines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VelAccOther.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Derivatives and Tangent Lines</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d. The First Derivative Test for Maxima and Minima</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Local Maxima, Local Minima and Horizontal Inflection Points</h3>
+
+<div class="column">
+  <div class="greybox">
+    <p class="def" data-title="Local Maxima and Minima">
+      <br>
+      A <span class="defword">local maximum</span> is a point where the function
+      value is larger than those at nearby points. At a local maximum, the curve
+      changes from increasing to decreasing. In other words, the derivative, or
+      slope, switches from positive to negative.
+    </p>
+    <p>
+      A <span class="defword">local minimum</span> is a point where the function
+      value is smaller than those at nearby points. At a local minimum, the curve
+      changes from decreasing to increasing. In other words, the derivative, or
+      slope, switches from negative to positive.
+    </p>
+    <p>
+      A <span class="hl">local maximum</span> or
+      <span class="hl">local minimum</span> is also called a
+      <span class="defword">local extremum</span>.
+    </p>
+  </div>
+  <div>
+    <p class="center">
+      <img src="graphics/def_max_-x^2.jpg" alt="def_max_-x^2">
+    </p>
+    <p class="center">
+      <img src="graphics/def_min_x^2.jpg" alt="def_min_x^2">
+    </p>
+  </div>
+</div>
+<div class="column">
+  <div>
+    <p class="remark">
+      At a local minimum or maximum, \(x=c\), the derivative changes sign and
+      so \(f'(c)=0\). However, it is possible to have \(f'(c)=0\) but \(x=c\)
+      is neither a maximum nor minimum. \(f'(c)=0\) means the curve is horizontal
+      at \(x=c\), but it could still be increasing on both sides or decreasing
+      on both sides as shown in the plots.
+    </p>
+    <br>
+    <p class="def" data-title="Horizontal Inflection Point">
+      A <span class="defword">horizontal inflection point</span> is a point
+      \(x=c\) where \(f'(c)=0\) and the function is either increasing on both
+      sides of \(x=c\) or decreasing on both sides of \(x=c\) as shown.
+    </p>
+    <br>
+    <p class="remark">
+      There are also <span class="hl">inflection points</span> which are not
+      horizontal and we will learn about them in the chapter on
+      <a href="../Higher/Concavity.html" title="Return using the Back button.">
+      Higher Derivatives</a>
+    </p>
+  </div>
+  <div>
+    <p class="center">
+      <img src="graphics/def_horinfl_incr.jpg" alt="def_horinfl_incr">
+    </p>
+    <p class="center">
+      <img src="graphics/def_horinfl_decr.jpg" alt="def_horinfl_decr">
+    </p>
+  </div>
+</div>
+
+<h3>The First Derivative Test</h3>
+
+<p>
+  To sumarize:
+</p>
+<div class="greybox">
+  <p class="thm" data-title="The First Derivative Test">
+    Suppose \(x=c\) is a critical point of \(f(x)\) where \(f'(c)=0\).
+    Then
+  </p>
+  <ol>
+    <li>
+      If  \(f'(x) < 0\) for \(x < c\) and \(f'(x) > 0\) for \(x > c\),
+      then the critical point \(c\) is a local minimum.
+      <br>
+      This says \(f\) is decreasing on the left and increasing on the right
+      of \(c\).
+    </li>
+    <li>
+      If  \(f'(x) > 0\) for \(x < c\) and \(f'(x) < 0\) for \(x > c\),
+      then the critical point \(c\) is a local maximum.
+      <br>
+      This says \(f\) is increasing on the left and decreasing on the right
+      of \(c\).
+    </li>
+    <li>
+      If  \(f'(x) < 0\) for \(x < c\) and \(x > c\)
+      or  \(f'(x) > 0\) for \(x < c\) and \(x > c\),
+      then the critical point \(c\) is a horizontal inflection point.
+      <br>
+      This says \(f\) is decreasing on the left and right of \(c\) or
+      increasing on the left and right of \(c\).
+    </li>
+  </ol>
+  <p>
+    <button class="toggle" data-toggle="DropX3">Note on \(x < c\) and \(x > c\)</button>
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="DropX3">
+  <p>
+    When we specify the sign of \(f'\) on \(x < c\) and \(x > c\), we actually
+    mean that there is some interval around \(c\) within which these conditions
+    on \(f'\) hold. For <em>local</em> extrema, we don't care what happens far
+    away from \(c\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the local maxima, local minima and horizontal inflection points of
+  the graph of \(f(x)=x^4-8x^2\).
+</p>
+<p class="sol">
+  In an example on a
+  <a href="Slope.html#eg_x^4-8x^2" title="Return using the Back button.">
+  previous page</a> we found the
+  derivative and factored it:
+  \[
+  f'(x)=4x^3-16x=4x(x-2)(x+2)
+  \]
+  Then we drew a number line and marked where the derivative is positive and
+  negative:
+  <span class="center">
+    <img src="graphics/eg_number_line-202arrows.jpg" alt="eg_number_line-202arrows">
+  </span>
+</p>
+<div class="column">
+  <p data-col-width="60%">
+    By the First Derivative Test, \(f(x)\) has a local minimum at \(x=-2\) where the value is
+    \[
+    f(-2)=(-2)^4-8(-2)^2=-16
+    \]
+    \(f(x)\) has a local maximum at \(x=0\) where the value is
+    \[
+    f(0)=(0)^4-8(0)^2=0
+    \]
+    and \(f(x)\) has a local minimum at \(x=2\) where the value is
+    \[
+    f(2)=(2)^4-8(2)^2=-16
+    \]
+    Its plot is shown.
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_maxmin-202.jpg" alt="eg_maxmin-202">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the local maxima, local minima and horizontal inflection points of
+    the graph of \(f(x)=3x^4-16x^3+24x^2\). This graph was previously discussed
+    in an exercise on a
+    <a href="Slope.html#ex_3x^4-16x^3+24x^2" title="Return using the Back button.">
+    previous page</a>.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Factor the derivative and determine where it is positive and negative.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(f(x)\) is decreasing on \((-\infty,0]\) and is
+  increasing on \([0,\infty)\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    In an exercise on a
+    <a href="Slope.html#ex_3x^4-16x^3+24x^2" title="Return using the Back button.">
+    previous page</a> we found the
+    derivative and factored it:
+    \[
+    f'(x)=12x^3-48x^2+48x=12x(x-2)^2
+    \]
+    Then we drew a number line and marked where the derivative is positive and
+    negative:
+    <span class="center">
+      <img src="graphics/ex_number_line02arrows.jpg" alt="ex_number_line02arrows">
+    </span>
+  </p>
+  <div class="column">
+    <p data-col-width="60%">
+      By the First Derivative Test, \(f(x)\) has a local minimum at \(x=0\) where the value is
+      \[
+      f(0)=3(0)^4-16(0)^3+24(0)^2=0
+      \]
+      and \(f(x)\) has a horizontal inflection point at \(x=2\) where the value is
+      \[
+      f(2)=3(2)^4-16(2)^3+24(2)^2=16
+      \]
+      Here is the plot.
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_maxmin02.jpg" alt="ex_maxmin02">
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

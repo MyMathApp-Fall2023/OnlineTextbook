@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b1. Limits - Definition | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Plot.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimPlot.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b1. Limits - Definition</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The limit of the sequence \(a_n\), denoted
+	\(\lim\limits_{n\to\infty}a_n\), tells what number the terms are
+	approaching as we go further and further out in the sequence (as \(n\) gets
+  arbitrarily large).
+</p>
+<div class="column">
+  <div>
+  	<p class="example" data-number="1">
+    Plot the sequence \(a_n=\dfrac{2n+1}{n}\) for \(1\cdots8\) and guess its limit.
+    </p>
+    <p class="sol">
+    	The plot is shown at the right. As  \(n\) gets larger, the terms \(a_n\) are
+    	approaching \(2\).  So we write:
+    	\[\lim_{n\to\infty}a_n
+    	=\lim_{n\to\infty}\dfrac{2n+1}{n}=2
+    	 \]
+  	</p>
+  </div>
+	<div class="center">
+  	<img src="graphics/lim1.jpg" alt="lim1">
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  When we are given a sequence, the typical questions we ask are:
+</p>
+<p>
+	<ol>
+  	<li> Does the sequence have a limit?
+		</li>
+  	<li> If so, what is the limit of the sequence?
+		</li>
+		<li> If not, is the limit infinite, (i.e. \(+\infty\) or \(-\infty\))
+			or oscillatory divergent (i.e. neither \(+\infty\) nor \(-\infty\))?
+		</li>
+	</ol>
+<p>
+	There is a precise definition of the limit of a squence, but it is beyond
+	the scope of most classes. If you want to read about it, it is at the end of
+	<a href="PrecDef.html" title="Return using the Back button.">this chapter</a>. However, it is sufficient to
+	understand the following intuitive definition:
+</p>
+
+<p class="predef" data-title="Limit of a Sequence">
+  The sequence \(a_n\) <span class= "defword">has a limit</span> if the
+	terms \(a_n\) get closer and closer to a <em>finite</em> number \(L\)
+	as \(n\) gets arbitrarily large.  In that case, we say
+	\(\lim\limits_{n\to\infty}a_n\) exists and is equal to \(L\),
+	and we write:
+	\[\lim_{n\to\infty}a_n=L
+	\]
+  If a sequence has a limit \(L\), we say it is
+	<span class="defword">convergent</span> and that it
+  <span class="defword">converges to</span> \(L\).
+  <br>
+  If a sequence does not have a limit, we say it is
+	<span class="defword">divergent</span> or that it
+	<span class="defword">diverges</span>.
+</p>
+<p>
+  If the sequence diverges, it may still have an
+  <span class="hl">infinite limit</span>.
+</p>
+ <p class="predef" data-title="Infinite Limit of a Sequence">
+  If the terms \(a_n\) get <span class="hl">arbitrarily large and
+	positive</span> as \(n\) gets arbitrarily large, then we say the
+	sequence <span class="defword">diverges to positive infinity</span>
+	(\(+\infty\)) or that the <span class="defword">limit	is
+	\(+\infty\)</span> and write:
+	\[\lim_{n\to\infty}a_n=\infty
+	\]
+  If the terms \(a_n\) get <span class="hl">arbitrarily large and
+  negative</span> as \(n\) gets arbitrarily large, then we say the
+  sequence <span class="defword">diverges to negative infinity</span>
+	(\(-\infty\)) or that the <span class="defword">limit	is
+	\(-\infty\)</span> and write:
+	\[\lim_{n\to\infty}a_n=-\infty
+	\]
+	If the sequence is divergent but does not diverge to either \(\infty\)
+	or \(-\infty\), then we say it is  <span class="defword">oscillatory
+  divergent</span>.
+</p>
+<p class="remark">
+  To say that the limit is plus or minus infinity does
+	<span class="hl">not</span> say that the limit exists! It merely says the
+	<span class="hl">way</span> in which it does not exist, i.e. the
+	<span class="hl">way</span> in which it <span class="hl">diverges</span>.
+</p>
+<div class="column">
+	<p class="example" data-number="2">
+		The sequence \(a_n=1+\sqrt{n}\) diverges to \(\infty\) because
+		\(1+\sqrt{n}\) gets arbitrarily large and positive as \(n\) gets
+		large. Its plot is:
+	</p>
+  <div class="center">
+    <img src="graphics/lim2.jpg" alt="lim2">
+  </div>
+</div>
+<div class="column">
+	<p class="example" data-number="3">
+		The sequence \(a_n=1-\sqrt{n}\) diverges to \(-\infty\) because \(1-\sqrt{n}\)
+		gets arbitrarily large and negative as \(n\) gets large.  Its plot is:
+	</p>
+	<div class="center">
+		<img src="graphics/lim3.jpg" alt="lim3">
+	</div>
+</div>
+<p class="remark">
+  It is certainly possible to diverge without diverging to
+  \(\infty\) or \(-\infty\).
+</p>
+<div class="column">
+	<p class="example" data-number="4">
+		Since the terms of the sequence \(a_n=(-1)^n+\dfrac{1}{n}\) oscillate
+		between numbers which get closer to \(1\) and numbers which get closer
+		to \(-1\); the sequence does not converge; it diverges. However, it
+		does not diverge to \(\infty\) or \(-\infty\). So it is
+		<span class="hl">oscillatory divergent</span>. Its plot is:
+	</p>
+	<div class="center">
+		<img src="graphics/lim4.jpg" alt="lim4">
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  Plots are insufficient to determine a limit. However, examples and exercises
+  appear on the
+  <a href="LimPlot.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

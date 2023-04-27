@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Falling with Air Resistance | 17. Applications of Differential Equations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="FreeFall.html" title="Previous">&lArr;</a></li>
+      <li><a href="Logistic.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Applications of Differential Equations</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Falling near the Earth</h2>
+
+
+      
+      <h2>2. Falling with Air Resistance</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Air resistance is a drag force which pushes back on the body, opposite to
+  the velocity, slowing it down. Further, the drag increases as the speed
+  increases. So the drag force is usually taken to be
+  \[
+  F=-kv
+  \]
+  where \(k\) is a positive constant called the
+  <span class="defword">drag coefficient</span> or the
+  <span class="defword">coefficient of viscosity</span>. There is a minus
+  sign because if the body is moving down so that the velocity \(v\) is
+  negative then the force is positive and pushes up. The drag coefficient
+  depends on the size and shape of the body as well as on the density
+  of the air (or other fluid).
+</p>
+<p>
+  The total force is now the sum of the gravitational force and the drag force.
+  So Newton's Second Law now says \(ma=-mg-kv\). Consequently, the position
+  of the body \(y(t)\) may now be found by solving the differential equation:
+  \[
+  m\dfrac{d^2y}{dt^2}=-mg-k\dfrac{dy}{dt}
+  \]
+  This equation is most easily solved by first finding the velocity \(v(t)\)
+  by solving the <span class="defword">velocity equation</span>:
+  \[
+  m\dfrac{dv}{dt}=-mg-kv
+  \]
+  and then finding the position \(y(t)\) by solving the
+  <span class="defword">position equation</span>:
+  \[
+  \dfrac{dy}{dt}=v
+  \]
+  The velocity equation is both separable and linear, and so may be solved by
+  either separating variables or by multiplying by an integrating factor.
+  The position equation may be solved by a simple integration.
+</p>
+<p>
+  Further, we will see that, when there is air resistance, the velocity
+  approaches a <span class="defword">terminal velocity</span>:
+  \[\begin{aligned}
+  v_\text{terminal}
+  &=\lim_{t\rightarrow\infty}v(t)
+  \end{aligned}\]
+</p>
+
+<p class="example" data-number="1">
+  A soccer ball whose mass is \(0.5\) kg is dropped (\(v(0)=0\))
+  from the top of the Leaning Tower of Pisa which is \(55\) m tall. If the
+  drag coefficient is \(k=0.8\,\dfrac{\text{kg}}{\text{m}}\), how long does it
+  take the ball to reach the ground? What is its velocity when it reaches
+  the ground? Graph its position and velocity as a function of time. What is
+  the terminal velocity and approximately when does the ball reach terminal
+  velocity?
+</p>
+<p class="sol">
+  The velocity equation is
+  \[
+  .5\dfrac{dv}{dt}=-.5(9.8)-.8v
+  \]
+  We multiply through by \(2\) and write this in standard linear form:
+  \[
+  \dfrac{dv}{dt}+1.6v=-9.8
+  \]
+  The integrating factor is
+  \[
+  I=e^{\textstyle \int 1.6\,dt}=e^{1.6t}
+  \]
+  We multiply the standard form of the differential equation by the
+  integrating factor, recognize the left as the derivative of a product
+  and integrate:
+  \[\begin{aligned}
+  e^{1.6t}\dfrac{dv}{dt}+e^{1.6t}1.6v&=-9.8e^{1.6t} \\
+  \dfrac{d}{dt}\left[e^{1.6t}v\right]&=-9.8e^{1.6t}
+  \end{aligned}\]
+  \[\begin{aligned}
+  e^{1.6t}v&=-\int 9.8e^{1.6t}\,dt=-\dfrac{9.8}{1.6}e^{1.6t}+C \\
+  &=-6.125e^{1.6t}+C
+  \end{aligned}\]
+  We solve for \(v\):
+  \[
+  v=-6.125+Ce^{-1.6t}
+  \]
+  Next, we use the initial condition \(v=0\) when \(t=0\):
+  \[
+  0=-6.125+C
+  \qquad \Longrightarrow \qquad
+  C=6.125
+  \]
+  So the velocity is \(v=-6.125+6.125e^{-1.6t}\) or:
+  \[
+  v=-6.125\left(1-e^{-1.6t}\right)
+  \]
+  Notice that the velocity is negative for \(t \gt 0\). So the speed
+  (the absolute value of the velocity) is:
+  \[
+  \text{speed}\,=|v|=6.125\left(1-e^{-1.6t}\right)
+  \]
+  Finally, we get the position by integrating the velocity:
+  \[\begin{aligned}
+  y&=\int v\,dt=\int \left(6.125e^{-1.6t}-6.125\right)\,dt \\
+  &=-\dfrac{6.125}{1.6}e^{-1.6t}-6.125t+K \\
+  &=-3.828e^{-1.6t}-6.125t+K
+  \end{aligned}\]
+  and using the initial condition \(y=55\) when \(t=0\):
+  \[
+  55=-3.828+K
+  \qquad \Longrightarrow \qquad
+  K=58.828
+  \]
+  So the position is \(y=-3.828e^{-1.6t}-6.125t+58.828\) or:
+  \[
+  y=55+3.828\left(1-e^{-1.6t}\right)-6.125t
+  \]
+</p>
+<div class="column">
+  <div>
+    <p>
+      The ball reaches the ground when \(y=0\). This equation is hard to
+      solve, so we get a rough estimate by graphing the position.
+      From the graph, the ball hits the ground at about \(t=9.6\) sec. A
+      better value, using a calculator is \(t=9.6046\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="ballposition.jpg" alt="ballposition">
+  </div>
+</div>
+<div class="column">
+  <div>
+    <p>
+      We also graph the velocity.  When the ball hits the ground, the velocity is
+      \[\begin{aligned}
+      v(9.6046)
+      &=-6.125\left(1-e^{-1.6\cdot9.6046}\right) \\
+      &=-6.124\,998\,7
+      \end{aligned}\]
+      We have written an excessive number of decimal places, so we could see
+      how close to the velocity is to the terminal velocity:
+      \[\begin{aligned}
+      v_\text{terminal}
+      &=-\lim_{t\rightarrow\infty}6.125\left(1-e^{-1.6t}\right) \\
+      &=-6.125
+      \end{aligned}\]
+    </p>
+  </div>
+  <div class="center">
+    <img src="ballspeed.jpg" alt="ballspeed">
+  </div>
+</div>
+<p>
+  The plots show that the ball reaches the terminal velocity at about \(t=3\)
+  sec where the <span class="hl">speed graph</span> becomes horizontal
+  and the <span class="hl">position graph</span> becomes a straight line.
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    A \(40\) gm marble is placed on the surface of a viscous oil whose
+    coefficient of viscosity is \(k=12\,\dfrac{\text{gm}}{\text{cm}}\),
+    so that it slowly falls into the fluid. The velocity is
+    \(v(0)=0\) at the surface of the fluid. Find the position and
+    velocity of the marble as a function of time as it falls through the oil.
+    Graph them for \(0 \le t \le 25\) sec. Find the terminal velocity. About
+    when does the marble reach terminal velocity?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\begin{aligned}
+    y&=108.89\left(1-e^{-.3t}\right)-32.667t \\
+    v&=-32.667\left(1-e^{-.3t}\right)
+    \end{aligned}\)
+  </p>
+  <div class="center">
+    <img src="marbleposition.jpg" alt="marbleposition">
+    &emsp;
+    <img src="marblespeed.jpg" alt="marblespeed">
+  </div>
+  <p>
+    \(v_\text{terminal}=-32.667\) at about \(t=15\) sec.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The velocity equation is
+    \[
+    40\dfrac{dv}{dt}=-40(980)-12v
+    \]
+    Its standard linear form is
+    \[
+    \dfrac{dv}{dt}+.3v=-980
+    \]
+    The integrating factor is \(e^{.3t}\). So the equation becomes
+    \[
+    \dfrac{d}{dt}\left[e^{.3t}v\right]=-980e^{.3t}
+    \]
+    We solve for \(v\).
+    \[
+    e^{.3t}v=-\int 980e^{.3t}\,dt=-\dfrac{9.8}{.3}e^{.3t}+C
+    \]
+    \[
+    v=-32.667+Ce^{-.3t}
+    \]
+    From the initial condition \(v(0)=0\), we have \(C=32.667\). So
+    \[
+    v=-32.667\left(1-e^{-.3t}\right)
+    \]
+    We get the position by integrating.
+    \[\begin{aligned}
+    y&=\int v\,dt=\int \left(32.667e^{-.3t}-32.667\right)\,dt \\
+    &=-108.89e^{-.3t}-32.667t+K
+    \end{aligned}\]
+    From the initial condition \(y(0)=0\), we have \(K=108.89\). So
+    \[
+    y=108.89\left(1-e^{-.3t}\right)-32.667t
+    \]
+    The graphs of the position and velocity are
+  </p>
+  <div class="center">
+    <img src="marbleposition.jpg" alt="marbleposition">
+    &emsp;
+    <img src="marblespeed.jpg" alt="marblespeed">
+  </div>
+  <p>
+    The <span class="hl">terminal velocity</span> is:
+    \[
+    v_\text{terminal}=-\lim_{t\rightarrow \infty}32.667\left(1-e^{-.3t}\right)
+    =-32.667
+    \]
+    From the plots, the marble reaches its terminal velocity at about \(t=15\) sec.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

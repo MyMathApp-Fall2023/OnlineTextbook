@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Work | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VectorInt.html" title="Previous">&lArr;</a></li>
+      <li><a href="FlowCirc.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Applications of Vector Line Integrals</h2>
+
+
+      
+      <h2>1. Work</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In a Physics course you learn that when a constant force, \(F\), moves an
+  object a distance, \(D\), in a straight line then the
+  <span class="hl">work</span> done is \(W=FD\) provided the force is in the
+  direction of the motion. In the chapter on the
+  <a href="../Dot/Work.html" title="Return using the Back button.">
+  Dot Product</a>, you learned that when a constart force vector, \(\vec F\),
+  moves an object by a displacement vector, \(\vec D\), the
+  <span class="hl">work</span> done is \(W=\vec F\cdot\vec D\) even if they
+  are not parallel. We now want to look at the case where the force may not
+  be constant and the path may not be straight. If the object moves a small
+  distance \(ds\) in the direction \(\hat{T}\) then the displacement is
+  \(d\vec D=\hat{T}\,ds\). Assuming the force is essentially constant over
+  this small distance, the small amount of work done is
+  \(dW=\vec F\cdot d\vec D=\vec F\cdot\hat{T}\,ds\) and the total
+  <span class="defword">work</span> is
+  \[
+  W=\int_A^B \vec F\cdot\hat{T}\,ds=\int_A^B \vec F\cdot d\vec s
+  \]
+</p>
+
+<p class="remark">
+  Notice that we used the theoretical
+  <a href="VectorInt.html#lineintvector" title="Return using the Back button.">
+  version (3)
+  </a> of the line integral to
+  derive the formula for work, but in the example below we will use
+  <a href="VectorInt.html#lineintvector" title="Return using the Back button.">
+  version (1)
+  </a> to compute it.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the work done by the force \(\vec F=\langle y^2,z,x^2\rangle\) on
+  an object which moves along the twisted cubic \(\vec r(t)=(t,t^2,t^3)\)
+  from \((0,0,0)\) to \((1,1,1)\).
+</p>
+<p class="sol">
+  The restriction of the force to the curve is
+  \(\vec F(\vec r(t))
+  =\left\langle (t^2)^2,(t^3),(t)^2\right\rangle
+  =\langle t^4,t^3,t^2\rangle\) and the velocity is
+  \(\vec v=\langle 1,2t,3t^2\rangle\). So the work is
+  \[\begin{aligned}
+  W&=\int_{(0,0,0)}^{(1,1,1)} \vec F\cdot d\vec s
+  =\int_0^1 \vec F\cdot\vec v\,dt \\
+  &=\int_0^1 (t^4+2t^4+3t^4)\,dt
+  =\left[\dfrac{6t^5}{5}\right]_0^1
+  =\dfrac{6}{5}
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the work done on a ball by a force \(\vec F=\langle y,-x,z\rangle\)
+    which pushes it along the helix \(\vec r(t)=(4\cos t,4\sin t,3t)\) from
+    the point \(A=\) \((4,0,0)\) to \(B=(-4,0,9\pi)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    \[
+    W=\int_A^B \vec F\cdot d\vec s
+    =\int_a^b \vec F(\vec r(t))\cdot\vec v\,dt
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \[W=\dfrac{81}{2}\pi^2-48\pi\]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The velocity vector for the helix is
+    \(\vec v=\langle -4\sin t,4\cos t,3\rangle\) and the force evaluated
+    on the curve is \(\vec F(\vec r(t))=\langle 4\sin t,-4\cos t,3t\rangle\).
+    Their dot product is:
+    \[
+    \vec F\cdot\vec v=-16\sin^2t-16\cos^2t+9t=9t-16
+    \]
+    The point \(A\) occurs at \(t=0\) and the point \(B\) occurs
+    at \(t=3\pi\). So the work done on the ball is thus given by
+    \[\begin{aligned}
+    W&=\int_0^{3\pi} \vec F\cdot\vec v\,dt
+    =\int_0^{3\pi} 9t-16\,dt \\
+    &=\left[\dfrac{9}{2}t^2-16t\right]_0^{3\pi}
+    =\dfrac{9}{2}(3\pi)^2-16(3\pi) \\
+    &=\dfrac{81}{2}\pi^2-48\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can practice finding the work done by a force to move an object along
+  a curve using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/WorkOnCurve.maplet" download>Work Along a Curve</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

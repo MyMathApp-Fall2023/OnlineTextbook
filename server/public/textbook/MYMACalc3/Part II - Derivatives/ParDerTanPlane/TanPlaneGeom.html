@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Geometric Derivation | 11. Partial Derivatives and Tangent Planes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ParDerGeom.html" title="Previous">&lArr;</a></li>
+      <li><a href="TanPlaneAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Partial Derivatives and Tangent Planes</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Tangent Plane to the Graph of a Function</h2>
+
+
+      
+      <h2>1. Geometric Derivation</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+  On the <a href="ParDerGeom.html">previous page</a>, we introduced the
+  tangent lines to the \(x\)-trace and \(y\)-trace of a function of two
+  variables, \(f(x,y)\), at \((x,y)=(a,b)\). By definition, the
+  <span class="defword">tangent plane</span> to the graph
+  at \((x,y)=(a,b)\) is the plane containing these two lines.
+</p>
+<p>
+  On this page, we display the tangent plane graphcally. On the
+  <a href="TanPlaneAlg.html">next page</a> we will find the formula for the
+  tangent plane.
+</p>
+
+        <div class="rule" id="ex_1_tanplane"></div>
+
+<p class="exercise" data-number="1">
+  The plot on the left below is again the graph of the function
+  \(f(x,y)=-x^2-y^2\) discussed in the exercises on the
+  <a href="ParDerGeom.html#ex_x_trace">previous page</a>.
+  The \(x\) and \(y\) sliders are now on the right along with a
+  2D-slider to move both coordinates at once.
+</p>
+
+<div class="column" style="align-items:flex-start;">
+  <div align="center" data-col-width="50%">
+    <textarea id="zFunction_1" hidden> return -(Math.pow(x,2)+Math.pow(y,2))/20 </textarea>
+    <canvas id="figure_1" alt="Graphic unavailable"></canvas>
+    <br><br>
+    <input type="checkbox" id="cbxplane_1">\(xz\)-Slice</input>
+    <input type="checkbox" id="cbxline_1">\(x\)-Trace</input>
+    <input type="checkbox" id="cbxtline_1">\(x\)-Tangent Line</input>
+    <input type="checkbox" id="cbxplay_1">Play \(x\)</input>
+    <br><br>
+    <input type="checkbox" id="cbyplane_1">\(yz\)-Slice</input>
+    <input type="checkbox" id="cbyline_1">\(y\)-Trace</input>
+    <input type="checkbox" id="cbytline_1">\(y\)-Tangent Line</input>
+    <input type="checkbox" id="cbyplay_1">Play \(y\)</input>
+    <br><br>
+    <input type="checkbox" id="cbtplane_1">Tangent Plane</input>
+  </div>
+  <div align="center" data-col-width="50%">
+    <canvas id="xyslider_1" alt="Graphic unavailable"></canvas>
+    <br><br>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="xslider_1" style="width:275px; vertical-align:bottom"></input>
+      \(x=\)
+      <input type="text" id="xdisp_1" style="resize:none;
+        width:30px; height:22px; font-size:12px; vertical-align:text-bottom">
+      </input>
+    </div>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="yslider_1" style="width:275px; vertical-align:bottom"></input>
+      \(y=\)
+      <input type="text" id="ydisp_1" style="resize:none;
+        width:30px; height:22px; font-size:12px; vertical-align:text-bottom">
+      </input>
+    </div>
+  </div>
+</div>
+
+<ul style="list-style-type:none;">
+  <li>
+    <img src="../../../graphics/bullet1.jpg" id="ex-1a"/ height="25">
+    Set the \(x\) and \(y\) sliders to \((x,y)=(6,5)\).
+  </li>
+  <li>
+    <img src="../../../graphics/bullet2.jpg" id="ex-1b"/ height="25">
+    Display the \(x\)-trace and \(y\)-trace through \((x,y)=(6,5)\).
+  </li>
+  <li>
+    <img src="../../../graphics/bullet3.jpg" id="ex-1c"/ height="25">
+    Add the tangent lines to the \(x\)-trace and \(y\)-trace through
+    \((x,y)=(6,5)\).
+  </li>
+  <li>
+    <img src="../../../graphics/bullet4.jpg" id="ex-1d"/ height="25">
+    Finally, add the tangent plane at \((x,y)=(6,5)\).
+  </li>
+  <li>
+    <img src="../../../graphics/rem.jpg" id="ex-1rem1"/ height="25">
+    You can change the point of tangency by typing values for \(x\) or \(y\),
+    dragging either 1D slider or dragging the 2D slider.
+  </li>
+  <li>
+    <img src="../../../graphics/rem.jpg" id="ex-1rem2"/ height="25">
+    You can animate either coordinate by selecting the Play buttons.
+  </li>
+  <li>
+    <img src="../../../graphics/rem.jpg" id="ex-1rem3"/ height="25">
+    <strong>Video Game:</strong> &ensp;
+    Use your mouse to try and catch the yellow dot in the 2D slider
+    while one or both of the Play buttons are checked.
+  </li>
+  <li>
+    <img src="../../../graphics/rem.jpg" id="ex-1rem4"/ height="25">
+    You can rotate the 3D plot with your mouse.
+  </li>
+  <li>
+    <img src="../../../graphics/rem.jpg" id="ex-1e"/ height="25">
+    We will find the equation of the tangent plane at \((x,y)=(6,5)\) in an
+    <a href="TanPlaneAlg.html#ex_tanplane">exercise</a> on the next page.
+  </li>
+</ul>
+
+        <div class="rule" id="ex_2_tanplane"></div>
+
+<p class="exercise" data-number="2">
+  The plot on the left below is the graph of the function
+  \(f(x,y)=-x^2y^3\).
+</p>
+<div class="column"style="align-items:flex-start;">
+  <div align="center" data-col-width="50%">
+    <textarea id="zFunction_2" hidden> return -Math.pow(x,2)*Math.pow(y,3)/10000 </textarea>
+    <canvas id="figure_2" alt="Graphic unavailable"></canvas>
+    <br><br>
+    <input type="checkbox" id="cbxplane_2">\(xz\)-Slice</input>
+    <input type="checkbox" id="cbxline_2">\(x\)-Trace</input>
+    <input type="checkbox" id="cbxtline_2">\(x\)-Tangent Line</input>
+    <input type="checkbox" id="cbxplay_2">Play \(x\)</input>
+    <br><br>
+    <input type="checkbox" id="cbyplane_2">\(yz\)-Slice</input>
+    <input type="checkbox" id="cbyline_2">\(y\)-Trace</input>
+    <input type="checkbox" id="cbytline_2">\(y\)-Tangent Line</input>
+    <input type="checkbox" id="cbyplay_2">Play \(y\)</input>
+    <br><br>
+    <input type="checkbox" id="cbtplane_2">Tangent Plane</input>
+  </div>
+  <div align="center" data-col-width="50%">
+    <canvas id="xyslider_2" alt="Graphic unavailable"></canvas>
+    <br><br>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="xslider_2" style="width:275px;"></input>
+      \(x=\)
+      <input type="text" id="xdisp_2" style="resize:none; width:30px; height:22px;
+        font-size:12px; vertical-align:text-bottom"></input>
+    </div>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="yslider_2" style="width:275px;"></input>
+      \(y=\)
+      <input type="text" id="ydisp_2" style="resize:none; width:30px; height:22px;
+        font-size:12px; vertical-align:text-bottom"></input>
+      <br><br>
+    </div>
+  </div>
+</div>
+<ul style="list-style-type:none;">
+  <li>
+    <img src="../../../graphics/bullet1.jpg" id="ex-2a"/ height="25">
+    Set the \(x\) and \(y\) sliders to \((x,y)=(3,2)\).
+  </li>
+  <li>
+    <img src="../../../graphics/bullet2.jpg" id="ex-2b"/ height="25">
+    Display the \(x\)-trace and \(y\)-trace through \((x,y)=(3,2)\).
+  </li>
+  <li>
+    <img src="../../../graphics/bullet3.jpg" id="ex-2c"/ height="25">
+    Add the tangent lines to the \(x\)-trace and \(y\)-trace through
+    \((x,y)=(3,2)\).
+  </li>
+  <li>
+    <img src="../../../graphics/bullet4.jpg" id="ex-2d"/ height="25">
+    Finally, add the tangent plane at \((x,y)=(3,2)\).
+  </li>
+  <li>
+    <img src="../../../graphics/rem.jpg" id="ex-2rem"/ height="25">
+    We will find the equation of the tangent plane at \((x,y)=(3,2)\) in an
+    <a href="TanPlaneAlg.html#eg_tanplane">example</a> on the next page.
+  </li>
+</ul>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+  <script src="scripts/OrbitControls.js"></script>
+  <script src="scripts/DragControls.js"></script>
+  <script src="scripts/TextSprite.js"></script>
+  <script src="../../../scripts/MYMAthree.min.js"></script>
+  <!-- <script src="scripts/MYMAthree.js"></script> -->
+  <script src="scripts/CreateTanPlane.js"></script>
+  <!-- <script src="scripts/ParDerGeom.js"></script> -->
+  <!-- <script src="scripts/ParDerGeomResp.js"></script> -->
+  <script src="scripts/TanPlaneGeom.js"></script>
+  <script src="scripts/TanPlaneGeomResp.js"></script>
+  <!-- <script src="scripts/TutTanPlane.js"></script> -->
+
+  <style>
+    canvas{
+      background: #f0f0f0;
+      height: 300px;
+      width: 300px;
+    }
+  </style>
+
+</body>
+</html>

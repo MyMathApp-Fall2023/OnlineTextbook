@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Derivative along a Curve and the Gradient | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="DerVec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a. Derivative along a Curve and the Gradient</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="example" data-number="1">
+  Suppose the density of the air in a room is given by \(\delta=\delta(x,y,z)\).
+  Also suppose there is a fly flying around the room moving along some path
+  \(\vec r(t)=(x(t),y(t),z(t))\). At each time \(t\), the fly
+  sees the density to be the <span class="hl">composition</span>
+  \[
+  \delta(t)=(\delta\circ\vec r)(t)=\delta(\vec r(t))
+  \]
+  Find the rate of change of the density as seen by the fly.
+</p>
+<p class="remark">
+  The notation \(\delta(t)\) is mathematically incorrect since \(\delta\) is
+  actually a function of \(3\) variables not \(1\). However, this usage is
+  commonplace and referred to as
+  <span class="defword">&ldquo;abuse of notation&rdquo;</span>.
+</p>
+<p class="sol">
+  The derivative of the density is found by the chain rule:
+  \[
+  \dfrac{d\delta}{dt}=\dfrac{d(\delta\circ\vec r)}{dt}
+  =\dfrac{\partial \delta}{\partial x}\dfrac{dx}{dt}
+  +\dfrac{\partial \delta}{\partial y}\dfrac{dy}{dt}
+  +\dfrac{\partial \delta}{\partial z}\dfrac{dz}{dt}
+  \]
+  Looking at this formula, we recognize the right side as a dot
+  product of two vectors:
+  \[
+  \dfrac{d\delta }{dt}
+  =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle
+  \cdot\left\langle \dfrac{\partial \delta}{\partial x},
+                    \dfrac{\partial \delta}{\partial y},
+                    \dfrac{\partial \delta}{\partial z}\right\rangle
+  \]
+  The first is simply the velocity (tangent vector) to the curve:
+  \[
+  \vec v=\dfrac{d\vec r}{dt}
+  =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle
+  \]
+  The second is something <em>new</em>. It is called the
+  <span class="defword">gradient</span> of the function
+  \(\delta\) which is denoted:
+  \[
+  \text{grad}\,\delta=\vec\nabla\delta=
+   \left\langle \dfrac{\partial \delta}{\partial x},
+               \dfrac{\partial \delta}{\partial y},
+               \dfrac{\partial \delta}{\partial z}\right\rangle
+  \]
+</p>
+<p class="remark">
+  The symbol \(\nabla\) is read as
+  <span class="defword">"del".</span> It is an upside down, capital, Greek
+  delta \(\Delta\).
+  If you want, you can think of \(\nabla\) as an upper case partial \(\partial\).
+</p>
+<p>
+  Consequently, the rate of change of the density as seen by the fly is:
+  \[
+  \dfrac{d\delta}{dt}=\dfrac{d(\delta\circ\vec r)}{dt}
+  =\vec v\cdot\vec\nabla\delta
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  To summarize:
+</p>
+<p class="def">
+  Given a function \(f(x,y,z)\), its <span class="defword">gradient</span>
+  is the vector field of its partial derivatives:
+  \[
+  \text{grad}\,f=\vec\nabla f=
+   \left\langle \dfrac{\partial f}{\partial x},
+               \dfrac{\partial f}{\partial y},
+               \dfrac{\partial f}{\partial z}\right\rangle
+  \]
+  Given a curve \(\vec r(t)=(x(t),y(t),z(t))\), the composition
+  \[
+  f(t)=(f\circ\vec r)(t)=f(\vec r(t))
+  \]
+  is called the <span class="defword">value of the function \(f\) along the
+  curve \(\vec r(t)\)</span> or the <span class="defword">restriction of the
+  function \(f\) to the curve \(\vec r(t)\).</span> Further, the derivative
+  of the composition
+  \[
+  \dfrac{df}{dt}=\dfrac{d(f\circ\vec r)}{dt}
+  =\dfrac{\partial f}{\partial x}\dfrac{dx}{dt}
+  +\dfrac{\partial f}{\partial y}\dfrac{dy}{dt}
+  +\dfrac{\partial f}{\partial z}\dfrac{dz}{dt}
+  =\vec v\cdot\vec\nabla f
+  \]
+  is called the <span class="defword">derivative of the function \(f\)
+    along the curve \(\vec r(t)\)</span>.
+</p>
+<div class="column" data-col-width="50%">
+  <p class="remark">
+    It should be noted that the derivative along a curve is independent of
+    the detailed path of the curve other than the current position and
+    current velocity. In other words, if two curves pass through the same
+    point and have the same velocity at that point, then the derivative along
+    the curve at that point is the same for both curves. In the figure,
+    all three curves pass through \(P\) and have the same velocity there:
+    \[
+    \vec v_1(P)=\vec v_2(P)=\vec v_3(P).
+    \]
+    So the derivative of any function \(f\) at \(P\) is the same along all
+    \(3\) curves:
+    \[
+    \left.\dfrac{d(f\circ\vec r_1)}{dt}\right|_P
+    =\left.\dfrac{d(f\circ\vec r_2)}{dt}\right|_P
+    =\left.\dfrac{d(f\circ\vec r_3)}{dt}\right|_P
+    \]
+  </p>
+	<div  class="center" data-col-width="50%">
+    <video src="graphics/DerivAlongCrv.mp4" autoplay controls loop>
+      Video playback not supported
+    </video>
+	</div>
+</div>
+
+        <div class="rule" id="tempeg"></div>
+
+<p class="example" data-number="2">
+  The temperature in \(^\circ K\) in a room is given by
+  \(T=275+\sin(\pi x)\cos(\pi y)+\sin(\pi z)\).
+  A fly is flying along the curve \(\vec r(t)=(1+t,-t^2,2t)\).
+  Find the rate of change of \(T\) as seen by the fly at \(t=1\).
+</p>
+<p class="sol">
+  The fly's velocity is \(\vec v(t)=\vec r'(t)=\langle 1,-2t,2\rangle\).
+  At \(t=1\) the fly's position is \(\vec r(1)=(2,-1,2)\) and
+  its velocity is \(\vec v(1)=\langle 1,-2,2\rangle\).
+  The gradient of the temperature is
+  \[\begin{aligned}
+  \vec\nabla T
+  &=\left\langle \dfrac{\partial T}{\partial x},
+                 \dfrac{\partial T}{\partial y},
+                 \dfrac{\partial T}{\partial z}\right\rangle\\
+  &=\langle \pi\cos(\pi x)\cos(\pi y),
+           -\pi\sin(\pi x)\sin(\pi y),
+            \pi\cos(\pi z)\rangle
+  \end{aligned}\]
+  At \(P=(2,-1,2)\) this is
+  \[\begin{aligned}
+  \left.\vec\nabla T\right|_P
+  &=\langle \pi\cos(2\pi)\cos(-\pi),
+            -\pi\sin(2\pi)\sin(-\pi),
+            \pi\cos(2\pi)\rangle\\
+  &=\langle -\pi,0,\pi\rangle
+  \end{aligned}\]
+  So the derivative along the curve at \(t=1\) is:
+  \[\begin{aligned}
+  \left.\dfrac{dT}{dt}\right|_{t=1}
+  &=\vec v(1)\cdot\left.\vec\nabla T\right|_P
+  &=\langle 1,-2,2\rangle\cdot\langle -\pi,0,\pi\rangle
+  &=-\pi+0+2\pi=\pi
+  \end{aligned}\]
+</p>
+<p class="check">
+  Since we have complete information about the functions, we can also form
+  the composition:
+  \[
+  T(t)=T(\vec r(t))=275+\sin(\pi(1+t))\cos(-\pi t^2)+\sin(2\pi t)
+  \]
+  and compute the derivative directly:
+  \[\begin{aligned}
+  \dfrac{dT}{dt}
+  &=\pi\cos(\pi(1+t))\cos(-\pi t^2) \\
+  &\quad+2\pi t\sin(\pi(1+t))\sin(-\pi t^2)+2\pi\cos(2\pi t) \\
+  \end{aligned}\]
+  Then
+  \[\begin{aligned}
+  \left.\dfrac{dT}{dt}\right|_{t=1}
+  &=\pi\cos(2\pi)\cos(-\pi) \\
+  &\quad+2\pi\sin(2\pi)\sin(-\pi)+2\pi\cos(2\pi)
+  =\pi
+  \end{aligned}\]
+  The benefit of the gradient formula,
+  \(\dfrac{df}{dt}=\vec v\cdot\vec\nabla f\), comes when we only have
+  partial information,
+</p>
+
+        <div class="rule" id="ex_barometric"></div>
+
+<p>
+  Since the derivative along a curve only depends on the current position and
+  velocity, we can solve a problem with only partial information.
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    A weather balloon is passing through a region where the barometric pressure
+    is given by \(P=z(2-\cos x)(2+\sin y)\). If its current position is
+    \((x,y,z)=\left(\dfrac{\pi}{2},\pi,2\right)\) and its current velocity is
+    \(\vec v=\langle 3,2,1\rangle\), find the rate of change of the
+    barometric pressure as seen by the balloon.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\dfrac{dP}{dt}=8\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The gradient of the barometric pressure is
+    \[\begin{aligned}
+    \vec\nabla P
+    &=\left\langle \dfrac{\partial P}{\partial x},
+             \dfrac{\partial P}{\partial y},
+             \dfrac{\partial P}{\partial z}\right\rangle\\
+    &=\langle z(\sin x)(2+\sin y),z(2-\cos x)(\cos y), \\
+    &\qquad(2-\cos x)(2+\sin y)\rangle
+    \end{aligned}\]
+    Currently, this is
+    \[\begin{aligned}
+    \left.\vec\nabla P\right|_{(\pi/2,\pi,2)}
+    &=\left\langle 2\left(\sin\dfrac{\pi}{2}\right)(2+\sin\pi),
+        2\left(2-\cos\dfrac{\pi}{2}\right)(\cos\pi), \right. \\
+    &\qquad\left.\left(2-\cos\dfrac{\pi}{2}\right)(2+\sin\pi)\right\rangle \\
+    &=\langle 4,-4,4\rangle
+    \end{aligned}\]
+    So, the current rate of change of the barometric pressure as seen by the
+    balloon is:
+    \[
+    \dfrac{dP}{dt}
+    =\vec v\cdot\left.\vec\nabla P\right|_{(\pi/2,\pi,2)}
+    =\left\langle 3,2,1\right\rangle\cdot\left\langle 4,-4,4\right\rangle
+    =8
+    \]
+  </p>
+</div>
+<p class="remark">
+  Here, we only have partial information because we don't know the weather
+  balloon's full path, only it current position and velocity.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

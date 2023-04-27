@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Linear Combinations | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ScalMultProp.html" title="Previous">&lArr;</a></li>
+      <li><a href="ijNote.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Scalar Multiplication</h2>
+
+
+      
+      <h2>4. Linear Combinations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	If we combine vector addition and scalar multiplication, we get a linear
+  combination.
+</p>
+<p class="def">
+	The <span class="defword">linear combination</span> of the vectors
+  \(\vec u,\vec v,\cdots,\vec w\) with coefficients
+  \(a,b,\cdots,c\) is the expression
+	\[
+  a\vec u+b\vec v+\cdots+c\vec w
+  \]
+	Notice we can do this with any number of vectors and coefficients
+  (as long as the numbers match).
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+	For example, the linear combination of the vectors
+  \(\vec p=\left\langle3,4\right\rangle\),
+	\(\vec q=\left\langle-1,3\right\rangle\)
+	and
+  \(\vec r=\left\langle2,-2\right\rangle\)
+	with coefficients \(2\), \(-3\), and \(4\) is
+	\[\begin{aligned}
+  2\vec p-3\vec q+4\vec r
+  &=2\left\langle3,4\right\rangle-3\left\langle-1,3\right\rangle+4\left\langle2,-2\right\rangle \\
+	&=\left\langle6,8\right\rangle+\left\langle3,-9\right\rangle+\left\langle8,-8\right\rangle
+  =\left\langle17,-9\right\rangle
+	\end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+		Compute
+	  \(5\left\langle-2,1\right\rangle+3\left\langle1,2\right\rangle-2\left\langle2,4\right\rangle
+	  +\left\langle4,-3\right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(
+		5\left\langle-2,1\right\rangle+3\left\langle1,2\right\rangle
+		-2\left\langle2,4\right\rangle+\left\langle4,-3\right\rangle
+		=\left\langle-7,0\right\rangle
+		\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    \[\begin{aligned}
+    5&\left\langle-2,1\right\rangle+3\left\langle1,2\right\rangle
+    -2\left\langle2,4\right\rangle+\left\langle4,-3\right\rangle \\
+    &=\left\langle-10,5\right\rangle+\left\langle3,6\right\rangle
+    +\left\langle-4,-8\right\rangle+\left\langle4,-3\right\rangle \\
+    &=\left\langle-7,0\right\rangle
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+		Write the vector \(\vec v=\left\langle10,6\right\rangle\) as a linear
+		combination of the vectors \(\vec p=\left\langle2,3\right\rangle\) and
+		\(\vec q=\left\langle-1,3\right\rangle\).
+	  In other words, find numbers \(a\) and \(b\) satisfying:
+	  \[
+	  \vec v=a\vec p+b\vec q
+	  \]
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(
+		\vec v=4\vec p-2\vec q
+		\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We first write out the  equation \(\vec v=a\vec p+b\vec q\):
+    \[
+    \left\langle10,6\right\rangle
+		=a\left\langle2,3\right\rangle+b\left\langle-1,3\right\rangle
+    \]
+    This is the two equations:
+    \[\begin{aligned}
+    10&=2a-b \\
+    6&=3a+3b
+    \end{aligned}\]
+    The second equation implies \(b=2-a\). We substitute this into the first
+    equation which becomes:
+    \[\begin{aligned}
+    10&=3a-2 \\
+    \end{aligned}\]
+    Consequently, \(a=4\) and hence \(b=-2\). We conclude:
+    \[
+		\vec v=4\vec p-2\vec q
+	  \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+	<p>
+		We check:
+		\[\begin{aligned}
+		4\vec p-2\vec q
+		=4\left\langle2,3\right\rangle-2\left\langle-1,3\right\rangle
+		=\left\langle10,6\right\rangle=\vec v
+		\end{aligned}\]
+	</p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can use this Maplet to practice 2D vector algebra (requires Maple on
+  the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/2DVecAlg.maplet" download>2D Vector Algebra</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p class="maplet-ref"></p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

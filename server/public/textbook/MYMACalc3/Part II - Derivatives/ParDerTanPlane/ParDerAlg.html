@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Algebraic Definition of Partial Derivatives | 11. Partial Derivatives and Tangent Planes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Compute.html" title="Previous">&lArr;</a></li>
+      <li><a href="ParDerGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Partial Derivatives and Tangent Planes</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b. Algebraic Definition of Partial Derivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  For a function of one variable, \(f(x)\), the definition of the derivative
+  is:
+  \[
+  f'(x)=\lim_{h\rightarrow 0} \dfrac{f(x+h)-f(x)}{h}
+  \]
+  For a function of two variables, \(f(x,y)\), the partial derivatives are
+  computed by differentiating with respect to one variable while holding the
+  other variable fixed. So the formulas for the partial derivatives are:
+</p>
+<p class="def" data-title="Partial Derivatives">
+  The <span class="defword">partial derivatives</span> of \(f(x,y)\) are
+  \[
+  f_x(x,y)=\lim_{h\rightarrow 0} \dfrac{f(x+h,y)-f(x,y)}{h}
+  \]
+  \[
+  f_y(x,y)=\lim_{h\rightarrow 0} \dfrac{f(x,y+h)-f(x,y)}{h}
+  \]
+</p>
+<p>
+  Looking at the formulas, the \(x\)-partial derivative says how the
+  function changes as we move parallel to the \(x\)-axis, that is in the
+  \(\hat{\imath}\) direction. Similarly, the \(y\)-partial derivative
+  says how the function changes as we move parallel to the \(y\)-axis,
+  that is in the \(\hat{\jmath}\) direction.
+
+<p id="deralongvector">
+  More directions exist. In fact, you can take a derivative along any
+  vector \(\vec v\) .
+</p>
+
+<p class="def" data-title="Derivative along a Vector">
+  Given any vector \(\vec v\), the <span class="defword">derivative of
+  \(f(x,y)\) along \(\vec v\)</span>
+  (or with respect to \(\vec v\)) is:
+  \[
+  \nabla_{\vec v}f(x,y)
+  =\lim_{h\rightarrow 0} \dfrac{f((x,y)+h\vec v)-f(x,y)}{h}
+  \]
+</p>
+<p class="remark">
+  The symbol \(\nabla\) is read as <span class="defword">"del"</span>.
+  It is an upside down, capital Greek delta: \(\Delta\). If you want,
+  you can think of \(\nabla\) as an upper case partial \(\partial\).
+</p>
+<p>
+  In particular, the \(x\)-partial derivative is the derivative along
+  \(\hat{\imath}\) since:
+  \[
+  (x,y)+h\hat{\imath}=(x+h,y)
+  \]
+  and the \(y\)-partial derivative is the derivative along \(\hat{\jmath}\)
+  since:
+  \[
+  (x,y)+h\hat{\jmath}=(x,y+h)
+  \]
+  So:
+  \[
+  f_x(x,y)=\nabla_{\hat{\imath}}f(x,y)
+  \qquad \text{and} \qquad
+  f_y(x,y)=\nabla_{\hat{\jmath}}f(x,y)
+  \]
+</p>
+<p>
+  Once we cover the
+  <a href="../Chain/ChContents.html" title="Return using the Back button.">
+  chain rule</a>, we will be able to give a
+  <a href="../DirDerivGrad/DerVec.html" title="Return using the Back button.">
+  formula</a> for the derivative along a vector that does <em>not</em>
+  involve <em>limits</em>.
+</p>
+
+        <div class="rule" id="ex1"></div>
+
+<p>
+  These <em>limit</em> formulas for partial derivatives and derivatives along
+  a vector are rarely use in computations. They are mostly used in theoretical
+  derivations. However, they can be turned around and used to compute a
+  limit:
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Compute
+    \(\displaystyle \lim_{h\rightarrow 0} \dfrac{(y+h)\sin(xy+xh)-y\sin(xy)}{h}\).
+	</p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    \(\displaystyle \lim_{h\rightarrow 0} \dfrac{(y+h)\sin(xy+xh)-y\sin(xy)}{h}
+    =\dfrac{\partial}{\partial y}(y\sin(xy))\)
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle \lim_{h\rightarrow 0} \dfrac{(y+h)\sin(xy+xh)-y\sin(xy)}{h}
+    =xy\cos(xy)+\sin(xy)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Since there is a \((y+h)\) in the numerator, we suspect this is a
+    \(y\)-partial derivative. So we compare
+    \[
+    \lim_{h\rightarrow 0} \dfrac{(y+h)\sin(xy+xh)-y\sin(xy)}{h}
+    \]
+    to
+    \[
+    f_y(x,y)=\lim_{h\rightarrow 0} \dfrac{f(x,y+h)-f(x,y)}{h}
+    \]
+    From the second term in the numerator, we identify:
+    \[
+    f(x,y)=y\sin(xy)
+    \]
+    We then check:
+    \[
+    f(x,y+h)=(y+h)\sin(x[y+h])=(y+h)\sin(xy+xh)
+    \]
+    which is the first term in the numerator. So:
+    \[\begin{aligned}
+    \lim_{h\rightarrow 0} &\dfrac{(y+h)\sin(xy+xh)-y\sin(xy)}{h}
+    =\dfrac{\partial}{\partial y}(y\sin(xy)) \\
+    &=y\cos(xy)x+\sin(xy)
+    =xy\cos(xy)+\sin(xy)
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

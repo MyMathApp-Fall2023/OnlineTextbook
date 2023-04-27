@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Algebraic Definition of Curl | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DivGeom.html" title="Previous">&lArr;</a></li>
+      <li><a href="CurlGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. The Curl Operator</h2>
+
+
+      
+      <h2>1. Algebraic Definition of Curl</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      The cross product of two vectors, \(\vec u\times\vec v\), is the
+      determinant of the matrix with \(\hat\imath\), \(\hat\jmath\) and
+      \(\hat k\) on the first row, the vector \(\vec u\) on the second row and
+      the vector \(\vec v\) on the third row.
+    </p>
+    <p>
+      The curl of a vector field, \(\vec\nabla\times\vec F\), is the
+      cross product of the del operator and the vector field with
+      the exception that when a differential operator "multiplies" a
+      component of the vector field, it differentiates it.
+    </p>
+  </div>
+  <div data-col-width="40%">
+      \[
+      \vec u\times\vec v
+      =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      u_1 & u_2 & u_3 \\
+      v_1 & v_2 & v_3
+      \end{vmatrix}
+      \]
+      \[
+      \vec\nabla\times\vec F
+      =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      F_1        & F_2        & F_3
+      \end{vmatrix}
+      \]
+  </div>
+</div>
+<p class="def" data-title="Curl">
+  The <span class="defword">curl</span>
+  (or <span class="defword">rotation</span>) of a vector field
+  \(\vec F=\left\langle F_1, F_2, F_3 \right\rangle\),
+  is the vector field
+  \[\begin{aligned}
+  \text{curl}\vec F
+  &=\text{rot}\vec F
+  =\vec\nabla\times\vec F
+  =\begin{vmatrix}
+  \hat\imath & \hat\jmath & \hat k \\
+  \partial_x & \partial_y & \partial_z \\
+  F_1        & F_2        & F_3
+  \end{vmatrix} \\
+   &=\hat\imath(\partial_y F_3-\partial_z F_2)
+    -\hat\jmath(\partial_x F_3-\partial_z F_1)
+    +\hat k    (\partial_x F_2-\partial_y F_1) \\
+   &=\left\langle
+   \partial_y F_3-\partial_z F_2,
+   \partial_z F_1-\partial_x F_3,
+   \partial_x F_2-\partial_y F_1
+   \right\rangle
+  \end{aligned}\]
+  Be careful with the sign of the second component!
+  <br>
+  The name <span class="defword">rotation</span> and the notation
+  \(\text{rot}\vec F\) are archaic and only appear in some old math and
+  science articles.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the curl of
+  \(\vec F=\left\langle x^2y,y^2+z^2,z^3-x^2z\right\rangle\).
+</p>
+<p class="sol">
+  We use the definition of the curl:
+  \[\begin{aligned}
+  \vec\nabla\times\vec F
+  &=\begin{vmatrix}
+  \; \; \hat\imath & \hat\jmath & \hat k \\
+  \; \; \partial_x & \partial_y & \partial_z \\
+  \; \; x^2y       & y^2+z^2    & z^3-x^2z
+  \end{vmatrix} \\
+  &=\hat\imath(0-2z)-\hat\jmath(-2xz-0)+\hat k(0-x^2) \\
+  &=\left\langle-2z,2xz,-x^2 \right\rangle
+  \end{aligned}\]
+  <span class="redbig">Be careful with the sign of the second component!</span>
+</p>
+
+        <div class="rule"></div>
+
+<h3> Fluid Velocity Interpretation</h3>
+<p>
+  If the vector field is the velocity field of a fluid, \(\vec V\), then
+  the curl of the velocity field, \(\vec\nabla\times\vec V\),
+  measures of how much the fluid is rotating at each point.
+  The direction of the curl is the axis of rotation. The magnitude of the curl
+  is the rate at which the vector field is rotating. The direction of rotation
+  is determined by the right hand rule. In particular, if you hold your right
+  hand in a fist and point your thumb along the direction of the curl, then
+  the fluid rotates in the direction of your fingers, i.e. counterclockwise
+  as seen from the tip of your thumb.
+  (See the <a href="CurlGeom.html">next page.</a>)
+  If \(\vec\nabla\times\vec V=0\), we say the vector field is
+  <span class="defword">curl-free</span> and the fluid is
+  <span class="defword">irrotational</span>.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the curl of the the velocity field
+    \(\vec V=\left\langle xz-xy^2, x^2+yz^2, xyz^3 \right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\vec\nabla\times\vec V
+  =\left\langle xz^3-2yz, x-yz^3, 2x+2xy \right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We use the definition of the curl:
+    \[\begin{aligned}
+    \vec\nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    xz-xy^2    & x^2+yz^2   & xyz^3
+    \end{vmatrix} \\
+    &=\hat\imath(xz^3-2yz)-\hat\jmath(yz^3-x)+\hat k(2x--2xy) \\
+    &=\left\langle xz^3-2yz, x-yz^3, 2x+2xy \right\rangle
+    \end{aligned}\]
+    Be careful with the sign of the second component!
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute the curl of the the velocity field
+    \(\vec V=\left\langle 3xy^2, 3x^2y, z^3 \right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\vec{\nabla}\times\vec V
+    =\left\langle 0,0,0 \right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    We use the definition of the curl:
+    \[\begin{aligned}
+    \nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    3xy^2      & 3x^2y      & z^3
+    \end{vmatrix} \\
+    &=\hat\imath(0-0)-\hat\jmath(0-0)+\hat k(6xy-6xy) \\
+    &=\left\langle 0,0,0 \right\rangle
+    \end{aligned}\]
+    So this velocity field is irrotational.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

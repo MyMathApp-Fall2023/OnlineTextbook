@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Ellipse Example | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DCurv-Jac.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DCurv-Int2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Integrating in 2D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>4. Ellipse Example</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Below is an example using curvilinear coordinates to compute an integral
+  over the area of an ellipse.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-title="Ellipse" data-number="1">
+    Compute \(\displaystyle \iint\limits_R x^2\,dA\), where \(R\) is the
+    region bounded by the ellipse \(9x^2+4y^2=36\). This may be interpreted
+    as the volume under \(z=x^2\) above the ellipse.
+  </p>
+  <div class="center">
+    <img src="graphics/2DcurvInt-ellipse.jpg" alt="2DcurvInt-ellipse">
+  </div>
+</div>
+<p class="sol">
+  We first write the ellipse in standard form:
+  \[
+  \dfrac{x^2}{4}+\dfrac{y^2}{9}=1
+  \]
+  There are two reasonable coordinate systems to use:
+</p>
+<p class="meth" data-number="1">
+  Use the coordinate system given by the component equations \(x=2u\) and
+  \(y=3v\) or the vector equation:
+  \[
+  (x,y)=\vec{R}(u,v)=(2u,3v)
+  \]
+  The benefit of this coordinate system is that it is easy to compute the
+  Jacobian and it converts the equation of the ellipse into the equation
+  for the circle:
+  \[
+  u^2+v^2=1
+  \]
+  So the region of integration changes from \(R\), the interior of an ellipse
+  in the \(xy\)-plane, to \(R'\), the interior of a circle in the
+  \(uv\)-plane which can be integrated in polar coordinates. For this
+  coordinate system, the Jacobian is
+  \[
+  J=\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|
+  =\left|
+  \begin{vmatrix}
+  \dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} \\[6pt]
+  \dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v}
+  \end{vmatrix}
+  \right|
+  =\left|
+  \begin{vmatrix}
+  2 & 0 \\
+  0 & 3
+  \end{vmatrix}
+  \right|
+  =6
+  \]
+  So the integral becomes: (Notice the integrand is \(x^2=(2u)^2\).)
+  \[
+  \iint\limits_R x^2\,dA
+  =\iint\limits_{R'} x^2\,J\,du\,dv
+  =\iint\limits_{u^2+v^2 \le 1} (2u)^2 \,6\,du\,dv
+  \]
+  We now switch to polar coordinates, \(u=r\cos\theta\) and \(v=r\sin\theta\),
+  for which the differential of area is \(du\,dv=r\,dr\,d\theta\). So the
+  integral becomes
+  \[\begin{aligned}
+  \iint\limits_R &x^2\,dA
+  =24\iint\limits_{u^2+v^2 \le 1} u^2\,du\,dv
+  =24\int_0^{2\pi}\int_0^1 r^2\cos^2\theta\,r\,dr\,d\theta \\
+  &=24\int_0^{2\pi} \cos^2\theta\,d\theta\int_0^1 r^3\,dr
+  =12\int_0^{2\pi} (1+\cos2\theta)\,d\theta\int_0^1 r^3\,dr \\
+  &=12\left[\theta+\dfrac{\sin2\theta}{2}\right]_0^{2\pi}
+  \left[\dfrac{r^4}{4}\right]_0^1 \\
+  &=12(2\pi)\left(\dfrac{1}{4}\right)=6\pi
+  \end{aligned}\]
+</p>
+
+<hr width="80%">
+
+<p class="meth" data-number="2">
+  Rather than do two successive coordinate transformations, from \((x,y)\)
+  to \((u,v)\) to \((r,\theta)\), we can do it all at once. We use an
+  <span class="hl">elliptic polar coordinate system</span>, given by the
+  component equations \(x=2t\cos\phi\) and \(y=3t\sin\phi\) or by the
+  vector equation:
+  \[
+  (x,y)=\vec{R}(t,\phi)=(2t\cos\phi,3t\sin\phi)
+  \]
+  The Jacobian is
+  \[\begin{aligned}
+  J&=\left|\dfrac{\partial(x,y)}{\partial(t,\phi)}\right|
+  =\left|
+  \begin{vmatrix}
+  \dfrac{\partial x}{\partial t} & \dfrac{\partial y}{\partial t} \\[6pt]
+  \dfrac{\partial x}{\partial\phi} & \dfrac{\partial y}{\partial\phi}
+  \end{vmatrix}
+  \right|
+  =\left|
+  \begin{vmatrix}
+  2\cos\phi & 3\sin\phi \\
+  -2t\sin\phi & 3t\cos\phi
+  \end{vmatrix}
+  \right| \\
+  &=6t\cos^2\phi+6t\sin^2\phi=6t
+  \end{aligned}\]
+  So the integral is
+  \[\begin{aligned}
+  \iint\limits_R x^2\,dA
+  &=\iint\limits_{R'} x^2\,J\,dt\,d\phi \\
+  &=\int_0^{2\pi}\int_0^1 (2t\cos\phi)^2 6t\,dt\,d\phi
+  =\cdots=6\pi
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="remark">
+    The coordinate system:
+    \[
+    (x,y)=\vec{R}(t,\phi)=(2t\cos\phi,3t\sin\phi)
+    \]
+    is called an <span class="defword">elliptic polar coordinate system</span>.
+    Here is its coordinate grid. For each value of \(t\), there is an ellipse,
+    and for each value of \(\phi\) there is a radial line. Notice that we
+    used the letters \(t\) and \(\phi\) rather than the usual \(r\) and
+    \(\theta\) to emphasize that in the \(xy\)-plane, \(t\) does not measure
+    the distance from the origin and \(\phi\) does not measure the angle
+    counterclockwise from the \(x\)-axis.
+  </p>
+  <div class="center">
+    <img src="graphics/ellipticpolarcoordplot.jpg" alt="ellipticpolarcoordplot">
+  </div>
+</div>
+<big>PY: Add an exercise.</big>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

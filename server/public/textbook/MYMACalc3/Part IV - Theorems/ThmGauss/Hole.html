@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Solids with Holes | 27. Gauss&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Theorem.html" title="Previous">&lArr;</a></li>
+      <li><a href="Verify.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>27. Gauss&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. The Theorem</h2>
+
+<p>
+  What happens to Gauss' Theorem if the region has holes? Here we do not mean
+  holes which go all the way through like a donut. Rather, we mean holes
+  inside, like in Swiss cheese. The theorem still
+  holds, but the boundary of the region is two or more closed
+  surfaces and there are some special directional considerations.
+</p>
+
+
+      
+      <h2>2. Solids with Holes</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="thm" data-title="Gauss' Theorem">
+  Let \(V\) be a nice solid region in \(\mathbb{R}^3\) with a nice
+  properly oriented boundary, \(\partial V\), and let \(\vec F\)
+  be a nice vector field on \(V\). Then
+  \[
+  \iiint\limits_V \vec\nabla\cdot\vec F\,dV
+  =\iint\limits_{\partial V} \vec F\cdot d\vec S
+  \]
+  The outer boundary must be oriented outward while any inner
+  boundaries must be oriented inward. This means that all pieces of the
+  boundary are oriented away from the solid.
+</p>
+
+<div class="column">
+  <p>
+    <strong>Technical details:</strong> &emsp;
+    The <span style="color:blue">boundary</span> \(\partial V\) of the
+    volume \(V,\) is usually a single closed surface surrounding the solid.
+    However, if the solid has holes, (like swiss cheese, as in the figure
+    at the right) then its boundary consists of a single outer closed
+    surface and \(1\) or more inner closed surfaces. Each piece of the
+    boundary must be oriented with the normal pointing out of the solid.
+    In particular, the normal to outer surface points outward, while the
+    normal(s) to the inner surface(s) point inward.
+  </p>
+  <div class="center">
+    <video src="graphics/thm_Gauss_cone_hole.mp4" autoplay controls loop></video>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  We now look at Gauss' Theorem for some regions with holes.
+</p>
+<div class="column">
+  <p class="example" data-number="1">
+    Compute
+    \(\displaystyle \iint_{\partial C} \vec F\cdot d\vec S\)
+    for the vector field
+    \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\)
+    over the complete surface of the region between the cylinder \(x^2+y^2=9\)
+    for \(0 \le z \le 4\) oriented outward and the cylinder \(x^2+y^2=1\)
+    for \(1 \le z \le 2\)  oriented inward. Compute the integral without and
+    with Gauss' Theorem.
+  <div class="center">
+    <video src="graphics/eg_Gauss_cyl_hole.mp4" autoplay controls loop></video>
+  </div>
+</div>
+
+<div class="sol collapse hide" data-number="1">
+  <strong>Surface Integral:</strong>
+  <p>
+    On the <a href="Theorem.html#eg_cyl">previous page</a>, we already
+    computed the integrals for the outer cylinder and disks. We now compute
+    them for the inner cylinder and disks and combine the answers.
+  </p>
+  <p>
+    <strong>Inner Cylinder:</strong>&emsp;
+    We parameterize the cylinder of radius \(1\) as:
+    \[\begin{aligned}
+    &\vec R(\theta,z)=(\cos\theta,\sin\theta,z) \\
+    \text{for} &\quad 0 \le \theta \le 2\pi
+    \quad \text{and} \quad 1 \le z \le 2
+    \end{aligned}\]
+    We compute the normal vector
+    \[\begin{aligned}
+    \vec N
+    &=\vec e_\theta\times\vec e_z=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    -\sin\theta & \cos\theta  & 0 \\
+    0            & 0            & 1
+    \end{vmatrix} \\
+    &=\hat{\imath}(\cos\theta)
+     -\hat{\jmath}(-\sin\theta)
+     +\hat{k}(0) \\
+    &=\langle \cos\theta,\sin\theta,0\rangle
+    \end{aligned}\]
+    The normal is horizontal and points outward. So we reverse it:
+    \[
+    \vec N=\langle -\cos\theta,-\sin\theta,0\rangle
+    \]
+    On this cylinder the vector field,
+    \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\), is
+    \[
+    \vec F
+    =\langle \cos\theta z^2,\sin\theta z^2,z\rangle
+    \]
+    So the dot product with the normal is
+    \[
+    \vec F\cdot\vec N
+    =-\cos^2\theta z^2-\sin^2\theta z^2
+    =-z^2
+    \]
+    We are ready to do the integral:
+    \[\begin{aligned}
+    \iint\limits_\text{inner cyl} \vec F\cdot d\vec S
+    =\int_1^2\int_0^{2\pi} -z^2\,d\theta\,dz
+    =-2\pi\left[\dfrac{z^3}{3}\right]_1^2
+    =-\,\dfrac{14\pi}{3}
+    \end{aligned}\]
+
+    <strong>Inner Upper Disk:</strong>&emsp;
+    We parameterize the inner upper disk as:
+    \[\begin{aligned}
+    &\vec R(r,\theta)=(r\cos\theta,r\sin\theta,2) \\
+    \text{for} &\quad 0 \le r \le 1
+    \quad \text{and} \quad 0 \le \theta \le 2\pi
+    \end{aligned}\]
+    We compute the normal vector:
+    \[
+    \vec N=\vec e_r\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \cos\theta   & \sin\theta   & 0 \\
+    -r\sin\theta & r\cos\theta  & 0
+    \end{vmatrix}
+    =\langle 0,0,r\rangle
+    \]
+    which points upward. So we reverse it:
+    \[
+    \vec N=\langle 0,0,-r\rangle
+    \]
+    On the disk the vector field,
+    \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\), is
+    \[
+    \vec F
+    =\langle 4r\cos\theta,4r\sin\theta,2r^2\rangle
+    \]
+    So the dot product with the normal is just
+    \[
+    \vec F\cdot\vec N=-2r^3
+    \]
+    We do the integral:
+    \[
+    \iint\limits_\text{inner upper} \vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^1 -2r^3\,dr\,d\theta
+    =-\pi\left[\rule{0pt}{10pt}r^4\right]_0^1
+    =-\pi
+    \]
+
+    <strong>Inner Lower Disk:</strong>&emsp;
+    We parameterize the inner lower disk as:
+    \[\begin{aligned}
+    &\vec R(r,\theta)=(r\cos\theta,r\sin\theta,1) \\
+    \text{for} &\quad 0 \le r \le 1
+    \quad \text{and} \quad 0 \le \theta \le 2\pi
+    \end{aligned}\]
+    We compute the normal vector:
+    \[
+    \vec N=\vec e_r\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \cos\theta   & \sin\theta   & 0 \\
+    -r\sin\theta & r\cos\theta  & 0
+    \end{vmatrix}
+    =\langle 0,0,r\rangle
+    \]
+    which correctly points upward. On the disk the vector field,
+    \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\), is
+    \[
+    \vec F
+    =\langle r\cos\theta,r\sin\theta,r^2\rangle
+    \]
+    So the dot product with the normal is just
+    \[
+    \vec F\cdot\vec N=r^3
+    \]
+    We do the integral:
+    \[
+    \iint\limits_\text{inner lower} \vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^1 r^3\,dr\,d\theta
+    =\pi\left[\dfrac{r^4}{2}\right]_0^1
+    =\dfrac{\pi}{2}
+    \]
+
+    <strong>Total:</strong>&emsp;
+    We complete the computation of the surface integral by adding together the
+    surface integrals from the six pieces of the boundary: (The first three
+    terms are from the
+    <a href="Theorem.html" title="Return using the Back button.">
+    previous page</a>.)
+    \[\begin{aligned}
+    \iint\limits_{\partial C} \vec F\cdot d\vec S
+    &=\iint\limits_\text{outer cyl} \vec F\cdot d\vec S
+    +\iint\limits_\text{outer upper} \vec F\cdot d\vec S
+    +\iint\limits_\text{outer lower} \vec F\cdot d\vec S \\
+    &\quad+\iint\limits_\text{inner cyl} \vec F\cdot d\vec S
+    +\iint\limits_\text{inner upper} \vec F\cdot d\vec S
+    +\iint\limits_\text{inner lower} \vec F\cdot d\vec S \\
+    &=384\pi+162\pi+0-\dfrac{14\pi}{3}-\pi+\dfrac{\pi}{2}
+    =\dfrac{3245\pi}{6}
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="sol collapse hide" data-number="2">
+  <strong>Volume Integral:</strong>
+  <p>
+    We now compute the integral over the inner solid cylinder and subtract
+    it from that for the outer solid cylinder. Everything is the same except
+    for the limits of integration:
+    \[\begin{aligned}
+    \iiint\limits_\text{inner solid} &\vec\nabla\cdot\vec F\,dV
+    =\int_1^2\int_0^{2\pi}\int_0^1 (r^2+2z^2)r\,dr\,d\theta\,dz \\
+    &=2\pi\left(\left[\dfrac{r^4}{4}\right]_0^1\left[\rule{0pt}{10pt}z\right]_1^2
+              +2\left[\dfrac{r^2}{2}\right]_0^1\left[\dfrac{z^3}{3}\right]_1^2\right) \\
+    &=2\pi\left(\dfrac{1}{4}+\dfrac{7}{3}\right)
+    =\dfrac{31\pi}{6}
+    \end{aligned}\]
+    The net integral is: (The first term is from the
+    <a href="Theorem.html" title="Return using the Back button.">
+    previous page</a>.)
+    \[\begin{aligned}
+    \iiint\limits_C \vec\nabla\cdot\vec F\,dV
+    &=\iiint\limits_\text{outer solid} \vec\nabla\cdot\vec F\,dV
+    -\iiint\limits_\text{inner solid} \vec\nabla\cdot\vec F\,dV \\
+    &=546\pi-\dfrac{31\pi}{6}=\dfrac{3245\pi}{6}
+    \end{aligned}\]
+  </p>
+</div>
+<p class="remark">
+  Both methods gave the same answer. This checks both computations and
+  also verifies Gauss' Theorem for this vector field and solid. Notice
+  how much easier the volume integral was. This may not always be the case.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="exercise" data-number="2">
+      Compute
+      \(\displaystyle \iint_{\partial S} \vec F\cdot d\vec S\)
+      for the vector field
+      \(\vec F=\langle x z^2, y z^2, z^3\rangle\)
+      over the two spheres \(x^2+y^2+z^2=4\) oriented inward and
+      \(x^2+y^2+z^2=16\) oriented outward.
+    </p>
+    <ol class="list-outside" type="a">
+      <li>
+        <div class="dotfillex">
+          <p>
+            <strong>Surface Integral:</strong>&emsp;
+            First solve it directly as a surface integral. Be sure to
+            add the integrals over both spheres, correctly oriented.
+          </p>
+          <p>
+            <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+            <button class="toggle has-sol" data-toggle="SolX2a"></button>
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="center" data-col-width="40%">
+    <video src="graphics/ex_Gauss_sph_hole.mp4" autoplay controls loop></video>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+  <p>
+    \(\displaystyle \iint\limits_{\partial S} \vec F\cdot d\vec S
+    =\dfrac{3968\pi}{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2a">
+  <p>
+    On the <a href="Theorem.html#ex_sph">previous page</a>, we already
+    computed the integral for the outer sphere. We now compute
+    it for the inner sphere and combine the answers.
+  </p>
+  <p>
+    We parameterize the sphere of radius \(2\) as:
+    \[\begin{aligned}
+    \vec R(\phi,&\theta)=(2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi) \\
+    &\text{for} \quad 0 \le \phi \le \pi
+    \quad \text{and} \quad 0 \le \theta \le 2\pi
+    \end{aligned}\]
+    The normal vector is:
+    \[
+    \vec N
+    =\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\rangle
+    \]
+    which is outward. So we reverse it:
+    \[
+    \vec N
+    =\langle -4\sin^2\phi\cos\theta,-4\sin^2\phi\sin\theta,-4\sin\phi\cos\phi\rangle
+    \]
+    On the surface, the vector field,
+    \(\vec F=\langle x z^2, y z^2, z^3\rangle\) becomes:
+    \[
+    \vec F=\langle 8\sin\phi\cos^2\phi\cos\theta,
+                   8\sin\phi\cos^2\phi\sin\theta,
+                   8\cos^3\phi\rangle
+    \]
+    And its dot product with the normal is:
+    \[
+    \vec F\cdot\vec N=-32\sin\phi\cos^2\phi
+    \]
+    So the integral is:
+    \[\begin{aligned}
+    \iint_{\partial V} &\vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^{\pi} \vec F\cdot\vec N\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^{\pi} -32\sin\phi\cos^2\phi\,d\phi\,d\theta \\
+    &=-64\pi\left[-\,\dfrac{\cos^3\phi}{3}\right]_0^{\pi}
+    =-\,\dfrac{128\pi}{3}
+    \end{aligned}\]
+    We complete the computation of the surface integral by adding together the
+    surface integrals for the inner and outer spheres:
+    \[\begin{aligned}
+    \iint\limits_{\partial S} \vec F\cdot d\vec S
+    &=\iint\limits_\text{outer sph} \vec F\cdot d\vec S
+     +\iint\limits_\text{inner sph} \vec F\cdot d\vec S \\
+    &=\dfrac{4096\pi}{3}-\,\dfrac{128\pi}{3}
+    =\dfrac{3968\pi}{3}
+    \end{aligned}\]
+  </p>
+</div>
+<ol class="list-outside" start="2" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>Volume Integral:</strong>&emsp;
+        Next use Gauss' Theorem to convert the surface integral into a
+        volume integral over the region between the spheres.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+        <button class="toggle has-sol" data-toggle="SolX2b"></button>
+        <button class="toggle has-rem" data-toggle="RemX2b"></button>
+      </p>
+    </div>
+  </li>
+</ol>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+  <p>
+    \(\displaystyle \iiint_S \vec\nabla\cdot\vec F\,dV
+    =\dfrac{3968\pi}{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2b">
+  <p>
+    The divergence of \(\vec F\) is still:
+    \[
+    \vec\nabla \cdot\vec F=5\rho^2\cos^2\phi
+    \]
+    So the integral is: (The only change is the limits on \(\rho\).)
+    \[\begin{aligned}
+    \iiint_S &\vec\nabla\cdot\vec F\,dV
+    =\int_0^{2\pi}\int_0^\pi\int_2^4
+    5\rho^2\cos^2\phi\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+    &=2\pi\left[\rho^5\right]_2^4\left[-\,\dfrac{\cos^3\phi}{3}\right]_0^\pi
+    =2\pi(4^5-2^5)\cdot\dfrac{2}{3}
+    =\dfrac{3968\pi}{3}
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2b">
+  <p>
+    Both methods gave the same answer. This checks both computations and
+    also verifies Gauss' Theorem for this vector field and solid. Notice
+    how much easier the volume integral was.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

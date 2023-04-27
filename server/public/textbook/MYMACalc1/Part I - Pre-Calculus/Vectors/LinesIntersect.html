@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Intersections of Lines | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Lines.html" title="Previous">&lArr;</a></li>
+      <li><a href="Curves.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Parametric Curves</h2>
+
+
+      
+      <h2>2. Intersections of Lines</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the plane, two (distinct) lines are either
+  <span class="hl">parallel</span> or they <span class="hl">intersect</span>.
+  We can tell when they are parallel, because their direction vectors will
+  be proportional. If they are not parallel, then they intersect and we may
+  be asked to find the point of intersection and/or the angle between the lines.
+</p>
+<div class="center">
+  <img src="graphics/line2DPara.jpg" alt="line2DPara">
+  &emsp;
+  <img src="graphics/line2DIntersect.jpg" alt="line2DIntersect">
+</div>
+<p>
+  The <span class="defword"> angle between the lines</span> is the angle
+  between their tangent vectors. In finding the
+  <span class="hl">point of intersection</span> remember that the
+  parameter on each line may be different. This will become clear in the next
+  example.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Consider the two straight lines
+  \[\begin{aligned}
+  L_1:\quad (x,y)&=(5-2t,2+t)\\
+  L_2:\quad (x,y)&=(2-t,1+3t)
+  \end{aligned}\]
+  Are they parallel or do they intersect? If they intersect, find the point of
+  intersection and the angle between them.
+</p>
+<p class="sol">
+  The direction vectors are
+  \[
+  \vec v_1=(-2,1) \qquad \text{and} \qquad \vec v_2=(-1,3)
+  \]
+  Since one is not a multiple of the other, the lines are not parallel; they
+  intersect. The angle between them is the angle between their direction
+  vectors:
+  \[\begin{aligned}
+  \cos\theta
+  &=\dfrac{\vec v_1\cdot\vec v_2}{|\vec v_1|\,|\vec v_2|}
+  =\dfrac{2+3}{\sqrt{5}\sqrt{10}}
+  =\dfrac{1}{\sqrt{2}} \\
+  \theta
+  &=\dfrac{\pi}{4}=45^\circ
+  \end{aligned}\]
+  We need to find the point of intersection.
+</p>
+<p>
+  <span class="redbig">Incorrect Attempt:</span> &emsp;
+  One is first tempted to equate the \(x\) and \(y\) components of the
+  two lines \(L_1\) and \(L_2\):
+  \[\begin{aligned}
+  5-2t&=2-t \\
+  2+t&=1+3t
+  \end{aligned}\]
+  Solving the first equation for \(t\), we get \(t=3\).  Placing this value of
+  \(t\) into the second equation, the left side is \(5\) while the right side
+  is \(10\). This says there is no solution to this system of equations.
+  <span class="redbig center">
+  This does not mean that the two lines do not intersect.
+  </span>
+  Here's why:  At the point of intersection, the parameter value for the
+  first line may not be the same as the parameter value for the second line.
+  Imagine having an ant crawling along each line. They each pass through the
+  intersection point, but not at the same time.
+</p>
+<p>
+  <span class="greenbig">Correct Method:</span> &emsp;
+  To allow for the possibility that the parameter value may be different on
+  the two lines, we change the parameter's name for the second line:
+  \[\begin{aligned}
+  L_1:\quad (x,y)&=(5-2t,2+t)\\
+  L_2:\quad (x,y)&=(2-s,1+3s)
+  \end{aligned}\]
+  What we really want is to solve the equation \(L_1(t)=L_2(s)\).
+  That is, we are asking if there is a point on the first line at some value
+  of its parameter \(t\) and which is also on the second line at a possibly
+  different value of its parameter \(s\).
+</p>
+<div class="column">
+  <div>
+    <p>
+      We equate the \(x\) and \(y\) components of the two lines:
+      \[\begin{aligned}
+      5-2t&=2-s \\
+      2+t&=1+3s
+      \end{aligned}\]
+      We add the first equation and twice the second to get \(9=4+5s\).
+      Thus \(s=1\). Then the second equation gives \(2+t=4\) or \(t=2\).
+      So the point of intersection is \(L_1(2)=(1,4)\).
+    </p>
+    <p class="check">
+      To double check, we compute \(L_2(1)=(1,4)\) also.
+    </p>
+    <p>
+      Here is the plot.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/lineintersect1.jpg" alt="lineintersect1">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Consider the two straight lines
+    \[\begin{aligned}
+    L_1:\quad (x,y)&=(-4+3t,8-2t)\\
+    L_2:\quad (x,y)&=(5+2t,15+3t)
+    \end{aligned}\]
+    Are they parallel or do they intersect?  If they intersect, find the point
+    of intersection and the angle between them.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    They intersect at \(L_1(1)=L_2(-3)=(-1,6)\).
+      <br>
+    The lines are perpendicular.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The direction vectors are \(\vec v_1=\langle 3,-2\rangle\) and
+    \(\vec v_2=(2,3)\). Since one is not a multiple of the other, the
+    lines are not parallel; they intersect. So we need to find the point of
+    intersection. To allow for the possibility that the parameter values may be
+    different on the two lines, we change the parameter name for the second line:
+    \[\begin{aligned}
+    L_1(t):\quad (x,y)&=(-4+3t,8-2t)\\
+    L_2(s):\quad (x,y)&=(5+2s,15+3s)
+    \end{aligned}\]
+    and equate components:
+    \[\begin{aligned}
+    -4+3t&=5+2s \\
+    8-2t&=15+3s
+    \end{aligned}\]
+    \(2\) times the first equation plus \(3\) times the second gives:
+    \[
+    16=55+13s \qquad \text{or} \qquad s=-3
+    \]
+    Then the first equation gives:
+    \[
+    -4+3t=5-6 \qquad \text{or} \qquad t=1
+    \]
+    So the point of intersection is \(L_1(1)=(-1,6)\).
+    <span class="check">To check, we compute \(L_2(-3)=(-1,6)\) also.</span>
+  </p>
+  <p>
+    We compute the angle between them. Since
+    \[
+    \vec v_1\cdot\vec v_2=6-6=0
+    \]
+    they are perpendicular.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice finding the intersetion of 2 lines in \(\mathbb{R}^2\)
+  using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/IntersectTwoLines2DSlopeInt.maplet" download>Intersection of 2 Lines in 2D in Slope-Intercept Form</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/IntersectTwoLines2DParam.maplet" download>Intersection of 2 Lines in 2D in Parametric Form</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

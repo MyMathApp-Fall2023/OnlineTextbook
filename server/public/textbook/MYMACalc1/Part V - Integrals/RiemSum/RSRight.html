@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a1. Right Riemann Sums and Areas | 22. Riemann Sums, Integrals and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="RSGen.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Riemann Sums, Integrals and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  So far we have seen how to compute area using antiderivatives. However,
+	mathematicians prefer to <em>define</em> the area under a curve by
+	summing up smaller pieces of area. These are called Riemann sums.
+</p>
+
+
+      
+      <h2>a1. Right Riemann Sums and Areas</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p class="proc" data-title="Using Riemann Sums to Compute Areas">
+    To find the area, \(A(a,b)\), under the graph of \(y=f(x)\) above
+    the \(x\)-axis between \(x=a\) and \(x=b\), follow these steps:
+  </p>
+  <figure class="center">
+    <img src="graphics/def_right_riem_sum1.jpg" alt="def_right_riem_sum1">
+    <figcaption>
+      In these plots, \(a=2\) and \(b=14\).
+    </figcaption>
+  </figure>
+</div>
+
+<div class="column">
+  <div>
+    <p class="step" data-number="1">
+      Divide the interval \([a,b]\) into \(n\) subintervals of equal width:
+      \[
+      \Delta x=\dfrac{b-a}{n}
+      \]
+      Then the <span class="defword">partition points</span> are:
+      \[
+      x_i=a+i\Delta x
+      \qquad \text{for} \quad
+      i=0,1,\cdots,n
+      \]
+      In particular:
+      \[
+      x_0=a \qquad \text{and} \qquad x_n=b
+      \]
+      and for the \(i^\text{th}\) subinterval, the left endpoint is \(x_{i-1}\)
+      and the right endpoint is \(x_i\).
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/def_right_riem_sum2.jpg" alt="def_right_riem_sum2">
+      <figcaption>
+        Here, there are \(n=6\) partitions of width
+        <br>
+        \(\Delta x=\dfrac{14-2}{6}=2\).
+        <br>
+        And the partition points are
+        <br>
+        \(2, 4, 6, 8, 10, 12, 14\).
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="column">
+  <div>
+    <p class="step" data-number="2">
+      Evaluate the function at the right endpoint of each subinterval
+      and multiply by the width of the subinterval to get:
+      \[
+      f(x_i)\Delta x
+      \]
+      This is the area of the \(i^\text{th}\) rectangle which is an
+      approximation to the area under the curve above the \(i^\text{th}\)
+      subinterval.  Add these up for all the subintervals to get the
+      <span class="defword">Riemann sum</span>:
+      \[
+      \sum_{i=1}^n f(x_i)\Delta x
+      \]
+      which is an approximation to the area under the curve above
+      \([a,b]\). The approximation gets better as \(n\) gets larger.
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/def_right_riem_sum3.jpg" alt="def_right_riem_sum3" />
+      <figcaption>
+        In this Riemann Sum, all \(6\) subintervals have
+        <br>
+        width \(\Delta x=2\) and the evaluation point
+        <br>
+        is the right endpoint of each interval.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="column">
+  <div>
+    <p class="step" data-number="3">
+    Take the limit as the number of intervals, \(n\), goes to infinity.
+    This is the <em>definition</em> of the area under the curve:
+    \[
+    A(a,b)
+    =\lim_{n\to\infty}\sum_{i=1}^n f(x_i)\Delta x
+    \]
+    The limit of a Riemann sum on the right is an example of an
+    <span class="hl">integral</span>.
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <!-- <img src="graphics/def_right_riem_sum_anim.gif" alt="pf_FTCintegdef_ab_anim"> -->
+      <video src="graphics/def_right_riem_sum_anim.mp4" autoplay loop controls></video>
+      <figcaption>
+        Here, the number of rectangles
+        <br>
+        starts at \(6\) and keeps doubling.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+          <div class="rule"></div>
+
+<p class="def" data-title="Definite Integral">
+  The <span class="defword">(definite) integral</span> of a function \(f(x)\)
+  is the limit of the Riemann sums:
+  \[
+  \int_a^b f(x)\,dx
+  =\lim_{n\to\infty}\sum_{i=1}^n f(x_i)\Delta x
+  \]
+  The integral sign, \(\displaystyle \int\), (which is an elongated S for sum)
+  replaces the limit of a sum. The differential, \(dx\), (previously discussed
+  in the chapter on
+  <a href="../../Part III - Derivatives/DiffLinApprox/ChContents.html"
+  title="Return using the Back button.">
+  Differentials & Linear Approximation</a>) replaces the change \(\Delta x\).
+</p>
+<p>
+  Thus the area under a curve is given by an integral:
+</p>
+<p class="thm" data-title="Area under a Curve as an Integral">
+  If \(f(x)\) is positive, then the area under the graph of \(y=f(x)\) above
+  the \(x\)-axis between \(x=a\) and \(x=b\) is:
+  \[
+  A(a,b)=\int_a^b f(x)\,dx
+  \]
+</p>
+<a id="fulldef"></a>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  The definitions of a Riemann sum and of an integral are actually more general
+  and allow for functions, \(f(x)\), which are not necessarily positive, for
+  partitions which are not  necessarily evenly spaced and for evaluation points
+  which are not necessarily the right endpoints. The full definition is
+  given on the <a href="RSGen.html">next page</a>. However, for most purposes,
+  the definitions on this page are totally sufficient.
+</p>
+<a id="eg_RSright"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    Approximate the area below \(y=x^3\) above the \(x\)-axis between \(x=1\)
+    and \(x=3\) using a Riemann sum with \(4\) equal width intervals and right
+    endpoints.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_x^3.jpg" alt="eg_x^3">
+  </div>
+</div>
+<div class="column">
+	<p class="sol">
+    With \(n=4\) intervals, the width is:
+    \[
+    \Delta x=\dfrac{3-1}{4}=0.5
+    \]
+    The right endpoints are:
+    \[
+    x_1=1.5 \quad x_2=2 \quad x_3=2.5 \quad x_4=3
+    \]
+    and the function values are:
+    \[\begin{aligned}
+    f(1.5)&=3.375 & f(2)&=8 \\
+    f(2.5)&=15.625 & f(3)&=27
+    \end{aligned}\]
+    So the Riemann sum is
+    \[\begin{aligned}
+    R_4&=3.375\cdot0.5+8\cdot0.5 \\
+    &\quad+15.625\cdot0.5+27\cdot0.5 \\
+    &=27.0
+    \end{aligned}\]
+  </p>
+  <div class="center">
+    <img src="graphics/eg_x^3_right.jpg" alt="eg_x^3_right">
+  </div>
+</div>
+<a id="ex_RSright"></a>
+
+        <div class="rule"></div>
+
+<p>
+  Here is an exercise on approximating an integral using right Riemann sums.
+  An analogous exercise using Riemann sums with other evaluation points
+  appears on the <a href="RSGen.html#ex_RSleft">next page</a>. The process of
+  taking the limit is discussed on the
+  <a href="RSLim.html#RSLim" title="Return using the Back button.">page after next</a>.
+</p>
+
+<div class="column">
+	<p class="exercise" data-number="2">
+  	Approximate the integral
+  	\(\displaystyle \int_1^9(x^2+1)\,dx\) using:
+  </p>
+  <div class="center">
+    <img src="graphics/ex_x^2+1.jpg" alt="ex_x^2+1">
+  </div>
+</div>
+<ol class="list-outside" type="a">
+  <li>
+		<div class="dotfillex">
+			<p>
+	      \(4\) equal width subintervals and the right endpoints of each interval.
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2a"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2a"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+	    <p>
+			  For equal width intervals \(\Delta x=\dfrac{b-a}{n}\). So:
+			  <span class="center">
+				\(\displaystyle \int_a^bf(x)\,dx
+				=\lim_{n\to\infty} \sum_{i=1}^n f(x_i)\Delta x\)
+				</span>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+	    <p>
+        \(R_4=336\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+      <div class="column">
+      	<p>
+  		    With \(n=4\) intervals, the width is \(\Delta x=\dfrac{9-1}{4}=2\).
+  		    For right endpoints, the evaluation points are:
+  		    \[
+          x_1=3 \qquad x_2=5 \qquad x_3=7 \qquad x_4=9
+  		    \]
+  		    and the function values are:
+  		    \[
+          f(3)=10 \qquad f(5)=26 \qquad f(7)=50 \qquad f(9)=82
+  		    \]
+  		    So the Riemann sum is
+  		    \[
+          R_4=10\cdot2+26\cdot2+50\cdot2+82\cdot2=336
+  		    \]
+        </p>
+        <div class="center">
+          <img src="graphics/ex_x^2+1_right_4.jpg" alt="ex_x^2+1_right_4">
+        </div>
+      </div>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      \(8\) equal width subintervals and the right endpoints of each interval.
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2b"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+	    <p>
+        \(R_8=292\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+      <div class="column">
+      	<p>
+  		    With \(n=8\) intervals, the width is \(\Delta x=\dfrac{9-1}{8}=1\).
+  		    For right endpoints, the evaluation points are:
+  		    \[\begin{aligned}
+          x_1=2 \qquad x_2=3 \qquad x_3=4 \qquad x_4=5 \\
+          x_5=6 \qquad x_6=7 \qquad x_7=8 \qquad x_8=9
+  		    \end{aligned}\]
+  		    and the function values are:
+  		    \[\begin{aligned}
+          f(2)=5\;\, \qquad f(3)=10 \qquad f(4)=17 \qquad f(5)=26 \\
+          f(6)=37 \qquad f(7)=50 \qquad f(8)=65 \qquad f(9)=82
+  		    \end{aligned}\]
+  		    So the Riemann sum is
+  		    \[
+          R_8=5+10+17+26+37+50+65+82=292
+  		    \]
+        </p>
+        <div class="center">
+          <img src="graphics/ex_x^2+1_right_8.jpg" alt="ex_x^2+1_right_8">
+        </div>
+      </div>
+	  </div>
+	</li>
+</ol>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  In practice, one does not compute integrals using the Riemann sum formula.
+  Rather, one uses this formula to derive the integral that needs to be
+  computed in various applications (such as area, arc length and total mass).
+  The integral is then computed using antiderivatives as prescribed by the
+  Fundamental Theorem of Calculus:
+  \[
+  \int_a^bf(x)\,dx=F(b)-F(a)
+  \]
+  as discussed later in
+  <a href="IntFTC.html#2ndFTC" title="Return using the Back button.">
+  this chapter</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

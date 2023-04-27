@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b2. Finding Coefficients - Quadratic | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Coeffs1.html" title="Previous">&lArr;</a></li>
+      <li><a href="Integ.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Partial Fractions</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b2. Finding Coefficients - Quadratic</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the <a href="Coeffs1.html">previous page</a>, we discussed the
+  techniques for finding the coefficients for terms with linear denominators
+  in a partial fraction decomposition. On this page we discuss the techniques
+  for terms with quadratic denominators.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Non-Repeated and Repeated Quadratic Denominators</h3>
+<p>
+  As we discuss the techniques we will refer to two examples:
+</p>
+<p class="example" data-number="1">
+  \[
+  \dfrac{x-12}{(x+1)\left((x-2)^2+4\right)}
+  =\dfrac{A}{x+1}+\dfrac{B(x-2)+C}{(x-2)^2+4}
+  \]
+</p>
+<p class="example" data-number="2">
+  \[
+  \dfrac{x^3}{\left((x-2)^2+4\right)^2}
+  =\dfrac{A(x-2)+B}{(x-2)^2+4}+\dfrac{C(x-2)+D}{\left((x-2)^2+4\right)^2}
+  \]
+</p>
+<p>
+  The first has one non-repeated linear factor and one non-repeated quadratic
+  factor in the denominator. The second has one repeated quadratic
+  factor in the denominator.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  As with linear factors, the first step is always:
+</p>
+<p class="step" data-number="1" data-title="Clear the Denominator">
+  For the two examples, we have:
+</p>
+<p class="example" data-number="1">
+  \[
+  x-12=A\left((x-2)^2+4\right)+\left(B(x-2)+C\right)(x+1) \qquad \text{(1*)}
+  \]
+</p>
+<p class="example" data-number="2">
+  \[
+  x^3=\left(A(x-2)+B\right)\left((x-2)^2+4\right)+\left(C(x-2)+D\right) \qquad \text{(2*)}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The second step is to find the coefficients. There are several methods which
+  may be mixed and matched:
+</p>
+<p class="step" data-number="2 Method A"
+data-title="Expand the Right Side, Equate Coefficients of Each Power of
+\(x\) and Solve for the Coefficients">
+  This always works and gives all the coefficients, but it is not
+  necessarily the most efficient method.
+</p>
+<div class="collapse sol hide" data-number="for Example 1">
+  <p>
+    We expand each term in (1*) and collect terms with the same power of \(x\):
+    \[\begin{aligned}
+      x-12&=A(x^2-4x+8)+B(x^2-x-2)+C(x+1) \\
+      &=x^2(A+B)+x(-4A-B+C)+(8A-2B+C)
+    \end{aligned}\]
+    We equate the coefficients of each power of \(x\). This gives \(3\)
+    equations in \(3\) unknowns:
+    \[\begin{aligned}
+    A+B&=0 \qquad (\text{1**}) \\
+    -4A-B+C&=1 \\
+    8A-2B+C&=-12
+    \end{aligned}\]
+    Equation (1**) says \(B=-A\). So the remaining equations become:
+    \[\begin{aligned}
+    -3A+C&=1 \\
+    10A+C&=-12
+    \end{aligned}\]
+    Subtracting the first equation from the second gives \(13A=-13\) or
+    \(A=-1\). Substituting back gives \(B=1\) and \(C=-2\).
+  </p>
+</div>
+<p>
+  So the coefficients are:
+  \[
+  A=-1 \qquad B=1 \qquad C=-2
+  \]
+  and the partial fraction expansion is:
+  \[
+  \dfrac{x-12}{(x+1)\left((x-2)^2+4\right)}
+  =\dfrac{-1}{x+1}+\dfrac{(x-2)-2}{(x-2)^2+4}
+  \]
+</p>
+<div class="collapse sol hide" data-number="for Example 2">
+  <p>
+    We expand each term in (2*) and collect terms with the same power of \(x\):
+    \[\begin{aligned}
+      x^3&=A(x^3-6x^2+16x-16)+B(x^2-4x+8) \\
+      &\quad+C(x-2)+D \\
+      &=x^3(A)+x^2(-6A+B)+x(16A-4B+C) \\
+      &\quad+(-16A+8B-2C+D)
+    \end{aligned}\]
+    We equate the coefficients of each power of \(x\). This gives \(4\)
+    equations in \(4\) unknowns:
+    \[\begin{aligned}
+    A&=1 \\
+    -6A+B&=0 \\
+    16A-4B+C&=0 \\
+    -16A+8B-2C+D&=0
+    \end{aligned}\]
+    Going down the equations, gives \(A=1\), \(B=6\), \(C=8\) and \(D=-16\).
+  </p>
+</div>
+<p>
+  So the coefficients are:
+  \[
+  A=1 \qquad B=6 \qquad C=8 \qquad D=-16
+  \]
+  and the partial fraction expansion is:
+  \[
+  \dfrac{x^3}{\left((x-2)^2+4\right)^2}
+  =\dfrac{(x-2)+6}{(x-2)^2+4}+\dfrac{8(x-2)-16}{\left((x-2)^2+4\right)^2}
+  \]
+</p>
+        <div class="rule"></div>
+
+<p>
+  Although the above method always works, it can be unwieldly if there
+  are lots of coefficients. (A course on linear algebra teaches how to
+  solve a system of linear equations with a large number of variables.)
+  So it is useful to have a way to find some or all coefficients easily.
+  Some of the techniques used for linear denominators can also help
+  for terms with quadratic denominators.
+</p>
+<p class="step" data-number="2 Method B"
+data-title='Plug in the Obvious and Non-Obvious Values of \(x\)'>
+  For a non-repeated linear term \(\dfrac{A}{x-a}\) plugging in the obvious
+  value \(x=a\) will give the coefficient \(A\). For a non-repeated quadratic
+  term \(\dfrac{B(x-b)+C}{(x-b)^2+c^2}\) plugging in the obvious
+  value \(x=b\) will eliminate the coefficient \(B\) from the equations and
+  help find the coefficient \(C\). Then plugging in additional non-obvious
+  values for \(x\) can help find the other coefficients.
+</p>
+<div class="collapse sol" data-number="for Example 1">
+  <p>
+    We start with the equation with cleared denominators:
+    \[
+    x-12=A\left((x-2)^2+4\right)+\left(B(x-2)+C\right)(x+1) \qquad \text{(1*)}
+    \]
+    Plugging in the obvious value \(x=-1\) will give the coefficient \(A\)
+    for the linear term:
+    \[
+    -13=A(13) \qquad \Longrightarrow \qquad A=-1
+    \]
+    Plugging in the obvious value \(x=2\) and using the value of \(A\) will
+    give the coefficient \(C\) for the quadratic term:
+    \[
+    -10=A(4)+C(3)=-4+C(3) \qquad \Longrightarrow \qquad C=-2
+    \]
+    Plugging in the non-obvious value \(x=0\) and using the values of \(A\)
+    and \(C\) will give the remaining coefficient \(B\) for the quadratic term:
+    \[
+    -12=A(8)+(B(-2)+C)=-8+B(-2)-2 \qquad \Longrightarrow \qquad B=1
+    \]
+    These are of course the same coefficients as found before.
+  </p>
+</div>
+<p class="step" data-number="2 Method C"
+data-title='Differentiate and Plug in the Obvious Values and Non-Obvious Values of \(x\)'>
+  When there are repeated factors in the denominator, differentiating may give
+  useful additional equations. After differentiating, we can again plug in
+  obvious and non-obvious values for \(x\) and get equations for the
+  coefficients. This can be repeated until all coefficients are found.
+</p>
+<div class="collapse sol" data-number="for Example 2">
+  <p>
+    We start with the equation with cleared denominators:
+    \[
+    x^3=\left(A(x-2)+B\right)\left((x-2)^2+4\right)+\left(C(x-2)+D\right) \qquad \text{(2*)}
+    \]
+    Taking the derivative gives:
+    \[
+      3x^2=A\left((x-2)^2+4\right)+\left(A(x-2)+B\right)\left(2(x-2)\right)+C \qquad \text{(2**)}
+    \]
+    <span class="greenbig">Notice we used the product rule and did not simplify!</span>
+    <br>
+    Plugging in the obvious value \(x=2\) into equations (2*) and (2**) gives
+    expressions for the coefficients \(C\) and \(D\):
+    \[
+      8=B(4)+D \qquad \Longrightarrow \qquad D=8-4B \qquad \text{(2a)}
+    \]
+    \[
+      12=A(4)+C \qquad \Longrightarrow \qquad C=12-4A \qquad \text{(2b)}
+    \]
+    Plugging in the non-obvious value \(x=0\) into equations (2*) and (2**)
+    and using the formulas for \(C\) and \(D\), gives two equations for
+    the coefficients \(A\) and \(B\):
+    \[\begin{aligned}
+      0&=(A(-2)+B)(8)+(C(-2)+D) \\
+       &=-16A+8B-2C+D \\
+       &=-16A+8B-2(12-4A)+(8-4B) \\
+       &=-8A+4B-16 \qquad \Longrightarrow \qquad 2A-B=-4 \qquad \text{(2c)}
+    \end{aligned}\]
+    \[\begin{aligned}
+      0&=A(8)+(A(-2)+B)(-4)+C \\
+       &=16A-4B+C=16A-4B+(12-4A) \\
+       &=12A-4B+12 \qquad \Longrightarrow \qquad 3A-B=-3 \qquad \text{(2d)}
+    \end{aligned}\]
+    Subtracting (2c) from (2d) gives \(A=1\). Then substituting back into  (2c)
+    gives \(B=6\). Finally, substituting back into  (2a) and (2b) gives
+    \(C=8\) and \(D=-16\).
+    These are of course the same coefficients as found before.
+  </p>
+</div>
+
+        <div class="rule" id="complex"></div>
+
+<p>
+  There is one further method that is very useful for terms with quadratic
+  factors in the denominator.
+</p>
+<p class="step" data-number="2 Method D"
+data-title='Plug in the Obvious Complex Values of \(x\), Differentiate if necessary'>
+  Since this method involves complex numbers, it is beyond the scope of this
+  class. It is discussed on this <a href="Coeffs2Complex.html">optional page</a>.
+  All problems in this class can be solved without using complex
+  numbers, but this method could make some problems easier.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  That completes the solution process for quadratic factors in the denominator.
+  We are now ready to do the integrals.
+</p>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice finding the Coefficients in a Partial Fraction
+  Expansion by using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ParFracFindCoeff.maplet" download>Partial Fractions: Finding Coefficients</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p class="maplet-ref"></p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

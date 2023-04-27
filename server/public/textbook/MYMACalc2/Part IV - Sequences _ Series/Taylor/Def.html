@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a.1. Taylor Series Definition | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Compute.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>23. Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a.1. Taylor Series Definition</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the
+  <a href="../PowSer/Functions.html" title="Return using the Back button.">
+  previous chapter</a>, we saw that a power series converges to a function
+  on its interval of convergence. We now turn this around. Given a
+  function, \(f(x)\) which is defined on an open interval
+  containing \(x=a\), does there exist a power series centered at \(x=a\) which
+  converges to \(f(x)\) on some interval? Such a series is called
+  the <span class="hl">Taylor series</span> for \(f(x)\) about \(x=a\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="genexample">
+  Given a function, \(f\), assume there is a power series centered at \(x=a\)
+  which converges to that function. Find the power series.
+</p>
+<p class="gensol">
+  To find a formula for the series, we write the series as:
+  \[\begin{aligned}
+  f(x)&=\sum_{n=0}^\infty c_n(x-a)^n \\
+  &=c_0+c_1(x-a)+c_2(x-a)^2+c_3(x-a)^3+c_4(x-a)^4+\cdots
+  \qquad\text{(0)}
+  \end{aligned}\]
+  and try to find the coefficients, \(c_n\).
+</p>
+<p>
+  <span class="hl">To find</span> \(c_0\):&emsp; Set \(x=a\) in equation \(0\):
+  \[
+  f(a)=c_0+c_1(a-a)+c_2(a-a)^2+c_3(a-a)^3+c_4(a-a)^4+\cdots=c_0
+  \]
+  since all terms are zero except the first. So we conclude
+  \[
+  c_0=f(a)
+  \]
+  <span class="hl">To find</span> \(c_1\):&emsp; Differentiate equation \((0)\) to obtain
+  \[
+  f'(x)=c_1+2c_2(x-a)+3c_3(x-a)^2+4c_4(x-a)^3+\cdots \qquad\qquad\text{(1)}
+  \]
+  Set \(x=a\) in equation \((1)\):
+  \[
+  f'(a)=c_1+2c_2(a-a)+3c_3(a-a)^2+4c_4(a-a)^3+\cdots=c_1
+  \]
+  since all terms are zero except the first. So we conclude
+  \[
+  c_1=f'(a)
+  \]
+  <span class="hl">To find</span> \(c_2\):&emsp; Differentiate equation \((1)\) to obtain
+  \[
+  f''(x)=2c_2+3\cdot 2c_3(x-a)+4\cdot 3c_4(x-a)^2+\cdots
+  \qquad\qquad\text{(2)}
+  \]
+  Set \(x=a\) in equation \((2)\):
+  \[
+  f''(a)=2c_2+3\cdot 2c_3(a-a)+4\cdot 3c_4(a-a)^2+\cdots=2c_2
+  \]
+  since all terms are zero except the first. So we conclude
+  \[
+  c_2=\dfrac{1}{2}\,f''(a)
+  \]
+  <span class="hl">To find</span> \(c_3\):&emsp; Differentiate equation \((2)\) to obtain
+  \[
+  f'''(x)=3\cdot 2c_3+4\cdot 3\cdot2c_4(x-a)+\cdots
+  \qquad\qquad\text{(3)}
+  \]
+  Set \(x=a\) in equation \((3)\):
+  \[
+  f'''(a)=3\cdot 2c_3+4\cdot 3\cdot2c_4(a-a)+\cdots
+  =3!\,c_3
+  \]
+  since all terms are zero except the first. So we conclude
+  \[
+  c_3=\dfrac{1}{3!}\,f'''(a)
+  \]
+  <span class="hl">To find</span> \(c_4\), \(c_5\), etc.:&emsp; If you proceed in this manner, you
+  find
+  \[
+  c_4=\dfrac{1}{4!}\,f^{(4)}(a),\qquad
+  c_5=\dfrac{1}{5!}\,f^{(5)}(a), \qquad \text{etc.}
+  \]
+  where \(f^{(n)}(a)\) denotes the \(n^\text{th}\)
+  derivative of \(f(x)\) evaluated at \(x=a\). In general, we
+  conclude
+  \[
+  c_n=\dfrac{1}{n!}\,f^{(n)}(a)
+  \]
+  Note: \(f^{(0)}(x)\)is the \(0^\text{th}\) derivative of \(f(x)\) which is
+  just \(f(x)\) itself.
+</p>
+<a id="Taylor"></a>
+
+        <div class="rule"></div>
+
+<p>
+  By substituting these results into equation \((0)\), we conclude:
+</p>
+<p class="def" data-title="Taylor Series">
+  The <span class="defword">Taylor series</span> for a function \(f(x)\)
+  <span class="hl">at</span> \(x=a\) is the series:
+  \[\begin{aligned}
+  Tf(x)
+  &=\sum_{n=0}^\infty \dfrac{f^{(n)}(a)}{n!}(x-a)^n \\
+  &=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2 \\[2 pt]
+  &\quad+\dfrac{f^{(3)}(a)}{3!}(x-a)^3+\cdots+\dfrac{f^{(n)}(a)}{n!}(x-a)^n+\cdots
+  \end{aligned}\]
+  This series is also called the
+  <span class="hl">Taylor series</span> for \(f(x)\)
+  <span class="hl">near, about, around</span> or
+  <span class="hl">centered at</span> \(x=a\).
+</p>
+<p class="thm" data-title="Taylor Series Theorem">
+  If the function \(f(x)\) is the limit of a power series centered
+  at \(x=a\) then the series is its Taylor series:
+  \[
+  f(x)=Tf(x)
+  \]
+</p>
+
+        <div class="rule" id="Maclaurin"></div>
+
+<p class="def" data-title="Maclaurin series">
+  If the Taylor series is centered at \(x=0\), then the series may also be
+  called the <span class="defword">Maclaurin series</span> for \(f(x)\):
+  \[\begin{aligned}
+  Tf(x)
+  &=\sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!}x^n \\
+  &=f(0)+f'(0)x+\dfrac{f''(0)}{2}x^2 \\[2 pt]
+  &\quad+\dfrac{f^{(3)}(0)}{3!}x^3+\cdots+\dfrac{f^{(n)}(0)}{n!}x^n+\cdots
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="thm" data-title="Maclaurin Series Theorem">
+  If the function \(f(x)\) is the limit of a power series centered
+  at \(x=0\) then the series is its Maclaurin series:
+  \[
+  f(x)=Tf(x)
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  <span class="redbig">Caution:</span> The Taylor Series Theorem does
+  <span class="wrong">not</span> say that the Taylor series for \(f(x)\)
+  actually converges to \(f(x)\). It merely says that if a power series
+  converges to \(f(x)\), it must be its Taylor series, \(Tf(x)\). In fact,
+  there are functions, \(f(x)\), whose Taylor series, \(Tf(x)\), does not
+  converge back to \(f(x)\). However,
+  suffice it to say that <span class="hl">for every function discussed in this
+  course, the Taylor series does in fact converge to the function.</span>
+  We will delay the discussion of when a Taylor series converges to the
+  function until the end of this chapter when we discuss the
+  <a href="ConvProofs.html" title="Return using the Back button.">
+  Taylor Series Convergence Proofs</a>. This is why we have notation to
+  distinguish between the function, \(f(x)\), and its Taylor series, \(Tf(x)\).
+  Then, for example, we can ask the question "Does \(Tf(x)\) converge to
+  \(f(x)\)?" However, throughout most of this chapter, we assume the Taylor
+  series does converge to the function. So we write \(f(x)\) and \(Tf(x)\)
+  interchangeably.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

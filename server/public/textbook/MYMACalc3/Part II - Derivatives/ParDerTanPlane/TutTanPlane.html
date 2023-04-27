@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>f. Trace and Tangent Plane Tutorial | 11. Partial Derivatives and Tangent Planes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MoreVars.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Partial Derivatives and Tangent Planes</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>f. Trace and Tangent Plane Tutorial</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+  <p>
+    Select a function and click <code>Plot</code> to plot the function.
+    Set the ranges as necessary and reclick <code>Plot</code>.
+  </p>
+  <div class="column">
+    <div data-col-width="15%">
+    </div>
+    <div class="center" data-col-width="25%">
+      <div style="text-align:right">
+        \(z=\)
+        <select name="zfunc" id="zfunc">
+          <option value="(-Math.pow(x,2)-Math.pow(y,2))">-x^2-y^2</option>
+          <option value="(-Math.pow(x,2)*y)">-x^2*y</option>
+          <option value="Math.exp((-Math.pow(x,2)-Math.pow(y,2)))">e^(-(x^2+y^2))</option>
+          <option value="Math.exp(1/(-Math.pow(x,2)-Math.pow(y,2)))">e^(-1/(x^2+y^2))</option>
+          <option value="(-(10*x*y)/(1+Math.pow(x,2)+Math.pow(y,2)))">-(10*x*y)/(1+x^2+y^2)</option>
+          <option value="1/(1+Math.pow(x,2)+Math.pow(y,2))">1/(1+x^2+y^2)</option>
+          <option value="(-Math.pow(x,2)-Math.pow(y,3))">-x^2-y^3</option>
+          <option value="(Math.cos(Math.PI*x)*Math.cos(Math.PI*y))">cos(pi*x)*cos(pi*y)</option>
+        </select>
+      </div>
+      <div>
+        <input type="checkbox" id="cbscaling">Match Scales</input>
+      </div>
+    </div>
+    <div class="center" data-col-width="20%">
+      <div class="center">
+        <input type="text" value="-0.5" id="xmin" style="width:50px">
+        \( \; \le \, x \, \le \; \)
+        <input type="text" value="0.5" id="xmax" style="width:50px">
+      </div>
+      <div class="center">
+        <input type="text" value="-0.5" id="ymin" style="width:50px">
+        \( \; \le \, y \, \le \; \)
+        <input type="text" value="0.5" id="ymax" style="width:50px">
+      </div>
+      <div class="center">
+        <input type="text" value="-0.5" id="zmin" style="width:50px">
+        \( \; \le \, z \, \le \; \)
+        <input type="text" value=".1" id="zmax" style="width:50px">
+      </div>
+    </div>
+    <div data-col-width="20%">
+      <div class="center">
+        <button id="plotit">Plot</button>
+      </div>
+      <div class="center">
+        <button class="toggle" data-toggle="Drop1">Mouse Controls</button>
+      </div>
+    </div>
+    <div data-col-width="10%">
+    </div>
+  </div>
+  <div class="toBeToggled" data-toggle="Drop1">
+    <h4>Mouse Controls</h4>
+    <div class=column>
+      <div> within 3D Plot Window
+        <ul>
+          <li>Rotate: Left Click and Drag
+          </li>
+          <li>Pan: Ctrl-Left Click and Drag
+          </li>
+          <li>Zoom: Scroll Wheel
+          </li>
+        </ul>
+      </div>
+      <div> within 2D Slider Window
+        <ul>
+          <li>Move Yellow Dot: Left Click and Drag
+          </li>
+        </ul>
+        <br><br>
+      </div>
+    </div>
+    <hr>
+    <h4>Track Pad and Touch Screen Controls</h4>
+    <div class=column>
+      <div> within 3D Plot Window
+        <ul>
+          <li>Rotate: Double Touch and Drag
+          </li>
+          <li>Pan: Ctrl-Double Touch and Drag
+          </li>
+          <li>Zoom: Spread Two Fingers
+          </li>
+        </ul>
+      </div>
+      <div> within 2D Slider Window
+        <ul>
+          <li>Move Yellow Dot: Double Touch and Drag
+          </li>
+        </ul>
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="column" style="align-items:flex-start;">
+    <div data-col-width="50%">
+      <div align="center">
+      	<canvas id="Figure" alt="Graphic unavailable"></canvas>
+        <br><br>
+        <input type="checkbox" id="cbxplane">\(xz\) Slice</input>
+        <input type="checkbox" id="cbxline">\(x\) Trace</input>
+        <input type="checkbox" id="cbxtline">\(x\) Tangent Line</input>
+        <input type="checkbox" id="cbxplay">Play \(x\)</input>
+        <br><br>
+        <input type="checkbox" id="cbyplane">\(yz\) Slice</input>
+        <input type="checkbox" id="cbyline">\(y\) Trace</input>
+        <input type="checkbox" id="cbytline">\(y\) Tangent Line</input>
+        <input type="checkbox" id="cbyplay">Play \(y\)</input>
+        <br><br>
+        <input type="checkbox" id="cbtplane">Tangent Plane</input>
+      </div>
+    </div>
+    <div data-col-width="50%" align="center">
+      <canvas id="xyslider" alt="Graphic unavailable"></canvas>
+      <br><br>
+      <div>
+        <input type="range" min="-10" max="10" value="0" step="0.1"
+          id="xslider" style="width:275px; vertical-align:bottom"></input>
+        \(x=\,\)
+        <input type="text" id="INx" style="resize:none;
+          width:40px; height:22px; font-size:12px; vertical-align:text-bottom">
+        </input>
+      </div>
+      <div>
+        <input type="range" min="-10" max="10" value="0" step="0.1"
+          id="yslider" style="width:275px; vertical-align:bottom"></input>
+        \(y=\,\)
+        <input type="text" id="INy" style="resize:none;
+          width:40px; height:22px; font-size:12px; vertical-align:text-bottom">
+        </input>
+      </div>
+    </div>
+  </div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+  <script src="scripts/OrbitControls.js"></script>
+  <script src="scripts/DragControls.js"></script>
+  <script src="scripts/TextSprite.js"></script>
+  <script src="../../../scripts/MYMAthree.min.js"></script>
+  <script src="scripts/CreateTanPlane.js"></script>
+  <script src="scripts/TutTanPlane.js"></script>
+
+
+</body>
+</html>

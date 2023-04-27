@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. The Divergence of a Gradient (\(\vec\nabla\cdot\vec\nabla f\)) - The Laplacian | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DiffIdent2.html#Ops" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>17. Divergence, Curl and Potentials</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>d. Differential Identities</h2>
+
+<h2>2. Second Order Differential Operators and Identities</h2>
+
+<div class="example-links">
+  <a href="OpDivGrad.html" class="active">\(\underline{\vec\nabla\cdot\vec\nabla f}\)</a>
+  &emsp;
+  <a href="OpCurlGrad.html">\(\underline{\vec\nabla\times\vec\nabla f}\)</a>
+  &emsp;
+  <a href="OpDivCurl.html">\(\underline{\vec\nabla\cdot\vec\nabla\times\vec F}\)</a>
+  &emsp;
+  <a href="OpCurlCurl.html">\(\underline{\vec\nabla\times\vec\nabla\times\vec F}\)</a>
+</div>
+
+
+      
+      <h2>a. The Divergence of a Gradient (\(\vec\nabla\cdot\vec\nabla f\)) - The Laplacian</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  This requires a definition.
+</p>
+<p class="def">
+  The <span class="defword">Laplacian</span> of a scalar field \(f\) is the
+  scalar field
+  \[\begin{aligned}
+  \text{Lap}f
+  &=\nabla^2f=\vec\nabla\cdot\vec\nabla f \\
+  &=\dfrac{\partial^2 f}{\partial x^2}
+  +\dfrac{\partial^2 f}{\partial y^2}
+  +\dfrac{\partial^2 f}{\partial z^2}
+  \end{aligned}\]
+  <button class="toggle" data-toggle="Drop1">Derivation of the last formula</button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    The gradient is
+    \(\vec\nabla f=\left\langle \partial_x f, \partial_y f, \partial_z f\right\rangle\).
+    So the divergence of the gradient is
+    \[
+    \vec\nabla\cdot\vec\nabla f
+    =\left\langle \partial_x, \partial_y, \partial_z\right\rangle\cdot
+       \left\langle \partial_x f, \partial_y f, \partial_z f\right\rangle
+    =\partial_x^2 f +\partial_y^2 f +\partial_z^2 f
+    \]
+  </p>
+</div>
+
+<p class="example" data-number="1">
+  Compute the Laplacian of the function
+  \(f=x^2y^3+y^2z^3\).
+</p>
+<p class="sol">
+  The gradient of \(f\) is
+  \[
+  \vec\nabla f=\left\langle 2xy^3, 3x^2y^2+2yz^3, 3y^2z^2\right\rangle
+  \]
+  The Laplacian is
+  \[\begin{aligned}
+  \nabla^2f
+  &=\vec\nabla\cdot\vec\nabla f \\
+  &=\dfrac{\partial}{\partial x}(2xy^3)
+  +\dfrac{\partial}{\partial y}(3x^2y^2+2yz^3)
+  +\dfrac{\partial}{\partial z}(3y^2z^2) \\
+  &=2y^3+6x^2y+2z^3+6y^2z
+  \end{aligned}\]
+  Note the answer is a scalar field, as it only has one function.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The Laplacian occurs in many differential equations. Here are some famous ones:
+</p>
+<p class="def" data-title="The Laplace Equation">
+  The <span class="defword">Laplace Equation</span> is:
+  \[
+  \nabla^2f=0
+  \]
+  Any solution of the Laplace equation is called an
+  <span class="defword">harmonic function</span>.
+</p>
+<p class="def" data-title="The Poisson Equation">
+  The <span class="defword">Poisson Equation</span> is:
+  \[
+  \nabla^2f=\rho
+  \]
+  where \(\rho\) is a given function called the <span class="defword">source</span>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The Laplacian also occurs in the differential equation version of many
+  laws of physics.
+</p>
+<div class="greybox">
+  <p class="physlaw" data-title="The Heat Equation">
+    If the temperature of an object depends on both position and time, then the
+    temperature is a function of the space coordinates \(x\), \(y\) and \(z\)
+    as well as time \(t\). Then the temperature \(T=T(t,x,y,z)\) satisfies
+    the <span class="defword">Heat Equation</span>:
+    \[
+    \dfrac{\partial T}{\partial t}=k \nabla^2T
+    \]
+    where \(k\) is the heat flow constant of the material of the object.
+  </p>
+</div>
+<br>
+<div class="greybox">
+  <p class="physlaw" data-title="The Wave Equation">
+    There are many types of waves: the vibration of a string or a drum head
+    or the air in a tube, a sound wave or an electromagnetic wave. These all
+    satisfy the <span class="defword">Wave Equation</span>:
+    \[
+    \dfrac{\partial^2 f}{\partial t^2}-v^2 \nabla^2f=0
+    \]
+    where \(v\) is the velocity of the wave.
+  </p>
+</div>
+<br>
+<div class="greybox">
+  <p class="physlaw" data-title="Newton's Law of Gravity">
+    The gravitational potential \(\phi_g\) is a solution of
+    <span class="defword">Newton's Law of Gravity</span>
+    which is the Poisson equation:
+    \[
+    \nabla^2\phi_g=4\pi\rho_g
+    \]
+    where \(\rho_g\) is is the <span class="defword">mass density</span>.
+    In empty space, this reduces to the Laplace equation.
+  </p>
+</div>
+<br>
+<div class="greybox">
+  <p class="physlaw" data-title="Coulomb's Law of Electrostatics">
+    The electrostatics potential \(\phi_e\) is a solution of
+    <span class="defword">Coulomb's Law of Electrostatics</span>
+    which is the Poisson equation:
+    \[
+    \nabla^2\phi_e=4\pi\rho_e
+    \]
+    where \(\rho_e\) is is the <span class="defword">charge density</span>.
+    In empty space, this reduces to the Laplace equation.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  You will have to wait until a course in partial differential equations
+  to learn how to solve these equations. But you can already verify that
+  a given function satisfies an equation.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Verify that the function
+    \[
+    f(t,x)=2\sin(x+vt)+3\cos(x-vt)
+    \]
+    satisfies the (\(1\)-dimensional) wave equation.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+    <button class="toggle has-rem" data-toggle="RemX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Compute \(\partial^2_t f\) and \(\nabla^2f=\partial^2_x f\) and substitute
+    into the left side of the Wave Equation to get \(0\).
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We compute the first and second derivatives:
+    \[\begin{aligned}
+    \partial_t f&=2v\cos(x+vt)+3v\sin(x-vt) \\
+    \partial^2_t f&=-2v^2\sin(x+vt)-3v^2\cos(x-vt) \\[6pt]
+    \partial_x f&=2\cos(x+vt)-3\sin(x-vt) \\
+    \nabla^2f=\partial^2_x f&=-2\sin(x+vt)-3\cos(x-vt)
+    \end{aligned}\]
+    Then we plug them into the left side of the wave equation:
+    \[\begin{aligned}
+    \partial^2_t f-v^2\nabla^2f
+    &=-2v^2\sin(x+vt)-3v^2\cos(x-vt) \\
+    &\quad-v^2(-2\sin(x+vt)-3\cos(x-vt))=0
+    \end{aligned}\]
+  </p>
+  <div class="column">
+    <p data-col-width="60%">
+      The plot at the right shows the graphs of
+      <br>&emsp;\(2\sin(x+2t)\) shown in green, which is a wave moving left,
+      <br>&emsp;\(3\cos(x-2t)\) shown in blue, which is a wave moving right.
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_1DwaveLR.gif" alt="ex_1DwaveLR">
+    </div>
+  </div>
+  <div class="column">
+    <p data-col-width="60%">
+      The plot at the right shows the sum
+      <br>&emsp;\(2\sin(x+2t)+3\cos(x-2t)\) shown in magenta.
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_1DwaveSum.gif" alt="ex_1DwaveSum">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    In fact, any function of the form:
+    \[
+    f(x,t)=g(x+vt)+h(x-vt)
+    \]
+    for any functions \(g\) and \(h\) will satisfy the \(1\)-dimensional
+    wave equation:
+    \[
+    \partial^2_t f-v^2\partial^2_x f=0
+    \]
+    because, by the chain rule:
+    \[
+    \partial^2_t f=v^2g''(x+vt)+v^2h''(x-vt)
+    \]
+    while:
+    \[
+    \partial^2_x f=g''(x+vt)+h''(x-vt)
+    \]
+    The function \(g(x+vt)\) describes a wave traveling to the left, while
+    the function \(h(x-vt)\) describes a wave traveling to the right.
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

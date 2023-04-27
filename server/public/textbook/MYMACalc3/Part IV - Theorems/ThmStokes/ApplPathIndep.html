@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Path Independence | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplSurf2Line.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplSurfIndep.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed counterclockwise
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>3. Path Independence</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div>
+    <p>
+      Suppose \(C_1\) and \(C_2\) are two <em>open</em> curves which start
+      at \(A\) and end at \(B\). We say that \(C_1\) can be
+      <span class="defword">continuously deformed</span> into \(C_2\) if there is a
+      surface \(S\) whose boundary is \(\partial S=C_1-C_2\). This
+      means that the boundary of \(S\) may be traversed with the proper
+      counterclockwise orientation
+      by traveling forward along \(C_1\) and then backward along \(C_2\).
+    </p>
+    <p>
+      In the figure, notice that \(C_2\) is traversed in the same direction as
+      \(C_1\), but needs to be reversed to complete the boundary of \(S\)
+      with the normal pointing out of the page.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/def_deform_open.gif" alt="def_deform_open">
+  </div>
+</div>
+<div class="column">
+  <div>
+    <p>
+      Similarly, suppose \(C_1\) and \(C_2\) are two <em>closed</em> curves.
+      We say that \(C_1\) can be <span class="defword">continuously deformed</span>
+      into \(C_2\) if there is a surface \(S\) whose boundary is
+      \(\partial S=C_1-C_2\). This means that the
+      boundary of \(S\) consists of two curves \(C_1\) and \(C_2\) with \(C_1\)
+      traversed forwards and \(C_2\) traversed backwards.
+    </p>
+    <p>
+      In the figure, notice that \(C_2\) is traversed in the same direction as
+      \(C_1\), but needs to be reversed to complete the boundary of \(S\)
+      with the normal as shown.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/def_deform_closed.gif" alt="def_deform_closed">
+  </div>
+</div>
+<p>
+  In either case, \(\partial S=C_1-C_2\), and so Stokes' Theorem says
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  =\oint_{C_1} \vec{F}\cdot d\vec{s}
+  -\oint_{C_2} \vec{F}\cdot d\vec{s}
+  \]
+  This may be rewritten as
+  \[
+  \int_{C_1} \vec{F}\cdot d\vec{s}
+  =\int_{C_2} \vec{F}\cdot d\vec{s}
+  +\iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S} \qquad\qquad \text{(*)}
+  \]
+  <!-- \tag{*}-->
+  In other words, to compute
+  \(\displaystyle \int_{C_1} \vec{F}\cdot d\vec{s}\), you
+  may alternatively compute
+  \(\displaystyle \int_{C_2} \vec{F}\cdot d\vec{s}\) and
+  \(\displaystyle \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}\),
+  if that is easier.
+  <a id="pathindep"></a>
+</p>
+<p class="def">
+  Suppose that \(\vec F\) is a vector field satisfying
+  \[
+  \int_{C_1} \vec{F}\cdot d\vec{s}
+  =\int_{C_2} \vec{F}\cdot d\vec{s}
+  \]
+  whenever \(C_1\) can be continuously deformed into \(C_2\).
+  Then we say \(\vec F\) has <span class="defword">path independent
+  line integrals</span>.
+</p>
+<p>
+  In the special case that \(\vec\nabla\times\vec{F}=\vec 0\), then
+  equation (*) says \(\vec F\) has <span class="hl">path independent
+  line integrals</span>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Let's compute a line integral in two different ways: Once directly and
+  once using Stokes' Theorem and the relation \((*)\).
+</p>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Compute the integral
+    \(\displaystyle \int_{C_1} \vec{F}\cdot d\vec{s}\) for
+    \(\displaystyle \vec{F}=\langle 2x+y,y-2\rangle\)
+    over the semi-circle \(C_1\) given by \(x^2+y^2=16\) counterclockwise from
+    \(A=(4,0)\) to \(B=(-4,0)\).
+    <br>
+    Compute it in two different ways:
+  </p>
+  <div class="center">
+    <img src="graphics/eg_pathindep_semicirc.jpg" alt="eg_pathindep_semicirc">
+  </div>
+</div>
+<p>
+  (1) directly along the curve \(C_1\), shown in <span style="color:blue">blue</span>, and
+  <br>
+  (2) using the relation \((*)\) where \(C_2\) is the straight line segment
+  from \(A\) to \(B\), shown in <span style="color:red">red</span>,
+  and \(S\) is the region inside the semi-circle inside \(x^2+y^2=16\)
+  for \(y\ge0\), shown in <span style="color:cyan">cyan</span>.
+</p>
+
+<p class="sol" data-number="Method 1" data-title="Compute the Line Integral Directly">
+  The semicircle \(C_1\) is parameterized as
+  \(\vec{r}(\theta)=(4\cos\theta, 4\sin\theta)\)
+  for \(0 \le \theta \le \pi\). So the velocity is
+  \[
+  \vec{v}(\theta)
+  =\langle-4\sin\theta, 4\cos\theta\rangle.
+  \]
+  This is properly parametrized counterclockwise.
+  Next we evaluate the vector field on the curve:
+  \[
+  \vec{F}
+  =\langle 2x+y,y-2\rangle
+  =\langle 8\cos\theta+4\sin\theta, 4\sin\theta- 2\rangle
+  \]
+  So the integral is: (Be careful with the range of \(\theta\).)
+  \[\begin{aligned}
+  \int_{C_1} \vec{F}\cdot d\vec{s}
+  &=\int_0^\pi \vec{F}\cdot\vec{v}\,d\theta \\
+  &=\int_0^\pi (-32\sin\theta\cos\theta- 16\sin^2\theta
+  +16\sin\theta\cos\theta- 8\cos\theta)\,d\theta \\
+  &=\int_0^\pi (-16\sin\theta\cos\theta
+  - 16\dfrac{1-\cos(2\theta)}{2}-8\cos\theta)\,d\theta \\
+  &=\left[- 8\sin^2\theta
+  - 8\left(\theta- \dfrac{\sin(2\theta)}{2}\right)
+  - 8\sin\theta\right]_0^\pi
+  =- 8\pi
+  \end{aligned}\]
+</p>
+<p class="sol" data-number="Method 2" data-title="Recompute Using Stokes' Theorem and the Relation \((*)\)">
+</p>
+<p data-title="First, the line integral over the Line \(C_2\)">
+  <br>
+  The line \(C_2\) may be parameterized as:
+  \(\vec{r}(t)=(t, 0)\)
+  for \(-4\le t \le4\).
+  The velocity is:
+  \(\vec{v}=(1, 0)\).
+  This points to the right, but we need it to point to the left. So we reverse it:
+  \[
+  \vec{v}=(- 1, 0)
+  \]
+  The vector field on the line is:
+  \[
+  \vec{F}(\vec{r}(t))
+  =\langle 2x+y,y-2\rangle
+  =\langle 2t,- 2\rangle.
+  \]
+  So the line integral is:
+  \[
+  \int_{C_2} \vec{F}\cdot d\vec{s}
+  =\int_{-4}^4 \vec{F}\cdot\vec{v}\,dt
+  =\int_{-4}^4 (-2t)\,dt
+  =\left[\rule{0pt}{10pt}-t^2\right]_{-4}^4=0
+  \]
+</p>
+<p data-title="Second, the integral over the region \(S\) between the
+  Semi-Circle and the Line">
+  <br>
+  To use the formulas for Stokes' Theorem, we need to work in
+  \(\mathbb{R}^3\). So the surface is the semi-circle \(x^2+y^2\le16\)
+  for \(y\ge0\) with \(z=0\). It is best to work in cylindrical coordinates.
+  So the surface may be parametrized as:
+  \(\vec{R}=(r\cos\theta, r\sin\theta, 0)\)
+  for which the normal is \(\vec{N}=(0,0,r)\). This points up along the
+  \(z\)-axis. So the curve must be traversed counterclockwise which
+  \(\partial S=C_1-C_2\) is.
+</p>
+<p>
+  The curl of the vector field \(\vec{F}=\langle 2x+y,y-2,0\rangle\) in
+  rectangular coordinates is:
+  \[
+  \vec{\nabla}\times\vec{F}
+  =\begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  \partial_x & \partial_y & \partial_z \\
+  2x+y & y-2 & 0 \\
+  \end{vmatrix}
+  =\langle 0, 0,-1\rangle
+  \]
+  So the surface integral over \(S\) is: (Be careful with the range of \(\theta\).)
+  \[\begin{aligned}
+  \iint_S &\vec{F}\cdot d\vec{S}
+  =\int_0^\pi\int_0^4 \vec{F}\cdot\vec{N}\,dr\,d\theta \\
+  &=\int_0^\pi\int_0^4 (-r)\,dr\,d\theta
+  =-\pi\left[\dfrac{r^2}{2}\right]_0^4
+  =-8\pi
+  \end{aligned}\]
+  That was easy!
+</p>
+<p data-title="Add the Integrals">
+  Finally we add the two integrals to get our answer:
+  \[
+  \int_{C_1} \vec{F}\cdot d\vec{S}
+  =\int_{C_2} \vec{F}\cdot d\vec{S}
+  +\iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =0-8\pi=-8\pi
+  \]
+</p>
+<p data-title="Comparison">
+  Notice the answers are the same. Clearly the integrals over the line
+  and area were easier than the integral over the semi-circle.
+</p>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  Consider the integral
+  \(\displaystyle I=\int_A^B \vec{F}\cdot d\vec{s}\)
+  for
+  \(\displaystyle \vec{F}=\langle e^x, e^y, e^z \rangle\), where
+  \(A=(0,0,0)\) and \(B=(1,2,3)\).
+</p>
+<div class="column">
+  <div data-col-width="60%">
+    <div class="dotfillex">
+      <p data-title="2a">
+        Compute the integral \(I\) along the parabola \(P\) parametrized by
+        \(\vec{r}(t)=(t, 2t^2, 3t^2)\), for \(0\le t\le 1\), shown in
+        <span style="color:blue">blue</span>.
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2a"></button>
+        <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+        <button class="toggle has-sol" data-toggle="SolX2a"></button>
+      </p>
+    </div>
+    <div class="dotfillex">
+      <p data-title="2b">
+        Compute the integral \(I\) along the line \(L\) parametrized by
+        \(\vec{r}(t)=(t, 2t, 3t)\), for \(0\le t\le 1\), shown in
+        <span style="color:red">red</span>.
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2b"></button>
+        <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+        <button class="toggle has-sol" data-toggle="SolX2b"></button>
+      </p>
+    </div>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/ex_pathindep_parab_line.jpg" alt="ex_pathindep_parab_line">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2a">
+  <p>
+  \(\displaystyle
+  I=\int_0^1 \vec{F}\cdot\vec{v}\,dt\)
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+  <p>
+  \(\displaystyle
+  I=e+e^2+e^3-3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2a">
+  <p data-title="2a">
+    The parabola \(P\), parametrized by \(\vec{r}(t)=(t, 2t^2, 3t^2)\), has
+    velocity \(\vec{v}(t)=(1, 4t, 6t)\). On the parabola, the vector field is:
+    \[
+    \vec{F}=\langle e^x, e^y, e^z \rangle
+    =\langle e^{\small t}, e^{\small 2t^2}, e^{\small 3t^2} \rangle
+    \]
+    Their dot product is:
+    \[
+    \vec{F}\cdot\vec{v}=e^{\small t}+4te^{\small 2t^2}+6te^{\small 3t^2}
+    \]
+    So the line integral is:
+    \[\begin{aligned}
+    I&=\int_A^B \vec{F}\cdot d\vec{s}
+    =\int_0^1 \vec{F}\cdot\vec{v}\,dt \\
+    &=\int_0^1 \left(e^{\small t}+4te^{\small 2t^2}+6te^{\small 3t^2}\right)\,dt \\
+    &=\left[e^{\small t}+e^{\small 2t^2}+e^{\small 3t^2}\right]_0^1
+    =e+e^2+e^3-3
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2b">
+  <p>
+  \(\displaystyle
+  I=\int_0^1 \vec{F}\cdot\vec{v}\,dt\)
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+  <p>
+  \(\displaystyle
+  I=e+e^2+e^3-3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2b">
+  <p data-title="2b">
+    The line \(L\), parametrized by \(\vec{r}(t)=(t, 2t, 3t)\), has
+    velocity \(\vec{v}(t)=(1,2,3)\). On the line, the vector field is:
+    \[
+    \vec{F}=\langle e^x, e^y, e^z \rangle
+    =\langle e^{\small t}, e^{\small 2t}, e^{\small 3t} \rangle
+    \]
+    Their dot product is:
+    \[
+    \vec{F}\cdot\vec{v}=e^{\small t}+2e^{\small 2t}+3e^{\small 3t}
+    \]
+    So the line integral is:
+    \[\begin{aligned}
+    I&=\int_A^B \vec{F}\cdot d\vec{s}
+    =\int_0^1 \vec{F}\cdot\vec{v}\,dt \\
+    &=\int_0^1 \left(e^{\small t}+2e^{\small 2t}+3e^{\small 3t}\right)\,dt \\
+    &=\left[e^{\small t}+e^{\small 2t}+e^{\small 3t}\right]_0^1
+    =e+e^2+e^3-3
+    \end{aligned}\]
+    The answer is the same!
+  </p>
+</div>
+<div class="dotfillex">
+  <p data-title="&emsp;&ensp;2c">
+    Why do the answers to (2a) and (2b) have be the same?
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2c"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2c"></button>
+    <button class="toggle has-sol" data-toggle="SolX2c"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2c">
+  <p>
+    See the
+    <a href="#pathindep">
+    definition of path independence</a> above. Compute \(\vec\nabla\times\vec F\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+  <p>
+    Since, \(\vec\nabla\times\vec F=\vec 0\), the vector field has
+    path independent line integrals. The integral \(I\) will have the same value
+    on any curve from \(A\) to \(B\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2c">
+  <p>
+    Since the integral \(I\) is the same for the parabola \(P\) and the line
+    \(L\), we suspect that \(\vec F\) has path independent line integrals.
+    To check, we compute its curl:
+    \[\begin{aligned}
+    \vec{\nabla}\times\vec{F}
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    e^x & e^y & e^z
+    \end{vmatrix} \\
+    &=\hat\imath(0)-\hat\jmath(0)+\hat k(0)
+    =\vec 0
+    \end {aligned}\]
+    Since, \(\vec\nabla\times\vec F=\vec 0\), the vector field  \(\vec F\),
+    has path independent line integrals. So the integral \(I\)
+    will have the same value on any curve from \(A\) to \(B\).
+  </p>
+</div>
+<div class="dotfillex">
+  <p data-title="&emsp;&ensp;2d">
+    In the chapter on the
+    <a href="../ThmFTCC/ChContents.html" title="Return using the Back button.">
+    Fundamental Theorem of Calculus for Curves</a>, we also
+    discussed
+    <a href="../ThmFTCC/ApplPathIndep.html" title="Return using the Back button.">
+    path independence</a>. Find a scalar potential for \(\vec F\) and use
+    the FTCC to compute \(I\) without specifying any curve. Which of the three
+    methods was easiest (2a), (2b) or (2d)?
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2d"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2d"></button>
+    <button class="toggle has-sol" data-toggle="SolX2d"></button>
+    <button class="toggle has-rem" data-toggle="RemX2d"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2d">
+  <p>
+    Solve \(\vec\nabla f=\vec F\). Then
+    \[
+    \int_A^B \vec{F}\cdot d\vec{s}
+    =\int_A^B \vec\nabla f\cdot d\vec{s}
+    =f(B)-f(A)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2d">
+  <p>
+    The scalar potential is \(f=e^x+e^y+e^z\).
+    <br>
+    \(\displaystyle
+    I=e+e^2+e^3-3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2d">
+  <p>
+    To find a scalar potential for \(\vec{F}=\langle e^x, e^y, e^z \rangle\),
+    we need to find a single function \(f\) satisfying \(\vec\nabla f=\vec F\), or:
+    \[
+    \partial_x f=e^x \qquad
+    \partial_y f=e^y \qquad
+    \partial_z f=e^z
+    \]
+    A common solution is \(f=e^x+e^y+e^z\). By the FTCC, the integral is
+    \[\begin{aligned}
+    I&=\int_A^B \vec{F}\cdot d\vec{s}
+    =\int_A^B \vec\nabla f\cdot d\vec{s} \\
+    &=f(B)-f(A)=f(1,2,3)-f(0,0,0)
+    =e+e^2+e^3-3
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2d">
+  <p>
+    The FTCC was clearly the easiest. But only because it was easy to find
+    the scalar potential.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

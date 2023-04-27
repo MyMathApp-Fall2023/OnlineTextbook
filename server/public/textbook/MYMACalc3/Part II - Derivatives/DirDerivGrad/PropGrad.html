@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Proposition | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DirecDerivApps.html" title="Previous">&lArr;</a></li>
+      <li><a href="PropGradApps12.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Properties of the Gradient</h2>
+
+<p>
+  While discussing the
+  <a href="DerCurve.html" title="Return using the Back buton.">
+  derivative along a curve</a>, we introduced the
+  <span class="hl">gradient</span> of a function,
+  which is the vector field of all partial derivatives of the function:
+  \[
+  \text{grad}\,f=\vec\nabla f
+  =\left\langle\dfrac{\partial f}{\partial x},
+               \dfrac{\partial f}{\partial y},
+               \dfrac{\partial f}{\partial z}\right\rangle
+  \]
+</p>
+
+
+      
+      <h2>1. Proposition</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p id="Proofs">
+  The gradient satisfies four properties (one of which is only qualitative):
+</p>
+</p>
+<div class="greybox">
+	<p class="prop" data-title="Properties of the Gradient">
+  </p>
+  <ol>
+    <li>
+      \(\vec\nabla f\) points in the direction of maximum increase of \(f\).
+    </li>
+    <li>
+      \(|\vec\nabla f|\) is the maximum rate of increase of \(f\).
+    </li>
+    <li>
+      \(\vec\nabla f\) points perpendicular to each level set of \(f\).
+    </li>
+    <li>
+      \(|\vec\nabla f|\) is inversely proportional to the
+          spacing between level sets. (Qualitative)
+    </li>
+  </ol>
+  <p>
+    <button class="toggle" data-toggle="Proof1">
+      Proof of Gradient Properties 1 and 2</button>
+    <button class="toggle" data-toggle="Proof2">
+      Proof of Gradient Properties 3 and 4</button>
+      <br>
+    The proofs are straight forward and informative. You should read them.
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Proof1">
+  <h4>Proof of Gradient Properties 1 and 2</h4>
+  <p>
+    For property 1, we need to show \(\vec\nabla f\) points in the same
+    direction as the unit vector \(\hat v\) for which the directional
+    derivative \(\nabla_{\hat v}f\) is largest.
+  </p>
+  <p class="remark">
+    We use the directional derivative rather than the derivative along a
+    general vector \(\vec v\) for two reasons. First, we want to measure
+    the intrinsic change in \(f\), independent of the speed of the observer
+    doing the measuring. And second,
+    \(\nabla_{\vec v}f=\vec v\cdot\vec\nabla f\)
+    can be made arbitrarily large by making \(|\vec v|\) bigger; so there
+    would be no maximum of \(\nabla_{\vec v}f\).
+  </p>
+	<div class="column">
+    <p data-col-width="50%">
+    From the definition of a directional derivative, we have
+    \[
+    \nabla_{\hat v}f=\hat v\cdot\vec\nabla f
+    \]
+    In the figure at the right, \(\vec\nabla f\) is a fixed vector, while
+    \(\hat v\) is a unit vector whose direction varies until
+    \(\hat v\cdot\vec\nabla f\) is a maximum.
+    </p>
+  	<div  class="center" data-col-width="50%">
+      <video src="graphics/GradProof12.mp4" autoplay controls loop>
+        Video playback not supported
+      </video>
+  	</div>
+  </div>
+  <p>
+    Using the geometrical formula for the dot product
+    (&nbsp;\(\vec u\cdot\vec v=|\vec u|\,|\vec v|\cos\theta\)&nbsp;) and the
+    fact that \(\hat v\) is a unit vector (&nbsp;\(|\hat v|=1\)&nbsp;),
+    the directional derivative becomes:
+    \[
+    \nabla_{\hat v}f=|\hat v|\,|\vec\nabla f|\cos\theta
+    =|\vec\nabla f|\cos\theta
+    \]
+    where \(\theta\) is the angle between \(\hat v\) and \(\vec\nabla f\).
+    Since \(|\vec\nabla f|\) is constant, this is a maximum when
+    \(\cos\theta=1\) or \(\theta=0\). So the maximum occurs when \(\hat v\)
+    is parallel to \(\vec\nabla f\). In other words, \(\vec\nabla f\) points
+    in the direction \(\hat v\) in which \(\nabla_{\hat v}f\) is a maximum.
+    This proves property 1.
+  </p>
+
+        <div class="rule"></div>
+
+  <p>
+    In addition, if \(\theta=0\) then \(\cos\theta=1\) and the directional
+    derivative becomes
+    \[
+    \nabla_{\hat v}f=|\vec\nabla f|
+    \]
+    In other words, the maximum rate of change of \(f\) is \(|\vec\nabla f|\).
+    This proves property 2.
+	</p>
+</div>
+<div class="toBeToggled note" data-toggle="Proof2">
+  <h4>Proof of Gradient Properties 3 and 4</h4>
+	<div class="column">
+    <div data-col-width="30%" class="center">
+      <p>
+        2D Diagrams
+        <br>
+        <br>
+        <img src="graphics/GradProof2D3a.jpg" alt="GradProof2D3a"/>
+      </p>
+    </div>
+    <p  data-col-width="40%">
+      Consider a level set of a function \(f\) shown in 2D on the left
+      and 3D on the right. Let \(P\) be a point on the level set with value
+      \(f=C\), i.e.:
+      \[
+      f(P)=C
+      \]
+      and let \(\left.\vec\nabla f\right|_P\) be the gradient of \(f\) at \(P\).
+      <br>
+      Note: \(\left.\vec\nabla f\right|_P\) is not drawn perpendicular to the
+      level set, since that is what we need to prove.
+    </p>
+    <div data-col-width="30%" class="center">
+      <p>
+        3D Diagrams
+        <br>
+        <br>
+        <img src="graphics/GradProof3D3a.jpg" alt="GradProof3D3a"/>
+        <br>
+      </p>
+    </div>
+  </div>
+	<div class="column">
+    <div data-col-width="30%" class="center">
+      <p>
+        <img src="graphics/GradProof2D3b.jpg" alt="GradProof2D3b"/>
+      </p>
+    </div>
+    <p  data-col-width="40%">
+      Now let \(\vec v\) be a vector tangent to the level set \(f=C\) at the
+      point \(P\). We need to show that \(\left.\vec\nabla f\right|_P\) is
+      perpendicular to every such \(\vec v\).
+    </p>
+    <div data-col-width="30%" class="center">
+      <p>
+        <img src="graphics/GradProof3D3b.jpg" alt="GradProof3D3b"/>
+      </p>
+    </div>
+  </div>
+	<div class="column">
+  	<div  class="center" data-col-width="30%">
+      <video src="graphics/GradProof2D3c.mp4" autoplay controls loop>
+        Video playback not supported
+      </video>
+  	</div>
+    <p  data-col-width="40%">
+      To show this, let \(\vec r(t)\) be a parametric curve which lies in the
+      level set \(f=C\) and has tangent vector \(\vec v\) at \(P\), i.e.:
+      \[
+      f(\vec r(t))=C
+      \quad \text{and} \quad
+      \left.\dfrac{d\vec r}{dt}\right|_P=\vec v
+      \]
+    </p>
+  	<div  class="center" data-col-width="30%">
+      <video src="graphics/GradProof3D3c.mp4" autoplay controls loop>
+        Video playback not supported
+      </video>
+  	</div>
+  </div>
+  <p>
+    We now compute
+    \(\dfrac{d(f\circ \vec r)}{dt}\) in two ways: On the one hand, this is
+    the derivative of \(f\) along the curve. So
+    \[
+    \dfrac{d(f\circ \vec r)}{dt}=\dfrac{df}{dt}=\vec v\cdot\vec\nabla f
+    \]
+    On the other hand, since the curve lies on the level set,
+    \(f(\vec r(t))\) has the constant value \(C\). So
+    \[
+    \dfrac{d(f\circ \vec r)}{dt}=\dfrac{df(\vec r(t))}{dt}=\dfrac{dC}{dt}=0
+    \]
+    Together, these say
+    \[
+    \vec v\cdot\vec\nabla f=0
+    \]
+    which says \(\vec\nabla f\) is perpendicular to \(\vec v\).
+    This proves property 3.
+  </p>
+
+        <div class="rule"></div>
+
+	<div class="column">
+    <p  data-col-width="50%">
+      Property 4 is only qualitative. Think of the contour plot at the right
+      as a contour map of the altitude of the land above sea level. When the
+      contours are closer together, the altitude, \(f\), is changing quickly
+      and so the \(|\vec\nabla f|\) is large. Conversely, when
+      the contours are farther apart, the altitude, \(f\), is changing slowly
+      and so the \(|\vec\nabla f|\) is small. This is what is
+      meant by property 4.
+    </p>
+    <div data-col-width="50%" class="center">
+      <p>
+        <img src="graphics/GradProof4.jpg" alt="GradProof4"/>
+      </p>
+    </div>
+  </div>
+</div>
+<p class="remark">
+  Notice there are two properties about the direction of \(\vec\nabla f\)
+  and two properties about the magnitude of \(\vec\nabla f\). Further there
+  are two properties about the maximum increase of \(f\) and two properties
+  about the level sets of \(f\).
+</p>
+<p>
+  Applications are on the
+  <a href="PropGradApps12.html">next two pages</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Grid Cell Volume | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="3DCurv-Grid.html" title="Previous">&lArr;</a></li>
+      <li><a href="3DCurv-Jac.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Integrating in 3D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>2. Grid Cell Volume</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We continue our investigation of how to integrate in general 3D curvilinear
+  coordinate systems. We continue to use spherical coordinates as a concrete
+  example. Once again, here are the general curvilinear coordinate grid and
+  the spherical coordinate grid with a tangent vector to each coordinate curve:
+</p>
+
+<div class="center">
+  <figure>
+    <figcaption>Spherical Grid Cell</figcaption>
+    <img src="graphics/3dsphgrid.jpg" alt="3dsphgrid">
+  </figure>
+  <figure>
+    <figcaption>3D Curvilinear Grid Cell</figcaption>
+    <img src="graphics/3Dcurvegrid-GridCell.jpg" alt="3Dcurvegrid-GridCell">
+  </figure>
+</div>
+<big>PY: ADD TANGENT VECTORS</big>
+
+<p class="example" data-number="1">
+  To integrate in spherical coordinates, we need to know (or be able to
+  approximate) the volume of each curvilinear box (or grid cell):
+  \[
+  \rho_0 \le \rho \le \rho_0+\Delta\rho
+  \qquad
+  \theta_0 \le \theta \le \theta_0+\Delta\theta
+  \qquad
+  \phi_0 \le \phi \le \phi_0+\Delta\phi
+  \]
+  Again, we are moving toward showing the differential of volume is
+  \(dV=\rho^2\sin\phi\,d\rho\,d\theta\,d\phi\).
+</p>
+<big> Add plot of one grid cell.</big>
+<p class="def">
+  To integrate in 3D curvilinear coordinates, we need to know (or be able to
+  approximate) the volume of each
+  <span class="defword">curvilinear box</span>
+  or <span class="defword">grid cell</span>:
+  \[
+  u_0 \le u \le u_0+\Delta u\qquad
+  v_0 \le v \le v_0+\Delta v\qquad
+  w_0 \le w \le w_0+\Delta w
+  \]
+  It turns out that this volume is
+  \[
+  \Delta V=J\,\Delta u\,\Delta v\,\Delta w
+  \]
+  where \(J\) is a function, called the
+  <span class="defword">Jacobian factor</span>, which differs from
+  one coordinate system to another. Then the differential of volume will be:
+  \[
+  dV=J\,du\,dv\,dw
+  \]
+  From this the integral \(\displaystyle \iiint_R f\,dV\) can be computed as
+  \[
+  \iiint_R f\,dV=\iiint f(u,v)\,J\,du\,dv\,dw
+  \]
+  where the limits are put on the integrals to describe the region \(R\).
+</p>
+<p class="remark">
+  For 3D rectangular coordinates, \(dV=dx\,dy\,dz\). So \(J=1\).
+    <br>
+  For cylindrical coordinates, \(dV=r\,dr\,d\theta\,dz\). So \(J=r\).
+    <br>
+  For spherical coordinates, we will show
+  \(dV=\rho^2\sin\phi\,d\rho\,d\theta\,d\phi\). So \(J=\rho^2\sin\phi\).
+    <br>
+  Our job is to find \(J\) for other coordinate systems.
+</p>
+
+        <div class="rule" id="volderive"></div>
+
+<h3>Volume of a Coordinate Box or Grid Cell</h3>
+
+<p>
+  We need to compute (or approximate) the volume of the curvilinear
+  <span class="hl">box</span> or <span class="hl">grid cell</span>:
+  \[
+  u_0 \le u \le u_0+\Delta u\qquad
+  v_0 \le v \le v_0+\Delta v\qquad
+  w_0 \le w \le w_0+\Delta w
+  \]
+  To do this, we stretch (or shrink) the tangent vectors \(\vec{e}_u\),
+  \(\vec{e}_v\) and \(\vec{e}_w\) to vectors \(\vec{U}\), \(\vec{V}\) and
+  \(\vec{W}\), respectively, which just touch the next coordinate curve, and
+  approximate the volume of the coordinate box by the volume of the
+  parallelepiped with edges \(\vec{U}\), \(\vec{V}\) and \(\vec{W}\).
+  These vectors and the parallelepiped are added to the plots below:
+</p>
+<big>PY: Add plots with vectors and parallelpiped</big>
+
+<p>
+  As with <a href="2DCurv-Grid.html" title="Return using the Back button.">
+  2D curvilinear coordinates</a>, the vector \(\vec{U}\) is constructed so
+  that \(\vec{U}\) points in the same direction as \(\vec{e}_u\):
+  \[
+  \hat{U}=\hat{e}_u=\dfrac{\vec{e}_u}{|\vec{e}_u|}
+  \]
+  and the length of \(\vec{U}\) is the arclength of the \(u\)-curve from \(u=u_0\)
+  to \(u=u_0+\Delta u\):
+  \[
+  |\vec{U}|=\int_{u_0}^{u_0+\Delta u} |\vec{e}_u|\,du\approx|\vec{e}_u|\,\Delta u
+  \]
+  From the magnitude and direction of \(\vec{U}\), we reconstruct \(\vec{U}\):
+  \[
+  \vec{U}=|\vec{U}|\hat{U}\approx\Delta u\,\vec{e}_u
+  \]
+  Similarly
+  \[
+  \vec{V}\approx\Delta v\,\vec{e}_v
+  \qquad \text{and} \qquad
+  \vec{W}\approx\Delta w\,\vec{e}_w
+  \]
+  The volume of the coordinate box, \(\Delta V\), is approximately
+  the volume of the parallelepiped which is the absolute value of the
+  triple product, \(|\vec{U}\times\vec{V}\cdot\vec{W}|\).
+  (See the applications of the
+  <a href="../../Part I - Geometry & Vectors/Cross/Volume.html"
+  title="Return using the Back button.">cross product</a>.) So:
+  \[
+  \Delta V=|\vec{U}\times\vec{V}\cdot\vec{W}|
+  =|\Delta u\,\vec{e}_u\times\Delta v\,\vec{e}_v\cdot\Delta w\,\vec{e}_w|
+  =|\vec{e}_u\times\vec{e}_v\cdot\vec{e}_w|\,\Delta u\,\Delta v\,\Delta w
+  \]
+  In the limit as \(\Delta u\), \(\Delta v\) and \(\Delta w\) get small,
+  all the approximations go away and the differential of volume becomes
+  \[
+  dV=|\vec{e}_u\times\vec{e}_v\cdot\vec{e}_w|\,du\,dv\,dw
+  \]
+  Comparing this to the formula
+  \[
+  dV=J\,du\,dv\,dw
+  \]
+  from the top of this page, we see that the Jacobian factor is
+    \[J=|\vec{e}_u\times\vec{e}_v\cdot\vec{e}_w|\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  The Jacobian factor will be simplified on the <a href="3DCurv-Jac.html">
+  next page</a>, but this is the basic requirement for integrating in general
+  curvilinear coordinates on the
+  <a href="3DCurv-Int.html" title="Return using the Back button.">page after next</a>.
+</p>
+<p class="remark">
+  The Jacobian for spherical coordinates will be calculated at the end of the
+  <a href="3DCurv-Jac.html">next page</a>
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Multiply by the Conjugate | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html#tricks" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>7. Computing Limits</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>b. When Limit Laws Don't Apply</h2>
+<h2>1. Limit Tricks</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="FactorCancel.html">Factor and Cancel</a></li>
+    <li><a href="ExpandCancel.html">Expand and Cancel</a></li>
+    <br>
+    <li><a href="DivLargeTerm.html">Divide by the Largest Term in the Denominator</a></li>
+    <br>
+    <li><a href="CommDenom.html">Put Terms over a Common Denominator</a></li>
+    <br>
+    <li><a href="MultConj.html" class="active">Multiply by the Conjugate</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>e. Multiply by the Conjugate</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  The <span class="defword">conjugate</span> of a difference \(a-b\) is
+  the sum \(a+b\). This is useful because their product is the difference
+  of squares, \((a-b)(a+b)=a^2-b^2\). Consequently, if \(a\) and/or \(b\)
+  is a square root, then \(a^2-b^2\) eliminates the square root.
+</p>
+<p>
+  This trick says if numerator or denominator contains a difference where
+  one or both terms is a square root, then multiply the numerator and
+  denominator by the conjugate. Multiply out the numerator or denominator
+  which had the original difference. It is most appropriate for the
+  indeterminate forms \(\dfrac{0}{0}\), \(\dfrac{\infty}{\infty}\),
+  \(0\cdot\infty\) or \(\infty-\infty\).
+</p>
+<p class="example" data-number="1">
+  Compute \(\displaystyle
+  \lim_{x\to3}\dfrac{x-3}{2-\sqrt{3x-5}}\).
+</p>
+<p class="sol">
+  If we plug \(x=3\) into the numerator and denominator, we see this has the
+  indeterminate form \(\dfrac{0}{0}\). The denominator is a difference where
+  one term is a square root. So we multiply the numerator and denominator
+  by the conjugate:
+  \[\begin{aligned}
+  \lim_{x\to3}&\dfrac{x-3}{2-\sqrt{3x-5}}
+  =\lim_{x\to3}\left(\dfrac{x-3}{2-\sqrt{3x-5}}\right)
+  \left(\dfrac{2+\sqrt{3x-5}}{2+\sqrt{3x-5}}\right) \\
+  &=\lim_{x\to3}\dfrac{(x-3)(2+\sqrt{3x-5})}{4-(3x-5)} \\
+  &=\lim_{x\to3}\dfrac{(x-3)(2+\sqrt{3x-5})}{9-3x}
+  =\lim_{x\to3}\dfrac{2+\sqrt{3x-5}}{-3}=-\,\dfrac{4}{3}
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The same kind of trick can be extended to cube roots (and higher roots) as
+  long as we remember an identity such as
+  \[
+  (a-b)(a^2+ab+b^2)=a^3-b^3
+  \]
+</p>
+<p class="example" data-number="2">
+  Compute \(\displaystyle
+  \lim_{x\to2}\dfrac{2-\sqrt[3]{4x}}{x-2}\).
+</p>
+<p class="sol">
+  If we plug \(x=2\) into the numerator and denominator, we see this has the
+  indeterminate form \(\dfrac{0}{0}\). The numerator is a difference where
+  one term is a cube root. So we multiply the numerator and denominator
+  by \(4+2(4x)^{1/3}+(4x)^{2/3}\):
+  \[\begin{aligned}
+  \lim_{x\to2}&\dfrac{2-\sqrt[3]{4x}}{x-2} \\
+  &=\lim_{x\to2}\left(\dfrac{2-\sqrt[3]{4x}}{x-2}\right)
+  \left(\dfrac{4+2(4x)^{1/3}+(4x)^{2/3}}{4+2(4x)^{1/3}+(4x)^{2/3}}\right) \\
+  &=\lim_{x\to2}\dfrac{8-4x}{(x-2)(4+2(4x)^{1/3}+(4x)^{2/3})} \\
+  &=\lim_{x\to2}\dfrac{-4}{4+2(4x)^{1/3}+(4x)^{2/3}} \\
+  &=\dfrac{-4}{4+2(8)^{1/3}+(8)^{2/3}}=-\,\dfrac{1}{3}
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\displaystyle
+    \lim_{u\to0}\dfrac{\sqrt{4+u}-\sqrt{4-u}}{u}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle
+  \lim_{u\to0}\dfrac{\sqrt{4+u}-\sqrt{4-u}}{u}=\dfrac{1}{2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    If we plug \(u=0\) into the numerator and denominator, we see this has the
+    indeterminate form \(\dfrac{0}{0}\). The numerator is a difference of
+    square roots. So we multiply the numerator and denominator by the conjugate:
+    \[\begin{aligned}
+    \lim_{u\to0}&\dfrac{\sqrt{4+u}-\sqrt{4-u}}{u} \\
+    &=\lim_{u\to0}\left(\dfrac{\sqrt{4+u}-\sqrt{4-u}}{u}\right)
+    \left(\dfrac{\sqrt{4+u}+\sqrt{4-u}}{\sqrt{4+u}+\sqrt{4-u}}\right) \\
+    &=\lim_{u\to0}\dfrac{(4+u)-(4-u)}{u(\sqrt{4+u}+\sqrt{4-u})} \\
+    &=\lim_{u\to0}\dfrac{2u}{u(\sqrt{4+u}+\sqrt{4-u})} \\
+    &=\lim_{u\to0}\dfrac{2}{\sqrt{4+u}+\sqrt{4-u}}=\dfrac{1}{2}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

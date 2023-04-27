@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NormalLine.html" title="Previous">&lArr;</a></li>
+      <li><a href="../Higher/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Derivative along a Curve and the Gradient-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="DerCurve.html">a. Derivative along a Curve and the Gradient</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DerCurve.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+	Find the derivative of the given function along the given curve at the
+	given time.
+</p>
+
+<li>
+	<p>
+		\(f(x,y)=2x^2y^3\), &ensp; \(\vec r(t)=(t^3,t^2)\) and \(t=2\). Use two methods.
+	</p>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Use the gradient formula.
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX1a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX1a"></button>
+					<button class="toggle has-sol" data-toggle="SolX1a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX1a">
+				<p>
+					The derivative along a curve is the dot product of the velocity of
+					the curve and the gradient of the function.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+				<p>
+					\(\dfrac{df}{dt}(2)=3\cdot2^{14}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1a">
+				<p>
+					The derivative is the dot product of the velocity of
+					the curve and the gradient of the function. The velocity is:
+					\[\begin{aligned}
+					\vec v(t)&=\langle3t^2,2t\rangle \\
+					\vec v(2)&=\langle12,4\rangle \\
+					\end{aligned}\]
+					The gradient is
+					\[\begin{aligned}
+					\vec\nabla f
+					&=\langle 4xy^3, 6x^2y^2\rangle \\
+					\left.\vec\nabla f\right|_{\vec r(t)}&=\langle 4t^9, 6t^{10}\rangle\\
+					\left.\vec\nabla f\right|_{\vec r(2)}&=\langle 2^{11}, 3\cdot2^{11}\rangle
+					\end{aligned}\]
+					Their dot product is:
+					\[\begin{aligned}
+					\dfrac{df}{dt}(2)
+					&=\vec v(2)\cdot\left.\vec\nabla f\right|_{\vec r(2)}
+					=\langle12,4\rangle\cdot\langle 2^{11}, 3\cdot2^{11}\rangle \\
+					&=3\cdot2^{13}+3\cdot2^{13}=3\cdot2^{14}
+					\end{aligned}\]
+				</p>
+				<p align="right">as&nbsp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Differentiate the composition.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1b"></button>
+					<button class="toggle has-sol" data-toggle="SolX1b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+				<p>
+					\(\dfrac{df}{dt}(2)=3\cdot2^{14}\)
+				</p>
+				<p align="right">as&nbsp;
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1b">
+				<p>
+					Since \(x\) and \(y\) are known in terms of \(t\), we substitute
+					\(x=t^3\)	and \(y=t^2\) into the function \(f(x,y)=2x^2y^3\):
+					\[
+					f(\vec r(t)=2(t^3)^2(t^2)^3=2t^{12}
+					\]
+					Then the derivative is:
+					\[
+					\dfrac{df}{dt}=24t^{11}
+					\]
+					When \(t=2\), this becomes:
+					\[
+					\dfrac{df}{dt}(2)=24\cdot2^{11}=3\cdot2^{14}
+					\]
+				</p>
+				<p align="right">as&nbsp;
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		\(f(x,y,z)=2x^2y^3z\), &ensp; \(r(t)=(t^3,t^2,t)\) and \(t=1\). Use two methods.
+	</p>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Use the gradient formula.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2a"></button>
+					<button class="toggle has-sol" data-toggle="SolX2a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+				<p>
+					\(\dfrac{df}{dt}=26\)
+				</p>
+				<p align="right">as&nbsp;
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2a">
+				<p>
+					The derivative is the dot product of the velocity of the curve and
+					the gradient of the function.
+					The velocity is:
+					\[\begin{aligned}
+					\vec v(t)&=(3t^2,2t,1) \\
+					\vec v(1)&=(3,2,1)
+					\end{aligned}\]
+					The gradient is:
+					\[\begin{aligned}
+					\vec\nabla f&=\langle 4xy^3 z,6x^2y^2 z,2x^2y^3\rangle \\
+					\left.\vec\nabla f\right|_{\vec r(t)}&=\langle 4t^{10}, 6t^{11}, 2t^{12}\rangle \\
+					\left.\vec\nabla f\right|_{\vec r(1)}&=\langle 4,6,2\rangle
+					\end{aligned}\]
+					Their dot product is:
+					\[\begin{aligned}
+					\dfrac{df}{dt}(1)&=\vec v(1)\cdot\left.\vec\nabla f\right|_{\vec r(2)}
+					=\langle 3, 2, 1\rangle\cdot\langle 4,6,2\rangle \\
+					&=3\cdot 4+2\cdot 6+1\cdot 2=26
+					\end{aligned}\]
+				</p>
+				<p align="right">jp&nbsp;
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Differentiate the composition.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2b"></button>
+					<button class="toggle has-sol" data-toggle="SolX2b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+				<p>
+					\(\dfrac{df}{df}(1)=26\)
+				</p>
+				<p align="right">jp&nbsp;
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2b">
+				<p>
+					Since \(x\), \(y\), and \(z\) are already known in terms of \(t\),
+					we can substitute \(x=t^3,\quad y=t^2,\quad z=t\) into the function
+					\(f(x,y,z)=2x^2y^3z\)
+					\[
+					f(\vec r(t))=2(t^3)^2(t^2)^3(t)=2t^{13}
+					\]
+					Then the derivative is:
+					\[
+					\dfrac{df}{dt}=26t^{12}
+					\]
+					When \(t=1\), this becomes:
+					\[
+					\dfrac{df}{dt}(1)=26(1)^{12}=26
+					\]
+				</p>
+				<p align="right">jp&nbsp;
+			</div>
+		</li>
+	</ol>
+</li>
+
+<hr width="80%">
+
+<p>
+	Find the derivative of the given function along a curve at the instant
+	when it passes through the given position with the given velocity.
+</p>
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y)=\sin(x)\cos(y)\),
+			\(\vec r(2)=\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)\) and
+			\(\vec v(2)=\langle 1,2\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX3"></button>
+			<button class="toggle has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+		<p>
+			\(\dfrac{df}{dt}=-\,\dfrac{\sqrt{3}}{4}\)
+		</p>
+		<p align="right">jp&nbsp;
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+		<p>
+			The derivative is the dot product of the velocity and the gradient at the point.
+			We compute the gradient and evaluate it at the point:
+			\[\begin{aligned}
+			\nabla f
+			&=\langle \cos(x)\cos(y),-\sin(x)\sin(y)\rangle \\
+			\left.\nabla f\right|_{(\pi/3,\pi/6)}
+			&=\left\langle \dfrac{\sqrt{3}}{4},-\,\dfrac{\sqrt{3}}{4}\right\rangle
+			\end{aligned}\]
+			Its dot product with the velocity gives the derivative:
+			\[\begin{aligned}
+			\dfrac{df}{dt}
+			&=\vec v(2)\cdot\left.\nabla f\right|_{(\pi/3,\pi/6)} \\
+			&=\dfrac{\sqrt{3}}{4}-2\dfrac{\sqrt{3}}{4}
+			=-\,\dfrac{\sqrt{3}}{4}
+			\end{aligned}\]
+		</p>
+		<p align="right">jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y,z)=z^2 e^{xy}\), &ensp;
+			\(\vec r(1)=(3,2,1)\) and
+			\(\vec v(1)=\langle 1,2,3\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX4"></button>
+			<button class="toggle has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+		<p>
+			\(\dfrac{df}{dt}(1)=14e^6\)
+		</p>
+		<p align="right">as&nbsp;
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+		<p>
+			The derivative is the dot product of the velocity and the gradient at
+			the point. We compute the gradient and evaluate it at the point:
+			\[\begin{aligned}
+			\nabla f
+			=&\langle yz^2e^{xy},xz^2e^{xy},2ze^{xy}\rangle \\
+			\left.\nabla f\right|_{(3,2,1)}
+			&=\langle 2e^6,3e^6,2e^6\rangle\\
+			\end{aligned}\]
+			Its dot product with the velocity gives the derivative:
+			\[\begin{aligned}
+			\dfrac{df}{dt}(1)
+			&=\vec v(1)\cdot	\left.\nabla f\right|_{(3,2,1)} \\
+			&=\langle 1,2,3\rangle\cdot\langle 2e^6,3e^6,2e^6\rangle \\
+			&=2e^6+6e^6+6e^6
+			=14e^6
+			\end{aligned}\]
+		</p>
+		<p align="right">as&nbsp;
+	</div>
+</li>
+
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+			A ant is crawling on a frying pan where the temperature is
+			\(T=300+\sqrt{x^2+y^2}\). If the ant is at \(P(x,y)=(3,-2)\)
+			and has velocity \(\vec v=\langle 2,-3\rangle\), find the rate of change
+			of the temperature as seen by the ant.
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX5"></button>
+			<button class="toggle has-sol" data-toggle="SolX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+		<p>
+			\(\dfrac{dT}{dt}=\dfrac{12}{\sqrt{13}}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+		<p>
+			The gradient of the temperature is
+			\[\begin{aligned}
+			\vec\nabla T=\left\langle \dfrac{\partial T}{\partial x},\dfrac{\partial T}{\partial y}\right\rangle
+			&=\left\langle\dfrac{x}{\sqrt{x^2+y^2}},\dfrac{y}{\sqrt{x^2+y^2}}\right\rangle \\
+			\left.\vec\nabla T\right|_{(3,-2)}
+			&=\left\langle\dfrac{3}{\sqrt{13}},-\,\dfrac{2}{\sqrt{13}}\right\rangle
+			\end{aligned}\]
+			We compute the dot product with \(\vec v=\langle 2,-3\rangle\) to find
+			\[\begin{aligned}
+			\dfrac{dT}{dt}
+			&=\vec v\cdot\left.\vec\nabla T\right|_{(3,-2)}
+			=\dfrac{6}{\sqrt{13}}+\dfrac{6}{\sqrt{13}}
+			=\dfrac{12}{\sqrt{13}}
+			\end{aligned}\]
+		</p>
+		<p align="right">as,jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Ham Duet is flying the Centurion Eagle through a dark matter field
+			whose density is \(\delta=\dfrac{x^2y^3}{z}\). Find the rate of change
+			of the density if the Eagle is located at \((3,2,1)\) and has velocity
+			\(\vec v=\langle 0.3,0.4,0.2\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX6"></button>
+			<button class="toggle has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+		<p>
+			\(\dfrac{d\delta}{dt}=43.2\)
+		</p>
+		<p align="right">as&nbsp;
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+		<p>
+			The gradient of the density is
+			\[\begin{aligned}
+			\vec\nabla\delta=\left\langle\delta_x,\delta_y,\delta_z\right\rangle
+			&=\left\langle\dfrac{2xy^3}{z},\dfrac{3x^2y^2}{z},-\,\dfrac{x^2y^3}{z^2}\right\rangle \\
+			\left.\vec\nabla\delta\right|_{(3,2,1)}
+			&=\langle48,108,-72\rangle
+			\end{aligned}\]
+			Then the rate of change of the density is the derivative along the velocity:
+			\[\begin{aligned}
+			\dfrac{d\delta}{dt}&=\vec v\cdot\left.\vec\nabla\delta\right|_{(3,2,1)} \\
+			&=\langle 0.3,0.4,0.2\rangle\cdot\langle48,108,-72\rangle \\
+			&=14.4+43.2-14.4=43.2
+			\end{aligned}\]
+		</p>
+		<p align="right">as, jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+
+			A weather balloon is located at \(Q=(x,y,z)=(20,-35,15)\,\text{m}\) and has
+			velocity \(\vec v=\langle 6,4,3\rangle\,\dfrac{\text{m}}{\text{hr}}\).
+			It measures the	pressure to be \(P|_Q=1.2\,\text{atm}\) and it gradient to be
+			\(\vec\nabla P|_Q=\langle.02,.03,-.05\rangle\,\dfrac{\text{atm}}{\text{m}}\).
+			Find the rate of change of the pressure as seen by the balloon at \(Q\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX7"></button>
+			<button class="toggle has-sol" data-toggle="SolX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+		<p>
+			\(\dfrac{dP}{dt}==.09\,\dfrac{\text{atm}}{\text{sec}}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+		<p>
+			We know the gradient at \(Q\) is \(\vec\nabla P|_Q=\langle.02,.03,-.05\rangle\)
+			and the velocity is \(\vec v=\langle 6,4,3\rangle\). So the rate of
+			change of the pressure is
+			\[\begin{aligned}
+		  \left.\dfrac{dP}{dt}\right|_Q
+		  &=\vec v\cdot\left.\vec\nabla P\right|_Q \\
+		  &=\langle 6,4,3\rangle\cdot\langle.02,.03,-.05\rangle \\
+		  &=.12+.12-.15=.09\,\dfrac{\text{atm}}{\text{sec}}
+		  \end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			A first airplane flies along the curve
+			\(\vec r_1(t)=\langle t,t^2,t^3\rangle\).
+			At time \(t=1\,\text{hr}\), the pilot of the first plane measures the
+			rate of change of the temperature to be
+			\(\left.\dfrac{d(T\circ\vec r_1)}{dt}\right|_{t=1}
+			=12\,\dfrac{^\circ\text{C}}{\text{hr}}\).
+		</p>
+		<p>
+			A second airplane flies along the curve
+			\(\vec r_2(t)
+			=\left\langle \dfrac{t}{2},\dfrac{t^2}{4},\dfrac{t^3}{8}\right\rangle\).
+			Find the rate of change of the temperature as seen by the second pilot
+			at time \(t=2\,\text{hr}\), that is:
+			\(\left.\dfrac{d(T\circ\vec r_2)}{dt}\right|_{t=2}\).
+		</p>
+		<p>
+			(Assume that the temperature depends on position \((x,y,z)\) but not
+			time \(t\).)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX8"></button>
+			<button class="toggle has-ans" data-toggle="AnsX8"></button>
+			<button class="toggle has-sol" data-toggle="SolX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+		<p>
+		Notice that both planes make their measurments at the same point.
+		How are their velocities related?
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+		<p>
+		\(\left.\dfrac{d(T\circ\vec r_2)}{dt}\right|_{t=2}
+		=6\,\dfrac{^\circ\text{C}}{\text{hr}}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+		<p>
+			Here are the two curves and their velocities:
+			\[\begin{aligned}
+			\vec r_1(t)&=\langle t,t^2,t^3\rangle
+			&\qquad\vec v_1(t)&=\langle 1,2t,3t^2\rangle\\
+			\vec r_2(t)&=\left\langle \dfrac{t}{2},\dfrac{t^2}{4},\dfrac{t^3}{8}\right\rangle
+			&\qquad\vec v_2(t)&=\left\langle \dfrac{1}{2},\dfrac{2t}{4},\dfrac{3t^2}{8}\right\rangle\\
+			\end{aligned}\]
+			At the appropriate times, these are:
+			\[\begin{aligned}
+			\vec r_1(1)&=\langle 1,1,1\rangle
+			&\qquad\vec v_1(1)&=\langle 1,2,3\rangle\\
+			\vec r_2(2)&=\langle 1,1,1\rangle
+			&\qquad\vec v_2(2)&=\langle \dfrac{1}{2},\dfrac{2}{2},\dfrac{3}{2}\rangle
+			=\dfrac{1}{2}\langle 1,2,3\rangle
+			\end{aligned}\]
+			Notice the points are the same and the second velocity is just a multiple
+			of the first:
+			\[
+			\vec v_2(2)=\dfrac{1}{2}v_1(1)
+			\]
+			 So the derivatives along the two curves are related by:
+			\[\begin{aligned}
+			\left.\dfrac{d(T\circ\vec r_2)}{dt}\right|_{t=2}
+			&=\vec v_2(2)\cdot\left.\vec\nabla T\right|_{(1,1,1)}
+			=\dfrac{1}{2}v_1(1)\cdot\left.\vec\nabla T\right|_{(1,1,1)} \\
+			&=\dfrac{1}{2}\left.\dfrac{d(T\circ\vec r_1)}{dt}\right|_{t=1}
+			=\dfrac{1}{2}\cdot12=6\,\dfrac{^\circ\text{C}}{\text{hr}}
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<!--Derivative along a Vector-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="DerVec.html">b. Derivative along a Vector</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DerVec.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<p id="f=y_x^2">
+	Find the derivative of the given function along the given vector at the
+	given point.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y)=\dfrac{y}{x^2}\),
+			&ensp;\(\vec v=\langle 3,4\rangle\) and
+			\(P=(2,3)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX9"></button>
+			<button class="toggle has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+		<p>
+			\(\dfrac{df}{dt}=-\,\dfrac{5}{4}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+		<p>
+			We first calculate the partial derivatives:
+			\[
+			\dfrac{\partial f}{\partial x}=-\,\dfrac{2y}{x^3}
+			\]
+			and
+			\[
+			\dfrac{\partial f}{\partial y}=\dfrac{1}{x^2}
+			\]
+			We combine them into the gradient:
+			\[\begin{aligned}
+			\vec\nabla f
+			=\left\langle\dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}\right\rangle
+			&=\left\langle -\,\dfrac{2y}{x^3},\dfrac{1}{x^2}\right\rangle
+			\end{aligned}\]
+			At point \(P=(2,3)\) this is:
+			\[\begin{aligned}
+			\left.\vec\nabla f\right|_{(2,3)}
+			&=\left\langle -\,\dfrac{3}{4},\dfrac{1}{4}\right\rangle
+			\end{aligned}\]
+			With \(\vec v=\langle 3,4\rangle\) this becomes:
+			\[\begin{aligned}
+			\left .\vec\nabla_{\vec v}f\right|_P
+			=\left .\vec v\cdot\vec\nabla f\right|_P
+			&=\langle 3,4\rangle\cdot\left\langle -\,\dfrac{3}{4},\dfrac{1}{4}\right\rangle \\
+			&=-\,\dfrac{9}{4}+1=-\,\dfrac{5}{4}
+			\end{aligned}\]
+		</p>
+		<p align="right">as/jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y,z)=x\sin(yz)-y\cos(xz)\),
+			&ensp;\(\vec v=\langle 2,2,9\pi\rangle\) and
+			\(P=\left(\dfrac{1}{3},\dfrac{1}{6},\pi\right)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX10"></button>
+			<button class="toggle has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+		<p>
+			\(\nabla_{\vec v} f=\sqrt{3}\pi\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+		<p>
+			The partial derivatives of \(f\) are:
+			\[\begin{aligned}
+			&\dfrac{\partial f}{\partial x}=\sin(yz)+yz\sin(xz) \\[4pt]
+			&\dfrac{\partial f}{\partial y}=xz\cos(yz)-\cos(xz) \\[2pt]
+			&\dfrac{\partial f}{\partial z}=xy\cos(yz)+xy\sin(xz)
+			\end{aligned}\]
+			At point \(P=\left(\dfrac{1}{3},\dfrac{1}{6},\pi\right)\), the gradient is:
+			\[\begin{aligned}
+			\left.\vec\nabla f\right|_{(1/3,1/6,\pi)}
+			&=\left\langle\dfrac{1}{2}+\dfrac{\sqrt{3}\pi}{12},\dfrac{\sqrt{3}\pi}{6}-\dfrac{1}{2},\dfrac{\sqrt{3}}{18}\right\rangle
+			\end{aligned}\]
+			So the derivative along \(\vec v=\langle 2,2,9\pi\rangle\) is:
+			\[\begin{aligned}
+			\nabla_{\vec v} f
+			=\vec v\cdot\vec\nabla f
+			&=1+\dfrac{\sqrt{3}\pi}{6}+\dfrac{\sqrt{3}\pi}{3}-1+\dfrac{\sqrt{3}\pi}{2}\\
+			&=\sqrt{3}\pi
+			\end{aligned}\]
+		</p>
+		<p align="right">as/jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(k(x,y)=\dfrac{x^2+3y}{(x+3)^2}\),
+			&ensp;\(\vec v=\left\langle 10,23\right\rangle\)
+			and \(P=(3,2)\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX11"></button>
+			<button class="toggle has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+		<p>
+			\(\dfrac{dk}{dt}=\dfrac{79}{36}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+		<p>
+			The partial derivatives of \(k\) are:
+			\[\begin{aligned}
+			\dfrac{\partial k}{\partial x}
+			&=\dfrac{(x+3)^22x-(x^2+3y)2(x+3)}{(x+3)^4} \\[2pt]
+			&=\dfrac{(x+3)2x-(x^2+3y)2}{(x+3)^3} \\[2pt]
+			&=\dfrac{2x^2+6x-2x^2-6y}{(x+3)^3}
+			=\dfrac{6x-6y}{(x+3)^3} \\[5pt]
+			\dfrac{\partial k}{\partial y}
+			&=\dfrac{(x+3)^23-(x^2+3y)0}{(x+3)^4}
+			=\dfrac{3}{(x+3)^2}
+			\end{aligned}\]
+			So the gradient of \(k\) is:
+			\[\begin{aligned}
+			\vec\nabla k
+			=\left\langle\dfrac{\partial k}{\partial x},\dfrac{\partial k}{\partial y}
+			\right\rangle
+			&=\left\langle\dfrac{6x-6y}{(x+3)^3},\dfrac{3}{(x+3)^2}\right\rangle
+			\end{aligned}\]
+			At the point \(P=(3,2)\) this is
+			\[
+			\left.\vec\nabla k\right|_P
+			=\left\langle\dfrac{6}{6^3},\dfrac{3}{6^2}\right\rangle
+			=\left\langle\dfrac{1}{36},\dfrac{1}{12}\right\rangle
+			\]
+			So the derivative of \(k\) along \(\vec v\) is:
+			\[\begin{aligned}
+			\left .\vec\nabla_{\vec v}k\right|_P
+			=\left .\vec v\cdot\vec\nabla k\right|_P
+			&=\langle 10,23\rangle\cdot\left\langle\dfrac{1}{36},\dfrac{1}{12}\right\rangle \\
+			&=\dfrac{10}{36}+\dfrac{23}{12}=\dfrac{79}{36}
+			\end{aligned}\]
+		</p>
+		<p align="right">jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y)=\dfrac{3x-y}{3x^2-3y^2}\),
+			&ensp;\(\vec v=\langle3,6\rangle\) and \(P=(2,1)\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX12"></button>
+			<button class="toggle has-sol" data-toggle="SolX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+		<p>
+			\(\dfrac{df}{dt}=\dfrac{1}{3}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+		<p>
+			We first must calculate the partial derivatives of \(f\):
+			\[\begin{aligned}
+			\dfrac{\partial f}{\partial x}
+			&=\dfrac{(3x^2-3y^2)(3)-(3x-y)(6x)}{(3x^2-3y^2)^2} \\
+			&=\dfrac{(3x^2-3y^2)-(3x-y)(2x)}{3(x^2-y^2)^2} \\
+			&=\dfrac{-3x^2+2xy-3y^2}{3(x^2-y^2)^2}
+			\end{aligned}\]
+			and
+			\[\begin{aligned}
+			\dfrac{\partial f}{\partial y}
+			&=\dfrac{(3x^2-3y^2)(-1)-(3x-y)(-6y)}{(3x^2-3y^2)^2} \\
+			&=\dfrac{-(x^2-y^2)+(3x-y)(2y))}{3(x^2-y^2)^2} \\
+			&=\dfrac{-x^2+6xy-y^2}{3(x^2-y^2)^2} \\
+			\end{aligned}\]
+			so the gradient of \(f\) is:
+			\[\begin{aligned}
+			\vec\nabla f
+			=\left\langle\dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}
+			\right\rangle
+			&=\left\langle\dfrac{-3x^2+2xy-3y^2}{3(x^2-y^2)^2},
+			\dfrac{-x^2+6xy-y^2}{3(x^2-y^2)^2}\right\rangle
+			\end{aligned}\]
+			At point \(P=(2,1)\) this is:
+			\[\begin{aligned}
+			\left.\vec\nabla f\right|_P
+			=\left\langle\dfrac{-12+4-3}{27},\dfrac{-4+12-1}{27}
+			\right\rangle
+			=\left\langle -\,\dfrac{11}{27},\dfrac{7}{27}\right\rangle
+			\end{aligned}\]
+			So the derivative of \(f\) along \(v\) is:
+			\[\begin{aligned}
+			\left .\vec\nabla_{\vec v}f\right|_P
+			=\left .\vec v\cdot\vec\nabla f\right|_P
+			&=\langle 3,6\rangle\cdot\left\langle -\,\dfrac{11}{27},\dfrac{7}{27}\right\rangle \\
+			&=\dfrac{-11+14}{9}=\dfrac{1}{3}
+			\end{aligned}\]
+		 </p>
+		 <p align="right">jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y,z)=x^2+y^2+z^2-x-y-z\),
+			&ensp; \(\vec v=\langle 3,2,1\rangle\), and
+			\(P=(1,-3,-4)\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX13"></button>
+			<button class="toggle has-sol" data-toggle="SolX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+		<p>
+		 \(\left .\nabla_{\vec v}f\right|_P=-20\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+		<p>
+			We compute the gradient and evaluate it at the point \(P=(1,-3,-4)\):
+			\[\begin{aligned}
+			\nabla f
+			&=\langle \dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y},\dfrac{\partial f}{\partial z}\rangle \\
+			&=\langle 2x-1,2y-1,2z-1\rangle \\
+			\left.\nabla f\right|_{(1,-3,-4)}
+			&=	\langle 2(1)-1, 2(-3)-1, 2(-4)-1\rangle \\
+			&=\langle 1,-7,-9\rangle
+			\end{aligned}\]
+			So the derivative along \(\vec v\) is:
+			\[\begin{aligned}
+			\left.\nabla_{\vec v}f\right|_P
+			&=\left.\vec v\cdot\vec\nabla f\right|_P
+			=\langle 3,2,1\rangle\cdot\langle 1,-7,-9\rangle \\
+			&=3-14-9=-20
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<!--Directional Derivatives-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="DirecDeriv.html">c. Directional Derivatives</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DirecDeriv.html">1</a></div>
+      
+        <div><a href="DirecDerivApps.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+	Find the directional derivative of the given function in the direction of
+	the given vector at the given point.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y)=\dfrac{y}{x^2}\), &ensp; \(\vec v=\langle 3,4\rangle\) and
+			\(P=(2,3)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX14"></button>
+			<button class="toggle has-sol" data-toggle="SolX14"></button>
+			<button class="toggle has-rem" data-toggle="RemX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+		<p>
+			\(\nabla_{\hat v} f=-\,\dfrac{1}{4}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+		<p>
+			We first compute the gradient and evaluate it at \(P\):
+			\[\begin{aligned}
+			\vec\nabla f
+			=\langle f_x,f_y\rangle
+			&=\left\langle -\,\dfrac{2y}{x^3},\dfrac{1}{x^2}\right\rangle \\
+			\left.\vec\nabla f\right|_{(2,3)}
+			&=\left\langle -\,\dfrac{3}{4},\dfrac{1}{4}\right\rangle
+			\end{aligned}\]
+			The directional derivative is the derivative using the unit vector.
+			When we apply this, the equation becomes:
+			\[
+			\hat v
+			=\dfrac{\vec v}{|\vec v|}
+			=\left\langle \dfrac{3}{5},\dfrac{4}{5}\right\rangle
+			\]
+			\[
+			\nabla_{\hat v} f
+			=\vec v\cdot\vec\nabla f
+			=-\,\dfrac{9}{20}+\dfrac{4}{20}
+			=-\,\dfrac{1}{4}
+			\]
+		</p>
+		<p align="right">as&nbsp;
+	</div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX14">
+		<p>
+			Notice that this problem has the same function, vector and point as a
+			<a href="#f=y_x^2" title="Return using the Back button.">
+			previous problem</a>, but this time we computed the directional derivaitve
+			instead of the derivative along the whole vector including its magnitude.
+			Since the magnitude of \(\vec v\) is \(5\), the answer to the previous
+			problem is \(5\) times the answer to this problem.
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y,z)=(2x+y)z^2\), &ensp; \(\vec v=\langle 1,2,-2\rangle\) and
+			\(P=(2,4,3)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX15"></button>
+			<button class="toggle has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+		<p>
+			\(\nabla_{\hat v} f=-20\)
+		</p>
+		<p align="right">as/jp&nbsp;
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+		<p>
+			The gradient and its value at \(P\) are:
+			\[\begin{aligned}
+			\vec\nabla f
+			=\langle f_x,f_y,f_z\rangle
+			&=\left\langle 2z^2,z^2,2(2x+y)z\right\rangle \\
+			\left.\vec\nabla f\right|_{(2,4,3)}
+			&=\left\langle 18,9,48\right\rangle
+			\end{aligned}\]
+			To find the directional derivative, we use the unit vector direction:
+			\[
+			|\vec v|=\sqrt{1+4+4}=3
+			\]
+			\[
+			\hat v
+			=\dfrac{\vec v}{|\vec v|}
+			=\left\langle \dfrac{1}{3},\dfrac{2}{3},-\,\dfrac{2}{3}\right\rangle
+			\]
+			So the directional derivative is:
+			\[\begin{aligned}
+			\nabla_{\hat v} f
+			&=\hat v\cdot\vec\nabla f
+			=6+6-32\\
+			&=-20
+			\end{aligned}\]
+		</p>
+		<p align="right">as/jp&nbsp;
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y)=\dfrac{e^2x^2}{y^3}\), &ensp; \(\vec v=\langle 2,1\rangle\), and \(P=(3,-2)\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX16"></button>
+			<button class="toggle has-sol" data-toggle="SolX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+		<p>
+			\(\left .\vec\nabla_{\hat v}f\right|_P=-\,\dfrac{51e^2}{16\sqrt{5}}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+		<p>
+			We first calculate the gradient of \(f\):
+			\[\begin{aligned}
+			\vec\nabla f
+			=\left\langle\dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}
+			\right\rangle
+			&=\left\langle\dfrac{2e^2x}{y^3},-\,\dfrac{3e^2x^2}{y^4}\right\rangle
+			\end{aligned}\]
+			At point \(P=(3,-2)\) this is:
+			\[\begin{aligned}
+			\left.\vec\nabla f\right|_P
+			=\left\langle-\,\dfrac{3e^2}{4},-\,\dfrac{27e^2}{16}\right\rangle
+			\end{aligned}\]
+			The directional derivative uses the unit vector:
+			\[
+			\hat v
+			=\dfrac{\vec v}{|\vec v|}
+			=\left\langle \dfrac{2}{\sqrt{5}},\dfrac{1}{\sqrt{5}}\right\rangle
+			\]
+			So the directional derivative is:
+			\[\begin{aligned}
+			\left .\vec\nabla_{\hat v}f\right|_P
+			&=\left .\hat v\cdot\vec\nabla f\right|_P \\
+			&=\left\langle \dfrac{2}{\sqrt{5}},\dfrac{1}{\sqrt{5}}\right\rangle
+			\cdot\left\langle-\,\dfrac{3e^2}{4},-\,\dfrac{27e^2}{16}\right\rangle \\
+			&=\dfrac{-24e^2-27e^2}{16\sqrt{5}}=-\,\dfrac{51e^2}{16\sqrt{5}}
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x,y)=x^2-y^2-x+y\), &ensp; \(\vec v=\left\langle \dfrac{2}{3},\dfrac{1}{3}
+			\right\rangle\), and \(P=(3,8)\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX17"></button>
+			<button class="toggle has-sol" data-toggle="SolX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+		<p>
+			\(\left.\nabla_{\hat v}f\right|_P=-\sqrt{5}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+		<p>
+			We first calculate the gradient of \(f\):
+			\[\begin{aligned}
+			\vec\nabla f
+			=\left\langle\dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}
+			\right\rangle
+			&=\left\langle2x-1,1-2y\right\rangle \\
+			\left.\vec\nabla f\right|_P
+			&=\left\langle5,-15\right\rangle \\
+			\end{aligned}\]
+			The directional derivative uses the unit vector. Since
+			\(|\vec v|=\dfrac{\sqrt{5}}{3}\), the unit vector is:
+			\[
+			\hat v
+			=\dfrac{\vec v}{|\vec v|}
+			=\left\langle \dfrac{2}{\sqrt{5}},\dfrac{1}{\sqrt{5}}\right\rangle
+			\]
+			So the directional derivative is:
+			\[\begin{aligned}
+			\left.\nabla_{\hat v}f\right|_P
+			&=\hat v\cdot\left.\vec\nabla f\right|_P
+			=\left\langle\dfrac{2}{\sqrt{5}},\dfrac{1}{\sqrt{5}}\right\rangle
+			\cdot\langle5,-15\rangle \\
+			&=\dfrac{10}{\sqrt{5}}-\dfrac{15}{\sqrt{5}}=-\,\dfrac{5}{\sqrt{5}}
+			=-\sqrt{5}
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+			The altitude of a mountain range is given by
+			\[
+			a=x\sin y+y\cos x
+			\]
+			Find the slope of the land at
+			\((x,y)=\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)\)
+			in the direction of the vector \(\vec v=\langle 4,-3\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX18"></button>
+			<button class="toggle has-sol" data-toggle="SolX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+		<p>
+			The slope is \(4\pi\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+		<p>
+			To solve this problem, we must break it down into its separate parts.
+			We are given a function \(f(x,y)=x\sin y+y\cos x\), a point
+			\(P=\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)\) and a vector
+			\(\vec v=\langle 4,-3\rangle\).
+		</p>
+		<p>
+			We calculate the gradient	of the altitude and evaluate it at the point:
+			\[\begin{aligned}
+			&\left.\vec\nabla a\right.
+			=\left\langle \sin y-y\sin x,x\cos y+\cos x \right\rangle \\
+			&\left.\vec\nabla a\right|_{(\pi/3,\pi/6)}
+	    =\left\langle \dfrac{1}{2}-\dfrac{\pi}{6}\dfrac{\sqrt{3}}{2},
+			\dfrac{\pi}{3}\dfrac{\sqrt{3}}{2}+\dfrac{1}{2}\right\rangle \\
+	    &\qquad\qquad\quad=\left\langle \dfrac{1}{2}-\dfrac{\pi\sqrt{3}}{12},
+			\dfrac{1}{2}+\dfrac{\pi\sqrt{3}}{6}\right\rangle
+	    \end{aligned}\]
+			Because the slope is the directional derivative, we need to take the
+			derivative along the unit vector. The length of \(\vec v\) is
+			\(|\vec v|=\sqrt{4^2+3^2}=5\). So the unit vector is
+			\(\hat v=\left\langle \dfrac{4}{5},-\,\dfrac{3}{5}\right\rangle\).
+			We can now calculate the slope:
+			\[\begin{aligned}
+	    \text{slope}&=\hat v\cdot\left.\vec\nabla a\right|_{(\pi/3,\pi/6)} \\
+	    &=\left\langle \dfrac{4}{5},-\,\dfrac{3}{5}\right\rangle
+	    \cdot\left\langle \dfrac{1}{2}-\dfrac{\pi\sqrt{3}}{12},
+			\dfrac{1}{2}+\dfrac{\pi\sqrt{3}}{6}\right\rangle \\[8pt]
+	    &=\dfrac{4}{5}\left(\dfrac{1}{2}-\dfrac{\pi\sqrt{3}}{12}\right)
+			-\dfrac{3}{5}\left(\dfrac{1}{2}+\dfrac{\pi\sqrt{3}}{6}\right) \\
+	    &=\dfrac{1}{10}-\dfrac{\pi\sqrt{3}}{6}
+	    \end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Ham Duet is aboard the Centurian Eagle at the point \(P=(10,-5,15)\)
+			in the middle of a deadly polaron field whose density is
+			\(D=(x-12)^2+(y+7)^2+(z-13)^2\). Find the derivative of the
+			density in the direction of the vector
+			\(\vec u=\langle-2,1,2\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX19"></button>
+			<button class="toggle has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+		<p>
+			\(\nabla_{\hat u}D|_P=\dfrac{20}{3}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+		<p>
+			The directional derivative is
+			\(\nabla_{\hat u}D|_P=\hat u\cdot\vec\nabla D|_P\).
+			First, we find the gradient of \(D\):
+			\[
+			\vec\nabla D=\left\langle2(x-12),2(y+7),2(z-13)\right\rangle
+			\]
+			At \(P=(10,-5,15)\), this is
+			\[
+			\vec\nabla D|_P=\langle-4,4,4\rangle
+			\]
+			Next, we need to find the unit vector. The length of
+			\(\vec u=\langle-2,1,2\rangle\) is:
+			\[
+			|\vec u|=\sqrt{4+1+4}=3
+			\]
+			So the unit vector is
+			\[
+			\hat u=\dfrac{\vec u}{|\vec u|}
+			=\left\langle \dfrac{-2}{3},\dfrac{1}{3},\dfrac{2}{3}\right\rangle
+			\]
+			So the directional derivative is:
+			\[\begin{aligned}
+			\nabla_{\hat u}D|_P&=\hat u\cdot\vec\nabla D|_P \\
+			&=\left\langle \dfrac{-2}{3},\dfrac{1}{3},\dfrac{2}{3}\right\rangle
+			\cdot\langle-4,4,4\rangle
+			&=\dfrac{8}{3}+\dfrac{4}{3}+\dfrac{8}{3}=\dfrac{20}{3}
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<!--Properties of the Gradient-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="PropGrad.html">d. Properties of the Gradient</a></h3>
+    <div class="pgs">
+      
+        <div><a href="PropGrad.html">1</a></div>
+      
+        <div><a href="PropGradApps12.html">2</a></div>
+      
+        <div><a href="PropGradApps34.html">3</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	The temperature in \(^\circ K\) in a room is given by
+  \(T=\dfrac{\sin(x+y)}{\cos(x-y)}\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the unit vector direction in which the temperature increases
+			    most rapidly at \(P=(3,8)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX20a"></button>
+					<button class="toggle has-sol" data-toggle="SolX20a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20a">
+				<p>
+					\(\hat w=\langle 0.706,0.708\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX20a">
+				<p>
+					We first must calculate the gradient of \(T\).  To do this, we first
+					rewrite the tempreature as:
+					\[
+					T=\sec(x-y)\sin(x+y)
+					\]
+					Then the partial derivatives are:
+					\[\begin{aligned}
+					\dfrac{\partial T}{\partial x}
+					&=\sec(x-y)\cos(x+y)+\sin(x+y)\sec(x-y)\tan(x-y) \\
+					\dfrac{\partial T}{\partial y}
+					&=\sec(x-y)\cos(x+y)-\sin(x+y)\sec(x-y)\tan(x-y))
+					\end{aligned}\]
+					Then the gradient at \(P=(3,8)\) is:
+					\[\begin{aligned}
+					\vec w&=\left.\vec\nabla T\right|_P
+					=\left.\left\langle \dfrac{\partial T}{\partial x},
+					\dfrac{\partial T}{\partial y}\right\rangle\right|_P \\
+					&=\langle \sec(3-8)\cos(3+8)+\sin(3+8)\sec(3-8)\tan(3-8), \\
+					&\qquad\sec(3-8)\cos(3+8)-\sin(3+8)\sec(3-8)\tan(3-8)\rangle \\
+					&=\langle \sec(5)\cos(11)-\sin(11)\sec(5)\tan(5), \\
+					&\qquad\sec(5)\cos(11)+\sin(11)\sec(5)\tan(5)\rangle \\
+					&=\langle -11.902,11.933\rangle
+					\end{aligned}\]
+					By Property \(1\), the gradient points in the direction of \(\vec w\).
+					Therefore, we need the unit vector of \(\vec w\).  Since the length
+					of \(\vec w\) is:
+					\[
+					|\vec w|=\sqrt{11.902^2+11.933^2}=16.854
+					\]
+					the unit vector in which the temperature	increases most rapidly is:
+					\[
+					\hat w
+					=\left\langle \dfrac{-11.902}{16.854},\dfrac{11.933}{16.854}\right\rangle
+					=\langle 0.706,0.708\rangle
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the maximum rate of increase of the temperature at \(P=(3,8)\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX20b"></button>
+					<button class="toggle has-sol" data-toggle="SolX20b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20b">
+				<p>
+					\(\left.\nabla_{\hat w} T\right|_P
+					=16.854\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX20b">
+				<p>
+					By Property \(2\), the maximum rate of increase of the temperature is
+					the length of the gradient:
+					\[
+					\left.\nabla_{\hat w} T\right|_P
+					=|\vec w|=16.854
+					\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	Consider the function \(f=\dfrac{y}{x^2}\) considered in a
+	<a href="#f=y_x^2" title="Return using the Back button.">
+	previous problem</a>.
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the unit vector direction in which\(f\) decreases most rapidly
+					at \(P=(2,3)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX21a"></button>
+					<button class="toggle has-sol" data-toggle="SolX21a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX21a">
+				<p>
+					\(\hat w
+					=\left\langle \dfrac{3}{\sqrt{10}},-\,\dfrac{1}{\sqrt{10}}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX21a">
+				<p>
+					As shown in the
+					<a href="#f=y_x^2" title="Return using the Back button.">
+					previous problem</a>,	the gradient of \(f\) is
+					\(\vec\nabla f
+					=\left\langle -\,\dfrac{3}{4},\dfrac{1}{4}\right\rangle\).
+					By Property \(1\) the direction of maximum decrease is the negative
+					of the gradient,
+					\(\vec w=-\vec\nabla f
+					=\left\langle \dfrac{3}{4},-\,\dfrac{1}{4}\right\rangle\).
+					We need the unit vector of \(\vec w\). Since
+					\[
+					|\vec w|=\sqrt{\left(\dfrac{3}{4}\right)^2+\left(\dfrac{1}{4}\right)^2}
+					=\dfrac{\sqrt{10}}{4}
+					\]
+					the unit vector in which \(f\)decreases most rapidly is:
+					\[
+					\hat w
+					=\dfrac{\vec w}{|\vec w|}
+					=\dfrac{4}{\sqrt{10}}\left\langle \dfrac{3}{4},-\,\dfrac{1}{4}\right\rangle
+					=\left\langle \dfrac{3}{\sqrt{10}},-\,\dfrac{1}{\sqrt{10}}\right\rangle
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the maximum rate of decrease of \(f\) at \(P=(2,3)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX21b"></button>
+					<button class="toggle has-sol" data-toggle="SolX21b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX21b">
+				<p>
+					\(\left.\nabla_{\hat w} T\right|_P
+					=-\dfrac{\sqrt{10}}{4}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX21b">
+				<p>
+					By Property \(2\), the maximum rate of decrease of \(f\) is
+			    the negative of the length of the gradient:
+					\[
+					\left.\nabla_{\hat w} T\right|_P
+					=-|\vec w|=-\dfrac{\sqrt{10}}{4}
+					\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	An bird is flying through the region where the temperaturere is
+	\(T=275+\sin(\pi x)\cos(\pi y)+\sin(\pi z)\) in \(^\circ K\) and is
+	currently at the point \(P=\left(\dfrac{1}{2},1,\dfrac{1}{2}\right)\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the unit vector direction in which the bird feels the temperature
+					increase the fastest at \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX22a"></button>
+					<button class="toggle has-sol" data-toggle="SolX22a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22a">
+				<p>
+					\(\hat w=\langle 1,0,0\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22a">
+				<p>
+					We must calculate the gradient of \(T\).  To do this, we calculate the
+					partial derivatives:
+					\[\begin{aligned}
+					\dfrac{\partial f}{\partial x}&=\pi\cos(\pi x)\cos(\pi y) \\
+					\dfrac{\partial f}{\partial y}&=-\pi\sin(\pi x)\sin(\pi y) \\
+					\dfrac{\partial f}{\partial z}&=\pi\cos(\pi z)
+					\end{aligned}\]
+					Then the gradient at \(P=\left(\dfrac{1}{2},1,\dfrac{1}{2}\right)\) is:
+					\[\begin{aligned}
+					\vec w
+					&=\left.\vec\nabla T\right |_P
+					=\left .\left\langle \dfrac{\partial T}{\partial x},
+					\dfrac{\partial T}{\partial y}, \dfrac{\partial T}{\partial z}\right\rangle\right |_P \\
+					&=\left\langle\pi\cos\left(\dfrac{\pi}{2}\right)\cos(\pi),
+					-\pi\sin\left(\dfrac{\pi}{2}\right)\sin(\pi),
+					\pi\cos\left(\dfrac{\pi}{2}\right)\right\rangle \\
+					&=\langle -\pi,0,0\rangle
+					\end{aligned}\]
+					By property \(1\), the gradient points in the direction of \(\vec w\).
+					Therefore, we need the unit vector of \(\vec w\).  Since the length of
+					\(\vec w\) is:
+					\[
+					|\vec w|=\sqrt{-\pi^2+0+0}=\pi
+					\]
+					The unit vector which the temperature increases most rapidly is:
+					\[\begin{aligned}
+					\hat w=\left\langle \dfrac{-\pi}{\pi},\dfrac{0}{\pi},\dfrac{0}{\pi}\right\rangle
+					&=\langle -1,0,0\rangle
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the maximum rate of increase of the temperature at \(P=\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX22b"></button>
+					<button class="toggle has-sol" data-toggle="SolX22b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22b">
+				<p>
+					\(\left.\nabla_{\hat w} T\right|_P=\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22b">
+				<p>
+					By Property \(2\), the maximum rate of increase of the temperature is
+					the length of the gradient:
+					\[
+					\left.\nabla_{\hat w} T\right|_P
+					=|\vec w|=\pi
+					\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	A spacecraft is located at \((4,3,2)\) and is experiencing strong aether
+	winds whose density is given by	\(D=x^2+y^2-z^3\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the unit vector direction in which the aether decreases
+					most rapidly at \((4,3,2)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX23a"></button>
+					<button class="toggle has-sol" data-toggle="SolX23a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX23a">
+				<p>
+					\(
+					\hat w=\left\langle\dfrac{-4}{\sqrt{61}},
+				               \dfrac{-3}{\sqrt{61}},
+					             \dfrac{6}{\sqrt{61}}\right\rangle
+					\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX23a">
+				<p>
+					We first calculate the gradient:
+					\[\begin{aligned}
+					\vec\nabla f
+					&=\left\langle\dfrac{\partial f}{\partial x}, \dfrac{\partial f}{\partial y},
+					\dfrac{\partial f}{\partial z}\right\rangle \\
+					&=\left\langle 2x,2y,-3z^2\right\rangle \\
+					\end{aligned}\]
+					The gradient at \(P=(4,3,2)\) is:
+					\[
+					\left.\vec\nabla f\right|_P
+					=\left\langle 8,6,-12\right\rangle
+					\]
+					By Property \(1\), the direction of maximum <em>decrease</em> is
+					opposite to	the gradient:
+					\[
+					\vec w=-\left.\vec\nabla f\right|_P
+					=\left\langle -8,-6,12\right\rangle
+					\]
+					Therefore, we need the unit vector of \(\vec w\).  Since the length of
+					\(\vec w\) is:
+					\[
+					|\vec w|=\sqrt{8^2+6^2+12^2}=\sqrt{64+36+144}
+					=\sqrt{244}=2\sqrt{61}
+					\]
+					the direction in which the unit vector decreases most rapidly is:
+					\[
+					\hat w
+					=\dfrac{\vec w}{|\vec w|}
+					=\dfrac{1}{2\sqrt{61}}\left\langle -8,-6,12\right\rangle
+					=\left\langle\dfrac{-4}{\sqrt{61}},
+				               \dfrac{-3}{\sqrt{61}},
+					             \dfrac{6}{\sqrt{61}}\right\rangle
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the maximum rate of decrease of the aether winds at \((4,3,2)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX23b"></button>
+					<button class="toggle has-sol" data-toggle="SolX23b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX23b">
+				<p>
+					\(|\vec w|=-2\sqrt{61}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX23b">
+				<p>
+					By Property \(2\), the maximum rate of decrease of the aether is
+					the negative length of the gradient:
+					\[
+					\left.\nabla_{\hat w} T\right|_P
+					=-|\vec w|=-2\sqrt{61}
+					\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find a parametric equation for the line perpendicular to the curve
+			\(xy^2+yx^2=6\) at the point \(P=(1,2)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX24"></button>
+			<button class="toggle has-sol" data-toggle="SolX24"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX24">
+		<p>
+			\((x,y)=(1+8t,2+5t)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX24">
+		<p>
+			We first calculate the gradient of \(f=xy^2+yx^2\) and evaluate it at
+			the point \(P=(1,2)\):
+			\[\begin{aligned}
+			\vec\nabla f
+			&=\left\langle\dfrac{\partial f}{\partial x},
+			  \dfrac{\partial f}{\partial y}\right\rangle \\
+			&=\left\langle y^2+2yx,2xy+x^2\right\rangle \\
+			\left.\vec\nabla f\right|_P
+			&=\left\langle 8,5\right\rangle
+			\end{aligned}\]
+			Since we want the perpendicular line, its direction is the gradient at
+			the point, \(\vec v=\left\langle 8,5\right\rangle\). Then the parametric
+			equation for the line is \(X=P+t\vec v\). We plug in:
+			\[
+			(x,y)=(1,2)+t\left\langle 8,5\right\rangle
+			=(1+8t,2+5t)
+			\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find a non-parametric equation for the line tangent to the curve
+			\(x^2y^2-xy=30\) at the point \(P=(2,3)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX25"></button>
+			<button class="toggle has-sol" data-toggle="SolX25"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX25">
+		<p>
+			\(3x+2y=12\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX25">
+		<p>
+			We first calculate the gradient of \(f=x^2y^2-xy\) and evaluate it at
+			the point \(P=(2,3)\):
+			\[\begin{aligned}
+			\vec\nabla f
+			&=\left\langle\dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}\right\rangle \\
+			&=\left\langle2xy^2-y,2x^2y-x\right\rangle \\
+			\left.\vec\nabla f\right|_P
+			&=\left\langle 36-3,24-2\right\rangle \\
+			&=\left\langle 33,22\right\rangle
+			\end{aligned}\]
+			The non-parametric equation of a line in \(\mathbb{R}^2\) is
+			\(\vec n\cdot X=\vec n\cdot P\) where \(\vec n\) is the normal
+			\(\vec n=\left.\vec\nabla f\right|_P=\left\langle 33,22\right\rangle\).
+			So the equation is:
+			\[
+			33x+22y=33\cdot2+22\cdot3=132
+			\]
+			or
+			\[
+			3x+2y=12
+			\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the non-parametric equation for the plane tangent to the surface
+			\(x^2z+z^2y-xy=19\) at the point \(P=(1,2,3)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX26"></button>
+			<button class="toggle has-sol" data-toggle="SolX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+		<p>
+			\(4x+8y+13z=59\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+		<p>
+			We first calculate the gradient of \(f=x^2z+z^2y-xy\) and evaluate it
+			at the point \(P=(1,2,3)\):
+			\[\begin{aligned}
+			\vec\nabla f&=\left\langle \dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}
+			,\dfrac{\partial f}{\partial z}\right\rangle \\
+			&=\langle 2xz-y,z^2-x,x^2+2yz\rangle \\
+			\left .\vec\nabla f\right |_P&=\langle 2\cdot 3-2, 3^2-1,1+2\cdot2\cdot 3\rangle \\
+			&=\langle 4,8,13\rangle
+			\end{aligned}\]
+			The non-parametric equation of a line in \(\mathbb{R}^3\) is
+			\(\vec N\cdot X=\vec N\cdot P\) where \(P=(1,2,3)\) is a point and
+			\(\vec N=\left.\vec\nabla f\right|_P=\langle 4,8,13\rangle\) is the normal.
+			Therefore, the equation is:
+			\[
+			4x+8y+13z=4+16+39=59
+			\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find a parametric equation for the line perpendicular to the surface
+			\(xy+yz^2+xz=13\) at the point \(P=(3,1,2)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX27"></button>
+			<button class="toggle has-sol" data-toggle="SolX27"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX27">
+		<p>
+			\((x,y,z)=(3+3t,1+7t,2+7t)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX27">
+		<p>
+			We first calculate the gradient of \(f=xy+yz^2+xz\) and evaluate it
+			at point \(P=(3,1,2)\):
+			\[\begin{aligned}
+			\vec\nabla f&=\left\langle \dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y},
+			\dfrac{\partial f}{\partial z}\right\rangle \\
+			&=\langle y+z,x+z^2,2yz+x\rangle \\
+			\left.\vec\nabla f\right|_P&=\langle 3,7,7\rangle
+			\end{aligned}\]
+			Since we want the perpendicular line, its direction is the gradient at
+			the point, \(\vec v=\left.\vec\nabla f\right|_P=\langle 3,7,7\rangle\).
+			Then the parametric equation for the line	is \(X=P+t\vec v\).  We plug in:
+			\[
+			(x,y,z)=(3,1,2)+t\langle 3,7,7\rangle=(3+3t,1+7t,2+7t)
+			\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find all points \(P=(p,q)\) on the parabola \(y=-\dfrac{1}{2}x^2+3\)
+			where the	normal vector is parallel to the vector \(\vec u=\langle4,2\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX28"></button>
+			<button class="toggle has-sol" data-toggle="SolX28"></button>
+			<button class="toggle has-check" data-toggle="CkX28"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX28">
+		<p>
+			\(P=(2,1)\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX28">
+		<p>
+			We first rearrange the equation into the form \(y+\dfrac{1}{2}x^2=3\).
+			We then calculate the gradient of \(f=y+\dfrac{1}{2}x^2\) and evaluate
+			it at \(P=(p,q)\):
+			\[\begin{aligned}
+			\vec\nabla f
+			&=\left\langle \dfrac{\partial f}{\partial x},
+			               \dfrac{\partial f}{\partial y}\right\rangle \\
+			&=\langle x,1\rangle \\
+			\left .\vec\nabla f\right|_P
+			&=\langle p, 1\rangle
+			\end{aligned}\]
+			We want this to be parallel to \(\vec u=\langle4,2\rangle\). So we solve
+			the equation:
+			\[\begin{aligned}
+			\left .\vec\nabla f\right|_P&=\lambda\vec u \\
+			\langle p, 1\rangle&=\lambda\langle4,2\rangle
+			\end{aligned}\]
+			or
+			\[\begin{aligned}
+			p=4\lambda &\qquad 1=2\lambda \\
+			\lambda=\dfrac{1}{2} &\qquad p=2
+			\end{aligned}\]
+			Then, because \(\dfrac{1}{2}p^2+q=3\), we conclude:
+			\[
+			q=3-\dfrac{1}{2}p^2=3-2=1
+			\]
+			Therefore, the point is	\(P=(2,1)\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX28">
+		<p>
+			We check by plugging \((p,q)=(2,1)\) into the parabola and into the
+			normal vector	to see the point is on the parabola and is parallel to
+			\(u\).  We get
+			\[
+			y=-\dfrac{1}{2}x^2+3=-\dfrac{1}{2}2^2+3=1
+			\]
+			and
+			\[
+		\left .\vec\nabla f\right|_{(p,q)}=(2,1)=\dfrac{1}{2}\vec u
+			\]
+			So we know this is the correct solution.
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find all points \(P=(p,q)\) on the parabola \(y=4-x^2\) where the
+			normal line passes through the origin \(O=(0,0)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX29"></button>
+			<button class="toggle has-sol" data-toggle="SolX29"></button>
+			<button class="toggle has-check" data-toggle="CkX29"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX29">
+		<p>
+			\(
+			(p,q)=(0,4) \quad \text{and} \quad
+			(p,q)=\left(\pm\sqrt{\dfrac{7}{2}},\dfrac{1}{2}\right)
+			\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX29">
+		<p>
+			We first rewrite the equation as \(y+x^2=4\).
+			We calculate the gradient of \(f=y+x^2\):
+			\[
+			\vec\nabla f
+			=\left\langle\dfrac{\partial f}{\partial x},
+			\dfrac{\partial f}{\partial y}\right\rangle
+			=\langle 2x,1\rangle
+			\]
+			The direction of the normal line is the gradient evaluated at the point
+			\(P=(p,q)\):
+			\[
+			\vec v=\left.\vec\nabla f\right|_P=\langle 2p,1\rangle
+			\]
+			So the normal line is:
+			\[\begin{aligned}
+			X&=P+t\vec v=(p,q)+t\langle 2p,1\rangle \\
+			(x,y)&=(p+2pt,q+t)
+			\end{aligned}\]
+			We want this to pass through the origin \((0,0)\). So we solve:
+			\[
+			(0,0)=(p+2pt,q+t)
+			\]
+			or
+			\[\begin{aligned}
+			0=p+2pt \quad &\text{and} \quad 0=q+t \\
+			t=-q \quad &\text{so} \quad 0=p-2pq=p(1-2q)
+			\end{aligned}\]
+			So either \(p=0\) or \(q=\dfrac{1}{2}\).
+			We also know \((p,q)\) lies on the parabola. So \(q=4-p^2\).
+			So if \(p=0\) then \(q=4\). And if \(q=\dfrac{1}{2}\) then
+			\(p^2=4-q=4-\dfrac{1}{2}=\dfrac{7}{2}\) or \(p=\pm\sqrt{\dfrac{7}{2}}\).
+			Therefore the three solutions are
+			\[
+			(p,q)=(0,4) \quad \text{and} \quad
+			(p,q)=\left(\pm\sqrt{\dfrac{7}{2}},\dfrac{1}{2}\right)
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX29">
+		<p>
+			<p>
+				We check the \(3\) points are on the parabola and and the normal line
+				passes throught the origin.
+			</p>
+			<p>
+				\((p,q)=(0,4)\):
+				Check the point is on the parabola:
+				\[
+				y+x^2=4-0^2=4
+				\]
+				The normal line is:
+				\[
+				(x,y)=(p+2pt,q+t)=(0,4+t)
+				\]
+				which passes through \((0,0)\) when \(t=-4\).
+			</p>
+			<p>
+				\((p,q)=\left(\pm\sqrt{\dfrac{7}{2}},\dfrac{1}{2}\right)\):
+				Check the point is on the parabola:
+				\[
+				y+x^2=\dfrac{1}{2}+\dfrac{7}{2}=4
+				\]
+				The normal line is:
+				\[
+				(x,y)=(p+2pt,q+t)=\left(\pm\sqrt{\dfrac{7}{2}}(1+2t),\dfrac{1}{2}+t\right)
+				\]
+				which passes through \((0,0)\) when \(t=-\dfrac{1}{2}\).
+			</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find all points \(P=(p,q,r)\) on the ellipsoid
+			\(36x^2+9y^2+4z^2=108\) where the	normal vector is parallel to the
+			vector \(\vec v=\langle12,6,4\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX30"></button>
+			<button class="toggle has-sol" data-toggle="SolX30"></button>
+			<button class="toggle has-check" data-toggle="CkX30"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX30">
+		<p>
+			\((p,q,r)=(1,2,3) \quad \text{and} \quad (p,q,r)=(-1,-2,-3)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX30">
+		<p>
+			We first calculate the gradient of \(f=36x^2+9y^2+4z^2\) and evaluate it
+			at \(P=(p,q,r)\):
+			\[\begin{aligned}
+			\vec\nabla f&=\left\langle \dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y},
+			\dfrac{\partial f}{\partial z}\right\rangle \\
+			&=\langle 72x,18y,8z\rangle \\
+			\left.\vec\nabla f\right |_P
+			&=\langle72p,18q,8r\rangle
+			\end{aligned}\]
+			We want this to be parallel to
+			\(\vec v=\langle12,6,4\rangle\).
+			So we need to solve the equations:
+			\[
+			\langle72p,18q,8r\rangle
+			=\lambda\langle12,6,4\rangle
+			\]
+			together with the equation that \(P\) lies on the ellipsoid. So the four
+			equations are:
+			\[\begin{aligned}
+			72p=\lambda12 \qquad 18&q=\lambda6
+			\qquad 8r=\lambda4 \\
+			36p^2+9q^2&+4r^2=108
+			\end{aligned}\]
+			So the first \(3\) equations say:
+			\[
+			p=\lambda\dfrac{1}{6} \qquad q=\lambda\dfrac{1}{3} \qquad r=\lambda\dfrac{1}{2}
+			\]
+			So the ellipse equation says:
+			\[
+			\lambda^2\left(36\dfrac{1}{36}+9\dfrac{1}{9}+4\dfrac{1}{4}\right)=108
+			\]
+			Therefore \(\lambda^2=36\) and \(\lambda=\pm6\). This gives the two points:
+			\[
+			(p,q,r)=(1,2,3) \quad \text{and} \quad (p,q,r)=(-1,-2,-3)
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX30">
+		<p>
+			We plug the points \((p,q,r)=(1,2,3)\) and \((p,q,r)=(-1,-2,-3)\)
+			into the ellipse equation, \(36x^2+9y^2+4z^2=108\), and into the
+			normal vector,
+			\(\left.\vec\nabla f\right |_P=\langle72\cdot p,18\cdot q,8\cdot r\rangle\)
+			to see the points	lie on the ellipse and the normal is parallel to
+			\(\langle12,6,4\rangle\).
+			For the point	\((x,y,z)=\pm (1,2,3)\) we get
+			\[
+			36\cdot1^2+9\cdot2^2+4\cdot3^2=36+36+36=108
+			\]
+			The normal vector is
+			\[
+			\left.\vec\nabla f\right |_P=\pm \langle72\cdot1,18\cdot2,8\cdot3\rangle
+			=\pm \langle72,36,24\rangle=\pm 6\langle12,6,4\rangle
+			\]
+			So we know that we have the correct answers.
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find all points \(P=(p,q,r)\) on the paraboloid
+			\(z=5-\dfrac{x^2}{4}-\dfrac{y^2}{6}\)
+			where the	normal line passes through the origin \(O=(0,0,0)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX31"></button>
+			<button class="toggle has-sol" data-toggle="SolX31"></button>
+			<button class="toggle has-check" data-toggle="CkX31"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX31">
+		<p>
+			There are \(5\) points:
+			\[\begin{aligned}
+			(p,q,r)&=(0,0,5) \\
+			(p,q,r)&=(0,\pm2\sqrt{3},3) \\
+			(p,q,r)&=(\pm2\sqrt{3},0,2)
+			\end{aligned}\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX31">
+		<p>
+			We first calculate the gradient of \(f=z+\dfrac{x^2}{4}+\dfrac{y^2}{6}\)
+			\[
+			\vec\nabla f
+			=\left\langle \dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y},
+			\dfrac{\partial f}{\partial z}\right\rangle
+			=\left\langle\dfrac{x}{2},\dfrac{y}{3},1\right\rangle
+			\]
+			The direction of the normal line is the gradient evaluated at the point
+			\(P=(p,q,r)\):
+			\[
+			\vec v=\left.\vec\nabla f\right |_P
+			=\left\langle\dfrac{p}{2},\dfrac{q}{3},1\right\rangle
+			\]
+			Therefore, the normal line is:
+			\[\begin{aligned}
+			X&=P+t\vec v=(p,q,r)+t\left\langle\dfrac{p}{2},\dfrac{q}{3},1\right\rangle \\
+			&=\left(p\left(1+\dfrac{t}{2}\right),q\left(1+\dfrac{t}{3}\right),r+t\right)
+			\end{aligned}\]
+			We want this to pass through the point \(O=(0,0,0)\).
+			So we need to solve the equations:
+			\[
+			\left(p\left(1+\dfrac{t}{2}\right),q\left(1+\dfrac{t}{3}\right),r+t\right)=(0,0,0)
+			\]
+			together with the equation that \(P\) lies on the ellipsoid. So the four
+			equations are:
+			\[\begin{aligned}
+			p\left(1+\dfrac{t}{2}\right)=0 \qquad q\left(1+\dfrac{t}{3}\right)&=0 \qquad r+t=0 \\
+			r+\dfrac{p^2}{4}+\dfrac{q^2}{6}=5
+			\end{aligned}\]
+			The third equation say \(r=-t\). The first two equations lead to three
+			cases:
+		</p>
+		<ol type="1">
+			<li>
+				\(p=0\) and \(q=0\): Then the ellipsoid equation says \(r=5\).
+				So the point is \((p,q,r)=(0,0,5)\) which is the vertex of the ellipsoid.
+				Not surprising!
+			</li>
+			<li>
+				\(p=0\) and \(t=-3\): Then \(r=3\) and the
+				ellipsoid equation \(r+\dfrac{p^2}{4}+\dfrac{q^2}{6}=5\) says
+				\[
+				3+\dfrac{q^2}{6}=5
+				\quad \text{or} \qquad
+				q=\pm\sqrt{12}=\pm2\sqrt{3}
+				\]
+				So there are two points \((p,q,r)=(0,\pm2\sqrt{3},3)\).
+			</li>
+			<li>
+				\(q=0\) and \(t=-2\):Then \(r=2\) and the
+				ellipsoid equation \(r+\dfrac{p^2}{2a}+\dfrac{q^2}{2b}=5\) says
+				\[
+				2+\dfrac{p^2}{4}=5
+				\quad \text{or} \qquad
+				p=\pm\sqrt{12}=\pm2\sqrt{3}
+				\]
+				So there are two points \((p,q,r)=(\pm2\sqrt{3},0,2)\)
+			</li>
+		</ol>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX31">
+		<p>
+			We check the \(5\) points are on the paraboloid and and the normal line
+			passes throught the origin.
+		</p>
+		<p>
+			\((p,q,r)=(0,0,5)\):
+			Check the point is on the paraboloid:
+			\[
+			r+\dfrac{p^2}{4}+\dfrac{q^2}{6}=5+0+0=5
+			\]
+			The normal line is:
+			\[\begin{aligned}
+			X&=\left(p\left(1+\dfrac{t}{2}\right),q\left(1+\dfrac{t}{3}\right),r+t\right) \\
+			&=(0,0,r+t) \\
+			\end{aligned}\]
+			which pass through \((0,0,0)\) when \(t=-5\).
+		</p>
+		<p>
+			\((p,q,r)=(0,\pm2\sqrt{3},3)\):
+			Check the point is on the paraboloid:
+			\[
+			r+\dfrac{p^2}{4}+\dfrac{q^2}{6}=3+0+\dfrac{12}{6}=5
+			\]
+			The normal line is:
+			\[\begin{aligned}
+			X&=\left(p\left(1+\dfrac{t}{2}\right),q\left(1+\dfrac{t}{3}\right),r+t\right) \\
+			&=(0,\pm2\sqrt{3}\left(1+\dfrac{t}{3}\right),3+t) \\
+			\end{aligned}\]
+			which pass through \((0,0,0)\) when \(t=-3\).
+		</p>
+		<p>
+			\((p,q,r)=(\pm2\sqrt{3},0,2)\):
+			Check the point is on the paraboloid:
+			\[
+			r+\dfrac{p^2}{4}+\dfrac{q^2}{6}=2+\dfrac{12}{4}+0=5
+			\]
+			The normal line is:
+			\[\begin{aligned}
+			X&=\left(p\left(1+\dfrac{t}{2}\right),q\left(1+\dfrac{t}{3}\right),r+t\right) \\
+			&=(\pm2\sqrt{3}\left(1+\dfrac{t}{2}\right),0,2+t) \\
+			\end{aligned}\]
+			which pass through \((0,0,0)\) when \(t=-2\).
+		</p>
+	</div>
+</li>
+
+<big>PY: Fix alignment of list in solution.</big>
+
+<!--Tangent and Normal, Lines and Planes to Level Sets-->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href="TanLine.html">e. Tangent and Normal, Lines and Planes to Level Sets</a></h3>
+    <div class="pgs">
+      
+        <div><a href="TanLine.html">1</a></div>
+      
+        <div><a href="TanPlane.html">2</a></div>
+      
+        <div><a href="NormalLine.html">3</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	In \(\mathbb R^3\), consider the  point \(P=(3,2,1)\) on the level surface
+	\(F(x,y,z)=x+\dfrac{y^2}{2}+\dfrac{z^3}{3}=\dfrac{16}{3}\). Calculate
+	each of the following:
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal vector at the point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX32a"></button>
+					<button class="toggle has-sol" data-toggle="SolX32a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX32a">
+				<p>
+					\(\vec N=\left .\vec\nabla F\right |_{P}=\langle 1,2,1\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX32a">
+				<p>
+					We calculate the gradient of \(F\) and evaluate it at the point
+					\(P\) to get the normal vector:
+					\[\begin{aligned}
+					\vec\nabla F&=\left\langle \dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y},
+					\dfrac{\partial f}{\partial z}\right\rangle \\
+					&=\langle 1,y,z^2\rangle \\
+					\vec N=\left .\vec\nabla F\right |_{P}&=\langle 1,2,1\rangle
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+			<li>
+				<div class="dotfillex">
+					<p>
+						Tangent plane at the point \(P\).
+					</p>
+					<p>
+						<button class="toggle has-ans" data-toggle="AnsX32b"></button>
+						<button class="toggle has-sol" data-toggle="SolX32b"></button>
+					</p>
+				</div>
+				<div class="toBeToggled drop-ans" data-toggle="AnsX32b">
+					<p>
+						\(x+2y+z=8\)
+					</p>
+				</div>
+				<div class="toBeToggled drop-sol" data-toggle="SolX32b">
+					<p>
+						The equation of a plane is \(\vec N\cdot X=\vec N\cdot P\).
+						Since \(\vec N=\langle 1,2,1\rangle\) and \(P=(3,2,1)\), the
+						plane is:
+						\[
+						x+2y+z=8
+						\]
+					</p>
+				</div>
+			</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal line at the point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="Ansx32C"></button>
+					<button class="toggle has-sol" data-toggle="Solx32C"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="Ansx32C">
+				<p>
+					\((x,y,z)=(3+t,2+2t,1+t)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="Solx32C">
+				<p>
+					The equation of a line is \(X=P+t\vec v\). For the normal line,
+					the direction vector is the normal. Here
+					\(\vec v=\vec N=\langle 1,2,1\rangle\) and \(P=(3,2,1)\), So the
+					normal line is:
+					\[\begin{aligned}
+					X&=(3,2,1)+t\langle 1,2,1\rangle \\
+					(x,y,z)&=(3+t,2+2t,1+t) \\
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	In \(\mathbb R^3\), consider the point \(P=(2,2,2)\) on
+	the level surface \(F(x,y,z)=(xy)^2\dfrac{z}{8}=4\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal vector at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX33a"></button>
+					<button class="toggle has-sol" data-toggle="SolX33a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX33a">
+				<p>
+					\(\vec N=\langle 4,4,2\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX33a">
+				<p>
+					We calculate the gradient of \(F\) and evaluate it at the point
+					\(P\) to get the normal vector:
+					\[\begin{aligned}
+					\vec\nabla F&=\left\langle \dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y},
+					\dfrac{\partial f}{\partial z}\right\rangle \\
+					&=\langle \dfrac{xy^2z}{4},\dfrac{x^2yz}{4},\dfrac{(xy)^2}{8}\rangle \\
+					\vec N=\left .\vec\nabla F\right |_{P}&=\langle 4,4,2\rangle
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Tangent plane at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX33b"></button>
+					<button class="toggle has-sol" data-toggle="SolX33b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX33b">
+				<p>
+					\(4x+4y+2z=20\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX33b">
+				<p>
+					The equation of a plane is \(\vec N\cdot X=\vec N\cdot P\).
+					Since \(\vec N=\langle 4,4,2\rangle\) and \(P=(2,2,2)\), the
+					plane is:
+					\[
+					4x+4y+2z=20
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal line at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX33c"></button>
+					<button class="toggle has-sol" data-toggle="SolX33c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX33c">
+				<p>
+					\((x,y,z)=(2+4t,2+4t,2+2t)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX33c">
+				<p>
+					The equation of a line is \(X=P+t\vec v\). For the normal line,
+					the direction vector is the normal. Here
+					\(\vec v=\vec N=\langle 4,4,2\rangle\) and \(P=(2,2,2)\), So the
+					normal line is:
+					\[\begin{aligned}
+					X&=(2,2,2)+t\langle 4,4,2\rangle \\
+					(x,y,z)&=(2+4t,2+4t,2+2t) \\
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	In \(\mathbb R^2\), consider the point \(P=(3,1)\) on
+	the level curve \(F(x,y)=x^2+xy+y^3=13\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal vector at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX34a"></button>
+					<button class="toggle has-sol" data-toggle="SolX34a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX34a">
+				<p>
+					\(\vec n=\langle 7,6\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX34a">
+				<p>
+					We calculate the gradient of \(F\) and evaluate it at the point
+					\(P\) to get the normal vector:
+					\[\begin{aligned}
+					\vec\nabla F&=\left\langle\dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}\right\rangle \\
+					&=\langle 2x+y,x+3y^2,\rangle \\
+					\vec n=\left .\vec\nabla F\right |_{P}&=\langle 7,6\rangle
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal line at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX34b"></button>
+					<button class="toggle has-sol" data-toggle="SolX34b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX34b">
+				<p>
+					\(7x+6y=27\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX34b">
+				<p>
+					The non-parametric equation of a line is \(\vec n\cdot X=\vec n\cdot P\).
+					Since \(\vec n=\langle 7,6\rangle\) and \(P=(3,1)\), the
+					plane is:
+					\[
+					7x+6y=27
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Tangent line at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX34c"></button>
+					<button class="toggle has-sol" data-toggle="SolX34c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX34c">
+				<p>
+					\((x,y)=(3+7t,1+6t)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX34c">
+				<p>
+					The parametric equation of a line is \(X=P+t\vec v\). For the normal line,
+					the direction vector is the normal. Here
+					\(\vec v=\vec n=\langle 7,6\rangle\) and \(P=(3,1)\). So the
+					normal line is:
+					\[\begin{aligned}
+					X&=(3,1)+t\langle 7,6\rangle \\
+					(x,y)&=(3+7t,1+6t) \\
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	In \(\mathbb R^2\), consider the point \(P=(1,2)\) on
+	the level curve \(F(x,y)=x^6+y^4+1=18\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal vector at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35a"></button>
+					<button class="toggle has-sol" data-toggle="SolX35a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35a">
+				<p>
+					\(\vec n=\langle 6,32\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX35a">
+				<p>
+					We calculate the gradient of \(F\) and evaluate it at the point
+					\(P\) to get the normal vector:
+					\[\begin{aligned}
+					\vec\nabla F&=\left\langle\dfrac{\partial f}{\partial x},\dfrac{\partial f}{\partial y}\right\rangle \\
+					&=\langle 6x^5,4y^3,\rangle \\
+					\vec n=\left .\vec\nabla F\right |_{P}&=\langle 6,32\rangle
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Normal line at point \(P\). Give a parametric and non-parametric form.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35b"></button>
+					<button class="toggle has-sol" data-toggle="SolX35b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35b">
+				<p>
+					\((x,y)=(1+6t,2+32t)\)
+					<br>
+					\(y=\dfrac{16}{3}x-\dfrac{10}{3}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX35b">
+				<p>
+					The parametric equation of a line is \(X=P+t\vec v\). For the normal line,
+					the direction vector is the normal. Here
+					\(\vec v=\vec n=\langle 6,32\rangle\) and \(P=(1,2)\). So the
+					normal line is:
+					\[\begin{aligned}
+					X&=(1,2)+t\langle 6,32\rangle \\
+					(x,y)&=(1+6t,2+32t) \\
+					\end{aligned}\]
+					To get the non-parametric equation, we solve the equations
+					\(x=1+6t\) and \(y=2+32t\) for \(t\) and equate them:
+					\[
+					t=\dfrac{x-1}{6}=\dfrac{y-2}{32}
+					\]
+					Solving for \(y\), we get:
+					\[
+					y-2=\dfrac{16}{3}(x-1)
+					\]
+					or
+					\[
+					y=\dfrac{16}{3}x-\dfrac{10}{3}
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Tangent line at point \(P\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35c"></button>
+					<button class="toggle has-sol" data-toggle="SolX35c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35c">
+				<p>
+					\(6x+32y=70\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX35c">
+				<p>
+					The non-parametric equation of a line is \(\vec n\cdot X=\vec n\cdot P\).
+					Since \(\vec n=\langle 6,32\rangle\) and \(P=(1,2)\), the	line is:
+					\[
+					6x+32y=70
+					\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the tangent line to the equation
+			\(F(x,y)=y-x^4=0\) at point \((2,16)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX36"></button>
+			<button class="toggle has-sol" data-toggle="SolX36"></button>
+			<button class="toggle has-rem" data-toggle="RemX36"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX36">
+		<p>
+			\(-32x+y=-48\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX36">
+		<p>
+			The gradient of \(F(x,y)\) is \(\vec\nabla F=\left\langle -4x^3,1\right\rangle\).
+			So the normal at \((2,16)\) is
+			\(\vec n=\left.\vec\nabla F\right|_{(2,16)}=\left\langle -32,1 \right\rangle\).
+			Hence, the tangent line is
+			\(\vec n\cdot X=\vec n\cdot P\) or
+			\[
+			-32x+y=-48
+			\]
+		</p>
+		<p style="text-align:right">
+		  jp&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX36">
+		<p>
+			This tangent line can also be found by rewriting the equation as
+			\(y=f(x)=x^4\) and using the \(1\) variable formula \(y=f(2)+f'(2)(x-2)\).
+			We have
+			\[
+			f(2)=16 \qquad f'(x)=4x^3 \qquad f'(2)=32
+			\]
+			So
+			the tangent line is
+			\[
+			y=16+32(x-2)=32x-48
+			\]
+		</p>
+	</div>
+</li>
+
+				<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+	Jane Bond is riding in a speedboat through a lake which is poluted by acid
+	whose density is given by	\(\delta(x,y)=x^2y^2\dfrac{\text{gm}}{\text{m}^3}\) where \(x\)
+	and \(y\) are measured in \(\text{m}\). Currently she is at the point
+	\(P=(2,1)\) and wants to get out of the acid as fast as possible.
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					If Jane's current velocity is
+					\(\vec v=\left\langle \dfrac{1}{4},\dfrac{1}{2}\right\rangle
+					\dfrac{\text{m}}{\text{sec}}\),
+					what is the current rate at which she sees the acid density changing?
+					Is it increasing or decreasing?
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX37a"></button>
+					<button class="toggle has-sol" data-toggle="SolX37a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX37a">
+				<p>
+					The density is increasing at \(\dfrac{\partial \delta}{\partial t}=5\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX37a">
+				<p>
+					The gradient of the density and its value at the current position are:
+					\[\begin{aligned}
+					\vec\nabla \delta&=\langle 2xy^2,2x^2y\rangle \\
+					\left .\vec\nabla \delta\right |_{(2,1)}&=\langle 4,8\rangle
+					\end{aligned}\]
+					So the rate of change of the density is:
+					\[\begin{aligned}
+					\dfrac{\partial \delta}{\partial t}&=\vec v\cdot\left .\vec\nabla \delta\right|_
+					{(2,1)}=\left\langle \dfrac{1}{4},\dfrac{1}{2}\right\rangle\cdot\langle 4,8\rangle \\
+					&=1+4=5
+					\end{aligned}\]
+					Since this is positive, the density is increasing.
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the unit vector direction, \(\hat w\), in which the acid density
+					decreases fastest.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX37b"></button>
+					<button class="toggle has-sol" data-toggle="SolX37b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX37b">
+				<p>
+					\(\hat w
+					=\left\langle \dfrac{-1}{\sqrt{5}},\dfrac{-2}{\sqrt{5}}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX37b">
+				<p>
+					The density decreases fastest in the direction opposite to the gradient
+					\[
+					\vec w=-\left .\vec\nabla \delta\right |_{(2,1)}=\langle -4,-8\rangle
+					\]
+					Its length is:
+					\[
+					|\vec w|=\sqrt{4^2+8^2}=\sqrt{80}=4\sqrt{5}
+					\]
+					So the unit vector of maximum decrease is:
+					\[
+					\hat w=\dfrac{\vec w}{|\vec w|}
+					=\left\langle \dfrac{-1}{\sqrt{5}},\dfrac{-2}{\sqrt{5}}\right\rangle
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the maximum rate of decrease of the acid density.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX37c"></button>
+					<button class="toggle has-sol" data-toggle="SolX37c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX37c">
+				<p>
+					\(\dfrac{\partial \delta}{\partial t}=\nabla_{\hat w}\delta
+					=|\vec w|=4\sqrt{5}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX37c">
+				<p>
+					The maximum rate of decrease is the length of the gradient which was
+		      previously found to be
+		      \[
+					\dfrac{\partial \delta}{\partial t}=\nabla_{\hat w}\delta
+		      =|\vec w|=4\sqrt{5}
+		      \]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					If the maximum speed of her speedboat is \(3\) m/sec.	Find the velocity,
+					\(\vec u\), the boat should have to decrease the acid density as fast as possible.
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX37d"></button>
+					<button class="toggle has-ans" data-toggle="AnsX37d"></button>
+					<button class="toggle has-sol" data-toggle="SolX37d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX37d">
+		    <p>
+		      The velocity is its speed times its direction.
+		    </p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX37d">
+				<p>
+					\(\vec u
+					=\left\langle\dfrac{-3}{\sqrt{5}},\dfrac{-6}{\sqrt{5}}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX37d">
+				<p>
+					The maximum speed is \(|\vec u|=3\) and the direction of maximum
+					decrease is
+					\[
+					\hat u=\hat w
+					=\left\langle\dfrac{-1}{\sqrt{5}},\dfrac{-2}{\sqrt{5}}\right\rangle
+					\]
+					So the velocity of maximum decrease is:
+					\[
+					\vec u=|\vec u|\hat u
+					=\left\langle\dfrac{-3}{\sqrt{5}},\dfrac{-6}{\sqrt{5}}\right\rangle
+					\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the rate the acid density is changing if the speedboat
+			    has velocity \(\vec u\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX37e"></button>
+					<button class="toggle has-sol" data-toggle="SolX37e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX37e">
+				<p>
+					\(\dfrac{\partial f}{\partial t}=\nabla_{\vec u} \delta=12\sqrt{5}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX37e">
+				<p>
+					\[
+		      \dfrac{\partial \delta}{\partial t}=\nabla_{\vec u} \delta
+					=|\vec u|\nabla_{\hat u}\delta=3\cdot4\sqrt{5}=12\sqrt{5}
+		      \]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	A spacecraft is experiencing strong aether winds whose density is given by
+	\(D=xy^{\small z}\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the unit vector direction in which the aether decreases most
+					rapidly	at the point \(P=(2,e,0)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX38a"></button>
+					<button class="toggle has-sol" data-toggle="SolX38a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX38a">
+				<p>
+				\(\hat w
+				=\left\langle -\dfrac{2}{\sqrt{8+4e^2}},
+				-\dfrac{2e}{\sqrt{8+4e^2}},
+				-\dfrac{2}{\sqrt{8+4e^2}}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX38a">
+				<p>
+					We first calculate the gradient:
+					\[
+					\vec\nabla D=\left\langle\dfrac{x^2y^z}{2},\dfrac{xy^{z+1}}{z+1},\dfrac
+					{xy^z}{\log y}\right\rangle
+					\]
+					The gradient at \(P=(2,e,0)\) is:
+					\[
+					\left.\vec\nabla D\right|_P=\langle 2,2e,2\rangle
+					\]
+					However, we need to find the unit vector that <b>de</b>creases most
+					rapidly, so we to take the negative of this to get:
+					\[
+					\vec w=\langle -2,-2e,-2\rangle
+					\]
+					Next, we compute thelength of \(\vec w\).
+					\[
+					|\vec w|=\sqrt{8+4e^2}
+					\]
+					So the direction which the aether decreases most rapidly is:
+					\[\begin{aligned}
+					\hat w&=\dfrac{\vec w}{|\vec w|}=\dfrac{1}{\sqrt{8+4e^2}}\langle -2,-2e,-2\rangle \\
+					&=\left\langle -\dfrac{2}{\sqrt{8+4e^2}},-\dfrac{2e}{\sqrt{8+4e^2}},-\dfrac{2}{\sqrt{8+4e^2}}\right\rangle
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					 Find the maximum rate of decrease of the aether winds at the point \(P=(2,e,0)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX38b"></button>
+					<button class="toggle has-sol" data-toggle="SolX38b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX38b">
+				<p>
+					\(\left .\nabla_{\hat w}D\right |_P=-\sqrt{8+4e^2}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX38b">
+				<p>
+					By Property \(2\), the maximum rate of decrease of the aether
+					is the negative length of the gradient:
+					\[
+					\left .\nabla_{\hat w}D\right |_P=-|\vec w|=-\sqrt{8+4e^2}
+					\]
+				</p>
+			</div>
+		</li>
+</ol>
+</li>
+
+<big>PY: All Checked</big>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

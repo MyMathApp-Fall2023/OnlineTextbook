@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. 2D Rectangular Coordinates | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="3DRectCoord.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Rectangular Coordinates - 2D, 3D and nD</h2>
+
+
+      
+      <h2>1. 2D Rectangular Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<p class="def" data-col-width="50%">
+    The <span class="defword">Rectangular Coordinate System</span> in the plane
+		(also called the <span class="defword">Cartesian Coordinate	System</span>
+		after its creator, <a href="https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes" target="_blank">
+    Rene Descartes</a>) is a method of uniquely identifying	points in a plane by
+		giving two numbers. A grid is	drawn with a pair of lines
+		(<span class="defword">axes</span>) drawn perpendicular to each other. The
+  	<span class="defword">horizontal axis</span> is called the
+		<span class="defword">\(x\)-axis</span>, and the
+    <span class="defword">vertical axis</span> is called the
+		<span class="defword">\(y\)-axis</span>. The point at which the axes intersect
+		is called the <span class="defword">origin</span>, \(O\). The axes are marked
+		off in unit lengths that can be used to locate points in the \(xy\)-plane.
+		Each point in the plane is specified by giving an ordered pair \((x,y)\).
+		The first number is the <span class="defword">\(x\)-coordinate</span> (its
+  	horizontal position on the \(x\)-axis) and the second number is the
+		<span class="defword">\(y\)-coordinate</span>	(its vertical position on the
+		\(y\)-axis). \(x\)-coordinates are positive to the right of the origin and
+		negative to the left. \(y\)-coordinates are positive above the origin
+  	and negative below. Since it takes \(2\) \(\mathbb{R}\)eal numbers to specify a point, the
+		plane is also	called \(\mathbb{R}^2\). In the plot, we have
+		marked in the point \(P=(4,3)\):
+	</p>
+	<div data-col-width="50%" class="center">
+		<img src="graphics/eg_2DRectCoord.jpg" alt="eg_2DRectCoord"/>
+	</div>
+</div>
+<div class="column">
+	<p class="greybox" data-col-width="50%">
+    The intersecting axes create four <span class="defword">quadrants</span>,
+		labeled I, II, III and IV counterclockwise starting from the top right as
+		shown above. The table shows which coordinates are positive or
+		negative in each quadrant:
+	</p>
+  <div data-col-width="50%">
+  	<table class="center outside-border cell-border" style="font-size: 16pt; font-weight:bold">
+			<colgroup>
+	      <col span="1" style="border-right: 2px solid black">
+	    </colgroup>
+  		<thead style="border-bottom: 2px solid black">
+  			<tr><th></th><th>I</th><th>II</th><th>III</th><th>IV</th></tr>
+  		</thead>
+  		<tbody style="color: red">
+  			<tr> <th>\(x\)</th> <td>\(+\)</td> <td>\(-\)</td> <td>\(-\)</td> <td>\(+\)</td> </tr>
+  			<tr> <th>\(y\)</th> <td>\(+\)</td> <td>\(+\)</td> <td>\(-\)</td> <td>\(-\)</td> </tr>
+  		</tbody>
+  	</table>
+  </div>
+</div>
+<p>
+  When working with symbols, the coordinates of a point are frequently written
+	using subscripts. Thus a point \(P\) may be written as \(P=(p_1,p_2)\).
+</p>
+
+				<div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+		<p class="exercise" data-number="1">
+		  Identify the coordinates of each point in the plot:
+    </p>
+		<table class="mcex center">
+		  <tbody>
+		  <tr>
+		    <td>\(P=\)</td>
+		    <td>
+		      <button class="open-modal bullet-a incorrect"
+					data-modal='A. Not Quite<br />The first coordinate measures left or right.<br />The second measures up or down.'>
+					</button>
+		      \((1,3)\)
+		    </td>
+		    <td>
+					<button class="open-modal bullet-b correct"
+					data-modal='B. Correct.<br />Way to go.'>
+					</button>
+		      \((3,1)\)
+		    </td>
+		    <td>
+		      <button class="open-modal bullet-c incorrect"
+		      data-modal='C. Incorrect. <br> \(P\) is in quadrant I where both coordinates are positive.'>
+		      </button>
+		      \((-3,1)\)
+		    </td>
+		    <td>
+					<button class="open-modal bullet-d incorrect"
+			    data-modal='D. Sorry. <br> \(P\) is in quadrant I where both coordinates are positive.'>
+			    </button>
+		      \((1,-3)\)
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>\(Q=\)</td>
+		    <td>
+		      <button class="open-modal bullet-a incorrect"
+		      data-modal='A. Incorrect.<br />Move horizontally to the \(y\)-axis to find the second coordinate.'>
+		      </button>
+		      \((-2,-4)\)
+		    </td>
+		    <td>
+		      <button class="open-modal bullet-b incorrect"
+		      data-modal='B. Not Quite. <br> The first coordinate measures left or right.<br />The second measures up or down.'>
+		      </button>
+		      \((-3,-2)\)
+		    </td>
+		    <td>
+					<button class="open-modal bullet-c correct"
+			    data-modal='C. Correct. <br> Good Job.'>
+			    </button>
+		      \((-2,-3)\)
+		    </td>
+		    <td>
+					<button class="open-modal bullet-d incorrect"
+					data-modal='D. Incorrect. <br> \(Q\) is in quadrant III where both coordinates are negative.'>
+					</button>
+		      \((-2,3)\)
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>\(R=\)</td>
+		    <td>
+					<button class="open-modal bullet-a correct"
+					data-modal='A. Correct. <br> You are off to a good start.'>
+					</button>
+		      \((-3,2)\)
+		    </td>
+		    <td>
+					<button class="open-modal bullet-b incorrect"
+					data-modal='B. Sorry. <br> \(R\) is in quadrant II where \(x\) is negative and \(y\) is positive.'>
+					</button>
+		      \((3,-2)\)
+		    </td>
+		    <td>
+					<button class="open-modal bullet-c incorrect"
+					data-modal='C. Incorrect. <br> \(R\) is in quadrant II where \(x\) is negative and \(y\) is positive.'>
+					</button>
+		      \((2,-3)\)
+		    </td>
+		    <td>
+					<button class="open-modal bullet-d incorrect"
+					data-modal='D. Not Quite. <br> The first coordinate measures left or right. <br> The second measures up or down.'>
+					</button>
+		      \((2,-3)\)
+		    </td>
+		  </tr>
+		  </tbody>
+		</table>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/ex_2DRectCoord.jpg" alt="ex_2DRectCoord">
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

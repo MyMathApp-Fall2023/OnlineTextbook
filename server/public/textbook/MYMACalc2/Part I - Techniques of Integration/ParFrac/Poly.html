@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Removing a Polynomial Part | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Decomp.html#examples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2 id="eg">a2. General Decompositions</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li class="active"><a href="Poly.html">Removing a Polynomial Part</a></li>
+    <br>
+    <li><a href="Lin.html">Non-Repeated Linear Factors</a></li>
+    <li><a href="Lin2.html">Repeated Linear Factors</a></li>
+    <br>
+    <li><a href="Quad.html">Non-Repeated Quadratic Factors</a></li>
+    <li><a href="Quad2.html">Repeated Quadratic Factors</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>b. Removing a Polynomial Part</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Be sure to review <a href="LongDivPoly.html" title="Retrun using the Back button.">
+  Long Division of Polynomials</a>.
+</p>
+
+<p class="example" data-number="1">
+  Find the partial fraction decomposition for \(\dfrac{x^4-3x^2+5x-100}{
+  x^2+9}\).
+</p>
+<p class="sol">
+  Since the degree of the numerator is larger than the
+  degree of the denominator, we first need to remove the polynomial part. We
+  use long division of polynomials:
+  \[\begin{aligned}
+  &\quad x^2 \qquad\;-12\;+\;\dfrac{5x+8}{x^2+9} \\
+  x^2+9&\overline{\left)\;x^4+0\,x^3-3x^2+5x-100\;\right.} \\
+  & \;\;\,\underline{x^4\qquad\;\;\;+9x^2\qquad \qquad \quad } \\
+  & \qquad\qquad\,-12x^2+5x-100 \\
+  & \qquad\qquad\;\;\underline{-\,12x^2\qquad\;-108\qquad } \\
+  & \qquad\qquad\qquad\qquad\;\;5x\;+\;8
+  \end{aligned}\]
+  Equivalently,
+  \[
+  \dfrac{x^4-3x^2+5x-100}{x^2+9}=x^2-12+\dfrac{5x+8}{x^2+9}
+  \]
+  Since the denominator is an irreducible quadratic and the remaining
+  numerator is linear, this is the partial fraction decomposition.
+</p>
+<p class="check">
+  To check, we compute:
+  \[\begin{aligned}
+  (x^2+9)(x^2-12)+(5x+8)
+  &=x^4-3x^2-108+5x+8 \\
+  &=x^4-3x^2+5x-100
+  \end{aligned}\]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+    Find the partial fraction expansion for \(\dfrac{x^3-2x^2+5x-4}{x-3}\)
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+    <button class="toggle has-check" data-toggle="Ck1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\dfrac{x^3-2x^2+5x-4}{x-3}=x^2+x+8+\dfrac{20}{x-3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+	<p>
+	  By long division:
+	  \[\begin{aligned}
+	  &\quad x^2\;+\;x\;+\;8\;+\;\dfrac{20}{x-3} \\
+	  x-3&\overline{\left)\;x^3-2x^2+5x-4\;\right.} \\
+	  &\;\;\underline{\,x^3-3x^2\qquad\qquad\quad} \\
+	  &\qquad\quad\;x^2+5x-4 \\
+	  &\qquad\quad\underline{\,x^2-3x\qquad\;} \\
+	  &\qquad\qquad\quad\;8x-\;4 \\
+	  &\qquad\qquad\quad\;\underline{8x-24} \\
+	  &\qquad\qquad\qquad\quad\;\;20
+	  \end{aligned}\]
+	  Equivalently,
+	  \[
+	  \dfrac{x^3-2x^2+5x-4}{x-3}=x^2+x+8+\dfrac{20}{x-3}
+	  \]
+	  Since the denominator is linear and the remaining numerator is constant,
+	  this is the partial fraction decomposition.
+	</p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="Ck1">
+  <p>
+    To check, we compute:
+    \[\begin{aligned}
+    (x-3)(x^2+x+8)+(20)
+    &=x^3+x^2+8x-3x^2-3x-24+20 \\
+    &=x^3-2x^2+5x-4
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>f. Logistic Growth | 17. Applications of Differential Equations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TermVel.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Applications of Differential Equations</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>f. Logistic Growth</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  <span class="hl">Exponential growth</span> is a reasonable model for
+  population growth when there are unlimited resources available. However,
+  there is often an upper limit \(M\) to the size of the population because
+  the environment cannot support a larger population. In that case, the rate
+  of increase of the population \(P(t)\) is often jointly proportional to the
+  population \(P(t)\) (as in exponential growth) and to the difference between
+  the population and its maximum \(M-P(t)\). Thus the population satisfies
+  \[
+  \dfrac{dP}{dt}=kP(M-P)
+  \]
+  As \(P\) gets bigger, the rate \(\dfrac{dP}{dt}\) gets bigger. As \(P\) gets
+  closer to \(M\), the quantity \(M-P\) gets smaller, and the rate
+  \(\dfrac{dP}{dt}\) gets smaller. This growth model is called
+  <span class="defword">logistic growth</span>.
+</p>
+<p class="genexample" data-number="1">
+  Find the general solution of the logistic growth equation:
+  \[
+  \dfrac{dP}{dt}=kP(M-P)
+  \]
+  Find the asymptotic value of the solution.
+</p>
+<p class="gensol">
+  We start by separating variables:
+  \[
+  \int \dfrac{dP}{P(M-P)}=\int k\,dt
+  \]
+  The integral on the right is
+  \[
+  \int k\,dt=kt+C
+  \]
+  The integral on the left is computed using the partial fraction expansion:
+  (Remember \(M\) is a constant. Check it by adding them up.)
+  \[
+  \dfrac{1}{P(M-P)}=\dfrac{1}{MP}+\dfrac{1}{M(M-P)}
+  \]
+  Thus
+  \[\begin{aligned}
+  \int \dfrac{dP}{P(M-P)}
+  &=\dfrac{1}{M}\int \dfrac{dP}{P}+\dfrac{1}{M}\int \dfrac{dP}{(M-P)} \\
+  &=\dfrac{1}{M}\ln|P|-\dfrac{1}{M}\ln|M-P| \\
+  &=\ln\left|\dfrac{P}{M-P}\right|^{1/M}
+  \end{aligned}\]
+  Equating the left and right integrals, we have
+  \[
+  \ln\left|\dfrac{P}{M-P}\right|^{1/M}=kt+C
+  \]
+  We exponentiate, raise both sides to the power \(M\) and remove the absolute
+  values:
+  \[\begin{aligned}
+  \left|\dfrac{P}{M-P}\right|^{1/M}&=e^C e^{kt} \\
+  \left|\dfrac{P}{M-P}\right|&=e^{MC}e^{Mkt} \\
+  \dfrac{P}{M-P}&=Ae^{Mkt}
+  \qquad \text{where} \quad
+  A=\pm e^{MC}
+  \end{aligned}\]
+  We finally need to solve for \(P\). We multiply both sides by \(M-P\) and
+  distribute:
+  \[
+  P=MAe^{Mkt}-PAe^{Mkt}
+  \]
+  We add \(PAe^{Mkt}\) to both sides and factor the left:
+  \[
+  P\left(1+Ae^{Mkt}\right)=MAe^{Mkt}
+  \]
+  Finally, we divide by \(1+Ae^{Mkt}\):
+  \[
+  P(t)=\dfrac{MAe^{Mkt}}{1+Ae^{Mkt}}
+  \]
+  This is the <span class="defword">logistic growth model</span>. An alternate
+  form is:
+  \[
+  P(t)=\dfrac{M}{1+A^{-1}e^{-Mkt}}
+  \]
+  If we let \(B=A^{-1}\) then the solution is:
+  \[
+  P(t)=\dfrac{M}{1+Be^{-Mkt}}
+  \]
+  For large times, the population approaches:
+  \[\begin{aligned}
+  \lim_{t\rightarrow\infty}P(t)
+  &=\lim_{t\rightarrow\infty}\dfrac{M}{1+Be^{-Mkt}}=M
+  \end{aligned}\]
+</p>
+<p class="remark">
+  Notice that the constant in the exponent of the logistic growth model
+  is \(Mk\) and not just \(k\). There are three unknown constants:
+  \(M\), \(k\) or \(Mk\) and \(A\) or \(B\). To find them, we will need three data points.
+</p>
+
+				<div class="rule"></div>
+
+<p class="example" data-number="2">
+  If you add flour to a yeast culture at a steady rate, then the culture
+  reaches a steady state size. So it satisfies the logistic growth model.
+  You start a yeast culture with \(P(0)=2000\) cells of yeast and
+  add a cup of flour every \(10\) min. After \(40\) min, there are
+  \(P(40)=3000\) cells of yeast. After \(80\) min, there are
+  \(P(80)=4000\) cells of yeast. About how many cells of yeast are there
+  after \(120\) min? What is the steady state number of yeast cells in this
+  culture?
+</p>
+<p class="sol"> We need to find the constants, \(M\), \(Mk\) and \(A\), in
+  the logistic growth model \(P(t)=\dfrac{MAe^{Mkt}}{1+Ae^{Mkt}}\) or
+  equivalently in the equation \(\dfrac{P}{M-P}=Ae^{Mkt}\). Our \(3\) data
+  points are at \(t=0\), \(t=40\) and \(t=80\):
+  <br>
+  \(P(0)=2000\):
+  \[
+  \dfrac{2000}{M-2000}=A \qquad \qquad \qquad (1)
+  \]
+  \(P(40)=3000\):
+  \[
+  \dfrac{3000}{M-3000}=Ae^{40Mk} \qquad \qquad (2)
+  \]
+  \(P(80)=4000\)
+  \[
+  \dfrac{4000}{M-4000}=Ae^{80Mk} \qquad \qquad (3)
+  \]
+  The equation (1) gives a formula for \(A\) which we substitute into equations
+  (2) and (3):
+  \[
+  \dfrac{3000}{M-3000}=\dfrac{2000}{M-2000}e^{40Mk}
+  \qquad \Longrightarrow \qquad
+  e^{40Mk}=\dfrac{3(M-2000)}{2(M-3000)}
+  \]
+  \[
+  \dfrac{4000}{M-4000}=\dfrac{2000}{M-2000}e^{80Mk}
+  \qquad \Longrightarrow \qquad
+  e^{80Mk}=\dfrac{2(M-2000)}{M-4000}
+  \]
+  To eliminate \(Mk\), we square the first equation and equate it to the second
+  equation:
+  \[
+  e^{80Mk}=\left(\dfrac{3(M-2000)}{2(M-3000)}\right)^2=\dfrac{2(M-2000)}{M-4000}
+  \]
+  Cross multiplying and cancelling, this last equation can be written as
+  \[\begin{aligned}
+  3^2(M-2000)^2(M-4000)&=2^3(M-2000)(M-3000)^2 \\
+  9(M-2000)(M-4000)&=8(M-3000)^2
+  \end{aligned}\]
+  Putting everything on one side of the equation and expanding we get
+  \[
+  9(M-2000)(M-4000)-8(M-3000)^2=0
+  \]
+  \[
+  M^2-6000M=0
+  \]
+  Consequently,
+  \[
+  M=6000
+  \]
+  To find \(A\) and \(Mk\), we plug \(M\) back into equations (1) and (2):
+  \[
+  A=\dfrac{2000}{6000-2000}
+  =\dfrac{1}{2}
+  \]
+  and
+  \[
+  \dfrac{1}{2}e^{40Mk}=\dfrac{3000}{6000-3000}=1
+  \]
+  so that
+  \[
+  Mk=\dfrac{1}{40}\ln2\approx .017 33
+  \]
+  Finally we plug the three constants back into the logistic growth model:
+  \[
+  P(t)=\dfrac{M}{1+A^{-1}e^{-Mkt}}
+  =\dfrac{6000}{1+2e^{-(t/40)\ln2}}
+  \]
+</p>
+<div class="column">
+  <p>
+    Here is the graph of \(P(t)\).
+    Notice that at early times, there is exponential growth, while at later
+    times, the graph bends over and exponentially approaches a steady state at
+    \(M=6000\). This is also supported by the limit
+    \[
+    \lim_{t\rightarrow\infty}P(t)
+    =\lim_{t\rightarrow\infty}\dfrac{6000}{1+2e^{-(t/40)\ln2}}
+    =6000
+    \]
+    After \(120\) min, the amount of yeast is:
+    \[
+    P(120)
+    =\dfrac{6000}{1+2e^{-3\ln2}}=4800\,\text{cells}
+    \]
+  </p>
+  <div class="center">
+    <img src="yeast.jpg" alt="yeast">
+  </div>
+</div>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Under certain conditions the rate of spread of a contagious disease is
+    jointly proportional to the number of people already infected and the
+    number not yet infected. If \(P\) is the number of people infected by day
+    \(t\) in a population of size \(N\), then the logistic growth equation is
+    \[
+    \dfrac{dP}{dt}=kP(N-P)
+    \]
+    At the beginning of an epidemic \(50\) people are infected out of a
+    population of \(50,000\) people. After \(5\) weeks \(200\) people are
+    infected. Find the number infected after \(t\) weeks.
+    When will half the population be infected?
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    The Logistic model says
+    \[
+    P(t)=\dfrac{N}{1+A^{-1}e^{-Nkt}}
+    \qquad \text{or equivalently} \qquad
+    \dfrac{P}{N-P}=Ae^{Nkt}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    After \(t\) weeks the number infected is:
+    \[
+    P(t)\approx\dfrac{50000}{1+999e^{-.278t}}
+    \]
+    Half the population is infected by approximately \(24.8\) weeks.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The logistic model says
+    \[
+    P(t)=\dfrac{N}{1+A^{-1}e^{-Nkt}}
+    \qquad \text{or equivalently} \qquad
+    \dfrac{P}{N-P}=Ae^{Nkt}
+    \]
+    We know \(N=50000\). We need to find \(A\) and \(k\) or \(Nk\).
+    From the initial condition \(P(0)=50\), we have
+    \[
+    A=\dfrac{P}{N-P}=\dfrac{50}{50000-50}=\dfrac{1}{999}
+    \]
+    From the secondary condition \(P(5)=200\), we have
+    \[
+    200=\dfrac{50000}{1+999e^{-250000k}}
+    \]
+    We solve for \(Nk=50000k\):
+    \[\begin{aligned}
+    &1+999e^{-250000k}=250
+    \qquad \Longrightarrow \qquad
+    e^{-250000k}=\dfrac{249}{999} \\
+    &\qquad \Longrightarrow \qquad
+    250000k=-\ln\dfrac{249}{999}=\ln\dfrac{999}{249} \\
+    &\qquad \Longrightarrow \qquad
+    50000k=\dfrac{\ln(999/249)}{5}\approx.278
+    \end{aligned}\]
+    So the logistic model says the number infected after \(t\) weeks is:
+    \[
+    P(t)=\dfrac{50000}{1+999e^{-(t/5)\ln(999/249)}}
+    \approx\dfrac{50000}{1+999e^{-.278t}}
+    \]
+    Half the population is infected when:
+    \[\begin{aligned}
+    25000&=\dfrac{50000}{1+999e^{-.278t}}
+    \qquad \Longrightarrow \qquad
+    1+999e^{-.278t}=2 \\
+    &\Longrightarrow \qquad
+    e^{-.278t}=\dfrac{1}{999}
+    \qquad \Longrightarrow \qquad
+    t=\dfrac{\ln(999)}{.278}\approx24.8\,\text{weeks}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

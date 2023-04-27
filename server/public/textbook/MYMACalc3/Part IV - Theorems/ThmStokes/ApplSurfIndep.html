@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Surface Independence | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplPathIndep.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplCirculation.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed counterclockwise
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>4. Surface Independence</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="def">
+      We say a vector field \(\vec F\) has
+      <span class="defword">surface independent surface integrals</span> if
+      \(\displaystyle \iint_{S_1} \vec F\cdot d\vec S
+      =\iint_{S_2} \vec F\cdot d\vec S\)
+      whenever \(S_1\) and \(S_2\) have the same boundary, i.e.
+      \(\partial S_1=\partial S_2\) with the same orientation.
+    </p>
+    <p class="prop">
+      If \(\vec F\) has a vector potential, then \(\vec F\) has surface independent
+      surface integrals.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/def_surf_indep.jpg" alt="def_surf_indep">
+  </div>
+</div>
+<p class="proof">
+  Suppose \(\vec F\) has a vector potential \(\vec A\), i.e.
+  \(\vec F=\vec\nabla\times \vec A\). Then Stokes' Theorem says
+  \[\begin{aligned}
+  \iint_{S_1} \vec{F}\cdot d\vec{S}
+  &=\iint_{S_1} \vec{\nabla}\times\vec{A}\cdot d\vec{S}
+  =\oint_{\partial S_1} \vec{A}\cdot d\vec{S} \\
+  \iint_{S_2} \vec{F}\cdot d\vec{S}
+  &=\iint_{S_2} \vec{\nabla}\times\vec{A}\cdot d\vec{S}
+  =\oint_{\partial S_2} \vec{A}\cdot d\vec{S}
+  \end{aligned}\]
+  So whenever \(\partial S_1=\partial S_2\), we can conclude:
+  \(\displaystyle
+  \iint_{S_1} \vec{F}\cdot d\vec{S}=\iint_{S_2} \vec{F}\cdot d\vec{S}\).
+  So \(\vec F\) has surface independent surface integrals.
+  <a id="surfindep"></a>
+</p>
+<p class="remark">
+  If \(\vec\nabla\cdot\vec F\ne0\), then \(\vec F\) cannot have a vector potential.
+  If \(\vec\nabla\cdot\vec F=0\) and \(\vec F\) is defined in all of
+  \(\mathbb R^3\), then \(\vec F\) has a vector potential.
+  So to know \(\vec F\) has surface independent surface integrals, we do not
+  need to find a vector potential, we only need to show
+  \(\vec\nabla\cdot\vec F=0\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="1">
+      Compute \(\displaystyle \iint_P \vec{F}\cdot d\vec{S}\) over the
+      paraboloid \(P\) given by \(z=16-x^2-y^2\) for \(z \ge 0\) oriented
+      up and out and the vector field \(\vec F=\langle xz, -yz, x^2+y^2\rangle\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX1"></button>
+      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+      <button class="toggle has-sol" data-toggle="SolX1"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_surfindep_parab.jpg" alt="ex_surfindep_parab">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    To show \(\vec F\) has a vector potential, compute its divergence
+    \(\vec\nabla\cdot\vec F\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle \iint_P \vec{F}\cdot d\vec{S}
+    =128\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    To compute the integral directly, we would need to parametrize the paraboloid,
+    find the normal, evaluate the vector field on the surface, take their dot
+    product and do the integral. That could be hard for the paraboloid. It might
+    be easier on the disk \(D\) given by \(x^2+y^2 \le 16\) with \(z=0\). We
+    check to see if \(\vec F\) has a vector potential, by computing its divergence:
+    \[
+    \vec\nabla\cdot\vec F=(z)+(-z)+(0)=0
+    \]
+    So \(\vec F\) has a vector potential and it is surface independent. So we
+    switch to the disk, \(D\). It may be parametrized in cylindrical coordinates as:
+    \[
+    \vec R=\langle r\cos\theta, r\sin\theta, 0\rangle
+    \]
+    The normal is \(\vec N=\langle 0, 0, r\rangle\), which correctly points up.
+    On the surface, the vector field is:
+    \[\begin{aligned}
+    \vec F&=\langle xz, -yz, x^2+y^2\rangle \\
+    &=\langle 0, 0, r^2\cos^2\theta+r^2\sin^2\theta\rangle
+    =\langle 0, 0, r^2\rangle
+    \end{aligned}\]
+    The dot product is:
+    \[
+    \vec F\cdot\vec N=r^3
+    \]
+    and the integral is
+    \[\begin{aligned}
+    \iint_P &\vec{F}\cdot d\vec{S}
+    =\iint_D \vec{F}\cdot d\vec{S}
+    =\int_0^{2\pi}\int_0^4 \vec{F}\cdot\vec N\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^4 r^3\,dr\,d\theta
+    =2\pi\left[\dfrac{r^4}{4}\right]_0^4
+    =128\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

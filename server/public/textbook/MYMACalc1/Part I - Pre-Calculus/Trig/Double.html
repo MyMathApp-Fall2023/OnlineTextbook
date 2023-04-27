@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum and Difference Consequences | Trigonometry</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="SumDiff.html" title="Previous">&lArr;</a></li>
+      <li><a href="TriIneq.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Trigonometry</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall the Sum Identities:
+  \[\begin{aligned}
+  \sin(A+B)&=\sin(A)\cos(B)+\cos(A)\sin(B) \\
+  \cos(A+B)&=\cos(A)\cos(B)-\sin(A)\sin(B)
+  \end{aligned}\]
+</p>
+
+
+      
+      <h2>Sum and Difference Consequences</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Double Angle Identities</h3>
+
+<p>
+  The Sum Identities can be used to derive the Double Angle Identities by
+  simply setting \(B\) equal to \(A\):
+</p>
+<p class="prop" data-title="Double Angle Identities:
+Sine and Cosine">
+  \[\begin{aligned}
+  \sin(2A)&=2\sin(A)\cos(A) \\
+  \cos(2A)&=\cos^2(A)-\sin^2(A) \\
+  &=2\cos^2(A)-1 \\
+  &=1-2\sin^2(A)
+  \end{aligned}\]
+  <button class="toggle" data-toggle="Pf1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf1">
+  <p>
+    Starting with the Sum Identities:
+    \[\begin{aligned}
+    \sin(A+B)&=\sin(A)\cos(B)+\cos(A)\sin(B) \\
+    \cos(A+B)&=\cos(A)\cos(B)-\sin(A)\sin(B)
+    \end{aligned}\]
+    replace \(B\) by \(A\) to get:
+    \[\begin{aligned}
+    \sin(2A)&=2\sin(A)\cos(A) \\
+    \cos(2A)&=\cos^2(A)-\sin^2(A)
+    \end{aligned}\]
+    There are two other forms of the cosine identity obtained by using the
+    Pythagorean Identity \(\sin^2(A)+\cos^2(A)=1\). In the formula for
+    \(\cos(2A)\), replace \(\sin^2(A)\) by \(1-\cos^2(A)\):
+    \[
+    \cos(2A)=\cos^2(A)-(1-\cos^2(A))=2\cos^2(A)-1
+    \]
+    Again in the formula for \(\cos(2A)\), this time replace \(\cos^2(A)\)
+    by \(1-\sin^2(A)\):
+    \[
+    \cos(2A)=1-\sin^2(A)-\sin^2(A)=1-2\sin^2(A)
+    \]
+  </p>
+</div>
+<p>
+  As a consequence:
+</p>
+<p class="prop" data-title="Double Angle Identities:
+Tangent, Cotangent, Secant and Cosecant">
+  \[
+  \tan(2A)=\dfrac{2\tan(A)}{1-\tan^2(A)}
+  \qquad
+  \cot(2A)=\dfrac{\cot^2(A)-1}{2\cot(A)}
+  \]
+  \[
+  \sec(2A)=\dfrac{\sec^2(A)}{1-\tan^2(A)}
+  \qquad
+  \csc(2A)=\dfrac{\csc^2(A)}{2\cot(A)} \quad
+  \]
+  <button class="toggle" data-toggle="Pf1b">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf1b">
+  <p>
+    For tangent, we have:
+    \[
+    \tan(2A)=\dfrac{\sin(2A)}{\cos(2A)}
+    =\dfrac{2\sin(A)\cos(A)}{\cos^2(A)-\sin^2(A)}
+    \]
+    Now divide top and bottom by \(\cos^2(A)\):
+    \[
+    \tan(2A)=\dfrac{2\tan(A)}{1-\tan^2(A)}
+    \]
+    For cotangent, we have:
+    \[
+    \cot(2A)=\dfrac{\cos(2A)}{\sin(2A)}
+    =\dfrac{\cos^2(A)-\sin^2(A)}{2\sin(A)\cos(A)}
+    \]
+    Now divide top and bottom by \(\sin^2(A)\):
+    \[
+    \cot(2A)=\dfrac{\cos(2A)}{\sin(2A)}
+    =\dfrac{\cot^2(A)-1}{2\cot(A)}
+    \]
+    For secant, we have:
+    \[
+    \sec(2A)=\dfrac{1}{\cos(2A)}
+    =\dfrac{1}{\cos^2(A)-\sin^2(A)}
+    \]
+    Now divide top and bottom by \(\cos^2(A)\):
+    \[
+    \sec(2A)=\dfrac{\sec^2(A)}{1-\tan^2(A)}
+    \]
+    For secant, we have:
+    \[
+    \csc(2A)=\dfrac{1}{\sin(2A)}
+    =\dfrac{1}{2\sin(A)\cos(A)}
+    \]
+    Now divide top and bottom by \(\sin^2(A)\):
+    \[
+    \csc(2A)=\dfrac{\csc^2(A)}{2\cot(A)}
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Square Identities</h3>
+
+<p>
+  The extra two versions of the identity for \(\cos(2A)\) can be solved for the
+  Square Identities:
+</p>
+<p class="prop" data-title="Square Identities:
+Sine and Cosine">
+  \[
+  \sin^2(A)=\dfrac{1-\cos(2A)}{2}
+  \qquad
+  \cos^2(A)=\dfrac{1+\cos(2A)}{2}
+  \]
+  <button class="toggle" data-toggle="Pf2">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf2">
+  <p>
+    Start with the identity:
+    \[
+    \cos(2A)=1-2\sin^2(A)
+    \]
+    Add \(2\sin^2(A)\) to both sides and subtract \(\cos(2A)\) from both sides:
+    \[
+    2\sin^2(A)=1-\cos(2A)
+    \]
+    Now divide by \(2\):
+    \[
+    \sin^2(A)=\dfrac{1-\cos(2A)}{2}
+    \]
+    Now start with the identity:
+    \[
+    \cos(2A)=2\cos^2(A)-1
+    \]
+    Add \(1\) to both sides:
+    \[
+    1+\cos(2A)=2\cos^2(A)
+    \]
+    Now divide by \(2\):
+    \[
+    \dfrac{1+\cos(2A)}{2}=\cos^2(A)
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Half Angle Identities</h3>
+
+<p>
+  The Square Identities lead to the Half Angle Identities:
+</p>
+<p class="prop" data-title="Half Angle Identities:
+Sine and Cosine">
+  \[
+  \sin\left(\dfrac{A}{2}\right)=\pm\sqrt{\dfrac{1-\cos(A)}{2}}
+  \qquad
+  \cos\left(\dfrac{A}{2}\right)=\pm\sqrt{\dfrac{1+\cos(A)}{2}}
+  \]
+  The plus or minus is determined by the quadrant of the angle \(\dfrac{A}{2}\).
+  <br>
+  <button class="toggle" data-toggle="Pf3">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf3">
+  <p>
+    In the Square Identities
+    \[
+    \sin^2(A)=\dfrac{1-\cos(2A)}{2}
+    \qquad
+    \cos^2(A)=\dfrac{1+\cos(2A)}{2}
+    \]
+    replace \(A\) by \(\dfrac{A}{2}\):
+    \[
+    \sin^2\left(\dfrac{A}{2}\right)=\dfrac{1-\cos(A)}{2}
+    \qquad
+    \cos^2\left(\dfrac{A}{2}\right)=\dfrac{1+\cos(A)}{2}
+    \]
+    Finally take the square root of both sides and remember to insert a \(\pm\).
+    The sign is determined by the quadrant of the angle \(\dfrac{A}{2}\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Product Identities</h3>
+
+<p>
+  The Sum and Difference Identities can be added and subtracted to get the
+  Product Identities:
+</p>
+<p class="prop" data-title="Product Identities:
+Sine and Cosine">
+  \[\begin{aligned}
+  \sin A\sin B&=\dfrac{1}{2}[\cos(A-B)-\cos(A+B)] \\
+  \cos A\cos B&=\dfrac{1}{2}[\cos(A+B)+\cos(A-B)] \\
+  \sin A\cos B&=\dfrac{1}{2}[\sin(A+B)+\sin(A-B)]
+  \end{aligned}\]
+  <button class="toggle" data-toggle="Pf4">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf4">
+  <p>
+    We add and subtract the identities
+    \[\begin{aligned}
+    \cos(A+B)&=\cos A\cos B-\sin A\sin B \\
+    \cos(A-B)&=\cos A\cos B+\sin A\sin B
+    \end{aligned}\]
+    to get
+    \[\begin{aligned}
+    \cos(A+B)+\cos(A-B)&=2\cos A\cos B \\
+    \cos(A-B)-\cos(A+B)&=2\sin A\sin B
+    \end{aligned}\]
+    Dividing by \(2\) gives:
+    \[\begin{aligned}
+    \sin A\sin B&=\dfrac{1}{2}[\cos(A-B)-\cos(A+B)] \\
+    \cos A\cos B&=\dfrac{1}{2}[\cos(A+B)+\cos(A-B)]
+    \end{aligned}\]
+    Now we add and subtract the identities
+    \[\begin{aligned}
+    \sin(A+B)&=\sin A\cos B+\cos A\sin B \\
+    \sin(A-B)&=\sin A\cos B-\cos A\sin B
+    \end{aligned}\]
+    to get
+    \[\begin{aligned}
+    \sin(A+B)+\sin(A-B)&=2\sin A\cos B \\
+    \sin(A+B)-\sin(A-B)&=2\cos A\sin B
+    \end{aligned}\]
+    Dividing by \(2\) gives:
+    \[\begin{aligned}
+    \sin A\cos B&=\dfrac{1}{2}[\sin(A+B)+\sin(A-B)] \\
+    \cos A\sin B&=\dfrac{1}{2}[\sin(A+B)-\sin(A-B)]
+    \end{aligned}\]
+    These last two formulas are the same but with the roles of \(A\) and \(B\)
+    reversed.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example">
+  Using the values of \(\sin15^\circ\) and \(\cos15^\circ\) found in a
+  <a href="SumDiff.html#15deg" title="Return using the Back button.">
+  previous exercise</a>, find \(\sin7.5^\circ\) and \(\cos7.5^\circ\).
+</p>
+<p class="sol">
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise">
+    Using the values of \(\sin75^\circ\) and \(\cos75^\circ\) found in a
+    <a href="SumDiff.html#75deg" title="Return using the Back button.">
+    previous example</a>, find \(\sin37.5^\circ\) and \(\cos37.5^\circ\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+    <button class="toggle has-rem" data-toggle="RemX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    xxx
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle
+  xxx\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    xxx
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    xxx
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX1">
+  <p>
+    xxx
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Tutorial on Average Value | 10. Area and Average Value</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MVT.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Area and Average Value</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>e. Tutorial on Average Value</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="tutorial">
+  <div class="column">
+    <div data-col-width="25%">
+      <button id="BNewProblem" class="btn-newproblem">New Problem</button>
+    </div>
+    <div data-col-width="50%" class="tutorial-message" style="padding: 10px 5px">
+      <textarea id="reply" rows=2 readonly style="height: 45px">
+        To get started, click New Problem.
+      </textarea>
+    </div>
+  </div>
+
+  <div class="column">
+    <div data-col-width="30%">
+      Guess and then compute the average value of the function
+    </div>
+    <div data-col-width="15%" class="tutorial-display no-border" id="funcdisplay">
+      \[
+      f(x)=
+      \]
+    </div>
+    <div data-col-width="5%">
+    </div>
+    <div data-col-width="15%">
+      on the interval
+    </div>
+    <div data-col-width="15%" class="tutorial-display no-border" id="domaindisplay">
+      \[
+      [a,b]=
+      \]
+    </div>
+  </div>
+
+  <hr width="80%">
+
+  <div class="column">
+    <div>
+      Step 1: Estimate the Average Value:
+      <br>
+      <div class="center">
+        <input type="text" id="userval" maxlength="6" style="text-align:center; width:50px; height:30px; resize:none;" />
+        <input type="range" id="slider" class="slider-vertical" orient="vertical" min="0" max="5" step="0.01" value="0" style="height:275px; width:50px"/>
+        <canvas id="Plot" style="margin-left:10px; width:350px; height:350px;"></canvas>
+      </div>
+    </div>
+
+    <div>
+      Step 2: Find the width of the interval:
+      <div class="column">
+        <div data-col-width="25%" class="tutorial-display no-border"><br>
+					\(\displaystyle b-a=\)
+				</div>
+        <div data-col-width="25%" class="tutorial-input">
+          <input type="text" id="userba" />
+        </div>
+        <div data-col-width="5%">
+        </div>
+        <div data-col-width="25%" class="tutorial-display" id="userbadisplay">
+					\[ \]
+				</div>
+      </div>
+      <div style="margin: 15px 30px">
+        <span class="nohint"></span>
+        <button class="btn-check" id="Checkba">Check</button>
+        <textarea id="MRba" class="tutorial-feedback" readonly></textarea>
+        <button class="btn-show" id="Showba">Show</button>
+      </div>
+
+      Step 3: Evaluate the Integral:
+      <div class="column">
+        <div data-col-width="25%" id="integdisplay" class="tutorial-display no-border">
+          \(\displaystyle
+          \int_a^b f(x)\,dx=\)
+        </div>
+        <div data-col-width="25%" class="tutorial-input">
+          <input type="text" id="userint" />
+        </div>
+        <div data-col-width="5%">
+        </div>
+        <div data-col-width="25%" class="tutorial-display" id="userintegdisplay">
+					\[ \]
+				</div>
+      </div>
+      <div style="margin: 15px 30px">
+        <span class="nohint"></span>
+        <button class="btn-check" id="Checkint">Check</button>
+        <textarea id="MRint" class="tutorial-feedback" readonly></textarea>
+        <button class="btn-show" id="Showint">Show</button>
+      </div>
+
+      Step 4: Find the Average Value of the Function
+      <div class="column">
+        <div data-col-width="25%" id="avgdisplay" class="tutorial-display no-border"><br>
+          \(\displaystyle f_{\text{ave}} =\)
+        </div>
+        <div data-col-width="25%" class="tutorial-input">
+          <input type="text" id="useravg" />
+        </div>
+        <div data-col-width="5%">
+        </div>
+        <div data-col-width="25%" class="tutorial-display" id="avdisplay">
+					\[ \]
+				</div>
+      </div>
+      <div style="margin: 15px 30px">
+        <button class="btn-hint" id="Hintavg">Hint</button>
+        <button class="btn-check" id="Checkavg">Check</button>
+        <textarea id="MRavg" class="tutorial-feedback" readonly></textarea>
+        <button class="btn-show" id="Showavg">Show</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+
+    
+      
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+<script src="../../../scripts/mathlex.min.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="./scripts/AverageValue1var.js"></script>
+
+
+</body>
+</html>

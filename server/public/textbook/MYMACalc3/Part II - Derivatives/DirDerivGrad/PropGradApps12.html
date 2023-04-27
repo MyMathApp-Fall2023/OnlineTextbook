@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Applications of Gradient Properties 1 &amp; 2 | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PropGrad.html" title="Previous">&lArr;</a></li>
+      <li><a href="PropGradApps34.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Properties of the Gradient</h2>
+
+<div class="greybox">
+	<p class="prop" data-title="Properties of the Gradient">
+	</p>
+  <ol>
+    <li>
+      \(\vec\nabla f\) points in the direction of maximum increase of \(f\).
+    </li>
+    <li>
+      \(|\vec\nabla f|\) is the maximum rate of increase of \(f\).
+    </li>
+  </ol>
+</div>
+
+
+      
+      <h2>2. Applications of Gradient Properties 1 &amp; 2</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="example" data-number="1">
+  The temperature in \(^\circ K\) in a room is given by
+  \(T=275+\sin(\pi x)\cos(\pi y)+\sin(\pi z)\).
+  <ol>
+    <li>Find the unit vector direction in which the temperature increases
+      most rapidly at \(P=(2,-1,2)\).
+		</li>
+    <li>Find the maximum rate of increase of the temperature at \(P=(2,-1,2)\).
+		</li>
+  </ol>
+</p>
+<p class="sol">
+  From an
+  <a href="DerCurve.html#tempeg" title="Return using the Back button.">
+    example on a previous page</a>, the gradient of the temperature at
+  \(P\) is:
+  \[
+  \vec w=\left.\vec\nabla T\right|_P
+	=\langle -\pi,0,\pi\rangle
+  \]
+</p>
+<ol>
+  <li>
+    By Property 1, the gradient points in the direction of maximum
+    increase of the function. So we need the unit vector in the direction
+    of \(\vec w\). Since \(|\vec w|=\sqrt{\pi^2+\pi^2}=\pi\sqrt{2}\),
+    the unit vector direction in which the temperature increases most
+    rapidly is:
+    \[
+    \hat w=\left\langle -\,\dfrac{1}{\sqrt{2}},0,\dfrac{1}{\sqrt{2}}\right\rangle
+    \]
+  </li>
+  <li>
+    By Property 2, the maximum rate of increase of the temperature is
+    the length of the gradient, or \(|\vec w|=\pi\sqrt{2}\).
+  </li>
+</ol>
+
+				<div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  Duke Skywater is flying the Centurion Eagle through a deadly polaron field
+  whose density is given by
+	\(p(x,y,z)=xyz^2\,\dfrac{\text{radions}}{\text{millilightyear}^3}\)
+  where \(x\), \(y\) and \(z\) are measured in \(\text{millilightyears}\).
+	Assume Duke's current position is \((x,y,z)=(4,-2,3)\).
+</p>
+<ol class="list-outside">
+  <li>
+		<div class="dotfillex">
+			<p>
+	      If Duke's current velocity is
+				\(\vec v=\langle .2,.3,.4\rangle\,\dfrac{\text{millilightyears}}{\text{year}}\),
+				what is the current rate at which he sees the polaron
+	      density changing? Is it increasing or decreasing?
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+	      <button class="toggle has-sol" data-toggle="SolX1"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX1">
+	    <p>
+	      The density is decreasing at
+	      \(\dfrac{\partial p}{\partial t}=-12\).
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX1">
+	    <p>
+	      The gradient of the density and its value at the current position are:
+	      \[\begin{aligned}
+	      \vec\nabla p&=\langle yz^2,xz^2,2xyz\rangle \\
+	      \left.\vec\nabla p\right|_{(4,-2,3)}&=\langle -18,36,-48\rangle
+	      \end{aligned}\]
+	      So the rate of change of the density is:
+	      \[\begin{aligned}
+	      \dfrac{dp}{dt}
+	      &=\vec v\cdot\left.\vec\nabla p\right|_{(4,-2,3)}
+	      =\langle .2,.3,.4\rangle\cdot\langle -18,36,-48\rangle \\
+	      &=-3.6+10.8-19.2=-12
+	      \end{aligned}\]
+	      So the density is decreasing.
+	    </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+		    Find the unit vector direction, \(\hat u\), in which the polaron
+		    density decreases fastest.
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2">
+	    <p>
+	      If a quantity increases fastest in the direction \(\hat w\), then it
+	      decreases fastest in the direction \(-\hat w\).
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2">
+	    <p>
+		    \(\hat u
+		    =\left\langle \dfrac{3}{\sqrt{109}},-\,\dfrac{6}{\sqrt{109}},
+				\dfrac{8}{\sqrt{109}}\right\rangle\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2">
+	    <p>
+	      The density increases fastest in the direction of the gradient
+	      \[
+				\vec w=\left.\vec\nabla p\right|_{(4,-2,3)}
+				=\langle -18,36,-48\rangle
+				\]
+	      Its length is:
+	      \[
+	      |\vec w|=\sqrt{18^2+36^2+48^2}=6\sqrt{3^2+6^2+8^2}=6\sqrt{109}
+	      \]
+	      So the unit vector of maximum increase is:
+	      \[
+	      \hat w=\left\langle -\,\dfrac{3}{\sqrt{109}},\dfrac{6}{\sqrt{109}},
+				-\,\dfrac{8}{\sqrt{109}}\right\rangle
+	      \]
+	      and the unit vector of maximum decrease is:
+	      \[
+	      \hat u=-\hat w
+	      =\left\langle \dfrac{3}{\sqrt{109}},-\,\dfrac{6}{\sqrt{109}},
+				\dfrac{8}{\sqrt{109}}\right\rangle
+	      \]
+	    </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+		    Find the rate the polaron density is changing in the direction \(\hat u\).
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+	      <button class="toggle has-sol" data-toggle="SolX3"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX3">
+	    <p>
+	      \(\dfrac{\partial p}{\partial t}=-6\sqrt{109}\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX3">
+	    <p>
+	      The maximum rate of increase is the length of the gradient which was
+	      previously found to be
+	      \[
+	      |\vec w|=\left|\left.\vec\nabla p\right|_{(4,-2,3)}\right|=6\sqrt{109}
+	      \]
+	      So the maximum rate of decrease is the negative of this
+	      \[
+	      \dfrac{\partial p}{\partial t}=-6\sqrt{109}
+	      \]
+	    </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+		    If the maximum speed of the Centurion Eagle is \(2\)
+		    millilightyears/year, find the velocity, \(\vec u\), the Centurion
+		    Eagle should have to decrease the polaron density as fast as possible.
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX4"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX4"></button>
+	      <button class="toggle has-sol" data-toggle="SolX4"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX4">
+	    <p>
+	      The velocity is its speed times its direction.
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX4">
+	    <p>
+	      \(\vec u
+	      =\left\langle \dfrac{6}{\sqrt{109}},-\,\dfrac{12}{\sqrt{109}},
+				\dfrac{16}{\sqrt{109}}\right\rangle\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX4">
+	    <p>
+	      The maximum speed is \(|\vec u|=2\) and the direction of maximum
+				decrease is
+	      \(\hat u
+	      =\left\langle \dfrac{3}{\sqrt{109}},-\,\dfrac{6}{\sqrt{109}},
+				\dfrac{8}{\sqrt{109}}\right\rangle\).
+	      So the velocity of maximum decrease is:
+	      \[
+	      \vec u=|\vec u|\hat u
+	      =\left\langle \dfrac{6}{\sqrt{109}},-\,\dfrac{12}{\sqrt{109}},
+				\dfrac{16}{\sqrt{109}}\right\rangle
+	      \]
+	    </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+		    Find the rate the polaron density is changing if the Centurion
+		    Eagle has velocity \(\vec u\).
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX5"></button>
+	      <button class="toggle has-sol" data-toggle="SolX5"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX5">
+	    <p>
+	      \(\dfrac{\partial p}{\partial t}=-12\sqrt{109}\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX5">
+	    <p>
+	      \[
+	      \dfrac{\partial p}{\partial t}=\nabla_{\vec u} p=|\vec u|\nabla_{\hat u}
+				p=2(-6\sqrt{109})=-12\sqrt{109}
+	      \]
+	    </p>
+	  </div>
+	</li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

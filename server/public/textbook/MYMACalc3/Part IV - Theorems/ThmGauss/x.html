@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Gauss&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplGauss.html" title="Previous">&lArr;</a></li>
+      <li><a href="../InterpDivCurl/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>12. Gauss&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Gauss' Theorem">
+  Let \(V\) be a nice solid region in \(\mathbb{R}^3\) with a nice
+  properly oriented boundary, \(\partial V\), and let \(\vec F\)
+  be a nice vector field on \(V\). Then
+  \[
+  \iiint_V \vec\nabla\cdot\vec F\,dV
+  =\iint_{\partial V} \vec F\cdot d\vec S
+  \]
+  The outer boundary must be oriented outward while any inner
+  boundaries must be oriented inward. This means that all pieces of the
+  boundary are oriented away from the solid.
+</p>
+
+
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--The Theorem-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Theorem.html">a. The Theorem</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Theorem.html">1</a></div>
+      
+        <div><a href="Hole.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+      	Consider the volume integral
+        \(\displaystyle \iiint_{H}\vec{\nabla}\cdot\vec{F}\,dV\)
+        over a hemisphere of radius of \(4\) to the right of \(y=0\) where
+        \(0 \le \theta \le \pi\) and
+        \(\vec{F}=\left\langle 0,\dfrac{y}{4},0\right\rangle\).
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/x-right-hemis-r=4.jpg" alt="Hemisphere Radius 4">
+    </div>
+  </div>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+          Express the volume integral as two surface integrals using Gauss'
+          Theorem
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1a"></button>
+					<button class="toggle has-sol" data-toggle="SolX1a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+				<p>
+          \(\begin{aligned}
+          \iiint_{H}\vec{\nabla}\cdot \vec{F}\ dV
+          &=\iint_{\text{hemi}}\vec{F}\cdot d\vec{S}
+          +\iint_{\text{disk}}\vec{F}\cdot d\vec{S} \\
+          \end{aligned}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1a">
+				<p>
+          Gauss' Theorem tells us that the volume integral can be computed as
+          the surface integral over the boundary. Here the boundary consists of
+          two surfaces:
+          <br>
+          (1) the hemisphere of \(\rho=4\) with \(y \ge 0\) which
+          may be parameterized by
+          \[
+          R_{\text{hemi}}\left(\theta,\phi\right)
+          =\left(4\sin\phi\cos\theta,4\sin\phi\sin\theta,4\cos\phi\right)
+          \]
+          for \(0 \le \phi \le \pi\) and \(0 \le \theta \le \pi\) and
+          <br>
+          (2) the disk in the plane \(y=0\) which may be parameterized by
+          \[
+          R_{\text{disk}}\left(r,\theta\right)
+          =\left(r\cos\theta,0,r\sin\theta\right)
+          \]
+          for \(0 \le r \le 4\) and \(0 \le \theta \le 2\pi\).
+          So the volume integral becomes:
+          \[\begin{aligned}
+          \iiint_{H}\vec{\nabla}\cdot \vec{F}\ dV
+          &=\iint_{\text{hemi}}\vec{F}\cdot d\vec{S}
+          +\iint_{\text{disk}}\vec{F}\cdot d\vec{S} \\
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Compute each surface integral and the total boundary integral.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1b"></button>
+					<button class="toggle has-sol" data-toggle="SolX1b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+				<p>
+          \(\begin{aligned}
+          \iint_{\text{hemi}}\vec{F}\cdot d\vec{S}
+          &=\dfrac{32}{3}\pi \\
+          \iint_{\text{disk}}\vec{F}\cdot d\vec{S}
+          &=0
+          \end{aligned}\)
+          <br>
+          \(\begin{aligned}
+          \iiint_{H} &\vec{\nabla}\cdot \vec{F}\ dV
+          =\iint_{\partial H}\vec{F}\cdot d\vec{S} \\
+          &=\iint_{\text{hemi}}\vec{F}\cdot d\vec{S} + \iint_{\text{disk}}\vec{F}\cdot d\vec{S}
+          =\dfrac{32}{3}\pi
+          \end{aligned}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1b">
+				<p>
+          <strong>Hemisphere:</strong>&emsp;
+          The hemisphere is
+          \[
+          R_{\text{hemi}}\left(\theta,\phi\right)
+          =\left(4\sin\phi\cos\theta,4\sin\phi\sin\theta,4\cos\phi\right)
+          \]
+          for \(0 \le \phi \le \pi\) and \(0 \le \theta \le \pi\).
+          The normal is:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{\phi }\times \vec{e}_{\theta }=
+          \begin{vmatrix}
+          \hat \imath & \hat \jmath & \hat k \\
+          4\cos\phi \cos\theta & 4\cos\phi \sin\theta & -4\sin\phi \\
+          -4\sin\phi \sin\theta & 4\sin\phi \cos\theta & 0
+          \end{vmatrix} \\
+          &=\hat \imath\left(16\sin^{2}\phi\cos\theta\right)
+           -\hat \jmath\left(-16\sin^{2}\phi\sin\theta\right) \\
+          &\quad+\hat k\left(16\sin\phi\cos\phi\cos^{2}\theta
+          +16\sin\phi\cos\phi\sin^{2}\theta \right) \\
+          &=\left\langle 16\sin^{2}\phi\cos\theta,16\sin^{2}\phi\sin\theta,
+          16\sin\phi\cos\phi\right\rangle
+          \end{aligned}\]
+          This is correctly oriented outward. On the hemisphere, the vector field,
+          \(\vec{F}=\left\langle 0,\dfrac{y}{4},0\right\rangle\), becomes
+          \[
+          \vec{F}=\left\langle 0,\sin\phi\sin\theta,0\right\rangle
+          \]
+          Now we can compute the dot product:
+          \[
+          \vec{F}\cdot\vec{N}
+          =16\sin ^{3}\phi \sin ^{2}\theta
+          \]
+          and the surface integral
+          \[\begin{aligned}
+          \int_{\text{hemi}}\vec{F}\cdot d\vec{S}
+          &=16\int_{0}^{\pi}\int_{0}^{\pi}\sin^{3}\phi\sin^{2}\theta\,d\theta\,d\phi \\
+          &=16\int_{0}^{\pi}(1-\cos^2\phi)\sin\phi\,d\phi
+          \int_{0}^{\pi}\dfrac{1-\cos2\theta}{2}\,d\theta \\
+          &=16\left[-\cos\phi+\dfrac{\cos^3\phi}{3}\right]_{0}^{\pi}
+          \left[\dfrac{1}{2}\left(\theta-\dfrac{\sin2\theta}{2}\right)\right]_{0}^{\pi} \\
+          &=16\cdot2\left(1-\dfrac{1}{3}\right)\dfrac{\pi}{2}
+          =\dfrac{32}{3}\pi
+          \end{aligned}\]
+				</p>
+				<p>
+          <strong>Disk:</strong>&emsp;
+          On the disk at \(y=0\), the vector field,
+          \(\vec{F}=\left\langle 0,\dfrac{y}{4},0\right\rangle\) becomes
+          \(\vec{F}=\langle 0,0,0\rangle\). So the integral is zero:
+          \[
+          \iint_{\text{disk}} \vec{F}\cdot d\vec{S}=0
+          \]
+        </p>
+				<p>
+          <strong>Total:</strong>&emsp;
+          Adding the hemisphere and disk integrals, our total surface
+          integral is:
+          \[\begin{aligned}
+          \iiint_{H} &\vec{\nabla}\cdot\vec{F}\,dV
+          =\iint_{\partial H}\vec{F}\cdot d\vec{S} \\
+          &=\iint_{\text{hemi}}\vec{F}\cdot d\vec{S} + \iint_{\text{disk}}\vec{F}\cdot d\vec{S}
+          =\dfrac{32}{3}\pi
+          \end{aligned}\]
+        </p>
+			</div>
+		</li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          Compute \(\vec{\nabla}\cdot\vec{F}\) and the volume integral directly.
+          Did Gauss' Theorem help to simplify the problem?
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX1c"></button>
+          <button class="toggle has-ans" data-toggle="AnsX1c"></button>
+          <button class="toggle has-sol" data-toggle="SolX1c"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX1c">
+        <p>
+          Always compute a divergence or curl in rectangular coordinates!
+          Then convert it to the coordinates needed for the integral.
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX1c">
+        <p>
+          \(\displaystyle
+          \iiint_{H} \vec{\nabla}\cdot\vec{F}\,dV= \dfrac{32}{3}\pi
+          \)
+          <br>
+          No, Gauss' Theorem did not simplify this problem because it is easier to
+          compute the divergence of \(\vec{F}\) and a volume integral.
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX1c">
+        <p>
+          The divergence is
+          \(\vec{\nabla}\cdot\vec{F}=0+\dfrac{1}{4}+0=\dfrac{1}{4}\).
+          So the volume integral is:
+          \[\begin{aligned}
+          \iiint\limits_{H} &\vec{\nabla}\cdot\vec{F}\,dV
+          =\int_{0}^{\pi}\int_{0}^{\pi}\int_{0}^{4}
+          \dfrac{1}{4}\rho^{2}\sin\phi\,d\rho\,d\phi\,d\theta \\
+          &=\dfrac{1}{4}(\text{Volume of hemisphere})
+          =\dfrac{1}{4}\cdot\dfrac{1}{2}\cdot\dfrac{4}{3}\pi4^3
+          =\dfrac{32}{3}\pi
+          \end{aligned}\]
+          No, the volume integral was much easier than the surface integrals.
+        </p>
+      </div>
+    </li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+    <div class="column">
+      <div data-col-width="60%">
+    		<p>
+          Compute the surface integral
+          \(\displaystyle \iint_{\partial C} \vec{F}\cdot d\vec{S}\)
+          where \(\vec{F}=\langle y,3y^{2},x^{2}z\rangle\) over the cube,
+          \(0 \le x \le 3\), \(0 \le y \le 3\), \(0 \le z \le 3\),
+          oriented outward, by using Gauss' Theorem to simplify the problem.
+        </p>
+      </div>
+      <div class="center" data-col-width="40%">
+        <img src="graphics/x-cube-side3-Cropped.jpg" alt="Cube Side Length 3">
+      </div>
+    </div>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(\displaystyle
+      \iint_{\partial C} \vec{F}\cdot d\vec{S}
+      =\iiint_{C} \vec{\nabla}\cdot\vec{F}\,dV
+      =324\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      The problem can be simplified from 6 surface integrals to one
+      volume integral by Gauss' Theorem:
+      \[
+      \iint_{\partial C} \vec{F}\cdot d\vec{S}
+      =\iiint_{C} \vec{\nabla}\cdot\vec{F}\,dV
+      \]
+      The divergence of \(\vec{F}=\langle y,3y^{2},x^{2}z\rangle\) is
+      \(\vec{\nabla}\cdot\vec{F}=0+6y+x^2\).
+      The volume differential is: \(dV=dx\,dy\,dz\).
+      <br>
+      Thus the integral is:
+      \[\begin{aligned}
+      \int_{0}^{3}\int_{0}^{3}\int_{0}^{3} (6y+x^2)\,dx\,dy\,dz
+      &=3\int_{0}^{3} \left[6xy+\dfrac{x^3}{3}\right]_{x=0}^{3}dy \\
+      &=3\int_{0}^{3} (18y+9)\,dy \\
+      &=3\left[9y^2+9y\right]_{0}^{3} \\
+      &=3\left( 81+27\right)
+      =324
+      \end{aligned}\]
+  	</p>
+    <p align=right> cj &nbsp </p>
+  </div>
+</li>
+
+<!--Verification-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="Verify.html">b. Verification</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Verify.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div>
+    <div class="column">
+      <div data-col-width="60%">
+        <p>
+          Verify Gauss' Theorem \(\displaystyle
+          \iiint_C \vec\nabla\cdot\vec F\,dV
+          =\iint_{\partial C} \vec F\cdot d\vec S\) for the vector
+          field \(\vec{F}=\left\langle yz^{2},xz^{2},z\left( x^{2}+y^{2}\right)
+          \right\rangle\) and the solid cone \(\sqrt{x^{2}+y^{2}}\leq z\leq 4\).
+        </p>
+      </div>
+      <div class="center" data-col-width="40%">
+        <img src="graphics/x-cone-height=4-Cropped.jpg" alt="Cone Height and Radius 4">
+      </div>
+		</div>
+	</div>
+  <ol class="list-outside">
+    <li>
+      <div class="dotfillex">
+        <p>
+          <strong>LHS: Volume Integral:</strong>&emsp;
+          Compute the divergence in rectangular coordinates. Then choose a
+          coordinate system for the integral, and express the divergence
+          and \(dV\) in those coordinates.
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX3a"></button>
+          <button class="toggle has-sol" data-toggle="SolX3a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX3a">
+        <p>
+          \(\displaystyle \iiint_C \vec\nabla\cdot\vec F\,dV = \dfrac{512\pi }{5}\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX3a">
+        <p>
+          On the left hand side, we first compute the divergence
+          \(\vec{\nabla}\cdot \vec{F}=0+0+x^{2}+y^{2}\).
+          In cylindrical coordinates,
+          \(\vec{\nabla}\cdot \vec{F}=r^{2}\)
+          and
+          \(dV=r\,dr\,d\theta \,dz\).
+          Finally we compute the integral
+          \[\begin{aligned}
+          \iiint_{C} &\vec{\nabla}\cdot\vec{F}\,dV
+          =\int_{0}^{2\pi}\int_{0}^{4}\int_{r}^{4} (r^2)r\,dz\,dr\,d\theta \\
+          &=2\pi\int_{0}^{4}\int_{r}^{4} r^3\,dz\,dr
+          =2\pi\int_{0}^{4} \left[r^3z\right]_{z=r}^{4}\,dr \\
+          &=2\pi\int_{0}^{4} \left(4r^3-r^4\right)\,dr
+          =2\pi\left[r^{4}-\dfrac{r^5}{5}\right]_{0}^{4} \\
+          &=2\pi\cdot4^{4}\left(1-\dfrac{4}{5}\right)
+          =\dfrac{512}{5}\pi
+          \end{aligned} \]
+        </p>
+        <p align=right> cj &nbsp </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          <strong>RHS: Surface Integral:</strong>&emsp;
+          Parameterize each piece of the surface. Compute tangent and normal
+          vectors, Evaluate \(\vec{F}\) on each surface and compute the flux
+          through each surface. Compare the answer with part (a).
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX3b"></button>
+          <button class="toggle has-sol" data-toggle="SolX3b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX3b">
+        <p>
+          \(\displaystyle
+          \iint_C \vec{F}\cdot d\vec{S}=\dfrac{512}{5}\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX3b">
+        <p>
+          The boundary surface consists of a cone and a disk, oriented outward.
+          Starting with the disk, we parameterize it as
+          \[
+          \vec{R}_{\text{Disk}}(r,\theta)=(r\cos\theta,r\sin\theta,4)
+          \]
+          The tangent vectors and normal are:
+          \[\begin{aligned}
+          &\vec{e}_{r}=\left\langle \cos \theta ,\sin \theta ,0\right\rangle \\
+          &\vec{e}_{\theta }=\left\langle -r\sin \theta ,r\cos \theta ,0\right\rangle
+          \end{aligned}\]
+          \[\begin{aligned}
+          \vec{N}
+          &=\hat{\imath}(0-\hat{\jmath}(0)+\hat{k}(r\cos^2\theta+r\sin^2\theta) \\
+          &=\langle 0,0,r\rangle
+          \end{aligned}\]
+          Next we evaluate
+          \(\vec{F}=\left\langle yz^{2},xz^{2},z\left( x^{2}+y^{2}\right)
+          \right\rangle\) on the disk:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(16r\sin\theta,16r\cos\theta,4r^{2})
+          \]
+          Computing the dot product,
+          \(\vec{F}\cdot \vec{N}=4r^{3}\). So:
+          \[\begin{aligned}
+          \iint_{\text{Disk}} \vec{F}\cdot d\vec{S}
+          &=\int_{0}^{2\pi}\int_{0}^{4} 4r^{3}\,dr\,d\theta \\
+          &=2\pi\left[r^{4}\right] _{0}^{4}
+          =512\pi
+          \end{aligned}\]
+          The next step is to do the same thing for the cone. It is
+          parameterized as:
+          \[
+          \vec{R}_{\text{cone}}=\left(r\cos\theta,r\sin\theta,r\right)
+          \]
+          The tangent and normal vectors are:
+          \[ \begin{aligned}
+          \vec{e}_{r}&=\left( \cos \theta ,\sin \theta ,1\right) \\
+          \vec{e}_{\theta }&=\left( -r\sin \theta ,r\cos \theta ,0\right)
+          \end{aligned}
+          \]
+          \[
+          \vec{N}=(-r\cos\theta,-r\sin\theta,r)
+          \]
+          This is oriented up and in, but we need down and out, so we reverse
+          the signs:
+          \[
+          \vec{N}=(r\cos\theta,r\sin\theta,-r)
+          \]
+          Evaluating
+          \(\vec{F}=\left\langle yz^{2},xz^{2},z\left( x^{2}+y^{2}\right)
+          \right\rangle\) on the cone gives:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(r^{3}\sin\theta,r^{3}\cos\theta,r^{3})
+          \]
+          Then the dot product is:
+          \[\begin{aligned}
+          \vec{F}\cdot\vec{N}
+          &=r^{4}\cos\theta\sin\theta+r^{4}\sin\theta\cos\theta-r^{4} \\
+          &=2r^{4}\sin\theta\cos\theta-r^{4} \\
+          &=r^{4}\sin2\theta-r^{4}
+          \end{aligned}\]
+          So the integral is:
+          \[\begin{aligned}
+          \iint_{\text{Cone}}\vec{F}\cdot d\vec{S}
+          &=\int_{0}^{2\pi}\int_{0}^{4} (r^{4}\sin2\theta-r^{4})\,dr\,d\theta \\
+          &=\left[-\,\dfrac{\cos2\theta}{2}-\theta\right]_{0}^{2\pi}
+          \left[\dfrac{r^{5}}{5}\right]_{0}^{4} \\
+          &=-2\pi\dfrac{4^{5}}{5}
+          =-\dfrac{2048\pi }{5}
+          \end{aligned}
+          \]
+          Finally, we sum the two integrals:
+          \[ \begin{aligned}
+          \iint_C \vec{F}\cdot d\vec{S}&=\iint_{\text{Disk}}\vec{F}\cdot d\vec{S}
+          +\iint_{\text{Cone}}\vec{F}\cdot d\vec{S} \\
+          &=512\pi -\dfrac{2048\pi }{5} \\
+          &=\dfrac{512}{5}\pi
+          \end{aligned}
+          \]
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+<li>
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        Verify Gauss' Theorem
+        \(\displaystyle
+        \iiint_V \vec\nabla\cdot\vec F\,dV
+        =\iint_{\partial V} \vec F\cdot d\vec S\)
+        for the vector field
+        \(\vec F=\langle x^3,y^3,z^3\rangle\)
+        and the hemisphere
+        \(0 \le z \le \sqrt{16-x^2-y^2 }.\)
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/x-hemis-r=4-Cropped.jpg" alt="Hemisphere Radius 4">
+    </div>
+  </div>
+  <ol class="list-outside">
+    <li>
+      <div class="dotfillex">
+        <p>
+          <strong>LHS: Volume Integral:</strong>&emsp;
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX4a"></button>
+          <button class="toggle has-ans" data-toggle="AnsX4a"></button>
+          <button class="toggle has-sol" data-toggle="SolX4a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX4a">
+        <p>
+          Always compute a divergence or curl in rectangular coordinates!
+          Then convert it to the coordinates needed for the integral.
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX4a">
+        <p>
+          \( \displaystyle
+          \iiint_V \vec\nabla\cdot\vec F\,dV=\dfrac{6144\pi}{5} \)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX4a">
+        <p>
+          First we compute the divergence of \(\vec F\) and convert to
+          spherical coordinates:
+          \[
+          \vec{\nabla}\cdot\vec{F}= 3x^2+3y^2+3z^2=3\rho^2
+          \]
+          The Jacobian for spherical coordinates is \(dV=\rho^2\sin\phi\).
+          Finally, we compute the integral on the hemisphere with bounds
+          \(0 \le \theta \le 2\pi\), \(0 \le \phi \le \dfrac{\pi}{2}\), and
+          \(0 \le \rho \le 4\).
+          \[ \begin{aligned}
+          \iiint_V &\vec\nabla\cdot\vec F\,dV
+          =\int_{0}^{2\pi}\int_{0}^{\pi/2}\int_{0}^{4}
+          3\rho^2(\rho^2\sin^2\phi)\,d\rho\,d\phi\,d\theta \\
+          &=6\pi\int_{0}^{\pi/2}\int_{0}^{4}\rho^4\sin\phi\,d\rho\,d\phi
+          =6\pi\left[\dfrac{1}{5} \rho^5 \right]_0^4
+          [-\cos\phi]_{0}^{\pi/2} \\
+          &=6\pi\dfrac{4^5}{5}(1)=\dfrac{6144\pi}{5}
+          \end{aligned}\]
+
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          <strong>RHS: Surface Integral:</strong>&emsp;
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX4b"></button>
+          <button class="toggle has-ans" data-toggle="AnsX4b"></button>
+          <button class="toggle has-sol" data-toggle="SolX4b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX4b">
+        <p>
+          Feel free to use the integrals:
+          \[
+          \int_{0}^{2\pi}\sin^4\theta\,d\theta
+          =\int_{0}^{2\pi}\cos^4\theta\,d\theta
+          =\dfrac{3}{4}\pi
+          \]
+          \[
+          \int_0^{\pi/2}\sin^5\phi\,d\phi
+          =\int_0^{\pi/2}\cos^5\phi\,d\phi
+          =\dfrac{8}{15}
+          \]
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX4b">
+        <p>
+          \(\displaystyle \iint_{\partial V} \vec F\cdot d\vec S
+          = \dfrac{6144\pi}{5}\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX4b">
+        <p>
+          The boundary surface consists of a hemisphere and a disk. We
+          parametrize the hemisphere as:
+          \[
+          \vec{R}_{\text{Hemi}}=\left(4\sin\phi\cos\theta,4\sin\phi\sin\theta,
+          4\cos\phi\right)
+          \]
+          The tangent vectors and normal are:
+          \[ \begin{aligned}
+          \vec{e}_{\phi}&=(4\cos\phi\cos\theta, 4\cos\phi\sin\theta, -4\sin\phi)\\
+          \vec{e}_{\theta }&=(-4\sin\phi\sin\theta, 4\sin\phi\cos\theta, 0)\\
+          \vec{N}&=(16\sin^2\phi\cos\theta, 16\sin^2\phi\sin\theta,
+           16\cos\phi\sin\phi)
+          \end{aligned}\]
+          The normal correctly points upward.
+          Evaluating the force \(\vec F=\langle x^3,y^3,z^3\rangle\) on the
+          surface gives:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(64\sin^3\phi\cos^3\theta, 64\sin^3\phi\sin^3\theta, 64\cos^3\phi)
+          \]
+          Then their dot product is:
+          \[
+          \vec{F}\cdot\vec{N}
+          =1024\sin^5\phi\cos^4\theta+1024\sin^5\phi\sin^4\theta
+          +1024\cos^4\phi\sin\phi
+          \]
+          Thus the integral is:
+          \[\begin{aligned}
+          \iint_{\text{Hemi}}\vec{F}\cdot d\vec{S}
+          =1024\int_{0}^{2\pi}\int_{0}^{\pi/2} &\sin^5\phi\cos^4\theta
+          +\sin^5\phi\sin^4\theta \\
+          &+\cos^4\phi\sin\phi \,d\phi\,d\theta
+          \end{aligned}\]
+          Since the integrand is a sum of products and the limits are constants,
+          We can separate the integral as:
+          \[\begin{aligned}
+          \iint_{\text{Hemi}}\vec{F}\cdot d\vec{S}
+          &=1024\int_{0}^{\pi/2} \sin^5\phi\,d\phi
+          \int_{0}^{2\pi} \cos^4\theta\,d\theta \\
+          &\quad+1024\int_{0}^{\pi/2} \sin^5\phi\,d\phi
+          \int_{0}^{2\pi} \sin^4\theta\,d\theta \\
+          &\quad+1024\int_{0}^{\pi/2} \cos^4\phi\sin\phi\,d\phi
+          \int_{0}^{2\pi} 1\,d\theta
+          \end{aligned}\]
+          We now use the standard integrals:
+          \[
+          \int_{0}^{2\pi}\sin^4\theta\,d\theta
+          =\int_{0}^{2\pi}\cos^4\theta\,d\theta
+          =\dfrac{3}{4}\pi
+          \]
+          \[
+          \int_0^{\pi/2}\sin^5\phi\,d\phi
+          =\int_0^{\pi/2}\cos^5\phi\,d\phi
+          =\dfrac{8}{15}
+          \]
+          \[
+          \int_{0}^{\pi/2} \cos^4\phi\sin\phi\,d\phi
+          =\left[-\,\dfrac{\cos^5\phi}{5}\right]_{0}^{\pi/2}
+          =\dfrac{1}{5}
+          \]
+          So the integral reduces to:
+          \[\begin{aligned}
+          \iint_{\text{Hemi}}\vec{F}\cdot d\vec{S}
+          &=1024\left(\dfrac{3}{4}\pi\right)\left(\dfrac{8}{15}\right)
+          +1024\left(\dfrac{3}{4}\pi\right)\left(\dfrac{8}{15}\right) \\
+          &\qquad+1024 \left(+\dfrac{1}{5}\right)(2\pi) \\
+          &=\dfrac{2048\pi}{5}+\dfrac{2048\pi}{5}+\dfrac{2048\pi}{5}
+          =\dfrac{6144\pi}{5}
+          \end{aligned}\]
+        </p>
+        <p>
+          We parametrize the disk as:
+          \[
+          \vec{R}_{\text{disk}}=(r\cos\theta,r\sin\theta,0)
+          \]
+          The tangent vectors and normal are:
+          \[ \begin{aligned}
+          \vec{e}_{r}&=(\cos\theta,\sin\theta, 0\sin\phi)\\
+          \vec{e}_{\theta}&=(-r\sin\theta,r\cos\theta, 0)\\
+          \vec{N}&=(0,0,r)
+          \end{aligned}\]
+          We reverse the normal to point down:
+          \[
+          \vec{N}=(0,0,-r)
+          \]
+          Evaluating the force \(\vec F=\langle x^3,y^3,z^3\rangle\) on the
+          surface gives:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(r^3\cos^3\theta,r^3\sin^3\theta,0)
+          \]
+          Then their dot product is:
+          \[
+          \vec{F}\cdot\vec{N}=0
+          \]
+          Thus the integral is:
+          \[
+          \iint_{\text{disk}}\vec{F}\cdot d\vec{S}=0
+          \]
+          So the total surface integral is:
+          \[\begin{aligned}
+          \iint_{\partial V} \vec F\cdot d\vec S
+          &=\iint_{\text{hemi}} \vec F\cdot d\vec S
+          +\iint_{\text{disk}} \vec F\cdot d\vec S \\[5pt]
+          &= \dfrac{6144\pi}{5}+0=\dfrac{6144\pi}{5}
+          \end{aligned}\]
+          which agrees with the volume integral.
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+<li>
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        Verify Gauss' Theorem
+        \(\displaystyle
+        \iiint_V \vec\nabla\cdot\vec F\,dV
+        =\iint_{\partial V} \vec F\cdot d\vec S\)
+        for the vector field
+        \(\vec F=\langle xz^2,yz^2,z^3\rangle\)
+        and the solid inside the cone
+        \(\sqrt{x^2+y^2 } \le z \le 8\) but outside the cone
+        \(1+\sqrt{x^2+y^2 } \le z \le 7\).
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/Verification2X-Cropped.jpg" alt="Nested Cones">
+    </div>
+  </div>
+  <ol class="list-outside">
+    <li>
+      <div class="dotfillex">
+        <p>
+          <strong>LHS: Volume Integral:</strong>&emsp;
+          Compute 2 volume integrals and subtract them.
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX5a"></button>
+          <button class="toggle has-sol" data-toggle="SolX5a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX5a">
+        <p>
+          \(\displaystyle\iiint_V \vec\nabla\cdot\vec F\,dV=21392\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX5a">
+        <p>
+          We calculate the divergence of the vector field:
+          \[
+          \vec\nabla\cdot\vec F
+          = z^2+z^2+3z^2 = 5z^2
+          \]
+          The Jacobian for cylindrical coordinates is \(r\). We first
+          calculate the volume integral over the outside cone with limits
+          \(r \le z \le 8 \), \(0 \le r \le 8 \), and \(0 \le \theta \le 2\pi\):
+          \[\begin{aligned}
+          \iiint\limits_\text{outer} &\vec\nabla\cdot\vec F\,dV
+          = \int_{0}^{2\pi}\int_{0}^{8}
+          \int_{r}^{8} 5z^2r\,dz\,dr\,d\theta \\
+          &=10\pi\int_{0}^{8} \left[\dfrac{1}{3}z^3\right]_{z=r}^{8}r\,dr
+          =\dfrac{10\pi}{3}\int_{0}^{8} 512r-r^4 \,dr \\
+          &=\dfrac{10\pi}{3} \left[256r^2-\dfrac{1}{5}r^5 \right]_{r=0}^{8}
+          =32768\pi
+          \end{aligned}\]
+          Next, we calculate the volume integral of the inner cone with limits
+          \(1+r \le z \le 7 \), \(0 \le r \le 6 \), and \(0 \le \theta \le 2\pi\),
+          given as
+          \[ \begin{aligned}
+          \iiint\limits_\text{inner} &\vec\nabla\cdot\vec F\,dV
+          =\int_{0}^{2\pi}\int_{0}^{6}\int_{1+r}^{7} 5z^2r\,dz\,dr\,d\theta \\
+          &=10\pi\int_{0}^{6} \left[\dfrac{1}{3}z^3\right]_{z=r+1}^{7}r\,dr
+          =\dfrac{10\pi}{3}\int_{0}^{6} (7^3-(1+r)^3)\,r\,dr \\
+          &=\dfrac{10\pi}{3}\int_{0}^{6} (7^3-(1+3r+3r^2+r^3))\,r\,dr \\
+          &=\dfrac{10\pi}{3}\int_{0}^{6} 342r-3r^2-3r^3-r^4\,dr \\
+          &=\dfrac{10\pi}{3} \left[171r^2-r^3-\dfrac{3}{4}r^4-\dfrac{1}{5}r^5
+          \right]_{0}^{6}
+          =11376\pi
+          \end{aligned}
+          \]
+          Finally, we subtract the integral over the inner cone
+          from that for the outer cone, giving us our final answer of:
+          \[\begin{aligned}
+          \iiint\limits_V \vec\nabla\cdot\vec F\,dV
+          &=\iiint\limits_\text{outer} \vec\nabla\cdot\vec F\,dV
+          -\iiint\limits_\text{inner} \vec\nabla\cdot\vec F\,dV \\
+          &=32768\pi-11376\pi=21392\pi
+          \end{aligned}\]
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          <strong>RHS: Surface Integral:</strong>&emsp;
+          Compute 4 surface integrals and properly combine them.
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX5b"></button>
+          <button class="toggle has-ans" data-toggle="AnsX5b"></button>
+          <button class="toggle has-sol" data-toggle="SolX5b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX5b">
+        <p>
+          Be careful with the orientation of the normal vectors of the inner
+          cone - they should point inward to the cone.
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX5b">
+        <p>
+          \(\displaystyle \iint_{\partial V} \vec F\cdot d\vec S=21392\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX5b">
+        <p>
+          We parameterize the disk atop the outer cones as
+          \[
+          \vec{R}_{\text{Disk}}(r,\theta)=(r\cos\theta,r\sin\theta,8)
+          \]
+          The tangent vectors and normal are:
+          \[\begin{aligned}
+          \vec{e}_{r}&=\left\langle \cos \theta ,\sin \theta ,0\right\rangle \\
+          \vec{e}_{\theta }&=\left\langle -r\sin \theta ,r\cos \theta ,0\right\rangle \\
+          \vec{N}&=\langle 0,0,r\rangle
+          \end{aligned}\]
+          Notice the normal is correctly oriented upward. Next we evaluate
+          \(\vec{F}=\left\langle xz^{2},yz^{2},z^3\right\rangle\) on the disk:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(64r\sin\theta,64r\cos\theta,512)
+          \]
+          Its dot product with the normal is:
+          \(\vec{F}\cdot \vec{N}=512r\). So:
+          \[\begin{aligned}
+          \iint_{\scriptstyle\text{Outer} \atop \scriptstyle\text{Disk}}
+          \vec{F}\cdot d\vec{S}
+          &=\int_{0}^{2\pi}\int_{0}^{8} 512r\,dr\,d\theta \\
+          &=2\pi\left[256r^2\right] _{0}^{8}
+          =32768\pi
+          \end{aligned}\]
+          We then parametrize the inner disk as:
+          \[
+          \vec{R}_{\text{Disk}}(r,\theta)=(r\cos\theta,r\sin\theta,7)
+          \]
+          This results in the same normal of \(\vec{N}=\langle 0,0,r\rangle\).
+          However, the normal is pointing outward when it should
+          point inward. So we reverse the signs, yielding
+          \(\vec{N}=\langle 0,0,-r\rangle\)
+          Next, we evaluate
+          \(\vec{F}=\left\langle xz^{2},yz^{2},z^3\right\rangle\) on the disk:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(49r\sin\theta,49r\cos\theta,343)
+          \]
+          and compute its dot product with the normal:
+          \[
+          \vec{F}\cdot \vec{N}=-343r
+          \]
+          So:
+          \[\begin{aligned}
+          \iint_{\scriptstyle\text{Inner} \atop \scriptstyle\text{Disk}}
+          \vec{F}\cdot d\vec{S}
+          &=\int_{0}^{2\pi}\int_{0}^{6} -343r\,dr\,d\theta \\
+          &=\pi\left[-343r^2\right] _{0}^{6}
+          =-12348\pi
+          \end{aligned}\]
+          The next step is to do the same thing for the outer cone. It is
+          parameterized as:
+          \[
+          \vec{R}_{\text{cone}}=\left(r\cos\theta,r\sin\theta,r\right)
+          \]
+          The tangent and normal vectors are:
+          \[\begin{aligned}
+          \vec{e}_{r}&=\left( \cos \theta ,\sin \theta ,1\right) \\
+          \vec{e}_{\theta }&=\left( -r\sin \theta ,r\cos \theta ,0\right) \\
+          \vec{N}&=(-r\cos\theta,-r\sin\theta,r)
+          \end{aligned}\]
+          This is oriented up and in, but we need down and out. So we reverse
+          the signs:
+          \[
+          \vec{N}=(r\cos\theta,r\sin\theta,-r)
+          \]
+          Evaluating \(\vec{F}=\left\langle xz^{2},yz^{2},z^3\right\rangle\)
+          on the cone gives:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(r^{3}\cos\theta,r^{3}\sin\theta,r^{3})
+          \]
+          Then the dot product is:
+          \[\begin{aligned}
+          \vec{F}\cdot\vec{N}
+          &=r^{4}\cos^2\theta+r^{4}\sin^2\theta-r^{4}=0
+          \end{aligned}\]
+          So the surface integral for the outer cone is equal to zero.
+          \[
+          \iint_{\scriptstyle\text{Outer} \atop \scriptstyle\text{Cone}}
+           \vec{F}\cdot d\vec{S}=0
+          \]
+          Next, we parametrize the inner cone as:
+          \[
+          \vec{R}_{\text{cone}}=\left(r\cos\theta,r\sin\theta,1+r\right)
+          \]
+          The tangent and normal vectors are:
+          \[\begin{aligned}
+          \vec{e}_{r}&=\left( \cos \theta ,\sin \theta ,1\right) \\
+          \vec{e}_{\theta }&=\left( -r\sin \theta ,r\cos \theta ,0\right) \\
+          \vec{N}&=(-r\cos\theta,-r\sin\theta,r)
+          \end{aligned}\]
+          This is oriented up and in, which is correct.
+          Evaluating \(\vec{F}=\left\langle xz^{2},yz^{2},z^3\right\rangle\)
+          on the cone gives:
+          \[
+          \left.\vec{F}\right\vert_{\vec{R}}
+          =(r\cos\theta(1+r)^2,r\sin\theta(1+r)^2,(1+r)^3)
+          \]
+          Then the dot product is:
+          \[\begin{aligned}
+          \vec{F}\cdot\vec{N}
+          &=-r^{2}\cos^2\theta(1+r)^2-r^{2}\sin^2\theta(1+r)^2+r(1+r)^{3} \\
+          &=-r^{2}(1+r)^2+r(1+r)^{3} \\
+          &=r^3+2r^2+r
+          \end{aligned}\]
+          So the integral for the inner cone is:
+          \[\begin{aligned}
+          \iint_{\scriptstyle\text{Inner} \atop \scriptstyle\text{Cone}}
+          \vec{F}\cdot d\vec{S}
+          &=\int_{0}^{2\pi}\int_{0}^{6} r^3+2r^2+r\,dr\,d\theta \\
+          &=2\pi \left[\dfrac{1}{4}r^4+\dfrac{2}{3}r^3
+          +\dfrac{1}{2}r^2\right]_{0}^{6}
+          =972\pi
+          \end{aligned}\]
+          Summing our surface integrals, we see that:
+          \[\begin{aligned}
+          \iint_{\partial V} \vec{F}\cdot d\vec{S}
+          &=\iint_{\scriptstyle\text{Outer} \atop \scriptstyle\text{Disk}}
+          +\iint_{\scriptstyle\text{Outer} \atop \scriptstyle\text{Cone}}
+          +\iint_{\scriptstyle\text{Inner} \atop \scriptstyle\text{Disk}}
+          +\iint_{\scriptstyle\text{Inner} \atop \scriptstyle\text{Cone}} \\
+          &=32768\pi+0 - 12348\pi-0+972\pi=21392\pi
+          \end{aligned}\]
+          which agrees with the volume integral.
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+<big>PY: Checked to here.</big>
+
+<!--Proof-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="Proof.html">c. Proof</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Proof.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Prove the \(Q\) piece of Gauss' Theorem for a rectangular box.
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX6"></button>
+    	<button class="toggle has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+      You are trying to prove that
+      \[
+      \iiint_V \partial_yQ\,dV
+      =\iint_{\partial V} Q\,dz\,dx
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      We prove
+      \[
+      \iiint_V \partial_y Q\,dV
+      =\iint_{\partial V} Q\,dz\,dx
+      \]
+      for the simple case of a rectangular box with bounds \(a \le x \le b\)
+      and \(c \le y \le d\) and \(e \le z \le f\). To carry out the proof,
+      we evaluate the left and right hand sides to see they are equal.
+      <br>
+      <br>
+      <strong>LHS:</strong>
+      To compute the integral on the left, we apply the Fundamental Theorem of
+      Calculus to the \(y\)-integral while \(x\) and \(z\) are held constant:
+      \[\begin{aligned}
+      \iiint_V \partial_yQ\,dV
+      &=\int_e^f\int_c^d\int_a^b \partial_yQ(x,y,z)\,dx\,dz\,dx \\
+      &=\int_e^f\int_a^b Q(x,d,z)-Q(x,c,z)\,dz\,dx
+      \end{aligned}\]
+      We now want to see that this is the same as the integral on the right.
+      <br>
+      <br>
+      <strong>RHS:</strong>
+      We know that \(\partial V\) is the surface of the box, which has
+      \(6\) faces. To evaluate the right side we need to parameterize all six
+      faces and find their normal vectors. In each case, we take
+      \(\vec N=\vec e_u\times\vec e_v\).
+      \[\begin{aligned}
+      \vec R_1(u,v)&=(a,v,u) \quad
+      \vec N_1=
+      \begin{vmatrix}
+      i & j & k \\
+      0 & 0 & 1 \\
+      0 & 1 & 0
+      \end{vmatrix}
+      =(-1,0,0) \quad\,
+      dx\,dz=0 \\
+      \vec R_2(u,v)&=(b,u,v) \quad
+      \vec N_2=
+      \begin{vmatrix}
+      i & j & k \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+      \end{vmatrix}
+      =(1,0,0) \qquad
+      dx\,dz=0 \\
+      \vec R_3(u,v)&=(u,c,v) \quad
+      \vec N_3=
+      \begin{vmatrix}
+      i & j & k \\
+      1 & 0 & 0 \\
+      0 & 0 & 1
+      \end{vmatrix}
+      =(0,-1,0) \quad\,
+      dx\,dz=-du\,dv \\
+      \vec R_4(u,v)&=(v,d,u) \quad
+      \vec N_4=
+      \begin{vmatrix}
+      i & j & k \\
+      0 & 0 & 1 \\
+      1 & 0 & 0
+      \end{vmatrix}
+      =(0,1,0) \qquad
+      dx\,dz=du\,dv \\
+      \vec R_5(u,v)&=(v,u,e) \quad
+      \vec N_5=
+      \begin{vmatrix}
+      i & j & k \\
+      0 & 1 & 0 \\
+      1 & 0 & 0
+      \end{vmatrix}
+      =(0,0,-1) \quad\,
+      dx\,dz=0 \\
+      \vec R_6(u,v)&=(u,v,f) \quad
+      \vec N_6=
+      \begin{vmatrix}
+      i & j & k \\
+      1 & 0 & 0 \\
+      0 & 1 & 0
+      \end{vmatrix}
+      =(0,0,1) \qquad
+      dx\,dz=0
+      \end{aligned}\]
+      Notice that we have chosen the order of \(u\) and \(v\) in each
+      parametrization so that the normal \(\vec N\) points out of the surface,
+      i.e. toward
+    </p>
+    <p class="center">
+      negative &nbsp; \(x\) &nbsp; when &nbsp; \(x=a\)
+      &emsp; and &emsp;
+      positive &nbsp; \(x\) &nbsp; when &nbsp; \(x=b\)
+    </p>
+    <p class="center">
+      negative &nbsp; \(y\) &nbsp; when &nbsp; \(y=c\)
+      &emsp; and &emsp;
+      positive &nbsp; \(y\) &nbsp; when &nbsp; \(y=d\)
+    </p>
+    <p class="center">
+      negative &nbsp; \(z\) &nbsp; when &nbsp; \(z=e\)
+      &emsp; and &emsp;
+      positive &nbsp; \(z\) &nbsp; when &nbsp; \(z=f\)
+    </p>
+    <p>
+      Further, the value of \(dx\,dz\) for each parametrization is found
+      from the equation
+      \[
+      d\vec S=\vec N\,du\,dv=(dy\,dz,dz\,dx,dx\,dy)
+      \]
+      Since \(dx\,dz=0\) for \(4\) of the \(6\) surfaces, the only surfaces
+      that contribute to the right side of Gauss' Theorem are surfaces
+      \(\vec R_3(u,v)\) and \(\vec R_4(u,v)\).
+      Thus we evaluate the right side by summing the two surface integrals:
+      \[\begin{aligned}
+      \iint_{\partial V} Q\,dz\,dx
+      &=\iint_{\vec R_3 } Q\,dz\,dx+\iint_{\vec R_4 } Q\,dz\,dx \\
+      &=-\int_e^f\int_a^b Q(u,c,v)\,du\,dv+\int_a^b\int_e^f Q(v,d,u)\,du\,dv
+      \end{aligned}\]
+      Notice that on the surface \(\vec R_3\) the \(v\) variable is the
+      value of \(z\) so that \(e \le v \le f\) and on the surface \(\vec R_4\)
+      the \(v\) variable is the value of \(x\) so that \(c \le v \le d\) and
+      the opposite is true for \(u\).
+    </p>
+    <p>
+      By Fubini's theorem, we can interchange the order of the differentials
+      of integration on the second integral if we also interchange the order
+      of the limits on the integrals
+      \[
+      \iint_{\partial V} Q\,dz\,dx
+      =-\int_e^f\int_a^b Q(u,c,v)\,dv\,du+\int_e^f\int_a^b Q(u,d,v)\,dv\,du
+      \]
+      Finally, in the first integral, we replace the dummy variables \(v\)
+      and \(u\) by \(z\) and \(x\) respectively and in the second integral,
+      we replace the dummy variables \(u\) and \(v\) by \(x\) and \(z\)
+      respectively:
+      \[
+      \iint_{\partial V} Q\,dz\,dx
+      =-\int_e^f\int_c^d Q(x,c,z)\,dz\,dx+\int_e^f\int_c^d Q(x,d,z)\,dz\,dx
+      \]
+      This is the same result we found on the left side. So the theorem is
+      proved for the case that \(\vec F=\langle Q,0,0\rangle\).
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Prove the \(T\) piece of Gauss' Theorem for a rectangular box.
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX7"></button>
+      <button class="toggle has-sol" data-toggle="SolX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+      You are trying to prove that
+      \[
+      \iiint_V \partial_zT\,dV
+      =\iint_{\partial V} T\,dx\,dy
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+      This solution has been omitted for the benefit of the poor professors who
+      have to assign homework to you reprobates. We encourage you to attempt it
+      on your own.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p data-title="Challenge Problem">
+      Reprove the \(P\) piece of Gauss' Theorem but for a curvilinear
+      rectangular box given in the curvilinear coordinates
+      \[
+      \vec R(u,v,w)=\langle x(u,v,w),y(u,v,w),z(u,v,w)\rangle
+      \]
+      by
+      \[
+      a \le u \le b \qquad c \le v \le d \qquad e \le w \le f
+      \]
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX8"></button>
+      <button class="toggle has-sol" data-toggle="SolX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      You are trying to prove that
+      \[
+      \iiint_V \partial_xP\,dV
+      =\iint_{\partial V} P\,dy\,dx
+      \]
+      On the left you will need the Jacobian determinant
+      \(J=\left|\dfrac{\partial(x,y,z)}{\partial(u,v,w)}\right|\).
+      Assume the coordinates are a right handed system, so you can ignore the
+      absolute value.
+      <br>
+      On the right, you will need to parametrize each surface. For example the
+      surface with \(u=a\) is:
+      \[
+      \vec R(a,v,w)=\langle x(a,v,w),y(a,v,w),z(a,v,w)\rangle
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+      This solution will take a serious amount of work.
+    </p>
+  </div>
+</li>
+
+<!--Applications-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="ApplSurf2Vol.html">d. Applications</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ApplSurf2Vol.html">1</a></div>
+      
+        <div><a href="ApplVol2Surf.html">2</a></div>
+      
+        <div><a href="ApplSurfIndep.html">3</a></div>
+      
+        <div><a href="ApplFluidFlow.html">4</a></div>
+      
+        <div><a href="ApplGauss.html">5</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute \(\displaystyle \iint_{\partial P} \vec{F}\cdot d\vec{S}\) for
+      \(\vec{F}=\left\langle xy^{2},yx^{2},z( x^{2}+y^{2})\right\rangle\)
+      over the complete surface of the solid paraboloid, \(P\), above
+      \(z=x^{2}+y^{2}\) below the plane \(z=4\), oriented outward.
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+      \(\displaystyle \iint_{\partial P} \vec{F}\cdot d\vec{S}
+      =\dfrac{64}{3}\pi\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+      By Gauss' Theorem,
+      \(\displaystyle \iint_{\partial P} \vec{F}\cdot d\vec{S}
+      =\iiint_P\vec{\nabla}\cdot \vec{F}\ dV\).
+      Using cylindrical coordinates:
+      \(\vec{\nabla}\cdot \vec{F}=y^{2}+x^{2}+x^{2}+y^{2}=2r^{2}\).
+      The Jacobian for cylindrical coordinates is:
+      \(dV=r\,dr\,d\theta \,dz\).
+      The range for \(z\) is \(r^{2} \le z \le 4\) where \(0 \le r \le 2\)
+      and \(0 \le \theta \le 2\pi\), So the integral is:
+      \[ \begin{aligned}
+      \iint_{\partial P} &\vec{F}\cdot d\vec{S}
+      =\int_{0}^{2\pi}\int_{0}^{2}\int_{r^{2}}^{4} 2r^{3}\,dz\,dr\,d\theta \\
+      &=2\pi \int_{0}^{2} \left[2r^{3}z\right]_{z=r^{2}}^{4}\,dr
+      =2\pi \int_{0}^{2} \left(8r^{3}-2r^{5}\right)\,dr \\
+      &=2\pi \left[2r^{4}-\dfrac{r^{6}}{3}\right]_{0}^{2}
+      =2\pi \left( 32-\dfrac{64}{3}\right)
+      =\dfrac{64}{3}\pi
+      \end{aligned} \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div>
+		<p>
+      Consider an electric field
+      \(\displaystyle \vec{E}=\left\langle
+      \dfrac{x}{x^{2}+y^{2}+z^{2}},
+      \dfrac{y}{x^{2}+y^{2}+z^{2}},
+      \dfrac{z}{x^{2}+y^{2}+z^{2}}
+      \right\rangle\) on the sphere of radius \(\rho =2\).
+		</p>
+    <ol type="a">
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+  					Find the charge density, \(\delta_{e}\), and use it to find the
+            total charge inside the sphere,
+            \(\displaystyle Q=\iiint_S \delta_{e}\,dV\).
+  				</p>
+  				<p>
+  					<button class="toggle has-ans" data-toggle="AnsX10a"></button>
+  					<button class="toggle has-sol" data-toggle="SolX10a"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX10a">
+  				<p>
+            \(
+            \delta _{e}=\dfrac{1}{4\pi \rho ^{2}}\)
+            &emsp;
+            \(Q=2\)
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX10a">
+  				<p>
+            To find the charge density, we will use the differential version
+            of Gauss' Law,
+            \(\delta_{e}=\dfrac{1}{4\pi}\vec{\nabla}\cdot\vec{E}\).
+            So we need to compute the divergence of \(\vec{E}\):
+            \[\begin{aligned}
+            \vec{\nabla}\cdot\vec{E}
+            &=\dfrac{-x^2+y^2+z^2}{(x^2+y^2+z^2)^2}
+            +\dfrac{ x^2-y^2+z^2}{(x^2+y^2+z^2)^2}
+            +\dfrac{ x^2+y^2-z^2}{(x^2+y^2+z^2)^2} \\
+            &=\dfrac{x^2+y^2+z^2}{(x^2+y^2+z^2)^2}
+            =\dfrac{1}{x^2+y^2+z^2}
+            \end{aligned}\]
+            By Gauss' Law, the charge density is:
+            \[
+            \delta _{e}=\dfrac{1}{4\pi\left(x^{2}+y^{2}+z^{2}\right)}
+            =\dfrac{1}{4\pi\rho ^{2}}
+            \]
+            To find \(Q\), we need to use spherical coordinates and integrate
+            over the volume:
+            \[\begin{aligned}
+            Q&=\iiint_{V}\rho _{e}\ dV
+            =\int_{0}^{2\pi}\int_{0}^{\pi}\int_{0}^{2}
+            \dfrac{1}{4\pi\rho^{2}}\rho^{2}\sin\phi\,d\rho\,d\phi\,d\theta \\
+            &=\dfrac{2\pi}{4\pi}\int_{0}^{2}\,d\rho\int_{0}^{\pi}\sin\phi\,d\phi
+            =\dfrac{1}{2}(2)\left[-\cos \phi\right]_{0}^{\pi} \\
+            &=-(-1)-(-1)=2
+            \end{aligned}\]
+  				</p>
+  			</div>
+  		</li>
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+            Find the total charge,
+            \(\displaystyle
+            Q=\dfrac{1}{4\pi }\iint_{\partial S}^{}\vec{E}\cdot d\vec{S}\).
+            Do both versions of Gauss' Law give the same answer?
+  				</p>
+  				<p>
+  					<button class="toggle has-ans" data-toggle="AnsX10b"></button>
+  					<button class="toggle has-sol" data-toggle="SolX10b"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX10b">
+  				<p>
+            \(Q=2\)
+            &emsp;
+            So the two versions of Gauss' Law give the same answer.
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX10b">
+  				<p>
+            For this we will use the integral version of Gauss' Law,
+            \(\displaystyle
+            Q=\dfrac{1}{4\pi}\iint_{\partial S}^{}\vec{E}\cdot d\vec{S}\),
+            where the boundary surface is the sphere of radius \(2\) which
+            we parametrize as:
+            \[
+            \vec{R}(\phi,\theta)
+            =(2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi)
+            \]
+            The normal vector is the cross product of the tangent vectors:
+            \[\begin{aligned}
+            \vec{N}&=\vec{e}_{\phi}\times\vec{e}_{\theta}
+            =\begin{vmatrix}
+            \hat{\imath}         & \hat{\jmath}        & \hat{k} \\
+             2\cos\phi\cos\theta & 2\cos\phi\sin\theta & -2\sin\phi \\
+            -2\sin\phi\sin\theta & 2\sin\phi\cos\theta & 0
+            \end{vmatrix} \\
+            &=\hat{\imath}(4\sin^{2}\phi\cos\theta)
+             -\hat{\jmath}(-4\sin^{2}\phi\sin\theta) \\
+            &\quad+\hat{k}(4\sin\phi\cos\phi\cos^2\theta
+            +4\sin\phi\cos\phi\sin^2\theta) \\
+            &=\left\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,
+            4\sin\phi\cos\phi\right\rangle
+            \end{aligned}\]
+            We evaluate the electric field \(\vec{E}\) on the surface:
+            \[\begin{aligned}
+            \vec{E}
+            &=\left\langle \dfrac{x}{x^2+y^2+z^2},
+                           \dfrac{y}{x^2+y^2+z^2},
+                           \dfrac{z}{x^2+y^2+z^2}\right\rangle \\
+            &=\dfrac{1}{2}\left\langle \sin\phi\cos\theta,\sin\phi\sin\theta,
+            \cos\phi\right\rangle
+            \end{aligned}\]
+            Next we take the dot product:
+            \[ \begin{aligned}
+            \vec{E}\cdot\vec{N}
+            &=\dfrac{1}{2}(4\sin^3\phi\cos^2\theta+4\sin^3\sin^2\theta
+            +4\sin\phi\cos^2\phi) \\
+            &=2\sin^3\phi+2\sin\phi\cos^2\phi
+            =2\sin\phi
+            \end{aligned}\]
+            Then we integrate:
+            \[\begin{aligned}
+            \iint_{\partial S}^{}\vec{E}\cdot d\vec{S}
+            &=\int_{0}^{2\pi}\int_{0}^{\pi} \vec{E}\cdot\vec{N}\,d\phi\,d\theta \\
+            &=\int_{0}^{2\pi}\int_{0}^{\pi} 2\sin\phi\,d\phi\,d\theta \\
+            &=2\left( 2\pi \right) \left[-\cos \phi \right] _{0}^{\pi }
+            =8\pi
+            \end{aligned}\]
+            Finally, we use the integral version of Gauss' Law to compute the
+            total charge:
+            \[
+            Q=\dfrac{1}{4\pi}\iint_{\partial S}^{}\vec{E}\cdot d\vec{S}
+            =\dfrac{1}{4\pi}8\pi=2
+            \]
+            This agrees with our other method of calculating \(Q\).
+  				</p>
+  			</div>
+  		</li>
+  	</ol>
+</li>
+<a id="rev"></a>
+
+<big>PY: Checked 7 - 10.</big>
+
+        <div class="rule"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  Evaluate using any appropriate method.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX11"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX11"></button>
+    	<button class="toggle has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX11">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	xxx
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX12a"></button>
+					<button class="toggle has-sol" data-toggle="SolX12a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12a">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12a">
+				<p>
+					xxx
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX12b"></button>
+					<button class="toggle has-sol" data-toggle="SolX12b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12b">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12b">
+				<p>
+					xxx
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

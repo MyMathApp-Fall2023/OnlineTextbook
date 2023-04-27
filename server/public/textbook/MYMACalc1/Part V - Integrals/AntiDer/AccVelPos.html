@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. From Acceleration to Velocity to Position | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ADRulesHyp.html" title="Previous">&lArr;</a></li>
+      <li><a href="DiffEq.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. From Acceleration to Velocity to Position</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We know that the derivative of the position is the velocity and the
+  derivative of the velocity is the acceleration. Conversely, the
+  antiderivative of the velocity is the position, up to an additive constant,
+  and the antiderivative of the acceleration is the velocity, up to an
+  additive constant. We can determine the constants by specifying initial
+  conditions for the position and/or velocity.
+</p>
+<a id="V2P"></a>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  If a car starts at time \(t=2\) hr at the position \(x(2)=3\) km and has
+  velocity \(v(t)=3t^2+2t\) km/hr, where is the car at \(t=3\) hr?
+</p>
+<p class="sol">
+  The position is an antiderivative of the velocity. So
+  \[
+  x(t)=t^3+t^2+C
+  \]
+  To find \(C\), we use the initial condition:
+  \[
+  x(2)=2^3+2^2+C=3 \qquad \Longrightarrow \qquad C=3-8-4=-9
+  \]
+  So the position at time \(t\) is:
+  \[
+  x(t)=t^3+t^2-9
+  \]
+  and the position at \(t=3\) hr is:
+  \[
+  x(3)=3^3+3^2-9=27+9-9=27\,\text{km}
+  \]
+</p>
+<a id="A2V"></a>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    At time \(t=2\) hr, a car has velocity \(v(2)=45\) mi/hr. If it accelerates
+    with acceleration \(a(t)=\dfrac{1}{2}t\) mi/hr\(^2\), what is its velocity at
+    \(t=4\) hr?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(
+  v(4)=48 \text{mi/hr}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Since the velocity is an antiderivative of the acceleration,
+    \[
+    v(t)=\dfrac{1}{4}t^2+C
+    \]
+    To find C, we use the initial condition for the velocity:
+    \[
+    v(2)=\dfrac{1}{4}\cdot2^2+C=45
+    \]
+    So \(C=44\) and the velocity at time \(t\) is:
+    \[
+    v(t)=\dfrac{1}{4}t^2+44
+    \]
+    So the velocity at \(t=4\) hr is:
+    \[
+    v(4)=\dfrac{1}{4}\cdot4^2+44=48 \text{mi/hr}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by differentiating the velocity \(v(t)=\dfrac{1}{4}t^2+44\) to get
+    the acceleration:
+    \[
+    a(t)=v'(t)=\dfrac{1}{2}t
+    \]
+    And by evaluating the initial condition:
+    \[
+    v(2)=\dfrac{1}{4}2^2+44=45
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing the velocity and position from the
+  acceleration by using
+  the following Maplet (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/AccVelPos.maplet" download>From Acceleration to Velocity and Position</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

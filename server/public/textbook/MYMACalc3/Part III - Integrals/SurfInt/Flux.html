@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Flux and Expansion | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VecSurfIntAlt.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>f. Applications of Vector Surface Integrals</h2>
+
+
+      
+      <h2>1. Flux and Expansion</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+  The <span class="defword">flux</span> of a vector field \(\vec{F}\) through
+  a surface, \(S\), parametrized by \(\vec R(u,v)\) is
+  \[
+  \iint_S \vec{F}\cdot\vec{dS}
+  =\iint_S \vec{F}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+  \]
+  Note that notation \(\vec{F}(\vec R(u,v))\) means the vector field
+  \(\vec{F}\) must be <span class="hl">evaluated on the surface</span>.
+</p>
+<p>
+  Flux is often used in subjects such as electromagnetism and fluid dynamics.
+  Electric fields, magnetic fields, and fluid flows can be expressed as vector
+  fields, and it is often useful to know how much of one of these fields is
+  flowing through a surface.
+</p>
+<p class="def">
+  The <span class="defword">expansion</span> of a vector field \(\vec{F}\)
+  is the flux of the vector field <span class="hl">outward</span> through
+  a <em>closed</em> surface (for example, a sphere, box, or a cylinder
+  with the ends closed). The <span class="defword">contraction</span> of
+  a vector field \(\vec{F}\) is the negative of the
+  <span class="hl">expansion</span>.
+</p>
+<p class="remark">
+  See a <a href="VecSurfInt.html" title="Return using the Back button.">
+  previous page</a> for a discussion of the orientation of the surface.
+  So to say the flux is <span class="hl">outward</span> means the normal
+  is pointing outward.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the flux of the velocity field,
+  \(\vec{V}=\left\langle 2xz,2yz,x^2+y^2\right\rangle\), through
+  the paraboloid, \(P\), given by \(z=x^2+y^2\) for \(z \le 4\) with the
+  normal pointing down and out.
+</p>
+<p class="sol">
+  The flux is \(\displaystyle \iint_P \vec{V}\cdot\,d\vec{S}\).
+  To find a parametrization, we start with cylindrical coordinates:
+  \[
+  \vec R(r,\theta,z)=\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+  \]
+  and substitute \(z=x^2+y^2=r^2\). This reduces the expression to two parameters:
+  \[
+  \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+  \]
+  Now we find the tangent vectors and the normal:
+  \[
+  \begin{array}{r}
+  \\
+  \vec{e}_r= \\
+  \vec{e}_\theta=
+  \end{array}
+  \left|
+  \begin{array}{ccc}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  \cos\theta   & \sin\theta   & 2r \\
+  -r\sin\theta & r\cos\theta  & 0
+  \end{array}
+  \right|
+  =\vec{e}_r\times\vec{e}_\theta=\vec{N}
+  \]
+  So
+  \[\begin{aligned}
+  \vec{N}
+  &=\hat{\imath}(-2r^2\cos\theta)
+  -\hat{\jmath}(--2r^2\sin\theta)
+  +\hat{k}(r\cos^2\theta--r\sin^2\theta) \\
+  &=\left\langle -2r^2\cos\theta,-2r^2\sin\theta,r\right\rangle
+  \end{aligned}\]
+  The problem defines the normal to be down and out. However,\(r \ge 0\) so that the
+  \(z\)-component of \(\vec N\) is positive, which is up. Further, in the first quadrant,
+  \(\sin\theta \ge 0\) and \(\cos\theta \ge 0\) so that the \(x\)- and
+  \(y\)-components of \(\vec N\) are negative or inward. So we need to reverse
+  \(\vec{N}\).
+  \[
+  \text{Reverse:}\qquad\vec{N}
+  =\left\langle 2r^2\cos\theta,2r^2\sin\theta,-r\right\rangle
+  \]
+  Next, we evaluate the vector field on the surface:
+  \[
+  \left.\vec{V}\right|_{\vec R(r,\theta)}
+  =\left\langle 2r^3\cos\theta,2r^3\sin\theta,r^2\right\rangle
+  \]
+  and compute its dot product with the normal:
+  \[\begin{aligned}
+  \vec{V}\cdot\vec{N}
+  &=\left\langle 2r^3\cos\theta,2r^3\sin\theta,r^2\right\rangle\cdot
+  \left\langle 2r^2\cos\theta,2r^2\sin\theta,-r\right\rangle \\
+  &=4r^5-r^3
+  \end{aligned}\]
+  Our integral is
+  \[\begin{aligned}
+  \text{Flux}
+  &=\int \int \vec{V}\cdot\vec{N}\,dr\,d\theta
+  =\int_0^{2\pi}\int_0^2 (4r^5-r^3)\,dr\,d\theta \\
+  &=2\pi\left[\dfrac{2r^6}{3}-\dfrac{r^4}{4}\right]_0^2
+  =2\pi\left(\dfrac{128-12}{3}\right)
+  =\dfrac{232}{3}\pi
+  \end{aligned}\]
+</p>
+<p class="remark">
+  <span class="redbig">Caution:</span>
+  Do not put an extra factor of \(r\) into the integrand, just because you see
+  a \(dr\,d\theta\). This \(r\) is already in \(\vec{N}\). While these
+  variables are similar to those used in cylindrical coordinates, <em>they are
+  not the same</em>. Here, \(r\) and \(\theta\) are <em>parameters for the
+  surface</em>, <strong>not</strong> cylindrical (nor polar) coordinates.
+</p>
+
+				<div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  The electric field of a positive point charge is given by:
+  \[\begin{aligned}
+  \vec E&(x,y,z)=\dfrac{\hat r}{r^2}=\dfrac{\vec r}{r^3} \\
+  &=\left\langle \dfrac{x}{\left(x^2+y^2+z^2\right)^{3/2}},
+                 \dfrac{y}{\left(x^2+y^2+z^2\right)^{3/2}},
+                 \dfrac{z}{\left(x^2+y^2+z^2\right)^{3/2}}\right\rangle
+  \end{aligned}\]
+</p>
+<ol class="list-outside" type="a">
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Find the expansion of the electric field out of the cylinder, \(C\),
+        given by \(x^2+y^2 \le 9\) and \(-3 \le z \le 3\).
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2a"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2a"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+	    <p>
+	      There are \(3\) pieces to the boundary: the curved sides, \(S\), the
+        top, \(T\), and the bottom, \(B\). Compute the flux through each and
+        add them up. To parametrize each surface, start with cylindrical
+        coordinates and set \(r=3\) for the sides, \(z=3\) for the top and
+        \(z=-3\) for the bottom.
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+	    <p>
+	      \(\displaystyle \text{Expansion}=\iint_C \vec E\cdot d\vec S=4\pi\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+	    <p>
+	      There are \(3\) pieces to the boundary: the curved sides, \(S\), the
+        top, \(T\), and the bottom, \(B\). We will compute the flux through
+        each and add them up.
+	    </p>
+      <div class="collapse hide"
+      data-title="<span style='color:black'>Sides:</span>&emsp;
+      \(\displaystyle \text{Flux}_S=\iint_S \vec E\cdot d\vec S=2\pi\sqrt{2}\)">
+        <p>
+          To parametrize the curved side surface, we start with cylindrical
+          coordinates:
+          \[
+          \vec R(r,\theta,z)
+          =\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+          \]
+          and set \(r=3\):
+          \[
+          \vec R(\theta,z)
+          =\left\langle 3\cos\theta,3\sin\theta,z\right\rangle
+          \]
+          The tangent and normal vectors are:
+          \[\begin{aligned}
+          \vec e_\theta&=\left\langle -3\sin\theta,3\cos\theta,0\right\rangle \\
+          \vec e_z&=\left\langle 0,0,1\right\rangle \\
+          \vec N&=\left\langle 3\cos\theta,3\sin\theta,0\right\rangle
+          \end{aligned}\]
+          As should be expected, the normal is horizontal and the \(x\) and \(y\)
+          components are parallel to those for the position vector. Like the
+          position vector, the normal points outward, as required.
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+        	\[
+          \vec E(\theta,z)
+          =\left\langle \dfrac{3\cos\theta}{\left(9+z^2\right)^{3/2}},
+                        \dfrac{3\sin\theta}{\left(9+z^2\right)^{3/2}},
+                        \dfrac{z}{\left(9+z^2\right)^{3/2}}\right\rangle
+          \]
+          and its dot product with the normal is:
+  	      \[
+  	      \vec E\cdot\vec N
+          =\dfrac{9\cos^2\theta}{\left(9+z^2\right)^{3/2}}
+          +\dfrac{9\sin^2\theta}{\left(9+z^2\right)^{3/2}}
+          =\dfrac{9}{\left(9+z^2\right)^{3/2}}
+  	      \]
+          So the flux is:
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=\iint_S \vec E\cdot d\vec S
+          =\iint_S \vec E\cdot \vec N\,d\theta\,dz \\
+          &=\int_{-3}^3\int_0^{2\pi} \dfrac{9}{\left(9+z^2\right)^{3/2}}\,d\theta\,dz
+          =2\pi\int_{-3}^3 \dfrac{9}{\left(9+z^2\right)^{3/2}}\,dz
+          \end{aligned}\]
+          At this point we use the trig substitution \(z=3\tan\alpha\) and
+          \(dz=3\sec^2\alpha\,d\alpha\):
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=2\pi\int_{z=-3}^{3}
+          \dfrac{9}{\left(9+9\tan^2\alpha\right)^{3/2}}3\sec^2\alpha\,d\alpha \\
+          &=2\pi\int_{z=-3}^{3}
+          \dfrac{1}{\left(1+\tan^2\alpha\right)^{3/2}}\sec^2\alpha\,d\alpha \\
+          &=2\pi\int_{z=-3}^{3} \cos\alpha\,d\alpha
+          =2\pi\left[\sin\alpha\dfrac{}{}\right]_{z=-3}^{3}
+          \end{aligned}\]
+          We now draw a right triangle with angle \(\alpha\), opposite side \(z\),
+          adjacent side \(3\) and hypotenuse \(\sqrt{9+z^2}\). Then
+          \(\sin\alpha=\dfrac{z}{\sqrt{9+z^2}}\). So
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=2\pi\left[\dfrac{z}{\sqrt{9+z^2}}\right]_{z=-3}^{3}
+          =4\pi\dfrac{3}{\sqrt{18}}
+          =2\pi\sqrt{2}
+          \end{aligned}\]
+  	    </p>
+      </div>
+      <div class="collapse hide"
+      data-title="<span style='color:black'>Top:</span>&emsp;
+      \(\displaystyle \text{Flux}_T=\iint_T \vec E\cdot d\vec S=2\pi-\pi\sqrt{2}\)">
+        <p>
+          To parametrize the top surface, we start with cylindrical
+          coordinates and set \(z=3\):
+          \[
+          \vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,3\right\rangle
+          \]
+          After finding the tangent vectors, the normal vector is
+          \(\vec N=\left\langle 0,0,r\right\rangle\).
+          Since the \(z\) component is positive, this points up as required.
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+        	\[
+          \vec E(\theta,z)
+          =\left\langle \dfrac{r\cos\theta}{\left(r^2+9\right)^{3/2}},
+                        \dfrac{r\sin\theta}{\left(r^2+9\right)^{3/2}},
+                        \dfrac{3}{\left(r^2+9\right)^{3/2}}\right\rangle
+          \]
+          and its dot product with the normal is:
+  	      \[
+  	      \vec E\cdot\vec N
+          =\dfrac{3r}{\left(r^2+9\right)^{3/2}}
+  	      \]
+          So the flux is:
+          \[\begin{aligned}
+          \text{Flux}_T
+          &=\iint_T \vec E\cdot d\vec S
+          =\iint_T \vec E\cdot \vec N\,dr\,d\theta \\
+          &=\int_0^{2\pi}\int_0^3 \dfrac{3r}{\left(r^2+9\right)^{3/2}}\,dr\,d\theta
+          =2\pi\int_0^3 \dfrac{3r}{\left(r^2+9\right)^{3/2}}\,dr
+          \end{aligned}\]
+          At this point we use the substitution \(u=r^2+9\) and
+          \(du=2r\,dr\):
+          \[\begin{aligned}
+          \text{Flux}_T
+          &=\pi\int_{r=0}^3 \dfrac{3}{u^{3/2}}\,du
+          =\pi\left[-2\dfrac{3}{u^{1/2}}\right]_{r=0}^3
+          =-2\pi\left[\dfrac{3}{\left(r^2+9\right)^{1/2}}\right]_0^3 \\
+          &=-\dfrac{2\pi 3}{\left(18\right)^{1/2}}
+          +\dfrac{2\pi 3}{\left(9\right)^{1/2}}
+          =2\pi-\pi\sqrt{2}
+          \end{aligned}\]
+  	    </p>
+  	  </div>
+      <div class="collapse hide"
+      data-title="<span style='color:black'>Bottom:</span>&emsp;
+      \(\displaystyle \text{Flux}_B=\iint_B \vec E\cdot d\vec S=2\pi-\pi\sqrt{2}\)">
+        <p>
+          To parametrize the bottom surface, we start with cylindrical
+          coordinates and set \(z=-3\):
+          \[
+          \vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,-3\right\rangle
+          \]
+          After finding the tangent vectors, the normal vector is
+          \(\vec N=\left\langle 0,0,r\right\rangle\).
+          Since the \(z\) component is positive, this points up but we need
+          it to point down to be out from the solid cylinder. So we reverse
+          it:
+          \[
+          \text{Reverse:}\qquad\vec N
+          =\left\langle 0,0,-r\right\rangle
+          \]
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+        	\[
+          \vec E(\theta,z)
+          =\left\langle \dfrac{r\cos\theta}{\left(r^2+9\right)^{3/2}},
+                        \dfrac{r\sin\theta}{\left(r^2+9\right)^{3/2}},
+                        \dfrac{-3}{\left(r^2+9\right)^{3/2}}\right\rangle
+          \]
+          and its dot product with the normal is (again):
+  	      \[
+  	      \vec E\cdot\vec N
+          =\dfrac{3r}{\left(r^2+9\right)^{3/2}}
+  	      \]
+          So the flux is (again):
+          \[\begin{aligned}
+          \text{Flux}_B
+          &=\iint_B \vec E\cdot d\vec S
+          =\iint_B \vec E\cdot \vec N\,dr\,d\theta \\
+          &=\int_0^{2\pi}\int_0^3 \dfrac{3r}{\left(r^2+9\right)^{3/2}}\,dr\,d\theta \\
+          &=\cdots=2\pi-\pi\sqrt{2}
+          \end{aligned}\]
+  	    </p>
+  	  </div>
+      <p>
+        Finally, we add up the flux through the \(3\) surfaces to get the
+        expansion out of the cylinder:
+        \[\begin{aligned}
+        \text{Expansion}&=\iint_C \vec E\cdot d\vec S
+        =\text{Flux}_S+\text{Flux}_T+\text{Flux}_B \\
+        &=\iint_S \vec E\cdot d\vec S+\iint_T \vec E\cdot d\vec S
+        +\iint_B \vec E\cdot d\vec S \\
+        &=2\pi\sqrt{2}
+        +2\pi-\pi\sqrt{2}
+        +2\pi-\pi\sqrt{2}
+        =4\pi
+        \end{aligned}\]
+      </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Find the expansion of the electric field out of the cylinder, \(C\),
+        given by \(x^2+y^2 \le R^2\) and \(-H \le z \le H\).
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2b"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+	    <p>
+	      \(\displaystyle \text{Expansion}=\iint_C \vec E\cdot d\vec S=4\pi\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+	    <p>
+	      There are \(3\) pieces to the boundary: the curved sides, \(S\), the
+        top, \(T\), and the bottom, \(B\). We will compute the flux through
+        each and add them up.
+	    </p>
+      <div class="collapse hide"
+      data-title="<span style='color:black'>Sides:</span>&emsp;
+      \(\displaystyle \text{Flux}_S=\iint_S \vec E\cdot d\vec S=\dfrac{4\pi H}{\sqrt{R^2+H^2}}\)">
+        <p>
+          To parametrize the curved side surface, we start with cylindrical
+          coordinates:
+          \[
+          \vec R(r,\theta,z)
+          =\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+          \]
+          and set \(r=R\):
+          \[
+          \vec R(\theta,z)
+          =\left\langle R\cos\theta,R\sin\theta,z\right\rangle
+          \]
+          The tangent and normal vectors are:
+          \[\begin{aligned}
+          \vec e_\theta&=\left\langle -R\sin\theta,R\cos\theta,0\right\rangle \\
+          \vec e_z&=\left\langle 0,0,1\right\rangle \\
+          \vec N&=\left\langle R\cos\theta,R\sin\theta,0\right\rangle
+          \end{aligned}\]
+          As should be expected, the normal is horizontal and the \(x\) and \(y\)
+          components are parallel to those for the position vector. Like the
+          position vector, the normal points outward, as required.
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+        	\[
+          \vec E(\theta,z)
+          =\left\langle \dfrac{R\cos\theta}{\left(R^2+z^2\right)^{3/2}},
+                        \dfrac{R\sin\theta}{\left(R^2+z^2\right)^{3/2}},
+                        \dfrac{z}{\left(R^2+z^2\right)^{3/2}}\right\rangle
+          \]
+          and its dot product with the normal is:
+  	      \[
+  	      \vec E\cdot\vec N
+          =\dfrac{R^2\cos^2\theta}{\left(R^2+z^2\right)^{3/2}}
+          +\dfrac{R^2\sin^2\theta}{\left(R^2+z^2\right)^{3/2}}
+          =\dfrac{R^2}{\left(R^2+z^2\right)^{3/2}}
+  	      \]
+          So the flux is:
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=\iint_S \vec E\cdot d\vec S
+          =\iint_S \vec E\cdot \vec N\,d\theta\,dz \\
+          &=\int_{-H}^H\int_0^{2\pi} \dfrac{R^2}{\left(R^2+z^2\right)^{3/2}}\,d\theta\,dz
+          =2\pi\int_{-H}^H \dfrac{R^2}{\left(R^2+z^2\right)^{3/2}}\,dz
+          \end{aligned}\]
+          At this point we use the trig substitution \(z=R\tan\alpha\) and
+          \(dz=R\sec^2\alpha\,d\alpha\):
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=2\pi\int_{z=-H}^{H}
+          \dfrac{R^2}{\left(R^2+R^2\tan^2\alpha\right)^{3/2}}R\sec^2\alpha\,d\alpha \\
+          &=2\pi\int_{z=-H}^{H}
+          \dfrac{1}{\left(1+\tan^2\alpha\right)^{3/2}}\sec^2\alpha\,d\alpha \\
+          &=2\pi\int_{z=-H}^{H} \cos\alpha\,d\alpha
+          =2\pi\left[\sin\alpha\dfrac{}{}\right]_{z=-H}^{H}
+          \end{aligned}\]
+          We now draw a right triangle with angle \(\alpha\), opposite side \(z\),
+          adjacent side \(R\) and hypotenuse \(\sqrt{R^2+z^2}\). Then
+          \(\sin\alpha=\dfrac{z}{\sqrt{R^2+z^2}}\). So
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=2\pi\left[\dfrac{z}{\sqrt{R^2+z^2}}\right]_{z=-H}^{H}
+          =\dfrac{4\pi H}{\sqrt{R^2+H^2}}
+          \end{aligned}\]
+  	    </p>
+      </div>
+      <div class="collapse hide"
+      data-title="<span style='color:black'>Top:</span>&emsp;
+      \(\displaystyle \text{Flux}_T=\iint_T \vec E\cdot d\vec S
+      =2\pi-\dfrac{2\pi H}{\left(R^2+H^2\right)^{1/2}}\)">
+        <p>
+          To parametrize the top surface, we start with cylindrical
+          coordinates and set \(z=H\):
+          \[
+          \vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,H\right\rangle
+          \]
+          After finding the tangent vectors, the normal vector is
+          \(\vec N=\left\langle 0,0,r\right\rangle\).
+          Since the \(z\) component is positive, this points up as required.
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+        	\[
+          \vec E(\theta,z)
+          =\left\langle \dfrac{r\cos\theta}{\left(r^2+H^2\right)^{3/2}},
+                        \dfrac{r\sin\theta}{\left(r^2+H^2\right)^{3/2}},
+                        \dfrac{H}{\left(r^2+H^2\right)^{3/2}}\right\rangle
+          \]
+          and its dot product with the normal is:
+  	      \[
+  	      \vec E\cdot\vec N
+          =\dfrac{Hr}{\left(r^2+H^2\right)^{3/2}}
+  	      \]
+          So the flux is:
+          \[\begin{aligned}
+          \text{Flux}_T
+          &=\iint_T \vec E\cdot d\vec S
+          =\iint_T \vec E\cdot \vec N\,dr\,d\theta \\
+          &=\int_0^{2\pi}\int_0^R \dfrac{Hr}{\left(r^2+H^2\right)^{3/2}}\,dr\,d\theta
+          =2\pi\int_0^R \dfrac{Hr}{\left(r^2+H^2\right)^{3/2}}\,dr
+          \end{aligned}\]
+          At this point we use the substitution \(u=r^2+H^2\) and
+          \(du=2r\,dr\):
+          \[\begin{aligned}
+          \text{Flux}_T
+          &=\pi\int_{r=0}^R \dfrac{H}{u^{3/2}}\,du
+          =\pi\left[-2\dfrac{H}{u^{1/2}}\right]_{r=0}^R
+          =-2\pi\left[\dfrac{H}{\left(r^2+H^2\right)^{1/2}}\right]_0^R \\
+          &=-\dfrac{2\pi H}{\left(R^2+H^2\right)^{1/2}}
+          +\dfrac{2\pi H}{\left(H^2\right)^{1/2}}
+          =2\pi-\dfrac{2\pi H}{\left(R^2+H^2\right)^{1/2}}
+          \end{aligned}\]
+  	    </p>
+  	  </div>
+      <div class="collapse hide"
+      data-title="<span style='color:black'>Bottom:</span>&emsp;
+      \(\displaystyle \text{Flux}_B=\iint_B \vec E\cdot d\vec S
+      =2\pi-\dfrac{2\pi H}{\left(R^2+H^2\right)^{1/2}}\)">
+        <p>
+          To parametrize the bottom surface, we start with cylindrical
+          coordinates and set \(z=-H\):
+          \[
+          \vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,-H\right\rangle
+          \]
+          After finding the tangent vectors, the normal vector is
+          \(\vec N=\left\langle 0,0,r\right\rangle\).
+          Since the \(z\) component is positive, this points up but we need
+          it to point down to be out from the solid cylinder. So we reverse
+          it:
+          \[
+          \text{Reverse:}\qquad\vec N
+          =\left\langle 0,0,-r\right\rangle
+          \]
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+        	\[
+          \vec E(\theta,z)
+          =\left\langle \dfrac{r\cos\theta}{\left(r^2+H^2\right)^{3/2}},
+                        \dfrac{r\sin\theta}{\left(r^2+H^2\right)^{3/2}},
+                        \dfrac{-H}{\left(r^2+H^2\right)^{3/2}}\right\rangle
+          \]
+          and its dot product with the normal is (again):
+  	      \[
+  	      \vec E\cdot\vec N
+          =\dfrac{Hr}{\left(r^2+H^2\right)^{3/2}}
+  	      \]
+          So the flux is (again):
+          \[\begin{aligned}
+          \text{Flux}_B
+          &=\iint_B \vec E\cdot d\vec S
+          =\iint_B \vec E\cdot \vec N\,dr\,d\theta \\
+          &=\int_0^{2\pi}\int_0^R \dfrac{Hr}{\left(r^2+H^2\right)^{3/2}}\,dr\,d\theta \\
+          &=\cdots=2\pi-\dfrac{2\pi H}{\left(R^2+H^2\right)^{1/2}}
+          \end{aligned}\]
+  	    </p>
+  	  </div>
+      <p>
+        Finally, we add up the flux through the \(3\) surfaces to get the
+        expansion out of the cylinder:
+        \[\begin{aligned}
+        \text{Expansion}&=\iint_C \vec E\cdot d\vec S
+        =\text{Flux}_S+\text{Flux}_T+\text{Flux}_B \\
+        &=\iint_S \vec E\cdot d\vec S+\iint_T \vec E\cdot d\vec S
+        +\iint_B \vec E\cdot d\vec S \\
+        &=\dfrac{4\pi H}{\sqrt{R^2+H^2}}
+        +2\pi-\dfrac{2\pi H}{\left(R^2+H^2\right)^{1/2}}
+        +2\pi-\dfrac{2\pi H}{\left(R^2+H^2\right)^{1/2}} \\
+        &=4\pi
+        \end{aligned}\]
+      </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Compare the expansion for various values of \(R\) and \(H\).
+        Does the expansion get larger or smaller as \(R\) or \(H\) gets
+        bigger.
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2c"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2c"></button>
+	      <button class="toggle has-rem" data-toggle="RemX2c"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+	    <p>
+	      The expansion is independent of \(R\) and \(H\).
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+	    <p>
+	      The expansion,
+        \(\displaystyle \iint_C \vec E\cdot d\vec S=4\pi\),
+        independent of \(R\) and \(H\).
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-rem" data-toggle="RemX2c">
+	    <p>
+	      In a
+        <a href="../../Part IV - Theorems/ThmGauss/ApplSurfIndep.html"
+        title="Return using the Back button.">
+        later chapter</a>, we will learn that Gauss' Theorem says
+        this integral is surface independent. Consequently, changing the
+        values of \(R\) and \(H\) does not change the value of the integral.
+	    </p>
+	  </div>
+	</li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Velocity, Acceleration, and Jerk | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Der.html" title="Previous">&lArr;</a></li>
+      <li><a href="ArcLen.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. Velocity, Acceleration, and Jerk</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Given a space curve, \(\vec{r}(t)\), its velocity, acceleration,
+  and jerk are defined exactly as they were for functions of one variable.
+  They are the first, second and third derivatives of the position:
+</p>
+
+<p class="def"> <br><br>
+  The <span class="hl">position</span> is:&emsp; &emsp;&ensp;
+  \(\vec{r}(t)\)
+    <br><br>
+  The <span class="hl">velocity</span> is:&emsp; &emsp;&ensp;
+  \(\vec{v}(t)=\dfrac{d\vec{r}}{dt}\)
+    <br><br>
+  The <span class="hl">acceleration</span> is: &emsp;
+  \(\vec{a}(t)=\dfrac{d\vec{v}}{dt}=
+  \dfrac{d^2\vec{r}}{dt^2}\)
+    <br><br>
+  The <span class="hl">jerk</span> is:&emsp; &emsp; &emsp;&emsp;
+  \(\vec{j}(t)=\dfrac{d\vec{a}}{dt}=\dfrac{d^{3}\vec{r}}{dt^{3}}\)
+</p>
+
+        <div class="rule"></div>
+
+<h3>Velocity</h3>
+<p>
+  On the
+  <a href="Der.html#def_vel" title="Return using the Back button.">
+  previous page</a>, we defined the velocity, \(\vec{v}\), to be the
+  derivative of the position and we saw that it is tangent to the curve.
+  Consequently, we defined the <span class="hl">tangent vector</span>
+  to be the <span class="hl">velocity vector</span>.
+</p>
+<div class="column">
+	<p class="example" data-number="1">
+    The quartic function at the right is:
+    \[
+    y=1+\dfrac{2}{5}x^2+\dfrac{1}{20}x^3-\,\dfrac{1}{60}x^4
+    \]
+    It may be parametrized as the position vector:
+    \[
+    \vec{r}(t)
+    =\left(t,1+\dfrac{2}{5}t^2+\dfrac{1}{20}t^3-\,\dfrac{1}{60}t^4 \right)
+    \]
+    To find the velocity vector, we simply take the
+    derivative as
+    \[
+    \vec{v}(t)=\dfrac{d\vec{r}}{dt}
+    =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt}\right\rangle
+    =\left\langle 1,\dfrac{4}{5}t+\dfrac{3}{20}t^2-\,\dfrac{1}{15}t^3\right\rangle
+    \]
+  </p>
+  <div class="center">
+  <figure>
+    <img src="graphics/eg_quartic_vel.jpg" alt="eg_quartic_vel">
+    <figcaption>
+      \(\vec{r}(t)\) is <span style="color:blue">Blue</span><br>
+      \(\vec{v}(t)\) is <span style="color:green">Green</span>
+    </figcaption>
+  </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Acceleration</h3>
+<p>
+  Since the acceleration is the derivative of the velocity, it measures the
+  change of both the magnitude and the direction of the velocity. We will see
+  <a href="TNAcc.html" title="Return using the Back button.">
+  later in this chapter</a> that the change in the magnitude of the velocity
+  is measured by the projection of the acceleration along the velocity (the
+  tangential acceleration \(a_{T}=\text{comp}_{\vec v}\vec a\)) while the
+  change in the direction of the velocity is measured by the projection of the
+  acceleration perpendicular to the velocity (the normal acceleration
+  \(a_{N}=\text{comp}_{\perp\vec v}\vec a\)). (See the definitions of
+  <a href="../Dot/ProjScalar.html" title="Return using the Back button.">
+  scalar projections</a>.)
+</p>
+<div class="column">
+  <p class="example" data-number="2">
+    For the quartic curve:
+    \[
+    \vec{r}(t)
+    =\left(t,1+\dfrac{2}{5}t^2+\dfrac{1}{20}t^3-\,\dfrac{1}{60}t^4\right)
+    \]
+    we have already found the velocity vector:
+    \[
+    \vec{v}(t)
+    =\left\langle 1,\dfrac{4}{5}t+\dfrac{3}{20}t^2-\,\dfrac{1}{15}t^3\right\rangle
+    \]
+    To find the acceleration vector, we simply take another derivative:
+    \[
+    \vec{a}(t)=\dfrac{d\vec{v}}{dt}
+    =\left\langle 0,\dfrac{4}{5}+\dfrac{3}{10}t-\,\dfrac{1}{5}t^2\right\rangle
+    \]
+  </p>
+  <div class="center">
+  <figure>
+    <img src="graphics/eg_quartic_acc.jpg" alt="eg_quartic_acc">
+    <figcaption>
+      \(\vec{r}(t)\) is <span style="color:blue">Blue</span><br>
+      \(\vec{v}(t)\) is <span style="color:green">Green</span><br>
+      \(\vec{a}(t)\) is <span style="color:orange">Orange</span>
+    </figcaption>
+  </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Jerk</h3>
+<p>
+  Jerk is the rate of change of acceleration. It only appears in one place in
+  this book, in a formula for the
+  <a href="Torsion.html#jerk" title="Return using the Back button.">
+  torsion</a> of a parametric curve.
+</p>
+<div class="column">
+  <p class="example" data-number="3">
+    For the quartic curve:
+    \[
+    \vec{r}(t)
+    =\left(t,1+\dfrac{2}{5}t^2+\dfrac{1}{20}t^3-\,\dfrac{1}{60}t^4 \right)
+    \]
+    we have already found the acceleration vector:
+    \[
+    \vec{a}(t)=\dfrac{d\vec{v}}{dt}
+    =\left\langle 0,\dfrac{4}{5}+\dfrac{3}{10}t-\,\dfrac{1}{5}t^2\right\rangle
+    \]
+    To find the jerk vector, we simply take the derivative again:
+    \[
+    \vec\jmath(t)=\dfrac{d\vec{a}}{dt}
+    =\left\langle 0,\dfrac{3}{10}-\,\dfrac{2}{5}t\right\rangle
+    \]
+  </p>
+  <div class="center">
+  <figure>
+    <img src="graphics/eg_quartic_jerk.jpg" alt="eg_quartic_jerk">
+    <figcaption>
+      \(\vec{r}(t)\) is <span style="color:blue">Blue</span><br>
+      \(\vec{v}(t)\) is <span style="color:green">Green</span><br>
+      \(\vec{a}(t)\) is <span style="color:orange">Orange</span><br>
+      \(\vec\jmath(t)\) is <span style="color:magenta">Magenta</span>
+    </figcaption>
+  </figure>
+  </div>
+</div>
+<p>
+  <span class="redbig">Caution:</span>
+  Be careful not to confuse the jerk, \(\vec\jmath\), with the basis unit vector
+  in the \(y\) direction, \(\hat\jmath\). The context will always make it
+  clear which quantity is being referred to. Additionally, jerk is always
+  written with a vector sign, \(\vec\jmath\), while the basis unit vector
+  is written with a hat, \(\hat{\jmath}\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Note that the interpretations of velocity, acceleration, and jerk we have
+  arrived at here are similar to the ones used in Single Variable Calculus.
+  The difference is that now we are dealing with vector quantities as opposed
+  to scalar quantities.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Calculate the velocity, acceleration, and jerk for the Circle
+    \(\vec{r}(\theta)=\left\langle4\cos(\theta),4\sin(\theta),2\right\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    <span class="hl">Position</span>:
+    \(\vec{r}(\theta)
+    =(4\cos\theta,4\sin\theta,2)\)
+    <br>
+    <span class="hl">Velocity</span>:
+    \(\vec{v}(\theta)=\dfrac{d\vec{r}}{d\theta}
+    =\langle -4\sin\theta,4\cos\theta,0\rangle\)
+    <br>
+    <span class="hl">Acceleration</span>:
+    \(\vec{a}(\theta)=\dfrac{d\vec{v}}{d\theta}
+    =\langle -4\cos\theta,-4\sin\theta,0\rangle\)
+    <br>
+    <span class="hl">Jerk</span>:
+    \(\vec\jmath(\theta)=\dfrac{d\vec{a}}{d\theta}
+    =\langle 4\sin\theta,-4\cos\theta,0\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    The <span class="hl">position</span> is:
+    \[
+    \vec{r}(\theta)=(4\cos\theta,4\sin\theta,2)
+    \]
+    We simply differentiate three times:
+    <br>
+    The <span class="hl">velocity</span> is:
+    \[
+    \vec{v}(\theta)=\dfrac{d\vec{r}}{d\theta}
+    =\langle -4\sin\theta,4\cos\theta,0\rangle
+    \]
+    The <span class="hl">acceleration</span> is:
+    \[
+    \vec{a}(\theta)=\dfrac{d\vec{v}}{d\theta}
+    =\langle -4\cos\theta,-4\sin\theta,0\rangle
+    \]
+    The <span class="hl">jerk</span> is:
+    \[
+    \vec\jmath(\theta)=\dfrac{d\vec{a}}{d\theta}
+    =\langle 4\sin\theta,-4\cos\theta,0\rangle
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Calculate the velocity, acceleration, and jerk for the Helix
+    \(\vec{r}(\theta)=\langle 4\cos\theta,4\sin\theta,3\theta\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+    <button class="toggle has-sol" data-toggle="SolX5"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    <span class="hl">Position</span>:
+    \(\vec{r}(\theta)
+    =(4\cos\theta,4\sin\theta,3\theta)\)
+    <br>
+    <span class="hl">Velocity</span>:
+    \(\vec{v}(\theta)=\dfrac{d\vec{r}}{d\theta}
+    =\langle -4\sin\theta,4\cos\theta,3\rangle\)
+    <br>
+    <span class="hl">Acceleration</span>:
+    \(\vec{a}(\theta)=\dfrac{d\vec{v}}{d\theta}
+    =\langle -4\cos\theta,-4\sin\theta,0\rangle\)
+    <br>
+    <span class="hl">Jerk</span>:
+    \(\vec\jmath(\theta)=\dfrac{d\vec{a}}{d\theta}
+    =\langle 4\sin\theta,-4\cos\theta,0\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <p>
+    The <span class="hl">position</span> is:
+    \[
+    \vec{r}(\theta)=(4\cos\theta,4\sin\theta,3\theta)
+    \]
+    We differentiate three times:
+    <br>
+    The <span class="hl">velocity</span> is:
+    \[
+    \vec{v}(\theta)=\dfrac{d\vec{r}}{d\theta}
+    =\langle -4\sin\theta,4\cos\theta,3\rangle
+    \]
+    The <span class="hl">acceleration</span> is:
+    \[
+    \vec{a}(\theta)=\dfrac{d\vec{v}}{d\theta}
+    =\langle -4\cos\theta,-4\sin\theta,0\rangle
+    \]
+    The <span class="hl">jerk</span> is:
+    \[
+    \vec\jmath(\theta)=\dfrac{d\vec{a}}{d\theta}
+    =\langle 4\sin\theta,-4\cos\theta,0\rangle
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="6">
+    Calculate the velocity, acceleration, and jerk for the Twisted Cubic
+    \(\vec{r}(t)=\left(t,t^2,\dfrac{2}{3}t^{3}\right)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX6"></button>
+    <button class="toggle has-sol" data-toggle="SolX6"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <p>
+    <span class="hl">Position</span>:
+    \(\vec{r}(t)
+    =\left(t,t^2,\dfrac{2}{3}t^{3}\right)\)
+    <br>
+    <span class="hl">Velocity</span>:
+    \(\vec{v}(t)=\dfrac{d\vec{r}}{dt}
+    =\langle 1,2t,2t^2\rangle\)
+    <br>
+    <span class="hl">Acceleration</span>:
+    \(\vec{a}(t)=\dfrac{d\vec{v}}{dt}
+    =\langle 0,2,4t\rangle\)
+    <br>
+    <span class="hl">Jerk</span>:
+    \(\vec\jmath(t)=\dfrac{d\vec{a}}{dt}
+    =\langle 0,0,4\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <p>
+    The <span class="hl">position</span> is:
+    \[
+    \vec{r}(t)=\left(t,t^2,\dfrac{2}{3}t^{3}\right)
+    \]
+    We differentiate three times:
+    <br>
+    The <span class="hl">velocity</span> is:
+    \[
+    \vec{v}(t)=\dfrac{d\vec{r}}{dt}
+    =\langle 1,2t,2t^2\rangle
+    \]
+    The <span class="hl">acceleration</span> is:
+    \[
+    \vec{a}(t)=\dfrac{d\vec{v}}{dt}
+    =\langle 0,2,4t\rangle
+    \]
+    The <span class="hl">jerk</span> is:
+    \[
+    \vec\jmath(t)=\dfrac{d\vec{a}}{dt}
+    =\langle 0,0,4\rangle
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

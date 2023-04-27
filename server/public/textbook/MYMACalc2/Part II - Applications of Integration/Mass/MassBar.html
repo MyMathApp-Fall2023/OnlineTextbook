@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Bar with Non-Uniform Density | 11. Mass and Center of Mass</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="CMDiscrete.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Mass and Center of Mass</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Mass</h2>
+
+
+      
+      <h2>1. Bar with Non-Uniform Density</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  If a bar of metal has length \(L=5\,\text{cm}\) and its mass is
+  \(M=35\,\text{gm}\) then its <span class="hl">linear density</span> is
+  \(\displaystyle \delta=\dfrac{M}{L}
+  =\dfrac{35\,\text{gm}}{5\,\text{cm}}=7\,\dfrac{\text{gm}}{\text{cm}}\)
+  provided the mass is uniformly distributed over the bar.
+</p>
+<p class="remark">
+  We call this <span class="defword">linear density</span> because it has
+  units of <em>mass per unit length</em> whereas the more familiar
+  <span class="hl">volume density</span> has units of <em>mass
+  per unit volume</em>. Later, we will also consider <span class="hl">surface
+  density</span> whose units are <em>mass per unit area</em>.
+  When the context is clear, the word <span class="hl">density</span> may
+  be used to mean any of these three quantities.
+</p>
+<p>
+  Conversely, if the mass is uniformly distributed over a bar of
+  length \(L=12\,\text{cm}\) and the density is
+  \(\delta=4\,\dfrac{\text{gm}}{\text{cm}}\), then the total mass is:
+  \[
+  M=\delta L=4\,\dfrac{\text{gm}}{\text{cm}}\times12\,\text{cm}=48\,\text{gm}
+  \]
+  <button class="toggle" data-toggle="Note1">Note on Cancelling Units</button>
+</p>
+<div class="toBeToggled note" data-toggle="Note1">
+  <p>
+    You can tell that you multiply the density and the length to get the mass
+    because the \(\text{cm}\) units cancel leaving the units of \(\text{gm}\):
+    \[
+    M=\delta L=4\,\dfrac{\text{gm}}{\cancel{\text{cm}}}\times12\,\cancel{\text{cm}}
+    =48\,\text{gm}
+    \]
+  </p>
+</div>
+<p>
+  On this page, we consider the situation when the mass is not uniformly
+  distributed over the bar, i.e. when the linear density \(\delta(x)\) is a
+  function of the position \(x\) along the bar.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+    <p class="genexample">
+      Find the total mass of a bar between \(x=a\) and \(x=b\)
+      whose linear density is \(\delta(x)\).
+    </p>
+    <p class="gensol">
+      We first cut up the bar into \(n\) small pieces each of
+      width \(\Delta x=\displaystyle \dfrac{b-a}{n}\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_bar.jpg" alt="eg_bar">
+    <img src="graphics/eg_barpc.jpg" alt="eg_barpc">
+  </div>
+</div>
+<p>
+  Since the density is not constant, we approximate the density of the
+  \(i^\text{th}\) piece as \(\delta(x_i^*)\) where \(x_i^*\)
+  is a point in the \(i^\text{th}\) region. Then the mass of the
+  \(i^\text{th}\) region is approximately
+  \(m_i\approx\delta(x_i^*)\Delta x\).
+  As the length of each piece gets smaller, the approximation gets better.
+  The total mass is then obtained by adding up the masses of the small pieces
+  and taking the limit as the number of pieces becomes large,
+  (\(n\rightarrow\infty\)) and hence the length of each piece gets small
+  (\(\Delta x\rightarrow0\)):
+  \[
+  M=\lim_{n\rightarrow\infty}\sum_{i=1}^n m_i
+  =\lim_{n\rightarrow \infty}\sum_{i=1}^n\delta(x_i^*)\Delta x
+  \]
+  This limit of a sum is recognized as the integral
+  \(\displaystyle \int_a^b \delta(x)\,dx\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Total Mass of a Bar with Non-Uniform Density">
+  The <span class="defword">total mass</span> of a bar with linear density
+  \(\delta(x)\) between \(x=a\) and \(x=b\) is:
+  \[
+  M=\int_a^b \delta(x)\,dx
+  \]
+</p>
+<a id="masseg"></a>
+
+<div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="2">
+    Find the total mass of an \(8\,\text{m}\) bar whose linear density is
+    \(\delta(x)=(1+x)\dfrac{\text{kg}}{\text{m}}\) if \(x\) is measured from
+    one end.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_1+x_mass.jpg" alt="eg_1+x_mass">
+  </div>
+</div>
+<p class="sol">
+  The total mass is
+  \[\begin{aligned}
+  M&=\int_0^8 \delta(x)\,dx
+  =\int_0^8 (1+x)\,dx \\
+  &=\left[x+\dfrac{x^2}{2}\right]_{x=0}^8
+  =8+\dfrac{64}{2}=40\,\text{kg}
+  \end{aligned}\]
+</p>
+<a id="massex"></a>
+
+        <div class="rule"></div>
+
+<p>
+  Your turn:
+</p>
+
+<div class="dotfillex">
+  <div>
+    <div class="column">
+    	<p class="exercise" data-number="3">
+        Find the total weight (in \(\text{lbs}\)) of a \(10\,\text{ft}\) bar
+        whose linear weight density is
+        \(\delta(x)=\dfrac{1}{1+x}\dfrac{\text{lb}}{\text{ft}}\) if \(x\) is
+        measured from one end.
+      </p>
+      <div class="center">
+        <img src="graphics/ex_1_(1+x)_mass.jpg" alt="ex_1_(1+x)_mass">
+      </div>
+    </div>
+    <p>
+      Note: If we are given a weight density instead of a mass density,
+      then we use the letter \(W\) for the total weight instead of \(M\) for
+      the total mass.
+    </p>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(W=\ln(11)\,\text{lb}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    \[\begin{aligned}
+    W&=\int_0^{10} \dfrac{1}{1+x}\,dx
+    =\left.\ln(1+x)\right|_0^{10} \\
+    &=\ln(11)-\ln(1)=\ln(11)\,\text{lb}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d.1. Taylor Polynomial Approximation | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NewFromOld.html" title="Previous">&lArr;</a></li>
+      <li><a href="Remainder.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>23. Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d.1. Taylor Polynomial Approximation</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<a id="Taylorpoly"></a>
+<p>
+  We frequently approximate a convergent series,
+  \(\displaystyle S=\sum_{n=0}^\infty a_n\), by one of its partial sums
+  \(\displaystyle S_k=\sum_{n=0}^k a_n\).
+  For a Taylor series the partial sums are called Taylor polynomials:
+</p>
+<p class="def" data-title="Taylor Polynomials">
+  The <span class="hl">Taylor polynomial</span> of degree \(k\) centered at \(x=a\)
+  for the function \(f(x)\) is
+  \[\begin{aligned}
+  T_k f(x)
+  &=\sum_{n=0}^k \dfrac{\,f^{(n)}(a)}{n!}(x-a)^n \\
+  &=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2+\cdots+\dfrac{f^{(k)}(a)}{k!}(x-a)^k
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  You should recognize the \(1^\text{st}\) degree Taylor polynomial,
+  \[
+  T_1f(x)=f_{\tan}=f(a)+f'(a)(x-a)
+  \]
+  as the
+  <a href="../../../MYMACalc1/Part III - Derivatives/DerivTanLine/TanLine.html"
+  title="Return using the Back button.">
+  tangent line</a> to the function which serves as the
+  <a href="../../../MYMACalc1/Part III - Derivatives/DiffLinApprox/LinApprox.html"
+  title="Return using the Back button.">
+  linear approximation</a> to the function when \(x\) is sufficiently
+  close to \(a\), as studied in Calculus 1. Similarly, the \(2^\text{nd}\)
+  degree Taylor polynomial,
+  \[
+  T_2f(x)=f_\text{quad}=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2
+  \]
+  is the
+  <a href="../../../MYMACalc1/Part III - Derivatives/Higher/HigherApprox.html"
+  title="Return using the Back button.">
+  quadratic approximation</a> to the function and the higher degree Taylor
+  polynomials, \(T_k f(x)\), serve as
+  <a href="../../../MYMACalc1/Part III - Derivatives/Higher/HigherApprox.html#higherapprox"
+  title="Return using the Back button.">
+  higher degree approximations</a> to the function. In other words, they are the
+  polynomials which best fit the function in the neighborhood of \(x=a\).
+  The \(k^\text{th}\) degree Taylor polynomial has the same value as the
+  function at \(x=a\):
+  \[
+  T_k f(a)=f(a)
+  \]
+  and also has the same derivatives at \(x=a\) up to order \(k\):
+  \[
+  T_k f'(a)=f'(a),\quad T_k f''(a)=f''(a),
+  \quad \cdots,\quad T_k f^{(k)}(a)=f^{(k)}(a)
+  \]
+  These approximations are <span class="hl">the main use for Taylor series</span>.
+</p>
+
+        <div class="rule" id="EgTaylorPoly"></div>
+
+<p class="example" data-number="1">
+  The following links show the graph of the indicated function along with
+  several of its Taylor polynomials so that you can see how the Taylor
+  polynomials approximate the function.
+</p>
+<div class=center>
+  <a href="TaylorSin.html">\(\underline{\sin x \quad \text{about } x=0}\)</a> &emsp; &emsp;
+  <a href="TaylorLn.html">\(\underline{\ln x \quad \text{about } x=1}\)</a> &emsp; &emsp;
+  <a href="TaylorCBRT.html">\(\underline{x^{1/3} \quad \text{about } x=8}\)</a>
+</div>
+
+        <div class="rule" id="Eg-Taylor-ccrt"></div>
+
+<p class="example" data-number="2">
+  Use the cubic Taylor polynomial approximation to \(f(x)=x^{1/3}\)
+  near \(x=8\) to approximate \(\sqrt[\scriptstyle 3]{8.1}\). Find an upper bound on the
+  error in this approximation.
+</p>
+<p class="sol">
+  The function and three derivatives and their values at \(x=8\) are:
+  \[\begin{array}{rlrl}
+  f(x)&=x^{1/3}& f(8)&=2 \\[2pt]
+  f'(x)&=\dfrac{1}{3}x^{-2/3}& f'(8)&=\dfrac{1}{3\cdot2^2} \\[5pt]
+  f''(x)&=-\,\dfrac{2}{3^2}x^{-5/3}& f''(8)&=-\,\dfrac{2}{3^2\cdot2^5} \\[8pt]
+  f'''(x)&=\dfrac{2\cdot5}{3^3}x^{-8/3}\quad& f'''(8)&=\dfrac{2\cdot5}{3^3\cdot2^8}
+  \end{array}\]
+  So the cubic Taylor polynomial is
+  \[\begin{aligned}
+  f(x)
+  &\approx f(8)+f'(8)(x-8)+\dfrac{f''(8)}{2}(x-8)^2+\dfrac{f'''(8)}{3!}(x-8)^3 \\
+  x^{1/3}
+  &\approx 2+\dfrac{1}{3\cdot2^2}(x-8)-\dfrac{2}{2!\cdot3^2\cdot2^5}(x-8)^2+
+  \dfrac{2\cdot5}{3!\cdot3^3\cdot2^8}(x-8)^3
+  \end{aligned}\]
+  At \(x=8.1\), we have
+  \[\begin{aligned}
+  \sqrt[\scriptstyle 3]{8.1}
+  &\approx 2+\dfrac{1}{3\cdot2^2}(8.1-8)-\dfrac{2}{2!\cdot3^2\cdot2^5}(8.1-8)^2+
+  \dfrac{2\cdot5}{3!\cdot3^3\cdot2^8}(8.1-8)^3 \\
+  &\approx 2+\dfrac{1}{3\cdot2^2}(.1)-\dfrac{2}{2!\cdot3^2\cdot2^5}(.01)+
+  \dfrac{2\cdot5}{3!\cdot3^3\cdot2^8}(.001) \\
+  &\approx2.008\,298\,852\,237
+  \end{aligned}\]
+  Since the Taylor series is alternating (beyond the second term), the error
+  in the approximation is bounded by the absolute value of the next term.
+  The fourth derivative is
+  \[\begin{array}{rlrl}
+  f^{(4)}(x)&=-\,\dfrac{2\cdot5\cdot8}{3^4}x^{-11/3}\quad&
+  f^{(4)}(8)&=-\,\dfrac{2\cdot5\cdot8}{3^4\cdot2^{11}}
+  \end{array}\]
+  So the fourth degree term in the Taylor series is
+  \[
+  \dfrac{f^{(4)}(8)}{4!}(x-8)^4=-\,\dfrac{2\cdot5\cdot8}{4!\cdot3^4\cdot2^{11}}(x-8)^4
+  \]
+  At \(x=8.1\), this is
+  \[
+  \dfrac{f^{(4)}(8)}{4!}(8.1-8)^4
+  =-\,\dfrac{2\cdot5\cdot8}{4!\cdot3^4\cdot2^{11}}(.0001)\approx-2\times 10^{-9}
+  \]
+  This says our approximation for \(\sqrt[\scriptstyle 3]{8.1}\) is accurate
+  to within \(\pm2\times 10^{-9}\) or at least \(8\) decimal places.
+</p>
+<p class="remark">
+  The actual value of \(\sqrt[\scriptstyle 3]{8.1}\) is
+  \(\sqrt[\scriptstyle 3]{8.1}\approx2.008\,298\,850\,246\).
+  Notice that \(8\) decimal places of the approximation agree with the exact answer.
+</p>
+<p class="remark">
+  This is not a very interesting problem since it is so much easier to type
+  \(8.1\) into a calculator or computer and find its cube root. The reason we
+  need to know how to do it, is because this is what is going on inside a
+  calculator when you ask it to find \(\displaystyle \sqrt[\scriptstyle 3]{8.1}\).
+  A more interesting problem is in the exercise below which has only partial
+  information about the function.
+</p>
+
+        <div class="rule" id="ex1"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    At \(12\):\(00\) noon, the Weather Service at your local airport reports
+    that the temperature is \(T(12)=80^\circ \text{F}\), is increasing at the
+    rate of \(\dfrac{dT}{dt}=2\,\dfrac{^\circ\text{F}}{\text{hr}}\) and this
+    increase is accelerating at
+    \(\dfrac{d^2T}{dt^2}=0.4\,\dfrac{^\circ\text{F}}{\text{hr}^2}\). Use
+    the quadratic Taylor polynomial approximation to estimate the temperature at
+    \(12\):\(30\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-rem" data-toggle="RemX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(T(12.5)\approx81.05^\circ\text{F}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The quadratic Taylor polynomial approximation for \(T(t)\) at \(t=12\) is
+    \[\begin{aligned}
+    T(t)&\approx T(12)+T'(12)(t-12)+\dfrac{1}{2}T''(12)(t-12)^2 \\
+    &=80+2(t-12)+\dfrac{1}{2}0.4(t-12)^2
+    \end{aligned}\]
+    At \(12\):\(30\), \(t=12.5\) and
+    \[
+    T(12.5)\approx 80+2(0.5)+\dfrac{1}{2}0.4(0.5)^2=81.05^\circ\text{F}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX1">
+  <p>
+    Of course, there is no way to determine the error in this approximation
+    because we do not know anything about the exact form of the temperature
+    function.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

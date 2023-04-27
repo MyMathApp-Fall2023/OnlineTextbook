@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Derivatives | 24. Applications of Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Lim.html" title="Previous">&lArr;</a></li>
+      <li><a href="Integ.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>24. Applications of Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+
+
+      
+      <h2>b. Derivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Recall the Taylor series formula:
+  \[\begin{aligned}
+  f\,(x)
+  &=\sum_{n=0}^\infty \dfrac{f\,^{(n)}(a)}{n!}(x-a)^n \\
+  &=f\,(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2 \\[2 pt]
+  &\quad+\dfrac{f\,^{(3)}(a)}{3!}(x-a)^3
+  +\cdots+\dfrac{f\,^{(n)}(a)}{n!}(x-a)^n+\cdots
+  \end{aligned}\]
+  In the chapter on
+  <a href="../Taylor/Def.html#Taylor" title="Return using the Back button.">
+  Taylor series</a>, we used this formula to find the power
+  series about \(x=a\) for a given function \(f\,(x)\). However, if
+  you already know the power series for a given function, then you can turn
+  the Taylor series around and use it to compute \(f\,^{(n)}(a)\),
+  the \(n^\text{th}\) derivative of \(f\,(x)\) evaluated at \(x=a\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  If \(f\,(x)=\ln(1-x^2)\), compute
+</p>
+<ol>
+  <li>
+    \(f\,^{(14)}(0)\), the \(14^\text{th}\)
+    derivative of \(f\,(x)\) evaluated at \(x=0\).
+  </li>
+  <li>
+    \(f\,^{(15)}(0)\), the \(15^\text{th}\)
+    derivative of \(f\,(x)\) evaluated at \(x=0\).
+  </li>
+</ol>
+<p class="sol">
+  Since we want derivatives evaluated at \(x=0\), we need a Taylor series
+  for \(\ln(1-x^2)\) centered at \(x=0\). We substitute
+  \(x\to-x^2\) into the known series
+  \[
+  \ln(1+x)=\sum_{n=1}^\infty \dfrac{(-1)^{n-1}}{n}x^n
+  =x-\dfrac{1}{2}x^2+\dfrac{1}{3}x^3-\dfrac{1}{4}x^4+\cdots
+  \]
+  to get
+  \[\begin{aligned}
+  \ln(1-x^2)
+  &=\sum_{n=1}^\infty \dfrac{(-1)^{n-1}}{n}(-x^2)^n \\
+  &=(-x^2)-\dfrac{1}{2}(-x^2)^2
+  +\dfrac{1}{3}(-x^2)^3-\dfrac{1}{4}(-x^2)^4+\cdots
+  \end{aligned}\]
+  and simplify to get the <em>specific</em> series:
+  \[
+  \ln(1-x^2)=\sum_{n=1}^\infty
+  \dfrac{-1}{n}x^{2n}=-x^2-\dfrac{1}{2}x^4-\dfrac{1}{3}x^6-\dfrac{1}{4}x^8+\cdots
+  \]
+  We now compare this with the <em>general</em> Maclaurin series (Taylor series
+  centered at \(x=0\)):
+  \[\begin{aligned}
+  f\,(x)
+  &=\sum_{n=0}^\infty \dfrac{f\,^{(n)}(0)}{n!}x^n \\
+  &=f\,(0)+f'(0)x+\dfrac{f''(0)}{2}x^2
+  +\dfrac{f\,^{(3)}(0)}{3!}x^3+\cdots+\dfrac{f\,^{(n)}(0)}{n!}x^n+\cdots
+  \end{aligned}\]
+  <span class="redbig">Caution:</span>  Notice that \(n\) has a
+  different meaning in the two series. In the specific series, the power
+  of \(x\) is \(2n\). In the general series, the power of \(x\) is just
+  \(n\).
+</p>
+<ol>
+  <li>
+    To find \(f\,^{(14)}(0)\), we note that in the general series the
+    coefficient of \(x^{14}\) is \(\dfrac{f\,^{(14)}(0)}{14!}\).
+    In the specific series for \(\ln(1-x^2)\), the term with an \(x^{14}\)
+    has \(n=7\) and its coefficient is \(-\dfrac{1}{7}\). We equate these
+    terms and solve for \(f\,^{(14)}(0)\):
+    \[
+    \dfrac{f\,^{(14)}(0)}{14!}x^{14}=-\dfrac{1}{7}x^{14}
+    \qquad \Longrightarrow
+    \]
+    \[
+    f\,^{(14)}(0)=-\dfrac{14!}{7}=-2\cdot13!
+    \]
+  </li>
+  <li>
+    To find \(f\,^{(15)}(0)\), we note that in the general series the
+    coefficient of \(x^{15}\) is \(\dfrac{f\,^{(15)}(0)}{15!}\).
+    In the specific series for \(\ln(1-x^2)\), there are no odd powers
+    of \(x\). So the coefficient \(x^{15}\) is \(0\). We equate these
+    terms and solve for \(f\,^{(15)}(0)\):
+    \[
+    \dfrac{f\,^{(15)}(0)}{15!}x^{15}=0
+    \qquad \Longrightarrow \qquad
+    f\,^{(15)}(0)=0
+    \]
+  </li>
+</ol>
+<p class="remark">
+  Notice that computing the \(14^\text{th}\) derivative of
+  \(\ln(1-x^2)\) directly would be a long, tedious process.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    If \(g(x)=\sin(x^2)\), compute
+  </p>
+  <ol>
+    <li>
+      \(g^{(16)}(0)\), the \(16^\text{th}\)
+      derivative of \(g(x)\) evaluated at \(x=0\).
+    </li>
+    <li>
+      \(g^{(18)}(0)\), the \(18^\text{th}\)
+      derivative of \(g(x)\) evaluated at \(x=0\).
+    </li>
+  </ol>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Remember
+    \[
+    \sin(x)=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{2n+1}
+    =x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(g^{(16)}(0)=0\)
+    &emsp;
+    \(g^{(18)}(0)=\dfrac{18!}{9!}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    To find the <em>specific</em> series for \(\sin(x^2)\)
+    we substitute \(x\to x^2\) into the series
+    \[
+    \sin(x)=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{2n+1}
+    =x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots
+    \]
+    to get
+    \[
+    \sin(x^2)=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{4n+2}
+    =x^2-\dfrac{x^6}{3!}+\dfrac{x^{10}}{5!}-\cdots
+    \]
+    We compare this to the <em>general</em> Maclaurin series:
+    \[\begin{aligned}
+    g(x)
+    &=\sum_{n=0}^\infty \dfrac{g^{(n)}(0)}{n!}x^n \\
+    &=g(0)+g'(0)x+\dfrac{g''(0)}{2}x^2 \\
+    &\quad+\dfrac{g^{(3)}(0)}{3!}x^3+\cdots+\dfrac{g^{(n)}(0)}{n!}x^n+\cdots
+    \end{aligned}\]
+  </p>
+  <ol>
+    <li>
+      To find \(g^{(16)}(0)\), we note that in the general series the
+      coefficient of \(x^{16}\) is \(\dfrac{g^{(16)}(0)}{16!}\).
+      In the specific series for \(\sin(x^2)\), the power of \(x\) is \(4n+2\).
+      When is this \(16\)? <strong>Never!</strong> So the coefficient of
+      \(x^{16}\) is \(0\) and \(g^{(16)}(0)=0\).
+    </li>
+    <li>
+      To find \(g^{(18)}(0)\), we note that in the general series the
+      coefficient of \(x^{18}\) is \(\dfrac{g^{(18)}(0)}{18!}\).
+      In the specific series for \(\sin(x^2)\), the power of \(x\) is \(4n+2\).
+      When is this \(18\)? When \(n=4\). We equate these terms
+      and solve for \(g^{(18)}(0)\):
+      \[
+      \dfrac{g^{(18)}(0)}{18!}x^{18}=\dfrac{(-1)^4}{9!}x^{18}
+      \]
+      \[
+      \Longrightarrow \qquad g^{(18)}(0)=\dfrac{18!}{9!}
+      \]
+    </li>
+  </ol>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

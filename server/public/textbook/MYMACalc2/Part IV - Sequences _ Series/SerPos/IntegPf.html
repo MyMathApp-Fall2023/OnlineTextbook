@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Proof | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="IntegTest.html#" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>20. Convergence of Positive Series</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>b.1. The Integral Test</h2>
+
+
+      
+      <h2>a. Proof</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p class="prop" data-title="The Integral Test">
+  If \(a_n=f(n)\) where \(f(x)\) is a continuous, positive, decreasing function on
+  \([n_o,\infty)\), then
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent if and
+  only if \(\displaystyle \int_{n_o}^\infty f(x)\,dx\) is convergent.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="proof">
+      To be concrete, let \(n_o=1\), and assume \(f(x)\) is a
+      continuous, positive, decreasing function on \([1,\infty)\).
+      The graph of \(f(x)\) is shown at the right.
+      The area under the curve is given by the integral
+      \(\displaystyle \int_1^\infty f(x)\,dx\). Now let \(a_n=f(n)\).
+      The series \(\displaystyle \sum_{n=1}^\infty a_n\)
+      can also be regarded as an area, but in two ways. The term \(a_n\)
+      may be regarded as the area of a rectangle whose height is \(a_n\)
+      and whose width is \(1\). This rectangle may be positioned to the left
+      or right of \(x=n\) resulting in the next two graphs.
+      The series \(\displaystyle \sum_{n=1}^\infty a_n\) measures
+      the total area of the red rectangles in either plot.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/pf_integ_fn.jpg" alt="pf_integ_fn">
+  </div>
+</div>
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      This figure shows
+      \[
+      \sum_{n=2}^\infty a_n < \int_1^\infty f(x)\,dx
+      \]
+      Notice that we have dropped the first term of the series (with \(n=1\))
+      since the first <span style="color:red"><strong>red</strong></span>
+      rectangle is not under the
+      <span style="color:blue"><strong>blue</strong></span> curve.
+      Consequently, if \(\displaystyle \int_1^\infty f(x)\,dx\) is convergent
+      (i.e. finite), then \(\displaystyle \sum_{n=2}^\infty a_n\) is
+      also convergent. However, this is a tail of the original series. So,
+      the series \(\displaystyle \sum_{n=1}^\infty a_n\) also converges.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/pf_integ_upper.jpg" alt="pf_integ_upper">
+  </div>
+</div>
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      This figure shows
+      \[
+      \int_1^\infty f(x)\,dx \lt \sum_{n=1}^\infty a_n
+      \]
+      Consequently, if \(\displaystyle \int_1^\infty f(x)\,dx\) is divergent
+      (i.e. infinite), then \(\displaystyle \sum_{n=1}^\infty a_n\)
+      is also divergent.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/pf_integ_lower.jpg" alt="pf_integ_lower">
+  </div>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

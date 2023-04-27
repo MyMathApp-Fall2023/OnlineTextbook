@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c1. Computing Integrals | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Coeffs2.html" title="Previous">&lArr;</a></li>
+      <li><a href="IntegEg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Partial Fractions</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c1. Computing Integrals</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We have seen that a partial fraction expansion expresses a rational function
+  \(\dfrac{p(x) }{q(x) }\) as the sum of a polynomial
+  and rational functions of four basic types:
+</p>
+<center><table>
+	<tr>
+		<td style="text-align:left">
+			\(\dfrac{\text{Constant}}{\text{Linear}}\qquad
+			  \dfrac{A}{x-a}\)
+		</td>
+		<td style="text-align:left">
+		  \(\dfrac{\text{Constant}}{\text{Linear}^n}\qquad
+			  \dfrac{A}{(x-a)^n}\qquad n>1\)
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left">
+			\(\dfrac{\text{Linear}}{\text{Quadratic}}\quad
+			  \dfrac{B(x-a)+C}{(x-a)^2+b^2}\) &ensp;
+		</td>
+		<td style="text-align:left">
+			\(\dfrac{\text{Linear}}{\text{Quadratic}^n}\quad
+			  \dfrac{B(x-a)+C}{\left((x-a)^2+b^2\right)^n}\quad n>1\)
+		</td>
+	</tr>
+</table></center>
+<p>
+  For the purpose of doing the integrals, the terms with quadratic
+  denominators need to be broken up into two pieces. So there are really six
+  basic terms:
+</p>
+<center><table>
+	<tr>
+		<td style="text-align:left">
+	    \(\dfrac{\text{Constant}}{\text{Linear}}\qquad
+			  \dfrac{A}{x-a}\)
+		</td>
+		<td style="text-align:left">
+			\(\dfrac{\text{Constant}}{\text{Linear}^n}\qquad
+			  \dfrac{A}{(x-a)^n}\qquad n>1\)
+		</td>
+	</tr>
+  <tr>
+		<td style="text-align:left">
+			\(\dfrac{\text{Linear}}{\text{Quadratic}}\quad
+			  \dfrac{B(x-a)}{(x-a)^2+b^2}\) &ensp;
+		</td>
+		<td style="text-align:left">
+			\(\dfrac{\text{Linear}}{\text{Quadratic}^n}\quad
+			  \dfrac{B(x-a) }{\left((x-a)^2+b^2\right)^n}\quad n>1\)
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left">
+			\(\dfrac{\text{Constant}}{\text{Quadratic}}\quad
+			  \dfrac{C}{(x-a)^2+b^2}\) &ensp;
+		</td>
+		<td style="text-align:left">
+			\(\dfrac{\text{Constant}}{\text{Quadratic}^n}\quad
+			  \dfrac{C}{\left((x-a)^2+b^2\right)^n}\quad n>1\)
+		</td>
+	</tr>
+</table></center>
+<p id="techniques">
+  <span class="hl">To compute the integrals</span> of these terms you <span class="hl">use
+  the following techniques:</span> (The comment buttons reveal examples.)
+</p>
+<ul>
+  <li>
+    For the \(\dfrac{\;\text{Constant}\;}{\text{Linear}}\)
+    <button class="toggle has-rem" data-toggle="Rem1"></button>
+		and \(\dfrac{\;\text{Constant}\;}{\text{Linear}^n}\,\)
+	  <button class="toggle has-rem" data-toggle="Rem2"></button>
+		terms use the substitution \(\quad u=x-a\):
+  </li>
+</ul>
+<div class="toBeToggled" data-toggle="Rem1">
+  <p class="example" data-number="1">
+    Compute: &ensp; \(\displaystyle \int \dfrac{5}{x-2}\,dx\).
+  </p>
+  <p class="sol">
+    Let \(u=x-2\). Then \(du=dx\) and:
+    \[\begin{aligned}
+    \int \dfrac{5}{x-2}\,dx
+    &=\int \dfrac{5}{u}\,du
+    =5\ln |u|+C \\
+    &=5\ln | x-2|+C
+    \end{aligned}\]
+    With experience, you can probably do this without the \(u\)-substitution.
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Rem2">
+  <p class="example" data-number="2">
+    Compute: &ensp; \(\displaystyle \int \dfrac{5}{(x-2)^3}\,dx\).
+  </p>
+  <p class="sol">
+    Let \(u=x-2\). Then \(du=dx\) and:
+    \[\begin{aligned}
+    \int \dfrac{5}{(x-2)^3}\,dx
+    &=\int \dfrac{5}{u^3}\,du
+    =\int 5u^{-3}\,du \\
+    &=5\dfrac{u^{-2}}{-2}+C=-\dfrac{5}{2}\dfrac{1}{u^2}+C \\
+    &=-\dfrac{5}{2}\dfrac{1}{(x-2)^2}+C
+    \end{aligned}\]
+    With experience, you can probably do this without the \(u\)-substitution:
+    \[\begin{aligned}
+     \int \dfrac{5}{(x-2)^3}\,dx
+    &=\int 5(x-2)^{-3}\,dx
+    =5\dfrac{(x-2)^{-2}}{-2}+C \\
+    &=-\dfrac{5}{2}\dfrac{1}{(x-2)^2}+C
+    \end{aligned}\]
+  </p>
+</div>
+<ul>
+  <li>
+    For the \(\dfrac{\text{Linear}}{\text{Quadratic}}\)
+    <button class="toggle has-rem" data-toggle="Rem3"></button>
+  	and \(\dfrac{\text{
+    Linear}}{\text{Quadratic}^n}\)
+    <button class="toggle has-rem" data-toggle="Rem4"></button>
+  	terms use the substitution \(\quad u=(x-a)^2+b^2\):
+  </li>
+</ul>
+<div class="toBeToggled" data-toggle="Rem3">
+  <p class="example" data-number="3">
+    Compute: &ensp; \(\displaystyle \int \dfrac{7(x-5)}{(x-5)^2+9}\,dx\).
+  </p>
+  <p class="sol">
+    Let \(u=(x-5)^2+9\). Then \(du=2(x-5)\,dx\) and:
+    \[\begin{aligned}
+    \int \dfrac{7(x-5) }{(x-5)^2+9}\,dx
+    &=\dfrac{7}{2}\int \dfrac{1}{u}\,du=\dfrac{7}{2}\ln | u|+C \\
+    &=\dfrac{7}{2}\ln \left((x-5)^2+9\right)+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Rem4">
+  <p class="example" data-number="4">
+    Compute: &ensp; \(\displaystyle \int \dfrac{7(x-5) }{\left((x-5)^2+9\right)^4}\,dx\).
+  </p>
+  <p class="sol">
+    Let \(u=(x-5)^2+9\). Then \(du=2(x-5)\,dx\) and:
+    \[\begin{aligned}
+    \int \dfrac{7(x-5) }{\left((x-5)^2+9\right)^4}\,dx
+    =\dfrac{7}{2}\int \dfrac{1}{u^4}\,du=-\dfrac{7}{6}\dfrac{1}{u^3}+C \\
+    =-\dfrac{7}{6}\dfrac{1}{\left((x-5)^2+9\right)^3}+C
+    \end{aligned}\]
+  </p>
+</div>
+<ul>
+  <li>
+    For the \(\dfrac{\text{Constant}}{\text{Quadratic}}\)
+    <button class="toggle has-rem" data-toggle="Rem5"></button>
+  	and \(\dfrac{\text{
+    Constant}}{\text{Quadratic}^n}\)
+    <button class="toggle has-rem" data-toggle="Rem6"></button>
+  	terms use the tangent substitution \(\quad
+    x-a=b\tan\theta\):
+  </li>
+</ul>
+<div class="toBeToggled" data-toggle="Rem5">
+  <p class="example" data-number="5">
+    Compute: &ensp; \(\displaystyle \int \dfrac{4}{(x-5)^2+9}\,dx\).
+  </p>
+  <p class="sol">
+    Let \(x-5=3\tan\theta\). Then \(dx=3\sec^2\theta\,d\theta\) and:
+    \[\begin{aligned}
+    \int \dfrac{4}{(x-5)^2+9}\,dx
+    &=\int \dfrac{4}{9\tan^2\theta+9}\,3\sec^2\theta\,d\theta \\
+    &=\dfrac{4}{3}\int \dfrac{\sec^2\theta}{\tan^2\theta+1}\,d\theta
+    =\dfrac{4}{3}\int 1\,d\theta \\
+    &=\dfrac{4}{3}\theta+C=\dfrac{4}{3}\arctan \left(\dfrac{x-5}{3}\right)+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Rem6">
+  <p>
+    This example is probably harder than anything you will be asked to do in
+    this course. It is included here for completeness.
+  </p>
+  <p class="example" data-number="6">
+    Compute: &ensp; \(\displaystyle \int \dfrac{4}{\left((x-5)^2+9\right)^4}\,dx\).
+  </p>
+  <p class="sol">
+    Let \(x-5=3\tan\theta\). Then \(dx=3\sec^2\theta\,d\theta\) and:
+    \[\begin{aligned}
+    \int &\dfrac{4}{\left((x-5)^2+9\right)^4}\,dx
+    =\int \dfrac{4}{(9\tan^2\theta+9)^4}\,3\sec^2\theta\,d\theta \\
+    &=\dfrac{4}{3^7}\int \dfrac{\sec^2\theta}{(\tan^2\theta+1)^4}\,d\theta
+    =\dfrac{4}{3^7}\int \dfrac{1}{\sec^6\theta}\,d\theta \\
+    &=\dfrac{4}{3^7}\int \cos^6\theta\,d\theta \qquad \text{(A bunch of work here.)} \\
+    &=\dfrac{4}{3^7}\left[\dfrac{1}{6}\cos^5\theta\sin\theta
+    +\dfrac{5}{24}\cos^3\theta\sin\theta+\dfrac{5}{16}\cos\theta\sin\theta
+    +\dfrac{5}{16}\theta\right]+C
+    \end{aligned}\]
+    Since \(\tan\theta=\dfrac{x-5}{3}\), we have:
+    (Draw a triangle with opposite side \(x-5\) and adjacent side \(3\).)
+    \[
+    \sin\theta=\dfrac{x-5}{\sqrt{(x-5)^2+9}}
+    \quad \text{and} \quad
+    \cos\theta=\dfrac{3}{\sqrt{(x-5)^2+9}}
+    \]
+    Thus
+    \[\begin{aligned}
+    \int \dfrac{4}{\left((x-5)^2+9\right)^4}\,dx
+    =&\dfrac{4}{3^7}\left[
+    \dfrac{1}{6}\dfrac{3^5(x-5)}{\left((x-5)^2+9\right)^3}
+    +\dfrac{5}{24}\dfrac{3^3(x-5)}{\left((x-5)^2+9\right)^2}\right. \\
+    &+\left.
+    \dfrac{5}{16}\dfrac{3(x-5)}{(x-5)^2+9}
+    +\dfrac{5}{16}\arctan \left(\dfrac{x-5}{3}\right)
+    \right]+C
+    \end{aligned}\]
+  </p>
+</div>
+<p class="remark">
+  The ability to use the substitution \(u=(x-a)^2+b^2\) in the
+  \(\dfrac{\text{Linear}}{\text{Quadratic}}\) and
+  \(\dfrac{\text{Linear}}{\text{Quadratic}^n}\) terms is precisely why we use
+  the numerator \(B(x-a)+C\) for the quadratic denominators rather than
+  \(Bx+C\).
+</p>
+<p class="remark">
+  If you want to see the general integrals, they are on the
+  <a href="IntegN.html">attached page</a>. However,
+  <span style="color: red">DO NOT</span> try to memorize the integral formulas.
+  Rather, <span class="hl">remember the three techniques</span>.
+</p>
+
+				<div class="rule"></div>
+
+<p>
+You are now ready to compute the integral of any <strong>rational function</strong>.
+The <a href="IntegEg.html">next page</a> has several complete examples and exercises.
+</p>
+
+				<div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing integrals using Partial Fraction Expansions by using the following
+  Maplet (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ParFracEvalInteg.maplet" download>Partial Fractions: Evaluating the Integral</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p class="maplet-ref"></p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

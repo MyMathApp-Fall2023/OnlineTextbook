@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Completing Squares | 7. Trigonometric Substitutions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CoefSinSec.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Trigonometric Substitutions</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. Completing Squares</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The trig substitutions of the previous pages can be generalized still
+  further. If the integrand contains a quadratic polynomial \(Ax^2+Bx+C\)
+  then you can complete the square and rewrite the polynomial as either:
+  \[
+  a^2(x-p)^2+b^2
+  \qquad \text{or} \qquad
+  a^2(x-p)^2-b^2
+  \]
+  <button class="toggle center" data-toggle="Drop1">How do I complete the square?</button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>How do I complete the square?</h4>
+  <p>
+    To complete the square on the quantity \(Ax^2+Bx+C\), means to rewrite it
+    in the form \(A[(x-p)^2+q]\) or \(\pm a^2(x-p)^2\pm b^2\). To find \(p\)
+    and \(q\), we equate the expressions, expand and equate coefficients:
+    \[\begin{aligned}
+    Ax^2+Bx+C&=A[(x-p)^2+q]=A[x^2-2px+p^2+q] \\
+    &=Ax^2-2Apx+Ap^2+Aq
+    \end{aligned}\]
+    Consequently, \(B=-2Ap\) and \(C=Ap^2+Aq\). Solving gives:
+    \[\begin{aligned}
+    p&=-\,\dfrac{B}{2A} \\
+    q&=\dfrac{C}{A}-p^2=\dfrac{C}{A}-\dfrac{B^2}{4A^2}
+    \end{aligned}\]
+    At the end, we can write \(A=\pm a^2\) and \(Aq=\pm b^2\).
+  </p>
+  <span class="center greenbig">Don't memorize this formulas! Memorize the process.</span>
+  <p>
+    In practice, we factor out the \(A\) and the successively find \(p\) and
+    then \(q\). For example:
+    \[\begin{aligned}
+    4x^2-24x+20&=4(x^2-6x+5) \\
+    &=4(x^2-6x+9-4) \\
+    &=4[(x-3)^2-4] \\
+    &=2^2(x-3)^2-4^2
+    \end{aligned}\]
+    To get the third expression, we identified \(p=3\) from the \(-6\)
+    coefficient of \(x\), squared it to get the \(9\) and then identified
+    \(q=-4\) to match the constant term \(5\).
+  </p>
+</div>
+<p>In the former case, you can use a \(\tan\)
+  substitution so that \(a(x-p)=b\tan\theta\). In the latter
+  case, you can use a \(\sin\) or \(\sec\) substitution so that
+  \(a(x-p)=b\sin\theta\) or \(a(x-p)=b\sec\theta\), depending on the size of
+  \(|x-p|\). The \(\tan\) case is most common and most important:
+</p>
+<p class="example" data-number="1">
+	Compute \(\displaystyle \int \dfrac{1}{x^2+6x+13}\,dx\).
+</p>
+<p class="sol">
+  We first complete the square:
+  \[
+	x^2+6x+13=x^2+6x+9+4=(x+3)^2+4
+	\]
+  Next we make the substitution \(x+3=2\tan\theta\). Then
+	\(dx=2\sec^2\theta\,d\theta\) and:
+  \[\begin{aligned}
+  \int &\dfrac{1}{x^2+6x+13}\,dx
+	=\int \dfrac{1}{(x+3)^2+4}\,dx \\
+  &=\int \dfrac{1}{4\tan^2\theta+4}2\sec^2\theta\,d\theta
+  =\dfrac{1}{2}\int \dfrac{\sec^2\theta}{\sec^2\theta}\,d\theta \\
+	&=\dfrac{1}{2}\int 1\,d\theta
+  =\dfrac{1}{2}\theta+C
+  \end{aligned}\]
+  To substitute back, we solve \(x+3=2\tan\theta\) for
+  \(\theta=\arctan\dfrac{x+3}{2}\). Therefore
+  \[
+	\int \dfrac{1}{x^2+6x+13}\,dx
+	=\dfrac{1}{2}\arctan\dfrac{x+3}{2}+C
+	\]
+</p>
+<p class="check">
+  We check by differentiating.
+  If \(f(x)=\dfrac{1}{2}\arctan\dfrac{x+3}{2}\), then:
+  \[\begin{aligned}
+  f'(x)
+	&=\dfrac{1}{2}\dfrac{1}{1+\left(\dfrac{x+3}{2}\right)^2}\dfrac{1}{2} \\
+	&=\dfrac{1}{4+(x+3)^2}=\dfrac{1}{x^2+6x+13}
+  \end{aligned}\]
+  which is the integrand we started with.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Now it's your turn:
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  Compute \(\displaystyle \int \dfrac{1}{(4x-x^2)^{3/2}}\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    \[\begin{aligned}
+		4x-x^2&=-(x^2-4x)
+		=-(x^2-4x+4-4) \\
+		&=-[(x-2)^2-4]
+		=4-(x-2)^2
+    \end{aligned}\]
+    Since this is inside of a \(\dfrac{3}{2}\) power, we let \(x-2=2\sin\theta\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle \int \dfrac{1}{(4x-x^2)^{3/2}}\,dx
+		=\dfrac{1}{4}\dfrac{x-2}{\sqrt{4x-x^2}}+C\)
+  </p>
+</div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We first complete the square:
+    \[\begin{aligned}
+    4x-x^2
+		&=-(x^2-4x)=-(x^2-4x+4-4) \\
+		&=-[(x-2)^2-4]=4-(x-2)^2
+    \end{aligned}\]
+    Since this is inside of a \(\dfrac{3}{2}\) power, we let \(x-2=2\sin\theta\).
+    Then \(dx=2\cos\theta\,d\theta\). The integral becomes:
+    \[\begin{aligned}
+		\int &\dfrac{1}{(4x-x^2)^{3/2}}\,dx
+		=\int \dfrac{1}{[4-(x-2)^2]^{3/2}}\,dx \\
+    &=\int \dfrac{1}{[4-4\sin^2\theta]^{3/2}}2\cos\theta\,d\theta \\
+    &=\dfrac{1}{4}\int \dfrac{\cos\theta}{[1-\sin^2\theta]^{3/2}}\,d\theta
+		=\dfrac{1}{4}\int \dfrac{\cos\theta}{\cos^3\theta}\,d\theta \\
+    &=\dfrac{1}{4}\int \sec^2\theta\,d\theta=\dfrac{1}{4}\tan\theta+C
+    \end{aligned}\]
+	</p>
+  <div class="column">
+    <div data-col-width="60%">
+	    <p>
+	      To substitute back, we know \(\sin\theta=\dfrac{x-2}{2}\).
+				So we draw a right triangle with an angle \(\theta\) whose opposite
+				side is \(x-2\) and whose hypotenuse is \(2\). These sides are
+				chosen so that \(\sin\theta=\dfrac{x-2}{2}\). Then the adjacent side
+				is \(\sqrt{4-(x-2)^2}\) and:
+				\[
+				\tan\theta=\dfrac{x-2}{\sqrt{4-(x-2)^2}}=\dfrac{x-2}{\sqrt{4x-x^2}}
+				\]
+	    </p>
+    </div>
+    <div data-col-width="40%" class="center">
+	    <img src="graphics/trisqsin12.jpg" alt="trisqsin12"	style="width: 250; height: 150;"/>
+    </div>
+  </div>
+	<p>
+    So the integral becomes:
+    \[
+		\int \dfrac{1}{(4x-x^2)^{3/2}}\,dx
+		=\dfrac{1}{4}\dfrac{x-2}{\sqrt{4x-x^2}}+C
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    We check by differentiating.
+    If \(f(x)=\dfrac{1}{4}\dfrac{x-2}{\sqrt{4x-x^2}}\), then
+    \[\begin{aligned}
+    f'(x)
+    &=\dfrac{1}{4}\dfrac{\sqrt{4x-x^2}(1)-(x-2)\dfrac{4-2x}{2\sqrt{4x-x^2}}}{4x-x^2} \\
+    &=\dfrac{1}{4}\dfrac{(4x-x^2)-(x-2)(2-x)}{(4x-x^2)^{3/2}} \\
+    &=\dfrac{1}{4}\dfrac{(4x-x^2)-(-x^2+4x-4)}{(4x-x^2)^{3/2}} \\
+    &=\dfrac{1}{(4x-x^2)^{3/2}}
+    \end{aligned}\]
+    which is the integrand we started with.
+  </p>
+</div>
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

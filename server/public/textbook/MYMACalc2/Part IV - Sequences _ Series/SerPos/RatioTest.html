@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e.1. The Ratio Test | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimCompTest2.html" title="Previous">&lArr;</a></li>
+      <li><a href="RootTest.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>e.1. The Ratio Test</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The next test mimics the behavior of the geometric series.
+</p>
+<div class="greybox">
+  <p class="prop" data-title="The Ratio Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) is a positive
+    series and the <span class="defword">limit of the ratio of successive
+    terms</span> is
+    \(\displaystyle \rho=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}\).
+  </p>
+  <ol>
+    <li>
+      If \(\rho<1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent.
+    </li>
+    <li>
+      If \(\rho>1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is divergent.
+    </li>
+  </ol>
+  <p>
+    &nbsp;<button class="toggle" data-toggle="Drop1">Justification</button>
+    \(\Longleftarrow\) Read this! It's easy.
+    <br/>
+  	&nbsp;<a href="RatioPf.html">
+    <button>Proof</button></a> \(\Longleftarrow\) The proof requires the
+    <a href="../Seq/PrecDef.html" title="Return using the Back button.">
+    precise definition</a> of the limit of a sequence.
+  </p>
+</div>
+<p class="remark">
+  If \(\rho=1\) the Ratio Test <span class="wrong">FAILS</span> and says
+  nothing about \(\displaystyle \sum_{n=n_o}^\infty a_n\).
+</p>
+<div class="toBeToggled drop-just" data-toggle="Drop1">
+  <p>
+    For large \(n\), \(\dfrac{a_{n+1}}{a_n}\) is approximately
+    \(\displaystyle \rho=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}\).
+    So pick some large \(N\). Then for \(n \ge N\), we have
+    \(a_n\approx a_N \rho^{n-N}\). So we can approximate the tail of the series by
+    \[
+    \sum_{n=N}^\infty a_n
+    \approx\sum_{n=N}^\infty a_N \rho^{n-N}
+    \]
+    This is a geometric series which converges to
+    \[
+    \sum_{n=N}^\infty a_N \rho^{n-N}
+    =\dfrac{a_N}{1-\rho}
+    \]
+    provided \(|\rho| \lt 1\) and diverges if \(|\rho| \ge 1\). So it is not
+    surprizing that the original series also convegres or diverges when
+    \(\rho\) is less than or greater than \(1\) with the exception that the
+    borderline case of \(\rho=1\) is indeterminate instead of divergent.
+  </p>
+</div>
+<p class="remark">
+  Notice that the conclusions of the Ratio Test are the same as for a
+  geometric series \(\displaystyle \sum_{n=n_o}^\infty a\rho^n\) whose ratio
+  is \(\rho\), except that the borderline case of \(\rho=1\) is indeterminate
+  instead of divergent.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Determine if \(\displaystyle \sum_{n=0}^\infty \dfrac{2^n}{n!}\) is convergent
+  or divergent.
+</p>
+<p class="sol">
+  We have \(a_n=\dfrac{2^n}{n!}\) and \(a_{n+1}=\dfrac{2^{n+1}}{(n+1)!}\).
+  So: (Notice how we divide by \(a_n\) by multiplying by its reciprocal.)
+  \[\begin{aligned}
+  \rho&=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+  =\lim_{n\to\infty}\dfrac{2^{n+1}}{(n+1)!}\cdot\dfrac{n!}{2^n} \\
+  &=\lim_{n\to\infty}\dfrac{2}{n+1}=0
+  \end{aligned}\]
+  Since \(\rho=0 \lt 1\), the series
+  \(\displaystyle \sum_{n=0}^\infty \dfrac{2^n}{n!}\) converges.
+  <br>
+  <button class="toggle btn" data-toggle="factorials">Note on simplifying factorials.</button>
+</p>
+<div class="toBeToggled" data-toggle="factorials">
+  <p>
+    \(\dfrac{n!}{(n+1)!}=\dfrac{n\cdots1}{(n+1)n\cdots1}=\dfrac{1}{n+1}\)
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Determine if \(\displaystyle \sum_{n=0}^\infty \dfrac{3^{2n+1}}{2n+1}\) is
+  convergent or divergent.
+</p>
+<p class="sol">
+  We have \(a_n=\dfrac{3^{2n+1}}{2n+1}\) and
+  \(a_{n+1}=\dfrac{3^{2(n+1)+1}}{2(n+1)+1}=\dfrac{3^{2n+3}}{2n+3}\).
+  So
+  \[\begin{aligned}
+  \rho&=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+  =\lim_{n\to\infty}\dfrac{3^{2n+3}}{2n+3}\cdot\dfrac{2n+1}{3^{2n+1}} \\
+  &=\lim_{n\to\infty}\dfrac{3^2(2n+1)}{2n+3}=9
+  \end{aligned}\]
+  Since \(\rho=9>1\), the series
+  \(\displaystyle \sum_{n=0}^\infty \dfrac{3^{2n+1}}{2n+1}\) diverges.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="3">
+  Determine if \(\displaystyle \sum_{n=0}^\infty \dfrac{n}{2n^2+1}\)
+  is convergent or divergent.
+</p>
+<p class="sol">
+  We have \(a_n=\dfrac{n}{2n^2+1}\) and
+  \(a_{n+1}=\dfrac{n+1}{2(n+1)^2+1}\). So
+  \[\begin{aligned}
+  \rho&=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+  =\lim_{n\to\infty}\dfrac{n+1}{2(n+1)^2+1}\cdot\dfrac{2n^2+1}{n} \\
+  &=\lim_{n\to\infty}\dfrac{2n^2+1}{2(n+1)^2+1}\cdot
+  \lim_{n\to\infty}\dfrac{n+1}{n}=1\cdot1=1
+  \end{aligned}\]
+  Since \(\rho=1\), the Ratio Test fails and we need to use some other test to
+  determine the convergence.
+</p>
+<p class="meth" data-number="1">
+  One way is to use the Integral Test. The
+  function \(f(n)=\dfrac{n}{2n^2+1}\) is continuous, positive and
+  decreasing and
+  \[
+  \int_0^\infty \dfrac{n}{2n^2+1}\,dn
+  =\left. \dfrac{1}{4}\ln(2n^2+1)\right|_0^\infty=\infty
+  \]
+  So \(\displaystyle \sum_{n=0}^\infty \dfrac{n}{2n^2+1}\) is divergent.
+</p>
+<p class="meth" data-number="2">
+  Another way is to use the Limit Comparison Test. Since
+  \(a_n=\dfrac{n}{2n^2+1}\approx\dfrac{1}{2n}\), we compare to
+  \(\displaystyle \sum_{n=0}^\infty b_n=\sum_{n=0}^\infty \dfrac{1}{n}\)
+  which is the harmonic series which is divergent. So we compute the limit:
+  \[
+  \lim_{n\to\infty}\dfrac{a_n}{b_n}
+  =\lim_{n\to\infty}\dfrac{n}{2n^2+1}\dfrac{n}{1}=\dfrac{1}{2}
+  \]
+  Since \(0 \lt \dfrac{1}{2} \lt \infty\) we know
+  \(\displaystyle \sum_{n=0}^\infty \dfrac{n}{2n^2+1}\) is also divergent.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{n}{3^n}\) is
+    convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{n}{3^n}\) is convergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    We have \(a_n=\dfrac{n}{3^n}\) and \(a_{n+1}=\dfrac{n+1}{3^{n+1}}\). So
+    \[\begin{aligned}
+    \rho=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+    =\lim_{n\to\infty}\dfrac{n+1}{3^{n+1}}\cdot\dfrac{3^n}{n} \\
+    =\lim_{n\to\infty}\dfrac{n+1}{3n}=\dfrac{1}{3}
+    \end{aligned}\]
+    Since \(\rho=\dfrac{1}{3}< 1\), the series
+    \(\displaystyle \sum_{n=0}^\infty \dfrac{n}{3^n}\) converges.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{2^nn!}{(n+1)!}\) is
+    convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+    <button class="toggle has-rem" data-toggle="Rem2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{2^nn!}{(n+1)!}\) is divergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    We have \(a_n=\dfrac{2^nn!}{(n+1)!}\) and
+    \(a_{n+1}=\dfrac{2^{n+1}(n+1)!}{(n+2)!}\). So
+    \[\begin{aligned}
+    \rho&=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+    =\lim_{n\to\infty}\dfrac{2^{n+1}(n+1)!}{(n+2)!}\cdot\dfrac{(n+1)!}{2^nn!} \\
+    &=\lim_{n\to\infty}\dfrac{2(n+1)}{n+2}=2
+    \end{aligned}\]
+    Since \(\rho=2 \gt 1\), the series
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{n!2^n}{(n+1)!}\)
+    diverges by the ratio test.
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="Rem2">
+  <p>
+    Notice that the Divergence Test will also work, since
+    \[
+    \lim_{n\to\infty} \dfrac{2^nn!}{(n+1)!}
+    =\lim_{n\to\infty} \dfrac{2^n}{n+1}=\infty \ne 0
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

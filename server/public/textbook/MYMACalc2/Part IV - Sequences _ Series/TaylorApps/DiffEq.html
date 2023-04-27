@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Differential Equations | 24. Applications of Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="FundConst.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>24. Applications of Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+
+
+      
+      <h2>e. Differential Equations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	Finally, power series can be used to find approximate solutions to
+  initial value problems, even when the differential equation is neither
+  separable nor linear.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the quadratic Taylor polynomial centered at \(x=0\), for the solution to
+  the initial value problem
+  \[
+  \dfrac{dy}{dx}=x^2+y^2 \qquad \text{with} \qquad y(0)=3.
+  \]
+</p>
+<p class="sol">
+  The quadratic Taylor polynomial about \(x=0\) has the form:
+  \[
+  y(x)\approx y(0)+y'(0)x+\dfrac{1}{2}y''(0)x^2
+  \]
+  So all we need is to find \(y(0)\), \(y'(0)\)
+  and \(y''(0)\). The first two come directly from
+  the initial condition and the differential equation:
+  \[\begin{aligned}
+  y(0)&=3 \\
+  y'(0)
+  &=\left.\dfrac{dy}{dx}\right|_{x=0}
+  =\left[x^2+y^2\right]_{x=0} \\
+  &=0^2+y(0)^2=3^2=9
+  \end{aligned}\]
+  The third comes from implicitly differentiating the differential equation:
+  \[\begin{aligned}
+  \dfrac{d^2y}{dx^2}
+  &=\dfrac{d}{dx}(x^2+y^2)=2x+2y\dfrac{dy}{dx} \\
+  y''(0)
+  &=\left[\dfrac{d^2y}{dx^2}\right]_{x=0}
+  =\left[2x+2y\dfrac{dy}{dx}\right]_{x=0} \\
+  &=2y(0)y'(0)=2\cdot3\cdot9=54
+  \end{aligned}\]
+  So the quadratic Taylor polynomial about \(x=0\) is:
+  \[
+  y(x)\approx3+9x+27x^2
+  \]
+  Don't forget the \(\dfrac{1}{2}\) in front of the quadratic term!
+</p>
+<p class="remark">
+  Obviously this process could be continued to produce the higher degree Taylor
+  polynomials.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the quadratic Taylor polynomial centered at \(x=1\),
+    for the solution to the initial value problem
+    \[
+    \dfrac{dy}{dx}=xy^2 \qquad \text{with} \qquad y(1)=2
+    \]
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    The quadratic Taylor polynomial about \(x=1\) has the form:
+    \[
+    y(x)=y(1)+y'(1)(x-1)+\dfrac{1}{2}y''(1)(x-1)^2
+    \]
+    So you need to find \(y(1)\), \(y'(1)\) and \(y''(1)\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle
+    y(x)=2+4(x-1)+10(x-1)^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    The quadratic Taylor polynomial about \(x=1\) has the form:
+    \[
+    y(x)=y(1)+y'1)(x-1)+\dfrac{1}{2}y''(1)(x-1)^2
+    \]
+    Using the initial condition, we evaluate:
+    \[\begin{aligned}
+    y(1)&=2. \\
+    y'(1)
+    &=\left[xy^2\right]_{x=1}=1\cdot2^2=4 \\
+    \end{aligned}\]
+		Using implicit differentiation, we find:
+    \[\begin{aligned}
+    \dfrac{d^2y}{dx^2}
+    &=\dfrac{d}{dx}(xy^2)=y^2+2xy\dfrac{dy}{dx} \\[5pt]
+    y''(1)
+    &=\left[y^2+2xy\dfrac{dy}{dx}\right]_{x=1}
+    =2^2+2\cdot1\cdot2\cdot4=20
+    \end{aligned}\]
+    So:
+    \[
+    y(x)=2+4(x-1)+10(x-1)^2
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

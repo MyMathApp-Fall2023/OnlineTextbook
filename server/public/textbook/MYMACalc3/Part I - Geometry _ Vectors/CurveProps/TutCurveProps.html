@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>j. Tutorial on Properties of Curves | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Frenet.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>j. Tutorial on Properties of Curves</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="tutorial">
+<div class="column">
+	<p data-col-width="25%">
+		<button class="btn-newproblem" id="BNewProblem">New Problem</button>
+	</p>
+  <div data-col-width="65%" class="tutorial-message">
+    <textarea id="reply" rows=2 readonly>
+			To get started, click New Problem.
+		</textarea>
+  </div>
+</div>
+
+<p>
+  The position of an object at time t is:
+</p>
+<div class="column">
+  <div data-col-width="8%">
+    \(\vec r(t)=\)
+  </div>
+  <div data-col-width="25%" class="tutorial-input">
+      <textarea id="INr" align=left rows=1 readonly></textarea>
+  </div>
+	<div data-col-width="2%"></div>
+  <div data-col-width="25%" class="tutorial-display" id="OUTr">\[ \]</div>
+	<div data-col-width="2%"></div>
+</div>
+
+<p>
+  Find its velocity.
+</p>
+<div class="column">
+  <div data-col-width="8%">
+    \(\vec v(t)=\)
+  </div>
+  <div data-col-width="25%" class="tutorial-input">
+    <textarea id="INv" align=left></textarea>
+  </div>
+	<div data-col-width="2%"></div>
+  <div data-col-width="25%" class="tutorial-display" id="OUTv">\[ \]</div>
+	<div data-col-width="2%"></div>
+  <div data-col-width="38%">
+    <p>
+      <button class="btn-check" id="Checkv">Check</button>
+      <textarea id="MRv" class="tutorial-feedback" rows=1 readonly></textarea>
+      <button class="btn-show" id="Showv">Show</button>
+    </p>
+  </div>
+</div>
+
+<p>
+  Find its acceleration.
+</p>
+<div class="column">
+  <div data-col-width="8%">
+    \(\vec a(t)=\)
+  </div>
+  <div data-col-width="25%" class="tutorial-input">
+    <textarea id="INa" rows=1 align=left></textarea>
+  </div>
+	<div data-col-width="2%"></div>
+  <div data-col-width="25%" class="tutorial-display" id="OUTa">\[ \]</div>
+	<div data-col-width="2%"></div>
+  <div data-col-width="38%">
+    <p>
+      <button class="btn-check" id="Checka">Check</button>
+      <textarea id="MRa" class="tutorial-feedback" rows=1 readonly></textarea>
+      <button class="btn-show" id="Showa">Show</button>
+    </p>
+  </div>
+</div>
+
+<p>
+	Find its jerk.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(\vec j(t)=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INj" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTj">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="Checkj">Check</button>
+			<textarea id="MRj" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="Showj">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its speed.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(|\vec v(t)|=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INs" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTs">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="Checks">Check</button>
+			<textarea id="MRs" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="Shows">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its arc length between \(t=0\) and \(t=1\).
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(L=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INL" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTL">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="CheckL">Check</button>
+			<textarea id="MRL" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="ShowL">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its unit tangent vector.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(\hat T=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INT" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTT">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="CheckT">Check</button>
+			<textarea id="MRT" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="ShowT">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find \(\vec v\times\vec a\) and its magnitude.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(\vec v\times\vec a=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INva" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTva">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="Checkva">Check</button>
+			<textarea id="MRva" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="Showva">Show</button>
+		</p>
+	</div>
+</div>
+
+<div class="column">
+	<div data-col-width="8%">
+		\(|\vec v\times\vec a|=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INmva" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTmva">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="Checkmva">Check</button>
+			<textarea id="MRmva" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="Showmva">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its unit binormal vector.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(\hat B=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INB" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTB">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="CheckB">Check</button>
+			<textarea id="MRB" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="ShowB">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its unit normal vector.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(\hat N=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INN" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTN">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="CheckN">Check</button>
+			<textarea id="MRN" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="ShowN">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its curvature.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(\kappa=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INk" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTk">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="Checkk">Check</button>
+			<textarea id="MRk" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="Showk">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its torsion.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(\tau=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INtau" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTtau">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="Checktau">Check</button>
+			<textarea id="MRtau" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="Showtau">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its tangential acceleration.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(a_T=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INaT" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTaT">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button class="btn-check" id="CheckaT">Check</button>
+			<textarea id="MRaT" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="ShowaT">Show</button>
+		</p>
+	</div>
+</div>
+
+<p>
+	Find its normal acceleration.
+</p>
+<div class="column">
+	<div data-col-width="8%">
+		\(a_N=\)
+	</div>
+	<div data-col-width="25%" class="tutorial-input">
+		<textarea id="INaN" rows=1 align=left></textarea>
+	</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="25%" class="tutorial-display" id="OUTaN">\[ \]</div>
+	<div data-col-width="2%"></div>
+	<div data-col-width="38%">
+		<p>
+			<button  class="btn-check"id="CheckaN">Check</button>
+			<textarea id="MRaN" class="tutorial-feedback" rows=1 readonly></textarea>
+			<button class="btn-show" id="ShowaN">Show</button>
+		</p>
+	</div>
+</div>
+
+
+
+</div>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+
+    
+      
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+  
+<script src="../../../scripts/mathlex.min.js"></script>
+<script src="../../../scripts/MYMAtutorials.min.js"></script>
+<script src="./scripts/CurveProps.js"></script>
+
+
+</body>
+</html>

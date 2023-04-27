@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pop Tac Toe | Pop Tac Toe</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="../../2DGeometry/AngMeas/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Pop Tac Toe</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Pop Tac Toe</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div data-col-width="60%" style="text-align: center; float: left; position: relative">
+    <canvas id="canvas_1"></canvas>
+  </div>
+  <ul  data-col-width="40%">
+    <li>
+      Read the rules at the bottom and select the rules.
+      <br> <em>For beginners, we recommend:  Reincarnation,  Win when All on
+        Board, and Never Move.</em>
+    </li><br>
+    <li>
+      Click on &emsp; <button id="reset">Restart</button> &emsp; to
+      restart the game without changing the number of checkers.
+    </li><br>
+    <li>
+      Click on &emsp;
+        <button id="chips_decrease">-</button>
+        <input type="text" id="chips_readout" name="chips_readout" size="2" readonly>
+        <button id="chips_increase">+</button>
+      &emsp; to restart the game and change the number of checkers.
+    </li><br>
+    <li>
+      To place a checker, simply drag it to a square on the board.
+      To undo, click on &emsp; <button id="undo">Undo</button>
+    </li><br>
+    <li>
+      Turn labels &emsp;
+        <input type="radio" id="labelOn" name="labelOnOff" value="on">
+          <label for="labelOn">On</label>&emsp;
+        <input type="radio" id="labelOff" name="labelOnOff" value="off">
+          <label for="labelOff">Off</label>
+    </li><br>
+    <li>
+      Next: <input type="text" id="turn_readout" name="turn_readout" size="4"
+        style="font-size:14pt; text-align:center; color:#FFFFFF; background-color:#0000FF" readonly>
+      &emsp;
+      Winner: <input type="text" id="win_readout" name="win_readout" size="4"
+        style="font-size:14pt; text-align:center; color:#FFFFFF" readonly>
+    </li>
+  </ul>
+</div>
+
+<h3>Rules</h3>
+  <ol>
+    <li>
+      <strong>Basic Rules:</strong>
+        Two players take turns placing a checker on the board on an unoccupied square.
+        When a checker is put on a square, all the checkers (of both colors) on
+        adjacent squares move away one space (horizontally, vertically or diagonally),
+        unless there is another checker directly behind it preventing it from moving
+        away. A player wins if they get three checkers in a row (horizontally,
+        vertically or diagonally). If a single move gives both red and blue players three
+        checkers in a row simultaniously, the player who made the move wins.
+    </li>
+    <li>
+      <strong>Edge Rules:</strong>
+        These rules determine what happens if a checker falls off the side of the board.
+      <ul style="list-style-type:none">
+        <li>
+          <input type="radio" id="edge1" name="edgeRule" value="reincarnate">
+          <label for="edge1"><strong>Reincarnation:</strong></label>&ensp;
+          When a checker falls off the side of the board, it is returned to the
+          storage bin. It can be placed back on the board on a later move.
+        </li>
+        <li>
+          <input type="radio" id="edge2" name="edgeRule" value="ringout">
+          <label for="edge2"><strong>Ringout:</strong></label>&emsp;&emsp;&emsp;
+          When a checker falls off the side of the board, it is out of the game.
+          When a player is reduced to 2 checkers, they lose. If both players are
+          reduced to 2 checkers at the same time, the game is a stalemate.
+        </li>
+        <li>
+          <input type="radio" id="edge3" name="edgeRule" value="blocked">
+          <label for="edge3"><strong>Blocked:</strong></label>&emsp;&emsp;&emsp;
+          Checkers cannot fall off the side of the board. If they are pushed
+          in a way where they would normally fall off the side of the board,
+          they instead remain where they are and are not pushed.
+        </li>
+        <li>
+          <input type="radio" id="edge4" name="edgeRule" value="torus">
+          <label for="edge4"><strong>Torus:</strong></label>&emsp;&emsp;&emsp;&emsp;
+          When a checker falls off the side of the board, it moves to the opposite
+          side of the board with the order of the rows and columns unchanged.
+          <button class="btn"
+            onclick="window.open('TorusBoard.html',
+                               'newwindow',
+                               'top=0,left=0,width=600,height=560');
+                    return false;">
+          Expanded Torus Board</button>
+        </li>
+        <!-- <li>
+          <input type="radio" id="edge5" name="edgeRule" value="projective">
+          <label for="edge5"><strong>Projective:</strong></label>&emsp;&emsp;
+          When a checker falls off the side of the board, it moves to the opposite
+          side of the board with the order of the rows and columns reversed.
+          Bishop and Queen moves are disabled in this case.
+          <button class="btn"
+            onclick="window.open('ProjectiveBoard.html',
+                               'newwindow',
+                               'top=0,left=0,width=600,height=560');
+                    return false;">
+          Expanded Projective Board</button>
+        </li> -->
+      </ul>
+    </li>
+    <li>
+      <strong>All on Board Rules:</strong>
+        These rules determine what happens when a player has all of their
+        checkers on the board.
+      <ul style="list-style-type:none">
+        <li>
+        <input type="radio" id="all1" name="allPlayWinRule" value="yes">
+          <label for="all1"><strong>Win:</strong></label>&emsp;&emsp;&emsp;&emsp;&ensp;
+          When a player gets all their pieces on the board, they win.
+        </li>
+        <li>
+        <input type="radio" id="all2" name="allPlayWinRule" value="no">
+          <label for="all2"><strong>Continue:</strong></label>&emsp;&emsp;&nbsp;
+          When a player gets all their pieces on the board, the game continues.
+          If movement if not allowed, the game is a stalemate.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Movement Rules:</strong>
+        These rules determine when and how pieces can be moved. Checkers can
+        only be placed in unoccupied squares.
+      <ol>
+        <li>
+          <strong>When:</strong>
+          <ul style="list-style-type:none">
+            <li>
+              <input type="radio" id="canmove1" name="canMoveRule" value="never">
+              <label for="canmove1"><strong>Never:</strong></label>&emsp;&emsp;&emsp;&emsp;
+              When a player cannot place a new piece on the board, the game is a
+              win or a stalemate.
+            </li>
+            <li>
+              <input type="radio" id="canmove2" name="canMoveRule" value="after">
+              <label for="canmove2"><strong>All on Board:</strong></label>&emsp;
+              A player can only move a piece when all of their pieces are on the board.
+            </li>
+            <li>
+              <input type="radio" id="canmove3" name="canMoveRule" value="always">
+              <label for="canmove3"><strong>Always:</strong></label>&emsp;&emsp;&emsp;&nbsp;
+              A player can move a piece on any turn.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>How:</strong>
+          <ul style="list-style-type:none">
+            <li>
+              <input type="radio" id="howmove1" name="howMoveRule" value="king">
+              <label for="howmove1"><strong>King:</strong></label>&emsp;&emsp;&emsp;&emsp;&nbsp;
+              A checker can be moved 1 space in any direction.
+            </li>
+            <li>
+              <input type="radio" id="howmove2" name="howMoveRule" value="rook">
+              <label for="howmove2"><strong>Rook:</strong></label>&emsp;&emsp;&emsp;&emsp;
+              A checker can be moved any number of spaces horizontally or vertically.
+            </li>
+            <li>
+              <input type="radio" id="howmove3" name="howMoveRule" value="bishop">
+              <label for="howmove3"><strong>Bishop:</strong></label>&emsp;&emsp;&emsp;&nbsp;
+              A checker can be moved any number of spaces diagonally.
+            </li>
+            <li>
+              <input type="radio" id="howmove4" name="howMoveRule" value="queen">
+              <label for="howmove4"><strong>Queen:</strong></label>&emsp;&emsp;&emsp;&ensp;
+              A checker can be moved any number of spaces horizontally, vertically or diagonally.
+            </li>
+            <li>
+              <input type="radio" id="howmove5" name="howMoveRule" value="anywhere">
+              <label for="howmove5"><strong>Anywhere:</strong></label>&emsp;&emsp;
+              A checker can be moved to any unoccupied space.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Zero Allowed:</strong>
+          <ul style="list-style-type:none">
+            <li>
+            <input type="radio" id="zero1" name="zeroMoveRule" value="yes">
+              <label for="zero1"><strong>Yes:</strong></label>&emsp;&emsp;&emsp;&emsp;
+              A player is allowed to pick up a checker and place it back into the same space.
+            </li>
+            <li>
+            <input type="radio" id="zero2" name="zeroMoveRule" value="no">
+              <label for="zero2"><strong>No:</strong></label>&emsp;&emsp;&emsp;&emsp;&nbsp;
+              A player is not allowed to pick up a checker and place it back into the same space.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Jumps Allowed:</strong>
+          <ul style="list-style-type:none">
+            <li>
+            <input type="radio" id="jump1" name="jumpMoveRule" value="yes">
+              <label for="jump1"><strong>Yes:</strong></label>&emsp;&emsp;&emsp;&emsp;
+              For Bishop, Rook or Queen moves, a player is allowed to move a
+              checker to any unoccupied space on a row, column or diagonal
+              including those behind other checkers.
+            </li>
+            <li>
+            <input type="radio" id="jump2" name="jumpMoveRule" value="no">
+              <label for="jump2"><strong>No:</strong></label>&emsp;&emsp;&emsp;&emsp;&nbsp;
+              For Bishop, Rook or Queen moves, a player is allowed to move a
+              checker only to an unoccupied space on a row, column or diagonal
+              which does not require jumping over other checkers.
+            </li>
+          </ul>
+        </li>
+      </ol>
+  </ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+
+<script src="scripts/three.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+<script src="scripts/TextSprite.js"></script>
+<script src="scripts/PopTacToe.js"></script>
+
+<style>
+  canvas{
+    background: #f0f0f0;
+    height: 200px;
+    width: 200px;
+    /* position: relative; */
+    z-index: 1;
+  }
+</style>
+
+
+</body>
+</html>

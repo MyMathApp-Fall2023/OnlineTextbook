@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Direction | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Mag.html" title="Previous">&lArr;</a></li>
+      <li><a href="VecAddAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Definition, Magnitude and Direction</h2>
+
+
+      
+      <h2>4. Direction</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	A vector \(\vec v\) has a <span class="hl">magnitude</span> and a
+  <span class="hl">direction</span>. The <span class="defword">magnitude</span>
+  is its length
+	\[
+  |\vec v|=\sqrt{ {v_1}^2+{v_2}^2}
+  \]
+	What do we want to mean by its direction? We could mean the slope \(m\) of
+	a line parallel	to the vector, but this would not say if the vector points
+	right of left and would not work for vertical vectors. Alternatively, we
+	could mean its polar angle \(\theta\) in polar coordinates. This works in
+	two dimensions but does not easily generalize to higher dimensions.
+	Further, these ideas depend on the coordinate system and change if we rotate
+	the axes.
+</p>
+<p>
+	We would like to have a notion of direction which is independent of the
+  coordinate system and generalizes to higher dimensions.	This is the unit vector.
+</p>
+
+				<div class="rule"></div>
+
+<h3>The Direction Unit Vector</h3>
+<p>
+	Recall that the
+	<span class="hl">unit vector in the direction of a vector</span>
+	\(\vec v\) is \(\hat v=\dfrac{\vec v}{|\vec v|}\). This is what is left
+	when you eliminate (divide out by) the magnitude. So we define:
+</p>
+<p class="def">
+	The <span class="defword">direction</span> of a vector \(\vec v\) is the
+	<span class="hl">unit vector in the direction of the vector</span> \(\vec v\):
+	\[
+  \hat{v}=\dfrac{\vec v}{|\vec v|}
+  =\left\langle\dfrac{v_1}{|\vec v|},\dfrac{v_2}{|\vec v|}\right\rangle
+  \]
+</p>
+<p>
+	If we know this unit vector, we know the direction of \(\vec v\) but we
+  know nothing about its magnitude.
+</p>
+<p class="example" data-number="1">
+  Find the unit vector in the direction opposite to
+	\(\vec v=\left\langle-3,4\right\rangle\).
+</p>
+<p class="sol">
+	The magnitude of \(\vec v=\left\langle-3,4\right\rangle\) is:
+  \[
+  |\vec v|=\sqrt{(-3)^2+4^2}=\sqrt{25}=5
+  \]
+	So the direction of \(\vec v\) is the unit vector:
+  \[
+  \hat v=\dfrac{\vec v}{|\vec v|}
+  =\left\langle\dfrac{-3}{5},\dfrac{4}{5}\right\rangle
+  \]
+	Therefore, the unit vector in the direction opposite to \(\vec v\) is:
+  \[
+  \hat w=-\hat v
+  =\left\langle\dfrac{3}{5},\dfrac{-4}{5}\right\rangle
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the vector of length \(6\) in the same direction as
+		\(\vec v=\left\langle6,-6\right\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(
+    \vec w=\left\langle3\sqrt{2},-3\sqrt{2}\right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+  	The magnitude of \(\vec v=\left\langle6,-6\right\rangle\) is:
+    \[
+    |\vec v|=\sqrt{6^2+(-6)^2}=\sqrt{72}=6\sqrt{2}
+    \]
+  	So the direction of \(\vec v\) is the unit vector:
+    \[
+    \hat v=\dfrac{\vec v}{|\vec v|}
+    =\left\langle\dfrac{6}{6\sqrt{2}},\dfrac{-6}{6\sqrt{2}}\right\rangle
+    =\left\langle\dfrac{1}{\sqrt{2}},\dfrac{-1}{\sqrt{2}}\right\rangle
+    \]
+    Since \(\hat v\) has a length of \(1\), a vector of length \(6\) in
+		the same direction is:
+    \[
+    \vec w=6\hat v
+    =\left\langle\dfrac{6}{\sqrt{2}},\dfrac{-6}{\sqrt{2}}\right\rangle
+    =\left\langle3\sqrt{2},-3\sqrt{2}\right\rangle
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+		We check by computing the length of \(\vec w\):
+    \[
+    |\vec w|=\sqrt{(3\sqrt{2})^2+(-3\sqrt{2})^2}=\sqrt{18+18}=6
+		\]
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<h3>Direction Angles and Direction Cosines (Optional)</h3>
+<p>
+  If there is a coordinate system, then giving the direction of a vector as
+  a unit vector is equivalent to giving the direction angles of the vector.
+</p>
+<div class="column">
+  <div>
+    <p class="def">
+      The <span class="defword">direction angles</span> of a vector \(\vec v\)
+      are the angles, \(\alpha_1\) and \(\alpha_2\), between \(\vec v\)
+			(when located at the origin) and each of the positive coordinate
+      axes. The <span class="defword">direction cosines</span> are the
+  	  cosines of these angles: \(\cos\alpha_1\) and \(\cos\alpha_2\).
+    </p>
+		<p class="remark">
+			Notice that \(\alpha_1\) is the polar angle \(\alpha_1=\theta\) and
+			\(\alpha_2\) is its complement \(\alpha_2=\dfrac{\pi}{2}-\theta\).
+		</p>
+  </div>
+  <div class="center">
+	  <img src="graphics/prop_dircos.jpg" alt="prop_dircos"/>
+  </div>
+</div>
+<p class="prop">
+	The components of the direction of \(\vec v\) are the direction cosines.
+	\[
+	\hat v
+	=\left\langle\cos\alpha_1,\cos\alpha_2\right\rangle
+	\]
+	In other words, the components of the direction of \(\vec v\) are the
+	direction cosines. If you know the direction angles or the direction
+	cosines, you know	the	direction of the vector and vice versa.
+	<br>
+	<button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+  	Look at the diagram above. Drop a perpendicular
+  	from the tip of \(\vec v\) to each of the coordinate axes. In the right
+		triangle formed by \(\vec v\), an axis and the perpendicular, the
+		hypotenuse is \(|\vec v|\) and the adjacent side
+		is the component, i.e. the side adjacent to \(\alpha_1\)
+		is \(v_1\) and the side adjacent to \(\alpha_2\) is \(v_2\). So
+		\(\cos\alpha_1=\dfrac{v_1}{|\vec v|}\) and
+		\(\cos\alpha_2=\dfrac{v_2}{|\vec v|}\). If you put these
+    together to form a vector, you get
+  	\[
+    \left\langle\cos\alpha_1,\cos\alpha_2\right\rangle
+    =\left\langle\dfrac{v_1}{|\vec v|},\dfrac{v_2}{|\vec v|}\right\rangle
+  	=\hat v
+		\]
+  	which is the unit vector direction of \(\vec v\).
+	</p>
+</div>
+<p>
+	<button class="toggle" data-toggle="Drop1">
+		Why are direction cosines more important than direction sines?
+	</button>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>The components of the direction of \(\vec v\) are the direction cosines
+		not the direction sines.
+	</p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

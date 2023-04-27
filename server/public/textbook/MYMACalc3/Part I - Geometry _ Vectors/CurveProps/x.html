@@ -1,0 +1,3401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TutCurveProps.html" title="Previous">&lArr;</a></li>
+      <li><a href="../LineInt/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>3. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<ol class="xlist">
+
+				<div class="rule" id="topic1"></div>
+
+<!--Vector Functions, Position, Velocity and Plots-->
+
+<div class="heading">
+  <h3><a href="VecFnsPosPlot.html">Vector Functions, Position, Velocity and Plots</a></h3>
+  <div class="pgs">
+    
+      <div><a href="VecFnsPosPlot.html">1</a></div>
+    
+      <div><a href="VecFnsVel.html">2</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<p>
+		Consider the position vector \(\vec{r}(t)=\langle t,t^2+1\rangle\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the position at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX1a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX1a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX1a">
+				<p>
+					Just substitute \(t=3\) into
+					\(\vec{r}(t)=\langle t,t^2+1\rangle\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+				<p>
+					\(\vec{r}(3)=\langle 3,10\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the velocity at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX1b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX1b"></button>
+					<button class="toggle has-sol" data-toggle="SolX1b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX1b">
+				<p>
+					The velocity is
+					\(\vec{v}(t)=\dfrac{d\vec{r}}{dt}\). Substitute in \(t=3\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+				<p>
+					\(\vec{v}(3)=\langle 1,6\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1b">
+				<p>
+					The velocity is
+					\(\vec{v}(t)=\dfrac{d\vec r}{dt}=\langle 1,2t\rangle\).
+					At \(t=3\) this is
+					\(\vec{v}(3)=\langle 1,6\rangle\).
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Plot the parametric curve.
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX1c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX1c"></button>
+					<button class="toggle has-sol" data-toggle="SolX1c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX1c">
+				<p>
+					Express \(y\) as a function of \(x\) by setting \(t=x\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1c">
+				<figure>
+					<img src="graphics/x_t_t21c.jpg" alt="x_t_t21c">
+				</figure>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1c">
+				<div class="column">
+					<p>
+						The coordinate form of the parametric curve is
+						\[
+						x=t \qquad y=t^2=1
+						\]
+						Eliminating the parameter we have \(y=x^2+1\), whose graph is:
+					</p>
+					<div class="center">
+						<figure>
+							<img src="graphics/x_t_t21c.jpg" alt="x_t_t21c">
+						</figure>
+					</div>
+				</div>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Add the plot of the <strong>position</strong> vector at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1d">
+				<figure>
+					<img src="graphics/x_t_t21d.jpg" alt="x_t_t21d">
+				</figure>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Add the plot of the <strong>velocity</strong> vector at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1e">
+				<figure>
+					<img src="graphics/x_t_t21e.jpg" alt="x_t_t21e">
+				</figure>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+  <p>Consider the position vector \(\vec{r}(t)
+		=\langle 2t,3t^2,8t-4\rangle\)</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the position at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX2a">
+				<p>
+					Just substitute \(t=3\) into
+					\(\vec{r}(t)=\langle 2t,3t^2,8t-4\rangle\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+				<p>
+					\(\vec{r}(3)=\langle 6,27,20\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the velocity at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2b"></button>
+					<button class="toggle has-sol" data-toggle="SolX2b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX2b">
+				<p>
+					The velocity is
+					\(\vec{v}(t)=\dfrac{d\vec{r}}{dt}\). Substitute in \(t=3\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+				<p>
+					\(\vec{v}(3)=\langle 2,18,8\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2b">
+				<p>
+					The velocity is
+					\(\vec{v}(t)=\dfrac{d\vec r}{dt}=\langle 2,6t,8\rangle\).
+					At \(t=3\) this is
+					\(\vec{v}(3)=\langle 2,18,8\rangle\).
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Plot the parametric curve in 3 dimensions.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+				<figure>
+					<img src="graphics/x_3dParabc.gif" alt="x_3dParabc">
+				</figure>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Plot the <strong>position</strong> vector at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2d">
+				<figure>
+					<img src="graphics/x_3dParabd.gif" alt="x_3dParabd">
+				</figure>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Add the plot of the <strong>velocity</strong> vector at \(t=3\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2e">
+				<figure>
+					<img src="graphics/x_3dParabe.gif" alt="x_3dParabe">
+				</figure>
+			</div>
+		</li>
+	</ol>
+</li>
+
+				<div class="rule" id="topic2"></div>
+
+<!--Limits and Derivatives of Vector Functions-->
+
+<div class="heading">
+  <h3><a href="Lim.html">Limits and Derivatives of Vector Functions</a></h3>
+  <div class="pgs">
+    
+      <div><a href="Lim.html">1</a></div>
+    
+      <div><a href="Der.html">2</a></div>
+    
+  </div>
+</div>
+
+ <li>
+	 <div class="dotfillex">
+  	<p>
+			Find the derivative of the vector function
+			\(\vec{f}(t)=\langle 3t-1,2t^{5}+3t+1,6-t\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX3"></button>
+			<button class="toggle has-ans" data-toggle="AnsX3"></button>
+			<button class="toggle has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX3">
+		<p>
+			Find the derivative of each component with respect to \(t\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+		<p>
+			\(\vec f''(t)=\langle 3,10t^4+3,-1\rangle\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+		<p>
+			\[\begin{aligned}
+			\vec f'(t)
+			&=\dfrac{d\vec{f}}{dt}
+			=\left\langle \dfrac{df_1}{dt},\dfrac{df_2}{dt},\dfrac{df_3}{dt}\right\rangle \\
+			&=\dfrac{d}{dt}\langle 3t-1,2t^{5}+3t+1,6-t\rangle
+			=\langle 3,\,10t^4+3,\,-1\rangle
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+ </li>
+
+ <li>
+	 <div class="dotfillex">
+  	<p>
+			Find the derivative of the vector function
+			\(\vec{f}(t)=\langle -9t,3t^2+5t+4,2t^3+8t^2-6t\rangle\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX4"></button>
+			<button class="toggle has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+		<p>
+			\(\vec f'(t)=\langle -9,6t+5,6t^2+16t-6\rangle\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+		<p>
+			\[
+			\vec f'(t)=
+			\dfrac{d\vec{f}}{dt}
+			=\left\langle \dfrac{df_1}{dt},\dfrac{df_2}{dt},\dfrac{df_3}{dt}\right\rangle
+			\]
+			\[
+			\dfrac{d}{dt}\langle -9t,3t^2+5t+4,2t^3+8t^2-6t\rangle
+			=\langle -9,\,6t+5,\,6t^2+16t-6\rangle
+			\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the derivative of the vector function \(\vec{f}
+			(t)=\langle 2t,t^2+t+1,7-t\rangle\) at the point when \(t=2\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX5"></button>
+			<button class="toggle has-sol" data-toggle="SolX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+		<p>
+			\(\vec f'(2)=\langle 2,5,-1\rangle\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+		<p>
+			\[
+			\vec f'(t)
+			=\dfrac{d\vec{f}}{dt}
+			=\left\langle \dfrac{df_1}{dt},\dfrac{df_2}{dt},\dfrac{df_3}{dt}\right\rangle
+			\]
+			\[
+			\dfrac{d}{dt}\langle 2t,t^2+t+1,7-t\rangle
+			=\langle 2,2t+1,-1\rangle
+			\]
+			\[
+			\vec f'(2)
+			=\langle 2,5,-1\rangle
+			\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find \(\vec f'(-3)\) if
+			\(\vec{f}(t)=\langle 6,2t^2+t,-4t\rangle\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX6"></button>
+			<button class="toggle has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+		<p>
+			\(\vec f'(-3)=\langle 0,-11,-4\rangle\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+		<p>
+			\[
+			\vec f't)
+			=\dfrac{d\vec{f}}{dt}
+			=\left\langle \dfrac{df_1}{dt},\dfrac{df_2}{dt},\dfrac{df_3}{dt}\right\rangle
+			\]
+			\[
+			\dfrac{d}{dt}\langle 6,2t^2+t,-4t\rangle
+			=\langle 0,4t+1,-4\rangle
+			\]
+			\[
+			\vec f'(-3)
+			=\langle 0,-11,-4\rangle
+			\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+				<div class="rule" id="topic3"> </div>
+
+<!--Velocity, Acceleration, and Jerk-->
+
+<div class="heading">
+  <h3><a href="VelAccelJerk.html">Velocity, Acceleration, and Jerk</a></h3>
+  <div class="pgs">
+    
+      <div><a href="VelAccelJerk.html">1</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<p>
+		Consider the parabola \(y=8-\,\dfrac{1}{2}(x-4)^2\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the position vector. (Take \(x=t\).)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX7a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7a">
+				<p>
+					\( \vec{r}(t)=\left\langle t,8-\,\dfrac{1}{2}(t-4)^2\right\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the velocity vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX7b"></button>
+					<button class="toggle has-sol" data-toggle="SolX7b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7b">
+				<p>
+					\(
+					\vec{v}(t)=\langle 1,4-t\rangle
+					\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7b">
+				<p>
+					To find the velocity vector, we simply take the
+		      derivative of the position vector as
+		        \[
+		        \vec{v}(t)=\dfrac{d\vec{r}}{dt}
+						=\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt}\right\rangle
+						=\langle 1,4-t\rangle
+		        \]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the acceleration vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX7c"></button>
+					<button class="toggle has-sol" data-toggle="SolX7c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7c">
+				<p>
+					 \(\vec{a}(t)=\langle 0,-1\rangle\)
+			  </p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7c">
+				<p>
+					We have already found the velocity vector
+					\(\vec{v}(t)=\langle 1,4-t\rangle\)
+		      for the parabola. To find the acceleration vector, we simply take the derivative as
+		       \[
+					 \vec{a}(t)=\dfrac{d\vec{v}}{dt}=\langle 0,-1\rangle
+					 \]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the jerk vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX7d"></button>
+					<button class="toggle has-sol" data-toggle="SolX7d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7d">
+				<p>
+					\(\vec{j}(t)=\langle 0,0\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7d">
+				<p>
+					We have already found the acceleration vector
+					\(\vec{a}(t)=\langle 0,-1\rangle\) for the parabola.
+					To find the jerk vector, we simply take the derivative as
+			     \[
+					 \vec{j}(t)=\dfrac{d\vec{a}}{dt}=\langle 0,0\rangle
+					 \]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Plot the original parabola from \(t=0\) to \(t=8\). At three different points along the curve,
+					plot the curve's corresponding velocity and acceleration vectors.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX7e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7e">
+				<div class="column">
+					<div dtat-col-width="60%">
+						<p>
+							The plot shows the parabola along with its
+							corresponding velocity and acceleration vectors at \(7\) points.
+						</p>
+						<p class="remark">
+							Note that the acceleration is a constant vector on the curve
+							which points straight down (like gravity). This means the
+							velocity is always bending down: an object that followed along
+							this curve would be decelerating on the	way up and accelerating
+							on the way down.
+						</p>
+					</div>
+					<div dtat-col-width="40%">
+						<figure>
+							<img src="graphics/x_parab_vel_acc.jpg" alt="x_parab_vel_acc">
+							<figcaption>
+								\(\vec{r}(t)\) is <span style="color:blue">Blue</span>,
+								<br>
+								\(\vec{v}(t)\) is <span style="color:green">Green</span>,
+								<br>
+								\(\vec{a}(t)\) is <span style="color:orange">Orange</span>.
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Consider the position vector \(\vec{r}(t)=
+		\langle t^3+2t^2+t,t-3,t^4+6\rangle\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the velocity vector
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX8a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX8a"></button>
+					<button class="toggle has-sol" data-toggle="SolX8a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8a">
+				<p>
+					\(\vec{v}(t)=\dfrac{d\vec{r}}{dt}
+					=\left\langle \dfrac{dr_{1}}{dt},\dfrac{dr_{2}}{dt},
+					\dfrac{dr_{3}}{dt}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8a">
+				<p>
+					\(\vec{v}(t)=\langle 3t^2+4t+1,1,4t^3\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8a">
+				<p>
+					\[\begin{aligned}
+					\vec{v}(t)=\dfrac{d\vec{r}}{dt}
+					=\left\langle \dfrac{dr_{1}}{dt},\dfrac{dr_{2}}{dt},
+					\dfrac{dr_{3}}{dt} \right\rangle \\
+					\end{aligned}\]
+					\[\begin{aligned}
+					\dfrac{d}{dt}\langle t^3+2t^2+t,t-3,t^4+6\rangle
+					=\langle 3t^2+4t+1,1,4t^3\rangle
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the acceleration vector
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX8b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX8b"></button>
+					<button class="toggle has-sol" data-toggle="SolX8b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8b">
+				<p>
+					\(\vec{a}(t)=\dfrac{d\vec{v}}{dt}
+					=\left\langle \dfrac{dv_{1}}{dt},\dfrac{dv_{2}}{dt},
+					\dfrac{dv_{3}}{dt} \right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8b">
+				<p>
+					\(\vec{a}(t)=\langle 6t+4,0,12t^2\rangle \)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8b">
+				<p>
+					\[\begin{aligned}
+					\vec{a}(t)=\dfrac{d\vec v}{dt}
+					=\left\langle \dfrac{dv_{1}}{dt},\dfrac{dv_{2}}{dt},
+					\dfrac{dv_{3}}{dt} \right\rangle \\
+					\end{aligned}\]
+					\[\begin{aligned}
+					\dfrac{d}{dt}\langle 3t^2+4t+1,1,4t^3\rangle
+					=\langle 6t+4,0,12t^2\rangle
+					\end{aligned}\]
+				</p>
+			</div>
+			<p style="text-align:right">
+				lh&ensp;
+			</p>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the jerk vector
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX8c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX8c"></button>
+					<button class="toggle has-sol" data-toggle="SolX8c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8c">
+				<p>
+					\(\vec{j}(t)=\dfrac{d\vec{a}}{dt}=
+					\left\langle \dfrac{da_{1}}{dt},
+					\dfrac{da_{2}}{dt},\dfrac{da_{3}}{dt}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8c">
+				<p>
+					\(\vec{j}(t)=\langle 6,0,24t\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8c">
+				<p>
+					\[\begin{aligned}
+					\vec{j}(t)=\dfrac{d\vec{a}}{dt}
+					=\left\langle \dfrac{da_{1}}{dt},\dfrac{da_{2}}{dt},
+					\dfrac{da_{3}}{dt}\right\rangle \\
+					\end{aligned}\]
+					\[\begin{aligned}
+					\dfrac{d}{dt}\langle 6t+4,0,12t^2\rangle
+					=\langle 6,0,24t\rangle
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Consider the position vector \(\vec{r}(t)
+		=\left\langle e^{t/2},t^{5/2}+1,\sin t\right\rangle\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the velocity vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX9a"></button>
+					<button class="toggle has-sol" data-toggle="SolX9a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX9a">
+				<p>
+					\(\vec{v}(t)
+					=\left\langle \dfrac{1}{2}e^{t/2},
+					\dfrac{5}{2}t^{3/2},\cos t\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX9a">
+				<p>
+					\[\begin{aligned}
+					\vec{v}(t)=\dfrac{d\vec{r}}{dt}
+					=\left\langle \dfrac{dr_{1}}{dt},\dfrac{dr_{2}}{dt},
+					\dfrac{dr_{3}}{dt}\right\rangle \\
+					\end{aligned}\]
+					\[\begin{aligned}
+					\dfrac{d}{dt}\left\langle e^{t/2}
+					,t^{5/2}+1,\sin t \right\rangle
+					=\left\langle \dfrac{1}{2}e^{t/2},
+					\dfrac{5}{2}t^{3/2},\cos t\right\rangle
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the acceleration vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX9b"></button>
+					<button class="toggle has-sol" data-toggle="SolX9b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX9b">
+				<p>
+					\(\vec{a}(t)
+					=\left\langle \dfrac{1}{4}e^{t/2},
+					\dfrac{15}{4}t^{1/2},-\sin t\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX9b">
+				<p>
+					\[\begin{aligned}
+					\vec{a}(t)=\dfrac{d\vec v}{dt}
+					=\left\langle \dfrac{dv_{1}}{dt},\dfrac{dv_{2}}{dt},
+					\dfrac{dv_{3}}{dt}\right\rangle \\
+					\end{aligned}\]
+					\[\begin{aligned}
+					\dfrac{d}{dt}\left\langle \dfrac{1}{2}e^{t/2},
+					\dfrac{5}{2}t^{3/2},\cos t\right\rangle
+					=\left\langle \dfrac{1}{4}e^{t/2},
+					\dfrac{15}{4}t^{1/2},-\sin t\right\rangle
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the jerk vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX9c"></button>
+					<button class="toggle has-sol" data-toggle="SolX9c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX9c">
+				<p>
+					\(\vec{j}(t)=\left\langle \dfrac{1}{8}e^{t/2},
+					\dfrac{15}{8}t^{-1/2},-\cos t\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX9c">
+				<p>
+					\[\begin{aligned}
+					\vec{j}(t)=\dfrac{d\vec{a}}{dt}
+					=\left\langle \dfrac{da_{1}}{dt},\dfrac{da_{2}}{dt},
+					\dfrac{da_{3}}{dt}\right\rangle \\
+					\end{aligned}\]
+					\[\begin{aligned}
+					\dfrac{d}{dt}\left\langle \dfrac{1}{4}e^{t/2},
+					\dfrac{15}{4}t^{1/2},-\sin t\right\rangle
+					=\left\langle \dfrac{1}{8}e^{t/2},
+					\dfrac{15}{8}t^{-1/2},-\cos t\right\rangle
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the tangent vector to the curve \(\vec{r}(t)=(4t+5,2t^2-2,7)\) at
+			\(t=3\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX10"></button>
+			<button class="toggle has-ans" data-toggle="AnsX10"></button>
+			<button class="toggle has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX10">
+		<p>
+			Which vector (position, velocity, or acceleration) lies tangent to the curve?
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+		<p>
+			\(\vec{v}(3)=\langle 4,12,0\rangle\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+		<p>
+			The tangent vector to the curve \(\vec r(t)\) is \(\vec v(t)\).
+			\[\begin{aligned}
+			\vec{v}(t)=\dfrac{d\vec{r}}{dt}
+			=\left\langle \dfrac{dr_{1}}{dt},\dfrac{dr_{2}}{dt},
+			\dfrac{dr_{3}}{dt}\right\rangle \\
+			\end{aligned}\]
+			\[\begin{aligned}
+			\dfrac{d}{dt}\langle 4t+5,2t^2-2,7\rangle
+			=\langle 4,4t,0\rangle
+			\end{aligned}\]
+			\[\begin{aligned}
+			\vec{v}(3)=\langle 4,12,0\rangle
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+				<div class="rule" id="topic4"> </div>
+
+<!--Arc Length, Arc Length Parameter, and Speed-->
+
+<div class="heading">
+  <h3><a href="ArcLen.html">Arc Length, Arc Length Parameter, and Speed</a></h3>
+  <div class="pgs">
+    
+      <div><a href="ArcLen.html">1</a></div>
+    
+      <div><a href="sParam.html">2</a></div>
+    
+      <div><a href="Speed.html">3</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the length of the curve \(\vec{r}(t)=(3t+32,4t+1,-12t-1)\)
+			from \(t=-2\) to \(t=4\).
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX11"></button>
+			<button class="toggle has-ans" data-toggle="AnsX11"></button>
+			<button class="toggle has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX11">
+		<p>
+			\(\displaystyle L=\int_{a}^{b} |\vec{v}|\,dt\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+		<p>
+			\(L=78\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+		<p>
+			\[
+			\vec v(t)
+			=\langle 3,4,-12\rangle
+			\qquad
+			|\vec v|=\sqrt{3^2+4^2+12^2}=13
+			\]
+			\[\begin{aligned}
+			L&=\int_{a}^{b} |\vec{v}|\,dt
+			=\int_{-2}^4 13\,dt \\
+			&=13(4-(-2))=78 \\
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the length of the curve \(\vec{r}(t)=(\sin t,-\cos t,3t+2)\) from \(
+			t=0\) to \(t=\dfrac{\pi}{2}\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX12"></button>
+			<button class="toggle has-sol" data-toggle="SolX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+		<p>
+			\(L=\dfrac{\pi\sqrt{10}}{2}\approx 4.97\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+		<p>
+			\[
+			\vec v(t)
+			=\langle \cos t,\sin t,3\rangle
+			\qquad
+			|\vec v|=\sqrt{\cos^2 t+\sin^2 t+3^2}=\sqrt{10}
+			\]
+			\[\begin{aligned}
+			L&=\int_{a}^{b} |\vec{v}|\,dt
+			=\int_0^{\pi/2} \sqrt{10}\,dt \\
+			&=\sqrt{10}\left(\dfrac{\pi}{2}-0\right)
+			=\dfrac{\pi\sqrt{10}}{2}\approx 4.97
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Reparametrize \(\vec{r}(t)=(3t+7,4\sin t-5,4\cos t-1)\) with
+			respect to arc length, \(s\), starting from \(t=0\).
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX13"></button>
+			<button class="toggle has-ans" data-toggle="AnsX13"></button>
+			<button class="toggle has-sol" data-toggle="SolX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX13">
+		<p>
+			To reparametrize \(\vec{r}(t)\) with respect to arc length \(s\)
+			starting from \(t=0\), solve for \(s\) in terms of \(t\) using
+			\(\displaystyle s(t)=\int_0^t |\vec{v}|\,dt\). Then solve for
+			\(t(s)\), and plug \(t(s)\) into \(\vec{r}(t)\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+		<p>
+			\(\vec r(s)
+			=\left\langle 3\left(\dfrac{s}{5}\right)+7,
+			              4\sin\left(\dfrac{s}{5}\right)-5,
+										4\cos\left(\dfrac{s}{5}\right)-1\right\rangle\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+		<p>
+			\[\begin{aligned}
+			\vec v(t)&=\langle 3,4\cos t,-4\sin t\rangle \\
+			|\vec v(t)|&=\sqrt{3^2+4^2\cos^2 t+4^2\sin^2 t}=\sqrt{9+16}=5
+			\end{aligned}\]
+			\[
+			s(t)
+			=\int_0^t |\vec{v}|\,dt
+			=\int_0^{t} 5\,dt=5t
+			\]
+			So \(t=\dfrac{s}{5}\) and:
+			\[
+			\vec r(s)
+			=\left\langle 3\left(\dfrac{s}{5}\right)+7,
+			              4\sin\left(\dfrac{s}{5}\right)-5,
+			              4\cos\left(\dfrac{s}{5}\right)-1\right\rangle
+			\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the speed of the position vector \(\vec{r}
+			(t)=\langle 3t^2+2,2t^3-5t,9t-2\rangle\) at \(t=1\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX14"></button>
+			<button class="toggle has-ans" data-toggle="AnsX14"></button>
+			<button class="toggle has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX14">
+		<p>
+			\(\text{speed}(t)=|\vec v(t)|\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+		<p>
+			\(\text{speed}(1)=\sqrt{118}\approx 10.9\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+		<p>
+			\[\begin{aligned}
+			\vec{v}(t)&=\langle 6t,6t^2-5,9\rangle \\
+
+			\vec{v}(1)&=\langle 6,1,9\rangle \\
+			\end{aligned}\]
+			\[\begin{aligned}
+			\text{speed}(1)=|\vec{v}(1)|=\sqrt{6^2+1^2+9^2}=\sqrt{118}\approx 10.9
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+<a id="sqrtcrv"></a>
+<br>
+
+<li>
+	<div class="dotfillex">
+		<p>
+		For the parametric curve
+		\(\vec r(t)=\left\langle2t^{1/2},\sqrt{6}t,2t^{3/2}\right\rangle\)
+		find the arc length between \(t=1\) and \(t=4\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX15"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+    <p>
+      In finding the speed, the quantity inside the square root is a perfect square.
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      \(L=16\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+			Since the position is:
+      \[r=\left\langle2t^{1/2},\sqrt{6}t,2t^{3/2}\right\rangle\]
+			the velocity is:
+			\[v=\left\langle t^{-1/2},\sqrt{6},3t^{1/2}\right\rangle\]
+			Therefore, the speed is:
+			\[\begin{aligned}
+			|v|&=\sqrt{t^{-1}+6+9t}
+			=\sqrt{(t^{-1/2}+3t^{1/2})^2} \\
+			&=t^{-1/2}+3t^{1/2}
+			\end{aligned}\]
+			To find the arc length, we take the integral of the speed between \(t=1\) and \(t=4\).
+			\[
+			\begin{aligned}
+			L&=\int_1^4\left|\vec v\right| dt
+			=\int_1^4\left(t^{-1/2}+3t^{1/2}\right) dt \\
+			&=\left[2t^{1/2}+2t^{3/2}\right]_1^4
+			=(4+16)-(2+2)=16
+			\end{aligned}
+			\]
+  	</p>
+		<p style="text-align:right">
+			ad&ensp;
+		</p>
+  </div>
+</li>
+
+				<div class="rule" id="topic5"></div>
+
+<!--Tangent, Normal, and Binormal Vectors-->
+
+<div class="heading">
+  <h3><a href="TNB.html">Tangent, Normal, and Binormal Vectors</a></h3>
+  <div class="pgs">
+    
+      <div><a href="TNB.html">1</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+		For the parametric curve
+		\(\vec r(t)=\left\langle2t^{1/2},\sqrt{6}t,2t^{3/2}\right\rangle\)
+		find \(\hat T\), \(\hat N\) and \(\hat B\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX16"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX16"></button>
+    	<button class="toggle has-sol" data-toggle="SolX16"></button>
+    	<button class="toggle has-check" data-toggle="CkX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX16">
+    <p>
+      The tangent vector is \(\hat T=\dfrac{\vec v}{|\vec v|}\). <br><br>
+			The binormal vector is \(\hat B=\dfrac{\vec v\times\vec a}{|\vec v\times\vec a|}\). <br><br>
+			Finally, the normal vector is \(\hat N=\vec B\times\vec T\).
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+  	<p>
+      \(\vec T
+			=\dfrac{v}{|v|}
+			=\left\langle\dfrac{1}{3t+1},\dfrac{\sqrt{6}t^{1/2}}{3t+1},
+			             \dfrac{3t}{3t+1}\right\rangle\)
+			<br>
+			\(\vec N
+			=\left\langle-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},\dfrac{1-3t}{3t+1},
+			\dfrac{\sqrt{6}t^{1/2}}{3t+1}\right\rangle\)
+			<br>
+			\(\vec B
+			=\left\langle\dfrac{3t}{3t+1},-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},
+			\dfrac{1}{3t+1}\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+  	<p>
+			From a
+			<a href="#sqrtcrv" title="Return using the Back button.">
+			previous problem</a>, the velocity is:
+			\[v=\left\langle t^{-1/2},\sqrt{6},3t^{1/2}\right\rangle\]
+			and its length is
+			\[\begin{aligned}
+			|v|&=t^{-1/2}+3t^{1/2}=\dfrac{3t+1}{t^{1/2}}
+			\end{aligned}\]
+			Therefore, the unit tangent vector is:
+			\[\begin{aligned}
+			\vec T&=\dfrac{v}{|v|}
+			=\dfrac{t^{1/2}}{3t+1}\left\langle t^{-1/2},\sqrt{6},3t^{1/2}\right\rangle \\
+			&=\left\langle\dfrac{1}{3t+1},\dfrac{\sqrt{6}t^{1/2}}{3t+1},
+			             \dfrac{3t}{3t+1}\right\rangle
+ 			\end{aligned}\]
+			To find the binormal, we need \(\vec v\times\vec a\) and its length.
+			The acceleration is:
+			\[
+			a=\left\langle -\dfrac{1}{2}t^{-3/2},0,\dfrac{3}{2}t^{-1/2}\right\rangle
+			\]
+			So:
+			\[\begin{aligned}
+			\vec v\times\vec a
+			&=\begin{vmatrix}
+			\hat\imath & \hat\jmath & \hat k \\
+			t^{-1/2} & \sqrt{6} & 3t^{1/2} \\
+			-\dfrac{1}{2}t^{-3/2} & 0 & \dfrac{3}{2}t^{-1/2}
+			\end{vmatrix} \\
+			&=\hat\imath\left(\dfrac{3}{2}\sqrt{6}t^{-1/2}\right)
+			-\hat\jmath\left(\dfrac{3}{2}t^{-1}--\dfrac{3}{2}t^{-1}\right)
+			+\hat k\left(\dfrac{1}{2}\sqrt{6}t^{-3/2}\right) \\
+			&=\left\langle\dfrac{3}{2}\sqrt{6}t^{-1/2},-3t^{-1},
+			\dfrac{1}{2}\sqrt{6}t^{-3/2}\right\rangle \\
+			\end{aligned}\]
+			\[\begin{aligned}
+			|\vec v\times\vec a|
+			&=\sqrt{\left(\dfrac{3}{2}\sqrt{6}t^{-1/2}\right)^2+(-3t^{-1})^2
+			+\left(\dfrac{1}{2}\sqrt{6}t^{-3/2}\right)^2} \\
+			&=\sqrt{\dfrac{27}{2}t^{-1}+9t^{-2}+\dfrac{3}{2}t^{-3}} \\
+			&=\dfrac{\sqrt{6}}{2t^{3/2}}\sqrt{9t^2+6t+1} \\
+			&=\dfrac{\sqrt{6}(3t+1)}{2t^{3/2}}
+			\end{aligned}\]
+			Therefore, the unit binormal vector is:
+			\[
+			\begin{aligned}
+			\vec B
+			&=\dfrac{\vec v\times\vec a}{|\vec v\times\vec a|} \\
+			&=\dfrac{2t^{3/2}}{\sqrt{6}(3t+1)}\left\langle\dfrac{3}{2}\sqrt{6}t^{-1/2},-3t^{-1},\dfrac{1}{2}\sqrt{6}t^{-3/2}\right\rangle \\
+			&=\left\langle\dfrac{3t}{3t+1},-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},\dfrac{1}{3t+1}\right\rangle
+			\end{aligned}
+			\]
+			Finally, the unit normal vector is:
+			\[\begin{aligned}
+			\vec N&=\hat B\times\hat T=\dfrac{1}{(3t+1)^2}
+			\begin{vmatrix}
+			\hat\imath & \hat\jmath & \hat k \\
+			3t & -\sqrt{6}t^{1/2} & 1 \\
+			1 & \sqrt{6}t^{1/2} & 3t
+			\end{vmatrix} \\
+			&=\dfrac{1}{(3t+1)^2}\left[
+			\hat\imath\left(-3\sqrt{6}t^{3/2}-\sqrt{6}t^{1/2}\right)
+			-\hat\jmath\left(9t^2-1\right)
+			+\hat k\left(3\sqrt{6}t^{3/2}+\sqrt{6}t^{1/2}\right)
+			\right] \\
+			&=\dfrac{1}{(3t+1)^2}\left\langle -\sqrt{6}t^{1/2}(3t+1),(1-3t)(1+3t),
+			\sqrt{6}t^{1/2}(3t+1)\right\rangle \\
+			&=\dfrac{1}{(3t+1)}\left\langle -\sqrt{6}t^{1/2},1-3t,\sqrt{6}t^{1/2}\right\rangle \\
+			&=\left\langle-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},\dfrac{1-3t}{3t+1},
+			\dfrac{\sqrt{6}t^{1/2}}{3t+1}\right\rangle
+			\end{aligned}\]
+  	</p>
+		<p style="text-align:right">
+			ad&ensp;
+		</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX16">
+  	<p>
+			To see \(\vec T\), \(\vec N\), and \(\vec B\) are orthogonal, we check
+			their dot products are zero:
+			\[
+			\begin{aligned}
+			\vec T\cdot\vec N
+			&=\left\langle\dfrac{1}{3t+1},\dfrac{\sqrt{6}t^{1/2}}{3t+1},
+			\dfrac{3t}{3t+1}\right\rangle\cdot\left\langle-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},
+			\dfrac{1-3t}{3t+1},\dfrac{\sqrt{6}t^{1/2}}{3t+1}\right\rangle \\
+			&=\dfrac{-\sqrt{6}t^{1/2}+\sqrt{6}t^{1/2}(1-3t)+3t\sqrt{6}t^{1/2}}{(3t+1)^2} \\
+			&=\dfrac{-\sqrt{6}t^{1/2}+\sqrt{6}t^{1/2}-3t\sqrt{6}t^{1/2}+3t\sqrt{6}t^{1/2}}{(3t+1)^2}
+			=0 \\
+			\vec N\cdot\vec B
+			&=\left\langle-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},\dfrac{1-3t}{3t+1},
+			\dfrac{\sqrt{6}t^{1/2}}{3t+1}\right\rangle\cdot\left\langle\dfrac{3t}{3t+1},
+			-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},\dfrac{1}{3t+1}\right\rangle \\
+			&=\dfrac{-\sqrt{6}t^{1/2}3t-(1-3t)\sqrt{6}t^{1/2}+\sqrt{6}t^{1/2}}{(3t+1)^2} \\
+			&=\dfrac{-3\sqrt{6}t^{3/2}-\sqrt{6}t^{1/2}+3\sqrt{6}t^{3/2}+\sqrt{6}t^{1/2}}{(3t+1)^2}
+			=0 \\
+			\vec B\cdot\vec T
+			&=\left\langle\dfrac{3t}{3t+1},-\,\dfrac{\sqrt{6}t^{1/2}}{3t+1},
+			\dfrac{1}{3t+1}\right\rangle\cdot\left\langle\dfrac{1}{3t+1},
+			\dfrac{\sqrt{6}t^{1/2}}{3t+1},\dfrac{3t}{3t+1}\right\rangle \\
+			&=\dfrac{3t-6t+3t}{(3t+1)^2}=0
+			\end{aligned}
+			\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<p>
+		Find the unit tangent vector of the position vector
+		\(\vec{r}(t)=\left\langle t+2,\sqrt{\dfrac{5}{2}}(t^2-4),\dfrac{5}{3}t^3+3\right\rangle\) at:
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					a general value of \(t\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX17a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX17a"></button>
+					<button class="toggle has-sol" data-toggle="SolX17a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX17a">
+				<p>
+					The unit tangent vector is \(\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX17a">
+				<p>
+					\(\hat{T}=\left\langle \dfrac{1}{1+5t^2},\dfrac{\sqrt{10}t}{1+5t^2},
+					\dfrac{5t^2}{1+5t^2} \right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX17a">
+				<p>
+					Since the position is:
+		      \[r=\left\langle t+2,\sqrt{\dfrac{5}{2}}(t^2-4),\dfrac{5}{3}t^3+3\right\rangle\]
+					the velocity is:
+					\[v=\left\langle 1,\sqrt{10}t,5t^2 \right\rangle\]
+					and the speed is:
+					\[\begin{aligned}
+					|v|&=\sqrt{1^2+\left(\sqrt{10}t\right)^2+(5t^2)^2} \\
+					&=\sqrt{1+10t^2+25t^4} \\
+					&=\sqrt{(1+5t^2)^2} \\
+					&=1+5t^2
+					\end{aligned}\]
+					Therefore, the unit tangent vector is:
+					\[\begin{aligned}
+					\hat T&=\dfrac{v}{|v|} \\
+					&=\dfrac{1}{1+5t^2}
+					\cdot\left\langle 1,\sqrt{10}t,5t^2 \right\rangle \\
+					&=\left\langle \dfrac{1}{1+5t^2},\dfrac{\sqrt{10}t}{1+5t^2},\dfrac{5t^2}{1+5t^2} \right\rangle
+		 			\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh,ad&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>\(t=1\)</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX17b"></button>
+					<button class="toggle has-sol" data-toggle="SolX17b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX17b">
+				<p>
+					\(\hat{T}
+					=\left\langle\dfrac{1}{6},\dfrac{\sqrt{10}}{6},\dfrac{5}{6}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX17b">
+				<p>
+					From part (a), we found:
+					\[
+					\hat T
+					=\left\langle \dfrac{1}{1+5t^2},\dfrac{\sqrt{10}t}{1+5t^2},
+					\dfrac{5t^2}{1+5t^2} \right\rangle
+					\]
+					Plugging \(t=1\), we get:
+					\[
+					\hat T=\left\langle \dfrac{1}{1+5\cdot1^2},\dfrac{\sqrt{10}\cdot1}{1+5\cdot1^2},
+					\dfrac{5\cdot1^2}{1+5\cdot1^2} \right\rangle
+					=\left\langle\dfrac{1}{6},\dfrac{\sqrt{10}}{6},\dfrac{5}{6}\right\rangle
+					\]
+				</p>
+				<p style="text-align:right">
+				  lh,ad&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Find the binormal vector of the curve \(\vec{r}
+		(t)=\langle 3t+2,3t^2+5,2t^3+4\rangle\) at:
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					a general value of \(t\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX18a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX18a"></button>
+					<button class="toggle has-sol" data-toggle="SolX18a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX18a">
+				<p>
+					The unit binormal vector is \(\hat{B}
+					=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX18a">
+				<p>
+					\(\hat{B}=\dfrac{\langle 2t^2,-2t,1\rangle}{2t^2+1}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX18a">
+				<p>
+					We know that the binormal is:
+					\[
+					\hat{B}=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+					\]
+					So we need to know \(\vec{v}\times\vec{a}\) and its length.
+					Since the position is
+					\[
+					\vec{r}=\langle 3t+2,3t^2+5,2t^3+4\rangle
+					\]
+					The velocity is:
+					\[
+					\vec{v}=\langle 3,6t,6t^2\rangle
+					\]
+					And the acceleration is:
+					\[
+					\vec{a}=\langle 0,6,12t\rangle
+					\]
+					So, \(\vec{v}\times\vec{a}\) is:
+					\[\begin{aligned}
+					\vec{v}\times\vec{a}&=
+					\begin{vmatrix}
+					\hat\imath & \hat\jmath & \hat k \\
+					3 & 6t & 6t^2 \\
+					0 & 6 & 12t
+					\end{vmatrix}
+					=\hat\imath(72t^2-36t^2)-\hat\jmath(36t-0)+\hat k(18-0) \\
+					&=\langle 36t^2,-36t,18\rangle
+					\end{aligned}\]
+					and its length is:
+					\[\begin{aligned}
+					|\vec{v}\times\vec{a}|
+					&=\sqrt{(36t^2)^2+(36t)^2+18^2}
+					=\sqrt{(36t^2)^2+2\cdot36t^2\cdot18+18^2} \\
+					&=36t^2+18 \\
+					\end{aligned}\]
+					So, the unit binormal vector is:
+					\[\begin{aligned}
+					\hat{B}&=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+					=\dfrac{\langle 36t^2,-36t,18\rangle}{36t^2+18}
+					=\dfrac{\langle 2t^2,-2t,1\rangle}{2t^2+1} \\
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh,ad&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(t=2\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX18b"></button>
+					<button class="toggle has-sol" data-toggle="SolX18b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX18b">
+				<p>
+					\(\hat{B}=\left\langle \dfrac{8}{9},-\,\dfrac{4}{9},\dfrac{1}{9}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX18b">
+				<p>
+					Plugging \(t=2\) into
+					\(\hat{B}=\dfrac{\langle 2t^2,-2t,1\rangle}{2t^2+1}\)
+					we get
+					\[\hat{B}=\dfrac{\langle 8,-4,1\rangle}{9}
+					=\left\langle \dfrac{8}{9},-\,\dfrac{4}{9},\dfrac{1}{9}\right\rangle\]
+				</p>
+				<p style="text-align:right">
+				  lh,ad&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Find the normal vector of the curve
+		\(\vec{r}(t)=\left\langle 2t+4,2t^2+11,\dfrac{4}{3}t^3\right\rangle\) at:
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					a general value of \(t\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX19a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX19a"></button>
+					<button class="toggle has-sol" data-toggle="SolX19a"></button>
+					<button class="toggle has-check" data-toggle="CkX19a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX19a">
+				<p>
+					The unit normal vector is \(\hat{N}=\hat{B}\times\hat{T}\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX19a">
+				<p>
+					\(\hat{N}
+					=\dfrac{\langle -2t,1-2t^2,2t\rangle}{2t^2+1}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX19a">
+				<p>
+					We know that the unit normal vector is:
+					\[
+					\hat{N}=\hat{B}\times\hat{T}
+					\]
+					So we need \(\hat{T}\) and \(\hat{B}\), which means we need \(\vec{v}\), \(\vec{v}\times\vec{a}\) and their lengths.
+					Since the position is:
+					\[
+					\vec{r}=\left\langle 2t+4,2t^2+11,\dfrac{4}{3}t^3\right\rangle
+					\]
+					The velocity is:
+					\[
+					\vec{v}=\langle 2,4t,4t^2\rangle
+					\]
+					And the acceleration is:
+					\[
+					\vec{a}=\langle 0,4,8t\rangle
+					\]
+					So the speed is:
+					\[\begin{aligned}
+					|\vec{v}|&=\sqrt{4+16t^2+16t^4} \\
+					&=\sqrt{(2+4t^2)^2}=2+4t^2
+					\end{aligned}\]
+					Therefore, the unit tangent vector is:
+					\[
+					\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}=\dfrac{\langle 2,4t,4t^2\rangle}{2+4t^2}
+					=\dfrac{\langle 1,2t,2t^2\rangle}{1+2t^2}
+					\]
+					To find \(\hat{B}\), we need \(\vec{v}\times\vec{a}\) and its length.
+					So \(\vec{v}\times\vec{a}\) is:
+					\[\begin{aligned}
+					\vec{v}\times\vec{a}&=
+					\begin{vmatrix}
+					\hat\imath & \hat\jmath & \hat k \\
+					2 & 4t & 4t^2 \\
+					0 & 4 & 8t
+					\end{vmatrix} \\
+					&=\hat\imath(32t^2-16t^2)-\hat\jmath(16t)+\hat k(8) \\
+					&=\langle 16t^2,-16t,8\rangle
+					\end{aligned}\]
+					And its length is:
+					\[\begin{aligned}
+					|\vec{v}\times\vec{a}|&=\sqrt{(16t^2)^2+(16t)^2+8^2} \\
+					&=\sqrt{(16t^2+8)^2}=16t^2+8
+					\end{aligned}\]
+					Therefore, the unit binormal vector is:
+					\[\begin{aligned}
+					\hat{B}&=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|} \\
+					&=\dfrac{\langle 16t^2,-16t,8\rangle}{16t^2+8}
+					=\dfrac{\langle 2t^2,-2t,1\rangle}{2t^2+1}
+					\end{aligned}\]
+					Finally, the unit normal is:
+					\[\begin{aligned}
+					\hat{N}&=\hat{B}\times\hat{T}
+					=\dfrac{1}{(2t^2+1)^2}
+					\begin{vmatrix}
+					\hat\imath & \hat\jmath & \hat k \\
+					2t^2 & -2t & 1 \\
+					1 & 2t & 2t^2
+					\end{vmatrix} \\
+					&=\dfrac{1}{(2t^2+1)^2}\left[\rule{0pt}{10pt}\hat\imath(-4t^3-2t)-\hat\jmath(4t^4-1)\right. \\
+					&\qquad\qquad\qquad\left.\rule{0pt}{10pt}+\hat k(4t^3+2t)\right] \\
+					&=\dfrac{1}{(2t^2+1)^2}\left[\rule{0pt}{10pt}\hat\imath(-2t)(2t^2+1)-\hat\jmath(2t^2-1)(2t^2+1)\right. \\
+					&\qquad\qquad\qquad\left.\rule{0pt}{10pt}+\hat k(2t)(2t^2+1)\right] \\
+					&=\dfrac{\langle -2t,1-2t^2,2t\rangle}{2t^2+1} \\
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh,ad&ensp;
+				</p>
+			</div>
+			<div class="toBeToggled drop-check" data-toggle="CkX19a">
+				<p>
+					We check that \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) are mutually
+					perpendicular unit vectors.
+					\[\begin{aligned}
+					\hat{T}\cdot\hat{T}
+					&=\dfrac{1}{(2t^2+1)^2}\langle 1,2t,2t^2\rangle\cdot\langle 1,2t,2t^2\rangle \\
+					&=\dfrac{1}{(2t^2+1)^2}\left(1+4t^2+4t^4\right)
+					=1 \\
+					\hat{N}\cdot\hat{N}
+					&=\dfrac{1}{(2t^2+1)^2}\langle -2t,1-2t^2,2t\rangle\cdot\langle -2t,1-2t^2,2t\rangle \\
+					&=\dfrac{1}{(2t^2+1)^2}\left(4t^2+(1-2t^2)^2+4t^2\right) \\
+					&=\dfrac{1}{(2t^2+1)^2}\left(8t^2+1-4t^2+4t^4\right)
+					=1 \\
+					\hat{B}\cdot\hat{B}
+					&=\dfrac{1}{(2t^2+1)^2}\langle 2t^2,-2t,1\rangle\cdot\langle 2t^2,-2t,1\rangle \\
+					&=\dfrac{1}{(2t^2+1)^2}\left(4t^4+4t^2+1\right)
+					=1
+					\end{aligned}\]
+					\[\begin{aligned}
+					\hat{T}\cdot\hat{N}
+					&=\dfrac{1}{(2t^2+1)^2}\langle 1,2t,2t^2\rangle\cdot\langle -2t,1-2t^2,2t\rangle \\
+					&=\dfrac{1}{(2t^2+1)^2}\left(-2t+2t-4t^3+4t^3\right)
+					=0 \\
+					\hat{T}\cdot\hat{B}
+					&=\dfrac{1}{(2t^2+1)^2}\langle 1,2t,2t^2\rangle\dot\langle 2t^2,-2t,1\rangle \\
+					&=\dfrac{1}{(2t^2+1)^2}\left(2t^2-4t^2+2t^2\right)
+					=0 \\
+					\hat{N}\cdot\hat{B}
+					&=\dfrac{1}{(2t^2+1)^2}\langle -2t,1-2t^2,2t\rangle\cdot\langle 2t^2,-2t,1\rangle \\
+					&=\dfrac{1}{(2t^2+1)^2}\left(-4t^3-2t(1-2t^2)+2t\right)
+					=0
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(t=2\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX19b"></button>
+					<button class="toggle has-sol" data-toggle="SolX19b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX19b">
+				<p>
+					\(\hat{N}=\left\langle-\,\dfrac{4}{9},\dfrac{7}{9},\dfrac{4}{9}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX19b">
+				<p>
+					Plugging \(t=2\) into
+					\(\hat{N}=\dfrac{\langle -2t,1-2t^2,2t\rangle}{2t^2+1}\), we get:
+					\[
+					\hat{N}=\dfrac{\left\langle -4,-7,4\right\rangle}{9}
+					=\left\langle-\,\dfrac{4}{9},-\,\dfrac{7}{9},\dfrac{4}{9}\right\rangle
+					\]
+				</p>
+				<p style="text-align:right">
+				  lh,ad&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<big>PY Checked to here.Renumber below.</big>
+
+				<div class="rule" id="topic6"></div>
+
+<!--Curvature and Torsion-->
+
+<div class="heading">
+  <h3><a href="Curvature.html">Curvature and Torsion</a></h3>
+  <div class="pgs">
+    
+      <div><a href="Curvature.html">1</a></div>
+    
+      <div><a href="Torsion.html">2</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<p>
+		Find the curvature \(\kappa\) for the curve \(\vec{r}
+		(t)=(3t^4,t+5,4t^3+3)\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					for a general value of \(t\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX20a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX20a"></button>
+					<button class="toggle has-sol" data-toggle="SolX20a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX20a">
+				<p>
+					\(\kappa=\dfrac{|\vec{v}\times\vec{a}|}
+					{|\vec{v}|^3}=\left|\dfrac{d\hat{T}}{ds}\right|\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20a">
+				<p>
+					\(\kappa=\dfrac{12t\sqrt{144t^6+9t^2+4}}{(144t^6+144t^4+1)^{3/2}}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX20a">
+				<p>
+					\[\begin{aligned}
+					\kappa &=\dfrac{|\vec{v}\times\vec{a}|}{
+					|\vec{v}|^3} \\
+					\vec{v}&=\langle 12t^3,1,12t^2 \rangle \\
+					|\vec{v}|&=\sqrt{144t^6+1+144t^4} \\
+					\vec{a}&=\langle 36t^2,0,24t \rangle \\
+					\vec{v}\times\vec{a}&=
+					\begin{vmatrix}
+					\hat\imath & \hat\jmath & \hat k \\
+					12t^3 & 1 & 12t^2 \\
+					36t^2 & 0 & 24t
+					\end{vmatrix}
+					=\hat\imath(24t-0)-\hat\jmath(288t^4-432t^4)+ \hat k(0-36t^2) \\
+					&=\langle 24t,144t^4,-36t^2 \rangle \\
+					|\vec{v}\times\vec{a}|
+					&=\sqrt{(24t)^2+(144t^4)^2+(36t^2)^2}\\
+					&=\sqrt{(12t)^2(2^2+(12t^3)^2+(3t)^2)}=12t\sqrt{144t^6+9t^2+4} \\
+					\kappa &=\dfrac{12t\sqrt{144t^6+9t^2+4}}
+					{\left(\sqrt{144t^6+144t^4+1}\right)^3}
+					=\dfrac{12t\sqrt{144t^6+9t^2+4}}{(144t^6+144t^4+1)^{3/2}}
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					at \(t=1\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX18b"></button>
+					<button class="toggle has-sol" data-toggle="SolX18b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX18b">
+				<p>
+					\(\kappa=\dfrac{12\sqrt{157}}{17^3}\approx 0.0306\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX18b">
+				<p>
+					We plug \(t=1\) into
+					\[\kappa=\dfrac{12t\sqrt{144t^6+9t^2+4}}{(144t^6+144t^4+1)^{3/2}}\]
+					And get
+					\[\kappa=\dfrac{12\sqrt{144+9+4}}{(144+144+1)^{3/2}}
+					=\dfrac{12\sqrt{157}}{17^3}\approx 0.0306\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Find the torsion \(\tau\) for the curve in the previous problem
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					for a general value of \(t\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX19a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX19a"></button>
+					<button class="toggle has-sol" data-toggle="SolX19a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX19a">
+				<p>
+					\(\tau
+					=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX19a">
+				<p>
+					\(\tau=\dfrac{6}{144t^6+9t^2+4}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX19a">
+				<p>
+					\[\begin{aligned}
+					\vec{v}&=\langle 12t^3,1,12t^2\rangle \\
+					\vec{a}&=\langle 36t^2,0,24t\rangle \\
+					\vec{v}\times\vec{a}
+					&=\langle 24t,144t^4,-36t^2\rangle \\
+					|\vec{v}\times\vec{a}|
+					&=12t\sqrt{144t^6+9t^2+4} \\
+					\vec{j}&=\langle 72t,0,24\rangle \\
+					\tau
+					&=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+					=\dfrac{\langle 24t,144t^4,-36t^2\rangle
+					\cdot\langle 72t,0,24 \rangle}{(12t\sqrt{144t^6+9t^2+4})^2} \\
+					&=\dfrac{1728t^2+0-864t^2}{144t^2(144t^6+9t^2+4)}
+					=\dfrac{864t^2}{144t^2(144t^6+9t^2+4)}
+					=\dfrac{6}{144t^6+9t^2+4}
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>at \(t=1\)</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX19b"></button>
+					<button class="toggle has-sol" data-toggle="SolX19b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX19b">
+				<p>
+					\(\tau=\dfrac{6}{157}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX19b">
+				<p>
+					We plug in \(t=1\) into
+					\[\tau=\dfrac{6}{144t^6+9t^2+4}\]
+					And get
+					\[\tau=\dfrac{6}{144+9+4}
+					=\dfrac{6}{157}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+				<div class="rule" id="topic7"></div>
+
+<!--Tangential and Normal Acceleration-->
+
+<div class="heading">
+  <h3><a href="TNAcc.html">Tangential and Normal Acceleration</a></h3>
+  <div class="pgs">
+    
+      <div><a href="TNAcc.html">1</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<p>
+		Find the tangential and normal acceleration to the curve \(\vec{r}(t)=(
+		\tfrac{1}{3}t^3+5,2t+1,t^2-3)\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					for a general value of \(t\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX20a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX20a"></button>
+					<button class="toggle has-sol" data-toggle="SolX20a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX20a">
+				<p>
+					\(a_{T}=\dfrac{d}{dt}|\vec{v}|\)
+					<br>
+					\(a_{N}=a\cdot\hat{N}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20a">
+				<p>
+					\(a_{T}=2t\)
+					<br>
+					\(a_{N}=2\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX20a">
+				<p>
+					To find the tangential acceleration:
+					\[\begin{aligned}
+					\vec{v}&=\langle t^2,2,2t \rangle \\
+					|\vec{v}|&=\sqrt{t^4+4t^2+4}=\sqrt{(t^2+2)^2}
+					=(t^2+2) \\
+					a_{T}&=\dfrac{d|\vec{v}|}{dt}=2t
+					\end{aligned}\]
+					To find the normal acceleration:
+					\[\begin{aligned}
+					\hat T&=\dfrac{\vec v}{|\vec v|}=\dfrac{\langle t^2,2,2t \rangle}
+					{(t^2+2)}=\left\langle \dfrac{t^2}{t^2+2},\dfrac{2}{t^2+2},
+					\dfrac{2t}{t^2+2} \right\rangle \\
+					T'&=\left\langle \dfrac{(t^2+2)2t-(t^2)(2t)}{(t^2+2)^2},
+					\dfrac{4t}{(t^2+2)^2},\dfrac{(t^2+2)(2)-(2t)(2t)}{(t^2+2)^2} \right\rangle \\
+					&=\left\langle \dfrac{4t}{(t^2+2)^2},\dfrac{-4t}{(t^2+2)^2},\dfrac{-2(t^2-2)}{
+					(t^2+2)^2} \right\rangle \\
+					|T'|&=\sqrt{\dfrac{16t^2+16t^2+4(t^2-2)^2}{(t^2+2)^4}}
+					=\dfrac{\sqrt{4t^4+16t^2+16}}{(t^2+2)^2}
+					=\dfrac{2\sqrt{(t^2+2)^2}}{(t^2+2)^2}
+					=\dfrac{2(t^2+2)}{(t^2+2)^2}=\dfrac{2}{t^2+2} \\
+					\hat{N}&=\dfrac{T'(t)}{|T'(t)|}
+					=\dfrac{t^2+2}{2}\left\langle \dfrac{4t}{(t^2+2)^2},
+					\dfrac{-4t}{(t^2+2)^2},\dfrac{-2(t^2-2)}{(t^2+2)^2} \right\rangle \\
+					\hat{N}
+					&=\left\langle \dfrac{2t}{(t^2+2)},\dfrac{-2t}{(t^2+2)},
+					\dfrac{-(t^2-2)}{(t^2+2)}\right\rangle \\
+					\vec a &=\langle 2t,0,2\rangle \\
+					a_{N}&=\vec a\cdot\hat{N}=\langle 2t,0,2 \rangle
+					\cdot\left\langle \dfrac{2t}{(t^2+2)},\dfrac{-2t}{(t^2+2)},
+					\dfrac{-(t^2-2)}{(t^2+2)}\right\rangle \\
+					a_{N}&=\dfrac{4t^2}{(t^2+2)}+0+\dfrac{-2(t^2-2)}{(t^2+2)}=\dfrac{
+					4t^2-2t^2+4}{(t^2+2)} \\
+					a_{N}&=\dfrac{2(t^2+2)}{(t^2+2)}=2
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					at \(t=1\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX20b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20b">
+				<p>
+					\[\begin{aligned}
+					a_{T}(t=1)=2 \\
+					a_{N}(t=1)=2
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Which component (tangential or normal) of the acceleration is
+					independent of the position on this curve?
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX20c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX20c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX20c">
+				<p>
+					Think about: which component (tangential or normal)
+					is a constant for any given value of \(t\)?
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20c">
+				<p>
+					Normal
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Find the tangential and normal acceleration to the curve \(\vec{r}
+		(t)=(2\sin t,3t^2+4,2\cos t)\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>for a general value of \(t\)</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX21a"></button>
+					<button class="toggle has-sol" data-toggle="SolX21a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX21a">
+				<p>
+					\[\begin{aligned}
+					a_{T}&=\dfrac{d|\vec{v}|}{dt}=\dfrac{1}{(9t^2+1)^{1/2}} \\
+					a_{N}&=\dfrac{\sqrt{288t^2\sin^2t-288t^2\sin t\cos t+144t^2\cos
+					^2t+16+288t\sin t\cos t+144\cos^2t}}{\sqrt{4+36t^2}}
+					\end{aligned}\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX21a">
+				<p>
+					To find the tangential acceleration:
+					\[\begin{aligned}
+					\vec{v}&=\langle 2\cos t,6t,-2\sin t\rangle \\
+					|\vec{v}|&=\sqrt{4\cos^2t+36t^2+4\sin^2t}=\sqrt{
+					4+36t^2} \\
+					&=2\sqrt{9t^2+1}=2(9t^2+1)^{1/2} \\
+					a_{T}&=\dfrac{d|\vec{v}|}{dt}=\dfrac{18t}{(9t^2+1)^{1/2}}
+					\end{aligned}\]
+					To find the normal acceleration:
+					\[\begin{aligned}
+					a_{N}&=\kappa|\vec{v}|^2
+					=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|} \\
+					\vec a&=\langle -2\sin t,6,-2\cos t \rangle \\
+					|\vec{v}\times\vec{a}|&=
+					\begin{vmatrix}
+					\hat\imath & \hat\jmath & \hat k \\
+					2\cos t & 6t & -2\sin t \\
+					-2\sin t & 6 & -2\cos t
+					\end{vmatrix} \\
+					&=|\hat\imath (-12t\cos t+12\sin t)
+					-\hat\jmath (-4\cos^2t-4\sin^2t)
+					+\hat k(12\cos t+12t\sin t)| \\
+					&=|\langle 12(\sin t-t\cos t),4,12(t\sin t+\cos t)\rangle| \\
+					|\vec{v}\times\vec{a}|
+					&=\sqrt{144(\sin^2t-2t\sin t\cos t+\cos^2t)+16
+						+144(t^2\sin^2t+2t\sin t\cos t+\cos^2t)} \\
+					&=\sqrt{(144\sin^2t+144\cos^2t)+(144t^2\sin^2t+144t^2\cos^2t)+16} \\
+					&=\sqrt{144t^2+160} \\
+					a_{N}&=\dfrac{\sqrt{144t^2+160}}{\sqrt{4+36t^2}} \\
+					&=\dfrac{\sqrt{36t^2+40}}{\sqrt{1+9t^2}} \\
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>at \(t=0\)</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX21b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX21b">
+				<p>
+					\(a_{T}=\dfrac{d|\vec{v}|}{dt}=0\)
+					<br>
+					\(a_{N}=\dfrac{\sqrt{40}}{\sqrt{1}}=\sqrt{40}\)
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+				<div class="rule" id="topic8"></div>
+
+<!--Summary: Circle, Helix, Twisted Cubic-->
+
+<div class="heading">
+  <h3><a href="CurveSummary.html">Summary &amp; Examples of Curve Computations</a></h3>
+  <div class="pgs">
+    
+      <div><a href="CurveSummary.html">1</a></div>
+    
+      <div><a href="CurveExamples.html">2</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<p>
+		Consider the position vector
+		\(\vec{r}(t)=\langle 6\cos t,6\sin t,8t\rangle\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>Is this a helical or circular curve? How can you tell?</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX22a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22a">
+				<div class="column">
+					<p>
+						This is a helical curve because the \(z\) component is a linear
+						polynomial. If it was a constant, then it would be a circular curve. The \(x\)
+						and \(y\) components make a circle in the \(xy\)-plane, therefore the helix spirals
+						in the \(z\) direction as shown to the right:
+					</p>
+					<div class="center">
+						<figure>
+							<img src="graphics/xhelixz.jpg" alt="xhelixz">
+						</figure>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute the velocity of the curve at \(t=\pi/2\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX22b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22b">
+				<p>
+					\(\vec{v}(t)=\langle -6\sin t,6\cos t,8\rangle\)
+					<br>
+					\(\vec{v}(\pi/2)=\langle -6,0,8\rangle\)
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Consider the position vector
+		\(\vec{r}(t)=\langle 12\cos t,9,12\sin t\rangle\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>Is this a helical or circular curve? How can you tell?</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX23a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX23a">
+				<div class="column">
+					<p>
+						This is a circular curve because the \(x\) and \(z\) components are the parameters
+						for a circle while the y component is constant. The \(y\) component is \(9\),
+						meaning that there is a circle in the \(xz\)-plane at \(y=7\) as shown to the right:
+					</p>
+					<div class="center">
+						<figure>
+							<img src="graphics/xcircle.jpg" alt="xcircle">
+						</figure>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute the acceleration of the curve at \(t=2\pi\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX23b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX23b">
+				<p>
+					\(\vec{v}(t)=\langle -12\sin t,0,12\cos t\rangle\)
+					<br>
+					\(\vec{v}(2\pi)=\langle 0,0,12\rangle\)
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Consider the position vector
+		\(\vec{r}(t)=(5t,12\sin t,12\cos t)\)
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Is this a helical or circular curve? How can you tell?
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX24a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX24a">
+				<div class="column">
+					<p>
+						This is a helical curve because the \(x\) component is a linear
+						polynomial. If it was a constant, then it would be a circular curve. The \(y\)
+						and \(z\) components are the parameters for a circle, meaning that in the \(yz\)
+						plane a circle is formed when looking from the \(x\) axis. The helix spirals in
+						the \(x\) direction, as shown to the right:
+					</p>
+					<div class="center">
+						<figure>
+							<img src="graphics/xhelixx.jpg" alt="xhelixx">
+						</figure>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					What is the length of the curve from \(t=0\) to \(t=\pi\)?
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX24b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX24b"></button>
+					<button class="toggle has-sol" data-toggle="SolX24b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX24b">
+				<p>
+					\(\displaystyle L=\int_a^b |\vec{v}|\,dt\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX24b">
+				<p>
+					\(L=13\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX24b">
+				<p>
+					The arclength is calculate from integrating the speed of the
+					curve over the distance along the parameter \(t\):
+					\[L=\int_{a}^{b} |\vec{v}|\,dt\]
+					First we must find the speed (the magnitude of the velocity vector):
+					\[\begin{aligned}
+					\vec{v}&=\vec{r\,}'(t)
+					=\langle 5,12\cos t,-12\sin t\rangle \\
+					|\vec{v}|
+					&=\sqrt{5^2+12^2\cos^2t+(-12)^2\sin^2t} \\
+					&=\sqrt{25+144(\cos^2t+\sin^2t)}=\sqrt{25+144}=13 \\
+					\end{aligned}\]
+					Finally we can input this into the arclength formula and easily solve for
+					the length of the curve:
+					\[L=\int_0^{\pi} 13\,dt=13\pi\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+<!--
+<li>
+	<p>
+		Consider the curve \(\vec{r}(t)
+		=\left(2t\cos t,2t\sin t,\dfrac{1}{3}t^3\right)\). Compute each
+		of the following. Simplify where possible.
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>velocity \(\vec{v}(t)\)</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25a">
+				<p>
+					\(\vec{v}(t)
+					=\langle 2\cos t-2t\sin t,2\sin t+2t\cos t,t^2\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>acceleration \(\vec{a}(t)\)</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25b">
+				<p>
+					\(\vec{a}(t)
+					=\langle -4\sin t-2t\cos t,4\cos t-2t\sin t,2t\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					jerk \(\vec{j}(t)\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25c">
+				<p>
+					\(\vec{j}(t)
+					=\langle -6\cos t+2t\sin t,-6\sin t-2t\cos t,2\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					speed \(|\vec{v}(t)|\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25d"></button>
+					<button class="toggle has-sol" data-toggle="SolX25d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25d">
+				<p>
+					\(|\vec{v}(t)|=2+t^2\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25d">
+				<p>
+					\[\begin{aligned}
+					|\vec{v}(t)|
+					&=\sqrt{(2\cos t-2t\sin t)^2+(2\sin t+2t\cos t)^2+(t^2)^2} \\
+					&=\sqrt{4+4t^2+t^4}=2+t^2
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>arclength \(L\) between \(t=0\) and \(t=1\)</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25e"></button>
+					<button class="toggle has-sol" data-toggle="SolX25e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25e">
+				<p>
+					\(L=\dfrac{7}{3}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25e">
+				<p>
+					\(\displaystyle L=\int_{(0,0,0)}^{(2\cos(1),2\sin(1),1/3)}\,ds
+					=\int_0^{1} |\vec{v}(t)|\,dt
+					=\int_0^{1} (2+t^2)\,dt
+					=\left[2t+\dfrac{1}{3}t^3\right]_0^{1}
+					=\dfrac{7}{3}\)
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					unit tangent vector &emsp; \(\hat{T}\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25f"></button>
+					<button class="toggle has-sol" data-toggle="SolX25f"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25f">
+				<p>
+					\(\hat{T}=\left\langle \dfrac{2\cos t-2t\sin t}{2+t^2},
+					\dfrac{2\sin t+2t\cos t}{2+t^2},\dfrac{t^2}{2+t^2} \right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25f">
+				<p>
+					\(\hat{T}=\dfrac{\vec{v}}{|\vec{v}(t)|}=
+					\dfrac{1}{2+t^2}\vec{v}
+					=\left\langle \dfrac{2\cos t-2t\sin t}{2+t^2},
+					\dfrac{2\sin t+2t\cos t}{2+t^2},\dfrac{t^2}{2+t^2}\right\rangle\)
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(\vec{v}\times\vec{a}\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25g"></button>
+					<button class="toggle has-sol" data-toggle="SolX25g"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25g">
+				<p>
+					\(\vec{v}\times\vec{a}
+					=\left\langle 2t(2+t^2)\sin t,-2t(2+t^2)\cos t,4(2+t^2)\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25g">
+				<p>
+					\[\begin{aligned}
+					\vec{v}\times\vec{a}&=
+					\det \begin{vmatrix}
+					\hat{\imath} & \hat{\jmath} & \hat{k} \\
+					2\cos t-2t\sin t& 2\sin t
+					+2t\cos t& t^2 \\
+					-4\sin t-2t\cos t& 4\cos t
+					-2t\sin t& 2t
+					\end{vmatrix} \\
+					&=\hat{\imath}\left(2t(2+t^2)\sin t\right)
+					 -\hat{\jmath}\left(2t(2+t^2)\cos t\right)
+					 +\hat{k}(4t^2+8) \\
+					&=\left\langle 2t(2+t^2)\sin t,-2t(2+t^2)\cos t,4(2+t^2)\right\rangle
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(|\vec{v}\times\vec{a}|\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25h"></button>
+					<button class="toggle has-sol" data-toggle="SolX25h"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25h">
+				<p>
+					\(|\vec{v}\times\vec{a}|
+					=2(2+t^2)\sqrt{t^2+4}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25h">
+				<p>
+					\[\begin{aligned}
+					|\vec{v}\times\vec{a}|
+					&=\sqrt{\left[2t(2+t^2)\sin t\right]^2
+					      +\left[-2t(2+t^2)\cos t\right]^2
+								+\left[4(2+t^2)\right]^2} \\
+					&=(2+t^2)\sqrt{(2t\sin t)^2+(-2t\cos t)^2+(4)^2}
+					=(2+t^2)\sqrt{4t^2+16}=2(2+t^2)\sqrt{t^2+4}
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					unit binormal vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25i"></button>
+					<button class="toggle has-sol" data-toggle="SolX25i"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25i">
+				<p>
+					\(\vec{B}
+					=\left\langle \dfrac{t\sin t}{\sqrt{t^2+4}},
+					\dfrac{-t\cos t}{\sqrt{t^2+4}},\dfrac{2}{\sqrt{t^2+4}}\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25i">
+				<p>
+					\[\begin{aligned}
+					\vec{B}&=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+					=\dfrac{1}{2(2+t^2)\sqrt{t^2+4}}
+					\left\langle 2t(2+t^2)\sin t,-2t(2+t^2)\cos	t,4(2+t^2)\right\rangle \\
+					&=\left\langle \dfrac{t\sin t}{\sqrt{t^2+4}},
+					\dfrac{-t\cos t}{\sqrt{t^2+4}},\dfrac{2}{\sqrt{t^2+4}}\right\rangle
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					unit normal vector \(\vec{N}\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25j"></button>
+					<button class="toggle has-sol" data-toggle="SolX25j"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25j">
+				<p>
+					\(\vec{N}=\dfrac{1}{(2+t^2)\sqrt{t^2+4}}
+					\left\langle -4\sin t-(4t+t^3)\cos t,4\cos t-(4t+t^3)\sin t,
+					2t\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25j">
+				<p>
+					\[\begin{aligned}
+					\vec{N}&=\vec{B}\times\vec{T}
+					=\dfrac{1}{(2+t^2)\sqrt{t^2+4}}
+					\begin{vmatrix}
+					\hat{\imath} & \hat{\jmath} & \hat{k} \\
+					t\sin t & -t\cos t& 2 \\
+					2\cos t-2t\sin t& 2\sin t
+					+2t\cos t& t^2
+					\end{vmatrix} \\[5pt]
+					&=\dfrac{1}{(2+t^2)\sqrt{t^2+4}}
+					\begin{pmatrix}
+					 \hat{\imath}\left(-t^3\cos t-2(2\sin t+2t\cos t)\right) \\
+					-\hat{\jmath}\left( t^3\sin t-2(2\cos t-2t\sin t)\right)\\
+					+\hat{k}\left(t\sin t(2\sin t+2t\cos t)+t\cos t(2\cos t-2t\sin t)\right)
+			    \end{pmatrix} \\[5pt]
+					&=\dfrac{1}{(2+t^2)\sqrt{t^2+4}}
+					\left\langle -4\sin t-(4t+t^3)\cos t,4\cos t-(4t+t^3)\sin t,2t\right\rangle \\
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					curvature \(\kappa\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25k"></button>
+					<button class="toggle has-sol" data-toggle="SolX25k"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25k">
+				<p>
+					\(\kappa=\dfrac{2\sqrt{t^2+4}}{(2+t^2)^2}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25k">
+				<p>
+					\(\kappa=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^3}
+					=\dfrac{2(2+t^2)\sqrt{t^2+4}}{(2+t^2)^3}
+					=\dfrac{2\sqrt{t^2+4}}{(2+t^2)^2}\)
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					torsion \(\tau\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25l"></button>
+					<button class="toggle has-sol" data-toggle="SolX25l"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25l">
+				<p>
+					\(\tau=\dfrac{1}{t^2+4}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25l">
+				<p>
+					\[\begin{aligned}
+					\vec{v}\times\vec{a}\cdot\vec{j}
+					&=\langle 2t(2+t^2)\sin t,-2t(2+t^2)\cos t,4(2+t^2)\rangle
+					\cdot\langle-6\cos t+2t\sin	t,-6\sin t-2t\cos t,2\rangle \\
+					&=4(2+t^2)^2 \\
+					|\vec{v}\times\vec{a}|^2
+					&=\left[2(2+t^2)\sqrt{t^2+4}\right]^2
+					=4(2+t^2)^2(t^2+4) \\
+					\tau
+					&=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}
+					{|\vec{v}\times\vec{a}|^2}
+					=\dfrac{4(2+t^2)^2}{4(2+t^2)^2(t^2+4)}
+					=\dfrac{1}{t^2+4} \\
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					tangential acceleration (compute in 2 ways) &emsp; \(a_{T}\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25m"></button>
+					<button class="toggle has-sol" data-toggle="SolX25m"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25m">
+				<p>
+					\(a_{T}=2t\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25m">
+				<p>
+					\[\begin{aligned}
+					a_{T}=\vec{a}\cdot\hat{T}
+					&=\langle -4\sin t-2t\cos t,4\cos t-2t\sin t,2t\rangle
+					\cdot
+					\dfrac{1}{2+t^2}\langle 2\cos t-2t\sin t,2\sin t+2t\cos t,t^2\rangle \\
+					&=\dfrac{2t^3+4t}{2+t^2}=2t \\
+					a_{T}=\dfrac{d|\vec{v}|}{dt}&=\dfrac{d}{dt}(2+t^2)
+					=2t
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					normal acceleration (compute in 2 ways) &emsp; \(a_{N}\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX25n"></button>
+					<button class="toggle has-sol" data-toggle="SolX25n"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25n">
+				<p>
+					\(a_{N}=2\sqrt{t^2+4}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25n">
+				<p>
+					\[\begin{aligned}
+					a_{N}=\vec{a}\cdot\hat{N}
+					&=\langle -4\sin t-2t\cos t,4\cos t-2t\sin t,2t\rangle \\
+					&\quad\cdot\dfrac{1}{(2+t^2)\sqrt{t^2+4}}
+					\langle -4\sin t-(4t+t^3)\cos t,4\cos t-(4t+t^3)\sin t,2t\rangle \\
+					&=\dfrac{2(2+t^2)(t^2+4)}{(2+t^2)\sqrt{t^2+4}}
+					=2\sqrt{t^2+4} \\
+					a_{N}=\kappa|\vec{v}|^2
+					&=\dfrac{2\sqrt{t^2+4}}{(2+t^2)^2}(2+t^2)^2
+					=2\sqrt{t^2+4}
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li> -->
+
+				<div class="rule" id="topic9"></div>
+
+<!--Frenet Frames-->
+
+<div class="heading">
+  <h3><a href="Frenet.html">Frenet Frames</a></h3>
+  <div class="pgs">
+    
+      <div><a href="Frenet.html">1</a></div>
+    
+  </div>
+</div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Verify the Frenet equations for the derivatives of \(\hat{T}\), \(\hat{N}\)
+			and \(\hat{B}\) for the circle:
+			\[
+			\vec{r}(\theta)=(a\cos\theta,a\sin\theta,b)
+			\]
+			where \(a\) and \(b\) are constants.
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX31"></button>
+			<button class="toggle has-sol" data-toggle="SolX31"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX31">
+		<p>
+			We must verify:
+			\[\begin{aligned}
+			\dfrac{d\hat{T}}{ds}&=\qquad \quad \kappa \hat{N} \\
+			\dfrac{d\hat{N}}{ds}&=-\kappa \hat{T} \quad + \quad \tau \hat{B} \\
+			\dfrac{d\hat{B}}{ds}&=\qquad -\tau \hat{N}
+			\end{aligned}\]
+			Compute \(\hat{T}\), \(\hat{N}\), \(\hat{B}\), \(\kappa\) and \(\tau\).
+			To compute \(\dfrac{d\hat{T}}{ds}\), \(\dfrac{d\hat{T}}{ds}\) and
+			\(\dfrac{d\hat{T}}{ds}\). Remember:
+			\[
+			\dfrac{d}{ds}=\dfrac{d\theta}{ds}\dfrac{d}{d\theta}
+			=\dfrac{1}{|\vec v|}\dfrac{d}{d\theta}
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX31">
+		<p>
+			First, we compute \(\hat T\). The velocity and its length are:
+			\[\begin{aligned}
+			\vec{v}
+			&=\langle -a\sin\theta,a\cos\theta,0\rangle \\
+			|\vec{v}|
+			&=\sqrt{a^2\sin^2\theta+a^2\cos^2\theta}=a
+			\end{aligned}\]
+			So the unit tangent vector is:
+			\[
+			\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}
+			=\langle -\sin\theta,\cos\theta,0\rangle
+			\]
+			Second, we compute \(\hat B\). The acceleration, the cross product,
+			\(\vec v\times\vec a\),	and its length are:
+			\[\begin{aligned}
+			\vec{a}
+			&=\langle -a\cos\theta,-a\sin\theta,0\rangle \\
+			\vec{v}\times\vec{a}
+			&=\begin{vmatrix}
+			\hat{\imath} & \hat{\jmath} & \hat{k} \\
+			-a\sin\theta & a\cos\theta  & 0 \\
+			-a\cos\theta & -a\sin\theta & 0
+			\end{vmatrix} \\
+			&=\hat{\imath}(0)
+			 -\hat{\jmath}(0)
+			 +\hat{k}(a^2\sin^2\theta+a^2\cos^2\theta) \\
+			&=\langle 0,0,a^2\rangle \\
+			|\vec{v}\times\vec{a}|
+			&=a^2 \\
+			\end{aligned}\]
+			So the unit binormal vector is:
+			\[
+			\hat{B}
+			=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+			=\langle 0,0,1\rangle
+			\]
+			Third, we compute \(\hat N\).
+			\[\begin{aligned}
+			\hat N&=\hat B\times\hat T
+			=\begin{vmatrix}
+			\hat{\imath} & \hat{\jmath} & \hat{k} \\
+			0  & 0 & 1 \\
+			-\sin\theta & \cos\theta  & 0 \\
+			\end{vmatrix} \\
+			&=\hat{\imath}(-\cos\theta)
+			-\hat{\jmath}(\sin\theta)
+			+\hat{k}(0) \\
+			&=\langle -\cos\theta,-\sin\theta,0\rangle \\
+			\end{aligned}\]
+			To determine the curvature and torsion, we compute the jerk and
+			triple product:
+			\[\begin{aligned}
+			\vec j
+			=\langle a\sin\theta,-a\cos\theta,0\rangle \\
+			\vec v\times\vec a\cdot\vec j
+			=0
+			\end{aligned}\]
+			So the curvature and torsion are:
+			\[\begin{aligned}
+			\kappa&=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^3}
+			=\dfrac{a^2}{a^3}
+			=\dfrac{1}{a} \\
+			\tau&=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+			=0
+			\end{aligned}\]
+			Finally, we must verify the Frenet equations:
+			\[\begin{aligned}
+			\dfrac{d\hat{T}}{ds}&=\qquad \quad \kappa \hat{N} \\
+			\dfrac{d\hat{N}}{ds}&=-\kappa \hat{T} \quad + \quad \tau \hat{B} \\
+			\dfrac{d\hat{B}}{ds}&=\qquad -\tau \hat{N}
+			\end{aligned}\]
+			We compute each side. First for \(\hat{T}\):
+			\[\begin{aligned}
+			\dfrac{d\hat{T}}{ds}&=\dfrac{1}{|\vec{v}|}\dfrac{d\hat{T}}{d\theta}
+			=\dfrac{1}{a}\langle -\cos\theta,-\sin\theta,0\rangle \\
+			\kappa\hat N
+			&=\dfrac{1}{a}\langle -\cos\theta,-\sin\theta,0\rangle
+			\end{aligned}\]
+			which agree. Second for \(\hat{N}\):
+			\[\begin{aligned}
+			\dfrac{d\hat{N}}{ds}&=\dfrac{1}{|\vec{v}|}\dfrac{d\hat{N}}{d\theta}
+			=\dfrac{1}{a}\langle \sin\theta,-\cos\theta,0\rangle \\
+			-\kappa\hat T+\tau\hat B
+			&=\dfrac{-1}{a}\langle -\sin\theta,\cos\theta,0\rangle
+			+0\langle 0,0,1\rangle \\
+			&=\dfrac{1}{a}\langle \sin\theta,-\cos\theta,0\rangle
+			\end{aligned}\]
+			which also agree. And finally for \(\hat{B}\):
+			\[\begin{aligned}
+			\dfrac{d\hat{B}}{ds}&=\dfrac{1}{|\vec{v}|}\dfrac{d\hat{B}}{d\theta}
+			=\dfrac{1}{a}\langle 0,0,0\rangle=\langle 0,0,0\rangle \\
+			-\tau\hat{N}
+			&=0\langle -\cos\theta,-\sin\theta,0\rangle=\langle 0,0,0\rangle
+			\end{aligned}\]
+			which also agree.
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Verify the Frenet equations for the derivatives of \(\hat{T}\), \(\hat{N}\)
+			and \(\hat{B}\) for a general helix:
+			\[
+			\vec{r}(\theta)=(a\cos\theta,a\sin\theta,b\,\theta)
+			\]
+			where \(a\) and \(b\) are constants.
+		</p>
+		<p>
+			<button class="toggle has-sol" data-toggle="SolX32"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX32">
+		<p>
+			First, we compute \(\hat T\). The velocity and its length are:
+			\[\begin{aligned}
+			\vec{v}
+			&=\langle -a\sin\theta,a\cos\theta,b\rangle \\
+			|\vec{v}|
+			&=\sqrt{a^2\sin^2\theta+a^2\cos^2\theta+b^2}
+			=\sqrt{a^2+b^2}
+			\end{aligned}\]
+			So the unit tangent vector is:
+			\[
+			\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}
+			=\dfrac{1}{\sqrt{a^2+b^2}}
+			\langle -a\sin\theta,a\cos\theta,b\rangle
+			\]
+			Second, we compute \(\hat B\). The acceleration, the cross product,
+			\(\vec v\times\vec a\),	and its length are:
+			\[\begin{aligned}
+			\vec{a}
+			&=\langle -a\cos\theta,-a\sin\theta,0\rangle \\
+			\vec{v}\times\vec{a}
+			&=\begin{vmatrix}
+			\hat{\imath} & \hat{\jmath} & \hat{k} \\
+			-a\sin\theta & a\cos\theta  & b \\
+			-a\cos\theta & -a\sin\theta & 0
+			\end{vmatrix} \\
+			&=\hat{\imath}(ab\sin\theta)
+			 -\hat{\jmath}(ab\cos\theta)
+			 +\hat{k}(a^2\sin^2\theta+a^2\cos^2\theta) \\
+			&=\langle ab\sin\theta,-ab\cos\theta,a^2\rangle \\
+			|\vec{v}\times\vec{a}|
+			&=\sqrt{a^2b^2\sin^2\theta+a^2b^2\cos^2\theta+a^4} \\
+			&=a\sqrt{a^2+b^2} \\
+			\end{aligned}\]
+			So the unit binormal vector is:
+			\[\begin{aligned}
+			\hat{B}
+			&=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+			=\dfrac{1}{a\sqrt{a^2+b^2}}\langle ab\sin\theta,-ab\cos\theta,a^2\rangle \\
+			&=\dfrac{1}{\sqrt{a^2+b^2}}\langle b\sin\theta,-b\cos\theta,a\rangle \\
+			\end{aligned}\]
+			Third, we compute \(\hat N\).
+			\[\begin{aligned}
+			\hat N&=\hat B\times\hat T
+			=\dfrac{1}{\sqrt{a^2+b^2}^{\,2}}\begin{vmatrix}
+			\hat{\imath} & \hat{\jmath} & \hat{k} \\
+			b\sin\theta  & -b\cos\theta & a \\
+			-a\sin\theta & a\cos\theta  & b \\
+			\end{vmatrix} \\
+			&=\dfrac{1}{a^2+b^2}\left(\begin{matrix}
+			 \hat{\imath}(-b^2\cos\theta-a^2\cos\theta) \\
+			-\hat{\jmath}(b^2\sin\theta+a^2\sin\theta) \\
+			+\hat{k}(ab\sin\theta\cos\theta-ab\sin\theta\cos\theta)
+			\end{matrix}\right) \\
+			&=\langle -\cos\theta,-\sin\theta,0\rangle \\
+			\end{aligned}\]
+			To determine the curvature and torsion, we compute the jerk and
+			triple product:
+			\[\begin{aligned}
+			\vec j
+			&=\langle a\sin\theta,-a\cos\theta,0\rangle \\
+			\vec v\times\vec a\cdot\vec j
+			&=a^2b\sin^2\theta+a^2b\cos^2\theta=a^2b
+			\end{aligned}\]
+			So the curvature and torsion are:
+			\[\begin{aligned}
+			\kappa&=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^3}
+			=\dfrac{a\sqrt{a^2+b^2}}{(a^2+b^2)^{3/2}}
+			=\dfrac{a}{a^2+b^2} \\
+			\tau&=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+			=\dfrac{a^2b}{\left(a\sqrt{a^2+b^2}\right)^2}
+			=\dfrac{b}{a^2+b^2}
+			\end{aligned}\]
+			Finally, we must verify the Frenet equations:
+			\[\begin{aligned}
+			\dfrac{d\hat{T}}{ds}&=\qquad \quad \kappa \hat{N} \\
+			\dfrac{d\hat{N}}{ds}&=-\kappa \hat{T} \quad + \quad \tau \hat{B} \\
+			\dfrac{d\hat{B}}{ds}&=\qquad -\tau \hat{N}
+			\end{aligned}\]
+			We compute each side. First for \(\hat{T}\):
+			\[\begin{aligned}
+			\dfrac{d\hat{T}}{ds}&=\dfrac{1}{|\vec{v}|}\dfrac{d\hat{T}}{d\theta}
+			=\dfrac{1}{a^2+b^2}\langle -a\cos\theta,-a\sin\theta,0\rangle \\
+			\kappa\hat N
+			&=\dfrac{a}{a^2+b^2}\langle -\cos\theta,-\sin\theta,0\rangle
+			\end{aligned}\]
+			which agree. Second for \(\hat{N}\):
+			\[\begin{aligned}
+			\dfrac{d\hat{N}}{ds}&=\dfrac{1}{|\vec{v}|}\dfrac{d\hat{N}}{d\theta}
+			=\dfrac{1}{\sqrt{a^2+b^2}}\langle \sin\theta,-\cos\theta,0\rangle \\
+			-\kappa\hat T+\tau\hat B
+			&=\dfrac{-a}{(a^2+b^2)^{3/2}}\langle -a\sin\theta,a\cos\theta,b\rangle \\
+			&\quad+\dfrac{b}{(a^2+b^2)^{3/2}}\langle b\sin\theta,-b\cos\theta,a\rangle \\
+			&=\dfrac{1}{\sqrt{a^2+b^2}}\langle \sin\theta,-\cos\theta,0\rangle
+			\end{aligned}\]
+			which also agree. And finally for \(\hat{B}\):
+			\[\begin{aligned}
+			\dfrac{d\hat{B}}{ds}&=\dfrac{1}{|\vec{v}|}\dfrac{d\hat{B}}{d\theta}
+			=\dfrac{1}{a^2+b^2}\langle b\cos\theta,b\sin\theta,0\rangle \\
+			-\tau\hat{N}
+			&=\dfrac{-b}{a^2+b^2}\langle -\cos\theta,-\sin\theta,0\rangle
+			\end{aligned}\]
+			which also agree.
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+<big>PY Checked 25 & 26</big>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Verify the Frenet equations for the derivatives of \(\hat{T}\), \(\hat{N}\)
+			and \(\hat{B}\) for a twisted cubic.
+		</p>
+		<p>
+			<button class="toggle has-sol" data-toggle="SolX33"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX33">
+		<p>
+			Circular motion is represented by the position vector:
+			\[\vec{r}(\theta)=\langle at,bt^2,ct^3\rangle\]
+			Where \(a\) and \(b\) are abitiary constants.
+			First, find \(\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}\)
+			\[\begin{aligned}
+			\vec{v}=\langle a,2bt,3ct^2\rangle \\
+			|\vec{v}|=\sqrt{a^2+4b^2t^2+9c^2t^4} \\
+			\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}=\dfrac{1}{\sqrt{
+			a^2+4b^2t^2+9c^2t^4}}\langle a,2bt,3ct^2\rangle \\
+			\end{aligned}\]
+			Next, find
+			\(\hat{B}=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}\)
+			\[\begin{aligned}
+			\vec{v}\times\vec{a}&=
+			\begin{vmatrix}
+			\hat{\imath} & \hat{\jmath} & \hat{k} \\
+			a & 2bt & 3ct^2 \\
+			0 & 2b & 6ct
+			\end{vmatrix}
+			=\hat{\imath}(12bct^2-6bct^2)
+			-\hat{\jmath}(6cat-0)+\hat{k}(2ab-0) \\
+			&=\langle 6bct^2,-6cat,2ab\rangle \\
+			|\vec{v}\times\vec{a}|
+			&=\sqrt{(6bct^2)^2-(6cat)^2+(2ab)^2}=a^2
+			\hat{B}=\dfrac{1}{a^2}\ft\langle 0,0,a^2\rangle
+			=\langle 0,0,1\rangle \\
+			\end{aligned}\]
+			Then, find
+			\(\hat{N}
+			=\dfrac{\hat{T}'(\theta)}{|\hat{T}'(\theta)|}\)
+			\[\begin{aligned}
+			\hat{T}'=\langle -\cos(\theta),-\sin(\theta),0\rangle \\
+			|\hat{T}'(\theta)|
+			=\sqrt{(\cos^2(\theta)+\sin^2(\theta))}=1 \\
+			\hat{N}=\dfrac{\hat{T}'(\theta)}{|\hat{T}'^{\prime}'(\theta)|}
+			=\langle -\cos(\theta),-\sin(\theta),0\rangle \\
+			\end{aligned}\]
+			Based on previously found values, we can determine that
+			\(\kappa=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|
+			^3}\) \(=\dfrac{a^2}{a^3}=\dfrac{1}{a}\).
+			<br>
+			Additionally, we can find that:
+			\[
+			\tau=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}
+			{|\vec{v}\times\vec{a}|^2}
+			=\dfrac{\langle 0,0,a^2\rangle
+			\cdot\langle a\sin\theta,-a\cos\theta,0\rangle}{a^4}=0
+			\]
+			Finally, we must verify that:
+			\[\begin{aligned}
+			\dfrac{d\hat{T}}{ds}&=\qquad \quad \kappa \hat{N} \\
+			\dfrac{d\hat{N}}{ds}&=-\kappa \hat{T} \quad + \quad \tau \hat{B} \\
+			\dfrac{d\hat{B}}{ds}&=\qquad -\tau \hat{N}
+			\end{aligned}\]
+			We compute each side. First for \(\hat{T}\):
+			\[\begin{aligned}
+			\dfrac{d\hat{T}}{ds}&=\dfrac{1}{|\vec{v}|}\dfrac{d
+			\hat{T}}{dt}
+			=\dfrac{1}{a}\dfrac{d}{dt}\langle -\sin\theta,\cos\theta,0\rangle \\
+			&=\dfrac{1}{a}\langle -\cos\theta,-\sin\theta,0\rangle
+			\qquad \text{while} \\
+			\kappa \hat{N}&=\dfrac{1}{a}\langle -\cos\theta,-\sin\theta,0\rangle
+			\qquad \text{which agrees.}
+			\end{aligned}\]
+			Second for \(\hat{N}\):
+			And finally for \(\hat{B}\):
+		</p>
+		<p style="text-align:right">
+			lh&ensp;
+		</p>
+	</div>
+</li>
+
+				<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the derivative of the vector function
+			\(\vec{f}(t)=\langle \ln t,t^2+1,\tan t\rangle\)
+			at the point when \(t=\pi\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX34"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX34">
+		<p>
+			\(\vec{f\,'}(\pi)=\langle \dfrac{1}{\pi},2\pi,1\rangle\)
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="column">
+		<p>
+			Consider the position vector \(\vec{r}(t)=(6\cos t,6\sin t,8t)\). Find:
+		</p>
+		<div class="center">
+			<img src="graphics/RevProbHelix.jpg" alt="RevProbHelix">
+		</div>
+	</div>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the velocity vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35a">
+				<p>
+					\(\vec{v}(t)=\left\langle -6\sin t,6\cos t,8 \right\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the acceleration vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35b">
+				<p>
+					\(\vec{a}(t)=\left\langle -6\cos t,-6\sin t,0 \right\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the jerk vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35c">
+				<p>
+					\(\vec{j}(t)=\left\langle 6\sin t,-6\cos t,0 \right\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the arc length from an arbitrary \(a\) to an arbitrary \(b\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35d">
+				<p>
+					\(L=10(b-a)\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the arclength parameter \(s=s(t)\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35e">
+				<p>
+					\(s=10\,t\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the unit tangent vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35f"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35f">
+				<p>
+					\(\hat{T}=\left\langle -\,\dfrac{3}{5}\sin t,\dfrac{3}{5}\cos t,\dfrac{4}{5} \right\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the unit binormal vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35h"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35h">
+				<p>
+					\(\hat{B}=\left\langle \dfrac{4}{5}\sin t,-\,\dfrac{4}{5}\cos t,\dfrac{3}{5} \right\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the unit normal vector
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35g"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35g">
+				<p>
+					\(\hat{N}=\left\langle -\cos t,-\sin t,0 \right\rangle\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the curvature of the curve
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35i"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35i">
+				<p>
+					\(\kappa=\dfrac{3}{50}\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the torsion of the curve
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35j"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35j">
+				<p>
+					\(\tau=\dfrac{2}{25}\)
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the component of the acceleration that is tangent to the curve
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35k"></button>
+					<button class="toggle has-sol" data-toggle="SolX35k"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35k">
+				<p>
+					\(a_{T}=0\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX35k">
+				<p>
+					\[\begin{aligned}
+					a_{T}&=\vec{a}\cdot\hat{T} \\
+					&=\langle -6\cos t,-6\sin t,0 \rangle
+					\cdot\langle -\,\dfrac{3}{5}\sin t,\dfrac{3}{5}\cos t,\dfrac{4}{5}\rangle \\
+					&=\dfrac{18}{5}\sin t\cos t-\,\dfrac{18}{5}\sin t\cos t
+					=0 \\
+					\end{aligned}\]
+				or
+					\[
+					a_{T}=\dfrac{d}{dt}|\vec{v}|=\dfrac{d}{dt}10=0
+					\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the component of the acceleration that is normal to the curve
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX35l"></button>
+					<button class="toggle has-sol" data-toggle="SolX35l"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX35l">
+				<p>
+					\(a_{N}=6\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX35l">
+				<p>
+					\[\begin{aligned}
+					a_{N}&=\vec{a}\cdot\hat{N} \\
+					&=\langle -6\cos t,-6\sin t,0\rangle\cdot\langle -\cos t,-\sin t,0\rangle \\
+					&=6\cos^2t+6\sin^2t
+					=6
+					\end{aligned}\]
+				or
+					\[
+					a_{N}=\kappa|\vec{v}|^2=\dfrac{3}{50}\cdot100=6
+					\]
+				</p>
+				<p style="text-align:right">
+				  lh&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+</ol>
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

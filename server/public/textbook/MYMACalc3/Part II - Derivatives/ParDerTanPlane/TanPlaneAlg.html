@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Algebraic Formula | 11. Partial Derivatives and Tangent Planes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TanPlaneGeom.html" title="Previous">&lArr;</a></li>
+      <li><a href="MoreVars.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Partial Derivatives and Tangent Planes</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Tangent Plane to the Graph of a Function</h2>
+
+
+      
+      <h2>2. Algebraic Formula</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the <a href="TanPlaneGeom.html">previous page</a>, we defined the
+  <span class="hl">tangent plane</span> to the graph of a function to be
+  the plane containing the tangent lines to its \(x\)-trace and \(y\)-trace.
+  On this page, we derive a formula for the tangent plane.
+  As we do this, it would be good to compare the derivation to that for
+  the tangent line to the graph of a function of \(1\) variable as shown here:
+  <span class="center">
+    <a href="TanLine.html">Tangent Line to the Graph of a Function</a>
+  </span>
+  It would be good to open the two pages side by side in two browser windows
+  to see the comparison. The two derivations are also available in a
+  two-column format for comparison as shown here:
+  <span class="center">
+    <a href="TanLinePlane.html">Comparison of Tangent Line and Tangent Plane Derivations</a>
+  </span>
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  We want to construct the tangent plane at a point, \((x,y)=(a,b)\), on the
+  graph of a function, \(z=f(x,y)\). The most general plane has the standard
+  equation:
+  \[
+  Ax+By+Cz=D.
+  \]
+  The plane is vertical if \(C=0\) and non-vertical if \(C\ne0\). Assuming it
+  is not vertical, we can solve for \(z\) and put the equation into
+  slope-intercept form:
+  \[
+  z=mx+ny+c \qquad (1)
+  \]
+  <!--z=mx+ny+c\tag{1}-->
+  where \(m\) is the \(x\)-slope, \(n\) is the \(y\)-slope and \(c\) is the
+  \(z\)-intercept.
+  (Note the \(x\)-slope is the slope of the \(x\)-trace
+  and the \(y\)-slope is the slope of the \(y\)-trace.)
+</p>
+<p>
+  Now suppose we want to find the equation of the plane tangent to \(z=f(x,y)\)
+  at \((x,y)=(a,b)\). We know the \(x\)-slope is \(m=f_x(a,b)\) and the
+  \(y\)-slope is \(n=f_y(a,b)\). So equation \((1)\) becomes:
+  \[
+  z=f_x(a,b)x+f_y(a,b)y+c \qquad(2)
+  \]
+  <!--z=f_x(a,b)x+f_y(a,b)y+c\tag{2}-->
+  We know the plane passes through the point \((x,y,z)=(a,b,f(a,b))\).
+  So equation \((2)\) tell us:
+  \[
+  f(a,b)=f_x(a,b)a+f_y(a,b)b+c
+  \]
+  or
+  \[
+  c=f(a,b)-f_x(a,b)a-f_y(a,b)b
+  \]
+  Using this formula for \(c\), equation \((2)\) becomes:
+  \[\begin{aligned}
+  z&=f_x(a,b)x+f_y(a,b)y+f(a,b)-f_x(a,b)a-f_y(a,b)b\\
+   &=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
+  \end{aligned}\]
+  which is <span class="hl">the equation for the tangent plane</span>.
+  We define the formula on the right to be the
+  <span class="defword">tangent function</span>:
+  \[
+  f_{\tan}(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
+  \]
+  so that the equation of the tangent plane is \(z=f_{\tan}(x,y)\).
+</p>
+<p class="formula" data-title="Equation of a Tangent Plane to a Graph">
+  The equation of the <span class="defword">tangent plane</span> to the graph
+  of the function \(z=f(x,y)\) at \((x,y)=(a,b)\) is:
+  \[
+  z=f_{\tan}(x,y)
+  \equiv f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b).
+  \]
+  In differential notation, this is:
+  \[
+  z=f_{\tan}(x,y)
+  \equiv f(a,b)
+  +\left.\dfrac{\partial f}{\partial x}\right|_{(a,b)}(x-a)
+  +\left.\dfrac{\partial f}{\partial y}\right|_{(a,b)}(y-b).
+  \]
+</p>
+<p>
+  <em class="center greenbig">Memorize this!</em>
+</p>
+
+        <div class="rule" id="eg_tanplane"></div>
+
+<p class="example" data-number="1">
+  Compute the tangent plane to \(z=-x^2y^3\) at \((x,y)=(3,2)\) discussed
+  in the second <a href="TanPlaneGeom.html#ex_2_tanplane">exercise</a> on the
+  previous page. Then find its \(z\)-intercept.
+</p>
+<p class="sol">
+  The solution is straightforward: find the required information and
+  plug into the formula for the equation of the tangent plane.
+  We identify \(a=3\) and \(b=2\).
+  We need to find \(f(3,2)\), \(f_x(3,2)\), and \(f_y(3,2)\).
+  It is good to make a table:
+  \[\begin{aligned}
+  f&=-x^2y^3 \qquad &f(3,2)&=-72 \\
+  f_x&=-2xy^3 \qquad &f_x(3,2)&=-48 \\
+  f_y&=-3x^2y^2 \qquad &f_y(3,2)&=-108
+  \end{aligned}\]
+  So the equation of the tangent plane is:
+  \[\begin{aligned}
+  z&=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b) \\
+  &=f(3,2)+f_x(3,2)(x-3)+f_y(3,2)(y-2) \\
+  &=-72-48(x-3)-108(y-2) \\
+  &=-48x-108y+288
+  \end{aligned}\]
+  We identify the \(z\)-intercept as \(c=288\).
+</p>
+
+        <div class="rule" id="ex_tanplane"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the tangent plane to \(z=-x^2-y^2\) at \((x,y)=(6,5)\) discussed
+    in the first <a href="TanPlaneGeom.html#ex_1_tanplane">exercise</a> on the
+    previous page. Then find its \(z\)-intercept.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-rem" data-toggle="RemX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Evaluate the function and its partial derivatives at
+    \((x,y)=(6,5)\).
+    Then use the formula:
+    \[
+    f_{\tan}(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(z=-12x-10y+61\)
+    <br>
+    The \(z\)-intercept as \(c=61\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We compute \(f(6,5)\), \(f_x(6,5)\), and \(f_y(6,5)\):
+    \[\begin{aligned}
+    f&=-x^2-y^2 \qquad &f(6,5)&=-61 \\
+    f_x&=-2x \qquad &f_x(6,5)&=-12 \\
+    f_y&=-2y \qquad &f_y(6,5)&=-10
+    \end{aligned}\]
+    So the equation of the tangent plane is:
+    \[\begin{aligned}
+    z&=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b) \\
+    &=f(6,5)+f_x(6,5)(x-6)+f_y(6,5)(y-5) \\
+    &=-61-12(x-6)-10(y-5) \\
+    &=-12x-10y+61
+    \end{aligned}\]
+    We identify the \(z\)-intercept as \(c=61\).
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    We can find the tangent line to the \(x\)-trace with \(y=5\) by setting
+    \(y=5\) in the equation for the tangent plane:
+    \[
+    z=-61-12(x-6)=-12x+11
+    \]
+    We can find the tangent line to the \(y\)-trace with \(x=6\) by setting
+    \(x=6\) in the equation for the tangent plane:
+    \[
+    z=-61-10(y-5)=-10y-11
+    \]
+    These agree with the results on a previous page in
+    <a href="ParDerGeom.html#ex_x_trace" title="Return using the Back button.">
+    Exercise 1</a>
+    and
+    <a href="ParDerGeom.html#ex_y_trace" title="Return using the Back button.">
+    Exercise 2</a>.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

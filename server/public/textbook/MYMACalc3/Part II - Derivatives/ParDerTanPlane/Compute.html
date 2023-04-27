@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Computation of Partial Derivatives | 11. Partial Derivatives and Tangent Planes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="ParDerAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Partial Derivatives and Tangent Planes</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a. Computation of Partial Derivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p id="ex1">
+  Let's start with some simple calculations to introduce the concept of a
+  <span class="hl">partial derivative</span>.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    If \(f(x)=a^2 x^3\), compute \(f'(x)=\dfrac{d}{dx}(a^2 x^3)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    \(a\) is a constant.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\dfrac{d}{dx}(a^2 x^3)=3 a^2 x^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    In this expression, \(a\) is a constant. So we take the derivative just
+    like we would any other derivative with a constant coefficient.
+    \[
+    \dfrac{d}{dx}(a^2 x^3)=3 a^2 x^2
+    \]
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    If \(f(y)=y^2 b^3\), compute \(f'(y)=\dfrac{d}{dy}(y^2 b^3)\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    \(b\) is a constant. \(y\) is the variable.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\dfrac{d}{dy}(y^2 b^3)=2y b^3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    In this expression, \(b\) is a constant, but now \(y\) is the variable.
+    \[
+    \dfrac{d}{dy}(y^2 b^3)=2y b^3
+    \]
+  </p>
+</div>
+
+        <div class="rule" id="ex3"></div>
+
+<p>
+  For a function of 2 variables \(f(x,y)\), we can take the derivative with
+  respect to either variable while regarding the other variable as a constant.
+  This is called a <span class="defword"> partial derivative</span>.
+  The prime notation for derivatives no longer makes sense because it does
+  not say which is the variable of differentiation. So we replace it by a
+  subscript notation: \(f'\) becomes \(f_x\) or \(f_y\). To further emphasize
+  the difference between ordinary derivatives and partial derivatives
+  we replace the &ldquo;straight d,&rdquo; \(d\), by a
+  &ldquo;<span class="defword">curly d</span>,&rdquo; \(\partial\),
+  which is read &ldquo;<span class="defword">partial</span>.&rdquo;
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    If \(f(x,y)=y^2 x^3\), compute
+    \(f_x(x,y)=\dfrac{\partial}{\partial x}(y^2 x^3)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Hold \(y\) constant while you take the \(x\) derivative.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\dfrac{d}{dx}(y^2 x^3)=3y^2 x^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Since this is an \(x\) derivative, \(y\) is a constant. So we take
+    the derivative just like any other derivative with a constant coefficient.
+    \[
+    \dfrac{d}{dx}(y^2 x^3)=3y^2 x^2
+    \]
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    If \(f(x,y)=y^2 x^3\), compute
+    \(f_y(x,y)=\dfrac{\partial}{\partial y}(y^2 x^3)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX4"></button>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    Hold \(x\) constant while you take the \(y\) derivative.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(\dfrac{d}{dy}(y^2 x^3)=2y x^3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    Since this is an \(y\) derivative, \(x\) is a constant. So we take
+    the derivative just like any other derivative with a constant coefficient.
+    \[
+    \dfrac{d}{dy}(y^2 x^3)=2y x^3
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  There are many ways to denote the derivative of a function of one
+  variable, \(y=f(x)\), such as
+  \[
+  f'(x)=\dfrac{df}{dx}=\dfrac{dy}{dx}=D(f)=D(y) \qquad \text{etc.}
+  \]
+  Likewise, there are multiple ways to refer to a partial derivative of a
+  function of 2 variables, \(z=f(x,y)\). These
+  include the following:
+  \[f_x(x,y)=\dfrac{\partial f}{\partial x}
+  =\dfrac{\partial z}{\partial x}=D_xf=D_xz
+  =\partial_xf=\partial_xz
+  \]
+  \[f_y(x,y)=\dfrac{\partial f}{\partial y}
+  =\dfrac{\partial z}{\partial y}=D_yf=D_yz
+  =\partial_yf=\partial_yz
+  \]
+  In practice, the first three, \(f_x\), \(\dfrac{\partial f}{\partial x}\)
+  and \(\dfrac{\partial z}{\partial x}\) are the most common. However, you
+  should be comfortable using any of these notations.
+</p>
+<p>
+  In addition, there are many ways to denote the evaluation of a partial
+  derivative at a point \((x,y)=(a,b)\) include the following:
+  \[f_x(a,b)=\dfrac{\partial f}{\partial x}(a,b)
+  =\left.\dfrac{\partial z}{\partial x}\right|_{(x,y)=(a,b)}
+  =D_xf(a,b)=\left.\partial_xz\right|_{(a,b)}
+  \]
+</p>
+
+        <div class="rule" id="eg1"></div>
+
+<p class="example" data-number="5">
+  Compute \(\dfrac{\partial f}{\partial y}\) for
+  \(f=\ln(\sin(x^2+y^3))\). Then compute
+  \(\left.\dfrac{\partial f}{\partial y}\right|_{(1,2)}\).
+</p>
+<p class="sol">
+  We regard \(x\) as a constant, because we are taking the partial derivative
+  with respect to \(y\). We take the derivative just like we would any other
+  derivative with constants. The function here is more complex than the
+  previous examples, and we need to use the chain rule, twice.
+  \[\begin{aligned}
+  \dfrac{\partial f}{\partial y}
+  &=\dfrac{1}{\sin(x^2+y^3)}\dfrac{\partial }{\partial y}\sin(x^2+y^3)
+  =\dfrac{\cos(x^2+y^3)}{\sin(x^2+y^3)}\dfrac{\partial }{\partial y}(x^2+y^3)
+  \\
+  &=\cot(x^2+y^3)(3y^2)
+  =3y^2\cot(x^2+y^3)
+  \end{aligned}\]
+  In practice, you would not need to write all these steps, but rather go
+  directly to
+  \[
+  \dfrac{\partial f}{\partial y}
+  =\dfrac{\cos(x^2+y^3)}{\sin(x^2+y^3)} 3 y^2
+  \]
+  Finally,
+  \[
+  \left.\dfrac{\partial f}{\partial y}\right|_{(1,2)}
+  =3\cdot2^2 \cot(1^2+2^3)=12\cot9
+  \]
+</p>
+
+        <div class="rule" id="ex5"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="6">
+    Compute
+    \(\dfrac{\partial }{\partial x}\left[xy\sin(x^3+y^3)\right]\).
+	</p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX6"></button>
+    <button class="toggle has-ans" data-toggle="AnsX6"></button>
+    <button class="toggle has-sol" data-toggle="SolX6"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX6">
+  <p>
+    \(y\) is a constant. Use the product rule and chain rule.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <p>
+    \(\dfrac{\partial }{\partial x}\left[xy\sin(x^3+y^3)\right]
+    =3x^3 y\cos(x^3+y^3)+y\sin(x^3+y^3)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <p>
+    \[\begin{aligned}
+    \dfrac{\partial}{\partial x}\left[xy\sin(x^3+y^3)\right]
+    &=(xy)\dfrac{\partial}{\partial x}\sin(x^3+y^3)
+    +\sin(x^3+y^3)\dfrac{\partial}{\partial x}(xy)\\
+    &=xy\cos(x^3+y^3)(3x^2)
+    +\sin(x^3+y^3)y\\
+    &=3x^3 y\cos(x^3+y^3)+y\sin(x^3+y^3)
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

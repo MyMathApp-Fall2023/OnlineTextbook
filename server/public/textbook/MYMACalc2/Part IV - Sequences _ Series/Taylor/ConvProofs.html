@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Convergence Proofs | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApproxSerTaylorBnd.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>23. Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+
+<h2>e. Taylor Remainder</h2>
+
+<p class="thm" data-title="Taylor Remainder Inequality">
+  If \(a\) is in an open interval \(I\) and
+  \(M \ge |f^{(k+1)}(c)|\) for all \(c\) in the interval \(I\), then the Taylor
+  remainder of degree \(k\) centered at \(x=a\) satisfies
+  \[
+  |R_k f(x)| \le \dfrac{M}{(k+1)!}|x-a|^{k+1}
+  \]
+  for all \(x\) in the interval \(I\). The quantity on the right is called the
+  <span class="hl">Taylor bound on the remainder</span>.
+</p>
+
+
+      
+      <h2>3. Convergence Proofs</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<!-- <p class="lemma"> -->
+<p class="lemma">
+  To prove the Taylor series for \(f(x)\) converges to \(f(x)\), it suffices
+  to prove the limit of the Taylor remainders is \(0\):
+  \[
+  \lim_{k\rightarrow\infty}R_k f(x)=0
+  \]
+</p>
+<p class="remark">
+  There are a couple of technical points which need to be discussed before we
+  start the proof. We need to distinguish between a function \(f(x)\) and the
+  sum of its Taylor series which we denote by \(Tf(x)\). We know that the
+  Taylor series converges to \(Tf(x)\) but we do not yet know that it
+  converges to \(f(x)\). Thus, the Taylor series is:
+  \[
+  Tf(x)=\sum_{n=0}^\infty \dfrac{f^{(n)}(a)}{n!}(x-a)^n
+  \]
+  Further, if the Taylor series is approximated by the \(k^\text{th}\)
+  Taylor polynomial
+  \[
+  T_k f(x)=\sum_{n=0}^k \dfrac{f^{(n)}(a)}{n!}(x-a)^n
+  \]
+  then the error in the approximation is
+  \[
+  E_k=Tf(x)-T_k f(x)
+  =\sum_{n=k+1}^\infty \dfrac{f^{(n)}(a)}{n!}(x-a)^n
+  \]
+  This needs to be distinguished from the Taylor remainder which is defined
+  to be:
+  \[
+  R_k f(x)=f(x)-T_k f(x)
+  \]
+  using \(f(x)\) instead of \(Tf(x)\). It is \(R_k f(x)\) which appears in
+  the Lemma as well as the Taylor Remainder Formula and the Taylor Remainder
+  Inequality.
+</p>
+<p class="proof">
+  To prove the Taylor series for \(f(x)\) converges to \(f(x)\), we need
+  to show the partial sums (the Taylor polynomials) converge to \(f(x)\):
+  \[
+  \lim_{k\rightarrow\infty}T_k f(x)=f(x)
+  \]
+  Subtracting each side from \(f(x)\), this is equivalent to:
+  \[
+  \lim_{k\rightarrow\infty}\left[f(x)-T_k f(x)\right]=0
+  \]
+  or
+  \[
+  \lim_{k\rightarrow\infty}R_k f(x)=0
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Prove that the Maclaurin series for \(f(x)=\sin x\) converges to
+  \(\sin x\) for all real numbers \(x\).
+</p>
+<p class="sol">
+  The Taylor series is:
+  \[
+  Tf(x)=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{2n+1}
+  \]
+  and the \(k^\text{th}\) partial sum is the Taylor polynomial of degree
+  \(2k+1\):
+  \[
+  T_{2k+1}f(x)=\sum_{n=0}^k \dfrac{(-1)^n}{(2n+1)!}x^{2n+1}
+  \]
+  and the Taylor remainder is:
+  \[
+  R_{2k+1}f(x)=\sin x-\sum_{n=0}^k \dfrac{(-1)^n}{(2n+1)!}x^{2n+1}
+  \]
+  To show the remainders converge to \(0\), we use the Taylor bound on
+  the remainder. For \(f(x)=\sin x\), the \((2k+2)^\text{nd}\) derivative
+  is either \(\sin x\) or \(-\sin x\). In either of
+  these cases, \(|f^{(2k+2)}(x)| \le 1\). So we take \(M=1\).
+  Thus,
+  \[
+  |R_{2k+1}f(x)| \le \dfrac{M}{(2k+2)!}|x|^{2k+2}
+  =\dfrac{|x|^{2k+2}}{(2k+2)!}
+  \]
+  and so
+  \[
+  \lim_{k\rightarrow\infty}|R_{2k+1}f(x)|
+  \le \lim_{k\rightarrow\infty}\dfrac{|x|^{2k+2}}{(2k+2)!}=0
+  \]
+  <button class="center toggle btn" data-toggle="Proof1">Why?</button>
+</p>
+<div class="toBeToggled note" data-toggle="Proof1">
+  <p>
+    We'll show \(\displaystyle \lim_{n\rightarrow\infty}\dfrac{|x|^n}{n!}=0\).
+    <br>
+    Pick an integer \(N>2|x|\). Then \(|x| \lt \dfrac{N}{2}\).
+    <br>
+    Now if \(p>N\), then \(\dfrac{1}{p} \lt \dfrac{1}{N}\) and \(\dfrac{|x|}{
+    p}<\dfrac{N}{2N}=\dfrac{1}{2}\).
+    <br>
+    We now compute (with \(n>N\))
+    \[\begin{aligned}
+    \lim_{n\rightarrow\infty}\dfrac{|x|^n}{n!}
+    &=\lim_{n\rightarrow\infty}\dfrac{|x|}{1}\dfrac{|x|}{2}
+    \cdots\dfrac{|x|}{N}\dfrac{|x|}{N+1}\cdots\dfrac{|x|}{n} \\
+    &=\dfrac{|x|^N}{N!}\lim_{n\rightarrow\infty}\dfrac{|x|}{N+1}\cdots\dfrac{|x|}{n} \\
+    &\lt \dfrac{|x|^N}{N!}\lim_{n\rightarrow\infty}\left(\dfrac{1}{2}\right)^{n-N}=0
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  This shows \(\displaystyle \lim_{k\rightarrow\infty}R_{2k+1}f(x)=0\),
+  and hence, the Taylor series for \(\sin x\) converges to \(\sin x\).
+</p>
+
+        <div class="rule" id="ex1"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Prove that the Maclaurin series for \(f(x)=e^{2x}\) converges to \(
+    e^{2x}\) for all real numbers \(x\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Let \(N\) be a number \(\gt |x|\). Find the Taylor bound on the
+    remainder for the interval \((-N,N)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    To show \(\displaystyle \lim_{k\rightarrow\infty}R_k f(x)=0\), we use
+    the Taylor bound on the remainder. Let \(N\) be a number
+    \(\gt |x|\). Consider the interval \((-N,N)\).
+    For \(f(x)=e^{2x}\), we have \(f^{(k+1)}(x)=2^{k+1}e^{2x}\).
+    So, \(|f^{(k+1)}(x)| \le 2^{k+1}e^{2N}\). So we take \(M=2^{k+1}e^{2N}\).
+    Thus,
+    \[
+    |R_k f(x)| \le \dfrac{M}{(k+1)!}|x|^{k+1}
+    =\dfrac{e^{2N}|2x|^{k+1}}{(k+1)!}
+    \]
+    and so
+    \[
+    \lim_{k\rightarrow\infty}|R_k f(x)| \le
+    e^{2N}\lim_{k\rightarrow\infty}\dfrac{|2x|^{k+1}}{(k+1)!}=0
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

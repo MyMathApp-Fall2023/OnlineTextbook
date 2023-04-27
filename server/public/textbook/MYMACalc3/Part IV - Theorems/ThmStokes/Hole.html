@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Surfaces whose Boundaries have Several Curves | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Theorem.html" title="Previous">&lArr;</a></li>
+      <li><a href="NoBoundary.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. The Theorem</h2>
+
+<p>
+  What happens to Stokes' Theorem when the boundary of the surface consists
+  of more than one curve? The theorem still holds, but there are some special
+  directional considerations.
+</p>
+
+
+      
+      <h2>2. Surfaces whose Boundaries have Several Curves</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed
+  <span class="hl">"counterclockwise"</span>
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+<div class="column">
+  <div>
+    <p data-title="Technical Details">
+      The <span class="hl">boundary</span>, \(\partial S,\) of the surface,
+      \(S,\) is usually a single closed curve surrounding the surface.
+      However, if the boundary of the surface has more than one closed curve,
+      (as in the figure at the right) then each piece must be traversed
+      <span class="hl">"counterclockwise"</span> as seen
+      from the tip of the normal to \(S\). This notion of counterclockwise
+      needs more explanation which is given in the "More Details" below.
+    </p>
+    <p class="remark">
+      The vector field \(\vec{F}\) is nice if it has continuous first partial
+      derivatives. Similarly, the surface, \(S,\) and its boundary,
+      \(\partial S,\) are nice if they are defined by parametric functions
+      with continuous first partial derivatives.
+    </p>
+  </div>
+  <!-- <div class="center">
+    <figure>
+      <img src="graphics/thm_8th_sph_hole_arrows_anim.gif" alt="thm_8th_sph_hole_arrows_anim">
+    </figure>
+  </div> -->
+  <div style="text_align: center;">
+    <div class="center">
+      <canvas id="canvas_8thSphereHole"></canvas>
+      <input type="range" min="0" max="90" val="25" step="0.1"
+        id="vertSlider_8thSphereHole" class="slider-vertical" orient="vertical"
+        style="height:200px; position:relative; bottom:20px; visibility:hidden;">
+      </input>
+    </div>
+    <div class="center">
+      <input type="range" min="-95" max="5" val="-45" step="0.1"
+        id="horiSlider_8thSphereHole" style="width:200px; position:relative; left:-10px; visibility:hidden;">
+      </input>
+    </div>
+    <div class="center">
+      <input type="checkbox" id="showHand_8thSphereHole">
+      Show Hand
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p data-title="More Details">
+  In discussing
+  <a href="../ThmGreen/Hole.html" title="Return using the Back button.">
+  Green's Theorem</a>, the region always has an outer
+  boundary curve which is traversed counterclockwise. In addition, it can
+  have one or more inner boundary curves surounding each hole traversed
+  clockwise.
+</p>
+<div class="column">
+  <div>
+    <p>
+      In discussing Stokes' Theorem, if there are two or more pieces to the
+      boundary, there is no way to say which piece is the outer curve. For
+      example, the cylinder shown at the right has two pieces to its boundary
+      and neither can be regarded as the outer curve.
+    </p>
+    <p>
+      Assuming the cylinder is oriented by an outward normal, to determine
+      which direction to traverse each piece of the boundary, draw a small
+      circle on the surface with counterclockwise arrows as seen from the
+      tip of the normal. Equivalently, put the fist of your right hand on the
+      small circle with your thumb pointing in the direction of the normal.
+      Then your fingers point counterclockwise on the circle. (Click on
+      Show Hand and try it.) Move the small
+      circle close to each boundary and see which direction the arrows say
+      you should travel along the boundary. In this sense, both pieces of
+      the boundary are traversed <span class="defword">counterclockwise</span>.
+    </p>
+    <p>
+      However, if we look at this cylinder from above, then the top circle is
+      traversed clockwise, while the bottom circle is traversed
+      counterclockwise.
+    </p>
+  </div>
+  <div style="text-align: center;">
+    <canvas id="canvas_cylinder"></canvas>
+    <input type="range" min="0" max="180" val="0" step="0.1"
+      id="vertSlider_cylinder" class="slider-vertical" orient="vertical"
+      style="height:200px; position:relative; bottom:45px; visibility:hidden;">
+    </input><br>
+    <input type="range" min="-76" max="76" val="-8.6" step="0.1"
+      id="horiSlider_cylinder" style="width:200px; visibility:hidden;">
+    </input><br>
+    <input type="checkbox" id="showHand_cylinder">
+    Show Hand
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Compute
+    \(\displaystyle \iint_C \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+    for the vector field
+    \(\vec{F}
+    =\left\langle \dfrac{y}{z},-\,\dfrac{x}{z},\dfrac{x+y}{z}\right\rangle\)
+    over the cylinder, \(C\), given by \(x^2+y^2=4\) for \(1 \le z \le 4\)
+    oriented outward.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_cyl_arrows_anim.gif" alt="eg_cyl_arrows_anim">
+  </div>
+</div>
+<p class="sol">
+  We use Stokes' Theorem to convert the surface integral over the cylinder
+  into a line integral around the boundary of the cylinder which is \(2\) circles.
+  \[\begin{aligned}
+  \iint_C &\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial C} \vec{F}\cdot d\vec{s} \\
+  &=\oint_\text{lower} \vec{F}\cdot d\vec{s}
+   +\oint_\text{upper} \vec{F}\cdot d\vec{s}
+  \end {aligned}\]
+  &emsp; <strong>Lower Circle:</strong> &emsp; The lower circle with radius
+  \(2\) at \(z=1\), may be parametrized by
+  \(\vec r_1(\theta)=(2\cos\theta,2\sin\theta,1)\) for \(0 \le \theta \le 2\pi\).
+  So on the curve, the vector field
+  \(\vec{F}
+  =\left\langle \dfrac{y}{z},-\,\dfrac{x}{z},\dfrac{x+y}{z}\right\rangle\)
+  becomes
+  \[
+  \vec{F}(\vec r_1)
+  =\left\langle 2\sin\theta,-2\cos\theta,2\cos\theta+2\sin\theta\right\rangle
+  \]
+  The velocity is:
+  \[
+  \vec v_1=\langle -2\sin\theta,2\cos\theta,0\rangle
+  \]
+  This points counterclockwise as seen from above (since the \(x\) component
+  is negative and the \(y\) component is positive in the \(1^\text{st}\)
+  quadrant). This is the correct orientation. (See the figure above.)
+  Then the dot product is:
+  \[
+  \vec{F}(\vec r_1)\cdot\vec v_1
+  =-2\sin\theta\,2\sin\theta-2\cos\theta\,2\cos\theta=-4
+  \]
+  And the line integral is:
+  \[\begin{aligned}
+  \int_{\vec r_1} \vec{F}\cdot d\vec{s}
+  &=\int_0^{2\pi} \vec{F}(\vec r_1)\cdot\vec v_1\,d\theta \\
+  &=\int_0^{2\pi} -4\,d\theta=-8\pi
+  \end{aligned}\]
+  &emsp; <strong>Upper Circle:</strong> &emsp; The upper circle with radius
+  \(2\) at \(z=4\), may be parametrized by
+  \(\vec r_2(\theta)=(2\cos\theta,2\sin\theta,4)\) for \(0 \le \theta \le 2\pi\).
+  So on the curve, the vector field
+  \(\vec{F}
+  =\left\langle \dfrac{y}{z},-\,\dfrac{x}{z},\dfrac{x+y}{z}\right\rangle\)
+  becomes
+  \[\begin{aligned}
+  \vec{F}(\vec r_2)
+  &=\left\langle \dfrac{2\sin\theta}{4},-\,\dfrac{2\cos\theta}{4},
+  \dfrac{2\cos\theta+2\sin\theta}{4}\right\rangle \\
+  &=\left\langle \dfrac{\sin\theta}{2},-\,\dfrac{\cos\theta}{2},
+  \dfrac{\cos\theta+\sin\theta}{2}\right\rangle
+  \end{aligned}\]
+  The velocity is:
+  \[
+  \vec v_2=\langle -2\sin\theta,2\cos\theta,0\rangle
+  \]
+  This points counterclockwise as seen from above (since the \(x\) component
+  is negative and the \(y\) component is positive in the \(1^\text{st}\)
+  quadrant). Since the normal points outward, the upper circle must be
+  traversed clockwise as seen from above. (See the figure above.) So we
+  reverse the velocity:
+  \[
+  \text{Reverse:}\qquad\vec v_2=\langle 2\sin\theta,-2\cos\theta,0\rangle
+  \]
+  Then the dot product is:
+  \[
+  \vec{F}(\vec r_2)\cdot\vec v_2
+  =\dfrac{2\sin\theta}{4}2\sin\theta+\dfrac{2\cos\theta}{4}2\cos\theta=1
+  \]
+  And the line integral is:
+  \[\begin{aligned}
+  \int_{\vec r_2} \vec{F}\cdot d\vec{s}
+  &=\int_0^{2\pi} \vec{F}(\vec r_2)\cdot\vec v_2\,d\theta \\
+  &=\int_0^{2\pi} 1\,d\theta=2\pi
+  \end{aligned}\]
+</p>
+<p>
+  &emsp; <strong>Total:</strong> &emsp; We add the line integrals:
+  \[\begin{aligned}
+  \oint_{\partial C} \vec{F}\cdot d\vec{s}
+  &=\oint_\text{lower} \vec{F}\cdot d\vec{s}
+   +\oint_\text{upper} \vec{F}\cdot d\vec{s} \\
+  &=-8\pi+2\pi=-6\pi
+  \end{aligned}\]
+</p>
+
+<div class="check collapse hide">
+  <strong>Check: Surface Integral Directly</strong>
+  <p>
+    To check, we compute the surface integral directly. We start
+    by computing the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec{\nabla}\times\vec{F}
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    \dfrac{y}{z} & -\,\dfrac{x}{z} & \dfrac{x+y}{z}
+    \end{vmatrix} \\
+    &=\hat\imath\left(\dfrac{1}{z}-\dfrac{x}{z^2}\right)
+     -\hat\jmath\left(\dfrac{1}{z}--\dfrac{y}{z^2}\right)
+     +\hat k\left(-\dfrac{1}{z}-\dfrac{1}{z}\right) \\
+    &=\left\langle \dfrac{1}{z}-\dfrac{x}{z^2},-\dfrac{1}{z}-\dfrac{y}{z^2},
+             -\dfrac{2}{z}\right\rangle
+    \end {aligned}\]
+    In cylindrical coordinates, the surface is \(r=2\). So a parametrization is:
+    \[
+    \vec R(\theta,z)=\langle 2\cos\theta,2\sin\theta,z\rangle
+    \]
+    On the surface, the curl of \(\vec F\) is:
+    \[\begin{aligned}
+    \left.\vec{\nabla}\times\vec{F}\right|_{R(\theta,z)}
+    &=\left\langle \dfrac{1}{z}-\dfrac{2\cos\theta}{z^2},
+                  -\dfrac{1}{z}-\dfrac{2\sin\theta}{z^2},
+                  -\dfrac{2}{z}\right\rangle
+    \end {aligned}\]
+    The normal is:
+    \[\begin{aligned}
+    \vec N&=\vec e_\theta\times\vec e_z
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    -2\sin\theta & 2\cos\theta & 0 \\
+    0 & 0 & 1
+    \end{vmatrix} \\
+    &=\hat\imath(2\cos\theta-0)-\hat\jmath(-2\sin\theta-0)
+     +\hat k(0) \\
+    &=\langle 2\cos\theta,2\sin\theta,0 \rangle
+    \end {aligned}\]
+    This is horizontal (since the \(z\)-component is \(0\)) and points outward
+    (since the \(x\) and \(y\) components are positive in the first quadrant).
+    So the normal is oriented correctly. Next we compute the dot product:
+    \[\begin{aligned}
+    \left.\vec{\nabla}\times\vec{F}\right|_{R(\theta,z)}\cdot\vec N
+    &=\dfrac{2\cos\theta}{z}-\dfrac{4\cos^2\theta}{z^2}
+     -\dfrac{2\sin\theta}{z}-\dfrac{4\sin^2\theta}{z^2} \\
+    &=\dfrac{2\cos\theta-2\sin\theta}{z}-\dfrac{4}{z^2}
+    \end {aligned}\]
+    Finally, we can compute the integral:
+    \[\begin{aligned}
+    \iint_C \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    &=\int_0^{2\pi}\int_1^4 \left.\vec{\nabla}\times\vec{F}\right|_{R(\theta,z)}
+    \cdot\vec N\,d\theta\,dz \\
+    &=\int_0^{2\pi}\int_1^4
+    \left(\dfrac{2\cos\theta-2\sin\theta}{z}-\dfrac{4}{z^2}\right)\,d\theta\,dz
+    \end {aligned}\]
+    We do the \(\theta\) integral first, noting that
+    \[
+    \int_0^{2\pi} \cos\theta\,d\theta=\int_0^{2\pi} \sin\theta\,d\theta=0
+    \]
+    So
+    \[\begin{aligned}
+    \iint_C &\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =-2\pi\int_1^4 \dfrac{4}{z^2}\,dz
+    =8\pi\left[\dfrac{1}{z}\right]_1^4 \\
+    &=8\pi\left(\dfrac{1}{4}-1\right)=2\pi-8\pi=-6\pi
+    \end {aligned}\]
+  </p>
+</div>
+<p class="remark">
+  Both methods gave the same answer. This checks both computations and also
+  verifies Stokes' Theorem for this function and surface. This time the two
+  methods were about equal difficulty..
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="2">
+      Use Stokes' Theorem to compute
+      \(\displaystyle \iint_P \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+      for the vector field
+      \(\vec{F}
+      =\langle yz,-xz,x^2+y^2\rangle\)
+      over the piece of the paraboloid, \(P\), given by \(z=14-x^2-y^2\) for
+      \(5 \le z \le 10\) oriented down and in.
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+      <button class="toggle has-check" data-toggle="CkX2"></button>
+      <button class="toggle has-rem" data-toggle="RemX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_parab_arrows_anim.gif" alt="ex_parab_arrows_anim">
+    <!-- <video src="graphics/StokesMovie1-hole.mp4" autoplay controls loop>
+      Video playback not supported
+    </video> -->
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \iint_P \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial P} \vec{F}\cdot d\vec{s}=10\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    By Stokes' Theorem:
+    \[
+    \iint_P \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial P} \vec{F}\cdot d\vec{s}
+    \]
+    So we now compute the line integral around the boundary which is \(2\)
+    circles. The lower one, at height \(z=5\), has radius \(r=3\) and must
+    be traversed clockwise. The upper one, at height \(z=10\), has radius
+    \(r=2\) and must be traversed counterclockwise.
+  </p>
+  <p>
+    &emsp; <strong>Lower Circle:</strong> &emsp; The lower circle may be
+    parametrized as:
+    \[
+    \vec r_1(\theta)=(3\cos\theta,3\sin\theta,5)
+    \]
+    The velocity is:
+    \[
+    \vec v_1=\langle -3\sin\theta,3\cos\theta,0\rangle
+    \]
+    This is counterclockwise. So we reverse it:
+    \[
+    \text{Reverse:}\qquad\vec v_1=\langle 3\sin\theta,-3\cos\theta,0\rangle
+    \]
+    On the circle, the vector field \(\vec{F}=\langle yz,-xz,x^2+y^2\rangle\)
+    becomes:
+    \[
+    \left.\vec{F}\right|_{\vec r_1(\theta)}
+    =\langle 15\sin\theta,-15\cos\theta,9\rangle
+    \]
+    So the line integral is:
+    \[\begin{aligned}
+    \oint_{\vec r_1} \vec{F}\cdot d\vec{s}
+    &=\int_0^{2\pi} \vec{F}\cdot\vec v_1\,d\theta \\
+    &=\int_0^{2\pi} (45\sin^2\theta+45\cos^2\theta)\,d\theta \\
+    &=45(2\pi)=90\pi
+    \end {aligned}\]
+    &emsp; <strong>Upper Circle:</strong> &emsp; The upper circle may be
+    parametrized as:
+    \[
+    \vec r_1(\theta)=(2\cos\theta,2\sin\theta,10)
+    \]
+    The velocity is:
+    \[
+    \vec v_1=\langle -2\sin\theta,2\cos\theta,0\rangle
+    \]
+    This is counterclockwise as required. On the circle, the vector field
+    \(\vec{F}=\langle yz,-xz,x^2+y^2\rangle\) becomes:
+    \[
+    \left.\vec{F}\right|_{\vec r_2(\theta)}
+    =\langle 20\sin\theta,-20\cos\theta,4\rangle
+    \]
+    So the line integral is:
+    \[\begin{aligned}
+    \oint_{\vec r_2} \vec{F}\cdot d\vec{s}
+    &=\int_0^{2\pi} \vec{F}\cdot\vec v_2\,d\theta \\
+    &=\int_0^{2\pi} (-40\sin^2\theta-40\cos^2\theta)\,d\theta \\
+    &=-40(2\pi)=-80\pi
+    \end {aligned}\]
+    &emsp; <strong>Total:</strong> &emsp; We add the line integrals:
+    \[\begin{aligned}
+    \oint_{\partial P} \vec{F}\cdot d\vec{s}
+    &=\oint_\text{lower} \vec{F}\cdot d\vec{s}
+     +\oint_\text{upper} \vec{F}\cdot d\vec{s} \\
+    &=90\pi-80\pi=10\pi
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by computing the surface integral directly. We start
+    by computing the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec{\nabla}\times\vec{F}
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    yz         & -xz        & x^2+y^2
+    \end{vmatrix} \\
+    &=\hat\imath(2y--x)-\hat\jmath(2x-y)+\hat k(-z-z) \\
+    &=\langle 2y+x,-2x+y,-2z\rangle
+    \end {aligned}\]
+    Since the surface is the parabola, \(z=14-x^2-y^2=14-r^2\), when \(z=5\)
+    we have \(r=3\) and when \(z=10\) we have \(r=2\). We parametrize starting
+    with cylindrical coordinates:
+    \[
+    \vec R(r,\theta)
+    =\langle r\cos\theta,r\sin\theta,14-r^2\rangle
+    \]
+    On the surface, the curl of \(\vec F\) is:
+    \[
+    \left.\vec{\nabla}\times\vec{F}\right|_{R(r,\theta)}
+    =\langle 2r\sin\theta+r\cos\theta,-2r\cos\theta+r\sin\theta,-28+2r^2\rangle
+    \]
+    The normal is:
+    \[\begin{aligned}
+    \vec N&=\vec e_r\times\vec e_\theta
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \cos\theta & \sin\theta & -2r \\
+    -r\sin\theta & r\cos\theta & 0
+    \end{vmatrix} \\
+    &=\hat\imath(0--2r^2\cos\theta)-\hat\jmath(0-2r^2\sin\theta) \\
+    &\quad+\hat k(r\cos^2\theta--r\sin^2\theta) \\
+    &=\langle 2r^2\cos\theta,2r^2\sin\theta,r\rangle
+    \end {aligned}\]
+    This points up and out but we need down and in. So we reverse it:
+    \[
+    \text{Reverse:}\qquad\vec N=\langle -2r^2\cos\theta,-2r^2\sin\theta,-r\rangle
+    \]
+    Finally, we can compute the integral:
+    \[\begin{aligned}
+    \iint_P &\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\int_0^{2\pi}\int_2^3 \left.\vec{\nabla}\times\vec{F}\right|_{R(r,\theta)}
+    \cdot\vec N\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_2^3
+    (-4r^3\sin\theta\cos\theta-2r^3\cos^2\theta \\
+    &\quad+4r^3\cos\theta\sin\theta-2r^3\sin^2\theta
+    +28r-2r^3)\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_2^3
+    (-2r^3+28r-2r^3)\,dr\,d\theta \\
+    &=2\pi\int_2^3 28r-4r^3\,dr
+    =2\pi\left[14r^2-r^4\right]_2^3 \\
+    &=2\pi(126-81)-2\pi(56-16)
+    =10\pi
+    \end {aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    Both methods gave the same answer. This checks both computations and also
+    verifies Stokes' Theorem for this function and surface. This time
+    the surface integral was easier.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+<script src="scripts/three.js"></script>
+<script type="module" src="scripts/three.module.js"></script>
+<script src="scripts/GLTFLoader.js"></script>
+<script src="scripts/OrbitControls.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="scripts/Hole.js"></script>
+<script src="scripts/Hole_8thSphere.js"></script>
+
+<style>
+  canvas{
+    background: #f0f0f0;
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+
+</body>
+</html>

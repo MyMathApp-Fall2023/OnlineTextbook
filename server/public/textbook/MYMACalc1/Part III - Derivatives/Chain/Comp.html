@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Compositions | 13. Chain Rule &amp; Implicit Differentiation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Chain.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Chain Rule &amp; Implicit Differentiation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a. Compositions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+	By a <span class="defword">composition of functions</span> we simply mean
+	that we have <em>a function of a function</em>. Thus,
+	if we have two functions, \(f(x)\) and \(g(x)\), we can form two
+	compositions,	\(f(g(x))\) (Read &ldquo;f of g of x.&rdquo;) and \(g(f(x))\)
+	(Read &ldquo;g of f of x.&rdquo;). We write \(f\circ g\) and
+	\(g\circ f\) for these two compositions. In other words,
+	\[
+	(f\circ g)(x)=f(g(x)) \qquad \text{and} \qquad (g\circ f)(x)=g(f(x))
+	\]
+	We read \(f\circ g\) as &ldquo;f composed with g&rdquo;
+	or &ldquo;f following g&rdquo;.
+</p>
+<p>
+  To evaluate a composition of functions, we evaluate the inner function at
+  a value, then evaluate the outer function at the first result.
+</p>
+
+<p class="example" data-number="1">
+	Suppose \(f(x)=x^2\) and \(g(x)=4x\), what are \((f\circ g)(3)\) and
+	\((g\circ f)(3)\)?
+</p>
+<p class="sol">
+	On the one hand, \(g(3)=12\), and then \((f\circ g)(3)=f(g(3))=f(12)=144\).
+	<br>
+	On the other hand, \(f(3)=9\), and then \((g\circ f)(3)=g(f(3))=g(9)=36\).
+	<br>
+  The answers are different!
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  	Suppose \(p(x)=(1+x^2)^3\) and \(q(x)=(1+x^3)^2\), what are
+    \((p\circ q)(2)\) and \((q\circ p)(2)\)?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\begin{aligned}
+  (p\circ q)(2)&=(1+81^2)^3 \\
+  (q\circ p)(2)&=(1+125^3)^2
+  \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Since \(q(2)=(1+2^3)^2=81\), we have
+    \[
+    (p\circ q)(2)=p(q(2))=p(81)=(1+81^2)^3
+    \]
+    Since \(p(2)=(1+2^2)^3=125\), we have
+    \[
+    (q\circ p)(2)=q(p(2))=q(125)=(1+125^3)^2
+    \]
+    These are two very big but different numbers!
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The composition can also be evaluated at a variable instead of a number.
+</p>
+<p class="example" data-number="3">
+	Suppose \(f(x)=x^2\) and \(g(x)=4x\), what are \((f\circ g)(x)\) and
+	\((g\circ f)(x)\)?
+</p>
+<p class="sol">
+	On the one hand, \(g(x)=4x\), and then \((f\circ g)(x)=f(g(x))=f(4x)=(4x)^2=16x^2\).
+	<br>
+	On the other hand \(f(x)=x^2\), and then \((g\circ f)(x)=g(f(x))=g(x^2)=4x^2\).
+	<br>
+  Notice \((f\circ g)(x)\) and \((g\circ f)(x)\) are different functions.
+</p>
+<p class="check">
+  As a check, notice \((f\circ g)(3)=\left.16x^2\right|_{x=3}=16\cdot9=144\).
+  <br>
+  And \((g\circ f)(3)=\left.4x^2\right|_{x=3}=4\cdot9=36\).
+  <br>
+  Both of these agree with the first example.
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+  	Suppose \(p(x)=(1+x^2)^3\) and \(q(x)=(1+x^3)^2\), what are
+    \((p\circ q)(x)\) and \((q\circ p)(x)\)?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\begin{aligned}
+    (p\circ q)(x)&=(1+[(1+x^3)^2]^2)^3 \\
+    (q\circ p)(x)&=(1+[(1+x^2)^3]^3)^2
+    \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Since \(q(x)=(1+x^3)^2\), we have
+    \[
+    (p\circ q)(x)=p(q(x))=p((1+x^3)^2)=(1+[(1+x^3)^2]^2)^3
+    \]
+    Since \(p(x)=(1+x^2)^3\), we have
+    \[
+    (q\circ p)(x)=q(p(x))=q((1+x^2)^3)=(1+[(1+x^2)^3]^3)^2
+    \]
+    These multiply out to two different polynomials!
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    As a check, notice
+    \[\begin{aligned}
+    (p\circ q)(2)
+    &=\left.(1+[(1+x^3)^2]^2)^3\right|_{x=2} \\
+    &=(1+[(1+2^3)^2]^2)^3=(1+81^2)^3
+    \end{aligned}\]
+    And
+    \[\begin{aligned}
+    (q\circ p)(2)
+    &=\left.(1+[(1+x^2)^3]^3)^2\right|_{x=2} \\
+    &=(1+[(1+2^2)^3]^3)^2=(1+125^3)^2
+    \end{aligned}\]
+    <br>
+    Both of these agree with the first exercise.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+	It is confusing for \(f(x)\) and \(g(x)\), to both have the same
+	variable \(x\). So we frequently write something like
+	\(z=f(y)\) and \(y=g(x)\). Then \(z=f(g(x))=(f\circ g)(x)\).
+  Then \(x\) is called the <span class="defword">inner variable</span>,
+  \(y\) is called the <span class="defword">intermediate variable</span>
+  and \(z\) is called the <span class="defword">outer variable</span>.
+  <br>
+  In the formula \(y=g(x)\), \(x\) is independent and \(y\) is dependent.
+  <br>
+  In the formula \(z=f(y)\), \(y\) is independent and \(z\) is dependent.
+  <br>
+  Overall, in the formula \(z=(f\circ g)(x)\), \(x\) is independent and
+  \(z\) is dependent.
+</p>
+
+<p class="example" data-number="5">
+  Suppose an ant is walking in a straight line on a hot frying pan. The
+  position (in mm) of the ant at time \(t\) (in sec) is \(x(t)=4t\). The
+  temperature of the pan (in \(^\circ\)C) is \(T(x)=40+x^2\). What is the
+  temperature of the pan as seen by the ant at time \(t\)?
+</p>
+<p class="sol">
+  \[
+  (T\circ x)(t)=T(x(t))=40+x(t)^2=40+(4t)^2=40+16t^2
+  \]
+</p>
+<p class="remark">
+  Although \(T\) is really a function of \(x\), scientists frequently write
+  \(T(t)\) for this composition:
+  \[
+  T(t)=T(x(t))=40+16t^2
+  \]
+  Even though this is bad notation, scientists do it anyway. We need to be
+	aware of it and we will sometimes do it in this book. Mathematicians call this
+  <span class="defword">&ldquo;abuse of notation&rdquo;</span>.
+</p>
+
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="6">
+    A fish is swimming in salt water where the density of salt is
+    \(\delta(x)=(5+x) \dfrac{\text{mg}}{\text{cm}^3}\). If the fish's
+    position is \(x(t)=3+t^2\) where \(t\) is in sec and \(x\) is in cm,
+    what is the density of the salt \(\delta(t)\) at the fish's position
+    at time \(t\)?
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    By abuse of notation, \(\delta(t)=\delta(x(t))\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+  \(\displaystyle
+  \delta(t)=8+t^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    We compute the composition:
+    \[
+    \delta(t)=\delta(x(t))=5+x(t)=5+(3+t^2)=8+t^2
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

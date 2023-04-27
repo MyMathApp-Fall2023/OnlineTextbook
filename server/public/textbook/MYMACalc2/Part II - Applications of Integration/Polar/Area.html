@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d.1. Area Enclosed by a Polar Graph | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Slope.html" title="Previous">&lArr;</a></li>
+      <li><a href="AreaBetween.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d.1. Area Enclosed by a Polar Graph</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	We have seen how to plot a polar curve. Since any polar curve is periodic,
+	it usually encloses a region. We now want to compute the area of such a region.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="genexample" data-number="1">
+	  Find the area bounded by the graph of \(r=f(\theta)\)
+	  and the rays \(\theta=\alpha\) and \(\theta=\beta\).
+	  Assume \(f(\theta) \ge 0\).
+	</p>
+	<div class="center">
+	  <img src="graphics/areageneral.jpg" alt="areageneral">
+	</div>
+</div>
+<div class="column">
+	<p class="gensol">
+	  Recall that in rectangular coordinates, to find the area
+	  under a curve \(y=f(x)\), we divided the \(x\)-interval into
+	  subintervals and approximated the area as the sum of a rectangle over each
+	  subinterval. Similarly, to find the area enclosed by a polar curve
+	  \(r=f(\theta)\), we divide the \(\theta\)-interval into subintervals and
+	  approximate the area as the sum of a circular pie wedge for each subinterval.
+	</p>
+	<div class="center">
+	  <img src="graphics/areawedges.jpg" alt="areawedges">
+	</div>
+</div>
+<p>
+  If we divide the \(\theta\)-interval into \(n\) intervals, then the angular
+  width of each wedge is \(\Delta\theta=\dfrac{\beta-\alpha}{n}\) and the
+  radius of the \(i^\text{th}\) wedge is \(r_i=f\left(\theta_i^*\right)\)
+	for some angle \(\theta_i^*\) in the \(i^\text{th}\) interval.
+	Now the area of a pie wedge of angle \(\Delta\theta\) (in radians) and radius
+  \(r_i\) is
+  \[
+  \Delta A
+	=\left(\dfrac{\Delta\theta}{2\pi}\right)\pi r_i^2
+	=\dfrac{1}{2}r_i^2\,\Delta\theta
+  \]
+  So the total area is obtained by adding up the areas of the wedges and
+  taking the limit as the number of wedges becomes large,
+	(\(n\to\infty\)):
+  \[
+  A
+	=\lim_{n\to\infty} \sum_{i=1}^n
+	  \dfrac{1}{2}r_i^2\,\Delta\theta
+	=\lim_{n\to\infty} \sum_{i=1}^n
+	  \dfrac{1}{2}f\left(\theta_i^*\right)^2\,\Delta\theta
+  \]
+  This limit of a sum is recognized as the integral:
+	\(\displaystyle A=\int_\alpha^\beta \dfrac{1}{2}f(\theta)^2\,d\theta\).
+</p>
+
+				<div class="rule" id="polararea"></div>
+
+<p class="formula" data-title="Area Enclosed by a Polar Graph">
+  The area bounded by the graph of \(r=f(\theta)\) and the rays
+	\(\theta=\alpha\) and \(\theta=\beta\) is:
+  \[
+	A=\int_\alpha^\beta \dfrac{1}{2}f(\theta)^2\,d\theta
+	\]
+  We often remove the reference to \(f\) and write this formula as
+  \[
+	A=\int_\alpha^\beta \dfrac{1}{2}r^2\,d\theta
+	\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="2">
+	  Find the area of the upper half of the cardioid, \(r=1+\cos\theta\).
+	</p>
+	<div class="center">
+	  <img src="graphics/halfcardioid.jpg" alt="halfcardioid">
+	</div>
+</div>
+<p class="sol">
+  It is clear that the upper half of the cardioid is swept out as \(\theta\)
+  increases from \(0\) to \(\pi\). Thus the area is:
+  \[\begin{aligned}
+  A&=\int_0^\pi \dfrac{1}{2}(1+\cos\theta)^2\,d\theta \\
+	&=\dfrac{1}{2}\int_0^\pi (1+2\cos\theta+\cos^2\theta)\,d\theta \\
+  &=\dfrac{1}{2}\int_0^\pi \left(1+2\cos\theta+\dfrac{1+\cos(2\theta)}{2}\right)\,d\theta \\
+  &=\dfrac{1}{2}\left[\theta+2\sin\theta+\dfrac{\theta}{2}+\dfrac{\sin(2\theta)}{4}\right]_0^\pi
+	=\dfrac{3\pi}{4}
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<div class="dotfillex">
+	  <p class="exercise" data-number="3">
+	    Find the area bounded by one petal of the 3-leaf rose \(r=\cos(3\theta)\).
+	  </p>
+	  <p>
+	    <button class="toggle has-hint" data-toggle="HintX1"></button>
+	    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+	    <button class="toggle has-sol" data-toggle="SolX1"></button>
+	  </p>
+	</div>
+	<div class="center">
+	  <img src="graphics/area3leaf.jpg" alt="area3leaf">
+	</div>
+</div>
+
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    The most difficult part of the problem is determining the limits of
+    integration. However, these occur at the angles where the curve passes
+    through the origin. So solve \(r=\cos(3\theta)=0\) and select two adjacent
+    solutions.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(A=\dfrac{\pi}{12}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The solutions of \(r=\cos(3\theta)=0\) occur when
+		\[
+		3\theta=\pm\dfrac{\pi}{2},\pm\dfrac{3\pi}{2},\pm\dfrac{5\pi}{2},\ldots
+		\]
+		or
+		\[
+		\theta=\pm\dfrac{\pi}{6},\pm\dfrac{3\pi}{6},\pm\dfrac{5\pi}{6},\ldots
+		\]
+    The petal on the right occurs for \(-\,\dfrac{\pi}{6} \le \theta \le \dfrac{\pi }{6}\).
+    Thus the area is:
+		\[\begin{aligned}
+		A&=\dfrac{1}{2}\int_{-\pi/6}^{\pi/6} \cos^2(3\theta)\,d\theta \\
+     &=\dfrac{1}{2}\int_{-\pi/6}^{\pi/6} \dfrac{1+\cos(6\theta)}{2}\,d\theta \\
+     &=\dfrac{1}{4}\left[\theta+\dfrac{\sin(6\theta)}{6}\right]_{-\pi/6}^{\pi/6}
+		 =\dfrac{\pi }{12}
+		\end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

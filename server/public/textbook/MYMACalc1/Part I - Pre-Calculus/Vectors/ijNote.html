@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. \(\hat\imath\hat\jmath\) Notation | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LinComb.html" title="Previous">&lArr;</a></li>
+      <li><a href="DotProdAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Scalar Multiplication</h2>
+
+<p>
+  In discussing vectors, we normally specify a vector as an ordered pair of
+  components. However, there is a second notation which involves two special
+  vectors: \(\hat\imath\) and \(\hat\jmath\).
+</p>
+
+
+      
+      <h2>5. \(\hat\imath\hat\jmath\) Notation</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p class="def" data-col-width="60%">
+  	There exist two special unit vectors that point in the directions of the
+    positive \(x\)- and \(y\)-axes. They are:
+  	\[
+    \hat\imath=\left\langle1,0\right\rangle \quad \text{and} \quad
+    \hat\jmath=\left\langle0,1\right\rangle
+    \]
+    They are called the <span class="defword">standard coordinate vectors</span>
+    or the <span class="defword">standard basis vectors</span>.
+  	<!-- In some contexts, it is useful to rename \(\hat\imath\) and
+    \(\hat\jmath\) as \(\hat e_1\) and \(\hat e_2\) or as
+    \(\hat e_x\) and \(\hat e_y\), but we will make this clear when it happens. -->
+    <br>
+    Notice that we put hats over these vectors because they are in fact
+    unit vectors.
+  </p>
+  <div class="center" data-col-width="40%">
+	  <img src="graphics/def_ij.jpg" alt="def_ij"/>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+	What happens if we take an arbitrary linear combination of \(\hat\imath\)
+  and \(\hat\jmath\) with coefficients \(a\) and \(b\)?
+	\[\begin{aligned}
+  a\hat\imath+b\hat\jmath
+  &=a\left\langle1,0\right\rangle+b\left\langle0,1\right\rangle \\
+	&=\left\langle a,0\right\rangle+\left\langle0,b\right\rangle
+  =\left\langle a,b\right\rangle
+	\end{aligned}\]
+	We get the vector \(\left\langle a,b\right\rangle\). Turning this around,
+  we can express any vector \(\vec v\) in terms of \(\hat\imath\) and
+  \(\hat\jmath\):
+	\[
+  \vec v=\left\langle v_1,v_2\right\rangle
+  =v_1\hat\imath+v_2\hat\jmath
+	\]
+</p>
+<p class="example" data-number="1">
+  For example, the vector \(\vec v=\left\langle3,-2\right\rangle\) can be
+  written as \(\vec v=3\hat\imath-2\hat\jmath\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+	The <span class="defword">ordered pair notation</span>,
+  \(\vec v=\left\langle v_1,v_2\right\rangle\), and the
+  <span class="defword">\(\hat\imath\,\hat\jmath\) notation</span>,
+  \(\vec v=v_1\hat\imath+v_2\hat\jmath\), can be used interchangably.
+  For some purposes one or the other may be more useful.
+</p>
+<p class="center">
+  <span class="greenbig">You need to be able to go back and forth as needed.</span>
+</p>
+
+        <div class="rule"></div>
+
+<p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  	Write the vector \(\vec a=\left\langle5,-3\right\rangle\) in
+    \(\hat\imath\,\hat\jmath\) notation.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\vec a=5\hat\imath-3\hat\jmath\)
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+  	Write the vector \(\vec a=-4\hat\imath+2\hat\jmath\) in
+    ordered pair notation.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\vec a=\left\langle-4,2\right\rangle\)
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

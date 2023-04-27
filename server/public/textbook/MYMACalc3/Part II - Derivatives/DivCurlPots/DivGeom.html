@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Geometric Interpretation of the Divergence | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DivAlg.html" title="Previous">&lArr;</a></li>
+      <li><a href="CurlAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. The Divergence Operator</h2>
+
+
+      
+      <h2>2. Geometric Interpretation of the Divergence</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The divergence of a vector field is a measure of how much the vector field
+  is spreading out at each point. More concretely, if the vector field
+  \(\vec V\) is the velocity field of a fluid, then the divergence of the
+  velocity field, \(\vec\nabla\cdot\vec V\),  measures of how much the fluid
+  is spreading out at each point. We will justify this in \(1\), \(2\) and \(3\)
+  dimensions.
+  <br>
+  <em>In the figures below, use your mouse to drag the center of the circle to
+  move it, or drag the circumference to change the radius.</em>
+</p>
+
+        <div class="rule"></div>
+
+<h3>1-dimension</h3>
+<p class="genexample" data-number="1">
+  Suppose the velocity field has only one component
+  \(\vec V=\left\langle V_1 \right\rangle\).
+  Then its divergence is \(\vec\nabla\cdot\vec V=\dfrac{dV_1}{dx}\).
+  If the divergence is positive, then \(\dfrac{dV_1}{dx} > 0\) and \(V_1\)
+  is getting larger as we move from left to right. So its plot looks like:
+</p>
+<center>
+  <canvas id="1d1" style="background-color: #f0f0f0; height: 100px; width: 600px;">
+  </canvas>
+</center>
+<p>
+  If we pick a point (Drag the green dot to \(x=2\).) and an interval
+  centered at that point (say \((1,3)\)), we can see that the
+  <span style="color:blue">blue</span> arrow going out of the interval
+  (at \(3\)) is larger than the <span style="color:red">red</span> arrow going
+  into the interval (at \(1\)). So more fluid flows out of the interval than in.
+  The fluid is diverging from that interval. Change the radius of the interval.
+  (Drag the edge of the circle.) The fluid is expanding out of any interval
+  around \(2\). So we say it is diverging at \(2\). Try changing the center and
+  the radius. We see that for this vector field (which happens to be
+  \(\vec V=\langle V_1\rangle=\langle x+2\rangle\)) the fluid is diverging
+  at all points. (Its divergence is
+  \(\vec\nabla\cdot\vec V=\dfrac{d(x+2)}{dx}=1\) at all points.)
+</p>
+<p>
+  If the divergence is negative, then \(\dfrac{dV_1}{dx} < 0\) and \(V_1\)
+  is getting smaller (or more negative) as we move from left to right.
+  So its plot looks like:
+</p>
+<center>
+  <canvas id="1d2" style="background-color: #f0f0f0; height: 100px; width: 600px;">
+  </canvas>
+</center>
+<p>
+  In each interval around each point, (Try changing the center and radius.)
+  bigger arrows are going into the interval than out. The fluid is converging.
+</p>
+
+        <div class="rule"></div>
+
+<h3>2-dimensions</h3>
+<p class="genexample" data-number="2">
+  Suppose the velocity field has two components
+  \(\vec V=\left\langle V_1, V_2 \right\rangle\).
+  Then its divergence is
+  \(\vec\nabla\cdot\vec V=\dfrac{dV_1}{dx}+\dfrac{dV_2}{dy}\).
+</p>
+
+<div class="column">
+  <p data-col-width="60%">
+    If both terms of the divergence are positive, i.e.
+    \(\dfrac{dV_1}{dx} \gt 0\) and \(\dfrac{dV_2}{dy} \gt 0\),
+    then \(V_1\) is getting larger as we move from left to right
+    and \(V_2\) is getting larger as we move from bottom to top.
+    So its plot looks something like the plot at the right.
+    If we draw a circle centered at a point, (Drag the green dot to
+    \((x,y)=(2,-3).\)) then there are bigger
+    <span style="color:blue">blue</span> arrows pointing out at the
+    right and bottom and smaller <span style="color:red">red</span> arrows
+    pointing in at the left and top.
+    More fluid flows out of the circle than in. So the fluid is diverging
+    or expanding. Try changing the radius (Drag the edge of the circle.)
+    or moving the center. You can see this velocity field is diverging
+    at all points.
+  </p>
+  <div class="center" data-col-width="40%">
+    <canvas id="2d1" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="60%">
+    If both terms of the divergence are negative, i.e.
+    \(\dfrac{dV_1}{dx} \lt 0\) and \(\dfrac{dV_2}{dy} \lt 0\),
+    then \(V_1\) is getting smaller (more negative) as we move from left
+    to right and \(V_2\) is getting smaller (more negative) as we move
+    from bottom to top. So its plot looks something like the plot at the
+    right. If we draw a circle centered at a point, (Drag the green dot to
+    \((x,y)=(-1,2).\)) then there are bigger <span style="color:red">red</span>
+    arrows pointing in at the left and top and smaller
+    <span style="color:blue">blue</span> arrows pointing out at the right and
+    bottom. More fluid flows into the circle than out. So the fluid is
+    converging or contracting. Try changing the radius or moving the center.
+    You can see this velocity field is converging at all points.
+  </p>
+  <div class="center" data-col-width="40%">
+    <canvas id="2d2" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<p>
+  If the two terms have opposite signs but the sum is positive, then there are
+  still bigger arrows pointing out than in and the fluid is diverging. If the
+  sum is negative, then there are still bigger arrows pointing in than out and
+  the fluid is converging.
+</p>
+
+        <div class="rule"></div>
+
+<h3>3-dimensions</h3>
+  <p class="genexample" data-number="3" data-col-width="60%">
+    Suppose the velocity field has three components
+    \(\vec V=\left\langle V_1, V_2, V_3 \right\rangle\).
+    Then its divergence is
+    \(\vec\nabla\cdot\vec V=\dfrac{dV_1}{dx}+\dfrac{dV_2}{dy}+\dfrac{dV_3}{dz}\).
+  </p>
+<div class="column">
+  <p data-col-width="30%">
+    If the divergence is positive at a point, then there are bigger arrows
+    pointing out of a sphere centered at that point than into that sphere.
+    More fluid flows out of the sphere than in. So the fluid is diverging
+    or expanding.
+  </p>
+  <div class="center" data-col-width="40%">
+    <div>
+      <canvas id="3d2" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+      </canvas>
+    </div>
+  </div>
+  <div class="center" data-col-width="30%">
+    <div>
+      &ensp;\(x\): -10
+      <input type="range" min="-2" max="2" val="0" step="0.1"
+        id="xslider_3d2" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &ensp;\(y\): -10
+      <input type="range" min="-2" max="2" val="0" step="0.1"
+        id="yslider_3d2" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &ensp;\(z\): -10
+      <input type="range" min="-2" max="2" val="0" step="0.1"
+        id="zslider_3d2" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &ensp;\(r\): &ensp;&nbsp; 0
+      <input type="range" min="0.1" max="2" val=".75" step="0.1"
+        id="rslider_3d2" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &emsp;
+      <button id="Reset3d2">Reset</button>
+      &emsp;
+    </div>
+  </div>
+</div>
+<div class="column">
+  <p data-col-width="30%">
+    If the divergence is negative at a point, then there are bigger arrows
+    pointing into a sphere centered at that point than out of that sphere.
+    More fluid flows into the sphere than out. So the fluid is converging
+    or contracting.
+  </p>
+  <div class="center" data-col-width="40%">
+    <div>
+      <canvas id="3d3" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+      </canvas>
+    </div>
+  </div>
+  <div class="center" data-col-width="30%">
+    <div>
+      &ensp;\(x\): -10
+      <input type="range" min="-2" max="2" val="0" step="0.1"
+        id="xslider_3d3" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &ensp;\(y\): -10
+      <input type="range" min="-2" max="2" val="0" step="0.1"
+        id="yslider_3d3" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &ensp;\(z\): -10
+      <input type="range" min="-2" max="2" val="0" step="0.1"
+        id="zslider_3d3" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &ensp;\(r\): &ensp;&nbsp; 0
+      <input type="range" min="0.1" max="2" val=".75" step="0.1"
+        id="rslider_3d3" style="width:35%;">
+      </input>
+      10
+    </div>
+    <div>
+      &emsp;
+      <button id="Reset3d3">Reset</button>
+      &emsp;
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="70%">
+    <div class="dotfillex">
+      <p class="exercise" data-number="4">
+        Determine the regions in the plot where \(\vec\nabla\cdot\vec F \gt 0\)
+        and where \(\vec\nabla\cdot\vec F \lt 0\).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX4"></button>
+        <button class="toggle has-ans" data-toggle="AnsX4"></button>
+        <button class="toggle has-sol" data-toggle="SolX4"></button>
+      </p>
+    </div>
+  </div>
+  <div data-col-width="30%">
+    <canvas id="2d3" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    Imagine drawing a small circle at each point.
+    Are the arrows pointing into the circle bigger or
+    smaller than those pointing out?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        \(\vec\nabla\cdot\vec F \gt 0\) in the blue region, quadrants
+        I and IV.
+        <br>
+        \(\vec\nabla\cdot\vec F \lt 0\) in the red region, quadrants
+        II and III.
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_divplot1A.jpg" alt="Div Plot 1A">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        We draw circles at a bunch of points.
+        Those centered in quadrants I and IV have bigger arrows
+        pointing out than in. So \(\vec\nabla\cdot F \gt 0\) there.
+        Those centered in quadrants II and III have bigger arrows
+        pointing in than out. So \(\vec\nabla\cdot F \lt 0\) there.
+        See the Answer for a summary plot.
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_divplot1S.jpg" alt="Div Plot 1S">
+    </div>
+  </div>
+</div>
+
+<div class="column">
+  <div data-col-width="70%">
+    <div class="dotfillex">
+      <p class="exercise" data-number="5">
+        Determine the regions in the plot where \(\vec\nabla\cdot\vec F \gt 0\)
+        and where \(\vec\nabla\cdot\vec F \lt 0\).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX5"></button>
+        <button class="toggle has-ans" data-toggle="AnsX5"></button>
+        <button class="toggle has-sol" data-toggle="SolX5"></button>
+      </p>
+    </div>
+  </div>
+  <div data-col-width="30%">
+    <canvas id="2d4" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX5">
+  <p>
+    Imagine drawing a small circle at each point.
+    Are the arrows pointing into the circle bigger or
+    smaller than those point out?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        \(\vec\nabla\cdot\vec F \gt 0\) in the blue region, above
+        the diagonal.
+        <br>
+        \(\vec\nabla\cdot\vec F \lt 0\) in the red region, below
+        the diagonal.
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+    <img src="graphics/ex_divplot2A.jpg" alt="Div Plot 2A">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        We draw circles at a bunch of points.
+        Those centered along the line \(y=-x\) have as many big arrows going
+        in as out. So \(\vec\nabla\cdot\vec F=0\) there.
+        Those centered above and to the right of this line have bigger arrows
+        pointing out than in. So \(\vec\nabla\cdot\vec F \gt 0\) there.
+        Those centered below and to the left of this line have bigger arrows
+        pointing in than out. So \(\vec\nabla\cdot\vec F \lt 0\) there.
+        See the Answer for a summary plot.
+      </p>s
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_divplot2S.jpg" alt="Div Plot 2S">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  A fuller geometrical discussion of the divergence uses an integral to sum up
+  the arrows going in or out over the boundary circle (or sphere) and takes the
+  limit as the radius goes to \(0\). This discussion appears in the chapter on the
+  <a href="../../Part IV - Theorems/InterpDivCurl/Div.html"
+  title="Return using the Back button">
+  Interpretation of Divergence and Curl</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+<script src="../../../scripts/mathlex.min.js"></script>
+<script src="./scripts/TextSprite.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script type="module" src="./scripts/OrbitControls.js"></script>
+<script type="module" src="./scripts/DivGeomInterp.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. The Curl of a Gradient (\(\vec\nabla\times\vec\nabla f\)) | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DiffIdent2.html#Ops" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>17. Divergence, Curl and Potentials</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>d. Differential Identities</h2>
+
+<h2>2. Second Order Differential Operators and Identities</h2>
+
+<div class="example-links">
+  <a href="OpDivGrad.html">\(\underline{\vec\nabla\cdot\vec\nabla f}\)</a>
+  &emsp;
+  <a href="OpCurlGrad.html" class="active">\(\underline{\vec\nabla\times\vec\nabla f}\)</a>
+  &emsp;
+  <a href="OpDivCurl.html">\(\underline{\vec\nabla\cdot\vec\nabla\times\vec F}\)</a>
+  &emsp;
+  <a href="OpCurlCurl.html">\(\underline{\vec\nabla\times\vec\nabla\times\vec F}\)</a>
+</div>
+
+
+      
+      <h2>b. The Curl of a Gradient (\(\vec\nabla\times\vec\nabla f\))</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Let's start with an example and an exercise.
+</P>
+<p class="example" data-number="1">
+  Compute the curl of the gradient of the function \(f=x^2y^3z^4\)
+</p>
+<p class="sol">
+  The gradient is
+  \[
+  \vec\nabla f=\left\langle 2xy^3z^4,3x^2y^2z^4,4x^2y^3z^3\right\rangle
+  \]
+  So the curl of the gradient is
+  \[\begin{aligned}
+  \vec\nabla\times\vec\nabla f
+  &=\begin{vmatrix}
+  \hat\imath & \hat\jmath & \hat  k \\[2pt]
+  \partial_x & \partial_y & \partial_z \\[2pt]
+  2xy^3z^4   & 3x^2y^2z^4 & 4x^2y^3z^3
+  \end{vmatrix} \\[2pt]
+  &=\hat\imath(12x^2y^2z^3-12x^2y^2z^3)
+   -\hat\jmath(8xy^3z^3-8xy^3z^3)
+   +\hat k(6xy^2z^4-6xy^2z^4) \\
+  &=\langle 0,0,0\rangle
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the curl of the gradient of the function \(g=x\sin(y)-z\cos(x)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\vec\nabla\times\vec\nabla g=\langle 0,0,0\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The gradient is
+    \[
+    \vec\nabla g=\left\langle \sin(y)+z\sin(x),x\cos(y),-\cos(x)\right\rangle
+    \]
+    So the curl of the gradient is
+    \[\begin{aligned}
+    \vec\nabla\times\vec\nabla g
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat  k \\[2pt]
+    \partial_x & \partial_y & \partial_z \\
+    \sin(y)+z\sin(x) & x\cos(y) & -\cos(x)
+    \end{vmatrix} \\[2pt]
+    &=\hat\imath(0-0)
+    -\hat\jmath(\sin(x)-\sin(x))
+    +\hat k(\cos(y)-\cos(y)) \\
+    &=\langle 0,0,0\rangle
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule" id="CurlGrad"></div>
+
+<p class="remark">
+  It is no coincidence that in both problems the answer was
+  \(\vec 0=\langle 0,0,0\rangle\). As long as the assumptions
+  of Clairaut's Theorem are satisfied (so that mixed partial derivatives
+  are equal) the curl of a gradient is always \(\vec 0\).
+
+<p class="prop" data-title="Curl of a Gradient Identity">
+  If all second partial derivatives of \(f\) are continuous functions, then
+  \[
+  \vec\nabla\times\vec\nabla f=\vec 0
+  \]
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    The general gradient is
+    \[
+    \vec\nabla f
+    =\left\langle \partial_x f,\partial_y f,\partial_z f\right\rangle
+    \]
+    So the curl of the gradient is
+    \[\begin{aligned}
+    \vec\nabla\times\vec\nabla f
+    &=\begin{vmatrix}
+      \hat\imath   & \hat\jmath   & \hat  k \\[2pt]
+      \partial_x   & \partial_y   & \partial_z \\[2pt]
+      \partial_x f & \partial_y f & \partial_z f
+      \end{vmatrix} \\[2pt]
+    &=\hat\imath (\partial_y\partial_z f-\partial_z\partial_y f)
+     -\hat\jmath (\partial_x\partial_z f-\partial_z\partial_x f) \\
+    &\qquad+\hat k     (\partial_x\partial_y f-\partial_y\partial_x f) \\
+    &=\langle 0,0,0\rangle
+    \end{aligned}\]
+    provided the mixed partial derivatives are equal.
+  </p>
+</div>
+<p class="remark">
+   In this class, we will always be dealing with continuous functions.
+   So you can always assume the curl of a gradient is zero.
+</p>
+<p class="remark">
+   This identity is used to help determine when a vector field has a scalar
+   potential as discussed at the end of
+   <a href="NoScalPot.html#curlgrad_noscalpot" title="Return using the Back button.">
+   this chapter</a>. This identity is also used to solve the equations
+   of electrostatics.
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

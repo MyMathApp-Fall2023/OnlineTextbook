@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Special Functions | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimLaws.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Computing Limits</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Limit Laws</h2>
+<p>
+  Now that we understand the intuitive notion of a limit, we are ready to
+  learn how to actually compute limits. Our computations will be justified
+  based on the intuitive definition. The formal proofs will appear in the
+  chapter on
+  <a href="../PreciseLim/ChContents.html" title="Return using the Back button.">
+  Precise Limits and Continuity</a>.
+</p>
+
+
+      
+      <h2>1. Special Functions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Before discussing the computation of limits in general, we first consider
+  some Special Limits.
+</p>
+
+				<div class="rule"></div>
+
+<p>
+  The simplest two types of functions are the
+  <span class="defword">identity function</span>, \(f(x)=x\), and the
+  <span class="defword">constant functions</span>, \(f(x)=c\) for any
+  number \(c\). Their plots are:
+</p>
+<div class="center">
+  <figure>
+    <img src="graphics/prop_id.jpg" alt="prop_id"/>
+    <figcaption>
+      The identity function \(y=x\).
+    </figcaption>
+  </figure>&emsp;&emsp;
+  <figure>
+    <img src="graphics/prop_const.jpg" alt="prop_const"/>
+    <figcaption>
+      The constant function \(y=c\).
+    </figcaption>
+  </figure>
+</div>
+<p>
+  Their limits are given by:
+</p>
+<p class="prop" data-title="Identity Function">
+	\[
+	(1) \qquad \lim_{x\to a}x= a
+	\]
+  <button class="toggle" data-toggle="Just1">Justification</button>
+	<!-- <a href="../PreciseLim/LimLaws.html#identity" title="Return using the Back button.">
+  <button>Proof</button></a> -->
+</p>
+<div class="toBeToggled drop-just" data-toggle="Just1">
+  <p>
+    As \(x\) approaches \(a\), we conclude \(x\) approaches \(a\).
+  </p>
+</div>
+<p class="example" data-number="1">
+  As examples we have:
+  \[
+  \lim\limits_{x\to 3}x=3 \qquad\qquad
+	\lim\limits_{\theta\to \pi}\theta=\pi
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<p class="prop" data-title="Constant Functions">
+	For any number \(c\):
+	\[
+	(2) \qquad \lim_{x\to a}c=c
+	\]
+  <button class="toggle" data-toggle="Just2">Justification</button>
+	<!-- <a href="../PreciseLim/LimLaws.html#constant" title="Return using the Back button.">
+  <button>Proof</button></a> -->
+</p>
+<div class="toBeToggled drop-just" data-toggle="Just2">
+  <p>
+    For all \(x\), \(f(x)=c\). So as \(x\) approaches \(a\), the value of
+    \(f(x)\) continues to be \(c\).
+  </p>
+</div>
+<p class="example" data-number="2">
+  As examples we have:
+  \[
+  \lim\limits_{x\to 3}2=2 \qquad\qquad
+	\lim\limits_{x\to e}\pi=\pi
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<p>
+	The next two groups of functions are the
+	<span class="hl">power functions</span>, \(f(x)=x^p\), (with a constant
+	power, \(p\)) and the <span class="hl">exponential functions</span>,
+	\(f(x)=b^x\), (with a constant base, \(b\)).
+</p>
+<p class="prop" data-title="Power Functions">
+	For any number \(p\):
+	\[
+	\lim_{x\to a}x^p= a^p
+	\]
+  <button class="toggle" data-toggle="Just3">Justification</button>
+	<!-- <a href="../PreciseLim/LimLaws.html#prod" title="Return using the Back button.">
+  <button>Proof</button></a> -->
+</p>
+<div class="toBeToggled drop-just" data-toggle="Just3">
+  <p>
+    As \(x\) approaches \(a\), the value of \(x^p\) approaches \(a^p\).
+  </p>
+</div>
+<p class="example" data-number="3">
+  As examples we have:
+  \[\begin{array}{ll}
+    \lim\limits_{x\to 3}x^2=9 \qquad
+	& \lim\limits_{x\to 9}x^{1/2}
+	=\lim\limits_{x\to 9}\sqrt{x}=3 \\
+    \lim\limits_{x\to 3}x^{-2}
+	=\lim\limits_{x\to 3}\dfrac{1}{x^2}=\dfrac{1}{9} \qquad
+	& \lim\limits_{x\to 9}x^{-1/2}
+	=\lim\limits_{x\to 9}\dfrac{1}{x^{1/2}}=\dfrac{1}{3} \\
+  \end{array}\]
+</p>
+
+				<div class="rule"></div>
+
+<p class="prop" data-title="Exponential Functions">
+	If \(b>0\), then
+	\[
+	\lim_{x\to a}b^x=b^a
+	\]
+  <button class="toggle" data-toggle="Just4">Justification</button>
+	<!-- <a href="../PreciseLim/LimLaws.html#prod" title="Return using the Back button.">
+  <button>Proof</button></a> -->
+</p>
+<div class="toBeToggled drop-just" data-toggle="Just4">
+  <p>
+    As \(x\) approaches \(a\), the value of \(b^x\) approaches \(b^a\).
+  </p>
+</div>
+<p class="example" data-number="4">
+  As examples we have:
+  \[\begin{array}{ll}
+   \lim\limits_{x\to 3}2^x= 8 \qquad
+	&\lim\limits_{x\to 3}\left(\dfrac{1}{2}\right)^x
+	=\lim\limits_{x\to 3}\dfrac{1}{2^x}=\dfrac{1}{8}
+  \end{array}\]
+</p>
+<p class="remark">
+  Notice that the Exponential Law does not discuss the case \(b \lt 0\).
+  That is because taking a limit of an exponential with a negative base
+  does not make sense. As \(x\) approaches \(a\), it goes through real numbers
+  for which \((-1)^x\) is undefined, such as \(x=\dfrac{1}{2}\) or any rational
+  number with an even denominator.
+</p>
+
+				<div class="rule"></div>
+
+<p>
+  Study the difference between the power and the exponential functions. The
+  first is the limit of the variable base \(x\) to a fixed power \(p\). The
+  second is the limit of a fixed base \(b\) to the variable power \(x\).
+  Here are example plots:
+</p>
+<div class="center">
+  <figure>
+    <img src="graphics/prop_power.jpg" alt="prop_power"/>
+    <figcaption>
+      The power function \(y=x^2\).
+    </figcaption>
+  </figure>&emsp;&emsp;
+  <figure>
+    <img src="graphics/prop_exp.jpg" alt="prop_exp"/>
+    <figcaption>
+      The exponential function \(y=2^x\).
+    </figcaption>
+  </figure>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

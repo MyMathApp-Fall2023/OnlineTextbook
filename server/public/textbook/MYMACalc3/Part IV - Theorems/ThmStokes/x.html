@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplAmpere.html" title="Previous">&lArr;</a></li>
+      <li><a href="../ThmGauss/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbf{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--The Theorem-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Theorem.html">a. The Theorem</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Theorem.html">1</a></div>
+      
+        <div><a href="Hole.html">2</a></div>
+      
+        <div><a href="NoBoundary.html">3</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="dotfillex">
+  	<p>
+  		Find
+      \(\displaystyle \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+      for
+      \(\vec{F}=\langle-2y,2x,xy\rangle\)
+      over the surface of the part of the sphere
+      \(x^2+y^2+z^2=17\) above \(z=1\) oriented upward, using Stokes' Theorem.
+      <br>
+      <big>PY: Add Plot</big>
+  	</p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX1"></button>
+      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+      <button class="toggle has-sol" data-toggle="SolX1"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX1">
+    <p>
+      What is the boundary curve?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(\displaystyle \oint_{\partial S} \vec{F}\cdot d\vec{s}=64\pi\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      By Stokes' Theorem,
+      \(\displaystyle \iint_{S} \vec{\nabla}\times \vec{F}\cdot d\vec{S}
+      =\oint_{\partial S} \vec{F}\cdot d\vec{s}\). So we
+      parameterize the boundary curve at \(z=1\) and evaluate \(\vec{F}\) on that
+      curve.
+      At \(z=1\), \(x^{2}+y^{2}=16\). So
+      \[\begin{aligned}
+      r^{2}&=16\\
+      r&=4
+      \end{aligned}\]
+      We can then parametrize our curve as:
+      \[
+      \vec{r}(\theta)
+      =\langle 4\cos\theta,4\sin\theta,1\rangle
+      \]
+      and compute the velocity:
+      \[
+      \vec{v}(\theta)
+      =\left\langle -4\sin\theta,4\cos\theta,0\right\rangle
+      \]
+      Since the normal is upward, the boundary must be oriented
+      counterclockwise. This velocity is counterclockwise.
+      Our parametrized vector field, \(\vec{F}=\langle -2y,2x,xy\rangle\),
+      is then:
+      \[
+      \left.\vec{F}\right|_{\vec{r}(\theta)}
+      =\langle -8\sin\theta,8\cos\theta,16\sin\theta\cos\theta\rangle
+      \]
+      We evaluate the line integral as:
+      \[\begin{aligned}
+      \oint_{\partial S}\vec{F}\cdot d\vec{s}
+      &=\int_{0}^{2\pi} \langle -8\sin\theta,8\sin^{2}\theta,16\sin\theta\cos\theta\rangle
+      \cdot\langle -4\sin\theta,4\cos\theta,0\rangle\,d\theta \\
+      &=\int_{0}^{2\pi}(32\sin^{2}\theta+32\cos^{2}\theta)\,d\theta
+      =\int_{0}^{2\pi}32\,d\theta= 64\pi
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+<li>
+  <div class="dotfillex">
+  	<p>
+  		Compute
+      \(\displaystyle \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+  		for the vector field \(\vec{F}=\langle-yz,xz,xyz\rangle\) over
+  		the quartic surface \(S\) given by \(z=(x^2+y^2)^2\) for
+      \(z \le 16\), oriented down and out.
+      <br>
+      <big>PY: Add Plot</big>
+  	</p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX2"></button>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX2">
+    <p>
+      What is the radius of the boundary circle?
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX2">
+    <p>
+      \(\displaystyle \iint_{S} \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+      =\oint_{\partial S} \vec{F}\cdot d\vec{s}=-128\pi\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX2">
+    <p>
+      By Stokes' Theorem,
+      \(\displaystyle \iint_{S} \vec{\nabla}\times \vec{F}\cdot d\vec{S}
+      =\oint_{\partial S} \vec{F}\cdot d\vec{s}\). As a result, we can greatly
+      simplify the integral by integrating over the boundary curve.
+      Using cylindrical coordinates, the surface is:
+      \[
+      \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^4\right\rangle
+      \]
+      On the upper boundary where \(z=16\), we have
+      \[\begin{aligned}
+      (x^2+y^2)^2 &=16\\
+      x^2+y^2 &=4\\
+      r &=2
+      \end{aligned}\]
+      So our circle boundary becomes
+      \[
+      \vec r(\theta)=\left\langle 2\cos\theta,2\sin\theta,16 \right\rangle
+      \]
+      Using this, we find the velocity:
+      \[
+      \vec v(\theta)=\left\langle -2\sin\theta,2\cos\theta,0 \right\rangle
+      \]
+      We need the surface oriented down and out. So we must traverse
+      the boundary circle clockwise. This \(\vec v\) is counterclockwise.
+      So we reverse it:
+      \[
+      \vec v(\theta)=\left\langle 2\sin\theta,-2\cos\theta,0 \right\rangle
+      \]
+      The vector field \(\vec{F}=\langle-yz,xz,xyz\rangle\) becomes:
+      \[
+      \left.\vec{F}\right|_{\vec r(\theta)}
+      =\langle -32\sin\theta,32\cos\theta,64\sin\theta\cos\theta \rangle
+      \]
+      Their dot product is:
+      \[\begin{aligned}
+      \vec{F}\cdot\vec{v}
+      &=-64\sin^2\theta-64\cos^2\theta\\
+      &=-64
+      \end{aligned}\]
+      Finally find the value of the line integral is:
+      \[\begin{aligned}
+      \oint_{\partial S}\vec{F}\cdot d\vec{s}
+      =\int_{0}^{2\pi}-64\,d\theta = -128\pi
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+  		Compute
+      \(\displaystyle \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+  		for \(F=\left\langle-3y,3x,\sqrt{x^2+y^2}\right\rangle\) over the
+  		hyperbolic paraboloid, \(H\), given by \(z=xy\) oriented upward
+      inside the cylinder \(x^2+y^2=9\) by using Stokes' Theorem.
+      <br>
+      <big>PY: Add Plot</big>
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX3"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX3">
+    <p>
+      Starting from cylindrical coordinates:
+      \[
+      \vec R(r,\theta,z)=(r\cos\theta,r\sin\theta,z)
+      \]
+      the surface is \(z=xy=r^2\sin\theta\cos\theta\) which may be parametrized as:
+      \[
+      \vec R(r,\theta)=(r\cos\theta,r\sin\theta,r^2\sin\theta\cos\theta)
+      \]
+      The boundary is at \(r=3\). So the boundary circle may be parametrized as:
+      \[
+      \vec r(\theta)=(3\cos\theta,3\sin\theta,9\sin\theta\cos\theta)
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \(\displaystyle
+      \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+      =\oint_{\partial H}\vec{F}\cdot d\vec{s}=54\pi\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      We will use Stokes' Theorem
+      \(\displaystyle \iint\limits_H \vec{\nabla}\times \vec{F}\cdot d\vec{S}
+      =\oint\limits_{\partial H}\vec{F}\cdot d\vec{s}\) to simplify
+      the integral.
+    </p>
+    <p>
+      Starting from cylindrical coordinates:
+      \[
+      \vec R(r,\theta,z)=(r\cos\theta,r\sin\theta,z)
+      \]
+      the surface is \(z=xy=r^2\sin\theta\cos\theta\) which may be parametrized as:
+      \[
+      \vec R(r,\theta)=(r\cos\theta,r\sin\theta,r^2\sin\theta\cos\theta)
+      \]
+      The boundary is at \(r=3\). So the boundary circle may be parametrized as:
+      \[
+      \vec r(\theta)=(3\cos\theta,3\sin\theta,9\sin\theta\cos\theta)
+      \]
+      The velocity is:
+      \[
+      \vec v(\theta)=(-3\sin\theta,3\cos\theta,9\cos^{2}\theta-9\sin^{2}\theta)
+      \]
+      On the curve the vector field
+      \(F=\left\langle-3y,3x,\sqrt{x^2+y^2}\right\rangle\) becomes
+      \(\vec{F}=(-9\sin\theta,9\cos\theta,3)\). So the integrand is:
+      \[\begin{aligned}
+      \vec{F}\cdot\vec{v}
+      &=27\sin^{2}\theta+27\cos^{2}\theta+27\cos^{2}\theta-27\sin^{2}\theta \\
+      &=54\cos^{2}\theta
+      \end{aligned}\]
+      Now the integral can be computed using the identity
+      \(\cos^2\theta=\dfrac{1+\cos2\theta}{2}\):
+      \[\begin{aligned}
+      \oint_{\partial H} \vec{F}\cdot d\vec{s}
+      &=\int_{0}^{2\pi} 54\cos^{2}\theta\,d\theta
+      =\int_{0}^{2\pi} 27\left(1+\cos2\theta\right)\,d\theta \\
+      &=27\left[\theta+\dfrac{\sin2\theta}{2}\right]_0^{2\pi}
+      =54\pi
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<!--Verification-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="Verify.html">b. Verification</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Verify.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<p>
+		Verify Stokes' Theorem,
+    \(\displaystyle \iint_C \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial C} \vec{F}\cdot d\vec{s}\),
+    for the	cone \(C\) given by \(z=\sqrt{x^2+y^2}\) for \(z \le 3\)
+    oriented down and	out, and the vector field
+    \(\vec{F}=\langle-yz,xz,z^2\rangle\)
+    <br>
+    <big>PY: Add Plot</big>
+	</p>
+	<ol>
+		<li>
+      <div class="dotfillex">
+        <p>
+          <strong>LHS - Surface Integral:</strong>&emsp;
+          Compute the left side.
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX4a"></button>
+          <button class="toggle has-ans" data-toggle="AnsX4a"></button>
+          <button class="toggle has-sol" data-toggle="SolX4a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX4a">
+        <p>
+          Always compute the divergence in rectangular coordinates!
+          When you are ready to do the integral, then you
+          convert the divergence into the coordinates needed for
+          the integral.
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX4a">
+        <p>
+          \(\displaystyle
+          \iint\limits_{S}\vec{\nabla}\times \vec{F}\cdot d\vec{S}=-54\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX4a">
+        <p>
+          To compute the left side, we first parametrize the cone, \(C\), as:
+          \[
+          \vec{R}\left( r,\theta \right) =\left( r\cos \theta ,r\sin \theta ,r\right)
+          \]
+          Next we find the normal vector:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{r}\times \vec{e}_{\theta }=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \cos \theta & \sin \theta & 1 \\
+          -r\sin \theta & r\cos \theta & 0
+          \end{vmatrix}\\
+          &=\left\langle -r\cos \theta,-r\sin \theta,r\right\rangle
+          \end{aligned}\]
+          We reverse \(\vec{N}\) so it points down and out:
+          \[
+          \vec{N}=\left\langle r\cos\theta,r\sin\theta,-r\right\rangle
+          \]
+          We compute the curl of \(\vec F\):
+          \[
+          \vec{\nabla}\times \vec{F}
+          =\begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \partial x & \partial y & \partial z \\
+          -yz & xz & z^{2}
+          \end{vmatrix}
+          =\hat{\imath}\left( -x\right) -\hat{\jmath}\left( y\right) +\hat{k}\left(
+          2z\right)
+          \]
+          On our parametrized surface, this is
+          \[
+          \vec{\nabla}\times \vec{F}
+          =\left\langle -r\cos \theta,-r\sin \theta,2r\right\rangle
+          \]
+          Its dot product with the normal is:
+          \[
+          \vec{\nabla}\times \vec{F}\cdot\vec N
+          =-r^2\cos^2\theta-r^2\sin^2\theta-2r^2
+          =-3r^2
+          \]
+          Now we compute the integral:
+          \[\begin{aligned}
+          \iint &\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+          =\int_{0}^{2\pi} \int_{0}^{3} \vec{\nabla}\times \vec{F}\cdot\vec N\,dr\,d\theta \\
+          &=\int_{0}^{2\pi} \int_{0}^{3} (-3r^{2})\,dr\,d\theta
+          =2\pi\left[-r^{3}\right]_{0}^{3}=-54\pi
+          \end{aligned}\]
+        </p>
+      </div>
+		</li>
+		<li>
+      <div class="dotfillex">
+        <p>
+          <strong>RHS - Line Integral:</strong>&emsp;
+          Compute the right side and verify the theorem.
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX4b"></button>
+          <button class="toggle has-sol" data-toggle="SolX4b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX4b">
+        <p>
+          \(\displaystyle\oint\limits_{\partial S}\vec{F}\cdot d\vec{s}=-54\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX4b">
+        <p>
+          To compute the right side, we parameterize the circle,
+          \(x^{2}+y^{2}=9\), as:
+          \[
+          \vec{r}\left( \theta \right) =\left( 3\cos \theta,3\sin \theta ,3\right)
+          \]
+          So the velocity vector is
+          \[
+          \vec{v}(\theta)=\left\langle -3\sin \theta,3\cos \theta,0\right\rangle
+          \]
+          We reverse the velocity vector so it points counterclockwise:
+          \[
+          \vec{v}(\theta)=\left\langle 3\sin \theta ,-3\cos \theta,0\right\rangle
+          \]
+          Evaluating \(\vec{F}=\left\langle -yz,xz,z^{2}\right\rangle\) along
+          the curve, we get:
+          \[
+          \left. \vec{F}\right\vert _{\vec{r}\left( \theta \right)}
+          =\left\langle -9\sin \theta,9\cos \theta,9\right\rangle
+          \]
+          So the dot product \(\vec{F}\cdot \vec v\) is:
+          \[
+          \vec{F}\cdot\vec v=-27\sin ^{2}\theta -27\cos ^{2}\theta +0=-27
+          \]
+          Finally, we compute the line integral:
+          \[
+          \oint_{\partial S}\vec{F}\cdot d\vec{s}=\int_{0}^{2\pi}-27\,d\theta =-54\pi
+          \]
+          This matches the left side, so we have verified the theorem!
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+  <div class="column">
+		<p>
+      Verify Stokes Theorem for the part of the saddle surface (hyperbolic
+      paraboloid), \(z=x^2-y^2\), oriented up, inside the cylinder
+      \(x^2+y^2 = 4\) for the vector field, \(\vec F=\langle-y,x,2z\rangle\).
+      <br>
+      <big>PY: Improve Plot</big>
+    </p>
+    <div class="center">
+      <img src="graphics/Verify-exercise.jpg" alt="Verify-exercise">
+    </div>
+	</div>
+	<ol>
+		<li>
+      <div class="dotfillex">
+        <p>
+          <strong>LHS - Surface Integral:</strong>&emsp;
+          Compute the left side.
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX5a"></button>
+          <button class="toggle has-ans" data-toggle="AnsX5a"></button>
+          <button class="toggle has-sol" data-toggle="SolX5a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX5a">
+        <p>
+          To parametrize the saddle surface, we start with cylindrical
+          coordinates and set
+          \(z=x^2-y^2=r^2(\cos^2\theta-\sin^2\theta)=r^2\cos2\theta\).
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX5a">
+        <p>
+          \(\displaystyle
+          \iint_{S}\vec{\nabla}\times \vec{F}\cdot d\vec{S}=8\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX5a">
+        <p>
+          To compute the left side, we first parametrize the saddle surface using
+          cylindrical coordinates. Setting \(x=r\cos\theta\) and \(y=r\sin\theta\),
+          we parametrize \(z\) as:
+          \[
+          z=x^2-y^2=r^2(\cos^2\theta-\sin^2\theta)=r^2\cos2\theta
+          \]
+          From here, we take the cross product of the tangent vectors to
+          obtain the normal vector:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{r}\times \vec{e}_{\theta }=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \cos \theta & \sin\theta & 2r\cos2\theta \\
+          -r\sin \theta & r\cos\theta & -2r^2\sin2\theta
+          \end{vmatrix}\\
+          &=\langle -2r^2(\sin\theta\sin2\theta+\cos\theta\cos2\theta),\\
+          &\qquad2r^2(\cos\theta\sin2\theta+\sin\theta\cos2\theta),r\rangle
+          \end{aligned}\]
+          Because we want the surface oriented upwards and \(N_z=r>0\),
+          we do not have to change the sign of the normal vector.
+          Next, we compute the curl of
+          the vector field \(\vec F=\langle-y,x,2z\rangle\):
+          \[
+          \vec{\nabla}\times \vec{F}
+          =\begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \partial_x & \partial_y & \partial_z \\
+          -y & x & 2z
+          \end{vmatrix}
+          =\hat{\imath}(0)-\hat{\jmath}(0)+\hat{k}(2)
+          \]
+          Taking the dot product with the normal gives:
+          \(\vec\nabla\times\vec F\cdot\vec N=2r\).
+          Since we are inside the cylinder \(x^2+y^2=4\) the upper limit on
+          \(r\) is \(2\). Finally, we compute the surface integral:
+          \[\begin{aligned}
+          \iint_S&\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+          =\int_{0}^{2\pi} \int_{0}^{2} \vec{\nabla}\times \vec{F}\cdot\vec N\,dr\,d\theta \\
+          &=\int_{0}^{2\pi} \int_{0}^{2} (2r)\,dr\,d\theta
+          =2\pi\left[r^{2}\right]_{0}^{2}=8\pi
+          \end{aligned}\]
+        </p>
+      </div>
+		</li>
+		<li>
+      <div class="dotfillex">
+        <p>
+          <strong>RHS - Line Integral:</strong>&emsp;
+          Compute the right side and verify the theorem.
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX5b"></button>
+          <button class="toggle has-sol" data-toggle="SolX5b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX5b">
+        <p>
+          \(\displaystyle \oint_{\partial S} \vec{F}\cdot d\vec{s}=8\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX5b">
+        <p>
+          First, we parametrize the boundary curve in cylindrical coordinates.
+          Letting \(x=r\cos\theta\) and \(y=r\sin\theta\), we can parametrize \(z\):
+          \[
+          z=x^2-y^2=r^2(\cos^2\theta-\sin^2\theta)=r^2\cos2\theta
+          \]
+          Our boundary curve where \(r=2\) is then:
+          \[
+          \vec r(\theta)=\left\langle 2\cos\theta, 2\sin\theta,
+          4\cos2\theta\right\rangle
+          \]
+          So the velocity vector is:
+          \[
+          \vec v(\theta)=\left\langle -2\sin\theta, 2\cos\theta,
+          -8\sin2\theta\right\rangle
+          \]
+          Since the orientation is up, we want the velocity to point counterclockwise
+          when looking from above. The velocity already points counterclockwise
+          so we need not reverse it.
+        </p>
+        <p>
+          We evaluate \(\vec F=\langle -y,x,2z\rangle\) on the surface:
+          \[
+          \left.\vec F\right |_{\vec r(\theta)}
+          =\langle -2\sin\theta,2\cos\theta,8\cos2\theta \rangle
+          \]
+          The dot product with the velocity is:
+          \[\begin{aligned}
+          \vec F \cdot\vec v
+          &=\langle -2\sin\theta,2\cos\theta,8\cos2\theta \rangle \cdot
+          \left\langle -2\sin\theta, 2\cos\theta,-8\sin2\theta\right\rangle\\
+          &=4\sin^{2}\theta+4\cos^{2}\theta-64\sin2\theta\cos2\theta
+          =4-32\sin4\theta
+          \end{aligned}\]
+          where we used the identity \(\sin2A=2\sin A\cos A\).
+          Finally, we compute the integral:
+          \[\begin{aligned}
+          \oint\limits_{\partial S}\vec{F}\cdot d\vec{s}
+          &=\int_0^{2\pi} (4-32\sin4\theta)\,d\theta\\
+          &=\left[4\theta+8\cos4\theta\right]_0^{2\pi}=8\pi
+          \end{aligned}\]
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Verify Stokes' Theorem,
+    \(\displaystyle \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial S} \vec{F}\cdot d\vec{s}\),
+    for the	cylinder \(S\) given by \(x^2+y^2=9\) for \(1 \le z \le 2\),
+    oriented outward, and the	vector field
+    \(\vec{F}=\langle yz^2,-xz^2,z^3\rangle\).
+    <br>
+    <big>PY: Add Plot</big>
+	</p>
+	<ol>
+		<li>
+      <div class="dotfillex">
+        <p>
+          <strong>LHS - Surface Integral:</strong>&emsp;
+          Compute the left side.
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX6a"></button>
+          <button class="toggle has-sol" data-toggle="SolX6a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX6a">
+        <p>
+          \(\displaystyle
+          \iint_{S} \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+          =54\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX6a">
+        <p>
+          To compute the left side, we parameterize the cylinder as:
+          \[
+          \vec{R}\left( \theta ,z\right)
+          =\left\langle 3\cos \theta,3\sin \theta,z\right\rangle
+          \]
+          First we find the tangent vectors and the normal vector:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{\theta}\times \vec{e}_{z}=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          -3\sin \theta & 3\cos \theta & 0 \\
+          0 & 0 & 1
+          \end{vmatrix}\\
+          &=\left\langle 3\cos \theta,3\sin \theta,0\right\rangle
+          \end{aligned}\]
+          This has the correct orientation. Next we compute the curl of
+          \(\vec F\) and evaluate it on the surface:
+          \[\begin{aligned}
+          \vec{\nabla}\times \left.\vec{F}\right|_{\vec{R}(r,\theta)}&=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \partial_x & \partial_y & \partial_z \\
+          yz^{2} & -xz^{2} & z^{3}
+          \end{vmatrix}\\
+          &=\hat{\imath}\left( 0+2xz\right) -\hat{\jmath}\left( -2yz\right) +\hat{k}
+          \left( -z^{2}-z^{2}\right)\\
+          &=\left\langle 2xz,2yz,-2z^{2}\right\rangle\\
+          &=\left\langle 6z\cos \theta,6z\sin \theta,-2z^{2}\right\rangle
+          \end{aligned}\]
+          Now we find the dot product of the curl and the normal:
+          \[\begin{aligned}
+          \vec{\nabla}\times \vec{F}\cdot \vec N
+          &=\left\langle 6z\cos\theta,6z\sin \theta,-2z^{2}\right\rangle \cdot
+          \left\langle 3\cos \theta,3\sin \theta,0\right\rangle \\
+          &=18z\cos ^{2}\theta +18z\sin ^{2}\theta=18z
+          \end{aligned}\]
+          Finally, we compute the integral:
+          \[\begin{aligned}
+          \iint_{S} \vec{\nabla}\times\vec{F} \cdot d\vec{S}
+          &=\int_{0}^{2\pi }\int_{1}^{2}\left( 18z\right) \,dz\,d\theta\\
+          &=2\pi \left[ 9z^{2}\right] _{1}^{2}=54\pi
+          \end{aligned}\]
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          <strong>RHS - Line Integral:</strong>&emsp;
+          Compute the right side and verify the theorem.
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX6b"></button>
+          <button class="toggle has-ans" data-toggle="AnsX6b"></button>
+          <button class="toggle has-sol" data-toggle="SolX6b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX6b">
+        <p>
+          The surface has two boundary curves. You must find the line integral
+          over both and add them.
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX6b">
+        <p>
+          \(\displaystyle
+          \oint_{\partial S} \vec{F}\cdot d\vec{s}=54\pi\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX6b">
+        <p>
+          To compute the right side, we parameterize the two circles, find their
+          velocity vector, and compute the dot products and integrals. The upper
+          circle can be parameterized as:
+          \[
+          \vec{r}\left( \theta \right) =\left\langle 3\cos \theta,3\sin \theta,
+          2\right\rangle
+          \]
+          So the velocity vector is:
+          \[
+          \vec{v}(\theta)=\left\langle -3\sin \theta,3\cos \theta,0\right\rangle
+          \]
+          By the right hand rule, the upper curve must be traversed clockwise. The
+          \(\vec{v}\) above points counterclockwise, so we have to reverse it:
+          \[
+          \vec{v}(\theta)=\left\langle 3\sin\theta,-3\cos \theta,0\right\rangle
+          \]
+          From here, we evaluate \(\vec{F}=\left\langle yz^2,-xz^2,z^3\right\rangle\)
+          along the curve:
+          \[
+          \left. \vec{F}\right\vert _{\vec{r}\left( \theta \right) }
+          =\left\langle 12\sin\theta,-12\cos \theta,8\right\rangle
+          \]
+          Its dot product with the velocity is:
+          \[
+          \vec{F}\cdot \vec{v}
+          =36\sin^{2}\theta+36\cos^{2}\theta=36
+          \]
+          Finally, we obtain the integral:
+          \[
+          \oint\limits_{\text{upper}}\vec{F}\cdot d\vec{s}
+          =\int_{0}^{2\pi}36\,d\theta =72\pi
+          \]
+          The lower circle can be parameterized as
+          \[
+          \vec{r}(\theta)=\left\langle 3\cos \theta,3\sin \theta,
+          1\right\rangle
+          \]
+          So the velocity vector is
+          \[
+          \vec{v}(\theta)=\left\langle -3\sin \theta,3\cos \theta,0\right\rangle
+          \]
+          By the right hand rule, the lower curve must be traversed
+          counterclockwise. The \(\vec{v}\) above points counterclockwise,
+          so we do not need to reverse it. Again, we evaluate
+          \(\vec{F}=\left\langle yz^2,-xz^2,z^3\right\rangle\) along the curve:
+          \[
+          \left. \vec{F}\right\vert _{\vec{r}\left( \theta \right) }
+          =\left\langle 3\sin\theta,-3\cos \theta,1\right\rangle
+          \]
+          and find its dot product with the velocity:
+          \[
+          \vec{F}\cdot \vec{v}
+          =-9\sin ^{2}\theta -9\cos ^{2}\theta =-9
+          \]
+          We obtain the integral:
+          \[
+          \oint\limits_{\text{lower}} \vec{F}\cdot d\vec{s}
+          =\int_{0}^{2\pi}-9\,d\theta =-18\pi
+          \]
+          Finally, we sum the two line integrals to compute the total
+          right hand side:
+          \[
+          \oint_{\partial S}\vec{F}\cdot d\vec{s}=72\pi -18\pi=54\pi
+          \]
+          which agrees with the left side.
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+  <div class="column">
+    <p>
+      Verify Stoke's Theorem on the frustum of the cone \(z=r\) with \(1\le z \le 4\),
+      oriented up and in for the vector field
+      \(\vec G=\langle -yz,xz,z(x^2+y^2)\rangle\).
+      <br>
+      <big>PY: Improve Plot</big>
+    </p>
+    <div class="center">
+      <img src="graphics/Verify2-Exercise.jpg" alt="Verify2-Exercise">
+    </div>
+	</div>
+<ol>
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>LHS - Surface Integral:</strong>&emsp;
+        Compute the left side.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX7a"></button>
+        <button class="toggle has-sol" data-toggle="SolX7a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX7a">
+      <p>
+        \(\displaystyle
+        \iint_{S} \vec{\nabla}\times\vec{G} \cdot d\vec{S}=126\pi
+        \)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX7a">
+      <p>
+        To compute the left side, we must find the normal, take the curl of the
+        vector field and evaluate it on the surface. Then, we take their dot
+        product and integrate.
+      </p>
+      <p>
+        We parametrize the frustum as:
+        \[
+        \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r\right\rangle
+        \]
+        The normal vector is:
+        \[\begin{aligned}
+        \vec{N}&=\vec{e}_{r}\times \vec{e}_{\theta}=
+        \begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \cos\theta & \sin\theta & 1 \\
+        -r\sin \theta & r\cos \theta & 0
+        \end{vmatrix}\\
+        &=\left\langle -r\cos \theta,-r\sin \theta,r\right\rangle
+        \end{aligned}\]
+        This normal vector points up and in, as required.
+        We compute the curl of the vector field
+        \(\vec G=\langle -yz,xz,z(x^2+y^2)\rangle\) and then evaluate it
+        on the surface:
+        \[\begin{aligned}
+        \vec{\nabla}\times\vec{G}
+        &=\begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \partial_x & \partial_y & \partial_z \\
+        -yz & xz & z(x^2+y^2)
+        \end{vmatrix}\\
+        &=\hat{\imath}\left(2yz-x\right)-\hat{\jmath}\left(2xz+y\right)+\hat{k}
+        \left(z+z\right)\\
+        \vec{\nabla}\times \left.\vec{G}\right|_{\vec{R}(r,\theta)}
+        &=\left\langle 2r^2\sin\theta-r\cos\theta,-2r^2\cos\theta-r\sin\theta,
+        2r\right\rangle
+        \end{aligned}\]
+        The dot product of the curl and the normal is:
+        \[
+        \begin{aligned}
+        \vec\nabla\times\vec G \cdot\vec N
+        &=-2r^3\sin\theta\cos\theta+r^2\cos^2\theta\\
+        &\quad\quad +2r^3\sin\theta\cos\theta+r^2\sin^2\theta+2r^2\\
+        &=3r^2
+        \end{aligned}
+        \]
+        Finally, we integrate over the surface:
+        \[
+        \begin{aligned}
+        \iint_{S} \vec{\nabla}\times\vec{G} \cdot d\vec{S}
+        &=\int_0^{2\pi}\int_1^4 3r^2\,dr\,d\theta\\
+        &=2\pi\left[r^3\right]_1^4=126\pi
+        \end{aligned}
+        \]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>RHS - Line Integral:</strong>&emsp;
+        Compute the right side and verify the theorem.
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX7b"></button>
+        <button class="toggle has-ans" data-toggle="AnsX7b"></button>
+        <button class="toggle has-sol" data-toggle="SolX7b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX7b">
+      <p>
+        The surface has two boundary curves. You must integrate over both. Since
+        the normal points up and in, in which direction must they be traversed?
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX7b">
+      <p>
+        \(\displaystyle
+        \oint_{\partial S}\vec{F}\cdot d\vec{s}=126\pi
+        \)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX7b">
+      <p>
+        First, we calculate the line integral over the top curve. Since the
+        normal points up and in, we must traverse this curve counterclockwise.
+        We parametrize the upper circle as:
+        \[
+        \vec r(\theta)=\langle 4\cos\theta,4\sin\theta,4\rangle
+        \]
+        The velocity is:
+        \[
+        \vec v(\theta)=\langle -4\sin\theta,4\cos\theta,0\rangle
+        \]
+        This velocity is counterclockwise, so we do not need to reverse it.
+        We evaluate the vector field \(\vec G=\langle -yz,xz,z(x^2+y^2)\rangle\)
+        on the boundary:
+        \[
+        \left.\vec G \right |_{\vec r(\theta)}
+        =\langle -16\sin\theta,16\cos\theta,64\rangle
+        \]
+        Then, we take the dot product of \(\vec G\) and \(\vec v\):
+        \[\begin{aligned}
+        \vec G\cdot \vec v
+        &=\langle -16\sin\theta,16\cos\theta,64\rangle
+        \cdot \langle -4\sin\theta,4\cos\theta,0\rangle\\
+        &=64\sin^2\theta+64\cos^2\theta=64
+        \end{aligned}\]
+        Finally, we compute the integral:
+        \[
+        \oint\limits_{\text{upper}}\vec F\cdot d\vec s
+        =\int_0^{2\pi}64\,d\theta=128\pi
+        \]
+      </p>
+      <p>
+        We must now do the same on the lower boundary. We parametrize the cirle:
+        \[
+        \vec r(\theta)=\langle \cos\theta,\sin\theta,1\rangle
+        \]
+        The velocity is:
+        \[
+        \vec v(\theta)=\langle -\sin\theta,\cos\theta,0\rangle
+        \]
+        This velocity is counterclockwise, but we want it to be clockwise. So,
+        we must reverse the signs:
+        \[
+        \vec v(\theta)=\langle \sin\theta,-\cos\theta,0\rangle
+        \]
+        We evaluate the vector field \(\vec G=\langle -yz,xz,z(x^2+y^2)\rangle\)
+        on the boundary:
+        \[
+        \left.\vec G \right |_{\vec r(\theta)}
+        =\langle -\sin\theta,\cos\theta,1 \rangle
+        \]
+        Then, we take the dot product of \(\vec G\) and \(\vec v\):
+        \[\begin{aligned}
+        \vec G\cdot \vec v
+        &=\langle -\sin\theta,\cos\theta,1\rangle
+        \cdot \langle \sin\theta,-\cos\theta,0\rangle\\
+        &=-\sin^2\theta-\cos^2\theta=-1
+        \end{aligned}\]
+        Finally, we compute the integral:
+        \[
+        \oint\limits_{\text{lower}}\vec F\cdot d\vec s
+        =\int_0^{2\pi}-1\,d\theta=-2\pi
+        \]
+        To complete the boundary integral, we add the integrals:
+        \[\begin{aligned}
+        \oint\limits_{\partial S}\vec F\cdot d\vec s
+        &=\oint\limits_{\text{upper}}\vec F\cdot d\vec s
+        +\oint\limits_{\text{lower}}\vec F\cdot d\vec s \\
+        &=128\pi-2\pi=126\pi
+        \end{aligned}\]
+        Since this is the same answer as part (a), we have verified Stokes'
+        Theorem for this surface.
+      </p>
+    </div>
+  </li>
+</ol>
+</li>
+<a id="x_proof"></a>
+
+<!--Proof-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="Proof.html">c. Proof</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Proof.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+  		Prove Stokes' Theorem for any parametric surface
+      \(\vec{R}(u,v)\) with parameter ranges \(a \lt u \lt b\) and
+      \(c \lt v \lt d\) and a vector field
+  		\(\vec{F}=\langle 0,Q(x,y,z),0\rangle\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX8"></button>
+    	LHS: <button class="toggle has-sol" data-toggle="SolX8a"></button>
+    	RHS: <button class="toggle has-sol" data-toggle="SolX8b"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      You are trying to prove that
+      \[
+      \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+      =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+      \]
+      Start by expanding out the dot product of the curl and the normal vector.
+      What is the parametric chain rule? Is there any way to incorporate that here?
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8a">
+  	<p>
+      Let \(S=\vec R(u,v)\) be a nice parametric surface with parameter ranges
+      \(a \lt u \lt b\) and \(c \lt v \lt d\) and let \(\vec F\) be a
+      vector field in \(\mathbb{R}^3\) such that
+      \[
+      \vec F=\langle 0,Q(x,y,z),0 \rangle .
+      \]
+      We must prove that
+      \[
+      \iint_S \vec\nabla \times \vec F \cdot d\vec S
+      =\oint_{\partial S} \vec F \cdot d\vec s.
+      \]
+      We start by computing the left hand side.
+    </p>
+    <p>
+      <strong> LHS: </strong>
+      We first evaluate the curl of
+      \(\vec{F}\):
+      \[\begin{aligned}
+      \vec{\nabla}\times\vec{F}
+      &=\begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      \partial_x & \partial_y & \partial_z \\
+      0 & Q & 0
+      \end{vmatrix}
+      =\hat{\imath}(-\partial_z Q)-\hat{\jmath}(0)+\hat{k}(\partial_x Q) \\
+      &=\langle -\partial_z Q,0,\partial_x Q\rangle
+      =\left\langle -\dfrac{\partial Q}{\partial z},0,
+      \dfrac{\partial Q}{\partial x}\right\rangle
+      \end {aligned}\]
+      For our own ease, we now represent the normal vector as Jacobians:
+      \[
+      \vec{N}
+      =\left\langle\dfrac{\partial(y,z)}{\partial(u,v)},
+                   \dfrac{\partial(z,x)}{\partial(u,v)},
+                   \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle
+      \]
+      Then we compute the dot product, write out the Jacobians, and rearrange
+      the terms:
+      \[\begin{aligned}
+      \vec{\nabla}\times\vec{F}\cdot \vec{N}
+      &=\left\langle -\dfrac{\partial Q}{\partial z},0,
+      \dfrac{\partial Q}{\partial x}\right\rangle
+      \cdot\left\langle\dfrac{\partial(y,z)}{\partial(u,v)},
+                       \dfrac{\partial(z,x)}{\partial(u,v)},
+                       \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle \\
+      &=-\dfrac{\partial Q}{\partial z}\dfrac{\partial(y,z)}{\partial(u,v)}
+           +\dfrac{\partial Q}{\partial x}\dfrac{\partial(x,y)}{\partial(u,v)} \\
+      &=-\dfrac{\partial Q}{\partial z}
+      \left(\dfrac{\partial y}{\partial u}\dfrac{\partial z}{\partial v}
+           -\dfrac{\partial y}{\partial v}\dfrac{\partial z}{\partial u}\right)
+        +\dfrac{\partial Q}{\partial x}
+      \left(\dfrac{\partial x}{\partial u}\dfrac{\partial y}{\partial v}
+           -\dfrac{\partial x}{\partial v}\dfrac{\partial y}{\partial u}\right) \\
+      &=\dfrac{\partial y}{\partial u}
+      \left(-\dfrac{\partial Q}{\partial z}\dfrac{\partial z}{\partial v}
+            -\dfrac{\partial Q}{\partial x}\dfrac{\partial x}{\partial v}\right)
+       +\dfrac{\partial y}{\partial v}
+      \left( \dfrac{\partial Q}{\partial z}\dfrac{\partial z}{\partial u}
+            +\dfrac{\partial Q}{\partial x}\dfrac{\partial x}{\partial u}\right)
+      \end{aligned}\]
+      To simplify the above expression, we subtract the expression
+      \(\dfrac{\partial Q}{\partial y}\dfrac{\partial y}{\partial u}
+      \dfrac{\partial y}{\partial v}\) from the first term and add it to the
+      second term.
+      \[\begin{aligned}
+      \vec{\nabla}\times\vec{F}\cdot \vec{N}
+      &=\dfrac{\partial y}{\partial u}
+      \left(-\dfrac{\partial Q}{\partial z}\dfrac{\partial z}{\partial v}
+            -\dfrac{\partial Q}{\partial x}\dfrac{\partial x}{\partial v}\right)
+       +\dfrac{\partial y}{\partial v}
+      \left( \dfrac{\partial Q}{\partial z}\dfrac{\partial z}{\partial u}
+            +\dfrac{\partial Q}{\partial x}\dfrac{\partial x}{\partial u}\right)\\
+      &\qquad\qquad -\dfrac{\partial Q}{\partial y}\dfrac{\partial y}{\partial u}
+      \dfrac{\partial y}{\partial v}
+      \qquad\qquad\qquad+\dfrac{\partial Q}{\partial y}
+      \dfrac{\partial y}{\partial u}\dfrac{\partial y}{\partial v}\\
+      &=\dfrac{\partial y}{\partial u}
+      \left(-\dfrac{\partial Q}{\partial z}\dfrac{\partial z}{\partial v}
+            -\dfrac{\partial Q}{\partial x}\dfrac{\partial x}{\partial v}
+            -\dfrac{\partial Q}{\partial y}\dfrac{\partial y}{\partial v}\right)\\
+      &\qquad\qquad\qquad +\dfrac{\partial y}{\partial v}
+      \left( \dfrac{\partial Q}{\partial z}\dfrac{\partial z}{\partial u}
+            +\dfrac{\partial Q}{\partial x}\dfrac{\partial x}{\partial u}
+            +\dfrac{\partial Q}{\partial y}\dfrac{\partial y}{\partial u}\right)
+      \end{aligned}\]
+      Recognize that this can be condensed using the parametric chain rule:
+      \[
+      \vec{\nabla}\times\vec{F}\cdot \vec{N}
+      =-\dfrac{\partial y}{\partial u}
+             \dfrac{\partial Q\circ\vec{R}}{\partial v}
+            +\dfrac{\partial y}{\partial v}
+             \dfrac{\partial Q\circ\vec{R}}{\partial u}
+      \]
+      We now add and subtract the term
+      \(\dfrac{\partial^2y}{\partial u\partial v}(Q\circ\vec{R})\)
+      so that each term becomes part of a product rule expansion:
+      \[\begin{aligned}
+      \vec{\nabla}\times\vec{F}\cdot \vec N
+      &=-\dfrac{\partial y}{\partial u}\dfrac{\partial Q\circ\vec{R}}{\partial v}
+        -\dfrac{\partial^2y}{\partial u\partial v}(Q\circ \vec{R})
+        +\dfrac{\partial y}{\partial v}\dfrac{\partial Q\circ\vec{R}}{\partial u}
+        +\dfrac{\partial^2y}{\partial u\partial v}(Q\circ\vec{R})\\
+      &=-\dfrac{\partial }{\partial v}
+       \left(\dfrac{\partial y}{\partial u}\,Q\circ\vec{R}\right)
+            +\dfrac{\partial}{\partial u}
+       \left(\dfrac{\partial y}{\partial v}\,Q\circ\vec{R}\right)
+      \end{aligned}\]
+      Now we incorporate this into the integral and split it into two pieces:
+      \[\begin{aligned}
+      \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+      &=\int_a^b\int_c^d
+      \left(-\dfrac{\partial }{\partial v}
+       \left(\dfrac{\partial y}{\partial u}\,Q\circ\vec{R}\right)
+            +\dfrac{\partial}{\partial u}
+       \left(\dfrac{\partial y}{\partial v}\,Q\circ\vec{R}\right)\right)\,dv\,du\\
+       &=-\int_a^b\int_c^d \dfrac{\partial }{\partial v}
+       \left(\dfrac{\partial y}{\partial u}\,Q\circ\vec{R}\right)\,dv\,du
+             +\int_a^b\int_c^d\dfrac{\partial}{\partial u}
+       \left(\dfrac{\partial y}{\partial v}\,Q\circ\vec{R}\right)\,dv\,du
+      \end{aligned}\]
+      We interchange the order of integration in the second integral so that
+      we can apply the Fundamental Theorem of Calculus to both terms:
+      \[\begin{aligned}
+      \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+      &=-\int_a^b\int_c^d \dfrac{\partial }{\partial v}
+      \left(\dfrac{\partial y}{\partial u}\,Q\circ\vec{R}\right)\,dv\,du
+            +\int_c^d\int_a^b\dfrac{\partial}{\partial u}
+      \left(\dfrac{\partial y}{\partial v}\,Q\circ\vec{R}\right)\,du\,dv\\
+      \end{aligned}\]
+      \[\begin{aligned}
+      &=-\int_a^b
+      \left[\dfrac{\partial y}{\partial u}Q\circ\vec{R}\right]_{(u,v)=(u,c)}^{(u,v)=(u,d)}\,du
+      +\int_c^d
+      \left[\dfrac{\partial y}{\partial v}Q\circ\vec{R}\right]_{(u,v)=(a,v)}^{(u,v)=(b,v)}\,dv
+      \end{aligned}\]
+      Finally, we evaluate the functions and reorder the integrals:
+      \[\begin{aligned}
+      \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+      &=\int_a^b Q\left(\vec{R}(u,c)\right)\dfrac{\partial y}{\partial u}(u,c)\,du
+       +\int_c^d Q\left(\vec{R}(b,v)\right)\dfrac{\partial y}{\partial v}(b,v)\,dv \\
+      &-\int_a^b Q\left(\vec{R}(u,d)\right)\dfrac{\partial y}{\partial u}(u,d)\,du
+       -\int_c^d Q\left(\vec{R}(a,v)\right)\dfrac{\partial y}{\partial v}(a,v)\,dv
+      \end{aligned}\]
+      We now want to see that this is the same as the integral on the right.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8b">
+    <p>
+      <strong> RHS: </strong>
+      To evaluate the right side of the equation, we must evaluate the integral
+      over the closed curve which is the boundary of the surface, which in fact
+      consists of four pieces: two \(u\)-curves and two \(v\)-curves.
+      \[\begin{aligned}
+      \vec{r}_1(u)&=\vec{R}(u,c)=\left(x(u,c),y(u,c),z(u,c)\right) \qquad a \lt u \lt b \\
+      \vec{r}_2(v)&=\vec{R}(b,v)=\left(x(b,v),y(b,v),z(b,v)\right) \qquad c \lt v \lt d \\
+      \vec{r}_3(u)&=\vec{R}(u,d)=\left(x(u,d),y(u,d),z(u,d)\right) \qquad a \lt u \lt b \\
+      \vec{r}_4(v)&=\vec{R}(a,v)=\left(x(a,v),y(a,v),z(a,v)\right) \qquad c \lt v \lt d
+      \end{aligned}\]
+      As in the proof of Green's Theorem, we must travel counterclockwise around
+      the boundary curve but this time as seen from the tip of the normal
+      \(\vec{N}\). If we put our eye at the tip of \(\vec{N}=\vec{e}_u\times\vec{e}_v\),
+      we can rotate our head so that \(\vec{e}_u\) points to the right and
+      \(\vec{e}_v\) points up. Then the \(u\)-coordinate increases from left to right and
+      the \(v\)-coordinate increases from bottom to top. To implement the
+      counterclockwise orientation, we must reverse the orientation of
+      \(\vec{r}_3\) and \(\vec{r}_4\), which we will do by simply putting a minus sign in
+      front of their integrals. So the integral on the right is:
+      \[
+      \oint_{\partial S} \vec{F}\cdot d\vec{s}
+      =\int_{\vec{r}_1} Q\,dy+\int_{\vec{r}_2} Q\,dy
+      -\int_{\vec{r}_3} Q\,dy-\int_{\vec{r}_4} Q\,dy
+      \]
+      To evaluate these integrals, we must evaluate the function, \(Q\), and the
+      differential, \(dx\), on each curve:
+      \[\begin{aligned}
+      \oint_{\partial S} \vec{F}\cdot d\vec{s}
+      &=\int_a^b Q\left(\vec{R}(u,c)\right)\dfrac{\partial y}{\partial u}(u,c)\,du
+       +\int_c^d Q\left(\vec{R}(b,v)\right)\dfrac{\partial y}{\partial v}(b,v)\,dv \\
+      &-\int_a^b Q\left(\vec{R}(u,d)\right)\dfrac{\partial y}{\partial u}(u,d)\,du
+       -\int_c^d Q\left(\vec{R}(a,v)\right)\dfrac{\partial y}{\partial v}(a,v)\,dv
+      \end{aligned}\]
+    </p>
+    <p>
+      <strong> Conclusion: </strong>
+      This is the same result we found on the left side. So the theorem is proved
+      for the case that \(\vec{F}=\langle 0,Q,0\rangle\)
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+  		Prove Stokes' Theorem for any parametric surface \(\vec{R}(u,v)\)
+  		with parameter ranges \(a \lt u \lt b\) and \(c \lt v \lt d\) and a vector field
+  		\(\vec{F}=\langle 0,0,T(x,y,z)\rangle\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX9">
+    <p>
+      We are trying to prove that
+      \[
+      \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+      =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+      \]
+      Refer to the previous problem as well as the "proof" page in this text.
+      We do not have a solution so that this problem can be assigned as homework.
+    </p>
+  </div>
+</li>
+
+<!--Applications-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="ApplLine2Surf.html">d. Applications</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ApplLine2Surf.html">1</a></div>
+      
+        <div><a href="ApplSurf2Line.html">2</a></div>
+      
+        <div><a href="ApplPathIndep.html">3</a></div>
+      
+        <div><a href="ApplSurfIndep.html">4</a></div>
+      
+        <div><a href="ApplCirculation.html">5</a></div>
+      
+        <div><a href="ApplAmpere.html">6</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="column">
+    <p data-col-width="60%">
+      Consider a solid with the shape of an hourglass given in cylindrical
+      coordinates by
+      \[
+      r=\dfrac{9}{10}|z-3|+\dfrac{1}{5}
+      \]
+      between two disks \(A\) and \(B\) at \(z=1\) and \(z=5\), respectively.
+      Note: We can check both disks have radius \(2\). Consider the vector field
+      \(\vec{F}=\left\langle -yz\sqrt{x^2+y^2},xz\sqrt{x^2+y^2},0\right\rangle\).
+      <br>
+      <big>PY: Improve Plot</big>
+    </p>
+    <div data-col-width="40%">
+      <figure class="center">
+        <video src="graphics/x11_hourglass_sand.mp4" autoplay controls loop>
+          Video playback not supported
+        </video>
+      </figure>
+    </div>
+  </div>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+          Compute
+          \(\displaystyle \iint_A \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+          for the vector field \(\vec F\) with the disk, \(A\), oriented downward.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX10a"></button>
+					<button class="toggle has-sol" data-toggle="SolX10a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX10a">
+				<p>
+          \(\displaystyle
+          \iint_A \vec{\nabla}\times\vec{F}\cdot d\vec{S}=-16\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX10a">
+        <p>
+          First, we begin by parameterizing the top disk, \(A\), using a
+          cylindrical coordinate system:
+          \[
+          \vec R_A(r,\theta)=\langle r\cos\theta,r\sin\theta,1 \rangle
+          \]
+          We use this to find the normal vector:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{r}\times \vec{e}_{\theta}=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \cos\theta & \sin\theta & 0 \\
+          -r\sin\theta & r\cos\theta & 0
+          \end{vmatrix}\\
+          &=\left\langle 0, 0, r\right\rangle
+          \end{aligned}\]
+          This orientation is up but should be down for the bottom disk. So
+          we reverse it:
+          \[
+          \vec{N}=\left\langle 0, 0, -r\right\rangle
+          \]
+          Then, we compute the curl of the vector field
+          \(\vec{F}
+          =\left\langle -yz\sqrt{x^2+y^2},xz\sqrt{x^2+y^2},0\right\rangle\):
+          \[\begin{aligned}
+          \vec{\nabla}\times\vec{F}
+          &=\begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\[2pt]
+          \partial_x & \partial_y & \partial_z \\[2pt]
+          -yz\sqrt{x^2+y^2} & xz\sqrt{x^2+y^2} & 0
+          \end{vmatrix}\\[2pt]
+          &=\hat{\imath}\left(0-x\sqrt{x^2+y^2}\right)
+          -\hat{\jmath}\left(0+y\sqrt{x^2+y^2}\right)+\\
+          &\qquad\hat{k}\left(\dfrac{zx^2}{\sqrt{x^2+y^2}}+z\sqrt{x^2+y^2}+
+          \dfrac{zy^2}{\sqrt{x^2+y^2}}+z\sqrt{x^2+y^2} \right)\\
+          &=\left\langle -x\sqrt{x^2+y^2},-y\sqrt{x^2+y^2},\dfrac{zx^2+zy^2}{\sqrt{x^2+y^2}}
+          +2z\sqrt{x^2+y^2} \right\rangle \\
+          &=\left\langle -x\sqrt{x^2+y^2},-y\sqrt{x^2+y^2},
+          z\sqrt{x^2+y^2}+2z\sqrt{x^2+y^2} \right\rangle\\
+          &=\left\langle -x\sqrt{x^2+y^2},-y\sqrt{x^2+y^2},3z\sqrt{x^2+y^2}\right\rangle
+          \end{aligned}\]
+          and evaluate it on the disk \(A\):
+          \[
+          \left.\vec{\nabla}\times\vec{F}\right|_{A}
+          =\left\langle -r^2\cos\theta,-r^2\sin\theta,3r\right\rangle
+          \]
+          The dot product of the curl and the normal vector is:
+          \[
+          \vec\nabla\times\vec{F}\cdot\vec{N}=-3r^2
+          \]
+          Finally, we evaluate the surface integral over \(A\):
+          \[\begin{aligned}
+          \iint_A \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+          &=\int_0^{2\pi}\int_0^2 -3r^2\,dr\,d\theta \\
+          &=-2\pi\int_0^2 3r^2\,dr=-16\pi
+          \end{aligned}\]
+          Notice there is no extra factor of \(r\) before the \(dr\,d\theta\)
+          because the Jacobian factor, \(r\), is already included in the \(\vec N\).
+        </p>
+      <li>
+    		<div class="dotfillex">
+        <p>
+          Compute
+          \(\displaystyle \iint_B \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+          for the vector field \(\vec F\) with the disk, \(B\), oriented upward.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX10b"></button>
+					<button class="toggle has-sol" data-toggle="SolX10b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX10b">
+				<p>
+          \(\displaystyle
+          \iint_B \vec{\nabla}\times\vec{F}\cdot d\vec{S}=80\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX10b">
+        <p>
+          We compute the surface integral over \(B\) in a very similar manner.
+          First, using \(z=5\), we can parameterize \(B\):
+          \[
+          \vec B(r,\theta)=\langle r\cos\theta,r\sin\theta,5\rangle
+          \]
+          Note that the normal vector is computed identically, with the only
+          difference being that the orientation is now upward and so the normal
+          does not need to be reversed:
+          \[
+          \vec N=\langle 0,0,r \rangle
+          \]
+          The curl is computed identically but its value on the surface \(B\)
+          differs because now \(z=5\):
+          \[
+          \vec{\nabla}\times\vec{F}
+          =\left\langle -x\sqrt{x^2+y^2},-y\sqrt{x^2+y^2},3z\sqrt{x^2+y^2}\right\rangle
+          \]
+          \[
+          \vec{\nabla}\times \left.\vec{F}\right|_{B}
+          =\left\langle -r^2\cos\theta,-r^2\sin\theta,15r\right\rangle
+          \]
+          Its dot product with the normal is now:
+          \[
+          \nabla\times\vec{F}\cdot\vec{N}=15r^2
+          \]
+          Finally, we evaluate the surface integral over \(B\):
+          \[\begin{aligned}
+          \iint_B &\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+          =\int_0^{2\pi}\int_0^2 15r^2\,dr\,d\theta \\
+          &=2\pi\int_0^2 15r^2\,dr=\left[10\pi r^3\right]_0^2=80\pi
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Compute
+          \(\displaystyle \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+          for the vector field \(\vec F\) over the sides of the hourglass,
+          \(H\), oriented outward.
+				</p>
+				<p>
+          <button class="toggle has-hint" data-toggle="HintX10c"></button>
+          <button class="toggle has-hint" data-toggle="Hint2X10c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX10c"></button>
+					<button class="toggle has-sol" data-toggle="SolX10c"></button>
+          <button class="toggle has-rem" data-toggle="RemX10c"></button>
+				</p>
+			</div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX10c">
+        <p>
+          What does Stokes' Theorem tell us about a line integral over the
+          boundary of this surface? How is this related to the answers in
+          parts (a) and (b)?
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="Hint2X10c">
+        <p>
+          You already have all the information you need to solve this problem by
+          using the answers from parts (a) and (b).
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX10c">
+				<p>
+					\(\displaystyle \iint_S \vec\nabla\times\vec{F}\cdot d\vec{S}=-64\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX10c">
+        <div class="column">
+          <div data-col-width="70%">
+    				<p>
+    					Observe that the boundary of the sides of the hourglass consists of
+              two circles:
+              <br>
+              \(C_1\): &emsp; with radius \(r=2\) at \(z=1\) traversed
+              counterclockwise, and
+              <br>
+              \(C_2\): &emsp; with radius \(r=2\) at \(z=5\) traversed
+              clockwise.
+            </p>
+    				<p>
+              Notice that \(C_1\) is also the boundary of disk \(A\) and
+              \(C_2\) is also the boundary of disk \(B\). So we can replace
+              the integrals over \(C_1\) and \(C_2\) by integrals over
+              \(A\) and \(B\).
+              However, \(A\) is oriented downward and so its boundary
+              should be clockwise, whereas \(C_1\) is counterclockwise.
+              So we need a minus before the integral over \(A\).
+              Likewise, \(B\) is oriented upward and so its boundary
+              should be counterclockwise, whereas \(C_2\) is clockwise.
+              So we also need a minus before the integral over \(B\).
+            </p>
+          </div>
+          <div class="center" data-col-width="30%">
+            <figure>
+              <video src="graphics/x11_hourglass_vectors.mp4" autoplay controls loop>
+                Video playback not supported
+              </video>
+            </figure>
+          </div>
+        </div>
+        <br>
+        <big>PY: Imporve and Rename Plot</big>
+        <p>
+          So by Stokes' Theorem, three times:
+          \[\begin{aligned}
+          \iint_H \vec\nabla\times\vec{F}\cdot d\vec{S}
+          &=\oint_{C_1}\vec{F}\cdot d\vec{s}
+           +\oint_{C_2}\vec{F}\cdot d\vec{s} \\
+          &=-\iint_A \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+            -\iint_B \vec{\nabla}\times\vec{F}\cdot d\vec{S}\\
+          &=16\pi-80\pi=-64\pi
+          \end{aligned}\]
+				</p>
+			</div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX10c">
+        <p>
+          Alternatively, we could have computed the two line integrals,
+          \(\displaystyle \oint_{C_1}\vec{F}\cdot d\vec{s}\) and
+          \(\displaystyle \oint_{C_2}\vec{F}\cdot d\vec{s}\), and
+          used them to find the answers to (a), (b) and (c).
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+    Consider the vector field
+    \(\displaystyle \vec{F}=\langle yz, xz, xy\rangle\).
+    This exercise will show \(\vec F\) is path independent. In other words,
+    the integral \(\displaystyle \int_A^B \vec{F}\cdot d\vec{s}\)
+    is the same for any two curves \(C\) which start at \(A\) and end
+    at \(B\). In particular, the integral is the same for all three of the
+    curves:
+  </p>
+  <div class="column">
+    <p data-col-width="60%">
+      &bull; \(C_1\) is the helix
+      \(\vec{r}(\theta)=(3\cos\theta, 2+3\sin\theta,\theta)\),
+      for \(0\le\theta\le2\pi\).
+      <br><br>
+      &bull; \(C_2\) is the sine curve
+      \(\vec{r}(\theta)=(3, 2+3\sin\theta,\theta)\),
+      for \(0\le\theta\le2\pi\).
+      <br><br>
+      &bull; \(C_3\) is the line segment
+      \(\vec{r}(t)=(3, 2, t)\),
+      for \(0\le t\le2\pi\).
+      <br><br>
+      <big>PY: Improve and crop plot, add curve labels green to magenta</big>
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/StokesAppsRelLS-Exercise2.jpg" alt="StokesAppsRelLS-Exercise2">
+    </div>
+  </div>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Compute \(\vec\nabla\times\vec F\) for
+          \(\displaystyle \vec{F}=\langle yz, xz, xy\rangle\).
+          Which theorem then guarantees \(\vec F\) is path independent?
+          <br>
+          <big>PY: Add sol</big>
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX11a"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX11a"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX11a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX11a">
+		    <p>
+					xxx
+		    </p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX11a">
+				<p>
+					\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX11a">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Verify the three curves, (i), (ii) and (iii), start and end at the
+          same points \(A\) and \(B\). Then pick one of the three of the curves
+          and compute \(\displaystyle \int_A^B \vec{F}\cdot d\vec{s}\).
+          <br>
+          <big>PY: Add sol</big>
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX11b"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX11b"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX11b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX11b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX11b">
+				<p>
+				\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX11b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Find a scalar potential for
+          \(\displaystyle \vec{F}=\langle yz, xz, xy\rangle\).
+          Which theorem then guarantees \(\vec F\) is path independent?
+          <br>
+          <big>PY: Add sol</big>
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX11c"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX11c"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX11c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX11c">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX11c">
+				<p>
+				\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX11c">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Use the scalar potential for
+          \(\displaystyle \vec{F}=\langle yz, xz, xy\rangle\)
+          to compute \(\displaystyle \int_A^B \vec{F}\cdot d\vec{s}\)
+          for all three of the curves (i), (ii) and (iii).
+          <br>
+          <big>PY: Add sol</big>
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX11d"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX11d"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX11d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX11d">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX11d">
+				<p>
+				\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX11d">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	The gas in a tank moves with a velocity vector of
+  \(\vec{V}=\langle 0,-2z,2x\rangle\).
+  <br>
+  <big>PY: Add Plot</big>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+          Find the circulation of the gas around the closed path
+          \(\vec{r}(\theta)=(2,3\cos\theta,5\sin\theta)\) from
+          \(\theta=0\) to \(2\pi\).
+				</p>
+				<p>
+          <button class="toggle has-hint" data-toggle="HintX12a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX12a"></button>
+					<button class="toggle has-sol" data-toggle="SolX12a"></button>
+				</p>
+			</div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX12a">
+        <p>
+          The circulation of a vector \(\vec F\) is
+          \(\displaystyle
+          \oint_{\partial S} \vec F\cdot d\vec s
+          \).
+          What is our vector field, and what is our closed curve?
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12a">
+				<p>
+					\(\textrm{Circulation}=30\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12a">
+        <p>
+          We find the tangent vector of our path:
+          \[\begin{aligned}
+          \vec{r}(\theta)&=(2,3\cos\theta,5\sin\theta)\\
+          \vec{v}(\theta)&=(0,-3\sin\theta,5\cos\theta)
+          \end{aligned}\]
+          We restrict our fluid velocity \(\vec V\) to the curve
+          \(\vec r(\theta)\):
+          \[
+          \left.\vec V \right |_{\vec r(\theta)}
+          =\left\langle 0,-10\sin\theta,4 \right\rangle
+          \]
+          We compute their dot product:
+          \[
+          \vec V\cdot\vec v=30\sin^2(\theta)+20\cos(\theta)
+          \]
+          Finally, we take the line integral using the above as our integrand:
+          \[\begin{aligned}
+          \textrm{Circulation}&=\oint_{\partial S} \vec V\cdot d\vec s
+          =\int_0^{2\pi} 30\sin^2(\theta)+20\cos(\theta)\,d\theta\\
+          &=\int_0^{2\pi} 30\sin^2(\theta)\,d\theta+
+          \int_0^{2\pi} 20\cos(\theta)\,d\theta\\
+          &=\int_0^{2\pi} 30\left(\dfrac{1-\cos2\theta}{2}\right)\,d\theta
+          +\left[20\sin(\theta)\right]_0^{2\pi} \\
+          &=15\int_0^{2\pi}1-\cos2\theta\,d\theta +0 \\
+          &=15\left[\theta-\dfrac{\sin(2\theta)}{2}\right]_0^{2\pi}
+          =30\pi
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					What is the vorticity of the gas?
+				</p>
+				<p>
+          <button class="toggle has-hint" data-toggle="HintX12b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX12b"></button>
+					<button class="toggle has-sol" data-toggle="SolX12b"></button>
+				</p>
+			</div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX12b">
+        <p>
+          The vorticity is \(\vec W=\vec\nabla\times\vec V\).
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12b">
+				<p>
+          \(\vec W=\langle 2,-2,0\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12b">
+				<p>
+					We simply compute the curl of \(\vec V=\langle 0,-2z,2x\rangle\).
+          \[\begin{aligned}
+          \vec W&=\vec{\nabla}\times\vec{V}
+          =\begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\[2pt]
+          \partial_x & \partial_y & \partial_z \\[2pt]
+          0 & -2z & 2x
+          \end{vmatrix}\\
+          &=\hat{\imath}(2)-\hat{\jmath}(2)+\hat{k}(0)
+          =\langle 2,-2,0\rangle
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+    <li>
+			<div class="dotfillex">
+				<p>
+					Recompute the circulation for the curve in part (a), this time
+          using the vorticity calculated in part (b). Notice that the curve
+          is the boundary of the elliptical region:
+          \[
+          \vec R(t,\theta)=\left\langle 2,3t\cos\theta,5t\sin\theta \right\rangle
+          \]
+          for \(0\le t\le 1\) and \(0\le \theta \le 2\pi\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX12c"></button>
+					<button class="toggle has-sol" data-toggle="SolX12c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12c">
+				<p>
+					\(\displaystyle
+          \textrm{Circulation}=\iint_{S}\vec{W}\cdot d\vec{S}=30\pi
+          \)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12c">
+				<p>
+					We begin by taking the normal vector of the surface:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{t}\times \vec{e}_{\theta}=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          0 & 3\cos\theta & 5\sin\theta \\
+          0 & -3t\sin\theta & 5t\cos\theta
+          \end{vmatrix}\\
+          &=\left\langle 15t, 0, 0\right\rangle
+          \end{aligned}\]
+          The dot product of vorticity from part (b), \(\vec W=\langle 2,-2,0\rangle\),
+          and the normal is:
+          \[
+          \vec{W}\cdot\vec{N}
+          =\langle 2,-2,0\rangle\cdot\langle 15t, 0, 0\rangle=30t
+          \]
+          Finally, we compute the surface integral:
+          \[\begin{aligned}
+          \textrm{Circulation}
+          &=\iint_{S}\vec{W}\cdot\vec{N}\,dt\,d\theta
+          =\int_0^{2\pi}\int_0^1 30t\,dt\,d\theta\\
+          &=60\pi\int_0^1 t\,dt=\left.60\pi\dfrac{t^2}{2}\right|_{0}^{1}=30\pi
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		Water with velocity vector \(\vec{V}
+    =\left\langle x,0,\dfrac{x^2}{2}\right\rangle\) is flowing down a river.
+	</p>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					What is the vorticity of the water?
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX13a"></button>
+					<button class="toggle has-sol" data-toggle="SolX13a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX13a">
+				<p>
+					\(
+          \vec W=\left\langle  0,-x,0\right\rangle
+          \)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX13a">
+				<p>
+					We can compute the vorticity of the water using the formula:
+          \[
+          \vec W=\vec\nabla\times\vec{V}
+          \]
+          Since \(\vec V=\left\langle x,0,\dfrac{x^2}{2}\right\rangle\), we can
+          easily take the curl:
+          \[\begin{aligned}
+          \vec{\nabla}\times\vec{V}
+          &=\begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\[2pt]
+          \partial_x & \partial_y & \partial_z \\[2pt]
+          x & 0 & \dfrac{x^2}{2}
+          \end{vmatrix}\\
+          &=\hat{\imath}(0)-\hat{\jmath}\left(x\right)+\hat{k}(0)\\
+          &=\left\langle 0,-x,0\right\rangle
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+    <li>
+			<div class="dotfillex">
+				<p>
+					Use the vorticity to find the circulation of the water along the
+          boundary of the rectangle in the plane of \(y=2\) where \(x\) ranges
+          from \(0\) to \(5\) and \(z\) ranges from \(0\) to \(2\). The
+          orientation should be clockwise as seen from the positive \(y\)-axis.
+          <br>
+          <big>PY: Add Plot</big>
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX13b"></button>
+					<button class="toggle has-sol" data-toggle="SolX13b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX13b">
+				<p>
+					\(\displaystyle
+          \textrm{Circulation}=\iint_{S}\vec{W}\cdot d\vec{S}=25
+          \)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX13b">
+				<p>
+					Recall the equation for circulation:
+          \[
+          \textrm{Circulation}=\oint_{C}\vec{V}\cdot d\vec{s}
+          \]
+          Using Stokes' Theorem, we can put this in terms of the curl which we
+          have already calculated:
+          \[
+          \textrm{Circulation}=\iint_{S}\vec\nabla\times\vec{V}\cdot d\vec{S}
+          =\iint_{S}\vec{W}\cdot d\vec{S}
+          \]
+          Since \(d\vec{S}=\vec{N}\,dA\), we need to compute the normal vector.
+          We begin by parameterizing our rectangle:
+          \[
+          \vec R(t,s)=\langle t,2,s\rangle
+          \]
+          Where \(0\le t\le 5\) and \(0\le s\le 2\). Thus, the normal vector is:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{t}\times \vec{e}_{s}=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          1 & 0 & 0 \\
+          0 & 0 & 1
+          \end{vmatrix}\\
+          &=\left\langle 0, -1, 0\right\rangle
+          \end{aligned}\]
+          This normal vector is pointing towards negative \(y\), which would
+          indicate a clockwise rotation. As a result, we do not need to reverse it.
+          The vorticity evaluated on the surface is:
+          \[
+          \vec W=\left\langle 0,-x,0\right\rangle
+          =\left\langle 0,-t,0\right\rangle
+          \]
+          So the dot product of the vorticity and the normal vector is
+          \(\vec W\cdot\vec N=t\). Using this, we compute the integral:
+          \[\begin{aligned}
+          \textrm{Circulation}&=\iint_{S}\vec{W}\cdot d\vec{S}
+          =\int_0^2\int_0^5 t\,dt\,ds\\
+          &=2\int_0^5 t\,dt=2\left[\dfrac{t^2}{2}\right]_{0}^{5}
+          =25
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+	</ol>
+  <p class="remark">
+    Note: In this problem it is easier to compute the circulation from the
+    vorticity for two reasons. First, the curl is simple in this particular problem.
+    Second, the direct line integral requires \(4\) separate integrals.
+  </p>
+</li>
+
+<li>
+	<p>
+		The magnetic field \(\vec{B}=\langle x^3,y^2z,y^3+yz^2\rangle\) is
+    produced by an the electrical current \(I\) flowing in the positive
+    \(x\) direction through the surface of a disk of radius \(2\) parallel to the
+		\(yz\)-plane with center at \((2,0,0)\). Find \(I\) using:
+    <br>
+    <big>PY: Add Plot</big>
+	</p>
+	<ol type="a">
+    <li>
+			<div class="dotfillex">
+				<p>
+					the differential version of Ampere's Law.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX14a"></button>
+					<button class="toggle has-sol" data-toggle="SolX14a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14a">
+				<p>
+					\(I=3\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14a">
+				<p>
+					Ampere's Law states that
+          \[
+          \vec\nabla\times\vec B=4\pi\vec{J}
+          \]
+          where \(\vec B\) is the magnetic field vector and \(\vec J\) is the
+          electric current density vector. By Stokes' Theorem, we also have that
+          \[
+          I=\iint_S \vec J\cdot d\vec{S}
+          \]
+          Since we know that \(\vec J\) is just \(\dfrac{\vec \nabla\times\vec B}{4\pi}\),
+          we can compute the current by evaluating the following integral:
+          \[
+          I=\dfrac{1}{4\pi}\iint_S \vec\nabla \times\vec B \cdot d\vec{S}
+          \]
+          First, we parametrize the surface in terms of \(r\) and \(\theta\):
+          \[
+          \vec R(r,\theta)=\langle 2,r\cos\theta,r\sin\theta \rangle
+          \]
+          Next, we take the normal vector of the surface:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_{r}\times \vec{e}_{\theta}=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          0 & \cos\theta & \sin\theta \\
+          0 & -r\sin\theta & r\cos\theta
+          \end{vmatrix}\\
+          &=\left\langle r, 0, 0\right\rangle
+          \end{aligned}\]
+          Notice \(\vec N\) points in the positive \(x\) direction as required.
+          We then take the curl of \(\vec B\):
+          \[\begin{aligned}
+          \vec{\nabla}\times\vec{B}
+          &=\begin{vmatrix}
+          \quad\hat{\imath} & \hat{\jmath} & \hat{k} \\[2pt]
+          \quad\partial_x & \partial_y & \partial_z \\[2pt]
+          \quad x^3 & y^2z & y^3+yz^2
+          \end{vmatrix}\\
+          &=\hat{\imath}(3y^2+z^2-y^2)-\hat{\jmath}(0-0)+\hat{k}(0-0)\\
+          &=\left\langle 2y^2+z^2,0,0\right\rangle
+          \end{aligned}\]
+          Since \(y=r\cos\theta\) and \(z=r\sin\theta\), we have
+          \[
+          \vec\nabla\times\vec B
+          =\left\langle 2r^2\cos^2\theta+r^2\sin^2\theta,0,0\right\rangle
+          =\langle r^2(\cos^2\theta+1),0,0 \rangle
+          \]
+          The dot product is:
+          \[
+          \vec\nabla\times\vec B\cdot\vec N=r^3(\cos^2\theta+1)
+          \]
+          Finally, we compute the surface integral:
+          \[\begin{aligned}
+          I&=\dfrac{1}{4\pi}\iint_S \vec\nabla\times\vec B\cdot d\vec S
+          =\dfrac{1}{4\pi}\int_0^{2\pi}\int_0^2 r^3(\cos^2\theta+1)\,dr\,d\theta \\
+          &=\dfrac{1}{4\pi}\left( \int_0^2 r^3 \,dr \right)
+          \left( \int_0^{2\pi} \cos^2\theta+1 \,d\theta\right) \\
+          &=\dfrac{1}{\pi}\int_0^{2\pi} \dfrac{1+\cos2\theta}{2}+1 \,d\theta
+          =\dfrac{1}{\pi}\left[\dfrac{3\theta}{2}
+          +\dfrac{\sin2\theta}{4}\right]_{0}^{2\pi}=\dfrac{3\pi}{\pi}=3
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+    <li>
+			<div class="dotfillex">
+				<p>
+					the integral version of Ampere's Law.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX14b"></button>
+					<button class="toggle has-sol" data-toggle="SolX14b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14b">
+				<p>
+					\(I=3\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14b">
+				<p>
+					Ampere's law states that
+          \[
+          I=\dfrac{1}{4\pi}\oint_{C} \vec{B}\cdot d\vec{s}
+          \]
+          where \(\vec B\) is the magnetic field vector and \(I\) is the current
+          through a closed loop \(C\). We can solve directly, first by parameterizing
+          the boundary of the disk:
+          \[
+          \vec r(\theta)=\langle 2, 2\cos\theta,2\sin\theta \rangle
+          \]
+          Then, we compute the velocity:
+          \[
+          \vec v(\theta)=\langle 0, -2\sin\theta,2\cos\theta \rangle
+          \]
+          We must parametrize \(\vec B=\langle x^3,y^2z,y^3+yz^2\rangle\)
+          in terms of this curve:
+          \[\begin{aligned}
+          \left.\vec B\right|_{\vec r(\theta)}
+          &=\langle 8,8\cos^2\theta\sin\theta,8\cos^3\theta+8\cos\theta\sin^2\theta\rangle\\
+          &=\langle 8,8\cos^2\theta\sin\theta,
+          8\cos\theta\left(\cos^2\theta+\sin^2\theta\right)\rangle\\
+          &=\langle 8,8\cos^2\theta\sin\theta,8\cos\theta\rangle
+          \end{aligned}\]
+          The penultimate step involves taking the dot product of
+          \(\left.\vec B\right|_{\vec r(\theta)}\) with \(\vec v\):
+          \[\begin{aligned}
+          \left.\vec B\right|_{\vec r(\theta)}\cdot\vec v
+          &=0-16\cos^2\theta\sin^2\theta+16\cos^2\theta\\
+          &=16\cos^2\theta\left(1-\sin^2\theta\right)=16\cos^4\theta
+          \end{aligned}\]
+          Finally, we compute the integral:
+          \[\begin{aligned}
+          I&=\dfrac{1}{4\pi}\oint_{C}\vec{B}\cdot d\vec{s}
+          =\dfrac{1}{4\pi}\int_0^{2\pi} 16\cos^4\theta\,d\theta\\
+          &=\dfrac{1}{4\pi}\int_0^{2\pi}16\left(\dfrac{1+\cos2\theta}{2}\right)^2\,d\theta\\
+          &=\dfrac{1}{\pi}\int_0^{2\pi}(1+2\cos2\theta+\cos^22\theta)\,d\theta\\
+          &=\dfrac{1}{\pi}\int_0^{2\pi}1+2\cos2\theta+\dfrac{1+\cos4\theta}{2}\,d\theta\\
+          &=\dfrac{1}{\pi}\left[\dfrac{3\theta}{2}+\sin{2\theta}
+          +\dfrac{\sin4\theta}{8}\right]_0^{2\pi}=\dfrac{3\pi}{\pi}=3
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<big>PY Checked to here except for 11.</big>
+
+        <div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  xxx
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX15"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	xxx
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX16a"></button>
+					<button class="toggle has-sol" data-toggle="SolX16a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX16a">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX16a">
+				<p>
+					xxx
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX16b"></button>
+					<button class="toggle has-sol" data-toggle="SolX16b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX16b">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX16b">
+				<p>
+					xxx
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

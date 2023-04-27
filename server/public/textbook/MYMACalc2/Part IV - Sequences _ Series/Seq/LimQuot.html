@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b5b. Indeterminate Forms \(\dfrac{0}{0}\) and \(\dfrac{\infty}{\infty}\) | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html#Indeterminate" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>18. Sequences</h1>
+    <div id="pg-wrapper">
+      
+
+<!-- NOTE: the "active" class indicates which page is displayed -->
+<div class="example-links">
+  <ul class="no-style">
+    <li class="active"><a href="LimQuot.html">
+      \(\underline{\dfrac{0}{0} \text{ and } \dfrac{\infty}{\infty}}\)</a></li> &emsp;
+    <li><a href="LimProd.html">
+      \(\underline{0\cdot\infty}\)</a></li> &emsp;
+    <li><a href="LimSubt.html">
+      \(\underline{\infty-\infty}\)</a></li> &emsp;
+    <li><a href="LimPower.html">
+      \(\underline{0^0 \text{ and } 1^\infty \text{ and } \infty^0}\)</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>b5b. Indeterminate Forms \(\dfrac{0}{0}\) and \(\dfrac{\infty}{\infty}\)</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<h3>Methods:</h3>
+<ol>
+  <li>
+    If the denominator is a sum, divide the numerator and denominator
+    by the largest term in the denominator.
+  </li>
+  <li>
+    If the numerator and denominator are differentiable functions of \(n\),
+    apply l'Hopital's Rule.
+  </li>
+  <li>
+    If the numerator and denominator are differentiable functions of \(n\),
+    it may be useful to change variables from \(n\) to \(t=\dfrac{1}{n}\) and
+    take the limit as \(t\to0^+\).
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\lim\limits_{n\to\infty}\dfrac{\ln n}{n}\).
+</p>
+<p class="sol">
+  This has the indeterminate form \(\dfrac{\infty}{\infty}\).
+	Notice that \(f(x)=\dfrac{\ln x}{x}\) is a differentiable function and
+	our sequence is \(a_n=\dfrac{\ln n}{n}=f(n)\). So we use
+  l'Hopital's Rule:
+  \[
+	  \lim_{n\to\infty}\dfrac{\ln n}{n}
+		=\lim_{x\to\infty}\dfrac{\ln x}{x}
+    \,\overset{\text{l'H}}{=}\,
+    \lim_{x\to\infty}\dfrac{\dfrac{1}{x}}{1}=\dfrac{0}{1}=0
+	\]
+</p>
+<p class="remark">
+  In practice, we do not switch variables and simply regard \(n\) as a
+  continuous variable:
+  \[
+	  \lim_{n\to\infty}\dfrac{\ln n}{n}
+  	\,\overset{\text{l'H}}{=}\,
+    \lim_{n\to\infty}\dfrac{\dfrac{1}{n}}{1}=\dfrac{0}{1}=0
+	\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Compute \(\lim\limits_{n\to\infty}\dfrac{3n^2}{2n^2+(-1)^n n}\).
+</p>
+<p class="sol">
+  This has the indeterminate form \(\dfrac{\infty}{\infty}\).
+	Since \(\dfrac{3n^2}{2n^2+(-1)^n n}\) does not look like a
+  continuous function of \(n\), we cannot use l'Hopital's Rule. So we divide
+  the numerator and denominator by \(n^2\):
+	\[\begin{aligned}
+   \lim_{n\to\infty}\dfrac{3n^2}{2n^2+(-1)^n n}
+  &=\lim_{n\to\infty}\dfrac{3n^2}{2n^2+(-1)^n n}\cdot
+	 \dfrac{\dfrac{1}{n^2}}{\dfrac{1}{n^2}} \\[20pt]
+  &=\lim_{n\to\infty}\dfrac{3}{2+\dfrac{(-1)^n}{n}}
+	=\dfrac{3}{2+0}=\dfrac{3}{2}
+	\end{aligned}\]
+</p>
+<p>
+  In fact, we can write \(\dfrac{3n^2}{2n^2+(-1)^n n}\) as a
+  continuous function, if we notice that \((-1)^n=\cos(n\pi)\).
+	However, it is much harder to differentiate
+	\(2n^2+\cos(n\pi)n\) than to divide by \(n^2\).
+</p>
+
+        <div class="rule"></div>
+
+<div class= "dotfillex">
+  <p class="exercise" data-number="3">
+    Compute
+    \(\begin{aligned}
+    \lim\limits_{n\to\infty}
+		\dfrac{\dfrac{4}{n^2}-\dfrac{9}{n^3}}{\dfrac{2}{n^2}+\dfrac{3}{n^3}}
+    \end{aligned}\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<br>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Which of \(\dfrac{2}{n^2}\) or \(\dfrac{3}{n^3}\) has more factors of \(n\) in
+    the denominator?
+    <br>
+    Which is larger?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+		\(\lim\limits_{n\to\infty}
+		\dfrac{\dfrac{4}{n^2}-\dfrac{9}{n^3}}{\dfrac{2}{n^2}+\dfrac{3}{n^3}}=2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+		\(\lim\limits_{n\to\infty}
+		\dfrac{\dfrac{4}{n^2}-\dfrac{9}{n^3}}{\dfrac{2}{n^2}+\dfrac{3}{n^3}}\)
+		has the indeterminate form \(\dfrac{0}{0}\).
+		When \(n\) is large, \(\dfrac{3}{n^3}\) is smaller than \(\dfrac{2}{n^2}\).
+		So the largest term in the denominator is \(\dfrac{2}{n^2}\). So we
+    divide the top and bottom by \(\dfrac{1}{n^2}\), or equivalently, we
+    multiply the top and bottom by \(n^2\):
+		\[\begin{aligned}
+		\lim_{n\to\infty}
+	 \dfrac{\dfrac{4}{n^2}-\dfrac{9}{n^3}}{\dfrac{2}{n^2}+\dfrac{3}{n^3}}
+		&=\lim_{n\to\infty}
+	     \dfrac{\dfrac{4}{n^2}-\dfrac{9}{n^3}}{\dfrac{2}{n^2}
+       +\dfrac{3}{n^3}}\cdot\dfrac{n^2}{n^2} \\[10pt]
+		&=\lim_{n\to\infty}
+		   \dfrac{4-\dfrac{9}{n}}{2+\dfrac{3}{n}}=\dfrac{4}{2}=2
+		\end{aligned}\]
+  </p>
+</div>
+
+<!--
+<p>
+  <h3>Indeterminate Forms \(0\cdot\infty\):</h3>
+  <h4><font color="blue">Procedure:</font></h4>
+  <p style="display:inline">Rewrite it as \(\dfrac{0}{0}\) or \(\dfrac{\infty}{\infty}\).
+</p>
+-->
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

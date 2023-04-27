@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Grid Cells and Scalar Surface Area Differential | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NormalVec.html" title="Previous">&lArr;</a></li>
+      <li><a href="ScalSurfInt.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Scalar Surface Integrals</h2>
+
+
+      
+      <h2>1. Grid Cells and Scalar Surface Area Differential</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We have learned how to integrate over curves and regions in
+  \(\mathbb{R}^2\) and \(\mathbb{R}^3\). We want to learn how to integrate over
+  <span class="hl">surfaces</span> in \(\mathbb{R}^3\).
+  The process is always the same: chop up the surface into small
+  pieces, calculate something on each piece and add them up.
+  Integrating over a parametric surface in \(\mathbb{R}^3\):
+  \[
+  (x,y,z)=\vec R(u,v)=\left\langle x(u,v),y(u,v),z(u,v)\right\rangle
+  \]
+  is most like integrating over a region in \(\mathbb{R}^2\) in curvilinear
+  coordinates:
+  \[
+  (x,y)=\vec R(u,v)=\left\langle x(u,v),y(u,v)\right\rangle
+  \]
+  In fact, a curvilinear coordinate system for a region in \(\mathbb{R}^2\)
+  is actually just a parametric surface which happens to lie in the
+  \(xy\)-plane, i.e. \(z=0\). Here again are the coordinate grids for a
+  curvilinear coordinate system in \(\mathbb{R}^2\) and for parametric
+  surface in \(\mathbb{R}^3\).
+</p>
+<div class="center">
+  <img src="graphics/coordgrid-gen.jpg" alt="coordgrid-gen">
+  <img src="graphics/surfgrid.jpg" alt="surfgrid">
+</div>
+<p>
+  In both cases, the <span style="color:blue">blue</span> curves are
+  \(u\)-curves because \(u\) is changing and are labeled by a value of \(v\).
+  <br>
+  Similarly, the <span style="color:red">red</span> curves are \(v\)-curves
+  because \(v\) is changing and are labeled by a value of \(u\).
+</p>
+<p>
+  In both cases, in order to integrate, you need to know (or be able to
+  approximate) the area of a coordinate grid box:
+  \[
+  u_0 \le u \le u_0+\Delta u \qquad \qquad v_0 \le v \le v_0+\Delta v
+  \]
+  For a curvilinear coordinate system, we call this area \(\Delta A\). For a
+  parametric surface, we call this area \(\Delta S\) for
+  <span class="hl">surface area</span>. The process of computing
+  \(\Delta S\) is completely analogous to that for computing \(\Delta A\).
+  We first compute the coordinate tangent vectors
+  \[
+  \vec{e}_u=\dfrac{\partial\vec R}{\partial u}
+  \qquad \text{and} \qquad
+  \vec{e}_v=\dfrac{\partial\vec R}{\partial v}
+  \]
+  and add them to the plots:
+</p>
+<div class="center">
+  <img src="graphics/coordtanvec-gen.jpg" alt="coordtanvec-gen">
+  <img src="graphics/surfgrid-tanvec.jpg" alt="surfgrid-tanvec">
+</div>
+<big>PY: Shorten e_u</big>
+<p>
+  Next we stretch (or shrink) the coordinate tangent vectors, \(\vec{e}_u\)
+  and \(\vec{e}_v\), into vectors, \(\vec{U}\) and \(\vec{V}\) resp.,
+  which just touch the next coordinate curve. (The magnitude is equal to
+  the arc length of the coordinate curve.)
+</p>
+<div class="center">
+  <img src="graphics/coordpara-gen.jpg" alt="coordpara-gen">
+  <img src="graphics/surfgrid-UVpar.jpg" alt="surfgrid-UVpar">
+</div>
+<p>
+  In both cases, we approximate the area of the coordinate grid box by the
+  area of the parallelogram with edges \(\vec{U}\) and \(\vec{V}\) which is the
+  magnitude of the cross product of \(\vec{U}\) and \(\vec{V}\).
+  \[
+  \Delta A\approx|\vec{U}\times\vec{V}|
+  \qquad \text{and} \qquad
+  \Delta S\approx|\vec{U}\times\vec{V}|
+  \]
+  In both cases, we approximate \(\vec{U}\) and \(\vec{V}\) as:
+  (See the derivation on
+  <a href="../CurvInt/2DCurv-GridArea.html#areaderive"
+  title="Return using the Back button.">this page</a>.)
+  \[
+  \vec{U}\approx\vec{e}_u\,\Delta u
+  \qquad \text{and} \qquad
+  \vec{V}\approx\vec{e}_v\,\Delta v
+  \]
+  So the areas become
+  \[
+  \Delta A\approx|\vec{e}_u\times\vec{e}_v|\,\Delta u\,\Delta v
+  \qquad \text{and} \qquad
+  \Delta S\approx|\vec{e}_u\times\vec{e}_v|\,\Delta u\,\Delta v
+  \]
+  In the limit as \(\Delta u\) and \(\Delta v\) get small, these become the
+  <span class="hl">(scalar) differential of area</span>, \(dA\), and the
+  <span class="defword">(scalar) differential of surface area</span>, \(dS\).
+  \[
+  dA=|\vec{e}_u\times\vec{e}_v|\,du\,dv
+  \qquad \text{and}\qquad
+  dS=|\vec{e}_u\times\vec{e}_v|\,du\,dv
+  \]
+  For the curvilinear coordinate system, we found that the length of the
+  cross product of the tangent vectors was the Jacobian factor which is
+  the absolute value of the Jacobian determinant:
+  \[
+  |\vec{e}_u\times\vec{e}_v|=J
+  =\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|
+  =\left|
+    \begin{vmatrix}
+    \dfrac{\partial x}{\partial u}&\dfrac{\partial y}{\partial u} \\
+    \dfrac{\partial x}{\partial v}&\dfrac{\partial y}{\partial v}
+    \end{vmatrix}
+  \right|
+  \]
+  For the parametric surface, we recognize that the cross product of the
+  tangent vectors is the normal vector:
+  \[
+  \vec N=\vec{e}_u\times\vec{e}_v
+  =\left\langle \dfrac{\partial(y,z)}{\partial(u,v)},
+                \dfrac{\partial(z,x)}{\partial(u,v)},
+                \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle
+  \]
+  So the length of the cross product is the length of the normal vector:
+  \[
+  |\vec{e}_u\times\vec{e}_v|=|\vec{N}|
+  =\sqrt{
+     \left(\dfrac{\partial(y,z)}{\partial(u,v)}\right)^2
+    +\left(\dfrac{\partial(z,x)}{\partial(u,v)}\right)^2
+    +\left(\dfrac{\partial(x,y)}{\partial(u,v)}\right)^2}
+  \]
+  So the differentials of area and surface area become
+  \[
+  dA=J\,du\,dv
+  \qquad \text{and} \qquad
+  dS=|\vec{N}|\,du\,dv
+  \]
+</p>
+<p class="remark">
+  Although the length of the normal, \(|\vec{N}|\), plays
+  the roll of the Jacobian in the differential of surface area, it is
+  technically NOT a Jacobian because it is not simply the determinant of the
+  partial derivatives of \(2\) variables with respect to \(2\) variables.
+</p>
+
+        <div class="rule" id="scaldiffsurfarea"></div>
+
+<p class="remark">
+  In the above derivation, the scalar differential of surface area, \(dS\),
+  was analogous to the differential of surface area, \(dA\). However,
+  in computing integrals, the scalar differential of surface area, \(dS\), is
+  actually more analogous to the scalar differential of arc length, \(ds\).
+</p>
+<p>
+  For a parametric curve, the <em>important</em> vector is the tangent vector,
+  \(\vec{v}\).
+  <br>
+  For a parametric surface, the <em>important</em> vector is the normal vector,
+  \(\vec{N}\).
+</p>
+<p>
+  We previously learned that the
+  <span class="hl">scalar differential of arc length</span> is:
+  \[
+  ds=|\vec{v}|\,dt
+  \]
+  We now have
+</p>
+<p class="def">
+  The <span class="defword">scalar differential of surface area</span> is
+  \[
+  dS=|\vec{N}|\,du\,dv
+  \]
+</p>
+<p>
+  The lengths of the <em>important</em> vectors appear before the differentials.
+  Notice the lower case \(s\) for curves and the upper case \(S\) for surfaces.
+</p>
+<p>
+  We <a href="../../Part I - Geometry & Vectors/LineInt/VectorInt.html" title="Return using the Back button.">
+  previously</a> learned that there is also a
+  <span class="hl">vector differential of arc length</span>.
+  In a <a href="VecSurfDiff.html" title="Return using the Back button.">
+  few pages</a> you will learn about the
+  <span class="hl">vector differential of surface area</span>. These are
+  \[
+  d\vec{s}=\vec{v}\,dt
+  \qquad \text{and} \qquad
+  d\vec{S}=\vec{N}\,du\,dv
+  \]
+  Now the <em>important</em> vectors themselves appear before the differentials.
+  Notice the parallels.
+</p>
+<p>
+  We are finally ready to compute surface integrals.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

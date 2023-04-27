@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Global Max-Min Problems | 16. Max-Min Problems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Parametrize.html" title="Previous">&lArr;</a></li>
+      <li><a href="MultConstraint.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>16. Max-Min Problems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Global maxima and minima were previously defined for
+  <a href="../../Part I - Geometry & Vectors/Functions/MaxMinSaddle.html"
+  title="Return using the Back botton.">
+  functions of \(1\) variable</a> and
+  <a href="../../Part I - Geometry & Vectors/Functions/MaxMinSaddle2.html"
+  title="Return using the Back botton.">
+  functions of \(2\) variables</a>. We now want to discuss how to find them.
+</p>
+
+
+      
+      <h2>c. Global Max-Min Problems</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def" data-title="Global Maxima and Minima">
+  A <span class="defword">global maximum</span>
+  (resp. <span class="defword">global minimum</span>) of a function, \(f\),
+  occurs at a point, \(P\) where the function value \(f(P)\) takes on the
+	<em>absolutely</em> <span class="hl">largest</span>
+  (resp. <span class="hl">smallest</span>) value for any point in the
+  domain of the function.
+  <br>
+  A <span class="hl">global maximum</span>
+  (resp. <span class="hl">global minimum</span>) is also called an
+  <span class="defword">absolute maximum</span>
+  (resp. <span class="defword">absolute minimum</span>).
+  Together,
+  <span class="hl">minima</span> and <span class="hl">maxima</span> are called
+  <span class="defword">extrema</span>.
+</p>
+<p>
+  One finds the global maxima and minima by evaluating the function at each
+  critical point in the interior of the region and at each critical point
+  on the boundary of the region. The largest of these is the global maximum.
+  The smallest if the global minimum.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  In Calculus 1, when we looked at a function of \(1\) variable defined on an
+  interval, we found all critical points in the interval and then checked
+  the endpoints. We now look at functions of \(2\) or \(3\) variables.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the largest and smallest values of the function
+    \(f(x,y)=6xy-2x^2y-xy^2\) inside or on the rectangle \(-4 \le x \le 4\)
+    and \(-3 \le y \le 3\).
+  </p>
+  <div class="center">
+    <img src="graphics/eg_rectangle_domain.jpg" alt="eg_rectangle_domain">
+  </div>
+</div>
+<p class="sol">
+  We first need to find all critical points in the interior. We set the
+  partial derivatives equal to \(0\):
+  \[\begin{aligned}
+  f_x&=6y-4xy-y^2&=0 \qquad \text{(1)} \\
+  f_y&=6x-2x^2-2xy&=0 \qquad \text{(2)}
+  \end{aligned}\]
+  Equation (1) says \(y=0\) or \(4x+y=6\).
+  Equation (2) says \(x=0\) or \(x+y=3\).
+  So we look at \(4\) cases:
+</p>
+<ul>
+  <li>
+    Case 1: \(x=0\) and \(y=0\):
+    <br>
+    This gives the critical point \((x,y)=(0,0)\) and the function value
+    \(f(0,0)=0\).
+  </li>
+  <li>
+    Case 2: \(x=0\) and \(4x+y=6\):
+    <br>
+    This implies \(y=6\) which gives the critical point \((x,y)=(0,6)\).
+    However, since \((0,6)\) is not within the rectangle, we can ignore it.
+  </li>
+  <li>
+    Case 3: \(y=0\) and \(x+y=3\):
+    <br>
+    This implies \(x=3\) which gives the critical point \((x,y)=(3,0)\)
+    and the function value \(f(3,0)=0\).
+  </li>
+  <li>
+    Case 4: \(4x+y=6\) and \(x+y=3\):
+    <br>
+    Subtracting the second equation from the first gives \(3x=3\) or \(x=1\).
+    Substituting back gives \(y=2\). This gives the critical point
+    \((x,y)=(1,2)\) and the function value
+    \(f(1,2)=6(1)(2)-2(1)^2(2)-(1)(2)^2=12-4-4=4\).
+  </li>
+</ul>
+<p>
+  We now need to check the boundary of the rectangle. There are \(4\) edges.
+  We evaluate the function \(f(x,y)=6xy-2x^2y-xy^2\) on each edge and find
+  the critical points.
+</p>
+<ul>
+  <li>
+    Edge 1: \(x=4\):
+    <br>
+    The function becomes \(f(4,y)=24y-32y-4y^2=-8y-4y^2\).
+    We find the critical point:
+    \(f_y=-8-8y=0\) or \(y=-1\). The critical point is \((x,y)=(4,-1)\) and
+    the function value is \(f(4,-1)=6(4)(-1)-2(4)^2(-1)-(4)(-1)^2=-24+32-4=4\).
+  </li>
+  <li>
+    Edge 2: \(x=-4\):
+    <br>
+    The function becomes \(f(-4,y)=-24y-32y+4y^2=-56y+4y^2\).
+    We find the critical point:
+    \(f_y=-56+8y=0\) or \(y=7\). However, the critical point \((-4,7)\)
+    is not on the edge of the rectangle. So we can ignore it.
+  </li>
+  <li>
+    Edge 3: \(y=3\):
+    <br>
+    The function becomes \(f(x,3)=18x-6x^2-9x=9x-6x^2\).
+    We find the critical point:
+    \(f_x=9-12x=0\) or \(x=\dfrac{3}{4}\).
+    The critical point is \((x,y)=\left(\dfrac{3}{4},3\right)\) and
+    the function value is
+    \(f\left(\dfrac{3}{4},3\right)
+    =6\left(\dfrac{3}{4}\right)(3)-2\left(\dfrac{3}{4}\right)^2(3)
+    -\left(\dfrac{3}{4}\right)(3)^2
+    =\dfrac{27}{2}-\,\dfrac{27}{8}-\,\dfrac{27}{4}
+    =\dfrac{27}{8}\).
+  </li>
+  <li>
+    Edge 4: \(y=-3\):
+    <br>
+    The function becomes \(f(x,-3)=-18x+6x^2-9x=-27x+6x^2\).
+    We find the critical point:
+    \(f_x=-27+12x=0\) or \(x=\dfrac{9}{4}\).
+    The critical point is \((x,y)=\left(\dfrac{9}{4},-3\right)\) and
+    the function value is
+    \(f\left(\dfrac{9}{4},-3\right)
+    =6\left(\dfrac{9}{4}\right)(-3)-2\left(\dfrac{9}{4}\right)^2(-3)
+    -\left(\dfrac{9}{4}\right)(-3)^2
+    =-\,\dfrac{81}{2}+\dfrac{243}{8}-\,\dfrac{81}{4}
+    =-\,\dfrac{243}{8}\).
+  </li>
+</ul>
+<p>
+  Finally, we now need to check the endpoints of the edges which are the
+  corners of the rectangle. We evaluate the function \(f(x,y)=6xy-2x^2y-xy^2\)
+  at the corners.
+</p>
+<ul>
+  <li>
+    Corner 1: \((x,y)=(4,3)\):
+    <br>
+    The function value is
+    \(f(4,3)=6(4)(3)-2(4)^2(3)-(4)(3)^2=-60\).
+  </li>
+  <li>
+    Corner 2: \((x,y)=(4,-3)\):
+    <br>
+    The function value is
+    \(f(4,-3)=6(4)(-3)-2(4)^2(-3)-(4)(-3)^2=-12\).
+  </li>
+  <li>
+    Corner 3: \((x,y)=(-4,3)\):
+    <br>
+    The function value is
+    \(f(-4,3)=6(-4)(3)-2(-4)^2(3)-(-4)(3)^2=-132\).
+  </li>
+  <li>
+    Corner 4: \((x,y)=(-4,-3)\):
+    <br>
+    The function value is
+    \(f(-4,-3)=6(-4)(-3)-2(-4)^2(-3)-(-4)(-3)^2=204\).
+  </li>
+</ul>
+<div class="column">
+  <p>
+    The critical points are plotted at the right.
+    We summarize the function values at all the critical points.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_rectangle_critpts.jpg" alt="eg_rectangle_critpts">
+  </div>
+</div>
+<p>
+  \[\begin{aligned}
+  f(0,0)=0 \qquad f(3,0)&=0 \qquad f(1,2)=4 \\
+  f(4,-1)=4 \qquad f\left(\dfrac{3}{4},3\right)&=\dfrac{27}{8} \qquad
+  f\left(\dfrac{9}{4},-3\right)=-\,\dfrac{243}{8} \\
+  f(4,3)=-60 \qquad f(4,-3)=-12 \qquad
+  &f(-4,3)=-132 \qquad f(-4,-3)=204
+  \end{aligned}\]
+  So the absolute maximum is \(204\) at \((-4,-3)\) and the absolute
+  minimum is \(-132\) at \((-4,3)\).
+</p>
+<div class="column">
+  <p class="check">
+    We check the absolute maximum and minimum are reasonable by
+    superimposing the contour plot of \(f(x,y)=6xy-2x^2y-xy^2\)
+    on the plot of the critical points.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_rectangle_contour.jpg" alt="eg_rectangle_contour">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Find the locations and values of the global maximum and minimum
+      of the function \(f(x,y)=4x+2y-x^2-y^2\) inside or on the triangle
+      with vertices \((0,0)\), \((3,0)\) and \((3,3)\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX1"></button>
+      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+      <button class="toggle has-sol" data-toggle="SolX1"></button>
+      <button class="toggle has-check" data-toggle="CkX1"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_triangle_domain.jpg" alt="ex_triangle_domain">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    The edge between \((0,0)\) and \((3,3)\) is \(y=x\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    The absolute maximum is \(5\) at \((2,1)\) and the absolute
+    minimum is \(0\) at \((0,0)\) and \((3,3)\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We first find all critical points in the interior. We set the
+    partial derivatives equal to \(0\):
+    \[\begin{aligned}
+    f_x&=4-2x&=0 \quad \Rightarrow \quad x=2 \\
+    f_y&=2-2y&=0 \quad \Rightarrow \quad y=1
+    \end{aligned}\]
+    So the only critical point is \((x,y)=(2,1)\) and the function value is
+    \(f(2,1)=4(2)+2(1)-(2)^2-(1)^2=5\).
+  </p>
+  <p>
+    We now check the boundary of the triangle. There are \(3\) edges.
+    We evaluate the function \(f(x,y)=4x+2y-x^2-y^2\) on each edge and find
+    the critical points.
+  </p>
+  <ul>
+    <li>
+      Edge 1: \(y=0\):
+      <br>
+      The function becomes \(f(x,0)=4x-x^2\).
+      We find the critical point:
+      \(f_x=4-2x=0\) or \(x=2\). The critical point is \((x,y)=(2,0)\) and
+      the function value is \(f(2,0)=4(2)-2^2=4\).
+    </li>
+    <li>
+      Edge 2: \(x=3\):
+      <br>
+      The function becomes \(f(3,y)=2y-y^2+3\).
+      We find the critical point:
+      \(f_y=2-2y=0\) or \(y=1\). The critical point is \((x,y)=(3,1)\) and
+      the function value is \(f(3,1)=2(1)-1^2+3=4\).
+    </li>
+    <li>
+      Edge 3: \(y=x\):
+      <br>
+      The function becomes \(f(x,x)=6x-2x^2\).
+      We find the critical point:
+      \(f_x=6-4x=0\) or \(x=\dfrac{3}{2}\). The critical point is
+      \((x,y)=\left(\dfrac{3}{2},\dfrac{3}{2}\right)\) and
+      the function value is
+      \(f\left(\dfrac{3}{2},\dfrac{3}{2}\right)
+      =6\left(\dfrac{3}{2}\right)-2\left(\dfrac{3}{2}\right)^2
+      =\dfrac{9}{2}\).
+    </li>
+  </ul>
+  <p>
+    Finally, we now check the corners of the triangle. We evaluate the
+    function \(f(x,y)=4x+2y-x^2-y^2\) at the corners.
+  </p>
+  <ul>
+    <li>
+      Corner 1: \((x,y)=(0,0)\):
+      <br>
+      The function value is
+      \(f(0,0)=0\).
+    </li>
+    <li>
+      Corner 2: \((x,y)=(3,0)\):
+      <br>
+      The function value is
+      \(f(3,0)=4(3)+2(0)-(3)^2-(0)^2=3\).
+    </li>
+    <li>
+      Corner 3: \((x,y)=(3,3)\):
+      <br>
+      The function value is
+      \(f(3,3)=4(3)+2(3)-(3)^2-(3)^2=0\).
+    </li>
+  </ul>
+  <div class="column">
+    <p>
+      The critical points are plotted at the right.
+      We summarize the function values at all the critical points.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_triangle_critpts.jpg" alt="ex_triangle_critpts">
+    </div>
+  </div>
+  <p>
+    \[\begin{aligned}
+    f(2,1)=5 \qquad f(2,0)=4 \qquad
+    &f(3,1)=4 \qquad f\left(\dfrac{3}{2},\dfrac{3}{2}\right)=\dfrac{9}{2} \\
+    f(0,0)=0 \qquad f(3,0)&=3 \qquad f(3,3)=0
+    \end{aligned}\]
+    So the absolute maximum is \(5\) at \((2,1)\) and the absolute
+    minimum is \(0\) at \((0,0)\) and \((3,3)\).
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <div class="column">
+    <p class="check">
+      We check the absolute maximum and minimum are reasonable by
+      superimposing the contour plot of \(f(x,y)=4x+2y-x^2-y^2\)
+      on the plot of the critical points.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_triangle_contour.jpg" alt="ex_triangle_contour">
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

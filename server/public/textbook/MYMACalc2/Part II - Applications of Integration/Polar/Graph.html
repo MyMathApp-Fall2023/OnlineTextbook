@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b.1. Graphs of Polar Equations | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PolarEq.html" title="Previous">&lArr;</a></li>
+      <li><a href="Plotting.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b.1. Graphs of Polar Equations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+  The <span class="defword">rectangular graph of an equation</span> is
+  the set of points whose rectangular coordinates, \((x,y)\), satisfy
+  the equation.  For example, the graphs of \(x^2+y^2=4\)
+  and \(x^2=y^3\) are
+</p>
+<div class="center">
+  <figure> <img src="graphics/rectcircle_plot.jpg" alt="rectcircle_plot"/>
+    <figcaption>\(x^2+y^2=4\)</figcaption>
+  </figure>
+  <figure> <img src="graphics/x^2=y^3_plot.jpg" alt="x^2=y^3_plot">
+    <figcaption>\(x^2=y^3\)</figcaption>
+  </figure>
+</div>
+<p>
+  In particular, the graph of a function is the graph of the equation which
+  defines the function. For most purposes, we take \(x\) as the independent
+  variable and \(y\) as the dependent variable, and write \(y=f(x)\).
+  However, sometimes we reverse the variables and write \(x=f(y)\).
+  For example, the graphs of \(y=x^2\) and \(x=y^2\) are
+</p>
+<div class="center">
+  <figure> <img src="graphics/y=x^2_plot.jpg" alt="y=x^2_plot"/>
+    <figcaption>\(y=x^2\)</figcaption>
+  </figure>
+  <figure> <img src="graphics/x=y^2_plot.jpg" alt="x=y^2_plot"/>
+    <figcaption>\(x=y^2\)</figcaption>
+  </figure>
+</div>
+
+        <div class="rule"></div>
+
+<p> Similarly:
+</p>
+<p class="def">
+  The <span class="defword">polar graph of an equation</span> is the set
+  of points for which
+  <button class="toggle" data-toggle="Drop1">at least one pair</button>
+  of polar coordinates, \((r,\theta)\),
+  satisfy the equation. In particular, the graph of a polar function is
+  the polar graph of the equation which defines the	function.
+	For most purposes, we take \(\theta\) as the independent variable and
+  \(r\) as the dependent variable, and write \(r=f(\theta)\).
+	However, sometimes we reverse the variables and write \(\theta=f(r)\).
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p class="remark">
+    It may seem strange, but indeed a point on a polar graph may have
+    coordinates that <span class="wrong">do not</span> satisfy the equation!
+    For instance, the equation \(r=\sin^2\theta\) is satisfied by
+  	\((r,\theta)=\left(1,\dfrac{\pi}{2}\right)\) but is not satisfied by
+  	\((r,\theta)=\left(-1,-\,\dfrac{\pi}{2}\right)\) which describes the
+    same point. We shall see that this complicates the process of finding the
+    points of intersection of polar graphs since if two polar graphs intersect
+    at a point \(P\), the coordinates \((r,\theta)\) of the point \(P\)
+    that satisfy one equation may not satisfy the other.
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  Some polar equations have graphs that are immediately obvious, such as
+	\(\theta=\dfrac{\pi}{6}\) or \(r=2\) or \(r=\theta\):
+</p>
+<div class="column">
+	<div data-col-width="50%">
+		<p class="example" data-number="1">
+			Graph \(\theta=\dfrac{\pi}{6}\).
+		</p>
+		<p class="sol">
+	    This problem actually has two solutions. If we require \(r \ge 0\), then
+			the graph of \(\theta=\dfrac{\pi}{6}\) is the set of points
+			\((r,\theta)=\left(r,\dfrac{\pi}{6}\right)\) with \(r \ge 0\) which is
+			the <span class="hl">ray</span> starting at the origin and going in the
+			direction \(\theta=\dfrac{\pi}{6}\).
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+		<img src="graphics/theta=pi6-pos_anim.gif" alt="theta=pi6-pos_anim"/>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="50%">
+		<p>
+	    If we allow \(r\) to be negative as well as positive, then
+			the graph of \(\theta=\dfrac{\pi}{6}\) is the set of points
+			\((r,\theta)=\left(r,\dfrac{\pi}{6}\right)\) for all \(r\) which is
+			the <span class="hl">line</span> through the origin in the
+			direction \(\theta=\dfrac{\pi}{6}\).
+		</p>
+		<p>
+	    So if you get a problem like this, you need to ask if \(r\) is
+			required to be positive or not.
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+		<img src="graphics/theta=pi6-all_anim.gif" alt="theta=pi6-all_anim"/>
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+		Graph \(r=2\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+		<img src="graphics/r=2.jpg" alt="r=2"/>
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<div class="column">
+		<p data-col-width="50%">
+		    The graph of \(r=2\) is the set of points \((r,\theta)=(2,\theta)\)
+		    for all values of \(\theta\), which is the circle of radius \(2\)
+				centered at the origin.
+		</p>
+		<div class="center" data-col-width="50%">
+			<img src="graphics/r=2.jpg" alt="r=2"/>
+		</div>
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<div class="column">
+	<div data-col-width="50%">
+		<p class="example" data-number="3">
+			Graph \(r=\theta\).
+		</p>
+		<p class="sol">
+	    We first graph the part of the curve with \(\theta \ge 0\). We start
+      at \(r=\theta=0\) which is the origin. As \(r=\theta\) gets larger,
+      we travel around counterclockwise and	the radius also gets larger.
+      So we trace out a spiral as shown in the first plot.
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+		<img src="graphics/r=theta-pos_anim.gif" alt="r=theta-pos_anim"/>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="50%">
+		<p>
+			As \(r=\theta\) gets negative, we travel around clockwise and since \(r\)
+			is also negative, we measure \(|r|\) backwards, which traces out a spiral
+			which is the mirror image through the \(y\)-axis of the first half
+			as shown in the second plot.
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+		<img src="graphics/r=theta-all_anim.gif" alt="r=theta-all_anim"/>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="50%">
+		<p class="remark">
+			If we restrict to the part of the curve, \(r=\theta\), with
+			\(-\,\dfrac{3\pi}{2} \le \theta \le \dfrac{3\pi}{2}\),
+			we get a heart shape.
+  		<br><br>
+  		<span class="redbig center">Happy Valentine's Day!</span>
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+		<img src="graphics/valentine.gif" alt="valentine">
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  Most polar equations, however, are not so transparent! On the
+	<a href="Plotting.html">next page</a>, we look at successively more complicated functions
+	and successively more refined graphing techniques.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

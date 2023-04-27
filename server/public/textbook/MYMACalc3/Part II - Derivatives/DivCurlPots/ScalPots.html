@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Finding Scalar Potentials | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="AntiDer.html" title="Previous">&lArr;</a></li>
+      <li><a href="NoScalPot.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>f. Scalar Potentials</h2>
+
+<p class="def">
+  Given a vector field \(\vec F\), a <span class="defword">scalar
+  potential</span> for \(\vec F\) is any scalar field \(f\) whose gradient
+  is \(\vec F\):
+  \[
+  \vec\nabla f=\vec F
+  \]
+</p>
+
+
+      
+      <h2>1. Finding Scalar Potentials</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  If you can find a scalar potential by inspection, that's great.
+  If not then you will need to do some work.
+</p>
+<p class="example" data-number="1">
+  Find a scalar potential for \(\vec F=\left\langle yz,xz,xy\right\rangle\).
+</p>
+<p class="sol">
+  We need to find a function \(f\) satisfying \(\vec\nabla f=\vec F\).
+  In more detail, \(f\) must satisfy
+  \[
+  \partial_x f=yz \qquad \partial_y f=xz \qquad \partial_z f=xy
+  \]
+  <button class="toggle" data-toggle="Drop1">
+  <span class="defword">By inspection</span></button>,
+  we see that a function that works is \(f=xyz\).
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    "By inspection" is a nebulous term. It actually means we took
+    <br> &emsp; the \(x\)-antiderivative of \(\partial_x f=yz\),
+    <br> &emsp; the \(y\)-antiderivative of \(\partial_y f=xz\) and
+    <br> &emsp; the \(z\)-antiderivative of \(\partial_z f=xy\)
+    <br> and got \(f=xyz\) in all three cases.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find a scalar potential for \(\vec F=\left\langle 2x,2y,2z\right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(f=x^2+y^2+z^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We need to find a function \(f\) satisfying \(\vec\nabla f=\vec F\), or
+    \[
+    \partial_x f=2x \qquad \partial_y f=2y \qquad \partial_z f=2z
+    \]
+    By
+    <button class="toggle" data-toggle="Drop2">inspection</button>,
+    we see that a function that works is \(f=x^2+y^2+z^2\).
+  </p>
+  <div class="toBeToggled" data-toggle="Drop2">
+    <p>
+      Actually, we take
+      <br> &emsp; the \(x\)-antiderivative of \(\partial_x f=2x\) to get
+      \(f(x,y,z)=x^2+g(y,z)\) where \(g\) is an arbitrary function
+      which is independent of \(x\),
+      <br> &emsp; the \(y\)-antiderivative of \(\partial_y f=2y\) to get
+      \(f(x,y,z)=y^2+h(x,z)\) where \(h\) is an arbitrary function
+      which is independent of \(y\), and
+      <br> &emsp; the \(z\)-antiderivative of \(\partial_z f=2z\) to get
+      \(f(x,y,z)=z^2+k(x,y)\) where \(k\) is an arbitrary function
+      which is independent of \(z\).
+      <br> Then \(f=x^2+y^2+z^2\) works in all three cases.
+    </p>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  <span class="redbig">Caution:</span> The scalar potential is
+  <span class="redbig">NOT</span> always just the sum of the
+  \(x\)-antiderivative of \(F_1\), the \(y\)-antiderivative of \(F_2\)
+  and the \(z\)-antiderivative of \(F_3\). A counter example happens in
+  the next example and exercise which also show the process of finding all
+  scalar potentials when inspection does not work.
+</p>
+<p class="example" data-number="3">
+  Find all scalar potentials for:
+  \[
+  \vec F
+  =\left\langle \sin(y)-\sin(x)+\cos(z),x\cos(y)+e^z+e^y,
+  y\,e^z-x\sin(z)+1\right\rangle
+  \]
+</p>
+<p class="sol">
+  We need to find a function \(f\) satisfying \(\vec\nabla f=\vec F\) or:
+  \[\begin{aligned}
+  \partial_x f&=\sin(y)-\sin(x)+\cos(z)\quad&&\text{(1)} \\
+  \partial_y f&=x\cos(y)+e^z+e^y\quad&&\text{(2)} \\
+  \partial_z f&=y\,e^z-x\sin(z)+1\quad&&\text{(3)}
+  \end{aligned}\]
+  <!-- \[\begin{aligned}
+  \partial_x f&=\sin(y)-\sin(x)+\cos(z)\tag{1} \\
+  \partial_y f&=x\cos(y)+e^z+e^y\tag{2} \\
+  \partial_z f&=y\,e^z-x\sin(z)+1\tag{3}
+  \end{aligned}\] -->
+  Since the scalar potential is not obvious by inspection, we solve these
+  successively and build up a solution.
+</p>
+<ol>
+  <li>
+    We first take the \(x\)-antiderivative of (1) to get:
+    \[
+    f=x\sin(y)+\cos(x)+x\cos(z)+g(y,z)
+    \]
+    where \(g\) is an arbitrary function which is independent of \(x\).
+    <br>
+    (Note: When we take an antiderivative, we normally add a constant \(C\).
+    However, since this is an \(x\)-antiderivative, the "constant", \(g\),
+    only needs to be constant in \(x\), i.e. a function of \(y\) and \(z\).)
+  </li>
+  <li>
+    Now this function \(f\) must also satisfy (2) and (3). We first take its
+    \(y\)-derivative:
+    \[
+    \partial_y f=x\cos(y)+\partial_y g
+    \]
+    Comparing this to (2) we find:
+    \[
+    \partial_y g=e^z+e^y
+    \]
+    We take the \(y\)-antiderivative of this to get:
+    \[
+    g=y\,e^z+e^y+h(z)
+    \]
+    where \(h\) is an arbitrary function of \(z\).
+    <br>
+    (Note: Even though we are taking a \(y\)-antiderivative, we don't allow
+    \(h\) to be a function of \(x\) as well as \(z\), because we already
+    know \(g\) must be independent of \(x\).)
+    <br> Then we substitute this \(g\) into \(f\) to get:
+    \[
+    f=x\sin(y)+\cos(x)+x\cos(z)+y\,e^z+e^y+h(z)
+    \]
+  </li>
+  <li>
+    Finally, this function \(f\) must also satisfy (3). We take its
+    \(z\)-derivative:
+    \[
+    \partial_z f=-x\sin(z)+y\,e^z+\dfrac{dh}{dz}
+    \]
+    Comparing this to (3) we find:
+    \[
+    \dfrac{dh}{dz}=1
+    \]
+    So:
+    \[
+    h=z+C
+    \]
+    where \(C\) is really constant. Substituting this back into \(f\), we
+    find the most general scalar potential is:
+    \[
+    f=x\sin(y)+\cos(x)+x\cos(z)+y\,e^z+e^y+z+C
+    \]
+  </li>
+</ol>
+
+        <div class="rule" id="scalpotex"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find all scalar potentials for:
+    \[
+    \vec F=\left\langle 2xy^3+z^3,3x^2y^2-3y^2z,3xz^2+4z^3-y^3\right\rangle
+    \]
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+    <button class="toggle has-check" data-toggle="CkX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(f=x^2y^3+xz^3-y^3z+z^4+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    We need to find a function \(f\) satisfying \(\vec\nabla f=\vec F\), or:
+    \[\begin{aligned}
+    \partial_x f&=2xy^3+z^3\quad&&\text{(1)} \\
+    \partial_y f&=3x^2y^2-3y^2z\quad&&\text{(2)} \\
+    \partial_z f&=3xz^2+4z^3-y^3\quad&&\text{(3)}
+    \end{aligned}\]
+    <!-- \[\begin{aligned}
+    \partial_x f&=2xy^3+z^3\tag{1} \\
+    \partial_y f&=3x^2y^2-3y^2z\tag{2} \\
+    \partial_z f&=3xz^2+4z^3-y^3\tag{3}
+    \end{aligned}\] -->
+    We solve these successively.
+  </p>
+  <ol>
+    <li>
+      We first take the \(x\)-antiderivative of (1) to get:
+      \[
+      f=x^2y^3+xz^3+g(y,z)
+      \]
+    </li>
+    <li>
+      Next, we take the \(y\)-derivative of this:
+      \[
+      \partial_y f=3x^2y^2+\partial_y g
+      \]
+      and compare it to (2) to  get:
+      \[
+      \partial_y g=-3y^2z
+      \]
+      We take the \(y\)-antiderivative of this to get:
+      \[
+      g=-y^3z+h(z)
+      \]
+      and substitute this \(g\) into \(f\) to get:
+      \[
+      f=x^2y^3+xz^3-y^3z+h(z)
+      \]
+    </li>
+    <li>
+      Finally, we take the \(z\)-derivative:
+      \[
+      \partial_z f=3xz^2-y^3+\dfrac{dh}{dz}
+      \]
+      and compare it to (3) to get:
+      \[
+      \dfrac{dh}{dz}=4z^3
+      \]
+      So:
+      \[
+      h=z^4+C
+      \]
+      Substituting this back into \(f\), we
+      find the most general scalar potential is:
+      \[
+      f=x^2y^3+xz^3-y^3z+z^4+C
+      \]
+    </li>
+  </ol>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX4">
+  <p>
+    We check by computing the gradient of the scalar potential:
+    \[\begin{aligned}
+    \text{grad}f
+    &=\vec\nabla(x^2y^3+xz^3-y^3z+z^4) \\
+    &=\left\langle 2xy^3+z^3,3x^2y^2-3y^2z,3xz^2-y^3+4z^3\right\rangle
+    \end{aligned}\]
+    which is the vector field we started with.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Non-Uniqueness of the Scalar Potential</h3>
+<p>
+  The previous example and exercise demonstrate the following:
+</p>
+<p class="prop" data-title="A Scalar Potential is Unique up to a Constant">
+  If \(f\) and \(g\) are both scalar potentials for a vector field \(\vec F\),
+  then \(f=g+C\) for some constant \(C\).
+  <br>
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    Since \(\vec F=\vec\nabla f=\vec\nabla g\), we have \(\vec\nabla(f-g)=0\).
+    So the \(x\), \(y\) and \(z\) partial derivatives of \(f-g\) are all \(0\).
+    This says \(f-g\) must be a constant \(C\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

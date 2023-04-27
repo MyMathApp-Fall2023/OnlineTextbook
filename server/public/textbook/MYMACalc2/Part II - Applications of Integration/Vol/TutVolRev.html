@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>g1. Tutorial | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Strategy.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topicT1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>g1. Tutorial</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="tutorial">
+  <h3>Volume of Revoution</h3>
+  <div class="column">
+    <div data-col-width="25%">
+      <button id="BNewProblem" class="btn-newproblem">New Problem</button>
+    </div>
+    <div data-col-width="50%" class="tutorial-message" style="padding: 10px 5px">
+      <textarea id="reply" rows=2 readonly style="height: 45px">
+        To get started, click New Problem.
+      </textarea>
+    </div>
+  </div>
+
+  <div style="margin: 0 auto;">
+    <div id="TextNewProblemX" style="margin-left: 30px;" hidden>
+      The region above
+      &ensp;<div class="tutorial-display no-border" id='lowerX' style="display: inline">\( f(x) \)</div>&ensp;
+      , below
+      &ensp;<div class="tutorial-display no-border" id='upperX' style="display: inline">\( f(x) \)</div>&ensp;
+      , and between
+      &ensp;<div class="tutorial-display no-border" id='startX' style="display: inline">\( x= \)</div>&ensp;
+      and
+      &ensp;<div class="tutorial-display no-border" id='finishX' style="display: inline">\( x= \)</div>&ensp;
+      is rotated about the
+      &ensp;<div class="tutorial-display no-border" id='axisX' style="display: inline">\( x \)</div>&ensp;
+      axis. Find the volume swept out.
+    </div>
+  </div>
+  <div style="margin: 0 auto;">
+    <div id="TextNewProblemY" style="margin-left: 30px;" hidden>
+      The region to the right of
+      &ensp;<div class="tutorial-display no-border" id='lowerY' style="display: inline">\( f(y) \)</div>&ensp;
+      , to the left of
+      &ensp;<div class="tutorial-display no-border" id='upperY' style="display: inline">\( f(y) \)</div>&ensp;
+      , and between
+      &ensp;<div class="tutorial-display no-border" id='startY' style="display: inline">\( y= \)</div>&ensp;
+      and
+      &ensp;<div class="tutorial-display no-border" id='finishY' style="display: inline">\( y= \)</div>&ensp;
+      is rotated about the
+      &ensp;<div class="tutorial-display no-border" id='axisY' style="display: inline">\( x \)</div>&ensp;
+      axis. Find the volume swept out.
+    </div>
+  </div>
+
+  <hr width="80%">
+
+  <div class="column" style="align-items: flex-start;">
+    <div style="max-width: 400px; min-width: 400px;">
+      Animation:
+      <button id="BPlay" class="btn-primary"><img src="../../../graphics/play.png"></img></button>
+      <button id="BPause" class="btn-primary" hidden><img src="../../../graphics/pause.png"></img></button>
+      <button id="BReverse" class="btn-primary"><img src="../../../graphics/arrowleft.png"></img></button>
+      <button id="BForward" class="btn-primary" hidden><img src="../../../graphics/arrowright.png"></img></button>
+      <button id="BStepR" class="btn-primary"><img src="../../../graphics/arrowstepleft.png"></button>
+      <button id="BStepF" class="btn-primary"><img src="../../../graphics/arrowstepright.png"></button><br><br>
+      <button id="BRevolve" class="btn-primary"><img src="../../../graphics/play.png">&ensp;Revolve</button>
+      <button id="BSlice" class="btn-primary"><img src="../../../graphics/play.png">&ensp;Slice</button>
+      <button id="BAccum" class="btn-primary"><img src="../../../graphics/play.png">&ensp;Accumulate</button><br><br>
+      <canvas id="Figure" style="width: 300px; height: 300px; background-color: #ff0000;"></canvas>
+    </div>
+    <div>
+      Step 1: Select the method to use.
+      <div style="margin: 15px 30px">
+        <input type="radio" name="INtype" id="INtype1" value="Disk"></input>
+        <label for="INtype1">Disk</label>
+        <input type="radio" name="INtype" id="INtype2" value="Washer"></input>
+        <label for="INtype2">Washer</label>
+        <input type="radio" name="INtype" id="INtype3" value="Cylinder"></input>
+        <label for="INtype3">Cylinder</label><br>
+      </div>
+      <div style="margin: 15px 30px">
+        <button id="Hinttype" class="btn-hint">Hint</button>
+        <button id="Checktype" class="btn-check">Check</button>
+        <textarea id="MRtype" class="tutorial-feedback" readonly></textarea>
+        <button id="Showtype" class="btn-show">Show</button>
+      </div>
+
+      Step 2: Enter the integral for the volume.
+      <div class="column">
+        <div data-col-width="10%">
+          \(\displaystyle V = \)
+        </div>
+        <div data-col-width="40%" class="tutorial-input">
+          <input type="text" id="INform" placeholder="integral(A(x), x, a, b)" />
+        </div>
+        <div data-col-width="5%"></div>
+        <div data-col-width="40%" id="OUTform" class="tutorial-display">
+          \[ \]
+        </div>
+      </div>
+      <div style="margin: 15px 30px">
+        <button id="Hintform" class="btn-hint">Hint</button>
+        <button id="Checkform" class="btn-check">Check</button>
+        <textarea id="MRform" class="tutorial-feedback" readonly></textarea>
+        <button id="Showform" class="btn-show">Show</button>
+      </div>
+      <div style="margin: 15px 30px">
+        <button id="Bsimplify" class="btn-primary" disabled>Simplify</button>
+        <button id="Bfactor" class="btn-primary" disabled>Factor</button>
+        <button id="Bexpand" class="btn-primary" disabled>Expand</button>
+      </div>
+
+      Step 3: Compute the volume of the solid
+      <div class="column">
+        <div data-col-width="10%">
+          \(V = \)
+        </div>
+        <div data-col-width="40%" class="tutorial-input">
+          <input type="text" id="INvol" />
+        </div>
+        <div data-col-width="5%"></div>
+        <div data-col-width="40%" id="OUTvol" class="tutorial-display">
+          \[ \]
+        </div>
+      </div>
+      <div style="margin: 15px 30px">
+        <button id="Hintvol" class="btn-hint">Hint</button>
+        <button id="Checkvol" class="btn-check">Check</button>
+        <textarea id="MRvol" class="tutorial-feedback" readonly></textarea>
+        <button id="Showvol" class="btn-show">Show</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+
+    
+      
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+<script src="../../../scripts/mathlex.min.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="./scripts/VolofRev.js"></script>
+<script src="./scripts/OrbitControls.js"></script>
+
+
+</body>
+</html>

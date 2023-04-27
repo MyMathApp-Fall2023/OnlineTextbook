@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>f. Repeated Quadratic Factors | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Decomp.html#examples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2 id="eg">a2. General Decompositions</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="Poly.html">Removing a Polynomial Part</a></li>
+    <br>
+    <li><a href="Lin.html">Non-Repeated Linear Factors</a></li>
+    <li><a href="Lin2.html">Repeated Linear Factors</a></li>
+    <br>
+    <li><a href="Quad.html">Non-Repeated Quadratic Factors</a></li>
+    <li class="active"><a href="Quad2.html">Repeated Quadratic Factors</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>f. Repeated Quadratic Factors</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p class="example" data-number="1">
+  Find the partial fraction decomposition for
+  \(\dfrac{100}{(x-1)\left((x-2)^2+3^2\right)^2}\).
+</p>
+<p class="sol">
+  The denominator is already factored and the square has already been
+  completed in the quadratic term. So we write the generic partial fraction
+  expansion:
+  \[
+  \dfrac{100}{(x-1)\left((x-2)^2+3^2\right)^2}
+  =\dfrac{A}{x-1}+\dfrac{B(x-2)+C}{(x-2)^2+3^2}
+  +\dfrac{D(x-2)+E}{\left((x-2)^2+3^2\right)^2}
+  \]
+  Notice that we include a quadratic denominator with each power up to the
+  power which appears in the original denominator. Next we clear the
+  denominators:
+  \[\begin{aligned}
+  100=&A\left((x-2)^2+3^2\right)^2+(B(x-2)+C)(x-1)\left((x-2)^2+3^2\right) \\
+  &+(D(x-2)+E)(x-1)
+  \end{aligned}\]
+  To find the coefficients we plug in numbers. The two obvious numbers are
+  \(x=1,2\). We also use \(x=0,-1,-2\):
+</p>
+<ul>
+  <li>
+    \(x=1\):
+    \[
+    100=A(10)^2 \qquad \Longrightarrow \qquad  A=1
+    \]
+    From here on, we use this in the other equations.
+  </li>
+  <li>
+    \(x=2\):
+    \[\begin{aligned}
+    100&=A(9)^2+(C)(1)(9)+(E)(1)=81+9C+E \\
+    &\Longrightarrow \qquad 9C+E=9
+    \end{aligned}\]
+  </li>
+  <li>
+    \(x=0\):
+    \[\begin{aligned}
+    100&=A(13)^2+(-2B+C)(-1)(13)+(-2D+E)(-1) \\
+    &=169+26B-13C+2D-E \\
+    &\Longrightarrow \qquad 26B-13C+2D-E=-69
+    \end{aligned}\]
+  </li>
+  <li>
+    \(x=-1\):
+    \[\begin{aligned}
+    100&=A(18)^2+(-3B+C)(-2)(18)+(-3D+E)(-2) \\
+    &=324+108B-36C+6D-2E \\
+    &\Longrightarrow \qquad 108B-36C+6D-2E=-224
+    \end{aligned}\]
+  </li>
+  <li>
+    \(x=-2\):
+    \[\begin{aligned}
+    100&=A(25)^2+(-4B+C)(-3)(25)+(-4D+E)(-3) \\
+    &=625+300B-75C+12D-3E \\
+    &\Longrightarrow \qquad 300B-75C+12D-3E=-525
+    \end{aligned}\]
+  </li>
+</ul>
+<p>
+  This gives \(4\) equations for the \(4\) unknowns \(B\), \(C\), \(D\) and \(E\).
+  \[\begin{aligned}
+  9C+E &=19\qquad\qquad\qquad \text{(*)} \\
+  26B-13C+2D-E &=-69 \\
+  54B-18C+3D-E &=-112 \\
+  100B-25C+4D-E &=-175
+  \end{aligned}\]
+  We solve (*) for \(E=19-9C\) and substitute into the other \(3\) equations.
+  \[\begin{aligned}
+  26B-4C+2D &=-50 \\
+  54B-9C+3D &=-93 \\
+  100B-16C+4D &=-156
+  \end{aligned}\]
+  These simplify to
+  \[\begin{aligned}
+  13B-2C+D &=-25\qquad\qquad \text{(**)} \\
+  18B-3C+D &=-31 \\
+  25B-4C+D &=-39
+  \end{aligned}\]
+  We solve (**) for \(D=-25-13B+2C\) and substitute into the other \(2\) equations.
+  \[\begin{aligned}
+  5B-C &=-6\qquad\qquad \text{(***)} \\
+  12B-2C &=-14
+  \end{aligned}\]
+  We solve (***) for \(C=5B+6\) and substitute into the other equation.
+  \[
+  B=-1
+  \]
+  Substituting back we find the coefficients are:
+  \[
+  A=1\qquad B=-1\qquad C=1\qquad D=-10\qquad E=10
+  \]
+  So the partial fraction expansion is
+  \[
+  \dfrac{100}{(x-1)\left((x-2)^2+3^2\right)^2}
+  =\dfrac{1}{x-1}+\dfrac{-(x-2)+1}{(x-2)^2+3^2}
+  +\dfrac{-10(x-2)+10}{\left((x-2)^2+3^2\right)^2}
+  \]
+  <span style="color: magenta">Don't simplify! </span>
+  This is the form you will need for the quadratic terms when you integrate.
+</p>
+
+        <div class="rule" id="ex"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the partial fraction expansion for \(\dfrac{1}{x(x^2+1)^2}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+    <button class="toggle has-check" data-toggle="Ck1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Expand the right hand side instead of plugging in numbers.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\dfrac{1}{x(x^2+1)^2}
+    =\dfrac{1}{x}-\dfrac{x}{x^2+1}-\dfrac{x}{(x^2+1)^2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    The generic expansion is
+    \[
+    \dfrac{1}{x(x^2+1)^2}
+    =\dfrac{A}{x}+\dfrac{Bx+C}{x^2+1}+\dfrac{Dx+E}{(x^2+1)^2}
+    \]
+    We clear the denominator:
+    \[
+    1=A(x^2+1)^2+(Bx+C)x(x^2+1)+(Dx+E)x
+    \]
+    This time we expand the right hand side and collect terms:
+    \[\begin{aligned}
+    1&=Ax^4+2Ax^2+A+Bx^4+Bx^2+Cx^3+xC+Dx^2+xE \\
+     &=(A+B)x^4+Cx^3+(2A+B+D)x^2+(C+E)x+A
+    \end{aligned}\]
+    Next we equate coefficients of each power of \(x\):
+    \[
+    A+B=0 \qquad C=0 \qquad 2A+B+D=0 \qquad C+E=0 \qquad A=1
+    \]
+    So the coefficients are:
+    \[
+    A=1 \qquad B=-1 \qquad C=0 \qquad D=-1 \qquad E=0
+    \]
+    and the partial fraction expansion is
+    \[
+    \dfrac{1}{x(x^2+1)^2}
+    =\dfrac{1}{x}-\dfrac{x}{x^2+1}-\dfrac{x}{(x^2+1)^2}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="Ck1">
+  <p>
+    We check by adding up the right side:
+    \[\begin{aligned}
+    \dfrac{1}{x}-\dfrac{x}{x^2+1}-\dfrac{x}{(x^2+1)^2}
+    &=\dfrac{(x^2+1)^2-x^2(x^2+1)-x^2}{x(x^2+1)^2} \\
+    &=\dfrac{1}{x(x^2+1)^2}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

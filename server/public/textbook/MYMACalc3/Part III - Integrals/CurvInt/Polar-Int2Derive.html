@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Derivation | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Polar-Int2.html#Typertheta" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>a. Integrating in Polar Coordinates</h2>
+<h2>3. Integral over a Non-Rectangular Polar Region</h2>
+
+
+      
+      <h2>a. Derivation</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<h4>
+  We start with regions of Type \(r\):
+</h4>
+<p class="thm" data-title="Integral over a Type \(r\) Region">
+  If \(R\) is a Type \(r\) region with \(a \le r \le b\) and
+  \(g(r) \le \theta \le h(r)\), then
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\int_a^b\int_{g(r)}^{h(r)} f(r,\theta)\,r\,d\theta\,dr
+  \]
+  This is just the iterated integral computed by holding \(r\) fixed
+  while doing the \(\theta\) integral and then integrating the resulting
+  function over \(r\).
+</p>
+<big>Add plots.</big>
+<p class="proof">
+  We want to compute \(\displaystyle \iint\limits_R f(r,\theta)\,dA\)
+  over a Type \(r\) region \(R\) satisfying \(a \le r \le b\) and
+  \(g(r) \le \theta \le h(r)\). We partition the rectangle \(R\) into
+  subregions in two steps.
+</p>
+<div class="column">
+  <div>
+    <p>
+      <strong><big>Step 1.</big></strong> &emsp;
+      First partition the \(r\) interval into subintervals using the
+      partition points:
+      \[
+      r_0=a \lt r_1 \lt r_2 \lt \cdots \lt r_{p-1} \lt r_p=b
+      \]
+      and pick an evaluation point \(r_i^*\) in each subinterval
+      \([r_{i-1},r_i]\).
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/PolarIntTyperStep1.jpg" alt="PolarIntTyperStep1">
+    </figure>
+  </div>
+</div>
+<div class="column">
+  <div>
+    <p>
+      <strong><big>Step 2.</big></strong> &emsp;
+      Then for each subinterval \([r_{i-1},r_i]\), partition the
+      \(\theta\) interval \([g(r_i^*),h(r_i^*)]\) using the partition points
+      \[
+      \theta_{i,0}
+      =g(r_i^*) \lt \theta_{i,1} \lt \theta_{i,2} \lt \cdots \lt \theta_{i,q-1} \lt \theta_{i,q}
+      =h(r_i^*)
+      \]
+      and pick an evaluation point \(\theta_{ij}^*\) in the subinterval
+      \([\theta_{i,j-1},\theta_{i,j}]\).
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/PolarIntTyperStep1.jpg" alt="PolarIntTyperStep2">
+    </figure>
+  </div>
+</div>
+<p>
+  Then the subregions are the polar rectangles
+  \(R_{ij}=[r_{i-1},r_i]\times[\theta_{i,j-1},\theta_{i,j}]\)
+  which have area
+  \(\Delta A_{ij}
+  =\bar r_i\Delta r_i\Delta\theta_{ij}
+  =\dfrac{r_i+r_{i-1}}{2}(r_i-r_{i-1})(\theta_{i,j}-\theta_{i,j-1})\),
+  and evaluation points \((r_i^*,\theta_{i,j}^*)\).
+</p>
+<p class="remark">
+  Notice that all the values of \(\theta\) carry the double index \(ij\)
+  instead of the single index \(j\) because these values depend on the \(r\)
+  subinterval \([r_{i-1},r_i]\) since the endpoints \(g(r_i^*)\) and
+  \(h(r_i^*)\) are not constant; they depend on \(r_i^*\).
+</p>
+<p>
+  <strong><big>Step 3.</big></strong> &emsp;
+  Then the double integral of \(f(r,\theta)\) over the region \(R\)
+  is the limit of Riemann sums:
+  \[
+  \iint\limits_R f(x,y)\,dA
+  =\lim_{\begin{aligned}&\scriptstyle\quad p\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta r_i\rightarrow0\end{aligned}}
+   \lim_{\begin{aligned}&\scriptstyle\quad q\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta \theta_{ij}\rightarrow0\end{aligned}}
+  \,\sum_{i=1}^p\sum_{j=1}^q
+  f(r_i^*,\theta_{i,j}^*)\,r_i^*\,\Delta r_i\,\Delta\theta_{ij}
+  \]
+  Since the limit of a sum is the sum of the limits, we can write this as
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\lim_{\begin{aligned}&\scriptstyle\quad p\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta r_i\rightarrow0\end{aligned}}
+  \,\sum_{i=1}^p \left(
+  \lim_{\begin{aligned}&\scriptstyle\quad q\rightarrow\infty \\
+                       &\scriptstyle\text{max}\Delta \theta_{ij}\rightarrow0\end{aligned}}
+  \,\sum\limits_{j=1}^q
+  f(r_i^*,\theta_{i,j}^*)\Delta\theta_{ij}
+  \right)\,r_i^*\,\Delta r_i
+  \]
+  Notice that we have also factored the \(r_i^*\,\Delta r_i\) out of the sum
+  \(j=1,\ldots,q\) because it is the same for all terms and also pulled it out
+  of the limit \(q\rightarrow\infty\) since it is independent of \(q\). Now
+  the quantity in the parentheses can be recognized as the single
+  \(\theta\)-integral
+  \(\displaystyle \int_{g(r_i^*)}^{h(r_i^*)} f(r_i^*,\theta)\,d\theta\). So
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\lim_{\begin{aligned}&\scriptstyle\quad p\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta r_i\rightarrow0\end{aligned}}
+  \sum_{i=1}^p \left(
+  \int_{g(r_i^*)}^{h(r_i^*)} f(r_i^*,\theta)\,d\theta
+  \right)r_i^*\Delta r_i
+  \]
+  Finally, since
+  \(\displaystyle \int_{g(r_i^*)}^{h(r_i^*)} f(r_i^*,\theta)\,d\theta\,r_i^*\)
+  is itself a function of \(r\) evaluated at \(r=r_i^*\), the remaining
+  limit of a sum is also an integral. So
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\int_a^b\int_{g(r)}^{h(r)} f(r,\theta)\,r\,d\theta\,dr
+  \]
+</p>
+<p class="remark">
+  This is just the iterated integral computed by holding \(r\) fixed while
+  doing the \(\theta\) integral and then integrating the resulting function
+  over \(r\).
+</p>
+<p class="remark">
+  The main difference between this derivation and that for a
+  <a href="Polar-Int.html" title="Return using the Back button.">
+  polar rectangle</a> is that the order of integration cannot be
+  reversed because \(\Delta\theta_{ij}\) cannot be factored out of the
+  sum \(i=1,\ldots,p\) because it depends on \(i\).
+</p>
+
+        <div class="rule" id="Typetheta"></div>
+
+<h4>
+  We now turn to regions of Type \(\theta\):
+</h4>
+<p class="thm" data-title="Integral over a Type \(\theta\) Region">
+  If \(R\) is a Type \(\theta\) region with \(\alpha \le \theta \le \beta\)
+  and \(g(\theta) \le r \le h(\theta)\), then
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\int_\alpha^\beta\int_{g(\theta)}^{h(\theta)} f(r,\theta)\,r\,dr\,d\theta
+  \]
+  This is just the iterated integral computed by holding \(\theta\) fixed
+  while doing the \(r\) integral and then integrating the resulting function
+  over \(\theta\).
+</p>
+<p>
+  For a Type \(\theta\) region, the above derivation can be repeated with the
+  rolls of \(r\) and \(\theta\) interchanged.
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7. Application - Work | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ProjScalar.html" title="Previous">&lArr;</a></li>
+      <li><a href="Lines.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Dot Product</h2>
+
+
+      
+      <h2>7. Application - Work</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+    	In a mechanical system, the work done to move an object a distance \(D\)
+      using a force \(F\) in the direction of motion is
+  		\[
+      W=FD
+      \]
+    	Here \(D\) is the length of the displacement vector, \(\vec D\), and
+      \(F\) is the magnitude of the force, \(\vec F\).
+  	</p>
+  </div>
+  <div class="center" data-col-width="40%">
+	  <img src="graphics/ApplDotWork1.jpg" alt="ApplDotWork1"/>
+  </div>
+</div>
+
+<div class="column">
+  <div data-col-width="60%">
+  	<p>
+    	If the force, \(\vec F\), is not in the direction of motion,
+      \(\vec D\), only the component (or scalar projection) in the direction
+      of motion contributes to the work:
+      \[
+      W=F_{\parallel}D
+      \]
+      where
+      \[
+      F_{\parallel}=\text{comp}_{\vec D}\vec F
+      =\dfrac{\vec F\cdot\vec D}{|\vec D|}
+      \]
+      Since \(D=|\vec D|\), the work is:
+    	\[
+      W=\dfrac{\vec F\cdot\vec D}{|\vec D|}D
+      =\vec F\cdot\vec D
+      \]
+  	  i.e. the dot product of the force and the displacement. You can
+      compute the dot product using either the algebraic or the geometric formula.
+  	</p>
+  </div>
+  <div class="center" data-col-width="40%">
+	  <img src="graphics/ApplDotWork2.jpg" alt="ApplDotWork2"/>
+  </div>
+</div>
+
+      	<div class="rule"></div>
+
+<p class="example" data-number="1">
+  A girl pulls a wagon \(5\) meters by applying a force of \(6\) Newtons at
+  an angle of \(30^\circ\)above the horizontal. Find the work she does.
+</p>
+<div class="center">
+  <figure>
+    <video src="graphics/EgDotWorkWagon.mp4" autoplay controls loop>
+      Sorry, your browser does not support video :/
+    </video>
+  </figure>
+</div>
+<p class="sol">
+	The force vector given is \(6\) Newtons at \(\theta=30^\circ\). The distance
+  vector given is \(5\) meters in the positive \(x\) direction. Therefore, we
+  can find the work done on the wagon by computing the dot product
+  \(\vec F\cdot\vec D\). Using the geometric formula, we find:
+	\[\begin{aligned}
+	W&=\vec F\cdot\vec D
+  =|\vec F|\,|\vec D|\cos\theta \\
+  &=6\,\text{N}\cdot5\,\text{m}\cdot\cos30^\circ \\
+  &=30\cdot\dfrac{1}{2}\sqrt{3}\,\text{N-m}
+	=15\sqrt{3}\,\text{J} \\
+  &\approx25.98\,\text{J}
+	\end{aligned}\]
+</p>
+
+      	<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  	A \(30\) lb young boy slides down a sliding board from \((0,6)\) to
+    \((4,0)\), measured in ft. So the force of gravity is
+    \(\vec F_g=\left\langle 0,-30\right\rangle\) lb. At the same time, his father
+    has his hand on his chest and slows him down with the force
+    \(\vec F_\text{dad}=\left\langle -5,10\right\rangle\) lb.
+    Find the work done by gravity and the total work done on the boy.
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    The work done by gravity is:
+    \(W_g=180\,\text{ft-lb}\).
+    <br/>
+    The total work is:
+    \(W=100\,\text{ft-lb}\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The total force is:
+  	\[\begin{aligned}
+  	\vec F=\vec F_g+\vec F_\text{dad}
+    =\left\langle0,-30\right\rangle+\left\langle -5,10\right\rangle \\
+    &=\left\langle-5,-20\right\rangle\,\text{lb}
+  	\end{aligned}\]
+    The displacement is:
+    \[
+    \vec D=(4,0)-(0,6)=\left\langle4,-6\right\rangle\,\text{ft}
+    \]
+    So the work done by gravity is:
+  	\[\begin{aligned}
+    W_g&=\vec F_g\cdot\vec D
+    =\left\langle 0,-30\right\rangle\cdot\left\langle 4,-6\right\rangle \\
+    &=180\,\text{ft-lb}
+  	\end{aligned}\]
+    And the total work is:
+  	\[\begin{aligned}
+    W&=\vec F\cdot\vec D
+    =\left\langle -5,-20\right\rangle\cdot\left\langle 4,-6\right\rangle \\
+    &=-20+120=100\,\text{ft-lb}
+  	\end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

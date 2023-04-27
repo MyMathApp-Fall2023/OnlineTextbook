@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Geometric Interpretation of Cross Products | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CrossRHR.html" title="Previous">&lArr;</a></li>
+      <li><a href="Area.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>5. Geometric Interpretation of Cross Products</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column" data-col-width="60%">
+  <p>
+  	Like the dot product, there is also a geometric description of the
+    cross product in terms of the magnitudes of the vectors	\(\vec u\) and
+    \(\vec v\) and the angle \(\theta\) between them. Unlike the dot
+    product, which is a scalar, the cross product	is a vector. So we need
+    to give a geometrical description of both its magnitude and direction.
+	</p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/DefCrossGeom.gif" alt="DefCrossGeom">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="greybox column">
+  <div data-col-width="60%">
+    <p class="thm" data-title="Geometric Description of the Cross Product">
+    Let \(\vec u\) and \(\vec v\) be arbitrary vectors and let \(\theta\)
+    be the angle between them. Then,
+    </p>
+    <ol>
+      <li>
+        The <span class="hl">magnitude of the cross product</span>
+        may be expressed as
+      	\[
+      	|\vec u\times\vec v|=|\vec u|\,|\vec v|\sin\theta
+      	\]
+      	<button class="toggle" data-toggle="Proof1">
+      	Proof of the  Magnitude Formula</button>
+      </li>
+    </ol>
+  </div>
+  <div data-col-width="40%">
+    &emsp; &emsp; &emsp;
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    <a href="CrossProp.html#Pythag" title="Return using the Back button.">Recall</a>
+    the <span class="hl">Pythagorean Identity for Dot and Cross Products</span> :
+    \[
+    (\vec u\cdot\vec v)^2+|\vec u\times\vec v|^2
+    =|\vec u|^2|\vec v|^2
+    \]
+    Solve for \(|\vec u\times\vec v|^2\) and substitute the geometric formula
+    for the dot product, \(\vec u\cdot\vec v=|\vec u|\,|\vec v|\cos\theta\):
+    \[\begin{aligned}
+    |\vec u\times\vec v|^2
+    &=|\vec u|^2|\vec v|^2-(\vec u\cdot\vec v)^2 \\
+    &=|\vec u|^2|\vec v|^2-|\vec u|^2|\vec v|^2\cos^2\theta
+    \end{aligned}\]
+    Next factor out the \(|\vec u|^2|\vec v|^2\) and use the
+    Pythagorean identity for trig:
+    \[\begin{aligned}
+    |\vec u\times\vec v|^2
+    &=|\vec u|^2|\vec v|^2(1-\cos^2\theta) \\
+    &=|\vec u|^2|\vec v|^2\sin^2\theta
+    \end{aligned}\]
+    Now take the square root of both sides\(:\)
+    \[
+    |\vec u\times\vec v|=|\vec u|\,|\vec v|\,|\sin\theta|
+    \]
+    Note, although the lengths \(|\vec u|\), \(|\vec v|\) and
+    \(|\vec u\times\vec v|\) are always non-negative,
+    \(\sin\theta\) may not be. So, we need an absolute value on
+    \(\sin\theta\). However, the angle between two vectors is always
+    between \(0\) (when they are in the same direction) and \(\pi\)
+    (when they are in opposite directions), and for these values
+    \(\sin\theta \ge 0\).
+    <button class="toggle" data-toggle="note1">Look at a plot.</button>
+  </p>
+  <div class="toBeToggled" data-toggle="note1">
+    <div class="center">
+      <img src="graphics/NoteSin.jpg" alt="NoteSin">
+    </div>
+  </div>
+  <p>
+    Consequently, we, in fact, don't need the absolute value. Therefore,
+    \[
+    |\vec u\times\vec v|
+    =|\vec u|\,|\vec v|\sin\theta
+    \]
+  </p>
+</div>
+<div class="greybox column">
+  <div data-col-width="60%">
+    <ol start="2">
+      <li>
+        The <span class="hl">direction of the cross product</span>
+        \(\vec u\times\vec v\) is perpendicular to \(\vec u\) and to
+        \(\vec v\) and given by the <span class="hl">right hand rule</span>.
+        <br>
+      	<button class="toggle" data-toggle="Proof2">
+      	Proof of the Direction Rule</button>
+      </li>
+    </ol>
+    <p class="center greenbig">
+      Be sure to read the two proofs!
+    </p>
+  </div>
+  <div data-col-width="40%">
+    <img src="graphics/DefCrossGeomDir.gif" alt="DefCrossGeomDir">
+  </div>
+</div>
+<!-- class="list-outside" class="center"  -->
+<div class="toBeToggled drop-proof" data-toggle="Proof2">
+  <p>
+    <a href="TripleAlg.html#triple2equalzero" title="Return using the Back button.">
+    Recall</a> the Triple Product is zero if any two vectors are equal. Consequently:
+    \[
+    \vec u\cdot\vec u\times\vec v=0 \qquad \text{and} \qquad
+    \vec v\cdot\vec u\times\vec v=0
+    \]
+  </p>
+  <p>
+    These equations say \(\vec u\times\vec v\) is perpendicular to both
+    \(\vec u\) and \(\vec v\).
+  </p>
+  <p>
+    To see that the cross product obeys the RHR,
+    <a href="CrossRHR.html#RHRijk" title="Return using the Back button.">
+    recall</a> that \(\hat\imath\times\hat\jmath=\hat k\) satisfies the RHR.
+  </p>
+  <p>
+    Now let \(\hat\imath\) gradually rotate (and stretch) into \(\vec u\).
+    Then \(\hat\imath\times\hat\jmath\) will gradually rotate
+    (and stretch) into \(\vec u\times\hat\jmath\) continuously
+    satisfing the RHR.
+  </p>
+  <p>
+    Finally let \(\hat\jmath\) gradually rotate (and stretch) into \(\vec v\).
+    Then \(\vec u\times\hat\jmath\) will gradually rotate (and stretch)
+    into \(\vec u\times\vec v\) continuously satisfing the RHR.
+  </p>
+</div>
+
+        <div class="rule" id="PythagThm"></div>
+
+<p class="remark" data-title="Justification of the name Pythagorean Identity">
+  <br>The
+  <span class="hl">Pythagorean Identity for Dot and Cross Products</span>
+  says:
+  \[
+  (\vec u\cdot\vec v)^2+|\vec u\times\vec v|^2
+  =|\vec u|^2|\vec v|^2
+  \]
+  Substitute the geometric formulas for the dot product and the magnitude
+  of the cross product:
+  \[
+  \vec u\cdot\vec v=|\vec u|\,|\vec v|\cos\theta
+  \qquad \text{and} \qquad
+  |\vec u\times\vec v|=|\vec u|\,|\vec v|\sin\theta
+  \]
+  into the Pythagorean identity:
+  \[
+  |\vec u|^2|\vec v|^2\cos^2\theta+|\vec u|^2|\vec v|^2\sin^2\theta
+  =|\vec u|^2|\vec v|^2
+  \]
+  So we see that the
+  <span class="hl">Pythagorean Identity for Dot and Cross Products</span>
+  is just \(|\vec u|^2|\vec v|^2\)
+  times the <span class="hl">Pythagorean Identity for Sine and Cosine</span>:
+  \[
+  \cos^2\theta+\sin^2\theta=1
+  \]
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

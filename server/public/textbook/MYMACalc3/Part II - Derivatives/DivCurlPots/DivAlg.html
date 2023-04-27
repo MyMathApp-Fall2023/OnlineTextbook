@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Algebraic Definition of Divergence | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DelOperator.html" title="Previous">&lArr;</a></li>
+      <li><a href="DivGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. The Divergence Operator</h2>
+
+
+      
+      <h2>1. Algebraic Definition of Divergence</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  When we compute the dot product of two vectors, we multiply corresponding
+  components and add them up. When the first of those two vectors is a
+  vector differential operator and the second is a vector field, multiplication
+  is replaced by differentiation, i.e. each component of the differential
+  operator differentiates the corresponding component of the vector field and
+  we add them up.
+</p>
+<p class="def" data-title="Divergence">
+  The <span class="defword">divergence</span> of a vector field
+  \(\vec F=\left\langle F_1, F_2, F_3 \right\rangle\),
+  is the function
+  \[\begin{aligned}
+  \text{div} \vec F
+  &=\vec\nabla\cdot\vec F
+  =\left\langle
+  \dfrac{\partial}{\partial x},
+  \dfrac{\partial}{\partial y},
+  \dfrac{\partial}{\partial z}\right\rangle
+  \cdot\left\langle F_1, F_2, F_3 \right\rangle \\[2pt]
+  &=\dfrac{\partial F_1}{\partial x}
+   +\dfrac{\partial F_2}{\partial y}
+   +\dfrac{\partial F_3}{\partial z}
+  =\partial_x F_1+\partial_y F_2+\partial_z F_3
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  For \(\vec F=\left\langle x^2y,y^2+z^2,z^3-x^2z\right\rangle\),
+  find the divergence \(\vec\nabla\cdot\vec F\).
+</p>
+<p class="sol">
+  We use the definition of the divergence:
+  \[\begin{aligned}
+  \vec\nabla\cdot\vec F
+  &=\dfrac{\partial }{\partial x}(x^2y)
+   +\dfrac{\partial }{\partial y}(y^2+z^2)
+   +\dfrac{\partial }{\partial z}(z^3-x^2z) \\
+  &=2xy+2y+3z^2-x^2
+\end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<h3> Fluid Velocity Interpretation</h3>
+<p>
+  If the vector field is the velocity field of a fluid, \(\vec V\), then
+  the divergence of the velocity field, \(\vec\nabla\cdot\vec V\),
+  measures how much the fluid is spreading out at each point.
+  (See the <a href="DivGeom.html">next page.</a>)
+  If \(\vec\nabla\cdot\vec V=0\),  we say vector field is
+  <span class="defword">divergence-free</span> and the fluid is
+  <span class="defword">incompressible</span>. At a point where
+  \(\vec\nabla\cdot\vec V \gt 0\), we say the fluid is
+  <span class="defword">diverging</span> or
+  <span class="defword">expanding</span> and the point is a
+  <span class="defword">source</span>. At a point where
+  \(\vec\nabla\cdot\vec V \lt 0\), we say the fluid is
+  <span class="defword">converging</span> or
+  <span class="defword">contracting</span> and the point is a
+  <span class="defword">sink</span>.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the divergence of the the velocity field
+    \(\vec V=\left\langle 3xy^2, 3x^2y, z^3 \right\rangle\).
+    At which points is it expanding or contracting?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\vec\nabla\cdot\vec V=3y^2+3x^2+3z^2\)
+  <br>
+  The fluid is expanding everywhere.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We use the definition of the divergence:
+    \[\begin{aligned}
+    \vec\nabla\cdot\vec V
+    &=\dfrac{\partial }{\partial x}(3xy^2)
+     +\dfrac{\partial }{\partial y}(3x^2y)
+     +\dfrac{\partial }{\partial z}(z^3) \\
+    &=3y^2+3x^2+3z^2
+    \end{aligned}\]
+    Since this is always positive, the fluid is expanding everywhere.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

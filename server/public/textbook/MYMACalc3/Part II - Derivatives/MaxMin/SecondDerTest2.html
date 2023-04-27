@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Second Derivative Test with More Variables (Optional) | 16. Max-Min Problems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="SecondDerTest1.html" title="Previous">&lArr;</a></li>
+      <li><a href="Constraint.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>16. Max-Min Problems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Local Minima, Local Maxima and Saddle Points</h2>
+
+
+      
+      <h2>4. Second Derivative Test with More Variables (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The second derivative test generalizes to functions with more than two
+  variables. First notice that the discriminant, \(D\), is the determinant of
+  the two-dimensional
+  <a href="../Higher/Hessian.html" title="Return using the Back button">
+  Hessian matrix</a>:
+  \[
+  D=\begin{vmatrix}
+  f_{xx} & f_{xy} \\
+  f_{yx} & f_{yy}
+  \end{vmatrix}
+  =f_{xx}f_{yy}-f_{xy}^2
+  \]
+  For each additional variable, we have a bigger Hessian determinant:
+  <br>
+  &emsp; \(D_1=f_{xx}\)
+  &emsp; \(D_2=\begin{vmatrix}
+    f_{xx} & f_{xy} \\
+    f_{yx} & f_{yy} \\
+    \end{vmatrix}\)
+  &emsp; \(D_3=\begin{vmatrix}
+    f_{xx} & f_{xy} & f_{xz} \\
+    f_{yx} & f_{yy} & f_{yz} \\
+    f_{zx} & f_{zy} & f_{zz} \\
+    \end{vmatrix}\)
+  &emsp; \(D_4=\begin{vmatrix}
+    f_{xx} & f_{xy} & f_{xz} & f_{xu} \\
+    f_{yx} & f_{yy} & f_{yz} & f_{yu} \\
+    f_{zx} & f_{zy} & f_{zz} & f_{zu} \\
+    f_{ux} & f_{uy} & f_{uz} & f_{uu} \\
+    \end{vmatrix}\)
+  &emsp; \(D_5=\begin{vmatrix}
+    f_{xx} & f_{xy} & f_{xz} & f_{xu} & f_{xv} \\
+    f_{yx} & f_{yy} & f_{yz} & f_{yu} & f_{yv} \\
+    f_{zx} & f_{zy} & f_{zz} & f_{zu} & f_{zv} \\
+    f_{ux} & f_{uy} & f_{uz} & f_{uu} & f_{uv} \\
+    f_{vx} & f_{vy} & f_{vz} & f_{vu} & f_{vv} \\
+    \end{vmatrix}\)
+  &emsp; \(\cdots\)
+  &emsp; \(D_n=\begin{vmatrix}
+    f_{xx} & f_{xy} & f_{xz} & f_{xu} & \cdots & f_{xw} \\
+    f_{yx} & f_{yy} & f_{yz} & f_{yu} & \cdots & f_{yw} \\
+    f_{zx} & f_{zy} & f_{zz} & f_{zu} & \cdots & f_{zw} \\
+    f_{ux} & f_{uy} & f_{uz} & f_{uu} & \cdots & f_{uw} \\
+    \vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+    f_{wx} & f_{wy} & f_{wz} & f_{wu} & \cdots & f_{ww} \\
+    \end{vmatrix}\)
+  <br>
+  These determinants are called the
+  <span class="defword">leading principle minor determinants</span>
+  (<span class="defword">LPMD's</span>) of the Hessian matrix. The
+  Second Derivative Test is stated in terms of the LPMD's.
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Second Derivative Test with \(n\) Variables">
+    Consider a function of \(n\) variables \(f(\vec x)\) and
+    assume \(\vec c\) is a critical point of \(f\), i.e.
+    \[
+    \vec\nabla f(\vec c)=\vec0
+    \]
+    Assume the LPMD's have been evaluated at \(\vec c\).
+  </p>
+  <ol>
+    <li>
+      If all the LPMD's are positive, i.e.
+      \(D_1 > 0, D_2 > 0, D_3 > 0, \cdots, D_n > 0\), then the critical
+      point \(\vec c\) is a local minimum.
+    </li>
+    <li>
+      If the odd LPMD's are all negative and the even LPMD's are all positive,
+      i.e. \(D_1 < 0, D_3 < 0, D_5 < 0,\cdots\) and
+      \(D_2 > 0, D_4 > 0, D_6 > 0,\cdots\), then the critical
+      point \(\vec c\) is a local maximum.
+    </li>
+    <li>
+      If \(D_n \ne 0\) but cases (1) and (2) do not hold, then the critical
+      point \(\vec c\) is a saddle point.
+    </li>
+    <li>
+      Otherwise, (i.e. when \(D_n=0\)) the TEST FAILS.
+    </li>
+  </ol>
+  <p>
+    <button class="toggle" data-toggle="Drop1">Justification</button>
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>Justification</h4>
+  <p>
+    To justify the second derivative test, we will only look at the cases
+    where all the mixed second partial derivatives are \(0\). In that case,
+    the Hessian is diagonal and the \(k^\text{th}\) LPMD is the product of
+    the first \(k\) direct second partial derivatives, e.g.
+    \(D_4=f_{xx}f_{yy}f_{zz}f_{uu}\). In particular, \(D_n\) is the product
+    of all \(n\) direct second partial derivatives. In the first three cases,
+    \(D_n \ne 0\). So all the direct second partial derivatives are nonzero.
+  </p>
+  <p>
+    If all the LPMD's are positive, i.e.
+    \(D_1 > 0, D_2 > 0, D_3 > 0, \cdots, D_n > 0\), then all the direct second
+    partial derivatives are positive. So the function, \(f\), is concave up
+    along all the coordinate axes directions and we expect that \(\vec c\) is
+    a local minimum. A more detailed proof would show that \(f\), is concave
+    up in all directions.
+  </p>
+  <p>
+    If the odd LPMD's are all negative and the even LPMD's are all positive,
+    i.e. \(D_1 < 0, D_3 < 0, D_5 < 0, \cdots\) and
+    \(D_2 > 0, D_4 > 0, D_6 > 0, \cdots\), then all the direct second
+    partial derivatives are negative. So the function, \(f\), is concave down
+    along all the coordinate axes directions and we expect that \(\vec c\) is
+    a local maximum. A more detailed proof would show that \(f\), is concave
+    down in all directions.
+  </p>
+  <p>
+    If \(D_n \ne 0\) but cases (1) and (2) do not hold, then the function
+    \(f\) is concave up along some coordinate direction and
+    concave down along some other coordinate direction and so
+    \(\vec c\) is a saddle point. A more detailed proof would show that \(f\),
+    is concave up in some direction and concave down in some other direction.
+  </p>
+</div>
+<p class="remark">
+  In this class, you will most likely never be asked to apply the Second
+  Derivative Test to any function with more than two variables. So this page
+  was included essentially for conceptual and theoretical reasons. However,
+  here is an example anyway:
+</p>
+<p class="example" data-number="1">
+  Find all critical points of \(f(x,y,z)=3x^2-2xy-2xz-4x+y^2+z^2\) and use
+  the second derivative test to classify each as a local maxima,
+  local minima or saddle or say the test fails.
+</p>
+<p class="sol">
+  We first compute the partial derivatives and set them equal to zero.
+  \[\begin{aligned}
+  f_x&=6x-2y-2z-4=0 \qquad \text{(1)} \\
+  f_y&=-2x+2y=0 \qquad \qquad \quad \text{(2)} \\
+  f_z&=-2x+2z=0 \qquad \qquad \quad \text{(3)}
+  \end{aligned}\]
+  <!-- f_x&=6x-2y-2z-4=0 \tag{1} \\
+  f_y&=-2x+2y=0 \tag{2}\\
+  f_z&=-2x+2z=0 \tag{3} -->
+  Equations (2) and (3) say \(y=x\) and \(z=x\). So equation (1) becomes
+  \(2x-4=0\). Consequently, the critical point is \((x,y,z)=(2,2,2)\).
+  The Hessian is
+  \[
+  \text{Hess} f
+  =\begin{pmatrix}
+  f_{xx} & f_{xy} & f_{xz} \\
+  f_{yx} & f_{yy} & f_{yz} \\
+  f_{zx} & f_{zy} & f_{zz}
+  \end{pmatrix}
+  =\begin{pmatrix}
+  6 & -2 & -2 \\
+  -2 & 2 & 0 \\
+  -2 & 0 & 2
+  \end{pmatrix}
+  \]
+  So the leading principal minor determinants are
+  \[\begin{aligned}
+  D_1&=f_{xx}=6 \\
+  D_2
+  &=\begin{vmatrix}
+  f_{xx} & f_{xy}\\
+  f_{yx} & f_{yy}
+  \end{vmatrix}
+  =\begin{vmatrix}
+  6 & -2 \\
+  -2 & 2
+  \end{vmatrix}
+  =8 \\
+  D_3
+  &=\begin{vmatrix}
+  f_{xx} & f_{xy} & f_{xz} \\
+  f_{yx} & f_{yy} & f_{yz} \\
+  f_{zx} & f_{zy} & f_{zz}
+  \end{vmatrix}
+  =\begin{vmatrix}
+  6 & -2 & -2 \\
+  -2 & 2 & 0 \\
+  -2 & 0 & 2
+  \end{vmatrix}
+  =8
+  \end{aligned}\]
+  Since these are all positive, the critical point, \((x,y,z)=(2,2,2)\),
+  is a minimum.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

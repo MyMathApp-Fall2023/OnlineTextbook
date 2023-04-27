@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a2. General Riemann Sums and Integrals (Optional) | 22. Riemann Sums, Integrals and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="RSRight.html" title="Previous">&lArr;</a></li>
+      <li><a href="RSLim.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Riemann Sums, Integrals and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="remark">
+	Riemann sums can be generalized in three ways:
+	<br/>
+	(1) <span class="hl">The partitions may not be evenly spaced.</span>
+	<br/>
+	(2) <span class="hl">The evaluation points may not be the right endpoints.</span>
+	<br/>
+	(3) <span class="hl">The function \(f(x)\) may not be positive.</span>
+	In that case, the limit of Riemann sums still defines an integral, but the
+	integral can no longer be	interpreted as an area.
+	<br/><br/>
+	If you skip the details on this page, at least read the definition, remark
+	and proposition in the middle of
+	<a href="#defremprop" title="Return using the Back button.">
+	this page</a>.
+</p>
+
+
+      
+      <h2>a2. General Riemann Sums and Integrals (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p class="proc" data-title="Using Riemann Sums to Compute Integrals">
+    To find the integral, \(\displaystyle \int_a^b f(x)\,dx\), of the function
+	  \(f(x)\) between \(x=a\) and \(x=b\), follow these steps:
+  </p>
+  <figure class="center">
+    <img src="graphics/def_gen_riem_sum1.jpg" alt="def_gen_riem_sum1">
+    <figcaption>
+      In these plots, \(a=2\) and \(b=14\) and
+			<br>the function is not always positive.
+		</figcaption>
+  </figure>
+</div>
+
+<div class="column">
+  <div>
+    <p class="step" data-number="1">
+      Divide the interval \([a,b]\) into \(n\) subintervals
+      at some <span class="hl">partition points</span>:
+      \[
+      x_0=a< x_1 < x_2 <\cdots < x_{n-1} < x_n=b
+      \]
+      They do not need to be evenly spaced. So, the \(i^\text{th}\)
+      subinterval is \([x_{i-1},x_i]\) and the
+      <span class="defword">width</span> of the \(i^\text{th}\) subinterval is
+      \(\Delta x_i=x_i-x_{i-1}\).
+    </p>
+    <p class="remark" data-number="1">
+      It is permissible (but not required) to take all the subintervals to
+      have the same width. In that case, the width of each interval is
+			\(
+			\Delta x=\dfrac{b-a}{n}
+			\)
+      and partition points are
+			\(
+			x_i=a+i\Delta x
+			\)
+			for
+			\(
+			i=0,1,\cdots,n
+			\).
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/def_gen_riem_sum2.jpg" alt="def_gen_riem_sum2">
+      <figcaption>
+        Here, there are \(n=6\) unequal partitions and
+				<br> the partition points are: \(2\), \(3\), \(6\), \(8\), \(11\), \(12\), \(14\).
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="column">
+  <div>
+    <p class="step" data-number="2">
+      Pick an <span class="defword">evaluation point</span> \(x_i^*\) in the
+      \(i^\text{th}\) interval \([x_{i-1},x_i]\). The points can be chosen by
+			some
+		  <button class="toggle" data-toggle="Drop1">rule</button>
+			or randomly.
+    </p>
+    <p class="remark" data-number="2">
+      It is permissible (but not required) to take the evaluation point
+        to be the right endpoint of the interval. In that case, \(x_i^*=x_i\).
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/def_gen_riem_sum3.jpg" alt="def_gen_riem_sum3">
+      <figcaption>
+        Evaluation points are denoted by vertical
+				<span style="color: #FF0000">red</span> lines.
+				<br> They are randomly located in each interval.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>Standard Rules for Riemann Sums</h4>
+  <p>
+    Left Riemann Sum: &emsp; &nbsp; Evaluate at the left endpoint of each interval.
+		<br>
+    Right Riemann Sum: &ensp; &nbsp; Evaluate at the right endpoint of each interval.
+		<br>
+    Middle Riemann Sum: &nbsp; Evaluate at the midpoint of each interval.
+		<br>
+    Upper Riemann Sum: &ensp;&nbsp; Evaluate at the maximum on each interval.
+		<br>
+    Lower Riemann Sum: &ensp; Evaluate at the minimum on each interval.
+  </p>
+</div>
+
+<div class="column">
+  <div>
+    <p class="step" data-number="3">
+      Evaluate the function at the \(i^\text{th}\) evaluation point
+      and multiply by the width of the \(i^\text{th}\) subinterval to get:
+      \[
+      f(x_i^*)\Delta x_i
+      \]
+			If \(f(x_i^*) \gt 0\), this is the area of the \(i^\text{th}\) rectangle
+			or an approximation of the area under the curve.
+			If \(f(x_i^*) \lt 0\), this is the negative of the area of the
+			\(i^\text{th}\) rectangle or an approximation of the negative of the
+			area above the curve.
+			<br><br>
+      Add these up for all the subintervals to get the
+      <span class="defword">Riemann sum</span>:
+      \[
+      \sum_{i=1}^n f(x_i^*)\Delta x_i
+      \]
+      which is an approximation to the difference between the area above
+			the \(x\)-axis and the area below	the \(x\)-axis, within the interval
+			\([a,b]\). The approximation gets better as \(n\) gets larger provided
+			all subinterval widths, \(\Delta x_i\), approach \(0\).
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/def_gen_riem_sum4.jpg" alt="def_gen_riem_sum4" />
+      <figcaption>
+        The height of each Riemann Sum rectangle is
+        <br>
+				the value of the function at the evaluation point.
+        <br><br>
+				The rectangles above the \(x\)-axis make a
+				<br>
+				positive contribution to the sum.
+        <br><br>
+				The rectangles below the \(x\)-axis make a
+				<br>
+				negative contribution to the sum.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="column">
+  <div>
+    <p class="step" data-number="4">
+      Take the limit as the number of intervals, \(n\), goes to infinity
+      while also requiring all subinterval widths approach \(0\).
+      This is the definition of an integral as a limit of Riemann sums:
+      \[
+      \int_a^b f(x)\,dx
+			=\lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+			                      &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+				\sum_{i=1}^n f(x_i^*)\Delta x_i
+      \]
+    </p>
+    <p class="remark" data-number="4">
+      If you use equal width intervals and right endpoints, then this formula
+        reduces to
+        \[
+        \int_a^bf(x)\,dx
+        =\lim_{n\to\infty}\sum_{i=1}^n f(x_i)\Delta x
+        \]
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+			<!-- <img src="graphics/def_gen_riem_sum_anim.gif" alt="def_gen_riem_sum_anim"> -->
+      <video src="graphics/def_gen_riem_sum_anim.mp4" autoplay loop controls></video>
+      <figcaption>
+        Here, the number of rectangles starts
+        <br>
+        at \(6\) and keeps doubling.
+        <br>
+				The widths of the intervals are unequal
+        <br>
+				and the evaluation points are random.
+        <br>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<a id="defremprop"></a>
+
+        <div class="rule"></div>
+
+<p class="def" data-title="Definite Integral">
+  The <span class="defword">(definite) integral</span> of a function \(f(x)\)
+  is the limit of the Riemann sums:
+	\[
+	\int_a^bf(x)\,dx
+	=\lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+	                      &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+		\sum_{i=1}^n f(x_i^*)\Delta x_i
+	\]
+</p>
+
+<p class="remark">
+	We can now discuss the implications of the three generalizations of Riemann sums:
+</p>
+<ol>
+	<li>
+		<span class="hl">The partitions may not be evenly spaced.</span>
+		However, we can essentially	always use partitions with equal spacing. In
+		this course, the only time we will use uneven spacing is to prove the result on
+		<a href="IntRulesDef.html#split" title="Return using the Back button.">
+		Splitting the Interval of an Integral</a>.
+		On the other hand, uneven spacing will become essential in Calculus 3 on
+		<a href="../../../MYMACalc3/Part III - Integrals/RiemInt/ChContents.html"
+		title="Return using the Back button.">
+		Multivariable Calculus</a>.
+	</li>
+	<li>
+		<span class="hl">The evaluation points may not be the right endpoints.</span>
+		Using other evaluation points is very	useful in doing
+		<a href="../../../MYMACalc2/Part I - Techniques of Integration/NumInt/ChContents.html"
+		title="Return using the Back button.">
+		Numerical Integration</a>. An exercise with left endpoints and midpoints is below.
+	</li>
+	<li>
+		<span class="hl">The function \(f(x)\) may not be positive.</span>
+		In that case the discussion above explains the following result:
+	</li>
+</ol>
+<div class="column">
+	<div class="greybox">
+		<p class="prop" data-title="Interpretation of an Integral as Net Area">
+		  If \(f(x)\) is positive, then the integral \(\displaystyle \int_a^b f(x)\,dx\)
+			gives the area under the graph of \(y=f(x)\) above the \(x\)-axis between
+			\(x=a\) and \(x=b\).
+		</p>
+		<p>
+			If \(f(x)\) is sometimes positive and sometimes negative, then the integral
+			\(\displaystyle \int_a^b f(x)\,dx\) gives the net area between the graph of
+			\(y=f(x)\) and the \(x\)-axis between	\(x=a\) and \(x=b\) with areas above
+			the \(x\)-axis counted positive and areas below the \(x\)-axis counted negative.
+		</p>
+	</div>
+  <figure class="center">
+    <img src="graphics/prop_net_area.jpg" alt="prop_net_area">
+    <figcaption>
+    	\(\displaystyle \int_a^bf(x)\,dx=A_1-A_2+A_3\)
+    </figcaption>
+  </figure>
+</div>
+<a id="eg_RSleft"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+  	Approximate the integral \(\displaystyle \int_1^3 x^3-6x\,dx\) using a
+		Riemann sum with \(4\) equal width intervals, first using right endpoints
+		and then using left endpoints.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_x^3-6x.jpg" alt="eg_x^3-6x">
+  </div>
+</div>
+<p class="sol">
+	With \(n=4\) intervals, the width is
+	\(\Delta x=\dfrac{3-1}{4}=0.5\).
+<div class="column">
+	<div>
+		<hr width="80%">
+		<p>
+	    The right endpoints are:
+	    \[
+	    x_1=1.5 \quad x_2=2 \quad x_3=2.5 \quad x_4=3
+	    \]
+	    and the function values are:
+	    \[\begin{aligned}
+	    f(1.5)&=-5.625 & f(2)&=-4 \\
+	    f(2.5)&=0.625 & f(3)&=9
+	    \end{aligned}\]
+	    So the Riemann sum is
+	    \[\begin{aligned}
+	    R_4&=-5.625\cdot0.5-4\cdot0.5 \\
+	    &\quad+0.625\cdot0.5+9\cdot0.5 \\
+	    &=0
+	    \end{aligned}\]
+	  </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_x^3-6x_right.jpg" alt="eg_x^3-6x_right">
+  </div>
+</div>
+<div class="column">
+	<div>
+		<hr width="80%">
+		<p>
+			The left endpoints are:
+			\[
+			x_1=1 \quad x_2=1.5 \quad x_3=2 \quad x_4=2.5
+			\]
+			and the function values are:
+			\[\begin{aligned}
+			f(1)&=-5 & f(1.5)&=-5.625 \\
+			f(2)&=4 & f(2.5)&=0.625
+			\end{aligned}\]
+			So the Riemann sum is
+			\[\begin{aligned}
+			L_4&=-5\cdot0.5-5.625\cdot0.5 \\
+			&\quad+4\cdot0.5+0.625\cdot0.5 \\
+			&=-7.0
+			\end{aligned}\]
+		</p>
+	</div>
+  <div class="center">
+    <img src="graphics/eg_x^3-6x_left.jpg" alt="eg_x^3-6x_left">
+  </div>
+</div>
+<a id="ex_RSleft"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="exercise" data-number="2">
+  	Approximate the integral
+  	\(\displaystyle \int_1^9(x^2+1)\,dx\) using:
+  </p>
+  <div class="center">
+    <img src="graphics/ex_x^2+1.jpg" alt="ex_x^2+1">
+  </div>
+</div>
+<ol class="list-outside" type="a">
+  <li>
+		<div class="dotfillex">
+			<p>
+	      \(4\) equal width subintervals and the left endpoints of each interval.
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2a"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2a"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+	    <p>
+			  For equal width intervals \(\Delta x=\dfrac{b-a}{n}\)
+				and for left endpoints \(x_i^*=x_{i-1}\). So:
+			  <span class="center">
+				\(\displaystyle \int_a^bf(x)\,dx
+				=\lim_{n\to\infty} \sum_{i=1}^n f(x_i^*)\Delta x\)
+				</span>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+	    <p>
+			  \(L_4=176\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+      <div class="column">
+      	<p>
+			    With \(n=4\) intervals, the width is \(\Delta x=\dfrac{9-1}{4}=2\).
+			    For left endpoints, the evaluation points are:
+			    \[
+			    x_1=1 \quad x_3=3 \quad x_5=5 \quad x_7=7
+			    \]
+			    and the function values are:
+			    \[
+			    f(1)=2 \quad f(3)=10 \quad f(5)=26 \quad f(7)=50
+			    \]
+			    So the Riemann sum is
+			    \[
+			    L_4=2(2)+10(2)+26(2)+50(2)=176
+			    \]
+        </p>
+        <div class="center">
+          <img src="graphics/ex_x^2+1_left_4.jpg" alt="ex_x^2+1_left_4">
+        </div>
+      </div>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      \(8\) equal width subintervals and the left endpoints of each interval.
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2b"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+	    <p>
+			  \(L_8=212\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+      <div class="column">
+      	<p>
+			    With \(n=8\) intervals, the width is \(\Delta x=\dfrac{9-1}{8}=1\).
+			    For left endpoints, the evaluation points are:
+			    \[\begin{aligned}
+			    x_1&=1 & x_2&=2 & x_3&=3 & x_4&=4 \\
+			    x_5&=5 & x_6&=6 & x_7&=7 & x_8&=8
+			    \end{aligned}\]
+			    and the function values are:
+			    \[\begin{aligned}
+			    f(1)&=2 & f(2)&=5 & f(3)&=10 & f(4)&=17 \\
+			    f(5)&=26 & f(6)&=37 & f(7)&=50 & f(8)&=65
+			    \end{aligned}\]
+			    So the Riemann sum is
+			    \[
+			    L_8=2+5+10+17+26+37+50+65=212
+			    \]
+        </p>
+        <div class="center">
+          <img src="graphics/ex_x^2+1_left_8.jpg" alt="ex_x^2+1_left_8">
+        </div>
+      </div>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      \(4\) equal width subintervals and the midpoints of each interval.
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2c"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2c"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2c"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2c">
+	    <p>
+			  For equal width intervals \(\Delta x=\dfrac{b-a}{n}\)
+				and for midpoints \(x_i^*=\dfrac{x_i+x_{i-1}}{2}\). So:
+			  <span class="center">
+				\(\displaystyle \int_a^bf(x)\,dx
+				=\lim_{n\to\infty} \sum_{i=1}^n f(x_i^*)\Delta x\)
+				</span>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+	    <p>
+			  \(M_4=248\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+      <div class="column">
+      	<p>
+			    With \(n=4\) intervals, the width is \(\Delta x=\dfrac{9-1}{4}=2\).
+			    For midpoints, the evaluation points are:
+			    \[
+			    x_2=2 \quad x_4=4 \quad x_6=6 \quad x_8=8
+			    \]
+			    and the function values are:
+			    \[
+			    f(2)=5 \quad f(4)=17 \quad f(6)=37 \quad f(8)=65
+			    \]
+			    So the Riemann sum is
+			    \[
+			    M_4=5(2)+17(2)+37(2)+65(2)=248
+			    \]
+        </p>
+        <div class="center">
+          <img src="graphics/ex_x^2+1_mid_4.jpg" alt="ex_x^2+1_mid_4">
+        </div>
+      </div>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      \(8\) equal width subintervals and the midpoints of each interval.
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2d"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2d"></button>
+	      <button class="toggle has-rem" data-toggle="RemX2d"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2d">
+	    <p>
+			  \(M_8=250\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2d">
+      <div class="column">
+      	<p>
+			    With \(n=8\) intervals, the width is \(\Delta x=\dfrac{9-1}{8}=1\).
+			    For midpoints, the evaluation points are:
+			    \[\begin{aligned}
+			    x_1&=1.5 & x_2&=2.5 & x_3&=3.5 & x_4&=4.5 \\
+			    x_5&=5.5 & x_6&=6.5 & x_7&=7.5 & x_8&=8.5
+			    \end{aligned}\]
+			    The finction is \(f(x)=x^2+1\) and the function values are:
+			    \[\begin{aligned}
+			    f(1.5)&=3.25 & f(2.5)&=7.25 \\
+					f(3.5)&=13.25 & f(4.5)&=21.25 \\
+			    f(5.5)&=31.25 & f(6.5)&=43.25 \\
+					f(7.5)&=57.25 & f(8.5)&=73.25
+			    \end{aligned}\]
+			    So the Riemann sum is
+			    \[\begin{aligned}
+			    M_8&=3.25+7.25+13.25+21.25 \\
+					&\quad+31.25+43.25+57.25+73.25 \\
+					&=250
+			    \end{aligned}\]
+        </p>
+        <div class="center">
+          <img src="graphics/ex_x^2+1_mid_8.jpg" alt="ex_x^2+1_mid_8">
+        </div>
+      </div>
+	  </div>
+	  <div class="toBeToggled drop-rem" data-toggle="RemX2d">
+			<div class="column">
+			  <div>
+			  	<p>
+			      Here is a summary of the left, middle and right Riemann sum
+						approximations to the integral
+						\(\displaystyle \int_1^9(x^2+1)\,dx\) as found in this exercise
+						and in the exercise on the
+						<a href="RSRight.html#ex_RSright" title="Return using the Back button.">
+						previous page</a>:
+						\[\begin{aligned}
+						&\text{left}   &L_4&=176 &L_8&=212 \\
+						&\text{middle} &M_4&=248 &M_8&=250 \\
+						&\text{right}  &R_4&=336 &R_8&=292
+						\end{aligned}\]
+			      The actual integral is
+						\(\displaystyle \int_1^9(x^2+1)\,dx=\dfrac{752}{3}\approx250.67\)
+						as found in an exercise on the
+						<a href="RSLim.html#RSLim" title="Return using the Back button.">
+						next page</a>.
+						Clearly, more intervals give a better approximation.
+			    </p>
+			    <p>
+			      Since the function \(f(x)=x^2+1\) is increasing, the plots explain
+						why the	left sums give lower bounds (under estimates), the right
+						sums give upper bounds (over estimates) and the middle sums give
+						better estimates. This is a case of Mama Bear, Papa Bear and
+						Baby Bear.
+			    </p>
+			    <p>
+						See the chapter on
+						<a href="../../../MYMACalc2/Part I - Techniques of Integration/NumInt/ChContents.html"
+						title="Return using the Back button.">
+						Numerical Integration</a> in Calculus 2 for more details about
+						Riemann sums and other approximations for integrals.
+			    </p>
+			  </div>
+			  <div class="center">
+			    <img src="graphics/ex_x^2+1_left_anim.gif" alt="ex_x^2+1_left_anim">
+			    <img src="graphics/ex_x^2+1_mid_anim.gif" alt="ex_x^2+1_mid_anim">
+			    <img src="graphics/ex_x^2+1_right_anim.gif" alt="ex_x^2+1_right_anim">
+			  </div>
+			</div>
+	  </div>
+	</li>
+</ol>
+<a id="fulldef"></a>
+
+				<div class="rule"></div>
+
+<p class="remark">
+  In practice, one does not compute integrals using the Riemann sum formula.
+  Rather, one uses this formula to derive the integral that needs to be
+  computed in various applications (such as area). The
+  integral is then computed using antiderivatives as prescribed by the
+  Fundamental Theorem of Calculus:
+  \[
+  \int_a^bf(x)\,dx=F(b)-F(a)
+  \]
+  as discussed on the <a href="IntFTC.html#2ndFTC">page after next</a>.
+  However, we first discuss how the limits of Riemann sums are computed in
+	simple cases on the <a href="RSLim.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

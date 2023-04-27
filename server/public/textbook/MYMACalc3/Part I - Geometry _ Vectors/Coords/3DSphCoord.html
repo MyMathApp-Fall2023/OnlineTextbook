@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. 3D Spherical Coordinates | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="3DCylCoord.html" title="Previous">&lArr;</a></li>
+      <li><a href="nDCylSphCoord.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Cylindrical and Spherical Coordinates - 3D and nD</h2>
+
+
+      
+      <h2>2. 3D Spherical Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<p>
+		In \(3\) dimensional space, in addition to <span class="hl">Rectangular
+    Coordinates</span> \((x,y,z)\) and <span class="hl">Cylindrical
+		Coordinates</span> \((r,\theta,z)\), there are
+		<span class="hl">Spherical Coordinates</span> \((\rho,\phi,\theta)\).
+		Spherical coordinates are useful when you want to study spheres or other
+	 	objects which are functions of latitude and longitude.
+  </p>
+  <div class="center">
+		<video src="graphics/def_sphcoordgrid_anim.mp4" autoplay controls loop></video>
+  </div>
+</div>
+
+<div class="column">
+	<p class="def" data-title="Spherical Coordinates">
+		<span class="defword">Spherical Coordinates</span> \((\rho,\phi,\theta)\)
+    start from cylindrical coordinates \((r,\theta,z)\) but replace the
+		cylindrical radius \(r\) and the height \(z\) by a new spherical radius
+		\(\rho\) which measures the distance from the point \(P\) to the origin
+		\(O\) and a new angular coordinate \(\phi\) which measures the angle
+    from the positive \(z\)-axis to the ray \(\overrightarrow{OP}\). In this
+    context, \(\phi\) is called the <span class="defword">polar angle</span>
+    since it measures the angle down from the north pole,	and \(\theta\) is
+    now called the <span class="defword">azimuthal angle</span>.
+  </p>
+  <div class="center">
+		<img src="graphics/def_3DSphCoord.jpg" alt="def_3DSphCoord"/>
+  </div>
+</div>
+
+<div class="column">
+	<div data-col-width="50%">
+		<p>
+			If you think about a point on a sphere,	\(\rho\) gives the radius of the
+			sphere, \(\phi\) <em>essentially</em> gives the latitude of the point on
+			the sphere, and \(\theta\) gives the longitude	of the point on the sphere.
+		</p>
+		<p>
+			<button class="toggle btn" data-toggle="Drop1">
+				What is the difference between \(\phi\) and latitude?
+			</button>
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+ 		<figure>
+			<img src="graphics/3DSphPoint.jpg" alt="3DSphPoint"/>
+		</figure>
+	</div>
+</div>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>
+		What is the difference between \(\phi\) and latitude?
+	</h4>
+	<p>
+		The real world latitude is measured north and south of the equator, \(0\)
+		at the equator, positive in the northern hemisphere and negative in the
+		southern hemisphere, \(90^\circ\) at the north pole and \(-90^\circ\) at
+		the south pole.
+	</p>
+	<p>
+		The polar angle \(\phi\) is measured from the north pole to the south pole,
+		\(0^\circ\) at the north pole and \(180^\circ\) at the south pole.
+	</p>
+	<p>
+		So
+		\[
+		\text{latitude}\,=90^\circ-\phi=\dfrac{\pi}{2}-\phi
+		\]
+	</p>
+</div>
+
+				<div class="rule" id="convertcylsph"> </div>
+
+<h3>Converting between Cylindrical and Spherical Coordinates</h3>
+
+<div class="column">
+	<div data-col-width="60%">
+		<p>
+			Look at the right triangle with legs \(r\) and \(z\) and hypotenuse \(\rho\).
+			Since \(\phi\) is the angle between \(\rho\) and the \(z\)-axis, we have
+			the relations
+			\[
+			\rho=\sqrt{r^2+z^2} \qquad \cos\phi=\dfrac{z}{\rho} \qquad
+			\sin\phi=\dfrac{r}{\rho}
+			\]
+		</p>
+	</div>
+	<div class="center" data-col-width="40%">
+		<figure>
+			<img src="graphics/def_3DSphCoord.jpg" alt="def_3DSphCoord"/>
+		</figure>
+	</div>
+</div>
+<p>
+	Consequently, cylindrical and spherical coordinates are related by
+	\[\begin{aligned}
+	r&=\rho\sin\phi \qquad \qquad &\rho&=\sqrt{r^2+z^2} \\[3pt]
+	\theta&=\theta                &\phi&=\arccos\dfrac{z}{\sqrt{r^2+z^2}} \\[3pt]
+	z&=\rho\cos\phi               &\theta&=\theta
+	\end{aligned}\]
+</p>
+<p>
+	(Since the values for \(\phi\) run from \(0\) at the north pole to \(\pi\) at the
+	south pole, and this is the image of the  \(\arccos\) function, there is no ambiguity
+	in the formula for \(\phi\) as there was in the formula for \(\theta\) in polar and
+	cylindrical coordinates.)
+</p>
+
+				<div class="rule" id="convertrectsph"> </div>
+
+<h3>Converting between Rectangular and Spherical Coordinates</h3>
+<p>
+	Recall the formulas relating rectangular and cylindrical
+	coordinates:
+	\[\begin{aligned}
+	x&=r\cos\theta \qquad \qquad &&r=\sqrt{x^2+y^2} \\[3pt]
+	y&=r\sin\theta               &&\tan\theta=\dfrac{y}{x} \\[3pt]
+	z&=z                         &&z=z
+	\end{aligned}\]
+</p>
+<p>
+	Combining these with the formulas relating cylindrical and
+	spherical, we get the formulas relating rectangular and spherical coordinates:
+	\[\begin{aligned}
+	x&=\rho\sin\phi\cos\theta \qquad \qquad &&\rho=\sqrt{x^2+y^2+z^2} \\[3pt]
+	y&=\rho\sin\phi\sin\theta               &&\phi=\arccos\dfrac{z}{\sqrt{x^2+y^2+z^2}} \\
+	z&=\rho\cos\phi                         &&\tan\theta=\dfrac{y}{x}
+	\end{aligned}\]
+	with the same conditions on solving for theta as there were for polar coordinates.
+	<br>
+	<button class="toggle btn" data-toggle="note1">
+		How to remember these formulas.
+	</button>
+</p>
+<div class="toBeToggled" data-toggle="note1">
+	<p>
+		Write
+		\[
+		x= \qquad y= \qquad z=
+		\]
+		Add \(\rho,\rho,\rho\) (your boat), to get
+		\[
+		x=\rho \qquad y=\rho \qquad z=\rho
+		\]
+		Put \(\cos\phi\) next to \(z\) since \(z\) is the polar axis and
+		\(\sin\phi\) next to \(x\) and \(y\), to get
+		\[
+		x=\rho\sin\phi \qquad y=\rho\sin\phi \qquad z=\rho\cos\phi
+		\]
+		Finally, to distinguish between \(x\) and \(y\), put \(\cos\theta\) next
+		to \(x\) and \(\sin\theta\) next to \(y\) just like for polar coordinates,
+		to get
+		\[
+		x=\rho\sin\phi\cos\theta \qquad y=\rho\sin\phi\sin\theta \qquad z=\rho\cos\phi
+		\]
+	</p>
+</div>
+
+				<div class="rule"> </div>
+
+<h3>Coordinate Surfaces</h3>
+<p class="def">
+	When you hold one of the coordinates fixed and let the other two vary, the point
+	\(P=(\rho,\phi,\theta)\) traces out a <span class="defword">coordinate surface</span>.
+</p>
+<p>
+	When \(\rho\) is constant, you get a sphere. You specify where you are on
+	the surface by giving \(\phi\) and \(\theta\), essentially latitude and
+	longitude.
+	<br>
+ 	When \(\phi\) is constant, you get a cone. You specify where you are on
+	the surface by giving \(\rho\) and \(\theta\).
+	<br>
+	When \(\theta\) is constant, you get a vertical half plane. You specify
+	where you are on the surface by	giving \(\rho\) and \(\phi\).
+</p>
+<p>
+	Here are the plots of the coordinate surfaces:
+</p>
+<div class="center">
+	<figure>
+		<video src="graphics/def_rho-surf_anim.mp4" autoplay controls loop></video>
+		<figcaption>Constant \(\rho\) Surface</figcaption>
+	</figure>
+	<figure>
+		<video src="graphics/def_phi-surf_anim.mp4" autoplay controls loop></video>
+		<figcaption>Constant \(\phi\) Surface</figcaption>
+	</figure>
+	<figure>
+		<video src="graphics/def_theta-surf_anim.mp4" autoplay controls loop></video>
+		<figcaption>Constant \(\theta\) Surface</figcaption>
+	</figure>
+</div>
+<p>
+	Rotate these plots with your mouse:
+<div class="center">
+	<figure>
+		<x3d width='200px' height='200px'>
+			<scene>
+				<inline url="graphics/def_sphrho-surf.x3d"> </inline>
+			</scene>
+		</x3d>
+		<figcaption>Constant \(\rho\) Surface</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+	      <inline url="graphics/def_sphphi-surf.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>Constant \(\phi\) Surface</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+				<inline url="graphics/def_sphth-surf.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>Constant \(\theta\) Surface</figcaption>
+	</figure>
+</div>
+
+				<div class="rule"> </div>
+
+<h3>Coordinate Curves</h3>
+<p class="def">
+	When you hold two of the coordinates fixed and let the other one vary, the
+	point \(P=(\rho,\phi,\theta)\) traces out a
+	<span class="defword">coordinate curve</span>.
+	The curves are named by the coordinate which is changing.	The
+	<span class="hl">coordinate curves</span>	are the intersections of the
+	<span class="hl">coordinate surfaces</span>.
+</p>
+<p>
+	When \(\phi\) and \(\theta\) are constant, you get a radial ray coming out of
+	the origin called a <span class="defword">\(\rho\)-curve</span>.
+	<br>
+	When \(\rho\) and \(\theta\) are constant, you get a semi-circle from the
+	North Pole to	the South Pole called a <span class="defword">\(\phi\)-curve</span>
+	or <span class="defword">line of longitude</span>.
+	<br>
+	When \(\rho\) and \(\phi\) are constant, you get a horizontal circle called a
+	<span class="defword">\(\theta\)-curve</span>
+	or <span class="defword">line of latitude</span>.
+</p>
+<p>
+	Here are the plots of the coordinate curves:
+</p>
+<div class="center">
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+	      <inline url="graphics/def_sphrho-crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>\(\rho\)-Curves</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+	      <inline url="graphics/def_sphphi-crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>\(\phi\)-Curves</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+	      <inline url="graphics/def_sphth-crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>\(\theta\)-Curves</figcaption>
+	</figure>
+</div>
+
+				<div class="rule"> </div>
+
+<h3>Coordinate Grid</h3>
+<p>
+	When you draw several coordinate curves or surfaces of each type you get a
+	<span class="defword">coordinate grid</span>. Here is the spherical coordinate
+	grid as surfaces and as curves. Notice how all points in space
+	can be reached with these coordinates. You can watch an animation of the
+	cylindrical coordinate grid at the top of this page.
+</p>
+<div class="center">
+	<figure>
+	  <x3d width='250px' height='250px'>
+	    <scene>
+	      <inline url="graphics/def_sph_grid_surf.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption><strong>Spherical Coordinate Grid as Surfaces</strong> <br>
+		The \(\rho\)-surfaces are <span style="color:red">red</span> spheres.
+		<br>
+		The \(\phi\)-surfaces are <span style="color:cyan">cyan</span> cones.
+		<br>
+		The \(\theta\)-surfaces are <span style="color:blue">blue</span> half-planes.
+		</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='250px' height='250px'>
+	    <scene>
+	      <inline url="graphics/def_sph_grid_crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption><strong>Spherical Coordinate Grid as Curves</strong> <br>
+		The \(\rho\)-curves are <span style="color:red">red</span> radial lines.
+		<br>
+		The \(\phi\)-curves are <span style="color:blue">blue</span> longitude circles.
+		<br>
+		The \(\theta\)-curves are <span style="color:cyan">cyan</span> latitude circles.
+		</figcaption>
+	</figure>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Applications | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="3DCurv-Int.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Integrating in 3D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>5. Applications</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We previously did
+  <a href="../RectInt/ChContents.html" title="Return using the Back button.">
+  Applications of Multiple Integrals in Rectangular Coordinates</a>
+  and we have done
+  <a href="Cyl-Appl.html" title="Return using the Back button.">
+  Applications of Triple Integrals in Cylindrical Coordinates</a> and
+  <a href="Sph-Appl.html" title="Return using the Back button.">
+  Applications of Triple Integrals in Spherical Coordinates</a>.
+  All of those applications can also be done using general three-dimensional
+  curvilinear coordinates.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="example" data-number="1">
+      All the examples on this page of applications of triple integrals in
+      curvilinear coordinates will use the upper half of a torus (donut)
+      where the distance from the center of the hole to the center of the ring
+      is \(4\) and the radius of the ring is \(2\). Find a curvilinear
+      coordinate system for the solid. Then find the Jacobian factor and the
+      ranges of the coordinates to describe the solid.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_3Dhalftorus.jpg" alt="eg_3Dhalftorus">
+  </div>
+</div>
+<p class="sol">
+  In cylindrical coordinates, the torus is a circle centered at \((r,z)=(4,2)\)
+  for each value of \(\theta\). So its equation is \((r-4)^2+z^2=4\) which may
+  be parametrized by:
+  \[
+  r=4+2\cos\phi \qquad \text{and} \qquad z=2\sin\phi
+  \]
+  If we change the radius of the ring from \(2\) to \(t\) then the torus
+  may be parametrized by:
+  \[
+  r=4+t\cos\phi \qquad \text{and} \qquad z=t\sin\phi
+  \]
+  So the curvilinear coordinates are \(t\), \(\phi\) and \(\theta\).
+  Plugging this into cylindrical coordinates:
+  \[
+  \vec{R}(r,\theta,z)=\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+  \]
+  we get the <span class="defword">toroidal coordinate system</span>:
+  \[
+  \vec{R}(r,\theta,z)
+  =\left\langle (4+t\cos\phi)\cos\theta,(4+t\cos\phi)\sin\theta,t\sin\phi\right\rangle
+  \]
+  The coordinate ranges are: (\(\phi\) stops at \(\pi\) to give a half circle.)
+  \[
+  0 \le t \le 2 \qquad 0 \le \phi \le \pi \qquad 0 \le \theta \le 2\pi
+  \]
+  The coordinate tangent vectors are:
+  \[\begin{aligned}
+  \vec{e}_t&=\dfrac{\partial\vec{R}}{\partial t}
+  =\left\langle \cos\phi\cos\theta,\cos\phi\sin\theta,\sin\phi\right\rangle \\
+  \vec{e}_\phi&=\dfrac{\partial\vec{R}}{\partial\phi}
+  =\left\langle -t\sin\phi\cos\theta,-t\sin\phi\sin\theta,t\cos\phi\right\rangle \\
+  \vec{e}_\theta&=\dfrac{\partial\vec{R}}{\partial\theta}
+  =\left\langle -(4+t\cos\phi)\sin\theta,(4+t\cos\phi)\cos\theta,0\right\rangle
+  \end{aligned}\]
+  Then the Jacobian determinant is: (We expand on the third row.)
+  \[\begin{aligned}
+  \dfrac{(x,y,z)}{(t,\phi,\theta)}
+  &=\begin{vmatrix}
+  \cos\phi\cos\theta       & \cos\phi\sin\theta      & \sin\phi \\
+  -t\sin\phi\cos\theta     & -t\sin\phi\sin\theta    & t\cos\phi \\
+  -(4+t\cos\phi)\sin\theta & (4+t\cos\phi)\cos\theta & 0
+  \end{vmatrix} \\
+  &=-(4+t\cos\phi)\sin\theta\begin{vmatrix}
+  \cos\phi\sin\theta   & \sin\phi \\
+  -t\sin\phi\sin\theta & t\cos\phi
+  \end{vmatrix} \\
+  &\quad-(4+t\cos\phi)\cos\theta\begin{vmatrix}
+  \cos\phi\cos\theta    & \sin\phi \\
+  -t\sin\phi\cos\theta  & t\cos\phi
+  \end{vmatrix} \\
+  &=-(4+t\cos\phi)\sin\theta\left(
+  t\cos^2\phi\sin\theta+t\sin^2\phi\sin\theta
+  \right) \\
+  &\quad-(4+t\cos\phi)\cos\theta\left(
+  t\cos^2\phi\cos\theta+t\sin^2\phi\cos\theta
+  \right) \\
+  &=-t(4+t\cos\phi)\sin^2\theta-t(4+t\cos\phi)\cos^2\theta \\
+  &=-t(4+t\cos\phi)
+  \end{aligned}\]
+  And the Jacobian is:
+  \[\begin{aligned}
+  J=|-t(4+t\cos\phi)|=t(4+t\cos\phi)=4t+t^2\cos\phi
+  \end{aligned}\]
+  since \(t\) is positive. Finally the differential of volume is:
+  \[
+  dV=(4t+t^2\cos\phi)\,dt\,d\phi\,d\theta
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<h3>Volume</h3>
+
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the volume of the half-donut.</span>" data-number="2">
+  <hr width="80%">
+  <p class="sol">
+    The volume is:
+    \[\begin{aligned}
+    V&=\iint_R 1\,dV
+    =\int_0^{2\pi}\int_0^\pi\int_0^2 (4t+t^2\cos\phi)\,dt\,d\phi\,d\theta \\
+    &=2\pi\int_0^\pi\left[2t^2+\dfrac{t^3}{3}\cos\phi\right]_0^2\,d\phi
+    =2\pi\int_0^\pi\left(8+\dfrac{8}{3}\cos\phi\right)\,d\phi \\
+    &=2\pi\left[8\phi+\dfrac{8}{3}\sin\phi\right]_0^\pi
+    =16\pi^2
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Mass</h3>
+
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the mass of the half-donut if the mass density is
+  \(\delta=z^2\).</span>" data-number="3">
+  <hr width="80%">
+  <p class="sol">
+    Since \(z=t\sin\phi\), the density is:
+    \[
+    \delta=z^2=t^2\sin^2\phi
+    \]
+    So the mass of the region is given by
+    \[\begin{aligned}
+    M&=\iint\limits_R \delta\,dV
+    =\int_0^{2\pi}\int_0^\pi\int_0^2 t^2\sin^2\phi(4t+t^2\cos\phi)\,dt\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^\pi\int_0^2 (4t^3\sin^2\phi+t^4\sin^2\phi\cos\phi)\,dt\,d\phi\,d\theta \\
+    &=2\pi\int_0^\pi\left[t^4\sin^2\phi+\dfrac{t^5}{5}\sin^2\phi\cos\phi\right]_0^2\,d\phi \\
+    &=2\pi\int_0^\pi\left(8(1-\cos2\phi)+\dfrac{32}{5}\sin^2\phi\cos\phi\right)\,d\phi \\
+    &=2\pi\left[8\left(\phi-\dfrac{\sin2\phi}{3}\right)+\dfrac{32}{5}\dfrac{\sin^3\phi}{3}\right]_0^\pi
+    =16\pi^2
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Center of Mass</h3>
+
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the center of mass of the half-donut if the mass density is
+  \(\delta=z^2\).</span>" data-number="4">
+  <hr width="80%">
+  <p class="sol">
+    By symmetry, the \(x\) and \(y\) components of the center of mass are
+    \(\bar x=\bar y=0\). So we need to compute the \(z\) component. The
+    \(z\) moment is
+    \[\begin{aligned}
+    M_z&=\iint\limits_R z\,\delta\,J\,du\,dv
+    =\int_0^{2\pi}\int_0^\pi\int_0^2 t^3\sin^3\phi(4t+t^2\cos\phi)\,dt\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^\pi\int_0^2 (4t^4\sin^3\phi+t^5\sin^3\phi\cos\phi)\,dt\,d\phi\,d\theta \\
+    &=2\pi\int_0^\pi\left[\dfrac{4t^5}{5}\sin^3\phi+\dfrac{t^6}{6}\sin^3\phi\cos\phi\right]_0^2\,d\phi \\
+    &=2\pi\int_0^\pi\left(\dfrac{128}{5}(1-\cos^2\phi)\sin\phi+\dfrac{32}{3}\sin^3\phi\cos\phi\right)\,d\phi \\
+    &=2\pi\left[\dfrac{128}{5}\left(-\cos\phi+\dfrac{\cos^3\phi}{3}\right)+\dfrac{32}{3}\dfrac{\sin^4\phi}{4}\right]_0^\pi \\
+    &=2\pi\left(\dfrac{256}{5}\left(1-\dfrac{1}{3}\right)\right)
+    =\dfrac{1024}{15}\pi
+    \end{aligned}\]
+    So:
+    \[\begin{aligned}
+    \bar z=\dfrac{M_z}{M}
+    =\dfrac{1024\pi}{15}\dfrac{1}{16\pi^2}
+    =\dfrac{64}{15\pi}
+    \end{aligned}\]
+  </p>
+  <div class="column">
+    <p>
+      Thus the center of mass for this region and given density is
+      \[\begin{aligned}
+      \left\langle \bar{x},\bar{y},\bar{z}\right\rangle
+      =\left\langle 0,0,\dfrac{64}{15\pi}\right\rangle
+      \approx\left\langle 0,0,1.36\right\rangle
+      \end{aligned}\]
+      The center of mass is not within the donut (It's in the hole.), but
+      it is within the convex hull.
+    </p>
+    <div class="center">
+      <img src="graphics/eg_3Dhalftorus.jpg" alt="eg_3Dhalftorus-cm">
+    </div>
+  </div>
+  <big>PY: Add the CM to the plot.</big>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Centroid</h3>
+
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the centroid of the half-donut.</span>" data-number="5">
+  <hr width="80%">
+  <p class="sol">
+    Again \(\bar x=\bar y=0\) and we compute \(\bar z\), but this time
+    the density function is \(\delta=1\). The \(z\)-moment of the volume is:
+    \[\begin{aligned}
+    V_z&=\iint\limits_R z\,J\,du\,dv
+    =\int_0^{2\pi}\int_0^\pi\int_0^2 t\sin\phi(4t+t^2\cos\phi)\,dt\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^\pi\int_0^2 (4t^2\sin\phi+t^3\sin\phi\cos\phi)\,dt\,d\phi\,d\theta \\
+    &=2\pi\int_0^\pi\left[\dfrac{4t^3}{3}\sin\phi+\dfrac{t^4}{4}\sin\phi\cos\phi\right]_0^2\,d\phi \\
+    &=2\pi\int_0^\pi\left(\dfrac{32}{3}\sin\phi+4\sin\phi\cos\phi\right)\,d\phi \\
+    &=2\pi\left[-\dfrac{32}{3}\cos\phi+2\sin^2\phi\right]_0^\pi
+    =2\pi\dfrac{64}{3}
+    =\dfrac{128}{3}\pi
+    \end{aligned}\]
+    So:
+    \[\begin{aligned}
+    \bar z=\dfrac{V_z}{V}
+    =\dfrac{128\pi}{3}\dfrac{1}{16\pi^2}
+    =\dfrac{8}{3\pi}
+    \end{aligned}\]
+  </p>
+  <div class="column">
+    <p>
+      Thus the centroid for this region is:
+      \[\begin{aligned}
+      \left\langle \bar{x},\bar{y},\bar{z}\right\rangle
+      =\left\langle 0,0,\dfrac{8}{3\pi}\right\rangle
+      \approx\left\langle 0,0,.849\right\rangle
+      \end{aligned}\]
+      The centroid is not within the donut (It's in the hole.), but
+      it is within the convex hull.
+    </p>
+    <div class="center">
+      <img src="graphics/eg_3Dhalftorus.jpg" alt="eg_3Dhalftorus-centroid">
+    </div>
+    <big>PY: Add the centroid to the plot.</big>
+  </div>
+  <p class="check">
+    Since the density \(\delta=x^2\) increases with \(z\) ,
+    we expect the center of mass to be above the centroid which it is.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Average Value</h3>
+
+<div class="collapse example hide" data-title="<span style='color:black'>
+    Find the average temperature  of the half-donut if the temperature is
+    \(T=270-z\).</span>" data-number="6">
+  <hr width="80%">
+  <p class="sol">
+    The average temperature is:
+    \[\begin{aligned}
+    T_\text{ave}&=\dfrac{1}{V}\iiint_R T\,dV
+    =\dfrac{1}{V}\iiint_R 270-z\,dV \\
+    &=\dfrac{270}{V}\iiint_R 1\,dV-\dfrac{1}{V}\iiint_R z\,dV
+    \end{aligned}\]
+    The first integral is the volume and the second is the
+    \(z\) \(1^\text{st}\) moment of the volume. So:
+    \[
+    T_\text{ave}=270\dfrac{V}{V}-\dfrac{V_z}{V}
+    =270-\bar z=270-(.849)=269.15
+    \]
+  </p>
+</div>
+
+        <div class="rule" id="ex_ellipsoid"></div>
+
+<div class="column">
+	<p class="exercise" data-width="60%" data-number="7">
+    The following exercises refer to the ellipsoid \(x^2+4y^2+9z^2=36\)
+    discussed on the
+    <a href="3DCurv-Int.html" title="Return using the Back button.">
+    previous page</a>. We use the <span class="hl">ellipsoidal spherical
+    coordinate system</span>:
+    \[\begin{aligned}
+    x&=6\rho\sin\phi\cos\theta \\
+    y&=3\rho\sin\phi\sin\theta \\
+    z&=2\rho\cos\phi
+    \end{aligned}\]
+    with
+    \[
+    0 \le \rho \le 1 \qquad 0 \le \rho \le \pi \qquad 0 \le \rho \le 2\pi
+    \]
+    for which the Jacobian is:
+    \[
+    J=36\rho^2\sin\phi
+    \]
+	</p>
+  <div class="center" data-width="40%">
+    <img src="graphics/3Dcurvint-example.jpg" alt="3Dcurvint-example">
+  </div>
+</div>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the volume of the ellipsoid.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX7a"></button>
+        <button class="toggle has-sol" data-toggle="SolX7a"></button>
+        <button class="toggle has-check" data-toggle="CkX7a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX7a">
+      <p>
+        \(V=48\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX7a">
+      <p>
+        The volume is:
+        \[\begin{aligned}
+        V&=\iiint\limits_R 1\,dV
+        =\iiint\limits_R 36\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=\int_0^{2\pi}\int_0^\pi\int_0^1 36\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=36\int_0^{2\pi} \,d\theta\int_0^\pi \sin\phi\,d\phi\int_0^1 \rho^2\,d\rho
+        =48\pi
+        \end{aligned}\]
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" data-toggle="CkX7a">
+      <p>
+        The high school geometry formula for the volume of an ellipsoid is:
+        \[
+        V=\dfrac{4}{3}\pi \,a\,b\,c
+        =\dfrac{4}{3}\pi \,6\cdot3\cdot2
+        =48\pi
+        \]
+        which agrees with our result.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the mass of the ellipsoid if the density is
+        \(\delta=z+2\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX7b"></button>
+        <button class="toggle has-sol" data-toggle="SolX7b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX7b">
+      <p>
+        \(M=96\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX7b">
+      <p>
+        First, we convert the density function to ellipsoidal
+        spherical coordinates:
+        \[
+        \delta=z+2=2\rho\cos\phi+2
+        \]
+        The mass of the ellipsoid is found by integrating the density
+        function over the volume
+        \[\begin{aligned}
+        M&=\iiint\limits_R \delta\,dV=\iiint\limits_R
+        (2\rho\cos\phi+2)36\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=72\int_0^{2\pi}\int_0^\pi\int_0^1
+        (\rho^3\sin\phi\cos\phi+\rho^2\sin\phi)\,d\rho\,d\phi\,d\theta \\
+        &=72\int_0^{2\pi} \,d\theta
+        \left[\int_0^\pi \sin\phi\cos\phi\,d\phi\int_0^1 \rho^3\,d\rho
+             +\int_0^\pi \sin\phi\,d\phi\int_0^1 \rho^2\,d\rho\right] \\
+        &=144\pi
+        \left(\left[\dfrac{\sin^2\phi}{2}\right]_0^\pi\left[\dfrac{\rho^4}{4}\right]_0^1
+            +\left[-\cos\phi\dfrac{}{}\right]_0^\pi\left[\dfrac{\rho^3}{3}\right]_0^1\right) \\
+        &=144\pi\left[(0)\left(\dfrac{1}{4}\right)+(2)\left(\dfrac{1}{3}\right)\right]
+        =144\pi\left(\dfrac{2}{3}\right)
+        =96\pi
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the center of mass of the ellipsoid if the density is
+        \(\delta=z+2\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX7c"></button>
+        <button class="toggle has-sol" data-toggle="SolX7c"></button>
+        <button class="toggle has-check" data-toggle="CkX7c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX7c">
+      <p>
+        \(\left\langle \bar{x},\bar{y},\bar{z}\right\rangle
+        =\left\langle 0,0,0.4\right\rangle\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX7c">
+      <p>
+        By symmetry \(\bar{x}=\bar{y}=0\). We need to compute
+        \(\bar{z}=\dfrac{M_z}{M}\). We already have the mass of the ellipsoid:
+        \(M=96\pi\). The \(z\)-moment of mass is:
+        \[\begin{aligned}
+        M_z&=\iiint_R z\,\delta\,dV
+        =\iiint_R (2\rho\cos\phi)(2\rho\cos\phi+2)36\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=288\pi\int_0^\pi\int_0^1
+        (\rho^4\cos^2\phi\sin\phi+\rho^3\cos\phi\sin\phi)\,d\rho\,d\phi \\
+        &=288\pi\left[\int_0^\pi\int_0^1
+        \rho^4\cos^2\phi\sin\phi\,d\rho\,d\phi
+        +\int_0^\pi\int_0^1 \rho^3\cos\phi\sin\phi\,d\rho\,d\phi\right] \\
+        &=288\pi\left[\int_0^\pi \cos^2\phi\sin\phi\,d\phi\int_0^1 \rho^4\,d\rho
+                     +\int_0^\pi \cos\phi\sin\phi\,d\phi\int_0^1 \rho^3\,d\rho\right] \\
+        &=288\pi\left(\left[\dfrac{-\cos^3\phi}{3}\right]_0^\pi\left[\dfrac{\rho^5}{5}\right]_0^1
+                     +\left[\dfrac{\sin^2\phi}{2}\right]_0^\pi\left[\dfrac{\rho^4}{4}\right]_0^1\right) \\
+        &=288\pi\left[\left(\dfrac{2}{3}\right)\left(\dfrac{1}{5}\right)
+        +(0)\left(\dfrac{1}{4}\right) \right]
+        =288\pi\left(\dfrac{2}{15}\right)
+        =\dfrac{192}{5}\pi
+        \end{aligned}\]
+      </p>
+      <div class="column">
+        <p data-width="60%">
+          Now we compute \(\bar{z}\) by
+          \[
+          \bar{z}=\dfrac{M_z}{M}
+          =\dfrac{192\pi}{5}\dfrac{1}{96\pi}=\dfrac{2}{5}=0.4
+          \]
+          So the center of mass is at:
+          \[\begin{aligned}
+          \left\langle \bar{x},\bar{y},\bar{z}\right\rangle
+          =\left\langle 0,0,0.4\right\rangle
+          \end{aligned}\]
+          The center of mass is plotted within the ellipsoid as a black dot.
+        </p>
+        <div class="center" data-width="40%">
+          <img src="graphics/3Dcurvapp-cm.jpg" alt="3Dcurvapp-cm">
+        </div>
+      </div>
+    </div>
+    <div class="toBeToggled drop-check" data-toggle="CkX7c">
+      <p>
+        The center of mass, \(\bar{z}=0.4\), is positive because the density,
+        \(\delta=z+2\) increases with \(z\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the centroid of the <strong>upper half</strong> of the ellipsoid.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX7d"></button>
+        <button class="toggle has-sol" data-toggle="SolX7d"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX7d">
+      <p>
+        \(\left\langle \bar{x},\bar{y},\bar{z}\right\rangle
+        =\left\langle 0,0,0.375\right\rangle\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX7d">
+      <p>
+        Since we are only looking at the upper half of the ellipsoid, the
+        range for \(\phi\) is:
+        \[
+        0 \le \phi \le \dfrac{\pi}{2}
+        \]
+        By symmetry \(\bar{x}=\bar{y}=0\). We need to compute
+        \(\bar{z}=\dfrac{V_z}{V}\). We already have the volume of the
+        half-ellipsoid: \(V=\dfrac{1}{2}(96\pi)=48\pi\).
+        The \(z\)-moment of volume is:
+        \[\begin{aligned}
+        V_z&=\iiint_R z\,dV \\
+        &=\int_0^{2\pi}\int_0^{\pi/2}\int_0^1 (2\rho\cos\phi)36\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=144\pi\int_0^{\pi/2} \cos\phi\sin\phi\,d\phi\int_0^1 \rho^3\,d\rho \\
+        &=144\pi\left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}\left[\dfrac{\rho^4}{4}\right]_0^1 \\
+        &=144\pi\left(\dfrac{1}{2}\right)\left(\dfrac{1}{4}\right)
+        =18\pi
+        \end{aligned}\]
+      </p>
+      <div class="column">
+        <p data-width="60%">
+          Now we compute \(\bar{z}\) by
+          \[
+          \bar{z}=\dfrac{V_z}{V}
+          =\dfrac{18\pi}{48\pi}=\dfrac{3}{8}=0.375
+          \]
+          So the center of mass is at:
+          \[\begin{aligned}
+          \left\langle \bar{x},\bar{y},\bar{z}\right\rangle
+          =\left\langle 0,0,0.375\right\rangle
+          \end{aligned}\]
+          The centroid is plotted within the half-ellipsoid as a black dot.
+        </p>
+        <div class="center" data-width="40%">
+          <img src="graphics/ex_halfellipsoid_centroid.jpg" alt="ex_halfellipsoid_centroid">
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Compute the average of the temperature, \(T=270-z^2\), over
+        the ellipsoid.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX7e"></button>
+        <button class="toggle has-sol" data-toggle="SolX7e"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX7e">
+      <p>
+        \(T_\text{ave}=269.2\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX7e">
+      <p>
+        The average temperature is:
+        \[\begin{aligned}
+        T_\text{ave}&=\dfrac{1}{V}\iiint_R T\,dV
+        =\dfrac{1}{V}\iiint_R 270-z^2\,dV \\
+        &=\dfrac{270}{V}\iiint_R 1\,dV-\dfrac{1}{V}\iiint_R z^2\,dV
+        \end{aligned}\]
+        The first integral is the volume and the second is:
+        \[\begin{aligned}
+        \iiint_R z^2\,dV
+        &=\int_0^{2\pi}\int_0^\pi\int_0^1 (2\rho\cos\phi)^2 36\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=288\pi\int_0^\pi \cos^2\phi\sin\phi\,d\phi\int_0^1 \rho^4\,d\rho \\
+        &=288\pi\left[\dfrac{-\cos^3\phi}{3}\right]_0^\pi\left[\dfrac{\rho^5}{5}\right]_0^1 \\
+        &=288\pi\left(\dfrac{2}{3}\right)\left(\dfrac{1}{5}\right)
+        =288\pi\left(\dfrac{2}{15}\right)
+        =\dfrac{192}{5}\pi
+        \end{aligned}\]
+        Since \(V=48\pi\), we have:
+        \[\begin{aligned}
+        T_\text{ave}&=270\dfrac{V}{V}-\dfrac{1}{V}\iiint_R z^2\,dV \\
+        &=270-\dfrac{1}{48\pi}\dfrac{192\pi}{5}
+        =270-\dfrac{4}{5}
+        =269.2
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

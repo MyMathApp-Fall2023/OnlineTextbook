@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Grid Cells | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DCurv-Appl.html" title="Previous">&lArr;</a></li>
+      <li><a href="3DCurv-GridVol.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Integrating in 3D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>1. Grid Cells</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Now we are going to look at curvilinear coordinates in 3D, which will be
+  similar to their 2D counterparts. As you read, you should look back at the
+  <a href="2DCurv-Grid.html" title="Return using the Back button.">
+  2D derivation</a> to see the parallels and for details about certain
+  quantities, such as the definition of the tangent vectors, e.g.
+  \(\vec{e}_u\), and of their stretched versions, e.g. \(\vec{U}\).
+</p>
+
+<p>
+  Cylindrical and spherical coordinates are the most common curvilinear
+  coordinate system in 3D, but there are others such as paracylindrical,
+  paraboloidal, and ellipsoidal-spherical.
+  A few coordinate grids are shown below.
+</p>
+
+<div class="center">
+  <figure>
+    <figcaption>Cylindrical Coordinates</figcaption>
+    <img src="graphics/3Dcurvgrid-cylindrical_coordplot.jpg"
+    alt="3Dcurvgrid-cylindrical_coordplot">
+  </figure>
+  <figure>
+    <figcaption>Spherical Coordinates</figcaption>
+    <img src="graphics/3Dcurvgrid-spherical_coordplot.jpg"
+    alt="3Dcurvgrid-spherical_coordplot">
+  </figure>
+  <figure>
+    <figcaption>Ellipsoidal-Spherical Coordinates</figcaption>
+    <img src="graphics/3Dcurvgrid-ellipsoidal_spherical_coordplot.jpg"
+    alt="3Dcurvgrid-ellipsoidal_spherical">
+  </figure>
+  <figure>
+    <figcaption>Paracylindrical Coordinates</figcaption>
+    <img src="graphics/3Dcurvgrid-paracylindrical_coordplot.jpg"
+    alt="3Dcurvgrid-paracylindrical_coordplot">
+  </figure>
+  <figure>
+    <figcaption>Paraboloidal Coordinates</figcaption>
+    <img src="graphics/3Dcurvgrid-paraboloidal_coordplot.jpg"
+    alt="3Dcurvgrid-paraboloidal_coordplot">
+  </figure>
+</div>
+
+<p>
+  We know how to integrate in cylindrical and spherical coordinates. We would
+  like to know how to integrate in other 3D coordinate systems as well. In the
+  section on <a href="Sph-Grid.html" title="Return using the Back button.">
+  spherical coordinates</a>, you were told the differential of
+  volume was \(dV=\rho^2\sin\phi\,d\rho\,d\theta\,d\phi\) but this was not
+  derived. Now as we discuss general curvilinear coordinates, we will use
+  spherical coordinates as a concerete example and in the process derive the
+  spherical differential of volume.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Coordinate System</h3>
+
+<p>
+  To specify a coordinate system, we need to give the position \((x,y,z)\)
+  as a function of the curvilinear coordinates.
+</p>
+<p class="example" data-number="1">
+  <span class="hl">Spherical coordinates</span> are given in components by
+  \[
+  x=\rho\sin\phi\cos\theta\qquad y=\rho\sin\phi\sin\theta\qquad
+  z=\rho\cos\phi
+  \]
+  or as a single vector equation for the position:
+  \[
+  (x,y,z)=\vec{R}(\rho,\theta,\phi)
+  =\left\langle
+  \rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi\right\rangle
+  \]
+  Once we specify the values of \(\rho\), \(\theta\) and \(\phi\), we know the
+  rectangular coordinates \(x\), \(y\) and \(z\).
+</p>
+<p class="def" data-title="3D Curvilinear Coordinates">
+  General curvilinear coordinates are given in components by:
+  \[
+  x=x(u,v,w) \qquad y=y(u,v,w) \qquad z=z(u,v,w)
+  \]
+  or as a single vector equation for the position:
+  \[
+  (x,y,z)=\vec{R}(u,v,w)
+  =\left\langle x(u,v,w),y(u,v,w),z(u,v,w) \right\rangle
+  \]
+  Once we specify the values of \(u\), \(v\) and \(w\), we know the rectangular
+  coordinates \(x\), \(y\) and \(z\).
+</p>
+
+        <div class="rule"></div>
+
+<h3>Coordinate Grid and Coordinate Curves</h3>
+
+<p>
+  Here is the spherical coordinate grid (again) and a general 3D curvilinear
+  coordinate grid:
+</p>
+<div class="center">
+  <figure>
+    <figcaption>Spherical Grid Cell</figcaption>
+    <img src="graphics/3dsphgrid.jpg" alt="3dsphgrid">
+  </figure>
+  <figure>
+    <figcaption>3D Curvlinear Grid Cell</figcaption>
+    <img src="graphics/3Dcurvegrid-GridCell.jpg" alt="3Dcurvegrid-GridCell">
+  </figure>
+</div>
+<big>PY: Replace the plots so they look analogous.</big>
+<p>
+  There are three families of coordinate curves that define the edges of a
+  grid cell (or coordinate box) in 3D.
+</p>
+<p class="example" data-number="2">
+  In spherical coordinates, the radial lines
+  (<span style="color:blue">blue</span>) are called \(\rho\)-curves
+  because \(\rho\) is changing, the circles of latitude
+  (<span style="color:red">red</span>) are called \(\theta\)-curves
+  because \(\theta\) is changing and the circles of longitude
+  (<span style="color:magenta">magenta</span>) are called \(\phi\)-curves
+  becuse \(\phi\) is changing.
+  <br/>
+  &emsp; The \(\rho\)-curve with \(\theta=\theta_0\) and \(\phi=\phi_0\) is
+  \(\vec{R}(\rho,\theta_0,\phi_0)
+  =\left\langle \rho\sin\phi_0\cos\theta_0,\rho\sin\phi_0\sin\theta_0,
+  \rho\cos\phi_0\right\rangle\)
+  with \(\rho\) as the parameter.
+  <br/>
+  &emsp; The \(\theta\)-curve with \(\rho=\rho_0\) and \(\phi=\phi_0\) is
+  \(\vec{R}(\rho_0,\theta,\phi_0
+  =\left\langle \rho_0\sin\phi_0\cos\theta,\rho_0\sin\phi_0\sin\theta,
+  \rho\cos\phi_0\right\rangle\)
+  with \(\theta\) as the parameter.
+  <br/>
+  &emsp; The \(\phi\)-curve with \(\rho=\rho_0\) and \(\theta=\theta_0\) is
+  \(\vec{R}(\rho_0,\theta_0,\phi)
+  =\left\langle \rho_0\sin\phi\cos\theta_0,\rho_0\sin\phi\sin\theta_0,
+  \rho\cos\phi\right\rangle\)
+  with \(\phi\) as the parameter.
+</p>
+<p class="def">
+  In the general curvilinear coordinates, there are \(u\)-curves (blue) on which
+  \(u\) is changing, \(v\)-curves (red) on which \(v\) is changing, and \(w\)-curves
+  (magenta) on which \(w\) is changing.
+  <br/>
+  &emsp; The \(u\)-curve with \(v=v_0\) and \(w=w_0\) is
+  \(\vec{R}(u,v_0,w_0)
+  =\left\langle x(u,v_0,w_0),y(u,v_0,w_0),z(u,v_0,w_0) \right\rangle\)
+  with \(u\) as the parameter.
+  <br/>
+  &emsp; The \(v\)-curve with \(u=u_0\) and \(w=w_0\) is
+  \(\vec{R}(u_0,v,w_0)
+  =\left\langle x(u_0,v,w_0),y(u_0,v,w_0),z(u_0,v,w_0) \right\rangle\)
+  with \(v\) as the parameter.
+  <br/>
+  &emsp; The\(w\)-curve with \(u=u_0\) and \(v=v_0\) is
+  \(\vec{R}(u_0,v_0,w)
+  =\left\langle x(u_0,v_0,w),y(u_0,v_0,w),z(u_0,v_0,w) \right\rangle\)
+  with \(v\) as the parameter.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Coordinate Tangent Vectors</h3>
+
+<p>
+  The tangent vector to a parametric curve, \(\vec r(t)\), is the derivative
+  of the position with respect to its parameter:
+  \[
+  \vec e_t=\dfrac{d\vec r}{dt}
+  =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle
+  \]
+</p>
+<p>
+  When dealing with a curvilinear coordinate system, the
+  tangent vector along each coordinate curve is found by differentiating
+  with respect to its parameter. Since the other coordinates are held fixed,
+  these are partial derivatives.
+</p>
+<p class="example" data-number="3">
+  In spherical coordinates:
+  \[
+  \vec{R}(\rho,\phi,\theta)
+  =\left\langle \rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,
+  \rho\cos\phi\right\rangle
+  \]
+  the tangent vectors to the \(\rho\), \(\phi\) and \(\theta\) curves are
+  the derivatives with respect to their parameters. Since the other two
+  coordinates are held constant, these are partial derivatives:
+  \[\begin{aligned}
+  \vec{e}_\rho=\dfrac{\partial\vec{R}}{\partial\rho}
+  &=\left\langle \dfrac{\partial x}{\partial\rho},
+  \dfrac{\partial y}{\partial\rho},\dfrac{\partial z}{\partial\rho}\right\rangle \\
+  &=\left\langle \sin\phi\cos\theta,\sin\phi\sin\theta,
+  \cos\phi\right\rangle \\
+  \vec{e}_\theta=\dfrac{\partial\vec{R}}{\partial\theta}
+  &=\left\langle \dfrac{\partial x}{\partial\theta},
+  \dfrac{\partial y}{\partial\theta},\dfrac{\partial z}{\partial\theta}\right\rangle \\
+  &=\left\langle -\rho\sin\phi\sin\theta,\rho\sin\phi\cos\theta,
+  0\right\rangle \\
+  \vec{e}_\phi=\dfrac{\partial\vec{R}}{\partial\phi}
+  &=\left\langle \dfrac{\partial x}{\partial\phi},
+  \dfrac{\partial y}{\partial\phi},\dfrac{\partial z}{\partial\phi}\right\rangle \\
+  &=\left\langle \rho\cos\phi\cos\theta,\rho\cos\phi\sin\theta,
+  -\rho\sin\phi\right\rangle
+  \end{aligned}\]
+</p>
+<p class="def">
+  For general curvilinear coordinates, the
+  <span class="defword">coordinate tangent vectors,</span> are:
+  \[\begin{aligned}
+  \vec{e}_u&=\dfrac{\partial\vec{R}}{\partial u}
+  =\left\langle \dfrac{\partial x}{\partial u},
+  \dfrac{\partial y}{\partial u},\dfrac{\partial z}{\partial u}\right\rangle \\
+  \vec{e}_v&=\dfrac{\partial\vec{R}}{\partial v}
+  =\left\langle \dfrac{\partial x}{\partial v},
+  \dfrac{\partial y}{\partial v},\dfrac{\partial z}{\partial v}\right\rangle \\
+  \vec{e}_w&=\dfrac{\partial\vec{R}}{\partial w}
+  =\left\langle \dfrac{\partial x}{\partial w},
+  \dfrac{\partial y}{\partial w},\dfrac{\partial z}{\partial w}\right\rangle
+  \end{aligned}\]
+</p>
+<p>
+  The coordinate tangent vectors are added to the coordinate grid plots below
+  at the point \((r_0,\phi_0,\theta_0)\) for the spherical plot and at
+  \((u_0,v_0,w_0)\) for the general curvilinear plot.
+</p>
+
+<span class="redbig">Add plots</span>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. 2D Polar Plots | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DPolarEq.html" title="Previous">&lArr;</a></li>
+      <li><a href="3DCylCoord.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Polar Coordinates - 2D</h2>
+
+
+      
+      <h2>4. 2D Polar Plots</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="remark">
+  Before you can graph polar curves, you need to understand the graphs of
+	the basic trig functions and how to shift them. These are covered in the
+  review chapter on
+  <a href="../../../MYMACalc1/Part I - Pre-Calculus/Trig/ChContents.html"
+  title="Return using the Back button.">Trigonometry</a>.
+</p>
+
+<p class="maplet">
+  You can also review graphs of the basic trig functions and how to shift them
+  by using the following Maplets
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/Basic6Trig.maplet" download>Basic 6 Trigonometric Functions</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ShiftTrig.maplet" download>Shifting Trigonometric Functions</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/SinCosProps.maplet" download>Properties of Sine and Cosine Curves</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+        <div class="rule"></div>
+
+<p>
+	The <span class="defword">rectangular graph of an equation</span> is
+	the set of all points whose rectangular coordinates \((x,y)\) satisfy
+	the equation.  For example, the graphs of the circle \(x^2+y^2=4\)
+	and the cusp \(x^2=y^3\) are
+</p>
+<div class="center">
+	<figure>
+		<figcaption>Circle</figcaption>
+    <img src="graphics/eg_circle.jpg" alt="eg_circle"/>
+	</figure>
+	<figure>
+		<figcaption>Cusp</figcaption>
+    <img src="graphics/eg_cusp.jpg" alt="eg_cusp"/>
+	</figure>
+</div>
+<p>
+	Similarly, the <span class="defword">polar graph</span> of a polar equation
+	is the set of all points for which some pair of polar coordinates
+  \((r,\theta)\) satisfy the equation. The simplest examples make one
+  coordinate constant.  For example, the graphs of the circle \(r=2\)
+	and the ray (or line, if \(r\) can be negative) \(\theta=\dfrac{\pi}{6}\) are
+</p>
+<div class="center">
+	<figure>
+		<figcaption>Circle&ensp;</figcaption>
+    <video src="graphics/eg_polarcircle_anim.mp4" autoplay loop controls></video>
+	</figure>
+	<figure>
+		<figcaption>Ray&ensp;</figcaption>
+    <video src="graphics/eg_polarray_anim.mp4" autoplay loop controls></video>
+	</figure>
+</div>
+<p class="remark">
+  In the graph of \(\theta=\dfrac{\pi}{6}\), if we require \(r \ge 0\), then
+  the graph is only the <span style="color:blue">blue</span> ray.
+  If we allow \(r \lt 0\), then the graph is the whole
+  <span style="color:red">red</span> and <span style="color:blue">blue</span> line.
+</p>
+
+        <div class="rule"> </div>
+
+<p>
+	We want to be able to graph more complicated polar equations. So let's do it
+ 	by examples:
+</p>
+<div class="collapse example hide"  data-number="1"
+data-title="<span style='color:black'>Plot the spiral \(r=\theta\).</span>">
+  <div class="column">
+  	<div data-col-width="50%">
+  		<p>
+  	    We first graph the part of the curve with \(\theta \ge 0\). We start
+        at \(r=\theta=0\) which is the origin. As \(r=\theta\) gets larger,
+        we travel around counterclockwise and	the radius also gets larger.
+        So we trace out a spiral as shown in the first plot.
+  		</p>
+  	</div>
+  	<div class="center" data-col-width="50%">
+  		<img src="graphics/eg_spiral_pos_anim.gif" alt="eg_spiral_pos_anim"/>
+  	</div>
+  </div>
+  <div class="column">
+  	<div data-col-width="50%">
+  		<p>
+  			As \(r=\theta\) gets negative, we travel around clockwise and since \(r\)
+  			is also negative, we measure \(|r|\) backwards, which traces out a spiral
+  			which is the mirror image through the \(y\)-axis of the first half
+  			as shown in the second plot.
+  		</p>
+  	</div>
+  	<div class="center" data-col-width="50%">
+  		<img src="graphics/eg_spiral_all_anim.gif" alt="eg_spiral_all_anim"/>
+  	</div>
+  </div>
+  <div class="column">
+  	<div data-col-width="50%">
+  		<p class="remark">
+  			If we restrict to the part of the curve, \(r=\theta\), with
+  			\(-\,\dfrac{3\pi}{2} \le \theta \le \dfrac{3\pi}{2}\),
+  			we get a heart shape.
+    		<br><br>
+    		<span class="redbig center">Happy Valentine's Day!</span>
+  		</p>
+  	</div>
+  	<div class="center" data-col-width="50%">
+  		<img src="graphics/rem_valentine.jpg" alt="rem_valentine">
+  	</div>
+  </div>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+		Plot the curve \(r=|\theta|\).
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX2"></button>
+		<button class="toggle has-sol" data-toggle="SolX2"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+	<div class="center">
+    <img src="graphics/ex_spiral_abs_anim.gif" alt="ex_spiral_abs_anim">
+	</div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <div class="column">
+  	<div>
+  		<p>
+  	    Start with the graph of \(r=\theta\) for \(\theta \ge 0\).
+  		</p>
+  	</div>
+  	<div class="center">
+  		<img src="graphics/eg_spiral_pos_anim.gif" alt="eg_spiral_pos_anim"/>
+  	</div>
+  </div>
+  <div class="column">
+  	<div>
+  		<p>
+  	    Then take its mirror image through \(\theta=0\) which is the
+        positive \(x\)-axis.
+  		</p>
+  	</div>
+  	<div class="center">
+      <img src="graphics/ex_spiral_abs_anim.gif" alt="ex_spiral_abs_anim">
+  	</div>
+  </div>
+</div>
+
+        <div class="rule"> </div>
+
+<div class="collapse example hide" data-number="3"
+data-title="<span style='color:black'>Plot the cardioid \(r=1+\cos{\theta}\).</span>">
+  <div class="column">
+		<p>
+			First think of \(r\) and \(\theta\) as rectangular coordinates.
+      The graph of \(r=\cos{\theta}\) is
+		</p>
+		<figure class="center">
+      <img src="graphics/eg_r=costheta_rect.jpg" alt="eg_r=costheta_rect"/>/>
+    </figure>
+	</div>
+	<div class="column">
+		<p>
+			We lift this up by \(1\) so that the graph of \(r=1+\cos\theta\) is
+		</p>
+		<figure class="center">
+      <img src="graphics/eg_r=1+costheta_rect.jpg" alt="eg_r=1+costheta_rect"/>
+    </figure>
+	</div>
+	<div class="column">
+		<div>
+			<p>
+				We first plot the polar points for these interesting points:
+			</p>
+			<table><tbody>
+					<tr>
+            <td>\(\theta=\)</td>
+            <td>\(0\)</td>
+            <td>\(\dfrac{\pi}{2}\)</td>
+            <td>\(\pi\)</td>
+            <td>\(\dfrac{3\pi}{2}\)</td>
+            <td>\(2\pi\)</td>
+          </tr>
+					<tr>
+            <td>\(r=\)</td>
+            <td>\(2\)</td>
+            <td>\(1\)</td>
+            <td>\(0\)</td>
+            <td>\(1\)</td>
+            <td>\(2\)</td>
+          </tr>
+			</tbody></table>
+		</div>
+		<figure class="center">
+      <img src="graphics/eg_r=1+costheta_pts.jpg" alt="eg_r=1+costheta_pts"/>
+    </figure>
+	</div>
+	<div class="column">
+		<p>
+			We now connect the dots in each quadrant. From the rectangular plot we
+      see that as	\(\theta\) increases from \(0\) to \(\dfrac{\pi}{2}\),
+      the value of r decreases from \(2\) to \(1\). We add this to the plot:
+		</p>
+		<figure class="center">
+      <img src="graphics/eg_r=1+costheta_I.jpg" alt="eg_r=1+costheta_I"/>
+    </figure>
+	</div>
+	<div class="column">
+		<p>
+			On the interval \(\dfrac{\pi}{2} \lt \theta \lt \pi\) we see that \(r\)
+      decreases from \(1\) to \(0\). We add this section next:
+		</p>
+		<figure class="center">
+      <img src="graphics/eg_r=1+costheta_II.jpg" alt="eg_r=1+costheta_II"/>
+    </figure>
+	</div>
+	<div class="column">
+		<p>
+			Finally, we see that as \(\theta\) increases from \(\pi\) to
+      \(\dfrac{3\pi}{2}\)	to \(2\pi\), the value of \(r\) reverses and goes
+      from \(0\) to \(1\) and finally back to \(2\). We conclude from this
+      that the second half of the cardioid is a mirror image of the first.
+      This finishes the plot:
+		</p>
+    <figure class="center">
+      <img src="graphics/eg_r=1+costheta_IV.jpg" alt="eg_r=1+costheta_IV"/>
+      <figcaption>
+        Cardioid: &ensp; \(r=1+\cos\theta\)
+      </figcaption>
+  	</figure>
+	</div>
+	<p>
+		<button class="toggle" data-toggle="cardioid">
+      Do you see why this is called a cardioid?
+    </button>
+  </p>
+	<div class="toBeToggled note" data-toggle="cardioid">
+		<p>
+			Because it is shaped like a heart!
+		</p>
+	</div>
+  <div class="column">
+    <p>
+    	Watch the animation of the cardioid being drawn:
+    </p>
+    <figure class="center">
+      <video src="graphics/eg_r=1+costheta_anim.mp4" autoplay loop controls></video>
+    </figure>
+  </div>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="4">
+		Plot the cardioid \(r=1+\sin{\theta}\).
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX4"></button>
+		<button class="toggle has-sol" data-toggle="SolX4"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <div class="column">
+  	<p data-col-width="40%">
+      Cardioid: &emsp; \(r=1+\sin\theta\)
+    </p>
+    <div data-col-width="40%">
+  		<img src="graphics/ex_r=1+sintheta_polar.jpg" alt="ex_r=1+sintheta_polar">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <div class="column">
+  	<figure class="center">
+  		<img src="graphics/ex_r=1+sintheta_rect.jpg" alt="ex_r=1+sintheta_rect">
+      <figcaption>
+        Cardioid: &emsp; \(r=1+\sin\theta\)
+      </figcaption>
+  	</figure>
+    <figure class="center">
+      <video src="graphics/ex_r=1+sintheta_anim.mp4" autoplay loop controls></video>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+	Frequently, when plotting polar functions we allow \(r\) to be negative by
+	measuring	backward. In particular, if the direction is \(\theta\), then
+</p>
+<ul>
+  <li>
+    when \(r\) is positive, we move in the	direction \(\theta\),
+    (and plot it in <span style="color:blue">blue</span>), but
+  </li>
+  <li>
+    when \(r\) is negative, we move in the direction \(\theta+\pi\),
+    (and plot it in <span style="color:red">red</span>).
+  </li>
+</ul>
+
+<div class="collapse example hide"  data-number="5"
+data-title="<span style='color:black'>Plot the lima&#xe7;on \(r=1+2\cos{\theta}\).">
+  <div class="column">
+		<p>
+      We follow the same procedure as last time by first graphing \(r\) as a
+      function of \(\theta\) as	rectangular coordinates:
+		</p>
+    <div class="center">
+  		<img src="graphics/eg_r=1+2costheta_rect.jpg" alt="eg_r=1+2costheta_rect"/>
+    </div>
+	</div>
+	<p>
+		Notice that \(r=1+2\cos{\theta}=0\) when \(\cos{\theta}=-\,\dfrac{1}{2}\)
+		or \(\theta=\dfrac{2\pi}{3}\) and \(\dfrac{4\pi}{3}\). We add these to
+    our list of important points.
+	</p>
+	<div class="column">
+		<div>
+			<p>
+        We plot the polar points at the important values of \(\theta\):
+      </p>
+			<table>
+			<tbody>
+				<tr>
+					<td>\(\theta=\)</td>
+          <td>\(0\)</td>
+          <td>\(\dfrac{\pi}{2}\)</td>
+          <td>\(\dfrac{2\pi}{3}\)</td>
+					<td>\(\pi\)</td>
+          <td>\(\dfrac{4\pi}{3}\)</td>
+          <td>\(\dfrac{3\pi}{2}\)</td>
+          <td>\(2\pi\)</td>
+				</tr> <tr>
+					<td>\(r=\)</td>
+          <td>\(3\)</td>
+          <td>\(1\)</td>
+          <td>\(0\)</td>
+          <td>\(-1\)</td>
+					<td>\(0\)</td>
+          <td>\(1\)</td>
+          <td>\(3\)</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		<figure class="center">
+  		<img src="graphics/eg_r=1+2costheta_pts.jpg" alt="eg_r=1+2costheta_pts"/>
+    </figure>
+	</div>
+	<p> Notice that the origin occurs twice when \(\theta=\dfrac{2\pi}{3}\) and
+    \(\dfrac{4\pi}{3}\). Also when \(\theta=\pi\), which is the negative
+    \(x\)-axis, \(r=-1\) which we measure	backwards along the positive
+    \(x\)-axis. Be careful to check that you know how each of	these points
+    is plotted!
+	</p>
+	<div class="column">
+    <div>
+  		<p>
+        Next, we connect the dots by observing that \(r\) decreases from \(3\)
+        to \(0\) on the interval \(0 \lt \theta \lt \dfrac{2\pi}{3}\). Also
+        notice that \(r\) is negative	on the interval
+        \(\dfrac{2\pi}{3} \lt \theta \lt \dfrac{4\pi}{3}\), so we measure \(r\)
+    		opposite to the direction of \(\theta\) on this interval.
+    	</p>
+  		<p>
+        The result is plotted for \(\theta \lt \theta \lt \pi\) with the curve
+        in <span style="color:red">red</span> when \(r\) is negative:
+  		</p>
+    </div>
+		<figure class="center">
+  		<img src="graphics/eg_r=1+2costheta_II.jpg" alt="eg_r=1+2costheta_II"/>
+    </figure>
+	</div>
+	<div class="column">
+		<p>
+      Finally, we note again that the second half is a mirror image of the
+      first. Thus by symmetry our final plot is:
+		</p>
+    <figure class="center">
+  		<img src="graphics/eg_r=1+2costheta_IV.jpg" alt="eg_r=1+2costheta_IV"/>
+      <figcaption>
+        Lima&#xe7;on: \(r=1+2\cos\theta\)
+      </figcaption>
+    </figure>
+	</div>
+  <div class="column">
+    <div>
+      <p>
+        Watch the animation of the lima&#xe7;on being	drawn.
+      </p>
+      <p>
+    		The word lima&#xe7;on is French for snail, but you can also remember that
+        it looks like a lima bean.
+      </p>
+  	</div>
+    <figure class="center">
+      <video src="graphics/eg_r=1+2costheta_anim.mp4" autoplay loop controls></video>
+    </figure>
+  </div>
+  <p>
+    Notice the curve and the radial line are
+    <span style="color:blue">blue</span> when the radius is positive and
+    <span style="color:red">red</span> when the radius is negative.
+  </p>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="6">
+		Plot the lima&#xe7;on \(r=1+2\sin\theta\)
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX6"></button>
+		<button class="toggle has-sol" data-toggle="SolX6"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <div class="column">
+  	<p data-col-width="40%">
+      Lima&#xe7;on &emsp; \(r=1+2\sin\theta\)
+    </p>
+    <div data-col-width="40%">
+			<img src="graphics/ex_r=1+2sintheta_polar.jpg" alt="ex_r=1+2sintheta_polar">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <div class="column">
+  	<figure class="center">
+  		<img src="graphics/ex_r=1+2sintheta_rect.jpg" alt="ex_r=1+2sintheta_rect">
+      <figcaption>
+        Lima&#xe7;on &emsp; \(r=1+2\sin\theta\)
+      </figcaption>
+  	</figure>
+    <figure class="center">
+      <video src="graphics/ex_r=1+2sintheta_anim.mp4" autoplay loop controls></video>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+	When there is a multiple of \(\theta\) inside the sine or cosine, the horizontal
+	scale of the rectangular plot stretches or shrinks, changing the period.
+</p>
+<div class="collapse example hide"  data-number="7"
+  data-title="<span style='color:black'>Plot the infinity curve
+  \(r=\cos^2\theta=\dfrac{1+\cos2\theta}{2}\).">
+  <p>
+  	From the equation \(r=\cos^2\theta\), we find
+    \(r=0\) when \(\theta=\dfrac{\pi}{2}\) or \(\dfrac{3\pi}{2}\) and
+    \(r=1\) when \(\theta=0\) or \(\pi\). Also notice there are no negative
+    values of \(r\). The equation \(r=\dfrac{1+\cos 2\theta}{2}\) makes it
+    easier to plot. Here is a table of important values and a rectangular plot:
+  </p>
+  <div class="column">
+    <div class="center" data-col-width="60%">
+  		<table><tbody>
+  			<tr>
+  				<td>\(\theta=\)</td>
+          <td>\(0\)</td>
+          <td>\(\dfrac{\pi}{4}\)</td>
+          <td>\(\dfrac{\pi}{2}\)</td>
+  				<td>\(\dfrac{3\pi}{4}\)</td>
+          <td>\(\pi\)</td>
+          <td>\(\dfrac{5\pi}{4}\)</td>
+  				<td>\(\dfrac{3\pi}{2}\)</td>
+          <td>\(\dfrac{7\pi}{4}\)</td>
+          <td>\(2 \pi\)</td>
+  			</tr>
+        <tr>
+  				<td>\(r=\)</td>
+          <td>\(1\)</td>
+          <td>\(0.5\)</td>
+          <td>\(0\)</td>
+          <td>\(0.5\)</td>
+  				<td>\(1\)</td>
+          <td>\(0.5\)</td>
+          <td>\(0\)</td>
+          <td>\(0.5\)</td>
+          <td>\(1\)</td>
+  			</tr>
+  		</tbody></table>
+    </div>
+		<figure class="center" data-col-width="40%">
+  		<img src="graphics/eg_r=cos^2theta_rect.jpg" alt="r=cos^2theta_rect"/>
+    </figure>
+  </div>
+  <p>
+  	Notice the plot repeats	with a period of \(\pi\). Here is the polar plot:
+  </p>
+  <div class="column">
+    <figure class="center">
+      <video src="graphics/eg_r=cos^2theta_anim.mp4" autoplay loop controls></video>
+    </figure>
+    <figure class="center" data-col-width="40%">
+  		<img src="graphics/eg_r=cos^2theta_polar.jpg" alt="r=cos^2theta_polar">
+      <figcaption>
+        Infinity: &emsp; \(r=\cos^2\theta\)
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="8">
+		Plot the figure eight curve \(r=\sin^2\theta\).
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX8"></button>
+		<button class="toggle has-sol" data-toggle="SolX8"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  <div class="column">
+  	<p data-col-width="40%">
+      Figure Eight: &emsp; \(r=\sin^2\theta\)
+    </p>
+    <div data-col-width="40%">
+  		<img src="graphics/ex_r=sin^2theta_polar.jpg" alt="r=sin^2theta_polar">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  <div class="column">
+  	<figure class="center">
+  		<img src="graphics/ex_r=sin^2theta_rect.jpg" alt="r=sin^2theta_rect">
+      <figcaption>
+        Figure Eight: &emsp; \(r=\sin^2\theta\)
+      </figcaption>
+  	</figure>
+    <figure class="center">
+      <video src="graphics/ex_r=sin^2theta_anim.mp4" autoplay loop controls></video>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule" id="roses"></div>
+
+<p>
+	Now let's combine a change of period with negative values of \(r\).
+</p>
+<div class="collapse example hide"  data-number="9"
+  data-title="<span style='color:black'>Plot the \(4\)-leaf rose \(r=\cos{2 \theta}\).">
+  <p>
+  	Notice that \(r=0\) when \(\theta=\dfrac{\pi}{4}, \dfrac{3\pi}{4},
+    \dfrac{5\pi}{4}\) or \(\dfrac{7\pi}{4}\).	Also \(r=1\) when \(\theta=0\)
+    or \(\pi\) and \(r=-1\) when \(\theta=\dfrac{\pi}{2}\) or \(\dfrac{3\pi}{2}\).
+    Also note that the plot repeats with a period of \(\pi\).
+    Here is a table of important values and a rectangular plot:
+  </p>
+  <div class="column">
+    <div class="center" data-col-width="60%">
+    	<table><tbody>
+    		<tr>
+    			<td>\(\theta=\)</td>
+          <td>\(0\)</td>
+          <td>\(\dfrac{\pi}{4}\)</td>
+          <td>\(\dfrac{\pi}{2}\)</td>
+    			<td>\(\dfrac{3 \pi}{4}\)</td>
+          <td>\(\pi\)</td>
+          <td>\(\dfrac{5 \pi}{4}\)</td>
+    			<td>\(\dfrac{3\pi}{2}\)</td>
+          <td>\(\dfrac{7 \pi}{4}\)</td>
+          <td>\(2 \pi\)</td>
+    		</tr> <tr>
+    			<td>\(r=\)</td>
+          <td>\(1\)</td>
+          <td>\(0\)</td>
+          <td>\(-1\)</td>
+          <td>\(0\)</td>
+    			<td>\(1\)</td>
+          <td>\(0\)</td>
+          <td>\(-1\)</td>
+          <td>\(0\)</td>
+          <td>\(1\)</td>
+    	</tbody></table>
+    </div>
+    <div class="center" data-col-width="40%">
+    	<img src="graphics/eg_r=cos2theta_rect.jpg" alt="r=cos2theta_rect"/>
+    </div>
+  </div>
+  <p>
+    Also notice that the plot has \(2\) positive bumps and \(2\) negative
+    bumps in the interval \([0,2\pi]\). Here is the polar plot:
+  </p>
+  <div class="column">
+    <div class="center" data-col-width="60%">
+      <video controls loop autoplay>
+        <source src="graphics/eg_r=cos2theta_anim.mp4" type="video/mp4">
+      </video>
+    </div>
+    <figure class="center" data-col-width="40%">
+  		<img src="graphics/eg_r=cos2theta_polar.jpg" alt="r=cos2theta_polar"/>
+  	  <figcaption>
+    		\(4\)-Leaf Rose: &emsp;  \(r=\cos(2\theta)\)
+  	  </figcaption>
+    </figure>
+  </div>
+  <p>
+  	In the animation, the radial line is
+    <span style="color:blue">blue</span> when \(r\) is	positive and
+    <span style="color:red">red</span> when \(r\) is negative.
+    They trace out different leaves.
+  </p>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="10">
+		Plot the 3-leaf rose \(r=\cos{3 \theta}\)
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX10"></button>
+		<button class="toggle has-sol" data-toggle="SolX10"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  <div class="column">
+  	<p data-col-width="40%">
+      3-Leaf Rose: &emsp; \(r=\cos(3\theta)\)
+    </p>
+    <div data-col-width="40%">
+  		<img src="graphics/ex_r=cos3theta_polar.jpg" alt="ex_r=cos3theta_polar">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX10">
+	<div class="column">
+    <div class="center">
+    	<p>
+    		Here is a table of values and the rectangular plot:
+    	</p>
+    	<table><tbody>
+  			<tr>
+  				<td>\(\theta =\)</td>
+  				<td>\(0\)</td>
+  				<td>\(\dfrac{\pi }{6}\)</td>
+  				<td>\(\dfrac{\pi }{3}\)</td>
+  				<td>\(\dfrac{\pi }{2}\)</td>
+  				<td>\(\dfrac{2\pi }{3}\)</td>
+  				<td>\(\dfrac{5\pi }{6}\)</td>
+  				<td>\(\pi \)</td>
+  			</tr>
+  			<tr>
+  				<td>\(r=\)</td>
+  				<td>\(1\)</td>
+  				<td>\(0\)</td>
+  				<td>\(-1\)</td>
+  				<td>\(0\)</td>
+  				<td>\(1\)</td>
+  				<td>\(0\)</td>
+  				<td>\(-1\)</td>
+  			</tr>
+    	</tbody></table>
+    </div>
+    <figure class="center">
+    	<img src="graphics/ex_r=cos3theta_rect.jpg" alt="ex_r=cos3theta_rect"/>
+      <figcaption>
+        3-Leaf Rose: &emsp; \(r=\cos(3\theta)\)
+      </figcaption>
+    </figure>
+	</div>
+	<div class="column">
+    <div>
+    	<p>
+    		There are \(3\) positive bumps and \(3\) negative
+        bumps in the interval \([0,2\pi]\). Here is the polar plot:
+    	</p>
+    	<p>
+    		In the animation, the radial line is
+        <span style="color:blue">blue</span> when \(r\) is	positive and
+        <span style="color:red">red</span> when \(r\) is negative.
+        Notice that each leaf of the rose is traced
+        out twice, once when \(r\) is	positive and once when \(r\) is negative.
+    	</p>
+    </div>
+  	<figure class="center">
+      <video src="graphics/ex_r=cos3theta_anim.mp4" autoplay loop controls></video>
+  	</figure>
+	</div>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="11">
+		How many leaves are there on the rose \(r=\cos(n \theta)\) if
+		\(n\) is even? Why?
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX11"></button>
+		<button class="toggle has-sol" data-toggle="SolX11"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+	<div class="column">
+    <div>
+    	<p>
+    		The rose \(r=\cos(n\theta)\) with even \(n\) has \(2n\) leaves,
+        \(n\) with a positive radius and \(n\) with a negative radius.
+    	</p>
+    	<p>
+        For example, the rose \(r=\cos(4\theta)\) has \(8\) leaves:
+    	</p>
+    </div>
+		<figure class="center">
+			<img src="graphics/ex_r=cos4theta_polar.jpg" alt="ex_r=cos4theta_polar">
+      <figcaption>
+        8-Leaf Rose: &emsp; \(r=\cos(4\theta)\)
+      </figcaption>
+		</figure>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  <p>
+    The function \(\cos(n \theta)\) is \(1\) when the argument is a multiple
+    of \(2\pi\), i.e. \(n \theta=2k\pi\). On the interval
+    \(0 \le \theta \le 2\pi\), this is at \(\theta=\dfrac{2k\pi}{n}\)
+    for \(k=1,2,\cdots,n\). These are the angles at the tip of each "positive"
+    leaf. Notice that these are the even multiples of \(\dfrac{\pi}{n}\).
+  </p>
+  <p>
+    Similarly, on the interval \(0 \le \theta \le 2\pi\), we have
+    \(\cos(n \theta)=-1\) when \(\theta=\dfrac{(2k+1)\pi}{n}\)
+    for \(k=1,2,\cdots,n\).  These are the angles at the tip of each "negative"
+    leaf. However, since the radius is negative, the leaf actually occurs at:
+    \[
+    \theta=\dfrac{(2k+1)\pi}{n}+\pi
+    =\dfrac{(2k+1+n)\pi}{n}
+    \]
+    Since \(n\) is even, these are the odd multiples of \(\dfrac{\pi}{n}\).
+  </p>
+  <p>
+    All together, there are \(2n\) leaves \(n\) positive and \(n\) negative.
+    For further evidence,	the polar plot of \(r=\cos 4\theta \) has \(8\) leaves:
+  </p>
+	<div class="column">
+  	<figure class="center">
+			<img src="graphics/ex_r=cos4theta_rect.jpg" alt="ex_r=cos4theta_rect">
+      <figcaption>
+        8-Leaf Rose: &emsp; \(r=\cos(4\theta)\)
+      </figcaption>
+  	</figure>
+  	<div class="center">
+      <video controls loop autoplay>
+  			<source src="graphics/ex_r=cos4theta_anim.mp4" type="video/mp4">
+  		</video>
+  	</div>
+  </div>
+</div>
+<div class="dotfillex">
+	<p class="exercise" data-number="12">
+		How many leaves are there on the rose \(r=\cos(n \theta)\) if
+		\(n\) is odd?
+		Why is this not the same answer as in the even case?
+	</p>
+	<p>
+    <button class="toggle has-ans" data-toggle="AnsX12"></button>
+		<button class="toggle has-sol" data-toggle="SolX12"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+	<div class="column">
+    <div>
+    	<p>
+    		The rose \(r=\cos(n\theta)\) with odd \(n\) has \(n\) leaves.
+        The \(n\) negative leaves coincide with the \(n\) positive leaves.
+    	</p>
+    	<p>
+        For example, the rose \(r=\cos(5\theta)\) has \(5\) leaves:
+    	</p>
+    </div>
+  	<figure class="center">
+			<img src="graphics/ex_r=cos5theta_polar.jpg" alt="ex_r=cos5theta_polar">
+      <figcaption>
+        5-Leaf Rose: &emsp; \(r=\cos(5\theta)\)
+      </figcaption>
+  	</figure>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX12">
+	<p>
+    On the interval \(0 \le \theta \le 2\pi\), the function \(\cos(n \theta)\)
+    is \(1\) when \(\theta=\dfrac{2k\pi}{n}\) for \(k=1,2,\cdots,n\). These
+    are the angles at the tip of each "positive" leaf. Notice that these are
+    the even multiples of \(\dfrac{\pi}{n}\).
+	</p>
+	<p>
+    Similarly, on the interval \(0 \le \theta \le 2\pi\), we have
+    \(\cos(n \theta)=-1\) when \(\theta=\dfrac{(2k+1)\pi}{n}\)
+    for \(k=1,2,\cdots,n\).  These are the angles at the tip of each "negative"
+    leaf. However, since the radius is negative, the leaf actually occurs at:
+    \[
+    \theta=\dfrac{(2k+1)\pi}{n}+\pi
+    =\dfrac{(2k+1+n)\pi}{n}
+    \]
+    Since \(n\) is odd, these are the even multiples of \(\dfrac{\pi}{n}\)
+    which are at the same angles as the positive leaves.
+	</p>
+	<p>
+		All together, there are only \(n\) leaves. The \(n\) negative leaves
+    coincide with the \(n\) positive leaves. For further evidence,the polar
+    plot of \(r=\cos 5\theta \) has \(5\) leaves. The \(5\) negative leaves
+    overwrite the \(5\) positive leaves.
+	</p>
+	<div class="column">
+  	<figure class="center">
+			<img src="graphics/ex_r=cos5theta_rect.jpg" alt="ex_r=cos5theta_rect">
+      <figcaption>
+        5-Leaf Rose: &emsp; \(r=\cos(5\theta)\)
+      </figcaption>
+  	</figure>
+  	<div class="center">
+      <video controls loop autoplay>
+  			<source src="graphics/ex_r=cos5theta_anim.mp4" type="video/mp4">
+  		</video>
+  	</div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+	You can review the graphs and equations of polar curves and practice
+  identifying polar curves from their graphs by using the following Maplets
+  (requires Maple on the computer where this is executed):
+</p>
+	
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/Basic14Polar.maplet" download>Basic 14 Polar Curves</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+	
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/PolarCurveID.maplet" download>Identify a Polar Curve from its Graph</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

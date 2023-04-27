@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b2. Volumes of Revolution: Disks, Washers or Cylinders? | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Rev.html" title="Previous">&lArr;</a></li>
+      <li><a href="Disk.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b2. Volumes of Revolution: Disks, Washers or Cylinders?</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  When we need to compute the <span class="hl">volume of a solid of
+  revolution</span>, we will need to decide whether to do an
+  \(x\) integral or a \(y\) integral and whether to use
+  <span class="hl">disks</span>, <span class="hl">washers</span> or
+  <span class="hl">cylinders</span>. <strong>Do not</strong> simply
+	try to remember all the formulas for the appropriate cases. Rather, here
+  are several steps to follow	to help make these decisions.
+</p>
+
+        <div class="rule"></div>
+
+<p class="meth" data-title="Volumes of Revolution">
+</p>
+<ol>
+  <li>
+    Draw the <span class="hl">region</span> in the \(xy\)-plane.
+	</li>
+  <li>
+    Decide if we will do an <span class="hl">\(x\)-integral</span>
+		or a <span class="hl">\(y\)-integral</span>.
+	</li>
+  <p>
+    This decision should be made in exactly the same way we would decide
+    how to compute the area of the region, <em>without regard to the axis of
+    rotation</em>. Is it easier to compute the area as an \(x\) integral
+    or as a \(y\) integral? Do the same for the volume.
+  </p>
+  <li>
+    Determine the <span class="hl">limits</span> for the integral.
+	</li>
+  <p>
+		We do this exactly as we would for computing the area.
+	</p>
+  <li>
+    Draw <span class="hl">one Riemann sum rectangle</span> in the figure.
+	</li>
+  <p>
+    For an \(x\)-integral the rectangle is vertical.
+    For a \(y\)-integral the rectangle is horizontal.
+  </p>
+  <li>
+    Rotate the rectangle about the specified axis and observe if it
+		sweeps out a <span class="hl">disk</span>, a <span class="hl">washer</span>
+		or a <span class="hl">cylinder</span>.
+  </li>
+</ol>
+
+        <div class="rule" id="rev_eg1"></div>
+
+<p>
+	On the next three pages we will discuss the volume integrals in each of the
+	three cases. But first some examples and exercises.
+</p>
+<div class="column">
+	<p class="example" data-col-width="60%" data-number="1">
+		The region between the parabola \(y=4x-x^2\) and the line \(y=x\) is
+		rotated about	the \(x\)-axis. To find the volume swept out, should we
+		do an \(x\) or \(y\) integral? What is the interval of integration?
+		Is a Riemann sum rectangle horizontal or vertical?	Does the Riemann
+		sum rectangle	sweep out a disk, washer of cylinder?
+	</p>
+	<div class="center" data-col-width="40%">
+		<img src="graphics/eg_4x_x-x^2_x_crv.jpg" alt="eg_4x_x-x^2_x_crv">
+	</div>
+</div>
+<div class="column">
+	<p class="sol" data-col-width="60%">
+		The boundaries of the region are given with \(y\) as functions of \(x\).
+		So we should do an \(x\) integral. (Further, if we tried to do it as a
+		\(y\) integral, we would need to split the integral at \(y=3\).) To
+		find the limits of integration, we equate the functions:
+		\[\begin{aligned}
+		4x-x^2=x
+		\quad &\Rightarrow& \quad
+		0&=x^2-3x=x(x-3) \\
+		\quad &\Rightarrow& \quad
+		x&=0,3
+		\end{aligned}\]
+		Since this is an \(x\) integral, we add a vertical Riemann sum rectangle
+		to the plot, rotate it about the \(x\)-axis and observe it sweeps out
+		a washer.
+	</p>
+	<div class="center" data-col-width="40%">
+		<img src="graphics/eg_4x_x-x^2_x_about_x_anim.gif" alt="eg_4x_x-x^2_x_about_x_anim">
+	</div>
+</div>
+
+        <div class="rule" id="rev_eg2"></div>
+
+<p>
+	We now rotate the same region about the opposite axis.
+</p>
+<div class="column">
+	<p class="example" data-col-width="60%" data-number="2">
+		The region between the parabola \(y=4x-x^2\) and the line \(y=x\) is
+		rotated about	the \(y\)-axis. To find the volume swept out, should we
+		do an \(x\) or \(y\) integral? What is the interval of integration?
+		Is a Riemann sum rectangle horizontal or vertical?	Does the Riemann
+		sum rectangle	sweep out a disk, washer of cylinder?
+	</p>
+	<div class="center" data-col-width="40%">
+		<img src="graphics/eg_4x_x-x^2_x_crv.jpg" alt="eg_4x_x-x^2_x_crv">
+	</div>
+</div>
+<div class="column">
+	<p class="sol" data-col-width="60%">
+		The boundaries of the region are given with \(y\) as functions of \(x\).
+		So we should still do an \(x\) integral. The limits of integration are
+		still \(x=0,3\). Since this is an \(x\) integral, we still add a vertical
+		Riemann sum rectangle	to the plot. However, when we rotate it about the
+		\(y\)-axis, it now sweeps out	a cylinder.
+	</p>
+	<div class="center" data-col-width="40%">
+		<img src="graphics/eg_4x_x-x^2_x_about_y_anim.gif" alt="eg_4x_x-x^2_x_about_y_anim">
+	</div>
+</div>
+
+        <div class="rule" id="rev_ex1"></div>
+
+<p>
+  Now you try.
+</p>
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-col-width="60%" data-number="3">
+			The region between the parabola \(x=y^2\) and the \(y\)-axis
+			for \(0 \le y \le 3\) is
+			rotated	about	the \(x\)-axis. To find the volume swept out, should we
+			do an	\(x\) or \(y\) integral? What is the interval of integration?
+			Is a Riemann sum rectangle horizontal or vertical?	Does the Riemann
+			sum rectangle	sweep out a disk, washer of cylinder?
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_y^2_0-3_crv.jpg" alt="ex_y^2_0-3_crv">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    If we were going to find the <em>area</em>, would we do an
+		\(x\) or \(y\) integral? Would a Riemann sum rectangle be horizontal
+		or vertical?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    We do a \(y\) integral on \(0 \le y \le 3\).
+		<br>
+		A Riemann sum rectangle is horizontal and sweeps out a cylinder.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<div class="column">
+		<p data-col-width="60%">
+			The boundaries of the region are given with \(x\) as functions of \(y\).
+			So we should do an \(y\) integral. The interval of integration is
+			\(0 \le y \le 3\). Since this is an \(y\) integral, we add a
+			horizontal Riemann sum rectangle to the plot, rotate it about the
+			\(x\)-axis and observe it sweeps out a cylinder.
+		</p>
+		<div class="center" data-col-width="40%">
+			<img src="graphics/ex_y^2_0-3_about_x_anim.gif" alt="ex_y^2_0-3_about_x_anim">
+		</div>
+	</div>
+</div>
+
+        <div class="rule" id="rev_ex2"></div>
+
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-col-width="60%" data-number="4">
+			The region between the parabola \(x=y^2\) and the \(y\)-axis
+			for \(0 \le y \le 3\) is
+			rotated	about	the \(y\)-axis. To find the volume swept out, should we
+			do an	\(x\) or \(y\) integral? What is the interval of integration?
+			Is a Riemann sum rectangle horizontal or vertical?	Does the Riemann
+			sum rectangle	sweep out a disk, washer of cylinder?
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_y^2_0-3_crv.jpg" alt="ex_y^2_0-3_crv">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    If we were going to find the <em>area</em>, would we do an
+		\(x\) or \(y\) integral? Would a Riemann sum rectangle be horizontal
+		or vertical?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    We do a \(y\) integral on \(0 \le y \le 3\).
+		<br>
+		A Riemann sum rectangle is horizontal and sweeps out a disk.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+	<div class="column">
+		<p data-col-width="60%">
+			We still do an \(y\) integral on \(0 \le y \le 3\).
+			Since this is an \(y\) integral, we still add a horizontal Riemann sum
+			rectangle. However, when we rotate it about the	\(y\)-axis, it now
+			sweeps out	a disk.
+		</p>
+		<div class="center" data-col-width="40%">
+			<img src="graphics/ex_y^2_0-3_about_y_anim.gif" alt="ex_y^2_0-3_about_y_anim">
+		</div>
+	</div>
+</div>
+<big>PY: We need to add a discussion of rotating about axes other than the
+  x-axis or the y-axis.</big>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

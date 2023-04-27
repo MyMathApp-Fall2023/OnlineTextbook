@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. 2-Sided Limits and Continuity | 6. Intuitive Limits and Continuity</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LRLims.html" title="Previous">&lArr;</a></li>
+      <li><a href="TutLimCont.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Intuitive Limits and Continuity</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Intuitive Definitions</h2>
+
+
+      
+      <h2>2. 2-Sided Limits and Continuity</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Given a function, \(f(x)\), and a point, \(x=a\), we have defined
+</p>
+<ul>
+  <li>
+    \(f(a)\), the <span class="hl">value at \(x=a\)</span>,
+  </li>
+  <li>
+    \(\displaystyle \lim_{x\to a^-}f(x)\), the
+    <span class="hl">limit as \(x\) approaches \(a\) from the left</span>, and
+  </li>
+  <li>
+  \(\displaystyle \lim_{x\to a^+}f(x)\), the
+  <span class="hl">limit as \(x\) approaches \(a\) from the right</span>.
+  </li>
+</ul>
+<p>
+  In principle, these three numbers could all be different or one or more
+  might not even exist. However, there are special words to describe the
+  situations when \(2\) or \(3\) of these three numbers are equal.
+</p>
+<div class="greybox">
+  <p class="def" data-title="Limits and Continuity">
+  </p>
+  <ul>
+    <li>
+      If \(\displaystyle \lim_{x\to a^-}f(x)=f(a)\), then we say
+      the \(f(x)\) is <span class="defword">continuous from the left</span>.
+    </li>
+    <li>
+      If \(\displaystyle \lim_{x\to a^+}f(x)=f(a)\), then we say
+      the \(f(x)\) is <span class="defword">continuous from the right</span>.
+    </li>
+    <li>
+      If
+      \(\displaystyle \lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=L\),
+      then we say the <span class="defword">(\(2\)-sided) limit</span> exists
+      and is equal to \(L\) and we write:
+      \[
+      \lim_{x\to a}f(x)=L
+      \]
+    </li>
+    <li>
+      If
+      \(\displaystyle \lim_{x\to a^-}f(x)
+      =\lim_{x\to a^+}f(x)=f(a)\),
+      then we say \(f(x)\) is <span class="defword">continuous</span>.
+      Equivalently:
+      \[
+      \lim_{x\to a}f(x)=f(a)
+      \]
+    </li>
+  </ul>
+  <p>
+    If we just say <span class="defword">limit</span>, we mean the
+    <span class="hl">\(2\)-sided limit</span>.
+  </p>
+</div>
+<span class="center">
+  <figure>
+    <img src="graphics/def_LR_contL.jpg" alt="def_LR_contL.jpg">
+    <figcaption>
+      Continuous from the left<br>but not continuous.
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_LR_contR.jpg" alt="def_LR_contR.jpg">
+    <figcaption>
+      Continuous from the right<br>but not continuous.
+    </figcaption>
+  </figure>
+</span>
+<span class="center">
+  <figure>
+    <img src="graphics/def_LR_2sided.jpg" alt="def_LR_2sided.jpg">
+    <figcaption>
+      \(2\)-sided limit exists<br>but not continuous.
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_LR_cont.jpg" alt="def_LR_cont.jpg">
+    <figcaption>
+      Continuous.
+    </figcaption>
+  </figure>
+</span>
+
+				<div class="rule"></div>
+
+<div class="def greybox">
+  <p class="def">
+    We say a <span class="defword">(\(2\)-sided) limit is positive
+    infinity</span> if both the left and right limits are \(\infty\).
+    We also say \(f(x)\) <span class="defword">diverges to \(\infty\)</span>
+    and write:
+    \[
+    \lim_{x\to a}f(x)=\infty
+    \]
+  </p>
+  <p>
+    We say a <span class="defword">(\(2\)-sided) limit is negative
+    infinity</span> if both the left and right limits are \(-\infty\).
+    We also say \(f(x)\) <span class="defword">diverges to \(-\infty\)</span>
+    and write:
+    \[
+    \lim_{x\to a}f(x)=-\infty
+    \]
+  </p>
+</div>
+<span class="center">
+  <figure>
+    <img src="graphics/def_2sided_inf.jpg" alt="def_2sided_inf.jpg">
+    <figcaption>
+      The limit does not exists but<br>gets arbitrarily large and positive.
+      \[
+      \lim_{x\to 6} f(x)=\infty
+      \]
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_2sided_minf.jpg" alt="def_2sided_minf.jpg">
+    <figcaption>
+      The limit does not exists but<br>gets arbitrarily large and negative.
+      \[
+      \lim_{x\to 6} f(x)=-\infty
+      \]
+    </figcaption>
+  </figure>
+</span>
+<p class="remark">
+  To say a limit is \(\pm\infty\) does <em>not</em> say the
+  limit <em>exists</em>, it merely says the <em>way</em> in which it diverges!
+</p>
+
+				<div class="rule" id="ex_graph"></div>
+
+<div class="column">
+  <div>
+    <p class="exercise" data-number="1">
+      For the function plotted, compute each quantity or say Yes or No to
+      each question.
+    </p>
+    <p>
+      From Exercise 2 on the
+      <a href="LRLims.html#ex_graph" title="Return using the Back button.">
+      previous page</a>, we know:
+      \[
+      \lim_{x\to 3^-}f(x)=4 \qquad
+      \lim_{x\to 3^+}f(x)=2 \qquad
+      f(3)=2
+      \]
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_LR_lim.jpg" alt="ex_LR_lim.jpg">
+  </div>
+</div>
+<ol type="a" class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <div>
+        Does the (\(2\)-sided) limit, \(\displaystyle \lim_{x\to 3}f(x)\), exist?
+        <br>
+        <label for="ex_lim1true">
+          <input type="radio" id="ex_lim1true" name="ex_li12tf" value="true">
+          Yes
+        </label>
+        <label for="ex_lim1false">
+          <input type="radio" id="ex_lim1false" name="ex_li12tf" value="false">
+          No
+        </label>
+      </div>
+      <div>
+        <button class="toggle has-hint" data-toggle="HintX1a"></button>
+        <button class="toggle has-sol" data-toggle="SolX1a"></button>
+        <input type="text" id="ex_cont1lefttfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1a"></button>
+      </div>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1a">
+      <p>
+        The (\(2\)-sided) limit exists if the limits from the left and right
+        exist and are equal:
+        \[
+        \lim_{x\to 3^-}f(x)=\lim_{x\to 3^+}f(x)=L
+        \]
+        We then write:
+        \[
+        \lim_{x\to 3}f(x)=L
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1a">
+      <p>
+        \(\displaystyle \lim_{x\to 3}f(x)\) does not exist
+        because
+        \(\displaystyle \lim_{x\to 3^-}f(x)=4\) while
+        \(\displaystyle \lim_{x\to 3^+}f(x)=2\) which are not equal.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        If the (\(2\)-sided) limit exists, give its value. If it does not exist,
+        enter infinity, -infinity or undefined.
+        <br>
+        \(\displaystyle \lim_{x\to 3}f(x)=\,\)
+        <input type="text" id="ex_lim1both" size="6" value="">
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1b"></button>
+        <button class="toggle has-sol" data-toggle="SolX1b"></button>
+        <input type="text" id="ex_lim1tfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1b">
+      <p>
+        The (\(2\)-sided) limit exists if the limits from the left and right
+        exist and are equal:
+        \[
+        \lim_{x\to 3^-}f(x)=\lim_{x\to 3^+}f(x)=L
+        \]
+        We then write:
+        \[
+        \lim_{x\to 3}f(x)=L
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1b">
+      <p>
+        \(\displaystyle \lim_{x\to 3}f(x)\) is undefined
+        because it does not exist and it is neither \(\infty\) nor \(-\infty\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the left at \(x=3\)?
+        <br>
+        <label for="ex_cont1lefttrue">
+          <input type="radio" id="ex_cont1lefttrue" name="ex_cont1lefttf" value=true>
+          Yes
+        </label>
+        <label for="ex_cont1leftfalse">
+          <input type="radio" id="ex_cont1leftfalse" name="ex_cont1lefttf" value=false>
+          No
+        </label>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1c"></button>
+        <button class="toggle has-sol" data-toggle="SolX1c"></button>
+        <input type="text" id="ex_cont1lefttfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1c">
+      <p>
+        \(f(x)\) is continuous from the left at \(x=3\) if
+        \(\displaystyle \lim_{x\to 3^-}f(x)\) and \(f(3)\) exist and are equal:
+        \[
+        \lim_{x\to 3^-}f(x)=f(3)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1c">
+      <p>
+        \(f(x)\) is not continuous from the left at \(x=3\)
+        because
+        \(\displaystyle \lim_{x\to 3^-}f(x)=4\) while
+        \(f(3)=2\) which are not equal.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the right at \(x=3\)?
+        <br>
+        <label for="ex_cont1righttrue">
+          <input type="radio" id="ex_cont1righttrue" name="ex_cont1righttf" value=true>
+          Yes
+        </label>
+        <label for="ex_cont1rightfalse">
+          <input type="radio" id="ex_cont1rightfalse" name="ex_cont1righttf" value=false>
+          No
+        </label>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1d"></button>
+        <button class="toggle has-sol" data-toggle="SolX1d"></button>
+        <input type="text" id="ex_cont1righttfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1d"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1d">
+      <p>
+        \(f(x)\) is continuous from the right at \(x=3\) if
+        \(\displaystyle \lim_{x\to 3^+}f(x)\) and \(f(3)\) exist and are equal:
+        \[
+        \lim_{x\to 3^+}f(x)=f(3)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1d">
+      <p>
+        \(f(x)\) is continuous from the right at \(x=3\)
+        because
+        \(\displaystyle \lim_{x\to 3^+}f(x)=f(3)=2\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous at \(x=3\)?
+        <br>
+        <label for="ex_cont1true">
+          <input type="radio" id="ex_cont1true" name="ex_cont1tf" value=true>
+          Yes
+        </label>
+        <label for="ex_cont1false">
+          <input type="radio" id="ex_cont1false" name="ex_cont1tf" value=false>
+          No
+        </label>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1e"></button>
+        <button class="toggle has-sol" data-toggle="SolX1e"></button>
+        <input type="text" id="ex_cont1tfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1e"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1e">
+      <p>
+        \(f(x)\) is continuous at \(x=3\) if the limit from the left, the limit
+        from the right and the value are all equal:
+        \[
+        \lim_{x\to 3^-}f(x)
+        =\lim_{x\to 3^+}f(x)
+        =f(3)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1e">
+      <p>
+        \(f(x)\) is not continuous at \(x=3\)
+        because it is not continuous from the left.
+      </p>
+    </div>
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+    <p class="exercise" data-number="2">
+      For the piecewise function shown, compute each quantity or say Yes or No to
+      each question.
+    </p>
+    <p>
+      From Exercise 3 on the
+      <a href="LRLims.html#ex_piecewise" title="Return using the Back button.">
+      previous page</a>, we know:
+      \[
+      \lim_{x\to 4^-}f(x)=2 \qquad
+      \lim_{x\to 4^+}f(x)=3 \qquad
+      f(4)=2
+      \]
+    </p>
+  </div>
+  <div class="center">
+  \[
+  f(x)=\left\{
+  \begin{matrix}
+  x-2 & \text{if} & x\lt4 \\
+  2 & \text{if} & x=4 \\
+  x-1 & \text{if} & x\gt4
+  \end{matrix}\right.
+  \]
+  </div>
+</div>
+<ol type="a" class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Does the (\(2\)-sided) limit, \(\displaystyle \lim_{x\to 4}f(x)\), exist?
+        <br>
+        <label for="ex_lim2true">
+          <input type="radio" id="ex_lim2true" name="ex_lim2tf" value="true">
+          Yes
+        </label>
+        <label for="ex_lim2false">
+          <input type="radio" id="ex_lim2false" name="ex_lim2tf" value="false">
+          No
+        </label>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2a"></button>
+        <button class="toggle has-sol" data-toggle="SolX2a"></button>
+        <input type="text" id="ex_lim2tfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX2a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+      <p>
+        The (\(2\)-sided) limit exists if the limits from the left and right
+        exist and are equal:
+        \[
+        \lim_{x\to 4^-}f(x)=\lim_{x\to 4^+}f(x)=L
+        \]
+        We then write:
+        \[
+        \lim_{x\to 4}f(x)=L
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+      <p>
+        \(\displaystyle \lim_{x\to 4}f(x)\) does not exist
+        because
+        \(\displaystyle \lim_{x\to 4^-}f(x)=2\) while
+        \(\displaystyle \lim_{x\to 4^+}f(x)=3\) which are not equal.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        If the (\(2\)-sided) limit exists, give its value. If it does not exist,
+        enter infinity, -infinity or undefined.
+        <br>
+        \(\displaystyle \lim_{x\to 4}f(x)=\,\)
+        <input type="text" id="ex_lim2both" size="6" value="">
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2b"></button>
+        <button class="toggle has-sol" data-toggle="SolX2b"></button>
+        <input type="text" id="ex_lim1tfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX2b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2b">
+      <p>
+        The (\(2\)-sided) limit exists if the limits from the left and right
+        exist and are equal:
+        \[
+        \lim_{x\to 4^-}f(x)=\lim_{x\to 4^+}f(x)=L
+        \]
+        We then write:
+        \[
+        \lim_{x\to 4}f(x)=L
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+      <p>
+        \(\displaystyle \lim_{x\to 4}f(x)\) is undefined
+        because it does not exist and it is neither \(\infty\) nor \(-\infty\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the left at \(x=4\)?
+        <br>
+        <label for="ex_cont2lefttrue">
+          <input type="radio" id="ex_cont2lefttrue" name="ex_cont2lefttf" value=true>
+          Yes
+        </label>
+        <label for="ex_cont2leftfalse">
+          <input type="radio" id="ex_cont2leftfalse" name="ex_cont2lefttf" value=false>
+          No
+        </label>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2c"></button>
+        <button class="toggle has-sol" data-toggle="SolX2c"></button>
+        <input type="text" id="ex_cont2lefttfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX2c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2c">
+      <p>
+        \(f(x)\) is continuous from the left at \(x=4\) if
+        \(\displaystyle \lim_{x\to 4^-}f(x)\) and \(f(4)\) exist and are equal:
+        \[
+        \lim_{x\to 4^-}f(x)=f(4)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+      <p>
+        \(f(x)\) is continuous from the left at \(x=4\)
+        because
+        \(\displaystyle \lim_{x\to 4^-}f(x)=f(4)=2\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the right at \(x=4\)?
+        <br>
+        <label for="ex_cont2righttrue">
+          <input type="radio" id="ex_cont2righttrue" name="ex_cont2righttf" value=true>
+          Yes
+        </label>
+        <label for="ex_cont2rightfalse">
+          <input type="radio" id="ex_cont2rightfalse" name="ex_cont2righttf" value=false>
+          No
+        </label>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2d"></button>
+        <button class="toggle has-sol" data-toggle="SolX2d"></button>
+        <input type="text" id="ex_cont2righttfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX2d"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2d">
+      <p>
+        \(f(x)\) is continuous from the right at \(x=4\) if
+        \(\displaystyle \lim_{x\to 4^+}f(x)\) and \(f(4)\) exist and are equal:
+        \[
+        \lim_{x\to 4^+}f(x)=f(4)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2d">
+      <p>
+        \(f(x)\) is not continuous from the right at \(x=4\)
+        because
+        \(\displaystyle \lim_{x\to 4^+}f(x)=3\) while
+        \(f(4)=2\) which are not equal.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous at \(x=4\)?
+        <br>
+        <label for="ex_cont2true">
+          <input type="radio" id="ex_cont2true" name="ex_cont2tf" value=true>
+          Yes
+        </label>
+        <label for="ex_cont2false">
+          <input type="radio" id="ex_cont2false" name="ex_cont2tf" value=false>
+          No
+        </label>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2e"></button>
+        <button class="toggle has-sol" data-toggle="SolX2e"></button>
+        <input type="text" id="ex_cont2tfreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX2e"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2e">
+      <p>
+        \(f(x)\) is continuous at \(x=4\) if the limit from the left, the limit
+        from the right and the value are all equal:
+        \[
+        \lim_{x\to 4^-}f(x)
+        =\lim_{x\to 4^+}f(x)
+        =f(4)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2e">
+      <p>
+        \(f(x)\) is not continuous at \(x=4\)
+        because it is not continuous from the right.
+      </p>
+    </div>
+  </li>
+</ol>
+
+				<div class="rule"></div>
+
+<p class="maplet">
+	The following Maplets will help you identify the function value and the
+  \(1\)-sided limits and help you determine whether the limit exists and
+  whether the function is continuous from \(1\) or \(2\) sides
+	(requires Maple on the computer where this is executed).
+  The first two are equivalent to the tutorial on the next page.
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/LimitLeftRightGraph.maplet" download>Left and Right Limits and Continuity, given a Graph</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/LimitLeftRightGraph.maplet" download>Left and Right Limits and Continuity, given a Formula</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/LimitLeftRightGraph.maplet" download>Left and Right Limits and Continuity, given Numeric Data</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p class="maplet-ref"></p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

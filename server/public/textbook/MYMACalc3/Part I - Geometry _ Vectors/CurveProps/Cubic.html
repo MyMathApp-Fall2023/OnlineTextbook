@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Twisted Cubic | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CurveExamples.html#CurveExamples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic8">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>8. Properties of Curves</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>h. Summary & Examples of Curve Computations</h2>
+
+<h2>2. Examples of Curve Computations</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="Circle.html">Circle</a></li> &emsp;
+    <li><a href="Helix.html">Helix</a></li> &emsp;
+    <li class="active"><a href="Cubic.html">Twisted Cubic</a></li>
+    <br>
+    <li><a href="CubicSpiralHelix.html">Cubic Spiral Helix</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>c. Twisted Cubic</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  We now look at the twisted cubic given by the position vector
+  \(\vec{r}(t)=(at,bt^2,ct^{3})\) where \(a\), \(b\), and \(c\) are
+  any constants. Here are all the properties of this curve and the
+  plot for the special case with \(a=1\), \(b=1\), and \(c=\dfrac{2}{3}\):
+</p>
+
+<div class="column">
+  <p data-col-width="25%">Position Vector</p>
+  <p>\(\vec{r}(t)=\left\langle t,t^2,\dfrac{2}{3}t^{3}\right\rangle\)</p>
+</div>
+
+<p>
+  Plot
+  <br>
+  Rotate with your mouse.
+</p>
+<div class="column">
+  <div data-col-width="33%">
+    <figure>
+      <x3d width="250px" height="250px">
+        <scene>
+          <inline url="graphics/eg_twistedcubic_yz.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>View from the&nbsp;\(x\)-axis</strong></figcaption>
+    </figure>
+  </div>
+  <div data-col-width="33%">
+    <figure>
+      <x3d width="250px" height="250px">
+        <scene>
+          <inline url="graphics/eg_twistedcubic_xz.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>View from the&nbsp;\(y\)-axis</strong></figcaption>
+    </figure>
+  </div>
+  <div data-col-width="33%">
+    <figure>
+      <x3d width="250px" height="250px">
+        <scene>
+          <inline url="graphics/eg_twistedcubic_xy.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>View from the&nbsp;\(z\)-axis</strong></figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Velocity Vector</p>
+  <p>
+    \(\vec{v}(t)=\dfrac{d\vec{r}}{dt}=\langle 1,2t,2t^2\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Acceleration Vector</p>
+  <p>
+    \(\vec{a}(t)=\dfrac{d\vec{v}}{dt}=\langle 0,2,4t\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Jerk Vector</p>
+  <p>
+    \(\vec{j}(t)=\dfrac{d\vec{a}}{dt}=\langle 0,0,4\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Speed</p>
+  <p>
+    \(\begin{aligned}
+    \dfrac{ds}{dt}&=|\vec{v}|=\sqrt{1^2+(2t)^2+(2t^2)^2}
+    =\sqrt{1+4t^2+4t^{4}} \\
+    &=\sqrt{(1+2t^2)^2}
+    =1+2t^2
+    \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Arclength (from \(t=a\) to \(t=b\))</p>
+  <p>
+    \(\displaystyle
+    \begin{aligned}
+    L&=\int_{a}^{b} |\vec{v}|\,dt
+    =\int_{a}^{b} (1+2t^2)\,dt
+    =\left[t+\dfrac{2}{3}t^{3}\right]_{a}^{b} \\
+    &=b-a+\dfrac{2}{3}(b^{3}-a^{3})
+    \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Unit Tangent Vector</p>
+  <p>
+    \(\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}
+    =\dfrac{\langle 1,2t,2t^2\rangle}{1+2t^2}
+    =\left\langle \dfrac{1}{1+2t^2},\dfrac{2t}{1+2t^2},
+    \dfrac{2t^2}{1+2t^2}\right\rangle\)
+  </p>
+</div>
+
+<p>
+  \(\vec{v}\times\vec{a}
+  =\begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  1 & 2t & 2t^2 \\
+  0 & 2 & 4t
+  \end{vmatrix}
+  =\hat{\imath}(8t^2-4t^2)-\hat{\jmath}(4t)+\hat{k}(2)
+  =\langle 4t^2,-4t,2\rangle\)
+</p>
+
+<p>
+  \(\begin{aligned}
+  |\vec{v}\times\vec{a}|
+  &=\sqrt{(4t^2)^2+(-4t)^2+(2)^2}
+  =\sqrt{16t^{4}+16t^2+4} \\
+  &=\sqrt{(4t^2+2)^2}
+  =4t^2+2
+  =2(1+2t^2)
+  \end{aligned}\)
+</p>
+
+<div class="column">
+  <p data-col-width="25%">Unit Binormal Vector</p>
+  <p>
+    \(\hat{B}=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+    =\dfrac{\langle 4t^2,-4t,2\rangle}{2(1+2t^2)}
+    =\left\langle \dfrac{2t^2}{1+2t^2},\dfrac{-2t}{1+2t^2},
+    \dfrac{1}{1+2t^2}\right\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Unit Normal Vector</p>
+  <p>
+  \(\begin{aligned}
+  \hat{N}&=\hat{B}\times\hat{T}=\dfrac{1}{(1+2t^2)^2}
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  2t^2 & -2t & 1 \\
+  1 & 2t & 2t^2
+  \end{vmatrix} \\
+  &=\dfrac{1}{(1+2t^2)^2}
+  \left(\hat{\imath}(-4t^{3}-2t)
+       -\hat{\jmath}(4t^{4}-1)
+       +\hat{k}(4t^{3}+2t)\right) \\
+  &=\dfrac{1}{1+2t^2}\langle -2t,1-2t^2,2t\rangle
+  =\left\langle \dfrac{-2t}{1+2t^2},\dfrac{1-2t^2}{1+2t^2},
+  \dfrac{2t}{1+2t^2}\right\rangle
+  \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Alternatively</p>
+  <p>
+    \(\begin{aligned}
+    \hat{N}&=\dfrac{T'(t)}{|T'(t)|}
+    =\dfrac{\left\langle \dfrac{-4t}{(1+2t^2)^2},-2\dfrac{2t^2-1}{(1+2t^2)^2},
+    \dfrac{4t}{(1+2t^2)^2}\right\rangle}
+    {\sqrt{\left(\dfrac{-4t}{(1+2t^2)^2}\right)^2
+    +\left(-2\dfrac{2t^2-1}{(1+2t^2)^2}\right)^2
+    +\left(\dfrac{4t}{(1+2t^2)^2}\right)^2}} \\
+    &=\dfrac{\dfrac{1}{(1+2t^2)^2}\left\langle -4t,2(1+2t^2),
+    4t\right\rangle}{\dfrac{2}{1-2t^2}}
+    =\left\langle \dfrac{-2t}{1+2t^2},\dfrac{1-2t^2}{1+2t^2},
+    \dfrac{2t}{1+2t^2}\right\rangle
+    \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Curvature</p>
+  <p>
+    \(\kappa=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}=
+    \dfrac{2(1+2t^2)}{(1+2t^2)^{3}}
+    =\dfrac{2}{(1+2t^2)^2}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Torsion</p>
+  <p>
+    \(\tau=\dfrac{\vec{v}
+    \times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+    =\dfrac{\langle 4t^2,-4t,2\rangle\cdot\langle 0,0,4\rangle}{(2(1+2t^2))^2}
+    =\dfrac{8}{4(1+2t^2)^2}
+    =\dfrac{2}{(1+2t^2)^2}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Tangential Acceleration</p>
+  <p>
+    \(\begin{aligned}
+    a_{T}&=\vec{a}\cdot\hat{T}
+    =\langle 0,2,4t\rangle
+    \cdot\left\langle \dfrac{1}{1+2t^2},\dfrac{2t}{1+2t^2},
+    \dfrac{2t^2}{1+2t^2}\right\rangle
+    =\dfrac{4t+8t^{3}}{1+2t^2} \\
+    &=\dfrac{4t(1+2t^2)}{1+2t^2}=4t \\
+    a_{T}&=\dfrac{d}{dt}|\vec{v}|=\dfrac{d}{dt}(1+2t^2)=4t
+    \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Normal Acceleration</p>
+  <p>
+    \(\begin{aligned}
+    a_{N}&=\vec{a}\cdot\hat{N}
+    =\langle 0,2,4t\rangle
+    \cdot\left\langle \dfrac{-2t}{1+2t^2},\dfrac{1-2t^2}{1+2t^2},
+    \dfrac{2t}{1+2t^2}\right\rangle
+    =\dfrac{2-4t^2}{1+2t^2}+\dfrac{8t^2}{1+2t^2} \\
+    &=\dfrac{2+4t^2}{1+2t^2}=2\dfrac{1+2t^2}{1+2t^2}=2 \\
+    a_{N}&=\kappa|\vec{v}|^2=\dfrac{2}{(1+2t^2)^2}(1+2t^2)^2=2
+    \end{aligned}\)
+ </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Frenet Frames &amp; Derivatives of TNB | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CurveExamples.html" title="Previous">&lArr;</a></li>
+      <li><a href="TutCurveProps.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic9">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>i. Frenet Frames (Optional)</h2>
+
+
+      
+      <h2>1. Frenet Frames &amp; Derivatives of TNB</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) make up what is called the
+  <span class="hl">Frenet Frame</span>. This is a right handed set of \(3\)
+  mutually orthogonal unit vectors that moves along the curve, as opposed to the
+  \(\hat{\imath},\hat{\jmath},\hat{k}\) unit vectors which make up the fixed
+  standard reference frame for \(\mathbb{R}^3\).
+</p>
+
+<h3>Algebraic Properties</h3>
+
+<p>
+  The Frenet Frame can be used
+  much like the standard frame. As a right handed set of \(3\) orthogonal unit
+  vectors, \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) satisfy:
+  \[\begin{aligned}
+  \hat{T}\cdot\hat{T}&=1 \qquad
+  &\hat{N}\cdot\hat{N}&=1 \qquad
+  &\hat{B}\cdot\hat{B}&=1 \\
+  \hat{T}\cdot\hat{N}&=0 \qquad
+  &\hat{N}\cdot\hat{B}&=0 \qquad
+  &\hat{B}\cdot\hat{T}&=0 \qquad (*) \\
+  \hat{T}\times\hat{N}&=\hat{B} \qquad
+  &\hat{N}\times\hat{B}&=\hat{T} \qquad
+  &\hat{B}\times\hat{T}&=\hat{N}
+  \end{aligned}\]
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Suppose \(\vec u=u_T\hat T + u_N\hat N + u_B\hat B\) and
+    \(\vec v=v_T\hat T + v_N\hat N + v_B\hat B\).
+    <br>
+    Use the distributive rule, the commutative rule and conditions (*) to
+    compute \(\vec u\cdot\vec v\). What do you notice?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle
+    \vec u\cdot\vec v
+    =u_Tv_T + u_Nv_N + u_Bv_B\)
+    <br>
+    As with using components relative to the standard basis,
+    the dot product is the sum of the pairwise products of the components
+    relative to the Frenet basis.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Using the distributive rule:
+    \[\begin{aligned}
+    \vec u\cdot\vec v
+    &=(u_T\hat T + u_N\hat N + u_B\hat B)\cdot(u_T\hat T + u_N\hat N + u_B\hat B) \\
+    &=       u_Tv_T\hat T\cdot\hat T + u_Tv_N\hat T\cdot\hat N + u_Tv_B\hat T\cdot\hat B \\
+    &\quad + u_Nv_T\hat N\cdot\hat T + u_Nv_N\hat N\cdot\hat N + u_Nv_B\hat N\cdot\hat B \\
+    &\quad + u_Bv_T\hat B\cdot\hat T + u_Bv_N\hat B\cdot\hat N + u_Bv_B\hat B\cdot\hat B \\
+    \end{aligned}\]
+    Then using (*) and the commutative rule:
+    \[\begin{aligned}
+    \vec u\cdot\vec v
+    &=       u_Tv_T(1) + u_Tv_N(0) + u_Tv_B(0) \\
+    &\quad + u_Nv_T(0) + u_Nv_N(1) + u_Nv_B(0) \\
+    &\quad + u_Bv_T(0) + u_Bv_N(0) + u_Bv_B(1) \\
+    &=u_Tv_T + u_Nv_N + u_Bv_B \\
+    \end{aligned}\]
+    As with using components relative to the standard basis,
+    the dot product is the sum of the pairwise products of the components
+    relative to the Frenet basis.
+  </p>
+</div>
+
+<p class="exercise" data-number="2">
+  Suppose \(\vec u=u_T\hat T + u_N\hat N + u_B\hat B\) and
+  \(\vec v=v_T\hat T + v_N\hat N + v_B\hat B\).
+</p>
+<ol class="list-outside" type="a">
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Use the distributive rule, the anti-commutative rule
+        and conditions (*) to compute \(\vec u\times\vec v\).
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2a"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+	    <p>
+        \(
+        \vec u\times\vec v
+      	=(u_Nv_B-u_Bv_N)\hat T-(u_Tv_B-u_Bv_T)\hat N+(u_Tv_N-u_Nv_T)\hat B
+      	\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+	    <p>
+        Using the distributive rule:
+        \[\begin{aligned}
+        \vec u\times\vec v
+        &=(u_T\hat T + u_N\hat N + u_B\hat B)\times(u_T\hat T + u_N\hat N + u_B\hat B) \\
+        &=       u_Tv_T\hat T\times\hat T + u_Tv_N\hat T\times\hat N + u_Tv_B\hat T\times\hat B \\
+        &\quad + u_Nv_T\hat N\times\hat T + u_Nv_N\hat N\times\hat N + u_Nv_B\hat N\times\hat B \\
+        &\quad + u_Bv_T\hat B\times\hat T + u_Bv_N\hat B\times\hat N + u_Bv_B\hat B\times\hat B \\
+        \end{aligned}\]
+        Then using (*) and the anti-commutative rule:
+        \[\begin{aligned}
+        \vec u\times\vec v
+        &=       u_Tv_T(\vec 0) + u_Tv_N(\vec B) + u_Tv_B(-\vec N) \\
+        &\quad + u_Nv_T(-\vec B) + u_Nv_N(\vec 0) + u_Nv_B(\vec T) \\
+        &\quad + u_Bv_T(\vec N) + u_Bv_N(-\vec T) + u_Bv_B(\vec 0) \\
+      	&=(u_Nv_B-u_Bv_N)\hat T-(u_Tv_B-u_Bv_T)\hat N+(u_Tv_N-u_Nv_T)\hat B
+        \end{aligned}\]
+      </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Compute
+        \(\begin{aligned}
+      	\begin{vmatrix}
+      	\hat T & \hat N & \hat B \\
+      	u_T & u_N & u_B \\
+      	v_T & v_N & v_B
+      	\end{vmatrix}
+      	\end{aligned}\)
+        by expanding on the first row. What do you notice?
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2b"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+	    <p>
+        \(\begin{aligned}
+        \begin{vmatrix}
+        \hat T & \hat N & \hat B \\
+        u_T & u_N & u_B \\
+        v_T & v_N & v_B
+        \end{vmatrix}
+      	&=(u_Nv_B-u_Bv_N)\hat T-(u_Tv_B-u_Bv_T)\hat N+(u_Tv_N-u_Nv_T)\hat B \\
+      	\end{aligned}\)
+        <br>
+        We notice, this is the same as \(\vec u\times\vec v\).
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+	    <p>
+        \[\begin{aligned}
+        \begin{vmatrix}
+        \hat T & \hat N & \hat B \\
+        u_T & u_N & u_B \\
+        v_T & v_N & v_B
+        \end{vmatrix}
+      	&=\hat T
+      	\begin{vmatrix}
+      	u_N & u_B \\
+      	v_N & v_B
+      	\end{vmatrix}
+      	-\hat N
+      	\begin{vmatrix}
+      	u_T & u_B \\
+      	v_T & v_B
+      	\end{vmatrix}
+      	+\hat B
+      	\begin{vmatrix}
+      	u_T & u_N \\
+      	v_T & v_N
+      	\end{vmatrix}	\\
+      	&=(u_Nv_B-u_Bv_N)\hat T-(u_Tv_B-u_Bv_T)\hat N+(u_Tv_N-u_Nv_T)\hat B \\
+      	\end{aligned}\]
+        We notice, this is the same as \(\vec u\times\vec v\).
+      </p>
+	  </div>
+	</li>
+</ol>
+<p class="remark">
+  These two exercises show that the dot and cross products can be computed
+  using components relative to \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) in
+  exactly the same way as they are computed using components relative to
+  \(\hat\imath\), \(\hat\jmath\) and \(\hat k\).
+</p>
+
+<h3>Differential Properties</h3>
+
+<p>
+  We now turn to the derivative properties of Frenet frames. First notice that
+  a vector field, \(\vec F(t)\), along a curve, \(\vec r(t)\), can be expanded
+  in either the \(\hat\imath\hat\jmath\hat k\)-basis or the
+  \(\hat{T}\hat{N}\hat{B}\)-basis:
+  \[\begin{aligned}
+  \vec F&=F_1\hat\imath + F_2\hat\jmath + F_3\hat k \\
+  &=F_T\hat T + F_N\hat N + F_B\hat B
+  \end{aligned}\]
+  We want to differentiate \(\vec F\). In the \(\hat\imath\hat\jmath\hat k\)
+  form, since \(\hat\imath\), \(\hat\jmath\) and \(\hat k\) are constant,
+  we only need to differentiate the coefficients:
+  \[
+  \dfrac{d\vec F}{dt}
+  =\dfrac{dF_1}{dt}\hat\imath + \dfrac{dF_2}{dt}\hat\jmath + \dfrac{dF_3}{dt}\hat k
+  \]
+  However, in the \(\hat{T}\hat{N}\hat{B}\) form, \(\hat{T}\), \(\hat{N}\)
+  and \(\hat{B}\) are not constant, and so we also need to differentiate
+  them. By the Product Rule:
+  \[\begin{aligned}
+  \dfrac{d\vec F}{dt}
+  &=\dfrac{dF_T}{dt}\hat T + F_T\dfrac{d\hat T}{dt} \\
+  &\quad+ \dfrac{dF_N}{dt}\hat N + F_N\dfrac{d\hat N}{dt} \\
+  &\quad\qquad+ \dfrac{dF_B}{dt}\hat B + F_B\dfrac{d\hat B}{dt}
+  \end{aligned}\]
+  The Frenet formulas tell us the derivatives of \(\hat{T}\), \(\hat{N}\) and
+  \(\hat{B}\) (with respect to arclength, \(s\)) written as linear combinations
+  of \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\). The coefficients turn out to be
+  the curvature, \(\kappa\), and the torsion, \(\tau\). The derivatives with
+  respect to time, \(t\), are given as a corollary.
+</p>
+<p class="prop" data-title="Frenet Formulas">
+  The derivatives of \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) satisfy:
+  \[\begin{aligned}
+  \dfrac{d\hat{T}}{ds}&=\qquad \quad \kappa \hat{N} \\
+  \dfrac{d\hat{N}}{ds}&=-\,\kappa \hat{T} \quad + \quad \tau \hat{B} \\
+  \dfrac{d\hat{B}}{ds}&=\qquad -\,\tau \hat{N}
+  \end{aligned}\]
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    First, note that each of the derivatives can be written
+    as a linear combination of \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\):
+    \[\begin{aligned}
+    \dfrac{d\hat{T}}{ds}&=a\hat{T}+b\hat{N}+c\hat{B} \\
+    \dfrac{d\hat{N}}{ds}&=d\hat{T}+e\hat{N}+f\hat{B} \\
+    \dfrac{d\hat{B}}{ds}&=g\hat{T}+h\hat{N}+i\hat{B}
+    \end{aligned}\]
+    for some coefficients \(a\) through \(i\) which we would like to determine.
+    Since \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) are mutually perpendicular unit
+    vectors, the coefficients can be found from:
+    \[
+    \begin{array}{ccc}
+    a=\hat{T}\cdot\dfrac{d\hat{T}}{ds}& b=\hat{N}\cdot\dfrac{d\hat{T}}{ds}&
+    c=\hat{B}\cdot\dfrac{d\hat{T}}{ds} \\
+    d=\hat{T}\cdot\dfrac{d\hat{N}}{ds}& e=\hat{N}\cdot\dfrac{d\hat{N}}{ds}&
+    f=\hat{B}\cdot\dfrac{d\hat{N}}{ds} \\
+    g=\hat{T}\cdot\dfrac{d\hat{B}}{ds}& h=\hat{N}\cdot\dfrac{d\hat{B}}{ds}&
+    i=\hat{B}\cdot\dfrac{d\hat{B}}{ds}
+    \end{array}
+    \]
+    To find the diagonal coefficients, suppose \(\hat{u}\) is a unit vector.
+    Then \(\hat{u}\cdot\hat{u}=1\) and consequently:
+    \[
+    0=\dfrac{d}{ds}(\hat{u}\cdot\hat{u})
+    =\dfrac{d\hat{u}}{ds}\cdot\hat{u}+\hat{u}\cdot\dfrac{d\hat{u}}{ds}
+    =2\hat{u}\cdot\dfrac{d\hat{u}}{ds}
+    \]
+    Applying this with \(\hat{u}=\hat{T}\), \(\hat{N}\) and \(\hat{B}\) gives
+    \(a=e=i=0\). Next suppose \(\hat{u}\) and \(\hat{v}\) are perpendicular. Then
+    \(\hat{u}\cdot\hat{v}=0\) and consequently:
+    \[
+    0=\dfrac{d}{ds}(\hat{u}\cdot\hat{v})
+    =\dfrac{d\hat{u}}{ds}\cdot\hat{v}+\hat{u}\cdot\dfrac{d\hat{v}}{ds}
+    \quad \text{or} \quad
+    \hat{u}\cdot\dfrac{d\hat{v}}{ds}
+    =-\,\dfrac{d\hat{u}}{ds}\cdot\hat{v}
+    \]
+    Applying this with \(\hat{u}\) and \(\hat{v}\) being two of \(\hat{T}\),
+    \(\hat{N}\) and \(\hat{B}\) gives \(b=-d\) and  \(c=-g\) and \(f=-h\).
+    This reduces the system of equations to:
+    \[\begin{aligned}
+    \dfrac{d\hat{T}}{ds}&=\,\qquad\; \quad b \hat{N} + c \hat{B}  \qquad\text{(1)} \\
+    \dfrac{d\hat{N}}{ds}&=-\,b \hat{T} \quad\; + \quad\; f \hat{B}  \qquad\text{(2)} \\
+    \dfrac{d\hat{B}}{ds}&=-\,c \hat{T} - f \hat{N}  \qquad\qquad\;\,\text{(3)}
+    \end{aligned}\]
+    <!-- \dfrac{d\hat{T}}{ds}&=\,\qquad\; \quad b \hat{N} + c \hat{B}   \tag{1} \\
+    \dfrac{d\hat{N}}{ds}&=-\,b \hat{T} \quad\; + \quad\; f \hat{B} \tag{2} \\
+    \dfrac{d\hat{B}}{ds}&=-\,c \hat{T} - f \hat{N}                 \tag{3} -->
+    Next, we recall the
+    <a href="Curvature.html#defcurv" title="Return using the Back button.">
+    definition</a> of the curvature and one of the
+    <a href="TNBFormulas.html#UnitNormal" title="Return using the Back button.">
+    formulas</a> for \(\hat{N}\):
+    \[
+    \kappa=\left|\dfrac{d\hat{T}}{ds}\right| \qquad
+    \hat{N}=\dfrac{\dfrac{d\hat{T}}{ds}}{\left|\dfrac{d\hat{T}}{ds}\right|}
+    \]
+    Consequently:
+    \[
+    \dfrac{d\hat{T}}{ds}=\kappa\hat{N}
+    \]
+    Comparing this to equation (1), we find \(b=\kappa\) and \(c=0\).
+    Finally, from the
+    <a href="Torsion.html#deftorsion" title="Return using the Back button.">
+    definition</a> of the torsion, we have:
+    \[
+    \tau=-\,\dfrac{d\hat{B}}{ds}\cdot\hat{N}
+    =-(-f\hat{N})\cdot\hat{N}=f
+    \]
+    Thus \(f=\tau\). Putting the values of \(b=\kappa\), \(c=0\) and \(f=\tau\) into
+    (1), (2) and (3) gives the final formulas as:
+    \[\begin{aligned}
+    \dfrac{d\hat{T}}{ds}&=\qquad \quad \kappa \hat{N} \\
+    \dfrac{d\hat{N}}{ds}&=-\,\kappa \hat{T} \quad + \quad \tau \hat{B} \\
+    \dfrac{d\hat{B}}{ds}&=\qquad -\,\tau \hat{N}
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  Since \(\dfrac{d}{dt}=\dfrac{ds}{dt}\dfrac{d}{ds}=|\vec v|\dfrac{d}{ds}\)
+  we conclude:
+</p>
+<p class="corollary" data-title="Frenet Formulas">
+  The derivatives of \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) satisfy:
+  \[\begin{aligned}
+  \dfrac{d\hat{T}}{dt}&=\qquad \quad |\vec v|\kappa \hat{N} \\
+  \dfrac{d\hat{N}}{dt}&=-\,|\vec v|\kappa \hat{T} \quad + \quad |\vec v|\tau \hat{B} \\
+  \dfrac{d\hat{B}}{dt}&=\qquad -\,|\vec v|\tau \hat{N}
+  \end{aligned}\]
+</p>
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

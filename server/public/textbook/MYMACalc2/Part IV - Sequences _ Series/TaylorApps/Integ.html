@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c.1. Integrals | 24. Applications of Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Deriv.html" title="Previous">&lArr;</a></li>
+      <li><a href="Integ2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>24. Applications of Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+
+
+      
+      <h2>c.1. Integrals</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  There are many integrals which can not be computed exactly. We previously
+  saw how to approximate a definite integral as a Riemann sum. However,
+  if we know a Taylor series for the integrand, we can
+</p>
+<ul>
+  <li>
+    express the indefinite integral as a power series within its interval
+    of convergence,
+  </li>
+  <li>
+    express the definite integral as a numerical series and compute it
+    exactly if we can sum the series, and
+  </li>
+  <li>
+    approximate the definite integral as a partial sum of the numerical
+    series provided we know it converges.
+  </li>
+</ul>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Evaluate \(\displaystyle \int e^{-x^2}\,dx\) as a power series
+  centered at \(x=0\). Find its radius of convergence.
+</p>
+<p class="sol">
+  Substitute \(x\to-x^2\) into the exponential series
+  \[
+  e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+  \]
+  to get
+  \[
+  e^{-x^2}=\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n}}{n!}
+  \]
+  Now integrate both sides:
+  \[
+  \int e^{-x^2}\,dx
+  =\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{(2n+1)n!}+C
+  \]
+  Since the series for \(e^x\) has an infinite radius of convergence, so
+  does the series for \(e^{-x^2}\) and that for
+  \(\displaystyle \int e^{-x^2}\,dx\). Alternatively, you
+  can apply the Ratio Test directly to the series
+  \(\displaystyle \sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{(2n+1)n!}\)
+  to see it converges for all \(x\).
+</p>
+<hr width="80%">
+<p class="example" data-number="2">
+  Approximate \(\displaystyle \int_0^1 e^{-x^2}\,dx\) to within
+  \(\pm 10^{-3}\).
+</p>
+<p class="sol">
+  In the previous example, we found a series expansion for
+  \(\displaystyle \int e^{-x^2}\,dx\). So
+  \[
+  \int_0^1 e^{-x^2}\,dx
+  =\left[\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{(2n+1)n!}\right]_0^1
+  =\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)n!}
+  \]
+  This is an alternating series. So we can approximate it by a finite number
+  of terms with the error bounded by the absolute value of the next term.
+  The term with \(n=5\) is
+  \[
+  \left|\dfrac{(-1)^5}{(2\cdot5+1)5!}\right|
+  =\dfrac{1}{11\cdot120}=\dfrac{1}{1320} \lt 10^{-3}
+  \]
+  So it is sufficient to keep the terms up to \(n=4\).
+  \[\begin{aligned}
+  \int_0^1 e^{-x^2}\,dx
+  &\approx\dfrac{(-1)^0}{(2\cdot0+1)0!}
+          +\dfrac{(-1)^1}{(2\cdot1+1)1!}
+          +\dfrac{(-1)^2}{(2\cdot2+1)2!} \\
+  &\qquad+\dfrac{(-1)^3}{(2\cdot3+1)3!}
+          +\dfrac{(-1)^4}{(2\cdot4+1)4!}
+       \pm \dfrac{(-1)^5}{(2\cdot5+1)5!} \\
+  &=1-\dfrac{1}{3}+\dfrac{1}{10}-\dfrac{1}{42}+\dfrac{1}{216}
+   \pm \dfrac{1}{1320} \approx .7475\pm .0007
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Evaluate \(\displaystyle \int \arctan(x^2)\,dx\)
+    as a power series centered at \(x=0\). Find its radius of convergence.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    \[
+    \arctan x
+    =\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{2n+1}
+    =x-\dfrac{x^3}{3}+\dfrac{x^5}{5}+\cdots
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\begin{aligned}\displaystyle
+    \int \arctan(x^2)\,dx
+    &=\sum_{n=0}^\infty (-1)^n\dfrac{x^{4n+3}}{(2n+1)(4n+3)}+C \\
+    &=\dfrac{x^3}{3}-\dfrac{x^7}{21}+\dfrac{x^{11}}{55}+\cdots+C
+    \end{aligned}\)
+    <br>
+    \(R=1\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    We substitute \(x\to x^2\) into the series:
+    \[
+    \arctan x=\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{2n+1}
+    =x-\dfrac{x^3}{3}+\dfrac{x^5}{5}+\cdots
+    \]
+    to get:
+    \[
+    \arctan(x^2)=\sum_{n=0}^\infty (-1)^n\dfrac{x^{4n+2}}{2n+1}
+    =x^2-\dfrac{x^6}{3}+\dfrac{x^{10}}{5}+\cdots
+    \]
+    We integrate both sides:
+    \[\begin{aligned}
+    \int \arctan(x^2)\,dx
+    &=\sum_{n=0}^\infty (-1)^n\dfrac{x^{4n+3}}{(2n+1)(4n+3)}+C \\
+    &=\dfrac{x^3}{3}-\dfrac{x^7}{21}+\dfrac{x^{11}}{55}+\cdots+C
+    \end{aligned}\]
+    The series for \(\arctan x\) converges for \(|x| \lt 1\). So the series
+    for \(\arctan(x^2)\) converges for \(|x^2| \lt 1\)
+    which is equivalent to \(|x| \lt 1\). So the series for
+    \(\displaystyle \int \arctan(x^2)\,dx\) also converges
+    for \(|x| \lt 1\). Alternatively, the Ratio Test says the series
+    converges when:
+    \[\begin{aligned}
+    \lim_{n\to\infty}\left|\dfrac{a_{n+1}}{a_n}\right|
+    &=\lim_{n\to\infty}
+    \left|\dfrac{x^{4(n+1)+3}}{(2[n+1]+1)(4[n+1]+3)}
+    \cdot\dfrac{(2n+1)(4n+3)}{x^{4n+3}}\right| \\
+    &=|x^4| \lt 1
+    \end{aligned}\]
+    or \(|x| \lt 1\). So the radius of convergence is \(R=1\).
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Approximate \(\displaystyle \int_0^{0.1} \arctan(x^2)\,dx\)
+    to within \(\pm 10^{-10}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint2"></button>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint2">
+  <p>
+  \[\begin{aligned}
+  \int \arctan(x^2)\,dx
+  &=\sum_{n=0}^\infty (-1)^n\dfrac{x^{4n+3}}{(2n+1)(4n+3)}+C \\
+  &=\dfrac{x^3}{3}-\dfrac{x^7}{21}+\dfrac{x^{11}}{55}+\cdots+C
+  \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(\displaystyle
+    \int_0^{0.1} \arctan(x^2)\,dx
+    \approx3.333\,285\,714\times10^{-4}\pm1.8\times10^{-13}
+    \)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+  \[\begin{aligned}
+  \int \arctan(x^2)\,dx
+  &=\sum_{n=0}^\infty (-1)^n\dfrac{x^{4n+3}}{(2n+1)(4n+3)}+C \\
+  &=\dfrac{x^3}{3}-\dfrac{x^7}{21}+\dfrac{x^{11}}{55}+\cdots+C
+  \end{aligned}\]
+  So
+  \[\begin{aligned}
+  \int_0^{0.1} \arctan(x^2)\,dx
+  &=\sum_{n=0}^\infty (-1)^n\dfrac{(0.1)^{4n+3}}{(2n+1)(4n+3)} \\
+  &=\dfrac{(0.1)^3}{3}-\dfrac{(0.1)^7}{21}+\dfrac{(0.1)^{11}}{55}+\cdots
+  \end{aligned}\]
+  This is an alternating series and \(\dfrac{(0.1)^{11}}{55} \lt 10^{-10}\).
+  So
+  \[\begin{aligned}
+  \int_0^{0.1} \arctan(x^2)\,dx
+  &\approx\dfrac{(0.1)^3}{3}-\dfrac{(0.1)^7}{21}\pm \dfrac{(0.1)^{11}}{55} \\
+  &\approx3.333\,285\,714\times10^{-4}\pm1.8\times10^{-13}
+  \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  In the above examples and exercises, the series were all alternating. So
+  we could use the alternating series bound to bound the remainder. In the
+  exercises on the
+  <a href="Integ2.html">
+  next page</a>, the series are not alternating. So we will need to
+  use the Taylor bound on the remainder.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

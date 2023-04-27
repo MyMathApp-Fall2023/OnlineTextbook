@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Leibniz&#39;s Method | 22. Riemann Sums, Integrals and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="IntFTC.html" title="Previous">&lArr;</a></li>
+      <li><a href="IndefInt.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Riemann Sums, Integrals and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. The Fundamental Theorem of Calculus for Integrals</h2>
+
+
+      
+      <h2>2. Leibniz&#39;s Method</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The <span class="hl">\(1^\text{st}\) Fundamental Theorem of Calculus</span>
+  tells us how to differentiate an integral with respect to its upper limit.
+  Leibniz's Method generalizes this using the <span class="hl">\(2^\text{nd}\)
+  Fundamental Theorem of Calculus</span>. It tellls us how to differentiate an
+  integral with respect
+  to its lower limit or when one or both limits are functions of the variable.
+  Leibniz's Method is actually a technique which is best learned by example.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  First a simple example:
+</p>
+<p class="example" data-number="1">
+  It is known that the integral \(\displaystyle \int \sin(t^2)\,dt\)
+  cannot be expressed in terms of standard functions. However, we can still
+  compute it's derivative.
+  The first problem uses the \(1^\text{st}\) Fundamental Theorem of Calculus.
+  The second problem uses the \(2^\text{nd}\) Fundamental Theorem of Calculus.
+  The third problem combines the \(2^\text{nd}\) Fundamental Theorem of Calculus
+  with the Chain Rule.
+</p>
+<ol class="list-outside" type="a">
+  <li>
+		<p>
+      Compute \(\displaystyle \dfrac{d}{dx}\int_4^x \sin(t^2)\,dt\).
+    </p>
+    <p class="sol">
+      By the \(1^\text{st}\) Fundamental Theorem of Calculus,
+      <span class="hl">the derivative of an integral with respect to its upper
+      limit is just the integrand with the variable changed to the upper limit:
+      </span>
+      \[
+      \dfrac{d}{dx}\int_4^x \sin(t^2)\,dt=\sin(x^2)
+      \]
+    </p>
+	</li>
+  <li>
+		<p>
+      Compute \(\displaystyle \dfrac{d}{dx}\int_x^4 \sin(t^2)\,dt\).
+    </p>
+    <p class="sol">
+      In order to use the \(2^\text{nd}\) Fundamental Theorem of Calculus,
+      we let \(F(t)\) be any antiderivative of the integrand \(\sin(t^2)\).
+      In other words:
+      \[
+      F'(t)=\sin(t^2) \qquad \qquad (*)
+      \]
+      Then by the \(2^\text{nd}\) Fundamental Theorem of Calculus:
+      \[
+      \int_x^4 \sin(t^2)\,dt=F(4)-F(x)
+      \]
+      We can now differentiate this, but first notice that \(F(4)\) is a
+      constant. So:
+      \[\begin{aligned}
+      \dfrac{d}{dx}&\int_x^4 \sin(t^2)\,dt
+      =\dfrac{d}{dx}(F(4)-F(x)) \\
+      &=-\,F'(x)=-\,\sin(x^2)
+      \end{aligned}\]
+      where in the last step we have used equation (*) with \(t\) replaced
+      by \(x\). Thus, <span class="hl">the derivative of an integral with
+      respect to its lower limit is just the negative of the integrand with
+      the variable changed to the lower limit.</span>
+    </p>
+	</li>
+  <li>
+		<p>
+      Compute \(\displaystyle \dfrac{d}{dx}\int_{3x}^{x^2} \sin(t^2)\,dt\).
+    </p>
+    <p class="sol">
+      Here's where we really use Leibniz's Method:
+      We again let \(F(t)\) be any antiderivative of the integrand \(\sin(t^2)\).
+      So:
+      \[
+      F'(t)=\sin(t^2) \qquad \qquad (*)
+      \]
+      Then by the \(2^\text{nd}\) Fundamental Theorem of Calculus:
+      \[
+      \int_{3x}^{x^2} \sin(t^2)\,dt=F(x^2)-F(3x)
+      \]
+      We can now differentiate this, but we need to use the Chain Rule:
+      \[\begin{aligned}
+      \dfrac{d}{dx}&\int_{3x}^{x^2} \sin(t^2)\,dt
+      =\dfrac{d}{dx}\left[F(x^2)-F(3x)\right] \\
+      &=F'(x^2)\dfrac{d}{dx}[x^2]-F'(3x)\dfrac{d}{dx}[3x] \\
+      &=2x\sin(x^4)-3\sin(9x^2)
+      \end{aligned}\]
+      where in the last step we have used equation (*) with \(t\) replaced
+      first by \(x^2\) and then by \(3x\).
+    </p>
+	</li>
+</ol>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  The Sine Integral function is defined by
+  \[
+  \mathrm{Si}(x)=\int_0^x \dfrac{\sin t}{t}\,dt
+  \]
+  It is known that \(\mathrm{Si}(x)\) cannot be expressed in terms of
+  standard functions. However, we can still compute its derivative.
+</p>
+<ol class="list-outside" type="a">
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Compute
+        \(\displaystyle \dfrac{d}{dx}\mathrm{Si}(x)\).
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2a"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2a"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+	    <p>
+        Use the \(1^\text{st}\) Fundamental Theorem of Calculus.
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+	    <p>
+	      \(\displaystyle
+        \dfrac{d}{dx}\mathrm{Si}(x)=\dfrac{\sin x}{x}\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+	    <p>
+        By the \(1^\text{st}\) Fundamental Theorem of Calculus, the derivative
+        of an integral with respect to its upper limit is just the integrand
+        with the variable changed to the upper limit:
+        \[\begin{aligned}
+        \dfrac{d}{dx}\mathrm{Si}(x)
+        &=\dfrac{d}{dx}\int_0^x \dfrac{\sin t}{t}\,dt \\
+        &=\dfrac{\sin x}{x}
+        \end{aligned}\]
+      </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Compute
+        \(\displaystyle \dfrac{d}{dx}\int_x^\pi \dfrac{\sin t}{t}\,dt\).
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2b"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2b"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2b">
+	    <p>
+        Use the \(2^\text{nd}\) Fundamental Theorem of Calculus.
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+	    <p>
+	      \(\displaystyle
+        \dfrac{d}{dx}\int_x^\pi \dfrac{\sin t}{t}\,dt=-\,\dfrac{\sin x}{x}\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+	    <p>
+	      Since \(\mathrm{Si}(t)\) is an antiderivative of \(\dfrac{\sin t}{t}\),
+        we know:
+        \[
+        \mathrm{Si}'(t)=\dfrac{\sin t}{t} \qquad \qquad (*)
+        \]
+        Then the \(2^\text{nd}\) Fundamental Theorem of Calculus says:
+        \[
+        \int_x^\pi \dfrac{\sin t}{t}\,dt=\mathrm{Si}(\pi)-\mathrm{Si}(x)
+        \]
+        So the derivative is:
+        \[\begin{aligned}
+        \dfrac{d}{dx}\int_x^\pi \dfrac{\sin t}{t}\,dt
+        &=\dfrac{d}{dx}(\mathrm{Si}(\pi)-\mathrm{Si}(x)) \\
+        &=-\,\mathrm{Si}'(x)=-\,\dfrac{\sin x}{x}
+        \end{aligned}\]
+        where in the last step note that \(\mathrm{Si}(\pi)\) is constant and
+        we have used equation (*) with \(t\) replaced by \(x\).
+      </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+	      Compute
+        \(\displaystyle \dfrac{d}{dx}\int_{2\pi x}^{3\pi x} \dfrac{\sin t}{t}\,dt\).
+	    </p>
+	    <p>
+	      <button class="toggle has-hint" data-toggle="HintX2c"></button>
+	      <button class="toggle has-ans" data-toggle="AnsX2c"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2c"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-hint" data-toggle="HintX2c">
+	    <p>
+        Combine the \(2^\text{nd}\) Fundamental Theorem of Calculus
+        with the Chain Rule.
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+	    <p>
+	      \(\displaystyle
+        \dfrac{d}{dx}\int_{2\pi x}^{3\pi x} \dfrac{\sin t}{t}\,dt
+        =\dfrac{\sin(3\pi x)}{x}-\dfrac{\sin(2\pi x)}{x}\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+	    <p>
+        We again observe that \(\mathrm{Si}(t)\) is an antiderivative of the
+        integrand \(\dfrac{\sin t}{t}\):
+        \[
+        \mathrm{Si}'(t)=\dfrac{\sin t}{t} \qquad \qquad (*)
+        \]
+        Then by the \(2^\text{nd}\) Fundamental Theorem of Calculus:
+        \[
+        \int_{2\pi x}^{3\pi x} \dfrac{\sin t}{t}\,dt
+        =\mathrm{Si}(3\pi x)-\mathrm{Si}(2\pi x)
+        \]
+        We can now differentiate this, using the Chain Rule:
+        \[\begin{aligned}
+        \dfrac{d}{dx}&\int_{2\pi x}^{3\pi x} \dfrac{\sin t}{t}\,dt
+        =\dfrac{d}{dx}\left[\mathrm{Si}(3\pi x)-\mathrm{Si}(2\pi x)\right] \\
+        &=\mathrm{Si}'(3\pi x)\dfrac{d}{dx}[3\pi x]-\mathrm{Si}'(2\pi x)\dfrac{d}{dx}[2\pi x] \\
+        &=\dfrac{\sin(3\pi x)}{3\pi x}3\pi-\dfrac{\sin(2\pi x)}{2\pi x}2\pi
+        =\dfrac{\sin(3\pi x)}{x}-\dfrac{\sin(2\pi x)}{x}
+        \end{aligned}\]
+        where in the next to last step we have used equation (*) with \(t\)
+        replaced first by \(3\pi x\) and then by \(2\pi x\).
+      </p>
+	  </div>
+	</li>
+</ol>
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. General Formulas | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Integ.html#techniques" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>c1. Computing Integrals</h2>
+
+
+      
+      <h2>a. General Formulas</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+	We have seen that a partial fraction expansion expresses a rational function
+	\(\dfrac{p(x) }{q(x) }\) as the sum of a polynomial
+	and rational functions of six basic types. Here are their integrals and
+	how to compute them:
+	<br><br>
+	<span class="redbig">Caution:</span> <span style="color: red">Do not</span> try to memorize these integral
+	formulas. Rather, <span class="hl">remember the three techniques</span>.
+</p>
+<ul>
+	<li>
+		\(\displaystyle
+		\dfrac{\text{Constant}}{\text{Linear}} \qquad
+		\int \dfrac{1}{x-a}\,dx=\ln | x-a|+C
+		\)
+		<br><br>
+		Substitute &emsp;
+		\(u=x-a\)&emsp;&emsp;
+		<button class="toggle has-sol" data-toggle="Sol1"></button>
+		<div class="toBeToggled drop-sol" data-toggle="Sol1">
+		  <p>
+		    Substitute \(u=x-a\). Then \(du=dx\) and:
+		    \[\begin{aligned}
+		    \int \dfrac{1}{x-a}\,dx
+				&=\int \dfrac{1}{u}\,du=\ln | u|+C \\
+		    &=\ln | x-a|+C
+		    \end{aligned}\]
+		  </p>
+		</div>
+  </li>
+	<br/>
+	<li>
+		\(\displaystyle
+		\dfrac{\text{Constant}}{\text{Linear}^n} \qquad
+		\int\dfrac{1}{(x-a)^n}\,dx
+		=\dfrac{-1}{n-1}\dfrac{1}{(x-a)^{n-1}}+C\,\)
+		&ensp; if &ensp;\(\,n>1\)
+		<br><br>
+		Substitute &emsp;
+		\(u=x-a\)&emsp;&emsp;
+		<button class="toggle has-sol" data-toggle="Sol2"></button>
+		<div class="toBeToggled drop-sol" data-toggle="Sol2">
+		  <p>
+		    Substitute \(u=x-a\). Then \(du=dx\) and:
+		    \[\begin{aligned}
+				\int &\dfrac{1}{(x-a)^n}\,dx
+				=\int u^{-n}\,du
+				=\dfrac{u^{-n+1}}{-n+1}+C \\
+		    &=\dfrac{-1}{n-1}\dfrac{1}{u^{n-1}}+C
+				=\dfrac{-1}{n-1}\dfrac{1}{(x-a)^{n-1}}+C
+		    \end{aligned}\]
+		  </p>
+		</div>
+  </li>
+	<br/>
+	<li>
+		\(\displaystyle
+		\dfrac{\text{Linear}}{\text{Quadratic}} \qquad
+		\int \dfrac{(x-a) }{(x-a)^2+b^2}\,dx
+		=\dfrac{1}{2}\ln\left((x-a)^2+b^2\right)+C\)
+		<br><br>
+		Substitute &emsp;
+		\(u=(x-a)^2+b^2\)&emsp;&emsp;
+		<button class="toggle has-sol" data-toggle="Sol3"></button>
+		<div class="toBeToggled drop-sol" data-toggle="Sol3">
+		  <p>
+		    Substitute \(u=(x-a)^2+b^2\). Then \(du=2(x-a)\,dx\) and:
+		    \[\begin{aligned}
+		    \int \dfrac{x-a}{(x-a)^2+b^2}\,dx
+				&=\dfrac{1}{2}\int \dfrac{1}{u}\,du=\dfrac{1}{2}\ln | u|+C \\
+		    &=\dfrac{1}{2}\ln\left((x-a)^2+b^2\right)+C
+		    \end{aligned}\]
+		  </p>
+		</div>
+  </li>
+	<br/>
+	<li>
+		\(\displaystyle
+		\dfrac{\text{Linear}}{\text{Quadratic}^n} \qquad
+		\int \dfrac{(x-a) }{\left((x-a)^2+b^2\right)^n}\,dx
+		=\dfrac{-1}{2(n-1)}\dfrac{1}{\left((x-a)^2+b^2\right)^{n-1}}+C\)
+		&ensp; if &ensp; \(n>1\)
+		<br><br>
+		Substitute &emsp;
+		\(u=(x-a)^2+b^2\)&emsp;&emsp;
+		<button class="toggle has-sol" data-toggle="Sol4"></button>
+		<div class="toBeToggled drop-sol" data-toggle="Sol4">
+		  <p>
+		    Substitute \(u=(x-a)^2+b^2\). Then
+				\(du=2(x-a)\,dx\) and:
+		    \[\begin{aligned}
+		    \int &\dfrac{x-a}{\left((x-a)^2+b^2\right)^n}\,dx
+				=\dfrac{1}{2}\int u^{-n}\,du \\
+		    &=\dfrac{1}{2}\dfrac{u^{-n+1}}{-n+1}+C
+				=\dfrac{-1}{2(n-1)}\dfrac{1}{u^{n-1}}+C \\
+		    &=\dfrac{-1}{2(n-1)}\dfrac{1}{\left((x-a)^2+b^2\right)^{n-1}}+C
+		    \end{aligned}\]
+		  </p>
+		</div>
+  </li>
+	<br/>
+	<li>
+		\(\displaystyle
+		\dfrac{\text{Constant}}{\text{Quadratic}} \qquad
+		\int \dfrac{1}{(x-a)^2+b^2}\,dx
+		=\dfrac{1}{b}\arctan \left(\dfrac{x-a}{b}\right)+C\)
+		<br><br>
+		Substitute &emsp;
+		\(x-a=b\tan\theta\)&emsp;&emsp;
+		<button class="toggle has-sol" data-toggle="Sol5"></button>
+		<div class="toBeToggled drop-sol" data-toggle="Sol5">
+		  <p>
+		    Substitute \(x-a=b\tan\theta\). Then \(dx=b\sec^2\theta\,d\theta\) and:
+		    \[\begin{aligned}
+		    \int &\dfrac{1}{(x-a)^2+b^2}\,dx
+				=\int \dfrac{1}{b^2\tan^2\theta+b^2}\,b\sec^2\theta\,d\theta \\
+		    &=\dfrac{1}{b}\int \dfrac{\sec^2\theta\,}{\tan^2\theta+1}\,d\theta
+				=\dfrac{1}{b}\int 1\,d\theta=\dfrac{1}{b}\theta+C \\
+		    &=\dfrac{1}{b}\arctan \left(\dfrac{x-a}{b}\right)+C
+		    \end{aligned}\]
+		  </p>
+		</div>
+	</li>
+	<br/>
+	<li>
+		\(\displaystyle
+		\dfrac{\text{Constant}}{\text{Quadratic}^n} \qquad
+		\int \dfrac{1}{\left((x-a)^2+b^2\right)^n}\,dx
+		=\dfrac{1}{b^{2n-1}}\int \cos^{2n-2}\theta\,d\theta\)
+		&ensp; if &ensp; \(n>1\)
+		<br><br>
+		Substitute\(^\dagger\) &emsp;
+		\(x-a=b\tan\theta\)&emsp;&emsp;
+		<button class="toggle has-sol" data-toggle="Sol6"></button>
+		<br/>
+	  \(^\dagger\)Complete the integral and then substitute back using
+		\(\tan\theta=\dfrac{x-a}{b}\) and hence
+	  \[
+		\sin\theta=\dfrac{x-a}{\sqrt{(x-a)^2+b^2}} \qquad \text{and} \qquad
+		 \cos\theta=\dfrac{b}{\sqrt{(x-a)^2+b^2}}
+		\]
+		<div class="toBeToggled drop-sol" data-toggle="Sol6">
+		  <p>
+		    Substitute \(x-a=b\tan\theta\). Then \(dx=b\sec^2\theta\,d\theta\) and:
+		    \[\begin{aligned}
+		    \int &\dfrac{1}{\left((x-a)^2+b^2\right)^n}\,dx
+		    =\int \dfrac{1}{\left(b^2\tan^2\theta+b^2\right)^n}\,b\sec^2\theta\,d\theta \\
+		    &=\dfrac{1}{b^{2n-1}}\int \dfrac{1}{\left(\tan^2\theta+1\right)^n}\sec^2\theta\,d\theta \\
+		    &=\dfrac{1}{b^{2n-1}}\int \dfrac{1}{\sec^{2n-2}\theta}\,d\theta
+		    =\dfrac{1}{b^{2n-1}}\int \cos^{2n-2}\theta\,d\theta
+		    \end{aligned}\]
+		    Complete the integral using the
+				<a href="../IntParts/Reduce.html" title="Return using the Back buton.">
+				reduction formula</a>:
+			  \[
+			  \int \cos^n x\,dx
+			  =\dfrac{1}{n}\cos^{n-1}x\sin x+\dfrac{n-1}{n}\int \cos^{n-2}x\,dx
+			  \]
+				and then substitute back.
+		  </p>
+		</div>
+  </li>
+</ul>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

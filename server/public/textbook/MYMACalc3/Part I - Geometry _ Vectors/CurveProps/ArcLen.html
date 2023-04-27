@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Arc Length of a Curve | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VelAccelJerk.html" title="Previous">&lArr;</a></li>
+      <li><a href="sParam.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Arc Length, Arc Length Parameter, and Speed</h2>
+
+
+      
+      <h2>1. Arc Length of a Curve</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  To find a formula for the length of a parametric curve,
+  \(\vec{r}(t)\), from \(A=\vec{r}(a)\) to \(B=\vec{r}(b)\),
+  we approximate the curve by straight line segments and sum the lengths of
+  the segments. In the limit, as we use more segments which are shorter and
+  shorter, this turns into an integral for the exact length of the curve.
+</p>
+<div class="column">
+  <p data-col-width="60%">
+    We start by dividing the curve, \(\vec r(t)=(x(t),y(t))\), into \(n\)
+    segments by partitioning the \(t\) values at
+    \(t_0,t_1,\cdots,t_{i-1},t_{i},\cdots,t_{n}\). As a shorthand, we define:
+    \[
+    x_i=x(t_i), \qquad y_i=y(t_i), \qquad z_i=z(t_i)
+    \]
+    We use the distance formula in three dimensions to determine the length of each of
+    the straight line segments from \(\vec{r}\left(t_{i-1}\right)\) to
+    \(\vec{r}\left(t_{i}\right)\). Finally, we sum these straight line
+    differences from \(i=1\) to \(i=n\) to get an approximation to the
+    length of the curve:
+    \[
+    L\approx\sum_{i=1}^n
+    \sqrt{\left(x_i-x_{i-1}\right)^2+
+    \left(y_i-y_{i-1}\right)^2+\left(z_i-z_{i-1}\right)^2}
+    \]
+    In the plot, a curve, shown in <span style="color:blue">blue</span>,
+    is partitioned into \(4\) approximating line segments, in
+    <span style="color:red">red</span>. The length of the
+    <span style="color:blue">blue</span> curve is approximated by summing the
+    lengths of the <span style="color:red">red</span> line segments.
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_arclength_n4.jpg" alt="eg_arclength_n4">
+  </div>
+</div>
+
+<p>
+  Next we note that
+  \(x_i-x_{i-1}=\Delta x=\dfrac{\Delta x}{\Delta t}\Delta t\).
+  The same holds true for the \(y\) and \(z\) differences. Substituting
+  these into the previous equation, we get
+  \[\begin{aligned}
+  L&\approx\sum_{i=1}^n \sqrt{\Delta x^2+\Delta y^2+\Delta z^2} \\
+   &\approx\sum_{i=1}^n \sqrt{
+    \left(\dfrac{\Delta x}{\Delta t}\Delta t\right)^2
+   +\left(\dfrac{\Delta y}{\Delta t}\Delta t\right)^2
+   +\left(\dfrac{\Delta z}{\Delta t}\Delta t\right)^2} \\
+   &\approx\sum_{i=1}^n \sqrt{
+     \left(\dfrac{\Delta x}{\Delta t}\right)^2
+    +\left(\dfrac{\Delta y}{\Delta t}\right)^2
+    +\left(\dfrac{\Delta z}{\Delta t}\right)^2}\,\Delta t
+  \end{aligned}\]
+</p>
+<div class="column">
+  <p data-col-width="60%">
+    This approximation becomes exact in the limit as the number of segments
+    \(n\) becomes infinite and \(\Delta t\) goes to \(0\), as shown in the
+    animation. At the same time the quotient \(\dfrac{\Delta x}{\Delta t}\)
+    approaches the derivative \(\dfrac{dx}{dt}\). Thus, the limit of the sum
+    becomes the integral:
+    \[\begin{aligned}
+    L&=\lim_{\Delta t\longrightarrow 0} \sum_{i=1}^n \sqrt{
+      \left(\dfrac{\Delta x}{\Delta t}\right)^2
+     +\left(\dfrac{\Delta y}{\Delta t}\right)^2
+     +\left(\dfrac{\Delta z}{\Delta t}\right)^2}\,\Delta t \\
+    &=\int_a^b \sqrt{\left(\dfrac{dx}{dt}\right)^2
+                       +\left(\dfrac{dy}{dt}\right)^2
+                       +\left(\dfrac{dz}{dt}\right)^2}\,dt
+    \end{aligned}\]
+  </p>
+  <div class="center" data-col-width="40%">
+    <video src="graphics/eg_arclength_limit_anim.mp4" autoplay controls loop>
+    </video>
+  </div>
+</div>
+<p>
+  Notice that the square root in this formula is just the length of the
+  velocity. So
+  \[
+  L=\int_a^b |\vec{v}|\,dt
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<h3>Arc Length Differential and Formulas for the Arc Length</h3>
+<p class="def" data-title="Arc Length Differential and Arc Length Integral">
+  The <span class="defword">(Scalar) Differential of Arc Length</span> is the
+  differential:
+  \[\begin{aligned}
+  ds&=\sqrt{dx^2+dy^2+dz^2} \\
+  &=\sqrt{\left(\dfrac{dx}{dt}\right)^2
+         +\left(\dfrac{dy}{dt}\right)^2
+         +\left(\dfrac{dz}{dt}\right)^2}\,dt=|\vec{v}|\,dt
+  \end{aligned}\]
+  If a curve runs between the points \(A\) and \(B\), then the
+  <span class="defword">Arc Length of the Curve</span> is the integral:
+  \[
+  L=\int_A^B\,ds=\int_A^B \sqrt{dx^2+dy^2+dz^2}
+  \]
+  where the endpoints \(A\) and \(B\) are the limits on the integral. If we
+  specify a parametrization (since there could be more than one way to
+  parametrize the curve) as \(\vec{r}(t)\), then the endpoints are
+  \(A=\vec{r}(a)\) and \(B=\vec{r}(b)\) and we write:
+  \[
+  L=\int_a^b |\vec{v}|\,dt
+  \]
+  where the limits on the integral are the values of \(t\) at \(A\) and \(B\).
+</p>
+
+<p class="example" data-number="1">
+  Compute the arclength of the twisted cubic
+  \(\vec{r}(t)=\left(t,t^2,\dfrac{2}{3}t^3\right)\)
+  between \(t=0\) and \(t=3\).
+</p>
+<p class="sol">
+  The velocity is \(\vec{v}=(1,2t,2t^2)\) and its length is
+  \[
+  |\vec{v}|=\sqrt{1+4t^2+4t^{4}}
+  =\sqrt{(1+2t^2)^2}=1+2t^2.
+  \]
+  So its arc length is
+  \[\begin{aligned}
+  L&=\int_{(0,0,0)}^{(3,9,18)}ds
+  =\int_0^3 |\vec{v}|\,dt
+  =\int_0^3 (1+2t^2)\,dt \\
+  &=\left[t+\dfrac{2}{3}t^3\right]_0^3=3+18=21
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the circumference of the circle
+    \(\vec{r}(\theta)=(R\cos(\theta),R\sin(\theta),3)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(L=2\pi R\)<br>
+    Notice this is the formula you already know for computing the
+    circumference of a circle -- in fact, this is one way that formula is derived!
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The circumference of a circle is the arc length of \(1\) revolution, from
+    \(\theta=0\) to \(\theta=2\pi\). So the circumference is
+    \[
+    L=\int_0^{2\pi} |\vec{v}|\,d\theta
+    \]
+    To compute this, we need the magnitude of the velocity vector, which is
+    \[\begin{aligned}
+    |\vec{v}|
+    &=\sqrt{\left(\dfrac{dx}{d\theta}\right)^2
+           +\left(\dfrac{dy}{d\theta}\right)^2
+           +\left(\dfrac{dz}{d\theta}\right)^2} \\
+    &=\sqrt{(-R\sin\theta)^2+(R\cos\theta)^2+0^2} \\
+    &=\sqrt{R^2(\sin^2\theta+\cos^2\theta)}=R
+    \end{aligned}\]
+    So the circumference is
+    \[\begin{aligned}
+    L=\int_0^{2\pi} |\vec{v}|\,d\theta
+     =\int_0^{2\pi} R\,d\theta
+     =2\pi R
+    \end{aligned}\]
+  </p>
+  <p class="check">
+    Notice this is the formula you already know for computing the
+    circumference of a circle -- in fact, this is one way that formula is derived!
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  If the parameter happens to be \(z\), while \(x\) and \(y\) are
+  functions of \(z\): &ensp; \(x=x(z)\) and \(y=y(z)\),
+  &ensp; then the arc length differential becomes
+  \[
+  ds=\sqrt{\left(\dfrac{dx}{dz}\right)^2+\left(\dfrac{dy}{dz}\right)^2+1}\,dz
+  \]
+  and the arc length integral is:
+  \[
+  L=\int_a^b\,ds=\int_a^b
+  \sqrt{\left(\dfrac{dx}{dz}\right)^2+\left(\dfrac{dy}{dz}\right)^2+1}\,dz
+  \]
+  where \(a\) and \(b\) are now the values of \(z\) at the endpoints. Similar
+  formulas hold when the parameter is \(x\) or \(y\).
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute the arclength of the helix &ensp;
+    \(x=4\cos\left(\dfrac{1}{3}z\right),
+      y=4\sin\left(\dfrac{1}{3}z\right)\) &ensp; between \(z=0\) and \(z=18\pi\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(L=30\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The arc length is
+    \[\begin{aligned}
+    L&=\int_a^b \sqrt{\left(\dfrac{dx}{dz}\right)^2
+                    +\left(\dfrac{dy}{dz}\right)^2+1}\,dz \\
+    &=\int_0^{18\pi} \sqrt{\dfrac{16}{9}\sin^2\left(\dfrac{1}{3}z\right)
+                          +\dfrac{16}{9}\cos^2\left(\dfrac{1}{3}z\right)+1}dz \\
+    &=\int_0^{18\pi} \sqrt{\dfrac{16}{9}+1}dz
+    =\left[\dfrac{5}{3}z\right]_0^{18\pi}=30\pi
+    \end{aligned}\]
+  </p>
+</div>
+<p class="remark">
+  Notice this is the same as the helix parametrized as
+  \(\vec{r}(\theta)=(4\cos\theta,4\sin\theta,3\theta)\)
+  for \(0 \le \theta \le 6\pi\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing the arc length of curves using the
+  following two Maplets
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ArcLength2D.maplet" download>Arc Length in 2D</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ArcLength3D.maplet" download>Arc Length in 3D</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a.2.Limit Laws | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimSpec.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimWOLaws.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Computing Limits</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  The Special Limits on the <a href="LimSpec.html">previous page</a> may be
+  combined with the following Limit Laws to compute many limits. They are
+  justified based on the intuitive definition. The formal proofs will appear
+  in the chapter on
+  <a href="../PreciseLim/ChContents.html" title="Return using the Back button.">
+  Precise Limits and Continuity</a>.
+</p>
+
+
+      
+      <h2>a.2.Limit Laws</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="prop" data-title="Limit Laws" id="thm">
+  Let \(f(x)\) and \(g(x)\) be functions for
+  which \(\lim\limits_{x\to a}f(x)=L\) and
+  \(\lim\limits_{x\to a}g(x)=M\) where \(L\) and \(M\) are finite. Then:
+  <br><br>
+  <span class="hl">Addition Law:</span>
+  &emsp; &emsp; &emsp; &emsp; &emsp;
+  \(\lim\limits_{x\to a}(f(x)+g(x))=L+M\)
+  <!-- <br>
+	<a href="../PreciseLim/LimLaws.html#add" title="Return using the Back button.">
+  <button class= 'btn'>Proof</button></a> -->
+  <br><br>
+  <span class="hl">Subtraction Law:</span>
+  &emsp; &emsp; &emsp; &emsp;
+  \(\,\lim\limits_{x\to a}(f(x)-g(x))=L-M\)
+  <!-- <br>
+	<a href="../PreciseLim/LimLaws.html#subt" title="Return using the Back button.">
+  <button class= 'btn'>Proof</button></a> -->
+  <br><br>
+  <span class="hl">Product Law:</span>
+  &emsp; &emsp; &emsp; &emsp; &emsp;
+  \(\,\,\lim\limits_{x\to a}f(x)\,g(x)=LM\)
+  <!-- <br>
+	<a href="../PreciseLim/LimLaws.html#prod" title="Return using the Back button.">
+  <button class= 'btn'>Proof</button></a> -->
+  <br><br>
+  <span class="hl">Quotient Law:</span>
+  &emsp; &emsp; &emsp; &emsp; &emsp;
+   \(\lim\limits_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{L}{M}\),
+  <br>
+  provided \(g(x)\neq 0\) for all \(x\) and \(M\neq 0\).
+  <!-- <br>
+	<a href="../PreciseLim/LimLaws.html#quot" title="Return using the Back button.">
+  <button class= 'btn'>Proof</button></a> -->
+  <br><br>
+  <span class="hl">Power Law:</span>
+  &emsp; &emsp; &emsp; &emsp; &emsp; &ensp;
+   \(\,\lim\limits_{x\to a}(g(x))^{f(x)}=M^L\),
+  <br>
+  provided \(g(x)\ge0\) for all \(x\), \(M\ge0\),
+  \((g(x))^{f(x) }\) is defined for all \(x\) and \(M^L\) is defined.
+  <!-- <br>
+	<a href="../PreciseLim/LimLaws.html#power" title="Return using the Back button.">
+  <button class= 'btn'>Proof</button></a> -->
+  <br><br>
+  <span class="hl">Continuous Function Law:</span>
+  &emsp;
+  \(\lim\limits_{x\to a}p(f(x))
+  =p(L)\),
+  <br>
+  where \(p(x)\) is any function which is continuous at \(L\).
+  <!-- <br>
+	<a href="../PreciseLim/LimLaws.html#fnc" title="Return using the Back button.">
+  <button class= 'btn'>Proof</button></a> -->
+</p>
+<p>
+  In words, these say
+</p>
+<ul>
+  <li>
+    "The limit of a sum is the sum of the limits."
+  </li>
+  <li>
+    "The limit of a difference is the difference of the limits."
+  </li>
+  <li>
+    "The limit of a product is the product of the limits."
+  </li>
+  <li>
+    "The limit of a quotient is the quotient of the limits, provided the
+    denominator is non-zero."
+  </li>
+  <li>
+    "The limit of a power is the power of the limits, provided the intermediate
+    powers and result are defined."
+  </li>
+  <li>
+    "The limit of a continuous function of a function is the continuous
+    function of the limit of the function."
+  </li>
+</ul>
+<p class="remark">
+  The product, quotient and power laws include the special cases:
+  \[\lim_{x\to a}(cf(x))=cL\qquad\qquad
+    \lim_{x\to a}\dfrac{1}{f(x)}=\dfrac{1}{L}\]
+  \[\lim_{x\to a}(f(x))^{\,p}=L^{\,p}\qquad\qquad
+    \lim_{x\to a}b^{f(x)}=b^{\,L}\]
+  where \(c\), \(p\) and \(b\) are constants. These say
+</p>
+<ul>
+  <li>
+    "The limit of a constant times a function is the constant times the
+    limit of the function."
+  </li>
+  <li>
+    "The limit of the reciprocal of a function is the reciprocal of the
+    limit of the function."
+  </li>
+  <li>
+    "The limit of a power of a function is the power of the limit of the
+    function."
+  </li>
+  <li>
+    "The limit of a number raised to a function of powers is the number
+    raised to the limit of the function."
+  </li>
+</ul>
+
+        <div class="rule" id="Examples"></div>
+
+<p>
+  In general, to compute a limit, we repeatedly apply the Limit Laws until we
+  get down to the Special Limits.
+</p>
+<div class="center">
+  <a href="LimLawsEg.html">Examples</a>
+</div>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Frequently, we do not introduce the letters \(L\) and \(M\). Then the Laws say:
+</p>
+<ul>
+  <li>
+    Constants pull out of limits:
+    \[
+    \lim_{x\to a}c f(x) = c \lim_{x\to a} f(x)
+    \]
+  </li>
+  <li>
+    The limit of a sum is the sum of the limits:
+    \[
+    \lim_{x\to a}(f(x)+g(x))=\lim_{x\to a} f(x)+\lim_{x\to a} g(x)
+    \]
+  </li>
+  <li>
+    The limit of a difference is the difference of the limits:
+    \[
+    \lim_{x\to a}(f(x)-g(x))=\lim_{x\to a} f(x)-\lim_{x\to a} g(x)
+    \]
+  </li>
+  <li>
+    The limit of a product is the product of the limits:
+    \[
+    \lim_{x\to a}(f(x)\,g(x))=\lim_{x\to a} f(x)\lim_{x\to a} g(x)
+    \]
+  </li>
+  <li>
+    The limit of a reciprocal is the reciprocal of the limit, provided the
+    denominator is non-zero:
+    \[
+    \lim_{x\to a}\dfrac{1}{g(x)}=\dfrac{1}{\displaystyle\lim_{x\to a} g(x)}
+    \]
+  </li>
+  <li>
+    The limit of a quotient is the quotient of the limits, provided the
+    denominator is non-zero:
+    \[
+    \lim_{x\to a}\dfrac{f(x)}{g(x)}
+    =\dfrac{\displaystyle\lim_{x\to a} f(x)}{\displaystyle\lim_{x\to a} g(x)}
+    \]
+  </li>
+  <li>
+    Continuous functions pull out of limits:
+    \[
+    \lim_{x\to a}p\big(f(x)\big)=p\big(\lim_{x\to a} f(x)\big)
+    \]
+  </li>
+  <li>
+    The limit of a power is the power of the limits, provided all the
+    exponentials exist:
+    \[
+    \lim_{x\to a}\big(f(x)\big)^{\small g(x)}
+    =\big(\lim_{x\to a} f(x)\big)^{\displaystyle\small\lim_{x\to a} g(x)}
+    \]
+  </li>
+</ul>
+        <div class="rule"></div>
+
+<p>
+  In summary, the Limit Laws basically say that if we can plug in \(x=a\)
+  and get a finite number, \(L\), while satisfying all the conditions
+  in the Limit Laws, then \(L\) is the limit.
+</p>
+<p>
+  All is very nice when the Limit Laws apply, but most of our time will
+  be spent on limits where the Limit Laws <em>do not</em> apply.
+  In that case, we first need to algebraically manipulate the
+  limit into a form where the Limit Laws <em>do</em> apply, as explained on the
+  <a href="LimWOLaws.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

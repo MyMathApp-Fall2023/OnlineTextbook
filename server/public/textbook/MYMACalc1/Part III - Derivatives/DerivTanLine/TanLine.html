@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Tangent Lines | 10. Derivatives and Tangent Lines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DerivPtAppl.html" title="Previous">&lArr;</a></li>
+      <li><a href="DerivFn.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Derivatives and Tangent Lines</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b. Tangent Lines</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The primary application of a derivative is to find the equation of the
+  <span class="hl">tangent line</span> at a point, \(x=a\), on the graph of
+  a function, \(y=f(x)\). The most general line has the standard equation:
+  \[
+  Ax+By=C.
+  \]
+  The line is vertical if \(B=0\) and non-vertical if \(B\ne0\). Assuming it
+  is not vertical, we can solve for \(y\) and put the equation into
+  slope-intercept form:
+  \[
+  y=mx+b \qquad (1)
+  \]
+  <!--y=mx+b\tag{1}-->
+  where \(m\) is the slope and \(b\) is the \(y\)-intercept.
+</p>
+<p>
+  Now suppose we want to find the equation of the line tangent to \(y=f(x)\)
+  at \(x=a\). We know the slope is \(m=f'(a)\). So equation \((1)\) becomes:
+  \[
+  y=f'(a)x+b \qquad (2)
+  \]
+  <!--y=f'(a)x+b\tag{2}-->
+  We know the line passes through the point \((x,y)=(a,f(a))\).
+  So equation \((2)\) tell us:
+  \[
+  f(a)=f'(a)a+b
+  \]
+  or
+  \[
+  b=f(a)-f'(a)a
+  \]
+  Using this formula for \(b\), equation \((2)\) becomes:
+  \[\begin{aligned}
+  y&=f'(a)x+f(a)-f'(a)a\\
+  &=f(a)+f'(a)(x-a)
+  \end{aligned}\]
+  which is <span class="hl">the equation for the tangent line</span>.
+  We define the formula on the right to be the
+  <span class="defword">tangent function</span>:
+  \[
+  f_{\tan}(x)=f(a)+f'(a)(x-a)
+  \]
+  so that the equation of the tangent line is \(y=f_{\tan}(x)\).
+</p>
+<div class="column">
+  <div>
+    <p class="formula" data-title="Equation of a Tangent Line to a Graph">
+      The equation of the <span class="defword">tangent line</span> to the graph
+      of the function \(y=f(x)\) at \(x=a\) is:
+      \[
+      y=f_{\tan}(x)
+      \equiv f(a)+f'(a)(x-a).
+      \]
+      In differential notation, this is:
+      \[
+      y=f_{\tan}(x)
+      \equiv f(a)+\left.\dfrac{df}{dx}\right|_{x=a}(x-a).
+      \]
+    </p>
+    <p>
+      <em class="center greenbig">Memorize this!</em>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eq_tanline.jpg" alt="eq_tanline">
+  </div>
+</div>
+
+        <div class="rule" id="eg_tanline"></div>
+
+<p class="example" data-number="1">
+  Compute the tangent line to \(y=6x^2-x^3\) at \(x=3\).
+  Then find its \(y\)-intercept. Its slope was found in an
+  <a href="DerivPtAppl.html#ex_slope">exercise</a> on the
+  previous page.
+</p>
+<p class="sol">
+  The solution is straightforward: find the required information and
+  plug into the formula for the equation of the tangent line.
+  We identify \(f(x)=6x^2-x^3\) and \(a=3\). Then:
+  \[
+  f(3)=54-27=27
+  \]
+  and from the <a href="DerivPtAppl.html#ex_slope">previous page</a>:
+  \[
+  f'(3)=9
+  \]
+  So the equation of the tangent line is:
+  \[\begin{aligned}
+  y&=f(a)+f'(a)(x-a) \\
+  &=f(3)+f'(3)(x-3) \\
+  &=27+9(x-3) \\
+  &=9x
+  \end{aligned}\]
+  We identify the \(y\)-intercept as \(b=0\).
+</p>
+
+        <div class="rule" id="ex_tanline"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="2">
+      Compute the tangent line to \(y=\dfrac{3}{x}\) at \(x=6\).
+      Then find its \(y\)-intercept. Its derivative was found in an
+      <a href="DerivPt.html#ex_limquo" title="Return using the Back button.">
+      exercise</a> on a previous page.
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_tan_deriv_pt.jpg" alt="ex_tan_deriv_pt">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Evaluate the function and find its derivative at \(x=6\).
+    Then use the formula:
+    \[
+    f_{\tan}(x)=f(6)+f'(6)(x-6)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(y=-\,\dfrac{1}{12}x+1\)
+    <br>
+    The \(y\)-intercept is \(b=1\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We identify \(f(x)=\dfrac{3}{x}\) and \(a=6\). Then:
+    \[
+    f(6)=\dfrac{1}{2}
+    \]
+    The derivative was found on a
+    <a href="DerivPt.html#ex_limquo" title="Return using the Back button.">
+    previous page</a> to be:
+    \[
+    f'(6)=-\,\dfrac{1}{12}
+    \]
+    So the equation of the tangent line is:
+    \[\begin{aligned}
+    y&=f(a)+f'(a)(x-a) \\
+    &=f(6)+f'(6)(x-6) \\
+    &=\dfrac{1}{2}-\dfrac{1}{12}(x-6) \\
+    &=-\,\dfrac{1}{12}x+1
+    \end{aligned}\]
+    We identify the \(y\)-intercept as \(b=1\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

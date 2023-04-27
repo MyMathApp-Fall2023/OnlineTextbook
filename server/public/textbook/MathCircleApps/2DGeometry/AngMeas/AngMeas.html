@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Measure | Angular Measure</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="../../3DGeometry/Cube/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Angular Measure</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Angular Measure</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Degrees</h3>
+
+<div class="column">
+  <p>
+    Most people are used to using degrees to measure angles. There are
+    \(360^\circ\) in a full circle, \(90^\circ\) in a right angle and
+    \(180^\circ\) in a straight angle.
+  </p>
+  <div class="center">
+    <video src="graphics/circle_in_deg_anim.mp4" autoplay loop controls width=300></video>
+  </div>
+</div>
+
+<h3>Radians</h3>
+
+<div class="column">
+  <p>
+    However, mathematicians and most scientists and engineers use radian measure.
+    There are \(2\pi\) rad in a full circle, \(\dfrac{\pi}{2}\) rad in a right
+    angle and \(\pi\) rad in a straight angle. You need to be able to go back
+    and forth between radians and degrees.
+  </p>
+  <div class="center">
+    <video src="graphics/circle_in_rad_anim.mp4" autoplay loop controls width=300></video>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The following activity may help you to conceptualize radians.
+  <br>
+  &#x2022; Stand up and do it yourself. Or make Dr. Y's robot follow the commands.
+  <br>
+  &#x2022; Raise or lower the robot's arms by draging the hand or clicking on the up or
+  down arrows.
+  <br>
+  &#x2022; Rotate the robot by dragging the dot or clicking on the counterclockwise or
+  clockwise arrows.
+  <br>
+  &#x2022; Reset the robot by clicking on the reset button.
+  <br>
+  &#x2022; Get a new problem by clicking on the refresh button.
+</p>
+<div class="column">
+  <ul>
+    <li>
+      Put out your left arm. Turn toward the left until you are facing backwards.
+      This is called turning by \(\pi\) rad.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX1a" id="CkX1a"></button>
+      <input type="text" id="replyX1a" name="replyX1a" size="6">
+      <button class="toggle has-show" data-toggle="ShX1a" id="ShX1a"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX1a" name="readoutX1a" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+    Go back to your starting position.
+    <li>
+      Put out your left arm. Turn toward the left until you are facing left.
+      That is called turning by \(\dfrac{1}{2}\pi\) rad.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX1b" id="CkX1b"></button>
+      <input type="text" id="replyX1b" name="replyX1b" size="6">
+      <button class="toggle has-show" data-toggle="ShX1b" id="ShX1b"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX1b" name="readoutX1b" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+    Go back to your starting position.
+    <li>
+      <button class="toggle has-refresh" data-toggle="refreshX1c" id="refreshButton_1"></button>
+      Turn by
+      <span id="randX1c" name="randX1c">\(\dfrac{1}{4}\pi\) rad.</span>
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX1c" id="CkX1c"></button>
+      <input type="text" id="replyX1c" name="replyX1c" size="6">
+      <button class="toggle has-show" data-toggle="ShX1c" id="ShX1c"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX1c" name="readoutX1c" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+  </ul>
+  <div style="text-align: center; float: left; width: 50%">
+    <canvas id="robo_1"></canvas>
+    <br>
+    <button id="leftArmButton">L&#129093;</button>
+    <button class="has-counterclockwise" id="leftButton"></button>
+    <button id="roboReset">Reset</button>
+    <button class="has-clockwise" id="rightButton"></button>
+    <button id="rightArmButton">R&#129093;</button>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The coordinates on a number line are positive on the right and negative
+  on the left. The angles to measure rotations also have signs. Turning to the
+  left is positive as above. Turning to the right is negative as follows:
+</p>
+<div class="column">
+  <ul>
+    Go back to your starting position.
+    <li>
+      Put out your right arm. Turn toward the right until you are facing right.
+      That is called turning by \(-\,\dfrac{\pi}{2}\) rad.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX2a" id="CkX2a"></button>
+      <input type="text" id="replyX2a" name="replyX2a" size="6">
+      <button class="toggle has-show" data-toggle="ShX2a" id="ShX2a"></button>
+      &emsp;That's&ensp;
+<input type="text" id="readoutX2a" name="readoutX2a" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+    Go back to your starting position.
+    <li>
+      Put out your right arm. Turn toward the right until you are facing backwards.
+      That is called turning by \(-\pi\) rad.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX2b" id="CkX2b"></button>
+      <input type="text" id="replyX2b" name="replyX2b" size="6">
+      <button class="toggle has-show" data-toggle="ShX2b" id="ShX2b"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX2b" name="readoutX2b" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+    Go back to your starting position.
+    <li>
+      <button class="toggle has-refresh" data-toggle="refreshX2c" id="refreshButton_2"></button>
+      Turn by
+      <span id="randX2c" name="randX2c">\(-\,\dfrac{3}{4}\pi\) rad.</span>
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX2c" id="CkX2c"></button>
+      <input type="text" id="replyX2c" name="replyX2c" size="6">
+      <button class="toggle has-show" data-toggle="ShX2c" id="ShX2c"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX2c" name="readoutX2c" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+  </ul>
+  <div style="text-align: center; float: left; width: 50%">
+    <canvas id="robo_2"></canvas>
+    <br>
+    <button id="leftArmButton_2">L&#129093;</button>
+    <button class="has-counterclockwise" id="leftButton_2"></button>
+    <button id="roboReset_2">Reset</button>
+    <button class="has-clockwise" id="rightButton_2"></button>
+    <button id="rightArmButton_2">R&#129093;</button>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Directions in the \(xy\)-plane are also specified by angular measure
+  that may be positive or negative.
+  The positive \(x\)-axis is called \(0^\circ\) or \(0\) rad.
+  Directions which are counterclockwise (turning left) from the positive
+  \(x\)-axis are positive.
+  Directions which are clockwise (turning right) from the positive
+  \(x\)-axis are negative.
+</p>
+<div class="column">
+  <ul>
+    Go back to your starting position.
+    <li>
+      Put out your left arm. Turn counterclockwise until you are facing left.
+      That is the \(\dfrac{\pi}{2}\) rad direction.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX3a" id="CkX3a"></button>
+      <input type="text" id="replyX3a" name="replyX3a" size="6">
+      <button class="toggle has-show" data-toggle="ShX3a" id="ShX3a"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX3a" name="readoutX3a" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+    Go back to your starting position.
+    <li>
+      Put out your right arm. Turn clockwise until you are facing right.
+      That is the \(-\,\dfrac{\pi}{2}\) rad direction.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX3b" id="CkX3b"></button>
+      <input type="text" id="replyX3b" name="replyX3b" size="6">
+      <button class="toggle has-show" data-toggle="ShX3b" id="ShX3b"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX3b" name="readoutX3b" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+    Go back to your starting position.
+    <li>
+      <button class="toggle has-refresh" data-toggle="refreshX3c" id="refreshButton_3"></button>
+      Turn to the
+      <span id="randX3c" name="randX3c">\(\dfrac{2}{3}\pi\) rad</span> direction.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkX3c" id="CkX3c"></button>
+      <input type="text" id="replyX3c" name="replyX3c" size="6">
+      <button class="toggle has-show" data-toggle="ShX3c" id="ShX3c"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX3c" name="readoutX3c" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+    <li>
+      <button class="toggle has-refresh" data-toggle="refreshX3d" id="refreshButton_3d"></button>
+      Start at the
+      <span id="randX3d1" name="randX3d1">\(\dfrac{2}{3}\pi\) rad</span> direction.
+      Then turn by
+      <span id="randX3d2" name="randX3d2">\(\dfrac{2}{3}\pi\) rad</span>.
+      <span class="center">
+      <button class="toggle has-check" data-toggle="CkXdc" id="CkX3d"></button>
+      <input type="text" id="replyX3d" name="replyX3d" size="6">
+      <button class="toggle has-show" data-toggle="ShX3d" id="ShX3d"></button>
+      &emsp;That's&ensp;
+      <input type="text" id="readoutX3d" name="readoutX3d" size="6"> &nbsp; \(\pi\)
+      </span>
+    </li>
+  </ul>
+  <div style="text-align: center; float: left; width: 50%">
+    <canvas id="robo_3"></canvas>
+    <br>
+    <button id="leftArmButton_3">L&#129093;</button>
+    <button class="has-counterclockwise" id="leftButton_3"></button>
+    <button id="roboReset_3">Reset</button>
+    <button class="has-clockwise" id="rightButton_3"></button>
+    <button id="rightArmButton_3">R&#129093;</button>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+
+<script src="scripts/three.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script src="scripts/GLTFLoader.js"></script>
+<script src="scripts/TextSprite.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="scripts/AngMeasInterp.js"></script>
+<script src="scripts/AngMeasInterp2.js"></script>
+<script src="scripts/AngMeasInterp3.js"></script>
+
+<style>
+  canvas{
+    background: #f0f0f0;
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+
+</body>
+</html>

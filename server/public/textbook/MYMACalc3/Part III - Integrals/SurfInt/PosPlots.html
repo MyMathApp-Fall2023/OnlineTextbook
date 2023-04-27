@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Position and Plots | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="CoordCurves.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Introduction to Parametric Surfaces</h2>
+
+
+      
+      <h2>1. Position and Plots</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="greybox">
+  <p class="def">
+    In a plane, \(\mathbb{R}^2\), the
+    <span class="defword">geometrical domains</span> on which we can
+    integrate are curves and regions.
+  </p>
+  <ol>
+    <li>
+      A <span class="defword">parametric curve</span> is
+      defined by an \(\mathbb{R}^2\) vector valued function of \(1\) variable:
+      \[
+      \vec r(t)=\left\langle x(t),y(t)\right\rangle
+      \]
+    </li>
+    <li>
+      A <span class="defword">parametrized 2D region</span> or
+      <span class="defword">2D curvilinear coordinate system</span> is
+      defined by an \(\mathbb{R}^2\) vector valued function of \(2\) variables:
+      \[
+      \vec R(u,v)=\left\langle x(u,v),y(u,v)\right\rangle
+      \]
+    </li>
+  </ol>
+</div>
+<div class="greybox">
+  <p class="def">
+    In space, \(\mathbb{R}^3\), the
+    <span class="defword">geometrical domains</span> on which we can
+    integrate are curves, surfaces and regions.
+  </p>
+  <ol>
+    <li>
+      A <span class="defword">parametric curve</span> is
+      defined by an \(\mathbb{R}^3\) vector valued function of \(1\) variable:
+      \[
+      \vec r(t)=\left\langle x(t),y(t),z(t)\right\rangle
+      \]
+    </li>
+    <li>
+      A <span class="defword">parametric surface</span> is
+      defined by an \(\mathbb{R}^3\) vector valued function of \(2\) variables:
+      \[
+      \vec R(u,v)=\left\langle x(u,v),y(u,v),z(u,v)\right\rangle
+      \]
+    </li>
+    <li>
+      A <span class="defword">parametrized 3D region</span> or
+      <span class="defword">3D curvilinear coordinate system</span> is
+      defined by an \(\mathbb{R}^3\) vector valued function of \(3\) variables:
+      \[
+      \vec R(u,v,w)=\left\langle x(u,v,w),y(u,v,w),z(u,v,w)\right\rangle
+      \]
+    </li>
+  </ol>
+</div>
+<p>
+  We have studied how to integrate on all of these geometric domains except
+  <span class="hl">surfaces</span>. That is the topic of this chapter.
+  In some ways parametric surfaces behave like parametric curves and in some
+  ways like curvilinear coordinate systems.
+</p>
+
+<h2>Position</h2>
+<p class="def">
+  A <span class="defword">parametric curve</span> gives the
+  <span class="defword">position</span> on the curve as a function of \(1\)
+  parameter, usually regarded as the time.
+  \[
+  (x,y,z)=\vec r(t)=\left\langle x(t),y(t),z(t)\right\rangle
+  \]
+</p>
+<p>
+  The parametrization can also be specified in component form:
+  \[
+  x=x(t), \qquad y=y(t), \qquad z=z(t)
+  \]
+</p>
+<p class="def">
+  A <span class="defword">curvilinear coordinate system</span> gives the
+  <span class="defword">position</span> in space as a function of \(3\)
+  parameters, the coordinates.
+  \[
+  (x,y,z)=\vec R(u,v,w)=\left\langle x(u,v,w),y(u,v,w),z(u,v,w)\right\rangle
+  \]
+</p>
+<p>
+  The parametrization can also be specified in component form:
+  \[
+  x=x(u,v,w), \qquad y=y(u,v,w), \qquad z=z(u,v,w)
+  \]
+</p>
+<p class="def">
+  A <span class="defword">parametric surface</span> gives the
+  <span class="defword">position</span> on the surface as a function of \(2\)
+  parameters, usually regarded as <span class="defword">coordinates</span>
+  on the surface.
+  \[
+  (x,y,z)=\vec R(u,v)=\left\langle x(u,v),y(u,v),z(u,v)\right\rangle
+  \]
+</p>
+<p>
+  The parametrization can also be specified in component form:
+  \[
+  x=x(u,v), \qquad y=y(u,v), \qquad z(u,v)
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    As a primary example of a parametric surface, we will study the sphere
+    (centered at the origin) of radius \(2\), which may be parametrized as
+    \[
+    (x,y,z)=\vec R(\phi,\theta)
+    =\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+    \]
+    Notice that this is exactly the same as the spherical coordinate system,
+    except that the radius \(\rho\) (the distance from the origin) has been
+    replaced by \(2\). The coordinates (parameters) on the surface are
+    <br>
+    (1) the polar angle, \(\phi\), measured down from the \(+z\) axis (the
+    North pole) to the \(-z\) axis (the South pole), and
+    <br>
+    (2) the azimuthal angle, \(\theta\), measured counterclockwise (West to
+    East) from the \(+x\) axis.
+    <br/>
+    <big>Add xyz axes and \(\phi\) and \(\theta\) arrows to the plot.</big>
+  </p>
+  <div class="center">
+    <img src="graphics/Sphere_coordcurves.jpg" alt="Sphere_coordcurves">
+  </div>
+</div>
+
+<h2>Plot</h2>
+<div class="column">
+  <p class="def">
+    The <span class="defword">plot</span> of a parametric curve
+    is the image of the function \(\vec r(t)\), i.e. the set of points
+    \(\left\langle x(t),y(t),z(t)\right\rangle\) for all values of \(t\).
+    For example, the plot of the helix,
+    \(\vec r(t)=\left\langle 4\cos t,4\sin t,3t\right\rangle\)
+    is shown at the right.
+  </p>
+  <div class="center">
+    <img src="graphics/Helix.jpg" alt="Helix">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="def">
+    Similarly, the <span class="defword">plot</span> of a parametric surface
+    is the image of the function \(\vec R(u,v)\), i.e. the set of points
+    \(\left\langle x(u,v),y(u,v),z(u,v)\right\rangle\) for all values of
+    \(u\) and \(v\). For example, the plot of the sphere,
+    \[
+    \vec R(\phi,\theta)
+    =\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+    \]
+    is shown at the right.
+  </p>
+  <div class="center">
+    <img src="graphics/Sphere.jpg" alt="Sphere">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Parameterizing a Surface</h3>
+<p>
+  A surface is frequently given by an equation, either as the graph of a
+  function of \(2\) variables, \(z=f(x,y)\), or as the level set of a
+  function of \(3\) variables, \(F(x,y,z)=C\). At times, you may want
+  (or need) to rewrite it in parametric form, for instance to be able to
+  integrate on the surface. Frequently a good method is to pick an appropriate
+  coordinate system (rectangular, cylindrical, spherical, etc), start with the
+  position vector \(\vec R\) of that coordinate system, and then eliminate one
+  of the coordinates by using the equation of the surface. The resulting
+  formula for \(\vec R\) will have only two coordinates which means that you
+  have a parametric surface. The choice of coordinate system will depend on
+  the shape of the surface and the shape of the boundary of the piece of the
+  surface you are interested in. The graph of a function, \(z=f(x,y)\) or
+  \(z=f(r,\theta)\), can always be parametrized in rectangular or cylindrical
+  coordinates by replacing \(z\) by \(f(x,y)\) or \(f(r,\theta)\);
+  the choice between them will depend on the domain of the function and the
+  shape of the boundary.
+</p>
+
+        <div class="rule" id="RectEllipticParab"></div>
+
+<p>
+  Rectangular coordinates are useful when the surface is given as the graph of
+  a function over a region in the \(xy\)-plane given in rectangular coordinates.
+</p>
+<div class="column">
+  <p class="example" data-number="2">
+    Parametrize the piece of the elliptic paraboloid \(z=x^2+y^2\) above the
+    rectangle \([0,2]\times[0,3]\). Give the range of the parameters (which
+    will be the limits of integration in future problems).
+  </p>
+  <div class="center">
+    <img src="graphics/EllipticParaboloid.jpg" alt="EllipticParaboloid">
+  </div>
+</div>
+<p class="sol">
+  If we let \(x=u\) and \(y=v\), then the equation of the surface is
+  \(z=u^2+v^2\) and the parametrization is:
+  \[
+  \vec R(u,v)=\left\langle u,v,u^2+v^2\right\rangle
+  \]
+  On the rectangle, \(0 \le x \le 2\) and \(0 \le y \le 3\). So the parameter
+  ranges are:
+  \[
+  0 \le u \le 2 \qquad \text{and} \qquad 0 \le v \le 3
+  \]
+  Actually, there was no reason to introduce the extra variables
+  \(u\) and \(v\). We could simply give the parametrization as
+  \[
+  \vec R(x,y)=\left\langle x,y,x^2+y^2\right\rangle
+  \]
+  with parameter ranges \(0 \le x \le 2\) and \(0 \le y \le 3\).
+  In this form the parametrization is simply the rectangular coordinates
+  \((x,y,z)\) with \(z\) replaced by \(x^2+y^2\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Cylindrical coordinates are useful when the surface is a piece of a
+  cylinder or or has axial symmetry or is given as the graph of a function
+  given in cylindrical coordinates.
+</p>
+<div class="column">
+  <p class="example" data-number="3">
+    Parametrize the piece of the elliptic paraboloid \(z=x^2+y^2\) below
+    \(z=9\). Give the range of the parameters.
+    <br>
+    <big>PY: Change the grid on the parabola to polar.</big>
+  </p>
+  <div class="center">
+    <img src="graphics/EllipticParaboloid2.jpg" alt="EllipticParaboloid2">
+  </div>
+</div>
+<p class="sol">
+  Since the surface (\(z=x^2+y^2\)) and the boundary (\(x^2+y^2=9\)) are
+  axisymmetric, it is useful to start with cylindrical coordinates:
+  \[
+  \vec R(r,\theta,z)=\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+  \]
+  In cylindrical coordinates, the equation of the surface is \(z=r^2\).
+  So the parametrization of the surface becomes
+  \[
+  \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+  \]
+  Since the boundary is \(r^2=9\) and there is no restriction on \(\theta\),
+  the parameter ranges are:
+  \[
+  0 \le r \le 3 \qquad \text{and} \qquad 0 \le \theta \le 2\pi
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Spherical coordinates are useful when the surface is a piece of a sphere or
+  has spherical symmetry or is given in spherical coordinates.
+</p>
+
+<div class="column">
+  <p class="example" data-number="4">
+    Parametrize the apple given in spherical coordinates by \(\rho=\phi\).
+    Give the range of the parameters.
+  </p>
+  <div class="center">
+    <img src="graphics/Apple.jpg" alt="Apple">
+  </div>
+</div>
+<p class="sol">
+  We start with spherical coordinates:
+  \[
+  \vec R(\rho,\phi,\theta)
+  =\left\langle \rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi\right\rangle
+  \]
+  Since \(\rho=\phi\), we replace \(\rho\) by \(\phi\). So the parametrization
+  of the surface is:
+  \[
+  \vec R(\phi,\theta)
+  =\left\langle \phi\sin\phi\cos\theta,\phi\sin\phi\sin\theta,\phi\cos\phi\right\rangle
+  \]
+  On the positive \(z\) axis, \(\rho=\phi=0\). In the \(xy\)-plane,
+  \(\rho=\phi=\dfrac{\pi}{2}\). On the negative \(z\) axis, \(\rho=\phi=\pi\).
+  There is no restriction on \(\theta\). So the parameter ranges are:
+  \[
+  0 \le \phi \le \pi \qquad \text{and} \qquad 0 \le \theta \le 2\pi
+  \]
+</p>
+
+        <div class="rule" id="hyperparab"></div>
+
+<p>
+  Now you try it:
+</p>
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="5">
+      Parametrize the piece of the hyperbolic paraboloid \(z=x^2-y^2\) within
+      the cylinder \(x^2+y^2=25\). Give the range of the parameters. The
+      cylinder is shown in blue and the hyperbolic paraboloid is shown in red.
+  	</p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX5"></button>
+      <button class="toggle has-ans" data-toggle="AnsX5"></button>
+      <button class="toggle has-sol" data-toggle="SolX5"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/Paraboloid_cylinder.jpg" alt="Paraboloid_cylinder">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX5">
+  <p>
+    Start with cylindrical coordinates and express \(z\) in turns of \(r\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    The parameterization is: &emsp;
+    \(\vec R(r,\theta)
+    =\left\langle r\cos\theta,r\sin\theta,r^2(\cos^2\theta-\sin^2\theta\right\rangle\)
+    <br/>
+    and the parameter ranges are: &emsp;
+    \(0 \le r \le 5\) &emsp; and &emsp; \(0 \le \theta \le 2\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <p>
+    We start with cylindrical coordinates:
+    \[
+    \vec R(r,\theta,z)=\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+    \]
+    In cylindrical coordinates, the hyperbolic paraboloid is
+    \[
+    z=x^2-y^2=r^2(\cos^2\theta-\sin^2\theta)
+    \]
+    So the parametrization of the hyperbolic paraboloid becomes
+    \[
+    \vec R(r,\theta)
+    =\left\langle r\cos\theta,r\sin\theta,r^2(\cos^2\theta-\sin^2\theta)\right\rangle
+    \]
+    The piece of the surface is within the cylinder \(x^2+y^2=25\) or
+    \(r^2=25\) or \(r=5\). So the parameter ranges are:
+    \[
+    0 \le r \le 5  \qquad \text{and} \qquad 0 \le \theta \le 2\pi
+    \]
+  </p>
+</div>
+
+
+        <div class="rule" id="cylinder"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="6">
+      Parametrize the piece of the cylinder \(x^2+z^2=4\) between \(y=0\) and
+      \(y=6+2x+3z\). Give the range of the parameters. The \(y=0\) plane is
+      shown in yellow and the \(y=6+2x+3z\) plane is shown in green.
+      <br>
+      <big>PY: less lines on yellow plane.</big>
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX6"></button>
+      <button class="toggle has-sol" data-toggle="SolX6"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/Cylinder_exercise2.jpg" alt="Cylinder_exercise2">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <p>
+    The parameterization is: &emsp;
+    \(\vec R(\theta,y)=\left\langle 2\cos\theta,y,2\sin\theta\right\rangle\)
+    <br/>
+    and the parameter ranges are: &emsp;
+    \(0 \le \theta \le 2\pi\)
+    &emsp; and &emsp;
+    \(0 \le y \le 6+4\cos\theta+6\sin\theta\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <p>
+    Since the cylinder is along the \(y\)-axis, we start with cylindrical
+    coordinates along the \(y\)-axis:
+    \[
+    \vec R(r,\theta,y)=\left\langle r\cos\theta,y,r\sin\theta\right\rangle
+    \]
+    where \(r=\sqrt{x^2+z^2}\). Since the equation of the cylinder is
+    \(x^2+z^2=4\) or \(r^2=4\), we plug \(r=2\) into parametrization to get:
+    \[
+    \vec R(\theta,y)=\left\langle 2\cos\theta,y,2\sin\theta\right\rangle
+    \]
+    The angle, \(\theta\), is unrestricted. To get the \(y\)-ranges, we plug
+    \(x=2\cos\theta\) and \(z=2\sin\theta\) into the boundaries \(y=0\) and
+    \(y=6+2x+3z\). So the ranges are:
+    \[
+    0 \le \theta \le 2\pi \qquad \text{and} \qquad 0 \le y \le 6+4\cos\theta+6\sin\theta
+    \]
+  </p>
+</div>
+<big>PY: Convert one example to an exercise.</big>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

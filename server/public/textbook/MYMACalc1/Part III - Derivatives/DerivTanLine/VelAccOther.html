@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Velocity, Acceleration and Other Rates | 10. Derivatives and Tangent Lines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Slope.html" title="Previous">&lArr;</a></li>
+      <li><a href="MaxMin.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Derivatives and Tangent Lines</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Derivative as a Function</h2>
+
+
+      
+      <h2>4. Velocity, Acceleration and Other Rates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Velocity</h3>
+<p>
+  If we know the position as a function of time, we can also find the
+  velocity as a function of time by simply taking the derivative.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    A girl takes a walk from \(x=0\) to \(x=16\) and back. Her position at
+    time \(t\) is \(x(t)=16-(t-2)^4\). What is her velocity at
+    time \(t\)? Use it to find her velocity at \(t=3\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\begin{aligned}
+    v(t)&=x'(t)=-4(t-2)^3 \\
+    v(3)&=x'(3)=-4
+    \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We find the velocity by diferentiating the position \(x(t)\).
+    On the \(3^\text{rd}\) line, we cancel the \(16\)'s and partially expand
+    the numerator.
+    (We keep powers of \(t-2\) grouped because that is what will cancel.)
+    On the \(4^\text{th}\) line we cancel the \((t-2)^4\)'s in the numerator.
+    On the \(5^\text{th}\) line we cancel the \(h\) from the denominator.
+    \[\begin{aligned}
+    v(t)&=x'(t)=\lim_{h\rightarrow 0} \dfrac{x(t+h)-x(t)}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{[16-(t+h-2)^4]-[16-(t-2)^4]}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-[(t-2)^4+4(t-2)^3h+O(h^2)]+(t-2)^4}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-4(t-2)^3h+O(h^2)}{h} \\
+    &=\lim_{h\rightarrow 0} (-4(t-2)^3+O(h))=-4(t-2)^3 \\
+    \end{aligned}\]
+    Where \(O(h^n)\) means additional terms with powers of \(h\) of degree
+    \(n\) or higher.
+  </p>
+  <p>
+    Using \(v(t)=-4(t-2)^3\), we find \(v(3)=-4\). This is the same answer
+    we found in a
+    <a href="DerivPtAppl.html#ex_vel" title="Return using the Back button.">
+    previous exercise</a>.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Acceleration</h3>
+<p>
+  The <span class="defword">acceleration</span> is the rate of change of the
+  velocity. So it can be found by taking the derivative of the velocity.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    A girl takes a walk from \(x=0\) to \(x=16\) and back. Her position at
+    time \(t\) is \(x(t)=16-(t-2)^4\). What is her acceleration at
+    time \(t\)? Use it to find her acceleration at \(t=3\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\begin{aligned}
+    a(t)&=v'(t)=-12(t-2)^2 \\
+    a(3)&=v'(3)=-12
+    \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    In the previous exercise, we found the velocity is:
+    \[
+    v(t)=-4(t-2)^3
+    \]
+    The acceleration is the derivative of this:
+    \[\begin{aligned}
+    a(t)&=v'(t)=\lim_{h\rightarrow 0} \dfrac{v(t+h)-v(t)}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{[-4(t+h-2)^3]-[-4(t-2)^3]}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-4[(t-2)^3+3(t-2)^2h+3(t-2)h^2+h^3]+4(t-2)^3}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-4[3(t-2)^2h+3(t-2)h^2+h^3]}{h} \\
+    &=\lim_{h\rightarrow 0} -4[3(t-2)^2+3(t-2)h+h^2]=-12(t-2)^2
+    \end{aligned}\]
+  </p>
+  <p>
+    Since \(a(t)=-12(t-2)^2\), we find \(a(3)=-12\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Jerk</h3>
+<p>
+  The <span class="defword">jerk</span> is the rate of change of the
+  acceleration. So it can be found by taking the derivative of the acceleration.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    A girl takes a walk from \(x=0\) to \(x=16\) and back. Her position at
+    time \(t\) is \(x(t)=16-(t-2)^4\). What is her jerk at
+    time \(t\)? Use it to find her jerk at \(t=3\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\begin{aligned}
+    j(t)&=a'(t)=-24(t-2) \\
+    j(3)&=a'(3)=-24
+    \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    In the previous exercise, we found the acceleration is:
+    \[
+    a(t)=-12(t-2)^2
+    \]
+    The jerk is the derivative of this:
+    \[\begin{aligned}
+    j(t)&=a'(t)=\lim_{h\rightarrow 0} \dfrac{a(t+h)-a(t)}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{[-12(t+h-2)^2]-[-12(t-2)^2]}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-12[(t-2)^2+2(t-2)h+h^2]+12(t-2)^2}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-12[2(t-2)h+h^2]}{h} \\
+    &=\lim_{h\rightarrow 0} -12[2(t-2)+h]=-24(t-2)
+    \end{aligned}\]
+  </p>
+  <p>
+    Since \(j(t)=-24(t-2)\), we find \(j(3)=-24\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Other Rates of Change</h3>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="4">
+      The amount of water in a rain gauge at time \(t\) is given by
+      \(R(t)=\sqrt{t}\). What is the rate at which the gauge is filling as a
+      function of \(t\)? What is the rate at \(t=4\)?
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX4"></button>
+      <button class="toggle has-sol" data-toggle="SolX4"></button>
+    </p>
+  </div>
+  <div class="center">
+    <video src="graphics/ex_raingauge.mp4" autoplay loop controls></video>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(\begin{aligned}
+    R'(x)&=\dfrac{1}{2\sqrt{x}} \\
+    R'(4)&=\dfrac{1}{4}
+    \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    The rate at which the gauge is filling is the derivative \(R'(x)\).
+    On the \(3^\text{rd}\) line, we multiply the numerator and denominator
+    by the conjugate.
+    On the \(4^\text{th}\) line, we expand in the numerator using difference
+    of squares.
+    On the \(5^\text{th}\) line we simplify the numerator and cancel the
+    \(h\) from the denominator.
+    \[\begin{aligned}
+    R'(x)&=\lim_{h\rightarrow 0} \dfrac{R(x+h)-R(x)}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{\sqrt{x+h}-\sqrt{x}}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{(\sqrt{x+h}-\sqrt{x})}{h}
+                            \dfrac{(\sqrt{x+h}+\sqrt{x})}{(\sqrt{x+h}+\sqrt{x})} \\
+    &=\lim_{h\rightarrow 0} \dfrac{(x+h)-(x)}{h(\sqrt{x+h}+\sqrt{x})} \\
+    &=\lim_{h\rightarrow 0} \dfrac{1}{\sqrt{x+h}+\sqrt{x}}=\dfrac{1}{2\sqrt{x}} \\
+    \end{aligned}\]
+    At \(x=4\) we have:
+    \[
+    R'(4)=\dfrac{1}{2\sqrt{4}}=\dfrac{1}{4}
+    \]
+    Notice this is the same answer we found in a
+    <a href="DerivPtAppl.html#ex_rates" title="Return using the Back button.">
+    previous exercise</a>.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

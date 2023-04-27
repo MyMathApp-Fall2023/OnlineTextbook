@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Non-Existence of a Scalar Potential | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ScalPots.html" title="Previous">&lArr;</a></li>
+      <li><a href="VecPots.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>f. Scalar Potentials</h2>
+
+<p class="def">
+  Given a vector field \(\vec F\), a <span class="defword">scalar
+  potential</span> for \(\vec F\) is any scalar field \(f\) whose gradient
+  is \(\vec F\):
+  \[
+  \vec\nabla f=\vec F
+  \]
+</p>
+
+
+      
+      <h2>2. Non-Existence of a Scalar Potential</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Not every vector field has a scalar potential. What can go wrong in the
+  process of finding a scalar potential?
+</p>
+<p class="example" data-number="1">
+  Find a scalar potential for
+  \(\vec F
+  =\left\langle 2xy^3+z^3,3x^2y^2-\underline{\large 6}\,y^2z,3xz^2+4z^3-y^3\right\rangle\)
+  or show it does not exist.
+</p>
+<p class="remark">
+  Notice that this is almost the same vector field as in the
+  <a href="ScalPots.html#scalpotex">last exercise</a>
+  on the previous page except for the \(\underline{\large 6}\) replacing a
+  \(3\). So watch the differences in the solutions, all of which are underlined
+  in a larger font.
+</p>
+<p class="sol">
+  We attempt to find a function \(f\) satisfying \(\vec\nabla f=\vec F\), or
+  \[\begin{aligned}
+  \partial_x f&=2xy^3+z^3\quad&&\text{(1)} \\
+  \partial_y f&=3x^2y^2-\underline{\large 6}\,y^2z\quad&&\text{(2)} \\
+  \partial_z f&=3xz^2+4z^3-y^3\quad&&\text{(3)}
+  \end{aligned}\]
+  <!-- \[\begin{aligned}
+  \partial_x f&=2xy^3+z^3\tag{1} \\
+  \partial_y f&=3x^2y^2-\underline{\large 6}y^2z\tag{2} \\
+  \partial_z f&=3xz^2+4z^3-y^3\tag{3}
+  \end{aligned}\] -->
+  We solve these successively.
+</p>
+<ol>
+  <li>
+    We first take the \(x\)-antiderivative of (1) to get
+    \[
+    f=x^2y^3+xz^3+g(y,z)
+    \]
+  </li>
+  <li>
+    We take the \(y\)-derivative of this:
+    \[
+    \partial_y f=3x^2y^2+\partial_y g
+    \]
+    and compare it to (2) to  get
+    \[
+    \partial_y g=-\underline{\large 6}\,y^2z
+    \]
+    We take the \(y\)-antiderivative of this to get
+    \[
+    g=-\underline{\large 2}\,y^3z+h(z)
+    \]
+    and substitute this \(g\) into \(f\) to get
+    \[
+    f=x^2y^3+xz^3-\underline{\large 2}\,y^3z+h(z)
+    \]
+  </li>
+  <li>
+    Finally, we take the \(z\)-derivative:
+    \[
+    \partial_z f=3xz^2-\underline{\large 2}\,y^3+\dfrac{dh}{dz}
+    \]
+    and compare it to (3) to get
+    \[
+    \dfrac{dh}{dz}=4z^3+\underline{\large y^3}
+    \]
+    This is a <span class="redbig">contradiction</span> because \(h\) is
+    only a function of \(z\) and so its derivative cannot depend on \(y\).
+    Consequently, there is no scalar potential.
+  </li>
+</ol>
+<p class="sum" data-title="No Scalar Potential">
+  <br>
+  If we try to find a scalar potential and derive a contradiction,
+  then no scalar potential exists.
+</p>
+<a id="curlgrad_noscalpot"></a>
+
+        <div class="rule"></div>
+
+<h3>Using the Curl of a Gradient Identity</h3>
+
+<p>
+  There is usually an easier way to show a scalar potential does not exist
+  using the
+  <a href="OpCurlGrad.html#CurlGrad" title="Return using the Back button.">
+  <span class="hl">Curl of a Gradient Identity</span></a>:
+  \[
+  \vec\nabla\times\vec\nabla f=\vec0
+  \]
+  If a vector field \(\vec F\) has a scalar potential, so that
+  \(\vec F=\vec\nabla f\), then
+  \[
+  \vec\nabla\times\vec F=\vec\nabla\times\vec\nabla f=\vec0
+  \]
+  Turning this around, we have
+</p>
+<p class="prop" data-title="Non-Existence of a Scalar Potential">
+  If \(\vec\nabla\times\vec F\ne\vec 0\), then \(\vec F\) does not have
+  a scalar potential.
+</p>
+<p class="example" data-number="2">
+  Find a scalar potential for
+  \(\vec F=\left\langle yz,2xz,3xy\right\rangle\)
+  or show it does not exist.
+</p>
+<p class="sol">
+  We compute the curl of \(\vec F\):
+  \[\begin{aligned}
+  \vec\nabla\times\vec F
+  &=\begin{vmatrix}
+  \hat\imath & \hat\jmath & \hat k \\
+  \partial_x & \partial_y & \partial_z \\
+  yz         & 2xz        & 3xy
+  \end{vmatrix} \\
+  &=\hat\imath(3x-2x)-\hat\jmath(3y-y)+ \hat k(2z-z) \\
+  &=\left\langle x,-2y,z\right\rangle\ne\vec0
+  \end{aligned}\]
+  Since this is not \(\vec0\), there is no scalar potential.
+</p>
+
+<p>
+  <span class="redbig">Caution:</span> The proposition does
+  <span class="redbig">NOT</span> say that if \(\vec\nabla\times\vec F=\vec0\)
+  then \(\vec F\) has a scalar potential. However, \(99\%\) of the time, there
+  is still a scalar potential. In fact,
+  a therorem from higher math says, if \(\vec\nabla\times\vec F=\vec0\) in a
+  <button class="toggle" data-toggle="Drop1">simply connected</button>
+  region then \(\vec F\) has a scalar potential in that region. So for a
+  scalar potential not to exist, even though \(\vec\nabla\times\vec F=\vec0\),
+  we would have to be looking for a potential on a region with holes, like a
+  donut. This does happen, for example, in studying the theory of magnetic
+  monopoles, but certainly not in this class.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    A region is <span class="defword">simply connected</span> if every
+    circle in the region can be shrunk to a point while still staying in
+    the region. Thus, a ball is simply connected while a donut is not.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find a scalar potential for
+    \(\vec F=\left\langle xz,yz,z^2\right\rangle\)
+    or show it does not exist.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    There is no scalar potential.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    We compute the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec\nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    xz         & yz         & z^2
+    \end{vmatrix} \\
+    &=\hat\imath(-y)-\hat\jmath(-x)+\hat k(0) \\
+    &=\left\langle -y,x,0\right\rangle\ne\vec0
+    \end{aligned}\]
+    Since this is not \(\vec0\), there is no scalar potential.
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find a scalar potential for
+    \(\vec F=\left\langle y+z,x+z,x+y\right\rangle\)
+    or show it does not exist.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(f=xy+xz+yz+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    We compute the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec\nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    y+z         & x+z         & x+y
+    \end{vmatrix} \\
+    &=\hat\imath(1-1)-\hat\jmath(1-1)+\hat k(1-1) \\
+    &=\vec0
+    \end{aligned}\]
+    Since this is \(\vec0\), we expect there is a scalar potential.
+    To find it, we solve:
+    \[
+    \partial_x f=y+z \qquad \partial_y f=x+z \qquad \partial_z f=x+y
+    \]
+    By inspection, the scalar potential is:
+    \[
+    f=xy+xz+yz+C
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  There is some terminology to  describe this distinction between
+  \(\vec\nabla\times\vec F=\vec0\) and \(\vec F=\vec\nabla f\).
+</p>
+<div class="greybox">
+  <p class="def">
+    A vector field \(\vec F\) is called
+    <span class="defword">irrotational</span> or
+    <span class="defword">curl-free</span> if \(\vec\nabla\times\vec F=\vec0\).
+  </p>
+  <p>
+    A vector field \(\vec F\) is called
+    <span class="defword">conservative</span> or a
+    <span class="defword">gradient field</span> if \(\vec F=\vec\nabla f\)
+    for some scalar potential, \(f\).
+  </p>
+</div>
+<p>
+  Consequently, a <span class="hl">gradient field</span> is
+  <span class="hl">curl-free</span>.
+  Equivalently, a <span class="hl">conservative field</span> is
+  <span class="hl">irrotational</span>.
+  But the converse is not necessarily true, except that most often,
+  a curl-free field is a gradient.
+</p>
+<p>
+  In physics, if a force is conservative, then its scalar potential is the
+  negative of its potential energy (hence the word "potential"). Further,
+  the work done by the force will equal the change in potential energy,
+  guaranteeing the conservation of energy (hence the word "conservative").
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  <span class="greenbig">Optional:</span> When can it happen that there is NO
+  scalar potential even though \(\vec\nabla\times\vec F=\vec0\). As an exmple, consider the region
+  which is all of \(\mathbb R^3\) except for the \(z\)-axis. This region is not
+  simply connected because a circle which goes around the \(z\)-axis cannot be
+  shrunk to a point.
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Notice the vector field,
+    \(\vec F=\left\langle \dfrac{2x}{x^2+y^2},\dfrac{2y}{x^2+y^2},0\right\rangle\)
+    is defined throughout \(\mathbb R^3\) except for the \(z\)-axis. Find a scalar
+    potential for \(\vec F\) defined on all of \(\mathbb R^3\) except for the
+    \(z\)-axis, or show it does not exist.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+    <button class="toggle has-sol" data-toggle="SolX5"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    A scalar potential is \(f=\ln(x^2+y^2)\) which is defined on all of
+    \(\mathbb R^3\) except for the \(z\)-axis.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <p>
+    We compute the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec\nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    \dfrac{2x}{x^2+y^2} & \dfrac{2y}{x^2+y^2} & 0
+    \end{vmatrix} \\
+    &=\hat\imath(0)-\hat\jmath(0) \\
+    &\quad+\hat k\left(\dfrac{-4xy}{(x^2+y^2)^2}
+    -\dfrac{-4xy}{(x^2+y^2)^2}\right) \\
+    &=\langle0,0,0\rangle
+    \end{aligned}\]
+    Since this is \(\vec0\), we expect there is a scalar potential.
+    To find it, we solve:
+    \[
+    \partial_x f=\dfrac{2x}{x^2+y^2} \qquad \partial_y f=\dfrac{2y}{x^2+y^2}
+     \qquad \partial_z f=0
+    \]
+    By inspection, a scalar potential is:
+    \[
+    f=\ln(x^2+y^2)
+    \]
+    (Check this by computing its gradient.) Further, this function is defined
+    on all of \(\mathbb R^3\) except where \(x^2+y^2=0\) which is the \(z\)-axis.
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="6">
+    Notice the vector field,
+    \(\vec F=\left\langle \dfrac{-y}{x^2+y^2},\dfrac{x}{x^2+y^2},0\right\rangle\)
+    is defined throughout \(\mathbb R^3\) except for the \(z\)-axis. Find a scalar
+    potential for \(\vec F\) defined on all of \(\mathbb R^3\) except for the
+    \(z\)-axis, or show it does not exist.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX6"></button>
+    <button class="toggle has-sol" data-toggle="SolX6"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <p>
+    There is no scalar potential on the entire plane missing the origin.
+    The closest we can get is the function
+    \[
+    f=\arctan\left(\dfrac{y}{x}\right)=\theta
+    \]
+    where \(\theta\) is the angular coordinate of cylindrical coordinates.
+    \(\theta\) is defined everywhere except on some one radial ray starting from
+    the origin, because the angle jumps by \(2\pi\) across this line.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <p>
+    We compute the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec\nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    \dfrac{-y}{x^2+y^2} & \dfrac{x}{x^2+y^2} & 0
+    \end{vmatrix} \\
+    &=\hat\imath(0)-\hat\jmath(0) \\
+    &\quad+\hat k\left(\dfrac{x^2+y^2-x(2x)}{(x^2+y^2)^2}
+    -\dfrac{(x^2+y^2)(-1)-(-y)(2y)}{(x^2+y^2)^2}\right) \\
+    &=\langle0,0,0\rangle
+    \end{aligned}\]
+    Since this is \(\vec0\), we expect there is a scalar potential.
+    To find it, we solve:
+    \[
+    \partial_x f=\dfrac{-y}{x^2+y^2} \qquad \partial_y f=\dfrac{x}{x^2+y^2}
+     \qquad \partial_z f=0
+    \]
+    By inspection, a scalar potential is:
+    \[
+    f=\arctan\left(\dfrac{y}{x}\right)
+    \]
+    (Check this by computing its gradient.)
+    Unfortunately, \(f\) is not defined on all of \(\mathbb R^3\) except for the
+    \(z\)-axis. In fact, it is not defined when \(x=0\) which is the entire
+    \(yz\)-plane. Can we fix this?
+  </p>
+  <p>
+    Notice, that \(\arctan\left(\dfrac{y}{x}\right)\) is the cylindrical
+    coordinate \(\theta\). So we rewrite the scalar potential as
+    \[
+    f=\theta
+    \]
+    which appears to be well-defined and continuous throughout \(\mathbb R^3\)
+    except for the \(z\)-axis. The problem is that \(\theta\) is not single
+    valued. When you go around the \(z\)-axis, \(\theta\) jumps by \(2\pi\).
+    So it does not actually define a function throughout \(\mathbb R^3\)
+    except for the \(z\)-axis. It cannot be a scalar potential. 
+    Further, any other possible scalar potential would have to differ by a
+    constant. So there is no scalar potential.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

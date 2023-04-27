@@ -1,7 +1,7 @@
 import {Module} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {ConfigModule} from "@nestjs/config";
-import { ServeStaticModule } from '@nestjs/serve-static';
+import {ServeStaticModule} from "@nestjs/serve-static";
 
 import {UserModule } from './user/user.module';
 import {User} from "./user/entities/user.entity";
@@ -15,10 +15,14 @@ import {Item} from "./item/entities/item.entity";
 import {PurchaseCode} from "./purchaseCode/purchaseCode.entity";
 import {Transaction} from "./transaction/entities/transaction.entity";
 import {Record} from "./record/entities/record.entity";
+import {EmailSubscription} from "./email-subscription/email-subscription.entity";
 import { EmailModule } from './email/email.module';
 import { BookModule } from './book/book.module';
+import {join} from 'path';
+
 
 import { PaymentModule } from './payment/payment.module';
+import { EmailSubscriptionModule } from './email-subscription/email-subscription.module';
 
 let envFilePath = [];
 if (process.env.RUNNING_ENV === 'dev') {
@@ -30,9 +34,12 @@ if (process.env.RUNNING_ENV === 'heroku') {
 if (process.env.RUNNING_ENV === 'prod') {
     envFilePath.unshift('.env.prod');
 }
-
+console.log(__dirname)
 @Module({
     imports: [
+        ServeStaticModule.forRoot({
+            rootPath: join(__dirname, '..', 'public','textbook')
+        }),
         ConfigModule.forRoot({
             isGlobal: true,
             envFilePath: envFilePath
@@ -44,7 +51,7 @@ if (process.env.RUNNING_ENV === 'prod') {
             username: process.env.DB_Username,
             password: process.env.DB_Password,
             database: process.env.DB_Database,
-            entities:[User,Item,PurchaseCode,Record,Transaction],
+            entities:[User,Item,PurchaseCode,Record,Transaction,EmailSubscription],
             synchronize: false,
         }),
         UserModule,
@@ -57,6 +64,7 @@ if (process.env.RUNNING_ENV === 'prod') {
         EmailModule,
         PaymentModule,
         BookModule,
+        EmailSubscriptionModule,
 
     ],
     providers: [],

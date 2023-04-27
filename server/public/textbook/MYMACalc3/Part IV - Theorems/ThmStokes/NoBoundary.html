@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Surfaces with No Boundary | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Hole.html" title="Previous">&lArr;</a></li>
+      <li><a href="Verify.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed counterclockwise
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+<h2>a. The Theorem</h2>
+
+<p>
+  What happens to Stokes' Theorem when there is no boundary?
+  The theorem still holds, but both sides are now \(0\).
+</p>
+
+
+      
+      <h2>3. Surfaces with No Boundary</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div>
+    <p class="remark">
+      In discussing Green's Theorem, the region always has an outer
+      boundary curve which is traversed counterclockwise. In addition, it can
+      have one or more inner boundary curves surounding each hole traversed
+      clockwise.
+    </p>
+    <p>
+      In discussing Stokes' Theorem, the surface usually has one or more
+      boundary curves, and there is no way to say which is an outer or
+      inner boundary. However, it is also possible for there to be no
+      pieces to the boundary (e.g. a sphere or donut surface).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/thm_NoBndry_sph.jpg" alt="StokesThm2">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute
+  \(\displaystyle \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+  for the vector field
+  \(\vec{F}=\langle yz^2,-xz^2,z^3\rangle\)
+  over the sphere, \(S\), given by \(x^2+y^2+z^2=4\)
+  oriented outward as in the figure above.
+</p>
+<p class="hint">
+  Try doing this problem yourself before you read the two solutions.
+</p>
+<p>
+  In the first solution, using a surface integral, parametrize the surface
+  starting from spherical coordinates and setting \(\rho=2\). Compute the
+  curl of \(\vec F\) and evaluate it on the surface. Find the normal vector
+  and check it points outward. Find their dot product and compute the
+  integral for \(0 \lt \theta \lt 2\pi\) and \(0 \lt \phi \lt \pi\).
+</p>
+<p>
+  In the second solution, using a line integral, parametrize any boundary
+  curve, evaluate \(\vec F\) on the curve, dot it into the velocity of the
+  curve and compute the integral.
+</p>
+
+<div class="sol collapse hide" data-number="1">
+  <strong>Surface Integral:</strong>
+  <p>
+    We first compute the integral directly as a surface integral. We
+    parametrize the surface in spherical coordinates with \(\rho=2\):
+    \[
+    \vec R(\phi,\theta)
+    =\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\rangle
+    \]
+    Next the curl of \(\vec F=\langle yz^2,-xz^2,z^3\rangle\) is:
+    \[\begin{aligned}
+    \vec{\nabla}\times\vec{F}
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    yz^2 & -xz^2 & z^3
+    \end{vmatrix} \\
+    &=\hat\imath(0--2xz)
+     -\hat\jmath(0-2yz)
+     +\hat k(-z^2-z^2) \\
+    &=\langle 2xz,2yz,-2z^2\rangle
+    \end {aligned}\]
+    On the surface, the curl of \(\vec F\) is:
+    \[\begin{aligned}
+    \left.\vec{\nabla}\times\vec{F}\right|_{R(\phi,\theta)}
+    &=\langle 8\sin\phi\cos\phi\cos\theta,
+              8\sin\phi\cos\phi\sin\theta,-8\cos^2\phi\rangle
+    \end {aligned}\]
+    The normal is:
+    \[\begin{aligned}
+    \vec N&=\vec e_\phi\times\vec e_\theta
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+     2\cos\phi\cos\theta & 2\cos\phi\sin\theta & -2\sin\phi \\
+    -2\sin\phi\sin\theta & 2\sin\phi\cos\theta & 0 \\
+    \end{vmatrix} \\
+    &=\hat\imath(0--4\sin^2\phi\cos\theta)
+     -\hat\jmath(0-4\sin^2\phi\sin\theta) \\
+    &\quad+\hat k(4\sin\phi\cos\phi\cos^2\theta--4\sin\phi\cos\phi\sin^2\theta) \\
+    &=\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\rangle
+    \end {aligned}\]
+    This is radially outward since it is just \(2\sin\phi\) times the position
+    vector \(\vec R(\phi,\theta)\). So the normal is oriented correctly.
+    Next we compute the dot product:
+    \[\begin{aligned}
+    \left.\vec{\nabla}\times\vec{F}\right|_{R(\phi,\theta)}\cdot\vec N
+    &=32(\sin^3\phi\cos\phi\cos^2\theta+\sin^3\phi\cos\phi\sin^2\theta
+    -\cos^3\phi\sin\phi) \\
+    &=32(\sin^3\phi\cos\phi-\cos^3\phi\sin\phi) \\
+    \end {aligned}\]
+    Finally, we can compute the integral:
+    \[\begin{aligned}
+    \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    &=\int_0^{2\pi}\int_0^\pi \left.\vec{\nabla}\times\vec{F}\right|_{R(\phi,\theta)}
+    \cdot\vec N\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^\pi
+    32(\sin^3\phi\cos\phi-\cos^3\phi\sin\phi)\,d\phi\,d\theta \\
+    &=2\pi\left[\dfrac{}{}8\sin^4\phi+8\cos^4\phi\right]_0^\pi \\
+    &=16\pi(\cos^4\pi-\cos^4 0)=0
+    \end {aligned}\]
+    All that work to get zero!
+  </p>
+</div>
+<div class="sol collapse hide" data-number="2">
+  <strong>Line Integral:</strong>
+  <p>
+    There is no boundary! So there are no integrals to compute. So the line
+    integral is trivially \(0\):
+    \[
+    \oint_{\partial S} \vec{F}\cdot d\vec{s}=0
+    \]
+  </p>
+</div>
+<div class="collapse hide" data-title="Remark">
+  <p>
+    What happened in this problem, always happens. Since there is no boundary,
+    there are no line integrals to compute and the line integral side of
+    Stokes' Theorem always gives \(0\). By Stokes' Theorem, the surface
+    integral side must also be \(0\). This proves:
+  </p>
+  <p class="prop">
+    If we integrate the curl of any vector field over a closed surface
+    (i.e. with no boundary), then the integral will always be \(0\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="exercise" data-number="2" data-col-width="60%">
+    The torus, \(T\), (donut) shown at the right may be parametrized as:
+    \[
+    R(\theta,\phi)
+    =((5+3\cos\phi)\cos\theta,(5+3\cos\phi)\sin\theta,3\sin\phi)
+    \]
+    for \(0 \lt \theta \lt 2\pi\) and \(0 \lt \phi \lt 2\pi\).
+    Here \(\phi\) goes around the small circle of radius \(3\), while
+    \(\theta\) goes around the big circle of radius \(5\) measured from the
+    center of the hole to the center of the ring. In cylindrical coordinates,
+    the equation of the torus is \((r-5)^2+z^2=9\) where
+    \(r=5+3\cos\phi\) and \(z=3\sin\phi\).
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/ex_NoBndry_torus.jpg" alt="NoBoundary-exercise">
+  </div>
+</div>
+<p>
+  Compute
+  \(\displaystyle \iint_T \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+  over this torus, oriented outward, for the vector field
+  \(\vec{F}=\langle yz,-xz,x^2+y^2\rangle\).
+</p>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>Surface Integral:</strong>&emsp; First solve it directly
+        as a surface integral.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+        <button class="toggle has-sol" data-toggle="SolX2a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+      <p>
+        \(\displaystyle \iint_T \vec{\nabla}\times\vec{F}\cdot d\vec{S}=0\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+      <p>
+        See the remark from the previous example. Since there is no boundary,
+        the integral of the curl of \(\vec F\) is automatically \(0\):
+        \[
+        \iint_T \vec{\nabla}\times\vec{F}\cdot d\vec{S}=0
+        \]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>Line Integral:</strong>&emsp; Next use Stokes' Theorem
+        to convert the surface integral into a line integral.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+        <button class="toggle has-sol" data-toggle="SolX2b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+      <p>
+        \(\displaystyle \oint_{\partial T} \vec{F}\cdot d\vec{s}=0\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+      <p>
+        There is no boundary! So there are no integrals to compute. So the line
+        integral is trivially \(0\):
+        \[
+        \oint_{\partial T} \vec{F}\cdot d\vec{s}=0
+        \]
+      </p>
+    </div>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

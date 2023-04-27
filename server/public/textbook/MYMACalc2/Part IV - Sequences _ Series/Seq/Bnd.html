@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c1. Bounded Sequences | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html" title="Previous">&lArr;</a></li>
+      <li><a href="Mono.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Sometimes we are unable to compute a limit exactly. However, if we can at
+  least show that the limit exists, then we can use some numerical technique
+  to approximate the limit. We now introduce two properties of sequences
+  (bounded and monotonic) which together help us show the limit exists.
+</p>
+
+
+      
+      <h2>c1. Bounded Sequences</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def" data-title="Bounded Sequences">
+  <br>
+  A sequence \(a_n\) is
+  <span class="defword">bounded above</span>
+  if there is a number \(M\) such that \(a_n \le M\) for all \(n\).
+  Then \(M\) is called an <span class="defword">upper bound</span>.
+  <br><br>
+  A sequence \(a_n\) is
+  <span class="defword">bounded below</span>
+  if there is a number \(m\) such that \(a_n \ge m\) for all \(n\).
+  Then \(m\) is called an <span class="defword">lower bound</span>.
+  <br><br>
+  A sequence \(a_n\) is
+  <span class="defword">bounded</span> if it is both bounded above and
+  bounded below.
+</p>
+<p class="example" data-number="1">
+  Here are some examples:
+</p>
+<div class="column">
+  <div class="center">
+    <figure>
+      <img src="graphics/bnd1.jpg" alt="bnd1"/>
+      <figcaption>
+        \(a_n=3-(1+(-1)^n)n\)
+        <br>
+        Bounded above by \(3\).
+        <br>
+        Unbounded below.
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/bnd3.jpg" alt="bnd3"/>
+      <figcaption>
+        \(a_n=\sin n\)
+        <br>
+        Bounded above by \(1\).
+        <br>
+        Bounded below by \(-1\).
+      </figcaption>
+    </figure>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/bnd2.jpg" alt="bnd2"/>
+      <figcaption>
+        \(a_n=3+(1+(-1)^n)n\)
+        <br>
+        Bounded below by \(3\).
+        <br>
+        Unbounded above.
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/bnd4.jpg" alt="bnd4"/>
+      <figcaption>
+        \(a_n=(-1)^n n\)
+        <br>
+        Unbounded above.
+        <br>
+        Unbounded below.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  Determine if each sequence is bounded above, below, neither or both.
+  When appropriate, find upper and lower bounds.
+</p>
+<ol class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <p>
+        \(a_n=2-\dfrac{1}{n}\)
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans1"></button>
+        <button class="toggle has-sol" data-toggle="Sol1"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans1">
+      <p>
+        Bounded below by \(1\) and bounded above by \(2\).
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol1">
+      <p>
+        Since \(n \ge 1,\) then \(0<\dfrac{1}{n}\le1\) and
+        \(0>-\dfrac{1}{n}\ge-1\) and \(2>2-\dfrac{1}{n}\ge1\).
+        <br>
+        So \(\left\{ 2-\dfrac{1}{n}\right\}\) is bounded below by \(1\) and bounded
+        above by \(2\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        \(a_n=(-1)^n n-n\)
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans2"></button>
+        <button class="toggle has-sol" data-toggle="Sol2"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans2">
+      <p>
+        Bounded above by \(0\) but not bounded below.
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol2">
+      <p>
+        We study the sequence \(a_n=(-1)^n n-n\) separately for \(n\)
+        odd and \(n\) even.
+        <br>
+        <br>
+        For \(n\) odd, \((-1)^n=-1\) and \(a_n=-2n\) which is always
+        negative and becomes arbitrarily large and negative.
+        <br>
+        <br>
+        For \(n\) even, \((-1)^n=1\) and \(a_n=n-n=0\).
+        <br>
+        <br>
+        So the sequence is bounded above by \(0\) (or by any positive number) but the
+        sequence is not bounded below and so is not bounded.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        \(a_n=\dfrac{n!}{2^n}\)
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans3"></button>
+        <button class="toggle has-sol" data-toggle="Sol3"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans3">
+      <p>
+        Bounded below by \(0\) (or \(\dfrac{1}{2}\)) but unbounded above.
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol3">
+      <p>
+        Since the terms \(a_n=\dfrac{n!}{2^n}\) are all positive, the sequence is
+        bounded below by \(0\).
+      </p>
+      <p>
+        To see if there is an upper bound, we write the \(n^\text{th}\) term as:
+        \[
+        a_n=\dfrac{1}{2}\cdot\dfrac{2}{2}\cdot\dfrac{3}{2}\cdot\dfrac{4}{2}
+        \cdot\,\cdots\,\cdot\dfrac{n-1}{2}\cdot\dfrac{n}{2}
+        =a_{n-1}\cdot\dfrac{n}{2}
+        \]
+        Thus as long as \(n \gt 2\), the term \(a_n\) is the term \(a_{n-1}\)
+        times something bigger than \(1\), namely \(\dfrac{n}{2}\). So we
+        suspect the sequence is unbounded above.
+      </p>
+      <p>
+        To see this we use a proof by contradiction. Suppose there is an
+        upper bound \(M\). Then the term \(a_{4M}\) is
+        \[\begin{aligned}
+        a_{4M}
+        &=\dfrac{1}{2}\cdot\dfrac{2}{2}\cdot\dfrac{3}{2}\cdot
+          \dfrac{4}{2}\cdot\,\cdots\,\cdot
+          \dfrac{4M-1}{2}\cdot\dfrac{4M}{2} \\
+        &=M\cdot\dfrac{2}{2}\cdot\dfrac{3}{2}\cdot
+          \dfrac{4}{2}\cdot\,\cdots\,\cdot
+          \dfrac{4M-1}{2}
+        \end{aligned}\]
+        which is \(M\) times a number bigger than \(1\). So \(a_{4M} \gt M\)
+        which contradicts the assumption that \(M\) is an upper bound.
+      </p>
+    </div>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

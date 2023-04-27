@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Mixing Problems | 17. Applications of Differential Equations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Cooling.html" title="Previous">&lArr;</a></li>
+      <li><a href="Robot.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Applications of Differential Equations</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  <span class="defword">Balancing problems</span> occur when there is some
+  type of quantity to which you are adding and subtracting at specified rates.
+  The solution begins by constructing the differential
+  equation for the rate of change of the quantity,
+  <span class="hl">balancing</span> the rate in minus the rate out.
+</p>
+
+
+      
+      <h2>c. Mixing Problems</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  <span class="defword">Mixing problems</span> are a special case of balancing
+  problems when a material is mixed into a solution.
+</p>
+
+<p class="example" data-number="1">
+  Initially, \(30\) cups of sugar are put into a \(20\) liter vat of boiling
+  water. Pure water boils away at the rate of \(2\) liters per hour. As it
+  boils, more sugar water containing \(2\) cups of sugar per liter is added to
+  the vat at \(3\) liters per hour. The sugar water is kept thoroughly mixed
+  and removed from the vat through a spout at the bottom at \(1\) liter per
+  hour. How much sugar is in the vat at time \(t\)? How much sugar is in the
+  vat after \(6\) hours? What is the concentration of sugar (in cups per
+  liter) in the water coming out the spout after \(6\) hours?
+</p>
+<p class="sol">
+  First notice that each hour, \(2\) liters boil away while \(1\) liter is
+  removed through the spout. In the same time \(3\) liters are
+  added. So there are always \(20\) liters of sugar water in the vat.
+  <br>
+  To find the quantity \(S(t)\) of sugar in the vat, we
+  first need to construct the differential equation for its rate of change
+  \(\dfrac{dS}{dt}\). This equation has the form:
+  \[
+  \dfrac{dS}{dt}
+  =\left[\text{rate sugar added}\right]-\left[\text{rate sugar removed}\right]
+  \]
+  Since \(S(t)\) is measured in cups of sugar, while \(t\) is
+  measured in hours, \(\dfrac{dS}{dt}\) is measured in cups per hour, or
+  \(\dfrac{\text{cups}}{\text{hour}}\). So the rate sugar is added and
+  removed must also be in \(\dfrac{\text{cups}}{\text{hour}}\). First,
+  sugar water is added at the rate of \(3\,\dfrac{\text{liters}}{\text{hour}}\)
+  and this water contains \(2\,\dfrac{\text{cups}}{\text{liter}}\). So sugar
+  is being added at the rate of
+  \[
+    \text{rate sugar added}
+    =2\,\dfrac{\text{cups}}{\text{liter}}\cdot3\,\dfrac{\text{liters}}{\text{hour}}
+    =6\,\dfrac{\text{cups}}{\text{hour}}
+  \]
+  Notice how the units cancel. Second sugar water is removed at the rate of
+  \(1\,\dfrac{\text{liter}}{\text{hour}}\). To know the rate in
+  \(\dfrac{\text{cups}}{\text{hour}}\), we need to know the concentration
+  in \(\dfrac{\text{cups}}{\text{liter}}\). At time \(t\), there are \(S(t)\)
+  cups of sugar and \(20\) liters of water in the vat. So the concentration
+  in the vat is \(\dfrac{S(t)}{20}\,\dfrac{\text{cups}}{\text{liter}}\) and
+  the rate sugar is coming out the spout is
+  \[
+    \text{rate sugar removed}
+    =\dfrac{S(t)}{20}\,\dfrac{\text{cups}}{\text{liter}}\cdot1\,\dfrac{\text{liter}}{\text{hour}}
+    =\dfrac{S(t)}{20}\,\dfrac{\text{cups}}{\text{hour}}
+  \]
+  Finally, pure water boils away at the rate of
+  \(2\,\dfrac{\text{liters}}{\text{hour}}\). However, since pure water
+  contains no sugar, there is no effect on the equation. So the differential
+  equation becomes:
+  \[
+  \dfrac{dS}{dt}=6-\dfrac{S(t)}{20}
+  \]
+  This equation is both separable and linear. We choose to solve it as a
+  linear equation. In standard form it is
+  \[
+  \dfrac{dS}{dt}+\dfrac{1}{20}S=6
+  \]
+  We compute the integrating factor:
+  \[
+  I=e^{\textstyle \int \frac{1}{20}\,dt}=e^{t/20}
+  \]
+  Then we multiply the standard equation by the integrating factor and
+  integrate:
+  \[
+  \dfrac{d}{dt}\left(e^{t/20}S\right)
+  =e^{t/20}\dfrac{dS}{dt}+e^{t/20}\dfrac{1}{20}S=6e^{t/20}
+  \]
+  \[
+  e^{t/20}S=\int 6e^{t/20}\,dt=120e^{t/20}+C
+  \]
+  Finally we solve for \(S\) by multiplying by \(e^{-\,t/20}\):
+  \[
+  S=120+Ce^{-t/20}
+  \]
+  To find \(C\), we use the initial condition \(S(0)=30\):
+  \[
+  S(0)=120+Ce^{-0/20}=120+C=30
+  \]
+  So \(C=-90\) and the solution is
+  \[
+  S(t)=120-90e^{-t/20}
+  \]
+  After \(6\) hours, there are
+  \[
+  S(6)=120-90e^{-6/20}\approx53.3\,\text{cups}
+  \]
+  of sugar in the vat and the concentration is
+  \[
+  \dfrac{53.3}{20}\,\dfrac{\text{cups}}{\text{liter}}
+  =2.665\,\dfrac{\text{cups}}{\text{liter}}
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    A tank contains \(15\) kg of salt in \(1500\) liters of water. Salt water
+    which contains \(0.04\) kg of salt per liter is added to the tank at the rate
+    of \(30\) liters per min. The salt water is kept mixed and drains from the
+    tank at \(30\) liters per min. What is the concentration of salt in the tank
+    after \(t\) min? After \(60\) min?
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Although the question asks for the concentration, it is best to work in
+    terms of \(S(t)\), the amount of salt in kg in the tank at time \(t\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    If \(S(t)\) is the amount of salt in the tank at time \(t\), then
+    the concentration is
+    \[
+    \dfrac{S(t)}{1500}
+    =\dfrac{1}{25}-\dfrac{3}{100}e^{-t/50}\,\dfrac{\text{kg}}{\text{liter}}
+    \]
+    After \(60\) min the concentration is
+    \[\begin{aligned}
+    \dfrac{S(60)}{1500}
+    &=\dfrac{1}{25}-\dfrac{3}{100}e^{-60/50}\,\dfrac{\text{kg}}{\text{liter}} \\
+    &\approx0.031\,\dfrac{\text{kg}}{\text{liter}}
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Salt is being added at the rate
+    \[
+    \text{rate in}
+    =.04\,\dfrac{\text{kg}}{\text{liter}}\,30\,\dfrac{\text{liters}}{\text{min}}
+    =1.2\,\dfrac{\text{kg}}{\text{min}}
+    \]
+    Salt is being removed at the rate
+    \[
+    \text{rate out}
+    =\dfrac{S(t)}{1500}\,\dfrac{\text{kg}}{\text{liter}}\,30\,\dfrac{\text{liters}}{\text{min}}
+    =\dfrac{S(t)}{50}\,\dfrac{\text{kg}}{\text{min}}
+    \]
+    So the differential equation is
+    \[\begin{aligned}
+    \dfrac{dS}{dt}=\left[\text{rate in}\right]-\left[\text{rate out}\right] \\
+    =1.2-\dfrac{S}{50}=\dfrac{60-S}{50}
+    \end{aligned}\]
+    This time we separate variables and integrate:
+    \[\begin{aligned}
+    \int \dfrac{dS}{60-S}&=\int \dfrac{dt}{50} \\
+    -\ln|60-S|&=\dfrac{t}{50}+C \\
+    \ln|60-S|&=-\,\dfrac{t}{50}-C
+    \end{aligned}\]
+    We exponentiate and remove the absolute value
+    \[
+    60-S=Ae^{-t/50}
+    \qquad \text{where} \quad
+    A=\pm e^{-C}
+    \]
+    Finally we solve for \(S\):
+    \[
+    S=60-Ae^{-t/50}
+    \]
+    We are now ready to use the initial condition:
+    \[
+    S(0)=15=60-Ae^{-0/50}=60-A
+    \]
+    So \(A=45\) and the solution is
+    \[S(t)=60-45e^{-t/50}\]
+    This is the kg of salt in the tank at time \(t\). Since there are \(1500\)
+    liters of water, the concentration at time \(t\) is
+    \[\begin{aligned}
+    \dfrac{S(t)}{1500}
+    &=\dfrac{60-45e^{-t/50}}{1500} \\
+    &=\dfrac{1}{25}-\dfrac{3}{100}e^{-t/50}\,\dfrac{\text{kg}}{\text{liter}}
+    \end{aligned}\]
+    After \(60\) min the concentration is
+    \[\begin{aligned}
+    \dfrac{S(60)}{1500}
+    &=\dfrac{1}{25}-\dfrac{3}{100}e^{-60/50}\,\dfrac{\text{kg}}{\text{liter}} \\
+    &\approx0.031\,\dfrac{\text{kg}}{\text{liter}}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

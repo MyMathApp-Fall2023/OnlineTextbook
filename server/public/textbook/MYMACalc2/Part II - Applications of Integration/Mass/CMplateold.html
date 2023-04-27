@@ -1,0 +1,324 @@
+
+Previous
+smasscmbar
+Next
+smassmom
+
+\begin{center}
+\begin{tabular}[b]{|c|}
+\hline
+\underline{
+%TCIMACRO{\hyperref\small Units and Constants} }{}{}{../units.tex} }%
+%BeginExpansion
+\msihyperref\small Units and Constants} }{}{}{../units.tex}%
+%EndExpansion
+} \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{1pt}
+
+\subsection{Center of Mass --- Plate with Uniform Density}
+
+\vspace{1pt}
+
+On this page, we compute the $x$-component of the center of mass of a plate
+with uniform (constant) surface density $\rho $. \ Note: \emph{Surface
+density} has the units of \emph{mass per unit area}. \
+
+\qquad \FRAME{itbpF}{6.0182in}{0.1003in}{0in}{}{}{maroon.wmf}{\special%
+{language "Scientific Word";type "GRAPHIC";display "PICT";valid_file
+"F";width 6.0182in;height 0.1003in;depth 0in;original-width
+290.5625pt;original-height 1pt;cropleft "0";croptop "0.5226";cropright
+"1";cropbottom "0";filename '../../graphics/maroon.wmf';file-properties
+"XNPEU";} }
+
+\vspace{1pt}
+
+\emph{Problem Type:} \ Find the $x$-component of the center of mass of a
+plate with constant density $\rho $ which has the shape of the area below a
+function $y=f\left( x\right) $ above a function $y=g\left( x\right) $
+between $x=a$ and $x=b.$
+
+\begin{center}
+\FRAME{itbpF}{3.0113in}{2.0081in}{0in}{}{}{Plot}{\special{language
+"Scientific Word";type "MAPLEPLOT";width 3.0113in;height 2.0081in;depth
+0in;display "PICT";plot_snapshots FALSE;mustRecompute FALSE;lastEngine
+"MuPAD";xmin "-5";xmax "5";xviewmin "0";xviewmax "3.5";yviewmin
+"-5";yviewmax "11";viewset"XY";plottype 19;plotticks 1;plottickdisable
+TRUE;num-x-ticks 7;num-y-ticks 5;labeloverrides 3;x-label "x";y-label
+"y";axesFont "Times New Roman,12,0000000000,useDefault,normal";numpoints
+100;plotstyle "patch";axesstyle "normal";axestips FALSE;xis
+\TEXUX{t};var1name \TEXUX{$t$};function \TEXUX{$\left[ 1+2t,\left(
+1+2t\right) \left( -2+2t\right) ^{2}+4+6t\right] $};linecolor
+"maroon";linestyle 1;pointstyle "point";linethickness 3;lineAttributes
+"Solid";var1range "-5,5";num-x-gridlines 100;curveColor
+"[flat::RGB:0x00800000]";curveStyle "Line";function \TEXUX{$\left[
+3.5t,\left( 3.5t\right) \left( 3.5t-3\right) ^{2}+10.5t+1\right]
+$};linecolor "black";linestyle 1;pointstyle "point";linethickness
+1;lineAttributes "Solid";var1range "-5,5";num-x-gridlines 100;curveColor
+"[flat::RGB:0000000000]";curveStyle "Line";function \TEXUX{$\left[
+1,-4+12t\right] $};linecolor "maroon";linestyle 1;pointstyle
+"point";linethickness 3;lineAttributes "Solid";var1range
+"-5,5";num-x-gridlines 100;curveColor "[flat::RGB:0x00800000]";curveStyle
+"Line";function \TEXUX{$\left[ 3,-4+14t\right] $};linecolor
+"maroon";linestyle 1;pointstyle "point";linethickness 3;lineAttributes
+"Solid";var1range "-5,5";num-x-gridlines 100;curveColor
+"[flat::RGB:0x00800000]";curveStyle "Line";function \TEXUX{$\left[
+1+2t,-\left( 1+2t\right) \left( -2+2t\right) ^{2}-4t\right] $};linecolor
+"maroon";linestyle 1;pointstyle "point";linethickness 3;lineAttributes
+"Solid";var1range "-5,5";num-x-gridlines 100;curveColor
+"[flat::RGB:0x00800000]";curveStyle "Line";function \TEXUX{$\left[
+3.5t,-3.5t\left( 3.5t-3\right) ^{2}-2\left( 3.5t-1\right) \right]
+$};linecolor "black";linestyle 1;pointstyle "point";linethickness
+1;lineAttributes "Solid";var1range "0,1";num-x-gridlines 49;curveColor
+"[flat::RGB:0000000000]";curveStyle "Line";rangeset"X";VCamFile
+'O3LNLS00.xvz';} }
+\end{center}
+
+\emph{Solution:} \ Again we divide the region into $n$ rectangles each of
+width $\Delta x=\dfrac{b-a}{n}$ and height $f\left( x_{i}^{\ast }\right)
+-g\left( x_{i}^{\ast }\right) $ where $x_{i}^{\ast }$ is a point in the $i^{
+\text{th} }$ rectangle:
+
+\begin{center}
+\FRAME{itbpF}{3.0113in}{2.0081in}{0in}{}{}{Plot}{\special{language
+"Scientific Word";type "MAPLEPLOT";width 3.0113in;height 2.0081in;depth
+0in;display "PICT";plot_snapshots FALSE;mustRecompute FALSE;lastEngine
+"MuPAD";xmin "-5";xmax "5";xviewmin "0";xviewmax "3.5";yviewmin
+"-5";yviewmax "11";viewset"XY";plottype 4;plotticks 1;plottickdisable
+TRUE;num-x-ticks 7;num-y-ticks 5;labeloverrides 3;x-label "x";y-label
+"y";axesFont "Times New Roman,12,0000000000,useDefault,normal";numpoints
+100;plotstyle "patch";axesstyle "normal";axestips FALSE;xis
+\TEXUX{x};var1name \TEXUX{$x$};function
+\TEXUX{$\MATRIX{2,16}{c}\VR{,,l,,,}{,,l,,,}{,,,,,}\HR{,,,,,,,,,,,,,,,,}%
+\CELL{1}\CELL{0}\CELL{1}\CELL{8.4}\CELL{1.4}\CELL{8.4}\CELL{1.4}\CELL{0}%
+\CELL{1.4}\CELL{9.1}\CELL{1.8}\CELL{9.1}\CELL{1.8}\CELL{0}\CELL{1.8}%
+\CELL{9.1}\CELL{2.2}\CELL{9.1}\CELL{2.2}\CELL{0}\CELL{2.2}\CELL{9}\CELL{2.6}%
+\CELL{9}\CELL{2.6}\CELL{0}\CELL{2.6}\CELL{9.7}\CELL{3}\CELL{9.7}\CELL{3}%
+\CELL{0}$};linecolor "blue";linestyle 1;pointstyle "point";linethickness
+1;lineAttributes "Solid";curveColor "[flat::RGB:0x00000080]";curveStyle
+"Line";function \TEXUX{$x\left( x-3\right) ^{2}+3x+1$};linecolor
+"black";linestyle 1;pointstyle "point";linethickness 1;lineAttributes
+"Solid";var1range "-5,5";num-x-gridlines 100;curveColor
+"[flat::RGB:0000000000]";curveStyle "Line";function \TEXUX{$\left\{
+\MATRIX{3,3}{c}\VR{,,l,,,}{,,l,,,}{,,l,,,}{,,,,,}\HR{,,,}\CELL{x\left(
+x-3\right)
+^{2}+3x+1}\CELL{\text{if} }\CELL{1<x<3}\CELL{-6}\CELL{\text{if} }\CELL{x<1}%
+\CELL{-6}\CELL{\text{if} }\CELL{3<x}\right. $};linecolor "maroon";linestyle
+1;pointstyle "point";linethickness 2;lineAttributes "Solid";var1range
+"-5,5";num-x-gridlines 100;curveColor "[flat::RGB:0x00800000]";curveStyle
+"Line";function
+\TEXUX{$\MATRIX{2,2}{c}\VR{,,l,,,}{,,l,,,}{,,,,,}\HR{,,}\CELL{1}\CELL{8}%
+\CELL{1}\CELL{-4}$};linecolor "maroon";linestyle 1;pointstyle
+"point";linethickness 2;lineAttributes "Solid";curveColor
+"[flat::RGB:0x00800000]";curveStyle "Line";function \TEXUX{$-x\left(
+x-3\right) ^{2}-2\left( x-1\right) $};linecolor "black";linestyle
+1;pointstyle "point";linethickness 1;lineAttributes "Solid";var1range
+"-5,5";num-x-gridlines 100;curveColor "[flat::RGB:0000000000]";curveStyle
+"Line";function \TEXUX{$\left\{
+\MATRIX{3,3}{c}\VR{,,l,,,}{,,l,,,}{,,l,,,}{,,,,,}\HR{,,,}\CELL{-x\left(
+x-3\right) ^{2}-2\left( x-1\right)
+}\CELL{\text{if} }\CELL{1<x<3}\CELL{-6}\CELL{\text{if} }\CELL{x<1}\CELL{-6}%
+\CELL{\text{if} }\CELL{3<x}\right. $};linecolor "maroon";linestyle
+1;pointstyle "point";linethickness 2;lineAttributes "Solid";var1range
+"-5,5";num-x-gridlines 100;curveColor "[flat::RGB:0x00800000]";curveStyle
+"Line";function
+\TEXUX{$\MATRIX{2,2}{c}\VR{,,l,,,}{,,l,,,}{,,,,,}\HR{,,}\CELL{3}\CELL{10}%
+\CELL{3}\CELL{-4}$};linecolor "maroon";linestyle 1;pointstyle
+"point";linethickness 2;lineAttributes "Solid";curveColor
+"[flat::RGB:0x00800000]";curveStyle "Line";function
+\TEXUX{$\MATRIX{2,16}{c}\VR{,,l,,,}{,,l,,,}{,,,,,}\HR{,,,,,,,,,,,,,,,,}%
+\CELL{1}\CELL{0}\CELL{1}\CELL{-4.3}\CELL{1.4}\CELL{-4.3}\CELL{1.4}\CELL{0}%
+\CELL{1.4}\CELL{-4.2}\CELL{1.8}\CELL{-4.2}\CELL{1.8}\CELL{0}\CELL{1.8}%
+\CELL{-4}\CELL{2.2}\CELL{-4}\CELL{2.2}\CELL{0}\CELL{2.2}\CELL{-3.8}%
+\CELL{2.6}\CELL{-3.8}\CELL{2.6}\CELL{0}\CELL{2.6}\CELL{-3.9}\CELL{3}%
+\CELL{-3.9}\CELL{3}\CELL{0}$};linecolor "blue";linestyle 1;pointstyle
+"point";linethickness 1;lineAttributes "Solid";curveColor
+"[flat::RGB:0x00000080]";curveStyle "Line";rangeset"X";VCamFile
+'O3LNLS01.xvz';} }
+\end{center}
+
+The area of the $i^{th}$ rectangle is $\left[ f\left( x_{i}^{\ast }\right)
+-g\left( x_{i}^{\ast }\right) \right] \;\Delta x$\ and so its mass is $%
+m_{i}=\rho \,\left[ f\left( x_{i}^{\ast }\right) -g\left( x_{i}^{\ast
+}\right) \right] \,\Delta x$. \ If we think of the plate as a balance beam
+with masses $m_{1},m_{2},\ldots m_{n}$ then the center of mass is at
+
+\begin{center}
+$\bar{x}\approx \dfrac{M_{1} }{M}=\dfrac{\dsum\limits_{i=1}^{n}m_{i}x_{i} }{
+\dsum\limits_{i=1}^{n}m_{i} }=\dfrac{\dsum\limits_{i=1}^{n}x_{i}\,\rho \,%
+\left[ f\left( x_{i}^{\ast }\right) -g\left( x_{i}^{\ast }\right) \right]
+\,\Delta x}{\dsum\limits_{i=1}^{n}\rho \,\left[ f\left( x_{i}^{\ast }\right)
+-g\left( x_{i}^{\ast }\right) \right] \,\Delta x}$
+\end{center}
+
+As the width of each piece gets smaller, the approximation gets better.\ \
+So the center of mass of the plate is obtained by taking the limit as the
+number of pieces becomes large, $\left( n\rightarrow \infty \right) $ and
+hence the width of each piece gets small $\left( \Delta x\rightarrow
+0\right) $:
+
+\begin{center}
+$\bar{x}=\lim\limits_{n\rightarrow \infty }\dfrac{\dsum%
+\limits_{i=1}^{n}x_{i}\,\rho \,\left[ f\left( x_{i}^{\ast }\right) -g\left(
+x_{i}^{\ast }\right) \right] \,\Delta x}{\dsum\limits_{i=1}^{n}\rho \,\left[
+f\left( x_{i}^{\ast }\right) -g\left( x_{i}^{\ast }\right) \right] \,\Delta x%
+}=\dfrac{\lim\limits_{n\rightarrow \infty }\dsum\limits_{i=1}^{n}x_{i}\,\rho
+\,\left[ f\left( x_{i}^{\ast }\right) -g\left( x_{i}^{\ast }\right) \right]
+\,\Delta x}{\lim\limits_{n\rightarrow \infty }\dsum\limits_{i=1}^{n}\rho \,%
+\left[ f\left( x_{i}^{\ast }\right) -g\left( x_{i}^{\ast }\right) \right]
+\,\Delta x}$
+\end{center}
+
+The limit of the sum in the denominator is the integral $\dint_{a}^{b}\rho \,%
+\left[ f\left( x\right) -g\left( x\right) \right] \;dx$.which we recognized
+as the \emph{total mass}:
+
+\begin{center}
+$M=\dint_{a}^{b}\,\rho \,\left[ f\left( x\right) -g\left( x\right) \right]
+\;dx$
+\end{center}
+
+The limit of the sum in the numerator is the integral $\dint_{a}^{b}x\rho \,%
+\left[ f\left( x\right) -g\left( x\right) \right] \;dx$.which is called the
+\emph{first moment of the mass}:
+
+\begin{center}
+$M_{1}=\dint_{a}^{b}x\,\rho \,\left[ f\left( x\right) -g\left( x\right) %
+\right] \;dx$
+\end{center}
+
+In terms of these, the \emph{center of mass} is
+
+\begin{center}
+$\bar{x}=\dfrac{M_{1} }{M}$
+\end{center}
+
+\vspace{1pt}
+
+\begin{proposition}
+\QTR{greenbig}{Center of Mass of a Plate with Uniform Density:}
+\end{proposition}
+
+\begin{quotation}
+\qquad The $x$-component of the \emph{center of mass} (or the \emph{centroid}%
+) of a plate with constant surface density $\rho $ which has the shape of
+the area \newline
+\qquad below a function $y=f\left( x\right) $ above a function $y=g\left(
+x\right) $ between $x=a$ and $x=b$ is $\qquad \bar{x}=\dfrac{M_{1} }{M}$%
+\newline
+$\qquad $where the \emph{total mass} is\qquad $M=\dint_{a}^{b}\,\rho \,\left[
+f\left( x\right) -g\left( x\right) \right] \;dx$\newline
+$\qquad $and the \emph{first moment of the mass} is\qquad $%
+M_{1}=\dint_{a}^{b}x\,\rho \,\left[ f\left( x\right) -g\left( x\right) %
+\right] \;dx$.
+\end{quotation}
+
+\vspace{1pt}
+
+\begin{remark}
+When the \textsl{density is constant}, the center of mass is also called the
+\emph{centriod}. \ Also notice that the constant density cancels out of the
+formula:
+
+$\hfill \bar{x}=\dfrac{M_{1} }{M}=\dfrac{\dint_{a}^{b}x\,\rho \,\left[
+f\left( x\right) -g\left( x\right) \right] \;dx}{\dint_{a}^{b}\,\rho \,\left[
+f\left( x\right) -g\left( x\right) \right] \;dx}=\dfrac{\dint_{a}^{b}x\,%
+\left[ f\left( x\right) -g\left( x\right) \right] \;dx}{\dint_{a}^{b}\,\left[
+f\left( x\right) -g\left( x\right) \right] \;dx}=\dfrac{A_{1} }{A}\hfill $
+
+where\qquad $A=\dint_{a}^{b}\,\left[ f\left( x\right) -g\left( x\right) %
+\right] \;dx$\qquad is the \emph{area} and\qquad $A_{1}=\dint_{a}^{b}x\,%
+\left[ f\left( x\right) -g\left( x\right) \right] \;dx$\qquad is called the
+\emph{first moment of the area}.
+
+So the centroid is a purely geometrical version of the center of mass.
+\end{remark}
+
+\vspace{1pt}
+
+\begin{example}
+Find the mass and the $x$-component of the center of mass of the region
+below $y=\sin x$ above the $x$-axis between $x=0$ and $x=\dfrac{\pi }{4}$ if
+the density is $\rho =5$ $\dfrac{\text{gm\ } }{\text{cm}^{2} }$ where
+distances are measured in centimeters.
+\end{example}
+
+\emph{Solution:} The total mass is
+
+$\qquad M=\dint\nolimits_{0}^{\pi /4}\rho \;f\left( x\right)
+\,dx=\dint\nolimits_{0}^{\pi /4}5\,\sin x\,dx=\left[ -5\cos x\rule%
+{0in}{0.15in}\right] _{x=0}^{\pi /4}=\left[ -5\cos \dfrac{\pi }{4}\right] -%
+\left[ -5\cos 0\right] =\left( -\dfrac{5}{\sqrt{2} }+5\right) $gm$\,\approx
+1.465$ gm
+
+The first moment is
+
+\qquad $M_{1}=\dint\nolimits_{0}^{\pi /4}x\,\rho \;f\left( x\right)
+\,dx=\dint\nolimits_{0}^{\pi /4}5x\,\sin x\,dx$
+
+We need to use integration by parts with $\left\{
+\begin{array}{ll}
+u=5x\qquad & dv=\sin x\,dx \\
+du=5\,dx & v=-\cos x%
+\end{array}
+\right\} $
+
+\qquad $M_{1}=\left[ -5x\cos x-\dint -5\cos x\,dx\right] _{x=0}^{\pi /4}=%
+\left[ -5x\cos x+5\sin x\rule{0in}{0.15in}\right] _{x=0}^{\pi /4}=\left[ -5%
+\dfrac{\pi }{4}\cos \dfrac{\pi }{4}+5\sin \dfrac{\pi }{4}\right] -\left[ 0%
+\right] \ =-\dfrac{5\pi }{4\sqrt{2} }+\dfrac{5}{\sqrt{2} }$ gm-cm$\,\approx
+.7587$ gm-cm
+
+So the center of mass is
+
+\qquad $\bar{x}=\dfrac{M_{1} }{M}=\dfrac{-\dfrac{5\pi }{4\sqrt{2} }+\dfrac{5}{
+\sqrt{2} }}{-\dfrac{5}{\sqrt{2} }+5}=\dfrac{-\pi +4}{-4+4\sqrt{2} }\approx .518$
+
+Notice that $0<.518<\dfrac{\pi }{4}$, so the centroid is inside the region.
+
+\qquad \FRAME{itbpF}{6.0182in}{0.1003in}{0in}{}{}{maroon.wmf}{\special%
+{language "Scientific Word";type "GRAPHIC";display "PICT";valid_file
+"F";width 6.0182in;height 0.1003in;depth 0in;original-width
+290.5625pt;original-height 1pt;cropleft "0";croptop "0.5226";cropright
+"1";cropbottom "0";filename '../../graphics/maroon.wmf';file-properties
+"XNPEU";} }
+
+\textbf{\copyright \FRAME{itbpF}{0.7498in}{0.2292in}{0.0502in}{}{}{
+webcalc.wmf}{\special{language "Scientific Word";type "GRAPHIC";display
+"PICT";valid_file "F";width 0.7498in;height 0.2292in;depth
+0.0502in;original-width 40.75pt;original-height 11.8125pt;cropleft
+"0";croptop "1.0536";cropright "1";cropbottom "-0.0536";filename
+'../../graphics/webcalc.wmf';file-properties "XNPEU";} }: Calculus II}\hfill
+\begin{tabular}[b]{|l|l|l|l|l|}
+\hline
+\underline{
+%TCIMACRO{\hyperref\small Main Contents} }{}{}{../../mcontents.tex} }%
+%BeginExpansion
+\msihyperref\small Main Contents} }{}{}{../../mcontents.tex}%
+%EndExpansion
+} & \underline{
+%TCIMACRO{\hyperref\small Section Contents} }{}{}{scontents.tex} }%
+%BeginExpansion
+\msihyperref\small Section Contents} }{}{}{scontents.tex}%
+%EndExpansion
+} & \underline{
+%TCIMACRO{\hyperref\small Previous} }{}{}{smasscmbar.tex} }%
+%BeginExpansion
+\msihyperref\small Previous} }{}{}{smasscmbar.tex}%
+%EndExpansion
+} & \underline{
+%TCIMACRO{\hyperref\small Next} }{}{}{smassmom.tex} }%
+%BeginExpansion
+\msihyperref\small Next} }{}{}{smassmom.tex}%
+%EndExpansion
+} & \underline{
+%TCIMACRO{\hyperref\small Exercises} }{}{}{x.tex#cm} }%
+%BeginExpansion
+\msihyperref\small Exercises} }{}{}{x.tex#cm}%
+%EndExpansion
+} \\ \hline
+\end{tabular}
+
+\end{document}

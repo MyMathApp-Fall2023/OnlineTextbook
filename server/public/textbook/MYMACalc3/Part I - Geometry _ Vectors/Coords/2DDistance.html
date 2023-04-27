@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Distance Formula in 2D | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="nDRectCoord.html" title="Previous">&lArr;</a></li>
+      <li><a href="3DDistance.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Distance Formula - 2D, 3D and nD</h2>
+
+
+      
+      <h2>1. Distance Formula in 2D</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	Recall the Pythagorean Theorem:
+</p>
+<p class="thm" data-title="Pythagorean Theorem">
+	If the legs of a triangle are \(a\) and \(b\), and the hypotenuse is \(c\),
+	then
+	\[
+	c=\sqrt{a^2+b^2}
+	\]
+</p>
+<div class="column">
+	<p data-col-width="40%">
+    We can use the Pythagorean Theorem to find the distance between two points in the plane.
+  	Consider two points	\(P=(p_1,p_2)\) and \(Q=(q_1,q_2)\)
+  	as shown: The difference in the \(x\)-coordinates is \(|q_1-p_1|\)
+  	and	the difference in the \(y\)-coordinates is \(|q_2-p_2|\).
+  	These are the two legs of a right triangle whose hypotenuse is the distance between
+  	the points \(P\) and \(Q\).
+		Consequently, by the Pythagorean Theorem, we conclude:
+	</p>
+  <div data-col-width="60%" class="center">
+    <img src="graphics/def_2DDist.jpg" alt="def_2DDist"/>
+  </div>
+</div>
+<p class="formula" data-title="Distance Formula">
+  The distance between the points \(P=(p_1,p_2)\) and \(Q=(q_1,q_2)\) is:
+  \[
+	d(P,Q)=\sqrt{(q_1-p_1)^2+(q_2-p_2)^2}
+	\]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the distance between the points \(A=(5,2)\) and \(B=(-3,8)\)
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+		\(d(A,B)=10\)
+	</p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<div class="column">
+	  <p>
+	    The distance between \(A=(5,2)\) and \(B=(-3,8)\) is:
+	    \[\begin{aligned}
+	    d(A,B)&=\sqrt{(b_1-a_1)^2+(b_2-a_2)^2} \\
+	    &=\sqrt{(-3-5)^2+(8-2)^2} \\
+	    &=\sqrt{64+36}=10
+	    \end{aligned}\]
+	  </p>
+	  <div class="center">
+	    <img src="graphics/ex_2DDist.jpg" alt="ex_2DDist">
+	  </div>
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<p class="maplet">
+  You can also use the two Maplets below for practice with the Pythagorean
+	Theorem and finding the distance between two points in the plane
+	(requires Maple on the computer where this is executed):
+</p>
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/PythagThm.maplet" download>Pythagorean Theorem Practice</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/DistBetw2Pts2D.maplet" download>Distance Between Two Points</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+				<div class="rule"></div>
+
+<h3>Equation of a Circle</h3>
+<p>
+  By definition, the circle of radius \(r\) centered at a point
+  \(C=(a,b)\) is the set of all points \(X=(x,y)\)
+  whose distance from \(C\) is \(r\). Using the distance formula,
+	this circle is the set of all points \(X=(x,y)\) satisfying the equation
+  \[
+	d(C,X)=r
+	\]
+  or
+  \[
+	\sqrt{(x-a)^2+(y-b)^2}=r
+	\]
+</p>
+<p class="formula" data-title="Equation of a Circle ">
+	The circle of radius \(r\) centered at a point \(C=(a,b)\) is:
+	\[
+	(x-a)^2+(y-b)^2=r^2
+	\]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+  	Find the equation of the circle centered at \(P=(-3,8)\) which is tangent
+  	to the \(x\)-axis.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Draw a picture. What is the distance from \(P=(-3,8)\) to the \(x\)-axis?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \((x+3)^2+(y-8)^2=64\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+	<div class="column">
+	  <p>
+	    The distance from \(P=(-3,8)\) to the \(x\)-axis is \(8\), the \(y\)
+			coordinate of \(P\). This is the radius. So the circle is
+			\((x+3)^2+(y-8)^2=64\).
+	  </p>
+	  <div class="center">
+	    <img src="graphics/ex_circ_tan_to_xaxis.jpg" alt="ex_circ_tan_to_xaxis">
+	  </div>
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+ Some exercises on circles use the fact that the center of a circle is at
+ the midpoint of a diameter.
+</p>
+
+ <h3>Midpoint of a Line Segment</h3>
+<p>
+  The midpoint of a line segment is the point halfway between the endpoints.
+	So its coordinates are found by averaging the coordinates of its endpoints.
+	Specifically,
+</p>
+<p class="formula" data-title="Midpoint of a Line Segment">
+	 If the endpoints of a line segment are \(P=(a,b)\) and \(Q=(c,d)\),
+	 then the midpoint is:
+   \[
+	 M=\left(\dfrac{a+c}{2}, \dfrac{b+d}{2} \right).
+	 \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="3">
+  	Find the equation of the circle which has a diameter with endpoints
+		\(P=(-2,3)\) and \(Q=(4,7)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    The center is at the midpoint of the line segment between
+		\(P=(-2,3)\) and \(Q=(4,7)\).
+    The radius is half of the diameter.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \((x-1)^2+(y-5)^2=13\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+	<div class="column">
+  	<p>
+	    The center of the circle is at the midpoint of the line segment between
+			\(P=(-2,3)\) and \(Q=(4,7)\) which is found by averaging their coordinates:
+	    \[
+			C=\left(\dfrac{-2+4}{2}, \dfrac{3+7}{2} \right)=(1,5)
+			\]
+	    The radius of the circle is half of the distance between \(P\) and \(Q\). This distance is
+	    \[
+			d(P,Q)=\sqrt{(4--2)^2+(7-3)^2}=2\sqrt{13}
+			\]
+    </p>
+	  <div class="center">
+	    <img src="graphics/ex_circ_from_diam.jpg" alt="ex_circ_from_diam">
+	  </div>
+	</div>
+  <p>
+    and so, the radius is \(r=\sqrt{13}\). So the equation of the circle is:
+    \[
+		(x-1)^2+(y-5)^2=13
+		\]
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing the midpoint of a line segment using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/LineMdpt2Pts2D.maplet" download>Midpoint of the Line Segment Between Two Points in 2D</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

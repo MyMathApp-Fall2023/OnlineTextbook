@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. The Divergence of a Curl (\(\vec\nabla\cdot\vec\nabla\times\vec F\)) | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DiffIdent2.html#Ops" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>17. Divergence, Curl and Potentials</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>d. Differential Identities</h2>
+
+<h2>2. Second Order Differential Operators and Identities</h2>
+
+<div class="example-links">
+  <a href="OpDivGrad.html">\(\underline{\vec\nabla\cdot\vec\nabla f}\)</a>
+  &emsp;
+  <a href="OpCurlGrad.html">\(\underline{\vec\nabla\times\vec\nabla f}\)</a>
+  &emsp;
+  <a href="OpDivCurl.html" class="active">\(\underline{\vec\nabla\cdot\vec\nabla\times\vec F}\)</a>
+  &emsp;
+  <a href="OpCurlCurl.html">\(\underline{\vec\nabla\times\vec\nabla\times\vec F}\)</a>
+</div>
+
+
+      
+      <h2>c. The Divergence of a Curl (\(\vec\nabla\cdot\vec\nabla\times\vec F\))</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Let's again start with an example and an exercise.
+</P>
+<p class="example" data-number="1">
+  Compute the divergence of the curl of the vector field
+  \(\vec F=\left\langle x^2y+yz,y^2+xz^2,z^3-x^2y \right\rangle\).
+</p>
+<p class="sol">
+  The curl is
+  \[\begin{aligned}
+  \vec\nabla\times\vec F
+  &=\begin{vmatrix}
+  \hat\imath & \hat\jmath & \hat  k \\[2pt]
+  \partial_x & \partial_y & \partial_z \\[2pt]
+  x^2y+yz    & y^2+xz^2   & z^3-x^2y
+  \end{vmatrix} \\[2pt]
+  &=\hat\imath (-x^2-2xz)
+   -\hat\jmath (-2xy-y)
+   +\hat k     (z^2-x^2-z) \\[2pt]
+  &=\left\langle-x^2-2xz, 2xy+y, z^2-x^2-z \right\rangle
+  \end{aligned}\]
+  So the divergence of the curl is
+  \[\begin{aligned}
+  \vec\nabla\cdot\vec\nabla\times\vec F
+  &=\partial_x(-x^2-2xz)+\partial_y(2xy+y)+\partial_z(z^2-x^2-z) \\
+  &=(-2x-2z)+(2x+1)+(2z-1)=0
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the divergence of the curl of the vector field
+    \(\vec F=\left\langle x^2y,y^2+z^2,z^3-x^2 \right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\vec\nabla\cdot\vec\nabla\times\vec F=0\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The curl is
+    \[\begin{aligned}
+    \vec\nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat  k \\[2pt]
+    \partial_x & \partial_y & \partial_z \\[2pt]
+    x^2y       & y^2+z^2    & z^3-x^2
+    \end{vmatrix} \\[2pt]
+    &=\hat\imath(0-2z)-\hat\jmath(-2x-0)+\hat k(0-x^2) \\
+    &=\left\langle -2z,2x,-x^2\right\rangle
+    \end{aligned}\]
+    So the divergence of the curl is
+    \[
+    \vec\nabla\cdot\vec\nabla\times\vec F
+    =\partial_x(-2z)+\partial_y(2x)+\partial_z(-x^2)=0
+    \]
+  </p>
+</div>
+
+        <div class="rule" id="DivCurl"></div>
+
+<p class="remark">
+  It is no coincidence that in both problems the answer was \(0\).
+  As long as the assumptions of Clairaut's Theorem are satisfied
+  (so that mixed partial derivatives are equal) the
+  divergence of a curl is always \(0\).
+</p>
+<p class="prop" data-title="Divergence of a Curl Identity">
+  If all second partial derivatives of the components of \(\vec F\)
+  are continuous functions, then
+  \[
+  \vec\nabla\cdot\vec\nabla\times\vec F=0
+  \]
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    The general curl is
+    \[\begin{aligned}
+    \vec\nabla\times\vec F
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat  k \\[2pt]
+    \partial_x & \partial_y & \partial_z \\[2pt]
+    F_1        & F_2        & F_3
+    \end{vmatrix} \\[1pt]
+    &=\hat\imath (\partial_yF_3-\partial_zF_2)
+     -\hat\jmath (\partial_xF_3-\partial_zF_1)
+     +\hat k     (\partial_xF_2-\partial_yF_1) \\[1pt]
+    &=\left\langle \partial_yF_3-\partial_zF_2,
+                   \partial_zF_1-\partial_xF_3,
+                   \partial_xF_2-\partial_yF_1\right\rangle
+    \end{aligned}\]
+    So the divergence of the curl is
+    \[\begin{aligned}
+    \vec\nabla\cdot\vec\nabla\times\vec F
+    &=\partial_x(\partial_yF_3-\partial_zF_2)
+     +\partial_y(\partial_zF_1-\partial_xF_3)
+     +\partial_z(\partial_xF_2-\partial_yF_1) \\
+    &=\partial_x\partial_yF_3-\partial_x\partial_zF_2
+     +\partial_y\partial_zF_1-\partial_y\partial_xF_3
+     +\partial_z\partial_xF_2-\partial_z\partial_yF_1 \\
+    &=0
+    \end{aligned}\]
+    provided the mixed partial derivatives are equal.
+  </p>
+</div>
+<p class="remark">
+   In this class, we will always be dealing with continuous functions.
+   So you can always assume the divergence of a curl is zero.
+</p>
+<p class="remark">
+   This identity is used to help determine when a vector field has a vector
+   potential as discussed at the end of
+   <a href="NoVecPot.html#divcurl_nosvecpot" title="Return using the Back button.">
+   this chapter</a>. This identity is also used to solve the equations
+   of electromagnetism.
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

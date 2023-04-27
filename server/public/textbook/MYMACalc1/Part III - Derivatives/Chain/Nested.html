@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b.2. Nested Chain Rules | 13. Chain Rule &amp; Implicit Differentiation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Chain.html" title="Previous">&lArr;</a></li>
+      <li><a href="TutChain.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Chain Rule &amp; Implicit Differentiation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b.2. Nested Chain Rules</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Compositions may be nested and we may need to apply the Chain Rule repeatedly.
+  While doing the derivative, we rarely specifically identify the
+  inner and outer functions and separately write down their derivatives.
+  Rather, we start with the outermost function and work inward. The outermost
+  function is the last operation you would perform if you plugged in a number
+  to evaluate the function.
+</p>
+<p class="example" data-number="1">
+  Compute the derivative of \(f(x)=\sin^3(4x^3-\cos(x^2))\).
+</p>
+<p class="sol">
+  The outermost function is \(\text{stuff}^{\;3}\) where \(\text{stuff}\) is
+  \(\sin(4x^3-\cos(x^2))\). The derivative of \(\text{stuff}^{\;3}\) is
+  \(3\text{stuff}^{\;2}\) but then we need to multiply by the derivative of the
+  \(\text{stuff}\):
+  \[
+  \dfrac{df}{dx}=3\sin^2(4x^3-\cos(x^2))\dfrac{d}{dx}\sin(4x^3-\cos(x^2))
+  \]
+  Now we look at \(\sin(\text{morestuff})\) where
+  \(\text{morestuff}=4x^3-\cos(x^2)\). The derivative of
+  \(\sin(\text{morestuff})\) is \(\cos(\text{morestuff})\) but then we
+  multiply by the derivative of \(\text{morestuff}\):
+  \[\begin{aligned}
+  \dfrac{df}{dx}
+  &=3\sin^2(4x^3-\cos(x^2))\cos(4x^3-\cos(x^2)) \\
+  &\quad\cdot\dfrac{d}{dx}(4x^3-\cos(x^2))
+  \end{aligned}\]
+  \(4x^3-\cos(x^2)\) is a sum. So we differentiate each term. The derivative
+  of the first term \(4x^3\) is \(12x^2\) and the derivative of the second term
+  \(-\cos(x^2)\) is \(\sin(x^2)2x\) again using the Chain Rule. Putting it
+  all together, we have:
+  \[\begin{aligned}
+  \dfrac{df}{dx}
+  &=3\sin^2(4x^3-\cos(x^2))\cos(4x^3-\cos(x^2)) \\
+  &\quad\cdot(12x^2+\sin(x^2)2x)
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Usually, the identification of \(\text{stuff}\) and \(\text{morestuff}\)
+  is done in the head and not written down separately but the intermediate
+  lines are still useful in the computation, as in this example:
+</p>
+<p class="example" data-number="2">
+  Compute \(\dfrac{d}{dx}\left[\sin^2(x+x^2)\cos(3x+2)\rule{0pt}{10pt}\right]\).
+</p>
+<p class="sol">
+  The outermost function is multiplication. So we start with the Product
+  Rule:
+  \[\begin{aligned}
+  \dfrac{d}{dx}&\left[\sin^2(x+x^2)\cos(3x+2)\rule{0pt}{10pt}\right] \\
+  &=\left[\dfrac{d}{dx}\sin^2(x+x^2)\right]\cos(3x+2) \\
+  &\quad+\sin^2(x+x^2)\left[\dfrac{d}{dx}\cos(3x+2)\right]
+  \end{aligned}\]
+  The remaining two derivatives are Chain Rules. The first has an outer
+  function which is \(\text{stuff}^{\;2}\). The second is
+  \(\cos(\text{morestuff})\):
+  \[\begin{aligned}
+  \dfrac{d}{dx}&\left[\sin^2(x+x^2)\cos(3x+2)\rule{0pt}{10pt}\right] \\
+  &=\left[2\sin(x+x^2)\dfrac{d}{dx}\sin(x+x^2)\right]\cos(3x+2) \\
+  &\quad+\sin^2(x+x^2)\left[-\sin(3x+2)\dfrac{d}{dx}(3x+2)\right]
+  \end{aligned}\]
+  We finish up with another Chain Rule and two polynomial derivatives.
+  Finally, we simplify:
+  \[\begin{aligned}
+  \dfrac{d}{dx}&\left[\sin^2(x+x^2)\cos(3x+2)\rule{0pt}{10pt}\right] \\
+  &=\left[2\sin(x+x^2)\cos(x+x^2)(1+2x)\right]\cos(3x+2) \\
+  &\quad+\sin^2(x+x^2)\left[-\sin(3x+2)(3)\right] \\
+  &=2(1+2x)\sin(x+x^2)\cos(x+x^2)\cos(3x+2) \\
+  &\quad-3\sin^2(x+x^2)\sin(3x+2)
+  \end{aligned}\]
+</p>
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\dfrac{d}{dx}\left[e^{x^2}-5e^{3x}\rule{0pt}{10pt}\right]\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\dfrac{d}{dx}\left[e^{x^2}-5e^{3x}\rule{0pt}{10pt}\right]
+    =2xe^{x^2}-15e^{3x}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We use the Sum Rule followed by the Exponential and Chain Rules twice:
+    \[\begin{aligned}
+    \dfrac{d}{dx}&\left[e^{x^2}-5e^{3x}\rule{0pt}{10pt}\right]
+    =\dfrac{d}{dx}e^{x^2}-5\dfrac{d}{dx}e^{3x} \\
+    &=e^{x^2}(2x)-5e^{3x}(3)
+    =2xe^{x^2}-15e^{3x}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

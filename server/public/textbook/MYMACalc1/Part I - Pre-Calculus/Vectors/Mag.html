@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Magnitude | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Disp.html" title="Previous">&lArr;</a></li>
+      <li><a href="Dir.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Definition, Magnitude and Direction</h2>
+
+
+      
+      <h2>3. Magnitude</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p class="def" data-title="Magnitude or Length">
+  	The <span class="defword">length</span> or
+    <span class="defword">magnitude</span>
+    of a vector \(\vec v=\left\langle v_1,v_2\right\rangle\),
+    denoted by \(|\vec v|\),
+    is defined to be the distance from its tail to its tip.
+  	By the Pythagorean Theorem, this is:
+		\[
+    |\vec v|=\sqrt{(v_1)^2+(v_2)^2}
+    \]
+	</p>
+  <div class="center">
+	  <img src="graphics/def_vecmag.jpg" alt="def_vecmag"/>
+  </div>
+</div>
+<p class="example" data-number="1">
+  Find the length of the vector \(\left\langle 5,-1 \right\rangle\).
+</p>
+<p class="sol">
+  \(|\left\langle5,-1\right\rangle|=\sqrt{5^2+(-1)^2}=\sqrt{26}\)
+</p>
+<p class="remark">
+  Notice that we use vertical bars around the vector to denote its length
+  just like the vertical bars that denote an absolute value. You must determine
+  from the context which is which. If there is a number inside the bars,
+  it's an absolute value. If there is a vector inside the bars, it's a length.
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the length of the vector \(\vec a=\left\langle-5,12 \right\rangle\)
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(|\vec a|=13\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    \[
+    |\vec a|=\sqrt{(-5)^2+12^2}=\sqrt{25+144}=\sqrt{169}=13
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Unit Vectors</h3>
+<p class="def">
+  A <span class="defword">unit vector</span> is a vector whose magnitude is
+  \(1\) (unity).
+</p>
+<p class="exercise" data-number="3">
+  Which of the following are unit vectors?
+</p>
+<p class="center">
+  <button class="bullet-blue incorrect"></button>
+  \(\left\langle 4,-3 \right\rangle\qquad\)
+  <button class="bullet-blue correct"></button>
+  \(\left\langle .6,.8 \right\rangle\qquad\)
+  <button class="bullet-blue correct"></button>
+  \(\left\langle \dfrac{5}{13},-\dfrac{12}{13} \right\rangle\qquad\)
+	<button class="bullet-blue correct"></button>
+  \(\left\langle-\,\dfrac{\sqrt{3}}{2},\dfrac{1}{2} \right\rangle\)
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  To emphasize that a vector is a unit vector, we will put a
+  <span class="hl">hat</span> over its name instead of an
+  <span class="hl">arrow</span>. Thus \(\hat u\) is a unit vector whereas
+  \(\vec u\) may or may not be.
+</p>
+<p class="prop">
+	Given an arbitrary vector \(\vec v=\left\langle v_1,v_2 \right\rangle\),
+  we can always construct a unit vector which points in the same direction. It is:
+	\[
+  \hat v
+  =\left\langle\dfrac{v_1}{|\vec v|},\dfrac{v_2}{|\vec v|}\right\rangle
+  \]
+  <button class="toggle" data-toggle="Justification">Justification</button>
+</p>
+<div class="toBeToggled justification" data-toggle="Justification">
+  <p>
+  	We need to verify that \(\hat{v}\) is in fact a unit vector and does
+    point in the same direction as \(\vec v\). We first compute its length:
+		\[\begin{aligned}
+		|\hat v|
+    &=\sqrt{\left(\dfrac{v_1}{|\vec v|}\right)^2
+            +\left(\dfrac{v_2}{|\vec v|}\right)^2} \\
+		&=\sqrt{\dfrac{ {v_1}^2+{v_2}^2}
+            {|\vec v|^2}}
+    =\sqrt{\dfrac{|\vec v|^2}{|\vec v|^2}}=1
+		\end{aligned}\]
+  </p>
+  <div class="column">
+    <p>
+  	  So it is a unit vector.
+      <br><br>
+      It also points in the same direction because, in the diagram at the right,
+      in going from the large triangle to the small triangle, we have scaled
+      all the edges by the same amount, \(c=\dfrac{1}{|\vec v|}\). Since the
+      triangles are similar, all the angles stay the same. So the direction of
+      the hypotenuse stays the same.
+  	</p>
+    <div class="center">
+  	  <img src="graphics/prop_unitvecdir.jpg" alt="prop_unitvecdir"/>
+    </div>
+  </div>
+</div>
+<p class="def">
+	We call \(\hat v\) the
+  <span class="defword">unit vector in the direction of \(\vec v\)</span>
+  and, as a shorthand, we write
+	\[
+  \hat v=\dfrac{\vec v}{|\vec v|}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the unit vector in the direction of the vector
+    \(\vec a=\left\langle -5,12 \right\rangle\)
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\hat a=\left\langle\dfrac{-5}{13},\dfrac{12}{13}\right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    \[
+    |\vec a|=\sqrt{(-5)^2+12^2}=\sqrt{169}=13
+    \]
+    \[
+    \hat a=\dfrac{\vec a}{|\vec a|}
+    =\left\langle\dfrac{-5}{13},\dfrac{12}{13}\right\rangle
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -10,11 +10,9 @@ export class BookController {
 
 
     @Get("read")
-    async read(@Res() res: Response) {
-        const bookContent = await this.bookService.getBookContent()
-
-        res.send(bookContent)
-
+    async read() {
+        const bookURL = this.bookService.getBookURL()
+        return {bookURL}
     }
 
 }

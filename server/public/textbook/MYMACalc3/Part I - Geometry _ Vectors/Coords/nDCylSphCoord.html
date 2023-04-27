@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Cylindrical and Spherical Coordinates in Higher Dimensions (Optional) | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="3DSphCoord.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Cylindrical and Spherical Coordinates - 3D and nD</h2>
+
+
+      
+      <h2>3. Cylindrical and Spherical Coordinates in Higher Dimensions (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	Cylindrical and spherical coordinates can be generalized from \(3\) dimensions to
+	higher dimensions, but this must be done recursively from one dimension to
+	the next. To facilitate the formulas, we will use subscripted variables. Thus
+	the rectangular coordinates are:
+	\[
+	x_1=x \qquad x_2=y \qquad x_3=z \qquad x_4 \qquad x_5
+	\qquad \cdots \qquad
+	x_n
+	\]
+	Then the radial coordinates are:
+	\[
+	r_2=r=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2} \qquad
+	r_3=\rho=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2+\left.x_3\right.^2}
+	\qquad \cdots \qquad
+	r_n=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2+\cdots+\left.x_n\right.^2}
+	\]
+	and the polar angles are
+  \[
+	\phi_3=\phi \qquad \phi_4 \qquad \phi_5
+	\qquad \cdots \qquad
+	\phi_n
+	\]
+	Note: The azimuthal angle \(\theta\) is not renamed because it is exactly the
+	same in all dimensions.
+</p>
+<p>
+	Using these variables, the 3D cylindrical coordinates are given by:
+  \[\begin{array}{rlrl}
+	x_1&=r_2\cos\theta \qquad &r_2
+	&=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2} \\[5pt]
+	x_2&=r_2\sin\theta&\tan\theta
+	&=\dfrac{x_2}{x_1} \\[5pt]
+	x_3&=x_3&x_3
+	&=x_3
+	\end{array}\]
+ 	and the 3D spherical coordinates are given by:
+  \[\begin{array}{rlrl}
+	x_1&=r_3\sin\phi_3\cos\theta \qquad
+	&r_3&=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2+\left.x_3\right.^2} \\[5pt]
+	x_2&=r_3\sin\phi_3\sin\theta
+	&\phi_3&=\arccos\dfrac{x_3}{\sqrt{\left.x_1\right.^2
+	+\left.x_2\right.^2+\left.x_3\right.^2}} \quad \\[5pt]
+	x_3&=r_3\cos\phi_3
+	&\tan\theta&=\dfrac{x_2}{x_1}
+	\end{array}\]
+</p>
+
+				<div class="rule"> </div>
+
+<p>
+	We are now ready to discuss cylindrical and spherical coordinates in
+	\(4\) dimensions:
+</p>
+
+<h3>4D Cylindrical and Spherical Coordinates</h3>
+
+<p>
+	<span class="defword">4D Cylindrical Coordinates</span> are constructed by
+	starting with 3D spherical coordinates and adding one new rectangular
+	coordinate \(x_4\).	Thus the rectangular - cylindrical transformations are
+  \[\begin{array}{rlrl}
+	x_1&=r_3\sin\phi_3\cos\theta \qquad
+	&r_3&=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2+\left.x_3\right.^2} \\[5pt]
+	x_2&=r_3\sin\phi_3\sin\theta
+	&\phi_3&=\arccos\dfrac{x_3}{\sqrt{\left.x_1\right.^2
+	+\left.x_2\right.^2+\left.x_3\right.^2}} \quad \\[5pt]
+	x_3&=r_3\cos\phi_3
+	&\tan\theta&=\dfrac{x_2}{x_1} \\[5pt]
+	x_4&=x_4&x_4&=x_4
+	\end{array}\]
+	Nothing much new!
+</p>
+<p>
+	<span class="defword">4D Spherical Coordinates</span> are constructed by
+	starting with 4D cylindrical coordinates and replacing \(x_4\) and \(r_3\)
+	by a new <span class="defword">spherical radius</span> \(r_4\) and a new
+	<span class="defword">polar angle</span> \(\phi_4\) defined by the relations
+	\[
+	r_4=\sqrt{\left.r_3\right.^2+\left.x_4\right.^2} \qquad
+	\cos\phi_4=\dfrac{x_4}{r_4} \qquad
+	\sin\phi_4=\dfrac{r_3}{r_4}
+	\]
+	Thus the rectangular - spherical transformations are
+	\[\begin{array}{rlrl}
+	x_1&=r_4\sin\phi_4\sin\phi_3\cos\theta \qquad
+	&r_4&=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2
+	+\left.x_3\right.^2+\left.x_4\right.^2} \\[5pt]
+	x_2&=r_4\sin\phi_4\sin\phi_3\sin\theta
+	&\phi_4&=\arccos \dfrac{x_4}{\sqrt{\left. x_1\right.^2
+	+\left.x_2\right.^2+\left. x_3\right.^2+\left. x_4\right.^2}} \quad \\[5pt]
+	x_3&=r_4\sin\phi_4\cos\phi_3&\phi_3
+	&=\arccos\dfrac{x_3}{\sqrt{\left.x_1\right.^2+\left.x_2\right.^2
+	+\left.x_3\right.^2}} \\[5pt]
+	x_4&=r_4\cos\phi_4&\tan\theta&=\dfrac{x_2}{x_1}
+	\end{array}\]
+</p>
+
+				<div class="rule"></div>
+
+<p>
+	Finally, we can recursively define cylindrical and spherical coordinates
+	in \(n\) dimensions:
+</p>
+<h3>\(n\)D Cylindrical and Spherical Coordinates</h3>
+<p>
+	In each new dimension, the
+	<span class="defword">\(n\)D Cylindrical Coordinates</span> are constructed
+	by taking the \(n-1\) spherical coordinates and adding one new rectangular
+	coordinate \(x_n\).	(We won't write these down.)
+</p>
+<p>
+	Then the <span class="defword">\(n\)D Spherical Coordinates</span> are
+	constructed by starting with \(n\)D cylindrical coordinates and replacing
+	\(x_n\) and \(r_{n-1}\) by a new <span class="defword">spherical
+	radius</span> \(r_n\) and a new <span class="defword">polar angle</span>
+	\(\phi_n\) defined by the relations:
+	\[
+	r_n=\sqrt{\left. r_{n-1}\right.^2+\left. x_n\right.^2} \qquad
+	\cos\phi_n=\dfrac{x_n}{r_n} \qquad
+	\sin\phi_n=\dfrac{r_{n-1}}{r_n}
+	\]
+	Thus the rectangular - spherical transformations are:
+	\[\begin{array}{rlrl}
+	x_1&=r_n\sin\phi_n\cdots\sin\phi_4\sin\phi_3\cos\theta \qquad	&r_n
+	&=\sqrt{\left.x_1\right.^2+\left.x_2\right.^2+\cdots+\left.x_n\right.^2} \\
+	x_2&=r_n\sin\phi_n\cdots\sin\phi_4\sin\phi_3\sin\theta&\phi_n
+	&=\arccos\dfrac{x_n}{\sqrt{\left.x_1\right.^2
+	+\left.x_2\right.^2+\cdots+\left.x_n\right.^2}} \\
+	x_3&=r_n\sin\phi_n\cdots\sin\phi_4\cos\phi_3&&\vdots \\
+	&\vdots&\phi_4
+	&=\arccos\dfrac{x_4}{\sqrt{\left.x_1\right.^2+\left.x_2\right.^2
+	+\left.x_3\right.^2+\left.x_4\right.^2}} \quad \\
+	x_{n-1}&=r_n\sin\phi_n\cos\phi_{n-1}&\phi_3
+	&=\arccos\dfrac{x_3}{\sqrt{\left.x_1\right.^2+\left.x_2\right.^2
+	+\left.x_3\right.^2}} \\
+	x_n&=r_n\cos\phi_n&\tan\theta&=\dfrac{x_2}{x_1}
+	\end{array}\]
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

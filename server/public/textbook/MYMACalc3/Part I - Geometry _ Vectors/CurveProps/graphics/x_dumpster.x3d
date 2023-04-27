@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Immersive">
+  <head>
+    <meta name="description" content="*enter description here, short-sentence summaries preferred*"/>
+    <meta name="created"    content="19 June 2022"/>
+    <meta name="revised"    content="19 June 2022"/>
+    <meta name="generator" content="Maple, http://www.maplesoft.com/"/>
+  </head>
+  <Scene>
+  <NavigationInfo headlight="false" type='"EXAMINE" "WALK" "ANY" ' />
+  <Background skyColor="1.0 1.0 1.0" />
+  <Transform rotation="0.0 0.0 1.0 0.0" >
+    <Transform rotation="0.0 1.0 0.0 0.0" >
+      <Transform rotation="1.0 0.0 0.0 0.0" >
+        <Transform rotation="0.0 0.0 1.0 1.5707964" >
+          <Viewpoint position="0.0 0.0 999.99994" fieldOfView="0.034987357" />
+        </Transform>
+      </Transform>
+    </Transform>
+  </Transform>
+  <Transform scale="2.0 2.0 2.0" translation="0.0 0.0 0.0" >
+    <Transform scale="1.0 1.0 1.0" translation="-5.0 5.0 -5.0" >
+      <Shape >
+        <Appearance >
+          <Material ambientIntensity="0.2" diffuseColor="0.0 0.0 0.0" emissiveColor="0.25490198 0.4117647 0.88235295" shininess="0.0" specularColor="0.0 0.0 0.0" transparency="0.0" />
+          <LineProperties linetype="1" />
+        </Appearance>
+        <TriangleFanSet solid="false" fanCount="5 4 4 4 4 4 5 " >
+          <Coordinate point="0.0 0.0 0.0, 10.0 0.0 0.0, 10.0 0.0 6.0, 6.0 0.0 10.0, 0.0 0.0 10.0, 0.0 0.0 0.0, 0.0 -10.0 0.0, 10.0 -10.0 0.0, 10.0 0.0 0.0, 10.0 0.0 0.0, 10.0 -10.0 0.0, 10.0 -10.0 6.0, 10.0 0.0 6.0, 10.0 0.0 6.0, 10.0 -10.0 6.0,
+6.0 -10.0 10.0, 6.0 0.0 10.0, 6.0 0.0 10.0, 6.0 -10.0 10.0, 0.0 -10.0 10.0, 0.0 0.0 10.0, 0.0 0.0 10.0, 0.0 -10.0 10.0, 0.0 -10.0 0.0, 0.0 0.0 0.0, 0.0 -10.0 10.0, 6.0 -10.0 10.0, 10.0 -10.0 6.0, 10.0 -10.0 0.0, 0.0 -10.0 0.0" />
+        </TriangleFanSet>
+      </Shape>
+    </Transform>
+  </Transform>
+  <Transform scale="1.0 1.0 1.0" translation="0.0 0.0 0.0" DEF="PrettyDrawing" >
+    <Transform scale="2.0 2.0 2.0" translation="0.0 0.0 0.0" >
+      <Transform scale="1.0 1.0 1.0" translation="-5.0 5.0 -5.0" >
+      </Transform>
+    </Transform>
+  </Transform>
+  <Group >
+  </Group>
+<ProximitySensor DEF='rotationSensor' size='1.0E7 1.0E7 1.0E7' />
+<Script DEF='moveLinesTowardsViewer'>
+         <field name='set_orientation' type='SFRotation' accessType='inputOnly' />
+         <field name='translation_changed' type='SFVec3f' accessType='outputOnly' />
+         <![CDATA[
+    ecmascript:
+    function set_orientation(orientation, eventTime) {
+        var angle = orientation[3];
+        //c = cos(angle)
+        var c =1.0 - angle*angle/2.0 + angle*angle*angle*angle/24.0 - angle*angle*angle*angle*angle*angle/720.0 + angle*angle*angle*angle*angle*angle*angle*angle/40320.0;
+        //s = sin(angle)
+        var s = angle - angle*angle*angle /6.0 + angle*angle*angle*angle*angle/120.0 - angle*angle*angle*angle*angle*angle*angle/5040.0;
+        var t = 1.0-c;
+        var x = orientation[0];
+        var y = orientation[1];
+        var z = orientation[2];
+        //'orientation' converted to matrix form is the INVERSE of the modelView matrix:
+        //[t*x*x*c   t*x*y+s*z t*x*z-s*y
+        // t*x*y-s*z t*y*y+c   t*y*z+s*x
+        // t*x*z+s*y t*y*z-s*x t*z*z+c  ]
+        //The modelView matrix is the transpose of this.
+        //The desired movement is
+        //(the modelView matrix) * (0, 0, 0.1)
+        translation_changed[0] = 0.1*(t*x*z+s*y);
+        translation_changed[1] = 0.1*(t*y*z-s*x);
+        translation_changed[2] = 0.1*(t*z*z+c);
+	 }
+]]>
+</Script>
+  <ROUTE fromNode='rotationSensor' fromField='orientation_changed' toNode='moveLinesTowardsViewer' toField='set_orientation' />
+  <ROUTE fromNode='moveLinesTowardsViewer' fromField='translation_changed' toNode='PrettyDrawing' toField='set_translation' />
+  </Scene>
+
+</X3D>

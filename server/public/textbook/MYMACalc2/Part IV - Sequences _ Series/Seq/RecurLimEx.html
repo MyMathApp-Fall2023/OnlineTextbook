@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d2a. Exercises | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="RecurLim.html#exercises" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>18. Sequences</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>Limits of Recursively Defined Sequences</h2>
+
+
+      
+      <h2>d2a. Exercises</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Consider the sequence given by the recursion relation
+    \(a_{n+1}=\dfrac{1}{8}(a_n)^2+\dfrac{3}{2}\) with the initial
+    term \(a_1=4\). Does the sequence have a limit? If so, find the limit.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <!-- <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button> -->
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Assume the sequence has a limit \(L\). Then use the recursion relation
+    to find the possible values of \(L\). Finally, show the limit actually
+    exists by showing it is bounded and monotonic.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\lim\limits_{n\to\infty}a_n=2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    The first \(4\) terms are:
+  	\[\begin{aligned}
+  	a_1&=4 \\
+  	a_2&=\dfrac{1}{8}4^2+\dfrac{3}{2}=\dfrac{7}{2}=3.5 \\
+  	a_3&=\dfrac{1}{8}\left(\dfrac{7}{2}\right)^2+\dfrac{3}{2}
+    =\dfrac{97}{32}\approx3.03 \\
+  	a_4&=\dfrac{1}{8}\left(\dfrac{97}{32}\right)^2+\dfrac{3}{2}
+    =\dfrac{21\,697}{8192}\approx2.65
+  	\end{aligned}\]
+    Before showing the limit exists, we want to get some idea what the limit
+    might be. So we assume the limit exists and try to find it.
+  </p>
+  <p>
+     2. &ensp; Assume the sequence has a limit \(L\). Then
+    \(\lim\limits_{n\to\infty}a_n=L\) and also
+    \(\lim\limits_{n\to\infty}a_{n+1}=L\) since
+    \(a_{n+1}\) is the same sequence as \(a_n\) but starting from a
+    different number. We apply \(\lim\limits_{n\to\infty}\)
+    to both sides of the recursion relation and use the limit laws:
+  	\[\begin{aligned}
+    a_{n+1}&=\dfrac{1}{8}(a_n)^2+\dfrac{3}{2} \\
+    \lim_{n\to\infty}a_{n+1}
+    &=\dfrac{1}{8}\left(\lim_{n\to\infty}a_n\right)^2+\dfrac{3}{2} \\
+    L&=\dfrac{1}{8}L^2+\dfrac{3}{2}
+  	\end{aligned}\]
+    We can solve this for \(L\):
+  	\[\begin{aligned}
+    8L=L^2+12 \quad \Longto \quad &L^2-8L+12=0 \quad \Longto \\
+    (L-2)(L-6)=0 \quad &\Longto \quad L=2 \quad \text{or} \quad 6
+  	\end{aligned}\]
+    This says that if a limit exists, it must be either \(2\) or \(6\).
+    Looking at the first five terms, we expect the limit is \(2\).
+  </p>
+  <p>
+    We now turn to showing the limit actually exists.
+  </p>
+  <p>
+    1. &ensp; To show the limit exists, we use the <span class="hl">Bounded,
+    Monotonic Sequence Theorem</span>. Looking at the first five terms, we
+    expect the sequence is decreasing and bounded below by \(2\). To prove
+    each of these we will use mathematical induction:
+  </p>
+  <p data-title="Bounded below by \(2\)">
+    We have \(a_1=4\gt2\). Suppose for some \(k\) we have \(a_k\gt2\).
+    Then \((a_k)^2\gt4\) and
+    \(a_{k+1}=\dfrac{1}{8}(a_n)^2+\dfrac{3}{2}
+    \gt\dfrac{1}{8}4+\dfrac{3}{2}=2\). By
+    mathematical induction, \(a_n\gt2\) for all \(n\).
+  </p>
+  <p data-title="Decreasing">
+    Notice the first four terms are decreasing. Suppose for some \(k\)
+    we have \(a_k>a_{k+1}\). Then \((a_k)^2>(a_{k+1})^2\)
+    and \(\dfrac{1}{8}(a_k)^2+\dfrac{3}{2}
+         >\dfrac{1}{8}(a_{k+1})^2+\dfrac{3}{2}\)
+    which says \(a_{k+1}>a_{k+2}\).
+    By mathematical induction, the sequence is decreasing.
+  </p>
+  <p>
+    Therefore: The sequence has a limit and the limit must be \(2\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Consider the sequence given by the recursion relation
+    \(a_{n+1}=\dfrac{1}{8}(a_n)^2+\dfrac{3}{2}\) with the initial
+    term \(a_1=8\). Does the sequence have a limit? If so, find the limit.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint2"></button>
+    <!-- <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button> -->
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint2">
+  <p>
+    Assume the sequence has a limit \(L\). Then use the recursion relation
+    to find the possible values of \(L\). Finally, show the limit actually
+    exists by showing it is bounded and monotonic.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(\lim\limits_{n\to\infty}a_n=\infty\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    The first \(3\) terms are:
+  	\[\begin{aligned}
+  	a_1&=8 \\
+  	a_2&=\dfrac{1}{8}8^2+\dfrac{3}{2}=\dfrac{19}{2}=9.5 \\
+  	a_3&=\dfrac{1}{8}\left(\dfrac{19}{2}\right)^2+\dfrac{3}{2}
+    =\dfrac{409}{32}\approx12.78
+  	\end{aligned}\]
+    Before showing the limit exists, we want to get some idea what the limit
+    might be. So we assume the limit exists and try to find it.
+  </p>
+  <p>
+     2. &ensp; Since the recurrance relation is the same as in the previous
+     example, the process of applying \(\lim\limits_{n\to\infty}\)
+    is also the same and we conclude if a limit exists, it must be either
+    \(2\) or \(6\). However, looking at the first \(3\) terms, we see that the
+    terms start at 8 and seem to be increasing. If we can prove it continues
+    to increase, there will not be a limit.
+  </p>
+  <p data-title="Increasing">
+    Notice the first three terms are increasing. Suppose for some \(k\)
+    we have \(a_k< a_{k+1}\). Then \((a_k)^2<(a_{k+1})^2\)
+    and \(\dfrac{1}{8}(a_k)^2+\dfrac{3}{2}
+         <\dfrac{1}{8}(a_{k+1})^2+\dfrac{3}{2}\)
+    which says \(a_{k+1}< a_{k+2}\).
+    By mathematical induction, the sequence is increasing.
+  </p>
+  <p data-title="Bounded?">
+    We now ask if it is bounded above. If there was an upper bound, the Bounded,
+    Monotonic Sequence Theorem would say there is a limit. But since the
+    sequence is increasing from \(8\), that limit would be bigger than \(8\)
+    which is impossible since the limit has to be either \(2\) or \(6\).
+    So there is no upper bound. By the Bounded, Monotonic Sequence Theorem, we
+    know the sequence diverges to \(\infty\).
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

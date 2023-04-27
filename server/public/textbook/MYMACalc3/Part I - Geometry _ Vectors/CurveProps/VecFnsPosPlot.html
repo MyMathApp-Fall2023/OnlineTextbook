@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Vector Functions: Position and Plots | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="VecFnsVel.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Vector Functions, Position, Velocity and Plots</h2>
+
+
+      
+      <h2>1. Vector Functions: Position and Plots</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the previous chapter, we used parametric curves to define
+  <a href="../CurveSurface/CrvR2.html"><span class="hl">planar curves</span>
+  in \(\mathbb{R}^2\)</a> and
+  <a href="../CurveSurface/CrvR3.html"><span class="hl">space curves</span> in
+  \(\mathbb{R}^{3}\)</a>.
+  These are examples of vector functions.
+</p>
+
+<p class="def">
+  A <span class="defword">vector function</span> is a function whose values
+  are vectors.
+  <br>
+  In \(\mathbb{R}^2\), a vector function has the form &emsp;
+  \(\vec{f}(t)=\langle f_1(t),\,f_2(t)\rangle\).
+  <br>
+  In \(\mathbb{R}^{3}\), a vector function has the form &emsp;
+  \(\vec{f}(t)=\langle f_1(t),\,f_2(t),\,f_3(t)\rangle\).
+</p>
+
+<p>
+  Throughout this chapter, we will write general formulas for \(3\)
+  dimensions; the \(2\) dimensional case, used in many examples, is obtained
+  by dropping one component.
+</p>
+<p>
+  If we think of the resulting vectors as having their tails located at the
+  origin, then the tips trace out a <span class="hl">parametric curve</span>.
+  If we regard the parameter as time, then we regard the vector function as
+  the <span class="defword">position vector</span>:
+  \[
+  \vec{r}(t)=(x(t),y(t),z(t))
+  \]
+  of a particle. A plot of a parametric curve or position vector, is a plot of
+  the points \(\vec{r}(t)\) for some range of \(t\)'s.
+</p>
+
+<div class="column">
+  <div>
+    <p class="example" data-number="1">
+      Plot the parametric curve:
+      \[
+      \vec{r}(t)=(t\cos t,t\sin t)
+      \qquad \text{for} \qquad
+      0 \le t \le 4\pi
+      \]
+    </p>
+    <p class="sol">
+      If we compare the curve to polar coordinates,
+      \[
+      x=r\cos\theta,\quad y=r\sin\theta
+      \]
+      we find \(r=t\) and \(\theta=t\). Thus as the angle
+      increases, the radius increases. Thus the plot
+      is the spiral.
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <video src="graphics/eg_spiral_anim.mp4" autoplay controls loop>
+      </video>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule" id="Circle"></div>
+
+<p>
+  There are three examples we will look at repeatedly throughout this
+  chapter: a <span class="hl">circle</span>, a <span class="hl">helix</span>
+  and a <span class="hl">twisted cubic</span>.
+</p>
+
+<div class="column">
+  <div>
+    <p class="example" data-title="Circle" data-number="2">
+      Plot the part of the circle of radius \(4\) centered at the origin in the
+      first \(3\) quadrants.
+    </p>
+    <p class="sol">
+      Using polar coordinates, the circle may be parametrized as:
+      \[
+      \vec{r}(\theta)=(4\cos\theta,4\sin\theta)
+      \qquad \text{for} \qquad
+       0 \le \theta \le \dfrac{3\pi}{2}
+      \]
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <video src="graphics/eg_circle_anim.mp4" autoplay controls loop>
+      </video>
+    </figure>
+  </div>
+</div>
+<p class="remark">
+  A circle may also be placed in \(3\)-dimensional space. For example, the
+  circle of radius \(3\) centered at \((1,4,2)\) in the plane \(y=4\) (which is
+  parallel to the \(xz\)-plane), may be parametrized as:
+  \[
+  (x,y,z)=(1+3\cos\theta,4,2+3\sin\theta)
+  \]
+
+        <div class="rule" id="Helix"></div>
+
+<p class="example" data-title="Helix" data-number="3">
+  A helix (half of a DNA molecule) looks like a spring or slinky. If the
+  axis is the along the \(z\)-axis, then the \(x\) and \(y\) coordinates
+  may be parametrized just like a circle, while the \(z\) coordinate
+  increases linearly with the angle. Plot the helix:
+  \[
+  \vec{r}(\theta)=(4\cos\theta,4\sin\theta,3\theta)
+  \qquad \text{for} \qquad
+  0 \le \theta \le 6\pi
+  \]
+  Find the slope of the helix.
+</p>
+<div class="column">
+  <div>
+    <p class="sol">
+      Since the angle changes by \(6\pi\), the helix makes \(3\) loops.
+      As the curve makes \(1\) loop, the horizontal displacement is the
+      circumference:
+      \[
+      C=2\pi r=2\pi4=8\pi
+      \]
+      while the vertical displacement is:
+      \[
+      H=3\theta=3\cdot2\pi=6\pi
+      \]
+      So the slope is:
+      \[
+      m=\dfrac{\text{rise}}{\text{run}}=\dfrac{H}{C}
+      =\dfrac{6\pi}{8\pi}=\dfrac{3}{4}
+      \]
+      or the ratio of the coefficient of \(\theta\) in the \(z\)-component
+      to the radius of the helix.
+  	</p>
+  </div>
+  <div class="center">
+    <figure>
+      <video src="graphics/eg_helix_anim.mp4" autoplay controls loop>
+      </video>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule" id="TwistedCubic"></div>
+
+<p class="example" data-title="Twisted Cubic" data-number="4">
+  A twisted cubic is a curve of the form \(\vec{r}(t)=(at,bt^2,ct^{3})\).
+  Plot the twisted cubic:
+  \[
+  \vec{r}(t)=\left(t,t^2,\dfrac{2}{3}t^{3}\right)
+  \qquad \text{for} \qquad
+  -2 \le t \le 2
+  \]
+</p>
+<big>PY: Trying new plot format:</big>
+<p class="sol">
+  Here are \(3\) plots of the twisted cubic. From the \(z\)-axis, it looks like
+  a quadratic. From the \(y\)-axis, it looks like a cubic. From the \(x\)-axis,
+  it looks like a cusp. (But there is really no sharp point.)
+  You can rotate any of these plots with your mouse.
+</p>
+<div class="column">
+  <div data-col-width="33%">
+    <figure>
+      <x3d width="250px" height="250px">
+        <scene>
+          <inline url="graphics/eg_twistedcubic_xy.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>View from the&nbsp;\(z\)-axis</strong></figcaption>
+    </figure>
+  </div>
+  <div data-col-width="33%">
+    <figure>
+      <x3d width="250px" height="250px">
+        <scene>
+          <inline url="graphics/eg_twistedcubic_xz.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>View from the&nbsp;\(y\)-axis</strong></figcaption>
+    </figure>
+  </div>
+  <div data-col-width="33%">
+    <figure>
+      <x3d width="250px" height="250px">
+        <scene>
+          <inline url="graphics/eg_twistedcubic_yz.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>View from the&nbsp;\(x\)-axis</strong></figcaption>
+    </figure>
+  </div>
+</div>
+<br>
+<big>PY: Old plot format:</big>
+<p class="sol">
+  Here are \(3\) plots of the twisted cubic. From the \(z\)-axis, it looks like
+  a quadratic. From the \(y\)-axis, it looks like a cubic. From the \(x\)-axis,
+  it looks like a cusp. (But there is really no sharp point as you can see by rotating it.)
+</p>
+<div class="column">
+  <div data-col-width="33%">
+    <figure>
+      <img src="graphics/eg_twistedcubic_xy_old.jpg" alt="eg_twistedcubic_xy_old">
+      <figcaption><strong>View from the&nbsp;\(z\)-axis</strong></figcaption>
+    </figure>
+  </div>
+  <div data-col-width="33%">
+    <figure>
+      <img src="graphics/eg_twistedcubic_xz_old.jpg" alt="eg_twistedcubic_xz_old">
+      <figcaption><strong>View from the&nbsp;\(y\)-axis</strong></figcaption>
+    </figure>
+  </div>
+  <div data-col-width="33%">
+    <figure>
+      <video src="graphics/eg_twistedcubic_yz_anim_old.mp4" autoplay controls loop></video>
+      <figcaption><strong>View from the&nbsp;\(x\)-axis</strong></figcaption>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Match the curves to the plots.
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+    <button class="toggle has-sol" data-toggle="SolX5"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    \(a\Longleftrightarrow 4\)<br>
+    \(b\Longleftrightarrow 3\)<br>
+    \(c\Longleftrightarrow 1\)<br>
+    \(d\Longleftrightarrow 2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <p>
+    \(a\Longleftrightarrow 4\)<br>
+    The curve (a) travels around a circle in the \(xz\)-plane while \(y\)
+    coordinate oscillates \(4\) times.<br>
+    \(b\Longleftrightarrow 3\)<br>
+    For the curve (b), as \(x\) increases, \(y\) increases quadratically
+    while \(z\) increases quartically.<br>
+    \(c\Longleftrightarrow 1\)<br>
+    Curve (c) lies in the plane \(z=2\). If we compare the \(x\) and \(y\)
+    cordinates to polar coordinates, \(x=r\cos\theta\) and \(y=r\sin\theta\)
+    we find \(r=2+\sin(3t)\) and \(\theta=t\) which is the polar equation of
+    a \(3\) leaf clover.<br>
+    \(d\Longleftrightarrow 2\)<br>
+    Curve (d) is a spiral in the \(xy\) coordinates while \(z\) increases.
+  </p>
+</div>
+
+<p>
+  \(a)\qquad \vec{r}(t)=(4\cos t,\sin(4t),4\sin t)\)
+    <br>
+  \(b)\qquad \vec{r}(t)=(t,t^2,t^4)\)
+    <br>
+  \(c)\qquad \vec{r}(t)=\left((2+\sin(3t))\cos t,(2+\sin(3t))\sin t,2\right)\)
+    <br>
+  \(d)\qquad \vec{r}(t)=(t\cos t,t\sin t,t^2)\)
+</p>
+
+<big>PY: New plot format:</big>
+
+<div class="center">
+  <div style="float: left">
+    <figure>
+      <x3d width="200px" height="200px">
+        <scene>
+          <inline url="graphics/ex_plot3.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>Plot 1</strong></figcaption>
+    </figure>
+  </div>
+  <div style="float: left">
+    <figure>
+      <x3d width="200px" height="200px">
+        <scene>
+          <inline url="graphics/ex_plot4.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>Plot 2</strong></figcaption>
+    </figure>
+  </div>
+  <div style="float: left">
+    <figure>
+      <x3d width="200px" height="200px">
+        <scene>
+          <inline url="graphics/ex_plot2.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>Plot 3</strong></figcaption>
+    </figure>
+  </div>
+  <div style="float: left">
+    <figure>
+      <x3d width="200px" height="200px">
+        <scene>
+          <inline url="graphics/ex_plot1.x3d"> </inline>
+        </scene>
+      </x3d>
+      <figcaption><strong>Plot 4</strong></figcaption>
+    </figure>
+  </div>
+</div>
+
+
+
+<big>PY: Old plot format:</big>
+<div class="center">
+  <figure>
+    <img src="graphics/ex_plot3.jpg" alt="PosPlots-Exercise3"
+    width="200" height="200">
+    <figcaption><strong>Plot 1</strong></figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/ex_plot4.jpg" alt="PosPlots-Exercise4"
+    width="200" height="200">
+    <figcaption><strong>Plot 2</strong></figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/ex_plot2.jpg" alt="PosPlots-Exercise2"
+    width="200" height="200">
+    <figcaption><strong>Plot 3</strong></figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/ex_plot1.jpg" alt="PosPlots-Exercise1"
+    width="200" height="200">
+    <figcaption><strong>Plot 4</strong></figcaption>
+  </figure>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

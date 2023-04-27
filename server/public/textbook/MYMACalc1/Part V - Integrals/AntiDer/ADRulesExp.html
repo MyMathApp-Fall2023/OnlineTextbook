@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Exp and Log Functions | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ADRulesAlg.html" title="Previous">&lArr;</a></li>
+      <li><a href="ADRulesTrig.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Antiderivative Rules</h2>
+
+
+      
+      <h2>2. Exp and Log Functions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The table on the previous page listed the properties of antiderivatives
+  with respect to algebraic operations. The table on this page gives the
+  antiderivatives for exponential and logarithmic functions. You can check
+  each line of the table by differentiating the quantity on the right to
+  see you get the quantity on the left.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Exponential and Logarithmic Functions</caption>
+  <thead>
+    <th class="thead"></th>
+    <th><span style="font-weight:normal">If the</span> Function
+      <span style="font-weight:normal">is</span></th>
+    <th><span style="font-weight:normal">then the</span> Antiderivative
+      <span style="font-weight:normal">is</span></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Natural<br>Exponential</td>
+      <td>\(f(x)=e^x\)</td>
+      <td>\(F(x)=e^x+C\)</td>
+    </tr>
+    <tr>
+      <td>General<br>Exponential</td>
+      <td>\(f(x)=b^x\)</td>
+      <td>\(F(x)=\dfrac{b^x}{\ln b}+C\)</td>
+    </tr>
+    <tr>
+      <td>Natural<br>Logarithm\(^\text{1}\)</td>
+      <td>\(f(x)=\dfrac{1}{x}\)</td>
+      <td>\(F(x)=\ln|x|+C\)</td>
+    </tr>
+    <tr>
+      <td>General<br>Logarithm\(^\text{2}\)</td>
+      <td>\(f(x)=\dfrac{1}{x}\)</td>
+      <td>\(F(x)=(\ln b)\log_b |x|+C\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  \(^\text{1}\)
+  This is the function whose antiderivative is \(\ln x\). We will
+  discuss the antiderivatives of \(\ln x\) and \(\log_b x\) in Calculus 2 in
+  the chapter on
+  <a href="../../../MYMACalc2/Part I - Techniques of Integration/IntParts/ChContents.html"
+  title="Return using the Back button.">
+  Integration by Parts</a>.
+<br>
+  \(^\text{2}\)
+  This antiderivative formula is not useful, since the formula using
+  \(\ln x\) is equivalent and easier.
+</p>
+
+<p>
+  <button class="toggle center" data-toggle="Drop1">Why is there an absolute
+  value in the antiderivatives which have logs?</button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>Why is there an absolute value in the antiderivatives which have logs?</h4>
+  <p>
+    Like the function \(\sqrt{x}\), the function \(\ln{x}\) is only defined
+    for positive values of \(x\), since it is the inverse function of \(e^x\)
+    which is always positive. However, the function \(\dfrac{1}{x}\) is
+    defined for all \(x\ne0\) and we might want to know its antiderivative
+    even when \(x\) is negative.
+  </p>
+  <p>
+    For \(x \gt 0\) we have \(\ln x=\ln|x|\) and so
+    \[
+    \dfrac{d}{dx}\ln|x|=\dfrac{d}{dx}\ln x=\dfrac{1}{x}
+    \]
+    Thus, \(\ln|x|\) is an antiderivative of \(\dfrac{1}{x}\)
+    without or with the absolute value.
+  </p>
+  <p>
+    However, for \(x \lt 0\), we need to find an antiderivative. We work backwards:
+    For \(x \lt 0\), we have \(|x|=-x\) and so \(\ln|x|=\ln(-x)\).
+    We differentiate using the Chain Rule:
+    \[\begin{aligned}
+    \dfrac{d}{dx}\ln|x|&=\dfrac{d}{dx}\ln(-x)=\dfrac{1}{(-x)}\dfrac{d}{dx}(-x) \\
+    &=\dfrac{1}{(-x)}(-1)=\dfrac{1}{x}
+    \end{aligned}\]
+    Reversing this, we have \(\ln|x|\) is an antiderivative of \(\dfrac{1}{x}\)
+    but we have to use the absolute value!
+  </p>
+  <p>
+    We conclude \(\ln|x|\) is an antiderivative of \(\dfrac{1}{x}\)
+    for both positive or negative values of \(x\).
+  </p>
+</div>
+<a id="ADRules"></a>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the general antiderivative of
+    \(g(t)=3t^2e^{\small t^3}\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(G(t)=e^{\small t^3}+C\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Since \(\dfrac{d}{dt}t^3=3t^2\), the Chain Rule
+    says \(g(t)\) is the derivative of \(G(t)=e^{\small t^3}+C\).
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    We check by differentiating. If \(G(t)=e^{\small t^3}\), then the Chain
+    Rule says:
+    \[
+    G'(t)=e^{\small t^3}\cdot3t^2
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Algebraic Definition of Cross Products | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DetProp.html" title="Previous">&lArr;</a></li>
+      <li><a href="TripleAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Cross Product and Triple Product</h2>
+
+
+      
+      <h2>1. Algebraic Definition of Cross Products</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The dot product is one way to compute the product of two vectors and it
+  produces a scalar. The cross product is another way to compute the
+  product of two vectors, but it produces a vector.
+</p>
+<p class="center">
+  <strong>The cross product is only defined in 3 dimensions
+    <br>(and 7 dimensions)</strong>
+</p>
+<p class="center">
+  Why? See this &nbsp;
+  <a href="http://en.wikipedia.org/wiki/Seven-dimensional_cross_product" target="_blank">
+  Wikipedia article</a>
+  &nbsp; on the 7-dimensional cross product
+</p>
+<p class="def" data-title="Cross Product or Vector Product">
+	If \(\vec u=\left\langle u_1,u_2,u_3\right\rangle\) and
+  \(\vec v=\left\langle v_1,v_2,v_3\right\rangle\) are vectors, then their
+  <span class="defword">cross product</span> or
+  <span class="defword">vector product</span> is the vector:
+  \[
+  \vec u\times\vec v
+  =\left\langle u_2v_3-u_3v_2,u_3v_1-u_1v_3,u_1v_2-u_2v_1\right\rangle
+  \]
+</p>
+<p>
+	The name <span class="hl">cross product</span> is used to emphasize
+  that it is denoted by putting a <span class="hl">cross</span>
+  between the two vectors.
+</p>
+<p>
+  The name <span class="hl">vector product</span> is used to emphasize that
+  the cross product takes two vectors and gives back a vector, unlike the
+  dot (or scalar) product, which takes two vectors and gives back a scalar.
+</p>
+<p>
+	Although it is possible to
+  <button class="toggle" data-toggle="memorize">memorize</button>
+	this formula for the cross product, it is usually only used for
+  theoretical purposes. No one actually uses this formula to compute a
+  cross product. Rather, we use a formula based on the determinant.
+</p>
+<div class="toBeToggled" data-toggle="memorize">
+  <h4>How to remember the formula:</h4>
+  <p>
+    \[
+    \vec u\times\vec v
+    =\left\langle u_2v_3-u_3v_2,\quad u_3v_1-u_1v_3,\quad u_1v_2-u_2v_1\right\rangle
+    \]
+    The first component has no \(1\) subscripts, the second has no \(2\)'s, the
+    third has no \(3\)'s.
+  </p>
+  <p>
+    The positive term in each component has the remaining numbers in cyclic
+    order: \(123123123\), and the negative term has them in reverse order.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Consider the "formal" determinant
+  <button class="toggle" data-toggle="formal">Why formal?</button>
+  expanded on the top row:
+</p>
+<div class="toBeToggled" data-toggle="formal">
+  <h4>Why this is called "formal"</h4>
+  <p>
+    The determinant is defined for a matrix of numbers. This "formal"
+    matrix has \(\hat\imath,\hat\jmath,\) and \(\hat k\) on the top
+    row and so is not really a determinant.
+  </p>
+</div>
+<p>
+	\[\begin{aligned}
+	\det\begin{pmatrix}
+	\hat\imath & \hat\jmath & \hat k \\
+	u_1 & u_2 & u_3 \\
+	v_1 & v_2 & v_3
+	\end{pmatrix}
+	&=\hat\imath
+	\begin{vmatrix}
+	u_2 & u_3 \\
+	v_2 & v_3
+	\end{vmatrix}
+	-\hat\jmath
+	\begin{vmatrix}
+	u_1 & u_3 \\
+	v_1 & v_3
+	\end{vmatrix}
+	+\hat k
+	\begin{vmatrix}
+	u_1 & u_2 \\
+	v_1 & v_2
+	\end{vmatrix}
+	\\
+	&=(u_2v_3-u_3v_2)\hat\imath-(u_1v_3-u_3v_1)\hat\jmath+(u_1v_2-u_2v_1)\hat k \\
+	&=\left\langle u_2v_3-u_3v_2,u_3v_1-u_1v_3,u_1v_2-u_2v_1\right\rangle
+	\end{aligned}\]
+This is the same as the cross product. So we have:
+</p>
+<p class="formula">
+  The cross product of \(\vec u=\left\langle u_1,u_2,u_3\right\rangle\)
+  and \(\vec v=\left\langle v_1,v_2,v_3\right\rangle\) may be computed using
+  the determinant:
+	\[
+	\vec u\times\vec v
+  =\begin{vmatrix}
+	\hat\imath & \hat\jmath & \hat k \\
+	u_1 & u_2 & u_3 \\
+	v_1 & v_2 & v_3
+	\end{vmatrix}
+	\]
+  which has \(\hat\imath,\hat\jmath,\) and \(\hat k\) on the first row,
+  the vector \(\vec u\) on the second row and \(\vec v\) on the third row.
+</p>
+<p class="center greenbig">
+  Memorize This!
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute the cross product of the vectors \(\left\langle 1,2,1\right\rangle\)
+  and \(\left\langle -2,5,6\right\rangle\).
+</p>
+<p class="sol">
+  The cross product is
+	\[\begin{aligned}
+	\left\langle 1,2,1\right\rangle\times\left\langle -2,5,6\right\rangle
+  &=\begin{vmatrix}
+	\hat\imath & \hat\jmath & \hat k \\
+	1 & 2 & 1 \\
+	-2 & 5 & 6
+	\end{vmatrix} \\
+	&=\hat\imath\begin{vmatrix}
+	2 & 1 \\
+	5 & 6
+	\end{vmatrix}
+  -\hat\jmath\begin{vmatrix}
+	1 & 1 \\
+	-2 & 6
+	\end{vmatrix}
+  +\hat k\begin{vmatrix}
+	1 & 2 \\
+	-2 & 5
+	\end{vmatrix} \\
+	&=(12-5)\hat\imath-(6+2)\hat\jmath+(5+4)\hat k \\
+	&=7\hat\imath-8\hat\jmath+9\hat k=\left\langle 7,-8,9\right\rangle
+	\end{aligned}\]
+</p>
+<p class="center greenbig">
+  Don't forget the minus before the \(\,\large \hat\jmath\)-term!
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the cross product of the vectors
+    \(\vec a=\left\langle 3,-2,1\right\rangle\) and
+    \(\vec b=\left\langle 2,3,0\right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\vec a\times\vec b=\left\langle -3,2,13\right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    \[\begin{aligned}
+		\vec a\times\vec b
+    &=\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	3 & -2 & 1 \\
+  	2 & 3 & 0
+  	\end{vmatrix} \\
+  	&=\hat\imath\begin{vmatrix}
+  	-2 & 1 \\
+  	3 & 0
+  	\end{vmatrix}
+  	-\hat\jmath\begin{vmatrix}
+  	3 & 1 \\
+  	2 & 0
+  	\end{vmatrix}
+  	+\hat k\begin{vmatrix}
+  	3 & -2 \\
+  	2 & 3
+  	\end{vmatrix} \\
+  	&=(0-3)\hat\imath-(0-2)\hat\jmath+(9+4)\hat k \\
+  	&=-3\hat\imath+2\hat\jmath+13\hat k=\left\langle -3,2,13\right\rangle
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<big>PY: FUTURE EXERCISE:</big>
+<p>
+  In the exercise below, click the refresh button to get a new problem.
+</p>
+<p class="exercise" data-number="3">
+  <button class="toggle has-refresh"id="ranButton"></button>&emsp;
+  Find the cross product of the vectors:
+  <span class="center">
+  \(\vec u = \langle\)
+  <input type="text" id="ux_0" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="uy_0" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="uz_0" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(\rangle\)
+  &emsp; and &emsp;
+  \(\vec v = \langle\)
+  <input type="text" id="vx_0" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="vy_0" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="vz_0" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(\rangle\)
+  </span>
+</p>
+<div class="dotfillex">
+  <p>
+    \(\vec u\times\vec v = \langle\)
+    <input type="text" id="uxvx" style="resize:none; width:50px; height:22px;
+      font-size:12px; vertical-align:text-bottom">
+    </input>
+    \(,\)
+    <input type="text" id="uxvy" style="resize:none; width:50px; height:22px;
+      font-size:12px; vertical-align:text-bottom">
+    </input>
+    \(,\)
+    <input type="text" id="uxvz" style="resize:none; width:50px; height:22px;
+      font-size:12px; vertical-align:text-bottom">
+    </input>
+    \(\rangle\)
+  </p>
+  <p>
+    <button class="toggle has-hint" id="BHintX3" data-toggle="HintX3"></button>
+    <button class="toggle has-check" id="BCheckX3" data-toggle="CheckX3"></button>
+    <input size="6" id="ReplyX3" readonly="readonly"></input>
+    <button class="toggle has-show" id="BShowX3" data-toggle="ShowX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+  	\[
+  	\vec u\times\vec v
+    =\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	u_1 & u_2 & u_3 \\
+  	v_1 & v_2 & v_3
+  	\end{vmatrix}
+  	\]
+    Be careful with the sign of the \(\hat\jmath\) term.
+  </p>
+</div>
+<div class="toBeToggled drop-check-tut" data-toggle="CheckX3">
+  <p id="CorrectX1a" style="display: none;">
+    Absolutely right!
+    \[\begin{aligned}
+		\vec u\times\vec v
+    &=\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	xxx & xxx & xxx \\
+  	xxx & xxx & xxx
+  	\end{vmatrix} \\
+  	&=\hat\imath\begin{vmatrix}
+  	xxx & xxx \\
+  	xxx & xxx
+  	\end{vmatrix}
+  	-\hat\jmath\begin{vmatrix}
+  	xxx & xxx \\
+  	xxx & xxx
+  	\end{vmatrix}
+  	+\hat k\begin{vmatrix}
+  	xxx & xxx \\
+  	xxx & xxx
+  	\end{vmatrix} \\
+  	&=xxx\hat\imath+xxx\hat\jmath+xxx\hat k
+    =\left\langle xxx,xxx,xxx\right\rangle
+    \end{aligned}\]
+  </p>
+  <p id="IncorrectX1a" style="display: none;">
+    Sorry. Read the hint. Try again.
+  </p>
+  <p id="InvalidX1a">
+    I can't understand your answer. It may have been typed wrong.
+    I am expecting three numbers.
+  </p>
+  <p id="MissingX1a" style="display: none;">
+    You need to enter an answer before checking.
+  </p>
+</div>
+<div class="toBeToggled drop-show" data-toggle="ShowX3">
+  <p>
+    \[\begin{aligned}
+		\vec u\times\vec v
+    &=\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	xxx & xxx & xxx \\
+  	xxx & xxx & xxx
+  	\end{vmatrix} \\
+  	&=\hat\imath\begin{vmatrix}
+  	xxx & xxx \\
+  	xxx & xxx
+  	\end{vmatrix}
+  	-\hat\jmath\begin{vmatrix}
+  	xxx & xxx \\
+  	xxx & xxx
+  	\end{vmatrix}
+  	+\hat k\begin{vmatrix}
+  	xxx & xxx \\
+  	xxx & xxx
+  	\end{vmatrix} \\
+  	&=xxx\hat\imath+xxx\hat\jmath+xxx\hat k
+    =\left\langle xxx,xxx,xxx\right\rangle
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Here are the two most important properties of the cross product:
+</p>
+<p>
+  Since a determinant changes sign when two rows are interchanged, the
+  cross product changes sign when the two vectors are interchanged:
+</p>
+<p class="prop">
+The Cross Product is Anti-Commutative:
+\(\qquad \vec u\times\vec v=-\vec v\times\vec u\)
+</p>
+<p>
+Since a determinant is zero when two rows are equal, the cross product
+is zero when the two vectors are equal:
+</p>
+<p class="prop">
+If the two vectors are equal, their Cross Product is zero:
+\(\qquad \vec v\times\vec v=0\)
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        Finally check the following \(3\) cross products which say \(\hat \imath\),
+        \(\hat \jmath\) and \(\hat k\) are a
+        <span class="hl">right handed triplet</span>.
+      </p>
+      <p class="exercise" data-number="4" data-col-width="60%">
+        Verify
+        \[
+        \hat \imath\times\hat \jmath=\hat k \qquad
+        \hat \jmath\times\hat k=\hat \imath \qquad
+        \hat k\times\hat \imath=\hat \jmath
+        \]
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+  	  <img src="graphics/DefVec_ijk.jpg" alt="DefVec_ijk"/>
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We use
+    \[\begin{aligned}
+    \hat \imath=\langle1,0,0\rangle \qquad
+    \hat \jmath=\langle0,1,0\rangle \qquad
+    \hat k=\langle0,0,1\rangle
+    \end{aligned}\]
+    Then
+    \[
+    \hat \imath\times\hat \jmath
+    =\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	1 & 0 & 0 \\
+  	0 & 1 & 0
+  	\end{vmatrix}
+    =\langle0,0,1\rangle
+    =\hat k
+    \]
+    \[
+    \hat \jmath\times\hat k
+    =\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	0 & 1 & 0 \\
+  	0 & 0 & 1 \\
+  	\end{vmatrix}
+    =\langle1,0,0\rangle
+    =\hat \imath
+    \]
+    \[
+    \hat k\times\hat \imath
+    =\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	0 & 0 & 1 \\
+  	1 & 0 & 0
+  	\end{vmatrix}
+    =\langle0,1,0\rangle
+    =\hat \jmath
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

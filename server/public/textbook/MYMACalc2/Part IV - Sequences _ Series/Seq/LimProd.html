@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b5c. Indeterminate Form \(0\cdot\infty\) | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html#Indeterminate" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>18. Sequences</h1>
+    <div id="pg-wrapper">
+      
+
+<!-- NOTE: the "active" class indicates which page is displayed -->
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="LimQuot.html">
+      \(\underline{\dfrac{0}{0} \text{ and } \dfrac{\infty}{\infty}}\)</a></li> &emsp;
+    <li class="active"><a href="LimProd.html">
+      \(\underline{0\cdot\infty}\)</a></li> &emsp;
+    <li><a href="LimSubt.html">
+      \(\underline{\infty-\infty}\)</a></li> &emsp;
+    <li><a href="LimPower.html">
+      \(\underline{0^0 \text{ and } 1^\infty \text{ and } \infty^0}\)</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>b5c. Indeterminate Form \(0\cdot\infty\)</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<h3>Methods:</h3>
+<ol>
+  <li>
+		Rewrite the limit as \(\dfrac{0}{0}\) or \(\dfrac{\infty}{\infty}\) and
+		apply a technique for those indeterminate forms.
+  </li>
+  <li>
+    If the factors are differentiable functions of \(n\),
+    it may be useful to change variables from \(n\) to \(t=\dfrac{1}{n}\) and
+    take the limit as \(t\to0^+\).
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute
+  \(\displaystyle
+  \lim_{n\to\infty}n^2\left[1-\cos\left(\dfrac{1}{n}\right)\right]\).
+</p>
+<p class="sol">
+  As \(n\) gets large \(\dfrac{1}{n}\) approaches \(0\),
+	\(\cos\left(\dfrac{1}{n}\right)\) approaches \(1\) and so
+	\(\left[1-\cos\left(\dfrac{1}{n}\right)\right]\) approaches \(0\). So the
+	limit has the indeterminate form \(0\cdot\infty\).
+	We change variables to \(t=\dfrac{1}{n}\) (which changes the indeterminate
+  form to \(\dfrac{0}{0}\)) and apply l'Hopital's Rule:
+	\[\begin{aligned}
+   \lim_{n\to\infty}n^2\left[1-\cos\left(\dfrac{1}{n}\right)\right]
+  &=\lim_{t\to 0^+}
+	 \dfrac{1-\cos(t)}{t^2} \\[10pt]
+   \overset{\text{l'H}}{=}\lim_{t\to 0^+}
+	 \dfrac{\sin(t)}{2t}
+  &\overset{\text{l'H}}{=}\lim_{t\to 0^+}
+	 \dfrac{\cos(t)}{2}=\dfrac{1}{2}
+	\end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class= "dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\lim\limits_{n\to\infty}
+		\left(\dfrac{4}{n^2}-\dfrac{9}{n^3}\right)(2+3n^2)\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    In this problem it is simpler to just multiply it out.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+		\(\lim\limits_{n\to\infty}
+		\left(\dfrac{4}{n^2}-\dfrac{9}{n^3}\right)(2+3n^2)=12\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    In this problem it is simpler to just multiply it out.
+		\[
+		\lim_{n\to\infty}
+		\left(\dfrac{4}{n^2}-\dfrac{9}{n^3}\right)(2+3n^2)
+		=\lim_{n\to\infty}
+		\left(\dfrac{8}{n^2}-\dfrac{18}{n^3}+12-\dfrac{27}{n}\right)
+		=12
+		\]
+		In the last step we used the specific limit
+		\(\lim_{n\to\infty}\dfrac{1}{n^p}=0\) for \(p>0\).
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

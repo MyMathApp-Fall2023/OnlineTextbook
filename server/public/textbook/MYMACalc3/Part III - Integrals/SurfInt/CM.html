@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Center of Mass | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Mass.html" title="Previous">&lArr;</a></li>
+      <li><a href="VecSurfDiff.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Applications of Scalar Surface Integrals</h2>
+
+
+      
+      <h2>5. Center of Mass</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+  The <span class="defword">center of mass</span> of a surface is the point,
+  \((\bar{x},\bar{y},\bar{z})\), whose coordinates are the balance points in the
+  \(x\), \(y\) and \(z\) directions:
+  \[
+  (\bar{x},\bar{y},\bar{z})
+  =\left(\dfrac{M_x}{M},\dfrac{M_y}{M},\dfrac{M_z}{M}\right)
+  \]
+  where the denominator is the <span class="defword">mass</span>, \(M\), and the
+  numerators are the <span class="defword">moments of the mass</span> are:
+  \[
+  M_x=\iint_S x\delta\,dS \qquad
+  M_y=\iint_S y\delta\,dS \qquad
+  M_z=\iint_S z\delta\,dS
+  \]
+</p>
+
+        <div class="rule" id="EgSphere"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    Find the height of the center of mass of the piece of the surface of the
+    sphere, \(S\), with \(\rho=3\) for which \(0<\phi<\dfrac{\pi}{2}\) and
+    \(0< \theta<\dfrac{\pi}{4}\) if the
+    density of the sphere is given by \(\delta(\phi,\theta)=1-\sin\phi\).
+    <br/>
+    <br/>
+    <big>PY: Plot the surface not the solid.</big>
+  </p>
+  <div class="center">
+    <img src="graphics/CM_example.jpg" alt="CM_example">
+  </div>
+</div>
+<p class="sol">
+  This is the same surface as the
+  <a href="Centroid.html#EgSphere" title="Return using the Back button.">
+  previous exercise</a> on centroids. So the parameterization is:
+  \[
+  \vec R(\phi,\theta)
+  =\left\langle 3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi\right\rangle
+  \]
+  and the magnitude of the normal is:
+  \[
+  |\vec{N}|=9\sin\phi
+  \]
+  We are ready now to compute the mass of the piece of a sphere:
+  \[\begin{aligned}
+  M&=\iint_S \delta\,dS
+    =\iint_S \delta(\phi,\theta)\,|\vec{N}|\,du\,dv
+  =\int_0^{\pi/4}\int_0^{\pi/2} (1-\sin\phi)9\sin\phi\,d\phi\,d\theta \\
+  &=\dfrac{9\pi}{4}\int_0^{\pi/2} (\sin\phi-\sin^2\phi)\,d\phi
+   =\dfrac{9\pi}{4}\int_0^{\pi/2} \sin\phi-\,\dfrac{1-\cos(2\phi)}{2}\,d\phi \\
+  &=9\dfrac{\pi}{4}\left[-\cos\phi-\,\dfrac{1}{2}\left(\phi-\,\dfrac{\sin(2\phi)}{2}\right)\right]_0^{\pi/2} \\
+  &=9\dfrac{\pi}{4}\left[\left(-0-\,\dfrac{1}{2}\left(\dfrac{\pi}{2}-\,\dfrac{0}{2}\right)\right)
+                        -\left(-1-\,\dfrac{1}{2}\left(0-\,\dfrac{0}{2}\right)\right)\right] \\
+  &=\dfrac{9\pi}{4}\left(1-\,\dfrac{\pi}{4}\right)
+  =\dfrac{9\pi(4-\pi)}{16}
+  \end{aligned}\]
+  Now, the height of the center of mass is
+  \(\displaystyle \bar{z}=\dfrac{M_z}{M}\). So we need the \(z\)-moment:
+  \[\begin{aligned}
+  M_z&=\iint_S z\,\delta\,dS
+  =\int_0^{\pi/4}\int_0^{\pi/2} 3\cos\phi(1-\sin\phi)9\sin\phi\,d\phi\,d\theta \\
+  &=\dfrac{27\pi}{4}\int_0^{\pi/2} (\sin\phi-\sin^2\phi)\,\cos\phi\,d\phi
+  \end{aligned}\]
+  We use the substitution \(u=\sin\phi\). Then \(du=\cos\phi\,d\phi\) and
+  \[\begin{aligned}
+  M_z&=\dfrac{27\pi}{4}\int_0^1 (u-u^2)\,du
+  =\dfrac{27\pi}{4}\left[\dfrac{u^2}{2}-\,\dfrac{u^3}{3}\right]_0^1 \\
+  &=\dfrac{27\pi}{4}\left(\dfrac{1}{2}-\,\dfrac{1}{3}\right)
+  =\dfrac{9\pi}{8}
+  \end{aligned}\]
+  Finally, we can find \(\bar{z}\):
+  \[
+  \bar{z}=\dfrac{M_z}{M}
+  =\dfrac{9\pi}{8}\dfrac{16}{9\pi(4-\pi)}
+  =\dfrac{2}{4-\pi}\approx2.33
+  \]
+</p>
+<p class="check">
+  This is reasonable because the radius of the sphere was \(3\).
+  Also, notice that this is higher than the centroid
+  \(\bar{z}_\text{centroid}=\dfrac{3}{2}=1.5\) since the surface is more
+  dense at the top.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the center of mass of the piece of the elliptic paraboloid
+    \(z=x^2+y^2\) below \(z=4\) if the surface density is
+    \(\delta=\dfrac{1}{\sqrt{4z+1}}\). The length of the
+    <a href="ScalSurfInt.html#ellipparab" title="Return using the Back button.">
+    normal vector</a> and the
+    <a href="Mass.html#ellipparab" title="Return using the Back button.">
+    mass</a> were found in previous exercises.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-rem" data-toggle="RemX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle
+  \left(\bar x,\bar y,\bar z\right)_\text{CM}
+  =\left( 0,0,2\right)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The paraboloid is parametrized by:
+    \[
+    \vec R(r,\theta)
+    =\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+    \]
+    the length of the normal is:
+    \[
+    |\vec N|=r\sqrt{4r^2+1}
+    \]
+    and the mass is:
+    \[\begin{aligned}
+    M&=\iint_S \delta\,dS
+    =\int_0^{2\pi}\int_0^2 \dfrac{1}{\sqrt{4r^2+1}}r\sqrt{4r^2+1}\,dr\,d\theta \\
+    &=2\pi\int_0^2 r\,dr=4\pi
+    \end{aligned}\]
+    By symmetry, \(\bar x=\bar y=0\). So we need the \(z\) component:
+    \[
+    \bar z=\dfrac{M_z}{M}
+    \]
+    We compute the \(z\) moment of the mass:
+    \[
+    M_z=\iint_S z\delta\,dS
+    =2\pi\int_0^2 (r^2)r\,dr
+    =\pi\left[\dfrac{r^4}{2}\right]_0^2
+    =8\pi
+    \]
+    Consequently, the \(z\) component of the center of mass is:
+    \[
+    \bar z=\dfrac{M_z}{M}
+    =\dfrac{8\pi}{4\pi}=2
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    The density \(\delta=\dfrac{1}{\sqrt{4z+1}}\) is bigger for smaller
+    values of \(z\). So we expect the center of mass to be lower than the
+    centroid. In fact, \(\bar z_\text{CM}=2\) whereas
+    \(\bar z_\text{centroid}\approx2.33\) from a
+    <a href="Centroid.html#ellipparab" title="Return using the Back button.">
+    previous problem</a>.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

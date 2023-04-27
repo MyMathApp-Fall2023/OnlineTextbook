@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Vectors as Arrows | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Disp.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Definition, Magnitude and Direction</h2>
+
+
+      
+      <h2>1. Vectors as Arrows</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def" data-title="Vectors and Scalars">
+	A <span class="defword">vector</span> is a quantity which has both
+  <span class="defword">magnitude</span> and
+	<span class="defword">direction</span>. It is useful to visualize the
+	vector as an arrow in space pointing from its
+	<span class="defword">tail</span> to its
+  <span class="defword">tip</span>, but it is	important to remember
+  the vector is the arrow and it does not matter where we
+  <span class="defword">locate</span> its tail.
+  To emphasize the difference between vectors and numbers, we often use
+  the word <span class="defword">scalar</span> to denote a number to
+	emphasize that it is a single number which provides a size or scale, but
+	with no	associated direction in space. Also, we denote a vector by putting an
+  <span class="hl">arrow</span> over its name, for example, \(\vec v\) and
+  \(\vec a\) denote vectors, whereas \(v\) and \(a\) denote scalars or numbers.
+</p>
+<div class="column">
+  <p>
+    Once we establish a rectangular coordinate system, a vector can be written
+    as an ordered pair:
+    \[\vec v=\left\langle v_1,v_2\right\rangle\]
+  	where \(v_1\) and \(v_2\) are called the components of \(\vec v\),
+    and measure how much the \(x\)- and \(y\)-coordinates
+  	change as we move from the tail to the tip of the vector. But remember
+    that vectors can start at any point, and not just at \((0,0)\).
+    Notice that we use angle brackets for vectors but parentheses for
+    points.
+  </p>
+  <div class="center">
+    <img src="graphics/def_arrowcomp.jpg" alt="def_arrowcomp">
+  </div>
+</div>
+<div class="column">
+  <p class="remark">
+    Notice that we use parentheses to surround the coordinates of a point
+		but we use angle brackets to surround the components of a vectors.
+		For example, the plot shows the point \(P=(2,3)\) and the vector
+		\(\vec v=\langle3,1\rangle\).
+  </p>
+  <div class="center">
+    <img src="graphics/eg_pt_vs_vec.jpg" alt="eg_pt_vs_vec">
+  </div>
+</div>
+<p>
+	Vectors are useful in modeling properties of nature such as forces,
+	velocities, and accelerations.
+	In this course, we will study two-dimensional vectors. However, most of what
+  we do will also work in \(3\) dimensions (by adding a component).
+</p>
+
+				<div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-col-width="60%" data-number="1">
+    If the tail of the vector \(\left\langle4,3\right\rangle\) is located
+		at the origin, \((0,0)\), then the tip is located at \((4,3)\).
+    However, if the vector \(\left\langle4,3\right\rangle\) starts at
+		\((2,1)\) then it ends at \((6,4)\).
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_vec0043_vec2164.jpg" alt="eg_vec0043_vec2164"/>
+  </div>
+</div>
+<p>
+	In general, if the tail of the vector
+	\(\vec v=\left\langle v_1,v_2\right\rangle\)
+	is located at point \(P=(a,b)\), its tip would be at the point
+	\(P+\vec v=(a+v_1,b+v_2)\). Two vectors are considered equal
+	if they have the same direction and length no matter where they are located.
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Consider the vector, \(\vec v\), from \((5,3)\) to \((4,7)\).
+		Write the vector, \(\vec v\), in components.
+		If it is moved so its tail is at \((3,-2)\), where will its tip be?
+		If it is moved so its tail is at \((0,0)\), where will its tip be?
+		<br>
+		<big>PY: Add plot in sol</big>
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  	In components, the vector is \(\vec v=\left\langle-1,4\right\rangle\).
+		<br>
+		When its tail is at \((3,-2)\), its tip be will be at \((2,2)\).
+		<br>
+		When its tail is at \((0,0)\), its tip be will be at \((-1,4)\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+	<div class="column">
+	  <p>
+	  	The vector from \((5,3)\) to \((4,7)\) has components which are the
+	    changes in the \(x\) and \(y\) coordinates.
+			\[
+			\vec v=(4,7)-(5,3)=\left\langle-1,4\right\rangle
+			\]
+			When this vector is moved so its tail is at \((3,-2)\), its tip be will
+			be at
+			\[
+			(3,-2)+\left\langle-1,4\right\rangle=(2,2)
+			\]
+			When this vector is moved so its tail is at \((0,0)\), its tip be will
+			be at
+			\[
+			(0,0)+\left\langle-1,4\right\rangle=(-1,4)
+			\]
+	  </p>
+	  <div class="center">
+	    <img src="graphics/ex_vec5347_vec3-222_vec00-14.jpg" alt="ex_vec5347_vec3-222_vec00-14">
+	  </div>
+	</div>
+</div>
+
+    		<div class="rule"></div>
+
+<p>
+  Sometimes we want a vector to be located at a particular point, i.e. we want
+  to specify where its tail is. For example a force may be applied to a
+  particular point on an object. And sometimes we want to locate the vector at
+  the origin.
+</p>
+<p class="def" data-title="Located Vectors">
+  A <span class="defword">located vector</span> is a vector together with a
+  location for its tail.
+</p>
+<p class="def" data-title="Position Vectors">
+	If \(\vec v\) is a vector somewhere in space, then its
+	<span class="defword">position vector</span> is the same vector
+  \(\vec v\) located but at the origin. Notice that the tip of the position
+  vector has the same coordinates as the components of \(\vec v\).
+</p>
+
+<div class="column">
+  <p class="example" data-col-width="60%" data-number="3">
+    If the vector, \(\vec v=\left\langle3,-2\right\rangle\), is located at
+    \((-1,5)\) then its tip will be at
+    \[
+    (-1,5)+\left\langle3,-2\right\rangle=(2,3)
+    \]
+    Further, the tip of its position vector will be at:
+    \[
+    (0,0)+\left\langle3,-2\right\rangle=(3,-2)
+    \]
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_vec-152,3_vec003-2.jpg" alt="eg_vec-152,3_vec003-2"/>
+  </div>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Consider the vector, \(\vec v\), from \((-2,-3)\) to \((1,2)\).
+    What are the components of the vector?
+		Where is the tip of its position vector?
+		<br>
+		<big>PY: Add plot in sol</big>
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    The components of the vector are \(\vec v=\left\langle3,5\right\rangle\).
+    <br>
+		The tip of its position vector is \((3,5)\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+	<div class="column">
+	  <p>
+	    The components of the vector are the changes in the  \(x\) and \(y\)
+	    coordinates:
+			\[
+			\vec v=(1,2)-(-2,-3)=\left\langle3,5\right\rangle
+			\]
+			Its position vector is located at the origin. So its tip will be at
+	    \[
+	    (0,0)+\left\langle3,5\right\rangle=(3,5)
+	    \]
+	  </p>
+	  <div class="center">
+	    <img src="graphics/ex_vec-2-312_vec0035.jpg" alt="ex_vec-2-312_vec0035">
+	  </div>
+	</div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

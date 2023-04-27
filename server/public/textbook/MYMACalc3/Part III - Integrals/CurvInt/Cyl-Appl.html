@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Applications | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Cyl-Int.html" title="Previous">&lArr;</a></li>
+      <li><a href="Cyl-Convert.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Integrating in Cylindrical Coordinates</h2>
+
+
+      
+      <h2>3. Applications</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Integrals in cylindrical coordinates are particularly useful when
+  the integrand and/or the limits of integration are axially symmetric
+  about the \(z\)-axis. We previously did
+  <a href="../RectInt/ChContents.html" title="Return using the Back button.">
+  Applications of Triple Integrals</a> in rectangular coordinates.
+  All of those applications can also be done using cylindrical coordinates
+  and on the <a href="Cyl-Convert.html">next page</a> we will see that it
+  is often useful to convert from rectangular to cylindrical coordinates.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      All the examples on this page of applications of triple integrals in
+      cylindrical coordinates will use the solid between the paraboloids
+      given by \(z=x^2+y^2\) and \(z=8-x^2-y^2\) as shown in the plot.
+      The first paraboloid opens upward with its vertex at the origin.
+      The second one opens downward with its vertex at \((0,0,8)\).
+      To find the intersection of the two paraboloids, we equate them:
+      \[
+      x^2+y^2=8-x^2-y^2 \qquad \Longrightarrow \qquad x^2+y^2=4
+      \]
+      The solution is a circle of radius \(r=2\). Equivalently, in cylindrical
+      coordinates, the paraboloids are \(z=r^2\) and \(z=8-r^2\). We equate them:
+      \[
+      r^2=8-r^2 \qquad \Longrightarrow \qquad r^2=4
+      \]
+      Again the radius is \(r=2\). So the bounds are
+      \[
+      0 \le \theta \le 2\pi \qquad 0 \le r \le 2 \qquad
+      r^2 \le z \le 8-r^2
+      \]
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/cylint-example.jpg" alt="cylint-example">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Volume</h3>
+<p>
+  To find the <span class="hl">volume</span> of a 3D region \(R\) in
+  cylindrical coordinates, the differential of volume \(dV\) must be
+  expressed in cylindrical coordinates:
+  \[
+  \text{Volume}=\iiint_R 1\,dV
+  =\iiint_R r\,dr\,d\theta\,dz
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the volume of the region between the paraboloids.</span>" data-number="1">
+  <hr width="80%">
+  <p class="sol">
+    We set up the integral as
+    \[
+    V=\int_0^{2\pi}\int_0^2\int_{r^2}^{8-r^2} \,r\,dz\,dr\,d\theta
+    \]
+    We factor off the \(\theta\)-integral, do the \(z\) integral and then the
+    \(r\)-integral:
+    \[\begin{aligned}
+    V&=\int_0^{2\pi} \,d\theta\int_0^2 \left[z\dfrac{}{}\right]_{z=r^2}^{8-r^2} r\,dr
+    =2\pi\int_0^2 (8-2r^2)r\,dr \\
+    &=2\pi\int_0^2 (8r-2r^3)\,dr
+    =2\pi\left[4r^2-\,\dfrac{r^4}{2}\right]_0^2
+    =16\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Mass</h3>
+
+<p>
+  To find the <span class="hl">mass</span> of a 3D region \(R\) in
+  cylindrical coordinates, the density \(\delta\) must also be
+  expressed in cylindrical coordinates:
+  \[
+  M=\iiint_R \delta(x,y,z)\,dV
+  =\iiint_R \delta(r,\theta,z)\,r\,dr\,d\theta\,dz
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the mass of the region between the paraboloids if its
+  mass density is \(\delta=(x^2+y^2)z\).</span>" data-number="2">
+  <hr width="80%">
+  <p class="sol">
+    We set up and evaluate the integral as
+    \[\begin{aligned}
+    M&=\iiint_R \delta(r,\theta,z)\,r\,dr\,d\theta\,dz
+    =\iiint_R (x^2+y^2)z\,r\,dr\,d\theta\,dz \\
+    &=\int_0^{2\pi}\int_0^2\int_{r^2}^{8-r^2} zr^3\,dz\,dr\,d\theta
+    =\int_0^{2\pi}\,d\theta\int_0^2
+    \left[\dfrac{z^2}{2}\right]_{z=r^2}^{8-r^2}r^3\,dr \\
+    &=\dfrac{1}{2}(2\pi)\int_0^2 ((8-r^2)^2-r^4)r^3\,dr
+    =\pi\int_0^2 (64r^3-16r^5)\,dr \\
+    &=\pi\left[16r^4-\,\dfrac{8}{3}r^6\right]_0^2
+    =\dfrac{256}{3}\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Center of Mass</h3>
+
+<p>
+  To find the <span class="hl">center of mass</span> of a 3D region \(R\) in
+  cylindrical coordinates, the coordinates \(x\), \(y\) and \(z\) must also be
+  expressed in cylindrical coordinates. So the center of mass is:
+  \[
+  \bar{x}=\dfrac{M_x}{M} \quad \text{and} \quad
+  \bar{y}=\dfrac{M_y}{M} \quad \text{and} \quad
+  \bar{z}=\dfrac{M_z}{M}
+  \]
+  where the <span class="hl">mass</span> of the region is
+  \[
+  M=\iiint_R \delta(x,y,z)\,dV
+  =\iiint_R \delta(r,\theta,z)\,r\,dr\,d\theta\,dz
+  \]
+  and the <span class="hl">\(x\), \(y\) and \(z\) \(1^\text{st}\)-moments
+  of the mass</span>, respectively, are
+  \[\begin{aligned}
+  M_x&=\iiint_R x\,\delta(x,y,z)\,dV
+  =\iiint_R r\cos\theta\,\delta(r,\theta,z)\,r\,dr\,d\theta\,dz \\
+  M_y&=\iiint_R y\,\delta(x,y,z)\,dV
+  =\iiint_R r\sin\theta\,\delta(r,\theta,z)\,r\,dr\,d\theta\,dz \\
+  M_z&=\iiint_R z\,\delta(x,y,z)\,dV
+  =\iiint_R z\,\delta(r,\theta,z)\,r\,dr\,d\theta\,dz
+  \end{aligned}\]
+</p>
+<p class="remark">
+  It is important to remember that we <span class="redbig">cannot</span>
+  compute \(\bar{r}=\dfrac{M_r}{M}\) and \(\bar{\theta}=\dfrac{M_\theta}{M}\)
+  where
+  \[\text{\Large\textcolor{red}Wrong}\qquad
+  \begin{array}{rl}
+  M_r&=\displaystyle\iiint_R r\,\delta(r,\theta,z)\,dV \\[8pt]
+  M_\theta&=\displaystyle\iiint_R \theta\,\delta(r,\theta,z)\,dV
+  \end{array}
+  \qquad \text{\Large\textcolor{red}Wrong}
+  \]
+  because moments are only defined for rectangular coordinates since the
+  balance beam derivation
+  (\(\text{Torque} = \text{Force} \times \text{Lever Arm}\)) does not work
+  for the \(r\) and \(\theta\) directions. If we want the cylindrical coordinates,
+  \((\bar r,\bar\theta,\bar z)\) of the center of mass, we must first find
+  the rectangular components and then convert to cylindrical.
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the center of mass of the region between the paraboloids if its
+  mass density is \(\delta=(x^2+y^2)z\).</span>" data-number="3">
+  <hr width="80%">
+  <p class="sol">
+    Before we begin, we notice that the given density function is symmetric
+    around the \(z\)-axis (i.e. \(\delta(r,\theta,z)=r^2z\) does not depend
+    on \(\theta\)). So we can conclude that the \(x\) and \(y\) components
+    of the center of mass are \(\bar{x}=\bar{y}=0\). We have already computed
+    the mass of the region as \(M=\dfrac{256}{3}\pi\). Now we compute the
+    \(z\) moment of mass as
+    \[\begin{aligned}
+    M_z&=\iiint_R z\,\delta(r,\theta,z)\,dV
+    =\int_0^{2\pi}\int_0^2\int_{r^2}^{8-r^2} z(r^2z)\,r\,dz\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^2\int_{r^2}^{8-r^2} z^2r^3\,dz\,dr\,d\theta
+    =\int_0^{2\pi}\int_0^2
+    \left[\dfrac{z^3}{3}r^3\right]_{z=r^2}^{8-r^2}\,dr\,d\theta \\
+    &=\dfrac{1}{3}\int_0^{2\pi}\int_0^2 ((8-r^2)^3-r^6)(r^3)\,dr\,d\theta \\
+    &=\dfrac{1}{3}\int_0^{2\pi}\int_0^2
+    (-2r^9+24r^7-192r^5+512r^3)\,dr\,d\theta \\
+    &=\dfrac{1}{3}\int_0^{2\pi}
+    \left[-\,\dfrac{1}{5}r^{10}+3r^8-32r^6+128r^4\right]_{r=0}^2\,d\theta \\
+    &=\dfrac{1}{3}\int_0^{2\pi} \dfrac{2816}{5}\,d\theta
+    =\dfrac{5632}{15}\pi
+    \end{aligned}\]
+    Thus, the \(z\) component of the center of mass of the region is:
+    \[
+    \bar{z}=\dfrac{M_z}{M}
+    =\dfrac{5632\pi}{15}\dfrac{3}{256\pi}
+    =\dfrac{22}{5}=4.4
+    \]
+  </p>
+  <div class="column">
+    <p>
+      So the center of mass is located at:
+      \[
+      (\bar{x},\bar{y},\bar{z})=(0,0,4.4)
+      \]
+      The center of mass is plotted as a black dot within the paraboloidal
+      region. It makes sense that \(\bar{z}>4\) because the density increases
+      with \(z\) within the region.
+    </p>
+    <div class="center">
+      <img src="graphics/cylapp-cm.jpg" alt="cylapp-cm">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Average Value</h3>
+
+<p>
+  To find the <span class="hl">average value</span> of a function over
+  a 3D region in cylindrical coordinates, the function must be evaluated in
+  cylindrical coordinates before integrating:
+  \[
+  f_\text{ave}=\dfrac{1}{V}\iiint_R f(x,y,z)\,dV
+  =\dfrac{1}{V}\iiint_R f(r,\theta,z)\,r\,dr\,d\theta\,dz
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Compute the average of the temperature, \(T=x^2\), on the region between
+  the paraboloids.</span>" data-number="4">
+  <hr width="80%">
+  <p class="sol">
+    The volume between the paraboloids was previously found to be \(V=16\pi\).
+    In cylindrical coordinates, the temperature is
+    \[
+    T=x^2=r^2\cos^2\theta
+    \]
+    We compute the integral of the temperature. We factor out the \(\theta\)
+    integral and do the \(z\) integral before the \(r\) integral:
+    \[\begin{aligned}
+    \iiint_R &T\,dV
+    =\int_0^{2\pi}\int_0^2\int_{r^2}^{8-r^2} (r^2\cos^2\theta)r\,dz\,dr\,d\theta \\
+    &=\int_0^{2\pi} \cos^2\theta\,d\theta\int_0^2 r^3\left[z\dfrac{}{}\right]_{z=r^2}^{8-r^2}\,dr \\
+    &=\int_0^{2\pi} \dfrac{1-\cos(2\theta)}{2}\,d\theta\int_0^2 r^3(8-2r^2)\,dr \\
+    &=\left[\dfrac{\theta}{2}-\,\dfrac{\sin(2\theta)}{4}\right]_0^{2\pi}
+    \int_0^2 8r^3-2r^5\,dr \\
+    &=\pi\left[2r^4-\,\dfrac{1}{3}r^6\right]_{r=0}^2
+    =\pi\left(2^5-\,\dfrac{2^6}{3}\right)
+    =\dfrac{32}{3}\pi
+    \end{aligned}\]
+    Finally, we compute the average temperature as
+    \[
+    T_\text{ave}=\dfrac{1}{V}\iiint_R T\,dV
+    =\dfrac{1}{16\pi}\dfrac{32\pi}{3}=\dfrac{2}{3}
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Centroid</h3>
+
+<p>
+  The centroid of a region \(R\) in 3D is the same as the center of mass
+  but with constant density which we take as \(\delta=1\). Then the mass
+  reduces to the volume and the moments of mass become moments of volume.
+  Thus the centroid is:
+  \[
+  \bar{x}=\dfrac{V_x}{V} \quad \text{and} \quad
+  \bar{y}=\dfrac{V_y}{V} \quad \text{and} \quad
+  \bar{z}=\dfrac{V_z}{V}
+  \]
+  where \(V\) is the <span class="hl">volume</span>
+  and the <span class="hl">\(x\), \(y\) and \(z\) \(1^\text{st}\)-moments
+  of the volume</span>, respectively, are
+  \[\begin{aligned}
+  V_x&=\iiint_R x\,dV
+  =\iiint_R r\cos\theta\,r\,dr\,d\theta\,dz \\
+  V_y&=\iiint_R y\,dV
+  =\iiint_R r\sin\theta\,r\,dr\,d\theta\,dz \\
+  V_z&=\iiint_R z\,dV
+  =\iiint_R z\,r\,dr\,d\theta\,dz
+  \end{aligned}\]
+</p>
+<div class="column">
+  <p>
+    For the region between the paraboloids considered in the other examples,
+    we can use symmetry to recognize that the centroid is obviously
+    \((0,0,4)\). So in the following example we only consider the bottom half of
+    that shape.
+  </p>
+  <div class="center">
+    <img src="graphics/cylapp-bottom.jpg" alt="cylapp-bottom">
+  </div>
+</div>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the centroid of the region between the paraboloid \(z=x^2+y^2=r^2\)
+  and the plane \(z=4\).</span>" data-number="5">
+  <hr width="80%">
+  <p class="sol">
+    By symmetric we see that the \(x\) and \(y\) components of the centroid
+    are \(\bar{x}=\bar{y}=0\). Half of the volume we previously computed is
+    \(V=8\pi\). Now we compute the \(z\) moment of the volume:
+    \[\begin{aligned}
+    V_z&=\iiint_R z\,dV
+    =\int_0^{2\pi}\int_0^2\int_{r^2}^4 z\,r\,dz\,dr\,d\theta \\
+    &=2\pi\int_0^2 \left[\dfrac{z^2}{2}\right]_{z=r^2}^4 r\,dr \\
+    &=\pi\int_0^2 (16-r^4)r\,dr \\
+    &=\pi\left[8r^2-\dfrac{r^6}{6}\right]_{r=0}^2 \\
+    &=\pi\left(32-\dfrac{32}{3}\right)
+    =\dfrac{64}{3}\pi
+    \end{aligned}\]
+    Thus, the \(z\) component of the center of mass of the region is:
+    \[
+    \bar{z}=\dfrac{V_z}{V}
+    =\dfrac{64\pi}{3}\dfrac{1}{8\pi}
+    =\dfrac{8}{3}\approx2.67
+    \]
+  </p>
+  <div class="column">
+    <p>
+      So the centroid is located at:
+      \[
+      (\bar{x},\bar{y},\bar{z})=(0,0,2.67)
+      \]
+      The centroid is plotted as a black dot within the paraboloidal
+      region. It makes sense that \(\bar{z}>2\) because there is more volume
+      in the upper half of the region.
+    </p>
+    <div class="center">
+      <img src="graphics/cylapp-centroid.jpg" alt="cylapp-centroid">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>4-Volume (Optional)</h3>
+<p>
+  If \(f(x,y,z)\) and \(g(x,y,z)\) are functions on a region \(R\)
+  in \(3\)-space and \(f(x,y,z) \ge g(x,y,z)\), then the 4-volume above
+   the 4-dimensional region \(R\) between \(w=g(x,y,z)\) and \(w=f(x,y,z)\) is:
+  \[
+  V_4=\iiint_R f(x,y,z)-g(x,y,z)\,dV
+  \]
+  In cylindrical coordinates, we have:
+</p>
+<p>
+  If \(f(r,\theta,z)\) and \(g(r,\theta,z)\) are functions on a region \(R\)
+  in \(3\)-space and \(f(r,\theta,z) \ge g(r,\theta,z)\), then the 4-volume
+  above the 4-dimensional region \(R\) between \(w=g(r,\theta,z)\) and
+  \(w=f(r,\theta,z)\) is
+  \[
+  V_4=\iiint_R (f(r,\theta,z)-g(r,\theta,z))\,r\,dr\,d\theta\,dz
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  The base of a \(4\)-dimensional solid is the paraboloidal region between
+  \(z=x^2+y^2\) and \(z=4\) as discussed in the centroid example above.
+  The upper surface is the graph of the function \(w=3z\). (Of course,
+  the lower surface is \(w=0\).) Find the \(4\)-volume of this
+  \(4\)-dimensional solid.</span>" data-number="6">
+  <hr width="80%">
+  <p class="sol">
+    The \(4\)-volume is the integral:
+    \[
+    V_4=\iiint_R 3z\,dV
+    =3\int_0^{2\pi}\int_0^2\int_{r^2}^4 z\,r\,dz\,dr\,d\theta
+    \]
+    This is just \(3\) times the integral we computed to find the \(z\)-moment
+    of the volume. So the \(4\)-volume is:
+    \[
+    V_4=3V_z=3\left(\dfrac{64}{3}\pi\right)=64\pi
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<big>PY: Add an exercise with parts for volume, mass, center of mass,
+centroid and average value.</big>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

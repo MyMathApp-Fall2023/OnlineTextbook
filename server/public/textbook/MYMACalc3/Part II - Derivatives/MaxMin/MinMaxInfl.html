@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Functions of \(1\) Variable | 16. Max-Min Problems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="MinMaxSaddle.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>16. Max-Min Problems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Local Minima, Local Maxima and Saddle Points</h2>
+
+
+      
+      <h2>1. Functions of \(1\) Variable</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We first review the
+  <a href="../../Part%20I%20-%20Geometry%20&%20Vectors/Functions/MaxMinSaddle.html"
+  title="Return using the Back button.">definitions</a> of a
+  <span class="hl">local maximum</span> and a
+  <span class="hl">local minimum</span> for functions of \(1\) variable.
+</p>
+<p class="def">
+  For a function of \(1\) variable, \(f(x)\), a
+  <span class="defword">local or relative maximum</span>
+  (resp. <span class="defword">local or relative minimum</span>)
+  occurs at a point, \(x=c\), where the function value is <em>relatively</em>
+  <span class="hl">larger</span> (resp. <span class="hl">smaller</span>)
+  than those at all
+  <button class="toggle" data-toggle="DropX1">nearby points</button>.
+  Together,
+  <span class="hl">local minima and maxima</span> are called
+  <span class="defword">local or relative extrema</span>.
+</p>
+<div class="toBeToggled" data-toggle="DropX1">
+  <p>
+    When we say <span class="defword">nearby</span>, we actually mean that
+    there is some interval around \(c\) within which \(f(c)\) is the largest
+    (resp. smallest) value. We don't care what happens far away from \(c\).
+  </p>
+</div>
+<p>
+  For a function of \(1\) variable, \(f(x)\), extrema occur when the tangent
+  line is horizontal or the derivative does not exist.
+  We search for extrema by identifying
+  <span class="defword">critical points</span> (points, \(c\), at which the
+  derivative, \(f'(c)\), is zero or undefined) and classifying each as a
+  <span class="hl">local minimum</span>, a
+  <span class="hl">local maximum</span> or a
+  <span class="defword">horizontal inflection point</span> (at which nearby
+  values are larger on one side and smaller on the other). There are no
+  <span class="hl">saddle points</span> for functions of \(1\) variable.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Assuming all derivatives exist, we distinguish between these three
+  possibilities by first looking at the second derivative:
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Second Derivative Test">
+  </p>
+  <ol>
+    <li>
+      If  \(f''(c) > 0\), then the critical point \(c\) is
+      a local minimum.
+    </li>
+    <li>
+      If  \(f''(c) < 0\), then the critical point \(c\) is
+      a local maximum.
+    </li>
+    <li>
+      If  \(f''(c)=0\), then the TEST FAILS.
+      <button class="toggle" data-toggle="DropX2">Why?</button>
+    </li>
+  </ol>
+</div>
+<div class="center">
+  <figure>
+    <img src="graphics/def_1var_locmin.jpg" alt="def_1var_locmin"/>
+    <figcaption>Local Minimum<br>\(f''(c) \gt 0\)</figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_1var_locmax.jpg" alt="def_1var_locmax"/>
+    <figcaption>Local Maximum<br>\(f''(c) \lt 0\)\</figcaption>
+  </figure>
+</div>
+<div class="toBeToggled" data-toggle="DropX2">
+  <p>
+    Here are four functions which all have a critical point at
+    \(x=2\) and all satisfy \(f''(2)=0\). However, one has a local minimum,
+    one has a local maximum and two have horizontal inflection points. So
+    the condition \(f''(2)=0\) cannot distinguish between the three cases.
+  </p>
+  <div class="center">
+    <figure>
+      <img src="graphics/def_1var_locmin_2ndtestfails.jpg" alt="def_1var_locmin_2ndtestfails"/>
+      <figcaption>
+        \(\begin{aligned}
+        f(x)&=(x-2)^4+2 \\
+        f'(x)&=4(x-2)^3 \\
+        f'(2)&=0 \\
+        f''(x)&=12(x-2)^2 \\
+        f''(2)&=0
+        \end{aligned}\)
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/def_1var_locmax_2ndtestfails.jpg" alt="def_1var_locmax_2ndtestfails"/>
+      <figcaption>
+        \(\begin{aligned}
+        f(x)&=-(x-2)^4+2 \\
+        f'(x)&=-4(x-2)^3 \\
+        f'(2)&=0 \\
+        f''(x)&=-12(x-2)^2 \\
+        f''(2)&=0
+        \end{aligned}\)
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/def_1var_infl_incr.jpg" alt="def_1var_infl_incr"/>
+      <figcaption>
+        \(\begin{aligned}
+        f(x)&=(x-2)^3+2 \\
+        f'(x)&=3(x-2)^2 \\
+        f'(2)&=0 \\
+        f''(x)&=6(x-2) \\
+        f''(2)&=0
+        \end{aligned}\)
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/def_1var_infl_decr.jpg" alt="def_1var_infl_decr"/>
+      <figcaption>
+        \(\begin{aligned}
+        f(x)&=-(x-2)^3+2 \\
+        f'(x)&=-3(x-2)^2 \\
+        f'(2)&=0 \\
+        f''(x)&=-6(x-2) \\
+        f''(2)&=0
+        \end{aligned}\)
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  When the Second Derivative Test fails, we turn to the first derivative:
+</p>
+<div class="greybox">
+  <p class="thm" data-title="First Derivative Test">
+  </p>
+  <ol>
+    <li>
+      If  \(f'(x) < 0\) for \(x < c\) and \(f'(x) > 0\) for \(x > c\),
+      then the critical point \(c\) is a local minimum.
+    </li>
+    <li>
+      If  \(f'(x) > 0\) for \(x < c\) and \(f'(x) < 0\) for \(x > c\),
+      then the critical point \(c\) is a local maximum.
+    </li>
+    <li>
+      If  \(f'(x) < 0\) for \(x < c\) and \(x > c\),
+      or  \(f'(x) > 0\) for \(x < c\) and \(x > c\),
+      then the critical point \(c\) is an inflection point.
+    </li>
+  </ol>
+  <p>
+    <button class="toggle" data-toggle="DropX3">Note on \(x < c\) and \(x > c\)</button>
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="DropX3">
+  <p>
+    When we specify the sign of \(f'\) on \(x < c\) and \(x > c\), we actually
+    mean that there is some interval around \(c\) within which these conditions
+    on \(f'\) hold. For <em>local</em> extrema, we don't care what happens far
+    away from \(c\).
+  </p>
+</div>
+<div class="center">
+  <figure>
+    <img src="graphics/def_1var_locmin.jpg" alt="def_1var_locmin"/>
+    <figcaption>
+      \(\begin{aligned}
+      f'(x)&\lt0 \,\text{on left} \\
+      f'(x)&\gt0 \,\text{on right} \\
+      \end{aligned}\)
+      <br>
+      Local Minimum
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_1var_locmax.jpg" alt="def_1var_locmax"/>
+    <figcaption>
+      \(\begin{aligned}
+      f'(x)&\gt0 \,\text{on left} \\
+      f'(x)&\lt0 \,\text{on right} \\
+      \end{aligned}\)
+      <br>
+      Local Maximum
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_1var_infl_incr.jpg" alt="def_1var_infl_incr"/>
+    <figcaption>
+      \(\begin{aligned}
+      f'(x)&\gt0 \,\text{on left} \\
+      f'(x)&\gt0 \,\text{on right} \\
+      \end{aligned}\)
+      <br>
+      Inflection Point
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_1var_infl_decr.jpg" alt="def_1var_infl_decr"/>
+    <figcaption>
+      \(\begin{aligned}
+      f'(x)&\lt0 \,\text{on left} \\
+      f'(x)&\lt0 \,\text{on right} \\
+      \end{aligned}\)
+      <br>
+      Inflection Point
+    </figcaption>
+  </figure>
+</div>
+<p>
+  We now generalize these ideas to two or more variables.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

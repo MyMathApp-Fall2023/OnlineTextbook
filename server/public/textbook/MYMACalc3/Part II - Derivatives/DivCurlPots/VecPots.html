@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Finding Vector Potentials | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NoScalPot.html" title="Previous">&lArr;</a></li>
+      <li><a href="NoVecPot.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic7">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>g. Vector Potentials</h2>
+
+<p class="def">
+  Given a vector field \(\vec F\), a <span class="defword">vector
+  potential</span> for \(\vec F\) is any vector field \(\vec A\) whose curl
+  is \(\vec F\):
+  \[
+  \vec\nabla\times\vec A=\vec F
+  \]
+</p>
+
+
+      
+      <h2>1. Finding Vector Potentials</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p id="vecpoteg">
+  It is quite difficult to find a vector potential by inspection.  So we will
+  need to do some work. However, most problems only ask us to find "a" vector
+  potential, not "all" vector potentials. We can use this to simplify the
+  process of finding the vector potential.
+</p>
+<p class="example" data-number="1">
+  Find a vector potential for \(\vec F=\left\langle -x-y,2z,z-y\right\rangle\).
+</p>
+<p class="sol">
+  We need to find a vector field \(\vec A\) satisfying
+  \(\vec\nabla\times\vec A=\vec F\). For a general vector field \(\vec A\),
+  the curl is
+  \[\begin{aligned}
+  \vec\nabla\times\vec A
+  &=\begin{vmatrix}
+  \hat\imath & \hat\jmath & \hat k \\
+  \partial_x & \partial_y & \partial_z \\
+  A_1        & A_2        & A_3
+  \end{vmatrix} \\
+  &=\left\langle \partial_y A_3-\partial_z A_2,\partial_z A_1-\partial_x A_3,
+                 \partial_x A_2-\partial_y A_1 \right\rangle
+  \end{aligned}\]
+  So we need to solve the equations
+  \[\begin{aligned}
+  \partial_y A_3-\partial_z A_2&=F_1=-x-y\quad&&\text{(1)} \\
+  \partial_z A_1-\partial_x A_3&=F_2=2z\quad&&\text{(2)} \\
+  \partial_x A_2-\partial_y A_1&=F_3=z-y\quad&&\text{(3)}
+  \end{aligned}\]
+  <!--\[\begin{aligned}
+  \partial_y A_3-\partial_z A_2&=F_1=-x-y\tag{1} \\
+  \partial_z A_1-\partial_x A_3&=F_2=2z\tag{2} \\
+  \partial_x A_2-\partial_y A_1&=F_3=z-y\tag{3}
+  \end{aligned}\] -->
+  for \(A_1\), \(A_2\) and \(A_3\).
+</p>
+<p>
+  Since we only want <em>some</em> vector potential, and not <em>all</em>
+  vector potentials, we can make assumptions about the solution and see if
+  they work. It turns out that it is always possible to find a vector
+  potential with \(A_3=0\). (Or any one component is \(0\). This will be
+  justified at the bottom of this page.) So the equations reduce to
+  \[\begin{aligned}
+  -\partial_z A_2&=-x-y\quad&&\text{(1)} \\
+  \partial_z A_1&=2z\quad&&\text{(2)} \\
+  \partial_x A_2-\partial_y A_1&=z-y\quad&&\text{(3)}
+  \end{aligned}\]
+  <!-- \[\begin{aligned}
+  -\partial_z A_2&=-x-y\tag{1} \\
+  \partial_z A_1&=2z\tag{2} \\
+  \partial_x A_2-\partial_y A_1&=z-y\tag{3}
+  \end{aligned}\] -->
+  We solve these successively.
+</p>
+<ol>
+  <li>
+    Equation (1) says \(\partial_z A_2=x+y\). So
+    \[
+    A_2=xz+yz+f(x,y)
+    \]
+    where the "constant" of integration, \(f(x,y)\), can be a function of
+    \(x\) and \(y\) because we took the \(z\)-antiderivative.
+  </li>
+  <li>
+    Equation (2) says \(\partial_z A_1=2z\). So
+    \[
+    A_1=z^2+g(x,y)
+    \]
+    where the "constant" of integration, \(g(x,y)\), can again be a function
+    of \(x\) and \(y\).
+  </li>
+  <li>
+    Using what we know about \(A_1\) and \(A_2\), equation (3) becomes
+    \[\begin{aligned}
+    \partial_x A_2-\partial_y A_1&=z-y \\
+    (z+\partial_x f)-(\partial_y g)&=z-y
+    \end{aligned}\]
+    or
+    \[
+    \partial_x f-\partial_y g=-y
+    \]
+    which we need to solve for \(f\) and \(g\). Since we are only looking for
+    one solution, we can pick \(g=0\) and solve for
+    \[
+    f=-xy
+    \]
+  </li>
+  <li>
+    Reassembling the solution, we find the vector potential is
+    \[
+    \vec A=\left\langle A_1,A_2,A_3\right\rangle
+    =\left\langle z^2,xz+yz-xy,0\right\rangle
+    \]
+  </li>
+</ol>
+<p class=check>
+  We check by computing the curl of the vector potential:
+  \[\begin{aligned}
+  \vec\nabla\times\vec A
+  &=\begin{vmatrix}
+  \hat\imath & \hat\jmath & \hat k \\
+  \partial_x & \partial_y & \partial_z \\
+  \quad z^2\quad & xz+yz-xy &\quad 0\quad
+  \end{vmatrix} \\
+  &=\hat\imath(0-(x+y))-\hat\jmath(0-2z)+\hat k((z-y)-0) \\
+  &=\left\langle -x-y,2z,z-y\right\rangle
+  \end{aligned}\]
+  This is just our original vector field \(\vec F\).
+</p>
+<p class="remark">
+  Notice that there are many correct answers. We did not necessarily need to
+  pick \(A_3=0\) and could have solved for \(f\) and \(g\) differently.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find a vector potential for
+    \(\vec F=\left\langle -\sin(x),\cos(y),z\cos(x)+z\sin(y)\right\rangle\).
+    <br> Be sure to check your work by computing \(\vec\nabla\times\vec A\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\vec A=\left\langle z\cos(y),z\sin(x),0\right\rangle\)
+    <br>
+    There are many other correct solutions.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We need to find a vector field \(\vec A\) satisfying
+    \(\vec\nabla\times\vec A=\vec F\). So we need to solve
+    \[\begin{aligned}
+    \partial_y A_3-\partial_z A_2&=F_1=-\sin(x)\quad&&\text{(1)} \\
+    \partial_z A_1-\partial_x A_3&=F_2=\cos(y)\quad&&\text{(2)} \\
+    \partial_x A_2-\partial_y A_1&=F_2=z\cos(x)+z\sin(y)\quad&&\text{(3)}
+    \end{aligned}\]
+    <!--\[\begin{aligned}
+    \partial_y A_3-\partial_z A_2&=F_1=-\sin(x)\tag{1} \\
+    \partial_z A_1-\partial_x A_3&=F_2=\cos(y)\tag{2} \\
+    \partial_x A_2-\partial_y A_1&=F_2=z\cos(x)+z\sin(y)\tag{3}
+    \end{aligned}\] -->
+    for \(A_1\), \(A_2\) and \(A_3\).
+    We assume \(A_3=0\). So the equations reduce to
+    \[\begin{aligned}
+    -\partial_z A_2&=-\sin(x)\quad&&\text{(1)} \\
+    \partial_z A_1&=\cos(y)\quad&&\text{(2)}\\
+    \partial_x A_2-\partial_y A_1&=z\cos(x)+z\sin(y)\quad&&\text{(3)}
+    \end{aligned}\]
+    <!--\[\begin{aligned}
+    -\partial_z A_2&=-\sin(x)\tag{1} \\
+    \partial_z A_1&=\cos(y)\tag{2} \\
+    \partial_x A_2-\partial_y A_1&=z\cos(x)+z\sin(y)\tag{3}
+    \end{aligned}\] -->
+    We solve these successively.
+  </p>
+  <ol>
+    <li>
+      Equation (1) says \(\partial_z A_2=\sin(x)\). So
+      \[
+      A_2=z\sin(x)+f(x,y)
+      \]
+    </li>
+    <li>
+      Equation (2) says \(\partial_z A_1=\cos(y)\). So
+      \[
+      A_1=z\cos(y)+g(x,y)
+      \]
+    </li>
+    <li>
+      Using what we know about \(A_1\) and \(A_2\), equation (3) becomes
+      \[\begin{aligned}
+      \partial_x A_2\qquad-\qquad\partial_y A_1\qquad
+      &=z\cos(x)+z\sin(y) \\
+      (z\cos(x)+\partial_x f)-(-z\sin(y)+\partial_y g)
+      &=z\cos(x)+z\sin(y)
+      \end{aligned}\]
+      or
+      \[
+      \partial_x f-\partial_y g=0
+      \]
+      which we need to solve for \(f\) and \(g\). This is trivial. We take
+      \(f=g=0\)
+    </li>
+    <li>
+      Reassembling the solution, we find the vector potential is
+      \[
+      \vec A=\left\langle A_1,A_2,A_3\right\rangle
+      =\left\langle z\cos(y),z\sin(x),0\right\rangle
+      \]
+    </li>
+  </ol>
+  <p>
+    There are many other correct solutions.
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by computing the curl of the vector potential:
+    \[\begin{aligned}
+    \text{curl}\vec A&=\vec\nabla\times\vec A
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    z\cos(y)   & z\sin(x)   & \quad 0\quad
+    \end{vmatrix} \\
+    &=\hat\imath(0-\sin(x))-\hat\jmath(0-\cos(y))+\hat k(z\cos(x)--z\sin(y))\\
+    &=\left\langle -\sin(x),\cos(y),z\cos(x)+z\sin(y)\right\rangle
+    \end{aligned}\]
+    This is just our original vector field \(\vec F\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Non-Uniqueness of the Vector Potential</h3>
+<p>
+  We have said that there are many vector potentials for a given vector
+  field, but how much non-uniqueness is there?
+</p>
+<p class="prop" data-title="A Vector Potential is Unique up to a Curl-Free Field">
+  If \(\vec A\) and \(\vec B\) are both vector potentials for a vector field
+  \(\vec F\), then \(\vec A=\vec B+\vec C\) for some curl-free vector field
+  \(\vec C\).
+  <br>
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    Since \(\vec F=\vec\nabla\times\vec A=\vec\nabla\times\vec B\),
+    we have \(\vec\nabla\times(\vec A-\vec B)=\vec0\).
+    Consequently, \(\vec C=\vec A-\vec B\) is curl free.
+  </p>
+</div>
+<p class="remark">
+  Since every gradient field is curl-free and most curl-free fields are
+  gradient fields, one frequently says you can add an arbitrary gradient,
+  \(\vec\nabla f\), to a vector potential, \(\vec B\), and get another
+  vector potential, \(\vec A\):
+  \[
+  \vec A=\vec B+\vec\nabla f
+  \]
+</p>
+<p>
+  We can now fulfill a promise from earlier on this page.
+</p>
+<p class="corollary">
+  If a vector field \(\vec F\) has a vector potential, \(\vec B\), then
+  there is another vector potential, \(\vec A\), for which \(A_3=0\).
+  <br>
+  <button class="toggle" data-toggle="Proof2">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof2">
+  <p>
+    Since \(\vec B\) is a vector potential for \(\vec F\), so is
+    \(\vec A=\vec B+\vec\nabla f\) for any function \(f\). We want to
+    find \(f\) so that \(A_3=0\). The equation for \(A_3\) is:
+    \[
+    A_3=B_3+\partial_z f
+    \]
+    So we pick \(f\) so that \(\partial_z f=-B_3\). In other words, \(f\)
+    can be any \(z\)-antiderivative of \(-B_3\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

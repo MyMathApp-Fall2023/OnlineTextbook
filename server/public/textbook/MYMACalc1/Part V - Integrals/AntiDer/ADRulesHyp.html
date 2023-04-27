@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Hyperbolic Trig Functions (Optional) | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ADRulesTrig.html" title="Previous">&lArr;</a></li>
+      <li><a href="AccVelPos.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Antiderivative Rules</h2>
+
+
+      
+      <h2>4. Hyperbolic Trig Functions (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The tables on the previous pages listed the antiderivatives of the standard
+  special functions. The tables on this page, list the properties of the
+  hyperbolic trig functions.
+</p>
+
+<h3>Definitions and Derivatives</h3>
+
+<p>
+  We first review the definitions and derivatives.
+  The derivatives can be derived by differentiating the exponential formulas
+  in the definitions.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Hyperbolic Trigonometric Function</caption>
+  <thead>
+    <th></th>
+    <th>Definition</th>
+    <th>Derivative</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hyperbolic Sine</td>
+      <td>\(\sinh x=\dfrac{e^x-e^{-x}}{2}\)</td>
+      <td>\(\dfrac{d}{dx}\sinh x=\cosh x\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Cosine</td>
+      <td>\(\cosh x=\dfrac{e^x+e^{-x}}{2}\)</td>
+      <td>\(\dfrac{d}{dx}\cosh x=\sinh x\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Tangent</td>
+      <td>\(\tanh x=\dfrac{e^x-e^{-x}}{e^x+e^{-x}}=\dfrac{\sinh x}{\cosh x}\)</td>
+      <td>\(\dfrac{d}{dx}\tanh x=\mathrm{sech}^2 x\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Cotangent</td>
+      <td>\(\coth x=\dfrac{e^x+e^{-x}}{e^x-e^{-x}}=\dfrac{\cosh x}{\sinh x}\)</td>
+      <td>\(\dfrac{d}{dx}\coth x=-\mathrm{csch}^2 x\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Secant</td>
+      <td>\(\mathrm{sech}\,x=\dfrac{2}{e^x+e^{-x}}=\dfrac{1}{\cosh x}\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{sech}\,x=-\,\mathrm{sech}\,x\tanh x\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Cosecant</td>
+      <td>\(\mathrm{csch}\,x=\dfrac{2}{e^x-e^{-x}}=\dfrac{1}{\sinh x}\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{csch}\,x=-\,\mathrm{csch}\,x\coth x\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Notice that the derivatives are identical to those for the ordinary circular
+  trig functions except for a few minus sign differences.
+</p>
+
+<hr width="80%">
+
+<p>
+  We now look at the inverse hyperbolic functions. We first need to check
+  which functions are 1-1, so the inverse can be defined on the whole domain.
+  If not, then we need to pick a branch on which to define the inverse.
+  The functions \(\mathrm{sinh}\), \(\mathrm{tanh}\), \(\mathrm{coth}\)
+  and \(\mathrm{csch}\) are 1-1 because their derivatives are always positive
+  or always negative, so that the functions are strictly increasing or
+  strictly decreasing. (The functions \(\mathrm{coth}\) and
+  \(\mathrm{csch}\) are also split at \(x=0\) but the two pieces don't
+  overlap.) So the inverses of these four functions are well-defined.
+  The functions \(\mathrm{cosh}\), \(\mathrm{sech}\) are not 1-1 because their
+  derivatives change sign at \(x=0\). By definition, we pick the branch with
+  \(x \ge 0\) to define the inverse.
+</p>
+<p>
+  Since there are exponential definitions of the hyperbolic functions, it is
+  not surprising there are logarithmic formulas for their inverses.
+</p>
+<p class="prop" data-title="Inverse Hyperbolic Function">
+  The inverse hyperbolic functions are given by:
+  \[\begin{aligned}
+  &\mathrm{arcsinh}\,x=\ln(x+\sqrt{x^2+1})
+  &&\mathrm{arccosh}\,x=\ln(x+\sqrt{x^2-1}) \\
+  &\mathrm{arctanh}\,x=\dfrac{1}{2}\ln\left(\dfrac{1+x}{1-x}\right)
+  &&\mathrm{arccoth}\,x=\dfrac{1}{2}\ln\left(\dfrac{x+1}{x-1}\right) \\
+  &\mathrm{arcsech}\,x=\ln\left(\dfrac{1+\sqrt{1-x^2}}{x}\right)
+  &&\mathrm{arccsch}\,x=\ln\left(\dfrac{1+\sqrt{1+x^2}}{x}\right)
+  \end{aligned}\]
+  Derivations for:
+  <button class="toggle" data-toggle="Drop1">
+    \(\mathrm{arcsinh}\)</button>&emsp;
+  <button class="toggle" data-toggle="Drop2">
+    \(\mathrm{arctanh}\)</button>&emsp;
+  <button class="toggle" data-toggle="Drop3">
+    \(\mathrm{arcsech}\)</button>
+    <br>
+    The derivations for \(\mathrm{arccosh}\), \(\mathrm{arccoth}\) and
+    \(\mathrm{arccsch}\) are left to the exercises.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>Derivation of the Formula for the Inverse Hyperbolic Sine</h4>
+  <p>
+    To say \(\mathrm{arcsinh}\) is the inverse of \(\sinh\) means:
+    <span class="center">\(b=\mathrm{arcsinh}\,a\)&ensp; if and only if
+    &ensp;\(a=\sinh b=\dfrac{e^b-e^{-b}}{2}\)</span>
+    We solve the latter equation for \(b\):
+    \[\begin{aligned}
+    2a=&e^b-e^{-b}=e^b-\dfrac{1}{e^b} \\
+    &2ae^b=e^{2b}-1 \\
+    (e^b)&^2-2a(e^b)-1=0
+    \end{aligned}\]
+    This is a quadratic equation for \(e^b\). By the quadratic formula:
+    \[
+    e^b=\dfrac{2a\pm\sqrt{4a^2+4}}{2}=a\pm\sqrt{a^2+1}
+    \]
+    We pick the \(+\) sign (so that \(e^b\) is positive) and take the log:
+    \[
+    b=\ln(a+\sqrt{a^2+1})\equiv\mathrm{arcsinh}\,a
+    \]
+    So the formula for \(\mathrm{arcsinh}\,x\) is:
+    \[
+    \mathrm{arcsinh}\,x=\ln(x+\sqrt{x^2+1})
+    \]
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Drop2">
+  <h4>Derivation of the Formula for the Inverse Hyperbolic Tangent</h4>
+  <p>
+    To say \(\mathrm{arctanh}\) is the inverse of \(\tanh\) means:
+    <span class="center">\(b=\mathrm{arctanh}\,a\)&ensp; if and only if
+    &ensp;\(a=\tanh b=\dfrac{e^b-e^{-b}}{e^b+e^{-b}}\)</span>
+    We solve the latter equation for \(b\):
+    \[\begin{aligned}
+    a(e^b+e^{-b})&=e^b-e^{-b} \\
+    a(e^{2b}+1)&=e^{2b}-1 \\
+    (a-1)e^{2b}&=-1-a \\
+    e^{2b}&=\dfrac{-1-a}{a-1}=\dfrac{1+a}{1-a} \\
+    b&=\dfrac{1}{2}\ln\left(\dfrac{1+a}{1-a}\right)\equiv\mathrm{arctanh}\,a
+    \end{aligned}\]
+    So the formula for \(\mathrm{arctanh}\,x\) is:
+    \[
+    \mathrm{arctanh}\,x=\dfrac{1}{2}\ln\left(\dfrac{1+x}{1-x}\right)
+    \]
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Drop3">
+  <h4>Derivation of the Formula for the Inverse Hyperbolic Secant</h4>
+  <p>
+    To say \(\mathrm{arcsech}\) is the inverse of \(\mathrm{sech}\) means:
+    <span class="center">\(b=\mathrm{arcsech}\,a\)&ensp; if and only if
+    &ensp;\(a=\mathrm{sech}\,b=\dfrac{2}{e^b+e^{-b}}\)</span>
+    Before solving for \(b\), we first note that \(\mathrm{sech}\,b\) is not 1-1
+    since \(b=u\) and \(b=-u\) give the same value of \(\mathrm{sech}\,b\).
+    We make the choice to define \(\mathrm{arcsech}\,a\) for the branch of
+    \(\mathrm{sech}\,b\) with \(b \ge 0\). We now solve the latter equation
+    for \(b\), expecting two solutions from which we want to pick the one with
+    \(b \ge 0\):
+    \[\begin{aligned}
+    a(e^b+e^{-b})&=2 \\
+    a(e^{2b}+1)&=2e^b \\
+    a(e^b)^2-2(e^b)+a&=0 \\
+    \end{aligned}\]
+    This is a quadratic equation for \(e^b\). By the quadratic formula:
+    \[
+    e^b=\dfrac{2\pm\sqrt{4-4a^2}}{2a}=\dfrac{1\pm\sqrt{1-a^2}}{a}
+    \]
+    The \(+\) and \(-\) signs give the two solutions and we want the one with
+    \(b \ge 0\). Now if \(b \ge 0\), then \(e^b \ge e^{-b}\). So we need the
+    larger solution which is the one with the \(+\) sign. Then we take the log:
+    \[
+    b=\ln\left(\dfrac{1+\sqrt{1-a^2}}{a}\right)\equiv\mathrm{arcsech}\,a
+    \]
+    So the formula for \(\mathrm{arcsech}\,x\) is:
+    \[
+    \mathrm{arcsech}\,x=\ln\left(\dfrac{1+\sqrt{1-x^2}}{x}\right)
+    \]
+  </p>
+</div>
+<p>
+  The formulas for the derivatives of the inverse hyperbolic functions can be
+  derived by differentiating their logarithmic formulas.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Inverse Hyperbolic Trigonometric Function</caption>
+  <thead>
+    <th></th>
+    <th>Formula</th>
+    <th>Derivative</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Inverse Hyperbolic Sine</td>
+      <td>\(\mathrm{arcsinh}\,x=\ln(x+\sqrt{x^2+1})\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{arcsinh}\,x=\dfrac{1}{\sqrt{x^2+1}}\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Cosine</td>
+      <td>\(\mathrm{arccosh}\,x=\ln(x+\sqrt{x^2-1})\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{arccosh}\,x=\dfrac{1}{\sqrt{x^2-1}}\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Tangent</td>
+      <td>\(\mathrm{arctanh}\,x=\dfrac{1}{2}\ln\left(\dfrac{1+x}{1-x}\right)\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{arctanh}\,x=\dfrac{1}{x^2-1}\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Cotangent</td>
+      <td>\(\mathrm{arccoth}\,x=\dfrac{1}{2}\ln\left(\dfrac{x+1}{x-1}\right)\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{arccoth}\,x=\dfrac{-1}{x^2-1}\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Secant</td>
+      <td>\(\mathrm{arcsech}\,x=\ln\left(\dfrac{1+\sqrt{1-x^2}}{x}\right)\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{arcsech}\,x=\dfrac{-1}{\sqrt{x^2(1-x^2)}}\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Cosecant</td>
+      <td>\(\mathrm{arccsch}\,x=\ln\left(\dfrac{1+\sqrt{1+x^2}}{x}\right)\)</td>
+      <td>\(\dfrac{d}{dx}\mathrm{arccsch}\,x=\dfrac{-1}{\sqrt{x^2(1+x^2)}}\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Notice that the derivatives of the inverse hyperbolic trig functions are the
+  same as those for the ordinary inverse trig functions except for numerous
+  minus sign differences.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Antiderivatives</h3>
+
+<p>
+  We are now ready for the antiderivatives. You can check each line of the table by
+  differentiating the quantity on the right to see you get the quantity on the left.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Hyperbolic Trigonometric Functions</caption>
+  <thead class="thead">
+    <th></th>
+    <th><span style="font-weight:normal">If the</span> Function
+      <span style="font-weight:normal">is</span></th>
+    <th><span style="font-weight:normal">then the</span> Antiderivative
+      <span style="font-weight:normal">is</span></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hyperbolic Sine</td>
+      <td>\(f(x)=\cosh x\)</td>
+      <td>\(F(x)=\sinh x+C\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Cosine</td>
+      <td>\(f(x)=\sinh x\)</td>
+      <td>\(F(x)=\cosh x+C\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Tangent\(^\text{1}\)</td>
+      <td>\(f(x)=\mathrm{sech}^2 x\)</td>
+      <td>\(F(x)=\tanh x+C\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Cotangent\(^\text{1}\)</td>
+      <td>\(f(x)=\mathrm{csch}^2 x\)</td>
+      <td>\(F(x)=-\coth x+C\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Secant\(^\text{1}\)</td>
+      <td>\(f(x)=\mathrm{sech}\,x\,\mathrm{tanh}\,x\)</td>
+      <td>\(F(x)=-\,\mathrm{sech}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Hyperbolic Cosecant\(^\text{1}\)</td>
+      <td>\(f(x)=\mathrm{csch}\,x\,\mathrm{coth}\,x\)</td>
+      <td>\(F(x)=-\,\mathrm{csch}\,x+C\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  \(^\text{1}\)
+  These are the functions whose antiderivatives are the hyperbolic trig
+  functions: \(\tanh x\), \(\coth x\), \(\mathrm{sech}\,x\) and
+  \(\mathrm{csch}\,x\). We will discuss the antiderivatives of these
+  hyperbolic trig functions in Calculus 2 in the chapter on
+  <a href="../../../MYMACalc2/Part I - Techniques of Integration/TrigInt/ChContents.html"
+  title="Return using the Back button.">
+  Trig Integrals</a>.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Inverse Hyperbolic Trigonometric Functions\(^\text{2}\)</caption>
+  <thead>
+    <th></th>
+    <th><span style="font-weight:normal">If the</span> Function
+      <span style="font-weight:normal">is</span></th>
+    <th><span style="font-weight:normal">then the</span> Antiderivative
+      <span style="font-weight:normal">is</span></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Inverse Hyperbolic Sine</td>
+      <td>\(f(x)=\dfrac{1}{\sqrt{x^2+1}}\)</td>
+      <td>\(F(x)=\mathrm{arcsinh}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Cosine</td>
+      <td>\(f(x)=\dfrac{1}{\sqrt{x^2-1}}\)</td>
+      <td>\(F(x)=\mathrm{arccosh}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Tangent</td>
+      <td>\(f(x)=\dfrac{1}{x^2-1}\)</td>
+      <td>\(F(x)=\mathrm{arctanh}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Cotangent\(^\text{3}\)</td>
+      <td>\(f(x)=\dfrac{1}{x^2-1}\)</td>
+      <td>\(F(x)=-\,\mathrm{arccoth}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Secant</td>
+      <td>\(f(x)=\dfrac{1}{\sqrt{x^2(1-x^2)}}\)</td>
+      <td>\(F(x)=-\,\mathrm{arcsech}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Hyperbolic Cosecant</td>
+      <td>\(f(x)=\dfrac{1}{\sqrt{x^2(1+x^2)}}\)</td>
+      <td>\(F(x)=-\,\mathrm{arccsch}\,x+C\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  \(^\text{2}\)
+  These are the functions whose antiderivatives are the inverse hyperbolic trig
+  functions. We will discuss the antiderivatives of the inverse hyperbolic trig
+  functions in Calculus 2 in the chapter on
+  <a href="../../../MYMACalc2/Part I - Techniques of Integration/IntParts/ChContents.html"
+  title="Return using the Back button.">
+  Integration by Parts</a>.
+</p>
+
+<p>
+  \(^\text{3}\)
+  This antiderivative formula is not useful, since the formula using
+  \(\mathrm{arctanh}\,x\) is easier. They just differ by a constant.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

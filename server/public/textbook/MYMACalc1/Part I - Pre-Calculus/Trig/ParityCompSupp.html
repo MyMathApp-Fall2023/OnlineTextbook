@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parity, Complementarity and Supplementarity Identities | Trigonometry</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Pythag.html" title="Previous">&lArr;</a></li>
+      <li><a href="LawsOfSinCos.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Trigonometry</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Parity, Complementarity and Supplementarity Identities</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Parity Identities</h3>
+
+<div class="column">
+  <div>
+  	<p class="prop" data-title="Parity Identities:
+    Sine and Cosine">
+      Sine is an odd function and cosine is an even function:
+      \[
+      \sin(-\theta)=-\sin(\theta)
+      \qquad
+      \cos(-\theta)=\cos(\theta)
+      \]
+      <button class="toggle" data-toggle="Pf1">Proof</button>
+      \(\Leftarrow\Leftarrow\) Read it! It simply explains the plot.
+    </p>
+  </div>
+  <div class="center">
+    <figure>
+      <img src="graphics/sin_parity_anim.gif" alt="Animation showing dots moving in positive and negative theta of sin">
+      <figcaption>\(\sin \theta\)</figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/cos_parity_anim.gif" alt="Animation showing dots moving in positive and negative theta of cos">
+      <figcaption>\( \cos \theta \) </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Pf1">
+  <p>
+    Looking at the figure, the point \(P=(x,y)\) is at the angle \(\theta\)
+    while the point \(Q=(x,-y)\) is at the angle \(-\theta\). So:
+    \[
+    \sin(\theta)=\dfrac{y}{r} \quad \text{while} \quad
+    \sin(-\theta)=\dfrac{-y}{r}=-\sin(\theta)
+    \]
+    and
+    \[
+    \cos(\theta)=\dfrac{x}{r} \quad \text{while} \quad
+    \cos(-\theta)=\dfrac{x}{r}=\cos(\theta)
+    \]
+  </p>
+</div>
+<p>
+  As a consequence:
+</p>
+<p class="prop" data-title="Parity Identities:
+Tangent, Cotangent, Secant and Cosecant">
+  Tangent, cotangent and cosecant are odd functions and secant is an even function:
+  \[
+  \tan(-\theta)=-\tan(\theta)
+  \qquad
+  \cot(-\theta)=-\cot(\theta)
+  \]
+  \[
+  \sec(-\theta)=\sec(\theta)
+  \qquad \quad
+  \csc(-\theta)=-\csc(\theta)
+  \]
+  <button class="toggle" data-toggle="Pf1b">Proof</button>
+  \(\Leftarrow\Leftarrow\)  It's a simple computation.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf1b">
+  <p>
+    \[
+    \tan(-\theta)=\dfrac{\sin(-\theta)}{\cos(-\theta)}
+    =\dfrac{-\sin(\theta)}{\cos(\theta)}=-\tan(\theta)
+    \]
+    \[
+    \cot(-\theta)=\dfrac{\cos(-\theta)}{\sin(-\theta)}
+    =\dfrac{\cos(\theta)}{-\sin(\theta)}=-\cot(\theta)
+    \]
+    \[
+    \sec(-\theta)=\dfrac{1}{\cos(-\theta)}
+    =\dfrac{1}{\cos(\theta)}=\sec(\theta) \qquad
+    \]
+    \[
+    \csc(-\theta)=\dfrac{1}{\sin(-\theta)}
+    =\dfrac{1}{-\sin(\theta)}=-\csc(\theta)
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Complementarity Identities</h3>
+
+<div class="column">
+  <div>
+  	<p class="prop" data-title="Complementarity Identities:
+    Sine and Cosine">
+      The complementary angle for \(\theta\) is
+      \(90^\circ-\theta\) or \(\dfrac{\pi}{2}-\theta\).
+      \[
+      \sin\left(\dfrac{\pi}{2}-\theta\right)=\cos(\theta)
+      \qquad
+      \cos\left(\dfrac{\pi}{2}-\theta\right)=\sin(\theta)
+      \]
+      <button class="toggle" data-toggle="Pf2">Proof</button>
+      \(\Leftarrow\Leftarrow\) Read it! It simply explains the plot.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/comp_angle_anim.gif" alt="xxx">
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Pf2">
+  <p>
+    Looking at the figure, if the angle \(\theta\) is measured
+    counterclockwise from the positive \(x\)-axis, then the complementary
+    angle \(\dfrac{\pi}{2}-\theta\) can be measured clockwise from the
+    positive \(y\)-axis. So switching from an angle to its complement is
+    equivalent to a reflection through the \(45^\circ\) diagonal line.
+    This means that the roles of \(x\) and \(y\) are interchanged. (The
+    opposite and adjacent sides are interchanged.) So:
+    \[\begin{aligned}
+    \sin\left(\dfrac{\pi}{2}-\theta\right)
+    &=\dfrac{\text{Opp}}{\text{Hyp}}
+    =\dfrac{x}{r} \\
+    \cos(\theta)
+    &=\dfrac{\text{Adj}}{\text{Hyp}}
+    =\dfrac{x}{r}
+    \end{aligned}\]
+    and
+    \[\begin{aligned}
+    \cos\left(\dfrac{\pi}{2}-\theta\right)
+    &=\dfrac{\text{Adj}}{\text{Hyp}}
+    =\dfrac{y}{r} \\
+    \sin(\theta)
+    &=\dfrac{\text{Opp}}{\text{Hyp}}
+    =\dfrac{y}{r}
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  As a consequence:
+</p>
+<p class="prop" data-title="Complementarity Identities:
+Tangent, Cotangent, Secant and Cosecant">
+  \[
+  \tan\left(\dfrac{\pi}{2}-\theta\right)=\cot(\theta)
+  \qquad
+  \cot\left(\dfrac{\pi}{2}-\theta\right)=\tan(\theta)
+  \]
+  \[
+  \sec\left(\dfrac{\pi}{2}-\theta\right)=\csc(\theta)
+  \qquad
+  \csc\left(\dfrac{\pi}{2}-\theta\right)=\sec(\theta)
+  \]
+  <button class="toggle" data-toggle="Pf2b">Proof</button>
+  \(\Leftarrow\Leftarrow\)  It's a simple computation.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf2b">
+  <p>
+    \[
+    \tan\left(\dfrac{\pi}{2}-\theta\right)
+    =\dfrac{\sin\left(\dfrac{\pi}{2}-\theta\right)}{\cos\left(\dfrac{\pi}{2}-\theta\right)}
+    =\dfrac{\cos(\theta)}{\sin(\theta)}=\cot(\theta)
+    \]
+    \[
+    \cot\left(\dfrac{\pi}{2}-\theta\right)
+    =\dfrac{\cos\left(\dfrac{\pi}{2}-\theta\right)}{\sin\left(\dfrac{\pi}{2}-\theta\right)}
+    =\dfrac{\sin(\theta)}{\cos(\theta)}=\tan(\theta)
+    \]
+    \[
+    \sec\left(\dfrac{\pi}{2}-\theta\right)
+    =\dfrac{1}{\cos\left(\dfrac{\pi}{2}-\theta\right)}
+    =\dfrac{1}{\sin(\theta)}=\csc(\theta)
+    \]
+    \[
+    \csc\left(\dfrac{\pi}{2}-\theta\right)
+    =\dfrac{1}{\sin\left(\dfrac{\pi}{2}-\theta\right)}
+    =\dfrac{1}{\cos(\theta)}=\sec(\theta)
+    \]
+  </p>
+</div>
+<p class="remark">
+  Notice that switching from an angle to its complementary angle interchanges
+  each trig function with its complementary angle, \(\sin\) with \(\cos\),
+  \(\tan\) with \(\cot\), \(\sec\) with \(\csc\). This is, in fact, why they
+  are called &ldquo;co&rdquo;-functions.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Supplementarity Identities</h3>
+
+<div class="column">
+  <div>
+  	<p class="prop" data-title="Supplementarity Identities:
+    Sine and Cosine">
+      The supplementary angle for \(\theta\) is
+      \(180^\circ-\theta\) or \(\pi-\theta\).
+      \[
+      \sin(\pi-\theta)=\sin(\theta)
+      \qquad
+      \cos(\pi-\theta)=-\cos(\theta)
+      \]
+      <button class="toggle" data-toggle="Pf3">Proof</button>
+      \(\Leftarrow\Leftarrow\) Read it! It simply explains the plot.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/supp_angle_anim.gif" alt="xxx">
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Pf3">
+  <p>
+    Looking at the figure, if the angle \(\theta\) is measured
+    counterclockwise from the positive \(x\)-axis, then the complementary
+    angle \(\pi-\theta\) can be measured clockwise from the negative
+    \(x\)-axis. So switching from an angle to its supplement is
+    equivalent to a reflection through the \(y\)-axis. This means that
+    \(x\) is replaced by \(-x\) while \(y\) remains unchanged. So:
+    \[\begin{aligned}
+    \sin(\pi-\theta)
+    &=\dfrac{\text{Opp}}{\text{Hyp}}
+    =\dfrac{y}{r} \\
+    \sin(\theta)
+    &=\dfrac{\text{Opp}}{\text{Hyp}}
+    =\dfrac{y}{r}
+    \end{aligned}\]
+    and
+    \[\begin{aligned}
+    \cos(\pi-\theta)
+    &=\dfrac{\text{Adj}}{\text{Hyp}}
+    =\dfrac{x}{r} \\
+    \cos(\theta)
+    &=\dfrac{\text{Adj}}{\text{Hyp}}
+    =\dfrac{-x}{r}
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  As a consequence:
+</p>
+<p class="prop" data-title="Supplementarity Identities:
+Tangent, Cotangent, Secant and Cosecant">
+  \[
+  \tan(\pi-\theta)=-\tan(\theta)
+  \qquad
+  \cot(\pi-\theta)=-\cot(\theta)
+  \]
+  \[
+  \sec(\pi-\theta)=-\sec(\theta)
+  \qquad
+  \csc(\pi-\theta)=\csc(\theta)
+  \quad
+  \]
+  <button class="toggle" data-toggle="Pf3b">Proof</button>
+  \(\Leftarrow\Leftarrow\)  It's a simple computation.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf3b">
+  <p>
+    \[
+    \tan(\pi-\theta)=\dfrac{\sin(\pi-\theta)}{\cos(\pi-\theta)}
+    =\dfrac{\sin(\theta)}{-\cos(\theta)}=-\tan(\theta)
+    \]
+    \[
+    \cot(\pi-\theta)=\dfrac{\cos(\pi-\theta)}{\sin(\pi-\theta)}
+    =\dfrac{-\cos(\theta)}{\sin(\theta)}=-\cot(\theta)
+    \]
+    \[
+    \sec(\pi-\theta)=\dfrac{1}{\cos(\pi-\theta)}
+    =\dfrac{1}{-\cos(\theta)}=-\sec(\theta)
+    \]
+    \[
+    \csc(\pi-\theta)=\dfrac{1}{\sin(\pi-\theta)}
+    =\dfrac{1}{\sin(\theta)}=\csc(\theta) \qquad
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example">
+  Given that
+  \[
+  \sin60^\circ=\dfrac{\sqrt{3}}{2}
+  \quad \text{and} \quad
+  \cos60^\circ=\dfrac{1}{2}
+  \]
+  find \(\sin(-30^\circ)\) and \(\cos(-30^\circ)\).
+</p>
+<p class="sol">
+  We use both the parity and complementarity identities for \(\sin(\theta)\)
+  and \(\cos(\theta)\).
+  <br>
+  Applying the parity identity, we see:
+  \[
+  \sin(-30^\circ) = -\sin(30^\circ) \quad  \cos(-30^\circ)=\cos(30^\circ)
+  \]
+  Next, we apply complementarity identities:
+  \[
+  -\sin\left(\dfrac{\pi}{2}-30^\circ\right)=-\cos(60^\circ)=-\dfrac{1}{2}
+  \]
+  \[
+  \cos\left(\dfrac{\pi}{2}-30^\circ\right)=\sin(60^\circ)=\dfrac{\sqrt{3}}{2}
+  \]
+
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise">
+    Given that
+    \[
+    \sin60^\circ=\dfrac{\sqrt{3}}{2}
+    \quad \text{and} \quad
+    \cos60^\circ=\dfrac{1}{2}
+    \]
+    find \(\sin(-150^\circ)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Go from \(-150^\circ\) to \(150^\circ\) to \(30^\circ\) to \(60^\circ\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \[
+  \sin(-150^\circ) = -\dfrac{1}{2}
+  \]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We use the parity,supplementarity, and complementarity identities
+   for \(\sin(\theta)\) and \(\cos(\theta)\).
+    <br>
+    Applying the parity identity, we see:
+    \[
+    \sin(-150^\circ) = -\sin(150^\circ)
+    \]
+    Next, using the supplementarity identity, we see:
+    \[
+    -\sin(\pi-150^\circ) =-\sin(30^\circ)
+    \]
+    Finally, we apply the complementarity identity:
+    \[
+    -\sin\left(\dfrac{\pi}{2}-30^\circ\right)=-\cos(60^\circ)=-\dfrac{1}{2}
+    \]
+  </p>
+</div>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

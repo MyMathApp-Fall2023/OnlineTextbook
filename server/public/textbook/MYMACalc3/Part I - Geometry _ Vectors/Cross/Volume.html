@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d. 1. Volume | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Area.html" title="Previous">&lArr;</a></li>
+      <li><a href="TripleGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d. 1. Volume</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Parallelepiped</h3>
+
+<div class="column">
+  <div>
+    <p>
+    	Consider a parallelepiped where the base has adjacent edges
+      \(\vec u\) and \(\vec v\) and the third adjacent edge is \(\vec w\).
+    	Let \(\theta\) be the angle between \(\vec u\) and \(\vec v\)
+      and let \(\phi\) be the angle between \(\vec w\) and the
+      perpendicular	to the base which is \(\vec u\times\vec v\).
+  	</p>
+    <p>
+    	The volume of the parallelepiped is the product of the area of the
+      base and its height
+    	\[
+      V=BH
+      \]
+    	The area of the base is \(B=|\vec u\times\vec v|\)
+      and the height is \(H=|\vec w|\cos\phi\)
+    	(assuming \(\phi\) is acute, as in the first figure). Thus:
+    </p>
+  </div>
+  <div class="center">
+	  <img src="graphics/DefVolParaUp.gif" alt="DefVolParaUp">
+  </div>
+</div>
+<div class="column" id="VolPara">
+  <p>
+    \[
+    V=BH
+    =|\vec u\times\vec v|\,|\vec w|\cos\phi
+    \]
+  	However, this is just the dot product of \(\vec u\times\vec v\)
+    and \(\vec w\). Therefore,
+		\[
+    V=\vec u\times\vec v\cdot\vec w
+    \]
+  	There is one technicality here. We need the volume to be positive,
+    but the triple product could be negative. In the figure above, we
+  	chose \(\vec u\) and \(\vec v\) so that \(\vec u\times\vec v\)
+    points to the same side as \(\vec w\). So \(\phi \lt 90^\circ\) and
+  	\(\cos\phi \gt 0\). However, if we interchange the names \(\vec u\) and
+    \(\vec v\), (as in the figure at the right) then \(\vec u\times\vec v\)
+    points to the opposite side as \(\vec w\) as in the figure. So
+    \(\phi \gt 90^\circ\) and \(\cos\phi \lt 0\). So we need to use
+    \(|\cos\phi|\) to compute the height
+    \(H=|\vec w|\,|\cos\phi|\).
+    So the volume is
+  	\(V=|\vec u\times\vec v|\,
+    |\vec w|\,|\cos\phi|
+    =|\vec u\times\vec v\cdot\vec w|\),
+    the absolute value of the triple product.
+	</p>
+  <div class="center">
+	  <img src="graphics/DefVolParaDn.gif" alt="DefVolParaDn"/>
+  </div>
+</div>
+<p class="formula" data-title="Volume of a Parallelepiped">
+  The Volume of a Parallelepiped with adjacent edges \(\vec u\),
+  \(\vec v\) and \(\vec w\) is:
+	\[
+  V=|\vec u\times\vec v\cdot\vec w|
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Notice that the volume is just the absolute value of the triple product.
+  This is fortunate because there is no reason that we need to take
+  \(\vec u\) and \(\vec v\) to be the edges of the base. So the formula
+  for the volume could have \(\vec u\), \(\vec v\) and \(\vec w\) in
+  any order. Luckily, the triple product is the
+  <a href="TripleAlg.html#TripProps" title="Return using the Back button.">
+  same in any order up to a minus sign</a> and the absolute value cancels off
+  this minus. So the volume is the absolute value of the triple product
+  in any order.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the volume of the parallelepiped with adjacent edges
+  \(\overrightarrow{AB}\), \(\overrightarrow{AC}\) and \(\overrightarrow{AD}\)
+  where:
+	\[
+  A=\left\langle 3,1,0\right\rangle, B=\left\langle 3,0,2\right\rangle,
+  C=\left\langle 2,3,0\right\rangle \text{ and } D=\left\langle 4,1,3\right\rangle
+  \]
+</p>
+<p class="sol">
+  The adjacent edges are
+	\[\begin{aligned}
+	\overrightarrow{AB}&=B-A
+  =\left\langle 3,0,2\right\rangle-\left\langle 3,1,0\right\rangle
+  =\left\langle 0,-1,2\right\rangle \\
+	\overrightarrow{AC}&=C-A
+  =\left\langle 2,3,0\right\rangle-\left\langle 3,1,0\right\rangle
+  =\left\langle -1,2,0\right\rangle \\
+	\overrightarrow{AD}&=D-A
+  =\left\langle 4,1,3\right\rangle-\left\langle 3,1,0\right\rangle
+  =\left\langle 1,0,3\right\rangle
+	\end{aligned}\]
+  Their triple product is
+	\[
+	\overrightarrow{AB}\times\overrightarrow{AC}\cdot\overrightarrow{AD}
+  =\begin{vmatrix}
+	0 & -1 & 2 \\
+	-1 & 2 & 0 \\
+	1 & 0 & 3
+	\end{vmatrix}
+  =-7
+	\]
+  So the volume is
+	\[
+  V
+  =\left|\overrightarrow{AB}\times\overrightarrow{AC}\cdot\overrightarrow{AD}\right|
+  =7
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  	Find the volume of the parallelepiped with adjacent edges
+    \(\vec u=\left\langle 2,3,1\right\rangle\),
+    \(\vec v=\left\langle 2,0,-1\right\rangle\) and
+  	\(\vec w=\left\langle 0,-2,3\right\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(V=26\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The triple product is
+    	\[
+      \vec u\times\vec v\cdot\vec w
+      =\begin{vmatrix}
+    	2 & 3 & 1 \\
+    	2 & 0 & -1 \\
+    	0 & -2 & 3
+    	\end{vmatrix}
+      =-26
+      \]
+  	So the volume is
+  	  \[V=|\vec u\times\vec v\cdot\vec w|=26\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>f1. Strategy for Computing Volumes of Revolution | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Cylin.html" title="Previous">&lArr;</a></li>
+      <li><a href="TutVolRev.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>f1. Strategy for Computing Volumes of Revolution</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  When we need to compute the <span class="hl">volume of a solid of
+	revolution</span>, we will need to decide whether to do an
+	\(x\) integral or a \(y\) integral and whether to use
+	<span class="hl">disks</span>, <span class="hl">washers</span> or
+  <span class="hl">cylinders</span>. <strong>Do not</strong> simply
+	try to remember all the formulas for the appropriate cases. Rather, here
+	are several steps to follow to help make these decisions.
+	We suggest you print out a copy of this page so you can refer
+	to it as you do the problems.
+</p>
+
+				<div class="rule"></div>
+
+<p class="meth" data-title="Volumes of Revolution">
+</p>
+<ol>
+  <li>
+		Draw <span class="hl">the region</span> in the \(xy\)-plane.
+	</li>
+  <li>
+		Decide if we will do an <span class="hl">\(x\)-integral</span>
+		or a <span class="hl">\(y\)-integral</span>.
+	</li>
+  <p>
+    This decision should be made in exactly the same way we would decide
+		how to compute the area of the region, <em>without regard to the axis of
+    rotation</em>. Is it easier to compute the area as an \(x\) integral
+		or as a \(y\) integral? Do the same for the volume.
+  </p>
+  <li>
+		Determine the <span class="hl">limits</span> for your integral.
+	</li>
+  <p>
+		Do this exactly as we would for computing the area.
+	</p>
+  <li>
+    Draw <span class="hl">one Riemann sum rectangle</span> in the figure.
+	</li>
+  <p>
+    For an \(x\)-integral the rectangle is vertical.
+    For a \(y\)-integral the rectangle is horizontal.
+  </p>
+  <li>
+    Rotate the rectangle about the specified axis and observe if it
+		sweeps out a <span class="hl">disk</span>, a <span class="hl">washer</span>
+		or a <span class="hl">cylinder</span>.
+  </li>
+  <li>
+    Express everything in terms of the independent variable \(x\) or \(y\).
+    <ol>
+      <li>For a disk, determine the radius.</li>
+      <li>For a washer, determine the inner radius and outer radius.</li>
+      <li>For a cylinder, determine the radius and height.</li>
+    </ol>
+  </li>
+  <li>
+    Compute the volume integral:
+    <ol>
+      <li>
+        For a disk,
+				\(\displaystyle	V=\int_a^b \pi(\text{radius})^2\,dx\)
+        &emsp; or &emsp;
+				\(\displaystyle V=\int_a^b \pi(\text{radius})^2\,dy\).
+      </li>
+      <li>
+        For a washer,
+				\(\displaystyle V=\int_a^b \pi(\text{upper})^2-\pi(\text{lower})^2\,dx\)
+        &emsp; or &emsp;
+				\(\displaystyle V=\int_a^b \pi(\text{right})^2-\pi(\text{left})^2\,dy\).
+      </li>
+      <li>
+        For a cylinder,
+				\(\displaystyle V=\int_a^b 2\pi(\text{radius})(\text{height})\,dx\)
+        &emsp; or &emsp;
+				\(\displaystyle V=\int_a^b 2\pi(\text{radius})(\text{height})\,dy\).
+      </li>
+    </ol>
+  </li>
+</ol>
+
+				<div class="rule"></div>
+
+<p class="remark">
+	Be sure to do the exercises for this section, because they don't tell you
+	which method (disks, washers or cylinders) to use.
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Application - Balancing Forces | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VecAddProp.html" title="Previous">&lArr;</a></li>
+      <li><a href="ScalMultAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Vector Addition</h2>
+
+<p>
+  A simple application of vectors occurs in physics when we balance forces
+  to analyze a static situation in mechanics.
+</p>
+
+
+      
+      <h2>4. Application - Balancing Forces</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	A <span class="defword">force</span> is the vector describing how we push
+  on an object: How hard we push is the magnitude and where we push is the
+	direction. <span class="hl">Newton's Second Law</span> says if one or
+  more unbalanced forces act on an object, then the object will move
+  with an acceleration \(\vec a\) satisfying
+	\[
+  m\vec a=\vec F
+  \]
+	where \(m\) is the mass of the object and \(\vec F\) is the sum of all
+  forces acting on the object. If the object is static (not moving) then
+  its acceleration is \(\vec a=\vec 0\) and the sum of the forces must
+  be zero. We can use this to find one or more forces when we know the
+  other forces in a static situation.
+</p>
+<p>
+	In doing these applications, you frequently need to know that the force
+  of gravity on an object (on the surface of the earth) is
+  \(\vec F_g=m\vec g\) where \(m\) is again the mass of the object
+  and \(\vec g=(0,-g)\) is the acceleration of gravity,	pulling straight
+  down, whose magnitude is approximately
+  \[\begin{aligned}
+  g&=9.8\dfrac{\text{m}}{\text{sec}^2}&&\text{in mks units} \\
+  &=980\dfrac{\text{cm}}{\text{sec}^2}&&\text{in cgs units} \\
+  &=32\dfrac{\text{ft}}{\text{sec}^2}&&\text{in British units}
+  \end{aligned}\]
+	Frequently, in order to avoid dealing with \(g\), we will give the weight of
+  an object instead of its mass. The weight is the force of gravity
+  \(\vec F_g=m\vec g\). The weight is measured in Newtons (in mks units),
+  in dynes (in cgs units) or in pounds (in British units).
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+  	An object which weighs \(mg=100\,\text{N}\) is suspended from \(2\) wires
+    which form the sides of a \(30^\circ-60^\circ-90^\circ\) right triangle
+    whose hypotenuse is horizontal at the ceiling. Find the tension (magnitude
+    of the force) in each wire.
+	</p>
+  <div class="center">
+	  <img src="graphics/EgBalForces.jpg" alt="EgBalForces"/>
+  </div>
+</div>
+<p class="sol">
+	Let \(F_1\) and \(F_2\) be the magnitudes of the forces \(\vec F_1\) and
+  \(\vec F_2\). Then the \(3\) forces are
+  \[\begin{aligned}
+  \vec F_1&=\left\langle-F_1\cos60^\circ,F_1\sin60^\circ\right\rangle \\
+  \vec F_2&=\left\langle F_2\cos30^\circ,F_2\sin30^\circ\right\rangle \\
+  \vec F_g&=\left\langle0,-mg\right\rangle
+  \end{aligned}\]
+	Newton's Law for a static situation says \(\vec F_1+\vec F_2+\vec F_g=0\).
+  The \(x\)- and \(y\)-components	of this equation are
+  \[\begin{aligned}
+  -F_1\cos60^\circ+F_2\cos30^\circ&=0 \\
+	F_1\sin60^\circ+F_2\sin30^\circ-mg&=0
+	\end{aligned}\]
+	or
+	\[\begin{aligned}
+  -\dfrac{1}{2}F_1+\dfrac{\sqrt{3}}{2}F_2&=0 \\
+	\dfrac{\sqrt{3}}{2}F_1+\dfrac{1}{2}F_2-mg&=0
+	\end{aligned}\]
+	The first of these says \(F_1=\sqrt{3}F_2\). Then the second says
+  \(\dfrac{3}{2}F_2+\dfrac{1}{2}F_2-mg=0\).	So:
+	\[\begin{aligned}
+  F_2&=\dfrac{1}{2}mg=\dfrac{1}{2}100\,\text{N}=50\,\text{N} \\
+  F_1&=\sqrt{3}F_2=50\sqrt{3}\,\text{N}\approx86.6\,\text{N}
+	\end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Three tugboats are pulling on an ocean liner. The first two exert the forces:
+    \[
+    \vec F_1=\left\langle3,4\right\rangle
+    \quad \text{and} \quad
+    \vec F_2=\left\langle-4,1\right\rangle
+    \]
+    What is the force \(\vec F_3\) that the third tugboat must exert to keep
+    the ocean liner stationary?
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The sum of the forces must be \(\vec 0\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(
+    \vec F_3=\left\langle1,-5\right\rangle
+    \)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <div class="column">
+    <p>
+      The sum of the forces must be \(\vec 0\).
+  		\[
+  		\vec F_1+\vec F_2+\vec F_3=\vec 0 \qquad (0)
+  		\]
+      So
+      \[\begin{aligned}
+      \vec F_3&=-\vec F_1-\vec F_2 \\
+      &=-\left\langle3,4\right\rangle-\left\langle-4,1\right\rangle \\
+      &=\left\langle1,-5\right\rangle
+      \end{aligned}\]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_tugboats.jpg" alt="ex_tugboats">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-number="3">
+    	A \(25\,\text{lb}\) sculpture is suspended from a wire which is
+      tied to \(2\) other wires at the origin, as shown in the figure.
+      The sculpture is at the bottom of the vertical wire. The other \(2\)
+      wires are attached to nails in the ceiling at \((-9,12)\) and \((16,12)\).
+      Find the forces in the upper \(2\) wires.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_sculpture_prob.jpg" alt="ex_sculpture_prob">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    The forces \(\vec F_1\) and \(\vec F_2\) point in the same directions
+    as the wires \(\vec u_1=\langle-9,12\rangle\) and
+    \(\vec u_2=\langle16,12\rangle\).
+    Write out the equations which say the sum of the forces is \(\vec 0\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\begin{aligned}
+    \vec F_1&=\left\langle-12,16\right\rangle \\
+    \vec F_2&=\left\langle12,9\right\rangle
+    \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    For the sculpture to be stationary, the forces must balance and cancel each
+    other out. In other words, the sum of the forces must add to be zero. We
+    express this mathematically as
+		\[
+		\vec F_1+\vec F_2+\vec F_3=\vec 0 \qquad (0)
+		\]
+    The force of gravity is \(\vec F_3=\langle0,-25\rangle\).
+    The vectors \(\vec F_1\) and \(\vec F_2\) point along the vectors from the
+    origin to the two nails which are \(\vec u_1=\langle-9,12\rangle\) and
+    \(\vec u_2=\langle16,12\rangle\), but we need to change their magnitudes.
+    To do this, we first compute their lengths:
+    \[
+    |u_1|=\sqrt{9^2+12^2}=15 \quad \text{and} \quad
+    |u_2|=\sqrt{16^2+12^2}=20
+    \]
+    Then the directions are the unit vectors:
+    \[
+    \vec u_1=\left\langle\dfrac{-9}{15},\dfrac{12}{15}\right\rangle
+    =\left\langle\dfrac{-3}{5},\dfrac{4}{5}\right\rangle
+    \quad \text{and} \quad
+    \vec u_2=\left\langle\dfrac{16}{20},\dfrac{12}{20}\right\rangle
+    =\left\langle\dfrac{4}{5},\dfrac{3}{5}\right\rangle
+    \]
+    These have length \(1\), but we want them to have lengths \(|F_1|\) and
+    \(|F_2|\). So we multiply the components by \(|F_1|\) and \(|F_2|\):
+    \[
+    \vec F_1=\left\langle-\,\dfrac{3}{5}|F_1|,\dfrac{4}{5}|F_1|\right\rangle
+    \quad \text{and} \quad
+    \vec F_2=\left\langle\dfrac{4}{5}|F_2|,\dfrac{3}{5}|F_2|\right\rangle
+    \]
+    We now balance the forces by writing out the components of equation (0):
+  	\[\begin{aligned}
+    -\,\dfrac{3}{5}|F_1|+\dfrac{4}{5}|F_2|+0&=0 \qquad (1)\\
+    \dfrac{4}{5}|F_1|+\dfrac{3}{5}|F_2|-25&=0 \qquad (2) \\
+  	\end{aligned}\]
+  </p>
+  <div class="column">
+  	<p>
+      Equation (1) says \(|F_2|=\dfrac{3}{4}|F_1|\). Then equation (2) says
+      \(\dfrac{4}{5}|F_1|+\dfrac{3}{5}\cdot\dfrac{3}{4}|F_1|=25\). Consequently:
+      \[
+      |F_1|=20 \quad \text{and} \quad |F_2|=15
+      \]
+      So the forces are:
+      \[
+      \vec F_1=\left\langle-12,16\right\rangle
+      \quad \text{and} \quad
+      \vec F_2=\left\langle12,9\right\rangle
+      \]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_sculpture_sol.jpg" alt="ex_sculpture_sol">
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

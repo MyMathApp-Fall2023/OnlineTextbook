@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Law of Sines and Law of Cosines | Trigonometry</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ParityCompSupp.html" title="Previous">&lArr;</a></li>
+      <li><a href="SumDiff.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Trigonometry</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  There are three trig identities whose proofs involve a little more geometry
+  than the previous ones. They are the Law of Sines and the Law of Cosines
+  (discussed here) and the Sum of Angles Formulas (discussed on the
+  <a href="SumDiff.html">next page</a>).
+</p>
+
+
+      
+      <h2>Law of Sines and Law of Cosines</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Given a triangle \(\triangle ABC\), as long as there is no confusion, we
+  will denote the angle at each vertex by the same letter as the vertex.
+  For example, the angle at the vertex \(B\) has measure \(B\).
+</p>
+
+<h3>Law of Sines</h3>
+
+<div class="column">
+  <p class="prop" data-title="Law of Sines">
+    If a triangle \(\triangle ABC\) has opposite sides with lengths \(a\),
+    \(b\) and \(c\) resp., then
+    \[
+    \dfrac{\sin A}{a}=\dfrac{\sin B}{b}=\dfrac{\sin C}{c}
+    \]
+    <button class="toggle" data-toggle="Pf1">Proof</button>
+    \(\Leftarrow\Leftarrow\) Read it! It's straightforward.
+  </p>
+  <div class="center">
+    <img src="graphics/trianglelaws2.jpg" alt="Triangle Plot">
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Pf1">
+  <div class="column">
+    <div>
+      <p>
+        Drop a perpendicular from \(B\) to the opposite side \(CA\). Let \(P\)
+        be the point of intersection which is called the
+        <span class="defword">foot of the perpendicular</span> and let \(h\) be
+        the length of this perpendicular. Looking at the right triangle
+        \(\triangle CPB\), we observe \(\sin C=\dfrac{h}{a}\). Similarly,
+        looking at the right triangle \(\triangle APB\), we observe
+        \(\sin A=\dfrac{h}{c}\). Solving each equation for \(h\) and equating,
+        we get:
+        \[
+        h=a\sin C=c\sin A
+        \]
+        Dividing by \(ac\) gives the result:
+        \[
+        \dfrac{\sin C}{c}=\dfrac{\sin A}{a}
+        \]
+        If we drop the perpendicular from \(A\) instead of \(B\), we would
+        conclude:
+        \[
+        \dfrac{\sin C}{c}=\dfrac{\sin B}{b}
+        \]
+        Together, these give the theorem.
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/trianglelaws2perpendicular.jpg" alt="Triangle Plot">
+    </div>
+  </div>
+  <p>
+    Actually, to have a full proof, we still need to check the cases where the
+    foot of the perpendicular is not between \(C\) and \(A\).
+    <button class="toggle" data-toggle="Proof1">Extra Cases</button>
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Proof1">
+  <h4>Extra Cases where \(P\) is not between \(C\) and \(A\)</h4>
+  <p>
+    Info here
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Law of Cosines</h3>
+
+<div class="column">
+  <p class="prop" data-title="Law of Cosines">
+    If a triangle \(\triangle ABC\) has opposite sides with lengths \(a\),
+    \(b\) and \(c\) and angles \(A\), \(B\) and \(C\) resp., then
+    \[
+    c^2=a^2+b^2-2ab\cos C
+    \]
+    and similarly for the other two sides:
+    \[
+    a^2=b^2+c^2-2bc\cos A
+    \]
+    \[
+    b^2=a^2+c^2-2ac\cos B
+    \]
+    <button class="toggle" data-toggle="Pf2">Proof</button>
+    \(\Leftarrow\Leftarrow\) Read it! It's straightforward.
+  </p>
+  <div class="center">
+    <img src="graphics/trianglelaws2.jpg" alt="Triangle Plot">
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Pf2">
+  <div class="column">
+    <div>
+      <p>
+        Drop a perpendicular from \(B\) to the opposite side \(CA\). Let \(P\)
+        be the foot of the perpendicular and let \(h\) be the length of this
+        perpendicular. Let \(r\) be the length of the segment \(CP\). Then
+        the length of the segment \(PA\) is \(b-r\). Applying the Pythagorean
+        Theorem to the triangle \(\triangle CPB\), we observe
+        \[
+        h^2=a^2-r^2
+        \]
+        Similarly, for the triangle \(\triangle APB\), we have
+        \[
+        h^2=c^2-(b-r)^2=c^2-b^2+2br-r^2
+        \]
+        Equating these two formulas for \(h^2\), we get:
+        \[
+        c^2-b^2+2br-r^2=a^2-r^2
+        \]
+        or
+        \[
+        c^2=a^2+b^2-2br \qquad \qquad (*)
+        \]
+        Finally, look at the triangle \(\triangle CPB\) again. We see
+        \(\cos C=\dfrac{r}{a}\). So \(r=a\cos C\) and
+        \[
+        c^2=a^2+b^2-2ab\cos C
+        \]
+      </p>
+      <p>
+        Actually, to have a full proof, we still need to check the cases where the
+        foot of the perpendicular is not between \(C\) and \(A\).
+        <button class="toggle" data-toggle="Proof2">Extra Cases</button>
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/trianglelaws2perpendicular.jpg" alt="Triangle Plot">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled" data-toggle="Proof2">
+  <h4>Extra Cases where \(P\) is not between \(C\) and \(A\)</h4>
+  <p>
+    Info here
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example">
+  If two sides of a triangle are \(5\) and \(8\) and the angle between them
+  is \(45^\circ\). Find the length of the third side and the other two angles.
+  Give answers to \(3\) decimal places. You may use a calculator to find an
+  angle given its sine or cosine.
+</p>
+<p class="sol">
+  <big> Needs Check -CJ </big> <br>
+  By the law of cosines, we see that the length of the third side must be:
+  \[
+  c=\sqrt{a^2+b^2-2ab\cos C}
+  \]
+  Plugging in our given values, we see:
+  \[
+  c=\sqrt{5^2+8^2-2(5)(8)\cos 45}=5.695
+  \]
+  By the law of sines, we know:
+  \[
+  \dfrac{\sin A}{a}=\dfrac{\sin B}{b}=\dfrac{\sin C}{c}
+  \]
+  Plugging in side c, we see:
+  \[
+  \dfrac{\sin 45}{5.695}=0.124
+  \]
+  Thus:
+  \[
+  B = \sin^{-1} 8(0.124) = 83.377^\circ \quad
+  C = \sin^{-1} 5(0.124) = 38.377^\circ
+  \]
+
+
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise">
+    If two angles of a triangle are \(45^\circ\) and \(45^\circ\) and the
+    length of the side between them is \(6\), find the third angle and the
+    lengths of the other two sides. Give answers to \(3\) decimal places.
+    You may use a calculator to do arithmetic including square roots.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  The third angle is:
+  \[
+  90^\circ
+  \]
+  And the two sides are:
+  \[
+  4.243
+  \]
+
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Given that the angles of a triangle must sum to \(180^\circ\), we know that
+    the third angle in the triangle must be:
+    \[
+    180^\circ - 45^\circ - 45^\circ = 90^\circ
+    \]
+    We see that this is a traditional \(45/45/90\) triangle and apply unit circle
+    definitions to see that the other two sides of the triangle must be equal to
+    \[
+    \dfrac{6}{\sqrt{2}} = 4.243
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Converting &amp; Mixing, Rectangular &amp; Cylindrical Coordinates | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Cyl-Appl.html" title="Previous">&lArr;</a></li>
+      <li><a href="Sph-Grid.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Integrating in Cylindrical Coordinates</h2>
+
+
+      
+      <h2>4. Converting &amp; Mixing, Rectangular &amp; Cylindrical Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Sometimes it is useful to use cylindrical coordinates instead of rectangular
+  coordinates when computing an integral. Other times it is best to use
+  rectangular coordinates for one part of an integral and cylindrical
+  coordinates for another part.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Converting Rectangular to Cylindrical Coordinates</h3>
+
+<p>
+  Sometimes the antiderivative of the integrand is
+  not known, making the integral difficult if not impossible. By converting to
+  cylindrical coordinates, we can simplify the integral greatly.
+</p>
+<p class="example" data-number="1">
+  Compute the integral \(\displaystyle I
+  =\int_0^{3/\sqrt{2}}\int_y^{\sqrt{9-y^2}}\int_0^{x^2+y^2} \cos(z)\,dz\,dx\,dy\)
+</p>
+<div class="column">
+  <p class="sol">
+    This integral is very hard to do in rectangular coordinates. The
+    \(z\)-integral can be easily done, but then the \(x\)-integral is
+    impossible since we do not know the \(x\)-antiderivative of
+    \(\sin(x^2+y^2)\). However, converting to cylindrical coordinates
+    drastically simplifies the problem. First, we plot the region in the \(xy\)
+    plane. From the integral, we see that the region of integration is
+    \(y \le x \le \sqrt{9-y^2}\) which is shaded in blue. The left and right
+    curves intersect when
+    \[
+    y=\sqrt{9-y^2} \quad \Rightarrow \quad 2y^2=9 \quad \Rightarrow \quad
+    y=\pm\dfrac{3}{\sqrt{2}}
+    \]
+    The upper limit for \(y\) is \(\dfrac{3}{\sqrt{2}}\) which is precisely
+    the intersection point and the lower limit is \(y=0\) as shown in the plot.
+	</p>
+  <div class="center">
+    <img src="graphics/polarapp-convert1.jpg" alt="polarapp-convert1">
+  </div>
+</div>
+<p>
+  We now convert to cylindrical coordinates. We replace the volume
+  differential by:
+  \[
+  dV=dz\,dx\,dy=r\,dz\,dr\,d\theta
+  \]
+  and the new limits are:
+  \[
+  0 \le \theta \le \dfrac{\pi}{4} \qquad
+  0 \le r \le 3 \quad \text{and} \quad
+  0 \le z \le r^2
+  \]
+  So the integral becomes
+  \[\begin{aligned}
+  I&=\int_0^{3/\sqrt{2}}\int_y^{\sqrt{9-y^2}}\int_0^{x^2+y^2} \cos(z)\,dz\,dx\,dy
+  =\int_0^{\pi/4}\int_0^{3}\int_0^{r^2} \cos(z)\,r\,dz\,dr\,d\theta \\
+  &=\dfrac{\pi}{4}\int_0^{3} \left[\sin(z)\dfrac{}{}\right]_0^{r^2}\,r\,dr
+  =\dfrac{\pi}{4}\int_0^{3} \sin(r^2)\,r\,dr
+  =\dfrac{\pi}{4}\left[-\,\dfrac{1}{2}\,\cos(r^2)\right]_0^3 \\
+  &=\dfrac{\pi}{8}(-\cos(9)+\cos(0))
+  =\dfrac{\pi}{8}(1-\cos(9))
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<h3>Mixing Rectangular and Cylindrical Coordinates</h3>
+
+<p>
+  Sometimes one integral should be done in rectangular coordinates and another
+  should be done in cylindrical coordinates, such as in the example below.
+</p>
+
+<p class="example" data-number="2">
+  The cube \(-3 \le x \le 3\) and \(-3 \le y \le 3\) and \(0 \le z \le 6\)
+  is cut out of the cone \(0 \le z \le 12-r\). Find the mass of the remaining
+  part of the cone if the mass density is \(\delta=x^2+y^2=r^2\).
+</p>
+<p class="sol">
+  We compute the mass of the cone including the cube and then subtract the
+  mass of the cube.
+</p>
+<p>
+  Using cylindrical coordinates, the mass of the cone including the cube is:
+  \[\begin{aligned}
+  M_\text{cone}
+  &=\iiint\limits_\text{cone} \delta \,dV
+  =\int_0^{2\pi}\int_0^{12}\int_0^{12-r} r^2\cdot r\,dz\,dr\,d\theta \\
+  &=2\pi\int_0^{12} r^3\left[z\dfrac{}{}\right]_{z=0}^{12-r}\,dr
+  =2\pi\int_0^{12} r^3(12-r)\,dr \\
+  &=2\pi\left[3r^4-\dfrac{r^5}{5}\right]_0^{12}
+  =2\pi\left(3\cdot12^4-\dfrac{12^5}{5}\right) \\
+  &=2\pi12^4\left(3-\dfrac{12}{5}\right)
+  =\dfrac{6\cdot12^4\pi}{5}
+  \end{aligned}\]
+  Using rectangular coordinates, the mass of the cube is:
+  \[\begin{aligned}
+  M_\text{cube}
+  &=\iiint\limits_\text{cube} \delta \,dV
+  =\int_0^6\int_{-3}^3\int_{-3}^3 (x^2+y^2)\,dx\,dy\,dz \\
+  &=\int_0^6 \,dz
+  \left(\int_{-3}^3 x^2\,dx\int_{-3}^3 \,dy
+  +\int_{-3}^3 \,dx\int_{-3}^3 y^2\,dy\right) \\
+  &=\left[z\dfrac{}{}\right]_0^{6}
+  \left(\left[\dfrac{x^3}{3}\right]_{x=-3}^3\left[y\dfrac{}{}\right]_{y=-3}^3
+       +\left[x\dfrac{}{}\right]_{-3}^3\left[\dfrac{y^3}{3}\right]_{-3}^3\right) \\
+  &=6(18\cdot6+6\cdot18)=1296
+  \end{aligned}\]
+  Thus, the mass inside the cone but outside the cube is
+  \[
+  V=\dfrac{6\cdot12^4\pi}{5}-1296\approx76877.
+  \]
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

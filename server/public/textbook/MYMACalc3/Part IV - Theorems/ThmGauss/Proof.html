@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Proof | 27. Gauss&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Verify.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplSurf2Vol.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>27. Gauss&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Gauss' Theorem">
+  Let \(V\) be a nice solid region in \(\mathbb{R}^3\) with a nice
+  properly oriented boundary, \(\partial V\), and let \(\vec F\)
+  be a nice vector field on \(V\). Then
+  \[
+  \iiint_V \vec\nabla\cdot\vec F\,dV
+  =\iint_{\partial V} \vec F\cdot d\vec S
+  \]
+  The outer boundary must be oriented outward while any inner
+  boundaries must be oriented inward. This means that all pieces of the
+  boundary are oriented away from the solid.
+</p>
+
+
+      
+      <h2>c. Proof</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We will only prove Gauss' Theorem for solids without holes. For a solid
+  with holes, we slice the solid into pieces without holes and add the
+  results for all the pieces.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Overview</h3>
+
+<p>
+  We will write the vector function \(\vec F\) as
+  \[
+  \vec F=\langle P(x,y,z),Q(x,y,z),T(x,y,z)\rangle .
+  \]
+  and expand Gauss' Theorem as
+  \[
+  \iiint_V (\partial_xP+\partial_yQ+\partial_zT)\,dV
+  =\iint_{\partial V} P\,dy\,dz+Q\,dz\,dx+T\,dx\,dy
+  \]
+</p>
+<p class="remark">
+  To write the right side in this form, we need to express the \(d\vec S\)
+  vector in terms of the normal vector:
+  \[\begin{aligned}
+  d\vec S
+  &=\vec N\,du\,dv
+  =\left(\dfrac{\partial(y,z)}{\partial(u,v)},
+          \dfrac{\partial(z,x)}{\partial(u,v)},
+          \dfrac{\partial(x,y)}{\partial(u,v)}\right)\,du\,dv \\
+  &=(dy\,dz,dz\,dx,dx\,dy)&&(*)
+  \end{aligned}\]
+  Then the right side is \(\vec F\cdot d\vec S\).
+</p>
+<p>
+  We will prove the theorem for the case that \(\vec F=\langle P,0,0\rangle\),
+  and that only for the case of a rectangular solid box.
+  Totally analogous proofs work for the other two cases
+  \(\vec F=\langle 0,Q,0\rangle\) and \(\vec F=\langle 0,0,T\rangle\).
+  They are assigned as
+  <a href="x.html#topic3" title="Return using the Back button.">exercises</a>.
+  The general result is then just the sum of the three special cases.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Proof of the \(P\) Piece</h3>
+
+<div class="column">
+  <p>
+    We prove
+    \[
+    \iiint_V \partial_x P\,dV
+    =\iint_{\partial V} P\,dy\,dz
+    \]
+    for the simple case of a rectangular box with bounds:
+    \[
+    a \le x \le b
+    \quad\text{and}\quad
+    c \le y \le d
+    \quad\text{and}\quad
+    e \le z \le f
+    \]
+    To carry out the proof,
+    we evaluate the left and right hand sides to see they are equal.
+    <br><br>
+    <span class="center">
+    <button class="toggle has-sol" data-toggle="DropLHS"></button>&nbsp;LHS
+    &emsp;&emsp;
+    <button class="toggle has-sol" data-toggle="DropRHS"></button>&nbsp;RHS
+    </span>
+  </p>
+  <div class="center">
+    <img src="graphics/pf_box_noarrows.jpg" alt="pf_box_noarrows">
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="DropLHS">
+  <h4>LHS:</h4>
+  <p>
+    To compute the integral on the left, we apply the Fundamental Theorem of
+    Calculus to the \(x\)-integral while \(y\) and \(z\) are held constant:
+    \[\begin{aligned}
+    \iiint_V \partial_xP\,dV
+    &=\int_e^f\int_c^d\int_a^b \partial_xP(x,y,z)\,dx\,dy\,dz \\
+    &=\int_e^f\int_c^d P(b,y,z)-P(a,y,z)\,dy\,dz
+    \end{aligned}\]
+    We now want to see that this is the same as the integral on the right.
+  </p>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="DropRHS">
+  <h4>RHS:</h4>
+  <div class="column">
+    <p>
+      We know that \(\partial V\) is the surface of the box, which has
+      \(6\) faces. To evaluate the right side we need to parameterize all six
+      faces and find their normal vectors. In each case, we take
+      \(\vec N=\vec e_u\times\vec e_v\) and choose \(u\) and \(v\) so that
+      \(\vec N\) has the correct orientation. Also notice from equation (*) that
+      \(dy\,dz\) is the first component of \(\vec N\) times \(\,du\,dv\).
+      <br>
+      <button id="button_Reset">Reset Plot</button>
+    </p>
+    <div class="center">
+      <img src="graphics/pf_box_allarrows.jpg"
+      alt="pf_box_allarrows" id="img_pf_RHS">
+    </div>
+  </div>
+  <p>
+    <button id="button_Face1">Plot</button>
+    \(\begin{aligned}
+    &\rule{0pt}{10pt} \\
+    &\vec R_1(u,v)=(a,v,u) \\
+    &e \le u \le f \quad c \le v \le d
+    \end{aligned} \quad
+    \vec N_1=
+    \begin{vmatrix}
+    i & j & k \\
+    0 & 0 & 1 \\
+    0 & 1 & 0
+    \end{vmatrix}
+    =(-1,0,0) \quad\,
+    dy\,dz=-du\,dv \)
+    <br>
+    <button id="button_Face2">Plot</button>
+    \(\begin{aligned}
+    &\rule{0pt}{10pt} \\
+    &\vec R_2(u,v)=(b,u,v) \\
+    &c \le u \le d \quad e \le v \le f
+    \end{aligned} \quad
+    \vec N_2=
+    \begin{vmatrix}
+    i & j & k \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+    \end{vmatrix}
+    =(1,0,0) \qquad
+    dy\,dz=du\,dv\)
+    <br>
+    <button id="button_Face3">Plot</button>
+    \(\begin{aligned}
+    &\rule{0pt}{10pt} \\
+    &\vec R_3(u,v)=(u,c,v) \\
+    &a \le u \le b \quad e \le v \le f
+    \end{aligned} \quad
+    \vec N_3=
+    \begin{vmatrix}
+    i & j & k \\
+    1 & 0 & 0 \\
+    0 & 0 & 1
+    \end{vmatrix}
+    =(0,-1,0) \quad\,
+    dy\,dz=0\)
+    <br>
+    <button id="button_Face4">Plot</button>
+    \(\begin{aligned}
+    &\rule{0pt}{10pt} \\
+    &\vec R_4(u,v)=(v,d,u) \\
+    &e \le u \le f \quad a \le v \le b
+    \end{aligned} \quad
+    \vec N_4=
+    \begin{vmatrix}
+    i & j & k \\
+    0 & 0 & 1 \\
+    1 & 0 & 0
+    \end{vmatrix}
+    =(0,1,0) \qquad
+    dy\,dz=0\)
+    <br>
+    <button id="button_Face5">Plot</button>
+    \(\begin{aligned}
+    &\rule{0pt}{10pt} \\
+    &\vec R_5(u,v)=(v,u,e) \\
+    &c \le u \le d \quad a\le v \le b
+    \end{aligned} \quad
+    \vec N_5=
+    \begin{vmatrix}
+    i & j & k \\
+    0 & 1 & 0 \\
+    1 & 0 & 0
+    \end{vmatrix}
+    =(0,0,-1) \quad\,
+    dy\,dz=0\)
+    <br>
+    <button id="button_Face6">Plot</button>
+    \(\begin{aligned}
+    &\rule{0pt}{10pt} \\
+    &\vec R_6(u,v)=(u,v,f) \\
+    &a \le u \le b \quad c \le v \le d
+    \end{aligned} \quad
+    \vec N_6=
+    \begin{vmatrix}
+    i & j & k \\
+    1 & 0 & 0 \\
+    0 & 1 & 0
+    \end{vmatrix}
+    =(0,0,1) \qquad
+    dy\,dz=0\)
+  </p>
+  <p>
+    Notice that we have chosen the order of \(u\) and \(v\) in each
+    parametrization so that the normal \(\vec N\) points out of the surface,
+    i.e. toward
+  </p>
+  <p class="center">
+    negative &nbsp; \(x\) &nbsp; when &nbsp; \(x=a\)
+    &emsp; and &emsp;
+    positive &nbsp; \(x\) &nbsp; when &nbsp; \(x=b\)
+  </p>
+  <p class="center">
+    negative &nbsp; \(y\) &nbsp; when &nbsp; \(y=c\)
+    &emsp; and &emsp;
+    positive &nbsp; \(y\) &nbsp; when &nbsp; \(y=d\)
+  </p>
+  <p class="center">
+    negative &nbsp; \(z\) &nbsp; when &nbsp; \(z=e\)
+    &emsp; and &emsp;
+    positive &nbsp; \(z\) &nbsp; when &nbsp; \(z=f\)
+  </p>
+  <p>
+    Further, the value of \(dy\,dz\) for each parametrization is found
+    from the equation
+    \[
+    d\vec S=\vec N\,du\,dv=(dy\,dz,dz\,dx,dx\,dy)
+    \]
+    Since \(dy\,dz=0\) for \(4\) of the \(6\) surfaces, the only surfaces
+    that contribute to the right side of Gauss' Theorem are surfaces
+    \(\vec R_1(u,v)\) and \(\vec R_2(u,v)\).
+    Thus we evaluate the right side by summing the two surface integrals:
+    \[\begin{aligned}
+    \iint_{\partial V} P\,dy\,dz
+    &=\iint_{\vec R_1 } P\,dy\,dz+\iint_{\vec R_2 } P\,dy\,dz \\
+    &=-\int_c^d\int_e^f P(a,v,u)\,du\,dv+\int_e^f\int_c^d P(b,u,v)\,du\,dv
+    \end{aligned}\]
+    Notice that on the surface \(\vec R_1\) the \(u\) variable is the
+    value of \(z\) so that \(e \le u \le f\) and on the surface \(\vec R_2\)
+    the \(u\) variable is the value of \(y\) so that \(c \le u \le d\) and
+    the opposite is true for \(v\).
+  </p>
+  <p>
+    By Fubini's theorem, we can interchange the order of the differentials
+    of integration on the first integral if we also interchange the order
+    of the limits on the integrals
+    \[
+    \iint_{\partial V} P\,dy\,dz
+    =-\int_e^f\int_c^d P(a,v,u)\,dv\,du+\int_e^f\int_c^d P(b,u,v)\,du\,dv
+    \]
+    Finally, in the first integral, we replace the dummy variables \(v\)
+    and \(u\) by \(y\) and \(z\) respectively and in the second integral,
+    we replace the dummy variables \(u\) and \(v\) by \(y\) and \(z\)
+    respectively:
+    \[
+    \iint_{\partial V} P\,dy\,dz
+    =-\int_e^f\int_c^d P(a,y,z)\,dy\,dz+\int_e^f\int_c^d P(b,y,z)\,dy\,dz
+    \]
+    This is the same result we found on the left side. So the theorem is
+    proved for the case that \(\vec F=\langle P,0,0\rangle\). Totally
+    analogous proofs work for the other two cases
+    \(\vec F=\langle 0,Q,0\rangle\) and
+    \(\vec F=\langle 0,0,T\rangle\). They are assigned as
+    <a href="x.html#topic3" title="Return using the Back button.">exercises</a>.
+    The general result is then just the sum of the three special cases.
+  </p>
+</div>
+<p class="remark">
+  If the solid is not a rectangular box, then it can usually be written as
+  a box in some curvilinear coodinate system. The proof is assigned as a
+  challenge problem on the
+  <a href="x.html#topic3" title="Return using the Back button.">exercise</a>
+  page.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+  <script>
+    function changeImageSourceOnClick(imgId, buttonId, imgSrc) {
+      const img = document.getElementById(imgId);
+      const button = document.getElementById(buttonId);
+      button.addEventListener("click", () => {
+        img.setAttribute("src", imgSrc);
+      });
+    }
+    changeImageSourceOnClick("img_pf_RHS", "button_Reset", "graphics/pf_box_allarrows.jpg");
+    changeImageSourceOnClick("img_pf_RHS", "button_Face1", "graphics/pf_box_bckarrow.jpg");
+    changeImageSourceOnClick("img_pf_RHS", "button_Face2", "graphics/pf_box_fntarrow.jpg");
+    changeImageSourceOnClick("img_pf_RHS", "button_Face3", "graphics/pf_box_lftarrow.jpg");
+    changeImageSourceOnClick("img_pf_RHS", "button_Face4", "graphics/pf_box_rgtarrow.jpg");
+    changeImageSourceOnClick("img_pf_RHS", "button_Face5", "graphics/pf_box_botarrow.jpg");
+    changeImageSourceOnClick("img_pf_RHS", "button_Face6", "graphics/pf_box_toparrow.jpg");
+   </script>
+
+</body>
+</html>

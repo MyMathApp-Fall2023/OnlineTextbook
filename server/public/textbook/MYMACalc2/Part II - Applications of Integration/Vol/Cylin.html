@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e1. Volume using Thin Cylinders | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Washer.html" title="Previous">&lArr;</a></li>
+      <li><a href="Strategy.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>e1. Volume using Thin Cylinders</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Finally, we consider the problem of computing the volume of a solid of
+  revolution using thin cylinders.
+</p>
+<div class="column">
+	<div data-col-width="40%">
+		<p class="genexample" data-title="Function of \(x\)">
+	    The region between the functions \(y=f(x)\) and \(y=g(x)\) between
+	    \(x=a\) and \(x=b\) is rotated about the \(y\)-axis. Find the volume
+	    of the solid swept out.
+		</p>
+		<p class="remark">
+		  For a region between a function \(y=f(x)\) and the \(x\)-axis, just
+		  set \(g(x)=0.\)
+		</p>
+  </div>
+  <div class="center" data-col-width="60%">
+    <img src="graphics/area2.jpg" alt="picture of a graph to be revolved">
+    <video src="graphics/area2yanimate.mp4" autoplay loop controls></video>
+  </div>
+</div>
+<div class="column">
+	<div data-col-width="40%">
+		<p class="sol">
+			This is an \(x\) integral. So we chop up the \(x\)-axis, draw a vertical
+			rectangle and rotate it obtaining a thin cylinder centered on the \(y\)-axis.
+		</p>
+	</div>
+	<div class="center" data-col-width="60%">
+		<img src="graphics/rect2.jpg" alt="picture of a graph to be revolved">
+		<video src="graphics/rect2yanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="60%">
+		<p>
+			To approximate the volume of the cylinder, we think of the cylinder
+			as being made from paper, cut it and unroll it into a rectangle
+			(actually a rectangular solid).
+		  The length of the rectangle is the circumference of the circle
+			\(L=2\pi r\). Here the radius \(r\) is equal to the position \(x\)
+			of the cylinder within the shape. So \(L=2\pi x\).
+			The width of the rectangle is the height of the cylinder
+		  \(W=f(x)-g(x)\). And the thickness of the rectangle is the thickness
+			of the cylinder, namely \(\Delta x\). So the volume of the thin cylinder
+			is approximately the volume of the rectangular solid which is:
+			\[
+			\Delta V\approx LW\Delta x=2\pi x(f(x)-g(x))\Delta x
+			\]
+			Adding these up and taking the limit, we get the volume of the solid
+			of revolution:
+	    \[
+			V=\int_a^b 2\pi x\,(f(x)-g(x))\,dx
+			\]
+		</p>
+	</div>
+	<div class="center" data-col-width="40%">
+	  <img src="graphics/eg_unroll_papercyl.jpg" alt="eg_unroll_papercyl">
+	</div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Now turn your head sideways
+	<img src="../../../graphics/happyfaceanim.gif" height="40" alt="happyfaceanim">
+</p>
+<div class="column">
+	<div data-col-width="40%">
+  	<p class="genexample" data-title="Function of \(y\)" data-col-width="40%">
+  	  The region between the functions \(x=f(y)\) and \(x=g(y)\) between
+  		\(y=a\) and \(y=b\) is rotated about the \(x\)-axis. Find the volume
+  		of the solid swept out.
+  	</p>
+    <p class="remark">
+      For a region between a function \(x=f(y)\) and the \(y\)-axis, just
+      set \(g(y)=0.\)
+    </p>
+  </div>
+	<div class="center" data-col-width="60%">
+    <img src="graphics/area4.jpg" alt="picture of a graph to be revolved">
+    <video src="graphics/area4xanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="40%">
+		<p class="sol">
+		  This is a \(y\) integral. So we cut up the \(y\)-axis, draw a horizontal
+			rectangle and rotate it obtaining a thin cylinder centered on the \(x\)-axis.
+		</p>
+		<p>
+		  The same reasoning gives the volume:
+	    \[
+			V=\int_a^b 2\pi y(f(y)-g(y))\,dy
+      \]
+		</p>
+	</div>
+	<div class="center" data-col-width="60%">
+    <img src="graphics/rect4.jpg" alt="picture of a graph to be revolved">
+    <video src="graphics/rect4xanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Volume of a Solid of Revolution using Thin Cylinders">
+  If the region below the function \(y=f(x)\) above the function \(y=g(x)\)
+	between \(x=a\) and \(x=b\) is rotated about the \(y\)-axis, the volume
+	swept out is:
+  \[
+	V=\int_a^b 2\pi x(f(x)-g(x))\,dx
+	\]
+  If the region to the left of the function \(x=f(y)\) and to the right of
+  the function \(x=g(y)\) between \(y=a\) and \(y=b\) is rotated about the
+  \(x\)-axis, the volume swept out is:
+  \[
+	V=\int_a^b 2\pi y(f(y)-g(y))\,dy
+	\]
+  Both formulas can be summarized as
+  \[
+	V=\int_a^b 2\pi(\text{radius})(\text{height})\,dv
+  \]
+  where \(dv\) is either \(dx\) or \(dy\).
+</p>
+<p class="remark">
+  Notice that finding the volume of a solid of revolution by cylinders is not
+  a special case of finding a volume by slicing. However, the integral can
+  still be written as
+  \[
+  V=\int_a^b A(v)\,dv
+  \]
+  but in this case the area is the area of the cylinder,
+  \(A=2\pi(\text{radius})(\text{height})\).
+</p>
+
+        <div class="rule" id="cylin_eg1"></div>
+
+<div class="column">
+  <div>
+  	<p class="example" data-number="1">
+      The region between the curves \(y=x\) and \(y=\sqrt{x}\) is rotated
+      about the \(y\)-axis. Find the volume swept out. (Do the integral as
+      an \(x\) integral.)
+    </p>
+    <p class="remark">
+      On the <a href="Washer.html#washer_eg1">previous page</a>, we computed this
+      volume using <span class="hl">washers</span>. We now recompute it
+      using <span class="hl">cylinders</span>.
+    </p>
+  </div>
+	<div class="center">
+    <img src="graphics/eg_parab_line_xint_about_y_solid_anim.gif"
+    alt="eg_parab_line_xint_about_y_solid_anim">
+	</div>
+</div>
+<div class="column">
+	<div>
+    <p class="sol">
+      Since we will be performing an \(x\)-integral, we cut up the \(x\)-axis,
+      see that the rectangles are vertical and they rotate into thin cylinders.
+    </p>
+    <p>
+      So the volume is:
+      \[\begin{aligned}
+      V&=\int_a^b 2\pi(\text{radius})(\text{height})\,dx \\
+      &=\int_a^b 2\pi x(\text{upper}-\text{lower})\,dx \\
+      &=\int_0^1 2\pi x(\sqrt{x}-x)\,dx
+      =\int_0^1 2\pi(x^{3/2}-x^2)\,dx \\
+      &=2\pi\left[\dfrac{2x^{5/2}}{5}-\dfrac{x^3}{3}\right]_0^1
+      =2\pi\left(\dfrac{2}{5}-\dfrac{1}{3}\right)
+      =\dfrac{2\pi}{15}
+      \end{aligned}\]
+    </p>
+	</div>
+	<div class="center">
+    <img src="graphics/eg_parab_line_xint_about_y_cylinder_anim.gif"
+    alt="eg_parab_line_xint_about_y_cylinder_anim">
+	</div>
+</div>
+
+        <div class="rule" id="cylin_ex1"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <div>
+      <p>
+        Now you do it:
+      </p>
+      <p class="exercise" data-number="2">
+        The region between the curves \(y=x\) and \(y=\sqrt{x}\) is rotated
+        about the \(x\)-axis. Find the volume swept out. (Do the integral as
+        a \(y\) integral.)
+      </p>
+      <p class="remark">
+        On the <a href="Washer.html#washer_ex1">previous page</a>, you computed
+        this volume using <span class="hl">washers</span>. Now recompute it
+        using <span class="hl">cylinders</span>.
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/ex_parab_line_yint_about_x_solid_anim.gif"
+      alt="ex_parab_line_yint_about_x_solid_anim">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Remember, you need to do a \(y\)-integral this time. So cut up the \(y\)-axis.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle V=\dfrac{\pi}{6}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<div class="column">
+    <p>
+      As functions of \(y\), the edges are at \(x=y\) and \(x=y^2\).
+      We cut up the \(y\)-axis and see that the rectangles are horizontal
+      rotate into thin cylinders. So the volume is:
+      \[\begin{aligned}
+      V&=\int_a^b 2\pi(\text{radius})(\text{height})\,dy \\
+      &=\int_a^b 2\pi y(\text{right}-\text{left})\,dy \\
+      &=\int_0^1 2\pi y(y-y^2)\,dy
+      =\int_0^1 2\pi(y^2-y^3)\,dy \\
+      &=2\pi\left[\dfrac{y^3}{3}-\dfrac{y^4}{4}\right]_0^1
+      =2\pi\left(\dfrac{1}{3}-\dfrac{1}{4}\right)
+      =\dfrac{\pi}{6}
+      \end{aligned}\]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_parab_line_yint_about_x_cylinder_anim.gif"
+      alt="ex_parab_line_yint_about_x_cylinder_anim.gif">
+    </div>
+  </div>
+</div>
+
+        <div class="rule" id="cylin_exs"></div>
+
+<p>
+  In the previous example and exercise, we considered volumes which could be
+  computed using either cylinders or washers. Here is another example which
+  can easily be computed using cylinders but would be very difficult using
+  washers:
+	<br>
+	<table class="center"> <tbody> <tr>
+		<td><a href="Cylin_eg1.html">Example</a></td>
+	</tr> </tbody> </table>
+</p>
+<p>
+  On the <a href="strategy.html">next page</a>, we will discuss the overall
+  strategy for computing volumes of revolution.
+</p>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can practice computing Volumes of Revolution by Cylinders by using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/VolOfRev.maplet" download>Volume of a Solid of Revolution</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p>
+  Now, you can do all the problems: Disks, Washers and Cylinders.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Free Fall | 17. Applications of Differential Equations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Robot.html" title="Previous">&lArr;</a></li>
+      <li><a href="TermVel.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Applications of Differential Equations</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Falling near the Earth</h2>
+
+<p>
+  On this and the <a href="TermVel.html">next page</a>, we study the motion
+  of a body falling vertically in the gravitational field near the surface
+  of the Earth. For this purpose, we will take the \(y\)-axis as vertical
+  with the positive direction pointing up. We take the position as \(y(t)\).
+  Then the velocity is \(v(t)=\dfrac{dy}{dt}\) and the acceleration is
+  \(a(t)=\dfrac{dv}{dt}=\dfrac{d^2y}{dt^2}\). When a body of mass \(m\) falls,
+  it feels a constant gravitational force \(F=-mg\) where
+  \[
+  g=9.8\,\dfrac{\text{m}}{\text{sec}^2}
+  =980\,\dfrac{\text{cm}}{\text{sec}^2}
+  =32\,\dfrac{\text{ft}}{\text{sec}^2}
+  \]
+  is called the <span class="defword">acceleration of gravity</span>.
+  There is a minus sign because the force pulls down. Newton's Second Law says
+  \(F=ma\), where \(F\) is the sum of all forces acting on the body. It is
+  frequently useful to reverse this, writing \(ma=F\) or
+  \[
+  m\dfrac{d^2y}{dt^2}=F
+  \]
+  and use this second order differential equation to solve for the position,
+  \(y(t)\). The solution method is to split this into two first order
+  equations:
+  \[
+  \dfrac{dy}{dt}=v(t)
+  \qquad \text{and} \qquad
+  \dfrac{dv}{dt}=\dfrac{1}{m}F
+  \]
+  Given the total force, \(F\), we integrate the second equation, called the
+  <span class="defword">velocity equation</span>, to find the
+  velocity, \(v(t)\), and then integrate the first equation, called the
+  <span class="defword">position equation</span>, to find the
+  position, \(y(t)\).
+</p>
+
+
+      
+      <h2>1. Free Fall</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We say a body is in <span class="defword">free fall</span> when the only
+  force is gravity, \(F=-mg\). Consequently, the position of the body
+  \(y(t)\) may be found by solving the differential equation:
+  \[
+  m\dfrac{d^2y}{dt^2}=-mg
+  \]
+  After cancelling the \(m\), the solution is easily found by integrating twice:
+  \[\begin{aligned}
+  \dfrac{dy}{dt}&=-gt+v_o \\
+  y&=-\dfrac{1}{2}gt^2+v_ot+y_o
+  \end{aligned}\]
+  where \(y_o\) and \(v_o\) are the constants of integration which may be
+  interpreted as the initial position and velocity, since:
+  \[
+  y(0)=y_o
+  \qquad \text{and} \qquad
+  v(0)=\dfrac{dy}{dt}(0)=v_o
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the amount of time it takes a golf ball to fall to the ground if it
+    is dropped from \(4\) m starting from rest, if the only force is gravity.
+    What is its velocity when it hits the ground?
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    "Dropped from \(4\) m starting from rest" means the initial conditions
+    are \(y(0)=4\) and \(v(0)=0\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  The golf ball hits the ground at:
+  \(t_g=\sqrt{\dfrac{4}{490}}\,\text{sec}\,\approx.09\,\text{sec}
+  \)
+  <br>
+  and its velocity is:
+  \(v(t_g)=-980\sqrt{\dfrac{4}{490}}\,\dfrac{\text{m}}{\text{sec}}
+  \approx88.5\,\dfrac{\text{m}}{\text{sec}}
+  \)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The initial conditions are \(y(0)=y_o=4\) and \(v(0)=v_o=0\).
+    We integrate the acceleration equation:
+    \[
+    \dfrac{dv}{dt}=-g=-9.8
+    \]
+    to get the velocity
+    \[
+    v(t)=-9.8t+v_o=-9.8t
+    \]
+    We integrate the position equation:
+    \[
+    \dfrac{dy}{dt}=v(t)=-9.8t
+    \]
+    to get the position
+    \[
+    y(t)=-4.9t^2+y_o=-4.9t^2+4
+    \]
+    The ball hits the ground at a time \(t_g\) when \(y(t_g)=0\), or:
+    \[
+    -4.9t_g^2+4=0
+    \qquad \Longrightarrow \qquad
+    t_g=\sqrt{\dfrac{4}{4.9}}\approx.9\,\text{sec}
+    \]
+    When it hits the ground, its velocity is:
+    \[
+    v(t_g)=-9.8t_g=-9.8\sqrt{\dfrac{4}{4.9}}\approx8.85\,\dfrac{\text{m}}{\text{sec}}
+    \]
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  The above computations assume that gravity is the only force acting on
+  the body. In reality, there are other forces, most
+  typically, the drag force of air resistance discussed on the
+  <a href="TermVel.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

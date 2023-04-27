@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. 3D Cylindrical Coordinates | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DPolarPlot.html" title="Previous">&lArr;</a></li>
+      <li><a href="3DSphCoord.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Cylindrical and Spherical Coordinates - 3D and nD</h2>
+
+
+      
+      <h2>1. 3D Cylindrical Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<p>
+		<span class="hl">Rectangular Coordinates</span> \((x,y,z)\) are one way to
+		specify a point, \(P\), in the space, but they are not the only way. We can
+		alternatively use	<span class="hl">Cylindrical Coordinates</span>
+		\((r,\theta,z)\).  Cylindrical coordinates are useful when you want to
+		study cylinders or other objects which have rotational symmetry about
+		the \(z\)-axis like a	paraboloid, \(z=x^2+y^2\) or a cone \(z=\sqrt{x^2+y^2}\).
+  </p>
+  <div class="center">
+		<video src="graphics/def_cylcoordgrid_anim.mp4" autoplay controls loop></video>
+  </div>
+</div>
+
+<div class="column">
+	<p class="def" data-title="Cylindrical Coordinates">
+		<span class="defword">Cylindrical Coordinates</span> \((r,\theta,z)\)
+		are just 2D polar coordinates \((r,\theta)\) with an extra coordinate
+		\(z\) which measures the distance	above or below the \(xy\)-plane	as in
+		rectangular coordinates.
+  </p>
+  <div class="center">
+		<img src="graphics/def_3DCylCoord.jpg" alt="def_3DCylCoord"/>
+  </div>
+</div>
+
+<div class="column">
+	<p>
+		If you think	about a point on a cylinder,	\(r\) gives	the	radius of the
+		cylinder, \(\theta\) gives the angle of the point on the cylinder measured
+		from the positive \(x\)-axis and \(z\) gives the height of the point
+		above	the \(xy\)-plane.
+  </p>
+  <div class="center">
+		<img src="graphics/def_3DCylPoint.jpg" alt="def_3DCylPoint"/>
+  </div>
+</div>
+
+				<div class="rule"></div>
+
+<h3>Converting between Rectangular and Cylindrical Coordinates</h3>
+<p>
+	To convert between rectangular and cylindrical coordinates, we have the equations
+	\[\begin{aligned}
+	x&=r\cos\theta \qquad \qquad &&r=\sqrt{x^2+y^2} \\[3pt]
+	y&=r\sin\theta               &&\tan\theta=\dfrac{y}{x} \\[3pt]
+	z&=z                         &&z=z
+	\end{aligned}\]
+	with the same conditions on solving for \(\theta\) as there were for polar coordinates
+</p>
+
+				<div class="rule"></div>
+
+<h3>Coordinate Surfaces</h3>
+<p class="def" data-title="Coordinate Surfaces">
+	When you hold one of the coordinates fixed and let the other two vary, the point
+	\(P=(r,\theta,z)\) traces out a <span class="defword">coordinate surface</span>.
+	The surfaces are named by the coordinate which is constant.
+</p>
+<p>
+	When \(r\) is constant, you get a cylinder, or \(r\)-surface. You specify
+	where you are on the surface by giving \(\theta\) and \(z\).
+	<br>
+	When \(\theta\) is constant, you get a vertical half plane (assuming
+	\(r \ge 0\)), called a \(\theta\)-surface. You specify where you are on
+	the surface by giving \(r\) and \(z\).
+	<br>
+	When \(z\) is constant, you get a horizontal plane, or \(z\)-surface. You
+	specify where you are on the surface by giving \(r\) and \(\theta\).
+</p>
+<p>
+	Here are the plots of the coordinate surfaces:
+</p>
+<div class="center">
+	<figure>
+		<video src="graphics/def_r-surf_anim.mp4" autoplay controls loop></video>
+		<figcaption>Constant \(r\) Surface</figcaption>
+	</figure>
+	<figure>
+		<video src="graphics/def_th-surf_anim.mp4" autoplay controls loop></video>
+		<figcaption>Constant \(\theta\) Surface</figcaption>
+	</figure>
+	<figure>
+		<video src="graphics/def_z-surf_anim.mp4" autoplay controls loop></video>
+		<figcaption>Constant \(z\) Surface</figcaption>
+	</figure>
+</div>
+<p>
+	Rotate these plots with your mouse:
+</p>
+<div class="center">
+	<x3d width='200px' height='200px'>
+		<scene>
+			<inline url="graphics/def_r-surf.x3d"> </inline>
+		</scene>
+	</x3d>
+  <x3d width='200px' height='200px'>
+    <scene>
+      <inline url="graphics/def_th-surf.x3d"> </inline>
+    </scene>
+  </x3d>
+  <x3d width='200px' height='200px'>
+    <scene>
+      <inline url="graphics/def_z-surf.x3d"> </inline>
+    </scene>
+  </x3d>
+</div>
+
+				<div class="rule"> </div>
+
+<h3>Coordinate Curves</h3>
+<p class="def" data-title="Coordinate Curves">
+	When you hold two of the coordinates fixed and let the other one vary, the point
+	\(P=(r,\theta,z)\) traces out a <span class="defword">coordinate curve</span>.
+	The curves are named by the coordinate which is changing.	The
+	<span class="hl">coordinate curves</span> are the intersections of the
+	<span class="hl">coordinate surfaces</span>.
+</p>
+<p>
+	When \(\theta\) and \(z\) are constant, you get a radial ray (assuming
+	\(r \ge 0\)) perpendicular to the	\(z\)-axis called an
+	<span class="defword">\(r\)-curve</span>.
+	<br>
+	When \(r\) and \(z\) are constant, you get a horizontal circle called a
+	<span class="defword">\(\theta\)-curve</span>.
+	<br>
+	When \(r\) and \(\theta\) are constant, you get a vertical line called a
+	<span class="defword">\(z\)-curve</span>.
+</p>
+<p>
+	Here are the plots of the coordinate curves:
+	Rotate with your mouse.
+</p>
+<div class="center">
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+	      <inline url="graphics/def_r-crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>\(r\)-Curves</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+	      <inline url="graphics/def_th-crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>\(\theta\)-Curves</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='200px' height='200px'>
+	    <scene>
+	      <inline url="graphics/def_z-crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption>\(z\)-Curves</figcaption>
+	</figure>
+</div>
+
+				<div class="rule"> </div>
+
+<h3>Coordinate Grid</h3>
+<p>
+	When you draw several coordinate curves or surfaces of each type you get a
+	<span class="defword">coordinate grid</span>. Here is the cylindrical
+	coordinate grid as surfaces and as curves. Notice how all points in space
+	can be reached with these coordinates. You can watch an animation of the
+	cylindrical coordinate grid at the top of this page.
+</p>
+<div class="center">
+	<figure>
+	  <x3d width='250px' height='250px'>
+	    <scene>
+	      <inline url="graphics/def_cyl_grid_surf.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption><strong>Cylindrical Coordinate Grid as Surfaces</strong> <br>
+		The \(r\)-surfaces are <span style="color:red">red</span> cylinders.
+		<br>
+		The \(\theta\)-surfaces are <span style="color:cyan">cyan</span> half-planes.
+		<br>
+		The \(z\)-surfaces are <span style="color:blue">blue</span> horizontal planes.
+		</figcaption>
+	</figure>
+	<figure>
+	  <x3d width='250px' height='250px'>
+	    <scene>
+	      <inline url="graphics/def_cyl_grid_crv.x3d"> </inline>
+	    </scene>
+	  </x3d>
+		<figcaption><strong>Cylindrical Coordinate Grid as Curves</strong> <br>
+		The \(r\)-curves are <span style="color:red">red</span> radial lines.
+		<br>
+		The \(\theta\)-curves are <span style="color:cyan">cyan</span> circles.
+		<br>
+		The \(z\)-curves are <span style="color:blue">blue</span> vertical lines.
+		</figcaption>
+	</figure>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. First Order Differential Identities | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CurlGeom.html" title="Previous">&lArr;</a></li>
+      <li><a href="DiffIdent2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Differential Identities</h2>
+
+
+      
+      <h2>1. First Order Differential Identities</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  These first order differential identities are much less important than the
+  second order identities on the <a href="DiffIdent2.html">next page</a>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  We will discuss these identities for scalar and vector fields in
+  \(\mathbb R^3\) but they hold in any dimension unless they involve a
+  cross product or a curl. In some of the proofs, we will only write out
+  the \(x\)-component. The other components are analogous.
+  Throughout these identities, \(f\) and \(g\) are scalar fields (functions),
+  \(\vec F\) and \(\vec G\) are vector fields and \(h\) is a simple function
+  of \(1\) variable. These first order identities generalize the product rule
+  and the chain rule to the del operator, specifically to the gradient,
+  divergence and curl. The only ones you need to remember are the first
+  product rules under gradient, divergence and curl.
+</p>
+
+<h3>The Product Rule</h3>
+
+<ul>
+  <li>
+    <strong>Gradient:</strong>
+    <p class="greybox">
+      \[
+      \vec\nabla(fg)
+      =f\vec\nabla g+g\vec\nabla f
+      \]
+      <button class="toggle" data-toggle="Proof1">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof1">
+      <p>
+        We start with the left side (and only show the \(x\) component):
+        \[\begin{aligned}
+        LHS
+        &=\vec\nabla(f\,g) \\
+        &=\left\langle \partial_x(f\,g),\cdots,\cdots\right\rangle \\
+        &=\left\langle (f(\partial_x g)+g(\partial_x f),\cdots,
+        \cdots\right\rangle \\
+        &=f\left\langle \partial_x g,\cdots,
+        \cdots\right\rangle
+        +g\left\langle \partial_x f,\cdots,
+        \cdots\right\rangle \\
+        &=f\vec\nabla g+g\vec\nabla f
+        =RHS
+        \end{aligned}\]
+      </p>
+    </div>
+    <p class="greybox">
+      \[
+      \vec\nabla(\vec F\cdot\vec G)
+      =(\vec F\cdot\vec\nabla)\vec G
+      +(\vec G\cdot\vec\nabla)\vec F
+      +\vec F\times(\vec\nabla\times\vec G)
+      +\vec G\times(\vec\nabla\times\vec F)
+      \]
+      <button class="toggle" data-toggle="Proof2">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof2">
+      <p>
+        We start with the right side (and only show the \(x\) component):
+        \[\begin{aligned}
+        RHS
+        &=(\vec F\cdot\vec\nabla)\vec G
+         +(\vec G\cdot\vec\nabla)\vec F
+         +\vec F\times(\vec\nabla\times\vec G)
+         +\vec G\times(\vec\nabla\times\vec F) \\
+        &=\left\langle F_1 \partial_x G_1 +F_2 \partial_y G_1 +F_3 \partial_z G_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle G_1 \partial_x F_1 +G_2 \partial_y F_1 +G_3 \partial_z F_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle F_2(\vec\nabla\times\vec G)_3-F_3(\vec\nabla\times\vec G)_2,
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle G_2(\vec\nabla\times\vec F)_3-G_3(\vec\nabla\times\vec F)_2,
+        \cdots,\cdots\right\rangle \\
+        &=\left\langle F_1 \partial_x G_1 +F_2 \partial_y G_1 +F_3 \partial_z G_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle G_1 \partial_x F_1 +G_2 \partial_y F_1 +G_3 \partial_z F_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle F_2(\partial_x G_2-\partial_y G_1)
+                           -F_3(\partial_z G_1-\partial_x G_3),
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle G_2(\partial_x F_2-\partial_y F_1)
+                           -G_3(\partial_z F_1-\partial_x F_3),
+        \cdots,\cdots\right\rangle
+        \end{aligned}\]
+        The terms \(F_2 \partial_y G_1\), \(F_3 \partial_z G_1\),
+        \(G_2 \partial_y F_1\) and \(G_3 \partial_z F_1\) cancel leaving:
+        \[\begin{aligned}
+        RHS
+        &=\left\langle F_1 \partial_x G_1,\cdots,\cdots\right\rangle \\
+        &\quad+\left\langle G_1 \partial_x F_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle F_2(\partial_x G_2)-F_3(-\partial_x G_3),
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle G_2(\partial_x F_2)-G_3(-\partial_x F_3),
+        \cdots,\cdots\right\rangle \\
+        &=\left\langle F_1 \partial_x G_1 +G_1 \partial_x F_1
+                      +F_2 \partial_x G_2 +G_2 \partial_x F_2\right. \\
+        &\quad\left.+\,F_3 \partial_x G_3 +G_3 \partial_x F_3,
+        \cdots,\cdots\right\rangle
+        \end{aligned}\]
+        Finally, we use the product rule in reverse:
+        \[\begin{aligned}
+        RHS
+        &=\left\langle \partial_x(F_1  G_1 +F_2 G_2 +F_3 G_3),
+        \cdots,\cdots\right\rangle \\
+        &=\left\langle \partial_x(\vec F\cdot\vec G),
+        \cdots,\cdots\right\rangle \\
+        &=\vec\nabla(\vec F\cdot\vec G)=LHS\\
+        \end{aligned}\]
+      </p>
+    </div>
+    <p class="remark">
+      Here, the operator \((\vec F\cdot\vec\nabla)\) is the product
+      of \(\vec F\) and \(\vec\nabla\) without differentiating:
+      \[
+      (\vec F\cdot\vec\nabla)
+      =F_1 \partial_x +F_2 \partial_y +F_3 \partial_z
+      \]
+      Then \((\vec F\cdot\vec\nabla)\vec G\) means to apply this
+      operator to each component of \(\vec G\).
+    </p>
+  </li>
+</ul>
+<p class="exercise" data-number="1">
+  If \(f=x^2yz^3\) and \(g=x^2y^3z^2\), compute \(\vec\nabla(fg)\) in two ways.
+</p>
+<ol class="list-outside" type="a">
+	<li>
+		<div class="dotfillex">
+			<p>
+				Find \(f\vec\nabla g\) and \(g\vec\nabla f\) and add them
+        to get \(\vec\nabla(fg)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX1a"></button>
+				<button class="toggle has-sol" data-toggle="SolX1a"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+			<p>
+      \(\begin{aligned}
+      f\vec\nabla g
+      &=\left\langle 2x^3y^4z^5,3x^4y^3z^5,2x^4y^4z^4\right\rangle \\
+      g\vec\nabla f
+      &=\left\langle 2x^3y^4z^5,x^4y^3z^5,3x^4y^4z^4\right\rangle \\
+      \vec\nabla(fg)
+      &=\left\langle 4x^3y^4z^5,4x^4y^3z^5,5x^4y^4z^4\right\rangle
+      \end{aligned}\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX1a">
+			<p>
+				\[\begin{aligned}
+        f\vec\nabla g
+        &=x^2yz^3\left\langle 2xy^3z^2,3x^2y^2z^2,2x^2y^3z\right\rangle \\
+        &=\left\langle 2x^3y^4z^5,3x^4y^3z^5,2x^4y^4z^4\right\rangle \\[6pt]
+        g\vec\nabla f
+        &=x^2y^3z^2\left\langle 2xyz^3,x^2z^3,3x^2yz^2\right\rangle \\
+        &=\left\langle 2x^3y^4z^5,x^4y^3z^5,3x^4y^4z^4\right\rangle \\[6pt]
+        \vec\nabla(fg)
+        &=f\vec\nabla g+g\vec\nabla f \\
+        &=\left\langle 4x^3y^4z^5,4x^4y^3z^5,5x^4y^4z^4\right\rangle
+        \end{aligned}\]
+			</p>
+		</div>
+	</li>
+	<li>
+		<div class="dotfillex">
+			<p>
+				Find \(fg\) and then \(\vec\nabla(fg)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX1b"></button>
+				<button class="toggle has-sol" data-toggle="SolX1b"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+			<p>
+				\(\begin{aligned}
+        fg&=x^4y^4z^5 \\
+        \vec\nabla(fg)
+        &=\left\langle 4x^3y^4z^5,4x^4y^3z^5,5x^4y^4z^4\right\rangle
+        \end{aligned}\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX1b">
+			<p>
+				\[\begin{aligned}
+        fg&=x^4y^4z^5 \\[6pt]
+        \vec\nabla(fg)
+        &=\left\langle 4x^3y^4z^5,4x^4y^3z^5,5x^4y^4z^4\right\rangle
+        \end{aligned}\]
+			</p>
+		</div>
+	</li>
+</ol>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    At a point \(P\), we know:
+    \[\begin{aligned}
+    f&=4\qquad&
+    \vec\nabla f&=\left\langle 1,3,2\right\rangle \\
+    g&=5\qquad&
+    \vec\nabla g&=\left\langle 4,2,3\right\rangle
+    \end{aligned}\]
+    Find \(\vec\nabla(fg)\) at \(P\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\vec\nabla(fg)
+    =\left\langle 21,23,22\right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Using the formula, we have:
+    \[\begin{aligned}
+    \vec\nabla(fg)
+    &=f\vec\nabla g+g\vec\nabla f \\
+    &=4\left\langle 4,2,3\right\rangle+5\left\langle 1,3,2\right\rangle \\
+    &=\left\langle 16,8,12\right\rangle+\left\langle 5,15,10\right\rangle \\
+    &=\left\langle 21,23,22\right\rangle
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<ul>
+  <li>
+    <strong>Divergence:</strong>
+    <p class="greybox">
+      \[
+      \vec\nabla\cdot(f\vec G)
+      =(\vec\nabla f)\cdot\vec G +f\vec\nabla\cdot\vec G
+      \]
+      <button class="toggle" data-toggle="Proof3">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof3">
+      <p>
+        We start with the left side:
+        \[\begin{aligned}
+        LHS
+        &=\vec\nabla\cdot(f\vec G) \\
+        &=\vec\nabla\cdot\left\langle fG_1,fG_2,fG_3\right\rangle \\
+        &=\partial_x(fG_1)+\partial_y(fG_2)+\partial_z(fG_3)
+        \end{aligned}\]
+        We apply the product rule for ordinary functions:
+        \[\begin{aligned}
+        LHS
+        &=(\partial_xf)G_1 +f\partial_xG_1
+        +(\partial_yf)G_2 +f\partial_yG_2 \\
+        &\quad+(\partial_zf)G_3 +f\partial_zG_3 \\
+        &=(\vec\nabla f)\cdot\vec G +f\vec\nabla\cdot\vec G
+        =RHS
+        \end{aligned}\]
+      </p>
+    </div>
+    <p class="greybox">
+      \[
+      \vec\nabla\cdot(\vec F\times\vec G)
+      =\vec\nabla\times\vec F\cdot\vec G-\vec F\cdot\vec\nabla\times\vec G
+      \]
+      <button class="toggle" data-toggle="Proof4">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof4">
+      <p>
+        We start with the left side:
+        \[\begin{aligned}
+        LHS
+        &=\vec\nabla\cdot(\vec F\times\vec G) \\
+        &=\partial_x(F_2G_3-F_3G_2)
+        +\partial_y(F_3G_1-F_1G_3) \\
+        &\quad+\partial_z(F_1G_2-F_2G_1)
+        \end{aligned}\]
+        We apply the product rule for ordinary functions:
+        \[\begin{aligned}
+        LHS
+        &=(\partial_xF_2)G_3+F_2(\partial_xG_3)
+         -(\partial_xF_3)G_2-F_3(\partial_xG_2) \\
+        &\quad+(\partial_yF_3)G_1+F_3(\partial_yG_1)
+         -(\partial_yF_1)G_3-F_1(\partial_yG_3) \\
+        &\quad+(\partial_zF_1)G_2+F_1(\partial_zG_2)
+         -(\partial_zF_2)G_1-F_2(\partial_zG_1) \\
+        &=(\partial_yF_3-\partial_zF_2)G_1
+         +(\partial_zF_1-\partial_xF_3)G_2
+         +(\partial_xF_2-\partial_yF_1)G_3 \\
+        &\quad-F_1(\partial_yG_3-\partial_zG_2)
+         -F_2(\partial_zG_1-\partial_xG_3)
+         -F_3(\partial_xG_2-\partial_yG_1) \\
+        &=\vec\nabla\times\vec F\cdot\vec G-\vec F\cdot\vec\nabla\times\vec G
+        =RHS
+        \end{aligned}\]
+      </p>
+    </div>
+    <p class="remark">
+      In the divergence of a cross product, notice that both sides flip
+      signs when \(\vec F\) and \(\vec G\) are
+      interchanged. This is a reason for the minus sign before the second term.
+      It comes from interchanging the order of the \(\vec F\) and the
+      \(\vec\nabla\). You can think of this as the minus sign that results
+      when you interchange two vectors in a triple product.
+    </p>
+  </li>
+</ul>
+<p class="exercise" data-number="3">
+  If \(f=x^2yz^3\) and \(\vec G=\left\langle x^4,y^3,z^2\right\rangle\),
+  compute \(\vec\nabla\cdot (f\vec G)\) in two ways.
+</p>
+<ol class="list-outside" type="a">
+	<li>
+		<div class="dotfillex">
+			<p>
+				Find \((\vec\nabla f)\cdot\vec G\) and \(f\vec\nabla\cdot\vec G\)
+        and add them to get \(\vec\nabla\cdot(f\vec G)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX3a"></button>
+				<button class="toggle has-sol" data-toggle="SolX3a"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX3a">
+			<p>
+				\(\begin{aligned}
+        (\vec\nabla f)\cdot\vec G
+        &=2x^5yz^3+x^2y^3z^3+3x^2yz^4 \\
+        f\vec\nabla\cdot\vec G
+        &=4x^5yz^3+3x^2y^3z^3+2x^2yz^4 \\
+				\vec\nabla\cdot(f\vec G)
+        &=6x^5yz^3+4x^2y^3z^3+5x^2yz^4
+        \end{aligned}\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX3a">
+			<p>
+				\[\begin{aligned}
+        (\vec\nabla f)
+        &=\left\langle 2xyz^3,x^2z^3,3x^2yz^2\right\rangle \\
+        (\vec\nabla f)\cdot\vec G
+        &=2x^5yz^3+x^2y^3z^3+3x^2yz^4 \\[6pt]
+        \vec\nabla\cdot\vec G
+        &=4x^3+3y^2+2z \\
+        f\vec\nabla\cdot\vec G
+        &=4x^5yz^3+3x^2y^3z^3+2x^2yz^4 \\[6pt]
+        \vec\nabla\cdot(f\vec G)
+        &=(\vec\nabla f)\cdot\vec G +f\vec\nabla\cdot\vec G \\
+        &=6x^5yz^3+4x^2y^3z^3+5x^2yz^4
+        \end{aligned}\]
+			</p>
+		</div>
+	</li>
+	<li>
+		<div class="dotfillex">
+			<p>
+				Find \(f\vec G\) and then \(\vec\nabla\cdot(f\vec G)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX3b"></button>
+				<button class="toggle has-sol" data-toggle="SolX3b"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX3b">
+			<p>
+				\(\begin{aligned}
+        f\vec G
+        &=\left\langle x^6yz^3,x^2y^4z^3,x^2yz^5\right\rangle \\
+				\vec\nabla\cdot(f\vec G)
+        &=6x^5yz^3+4x^2y^3z^3+5x^2yz^4
+        \end{aligned}\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX3b">
+			<p>
+				\[\begin{aligned}
+        f\vec G
+        &=x^2yz^3\left\langle x^4,y^3,z^2\right\rangle \\
+        &=\left\langle x^6yz^3,x^2y^4z^3,x^2yz^5\right\rangle \\[6pt]
+        \vec\nabla\cdot(f\vec G)
+        &=6x^5yz^3+4x^2y^3z^3+5x^2yz^4
+        \end{aligned}\]
+			</p>
+		</div>
+	</li>
+</ol>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    At a point \(P\), we know:
+    \[\begin{aligned}
+    \vec F&=\left\langle 1,3,2\right\rangle\qquad&
+    \vec\nabla\times\vec F&=\left\langle 5,1,2\right\rangle \\
+    \vec G&=\left\langle 2,3,1\right\rangle\qquad&
+    \vec\nabla\times\vec G&=\left\langle 3,2,4\right\rangle
+    \end{aligned}\]
+    Find \(\vec\nabla\cdot(\vec F\times\vec G)\) at \(P\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(\vec\nabla\cdot(\vec F\times\vec G)=-2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    Using the formula, we have:
+    \[\begin{aligned}
+    \vec\nabla\cdot(\vec F\times\vec G)
+    &=\vec\nabla\times\vec F\cdot\vec G-\vec F\cdot\vec\nabla\times\vec G \\
+    &=\left\langle 5,1,2\right\rangle\cdot\left\langle 2,3,1\right\rangle
+    -\left\langle 1,3,2\right\rangle\cdot\left\langle 3,2,4\right\rangle \\
+    &=(10+3+2)-(3+6+8)=-2
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<ul>
+  <li>
+    <strong>Curl:</strong>
+    <p class="greybox">
+      \[
+      \vec\nabla\times(f\vec G)
+      =(\vec\nabla f)\times\vec G +f\vec\nabla\times\vec G
+      \]
+      <button class="toggle" data-toggle="Proof5">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof5">
+      <p>
+        We start with the left side (and only show the \(x\) component):
+        \[\begin{aligned}
+        LHS
+        &=\vec\nabla\times(f\vec G) \\
+        &=\left\langle \partial_y(fG_3)-\partial_z(fG_2),
+        \cdots,\cdots\right\rangle \\
+        \end{aligned}\]
+        We apply the product rule for ordinary functions:
+        \[\begin{aligned}
+        LHS
+        &=\left\langle (\partial_y f)G_3+f\partial_y G_3
+                      -(\partial_z f)G_2-f\partial_z G_2,
+        \cdots,\cdots\right\rangle \\
+        &=(\vec\nabla f)\times\vec G +f(\vec\nabla\times\vec G)
+        =RHS
+        \end{aligned}\]
+      </p>
+    </div>
+    <p class="greybox">
+      \[
+      \vec\nabla\times(\vec F\times\vec G)
+      =(\vec G\cdot\vec\nabla)\vec F
+      -(\vec F\cdot\vec\nabla)\vec G
+      +(\vec\nabla\cdot\vec G)\vec F
+      -(\vec\nabla\cdot\vec F)\vec G
+      \]
+      <button class="toggle" data-toggle="Proof6">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof6">
+      <p>
+        We start with the right side (and only show the \(x\) component):
+        \[\begin{aligned}
+        RHS
+        &=(\vec G\cdot\vec\nabla)\vec F-(\vec F\cdot\vec\nabla)\vec G
+         +(\vec\nabla\cdot\vec G)\vec F-(\vec\nabla\cdot\vec F)\vec G \\
+        &=\left\langle G_1(\partial_x F_1)+G_2(\partial_y F_1)+G_3(\partial_z F_1),
+        \cdots,\cdots\right\rangle \\
+        &\quad-\left\langle F_1(\partial_x G_1)+F_2(\partial_y G_1)+F_3(\partial_z G_1),
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle(\partial_x G_1)F_1 +(\partial_y G_2)F_1 +(\partial_z G_3)F_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad-\left\langle(\partial_x F_1)G_1 +(\partial_y F_2)G_1 +(\partial_z F_3)G_1,
+        \cdots,\cdots\right\rangle \\
+        \end{aligned}\]
+        The terms \(G_1(\partial_x F_1)\) and \(F_1(\partial_x G_1)\) cancel
+        and we rearrange the terms leaving:
+        \[\begin{aligned}
+        RHS
+        &=\left\langle G_2(\partial_y F_1)+(\partial_y G_2)F_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad-\left\langle F_2(\partial_y G_1)+(\partial_y F_2)G_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad+\left\langle G_3(\partial_z F_1)+(\partial_z G_3)F_1,
+        \cdots,\cdots\right\rangle \\
+        &\quad-\left\langle F_3(\partial_z G_1)+(\partial_z F_3)G_1,
+        \cdots,\cdots\right\rangle \\
+        \end{aligned}\]
+        We now use the product rule in reverse:
+        \[\begin{aligned}
+        RHS
+        &=\left\langle \partial_y(F_1 G_2),\cdots,\cdots\right\rangle
+         -\left\langle \partial_y(F_2 G_1),\cdots,\cdots\right\rangle \\
+        &\quad+\left\langle \partial_z(F_1 G_3),\cdots,\cdots\right\rangle
+         -\left\langle \partial_z(F_3 G_1),\cdots,\cdots\right\rangle \\
+        &=\left\langle \partial_y(F_1 G_2-F_2 G_1),\cdots,\cdots\right\rangle \\
+        &\quad-\left\langle \partial_z(F_3 G_1-F_1 G_3),\cdots,\cdots\right\rangle \\
+        &=\left\langle \partial_y(\vec F\times\vec G)_3
+         -\partial_z(\vec F\times\vec G)_2,\cdots,\cdots\right\rangle \\
+        &=\vec\nabla\times(\vec F\times\vec G)
+        =LHS
+        \end{aligned}\]
+      </p>
+    </div>
+    <p class="remark">
+      In the curl of a cross product, notice that both sides flip signs when
+      \(\vec F\) and \(\vec G\) are interchanged.
+    </p>
+  </li>
+</ul>
+<p class="exercise" data-number="5">
+  If \(f=x^2yz^3\) and \(\vec G=\left\langle xy,yz,zx\right\rangle\),
+  compute \(\vec\nabla\times (f\vec G)\) in two ways.
+</p>
+<ol class="list-outside" type="a">
+	<li>
+		<div class="dotfillex">
+			<p>
+				Find \((\vec\nabla f)\times\vec G\) and \(f\vec\nabla\times\vec G\)
+        and add them to get \(\vec\nabla\times(f\vec G)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX5a"></button>
+				<button class="toggle has-sol" data-toggle="SolX5a"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX5a">
+			<p>
+				\(\begin{aligned}
+        (\vec\nabla f)\times\vec G
+        &=\left\langle x^3z^4-3x^2y^2z^3,3x^3y^2z^2-2x^2yz^4,
+                       2xy^2z^4-x^3yz^3\right\rangle \\
+        f\vec\nabla\times\vec G
+        &=\left\langle -x^2y^2z^3,-x^2yz^4,-x^3yz^3\right\rangle \\
+				\vec\nabla\times(f\vec G)
+        &=\left\langle x^3z^4-4x^2y^2z^3,
+                      3x^3y^2z^2-3x^2yz^4,
+                      2xy^2z^4-2x^3yz^3\right\rangle
+       \end{aligned}\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX5a">
+			<p>
+				\[\begin{aligned}
+        \vec\nabla f
+        &=\left\langle 2xyz^3,x^2z^3,3x^2yz^2\right\rangle \\[6pt]
+        (\vec\nabla f)\times\vec G
+        &=\begin{vmatrix}
+        \hat\imath & \hat\jmath & \hat k   \\
+        2xyz^3     & x^2z^3     & 3x^2yz^2 \\
+        xy         & yz         & zx
+        \end{vmatrix} \\
+        &=\hat\imath(x^3z^4-3x^2y^2z^3)-\hat\jmath(2x^2yz^4-3x^3y^2z^2) \\
+        &\quad+\hat k(2xy^2z^4-x^3yz^3) \\
+        &=\left\langle x^3z^4-3x^2y^2z^3,3x^3y^2z^2-2x^2yz^4,
+                       2xy^2z^4-x^3yz^3\right\rangle \\[6pt]
+        \vec\nabla\times\vec G
+        &=\begin{vmatrix}
+        \hat\imath & \hat\jmath & \hat k   \\
+        \partial_x & \partial_y & \partial_z \\
+        xy         & yz         & zx
+        \end{vmatrix} \\
+        &=\hat\imath(0-y)-\hat\jmath(z-0)
+        +\hat k(0-x) \\
+        &=\left\langle -y,-z,-x\right\rangle \\[6pt]
+        f\vec\nabla\times\vec G
+        &=\left\langle -x^2y^2z^3,-x^2yz^4,-x^3yz^3\right\rangle \\[6pt]
+        \vec\nabla\times(f\vec G)
+        &=(\vec\nabla f)\times\vec G +f\vec\nabla\times\vec G \\
+        &=\left\langle x^3z^4-4x^2y^2z^3,
+                       3x^3y^2z^2-3x^2yz^4,
+                       2xy^2z^4-2x^3yz^3\right\rangle
+        \end{aligned}\]
+			</p>
+		</div>
+	</li>
+	<li>
+		<div class="dotfillex">
+			<p>
+				Find \(f\vec G\) and then \(\vec\nabla\times(f\vec G)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX5b"></button>
+				<button class="toggle has-sol" data-toggle="SolX5b"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX5b">
+			<p>
+				\(\begin{aligned}
+        f\vec G
+        &=\left\langle x^3y^2z^3,x^2y^2z^4,x^3yz^4\right\rangle \\
+        \vec\nabla\times(f\vec G)
+        &=\left\langle x^3z^4-4x^2y^2z^3,
+                    3x^3y^2z^2-3x^2yz^4,
+                    2xy^2z^4-2x^3yz^3\right\rangle
+        \end{aligned}\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX5b">
+			<p>
+				\[\begin{aligned}
+        f\vec G
+        &=\left\langle x^3y^2z^3,x^2y^2z^4,x^3yz^4\right\rangle \\[6pt]
+        \vec\nabla\times(f\vec G)
+        &=\begin{vmatrix}
+        \hat\imath & \hat\jmath & \hat k   \\
+        \partial_x & \partial_y & \partial_z \\
+        x^3y^2z^3  & x^2y^2z^4  & x^3yz^4
+        \end{vmatrix} \\
+        &=\hat\imath(x^3z^4-4x^2y^2z^3)-\hat\jmath(3x^2yz^4-3x^3y^2z^2)
+        +\hat k(2xy^2z^4-2x^3yz^3) \\
+        &=\left\langle x^3z^4-4x^2y^2z^3,
+                3x^3y^2z^2-3x^2yz^4,
+                2xy^2z^4-2x^3yz^3\right\rangle
+        \end{aligned}\]
+			</p>
+		</div>
+	</li>
+</ol>
+<div class="dotfillex">
+  <p class="exercise" data-number="6">
+    At a point \(P\), we know:
+    \[\begin{aligned}
+    f&=4\qquad&
+    \vec\nabla f&=\left\langle 1,3,2\right\rangle \\
+    \vec G&=\left\langle 2,3,1\right\rangle\qquad&
+    \vec\nabla\times\vec G&=\left\langle 3,2,4\right\rangle
+    \end{aligned}\]
+    Find \(\vec\nabla\times(f\vec G)\) at \(P\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX6"></button>
+    <button class="toggle has-sol" data-toggle="SolX6"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <p>
+    \(\vec\nabla\times(f\vec G)
+    =\left\langle 9,11,13\right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <p>
+    \[\begin{aligned}
+    (\vec\nabla f)\times\vec G
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k   \\
+    1 & 3 & 2 \\
+    2 & 3 & 1
+    \end{vmatrix} \\
+    &=\hat\imath(3-6)-\hat\jmath(1-4)+\hat k(3-6) \\
+    &=\left\langle -3,3,-3\right\rangle \\[6pt]
+    f\vec\nabla\times\vec G
+    &=4\left\langle 3,2,4\right\rangle
+    =\left\langle 12,8,16\right\rangle \\[6pt]
+    \vec\nabla\times(f\vec G)
+    &=(\vec\nabla f)\times\vec G +f\vec\nabla\times\vec G \\
+    &=\left\langle 9,11,13\right\rangle
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>The Chain Rule</h3>
+
+<ul>
+  <li>
+    <strong>Gradient:</strong>
+    <p class="greybox">
+      \[
+      \vec\nabla(f(u))
+      =f'(u)\vec\nabla u
+      \]
+      <button class="toggle" data-toggle="Proof7">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof7">
+      <p>
+        We start from the left side:
+        \[
+        LHS
+        =\vec\nabla(f(u))
+        =\left\langle \partial_x(f(u)),
+                   \partial_y(f(u)),
+                   \partial_z(f(u))\right\rangle
+        \]
+        We use the chain rule for a partial derivative of an ordinary
+        composition of functions:
+        \[\begin{aligned}
+        LHS
+        &=\left\langle f'(u)\partial_x u,f'(u)\partial_y u,f'(u)\partial_z u\right\rangle \\
+        &=f'(u)\vec\nabla u
+        =RHS
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+</ul>
+<p class="exercise" data-number="7">
+  Compute \(\vec\nabla(\sin(x^2yz^3))\) in two ways.
+</p>
+<ol class="list-outside" type="a">
+	<li>
+		<div class="dotfillex">
+			<p>
+				Let \(u=\sin(w)\) and \(f=x^2yz^3\).
+        Find \(u'(f)\), \(\vec\nabla f\)
+        and \(u'(f)\vec\nabla f\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX7a"></button>
+				<button class="toggle has-sol" data-toggle="SolX7a"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX7a">
+			<p>
+				\(u'(f)\vec\nabla f
+        =\left\langle \cos(x^2yz^3)2xyz^3,\cos(x^2yz^3)x^2z^3,
+                      \cos(x^2yz^3)3x^2yz^2\right\rangle\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX7a">
+			<p>
+				If \(u=\sin(w)\) and \(f=x^2yz^3\), then \(u'=\cos(w)\) and
+        \(u'(f)=\cos(x^2yz^3)\).
+        <!-- <br> -->
+        Further,
+        \(\vec\nabla f=\left\langle 2xyz^3,x^2z^3,3x^2yz^2\right\rangle\).
+        So
+        \[
+        u'(f)\vec\nabla f
+        =\left\langle \cos(x^2yz^3)2xyz^3,\cos(x^2yz^3)x^2z^3,
+                      \cos(x^2yz^3)3x^2yz^2\right\rangle
+        \]
+			</p>
+		</div>
+	</li>
+	<li>
+		<div class="dotfillex">
+			<p>
+				Compute \(\vec\nabla(\sin(x^2yz^3))\) by taking the
+        \(x\), \(y\) and \(z\) derivatives of \(\sin(x^2yz^3)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX7b"></button>
+				<button class="toggle has-sol" data-toggle="SolX7b"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX7b">
+			<p>
+				\(\vec\nabla \sin(x^2yz^3)
+        =\left\langle \cos(x^2yz^3)2xyz^3,\cos(x^2yz^3)x^2z^3,
+                      \cos(x^2yz^3)3x^2yz^2\right\rangle\)
+			</p>
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX7b">
+			<p>
+        We compute the partial derivatives of \(\sin(x^2yz^3)\):
+				\[\begin{aligned}
+        \partial_x\sin(x^2yz^3)
+        &=\cos(x^2yz^3)2xyz^3 \\
+        \partial_y\sin(x^2yz^3)
+        &=\cos(x^2yz^3)x^2z^3 \\
+        \partial_z\sin(x^2yz^3)
+        &=\cos(x^2yz^3)3x^2yz^2 \\
+        \end{aligned}\]
+        So
+        \[
+        \vec\nabla \sin(x^2yz^3)
+        =\left\langle \cos(x^2yz^3)2xyz^3,\cos(x^2yz^3)x^2z^3,
+                      \cos(x^2yz^3)3x^2yz^2\right\rangle
+        \]
+			</p>
+		</div>
+	</li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

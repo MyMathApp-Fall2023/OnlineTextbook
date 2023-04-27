@@ -46,7 +46,7 @@ export class RecordService {
     })
     if (records == null){//add a new record
       const newrecord = new Record();
-      
+
     }
     else{//update old record
 
@@ -57,4 +57,12 @@ export class RecordService {
   remove(id: number) {
     return `This action removes a #${id} record`;
   }
+
+  checkOneUser() {
+    //To Do
+    //Check If User Purchased
+    return true
+  }
+
+
 }

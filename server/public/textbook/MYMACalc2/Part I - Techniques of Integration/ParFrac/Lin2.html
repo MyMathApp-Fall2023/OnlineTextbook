@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d. Repeated Linear Factors | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Decomp.html#examples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2 id="eg">a2. General Decompositions</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="Poly.html">Removing a Polynomial Part</a></li>
+    <br>
+    <li><a href="Lin.html">Non-Repeated Linear Factors</a></li>
+    <li class="active"><a href="Lin2.html">Repeated Linear Factors</a></li>
+    <br>
+    <li><a href="Quad.html">Non-Repeated Quadratic Factors</a></li>
+    <li><a href="Quad2.html">Repeated Quadratic Factors</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>d. Repeated Linear Factors</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p class="example" data-number="1">
+  Find the partial fraction expansion for
+  \(\dfrac{x^2+1}{x^4+3x^3+3x^2+x}\).
+</p>
+<p class="sol">
+  We factor the denominator:
+  \[
+  x^4+3x^3+3x^2+x=x(x^3+3x^2+3x+1)=x(x+1)^3
+  \]
+  We write the generic partial fraction decomposition:
+  \[
+  \dfrac{x^2+1}{x(x+1)^3}
+  =\dfrac{A}{x}+\dfrac{B}{x+1}+\dfrac{C}{(x+1)^2}+\dfrac{D}{(x+1)^3}
+  \]
+  Notice that for the repeated factor \((x+1)^3\) we need to
+  include denominators \((x+1)\), \((x+1)^2\) and \((x+1)^3\).
+  Next we clear the denominator:
+  \[
+  x^2+1=A(x+1)^3+Bx(x+1)^2+Cx(x+1)+Dx \qquad (*)
+  \]
+  <span style="color: magenta">Don't simplify! Don't expand!</span>
+  We now try the evaluation trick that worked for non-repeating linear
+  factors: Plug in \(x=0,-1\):
+</p>
+<ul>
+  <li>
+    \(x=0\):
+    \[
+    1=A(1)^3 \qquad \Longrightarrow \qquad A=1
+    \]
+  </li>
+  <li>
+    \(x=-1\):
+    \[
+    2=D(-1) \qquad \Longrightarrow \qquad D=-2
+    \]
+  </li>
+</ul>
+<p>
+  Notice that this only determined \(A\) which was the numerator for the
+  non-repeating factor \(x\) and \(D\) which was the numerator for the
+  highest power of the repeating factor \((x+1)\). There are \(3\) methods
+  to find the remaining coefficients \(B\) and \(C\):
+</p>
+<p class="meth" data-number="1">
+  We can plug in for \(A\) and \(D\) in equation \((*)\), multiply out
+  the right side, equate coefficients of powers of \(x\), and solve.
+  This is tedious. So we don't recommend this method.
+</p>
+<p class="meth" data-number="2">
+  Since equation \((*)\) must be true for all \(x\), we just plug in
+  two other random values of \(x\), say \(x=1,2\), as well as the known
+  values of \(A\) and \(D\):
+</p>
+<ul>
+  <li>
+    \(x=1\):
+    \[\begin{aligned}
+    2&=A(8)+B(1)(4)+C(1)(2)+D(1) \\
+     &=8A+4B+2C+D=8+4B+2C-2 \\
+     &\Longrightarrow \qquad 4B+2C=-4 \qquad \Longrightarrow \qquad 2B+C=-2
+    \end{aligned}\]
+  </li>
+  <li>
+    \(x=2\):
+    \[\begin{aligned}
+    5&=A(27)+B(2)(9)+C(2)(3)+D(2) \\
+     &=27A+18B+6C+2D=27+18B+6C-4 \\
+     &\Longrightarrow \qquad 18B+6C=-18 \qquad \Longrightarrow \qquad 3B+C=-3
+    \end{aligned}\]
+  </li>
+</ul>
+<p>
+  Subtracting these equations gives \(B=-1\) and substituting back gives \(C=0\).
+</p>
+<p class="meth" data-number="3">
+  Since equation \((*)\) must be true for all \(x\), its derivative will
+  also be true for all \(x\). So we differentiate \((*)\) and plug in
+  \(x=-1\); then differentiate again and plug in \(x=-1\):
+</p>
+<ul>
+  <li>
+    We compute the first derivative and plug in \(A\) and \(D\):
+    \[\begin{aligned}
+    2x&=A3(x+1)^2+B\left[(x+1)^2+x2(x+1)\right]+C(2x+1)+D \\
+      &=3(x+1)^2+B\left[(x+1)^2+x2(x+1)\right]+C(2x+1)-2
+   \end{aligned}\]
+    At \(x=-1\):
+    \[
+    -2=C(-1)-2 \qquad \Longrightarrow \qquad C=0
+    \]
+  </li>
+  <li>
+    We compute the second derivative and plug in \(A\) and \(D\):
+    \[\begin{aligned}
+    2&=A6(x+1)+B[2(x+1)+2(x+1)+x2]+C(2) \\
+     &=6(x+1)+B[2(x+1)+2(x+1)+x2]
+    \end{aligned}\]
+    At \(x=-1\):
+    \[
+    2=B(-2) \qquad \Longrightarrow \qquad B=-1
+    \]
+  </li>
+</ul>
+<p class="remark">
+  Notice that as we take the derivatives, we use the product rule and chain
+  rule rather than multiplying out first. This makes it easier to plug in the
+  zeros of the denominator.
+</p>
+<hr width="80%">
+<p>
+  In any case the the coefficients are
+  \[
+  A=1\qquad B=-1\qquad C=0\qquad D=-2
+  \]
+  and the partial fraction expansion is:
+  \[
+  \dfrac{x^2+1}{x^4+3x^3+3x^2+x}=\dfrac{1}{x}-\dfrac{1}{x+1}-\dfrac{2}{(x+1)^3}
+  \]
+</p>
+<p class="remark">
+  Notice that some coefficients may be zero but there is no way to know that
+  in advance.
+</p>
+<p class="check">
+  We check by adding up the right side:
+  \[\begin{aligned}
+  \dfrac{1}{x}-\dfrac{1}{x+1}-\dfrac{2}{(x+1)^3}
+  &=\dfrac{(x+1)^3-x(x+1)^2-2x}{x(x+1)^3} \\
+  &=\dfrac{x^2+1}{x^4+3x^3+3x^2+x}
+  \end{aligned}\]
+</p>
+
+        <div class="rule" id="ex"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the partial fraction decomposition for
+    \(\dfrac{x^2+x-4}{x^4-8x^2+16}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+    <button class="toggle has-check" data-toggle="Ck1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\dfrac{x^2+x-4}{x^4-8x^2+16}
+    =\dfrac{1}{8}\left[\dfrac{2}{x-2}+\dfrac{1}{(x-2)^2}
+    -\dfrac{2}{x+2}-\dfrac{1}{(x+2)^2}\right]\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    To find the partial fraction expansion for \(\dfrac{x^2+x-4}{x^4-8x^2+16}\)
+    we first factor the denominator:
+    \[
+    x^4-8x^2+16=(x^2-4)^2=(x-2)^2(x+2)^2
+    \]
+    We write out the general expansion and clear the denominator:
+    \[
+    \dfrac{x^2+x-4}{x^4-8x^2+16}
+    =\dfrac{A}{x-2}+\dfrac{B}{(x-2)^2}+\dfrac{C}{x+2}+\dfrac{D}{(x+2)^2}
+    \]
+    \[
+    x^2+x-4=A(x-2)(x+2)^2+B(x+2)^2+C(x-2)^2(x+2)+D(x-2)^2
+    \]
+    We plug in the two roots \(x=2,-2\) and two other numbers, say \(x=0,1\):
+  </p>
+  <ul>
+    <li>
+    \(x=2\):
+    \[
+    2=B(16) \qquad \Longrightarrow \qquad B=\dfrac{1}{8}
+    \]
+    </li>
+    <li>
+    \(x=-2\):
+    \[
+    -2=D(16) \qquad \Longrightarrow \qquad D=-\dfrac{1}{8}
+    \]
+    </li>
+    <li>
+    \(x=0\):
+    \[\begin{aligned}
+    -4&=A(-2)(4)+B(4)+C(4)(2)+D(4)=-8A+4B+8C+4D \\
+      &=-8A+\dfrac{1}{2}+8C-\dfrac{1}{2}=-8A+8C \\
+      &\Longrightarrow \qquad 1=2A-2C \qquad \text{*}
+    \end{aligned}\]
+    </li>
+    <li>
+    \(x=1\):
+    \[\begin{aligned}
+    -2&=A(-1)(9)+B(9)+C(1)(3)+D(1)=-9A+9B+3C+D \\
+      &=-9A+\dfrac{9}{8}+3C-\dfrac{1}{8}=-9A+3C+1 \\
+      &\Longrightarrow \qquad -3=-9A+3C \qquad \Longrightarrow
+      \qquad 1=3A-C \qquad \text{**}
+    \end{aligned}\]
+    </li>
+  </ul>
+  <p>
+    Solving (**) for \(C\) and substituting into (*) gives \(A=\dfrac{1}{4}\).
+    Substituting back gives \(C=-\dfrac{1}{4}\).
+    So the partial fraction expansion is
+    \[\begin{aligned}
+    \dfrac{x^2+x-4}{x^4-8x^2+16}
+    &=\dfrac{\dfrac{1}{4}}{x-2}+\dfrac{\dfrac{1}{8}}{(x-2)^2}
+    +\dfrac{-\dfrac{1}{4}}{x+2}+\dfrac{-\dfrac{1}{8}}{(x+2)^2} \\
+    &=\dfrac{1}{8}\left[\dfrac{2}{x-2}+\dfrac{1}{(x-2)^2}
+    -\dfrac{2}{x+2}-\dfrac{1}{(x+2)^2}\right]
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="Ck1">
+  <p>
+    We check by adding up the right hand side:
+    \[\begin{aligned}
+    \dfrac{1}{8}&\left[\dfrac{2}{x-2}+\dfrac{1}{(x-2)^2}
+    -\dfrac{2}{x+2}-\dfrac{1}{(x+2)^2}\right] \\
+    &=\dfrac{2(x-2)(x+2)^2+(x+2)^2-2(x-2)^2(x+2)-(x-2)^2}{x^4-8x^2+16} \\
+    &=\dfrac{x^2+x-4}{x^4-8x^2+16}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

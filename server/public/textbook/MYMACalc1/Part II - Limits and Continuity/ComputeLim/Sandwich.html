@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. The Theorem | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html" title="Previous">&lArr;</a></li>
+      <li><a href="SinCos.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Computing Limits</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Sandwich Theorem</h2>
+
+
+      
+      <h2>1. The Theorem</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The tricks covered on the previous page cover most limits involving
+  <button class="toggle" data-toggle="Drop1">generalized polynomials</button>.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p data-title="Generalized Polynomials">
+    A <span class="defword">generalized polynomial</span> is a sum of terms
+    each of which is a coefficient times the variable to a numerical power,
+    not necessarily non-negative integers. If all the powers are non-negative
+    integers, then it is a polynomial.
+  </p>
+</div>
+<p>
+  However, if the limit involves other functions (such as exponential or trig
+  functions), then there is one more technique that may prove useful, the
+  <span class="defword">Sandwich Theorem</span>, which is also called the
+  <span class="defword">Pinching Theorem</span> or the
+  <span class="defword">Squeeze Theorem</span>. It is based on a simple fact:
+</p>
+<div class="column">
+  <p class="prop" data-title="Limits of Inequalities" data-col-width="60%">
+    If \(\displaystyle \lim_{x\to a}f(x)\) exists and
+    \(\displaystyle \lim_{x\to a}g(x)\) exists and
+    \[
+    f(x) \le g(x) \quad \text{for all} \quad x\ne a
+    \]
+    then
+    \[
+    \lim_{x\to a}f(x) \le \lim_{x\to a}g(x)
+    \]
+  </p>
+  <div class="center" data-col-width="40%">
+    <figure>
+      <img src="graphics/prop_LimIneq.jpg" alt="prop_LimIneq">
+      <figcaption>
+        \(f=1-x^2+.2\sin(2\pi x)\) <br> \(g=1.2+x^2+.2\sin(2\pi x)\)
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<p>
+  From this we have:
+</p>
+<div class="column">
+  <p class="thm" data-title="Sandwich Theorem" data-col-width="60%">
+    If \(\displaystyle \lim_{x\to a}g(x)\) exists and
+    \(\displaystyle \lim_{x\to a}h(x)\) exists and
+    \[
+    \displaystyle \lim_{x\to a}g(x)=\lim_{x\to a}h(x)=L
+    \]
+    and further:
+    \[
+    g(x) \le f(x) \le h(x) \quad \text{for all} \quad x\ne a
+    \]
+    (i.e. \(f(x)\) is sandwiched between \(g(x)\) and \(h(x)\))
+    then \(\displaystyle \lim_{x\to a}f(x)\) exists and
+    \[
+    \lim_{x\to a}f(x)=L
+    \]
+    <button class="toggle" data-toggle="Just1">Justification</button>
+    <a href="../PreciseLim/Sandwich.html"
+    title="Return using the Back button.">
+    <button>Proof</button>
+    </a>
+  </p>
+  <div class="center" data-col-width="40%">
+    <figure>
+      <img src="graphics/thm_Sandwich.jpg" alt="thm_Sandwich">
+      <figcaption>
+        \(g=1+x^2\) <br> \(h=1+3x^2\) <br> \(f=1+2x^2\sin(1/x)\)
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="toBeToggled drop-just" data-toggle="Just1">
+  <p data-title="Sandwich Theorem">
+    Applying the previous proposition twice, we have that since
+    \(g(x) \le f(x) \le h(x)\),
+    then
+    \[
+    \lim_{x\to a}g(x) \le
+    \lim_{x\to a}f(x) \le
+    \lim_{x\to a}h(x)
+    \]
+    We substitute
+    \(\displaystyle \lim_{x\to a}g(x)=\lim_{x\to a}h(x)=L\)
+    to get
+    \[
+    L \le \displaystyle\lim_{x\to a}f(x) \le L
+    \]
+    Thus, \(\displaystyle\lim_{x\to a}f(x)=L\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Let's start with a example which can also be computed by previous techniques.
+</p>
+<p class="example" data-number="1">
+  Use the Sandwich Theorem to compute
+  \(\displaystyle \lim_{x\to0}\dfrac{3x^2}{x+2}\).
+</p>
+<p class="remark">
+  This limit can easily be seen to be \(0\) by dividing the numerator and
+  denominator by \(x\) which is the largest term in the denominator.
+  However, we were asked to use the Sandwich Theorem.
+</p>
+<p class="sol">
+  To compute a limit as \(x\) approaches \(0\) we only need to look at
+  \(x\)'s close to \(0\). So let's assume:
+  \[
+  -1 \lt x \lt 1
+  \]
+  and build up our function, \(\dfrac{3x^2}{x+2}\), in the middle. Add \(2\) to all sides:
+  \[
+  1 \lt x+2 \lt 3
+  \]
+  Take the reciprocals, which reverses the inequalities:
+  \[
+  1 \gt \dfrac{1}{x+2} \gt \dfrac{1}{3}
+  \]
+  Multiply through by \(3x^2\) which is positive and so does nothing to
+  the inequalities:
+  \[
+  3x^2 \gt \dfrac{3x^2}{x+2} \gt \dfrac{3x^2}{3}=x^2
+  \]
+  So our function, \(\dfrac{3x^2}{x+2}\), is squeezed between \(x^2\) and
+  \(3x^2\). Since:
+  \[
+  \lim_{x\to0}(x^2)= \lim_{x\to0}(3x^2)=0
+  \]
+  we conclude:
+  \[
+   \lim_{x\to0}\dfrac{3x^2}{x+2}=0
+  \]
+  also, by the Sandwich Theorem.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The solution to the following example shows how a mathematician would think
+  through such a problem. Study it carefully!
+</p>
+ <!-- style="max-height: 60px" -->
+<div class="collapse example hide" data-number="2"
+data-title=
+"<span style='color:black'>Compute \(\displaystyle \lim\limits_{h\to 0}\dfrac{\left( 1+h\right)^{1/5}-1}{h}\).</span>">
+	<p>
+		Suppose the limit does have a value \(L\):
+    \[
+    \lim\limits_{h\to 0}\dfrac{\left( 1+h\right)^{1/5}-1}{h}=L
+    \]
+    Then for small \(h\) we have an approximate equality:
+    \[
+    \dfrac{\left( 1+h\right)^{1/5}-1}{h}\approx L
+    \]
+    We rearrange to obtain
+    \[
+    \left( 1+h\right)^{1/5}\approx 1+hL
+    \]
+    Raising to the \(5^{\text{th}}\) power and using Pascal's triangle on the
+    right, we have:
+    \[
+    1+h\approx \left( 1+hL\right)^{5}
+    =1+5Lh+10L^{2}h^{2}+10L^{3}h^{3}+5L^{4}h^{4}+L^{5}h^{5}
+    \]
+    To make the two sides agree, at least to first degree, we need
+    \(L=\dfrac{1}{5}\). Then the previous equation says:
+    \[
+    1+h\approx \left( 1+\dfrac{1}{5}h\right)^{5}=1+h+\dfrac{2}{5}h^{2}+\dfrac{2
+    }{25}h^{3}+\dfrac{1}{125}h^{4}+\dfrac{1}{3125}h^{5}
+    \]
+    For small \(h\), the \(h^{2}\) and higher terms a negligible. We have now
+    identified the limit as \(L=\dfrac{1}{5}\), but that does not mean we have
+    proved it. For that we need the Sandwich Theorem.
+	</p>
+	<p>
+    To apply the Sandwich Theorem, we need upper and lower bounds on the limit.
+    Can we change the approximate equality above into an inequality? Yes!
+    Since \(\dfrac{2}{5}h^{2}>0\) and the other terms are smaller (for \(h\)
+    close to \(0\)), we conclude:
+    \[
+    \left( 1+\dfrac{1}{5}h\right)^{5}=1+h+\dfrac{2}{5}h^{2}+\dfrac{2}{25}h^{3}+
+    \dfrac{1}{125}h^{4}+\dfrac{1}{3125}h^{5}>1+h
+    \]
+    Turning this around and taking the \(5^\text{th}\) root gives:
+    \[
+    \left( 1+h\right)^{1/5}<1+\dfrac{1}{5}h
+    \]
+    Subtracting \(1\) and dividing by \(h\) gives:
+    \[
+    \dfrac{\left( 1+h\right)^{1/5}-1}{h}<\dfrac{\left( 1+\dfrac{1}{5}h\right) -1
+    }{h}=\dfrac{1}{5}
+    \]
+    This is the upper bound (the upper crust) for our Sandwich Theorem. We now
+    need a lower bound. We need to change the \(1+\dfrac{1}{5}h\) to something
+    smaller than \(\left( 1+h\right)^{1/5}\) without messing up the linear term \(
+    \dfrac{1}{5}h\). So we try \(1+\dfrac{1}{5}h-h^{2}\). As above, we work out the
+    \(5^{\text{th}}\) power:
+    \[
+    \left( 1+\dfrac{1}{5}h-h^{2}\right)^{5}=1+h-\dfrac{23}{5}h^{2}-\dfrac{98}{25%
+    }h^{3}+\left( \text{higher degree terms}\right) <1+h
+    \]
+    This is less then \(1+h\) because the quadratic term is negative. Turning this
+    around and taking the \(5^{\text{th}}\) root gives:
+    \[
+    \left( 1+h\right)^{1/5}>1+\dfrac{1}{5}h-h^{2}
+    \]
+    Subtracting \(1\) and dividing by \(h\) gives:
+    \[
+    \dfrac{\left( 1+h\right)^{1/5}-1}{h}>\dfrac{\left( 1+\dfrac{1}{5}%
+    h-h^{2}\right) -1}{h}=\dfrac{1}{5}-h
+    \]
+    This is the lower bound (the lower crust) for our Sandwich Theorem. We now
+    have that \(\dfrac{\left( 1+h\right)^{1/5}-1}{h}\) is sandwiched between \(
+    \dfrac{1}{5}-h\) and \(\dfrac{1}{5}\). Since their limits are both \(\dfrac{1}{5}
+    \), we conclude
+    \[
+    \lim\limits_{h\to 0}\dfrac{\left( 1+h\right)^{1/5}-1}{h}=\dfrac{1}{5%
+    }
+    \]
+	</p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The following exercise is much easier than the previous examples. This
+  limit involving a trig function cannot be done by previous techniques.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\displaystyle \lim_{x\to0}x\cos\left(\dfrac{1}{x}\right)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Start with:
+    \[
+    -1 \le \cos\left(\dfrac{1}{x}\right) \le 1
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle
+   \lim_{x\to0}x\cos\left(\dfrac{1}{x}\right)=0\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <div class="column">
+  	<p>
+      As \(x\) approaches \(0\), \(\cos\left(\dfrac{1}{x}\right)\) oscillates
+      between \(1\) and \(-1\) faster and faster; it is oscillatory divergent.
+      However, when we multiply by \(x\), the result is different. Unfortunately,
+      there is no way to simplify the \(\cos\left(\dfrac{1}{x}\right)\).
+      So we turn to the Sandwich Theorem.
+    </p>
+    <div class="center">
+      <img src="graphics/eg_cos1x.jpg" alt="eg_cos1x">
+    </div>
+  </div>
+  <p>
+    We need to find upper and lower bounds on \(x\cos\left(\dfrac{1}{x}\right)\)
+    whose limits we can compute. We start with the bounds on \(\cos\):
+    \[
+    -1 \le \cos\left(\dfrac{1}{x}\right) \le 1
+    \]
+    and multiply through by \(x\):
+    \[
+    -x \le x\cos\left(\dfrac{1}{x}\right) \le x
+    \]
+  </p>
+  <div class="column">
+  	<p>
+      So \(x\cos\left(\dfrac{1}{x}\right)\) is squeezed between \(-x\) and \(x\).
+      Since:
+      \[
+      \lim_{x\to0}(-x)= \lim_{x\to0}(x)=0
+      \]
+      we conclude:
+      \[
+       \lim_{x\to0}x\cos\left(\dfrac{1}{x}\right)=0
+      \]
+      also, by the Sandwich Theorem.
+    </p>
+    <div class="center">
+      <img src="graphics/eg_xcos1x.jpg" alt="eg_xcos1x">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  On the <a href="SinCos.html">next page</a>, we will look at several very
+  important limits involving trig functions, including
+  \(\displaystyle \lim_{x\to0}\dfrac{\sin x}{x}\), where the application of
+  the  Sandwich Theorem is much more intricate.
+</p>
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Grid Cells | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Cyl-Convert.html" title="Previous">&lArr;</a></li>
+      <li><a href="Sph-Int.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Integrating in Spherical Coordinates</h2>
+
+<p>
+  The extension of integration to spherical coordinates in 3D is somewhat
+  similar to the extension to cylindrical coordinates. We break up the
+  region of integration \(R\) into subregions \(R_k\) which are
+  spherical grid cells. We need to know the volume of these cells.
+</p>
+
+
+      
+      <h2>1. Grid Cells</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  A spherical box is very different from a cylindrical box or a polar
+  rectangle. Think of a rectangle on the surface of the earth between two
+  lines of lattitude and between two lines of longitude. Pile up dirt on this
+  rectangle to some depth and that is a spherical box.
+</p>
+
+<div class="column">
+  <p class="def" data-col-width="60%">
+    A <span class="defword">spherical box</span> or
+    <span class="defword">spherical grid cell</span> is a region of the form:
+    \[
+    \rho_1 \le \rho \le \rho_2
+    \quad
+    \phi_1 \le \phi \le \phi_2
+    \quad \text{and} \quad
+    \theta_1 \le \theta \le \theta_2
+    \]
+    The <span class="defword">coordinate center</span> of the cell is at:
+    \[
+    \bar{\rho}=\dfrac{\rho_1+\rho_2}{2}
+    \quad
+    \bar{\phi}=\dfrac{\phi_1+\phi_2}{2}
+    \quad \text{and} \quad
+    \bar{\theta}=\dfrac{\theta_1+\theta_2}{2}
+    \]
+    and the <span class="defword">coordinate dimensions</span> of the cell are:
+    \[
+    \Delta\rho=\rho_2-\rho_1
+    \quad
+    \Delta\phi=\phi_2-\phi_1
+    \quad \text{and} \quad
+    \Delta\theta=\theta_2-\theta_1
+    \]
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/3dsphgrid.jpg" alt="3dsphgrid">
+  </div>
+</div>
+<p>
+  It is difficult to derive an exact formula for the volume of a
+  spherical box. However, it is approximately:
+  \[
+  \Delta V=\bar{\rho}\,^2\sin\bar{\phi}\,\Delta\rho\,\Delta\phi\,\Delta\theta
+  \]
+</p>
+<p>
+  In the limit as \(\Delta\rho\), \(\Delta\phi\) and \(\Delta\theta\) get small,
+  \(\Delta\rho\) becomes \(d\rho\), \(\Delta\phi\) becomes \(d\phi\),
+  \(\Delta\theta\) becomes \(d\theta\) and \(\Delta V\) becomes \(dV\).
+  Consequently:
+</p>
+<p class="def" data-title="Differential of Volume in Spherical Coordinates">
+  The <span class="defword">spherical differential of volume</span> is:
+  \[
+  dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+  \]
+</p>
+<p class="center greenbig">
+  Memorize this!
+</p>
+<p>
+  We will derive this formula for the spherical volume differential as a
+  special case of the volume differential for general curvilinear coordinates
+  in 3D <a href="3DCurv-Jac.html#sph_jac" title="Return using the Back button.">
+  later in this chapter</a>. For now, we will just use the formula to do
+  integrals starting on the <a href="Sph-Int.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

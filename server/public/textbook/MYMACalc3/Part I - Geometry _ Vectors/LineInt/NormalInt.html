@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>f. Normal Line Integrals in \(\mathbb{R}^2\) (Optional) | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="FlowCirc.html" title="Previous">&lArr;</a></li>
+      <li><a href="Expansion.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>f. Normal Line Integrals in \(\mathbb{R}^2\) (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  There is one other type of line integral which only exists in
+  \(\mathbb{R}^2\). Recall that when we discussed the
+  <a href="../LinePlane/LineNonParam3.html"
+  title="Return using the Back button.">
+  equation of a line</a>, we said that a line can always be specified by
+  giving a point and a tangent vector, but in \(\mathbb{R}^2\) it can also
+  be specified by giving a point and a normal vector. If the tangent vector
+  is \(\vec v=\langle v_1,v_2\rangle\), then the normal vector is
+  \(\vec n=\vec v^\perp=\langle v_2,-v_1\rangle\). From these we get the
+  unit tangent vector:
+  \[
+  \hat v=\dfrac{\vec v}{|\vec v|} \qquad (=\hat T)
+  \]
+  and the unit normal vector:
+  \[
+  \hat n=\dfrac{\vec n}{|\vec n|}=\dfrac{\vec n}{|\vec v|}
+  \]
+  Here, we have noted that the unit tangent vector is also called \(\hat T\)
+  and \(|\vec n|=|\vec v|\).
+</p>
+<p>
+  In the same way, the usual line integral of a vector:
+  \[
+  \int_A^B \vec F\cdot d\vec s
+  =\int_A^B \vec F\cdot\hat v\,ds
+  \]
+  should be regarded as a
+  <span class="defword">tangential line integral</span> since it is the scalar
+  line integral of the <span class="hl">tangential component</span> of \(\vec F\):
+  \[
+  F_\parallel=\text{comp}_{\vec v}\vec F
+  =\dfrac{\vec F\cdot\vec v}{|\vec v|}
+  =\vec F\cdot\hat v
+  \]
+  On the other hand, in \(\mathbb{R}^2\), the
+  <span class="hl">normal component</span> of \(\vec F\) is:
+  \[
+  F_\perp=\text{comp}_{\vec n}\vec F
+  =\dfrac{\vec F\cdot\vec n}{|\vec n|}
+  =\vec F\cdot\hat n
+  \]
+  So in \(\mathbb{R}^2\), we can use \(\vec n\) instead of \(\vec v\) to also
+  define a <span class="hl">normal line integral</span>.
+</p>
+
+        <div class="rule"></div>
+
+<p class="def">
+  The <span class="defword">normal differential of arc length</span> is:
+  \[
+  d\vec n=d\vec s^\perp=(dy,-dx)
+  \]
+  For a parametrized curve, \(\vec r(t)=(x(t),y(t))\),
+  it can be expressed in terms of the normal,
+  \(\vec n=\vec v^\perp=\left(\dfrac{dy}{dt},-\,\dfrac{dx}{dt}\right)\), as
+  \[
+  d\vec n
+  =\left(\dfrac{dy}{dt},-\,\dfrac{dx}{dt}\right)\,dt
+  =\vec n\,dt
+  \]
+  Notice that the length of the
+  <span class="hl">normal differential of arc length</span>
+  is the same <span class="hl">scalar differential of arclength</span>:
+  \[
+  |d\vec n|=\sqrt{dy^2+dx^2\,}=|d\vec s|=ds
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Using the normal differential of arc length, we can now define the
+  <span class="hl">normal integral of a vector</span>:
+</p>
+
+<p class="def">
+  The <span class="defword">normal line integral of a vector field</span>
+  \(\vec F\) along a parametric curve \(\vec r(t)=(x(t),y(t))\) between
+  \(A=\vec r(a)\) and \(B=\vec r(b)\) is given by
+    \[
+    \int_A^B \vec F\cdot d\vec n
+    =\int_a^b \vec F(\vec r(t))\cdot\vec n\,dt \qquad (1)
+    \]
+    <!--=\int_a^b \vec F(\vec r(t))\cdot\vec n\,dt \tag{(1)}-->
+  where \(\vec F(\vec r(t))\) is the composition of \(\vec F\) and \(\vec r\),
+  i.e. the function \(\vec F(x,y)\)
+  with \(x\) and \(y\) replaced by \(x(t)\)
+  and \(y(t)\). The composition \(\vec F(\vec r(t))\) is called the
+  <span class="defword">value of the vector field along
+  the curve</span>.
+</p>
+
+<p class="remark">
+  Notice that we again switch the limits on the integral from the abstract
+  points \(A\) and \(B\) to the values \(a\) and \(b\) of the parameter \(t\)
+  when we switch from the integral with the general differential \(d\vec n\)
+  to the integral with the parameter differential \(dt\).
+</p>
+
+<p class="remark">
+  The normal line integral can also be written in other notations.
+  <ol>
+    <li>
+      Using differentials:
+      \[
+      \int_A^B \vec F\cdot d\vec n
+      =\int_A^B F_1\,dy-F_2\,dx \qquad (2)
+      \]
+      <!--\int_A^B \vec F\cdot d\vec n
+      =\int_A^B F_1\,dy-F_2\,dx \tag{(2)}-->
+    </li>
+    <li>
+      Using the unit normal vector:
+      \[
+      \int_A^B \vec F\cdot d\vec n
+      =\int_A^B \vec F\cdot\hat{n}\,ds \qquad (3)
+      \]
+      <!--\int_A^B \vec F\cdot d\vec s
+      =\int_A^B \vec F\cdot\hat{T}\,ds \tag{(3)}-->
+    </li>
+  </ol>
+</p>
+
+<p class="remark">
+  When computing a line integral of a vector field, always use the forms shown
+  in (1) or (2) as demonstrated in the examples. Never use version (3) for
+  computation. If you do, you end up unnecessarily computing \(|\vec v|\)
+  since you divide by \(|\vec v|\) when
+  forming \(\hat{n}=\dfrac{\vec n}{|\vec v|}\) and
+  multiply by it when forming \(ds=|\vec v|\,dt\) so that
+  they cancel out in the end. The version (3) is used mostly for theoretical
+  purposes, since it writes the vector integral as the scalar integral of the
+  normal component of the vector field.
+  \[
+  F_\perp=\text{comp}_{\vec n}\vec F
+  =\dfrac{\vec F\cdot\vec n}{|\vec n|}
+  =\vec F\cdot\hat n
+  \]
+  This will become clear when we discuss applications on the
+  <a href="Expansion.html">next page</a>.
+</p>
+
+<p class="remark">
+  It should also be noted that every normal line integral can be rewritten
+  as a tangential line integral but for a rotated vector field. Specifically,
+  if we define \(\vec F^\perp=\langle F_2,-F_1\rangle\), then
+  \[\begin{aligned}
+  \int_A^B &\vec F\cdot d\vec n
+  =\int_A^B F_1\,dy-F_2\,dx \\
+  &=\int_A^B -F_2\,dx+F_1\,dy
+  =-\int_A^B \vec F^\perp\cdot d\vec s
+  \end{aligned}\]
+  This rewrite is rarely used.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int_{(0,0)}^{(2,4)} \vec F\cdot d\vec n\)
+  along the parabola \(\vec r(t)=\left(t,t^2\right)\)
+  for the vector field \(\vec F=\langle 3y,2x^3\rangle\).
+</p>
+<p class="sol">
+  The value of \(\vec F\) along the curve is:
+  \[
+  \vec F(\vec r(t))=\langle 3t^2,2t^3\rangle
+  \]
+  The velocity is \(\vec v=(1,2t)\) and the normal is \(\vec n=(2t,-1)\). So
+  \(\vec F(\vec r(t))\cdot\vec n=6t^3-2t^3=4t^3\), and
+  the integral is
+  \[
+  \int_{(0,0)}^{(2,4)} \vec F\cdot d\vec n
+  =\int_0^2 \vec F(\vec r(t))\cdot\vec n\,dt
+  =\int_0^2 4t^3\,dt=\left[t^4\rule{0pt}{10pt}\right]_0^2=16
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the normal line integral of the vector field
+    \(\vec G=\langle 3x,2y\rangle\)
+    along the cusp
+    \(\vec r(t)=(t^2,t^3)\)
+    for \(0 \le t \le 3\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle
+    \int_{\vec r(0)}^{\vec r(3)} \vec G\cdot d\vec n
+    =\int_0^3 \vec G(\vec r(t))\cdot\vec n\,dt
+    =243\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We are computing the line integral:
+    \[
+    \int_{\vec r(0)}^{\vec r(3)} \vec G\cdot d\vec n
+    =\int_0^3 \vec G(\vec r(t))\cdot\vec n\,dt
+    \]
+    The tangent vector is
+    \(\vec v=\langle 2t,3t^2\rangle\) and the normal vector is
+    \(\vec n=\langle 3t^2,-2t\rangle\). On the cusp, the vector
+    field \(\vec G=\langle 3x,2y\rangle\) becomes
+    \(\vec G(\vec r(t))=\langle 3t^2,2t^3\rangle\). So their dot product is:
+    \[
+    \vec G(\vec r(t))\cdot\vec n
+    =9t^4-4t^4=5t^4
+    \]
+    and the line integral is:
+    \[
+    \int_0^3 \vec G(\vec r(t))\cdot\vec n\,dt
+    =\int_0^3 5t^4,dt
+    =\left[t^5\rule{0pt}{10pt}\right]_0^3
+    =243
+    \]
+  </p>
+</div>
+<p>
+  We look at applications on the <a href="Expansion.html">
+  next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Area as a \(y\)-Integral | 10. Area and Average Value</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="BetweenPieces.html" title="Previous">&lArr;</a></li>
+      <li><a href="Ave.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Area and Average Value</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. Area as a \(y\)-Integral</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the previous pages, we computed the area of a region whose edges were
+  specified by giving \(y\) as a function of \(x\). We now look at regions
+	whose edges are specified by giving \(x\) as a function of \(y\).
+	Everything is the same as previously, except we need to turn our heads
+	sidewise.
+	<img src="../../../graphics/happyfaceanim.gif" alt="happyfaceanim"
+	height="40" width="40">
+</p>
+<div class="column">
+  <div>
+    <p class="genexample" data-number="1">
+      Find the area to the left of a function \(x=f(y)\) and to the
+      right of a function \(x=g(y)\) between \(y=c\) and \(y=d\).
+    </p>
+		<p class="der">
+      This time divide the region into \(n\) horizontal rectangles each of
+			height \(\Delta y=\dfrac{d-c}{n}\) and width
+      \(f(y_i^*)-g(y_i^*)\) where
+      \(y_i^*\) is a point in the \(i^\text{th}\) interval.
+    </p>
+		<p>
+      The area is then obtained by adding up the areas of the rectangles and
+      taking the limit as the number of rectangles becomes large,
+			(\(n\rightarrow\infty\)):
+      \[
+      A=\lim_{n\rightarrow\infty}\sum_{i=1}^n
+			[f(y_i^*)-g(y_i^*)]\Delta y
+      \]
+      This limit of the sum is recognized as the integral
+			\[
+			A=\int_c^d [f(y)-g(y)]\,dy
+			\]
+    </p>
+	</div>
+	<div class="center">
+		<img src="graphics/eg_yint1.jpg" alt="eg_yint1">
+		<img src="graphics/eg_yint1rect.jpg" alt="eg_yint1rect">
+		<img src="graphics/eg_yint1rect_anim.gif" alt="eg_yint1rect_anim">
+	</div>
+</div>
+<p class="formula" data-title="Area as a \(y\)-Integral">
+  The area to the left of a function \(x=f(y)\) and to the right of a function
+	\(x=g(y)\) between \(y=c\) and \(y=d\) is:
+  \[
+  A=\int_c^d [f(y)-g(y)]\,dy
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+		<p class="example" data-number="2">
+		  Find the area between the parabolas \(x=2y^2\) and \(x=3+y^2\).
+		</p>
+    <p class="sol">
+      We plot the curves to get an idea of the shape.
+      The curves are both parabolas opening to the right.
+      To find the intersection points, we equate the functions and solve for \(y\):
+      \[\begin{aligned}
+      2y^2&=3+y^2 \\
+      y^2&=3 \\
+      y&=\pm\sqrt{3}
+      \end{aligned}\]
+      Then the area is
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_yint_2y^2=3+y^2.jpg" alt="eg_yint_2y^2=3+y^2">
+  </div>
+</div>
+<p>
+	\[\begin{aligned}
+	A&=\int_{-\sqrt{3}}^{\sqrt{3}} [\text{right}-\text{left}]\,dy
+	=\int_{-\sqrt{3}}^{\sqrt{3}} [(3+y^2)-(2y^2)]\,dy \\
+  &=\int_{-\sqrt{3}}^{\sqrt{3}} (3-y^2)\,dy
+  =\left[ 3y-\dfrac{y^3}{3}\right]_{y=-\sqrt{3}}^{\sqrt{3}} \\
+  &=2\left[ 3\sqrt{3}-\dfrac{\sqrt{3}^3}{3}\right]
+  =4\sqrt{3}
+	\end{aligned}\]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the area between \(x=y^3+3y^2\) and the \(y\)-axis for \(2 \le y \le 4\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <div class="column">
+    <div>
+      <p>
+        You don't really need a graph, but here it is:
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/ex_yint_y^3+3y^2.jpg" alt="ex_yint_y^3+3y^2">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\displaystyle A=\int_2^4 (y^3+3y^2)\,dy=116\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    \[\begin{aligned}
+    A&=\int_2^4 (y^3+3y^2)\,dy
+		=\left[\dfrac{y^4}{4}+y^3\right]_2^4 \\
+    &=[64+64]-[4+8]=116
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the area between \(x=y^3-y^2\) and \(x=12y\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX4"></button>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+	<div class="column">
+	  <div>
+		  <p>
+		    Here is the graph of the two curves:
+		  </p>
+		</div>
+	  <div class="center">
+	      <img src="graphics/ex_yint_y^3-y^2=12y.jpg" alt="ex_yint_y^3-y^2=12y">
+	  </div>
+	</div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(\displaystyle A=\int_{-3}^0 (y^3-y^2-12y)\,dy
+	    +\int_0^4 (12y-y^3+y^2)\,dy =\dfrac{937}{12}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+	<div class="column">
+	  <div>
+		  <p>
+        The cubic is \(0\) at \(y=0\) and \(y=1\) and is positive for
+        \(y \gt 1\). It's graph and the graph of the line are shown.
+		    We find the points of intersection by setting the curves equal:
+	      \[\begin{aligned}
+	      y^3-y^2&=12y \\
+	      y^3-y^2-12y&=0 \\
+	      y(y-4)(y+3)&=0
+	      \end{aligned}\]
+		    So, the curves intersect at \(y=-3,0,4\).
+		  </p>
+		</div>
+	  <div class="center">
+      <img src="graphics/ex_yint_y^3-y^2=12y.jpg" alt="ex_yint_y^3-y^2=12y">
+	  </div>
+	</div>
+	<p>
+		For \(-3 \lt y \lt 0\), the cubic	is to the right of the line. (Check
+    \(y=-1\).)	For \(0 \lt y \lt 4\), the line is to the
+		right of the cubic. (Check \(y=1\).) So the area is
+		\[\begin{aligned}
+		A&=\int_{-3}^0 (y^3-y^2-12y)\,dy
+	    +\int_0^4 (12y-y^3+y^2)\,dy \\
+    &=\left[\dfrac{y^4}{4}-\dfrac{y^3}{3}-6y^2\right]_{-3}^0
+		  +\left[6y^2-\dfrac{y^4}{4}+\dfrac{y^3}{3}\right]_0^4 \\
+    &=(0)-\left(\dfrac{81}{4}+9-54\right)
+		  +\left(96-64+\dfrac{64}{3}\right)-(0) \\
+    &=77+\dfrac{-243+256}{12}
+    =\dfrac{937}{12}
+		\end{aligned}\]
+	</p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing Areas as \(y\)-Integrals by using the
+  following Maplet (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/AreaRegion.maplet" download>Area of a Region</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p>
+  Now look at the problems where \(x\) is a function of \(y\).
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

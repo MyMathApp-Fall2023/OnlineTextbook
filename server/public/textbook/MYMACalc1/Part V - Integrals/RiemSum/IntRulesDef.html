@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Definite Integral Properties | 22. Riemann Sums, Integrals and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="IntRulesSpec.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Riemann Sums, Integrals and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Integration Rules and Properties</h2>
+
+
+      
+      <h2>3. Definite Integral Properties</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The tables on the two previous pages listed the properties of indefinite
+  integrals. On this page, we discuss additional properties of definite
+  integrals. All the proofs are bases on the
+  <a href="RSGen.html" title="Return using the Back button.">
+  Riemann sum definition</a>.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Inequalities:</h3>
+
+<p>
+  If the functions \(f\) and \(g\) are related by \(f \le g\) everywhere on the
+  interval of integration, then their integrals are similarly related:
+</p>
+<p class="prop">
+  If \(f(x) \le g(x)\) for all \(x\) in \([a,b]\), then
+  \[
+  \int_a^b f(x)\,dx \le \int_a^b g(x)\,dx
+  \]
+  <button class="toggle btn" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    Since \(f(x) \le g(x)\), we have
+    \[\begin{aligned}
+         f(x_i^*)
+    &\le g(x_i^*) \\
+         \sum_{i=1}^n\,f(x_i^*)\Delta x_i
+    &\le \sum_{i=1}^n\,g(x_i^*)\Delta x_i \\
+         \lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+    	                        &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+         \,\sum_{i=1}^n\,f(x_i^*)\Delta x_i
+    &\le \lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+    	                        &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+         \,\sum_{i=1}^n\,g(x_i^*)\Delta x_i \\
+         \int_a^b f(x)\,dx
+    &\le \int_a^b g(x)\,dx
+    \end{aligned}\]
+  </p>
+</div>
+
+<p class="example" data-number="1">
+  Show that the area under the curve \(f(x)=x^3+x^2+3\) is greater than the
+  area under the curve \(g(x)=x+4\) above the interval \([1,2]\), without
+  computing any integrals.
+</p>
+<div class="column">
+	<p class="sol">
+    On the interval \([1,2]\), we have \(f'(x)=3x^2+2x > 1\) and \(g'(x)=1\).
+    So both functions are increasing on the that interval and \(f\)
+    increases faster than \(g\). Further, the minimum value for both functions
+    occurs at the left endpoint, \(x=1\), where \(f(1)=g(1)=5\). Therefore,
+    \(f \ge g\) on the entire interval. This is confirmed in the plot.
+    Therefore:
+    \[
+    \int_1^2 f(x)\,dx \ge \int_1^2 g(x)\,dx
+    \]
+    which says the area under \(f\) is greater than the area under \(g\) on
+    the interval \([1,2]\).
+	</p>
+  <div class="center">
+    <img src="graphics/eg_ineq.jpg" alt="eg_ineq">
+  </div>
+</div>
+<p class="remark">
+  If you considered a range such as \(0 < x < 2\), you can see that \(g(x)\)
+  is sometimes greater than \(f(x)\); therefore we would not be
+  able to conclude anything about the relative areas.
+  However, on the range \(1 < x < 2\), \(g(x)\) <strong>is</strong>
+  greater than \(f(x)\); so we <strong>can</strong> conclude the area below
+  \(g(x)\) is greater than that below \(f(x)\).
+</p>
+
+        <div class="rule"></div>
+
+<h3>Bounds on the Integral:</h3>
+
+<p>
+  In particular, if \(m\) is a lower bound for \(f\) and
+  \(M\) is an upper bound for \(f\), then \(m \le f(x) \le M\)
+  which leads to bounds on the integral of \(f\):
+</p>
+<p class="prop">
+  If \(m \le f(x) \le M\) then
+  \[
+  m(b-a)
+  =   \int_a^b m\,dx
+  \le \int_a^b f(x)\,dx
+  \le \int_a^b M\,dx
+  =M(b-a)
+  \]
+  <button class="toggle btn" data-toggle="Proof2">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof2">
+  <p>
+    Since \(m \le f(x) \le M\), the Inequality Rule says:
+    \[
+         \int_a^b  m\,dx
+     \le \int_a^b  f(x)\,dx
+     \le \int_a^b  M\,dx
+    \]
+    Now the antiderivative of \(m\) is \(mx\) and that of \(M\) is \(Mx\). So:
+    \[
+    \int_a^b m\,dx=\left[\rule{0pt}{10pt}mx\right]_a^b=m(b-a)
+    \]
+    and
+    \[
+    \int_a^b M\,dx=\left[\rule{0pt}{10pt}Mx\right]_a^b=M(b-a)
+    \]
+  </p>
+</div>
+
+<p class="example" data-number="2">
+  Find lower and upper bounds for the integral
+  \(\displaystyle \int_1^4 \sin^2 x\,dx\).
+</p>
+<p class="sol">
+  Since \(0 \le \sin^2 x \le 1\) for all \(x\), we conclude
+  \[
+  0=0(4-1) \le
+  \int_1^4 \sin^2 x\,dx
+  \le 1(4-1)=3
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find lower and upper bounds for the integral
+    \(\displaystyle \int_1^3 x^4\,dx\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\displaystyle 2 \le \int_1^3 x^4\,dx \le 243\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Since \(1 \le x^4 \le 81\) on the interval \(1 \le x \le 3\), we can
+    conclude that the lower bound on the integral is \(L=1(3-1)=2\) and
+    the upper bound is \(U=81(3-1)=162\):
+    \[
+    2 \le \int_1^3 x^4\,dx \le 162
+    \]
+  </p>
+</div>
+<a id="split"></a>
+
+        <div class="rule"></div>
+
+<h3>Splitting the Interval</h3>
+
+<p class="prop">
+  If \(a \le b \le c\), then an integral from \(a\) to \(c\), can be split
+  at \(b\):
+  \[
+  \int_a^c f(x)\,dx=\int_a^b f(x)\,dx+\int_b^c f(x)\,dx
+  \]
+  <button class="toggle btn" data-toggle="Proof3">Proof</button>
+  (This is the one proof which requires Riemann Sums with unequal intervals.)
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof3">
+  <p>
+    We start with the Riemann sum definitions of
+    \[
+    \int_a^b f\,dx \quad \text{and} \quad \int_b^c f\,dx
+    \]
+    Partition \([a,b]\) into \(n_1\) subregions \([x_{i-1},x_i]\) of width
+    \(\Delta x_i=x_i-x_{i-1}\) for \(i=1,2,\ldots,n_1\).
+    <br>
+    Partition \([b,c]\) into \(n_2\) subregions \([x_{j-1},x_j]\) of width
+    \(\Delta x_j=x_j-x_{j-1}\) for \(j=n_1+1,n_1+2,\ldots,n_1+n_2\).
+    <br>
+    Note: \(n_0=a\), \(n_1=b\) and \(n_1+n_2=c\).
+    <br>
+    Then the subregions \([x_{i-1},x_i]\) and \([x_{j-1},x_j]\) are a partition
+    of \([a,c]\) and any sum over \(i=1,\ldots,n=n_1+n_2\) is the sum over
+    \(i=1,2,\ldots,n_1\) plus the sum over \(j=n_1+1,n_1+2,\ldots,n_1+n_2\).
+    Further, the limit as \(n\to\infty\) can be achieved by
+    simultaneously taking the limits as \(n_1\to\infty\) and
+    \(n_2\to\infty\). Then:
+    \[\begin{aligned}
+    \int_a^c f\,dx
+    &=\lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+    	                     &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+      \sum_{i=1}^n\,f(x_i^*)\Delta x_i \\
+    &=\lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+    	                     &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+      \sum_{i=1}^{n_1}\,f(x_i^*)\Delta x_i
+     +\lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+    	                     &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+      \sum_{j=n_1+1}^{n_1+n_2}\,f(x_j^*)\Delta x_j \\
+    &=\int_a^b f\,dx+\int_b^c f\,dx
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="column">
+	<p class="example" data-number="4">
+    Find the area above the \(x\)-axis below <em>both</em> of the functions
+    \(y=-x^2+4\) and \(y=x^2+2\) as shown in the plot.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_split.jpg" alt="eg_split">
+    <!-- Plot from Calc 3. -->
+  </div>
+</div>
+<p class="sol">
+  We first have to find the intersection points where we need to split the
+  integral:
+  \[\begin{aligned}
+  y=-x^2+4=x^2+2 \quad &\implies \quad 2x^2=2 \\
+  \implies \quad x^2=1 \quad &\implies \quad x=\pm 1
+  \end{aligned}\]
+  So we break up the integral at \(x=-1\) and \(x=1\) as follows:
+  \[\begin{aligned}
+  \int_{-2}^2 f(x)\,dx
+  &=\int_{-2}^{-1} -x^2+4\,dx+\int_{-1}^1 x^2+2\,dx+\int_1^2 -x^2+4\,dx \\
+  &=\left[-\,\dfrac{x^3}{3}+4x\right]_{-2}^{-1}
+   +\left[\dfrac{x^3}{3}+2x\right]_{-1}^1
+   +\left[-\,\dfrac{x^3}{3}+4x\right]_1^2 \\
+  &=\left[\dfrac{1}{3}-4-\dfrac{8}{3}+8\right]
+   +\left[\dfrac{1}{3}+2+\dfrac{1}{3}+2\right]
+   +\left[-\,\dfrac{8}{3}+8+\,\dfrac{1}{3}-4\right] \\
+  &=\dfrac{-12}{3}+4+4+4=8
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="5">
+      Compute
+      \(\displaystyle \int_{-1}^3 2+|x-2|\,dx\).
+    </p>
+    <div class="center">
+      <img src="graphics/ex_split_prob.png" alt="ex_split_prob"/>
+      <!-- Plot from Calc 3. -->
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+    <button class="toggle has-sol" data-toggle="SolX5"></button>
+    <button class="toggle has-check" data-toggle="CkX5"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    \(\displaystyle \int_{-1}^3 2+|x-2|\,dx=13\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <p>
+    We split the integral at \(x=2\):
+    \[\begin{aligned}
+    \int_{-1}^3 2+|x-2|\,dx
+    &=\int_{-1}^2 2+(2-x)\,dx+\int_2^3 2+(x-2))\,dx \\
+    &=\left[4x-\dfrac{x^2}{2}\right]_{-1}^2+\left[\dfrac{x^2}{2}\right]_2^3 \\
+    &=(8-2)-\left(-4-\dfrac{1}{2}\right)+\left(\dfrac{9}{2}\right)-(2)
+    =13
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX5">
+  <div class="column">
+    <p>
+      We can check the answer by simply calculating the area in the plot:
+      a \(4\times 2\) rectangle at the bottom, a \(3\times3\) right triangle
+      at the left and a \(1\times1\) right triangle at the right.
+      \[
+      8+\dfrac{9}{2}+\dfrac{1}{2}=13
+      \]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_split_ck.png" alt="ex_split_ck"/>
+      <!-- Plot from Calc 3. -->
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

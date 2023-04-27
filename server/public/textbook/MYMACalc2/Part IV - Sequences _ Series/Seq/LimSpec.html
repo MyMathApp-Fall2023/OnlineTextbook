@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b3. Special Limits | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimPlot.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimLaws.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  In general, the process of finding the limit of a sequence is essentially
+  the same as finding the limit at infinity of a continuous function (i.e.
+	finding its horizontal asymptote).
+</p>
+
+
+      
+      <h2>b3. Special Limits</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Before discussing the computation of limits of sequences in general, we
+  first present some Special Limits.  The Special Limit are intuitively
+  obvious, but the proof links go to the proofs which
+  are at the end of this chapter after the
+	<a href="PrecDef.html" title="Return using the Back button.">
+  precise definition</a> of the limit of a sequence.
+</p>
+
+				<div class="rule"></div>
+
+<p>
+  The simplest two sequences are the <span class="hl">identity sequence</span>,
+  \(a_n=n\), and the <span class="hl">constant sequences</span>, \(a_n=c\)
+  for any number \(c\). Their plots are:
+</p>
+<div class="center">
+  <img src="graphics/id.jpg" alt="id"/>&emsp;
+  <img src="graphics/const.jpg" alt="const"/>
+</div>
+<p>
+  Their limits are given by:
+</p>
+<p class="prop" data-title="Identity Sequence">
+	\[
+	(1) \qquad \lim_{n\to\infty}n=\infty
+	\]
+	<a href="PrecSpec.html#identity" title="Return by closing the Tab."
+  target="_blank">
+  <button class="btn">Proof</button></a>
+</p>
+<p class="prop" data-title="Constant Sequences">
+	For any number \(c\),
+	\[
+	(2) \qquad \lim_{n\to\infty}c=c
+	\]
+	<a href="PrecSpec.html#constant" title="Return by closing the Tab."
+  target="_blank">
+  <button class="btn">Proof</button></a>
+</p>
+
+				<div class="rule"></div>
+
+<p>
+	The next two groups of sequences are the
+	<span class="hl">power sequences</span>, \(a_n=n^p\), (with a constant
+	power, \(p\)) and the <span class="hl">exponential sequences</span>,
+	\(a_n=b^n\), (with a constant base, \(b\)).
+</p>
+
+<p class="prop" data-title="Power Sequences">
+	If \(p>0\), then
+	\[
+	(3a) \qquad \lim_{n\to\infty}n^p=\infty
+	\qquad \text{and} \qquad
+	(3b) \qquad \lim_{n\to\infty}\dfrac{1}{n^p}=0.
+	\]
+	If \(p<0\), then
+	\[
+	(3c) \qquad \lim_{n\to\infty}n^p=0
+	\qquad \text{and} \qquad
+	(3d) \qquad \lim_{n\to\infty}\dfrac{1}{n^p}=\infty.
+	\]
+	<a href="PrecSpec.html#power" title="Return by closing the Tab."
+  target="_blank">
+  <button class="btn">Proof</button></a>
+</p>
+
+<p class="example" data-number="1">
+  As examples we have:
+  \[\begin{array}{ll}
+    \lim\limits_{n\to\infty}n^2
+	=\lim\limits_{n\to\infty}\dfrac{1}{n^{-2}}=\infty \qquad
+	& \lim\limits_{n\to\infty}n^{1/2}
+	=\lim\limits_{n\to\infty}\dfrac{1}{n^{-1/2}}
+	=\lim\limits_{n\to\infty}\sqrt{n}=\infty \\
+    \lim\limits_{n\to\infty}n^{-2}
+	=\lim\limits_{n\to\infty}\dfrac{1}{n^2}=0 \qquad
+	& \lim\limits_{n\to\infty}n^{-1/2}
+	=\lim\limits_{n\to\infty}\dfrac{1}{n^{1/2}}
+  =\lim\limits_{n\to\infty}\dfrac{1}{\sqrt{n}}=0
+  \end{array}\]
+  To justify these, try plugging in \(n=1\) million, i.e.
+	\(n=1,000,000=10^6\).
+</p>
+
+				<div class="rule"></div>
+
+<p class="prop" data-title="Exponential Sequences">
+	If \(b>1\), then
+	\[
+	(4a) \qquad \lim_{n\to\infty}b^n=\infty
+	\qquad \text{and} \qquad
+	(4b) \qquad \lim_{n\to\infty}\dfrac{1}{b^n}=0.
+	\]
+	If \(0 < b < 1\), then
+	\[
+	(4c) \qquad \lim_{n\to\infty}b^n=0
+	\qquad \text{and} \qquad
+	(4d) \qquad \lim_{n\to\infty}\dfrac{1}{b^n}=\infty.
+	\]
+	<a href="PrecSpec.html#exp" title="Return by closing the Tab."
+  target="_blank">
+  <button class="btn">Proof</button></a>
+</p>
+
+<p class="example" data-number="2">
+  As examples we have:
+  \[\begin{array}{ll}
+   \lim\limits_{n\to\infty}2^n=\infty \qquad
+	&\lim\limits_{n\to\infty}\left(\dfrac{1}{2}\right)^n
+	=\lim\limits_{n\to\infty}\dfrac{1}{2^n}=0
+  \end{array}\]
+  To justify these, try plugging in \(n=10\) or \(n=20\).
+</p>
+
+				<div class="rule"></div>
+
+<p>
+  Study the difference between the power and the exponential sequences. The
+  first is the limit of the variable base \(n\) to a fixed power \(p\). The
+  second is the limit of a fixed base \(b\) to the variable power \(n\).
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

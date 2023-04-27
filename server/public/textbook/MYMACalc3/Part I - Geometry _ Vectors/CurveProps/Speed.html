@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Speed | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="sParam.html" title="Previous">&lArr;</a></li>
+      <li><a href="TNB.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Arc Length, Arc Length Parameter, and Speed</h2>
+
+
+      
+      <h2>3. Speed</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The arc length function allows us to give an interpretation to the length
+  of the velocity vector. By definition, the
+  <span class="defword">speed</span> is the rate of change of the distance
+  along the curve, i.e. the rate of change of the arc length parameter:
+  \[
+  speed=\dfrac{ds}{dt}=\dfrac{d}{dt}\int_a^t |\vec{v}|\,dt
+  \]
+  By the fundamental theorem of calculus, the derivative of an integral with
+  respect to the upper limit is the integrand. Thus:
+  \[
+  speed=\dfrac{ds}{dt}=|\vec{v}|
+  \]
+  In other words, the length of the velocity vector is the speed. You probably
+  heard it many times before that speed is the magnitude of the velocity, but
+  this proves it.
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Previously we found the velocity vector for the Circle,
+    \(\vec{r}(\theta)=(4\cos\theta,4\sin\theta,2)\), is:
+    \[
+    \vec{v}(\theta)=\dfrac{d\vec{r}}{d\theta}
+    =\langle -4\sin\theta,4\cos\theta,0\rangle
+    \]
+    Find the speed of the curve.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\dfrac{ds}{dt}=|\vec{v}|=4\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The speed is:
+    \[\begin{aligned}
+    \dfrac{ds}{dt}
+    &=|\vec{v}|
+    =\sqrt{(-4\sin\theta)^2+(4\cos\theta)^2} \\
+    &=\sqrt{16\sin^2\theta+16\cos^2\theta}
+    =\sqrt{16}
+    =4
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Previously we found the velocity vector for the Helix,
+    \(\vec{r}(\theta)=(4\cos\theta,4\sin\theta,3\theta)\), is:
+    \[
+    \vec{v}(\theta)=\dfrac{d\vec{r}}{d\theta}
+    =\langle -4\sin\theta,4\cos\theta,3\rangle
+    \]
+    Find the speed of the curve.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\dfrac{ds}{dt}=|\vec{v}|=5\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The speed is:
+    \[\begin{aligned}
+    \dfrac{ds}{dt}
+    &=|\vec{v}|
+    =\sqrt{((-4\sin\theta)^2+(4\cos\theta)^2+9} \\
+    &=\sqrt{16\sin^2\theta+16\cos^2\theta+9}
+    =\sqrt{16+9}=5
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Previously we found the velocity vector for the Twisted Cubic,
+    \(\vec{r}(t)=\left(t,t^2,\dfrac{2}{3}t^3\right)\), is:
+    \[
+    \vec{v}(t)=\dfrac{d\vec{r}}{dt}=\langle 1,2t,2t^2\rangle
+    \]
+    Find the speed of the curve.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    The quantity inside the square root is a perfect square.
+    <br>
+    This is, in fact, the reason the coefficient \(\dfrac{2}{3}\) is
+    included in the formula for the standard twisted cubic.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\dfrac{ds}{dt}=|\vec{v}|=2t^2+1\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The speed is:
+    \[\begin{aligned}
+    \dfrac{ds}{dt}
+    &=|\vec{v}|
+    =\sqrt{1^2+(2t)^2+(2t^2)^2} \\
+    &=\sqrt{1+4t^2+4t^{4}}
+    =\sqrt{(2t^2+1)^2}
+    =2t^2+1
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  On the <a href="sParam.html">previous page</a>, we mentioned that it may
+  be difficult to reparametrize a curve in terms of the arc length parameter,
+  \(s\). However, it is usually easy to differentiate with respect to the arc
+  length parameter, \(s\), provided you can differentiate with respect to
+  the original parameter \(t\). In particular, if \(f(t)\) is a function of
+  \(t\) for which you can compute the derivative \(\dfrac{df}{dt}\),
+  then by the chain rule:
+  \[
+  \dfrac{df}{ds}=\dfrac{df}{dt}\dfrac{dt}{ds}=\dfrac{1}{ds/dt}
+  \dfrac{df}{dt}=\dfrac{1}{|\vec{v}|}\dfrac{df}{dt}
+  \]
+  Conversely,
+  \[
+  \dfrac{df}{dt}=\dfrac{df}{ds}\dfrac{ds}{dt}=|\vec{v}|\dfrac{df}{ds}
+  \]
+  These two relations will be very useful later in this chapter.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b1. Solids of Revolution | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Slice.html" title="Previous">&lArr;</a></li>
+      <li><a href="Rev2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b1. Solids of Revolution</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+  If a region in the \(xy\)-plane is rotated about some axis, it sweeps out a
+  solid called a <span class="hl">Solid of Revolution</span>. For example, here are four
+  regions in the \(xy\)-plane and the solids swept out when they are rotated
+  about the \(x\)-axis or the \(y\)-axis:
+</p>
+<ol>
+  <li>
+    Area below \(y=f(x)\) above \(x\)-axis rotated about \(x\)-axis
+    and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Region 1</figcaption>
+	      <img src="graphics/area1.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Region 1 \(x\)-axis</figcaption>
+				<video src="graphics/area1xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Region 1 \(y\)-axis</figcaption>
+	      <video src="graphics/area1yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+  <li>
+    Area below \(y=f(x)\) above \(y=g(x)\) rotated
+    about \(x\)-axis and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Region 2</figcaption>
+	      <img src="graphics/area2.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Region 2 \(x\)-axis</figcaption>
+				<video src="graphics/area2xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Region 2 \(y\)-axis</figcaption>
+	      <video src="graphics/area2yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+  <li>
+    Area left of \(x=f(y)\) right of \(y\)-axis rotated about
+    \(x\)-axis and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Region 3</figcaption>
+	      <img src="graphics/area3.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Region 3 \(x\)-axis</figcaption>
+				<video src="graphics/area3xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Region 3 \(y\)-axis</figcaption>
+	      <video src="graphics/area3yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+  <li>
+    Area left of \(x=f(y)\) right of \(x=g(y)\)
+    rotated about \(x\)-axis and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Region 4</figcaption>
+	      <img src="graphics/area4.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Region 4 \(x\)-axis</figcaption>
+				<video src="graphics/area4xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Region 4 \(y\)-axis</figcaption>
+	      <video src="graphics/area4yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+</ol>
+
+<p>
+  (We will also rotate about other lines such as \(y=y_0\) or \(x=x_0\) but
+  the axes will suffice initially.)
+</p>
+
+<div class="center">
+  <span style="color:green">Our goal is to find the volumes of these solids of revolution.</span>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  As with all integration problems, we chop the solid up into small pieces,
+  approximate the volume of each piece, add them up and take the limit as the
+  number of pieces gets large and the size of each piece gets small.
+</p>
+<p>
+  For regions 1 and 2, the region is defined in terms of functions of \(x\). So we chop up the
+  \(x\)-interval into small pieces of length \(\Delta x\).
+</p>
+<p>
+  For regions 3 and 4, the region is defined in terms of functions of \(y\). So we chop up the
+  \(y\)-interval into small pieces of length \(\Delta y\).
+</p>
+<p>
+  Here are the corresponding small pieces of the regions and the corresponding
+  small pieces of the volumes of revolution:
+</p>
+<ol>
+  <li>
+    Area below \(y=f(x)\) above \(x\)-axis rotated about \(x\)-axis
+    and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Rectangle 1</figcaption>
+	      <img src="graphics/rect1.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 1 \(x\)-axis</figcaption>
+				<video src="graphics/rect1xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 1 \(y\)-axis</figcaption>
+	      <video src="graphics/rect1yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+  <li>
+    Area below \(y=f(x)\) above \(y=g(x)\) rotated
+    about \(x\)-axis and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Rectangle 2</figcaption>
+	      <img src="graphics/rect2.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 2 \(x\)-axis</figcaption>
+				<video src="graphics/rect2xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 2 \(y\)-axis</figcaption>
+	      <video src="graphics/rect2yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+  <li>
+    Area left of \(x=f(y)\) right of \(y\)-axis rotated about
+    \(x\)-axis and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Rectangle 3</figcaption>
+	      <img src="graphics/rect3.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 3 \(x\)-axis</figcaption>
+				<video src="graphics/rect3xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 3 \(y\)-axis</figcaption>
+	      <video src="graphics/rect3yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+  <li>
+    Area left of \(x=f(y)\) right of \(x=g(y)\)
+    rotated about \(x\)-axis and \(y\)-axis:
+    <div class="center">
+		  <figure>
+				<figcaption>Rectangle 4</figcaption>
+	      <img src="graphics/rect4.jpg" alt="picture of a graph to be revolved">
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 4 \(x\)-axis</figcaption>
+				<video src="graphics/rect4xanimate.mp4" autoplay loop controls></video>
+		  </figure>
+		  <figure>
+				<figcaption>Rectangle 4 \(y\)-axis</figcaption>
+	      <video src="graphics/rect4yanimate.mp4" autoplay loop controls></video>
+		  </figure>
+    </div>
+  </li>
+</ol>
+
+<p>
+  Notice that:
+  <br>
+  <strong>Rectangles 1x and 3y</strong> rotate into <span class="defword">
+  thin disks</span>,
+  <br>
+  <strong>Rectangles 2x and 4y</strong> rotate into	<span class="defword">
+  thin washers</span> and
+  <br>
+  <strong>Rectangles 1y, 2y, 3x and 4x</strong> rotate into <span class="defword">
+  thin cylinders</span>.
+  <br>
+	(Thin cylinders are also called <span class="defword">cylindrical shells</span>.)
+	The integrals are slightly different in each of the three cases.
+</p>
+
+<p class="remark">
+  <span class="redbig">Do not try to memorize which shape arises from each
+  choice of integration variable and which way it is rotated.</span>
+</p>
+<p>
+	Rather, on subsequent pages, we will explain how to distinguish between them.
+  On the <a href="Rev2.html">next page</a> we will discuss the general
+	procedure for how to determine the shape. Then on subsequent pages,
+	we will discuss
+	<a href="Disk.html" title="Return using the Back button."><span class="hl">
+    thin disks</span></a>,
+	<a href="Washer.html" title="Return using the Back button."><span class="hl">
+    thin washers</span></a> and
+	<a href="Cylin.html" title="Return using the Back button."><span class="hl">
+    thin cylinders</span></a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

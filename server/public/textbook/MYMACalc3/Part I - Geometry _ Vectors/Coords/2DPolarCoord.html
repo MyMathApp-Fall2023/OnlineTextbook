@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. 2D Polar Coordinates | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="nDDistance.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DPolarConvert.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Polar Coordinates - 2D</h2>
+
+
+      
+      <h2>1. 2D Polar Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<div>
+		<p>
+			Rectangular coordinates \((x,y)\) are one way to specify a point,
+			\(P\), in the plane, but they are not the only way. When we are
+			studying circles, it is useful to use
+			<span class="defword">Polar Coordinates</span>	\((r,\theta)\) which
+			identify the point, \(P\), using
+		</p>
+		<ul>
+			<li>
+				the	<span class="defword">radius</span> \(r\) and
+			</li>
+			<li>
+				the <span class="defword">polar angle</span> \(\theta\).
+			</li>
+		</ul>
+	</div>
+	<div class="center">
+		<img src="graphics/def_2DPolarCoord.jpg" alt="def_2DPolarCoord"/>
+	</div>
+</div>
+<p class="caution">
+	Like rectangular coordinates \(P=(x,y)\), the polar coordinates can
+	be written as an ordered pair, \(P=(r,\theta)\). So you need to be
+	careful to say whether this ordered pair is rectangular or polar.
+</p>
+<div class="column">
+	<div>
+		<p>
+			Most often, the <span class="hl">radius</span> measures the (positive)
+			distance from the origin, \(O\), to the point, \(P\), and the
+			<span class="hl">polar angle</span>	measures an angle (usually
+			measured in radians and usually with \(0 \le \theta \lt 2\pi\))
+			counterclockwise from the positive \(x\)-axis to the ray
+			\(\overrightarrow{OP}\).
+		</p>
+		<p>
+			However, frequently the angle \(\theta\) is allowed to be bigger than
+			\(2\pi\) or is allowed to be negative, in which case it is measured
+			clockwise from the posiitve \(x\)-axis. Consequently, \(\theta\) is
+			non-unique; we can always add or subtract an arbitrary multiple of
+			\(2\pi\) or \(360^\circ\). Thus the point with polar coordinates
+			\((3,{30^\circ})\) can also be written as \((3,{390^\circ})\), or
+			\((3,{750^\circ})\), or \((3,{-330^\circ})\),	or \((3,{-690^\circ})\)
+			all of which are shown in the plot with
+			<span style="color:blue">blue</span> angles positive and
+			<span style="color:red">red</span> angles negative.
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+		<img src="graphics/def_2DPolarMultiTheta.jpg" alt="def_2DPolarMultiTheta"/>
+	</div>
+</div>
+<div class="column">
+	<div>
+		<p>
+			Further, once in a while, we allow \(r\) to be negative, for example
+			in the context of solving equations or graphing.	Then \(r\) is the
+			negative of the distance from \(O\) to \(P\). When \(r\) is negative,
+			the point \((r,\theta)\) is obtained by going a distance \(|r|\) along
+			the ray at the angle \(\theta\pm\pi=\theta\pm180^\circ\). Think of
+			this as going backwards	along the ray at the angle \(\theta\).
+			Thus the point with polar coordinates \((-3,{30^\circ})\) is actually
+			the point \((3,{210^\circ})\) or \((3,-150^\circ)\).
+		</p>
+	</div>
+	<div class="center" data-col-width="50%">
+		<img src="graphics/def_2DPolarNegRadius.jpg" alt="def_2DPolarNegRadius"/>
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<h3>Coordinate Curves</h3>
+<p class="def">
+	When you hold one of the coordinates fixed and let the other one vary, the point
+	\(P=(r,\theta)\) traces out a  <span class="defword">coordinate curve</span>.
+	The curves are named by the	coordinate which is changing.
+</p>
+<div class="column">
+	<p data-col-width="50%">
+		When \(\theta\) is constant, you get a radial ray (assuming \(r \gt 0\))
+		called an	<span class="defword">\(r\)-curve</span>, e.g. here
+		is the \(r\)-curve with \(\theta=\dfrac{\pi}{3}\):
+	</p>
+	<div data-col-width="50%" class="center">
+		<figure>
+			<img src="graphics/def_rcurve.jpg" alt="def_rcurve">
+			<figcaption>\(r\)-curve: &ensp; \(\theta=\dfrac{\pi}{3}\)</figcaption>
+		</figure>
+	</div>
+</div>
+<div class="column">
+	<p data-col-width="50%">
+		When \(r\) is constant, you get a circle called a
+		<span class="defword">\(\theta\)-curve</span>, e.g. here is
+		the \(\theta\)-curve with \(r=2\):
+	</p>
+	<div data-col-width="50%" class="center">
+		<figure>
+			<img src="graphics/def_thetacurve.jpg" alt="def_thetacurve">
+			<figcaption>\(\theta\)-curve: &ensp; \(r=2\)</figcaption>
+		</figure>
+	</div>
+</div>
+<div class="column">
+	<p data-col-width="50%">
+		When you draw several coordinate curves of each type you get a
+		<span class="defword">coordinate grid</span>. Here is a polar coordinate grid:
+	</p>
+	<div data-col-width="50%" class="center">
+		<figure>
+			<img src="graphics/def_polarcoordgrid.jpg" alt="def_polarcoordgrid">
+			<figcaption>Polar Coordinate Grid</figcaption>
+		</figure>
+	</div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

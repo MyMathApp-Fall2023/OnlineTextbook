@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Comparison Bounds | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApproxSerIntegBnd2.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApproxSerCompBnd2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic7">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>g. Approximating the Series</h2>
+
+<p id="Eg-CompBnd">
+  We now turn to approximating series which can be shown to converge using the
+  Comparison Test.
+</p>
+
+
+      
+      <h2>3. Comparison Bounds</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="example" data-number="1">
+  Show that the series \(\displaystyle \sum_{n=1}^\infty \dfrac{2+\sin n}{2^n}\)
+  converges. Sum the first \(10\) terms to approximate the sum of the series.
+  Find an upper bound on the error in the approximation.
+</p>
+<p class="sol">
+  Since \(\sin n \le 1\), we have \(2+\sin n \le 3\) and
+  \(\dfrac{2+\sin n}{2^n} \le \dfrac{3}{2^n}\). Thus
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{2+\sin n}{2^n} \le \sum_{n=1}^\infty \dfrac{3}{2^n}\).
+  Since \(\displaystyle \sum_{n=1}^\infty \dfrac{3}{2^n}\) is a geometric
+  series with ratio \(\dfrac{1}{2}\) it converges. By the Simple Comparison
+  Test \(\displaystyle \sum_{n=1}^\infty \dfrac{2+\sin n}{2^n}\) also converges.
+</p>
+<p>
+  We approximate the sum of the series by the \(10^\text{th}\) partial sum
+  \[
+  \sum_{n=1}^\infty \dfrac{2+\sin n}{2^n}\approx S_{10}=
+  \sum_{n=1}^{10} \dfrac{2+\sin n}{2^n}\approx 2.5914
+  \]
+
+  The error in the approximation is
+  \[
+  E_{10}=\sum_{n=1}^\infty \dfrac{2+\sin n}{2^n}
+  -\sum_{n=1}^{10} \dfrac{2+\sin n}{2^n}
+  =\sum_{n=11}^\infty \dfrac{2+\sin n}{2^n}
+  \]
+
+  Since the terms \(\dfrac{2+\sin n}{2^n}\) are positive, \(E_{10} \gt 0\). To put
+  an upper bound on the error, we again use the comparison
+  \(\dfrac{2+\sin n}{2^n} \le \dfrac{3}{2^n}\). Thus
+  \[
+  E_{10}=\sum_{n=11}^\infty \dfrac{2+\sin n}{2^n} \lt
+  \sum_{n=11}^\infty \dfrac{3}{2^n}=\dfrac{\dfrac{3}{2^{11}}}{1-
+  \dfrac{1}{2}}=\dfrac{3}{2^{10}}\approx.00293
+  \]
+  Therefore, the error in the approximation
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{2+\sin n}{2^n}
+  \approx S_{10}=\sum_{n=1}^{10} \dfrac{2+\sin n}{2^n}
+  \approx 2.5914\) is \(E_{10} \lt .00293\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  To summarize (and generalize) this result, we have
+</p>
+<div class="greybox">
+  <p class="prop" data-title="The Comparison Bound on the Error in an Approximation">
+    Assume \(0 \lt a_n \lt b_n\) for \(n \ge n_o\) and
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) converges.
+    In other words, \(\displaystyle S=\sum_{n=n_o}^\infty a_n\)
+    converges by the Simple Comparison Test.
+  </p>
+  <p>
+    If the series \(\displaystyle S=\sum_{n=n_o}^\infty a_n\) is
+    approximated by
+    \(\displaystyle S_k=\sum_{n=n_o}^k a_n\)
+    for some \(k \gt n_o\), then the error in the approximation
+    \(\displaystyle E_k=S-S_k=\sum_{n=k+1}^\infty a_n\) is less than
+    \(\displaystyle \sum_{n=k+1}^\infty b_n\) which is called the
+    <span class="defword">comparison bound on the error in the approximation</span>.
+  </p>
+</div>
+
+        <div class="rule" id="Ex-CompBnd"></div>
+
+<p class="exercise" data-number="2">
+  Consider the series \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{2^n+1}\).
+</p>
+<ol class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Show that the series converges.
+        <br/>
+      </p>
+      <p>
+        <button class="toggle has-sol" data-toggle="Sol1"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol1">
+      <p>
+        Since \(\dfrac{1}{2^n+1} \lt \dfrac{1}{2^n}\), we have
+        \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{2^n+1}
+        \lt \sum_{n=1}^\infty \dfrac{1}{2^n}\).
+        Since \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{2^n}\) is a
+        geometric series with ratio \(\dfrac{1}{2}\) it converges.
+        By the Simple Comparison Test,
+        \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{2^n+1}\) also converges.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Approximate the sum of the series by summing \(10\) terms. Find
+        a comparison bound on the error in this approximation.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans2"></button>
+        <button class="toggle has-sol" data-toggle="Sol2"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans2">
+      <p>
+        \(S_{10}\approx 0.7635\) and
+        \(E_{10} \lt \dfrac{1}{2^{10}}\approx.00098\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol2">
+      <p>
+        The \(10^\text{th}\) partial sum is
+        \[
+        S_{10}=\sum_{n=1}^\infty \dfrac{1}{2^n+1}\approx
+        \sum_{n=1}^{10} \dfrac{1}{2^n+1}\approx 0.7635
+        \]
+        (This should probably be done using some type of calculator.)
+        The error in this approximation is
+        \[
+        E_{10}=\sum_{n=11}^\infty \dfrac{1}{2^n+1}
+        \]
+        To put an upper bound on this error, we again use the comparison
+        \(\dfrac{1}{2^n+1} \lt \dfrac{1}{2^n}\). Thus
+        \[\begin{aligned}
+        E_{10}&=\sum_{n=11}^\infty \dfrac{1}{2^n+1}
+        \lt \sum_{n=11}^\infty \dfrac{1}{2^n}
+        =\dfrac{\dfrac{1}{2^{11}}}{1-\dfrac{1}{2}} \\
+        &=\dfrac{1}{2^{10}}\approx.00098
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

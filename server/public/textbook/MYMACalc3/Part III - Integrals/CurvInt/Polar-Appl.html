@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Applications | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Polar-Int2.html" title="Previous">&lArr;</a></li>
+      <li><a href="Polar-Convert.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Integrating in Polar Coordinates</h2>
+
+
+      
+      <h2>4. Applications</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Integrals in polar coordinates are particularly useful when
+  the integrand and/or the region of integration are easily expressed in
+  terms of polar coordinates. We previously did
+  <a href="../RectInt/ChContents.html" title="Return using the Back button">
+  Applications of Double Integrals</a>  in rectangular coordinates.
+  All of those applications can also be done using polar coordinates, and on
+  the <a href="Polar-Convert.html">next page</a> we will see that it is
+  often useful to convert from rectangular to polar coordinates.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      All the examples on this page of applications of double integrals in polar
+      coordinates will use the crescent shape inside the circle
+      \(r=4\cos\theta\) but outside the limacon \(r=1+2\cos\theta\)
+      as shown in the pink region of the plot.
+    </p>
+    <p>
+      The \(\theta\)-bounds on the integrals are the angles of intersection.
+      So we equate the values of \(r\):
+      \[\begin{aligned}
+      4\cos\theta&=1+2\cos\theta \qquad
+      2\cos\theta=1 \\
+      \cos\theta&=\dfrac{1}{2} \qquad
+      \theta=\pm \dfrac{\pi}{3}
+      \end{aligned}\]
+      The lower bound (smaller value) of \(r\) is the limacon
+      \(r=1+2\cos\theta\) and the upper bound (larger value) is the
+      circle \(r=4\cos\theta\).
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/polarapp-area-ex.jpg" alt="polarapp-area-ex">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Volume</h3>
+<p>
+  Recall that the <span class="hl">volume</span> under a surface \(z=f(x,y)\)
+  above a region \(R\) in the \(xy\)-plane is:
+  \[
+  \text{Volume}=\iint\limits_R f(x,y)\,dA
+  \]
+  When using polar coordinates, as in the examples below, the function and
+  differential must be expressed in polar coordinates \(r\) and \(\theta\):
+  \[
+  \text{Volume}=\iint_R f(r,\theta)\,dA
+  =\iint_R f(r,\theta)\,r\,dr\,d\theta
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the volume of the solid above the crescent shape, below the surface
+  \(z=\dfrac{1}{\sqrt{x^2+y^2}}\).</span>" data-number="1">
+  <hr width="80%">
+  <p class="sol">
+    In polar coordinates, the surface becomes \(z=\dfrac{1}{r}\). So the volume
+    below the paraboloid is
+    \[\begin{aligned}
+    \text{Volume}
+    &=\int_{-\pi/3}^{\pi/3}\int_{1+2\cos\theta}^{4\cos\theta} \dfrac{1}{r}\,r\,dr\,d\theta
+    =\int_{-\pi/3}^{\pi/3} \left[r\dfrac{}{}\right]_{1+2\cos\theta}^{4\cos\theta}\,d\theta \\
+    &=\int_{-\pi/3}^{\pi/3} \left(2\cos\theta-1\right)\,d\theta
+    =\left[2\sin\theta-\theta\dfrac{}{}\right]_{-\pi/3}^{\pi/3} \\
+    &=2\left(2\sin\dfrac{\pi}{3}-\dfrac{\pi}{3}\right)
+    =2\sqrt{3}-\dfrac{2\pi}{3}
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Area</h3>
+<p>
+  Recall that the <span class="hl">area</span> of a 2D region \(R\) is:
+  \[
+  \text{Area}=\iint\limits_R 1\,dA
+  =\iint\limits_R r\,dr\,d\theta
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the area of the crescent shape.</span>" data-number="2">
+  <hr width="80%">
+  <p class="sol">
+    The area is:
+    \[\begin{aligned}
+    A
+    &=\int_{-\pi/3}^{\pi/3}\int_{1+2\cos\theta}^{4\cos\theta} r\,dr\,d\theta
+    =\int_{-\pi/3}^{\pi/3}
+    \left[\dfrac{r^2}{2}\right]_{r=1+2\cos\theta}^{4\cos\theta}\,d\theta\\
+    &=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3}
+    \left[(4\cos\theta)^2-(1+2\cos\theta)^2\right]\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3} (12\cos^2\theta-1-4\cos\theta)\,d\theta
+    \end{aligned}\]
+    To complete the integral, we use the identity
+    \(\displaystyle \cos^2\theta=\dfrac{1+\cos(2\theta)}{2}\). So:
+    \[\begin{aligned}
+    A&=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3}
+    (6(1+\cos(2\theta))-1-4\cos\theta)\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3}
+    \left[5+6\cos(2\theta)-4\cos\theta\right]\,d\theta \\
+    &=\dfrac{1}{2}
+    \left[5\theta+3\sin(2\theta)-4\sin\theta\dfrac{}{}\right]_{-\pi/3}^{\pi/3} \\
+    &=5\dfrac{\pi}{3}+3\sin\left(2\dfrac{\pi}{3}\right)-4\sin\dfrac{\pi}{3}
+    =\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}
+    \end{aligned}\]
+  </p>
+</div>
+<p class="remark">
+  More generally, the area between two polar curves \(r=g(\theta)\) and
+  \(r=h(\theta)\) which intersect at \(\theta=\alpha\) and \(\theta=\beta\) is:
+  \[\begin{aligned}
+  A&=\iint\limits_R 1\,dA=\int_\alpha^\beta\int_{g(\theta)}^{h(\theta)} r\,dr\,d\theta
+  =\int_\alpha^\beta
+  \left[\dfrac{r^2}{2}\right]_{g(\theta)}^{h(\theta)}\,d\theta \\
+  &=\dfrac{1}{2}\int_\alpha^\beta (h(\theta)^2-g(\theta)^2)\,d\theta
+  \end{aligned}\]
+  which is a formula you may have learned in Calculus 2. Notice that the
+  second line in the solution was just this formula.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Mass</h3>
+
+<p>
+  Recall that the <span class="hl">mass</span> of a plate occupying a 2D
+  region, \(R\), is the integral of the density, \(\delta(x,y)\). After
+  converting to polar coordinates, the density becomes
+  \(\delta(r,\theta)\). So the mass is:
+  \[
+  M=\iint\limits_R \delta(x,y)\,dA
+  =\iint\limits_R \delta(r,\theta)\,r\,dr\,d\theta
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the mass of the crescent shape if its mass density is
+  \(\delta=\dfrac{1}{\sqrt{x^2+y^2}}=\dfrac{1}{r}\).</span>" data-number="3">
+  <hr width="80%">
+  <p class="sol">
+    The mass is:
+    \[\begin{aligned}
+    M&=\iint\limits_R \delta(r,\theta)\,r\,dr\,d\theta
+    =\int_{-\pi/3}^{\pi/3}\int_{1+2\cos\theta}^{4\cos\theta}
+    \dfrac{1}{r}\,r\,dr\,d\theta \\
+    &=\int_{-\pi/3}^{\pi/3}\int_{1+2\cos\theta}^{4\cos\theta}
+    1\,dr\,d\theta
+    =\int_{-\pi/3}^{\pi/3}
+    \left[r\dfrac{}{}\right]_{r=1+2\cos\theta}^{4\cos\theta}\,d\theta \\
+    &=\int_{-\pi/3}^{\pi/3} (2\cos\theta-1)\,d\theta
+    =\left[2\sin\theta-\theta\dfrac{}{}\right]_{-\pi/3}^{\pi/3} \\
+    &=2\left(\sqrt{3}-\,\dfrac{\pi}{3}\right)=2\sqrt{3}-\,\dfrac{2\pi}{3}
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Center of Mass</h3>
+<p>
+  Recall that the <span class="hl">center of mass</span> of a plate occupying
+  a region \(R\) with density \(\delta(x,y)\) is given by
+  \[
+  \bar{x}=\dfrac{M_x}{M}
+  \qquad \text{and} \qquad
+  \bar{y}=\dfrac{M_y}{M}
+  \]
+  where the denominator is the <span class="hl">mass</span>, \(M\) of the plate
+  and numerators are the <span class="hl">\(x\) and \(y\)
+  \(1^\text{st}\)-moments of the mass</span>, given by
+  \[\begin{aligned}
+  M_x&=\iint\limits_R x\,\delta(x,y)\,dA
+  =\iint\limits_R r\cos\theta\,\delta(r,\theta)\,r\,dr\,d\theta \\
+  M_y&=\iint\limits_R y\,\delta(x,y)\,dA
+  =\iint\limits_R r\sin\theta\,\delta(r,\theta)\,r\,dr\,d\theta \\
+  \end{aligned}\]
+</p>
+<p class="remark">
+  It is important to remember that we <span class="redbig">cannot</span>
+  compute \(\bar{r}=\dfrac{M_r}{M}\) and \(\bar{\theta}=\dfrac{M_\theta}{M}\)
+  where
+  \[\text{\Large\textcolor{red}Wrong}\qquad
+  M_r=\iint\limits_R r\,\delta(r,\theta)\,dA
+  \qquad \text{and} \qquad
+  M_\theta=\iint\limits_R \theta\,\delta(r,\theta)\,dA
+  \qquad \text{\Large\textcolor{red}Wrong}
+  \]
+  because moments are only defined for rectangular coordinates since the
+  balance beam derivation
+  (\(\text{Torque} = \text{Force} \times \text{Lever Arm}\)) does not work
+  for the \(r\) and \(\theta\) directions. If we want the polar coordinates,
+  \((\bar r,\bar\theta)\) of the center of mass, we find them from
+  \[
+  \bar r=\sqrt{\bar x^2+\bar y^2} \qquad \tan\bar\theta=\dfrac{\bar y}{\bar x}
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the center of mass of the crescent shape if its mass density is
+  \(\delta=\dfrac{1}{\sqrt{x^2+y^2}}=\dfrac{1}{r}\).</span>" data-number="4">
+  <hr width="80%">
+  <p class="sol">
+    We have already found the mass is
+    \[
+    M=\int_{-\pi/3}^{\pi/3}\int_{1+2\cos\theta}^{4\cos\theta}
+    \dfrac{1}{r}\,r\,dr\,d\theta
+    =2\sqrt{3}-\,\dfrac{2\pi}{3}
+    \]
+    By symmetry (since the region and density are the same above and below
+    the \(x\)-axis):
+    \[
+    M_y=\iint\limits_R y\,\delta(x,y)\,dA=0
+    \qquad \text{and} \qquad
+    \bar{y}=\dfrac{M_y}{M}=0
+    \]
+    We compute the \(x\) moment of mass as
+    \[\begin{aligned}
+    M_x&=\iint\limits_R x\,\delta(x,y)\,dA
+    =\iint\limits_R r\cos\theta\,\delta(r,\theta)\,r\,dr\,d\theta \\
+    &=\int_{-\pi/3}^{\pi/3}\int_{1+2\cos\theta}^{4\cos\theta}
+    r\cos\theta\,dr\,d\theta
+    =\int_{-\pi/3}^{\pi/3}
+    \cos\theta\left[\dfrac{r^2}{2}\right]_{r=1+2\cos\theta}^{4\cos\theta}\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3}
+    \cos\theta\left[(4\cos\theta)^2-(1+2\cos\theta)^2\right]\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3}
+    (12\cos^3\theta-\cos\theta-4\cos^2\theta)\,d\theta \\
+    \end{aligned}\]
+    To complete the integral, we use the identities
+    \(\displaystyle \cos^2\theta=1-\sin^2\theta\) and
+    \(\displaystyle \cos^2\theta=\dfrac{1+\cos(2\theta)}{2}\). So:
+    \[\begin{aligned}
+    M_x&=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3}
+    \left(12(1-\sin^2\theta)\cos\theta
+    -\cos\theta-2[1+\cos(2\theta)]\right)\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/3}^{\pi/3}
+    \left(11\cos\theta-12\sin^2\theta\cos\theta-2
+      -2\cos(2\theta)\right)\,d\theta \\
+    &=\dfrac{1}{2}
+    \left[11\sin\theta-4\sin^3\theta-2\theta
+      -\sin(2\theta)\dfrac{}{}\right]_{-\pi/3}^{\pi/3} \\
+    &=11\sin\dfrac{\pi}{3}-4\sin^3\dfrac{\pi}{3}-2\dfrac{\pi}{3}
+      -\sin(\dfrac{2\pi}{3}) \\
+    &=11\dfrac{\sqrt{3}}{2}-4\dfrac{3\sqrt{3}}{8}-\,\dfrac{2\pi}{3}
+      -\,\dfrac{\sqrt{3}}{2} \\
+    &=7\dfrac{\sqrt{3}}{2}-\,\dfrac{2\pi}{3}
+    \end{aligned}\]
+    Thus:
+    \[
+    \bar{x}=\dfrac{M_x}{M}
+    =\dfrac{7\dfrac{\sqrt{3}}{2}-\,\dfrac{2\pi}{3}}{2\sqrt{3}-\,\dfrac{2\pi}{3}}
+    =\dfrac{21\sqrt{3}-4\pi}{12\sqrt{3}-4\pi}
+    \]
+    <!-- =\genfrac{}{}{2pt}{0}
+    {7\dfrac{\sqrt{3}}{2}-\,\dfrac{2\pi}{3}}{2\sqrt{3}-\,\dfrac{2\pi}{3}} -->
+    Thus, the center of mass of the region is:
+    \[
+    (\bar{x},\bar{y})_\text{cm}
+    =\left(\dfrac{21\sqrt{3}-4\pi}{12\sqrt{3}-4\pi},0\right)
+    \approx(2.897,0)
+    \]
+  </p>
+</div>
+<div class="column">
+  <p class="remark">
+    It is interesting to note that the center of mass of the crescent is not
+    actually within the crescent. However, it is within the
+    <span class="hl">convex hull</span> of the crescent. By definition, the
+    <span class="defword">convex hull</span> of any set \(R\) is the smallest
+    convex set containing \(R\). For the crescent, the convex hull is the
+    pink and yellow region shown in the plot.
+    <br>
+    <big>Make the plot have CM</big>
+  </p>
+  <div class="center">
+    <figure>
+      <img src="graphics/polarapp-centroid.jpg" alt="polarapp-centroid">
+      <figcaption>Convex hull of the crescent region showing
+      <br> the center of mass for
+        density \(\delta=\dfrac{1}{r}\)</figcaption>
+    </figure>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Average Value</h3>
+<p>
+  Recall that the average value of a function over a 2D region, \(R\),
+  is:
+  \[
+  f_\text{ave}=\dfrac{1}{A}\iint\limits_R f(x,y)\,dA
+  =\dfrac{1}{A}\iint\limits_R f(r,\theta)\,r\,dr\,d\theta
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Compute the average density on the crescent shape if the density is
+  \(\delta=\dfrac{1}{\sqrt{x^2+y^2}}=\dfrac{1}{r}\).</span>" data-number="5">
+  <hr width="80%">
+  <p class="sol">
+    The average value of the density is
+    \[
+    \delta_\text{ave}=\dfrac{1}{A}\iint\limits_R \delta(r,\theta)\,r\,dr\,d\theta
+    \]
+    We recognize the numerator is the mass which was previously computed to be:
+    \[
+    M=\iint\limits_R \delta(r,\theta)\,r\,dr\,d\theta
+    =2\sqrt{3}-\,\dfrac{2\pi}{3}
+    \]
+    The denominator is the area which was previously computed to be:
+    \[
+    A=\iint\limits_R r\,dr\,d\theta
+    =\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}
+    \]
+    So the average value is:
+    \[
+    \delta_\text{ave}=\dfrac{M}{A}
+    =\dfrac{2\sqrt{3}-\,\dfrac{2\pi}{3}}
+    {\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}}
+    =\dfrac
+    {12\sqrt{3}-4\pi}
+    {10\pi-3\sqrt{3}}
+    \]
+    <!-- =\genfrac{}{}{2pt}{0}
+    {2\sqrt{3}-\,\dfrac{2\pi}{3}}
+    {\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}} -->
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Centroid</h3>
+
+<p>
+  Recall that the centroid of a region \(R\) is given by
+  \[
+  \bar{x}=\dfrac{1}{A}\iint\limits_R x\,dA
+  \qquad \text{and} \qquad
+  \bar{y}=\dfrac{1}{A}\iint\limits_R y\,dA
+  \]
+  In polar coordinates, we express \(x\) and \(y\) in terms of \(r\) and
+  \(\theta\), so that the formulas become
+  \[\begin{aligned}
+  \bar{x}&=\dfrac{1}{A}\iint\limits_R r\cos\theta\,dA
+  =\dfrac{1}{A}\iint\limits_R r^2\cos\theta\,dr\,d\theta \\
+  \bar{y}&=\dfrac{1}{A}\iint\limits_R r\sin\theta\,dA
+  =\dfrac{1}{A}\iint\limits_R r^2\sin\theta\,dr\,d\theta
+  \end{aligned}\]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the centroid of the crescent shape.</span>" data-number="6">
+  <hr width="80%">
+  <p class="sol">
+    We already know that the area of the crescent is
+    \[
+    A=\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}
+    \]
+    By symmetry (since the region is the same above and below the \(x\)-axis):
+    \[
+    A_y=\iint\limits_R y\,dA=0
+    \qquad \text{and} \qquad
+    \bar{y}=\dfrac{A_y}{A}=0
+    \]
+    Now we compute the \(x\) moment as
+    \[\begin{aligned}
+    A_x&=\iint\limits_R r\cos\theta\,dA
+    =\int_{-\pi/3}^{\pi/3}\int_{1+2\cos\theta}^{4\cos\theta}
+      r^2\cos\theta\,dr\,d\theta \\
+    &=\int_{-\pi/3}^{\pi/3}
+    \left[\dfrac{r^3}{3}\cos\theta\right]_{r=1+2\cos\theta}^{4\cos\theta}\,d\theta \\
+    &=\dfrac{1}{3}\int_{-\pi/3}^{\pi/3}
+    (4\cos\theta)^3\cos\theta-(1+2\cos\theta)^3\cos\theta\,d\theta \\
+    &=\dfrac{1}{3}\int_{-\pi/3}^{\pi/3}
+    64\cos^4\theta-(8\cos^4\theta+12\cos^3\theta+6\cos^2\theta+\cos\theta)\,d\theta \\
+    &=\dfrac{1}{3}\int_{-\pi/3}^{\pi/3}
+    (56\cos^4\theta-12\cos^3\theta-6\cos^2\theta-\cos\theta)\,d\theta
+    \end{aligned}\]
+    We now use the identities
+    \(\displaystyle \cos^2\theta=1-\sin^2\theta\) and
+    \(\displaystyle \cos^2\theta=\dfrac{1+\cos(2\theta)}{2}\) repeatedly to obtain:
+    \[
+    A_x=4\pi+\dfrac{1}{4}\sqrt{3}
+    \]
+    Thus the \(x\)-component of the centroid is:
+    \[
+    \bar{x}=\dfrac{A_x}{A}
+    =\dfrac{4\pi+\dfrac{1}{4}\sqrt{3}}
+    {\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}}
+    =\dfrac
+    {48\pi+3\sqrt{3}}
+    {20\pi-6\sqrt{3}}
+    \]
+    <!-- =\genfrac{}{}{2pt}{0}
+    {4\pi+\dfrac{1}{4}\sqrt{3}}
+    {\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}} -->
+    Thus, the centroid of the region is:
+    \[
+    (\bar{x},\bar{y})_\text{centroid}
+    =\left(\dfrac{48\pi+3\sqrt{3}}{20\pi-6\sqrt{3}},0\right)
+    \approx(2.975,0)
+    \]
+    <!-- =\genfrac{}{}{2pt}{0}
+    {4\pi+\dfrac{1}{4}\sqrt{3}}
+    {\dfrac{5}{3}\pi-\,\dfrac{1}{2}\sqrt{3}} -->
+  </p>
+</div>
+<div class="column">
+  <p class="remark">
+    Like the center of mass, the centroid of the crescent is not
+    within the crescent, but is within the convex hull of the crescent.
+  </p>
+  <div class="center">
+    <figure>
+      <img src="graphics/polarapp-centroid.jpg" alt="polarapp-centroid">
+      <figcaption>Convex hull of the crescent region
+      <br> showing the centroid</figcaption>
+    </figure>
+  </div>
+</div>
+<div class="column">
+  <p>
+    Here is a blow-up of the edge of the crescent showing the
+    centroid with an \(\times\) and the center of mass with an \(\circ\).
+    Notice that the center of mass is to the left of the centroid:
+    \[
+    \bar{x}_\text{cm} < \bar{x}_\text{centroid}
+    \]
+    This is because the density \(\delta=\dfrac{1}{r}\) decreases to
+    the right, pulling the centroid to the left.
+    <br>
+    <big>PY: Fix the plots to have both centroid and center of mass.</big>
+  </p>
+  <div class="center">
+    <figure>
+      <img src="graphics/polarapp-centroid-zoom.jpg" alt="polarapp-centroid-zoom">
+      <figcaption>Enlargement of the edge of the crescent,
+      <br>with the centroid and the center of mass</figcaption>
+    </figure>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

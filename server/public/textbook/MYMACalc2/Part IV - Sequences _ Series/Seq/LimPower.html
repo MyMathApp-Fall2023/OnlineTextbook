@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b5e. Indeterminate Forms \(0^0\) and \(1^\infty\) and \(\infty^0\) | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html#Indeterminate" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>18. Sequences</h1>
+    <div id="pg-wrapper">
+      
+
+<!-- NOTE: the "active" class indicates which page is displayed -->
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="LimQuot.html">
+      \(\underline{\dfrac{0}{0} \text{ and } \dfrac{\infty}{\infty}}\)</a></li> &emsp;
+    <li><a href="LimProd.html">
+      \(\underline{0\cdot\infty}\)</a></li> &emsp;
+    <li><a href="LimSubt.html">
+      \(\underline{\infty-\infty}\)</a></li> &emsp;
+    <li class="active"><a href="LimPower.html">
+      \(\underline{0^0 \text{ and } 1^\infty \text{ and } \infty^0}\)</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>b5e. Indeterminate Forms \(0^0\) and \(1^\infty\) and \(\infty^0\)</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Recall that \(e^x\) and \(\ln(x)\) are inverse functions. Further, recall
+  that limits can be moved inside continuous functions.
+</p>
+<h3>Method:</h3>
+<ol>
+  <li>
+		These sequences are all of the form: \((a_n)^{b_n}\). We apply
+    \(e^{\ln{}}\) to each term, move the limit inside the
+    exponential function (since it is continuous) and pull the exponent out
+    of the log (using the identity \(\ln{a^b}=b\ln{a}\)). This will convert
+    the limit to the indeterminate form \(0\cdot\infty\).
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<p>
+  The first example has indeterminate form \(1^\infty\).
+</p>
+<p class="example" data-number="1">
+  Compute \(\lim\limits_{n\to\infty}
+    \left(1+\dfrac{2}{n}\right)^{3n}\).
+</p>
+<p class="sol">
+  We first apply \(e^{\ln{}}\) to the term:
+	\[
+    \lim_{n\to\infty}
+      \left(1+\dfrac{2}{n}\right)^{3n}
+  	=\lim_{n\to\infty}
+      {\large e}^{\displaystyle \ln{\left(1+\dfrac{2}{n}\right)^{3n}}}
+	\]
+  Next we move the limit inside the exponential (since it is a continuous
+  function) and pull the exponent out the log:
+	\[
+    \lim_{n\to\infty}
+      \left(1+\dfrac{2}{n}\right)^{3n}
+  	={\large e}^{\displaystyle \lim_{n\to\infty}
+      3n\ln{\left(1+\dfrac{2}{n}\right)}}
+	\]
+  The new limit has the form \(0\cdot\infty\). We convert it to
+  \(\dfrac{0}{0}\) by writing the \(n\) factor as \(\dfrac{1}{n}\) in
+  the denominator. Then we apply l'Hopital's Rule and simplify:
+	\[\begin{aligned}
+    \lim_{n\to\infty}
+      \left(1+\dfrac{2}{n}\right)^{3n}
+    &={\large e}^{\displaystyle \lim_{n\to\infty}
+      \dfrac{3\ln{\left(1+\dfrac{2}{n}\right)}}{\dfrac{1}{n}}} \\
+    &\overset{\text{l'H}}{=}{\large e}^{\displaystyle \lim_{n\to\infty}
+      \dfrac{\dfrac{3}{1+\dfrac{2}{n}}\left(\dfrac{-2}{n^2}\right)}{-\dfrac{1}{n^2}}} \\
+    &={\large e}^{\displaystyle \lim_{n\to\infty}
+      \dfrac{6}{1+\dfrac{2}{n}}} \\[5pt]
+    &={\large e^6}
+	\end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  This exercise has indeterminate form \(\infty^0\).
+</p>
+<div class= "dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\lim\limits_{n\to\infty}n^{1/n}\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Insert \(e^{\ln{}}\), move the limit inside the exponential and pull
+    the exponent out the log.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+		\(\lim\limits_{n\to\infty}n^{1/n}=1\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    We insert \(e^{\ln{}}\), move the limit inside the exponential and pull
+    the exponent out the log:
+		\[\begin{aligned}
+      \lim_{n\to\infty}n^{1/n}
+      &=\lim_{n\to\infty}{\large e}^{\displaystyle \ln{n^{1/n}}} \\
+      &={\large e}^{\displaystyle \lim_{n\to\infty}
+        \dfrac{1}{n}\ln{n}}
+		\end{aligned}\]
+    Next we apply l'Hopital's Rule and simplify:
+		\[\begin{aligned}
+      \lim_{n\to\infty}n^{1/n}\,
+	  	&\overset{\text{l'H}}{=}&{\large e}^{\displaystyle \lim_{n\to\infty}
+        \dfrac{\dfrac{1}{n}}{1}}={\large e}^0=1
+		\end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  This exercise has indeterminate form \(0^0\).
+</p>
+<div class= "dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\lim\limits_{n\to\infty}
+		\left(\dfrac{1}{n^2}\right)^{\textstyle \dfrac{2}{\ln(n)}}\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint2"></button>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+  </p>
+</div>
+<br>
+<div class="toBeToggled drop-hint" data-toggle="Hint2">
+  <p>
+    Insert \(e^{\ln{}}\), move the limit inside the exponential and pull
+    the exponent out the log.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+		\(\lim\limits_{n\to\infty}
+		\left(\dfrac{1}{n^2}\right)^{\textstyle \dfrac{2}{\ln(n)}}=e^{-4}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    We insert \(e^{\ln{}}\), move the limit inside the exponential and pull
+    the exponent out the log:
+    \[\begin{aligned}
+      \lim_{n\to\infty}
+			\left(\dfrac{1}{n^2}\right)^{\textstyle \dfrac{2}{\ln(n)}}
+      &=\lim_{n\to\infty}
+      {\large e}^{\displaystyle \ln{\left(\dfrac{1}{n^2}\right)^{\textstyle \dfrac{2}{\ln(n)}}}} \\
+      &={\large e}^{\displaystyle \lim_{n\to\infty}
+      \dfrac{2}{\ln(n)}\ln\left(\dfrac{1}{n^2}\right)} \\
+      &={\large e}^{\displaystyle \lim_{n\to\infty}
+      \dfrac{-4\ln(n)}{\ln(n)}}
+      ={\large e}^{-4}
+    \end{aligned}\]
+    In the next to last step, we used
+    \(\ln\left(\dfrac{1}{n^2}\right)
+    =\ln\left(n^{-2}\right)
+    =-2\ln n\).
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pythagorean Identities | Trigonometry</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Plots.html" title="Previous">&lArr;</a></li>
+      <li><a href="ParityCompSupp.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Trigonometry</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>Trig Identities</h2>
+
+<p>
+  We now start to investigate trig identities. The first group of these are
+  the Pythagorean Identities.
+</p>
+
+
+      
+      <h2>Pythagorean Identities</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Pythagorean Theorem</h3>
+
+<div class="column">
+  <div>
+    <p class="prop" data-title="Pythagorean Theorem">
+      In terms of the circle which is used to define the trig functions,
+      the Pythagorean Theorem says:
+      \[
+      x^2+y^2=r^2 \qquad \text{(1)}
+      \]
+      <button class="toggle" data-toggle="Pf0">Proof</button>
+      \(\Leftarrow\Leftarrow\) Read it! It's fun.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/pythag.jpg" alt="xxx">
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Pf0">
+  <p>
+    Here are two diagrams of a square with side \(x+y\).
+  </p>
+  <p class="center">
+    <img src="graphics/PythagSquare1.jpg" alt="Square 1">
+    &emsp;\(\)&emsp;
+    <img src="graphics/PythagSquare2.jpg" alt="Square 2">
+  </p>
+  <p>
+    In the first, there is a square of side \(x\), a square of side \(y\)
+    and two rectangles with sides \(x\) and \(y\). In the second,
+    there is a square of side \(r\) and four right triangles with legs
+    \(x\) and \(y\). We equate areas:
+    \[
+    x^2+y^2+2xy=r^2+4\left(\dfrac{1}{2}xy\right)
+    \]
+    Cancelling \(2xy\) leaves:
+    \[
+    x^2+y^2=r^2
+    \]
+  </p>
+</div>
+
+        <div class="rule" id="PythagSinCos"></div>
+
+<h3>Pythagorean Identity for Sine and Cosine</h3>
+
+<p class="prop" data-title="Pythagorean Identity for Sine and Cosine">
+  \[
+  \sin^2\theta+\cos^2\theta=1 \qquad \text{(2)}
+  \]
+  <button class="toggle" data-toggle="Pf1">Proof</button>
+  \(\Leftarrow\Leftarrow\) Read it! It's easy.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf1">
+  <p>
+    Start with equation (1) and divide both sides by \(r^2\):
+    \[
+    \left(\dfrac{x}{r}\right)^2+\left(\dfrac{y}{r}\right)^2=1
+    \]
+    Then make the substitutions \(\dfrac{x}{r}=\cos\theta\) and
+    \(\dfrac{y}{r}=\sin\theta\).
+  </p>
+</div>
+
+        <div class="rule" id="PythagTanSec"></div>
+
+<h3>Pythagorean Identity for Tangent and Secant</h3>
+
+<p class="prop" data-title="Pythagorean Identity for Tangent and Secant">
+  \[
+  \tan^2\theta+1=\sec^2\theta
+  \]
+  <button class="toggle" data-toggle="Pf2">Proof</button>
+  \(\Leftarrow\Leftarrow\) Read it! It's easy.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf2">
+  <p>
+    Start with equation (2) and divide both sides by \(\cos^2\theta\):
+    \[
+    \dfrac{\sin^2\theta}{\cos^2\theta}+\dfrac{\cos^2\theta}{\cos^2\theta}
+    =\dfrac{1}{\cos^2\theta}
+    \]
+    Then make the substitutions \(\dfrac{\sin\theta}{\cos\theta}=\tan\theta\) and
+    \(\dfrac{1}{\cos\theta}=\sec\theta\).
+  </p>
+</div>
+
+        <div class="rule" id="PythagCotCsc"></div>
+
+<h3>Pythagorean Identity for Cotangent and Cosecant</h3>
+
+<p class="prop" data-title="Pythagorean Identity for Cotangent and Cosecant">
+  \[
+  1+\cot^2\theta=\csc^2\theta
+  \]
+  <button class="toggle" data-toggle="Pf3">Proof</button>
+  \(\Leftarrow\Leftarrow\) Read it! It's easy.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf3">
+  <p>
+    Start with equation (2) and divide both sides by \(\sin^2\theta\):
+    \[
+    \dfrac{\sin^2\theta}{\sin^2\theta}+\dfrac{\cos^2\theta}{\sin^2\theta}
+    =\dfrac{1}{\sin^2\theta}
+    \]
+    Then make the substitutions \(\dfrac{\cos\theta}{\sin\theta}=\cot\theta\) and
+    \(\dfrac{1}{\sin\theta}=\csc\theta\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example">
+  Consider an angle \(\alpha\) for which \(\cos\alpha=0.8\). Find the other
+  \(5\) trig functions.
+</p>
+<p class="sol">
+  By the Pythagorean Identity, we know that \(\sin^2\alpha+\cos^2\alpha=1\).
+  Rearranging, we see that
+  \[
+  \sqrt{1-\cos^2\alpha}=\sqrt{\sin^2\alpha}=\sin\alpha
+  \]
+  Evaluating for \(\cos\alpha=0.8\),
+  \[
+  \sqrt{1-0.8}=\sqrt{0.36}=0.6
+  \]
+  We know that \(\tan\alpha=\dfrac{\sin\alpha}{\cos\alpha}\), therefore:
+  \[
+  \tan\alpha=\dfrac{0.6}{0.8}=0.75
+  \]
+  Similarly, we know that
+  \[\begin{aligned}
+  &\cot\alpha=\dfrac{1}{\tan\alpha} \quad
+  &\sec\alpha=\dfrac{1}{\cos\alpha}\quad
+  &&\csc\alpha=\dfrac{1}{\sin\alpha}
+  \end{aligned}\]
+  Therefore:
+  \[\begin{aligned}
+  &\cot\alpha=\dfrac{1}{0.75}=\dfrac{4}{3} \quad
+  &\sec\alpha=\dfrac{1}{0.8}=1.25\quad
+  &&\csc\alpha=\dfrac{1}{0.6}=\dfrac{5}{3}
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise">
+    Consider an angle \(\alpha\) for which \(\sin\alpha=0.96\). Find the other
+    \(5\) trig functions.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \[\begin{aligned}
+    &\sin\alpha=0.96 \quad
+    &\cos\alpha=0.28 \\[8pt]
+    &\tan\alpha=\dfrac{24}{7}\quad
+    &\cot\alpha=\dfrac{7}{24} \\[8pt]
+    &\sec\alpha=\dfrac{25}{7}\quad
+    &\csc\alpha=\dfrac{25}{24}
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    By the Pythagorean Identity, we know that \(\sin^2\alpha+\cos^2\alpha=1\).
+    Rearranging, we see that
+    \[
+    \sqrt{1-\sin^2\alpha}=\sqrt{\cos^2\alpha}=\cos\alpha
+    \]
+    Evaluating for \(\sin\alpha=0.96\),
+    \[
+    \sqrt{1-0.9216}=\sqrt{0.0784}=0.28
+    \]
+    We know that \(\tan\alpha=\dfrac{\sin\alpha}{\cos\alpha}\), therefore:
+    \[
+    \tan\alpha=\dfrac{0.96}{0.28}=\dfrac{24}{7}
+    \]
+    Similarly, we know that
+    \[\begin{aligned}
+    &\cot\alpha=\dfrac{1}{\tan\alpha} \quad
+    &\sec\alpha=\dfrac{1}{\cos\alpha}\quad
+    &&\csc\alpha=\dfrac{1}{\sin\alpha}
+    \end{aligned}\]
+    Therefore:
+    \[\begin{aligned}
+    &\cot\alpha=\dfrac{1}{\dfrac{24}{7}}=\dfrac{7}{24} \quad
+    &\sec\alpha=\dfrac{1}{0.28}=\dfrac{25}{7}\quad
+    &&\csc\alpha=\dfrac{1}{0.96}=\dfrac{25}{24}
+    \end{aligned}\]
+  </p>
+  <p align=right> cj &nbsp </p>
+</div>
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

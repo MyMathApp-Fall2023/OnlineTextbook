@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Formula and Inequality | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PolyApprox.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApproxSerTaylorBnd.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>23. Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Taylor Remainder</h2>
+
+<p>
+  When we approximate a power series,
+  \(\displaystyle S=\sum_{n=0}^\infty a_n\), by one of its partial sums
+  \(\displaystyle S_k=\sum_{n=0}^k a_n\), the error in the approximation,
+  \(\displaystyle E_k=S-S_k=\sum_{n=k+1}^\infty a_n\),
+  may be bounded by an
+  <a href="../SerPos/ApproxSerIntegBnd.html" title="Return using the Back button.">
+  integral bound</a>, a
+  <a href="../SerPos/ApproxSerCompBnd.html" title="Return using the Back button.">
+  comparison bound</a> or an
+  <a href="../SerGen/ApproxSerAltBnd.html" title="Return using the Back button.">
+  alternating series bound</a>, as appropriate.
+  When we approximate a function by a Taylor polynomial, the error in the
+  approximation is called the Taylor remainder.
+</p>
+<p class="def" data-title="Taylor Remainder">
+  The <span class="defword">Taylor remainder of degree \(k\)</span>
+  <span class="hl">centered at</span> \(x=a\) <span class="hl">for
+  the function</span>
+  \(f(x)\) is
+  \[
+  R_k f(x)=f(x)-T_k f(x)
+  \]
+  where the <span class="hl">Taylor polynomial of degree</span>  \(k\) is
+  \[
+  T_k f(x)=\sum_{n=0}^k \dfrac{\,f^{(n)}(a)}{n!}(x-a)^n
+  \]
+</p>
+<p>
+  For values of \(x\) for which the Alternating Series Test, the Integral
+  Test or the Simple Comparison test are sufficient to prove convergence,
+  the corresponding bounds may be applied to the remainder. (This was done in
+  the example on the
+  <a href="PolyApprox.html#Eg-Taylor-ccrt">
+  previous page</a>.) However, when these techniques fail, the Taylor
+  Remainder Inequality (given below) will give a bound on the error in the
+  Taylor polynomial approximation. (See the example and exercise on the
+  <a href="ApproxSerTaylorBnd.html">next page</a>.)
+  Further, the Taylor Remainder Inequality will finally allow us to determine
+  whether the Taylor series for a function \(f(x)\) actually converges to the
+  function \(f(x)\). (See the example and exercise on the
+  <a href="ConvProofs.html">following page</a>.)
+  This inequality is based on the Taylor Remainder Formula given in the next theorem.
+</p>
+
+<span id="TayThm"></span>
+
+
+      
+      <h2>1. Formula and Inequality</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The above definition says what the remainder is, but it does not give a
+  formula for it or even put an upper bound on it. The following theorem gives
+  a formula and the next one says how to put an upper bound on it.
+</p>
+
+<p class="thm" data-title="Taylor Remainder Formula Theorem (Extended Mean Value Theorem)">
+  If the \((k+1)^\text{st}\) derivative exists on an open
+  interval containing \(a\) and \(x\), then there is a number \(c\) between
+  \(a\) and \(x\) such that the Taylor remainder of degree \(k\) is
+  \[
+  R_k f(x)=\dfrac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}
+  \]
+	&nbsp;<a href="RemainderPf.html">
+  <button class= 'btn'>Proof</button></a>
+  &emsp; The proof is straight forward and based on the Mean Value Theorem.
+  Try reading it.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Using the definition of the remainder, the Taylor remainder may be combined
+  with the Taylor polynomial to say:
+  \[\begin{aligned}
+  f(x)
+  &=T_k f(x)+R_k f(x) \\
+  &=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2 \\
+  &\quad+\cdots+\dfrac{\,f^{(k)}(a)}{k!}(x-a)^k
+  +\dfrac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}
+  \end{aligned}\]
+  So the remainder is just the next term in the Taylor series except that the
+  \((k+1)^\text{st}\) derivative is evaluated at \(c\) instead of \(a\).
+</p>
+<p class="remark">
+  For \(k=0\), Taylor's Theorem says there is a \(c\) for which
+  \[
+  f(x)=f(a)+f'(c)(x-a)
+  \]
+  This is just the Mean Value Theorem for Derivatives. So Taylor's Remainder
+  Theorem is often called the <span class="defword">Extended Mean Value
+  Theorem</span>. In fact, the proof of Taylor's Theorem is based on the
+  ordinary Mean Value Theorem.
+</p>
+
+        <div class="rule" id="TayIneq"></div>
+
+<p>
+  The problem with this theorem is that there is no way to determine the value
+  of \(c\) guaranteed by the theorem.  So instead, we find a bound on \(
+  f^{(k+1)}(c)\) and use it to put a bound on the
+  remainder \(R_k f(x)\):
+</p>
+<p class="thm" data-title="Taylor Remainder Inequality">
+  If \(a\) is in an open interval \(I\) and
+  \(M \ge |f^{(k+1)}(c)|\) for all \(c\) in the interval \(I\), then the Taylor
+  remainder of degree \(k\) centered at \(x=a\) satisfies
+  \[
+  |R_k f(x)| \le \dfrac{M}{(k+1)!}|x-a|^{k+1}
+  \]
+  for all \(x\) in the interval \(I\). The quantity on the right is called the
+  <span class="hl">Taylor bound on the remainder</span>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  On the <a href="ApproxSerTaylorBnd.html">next page</a> we will see how the
+  Taylor Remainder Inequality may be used to bound the error in a Taylor
+  polynomial approximation. Then on the
+  <a href="ConvProofs.html" title="Return using the back button.">
+  following page</a> we will see how it can be used to determine when the Taylor
+  series for a function \(f(x)\) actually converges to the function \(f(x)\).
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c3. Bounded, Monotonic Sequence Theorem | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Mono.html" title="Previous">&lArr;</a></li>
+      <li><a href="Recur.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c3. Bounded, Monotonic Sequence Theorem</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Sometimes you want to show that a sequence has a limit even if you can't
+  write down a simple formula for the limit. The following theorem can
+  determine if the limit exists. The proof link goes to the proof which is at
+  the end of this chapter after the
+	<a href="PrecDef.html" title="Return using the Back button.">precise definition</a>
+  of the limit of a sequence.
+</p>
+
+<p class="thm" data-title="Bounded, Monotonic Sequence Theorem">
+  <br>
+  Every <span class="hl">increasing</span> sequence which is
+  <span class="hl">bounded above</span> is <span class="hl">convergent</span>
+  to the <span class="hl">least upper bound</span>.
+  <br>
+  Every <span class="hl">decreasing</span> sequence which is
+  <span class="hl">bounded below</span> is <span class="hl">convergent</span>
+  to the <span class="hl">greatest lower bound</span>.
+  <br><br>
+  Every <span class="hl">bounded, monotonic</span> sequence is
+  <span class="hl">convergent</span>.
+  <br><br>
+  Every <span class="hl">unbounded, increasing</span> sequence is
+  <span class="hl">divergent to</span> \(\infty\).
+  <br>
+  Every <span class="hl">unbounded, decreasing</span> sequence is
+  <span class="hl">divergent to</span> \(-\infty\).
+  <br><br>
+  <button class="toggle" data-toggle="Justification">Justification</button>
+	<a href="PrecBM.html" title="Return by closing the Tab."
+  target="_blank">
+  <button>Proof</button></a>
+</p>
+<div class="toBeToggled drop-just" data-toggle="Justification">
+  <p>
+    If the sequence is increasing but bounded above,
+    it can't "increase forever" and must approach some number below the known
+    upper bound.
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  We will later apply the theorem to sequences for which it is not easy to
+  compute the limit. For now we take a look at three sequences for which it
+  is easy to check whether the sequence is bounded or monotonic and to compute
+  the limit. We will also see the dangers of trusting a plot and not
+  carefully checking the sequence is both bounded and monotonic.
+</p>
+
+<p class="exercise" data-number="1">
+  Determine whether each sequence is bounded and/or monotonic and whether
+  the theorem says the sequence is convergent or divergent to \(\pm\infty\).
+</p>
+<ol class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <p>
+        \(a_n=\dfrac{n^2}{n^2+10}\)
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans1"></button>
+        <button class="toggle has-sol" data-toggle="Sol1"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans1">
+      <p>
+        Bounded above by \(1\) and increasing, and hence convergent.
+        <br><br>
+        \(\lim\limits_{n\to\infty}\dfrac{n^2}{n^2+10}=1\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol1">
+      <p>
+        Since \(n^2\lt n^2+10\), we have \(\dfrac{n^2}{n^2+10}\lt 1\),
+        i.e. \(a_n\) is bounded above by \(1\).
+        <br><br>
+        First notice that \(a_n=\dfrac{n^2+10-10}{n^2+10}=1-\dfrac{10}{n^2+10}\).
+        <br>
+        Since \(0\lt n\lt n+1\), we have \(n^2 \lt (n+1)^2\) and
+        \(n^2+10 \lt (n+1)^2+10\).
+        <br>
+        Then \(\dfrac{10}{n^2+10}\gt \dfrac{10}{(n+1)^2+10}\) and
+        \(1-\dfrac{10}{n^2+10}\lt 1-\dfrac{10}{(n+1)^2+10}\).
+        <br>
+        So \(a_n\lt a_{n+1}\), i.e. the sequence is increasing and hence convergent.
+        <br><br>
+        In fact, we can compute
+        \[
+        \lim_{n\to\infty}\dfrac{n^2}{n^2+10}
+        =\lim_{n\to\infty}\dfrac{1}{1+\dfrac{10}{n^2}}
+        =1
+        \]
+      </p>
+    </div>
+    <button class="toggle" data-toggle="Drop1">Discussion of Plots</button>
+	  <div class="toBeToggled" data-toggle="Drop1">
+		  <div class="column">
+		    <div data-col-width="40%">
+		      <p>
+		        Here is the plot of the first \(10\) terms of the sequence.
+						It appears that the limit is \(1\).
+						<br><br><br><br><br><br><br><br>
+						But to be "sure" here is the plot of the first \(100\) terms of
+						the sequence.
+						<br>
+						However, there is no guarantee that even \(100\) terms is enough.
+						<br>
+						(See the next two exercises.)
+						<br>
+						Only a computation like the one in the solution can really show
+						the limit is \(1\).
+		      </p>
+		    </div>
+		    <div data-col-width="60%">
+	        <img src="graphics/bm1a.jpg" alt="bm1a">
+					<br>
+	        <img src="graphics/bm1b.jpg" alt="bm1b">
+		    </div>
+		  </div>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        \(b_n=\dfrac{8n}{n^2+64}\)
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans2"></button>
+        <button class="toggle has-sol" data-toggle="Sol2"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans2">
+      <p>
+        Bounded below but not monotonic. So the theorem does <em>not</em>
+        say it converges or diverges.
+        <br><br>
+        In fact it converges:
+        \[
+        \lim_{n\to\infty}\dfrac{8n}{n^2+64}=0
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol2">
+      <p>
+        Assuming \(n\ge 1\), all terms are positive and so the sequence is
+        bounded below by \(0\).
+        <br><br>
+        Regard \(n\) as a continuous variable and take the derivative:
+        \[
+        \dfrac{d(b_n)}{dn}=\dfrac{(n^2+64)8-8n(2n)}{(n^2+64)^2}
+        =\dfrac{512-8n^2}{(n^2+64)^2}
+        \]
+        This is positive for \(n\le 8\) and negative for \(n\ge 8\).
+        <br>
+        So the sequence is increasing for \(n\le 8\) and decreasing for \(n\ge 8\).
+        <br><br>
+        Since the sequence is not monotonic, the theorem does not directly
+        say whether the sequence converges or diverges. However, if we start
+        the index of the sequence at \(n=8\), then the sequence is
+        decreasing and the theorem says it is convergent. So the original
+        sequence is also convergent since convergence does not care about
+        the behavior of any finite number of terms, only the tail of the sequence.
+        <br><br>
+        In fact, we can compute
+        \[
+        \lim_{n\to\infty}\dfrac{8n}{n^2+64}
+        =\lim_{n\to\infty}\dfrac{\dfrac{8}{n}}{1+\dfrac{64}{n^2}}
+        =0
+        \]
+      </p>
+    </div>
+    <button class="toggle" data-toggle="Drop2">Discussion of Plots</button>
+	  <div class="toBeToggled" data-toggle="Drop2">
+		  <div class="column">
+		    <div data-col-width="40%">
+		      <p>
+		        Here is the plot of the first \(10\) terms of the sequence.
+						It appears that the limit is \(\dfrac{1}{2}\).
+						<br><br><br><br><br><br><br><br>
+						But to be "sure" here is the plot of the first \(100\) terms of
+						the sequence.
+						<br>
+						Oops. It now appears that the limit may be \(0\).
+						<br>
+						However, only a computation like the one in the solution can really show
+						the limit is \(0\).
+		      </p>
+		    </div>
+		    <div data-col-width="60%">
+	        <img src="graphics/bm2a.jpg" alt="bm2a">
+					<br>
+	        <img src="graphics/bm2b.jpg" alt="bm2b">
+		    </div>
+		  </div>
+	  </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        \(c_n=\dfrac{n^{2.1}}{2n^2+1}\)
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans3"></button>
+        <button class="toggle has-sol" data-toggle="Sol3"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans3">
+      <p>
+        Increasing and unbounded, and hence divergent to \(\infty\).
+        <br><br>
+        \(\lim\limits_{n\to\infty}\dfrac{n^{2.1}}{2n^2+1}=\infty\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol3">
+      <p>
+        Regard \(n\) as a continuous variable and take the derivative:
+        \[
+        \dfrac{d(c_n)}{dn}=\dfrac{(2n^2+1)2.1n^{1.1}-n^{2.1}4n}{(2n^2+1)^2}
+        =\dfrac{.2n^{3.1}+2.1n^{1.1}}{(2n^2+1)^2}
+        \]
+        Since this is always positive, the sequence is increasing.
+        <br><br>
+				Now notice that \(c_n=\dfrac{n^{.1}}{2+\dfrac{1}{n^2}}\). The
+				numerator can be arbitrarily large and the denominator stays
+				between \(2\) and \(3\). So we expect the sequence is unbounded.
+			  <br><br>
+        To see this we use a proof by contradiction. Suppose there is an
+        upper bound \(M\). Then for all \(n\) we know:
+				\[
+				\dfrac{n^{.1}}{2+\dfrac{1}{n^2}}\le M
+				\]
+				We multiply both sides by the denominator:
+				\[
+				n^{.1}\le M\left(2+\dfrac{1}{n^2}\right)
+				\]
+				Now since \(n\ge 1\) we know \(2+\dfrac{1}{n^2}\le 3\), and so:
+				\[
+				n^{.1}\le 3M
+				\]
+				for all \(n\). However, if \(n \gt (3M)^{10}\), this will be false!
+				This is a contradiction. So there is no upper bound.
+      </p>
+    </div>
+    <button class="toggle" data-toggle="Drop3">Discussion of Plots</button>
+	  <div class="toBeToggled" data-toggle="Drop3">
+		  <div class="column">
+		    <div data-col-width="40%">
+		      <p>
+		        Here is the plot of the first \(10\) terms of the sequence.
+						It appears that the limit may be about \(\dfrac{2}{3}\).
+						<br><br><br><br><br><br><br><br>
+						But to be "sure" here is the plot of the first \(100\) terms of
+						the sequence.
+						<br>
+						Oops. It now appears that the limit may be somewhat bigger, maybe
+						\(\dfrac{3}{4}\) or maybe \(1\).
+						<br>
+						However, the computation in the solution shows the limit is
+						actually \(\infty\) although the series grows extremely slowly.
+		      </p>
+		    </div>
+		    <div data-col-width="60%">
+	        <img src="graphics/bm3a.jpg" alt="bm3a">
+					<br>
+	        <img src="graphics/bm3b.jpg" alt="bm3b">
+		    </div>
+		  </div>
+	  </div>
+  </li>
+</ol>
+<p class="remark">
+	As you can see from the discussion of the plots in the three examples, it
+	is very dangerous to trust a plot (or the numerical values of any number of
+	terms) to estimate the limit of a sequence.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Applications of Gradient Properties 3 &amp; 4 | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PropGradApps12.html" title="Previous">&lArr;</a></li>
+      <li><a href="TanLine.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Properties of the Gradient</h2>
+
+<div class="greybox">
+	<p class="prop" data-title="Properties of the Gradient">
+	</p>
+  <ol start="3">
+    <li>
+      \(\vec\nabla f\) points perpendicular to each level set of \(f\).
+    </li>
+    <li>
+      \(|\vec\nabla f|\) is inversely proportional to the
+          spacing between level sets. (Qualitative)
+    </li>
+  </ol>
+</div>
+
+
+      
+      <h2>3. Applications of Gradient Properties 3 &amp; 4</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="example" data-number="1">
+  Find a normal vector to the ellipse \(\dfrac{x^2}{8}+\dfrac{y^2}{18}=1\)
+  at the point \((x,y)=(2,3)\).
+</p>
+<p class="sol">
+  The ellipse is the level set of \(f=\dfrac{x^2}{8}+\dfrac{y^2}{18}\)
+  with value \(1\). Its gradient will be perpendicular to the level set.
+  The gradient is:
+  \[
+  \vec\nabla f=\left\langle \dfrac{x}{4},\dfrac{y}{9}\right\rangle
+  \]
+  At \((x,y)=(2,3)\), the normal is:
+  \[
+  \vec N=\left.\vec\nabla f\right|_{(2,3)}
+	=\left\langle \dfrac{1}{2},\dfrac{1}{3}\right\rangle
+  \]
+	Any multiple of this is acceptable.
+</p>
+
+				<div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="50%">
+  	<p class="exercise" data-number="2">
+      The plot at the right is a contour plot of \(f(x,y)\).
+      At which point is \(|\vec\nabla f|\) the largest?
+  	</p>
+    <p>
+      &emsp;
+      <button class="toggle has-choice1 incorrect" data-toggle="AnsXA"></button> Point \(P\)
+      &emsp; &emsp;
+      <button class="toggle has-choice2 incorrect" data-toggle="AnsXB"></button> Point \(Q\)
+			<br>
+			&emsp;
+      <button class="toggle has-choice3 incorrect" data-toggle="AnsXC"></button> Point \(R\)
+      &emsp; &emsp;
+      <button class="toggle has-choice4 correct" data-toggle="AnsXD"></button> Point \(S\)
+    </p>
+  </div>
+  <div data-col-width="50%" class="center">
+    <img src="graphics/GradContourEx.jpg" alt="GradContourEx.jpg"/>
+  </div>
+</div>
+
+<div class="toBeToggled drop-ans" data-toggle="AnsXA">
+  <p>
+    \(P\). Incorrect. At this point the countours are far apart.
+    What does that say about \(|\vec\nabla f|\)?
+    Try again.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsXB">
+  <p>
+    \(Q\). Sorry. At this point the countours are farther apart than at \(R\)
+		but closer than at \(P\).
+    What does that say about \(|\vec\nabla f|\)?
+    Try again.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsXC">
+  <p>
+    \(R\). Sorry. At this point the countours are farther apart than at \(S\)
+		but closer than at \(Q\).
+    What does that say about \(|\vec\nabla f|\)?
+    Try again.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsXD">
+  <p>
+    \(S\). Correct. At this point the countours are close together.
+    So \(|\vec\nabla f|\) is largest.
+  </p>
+</div>
+
+				<div class="rule"></div>>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="3">
+    Find the points on the hyperboloid \(2x^2-y^2+2z^2=1\) where the normal
+    line is parallel to the line that joins the points \(P=(2,-1,3)\) and
+    \(Q=(6,-4,1)\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-rem" data-toggle="RemX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+		The points are:
+    \[
+    (x,y,z)=(2,3,-1) \qquad \text{and} \qquad (x,y,z)=(-2,-3,1)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The hyperboloid is a level set of the function \(f(x,y,z)=2x^2-y^2+2z^2\).
+    The direction of the normal line is its gradient:
+    \[
+    \vec\nabla f=\langle 4x,-2y,4z\rangle
+    \]
+    We want this to be parallel to the vector from \(P\) to \(Q\):
+    \[
+    \overrightarrow{PQ}=Q-P=\langle 4,-3,-2\rangle
+    \]
+    To say they are parallel means one vector is a multiple of the other, i.e.
+    \[
+    \vec\nabla f=\lambda\overrightarrow{PQ}
+		\qquad \text{or} \qquad
+    \langle 4x,-2y,4z\rangle
+		=\lambda\langle 4,-3,-2\rangle
+    \]
+    where \(\lambda\) (the Greek letter lambda) is the proportionality factor.
+    This gives \(3\) equations,
+    \[
+    4x=4\lambda \qquad -2y=-3\lambda \qquad 4z=-2\lambda,
+    \]
+    but there are \(4\) unknowns: \(x\), \(y\), \(z\) <em>and</em> \(\lambda\).
+    We need a \(4^\text{th}\) equation. It is the equation of the hyperboloid:
+    \[
+    2x^2-y^2+2z^2=1
+    \]
+    To solve these equations, we use the first three equations to express
+    \(x\), \(y\) and \(z\) in terms of \(\lambda\) and substitute these
+		into the equation of the hyperbola:
+    \[
+    x=\lambda \qquad y=\dfrac{3}{2}\lambda \qquad z=-\,\dfrac{1}{2}\lambda
+    \]
+    \[
+    2(\lambda)^2-\left(\dfrac{3}{2}\lambda\right)^2
+		+2\left(-\,\dfrac{1}{2}\lambda\right)^2=1
+    \]
+    This says \((2-\,\dfrac{9}{4}+\dfrac{1}{2})\lambda^2=1\) or
+    \(\dfrac{\lambda^2}{4}=1\) or \(\lambda=\pm2\).
+    So the points are:
+    \[
+    (x,y,z)=(2,3,-1) \qquad \text{and} \qquad (x,y,z)=(-2,-3,1)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX1">
+  <p>
+	  The method used to solve this problem is similar to one that will be used
+	  later to solve
+	  <a href="../MaxMin/Lagrange.html" title="Return using the Back button.">
+	    Max-Min problems using Lagrange multipliers.</a>
+  </p>
+</div>
+
+    		<div class="rule"></div>
+
+<p>
+  There are more significant applications of Property 3 on the
+  <a href="TanLine.html">next three pages</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

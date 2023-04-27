@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c.1. Directional Derivatives | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DerVec.html" title="Previous">&lArr;</a></li>
+      <li><a href="DirecDerivApps.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c.1. Directional Derivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  So we now know how to differentiate a function \(f\) along any vector
+  \(\vec v\):
+  \[
+  \nabla_{\vec v}f=\vec v\cdot\vec\nabla f
+  \]
+  If \(\vec v\) happens to be a unit vector (i.e. \(|\vec v|=1\)), then
+  \(\nabla_{\vec v}f\) has a special name.
+</p>
+<p class="def" data-title="Directional Derivative">
+  If \(\vec v\) is a <em>unit</em> vector, then the derivative of \(f(x,y)\)
+  along \(\vec v\) is called the <span class="defword"><em>directional</em>
+  derivative of \(f(x,y)\) along \(\vec v\)</span> (or
+  <span class="defword">with respect to \(\vec v\)</span>).
+  \[
+  \nabla_{\vec v}f=\vec v\cdot\vec\nabla f
+  \]
+</p>
+<p>
+  If  \(\vec v\) is <em>not</em> a unit vector, then we can construct the
+  unit vector
+  \[
+  \hat v=\dfrac{\vec v}{|\vec v|},
+  \]
+  which is call the <span class="defword">unit vector in the direction of
+  \(\vec v\)</span> or more simply the <span class="defword">the direction of
+  \(\vec v\)</span>. Then:
+</p>
+<p class="def" data-title="Directional Derivative">
+  For <em>any</em> vector \(\vec v\), the <span class="defword">directional
+  derivative of \(f(x,y)\) <em>in the direction of</em> \(\vec v\)</span>
+  is the derivative of \(f(x,y)\) along \(\hat v\):
+  \[
+  \nabla_{\hat v}f=\hat v\cdot\vec\nabla f
+  \]
+</p>
+<p class="remark">
+  Notice the key words <em>&ldquo;in the direction of&rdquo;</em>.
+  This is the indication that we are to use \(\hat v\) rather than \(\vec v\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  <button class="toggle" data-toggle="Drop1">
+  Why is the unit vector case so important?</button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    Suppose we want to know the rate of change of a function \(f\).
+    If we compute the derivative of \(f\) along a curve \(\vec r(t)\) we get
+    \[
+    \dfrac{df}{dt}=\nabla_{\vec v}f=\vec v\cdot\vec\nabla f
+    \]
+    where \(\vec v\) is the velocity of the curve. However, any vector can be
+    split up as the product of its magnitude and its direction,
+    \[
+    \vec v=|\vec v|\,\hat v,
+    \]
+    in this case, the speed and the unit tangent vector. So the derivative
+    along the curve is
+    \[
+    \dfrac{df}{dt}
+    =|\vec v|\,\hat v\cdot\vec\nabla f=|\vec v|\,\nabla_{\hat v}f
+    \]
+    which is the speed of the curve times the directional derivative of \(f\).
+    So the derivative along the curve is proportional to the speed we move
+    along the curve. <em>If we want to know the rate of change of \(f\),
+    we don't want the answer to depend on the speed of the curve used to
+    measure it.</em> So we use a curve with unit speed, and in that case,
+    the rate of change of \(f\) is the directional derivative of \(f\):
+    \[
+    \dfrac{df}{dt}=\hat v\cdot\vec\nabla f=\nabla_{\hat v}f
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the directional derivative of \(f(x,y)=\dfrac{x}{y}\) in the direction
+  of \(\vec v=\langle 3,4\rangle\) at the point \(P=(1,2)\).
+</p>
+<p class="sol">
+  The length of \(\vec v\) is \(|\vec v|=\sqrt{3^2+4^2}=5\). So the unit
+  vector in the direction of \(\vec v\) is:
+  \[
+  \hat{v}=\dfrac{\vec v}{|\vec v|}
+  =\left\langle \dfrac{3}{5},\dfrac{4}{5}\right\rangle
+  \]
+  From the example on the <a href="DerVec.html#eg_xy">previous page</a>,
+  the gradient of \(f\) at \(P\) is:
+  \[
+  \left.\vec\nabla f\right|_P
+  =\left\langle \dfrac{1}{2},-\,\dfrac{1}{4}\right\rangle
+  \]
+  So the directional derivative of \(f\) in the direction of \(\vec v\) is:
+  \[
+  \left.\vec\nabla_{\hat v}f\right|_P
+  =\hat v\cdot\left.\vec\nabla f\right|_P
+  =\left\langle \dfrac{3}{5},\dfrac{4}{5}\right\rangle
+  \cdot\left\langle \dfrac{1}{2},-\,\dfrac{1}{4}\right\rangle
+  =\dfrac{3}{10}-\,\dfrac{1}{5}
+  =\dfrac{1}{10}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  In general, the directional derivative measures the slope of the function
+  along the path.
+</p>
+<p class="genexample">
+  Find the slope of the function \(z=f(x,y)\) at the point \((a,b)\) in the
+  direction of \(\vec v\).
+</p>
+<p class="sol">
+  The vector \(\vec v\) only tell us how \(x\) and \(y\) are changing.
+  The function \(f\) tells us how \(z\) is changing.
+  The slope is the rise over the run. We want to do this infinitesimally.
+  So we approximate changes by differentials.
+</p>
+<p>
+  The run is the change in \(x\) and \(y\), i.e.
+  \(\sqrt{\Delta x^2+\Delta y^2}\) computed using the vector
+  \(\vec v=\langle \Delta x,\Delta y\rangle\). So:
+  \[
+  \text{run}=\sqrt{\Delta x^2+\Delta y^2}
+  =|\vec v|
+  \]
+</p>
+<p>
+  The rise is the change in \(z\), computed using \(f\):
+  \[\begin{aligned}
+  \text{rise}&=\Delta z=\Delta f\approx df \\
+  &=\dfrac{\partial f}{\partial x}\,dx+\dfrac{\partial f}{\partial y}\,dy \\
+  &=\dfrac{\partial f}{\partial x}\,\Delta x+\dfrac{\partial f}{\partial y}\,\Delta y
+  =\vec v\cdot\vec\nabla f
+  \end{aligned}\]
+  So the slope is
+  \[
+  \text{slope}=\dfrac{\text{rise}}{\text{run}}
+  =\dfrac{\vec v\cdot\vec\nabla f}{|\vec v|}
+  =\hat v\cdot\vec\nabla f
+  =\nabla_{\hat v}f
+  \]
+  which is the directional  derivative; another reason the directional
+  derivative is important.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    A hiker is walking up a mountainside whose altitude is given by
+    \(a=4-\,\dfrac{x^2+y^2}{25}\). If the hiker is currently at \((3,4)\) and
+    walking in the direction \(\vec v=\langle 5,-12\rangle\),
+    what is the slope of the path?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\text{slope}=\dfrac{66}{325}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The slope is the directional derivative. The gradient of the altitude is:
+    \[\begin{aligned}
+    \vec\nabla a
+    &=\left\langle-\,\dfrac{2x}{25},-\,\dfrac{2y}{25}\right\rangle \\
+    \left.\vec\nabla a\right|_{(3,4)}
+    &=\left\langle-\,\dfrac{6}{25},-\,\dfrac{8}{25}\right\rangle
+    \end{aligned}\]
+    The direction of \(\vec v\) is:
+    \[
+    \hat v=\left\langle \dfrac{5}{13},-\,\dfrac{12}{13}\right\rangle
+    \]
+    So the slope is
+    \[\begin{aligned}
+    \text{slope}&=\hat v\cdot\left.\vec\nabla a\right|_{(3,4)}
+    =\left\langle \dfrac{5}{13},-\,\dfrac{12}{13}\right\rangle
+    \cdot\left\langle-\,\dfrac{6}{25},-\,\dfrac{8}{25}\right\rangle \\[8pt]
+    &=-\,\dfrac{30}{13\cdot25}+\dfrac{96}{13\cdot25}
+    =\dfrac{66}{325}
+    \end{aligned}\]
+</div>
+<p>
+  More applications of the directional derivative appear on the
+  <a href="DirecDerivApps.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

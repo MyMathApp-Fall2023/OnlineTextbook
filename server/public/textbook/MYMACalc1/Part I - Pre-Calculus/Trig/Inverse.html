@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inverse Functions (Review) | Trigonometry</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="IdentSumry.html" title="Previous">&lArr;</a></li>
+      <li><a href="Arcsin.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Trigonometry</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Inverse Functions (Review)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Before discussing inverse trig functions, we need to understand inverse
+  functions in general. These are covered in the chapter on
+  <a href="../Functions/ChContents.html" title="Return using the Back button.">
+  Functions</a>.
+</p>
+<div class="greybox">
+  <p class="def">
+    Given a function, \(f\), its <span class="defword">inverse function</span>
+    is a function, \(g\), which undoes the action of \(f\). Thus:
+    <span class="center">
+    if &emsp; \(b=f(a)\), &emsp; then &emsp; \(a=g(b)\).
+    </span>
+    Combining these, we get
+    \[
+    a=g(f(a))
+    \qquad \text{and} \qquad
+    b=f(g(b))
+    \]
+    Either of these two equations can also be used to define the inverse function.
+  </p>
+  <p>
+    The inverse of \(f\) is frequently denoted by \(f^{-1}\). Then the above
+    equations become:
+    <span class="center">
+    if &emsp; \(b=f(a)\), &emsp; then &emsp; \(a=f^{-1}(b)\).
+    </span>
+    Combining these, we get
+    \[
+    a=f^{-1}(f(a))
+    \qquad \text{and} \qquad
+    b=f(f^{-1}(b))
+    \]
+  </p>
+</div>
+<p>
+  <span class="redbig">Caution:</span>
+  Don't get confused between the \(-1\) superscript on a function, which
+  denotes an inverse function \(f^{-1}\), and the \(-1\) superscript on a
+  number, which denotes a reciprocal \(5^{-1}=\dfrac{1}{5}\). This is
+  particularly confusing when we talk about trig functions, since we
+  frequently write \(\sin^2(x)\) to mean the square of \(\sin(x)\), but we
+  write \(\sin^{-1}(x)\) to mean the inverse function of \(\sin(x)\) which is
+  <span class="redbig">NOT</span> the reciprocal \(\dfrac{1}{\sin(x)}\).
+</p>
+
+        <div class="rule"></div>
+
+<h3>Graphs</h3>
+<div class="column">
+  <div>
+  	<p>
+      If we plot \(f\) as the graph of the equation \(y=f(x)\) then we plot \(g\),
+      as the graph of the equation \(y=g(x)\). If \((a,b)\) is on the graph of
+      \(f\), i.e. \(b=f(a)\), then \((b,a)\) is on the graph of
+      \(g\), i.e. \(a=g(b)\). The points \((a,b)\) and \((b,a)\) are related by
+      interchanging the \(x\) and \(y\) components. Geometrically, the points
+      \((a,b)\) and \((b,a)\) are mirror images through the \(45^\circ\) line
+      \(y=x\) (which is simply call <span class="defword">the diagonal</span>.)
+      Consequently, the graph of the inverse function \(y=g(x)\) is the mirror
+      image of the graph of the function \(y=f(x)\) through the diagonal.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/xcubedinverse.jpg" alt="Plot of x^3-1 and (x+1)^{1/3}">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>\(g\) must be single valued; so \(f\) must be one-to-one</h3>
+<div class="column">
+  <div>
+  	<p>
+      Every function must be single-valued. So for the inverse to exist, it
+      must be single-valued. So \(g\) must satisfy the vertical line test.
+      (Every vertical line hits the graph of \(g\) at most once.) Since \(f\)
+      is the mirror image of \(g\), it must satisfy the horizontal line test.
+      (Every horizontal line hits the graph of \(f\) at most once.) This says
+      \(f\) must be one-to-one. (Every output value of \(f\) occurs at most
+      once.) If \(f\) is not one-to-one, then it cannot be inverted.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/xcubedinversewithlinetest.jpg" alt="Plot of x^3-1 and (x+1)^{1/3}  with hor and vert lines">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>What if \(f\) is not one-to-one?</h3>
+<div class="column">
+  <div>
+  	<p>
+      If \(f\) is not one-to-one, then we pick a piece of the function which
+      is one-to-one and invert that. The piece is called a
+      <span class="defword">branch</span> of the function and is obtained by
+      cutting down the domain of \(f\). For example, the function \(f(x)=x^2\)
+      is not one-to-one because \(f(2)=4\) and also \(f(-2)=4\). So we cut down
+      the domain and only consider the branch of the function for \(x \ge 0\).
+      Then \(x^2\) is one-to-one and its inverse is \(g(x)=\sqrt{x}\). (Recall
+      that the radical symbol \(\sqrt{}\) always gives the positive square
+      root.) This is the standard branch of \(x^2\) for finding an inverse.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/xsquaredinverse.jpg" alt="Plot of x^2 and sqrt(x)">
+  </div>
+</div>
+<p>
+  The same thing happens for each of the trig functions. They are not
+  one-to-one since they are periodic. So we pick a standard branch and
+  define the inverse for that branch. This is done on the
+  <a href="Arcsin.html">next three pages</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

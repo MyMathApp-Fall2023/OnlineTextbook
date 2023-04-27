@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Intersections of Polar Graphs | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PlottingRect.html" title="Previous">&lArr;</a></li>
+      <li><a href="Slope.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Graphs of Polar Equations</h2>
+
+
+      
+      <h2>4. Intersections of Polar Graphs</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+  Normally, to find the intersection of two graphs, you simply equate
+  the defining functions. However, if two polar graphs intersect at a point
+	\(P\), the coordinates \((r,\theta)\) of the point \(P\) that satisfy
+  one equation may not satisfy the other. It may be necessary to replace the
+  coordinates \((r,\theta)\) in <span class="hl">one</span> of the polar
+  equations, by the coordinate \((-r,\theta+\pi)\), which
+  describe the same point, before equating the functions. It may also be
+  necessary to check the origin, since \(r=0\) could correspond to any value
+	of \(\theta\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+	  Locate all points of intersection of the limacon, \(r=1+2\cos\theta\),
+	  and the circle, \(r=1\).
+	</p>
+	<div class="center">
+	  <img src="graphics/intlimacirc.jpg" alt="intlimacirc">
+	</div>
+</div>
+<p class="sol">
+  From the graph, we can see three points of intersection,
+  two on the vertical axis and one on the horizontal axis. Let's see if we
+  can find them algebraically. We first equate the two functions:
+  \[\begin{aligned}
+  1+2\cos\theta=1
+	\quad &\Rightarrow& \quad
+	&\cos\theta=0
+	\quad \Rightarrow \\
+	\theta=\pm\dfrac{\pi}{2},\pm\dfrac{3\pi}{2},\ldots
+	\quad &\Rightarrow& \quad
+	&r=1+2\cos\left(\pm\dfrac{\pi}{2}\right)=1
+  \end{aligned}\]
+  We obtain only the two intersection points on the \(y\)-axis. We have
+	missed the intersection on the \(x\)-axis. The problem is that the common
+	point on the \(x\)-axis has <em>different</em> coordinates on the two graphs.
+	In fact, this point on the limacon has coordinates \((-1,\pi)\). To find
+	this point, we need to make the substitution
+	\((r,\theta)\;\to\;(-r,\theta+\pi)\) in <span class="hl">one</span>
+	of the polar equations.The limacon becomes:
+  \[\begin{aligned}
+  -r&=1+2\cos(\theta+\pi)=1-2\cos\theta \\
+  \text{or}\qquad
+	r&=-1+2\cos\theta
+  \end{aligned}\]
+  We now equate the two functions:
+  \[\begin{aligned}
+  -1+2\cos\theta=1
+  \quad &\Rightarrow& \quad
+  &\cos\theta=1
+  \quad \Rightarrow \\
+  \theta=0,\pm2\pi,\pm4\pi,\ldots
+  \quad &\Rightarrow& \quad
+  &r=-1+2\cos0=1
+  \end{aligned}\]
+  This gives the intersection point on the positive \(x\)-axis.
+</p>
+<p class="remark">
+  We only need to make the substitution in one graph or the other. And be
+  sure not to make the substitution in both graphs at the same time.
+  <button class="toggle" data-toggle="Note1">Note: Substituting in the other equation.</button>
+</p>
+<div class="toBeToggled note" data-toggle="Note1">
+  <p>
+    We could alternatively make the substitution
+  	\((r,\theta)\;\to\;(-r,\theta+\pi)\) in the circle \(r=1\)
+    to obtain \(r=-1\). If we now equate, we get:
+  </p>
+  <p>
+    \[\begin{aligned}
+    1+2\cos\theta=-1
+    \quad &\Rightarrow& \quad
+    &\cos\theta=-1
+    \quad \Rightarrow \\
+    \theta=\pm\pi,\pm3\pi,\pm 5\pi,\ldots
+    \quad &\Rightarrow& \quad
+    &r=1+2\cos(\pi)=-1
+    \end{aligned}\]
+    This gives the point \((r,\theta)=(-1,\pi)\) which is also the
+    intersection point on the positive \(x\)-axis.
+  </p>
+</div>
+
+        <div class="rule" id="intersectcirclesex"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find all intersections of the polar graphs, \(r=2\sin\theta\) and
+    \(r=2\cos\theta\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    If you only found the intersection at
+    \((r,\theta)=\left(\sqrt{2},\dfrac{\pi}{4}\right)\),
+    you missed a point. Try graphing the two curves.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    The graphs intersect at
+    \((r,\theta)=\left(\sqrt{2},\dfrac{\pi}{4}\right)\) and at the origin,
+    \((x,y)=(0,0)\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We first equate the two equations and solve:
+    \[\begin{aligned}
+    2\sin\theta=2\cos\theta
+  	\quad &\Rightarrow& \quad
+  	&\tan\theta=1
+  	\quad \Rightarrow \\
+  	\theta=\dfrac{\pi}{4},\pm\dfrac{5\pi}{4},\ldots
+  	\quad &\Rightarrow& \\
+  	r=2\sin\left(\dfrac{\pi}{4}\right)=\dfrac{2}{\sqrt{2}}=\sqrt{2}
+  	\quad &\text{or}& \quad
+  	&r=2\sin\left(\dfrac{5\pi}{4}\right)=-\sqrt{2}
+    \end{aligned}\]
+    which gives intersections at the points
+    \(\left(\sqrt{2},\dfrac{\pi}{4}\right)\) and
+    \(\left(-\sqrt{2},\dfrac{5\pi}{4}\right)\) which are actually the same point.
+  </p>
+  <p>
+    Next, we make the substitution
+    \((r,\theta)\;\to\;(-r,\theta+\pi)\) in the second equation to
+    get \(-r=2\cos(\theta+\pi)=-2\cos\theta\) which is equivalent to the
+    original equation \(r=2\cos\theta\). So this does not give any extra
+    intersections.
+  </p>
+  <p>
+    Finally, we examine the origin. \((r,\theta)=(0,0)\) is a solution of
+    \(r=2\sin\theta\) while \((r,\theta)=\left(0,\dfrac{\pi}{2}\right)\)
+    is a solution of \(r=2\cos\theta\). So the origin, \((x,y)=(0,0)\), is
+    a solution of both equations, although there is no value of \(r\) and
+    \(\theta\) which satisfies both equations!
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <div class="column">
+    <p data-col-width="60%">
+      We check by looking at the graphs.
+      <br><br>
+      \(r=2\sin\theta\) is a circle of radius \(1\) centered at
+      \((x,y)=(0,1)\).
+      <br><br>
+      \(r=2\cos\theta\) is a circle of radius \(1\) centered at
+      \((x,y)=(1,0)\).
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/intcirccirc.jpg" alt="intcirccirc">
+    </div>
+  </div>
+</div>
+
+<p>
+  <span style="color:green">The Moral:</span> &emsp;
+  Whenever you seek points of intersection of
+  polar graphs, use <span class="hl">a graph in conjunction with algebra</span>!
+  Equate the equations, substitute \((r,\theta)\;\to\;(-r,\theta+\pi)\)
+  in one equation and equate them, and check the origin.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>
