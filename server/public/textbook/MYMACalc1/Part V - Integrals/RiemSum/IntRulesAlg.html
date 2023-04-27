@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Algebraic Operations | 22. Riemann Sums, Integrals and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="IndefInt.html" title="Previous">&lArr;</a></li>
+      <li><a href="IntRulesSpec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Riemann Sums, Integrals and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Integration Rules and Properties</h2>
+
+
+      
+      <h2>1. Algebraic Operations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Since indefinite integrals are just general antiderivatives, all the rules for
+  antiderivatives immediately become rules for indefinite integrals. In general,
+  <span class="hl">a derivative rule produces an indefinite integral rule</span
+  >: \[ \dfrac{d}{dx}[F(x)] =f(x) \qquad \text{becomes} \qquad \int
+  f(x)\,dx=F(x)+C \]
+</p>
+<a id="Rules"></a>
+
+        <div class="rule"></div>
+
+<p>
+  So far, we have learned the derivative rules and corresponding integral rules
+  shown in this table about algebraic operations and the one on the
+  <a href="IntRulesSpec.html" title="Return using the Back button.">next page</a>
+  about special functions.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>
+    Derivative and Integral Rules for Algebraic Operations
+  </caption>
+  <thead class="thead">
+    <th></th>
+    <th>Derivative Rule</th>
+    <th>Integral Rule</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Constant</td>
+      <td>\(\dfrac{d}{dx}(c) =0\)</td>
+      <td>Integrals are only determined up to a constant of integration.</td>
+    </tr>
+    <tr>
+      <td>Identity</td>
+      <td>\(\dfrac{d}{dx}(x) =1\)</td>
+      <td>\(\displaystyle \int 1\,dx=x+C\)</td>
+    </tr>
+    <tr>
+      <td>Power</td>
+      <td>\(\dfrac{d}{dx}(x^n) =nx^{n-1}\)</td>
+      <td>\(\displaystyle \int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C\)</td>
+    </tr>
+    <tr>
+      <td>Sum</td>
+      <td>\(\dfrac{d}{dx}[f(x)+g(x)]=\dfrac{df}{dx}+\dfrac{dg}{dx}\)</td>
+      <td>
+        \(\displaystyle \int (f(x)+g(x))\,dx =\int f(x)\,dx+\int g(x)\,dx\)
+      </td>
+    </tr>
+    <tr>
+      <td>Constant Multiple</td>
+      <td>\(\dfrac{d}{dx}[cf(x)] =c\dfrac{df}{dx}\)</td>
+      <td>\(\displaystyle \int cf(x)\,dx=c\int f(x)\,dx\)</td>
+    </tr>
+    <tr>
+      <td>
+        Product
+        <div class="hidden-rules" style="visibility: hidden; display: inline;">
+          <br>Parts
+        </div>
+      </td>
+      <td>
+        \(\dfrac{d}{dx}[f(x) g(x)] =\dfrac{df}{dx}g(x)+f(x)\dfrac{dg}{dx}\)
+      </td>
+      <td>
+        <div class="hidden-rules" style="visibility: hidden">
+          \(\displaystyle \int u\,dv=uv-\int v\,du\) where \(u=f(x)\) and
+          \(dv=g(x)\,dx\)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Quotient</td>
+      <td>
+        \(\dfrac{d}{dx}\left[\dfrac{f(x)}{g(x)}\right]
+        =\dfrac{g(x)\dfrac{df}{dx}-f(x)\dfrac{dg}{dx}}{[g(x)]^2}\)
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Extended Power\(^\text{*}\)</td>
+      <td>\(\dfrac{d}{dx}[g(x)^n]=n g(x)^{n-1}\dfrac{dg}{dx}\)</td>
+      <td>
+        <div class="hidden-rules" style="visibility: hidden">
+          \(\displaystyle \int g(x)^n\dfrac{dg}{dx}\,dx
+          =\dfrac{g(x)^{n+1}}{n+1}+C\)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Chain
+        <div class="hidden-rules" style="visibility: hidden; display: inline;">
+          <br>Substitution
+        </div>
+      </td>
+      <td>
+        \(\dfrac{d}{dx}[f(g(x))]
+        =\left.\dfrac{df}{du}\right|_{u=g(x)}\dfrac{dg}{dx}\)
+      </td>
+      <td>
+        <div class="hidden-rules" style="visibility: hidden">
+          \(\displaystyle \int f(g(x))\dfrac{dg}{dx}\,dx =\int f(u)\,du\) where
+          \(u=g(x)\)
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  \(^\text{*}\) The Extended Power Rule is the special case of the Chain Rule
+  for derivatives (and the Substitution Rule for integrals) where \(f(u) =u^n\).
+  The integral version will not be covered separately.
+</p>
+<a id="Final"></a>
+
+        <div class="rule"></div>
+
+<p>
+  Noticeably missing from this table are integral rules corresponding to the
+  Product, Quotient, Extended Power and Chain Rules for derivatives. There is no
+  nice integral rule corresponding to the Quotient Rule. However, in the next
+  chapter, we will learn that the integral rule corresponding to the Chain Rule
+  is called
+  <a href="../IntSubs/ChContents.html" title="Return using the Back button.">
+  Integration by Substitution</a>.
+  (This includes the Extended Power Rule.)
+  Then in Calculus 2, we
+  will learn that the integral rule corresponding to the Product Rule is called
+  <a href="../../../MYMACalc2/Part I - Techniques of Integration/IntParts/ChContents.html"
+  title="Return using the Back button.">Integration by Parts</a>.
+  To show/hide these additional rules in the table,
+  <a id="show-rules"
+     style="cursor: pointer; color: green"
+     title="Additional rules are displayed in table above"
+     onclick="showHiddenRules()"><strong>click here</strong></a>.
+</p>
+<a id="IntRules"></a>
+
+        <div class="rule"></div>
+
+<p>
+  The following exercise is the same as on a
+  <a href="../AntiDer/ADRulesAlg.html#ADRules"
+  title="Return using the Back button.">
+  previous page</a>
+  except solved using integrals and the Fundamental Theorem of Calculus.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Compute \(\displaystyle \int 12x^5-9x^2+4x+5\,dx\) and
+    \(\displaystyle \int_1^2 12x^5-9x^2+4x+5\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle \int 12x^5-9x^2+4x+5\,dx=2x^6-3x^3+2x^2+5x+C\)
+    <br />
+    \(\displaystyle \int_1^2 12x^5-9x^2+4x+5\,dx=116\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    By the Sum, Constant Multiple and Power Rules, the indefinite integral is:
+    \[\begin{aligned} \int 12x^5-9x^2+4x+5\,dx
+    &=12\left(\dfrac{x^6}{6}\right)-9\left(\dfrac{x^3}{3}\right)
+    +4\left(\dfrac{x^2}{2}\right)+5x+C \\ &=2x^6-3x^3+2x^2+5x+C \\
+    \end{aligned}\]
+  </p>
+  <p class="check">
+    We check by differentiating. If \(F=2x^6-3x^3+2x^2+5x\) then: \[
+    F'(x)=2\cdot6x^5-3\cdot3x^2+2\cdot2x+5=12x^5-9x^2+4x+5 \]
+  </p>
+  <p>
+    By the Fundamental Theorem of Calculus, the definite integral is:
+    \[\begin{aligned}
+    \int_1^2 &12x^5-9x^2+4x+5\,dx
+    =\left[2x^6-3x^3+2x^2+5x\right]_1^2 \\
+    &=(2\cdot2^6-3\cdot2^3+2\cdot2^2+5\cdot2)-(2-3+2+5) \\
+    &=(128-24+8+10)-(6)=116
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p class="check">
+    We check the indefinite integral by differentiating.
+    If \(F=2x^6-3x^3+2x^2+5x\) then:
+    \[
+    F'(x)=2\cdot6x^5-3\cdot3x^2+2\cdot2x+5=12x^5-9x^2+4x+5
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The Extended Power Rule is frequently used with trig functions.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\displaystyle \int \cos^7(x)\sin(x)\,dx\) and
+    \(\displaystyle \int_{\pi/6}^{\pi/3} \cos^7(x)\sin(x)\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Apply the Extended Power Rule with \(g(x)=\cos(x)\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \int \cos^7(x)\sin(x)\,dx=-\,\dfrac{\cos^8(x)}{8}+C\)
+    <br>
+    \(\displaystyle \int_{\pi/6}^{\pi/3} \cos^7(x)\sin(x)\,dx
+    =\dfrac{5}{2^7}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We apply the Extended Power Rule with \(g(x)=\cos(x)\). Since
+    \(\dfrac{d\cos(x)}{dx}=-\sin(x)\), we have
+    \[\begin{aligned} \int \cos^7(x)\sin(x)\,dx
+    &=-\,\dfrac{\cos^8(x)}{8}+C \\
+    \end{aligned}\]
+  </p>
+  <p>
+    By the Fundamental Theorem of Calculus, the definite integral is:
+    \[\begin{aligned}
+    \int_{\pi/6}^{\pi/3} &\cos^7(x)\sin(x)\,dx
+    =\left[-\,\dfrac{\cos^8(x)}{8}\right]_{\pi/6}^{\pi/3} \\
+    &=\dfrac{1}{8}\left[-\cos^8\left(\dfrac{\pi}{3}\right)
+    +\cos^8\left(\dfrac{\pi}{6}\right)\right] \\
+    &=\dfrac{1}{8}\left[-\left(\dfrac{1}{2}\right)^8
+    +\left(\dfrac{\sqrt{3}}{2}\right)^8\right] \\
+    &=\dfrac{1}{8}\left[-\,\dfrac{1}{2^8}+\dfrac{3^4}{2^8}\right]
+    =\dfrac{1}{8}\left[\dfrac{80}{2^8}\right]
+    =\dfrac{5}{2^7}
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p class="check">
+    We check the indefinite integral by differentiating.
+    If \(F=-\,\dfrac{\cos^8(x)}{8}\) then:
+    \[
+    F'(x)=-\,\dfrac{1}{8}8\cos^7(x)[-\sin(x)]=\cos^7(x)\sin(x)
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+  <script src="scripts/DisplayAdditionalRules.js"></script>
+
+</body>
+</html>

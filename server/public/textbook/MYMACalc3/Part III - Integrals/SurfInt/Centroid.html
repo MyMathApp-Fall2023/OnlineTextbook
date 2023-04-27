@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Centroid | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="AveVal.html" title="Previous">&lArr;</a></li>
+      <li><a href="Mass.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Applications of Scalar Surface Integrals</h2>
+
+
+      
+      <h2>3. Centroid</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+  The <span class="defword">centroid</span> of a surface is the point,
+  \((\bar{x},\bar{y},\bar{z})\), whose coordinates are the average values of
+  \(x\), \(y\) and \(z\) on the surface:
+  \[
+  (\bar{x},\bar{y},\bar{z})
+  =\left(\dfrac{A_x}{A},\dfrac{A_y}{A},\dfrac{A_z}{A}\right)
+  \]
+  where the <span class="defword">moments of the area</span> are:
+  \[
+  A_x=\iint_S x\,dS \qquad A_y=\iint_S y\,dS \qquad A_z=\iint_S z\,dS
+  \]
+</p>
+<p class="remark">
+  Note: The <span class="hl">centroid</span> can also be regarded as the center of
+mass when the region has a constant density, which can be taken as \(\delta=1\).
+</p>
+
+        <div class="rule" id="EgSphere"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the height of the centroid of the surface of
+    the piece of the sphere, \(S\), with \(\rho=3\) for which
+    \(0<\phi<\dfrac{\pi}{2}\) and \(0< \theta<\dfrac{\pi}{4}\).
+    <br/>
+    <br>
+    <big>PY: Plot the surface not the solid.</big>
+  </p>
+  <div class="center">
+    <img src="graphics/CM_example.jpg" alt="CM_example">
+  </div>
+</div>
+<p class="sol">
+  The first step is to parameterize the sphere in spherical coordinates
+  with \(\rho=3\):
+  \[
+  \vec R(\phi,\theta)
+  =\left\langle 3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi\right\rangle
+  \]
+  Next, the normal vector is the cross product of the tangent vectors:
+  \[\begin{aligned}
+  \vec{N}&=\vec{e}_\phi\times\vec{e}_\theta=
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  3\cos\phi\cos\theta & 3\cos\phi\sin\theta & -3\sin\phi \\
+  -3\sin\phi\sin\theta & 3\sin\phi\cos\theta & 0
+  \end{vmatrix}
+  \\
+  &=\hat{\imath}(--9\sin^2\phi\cos\theta)
+   -\hat{\jmath}(-9\sin^2\phi\sin\theta) \\
+  &\qquad+\hat{k}(9\sin\phi\cos\phi\cos^2\theta--9\sin\phi\cos\phi\sin^2\theta) \\
+  &=\left\langle 9\sin^2\phi\cos\theta,9\sin^2\phi\sin\theta,9\sin\phi\cos\phi\right\rangle
+  \end{aligned}\]
+  Then the magnitude of the normal is:
+  \[\begin{aligned}
+  |\vec{N}|&=\sqrt{81\sin^4\phi\cos^2\theta
+  +81\sin^4\phi\sin^2\theta+81\sin^2\phi\cos^2\phi} \\
+  &=9\sin\phi\sqrt{\sin^2\phi\cos^2\theta+\sin^2\phi\sin^2\theta+\cos^2\phi} \\
+  &=9\sin\phi\sqrt{\sin^2\phi(\cos^2\theta+\sin^2\theta)+\cos^2\phi}=9\sin\phi
+  \end{aligned}\]
+  So the surface area differential is:
+  \[
+  dS=|\vec{N}|\,du\,dv=9\sin\phi\,d\phi\,d\theta
+  \]
+  We are now ready to compute the surface area of the piece of the sphere:
+  \[\begin{aligned}
+  A&=\iint_S \,dS
+  =\int_0^{\pi/4}\int_0^{\pi/2} 9\sin\phi\,d\phi\,d\theta \\
+  &=9\left[\theta\dfrac{}{}\right]_0^{\pi/4}\left[-\cos\phi\dfrac{}{}\right]_0^{\pi/2}
+  =9\dfrac{\pi}{4}(0-(-1))
+  =\dfrac{9\pi}{4}
+  \end{aligned}\]
+</p>
+<p class="check">
+  This is correct because it is \(\dfrac{1}{16}\) of the surface of the sphere:
+  \[
+  A=\dfrac{1}{16}\left(4\pi R^2\dfrac{}{}\right)
+  =\dfrac{1}{16}\left(4\pi3^2\dfrac{}{}\right)=\dfrac{9\pi}{4}
+  \]
+</p>
+<p>
+  Now, finding the height of the centroid means finding
+  \(\displaystyle \bar{z}=\dfrac{A_z}{A}\).
+  The numerator is the \(z\)-moment:
+  \[\begin{aligned}
+  A_z&=\iint_S z\,\,dS
+  =\int_0^{\pi/4}\int_0^{\pi/2} 3\cos\phi\cdot9\sin\phi\,d\phi\,d\theta \\
+  &=27\left[\theta\dfrac{}{}\right]_0^{\pi/4}\left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}
+  =27\dfrac{\pi}{4}\left(\dfrac{1}{2}-0\right)
+  =\dfrac{27\pi}{8}
+  \end{aligned}\]
+  Finally, the height of the centroid is:
+  \[
+  \bar{z}=\dfrac{A_z}{A}=\dfrac{27\pi}{8}\dfrac{4}{9\pi}=
+  \dfrac{3}{2}
+  \]
+</p>
+<p class="check">
+  This is reasonable because the radius of the sphere was \(3\).
+</p>
+
+        <div class="rule" id="ellipparab"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the centroid of the piece of the elliptic paraboloid \(z=x^2+y^2\)
+    below \(z=4\).
+    The length of the
+    <a href="ScalSurfInt.html#ellipparab" title="Return using the Back button.">
+    normal vector</a> and the
+    <a href="SurfArea.html#ellipparab" title="Return using the Back button.">
+    surface area</a> were found in previous exercises.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle
+  \left(\bar x,\bar y,\bar z\right)_\text{centroid}
+  =\left( 0,0,\dfrac{23\cdot17^{3/2}+1}{10(17^{3/2}-1)}\right)
+  \approx(0,0,2.33)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The paraboloid is parametrized by:
+    \[
+    \vec R(r,\theta)
+    =\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+    \]
+    the length of the normal is:
+    \[
+    |\vec N|=r\sqrt{4r^2+1}
+    \]
+    and the area is:
+    \[
+    A=\int_0^{2\pi}\int_0^2 r\sqrt{4r^2+1}\,dr\,d\theta
+    =\dfrac{\pi}{6}\left(17^{3/2}-1\right)
+    \approx36.2
+    \]
+    By symmetry, \(\bar x=\bar y=0\). So we need the \(z\) component:
+    \[
+    \bar z=\dfrac{A_z}{A}
+    \]
+    We compute the \(z\) moment of the area:
+    \[
+    A_z=\iint_S z\,dS
+    =\int_0^{2\pi}\int_0^2 (r^2)r\sqrt{4r^2+1}\,dr\,d\theta
+    \]
+    Again, we make the substitution \(u=4r^2+1\) and \(du=8r\,dr\). Then
+    \(r^2=\dfrac{u-1}{4}\) and so:
+    \[\begin{aligned}
+    A_z
+    &=\dfrac{\pi}{4}\int_1^{17} \dfrac{u-1}{4}\sqrt{u}\,du
+    =\dfrac{\pi}{16}\int_1^{17} (u^{3/2}-u^{1/2})\,du \\
+    &=\dfrac{\pi}{16}\left[\dfrac{2u^{5/2}}{5}-\dfrac{2u^{3/2}}{3}\right]_1^{17} \\
+    &=\dfrac{\pi}{16}\left(\dfrac{2\cdot17^{5/2}}{5}-\dfrac{2\cdot17^{3/2}}{3}
+    -\dfrac{2}{5}+\dfrac{2}{3}\right) \\
+    &=\dfrac{\pi}{8}\left(\dfrac{17\cdot17^{3/2}}{5}-\dfrac{17^{3/2}}{3}
+    -\dfrac{1}{5}+\dfrac{1}{3}\right) \\
+    &=\dfrac{\pi}{120}\left(3\cdot17\cdot17^{3/2}-5\cdot17^{3/2}
+    -3+5\right) \\
+    &=\dfrac{\pi}{60}\left(23\cdot17^{3/2}+1\right)
+    \approx84.5
+    \end{aligned}\]
+    Consequently, the \(z\) component of the centroid is:
+    \[\begin{aligned}
+    \bar z&=\dfrac{A_z}{A}
+    =\dfrac{(23\cdot17^{3/2}+1)\pi}{60}\dfrac{6}{(17^{3/2}-1)\pi} \\
+    &=\dfrac{23\cdot17^{3/2}+1}{10(17^{3/2}-1)}
+    \approx2.33
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

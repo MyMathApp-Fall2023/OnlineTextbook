@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Mass and Center of Mass</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Charge.html" title="Previous">&lArr;</a></li>
+      <li><a href="../ArcSurf/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Mass and Center of Mass</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<ol class="xlist">
+
+<!-- Total Mass -->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="MassBar.html">a. Total Mass</a></h3>
+    <div class="pgs">
+      
+        <div><a href="MassBar.html">1</a></div>
+      
+    </div>
+  </div>
+
+<a id="xlinearrod"></a>
+
+<p>
+  In each problem, find the total mass.
+</p>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A \(6\) cm rod has linear density given by
+        \(\delta(x)=(2x+1)\,\dfrac{\text{gm}}{\text{cm}}\) where
+        \(x\) is measured from one end.
+      </p>
+      <div class="center">
+        <img src="graphics/x_2x+1.jpg" alt="x_2x+1">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+      <button class="toggle has-sol" data-toggle="SolX1"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX1">
+    <p>
+      \(M=42\) gm
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX1">
+    <p>
+      The mass is
+      \[\begin{aligned}
+      M&=\int_0^6 \delta(x)\,dx=\int_0^6 (2x+1)\,dx \\
+      &=\left[\dfrac{}{}x^2+x\right]_0^6=36+6=42 \,\text{gm}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+<a id="xcubicrod"></a>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A \(4\) cm rod has linear density given by
+        \(\delta(x)=(5x^3-3x+2)\,\dfrac{\text{gm}}{\text{cm}}\)
+        where \(x\) is measured from one end.
+      </p>
+      <div class="center">
+        <img src="graphics/x_5x_x^3-3x+2.jpg" alt="x_5x_x^3-3x+2">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX2">
+    <p>
+      \(M=304\,\text{gm}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX2">
+    <p>
+      The mass is
+      \[\begin{aligned}
+      M&=\int_0^4 \delta(x)\,dx=\int_0^4 (5x^3-3x+2)\,dx \\
+      &=\left[\dfrac{5x^4}{4}-\dfrac{3x^2}{2}+2x\right]_0^4
+      =320-24+8=304\,\text{gm}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A chocolate bar which is \(6\) in long has linear density given by
+        \(\delta(x)=\ln(x+2)\,\dfrac{\text{oz}}{\text{in}}\)
+        where \(x\) is measured from one end.
+      </p>
+      <div class="center">
+        <img src="graphics/x_ln_x+2.jpg" alt="x_ln_x+2">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX3"></button>
+      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+      <button class="toggle has-sol" data-toggle="SolX3"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX3">
+    <p>
+      Recall: \(\displaystyle \int \ln u\,du=u\ln u-u+C\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX3">
+    <p>
+      \(M=(22\ln 2-6)\,\text{oz}\approx 9.25\,\text{oz}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX3">
+    <p>
+      The mass is
+      \[
+      M=\int_0^6 \ln(x+2)\,dx
+      \]
+      To use the formula \(\displaystyle \int \ln u\,du=u\ln u-u+C\),
+      we make the change of variables \(u=x+2\) and \(du=dx\).
+      For the limits, when \(x=0\), we have \(u=2\) and when \(x=6\), we have
+      \(u=8\). So
+      \[\begin{aligned}
+      M&=\int_2^8 \ln u\,du=\left[\dfrac{}{}u\ln u-u\right]_2^8 \\
+      &=(8\ln8-8)-(2\ln2-2) \\
+      &=(8\cdot3\ln2-8)-(2\ln2-2) \\
+      &=(22\ln2-6)\,\text{oz}
+      \approx 9.25\,\text{oz}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A bar which is \(5\) in long has linear density given by
+        \(\delta(x)=xe^x\) \(\dfrac{\text{oz}}{\text{in}}\)
+        where \(x\) is measured from one end.
+      </p>
+      <div class="center">
+        <img src="graphics/x_xe^x.jpg" alt="x_xe^x">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX4"></button>
+      <button class="toggle has-ans" data-toggle="AnsX4"></button>
+      <button class="toggle has-sol" data-toggle="SolX4"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX4">
+    <p>
+      Use integration by parts.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX4">
+    <p>
+      \(M=(4e^5+1)\,\text{oz}\approx 595.\,\text{oz}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX4">
+    <p>
+      The mass is
+      \[
+      M=\int_0^5 \delta(x)\,dx=\int_0^5 xe^x\,dx
+      \]
+      We use integration by parts with
+      \[\begin{array}{ll}
+      u=x & dv=e^x\,dx \\
+      du=dx \quad & v=e^x
+      \end{array}\]
+      So
+      \[\begin{aligned}
+      M&=\left[xe^x-\int e^x\,dx\right]_0^5
+      =\left[\dfrac{}{}xe^x-e^x\right]_0^5 \\
+      &=(4e^5+1)\,\text{oz}
+      \approx 595.\,\text{oz}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+  		<p>
+          A \(6\) cm rod has linear density given by
+          \(\delta(x)=\left(\dfrac{1}{8}+\dfrac{2}{(x+4)^2}\right)
+          \,\dfrac{\text{gm}}{\text{cm}}\)
+          where \(x\) is measured from one end.
+			</p>
+      <div class="center">
+        <img src="graphics/x_mass_bar_1_8+2_(x+4)^2.jpg" alt="x_mass_bar_1_8+2_(x+4)^2">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX5"></button>
+      <button class="toggle has-sol" data-toggle="SolX5"></button>
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+      \(M=\dfrac{21}{20}\,\text{gm}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+      The mass is
+      \[
+      M=\int_0^6 \delta(x)\,dx=\int_0^6\left(\dfrac{1}{8}+\dfrac{2}{(x+4)^2}\right)\,dx
+      \]
+      Using substitution with \(u=x+4\) and \(du=dx\). For the limits,
+      when \(x=0\), we have \(u=4\) and when \(x=6\), we have \(u=10\). So
+      \[
+      \begin{aligned}
+      M&=\int_4^{10}\left(\dfrac{1}{8}+\dfrac{2}{u^2}\right)\,du
+      =\left[\dfrac{1}{8}u-\dfrac{2}{u}\right]_4^{10}\\
+      &=\left(\dfrac{1}{8}10-\dfrac{2}{10}\right)-\left(\dfrac{1}{8}4-\dfrac{2}{4}\right)\\
+      &=\dfrac{5}{4}-\dfrac{1}{5}-\dfrac{1}{2}+\dfrac{1}{2}\\
+      &=\dfrac{25}{20}-\dfrac{4}{20}=\dfrac{21}{20}\,\text{gm}
+      \end{aligned}
+      \]
+  	</p>
+  </div>
+</li>
+
+<!-- Center of Mass -->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="CMDiscrete.html">b. Center of Mass</a></h3>
+    <div class="pgs">
+      
+        <div><a href="CMDiscrete.html">1</a></div>
+      
+        <div><a href="CMBar.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        Find the total mass and the center of mass for four discrete masses
+        lying on the \(x\)-axis where the masses and positions indicated below
+        are in grams and centimeters.
+        \[\begin{aligned}
+        m_1&=7  &m_2&=5  &m_3&=2 &m_4&=6 \\
+        x_1&=-3 &x_2&=-2 &x_3&=4 &x_4&=7
+        \end{aligned}\]
+      </p>
+      <div class="center">
+        <img src="graphics/x_MassBeam1.jpg" alt="x_MassBeam1">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX6"></button>
+      <button class="toggle has-sol" data-toggle="SolX6"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX6">
+    <p>
+      \(M=20\) gm
+      <br>
+      \(\bar{x}=\dfrac{19}{20}\,\text{cm}=.95\,\text{cm}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX6">
+    <p>
+      The total mass is:
+      \[\begin{aligned}
+      M&=m_1+m_2+m_3+m_4 \\
+      &=7+5+2+6=20\,\text{gm}
+      \end{aligned}\]
+      The first moment is:
+      \[\begin{aligned}
+      M_1&=m_1x_1+m_2x_2+m_3x_3+m_4x_4 \\
+      &=7(-3)+5(-2)+2(4)+6(7)=19\,\text{gm-cm}
+      \end{aligned}\]
+    </p>
+    <div class="column">
+    	<p>
+        So the center of mass is at:
+        \[
+        \bar{x}=\dfrac{M_1}{M}=\dfrac{19}{20}\,\text{cm}
+        =.95\,\text{cm}
+        \]
+        The plot shows the location of the center of mass.
+      </p>
+      <div class="center">
+        <img src="graphics/x_MassBeam1_CM.jpg" alt="x_MassBeam1_CM">
+      </div>
+    </div>
+  </div>
+</li>
+
+<hr width="80%">
+
+<p>
+  In each problem, find the center of mass.
+</p>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A \(6\) cm rod has linear density
+        \(\delta(x)=(2x+1)\,\dfrac{\text{gm}}{\text{cm}}\) where \(x\)
+        is measured from one end. The mass was found in
+        <a href="#xlinearrod">previous exercise</a>.
+      </p>
+      <div class="center">
+        <img src="graphics/x_2x+1.jpg" alt="x_2x+1">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX7"></button>
+      <button class="toggle has-sol" data-toggle="SolX7"></button>
+      <button class="toggle has-check" data-toggle="Ck7"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX7">
+    <p>
+      \(\bar{x}=\dfrac{27}{7}\,\text{cm}\approx3.86\,\text{cm}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX7">
+    <p>
+      From a <a href="#xlinearrod">previous exercise</a> we know the mass is
+      \[
+      M=42
+      \]
+      The first moment is
+      \[\begin{aligned}
+      M_1&=\int_0^6 x\delta(x)\,dx=\int_0^6 x(2x+1)\,dx \\
+      &=\left[\dfrac{2x^3}{3}+\dfrac{x^2}{2}\right]_0^6
+      =144+18=162\,\text{gm-cm}
+      \end{aligned}\]
+    </p>
+    <div class="column">
+      <p>
+        So the center of mass is at:
+        \[
+        \bar{x}=\dfrac{M_1}{M}=\dfrac{162}{42}=\dfrac{27}{7}\,\text{cm}
+        \approx3.86\,\text{cm}
+        \]
+        The plot shows the location of the center of mass.
+      </p>
+      <div class="center">
+        <img src="graphics/x_2x+1_CM.jpg" alt="x_2x+1_CM">
+      </div>
+    </div>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="Ck7">
+    <p>
+      The density \(\delta(x)=(2x+1)\) is bigger on the right and
+      \(\bar{x}=\dfrac{27}{7}\,\text{cm}\approx3.86\,\text{cm}\)
+      is inside the bar but right of the middle.
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        Find the center of mass of a \(4\) cm rod has linear density
+        \(\delta(x)=(5x^3-3x+2)\,\dfrac{\text{gm}}{\text{cm}}\) where \(x\)
+        is measured from one end. The mass was found in
+        <a href="#xcubicrod">previous exercise</a>.
+      </p>
+      <div class="center">
+        <img src="graphics/x_5x_x^3-3x+2.jpg" alt="x_5x_x^3-3x+2">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX8"></button>
+      <button class="toggle has-sol" data-toggle="SolX8"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX8">
+    <p>
+      \(\bar{x}=\dfrac{61}{3}\approx 3.21\) gm
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX8">
+    <p>
+      From a <a href="#xcubicrod">previous exercise</a> we know the mass is
+      \[
+      M=304
+      \]
+      The first moment is
+      \[\begin{aligned}
+      M_1&=\int_0^4 x\delta(x)\,dx=\int_0^4 x(5x^3-3x+2)\,dx \\
+      &=\left[\dfrac{}{}x^5-x^3+x^2\right]_0^4 \\
+      &=1024-64+16=976\,\text{gm-cm}
+      \end{aligned}\]
+    </p>
+    <div class="column">
+      <p>
+      So the center of mass is at:
+      \[
+      \bar{x}=\dfrac{M_1}{M}=\dfrac{976}{304}=\dfrac{61}{19}\approx 3.21\,\text{cm}
+      \]
+      The plot shows the location of the center of mass.
+      </p>
+      <div class="center">
+        <img src="graphics/x_5x_x^3-3x+2_CM.jpg" alt="x_5x_x^3-3x+2_CM">
+      </div>
+    </div>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        Find the mass and the center of mass of a \(30\) cm rod that has linear
+        density \(\delta(x)=\dfrac{1}{2}x^2\) \(\dfrac{\text{gm}}{\text{cm}}\)
+        where \(x\) is measured from one end.
+      </p>
+      <div class="center">
+        <img src="graphics/x_x^2_2.jpg" alt="x_x^2_2">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX9"></button>
+      <button class="toggle has-sol" data-toggle="SolX9"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX9">
+    <p>
+      \(M=4500\) gm
+      <br/>
+      \(\bar{x}=\dfrac{45}{2}\,\text{cm}=22.5\,\text{cm}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX9">
+    <p>
+      The mass is:
+      \[\begin{aligned}
+      M&=\int_0^{30} \delta(x)\,dx=\int_0^{30} \dfrac{1}{2}x^2\,dx \\
+      &=\left[\dfrac{1}{6}x^3\right]_0^{30}
+      =\dfrac{30^3}{6}
+      =4500 \,\text{gm}
+      \end{aligned}\]
+      The first moment is:
+      \[\begin{aligned}
+      M_1&=\int_0^{30} x\delta(x)\,dx=\int_0^{30} x\dfrac{1}{2}x^2\,dx \\
+      &=\left[\dfrac{1}{8}x^4\right]_0^{30}
+      =\dfrac{30^4}{8}
+      = 101250\,\text{gm}
+      \end{aligned}\]
+    </p>
+      <div class="column">
+        <p>
+          So the center of mass is at:
+          \[\begin{aligned}
+          \bar{x}&=\dfrac{M_1}{M}=\dfrac{30^4}{8}\dfrac{6}{30^3} \\
+          &=\dfrac{45}{2}\,\text{cm}
+          =22.5\,\text{cm}
+          \end{aligned}\]
+          The plot shows the location of the center of mass.
+        </p>
+        <div class="center">
+          <img src="graphics/x_x^2_2_CM.jpg" alt="x_x^2_2_CM">
+        </div>
+      </div>
+    </div>
+</li>
+
+<!-- Moment of Inertia -->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="MomInertia.html">c. Moment of Inertia</a></h3>
+    <div class="pgs">
+      
+        <div><a href="MomInertia.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="dotfillex">
+    <div>
+      <div class="column">
+        <p>
+          Find the moment of inertia for four discrete masses lying on the
+          \(x\)-axis and rotating about \(x_0=0\), where the masses and positions
+          indicated below are in grams and centimeters.
+          \[\begin{aligned}
+          m_1&=7  &m_2&=5  &m_3&=2 &m_4&=6 \\
+          x_1&=-3 &x_2&=-2 &x_3&=4 &x_4&=7
+          \end{aligned}\]
+        </p>
+        <div class="center">
+          <img src="graphics/x_MassBeam2.jpg" alt="x_MassBeam2">
+        </div>
+
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX10"></button>
+      <button class="toggle has-sol" data-toggle="SolX10"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX10">
+    <p>
+      \(I=409\) gm-cm\(^2\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX10">
+    <p>
+      Since \(x_0=0\), the moment of intertia is just the second moment.
+      \[\begin{aligned}
+      I&=M_2=m_1x_1^2+m_2x_2^2+m_3x_3^2+m_4x_4^2 \\
+      &=7(-3)^2+5(-2)^2+2(4)^2+6(7)^2=409\,\text{gm-cm}^2
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <p>
+    Find the mass, center of mass and moment of inertia of a \(6\) m bar on
+    the \(x\)-axis between \(x=0\) and \(x=6\) rotating about \(x_0=4\),
+	</p>
+  <ol>
+    <li>
+      <div class="dotfillex">
+        <p>
+          with uniform density \(\delta=3\) \(\dfrac{\text{kg}}{\text{m}}\).
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX11a"></button>
+          <button class="toggle has-sol" data-toggle="SolX11a"></button>
+          <button class="toggle has-rem" data-toggle="Rem11a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX11a">
+        <p>
+        \(M=18\,\text{kg}\)
+        <br/>
+        \(\bar{x}=3\,\text{m}\)
+        <br/>
+        \(I=72\,\text{kg-m}^2\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX11a">
+        <p>
+          The mass is:
+          \[\begin{aligned}
+          M&=\int_0^6 \delta(x)\,dx=\int_0^6 3\,dx \\
+          &=\left[\dfrac{}{}3x\right]_0^6=18\,\text{kg}
+          \end{aligned}\]
+          The first moment is:
+          \[\begin{aligned}
+          M_1&=\int_0^6 x\delta(x)\,dx=\int_0^6 3x\,dx \\
+          &=\left[3\dfrac{x^2}{2}\right]_0^6=54\,\text{kg-m}
+          \end{aligned}\]
+          The second moment is:
+          \[\begin{aligned}
+          M_2&=\int_0^6 x^2\delta(x)\,dx=\int_0^6 3x^2\,dx \\
+          &=\left[\dfrac{}{}x^3\right]_0^6=216\,\text{kg-m}^2
+          \end{aligned}\]
+          So the center of mass is at:
+          \[
+          \bar{x}=\dfrac{M_1}{M}=\dfrac{54}{18}=3\,\text{m}
+          \]
+          Since \(x_0=4\), the moment of intertia is:
+          \[\begin{aligned}
+          I&=M_2-2x_0M_1+x_0^2M \\
+          &=216-8\cdot54+16\cdot18=72\,\text{kg-m}^2
+          \end{aligned}\]
+        </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="Rem11a">
+        <p>
+          Since the density is uniform, the mass, \(M=18\), is just
+          the length times the density.
+          <br/>
+          Since the density is uniform, the center of mass, \(\bar{x}=3\),
+          is at the geomertrical center of the bar which is also called the
+          centroid.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          with linear density \(\delta(x)=x\) \(\dfrac{\text{kg}}{\text{m}}\).
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX11b"></button>
+          <button class="toggle has-sol" data-toggle="SolX11b"></button>
+          <button class="toggle has-rem" data-toggle="Rem11b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX11b">
+        <p>
+        \(M=18\,\text{kg}\)
+        <br/>
+        \(\bar{x}=4\,\text{m}\)
+        <br/>
+        \(I=36\,\text{kg-m}^2\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX11b">
+        <p>
+          The mass is:
+          \[\begin{aligned}
+          M&=\int_0^6 \delta(x)\,dx=\int_0^6 x\,dx \\
+          &=\left[\dfrac{x^2}{2}\right]_0^6=18\,\text{kg}
+          \end{aligned}\]
+          The first moment is:
+          \[\begin{aligned}
+          M_1&=\int_0^6 x\delta(x)\,dx=\int_0^6 x^2\,dx \\
+          &=\left[\dfrac{x^3}{3}\right]_0^6=72\,\text{kg-m}
+          \end{aligned}\]
+          The second moment is:
+          \[\begin{aligned}
+          M_2&=\int_0^6 x^2\delta(x)\,dx=\int_0^6 x^3\,dx \\
+          &=\left[\dfrac{x^4}{4}\right]_0^6=324\,\text{kg-m}^2
+          \end{aligned}\]
+          So the center of mass is at:
+          \[
+          \bar{x}=\dfrac{M_1}{M}=\dfrac{72}{18}=4\,\text{m}
+          \]
+          Since \(x_0=4\), the moment of intertia is:
+          \[\begin{aligned}
+          I&=M_2-2x_0M_1+x_0^2M \\
+          &=324-8\cdot72+16\cdot18=36\,\text{kg-m}^2
+          \end{aligned}\]
+        </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="Rem11b">
+        <p>
+          Notice that the mass of both bars is \(M=18\). Since the lengths are
+          both \(L=6\), the average densities are the same:
+          \[
+          \delta_\text{ave}=\dfrac{M}{L}=\dfrac{18}{6}=3
+          \]
+          Since the non-uniform bar is heavier for \(x>3\), the center of mass,
+          \(\bar{x}=4\), is on that side.
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+<!-- Electric Charge -->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="Charge.html">d. Electric Charge</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Charge.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <p>
+    If we measure \(x\) from one end of the bar, find the net charge on a
+    \(6\) m bar whose linear charge density is:
+    <br/>
+    (In each case, explain why the answer is reasonable by explaining where
+    there is positive or negative charge.)
+  </p>
+  <ol>
+    <li>
+      <div class="dotfillex">
+        <div class="column">
+          <p>
+            \(\delta_e(x)=3-2x\) \(\dfrac{\text{coul}}{\text{m}}\)
+          </p>
+          <div class="center">
+            <img src="graphics/x_3-2x.jpg" alt="x_3-2x">
+          </div>
+        </div>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX12a"></button>
+          <button class="toggle has-sol" data-toggle="SolX12a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX12a">
+        <p>
+          \(Q=-18\) coul
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX12a">
+        <p>
+          The net charge is:
+          \[\begin{aligned}
+          Q&=\int_0^6 \delta_e(x)\,dx=\int_0^6 3-2x\,dx \\
+          &=\left[\dfrac{}{}3x-x^2\right]_0^6
+          =18-36=-18\,\text{coul}
+          \end{aligned}\]
+          There is the positive charge for \(0 \le x \lt \dfrac{3}{2}\) but
+          negative charge for \(\dfrac{3}{2} \lt x \le 6\). So there is more
+          negative charge.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <div class="column">
+          <p>
+            \(\delta_e(x)=x-3\) \(\dfrac{\text{coul}}{\text{m}}\)
+          </p>
+          <div class="center">
+            <img src="graphics/x_x-3.jpg" alt="x_x-3">
+          </div>
+        </div>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX12b"></button>
+          <button class="toggle has-sol" data-toggle="SolX12b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX12b">
+        <p>
+          \(Q=0\) coul
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX12b">
+        <p>
+          The net charge is:
+          \[\begin{aligned}
+          Q&=\int_0^6 \delta_e(x)\,dx=\int_0^6 x-3\,dx \\
+          &=\left[\dfrac{x^2}{2}-3x\right]_0^6
+          =18-18=0\,\text{coul}
+          \end{aligned}\]
+          There is the positive charge on half the bar and negative charge
+          on the other half.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <div class="column">
+          <p>
+      		  \(\delta_e(x)=x-2\) \(\dfrac{\text{coul}}{\text{m}}\)
+          </p>
+          <div class="center">
+            <img src="graphics/x_x-2.jpg" alt="x_x-2">
+          </div>
+        </div>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX12c"></button>
+          <button class="toggle has-sol" data-toggle="SolX12c"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX12c">
+        <p>
+          \(Q=6\) coul
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX12c">
+        <p>
+          The net charge is:
+          \[\begin{aligned}
+          Q&=\int_0^6 \delta_e(x)\,dx=\int_0^6 x-2\,dx \\
+          &=\left[\dfrac{x^2}{2}-2x\right]_0^6
+          =18-12=6\,\text{coul}
+          \end{aligned}\]
+          There is the negative charge for \(0 \le x \lt 2\) but positive
+          charge for \(2 \lt x \le 6\). So there is more positive charge.
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+        <div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the total weight of a \(12\) ft rod with linear density
+      \(\delta(x)=x\sqrt{x^2+1}\) \(\dfrac{\text{lb}}{\text{ft}}\)
+      if \(x\) is measured from one end.
+		</p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX13"></button>
+      <button class="toggle has-sol" data-toggle="SolX13"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX13">
+    <p>
+      \(M=\dfrac{1}{3}(145^{3/2}-1)\,\text{lb}
+      \approx581.7\,\text{lb}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX13">
+    <p>
+      The mass is
+      \[
+      M=\int_0^{12} \delta(x)\,dx=\int_0^{12} x\sqrt{x^2+1}\,dx
+      \]
+      We make the substitution \(u=x^2+1\) and \(du=2x\,dx\):
+      \[\begin{aligned}
+      M&=\dfrac{1}{2}\int_1^{145} \sqrt{u}\,du
+      =\dfrac{1}{2}\left[\dfrac{2u^{3/2}}{3}\right]_1^{145} \\
+      &=\dfrac{1}{3}(145^{3/2}-1)\,\text{lb}
+      \approx581.7\,\text{lb}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the total mass and the center of mass for a \(10\) m rod if the
+      linear density is \(\delta(x)=e^x\) \(\dfrac{\text{kg}}{\text{m}}\)
+      where \(x\) is measured from one end.
+		</p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX14"></button>
+      <button class="toggle has-sol" data-toggle="SolX14"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX14">
+    <p>
+      \(M=e^{10}-1\) kg
+      <br>
+      \(\bar{x}=\dfrac{9e^{10}+1}{e^{10}-1}\,\text{m}
+      \approx9\,\text{m}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX14">
+    <p>
+      The mass is:
+      \[
+      M=\int_0^{10} \delta(x)\,dx=\int_0^{10} e^x\,dx
+      =\left[\dfrac{}{}e^x\right]_0^{10}=e^{10}-1\,\text{kg}
+      \]
+      The first moment is:
+      \[
+      M_1=\int_0^{10} x\delta(x)\,dx=\int_0^{10} xe^x\,dx
+      \]
+      To compute this integral, we use the parts:
+      \[\begin{array}{ll}
+      u=x & dv=e^x\,dx \\
+      du=dx \quad & v=e^x
+      \end{array}\]
+      So:
+      \[\begin{aligned}
+      M_1&=xe^x-\int e^x\,dx  \\
+      &=\left[\dfrac{}{}xe^x-e^x\right]_0^{10}=9e^{10}+1\,\text{kg-m}
+      \end{aligned}\]
+      So the center of mass is:
+      \[
+      \bar{x}=\dfrac{M_1}{M}
+      =\dfrac{9e^{10}+1}{e^{10}-1}\,\text{m}
+      \approx9\,\text{m}
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the moment of inertia of a \(2\) in bar with linear density
+      \(\delta(x)=\sqrt{x^3+1}\) \(\dfrac{\text{oz}}{\text{in}}\)
+      if \(x\) is measured from one end and the rod rotates about that end.
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX15"></button>
+      <button class="toggle has-sol" data-toggle="SolX15"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX15">
+    <p>
+      \(I=\dfrac{52}{9}\,\text{oz-in}^2\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX15">
+    <p>
+      Since \(x_0=0\), the moment of intertia is just the second moment.
+      \[
+      I=M_2=\int_0^2 x^2\delta(x)\,dx=\int_0^2 x^2\sqrt{x^3+1}\,dx
+      \]
+      We make the substitution \(u=x^3+1\) and \(du=3x^2\,dx\):
+      \[\begin{aligned}
+      I&=\dfrac{1}{3}\int_1^9 \sqrt{u}\,du
+      =\dfrac{1}{3}\left[\dfrac{2u^{3/2}}{3}\right]_1^9 \\
+      &=\dfrac{2}{9}(9^{3/2}-1)
+      =\dfrac{52}{9}\,\text{oz-in}^2
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        Find the net charge on a rod with length \(3\pi\) cm and linear charge
+        density \(\delta_e=\sin x\) \(\dfrac{\text{coul}}{\text{cm}}\) if
+        \(x\) is measured from one end.
+      </p>
+      <div class="center">
+        <img src="graphics/x_sinx.jpg" alt="x_sinx">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX16"></button>
+      <button class="toggle has-sol" data-toggle="SolX16"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX16">
+    <p>
+      \(Q=2\) coul
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX16">
+    <p>
+      The net charge is
+      \[\begin{aligned}
+      Q&=\int_0^{3\pi} \delta_e(x)\,dx=\int_0^{3\pi} \sin x\,dx
+      =\left[\dfrac{}{}-\cos x\right]_0^{3\pi} \\
+      &=-\cos(3\pi)--\cos(0)=2\,\text{coul}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<big>PY: All Checked</big>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

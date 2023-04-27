@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Helix | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CurveExamples.html#CurveExamples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic8">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>8. Properties of Curves</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>h. Summary & Examples of Curve Computations</h2>
+
+<h2>2. Examples of Curve Computations</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="Circle.html">Circle</a></li> &emsp;
+    <li class="active"><a href="Helix.html">Helix</a></li> &emsp;
+    <li><a href="Cubic.html">Twisted Cubic</a></li>
+    <br>
+    <li><a href="CubicSpiralHelix.html">Cubic Spiral Helix</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>b. Helix</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Next we look at helical motion represented by the position vector
+  \(\vec{r}(\theta)=(a\cos\theta,a\sin\theta,b\theta)\) where
+  \(a\) and \(b\) are any constants. Helical motion is similar to circular
+  motion, but the curve rises as the angle increases. Here are all the
+  properties of this curve and the plot for the special case with \(a=4\),
+  \(b=3\):
+</p>
+
+<div class="column">
+  <p data-col-width="25%">Position Vector</p>
+  <p>\(\vec{r}(\theta)=\langle 4\cos\theta,4\sin\theta,3\theta\rangle\)</p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">
+    Plot
+    <br>
+    Rotate with your mouse.
+  </p>
+  <div data-col-width="75%">
+    <x3d width="250px" height="250px">
+      <scene>
+        <inline url="graphics/eg_helix_plot.x3d"> </inline>
+      </scene>
+    </x3d>
+  </div>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Velocity Vector</p>
+  <p>
+    \(\vec{v}(\theta)=\dfrac{d\vec{r}}{d\theta}
+    =\langle -4\sin\theta,4\cos\theta,3\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Acceleration Vector</p>
+  <p>
+    \(\vec{a}(\theta)=\dfrac{d\vec{v}}{d\theta}
+    =\langle -4\cos\theta,-4\sin\theta,0\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Jerk Vector</p>
+  <p>
+    \(\vec{j}(\theta)=\dfrac{d\vec{a}}{d\theta}
+    =\langle 4\sin\theta,-4\cos\theta,0\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Speed</p>
+  <p>
+    \(\dfrac{ds}{d\theta}=|\vec{v}|
+    =\sqrt{16\sin^2\theta+16\cos^2\theta+9}=5\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Arclength (from \(\theta=\alpha\) to \(\theta=\beta\))</p>
+  <p>
+    \(\displaystyle L=\int_{\alpha}^{\beta} |\vec{v}|\,d\theta
+    =\int_{\alpha}^{\beta} 5\,d\theta
+    =5(\beta-\alpha)\)
+  </p>
+</div>
+<p>
+  Notice that this is the hypotenuse of a right triangle whose
+  base is \(4(\beta-\alpha)\) and whose altitude is
+  \(3(\beta-\alpha)\), which has been rolled around a cylinder.
+</p>
+
+<div class="column">
+  <p data-col-width="25%">
+    Unit Tangent Vector
+  </p>
+  <p>
+    \(\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}
+    =\dfrac{1}{5}\langle -4\sin\theta,4\cos\theta,3\rangle
+    =\left\langle -\,\dfrac{4}{5}\sin\theta,\dfrac{4}{5}\cos\theta,
+    \dfrac{3}{5}\right\rangle\)
+  </p>
+</div>
+
+<p>
+  \(\begin{aligned}
+  \vec{v}\times\vec{a}
+  &=\begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  -4\sin\theta & 4\cos\theta & 3 \\
+  -4\cos\theta & -4\sin\theta & 0
+  \end{vmatrix}
+  =\hat{\imath}(12\sin\theta)-\hat{\jmath}(12\cos\theta)
+  +\hat{k}(16\sin^2\theta+16\cos^2\theta) \\
+  &=\langle 12\sin\theta,-12\cos\theta,16\rangle
+  \end{aligned}\)
+</p>
+
+<p>
+  \(|\vec{v}\times\vec{a}|
+  =\sqrt{(12\sin\theta)^2+(-12\cos\theta)^2+(16)^2}
+  =\sqrt{144+256}=\sqrt{400}=20\)
+</p>
+
+<div class="column">
+  <p data-col-width="25%">Unit Binormal Vector</p>
+  <p>
+    \(\hat{B}=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+    =\dfrac{\langle 12\sin\theta,-12\cos\theta,16\rangle}{20}
+    =\left\langle \dfrac{3}{5}\sin\theta,-\,\dfrac{3}{5}\cos\theta,
+    \dfrac{4}{5}\right\rangle\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Unit Normal Vector</p>
+  <p>
+    \(\begin{aligned}
+    \hat{N}&=\hat{B}\times\hat{T}
+    =\dfrac{1}{25}\begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    3\sin\theta & -3\cos\theta & 4 \\
+    -4\sin\theta & 4\cos\theta & 3
+    \end{vmatrix} \\
+    &=\hat{\imath}\left(-9\cos\theta-16\cos\theta\right)
+    -\hat{\jmath}\left(9\sin\theta+16\sin\theta\right)\\
+    &\quad+\hat{k}\left(12\sin\theta\cos\theta
+    -12\sin\theta\cos\theta\right) \\
+    &=\langle -\cos\theta,-\sin\theta,0\rangle
+    \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Alternatively</p>
+  <p>
+    \(\begin{aligned}
+    \hat{N}&=\dfrac{\hat T'(\theta)}{|\hat T'(\theta)|}
+    =\dfrac{\left\langle -\,\dfrac{4}{5}\cos\theta,-\,\dfrac{4}{5}\sin\theta,
+    0\right\rangle}
+    {\sqrt{\left(-\,\dfrac{4}{5}\cos\theta\right)^2
+    +\left(-\,\dfrac{4}{5}\sin\theta\right)^2}} \\
+    &=\dfrac{\left\langle -\,\dfrac{4}{5}\cos\theta,-\,\dfrac{4}{5}\sin\theta,0\right\rangle}
+    {\dfrac{4}{5}}
+    =\langle -\cos\theta,-\sin\theta,0\rangle
+    \end{aligned}\)
+  </p>
+</div>
+<p>
+  So the unit normal is horizontal and points radially inward,
+  directly toward the \(z\)-axis.
+</p>
+
+<div class="column">
+  <p data-col-width="25%">Curvature</p>
+  <p>
+    \(\kappa=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}=
+    \dfrac{20}{5^{3}}=\dfrac{4}{25}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Torsion</p>
+  <p>
+    \(\begin{aligned}
+    \tau&=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+    =\dfrac{\langle 12\sin\theta,-12\cos\theta,16\rangle
+    \cdot\langle 4\sin\theta,-4\cos\theta,0\rangle}{16^2} \\
+    &=\dfrac{48}{256}=\dfrac{3}{16}
+    \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Tangential Acceleration</p>
+  <p>
+    \(\begin{aligned}
+    a_{T}&=\vec{a}\cdot\hat{T}
+    =\langle -4\cos\theta,-4\sin\theta,0\rangle
+    \cdot\left\langle -\,\dfrac{4}{5}\sin\theta,\dfrac{4}{5}\cos\theta,
+    \dfrac{3}{5}\right\rangle \\
+    &=\dfrac{16}{5}\sin\theta\cos\theta-\,\dfrac{16}{5}\sin\theta\cos\theta=0 \\
+    a_{T}&=\dfrac{d}{d\theta}|\vec{v}|=\dfrac{d}{d\theta}5=0
+    \end{aligned}\)
+  </p>
+</div>
+
+<div class="column">
+  <p data-col-width="25%">Normal Acceleration</p>
+  <p>
+    \(\begin{aligned}
+    a_{N}&=\vec{a}\cdot\hat{N}
+    =\langle -4\cos\theta,-4\sin\theta,0\rangle
+    \cdot \langle -\cos\theta,-\sin\theta,0\rangle \\
+    &=4\cos^2\theta+4\sin^2\theta+0=4 \\
+    a_{N}&=\kappa|\vec{v}|^2=\dfrac{|\vec{v}|^2}{R}=\dfrac{4}{25}(25)=4
+    \end{aligned}\)
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

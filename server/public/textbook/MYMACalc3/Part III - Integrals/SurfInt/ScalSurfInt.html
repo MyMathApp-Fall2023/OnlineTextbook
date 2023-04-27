@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Formulas | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ScalSurfDiff.html" title="Previous">&lArr;</a></li>
+      <li><a href="SurfArea.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Scalar Surface Integrals</h2>
+
+
+      
+      <h2>2. Formulas</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the <a href="ScalSurfDiff.html#scaldiffsurfarea">previous page</a>, we
+  defined the <span class="hl">scalar differential of surface area</span> to be
+  \[
+  dS=|\vec{N}|\,du\,dv
+  \]
+  which gives the area of an infinitesimal coordinate grid rectangle.
+  Now that we know \(dS\), integrating a scalar on a parametric surface is
+  straightforward. The most difficult part is finding the limits on the integral.
+</p>
+<p class="def">
+  The integral of a scalar \(f(x,y,z)\) over a surface, \(S\), parametrized as
+  \(\vec R(u,v)\) is
+  \[
+  \iint_S f\,dS
+  =\iint_{\vec R} f(\vec R(u,v))|\vec{N}|\,du\,dv
+  \]
+  Note that the function must be evaluated on the surface and the \(u\) and
+  \(v\) limits must be put on the integrals.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The simplest example is the area of a surface, \(S\), which is
+  \[
+  A=\iint_S 1\,dS
+  =\iint_S |\vec{N}|\,du\,dv
+  \]
+  This and other applications (average value, mass, center of mass and centroid)
+  appear on subsequent pages.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the area of the piece of the cylinder \(x^2+z^2=4\) between \(y=0\) and
+  \(y=6+2x+3z\) parametrized by
+  \(\vec R(\theta,y)=\left\langle 2\cos\theta,y,2\sin\theta\right\rangle\).
+  The <a href="PosPlots.html#cylinder" title="Return using the Back button.">
+  ranges</a> and
+  <a href="NormalVec.html#cylinder" title="Return using the Back button.">
+  normal</a> were found in previous exercises.
+</p>
+<p class="sol">
+  We previously found the length of the normal is \(|\vec{N}|=2\) and the ranges
+  are \(0 \le \theta \le 2\pi\) and \(0 \le y \le 6+4\cos\theta+6\sin\theta\).
+  We need to put the \(y\) integral inside of the \(\theta\) integral because the
+  \(y\) range is a function of \(\theta\). So the area is
+  \[\begin{aligned}
+  A&=\iint_S 1\,dS
+  =\iint_S |\vec{N}|\,dy\,d\theta
+  =\int_0^{2\pi}\int_0^{6+4\cos\theta+6\sin\theta} 2\,dy\,d\theta \\
+  &=\int_0^{2\pi} \left[2y\dfrac{}{}\right]_{y=0}^{6+4\cos\theta+6\sin\theta}\,d\theta
+  =\int_0^{2\pi} 2(6+4\cos\theta+6\sin\theta)\,d\theta \\
+  &=2\left[6\theta+4\sin\theta-6\cos\theta\dfrac{}{}\right]_0^{2\pi}
+  =2(6\cdot2\pi)=24\pi
+  \end{aligned}\]
+</p>
+
+        <div class="rule" id="ellipparab"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\displaystyle \iint_S \dfrac{1}{\sqrt{4x^2+4y^2+1}}\,dS\)
+    over the piece of the elliptic paraboloid \(z=x^2+y^2\) below \(z=4\).
+    The tangent vectors were found in a
+    <a href="TanVecs.html#ellipparab" title="Return using the Back button.">
+    previous exercise</a>.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The normal is the cross product of the tangent vectors. Further,
+    \(dS=|\vec N|\,dr\,d\theta\). There is no extra \(r\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle
+  \iint_S \dfrac{1}{\sqrt{4x^2+4y^2+1}}\,dS=4\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    From the
+    <a href="TanVecs.html#ellipparab" title="Return using the Back button.">
+    previous exercise</a>, the parametrization and tangent vectors are:
+    \[\begin{aligned}
+    \vec R(r,\theta)&=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle \\
+    \vec e_r&=\left\langle \ \cos\theta,\quad\sin\theta,\;2r\right\rangle \\
+    \vec e_\theta&=\left\langle -r\sin\theta,r\cos\theta,\;0\right\rangle
+    \end{aligned}\]
+    Then the normal vector and its length are:
+    \[\begin{aligned}
+    \vec N&=\left\langle -2r^2\cos\theta,-2r^2\sin\theta,r\right\rangle \\
+    |\vec N|&=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2}=r\sqrt{4r^2+1}
+    \end{aligned}\]
+    The integrand is:
+    \[
+    \dfrac{1}{\sqrt{4x^2+4y^2+1}}=\dfrac{1}{\sqrt{4r^2+1}}
+    \]
+    So the integral is:
+    \[
+    \iint_S \dfrac{1}{\sqrt{4x^2+4y^2+1}}\,dS
+    =\int_0^{2\pi}\int_0^2 \dfrac{1}{\sqrt{4r^2+1}}|\vec N|\,dr\,d\theta
+    \]
+  </p>
+  <p class="remark">
+    Notice that there is NO extra \(r\) in the integrand before the
+    \(dr\,d\theta\)! This is because \(r\) and \(\theta\) are not actually
+    polar or cylindrical coordinates. They are the parameters for a surface
+    which just happen to have the same names. The \(|\vec N|\) plays the roll
+    of the Jacobian.
+  </p>
+  <p>
+    We continue the computation of the integral:
+    \[\begin{aligned}
+    \iint_S \dfrac{1}{\sqrt{4x^2+4y^2+1}}\,dS
+    &=\int_0^{2\pi}\int_0^2 \dfrac{1}{\sqrt{4r^2+1}} r\sqrt{4r^2+1}\,dr\,d\theta \\
+    &=2\pi\int_0^2 r\,dr
+    =2\pi\left[\dfrac{r^2}{2}\right]_0^2=4\pi \\
+    \end{aligned}\]
+  </p>
+</div>
+<p class="remark">
+  We <em>emphasize</em>, if you are dealing with a parametric surface where
+  the parameters are \(r\) and \(\theta\), <em>there is NO extra \(r\) in the
+  integrand before the \(dr\,d\theta\)!</em> This is because \(r\) and \(\theta\)
+  are not actually polar or cylindrical coordinates. They are the parameters
+  for a surface which just happen to have the same names. The \(|\vec N|\)
+  plays the roll of the Jacobian.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

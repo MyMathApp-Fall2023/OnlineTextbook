@@ -1,0 +1,5988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Integration by Parts</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Reduce.html" title="Previous">&lArr;</a></li>
+      <li><a href="../NumInt/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Integration by Parts</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall: &emsp; &emsp; &emsp;
+  \(\displaystyle \int u\,dv=u\,v-\int v\,du\) &emsp; where &emsp;
+  \(du=\dfrac{du}{dx}\,dx\) &emsp; and &emsp; \(dv=\dfrac{dv}{dx}\,dx\)
+</p>
+
+
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Indefinite Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Indef.html">a. Indefinite Integrals</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Indef.html">1</a></div>
+      
+        <div><a href="Multi.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Use integration by parts to compute the following integrals:
+</p>
+
+<!-- Problem 1 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int xe^{2x}\,dx\)
+		</p>
+		<p>
+  	  <button class="toggle has-ans" data-toggle="AnsX1"></button>
+			<button class="toggle has-sol" data-toggle="SolX1"></button>
+			<button class="toggle has-check" data-toggle="CkX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+    <p>
+			\(\displaystyle \int xe^{2x}\,dx
+      =\dfrac{1}{2}xe^{2x}-\dfrac{1}{4}e^{2x}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX1">
+    <p>
+			For the parts take
+			\[\begin{array}{ll}
+			u=x & dv=e^{2x}\,dx \\
+			du=dx \quad & v=\dfrac{1}{2}e^{2x}
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int xe^{2x}\,dx &=\dfrac{1}{2}xe^{2x}-\dfrac{1}{2}\int e^{2x}\,dx \\
+			&=\dfrac{1}{2}xe^{2x}-\dfrac{1}{4}e^{2x}+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX1">
+    <p>
+      Check by differentiating.
+      If \(f(x)=\dfrac{1}{2}xe^{2x}-\dfrac{1}{4}e^{2x}\), then
+      \[
+      f'(x)=\dfrac{1}{2}e^{2x}+xe^{2x}-\dfrac{1}{2}e^{2x}=xe^{2x}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 2 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int xe^{-3x}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX2"></button>
+			<button class="toggle has-sol" data-toggle="SolX2"></button>
+			<button class="toggle has-check" data-toggle="CkX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+    <p>
+			\(\displaystyle \int xe^{-3x}\,dx=-\,\dfrac{1}{3}xe^{-3x}-\dfrac{1}{9}e^{-3x}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX2">
+    <p>
+			For the parts take
+			\[\begin{array}{ll}
+			u=x & dv=e^{-3x}\,dx \\
+			du=dx \quad & v=-\,\dfrac{1}{3}e^{-3x}
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int xe^{-3x}\,dx
+      &=-\,\dfrac{1}{3}xe^{-3x}+\dfrac{1}{3}\int e^{-3x}\,dx \\
+			&=-\,\dfrac{1}{3}xe^{-3x}-\dfrac{1}{9}e^{-3x}+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX2">
+    <p>
+      Check by differentiating.
+      If &ensp; \(f(x)=-\,\dfrac{1}{3}xe^{-3x}-\dfrac{1}{9}e^{-3x}\), &ensp; then
+      \[
+      f'(x)=-\,\dfrac{1}{3}e^{-3x}+xe^{-3x}+\dfrac{1}{3}e^{-3x}=xe^{-3x}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 3 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int xe^{-x}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX3"></button>
+			<button class="toggle has-sol" data-toggle="SolX3"></button>
+			<button class="toggle has-check" data-toggle="CkX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+    <p>
+			\(\displaystyle \int xe^{-x}\,dx=-xe^{-x}-e^{-x}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX3">
+    <p>
+			For the parts take
+			\[\begin{array}{ll}
+			u=x & dv=e^{-x}\,dx \\
+			du=dx \quad & v=-e^{-x}
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int xe^{-x}\,dx
+      &=-xe^{-x}+\int e^{-x}\,dx \\
+			&=-xe^{-x}-e^{-x}+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX3">
+    <p>
+      Check by differentiating.
+      If \(f(x)=-xe^{-x}-e^{-x}\), then
+      \[
+      f'(x)=-e^{-x}+xe^{-x}+e^{-x}=xe^{-x}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 4 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int (x-2)e^{x+1}\,dx\;\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX4"></button>
+      <button class="toggle has-sol" data-toggle="SolX4"></button>
+			<button class="toggle has-check" data-toggle="CkX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+    <p>
+			\(\displaystyle \int (x-2)e^{x+1}\,dx=(x-3)e^{x+1}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX4">
+    <p>
+			For the parts take
+			\[\begin{array}{ll}
+			u=x-2 & dv=e^{x+1}\,dx \\
+			du=dx \quad & v=e^{x+1}
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int (x-2)e^{x+1}\,dx
+      &=(x-2)e^{x+1}-\int e^{x+1}\,dx \\
+			&=(x-2)e^{x+1}-e^{x+1}+C\\
+      &=xe^{x+1}-2e^{x+1}-e^{x+1}+C\\
+      &=xe^{x+1}-3e^{x+1}+C\\
+      &=(x-3)e^{x+1}+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX4">
+    <p>
+      Check by differentiating.
+      If \(f(x)=(x-3)e^{x+1}\), then
+      \[\begin{aligned}
+      f'(x)
+      &=e^{x+1}+(x-3)e^{x+1} \\
+      &=e^{x+1}+xe^{x+1}-3e^{x+1} \\
+      &=xe^{x+1}-2e^{x+1} \\
+      &=(x-2)e^{x+1}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 5 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int \dfrac{2x}{e^x}\,dx\;\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX5"></button>
+	    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+			<button class="toggle has-sol" data-toggle="SolX5"></button>
+			<button class="toggle has-check" data-toggle="CkX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX5">
+    <p>
+			\(\displaystyle \dfrac{1}{e^x}=e^{-x}\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+    <p>
+			\(\displaystyle \int \dfrac{2x}{e^x}\,dx=\dfrac{-2x-2}{e^x}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX5">
+    <p>
+			Take the parts
+			\[\begin{array}{ll}
+			u=2x & dv=\dfrac{1}{e^x}\,dx=e^{-x}\,dx \\
+			du=2\,dx \quad & v=-e^{-x}
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int \dfrac{2x}{e^x}\,dx
+      &=-2xe^{-x}+2\int e^{-x}\,dx \\
+			&=-2xe^{-x}-2e^{-x}+C \\
+			&=\dfrac{-2x-2}{e^x}+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX5">
+    <p>
+      Check by differentiating.
+      If \(f(x)=\dfrac{-2x-2}{e^x}=-2xe^{-x}-2e^{-x}\), then
+      \[
+      f'(x)=-2e^{-x}+2xe^{-x}+2e^{-x}=\dfrac{2x}{e^x}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 6 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int (1+x)e^{-3x}\,dx\;\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX6"></button>
+	    <button class="toggle has-ans" data-toggle="AnsX6"></button>
+			<button class="toggle has-sol" data-toggle="SolX6"></button>
+			<button class="toggle has-check" data-toggle="CkX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+			Use the parts \(u=x+1\) and \(dv=e^{-3x}\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+    <p>
+			\(\displaystyle \int (1+x)e^{-3x}\,dx
+      =-\,\dfrac{4}{9}e^{-3x}-\dfrac{1}{3}xe^{-3x}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX6">
+    <p>
+			Take the parts
+			\[\begin{array}{ll}
+			u=1+x & dv=e^{-3x}\,dx \\
+			du=dx \quad & v=\dfrac{-1}{3}e^{-3x}
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int (1+x)e^{-3x}\,dx
+      &=-\,\dfrac{1}{3}\left(1+x\right)e^{-3x}+\dfrac{1}{3}\int e^{-3x}\,dx \\
+			&=-\,\dfrac{1}{3}e^{-3x}-\dfrac{1}{3}xe^{-3x}-\dfrac{1}{9}e^{-3x}+C \\
+			&=-\,\dfrac{4}{9}e^{-3x}-\dfrac{1}{3}xe^{-3x}+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX6">
+    <p>
+      Check by differentiating.
+      If \(f(x)=-\,\dfrac{4}{9}e^{-3x}-\dfrac{1}{3}xe^{-3x}\), then
+      \[
+      f'(x)=\dfrac{4}{3}e^{-3x}-\dfrac{1}{3}e^{-3x}+xe^{-3x}=e^{-3x}+xe^{-3x}=(1+x)e^{-3x}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 7 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int (x^2+1)\sin 2x\,dx\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX7"></button>
+	    <button class="toggle has-ans" data-toggle="AnsX7"></button>
+			<button class="toggle has-sol" data-toggle="SolX7"></button>
+			<button class="toggle has-check" data-toggle="CkX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+			Use the parts \(u=x^2+1\) and \(dv=\sin 2x\,dx\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+    <p>
+			\(\displaystyle\begin{aligned}
+      \int &(x^2+1)\sin 2x\,dx \\
+			&=-\,\dfrac{1}{2}x^2\cos 2x+\dfrac{1}{2}x\sin 2x-\dfrac{1}{4}\cos 2x+C
+      \end{aligned}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX7">
+    <p>
+			We take the parts
+			\[\begin{array}{ll}
+			u=x^2+1 & dv=\sin 2x\,dx \\
+			du=2x\,dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int (x^2+1)\sin 2x\,dx
+      &=-\,\dfrac{1}{2}(x^2+1)\cos 2x+\int x\cos 2x\,dx \\
+      \end{aligned}\]
+			We do another integration by parts using
+      \[\begin{array}{ll}
+      u=x & dv=\cos 2x\,dx \\
+      du=\,dx \quad & v=\dfrac{1}{2}\sin 2x
+      \end{array}\]
+			Thus
+			\[\begin{aligned}
+			\int (x^2+1)&\sin 2x\,dx \\
+      &=-\,\dfrac{1}{2}(x^2+1)\cos 2x+\left(\dfrac{1}{2}x\sin 2x-\dfrac{1}{2}\int \sin 2x\,dx\right) \\
+      &=-\,\dfrac{1}{2}x^{2}\cos 2x-\dfrac{1}{2}\cos 2x+\dfrac{1}{2}x\sin 2x+\dfrac{1}{4}\cos 2x+C \\
+      &=-\,\dfrac{1}{2}x^{2}\cos 2x+\dfrac{1}{2}x\sin 2x-\dfrac{1}{4}\cos 2x+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX7">
+    <p>
+      Check by differentiating.
+      If \(f(x)=-\,\dfrac{1}{2}x^2\cos 2x+\dfrac{1}{2}x\sin 2x-\dfrac{1}{4}\cos 2x\), then
+      \[\begin{aligned}
+      f'(x)
+      &=-x\cos 2x+x^{2}\sin 2x+\dfrac{1}{2}\sin 2x+x\cos 2x+\dfrac{1}{2}\sin 2x \\
+      &=x^{2}\sin 2x+\sin 2x \\
+      &=(x^2+1)\sin 2x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 8 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int (x^2-4)\cos 3x\,dx\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX8"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX8"></button>
+			<button class="toggle has-sol" data-toggle="SolX8"></button>
+			<button class="toggle has-check" data-toggle="CkX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+			Use the parts \(u=x^2-4\) and \(dv=\cos 3x\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+    <p>
+			\(\displaystyle\begin{aligned}
+			\int &(x^2-4)\cos 3x\,dx \\
+      &=\dfrac{1}{3}x^2\sin 3x+\dfrac{2}{9}x\cos 3x-\dfrac{38}{27}\sin3x+C
+      \end{aligned}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX8">
+    <p>
+			We take the parts:
+			\[\begin{array}{ll}
+			u=x^2-4 & dv=\cos 3x\,dx \\
+			du=2x\,dx \quad & v=\dfrac{1}{3}\sin 3x
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int (x^2-4)\cos 3x\,dx
+      &=\dfrac{1}{3}(x^2-4)\sin 3x-\dfrac{2}{3}\int x\sin 3x\,dx \\
+      \end{aligned}\]
+			We do another integration by parts using:
+      \[\begin{array}{ll}
+      u=x & dv=\sin 3x\,dx \\
+      du=dx \quad & v=-\,\dfrac{1}{3}\cos 3x
+      \end{array}\]
+			Thus
+			\[\begin{aligned}
+			\int (x^2-4)&\cos 3x\,dx \\
+      &=\dfrac{1}{3}(x^2-4)\sin 3x-\dfrac{2}{3}\left(-\,\dfrac{1}{3}x\cos 3x+\dfrac{1}{3}\int \cos 3x\,dx\right) \\
+      &=\dfrac{1}{3}x^{2}\sin 3x-\dfrac{4}{3}\sin 3x+\dfrac{2}{9}x\cos 3x-\dfrac{2}{27}\sin 3x+C \\
+      &=\dfrac{1}{3}x^{2}\sin 3x+\dfrac{2}{9}x\cos 3x-\dfrac{38}{27}\sin 3x+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX8">
+    <p>
+      Check by differentiating.
+      If \(f(x)=\dfrac{1}{3}x^2\sin 3x+\dfrac{2}{9}x\cos 3x-\dfrac{38}{27}\sin 3x\), then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{2}{3}x\sin 3x+x^{2}\cos 3x+\dfrac{2}{9}\cos 3x-\dfrac{2}{3}x\sin 3x-\dfrac{38}{9}\cos 3x \\
+      &=x^{2}\cos 3x-4\cos 3x \\
+      &=(x^2-4)\cos 3x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 9 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int x(x^3+1)\,dx\;\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX9"></button>
+	    <button class="toggle has-ans" data-toggle="AnsX9"></button>
+	    <button class="toggle has-sol" data-toggle="SolX9"></button>
+			<button class="toggle has-check" data-toggle="CkX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX9">
+    <p>
+			Use the parts \(u=x\) and \(dv=(x^3+1)\,dx\).
+			<br>
+			Or find a simpler method.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+    <p>
+			\(\displaystyle
+      \int x(x^3+1)\,dx=\dfrac{1}{5}x^{5}+\dfrac{1}{2}x^2+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+    <p>
+			This problem can be solved using the parts \(u=x\) and \(dv=(x^3+1)\,dx\).
+			However, it is easier to just expand the polynomial and integrate it:
+			<br>
+			\[\begin{aligned}
+			\int x(x^3+1)\,dx
+      &=\int (x^4+x)\,dx \\
+			&=\dfrac{1}{5}x^{5}+\dfrac{1}{2}x^2+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX9">
+    <p>
+      Check by differentiating.
+      If \(f(x)=\dfrac{1}{5}x^{5}+\dfrac{1}{2}x^{2}\), then
+      \[
+      f'(x)=x^{4}+x=x(x^3+1)
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 10 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int x\sqrt{x-1}\,dx\) &ensp; Compute once by parts
+      and once by substitution.
+		</p>
+		<p>
+	    <button class="toggle has-ans" data-toggle="AnsX10"></button>
+			<button class="toggle has-sol" data-toggle="SolX10a"></button>
+			<button class="toggle has-sol" data-toggle="SolX10b"></button>
+			<button class="toggle has-check" data-toggle="CkX10"></button>
+			<button class="toggle has-rem" data-toggle="RemX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+    <p>
+      Here are three equivalent answers:
+      <br>
+      \(\begin{aligned}
+      \int x\sqrt{x-1}\,dx
+      &=\dfrac{2}{3}x(x-1)^{3/2}-\dfrac{4}{15}(x-1)^{5/2}+C \\
+      &=\dfrac{2}{5}(x-1)^{5/2}+\dfrac{2}{3}(x-1)^{3/2}+C \\
+      &=\left(\dfrac{2}{5}x+\dfrac{4}{15}\right)(x-1)^{3/2}+C
+      \end{aligned}\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10a">
+    <p class="meth" data-title="By Parts">
+      This integral can be computed using Integration by Parts with the parts:
+      \[\begin{array}{ll}
+      u=x & dv=\sqrt{x-1}\,dx \\
+      du=dx \quad & v=\dfrac{2}{3}(x-1)^{3/2}
+      \end{array}\]
+      Then,
+      \[\begin{aligned}
+      \int x\sqrt{x-1}\,dx
+      &=x\left(\dfrac{2}{3}(x-1)^{3/2}\right)
+      -\int \dfrac{2}{3}(x-1)^{3/2}\,dx \\
+      &=\dfrac{2}{3}x(x-1)^{3/2}-\dfrac{2}{3}\left(\dfrac{2}{5}(x-1)^{5/2}\right)+C \\
+      &=\dfrac{2}{3}x(x-1)^{3/2}-\dfrac{4}{15}(x-1)^{5/2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10b">
+    <p class="meth" data-title="By Substitution">
+      Although we solved this example using integration by parts, it is more
+      efficient to solve it by using the method of substitution. We take
+      \(u=x-1\). Then \(du=dx\) and \(x=u+1\). So:
+      \[\begin{aligned}
+      \int x\sqrt{x-1}\,dx
+      &=\int (u+1)\sqrt{u}\,du
+      =\int \left(u^{3/2}+u^{1/2}\right)\,du \\
+      &=\dfrac{2}{5}u^{5/2}+\dfrac{2}{3}u^{3/2}+C \\
+      &=\dfrac{2}{5}(x-1)^{5/2}+\dfrac{2}{3}(x-1)^{3/2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX10">
+    <p data-title="Using Parts Solution">
+      We check by differentiating (using the Product and Power Rules).
+      \[\begin{aligned}
+      \dfrac{d}{dx}&\left(\dfrac{2}{3}x(x-1)^{3/2}-\dfrac{4}{15}(x-1)^{5/2}\right) \\
+      &=\dfrac{2}{3}(x-1)^{3/2}+x(x-1)^{1/2}-\dfrac{4}{15}\dfrac{5}{2}(x-1)^{3/2} \\
+      &=x\sqrt{x-1}
+      \end{aligned}\]
+    </p>
+    <p data-title="Using Substitution Solution">
+      We check by differentiating (using the Power Rule).
+      \[\begin{aligned}
+      \dfrac{d}{dx}&\left(\dfrac{2}{5}(x-1)^{5/2}+\dfrac{2}{3}(x-1)^{3/2}\right) \\
+      &=(x-1)^{3/2}+(x-1)^{1/2} \\
+      &=((x-1)+1)\sqrt{x-1} \\
+      &=x\sqrt{x-1}
+      \end{aligned}\]
+      </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX10">
+    <p>
+      Which of the two ways to compute this integral is better? The
+      substitution is quicker but both are OK.
+    </p>
+    <p data-title="Why are the Answers Different? They're not!">
+      <br>
+      The first answer simplifies to
+      \[\begin{aligned}
+      \dfrac{2}{3}x(x-1)^{3/2}-\dfrac{4}{15}(x-1)^{5/2}
+      &=\left[\dfrac{2}{3}x-\dfrac{4}{15}(x-1)\right](x-1)^{3/2} \\
+      &=\left(\dfrac{2}{5}x+\dfrac{4}{15}\right)(x-1)^{3/2}
+      \end{aligned}\]
+      The second answer simplifies to
+      \[\begin{aligned}
+      \dfrac{2}{5}(x-1)^{5/2}+\dfrac{2}{3}(x-1)^{3/2}
+      &=\left[\dfrac{2}{5}(x-1)+\dfrac{2}{3}\right](x-1)^{3/2} \\
+      &=\left(\dfrac{2}{5}x+\dfrac{4}{15}\right)(x-1)^{3/2}
+      \end{aligned}\]
+      They're equal!
+    </p>
+  </div>
+</li>
+
+<!-- Problem 11 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int x\csc^2 2x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX11"></button>
+			<button class="toggle has-sol" data-toggle="SolX11"></button>
+			<button class="toggle has-check" data-toggle="CkX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+    <p>
+			\(\displaystyle \int x\csc^2 2x\,dx
+      =-\,\dfrac{1}{2}x\cot 2x+\dfrac{1}{4}\ln|\sin 2x|+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+	  <p>
+			We use the parts
+			\[\begin{array}{ll}
+			u=x & dv=\csc^2 2x \\
+			du=dx \quad & v=-\,\dfrac{1}{2}\cot 2x
+			\end{array}\]
+			This gives
+			\[\begin{aligned}
+			\int x\csc^2 2x\,dx
+      &=-\,\dfrac{1}{2}x\cot 2x+\dfrac{1}{2}\int \cot 2x\,dx \\
+			&=-\,\dfrac{1}{2}x\cot 2x+\dfrac{1}{2}\int \dfrac{\cos 2x}{\sin 2x}\,dx
+			\end{aligned}\]
+			We now use the substitution \(u=\sin 2x\), with \(du=2\cos 2x\,dx\), to get
+			\[\begin{aligned}
+			\int x\csc^2 2x\,dx
+      &=-\,\dfrac{1}{2}x\cot 2x+\dfrac{1}{4}\int \dfrac{1}{u}\,du \\
+			&=-\,\dfrac{1}{2}x\cot 2x+\dfrac{1}{4}\ln|u|+C \\
+			&=-\,\dfrac{1}{2}x\cot 2x+\dfrac{1}{4}\ln|\sin 2x|+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX11">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=-\,\dfrac{1}{2}x\cot 2x+\dfrac{1}{4}\ln|\sin 2x|\), &ensp; then
+      \[
+      f'(x)=-\,\dfrac{1}{2}\cot 2x+x\csc^2 2x+\dfrac{1}{2}\dfrac{\cos 2x}{\sin 2x}
+      =x\csc^2 2x
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 12 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int (x+1)\sin(x+1)\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has-sol" data-toggle="SolX12"></button>
+			<button class="toggle has-check" data-toggle="CkX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+    <p>
+			\(\displaystyle \int (x+1)\sin(x+1)\,dx
+      =-(x+1)\cos(x+1)+\sin(x+1)+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+    <p>
+			Don't expand the function in the problem for example by writing
+      \(\sin(x+1)=\sin x\cos 1+\cos x\sin 1\).
+      This unnecessarily complicates the solution.
+      <br>
+      We use the parts:
+			\[\begin{array}{ll}
+			u=x+1 & dv=\sin(x+1)\,dx \\
+			du=dx \quad & v=-\cos(x+1)
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int (x+1)\sin(x+1)\,dx
+      &=-(x+1)\cos(x+1)+\int \cos(x+1)\,dx \\
+			&=-(x+1)\cos(x+1)+\sin(x+1)+C
+			\end{aligned}\]
+			<span class="greenbig">Alternatively</span>, first make the substitution
+      \(\theta=x+1\).
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX12">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=-(x+1)\cos(x+1)+\sin(x+1)\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-\cos(x+1)+(x+1)\sin(x+1)+\cos(x+1) \\
+      &=(x+1)\sin(x+1)
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 13 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int (x+2)\cos(x+1)\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has-sol" data-toggle="SolX13"></button>
+			<button class="toggle has-check" data-toggle="CkX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+    <p>
+			\(\displaystyle \int (x+2)\cos(x+1)\,dx=(x+2)\sin(x+1)+\cos(x+1)+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+    <p>
+      We use the parts:
+			\[\begin{array}{ll}
+			u=x+2 & dv=\cos(x+1)\,dx \\
+			du=dx \quad & v=\sin(x+1)
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int (x+2)\cos(x+1)\,dx
+      &=(x+2)\sin(x+1)-\int \sin(x+1)\,dx \\
+			&=(x+2)\sin(x+1)+\cos(x+1)+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX13">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=(x+2)\sin(x+1)+\cos(x+1)\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\sin(x+1)+(x+2)\cos(x+1)-\sin(x+1) \\
+      &=(x+1)\cos(x+1)
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 14 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int x(e^x+2)(e^x-2)\,dx\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX14"></button>
+			<button class="toggle has-ans" data-toggle="AnsX14"></button>
+			<button class="toggle has-sol" data-toggle="SolX14"></button>
+			<button class="toggle has-check" data-toggle="CkX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX14">
+    <p>
+			First multiply out the integrand and split the integral in two:
+			\[\begin{aligned}
+			\int x(e^x+2)(e^x-2)\,dx
+      &=\int x(e^{2x}-4)\,dx \\
+			&=\int xe^{2x}\,dx-4\int x\,dx
+			\end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+    <p>
+			\(\displaystyle \int x(e^x+2)(e^x-2)\,dx
+      =\dfrac{1}{2}xe^{2x}-\dfrac{1}{4}e^{2x}-2x^2+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+    <p>
+			We first multiply out the integrand and split the integral in two:
+			\[\begin{aligned}
+			\int x(e^x+2)(e^x-2)\,dx
+      &=\int x(e^{2x}-4)\,dx \\
+			&=\int xe^{2x}\,dx-4\int x\,dx
+			\end{aligned}\]
+			For the first integral we use the parts:
+			\[\begin{array}{ll}
+			u=x & dv=e^{2x}\,dx \\
+			du=dx \quad & v=\dfrac{1}{2}e^{2x}
+			\end{array}\]
+			Then
+			\[\begin{aligned}
+			\int x(e^x+2)(e^x-2)\,dx
+      &=\dfrac{1}{2}xe^{2x}-\dfrac{1}{2}\int e^{2x}\,dx-4\int x\,dx \\
+			&=\dfrac{1}{2}xe^{2x}-\dfrac{1}{4}e^{2x}-2x^2+C
+			\end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX14">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=\dfrac{1}{2}xe^{2x}-\dfrac{1}{4}e^{2x}-2x^2\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{1}{2}e^{2x}+xe^{2x}-\dfrac{1}{2}e^{2x}-4x \\
+      &=xe^{2x}-4x=x(e^{2x}-4) \\
+      &=x(e^x+2)(e^x-2)
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 15 -->
+<li>
+	<div class="dotfillex">
+  	<p>
+			\(\displaystyle \int p^2e^{-p}\,dp\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX15"></button>
+			<button class="toggle has-sol" data-toggle="SolX15"></button>
+			<button class="toggle has-check" data-toggle="CkX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+    <p>
+			\(\displaystyle \int p^2e^{-p}\,dp
+      =-p^2e^{-p}-2pe^{-p}-2e^{-p}+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+	  <p>
+			We use the parts
+			\[\begin{array}{ll}
+			u=p^2 & dv=e^{-p}dp \\
+			du=2p\,dp \quad & v=-e^{-p}
+			\end{array}\]
+			This gives
+			\[\begin{aligned}
+			\int p^2e^{-p}\,dx
+      &=-p^2e^{-p}+2\int pe^{-p}\,dp
+			\end{aligned}\]
+      We need to use parts again.
+      \[\begin{array}{ll}
+      u=p & dv=e^{-p}dp \\
+      du=\,dp \quad & v=-e^{-p}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int p^2e^{-p}\,dp
+      &=-p^2e^{-p}+2(-pe^{-p}+\int e^{-p}\,dp) \\
+      &=-p^2e^{-p}+2(-pe^{-p}-e^{-p})+C \\
+      &=-p^2e^{-p}-2pe^{-p}-2e^{-p}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX15">
+    <p>
+      We differentiate &ensp;
+      \(f(x)=-p^2e^{-p}-2pe^{-p}-2e^{-p}\):
+      \[\begin{aligned}
+      f'(x)
+      &=-2pe^{-p}+p^2e^{-p}-2e^{-p}+2pe^{-p}+2e^{-p} \\
+      &=p^2e^{-p}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 16 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int p^3e^{p^2}\,dp\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX16"></button>
+			<button class="toggle has-ans" data-toggle="AnsX16"></button>
+			<button class="toggle has-sol" data-toggle="SolX16"></button>
+			<button class="toggle has-check" data-toggle="CkX16"></button>
+			<button class="toggle has-rem" data-toggle="RemX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX16">
+		<p>
+			Selecting the parts for this one is more subtle.
+			<br>
+			Take the parts to be \(u=p^2\) and \(dv=pe^{p^2}\,dp\)
+      so that is easier to find \(v\).
+      <br/>
+			<span class="greenbig">Alternatively</span>, first make the substitution
+      \(w=p^2\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+		<p>
+			\(\displaystyle \int p^3e^{p^2}\,dp
+      =\dfrac{1}{2}p^2e^{p^2}-\dfrac{1}{2}e^{p^2 }+C\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+	  <p>
+			The parts are tricky because we need to be able to find the
+      antiderivative of \(dv\). Since \(\dfrac{d}{dp}e^{p^2}=2pe^{p^2}\),
+      we use the parts:
+			\[\begin{array}{ll}
+			u=p^2 & dv=pe^{p^2}\,dp \\
+			du=2p\,dp \quad & v=\dfrac{1}{2}e^{p^2}
+			\end{array}\]
+			This gives
+			\[\begin{aligned}
+			\int p^3e^{p^2}\,dp
+			&=\int p^2\cdot pe^{p^2}\,dp \\
+      &=\dfrac{1}{2}p^2e^{p^2}-\int pe^{p^2}\,dp \\
+      &=\dfrac {1}{2}p^2e^{p^2}-\dfrac{1}{2}e^{p^2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX16">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=\dfrac{1}{2}p^2e^{p^2}-\dfrac{1}{2}e^{p^2}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=pe^{p^2}+\dfrac{1}{2}p^22pe^{p^2}-pe^{p^2} \\
+      &=p^3e^{p^2}
+      \end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX16">
+	  <p>
+      <span class="greenbig">Alternatively</span>, we can first substitue
+      \(w=p^2\) with \(dw=2p\,dp\):
+      \[
+      \int p^3e^{p^2}\,dp=\dfrac{1}{2}\int we^{w}\,dw
+      \]
+      We now take the parts:
+      \[\begin{array}{ll}
+      u=w & dv=e^{w}dw \\
+      du= dw \quad & v=e^{w}
+      \end{array}\]
+      \[\begin{aligned}
+      \int p^3e^{p^2}\,dp
+      &=\dfrac{1}{2}(we^{w}-\int e^{w}dw) \\
+      &=\dfrac{1}{2}we^{w}-\dfrac{1}{2}e^{w}+C \\
+      \end{aligned}\]
+      We substitute back \(w=p^2\):
+      \[
+      \int p^3e^{p^2}\,dp
+      =\dfrac{1}{2}p^2e^{p^2}-\dfrac{1}{2}e^{p^2}+C
+      \]
+      Which method was easier?
+    </p>
+  </div>
+</li>
+
+<!-- Problem 17 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int (x^2+x-1)e^{3x}\,dx\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX17"></button>
+			<button class="toggle has-sol" data-toggle="SolX17"></button>
+			<button class="toggle has-check" data-toggle="CkX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+		<p>
+			\(\displaystyle
+      \int (x^2+x-1)e^{3x}\,dx
+			=\left(\dfrac{1}{3}x^2+\dfrac{1}{9}x-\dfrac{10}{27}\right)e^{3x}+C\)
+		</p>
+	</div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX17">
+	  <p>
+    We use the parts
+    \[\begin{array}{ll}
+    u=x^2+x-1 & dv=e^{3x}\,dx \\
+    du=(2x+1)\,dx \quad & v=\dfrac{1}{3}e^{3x}
+    \end{array}\]
+    Then
+    \[\begin{aligned}
+    \int &(x^2+x-1)e^{3x}\,dx \\
+    &=\dfrac{1}{3}(x^2+x-1)e^{3x}-\dfrac{1}{3}\int (2x+1)e^{3x}dx \\
+    \end{aligned}\]
+    We need to take parts again:
+    \[\begin{array}{ll}
+    u=2x+1 & dv=e^{3x}dx \\
+    du=2dx \quad & v=\dfrac{1}{3}e^{3x}
+    \end{array}\]
+    Thus
+    \[\begin{aligned}
+    \int &(x^2+x-1)e^{3x}\,dx \\
+    &=\dfrac{1}{3}(x^2+x-1)e^{3x}
+    -\dfrac{1}{3}\left(\dfrac{1}{3}e^{3x}(2x+1)-\dfrac{2}{3}\int e^{3x}\,dx\right) \\
+    &=\dfrac{1}{3}(x^2+x-1)e^{3x}-\dfrac{1}{9}e^{3x}(2x+1)+\dfrac{2}{27}e^{3x}+C \\
+    &=\left(\dfrac{1}{3}x^2+\dfrac{1}{3}x-\dfrac{1}{3}-\dfrac{2}{9}x
+    -\dfrac{1}{9}+\dfrac{2}{27}\right)e^{3x}+C \\
+    &=\left(\dfrac{1}{3}x^2+\dfrac{1}{9}x-\dfrac{10}{27}\right)e^{3x}+C
+    \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX17">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=\dfrac{1}{3}x^2e^{3x}+\dfrac{1}{9}xe^{3x}-\dfrac{10}{27}e^{3x}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{2}{3}xe^{3x}+x^2e^{3x}+\dfrac{1}{9}e^{3x}+\dfrac{1}{3}xe^{3x}-\dfrac{10}{9}e^{3x} \\
+      &=x^2e^{3x}+xe^{3x}-e^{3x} \\
+      &=(x^2+x-1)e^{3x}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 18 -->
+<li>
+	<div class="dotfillex">
+			<p>
+			\(\displaystyle \int (x^2-x+1)e^{ax}\,dx\;\)
+		</p>
+		<p>
+				<button class="toggle has-hint" data-toggle="HintX18"></button>
+				<button class="toggle has-ans" data-toggle="AnsX18"></button>
+  			<button class="toggle has-sol" data-toggle="SolX18"></button>
+  			<button class="toggle has-check" data-toggle="CkX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX18">
+		<p>
+			Take the parts \(u=x^2-x+1\) and \(dv=e^{ax}\,dx\).<br>
+			You will need two integrations by parts to complete the computation.
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+		<p>
+			\(\displaystyle\begin{aligned}
+      \int &(x^2-x+1)e^{ax}\,dx \\
+			&=\left(\dfrac{x^2-x+1}{a}-\dfrac{2x-1}{a^2 }
+                   +\dfrac{2}{a^3 }\right)e^{ax}+C
+      \end{aligned}\)
+		</p>
+	</div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX18">
+	  <p>
+    We use the parts
+    \[\begin{array}{ll}
+    u=x^2-x+1 & dv=e^{ax}\,dx \\
+    du=(2x-1)\,dx \quad & v=\dfrac{1}{a}e^{ax}
+    \end{array}\]
+    Then
+    \[\begin{aligned}
+    \int &(x^2-x+1)e^{ax}\,dx \\
+    &=\dfrac{1}{a}(x^2-x+1)e^{ax}-\dfrac{1}{a}\int (2x-1)e^{ax}\,dx
+    \end{aligned}\]
+    This time we take the parts:
+    \[\begin{array}{ll}
+    u=2x-1 & dv=e^{ax}\,dx \\
+    du=2\,dx \quad & v=\dfrac{1}{a}e^{ax}
+    \end{array}\]
+    Thus
+    \[\begin{aligned}
+    \int &(x^2+x-1)e^{3x}\,dx \\
+    &=\dfrac{x^2-x+1}{a}e^{ax}
+    -\dfrac{1}{a}\left(\dfrac{2x-1}{a}e^{ax}-\dfrac{2}{a}\int e^{ax}\,dx\right) \\
+    &=\dfrac{x^2-x+1}{a}e^{ax}-\dfrac{2x-1}{a^2}e^{ax}+\dfrac{2}{a^3}e^{ax}+C \\
+    &=\left(\dfrac{x^2-x+1}{a}-\dfrac{2x-1}{a^2}+\dfrac{2}{a^3}\right)e^{ax}+C
+    \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX18">
+    <p>
+      We check by differentiating. If
+      \[
+      f(x)=\left(\dfrac{x^2-x+1}{a}-\dfrac{2x-1}{a^2 }
+                   +\dfrac{2}{a^3 }\right)e^{ax}
+      \]
+      then
+      \[\begin{aligned}
+      f'(x)
+      &=\left(\dfrac{2x-1}{a}-\dfrac{2}{a^2}\right)e^{ax}
+      +\left(\dfrac{x^2-x+1}{a}-\dfrac{2x-1}{a^2 }
+                   +\dfrac{2}{a^3 }\right)ae^{ax} \\
+      &=\left(\dfrac{2x-1}{a}-\dfrac{2}{a^2}\right)e^{ax}
+      +\left(x^2-x+1-\dfrac{2x-1}{a}
+                  +\dfrac{2}{a^2}\right)e^{ax} \\
+      &=(x^2-x+1)e^{ax}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 19 -->
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle \int (x-1)^2e^{-x}\,dx\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX19"></button>
+      <button class="toggle has-sol" data-toggle="SolX19"></button>
+      <button class="toggle has-check" data-toggle="CkX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+		<p>
+		  \(\displaystyle \int (x-1)^2e^{-x}\,dx=-(x^2+1)e^{-x}+C\)
+		</p>
+	</div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX19">
+	  <p>
+    We use the parts
+    \[\begin{array}{ll}
+    u=(x-1)^2 & dv=e^{-x}\,dx \\
+    du=2(x-1)\,dx \quad & v=-e^{-x}
+    \end{array}\]
+    Then
+    \[\begin{aligned}
+    \int (x-1)^2e^{-x}\,dx
+    &=-(x-1)^2e^{-x}+2\int (x-1)e^{-x}\,dx
+    \end{aligned}\]
+    We now take the parts:
+    \[\begin{array}{ll}
+    u=(x-1) & dv=e^{-x}\,dx \\
+    du=dx \quad & v=-e^{-x}
+    \end{array}\]
+    Thus
+    \[\begin{aligned}
+    \int &(x-1)^2e^{-x}\,dx \\
+    &=-(x-1)^2e^{-x}+2\left(-(x-1)e^{-x}+\int e^{-x}\,dx\right) \\
+    &=-(x-1)^2e^{-x}+2\left(-(x-1)e^{-x}-e^{-x}\right)+C \\
+    &=-(x^2-2x+1)e^{-x}-(2x-2)e^{-x}-2e^{-x}+C \\
+    &=(-x^2+2x-1-2x+2-2)e^{-x}+C \\
+    &=-(x^2+1)e^{-x}+C
+    \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX19">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=-(x^2+1)e^{-x}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-(2x)e^{-x}+(x^2+1)e^{-x} \\
+      &=(x^2-2x+1)e^{-x} \\
+      &=(x-1)^2e^{-x}
+      \end{aligned}\]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 20 -->
+<li>
+	<div class="dotfillex">
+    <p>
+      \(\displaystyle \int (x-1)\cos x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX20"></button>
+      <button class="toggle has-sol" data-toggle="SolX20"></button>
+      <button class="toggle has-check" data-toggle="CkX20"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX20">
+    <p>
+      \(\displaystyle \int (x-1)\cos x\,dx
+      =(x-1)\sin x+\cos x +C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX20">
+	  <p>
+    We use the parts
+    \[\begin{array}{ll}
+    u=(x-1) & dv=\cos x\,dx \\
+    du= dx \quad & v=\sin x
+    \end{array}\]
+    Then
+    \[\begin{aligned}
+    \int (x-1)\cos x\,dx
+    &=(x-1)\sin x-\int \sin x\,dx \\
+    &=(x-1)\sin x+\cos x+C
+    \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX20">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=(x-1)\sin x+\cos x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\sin x+(x-1)\cos x-\sin x \\
+      &=(x-1)\cos x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 21 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int x^2\sin x\,dx\)
+    </p>
+    <p>
+	    <button class="toggle has-ans" data-toggle="AnsX21"></button>
+			<button class="toggle has-sol" data-toggle="SolX21"></button>
+      <button class="toggle has-check" data-toggle="CkX21"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX21">
+    <p>
+      \(\displaystyle \int x^2\sin x\,dx=-x^2\cos x+2x\sin x+2\cos x+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX21">
+    <p>
+      First let: &ensp;
+      \[\begin{array}{ll}
+      u=x^2 & dv=\sin x\,dx \\
+      du=2x\,dx \quad & v=-\cos x
+      \end{array}\]
+      <br/>
+      So:
+      \[
+      \int x^2\sin x\,dx=-x^2\cos x+\int 2x\cos x
+      \]
+      Now let: &ensp;
+      \[\begin{array}{ll}
+      u=2x & dv=\cos x\,dx \\
+      du=2\,dx \quad & v=\sin x
+      \end{array}\]
+      <br/>
+      So:
+      \[\begin{aligned}
+      \int x^2\sin x\,dx
+      &=-x^2\cos x+2x\sin x-\int 2\sin x\,dx \\
+      &=-x^2\cos x+2x\sin x+2\cos x+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX21">
+    <p>
+      We check by differentiating. If &ensp;
+      \(f(x)=-x^2\cos x+2x\sin x+2\cos x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-2x\cos x+x^2\sin x+2\sin x+2x\cos x-2\sin x \\
+      &=x^2\sin x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!--Choosing the Parts-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="Choice.html">b. Choosing the &#39;Parts&#39;</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Choice.html">1</a></div>
+      
+        <div><a href="Spec.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Use integration by parts to compute the following integrals:
+</p>
+
+<!-- Problem 22 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int \dfrac{\ln|x|}{x^2}\,dx\;\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX22"></button>
+      <button class="toggle has-ans" data-toggle="AnsX22"></button>
+      <button class="toggle has-sol" data-toggle="SolX22"></button>
+      <button class="toggle has-check" data-toggle="CkX22"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX22">
+    <p>
+      Take \(u=\ln|x|\) and \(dv=\dfrac{1}{x^2}\,dx\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX22">
+    <p>
+      \(\displaystyle \int \dfrac{\ln|x|}{x^2}\,dx
+      =-\,\dfrac{\ln|x|}{x}-\dfrac{1}{x}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX22">
+    <p>
+      This is a product of a log function and a power function. So LAPTE tells
+      us that \(u\) should be the log function. So we take the parts:
+      \[\begin{array}{ll}
+      u=\ln|x| & dv=\dfrac{1}{x^2}\,dx \\[7pt]
+      du=\dfrac{1}{x}\,dx \quad & v=-\,\dfrac{1}{x}
+      \end{array}\]
+      Hence
+      \[\begin{aligned}
+      \int \dfrac{\ln|x|}{x^2}\,dx
+      =-\,\dfrac{\ln|x|}{x}+\int \dfrac{1}{x^2}\,dx \\
+      =-\,\dfrac{\ln|x|}{x}-\dfrac{1}{x}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX22">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{1}{x}\ln|x|-\dfrac{1}{x}\), &ensp; then
+      \[
+      f'(x)=\dfrac{1}{x^2}\ln|x|-\dfrac{1}{x^2}+\dfrac{1}{x^2}
+      =\dfrac{\ln|x|}{x^2}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 23 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int s^2\ln s\,ds\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX23"></button>
+      <button class="toggle has-ans" data-toggle="AnsX23"></button>
+      <button class="toggle has-sol" data-toggle="SolX23"></button>
+      <button class="toggle has-check" data-toggle="CkX23"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX23">
+    <p>
+      Take the parts \(u=\ln s\) and \(dv=s^2\,ds\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX23">
+    <p>
+      \(\displaystyle \int s^2\ln s\,ds
+      =\dfrac{s^3\ln s}{3}-\dfrac{s^3}{9}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX23">
+    <p>
+      We take
+      \[\begin{array}{ll}
+      u=\ln s & dv=s^2\,ds \\
+      du=\dfrac{1}{s}\,ds \quad & v=\dfrac{s^3}{3}
+      \end{array}\]
+      Hence
+      \[\begin{aligned}
+      \int s^2\ln s\,ds
+      &=\dfrac{s^3\ln s}{3}-\dfrac{1}{3}\int s^2\,dx \\
+      &=\dfrac{s^3\ln s}{3}-\dfrac{s^3}{9}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX23">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{s^3}{3}\ln|s|-\dfrac{s^3}{9}\), &ensp; then
+      \[
+      f'(x)=s^2\ln|s|+\dfrac{s^2}{3}-\dfrac{s^2}{3}
+      =s^2\ln|s|
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 24 -->
+<li>
+  <div class="dotfillex">
+  <p>
+    \(\displaystyle \int x\ln|x+1|\,dx\)
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX24"></button>
+    <button class="toggle has-sol" data-toggle="SolX24"></button>
+    <button class="toggle has-check" data-toggle="CkX24"></button>
+  </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX24">
+    <p>
+      \(\displaystyle \int x\ln|x+1|\,dx
+      =\dfrac{(x^2-1)\ln|x+1|}{2}-\dfrac{x^2}{4}+\dfrac{x}{2}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX24">
+    <p>
+      We integrate by parts with
+      \[\begin{array}{ll}
+      u=\ln|x+1| & dv=x\,dx \\
+      du=\dfrac{1}{x+1}\,dx \quad & v=\dfrac{x^2}{2}
+      \end{array}\]
+      So
+      \[
+      \int x\ln|x+1|\,dx
+      =\dfrac{x^2\ln|x+1|}{2}-\dfrac{1}{2}\int \dfrac{x^2}{x+1}\,dx
+      \]
+      By long division of polynomials, we have
+      \[
+      \dfrac{x^2}{x+1}=x-1+\dfrac{1}{x+1}
+      \]
+      So:
+      \[\begin{aligned}
+      \int x\ln|x+1|\,dx
+      &=\dfrac{x^2\ln|x+1|}{2}-\dfrac{1}{2}\int x-1+\dfrac{1}{x+1}\,dx \\
+      &=\dfrac{x^2\ln|x+1|}{2}-\dfrac{1}{2}\left(\dfrac{x^2}{2}-x+\ln|x+1|\right)+C \\
+      &=\dfrac{(x^2-1)\ln|x+1|}{2}-\dfrac{x^2}{4}+\dfrac{x}{2}+C \\
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX24">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{x^2-1}{2}\ln|x+1|-\dfrac{x^2}{4}+\dfrac{x}{2}\), &ensp; then
+      \[
+      f'(x)=x\ln|x+1|+\dfrac{x^2-1}{2}\dfrac{1}{x+1}-\dfrac{x}{2}+\dfrac{1}{2}
+      =x\ln|x+1|
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 25 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int 3x\ln(x^2)\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX25"></button>
+      <button class="toggle has-ans" data-toggle="AnsX25"></button>
+      <button class="toggle has-sol" data-toggle="SolX25"></button>
+      <button class="toggle has-check" data-toggle="CkX25"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX25">
+    <p>
+      Remember \(\ln(x^2)=2\ln|x|\).
+      Then use the parts \(u=\ln|x|\) and \(dv=6x\,dx\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX25">
+
+    <p>
+      \(\displaystyle \int 3x\ln(x^2)\,dx
+      =3x^2\ln|x|-\dfrac{3x^2}{2}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX25">
+    <p>
+      We first rewrite the integrand using a log identity:
+      \[
+      \int 3x\ln(x^2)\,dx=\int 6x\ln|x|\,dx
+      \]
+      We integrate by parts with
+      \[\begin{array}{ll}
+      u=\ln|x| & dv=6x\,dx \\
+      du=\dfrac{1}{x}\,dx \quad & v=3x^2
+      \end{array}\]
+      So
+      \[\begin{aligned}
+      \int 3x\ln(x^2)\,dx
+      &=3x^2\ln|x|-3\int x\,dx \\
+      &=3x^2\ln|x|-\dfrac{3x^2}{2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX25">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=3x^2\ln|x|-\dfrac{3x^2}{2}\), &ensp; then
+      \[
+      f'(x)=6x\ln|x|+3x-3x
+      =3x\ln(x^2)
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 26 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int (\ln x)^2\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX26"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX26"></button>
+    	<button class="toggle has-sol" data-toggle="SolX26"></button>
+      <button class="toggle has-check" data-toggle="CkX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX26">
+    <p>
+      Let \(u=(\ln x)^2\) and \(dv=dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+  	<p>
+      \(\displaystyle \int (\ln x)^2\,dx
+      =x(\ln x)^2-2x\ln x+2x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+  	<p>
+      Let
+      \[\begin{array}{ll}
+      u=(\ln x)^2 & dv=dx \\
+      du=\dfrac{2(\ln x)}{x}\,dx \quad & v=x
+      \end{array}\]
+      So
+      \[\begin{aligned}
+      \int (\ln x)^2\,dx
+      &=x(\ln x)^2-\int \dfrac{2x(\ln x)}{x}\,dx \\
+      &=x(\ln x)^2-2\int \ln x\,dx \\
+      &=x(\ln x)^2-2(x\ln x-x)+C \\
+      &=x(\ln x)^2-2x\ln x+2x+C
+      \end{aligned}\]
+      You should remenber
+      \(\displaystyle \int \ln x\,dx=x\ln x-x+C\)
+      which was derived in a
+      <a href="Spec.html#exspec" title="Return using the Back button.">
+      previous exercise</a>. Alternatively, we could do another integration by parts.
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX26">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x(\ln x)^2-2x\ln x+2x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=(\ln x)^2+x2(\ln x)\dfrac{1}{x}-2\ln x-2x\dfrac{1}{x}+2 \\
+      &=(\ln x)^2+2(\ln x)-2\ln x-2+2
+      =(\ln x)^2
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 27 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int \ln(x^2)\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX27"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX27"></button>
+    	<button class="toggle has-sol" data-toggle="SolX27"></button>
+      <button class="toggle has-check" data-toggle="CkX27"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX27">
+    <p>
+      Use the log identity
+      \(\ln(x^2)=2\ln|x|\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX27">
+  	<p>
+      \(\displaystyle \int \ln(x^2)\,dx
+      =2x\ln|x|-2x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX27">
+  	<p>
+      This is a trick problem. Simply use the log identity
+      \(\ln(x^2)=2\ln|x|\). So:
+      \[
+      \int \ln(x^2)\,dx=2\int \ln|x|\,dx=2(x\ln|x|-x)+C=2x\ln|x|-2x+C
+      \]
+      assuming you remember \(\displaystyle \int \ln|x|\,dx=x\ln x-x+C\)
+      which was derived in a
+      <a href="Spec.html#exspec" title="Return using the Back button.">
+      previous exercise</a>.
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX27">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=2x\ln|x|-2x\), &ensp; then
+      \[
+      f'(x)=2\ln|x|+2-2
+      =2\ln|x|
+      =\ln(x^2)
+      \]
+    </p>
+  </div>
+</li>
+<a id="x_arcsin2x"></a>
+
+<!-- Problem 28 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int \arcsin 2x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX28"></button>
+    	<button class="toggle has-sol" data-toggle="SolX28"></button>
+      <button class="toggle has-check" data-toggle="CkX28"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX28">
+  	<p>
+      \(\displaystyle \int \arcsin 2x\,dx
+      =x\arcsin 2x+\dfrac{\sqrt{1-4x^2}}{2}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX28">
+  	<p class="meth" data-number="1">
+      Take
+      \[\begin{array}{ll}
+      u=\arcsin 2x & dv=\,dx \\
+      du=\dfrac{2}{\sqrt{1-4x^2}}\,dx \quad & v=x
+      \end{array}\]
+      Thus
+      \[
+      \int \arcsin 2x\,dx
+      =x\arcsin 2x-2\int \dfrac{x}{\sqrt{1-4x^2}}\,dx
+      \]
+      To compute the remaining integral, use the substitution \(z=1-4x^2\).
+      Then \(dz=-8x\,dx\) and \(x\,dx=-\,\dfrac{1}{8}\,dz\). Thus,
+      \[\begin{aligned}
+      \int \arcsin 2x\,dx
+      &=x\arcsin 2x+\dfrac{1}{4}\int \dfrac{1}{\sqrt{z}}\,dz \\
+      &=x\arcsin 2x+\dfrac{1}{2}\sqrt{z}+C \\
+      &=x\arcsin 2x+\dfrac{1}{2}\sqrt{1-4x^2}+C \\
+      \end{aligned}\]
+    	<p class="meth" data-number="2">
+      If you remember from a
+      <a href="Spec.html#egspec" title="Return using the Back button.">
+      previous example</a>:
+      (You're not expected to remember this one.)
+      \[
+      \int \arcsin u\,du=u\arcsin u+\sqrt{1-u^2}+C
+      \]
+      then the substitution \(u=2x\) will also work.
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX28">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\arcsin 2x+\dfrac{1}{2}\sqrt{1-4x^2}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\arcsin 2x+\dfrac{2x}{\sqrt{1-4x^2}}+\dfrac{1}{4}\dfrac{-8x}{\sqrt{1-4x^2}} \\
+      &=\arcsin 2x+\dfrac{2x}{\sqrt{1-4x^2}}-\dfrac{2x}{\sqrt{1-4x^2}} \\
+      &=\arcsin 2x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 29 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int \arctan 3x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX29"></button>
+    	<button class="toggle has-sol" data-toggle="SolX29"></button>
+      <button class="toggle has-check" data-toggle="CkX29"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX29">
+  	<p>
+      \(\displaystyle \int \arctan 3x\,dx
+      =x\arctan 3x-\dfrac{1}{6}\ln(1+9x^2)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX29">
+  	<p>
+    	<p class="meth" data-number="1">
+      Take
+      \[\begin{array}{ll}
+      u=\arctan 3x & dv=dx \\
+      du=\dfrac{3}{1+9x^2}\,dx \quad & v=x
+      \end{array}\]
+      Thus
+      \[
+      \int \arctan 3x\,dx=x\arctan 3x-\int \dfrac{3x}{1+9x^2}\,dx
+      \]
+      To compute the second integral, use the substitution \(z=1+9x^2\).
+      Then \(dz=18x\,dx\) and \(3x\,dx=\dfrac{1}{6}\,dz\). Thus:
+      \[\begin{aligned}
+      \int \arctan 3x\,dx
+      &=x\arctan 3x-\dfrac{1}{6}\int \dfrac{1}{z}\,dz \\
+      &=x\arctan 3x-\dfrac{1}{6}\ln|z|+C \\
+      &=x\arctan 3x-\dfrac{1}{6}\ln(1+9x^2)+C
+      \end{aligned}\]
+    	<p class="meth" data-number="2">
+      You may remember from a
+      <a href="Spec.html#exspec" title="Return using the Back button.">
+      previous exercise</a>: (You're not expected to remember this one.)
+      \[
+      \int \arctan u\,du
+      =u\arctan u-\dfrac{1}{2}\ln(1+u^2)+C
+      \]
+      Then the substitution \(u=3x\) will also work.
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX29">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\arctan 3x-\dfrac{1}{6}\ln(1+9x^2)\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\arctan 3x+\dfrac{3x}{1+9x^2}-\dfrac{1}{6}\dfrac{18x}{1+9x^2} \\
+      &=\arctan 3x+\dfrac{3x}{1+9x^2}-\dfrac{3x}{1+9x^2} \\
+      &=\arctan 3x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 30 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int \arccos x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX30"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX30"></button>
+    	<button class="toggle has-sol" data-toggle="SolX30"></button>
+      <button class="toggle has-check" data-toggle="CkX30"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX30">
+    <p>
+      Use integration by parts with \(u=\arccos x\) and \(dv=dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX30">
+  	<p>
+      \(\displaystyle \int \arccos x\,dx
+      =x\arccos x-\sqrt{1-x^2}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX30">
+  	<p>
+      We take:
+      \[\begin{array}{ll}
+      u=\arccos x & dv=dx \\
+      du=\dfrac{-1}{\sqrt{1-x^2}}\,dx \quad & v=x
+      \end{array}\]
+      Thus
+      \[
+      \int \arccos x\,dx=x\arccos x+\int \dfrac{x}{\sqrt{1-x^2}}\,dx
+      \]
+      To compute the remaining integral, we use the substitution \(z=1-x^2\).
+      Then \(dz=-2x\,dx\) and \(x\,dx=-\,\dfrac{1}{2}\,dz\). Thus:
+      \[\begin{aligned}
+      \int \arccos x\,dx
+      &=x\arccos x-\dfrac{1}{2}\int \dfrac{1}{\sqrt{z}}\,dz \\
+      &=x\arccos x-\sqrt{z}+C \\
+      &=x\arccos x-\sqrt{1-x^2}+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX30">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\arccos x-\sqrt{1-x^2}\), &ensp; then
+      \[
+      f'(x)=\arccos x+\dfrac{-x}{\sqrt{1-x^2}}+\dfrac{x}{\sqrt{1-x^2}}
+      =\arccos x
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 31 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int \arccos(ax)\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX31"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX31"></button>
+    	<button class="toggle has-sol" data-toggle="SolX31"></button>
+      <button class="toggle has-check" data-toggle="CkX31"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX31">
+    <p>
+      Just use the substitution \(u=ax\) and then the previous problem.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX31">
+  	<p>
+      \(\displaystyle \int \arccos(ax)\,dx
+      =x\arccos(ax)-\dfrac{\sqrt{1-a^2x^2}}{a}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX31">
+  	<p>
+      From the previous problem we know:
+      \[
+      \int \arccos u\,du=u\arccos u-\sqrt{1-u^2}+C
+      \]
+      For this problem we make the substitution \(u=ax\):
+      \[\begin{aligned}
+      \int \arccos (ax)\,dx
+      &=\dfrac{1}{a}\int \arccos (u)\,du \\
+      &=\dfrac{1}{a}\left[u\arccos u-\sqrt{1-u^2}\right]+C \\
+      &=\dfrac{1}{a}\left[ax\arccos ax-\sqrt{1-a^2x^2}\right]+C \\
+      &=x\arccos (ax)-\dfrac{\sqrt{1-a^2x^2}}{a}+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX31">
+    <p>
+      If &ensp;
+      \(f(x)=x\arccos (ax)-\dfrac{\sqrt{1-a^2x^2}}{a}
+      \), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\arccos (ax)-\dfrac{ax}{\sqrt{1-a^2x^2}}+\dfrac{2a^2x}{2a\sqrt{1-a^2x^2}} \\
+      &=\arccos (ax)
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 32 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int \mathrm{arccot}\,x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX32"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX32"></button>
+    	<button class="toggle has-sol" data-toggle="SolX32"></button>
+      <button class="toggle has-check" data-toggle="CkX32"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX32">
+    <p>
+      Use integration by parts with \(u=\mathrm{arccot}\,x\) and \(dv=dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX32">
+  	<p>
+      \(\displaystyle \int \text{arccot}\,x\,dx
+      =x\,\text{arccot}\,x+\dfrac{1}{2}\ln(1+x^2)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX32">
+  	<p>
+      We take:
+      \[\begin{array}{ll}
+      u=\mathrm{arccot}\,x & dv=dx \\
+      du=\dfrac{-1}{1+x^2}\,dx \quad & v=x
+      \end{array}\]
+      Thus
+      \[
+      \int \mathrm{arccot}\,x\,dx=x\,\mathrm{arccot}\,x+\int \dfrac{x}{1+x^2}\,dx
+      \]
+      To compute the remaining integral, we use the substitution \(z=1+x^2\).
+      Then \(dz=2x\,dx\) and \(x\,dx=\dfrac{1}{2}\,dz\). Thus:
+      \[\begin{aligned}
+      \int \mathrm{arccot}\,x\,dx
+      &=x\,\mathrm{arccot}\,x+\dfrac{1}{2}\int \dfrac{1}{z}\,dz \\
+      &=x\,\mathrm{arccot}\,x+\dfrac{1}{2}\ln|z|+C \\
+      &=x\,\mathrm{arccot}\,x+\dfrac{1}{2}\ln(1+x^2)+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX32">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\,\mathrm{arccot}\,x+\dfrac{1}{2}\ln(1+x^2)\), &ensp; then
+      \[
+      f'(x)=\mathrm{arccot}\,x+\dfrac{-x}{1+x^2}+\dfrac{x}{1+x^2}
+      =\mathrm{arccot}\,x
+      \]
+    </p>
+  </div>
+</li>
+
+<hr>
+
+<!-- Problem 33 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      An important function in statistics is the error function defined by
+      \[
+      \mathrm{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_0^x e^{-t^2}\,dt
+      \]
+      There is no exact formula for the result of this integral; it must be
+      computed numerically. However, its derivative is easily found by the
+      fundamental theorem of calculus:
+      \[
+      \dfrac{d}{dx}(\mathrm{erf}(x))
+      =\dfrac{2}{\sqrt{\pi}}e^{-x^2}
+      \]
+      In addition, its antiderivative is easily found by integration by parts.
+      <br>
+      Compute \(\displaystyle \int \mathrm{erf}(x)\,dx\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX33"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX33"></button>
+    	<button class="toggle has-sol" data-toggle="SolX33"></button>
+      <button class="toggle has-check" data-toggle="CkX33"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX33">
+    <p>
+      Use integration by parts with \(u=\text{erf}(x)\) and \(dv=dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX33">
+  	<p>
+      \(\displaystyle \int \mathrm{erf}(x)\,dx
+      =x\,\mathrm{erf}(x)+\dfrac{1}{\sqrt{\pi}}e^{-x^2}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX33">
+  	<p>
+      We take
+      \[\begin{array}{ll}
+      u=\mathrm{erf}(x) & dv=dx \\
+      du=\dfrac{2}{\sqrt{\pi}}e^{-x^2}\,dx \quad & v=x
+      \end{array}\]
+      Thus
+      \[\begin{aligned}
+      \int \mathrm{erf}(x)\,dx
+      =x\,\mathrm{erf}(x)-\dfrac{2}{\sqrt{\pi}}\int xe^{-x^2}\,dx
+      \end{aligned}\]
+      To compute the remaining integral, we use the substitution \(z=-x^2\).
+      Then \(dz=-2x\,dx\) and so:
+      \[\begin{aligned}
+      \int \mathrm{erf}(x)\,dx
+      &=x\,\mathrm{erf}(x)+\dfrac{1}{\sqrt{\pi}}\int e^z\,dz \\
+      &=x\,\mathrm{erf}(x)+\dfrac{1}{\sqrt{\pi}}e^{-x^2}+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX33">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\,\mathrm{erf}(x)+\dfrac{1}{\sqrt{\pi}}e^{-x^2}\), &ensp; then
+      \[
+      f'(x)=\mathrm{erf}(x)+\dfrac{2x}{\sqrt{\pi}}e^{-x^2}-\dfrac{2x}{\sqrt{\pi}}e^{-x^2}
+      =\mathrm{erf}(x)
+      \]
+    </p>
+  </div>
+</li>
+
+<hr>
+
+<p>
+  The following problems can all be done by substitution,
+  but give them a try using parts.
+</p>
+
+<!-- Problem 34 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int 3x\sqrt{2x+1}\,dx\;\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX34"></button>
+      <button class="toggle has-ans" data-toggle="AnsX34"></button>
+      <button class="toggle has-sol" data-toggle="SolX34"></button>
+      <button class="toggle has-check" data-toggle="CkX34"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX34">
+    <p>
+      Use the parts \(u=3x\) and \(dv=\sqrt{2x+1}\,dx\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX34">
+    <p>
+      \(\displaystyle \int 3x\sqrt{2x+1}\,dx
+      =x(2x+1)^{3/2}-\dfrac{1}{5}(2x+1)^{5/2}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX34">
+    <p>
+      We use the parts
+      \[\begin{array}{ll}
+      u=3x & dv=\sqrt{2x+1}\,dx \\
+      du=3\,dx \quad & v=\dfrac{1}{3}(2x+1)^{3/2}
+      \end{array}\]
+      (To find \(v\), we used the substitution \(z=2x+1\).) Then
+      \[\begin{aligned}
+      \int 3x\sqrt{2x+1}\,dx
+      &=x(2x+1)^{3/2}-\int (2x+1)^{3/2}\,dx \\
+      &=x(2x+1)^{3/2}-\dfrac{1}{5}(2x+1)^{5/2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX34">
+    <p>
+      We check using the Product Rule. If
+      &ensp;\(f(x)=x(2x+1)^{3/2}-\dfrac{1}{5}(2x+1)^{5/2}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=(2x+1)^{3/2}+3x(2x+1)^{1/2}-(2x+1)^{3/2} \\
+      &=3x\sqrt{2x+1}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 35 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int x^2\sqrt{x+3}\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX35"></button>
+      <button class="toggle has-ans" data-toggle="AnsX35"></button>
+      <button class="toggle has-sol" data-toggle="SolX35"></button>
+      <button class="toggle has-check" data-toggle="CkX35"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX35">
+    <p>
+      You will need to integrate by parts twice. Start with the parts
+      \(u=x^2\) and \(dv=\sqrt{x+3}\,dx\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX35">
+    <p>
+      \(\begin{aligned}\displaystyle
+      \int &x^2\sqrt{x+3}\,dx \\
+      &=\dfrac{2}{3}x^2(x+3)^{3/2}-\dfrac{8}{15}x(x+3)^{5/2}
+      +\dfrac{16}{105}(x+3)^{7/2}+C
+      \end{aligned}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX35">
+    <p>
+      We let
+      \[\begin{array}{ll}
+      u=x^2 & dv=\sqrt{x+3}\,dx \\
+      du=2x\,dx \quad & v=\dfrac{2}{3}(x+3)^{3/2}
+      \end{array}\]
+      Then
+      \[
+      \int x^2\sqrt{x+3}\,dx
+      =\dfrac{2}{3}x^2(x+3)^{3/2}-\dfrac{4}{3}\int x(x+3)^{3/2}\,dx
+      \]
+      Next, we let
+      \[\begin{array}{ll}
+      u=x & dv=(x+3)^{3/2}\,dx \\
+      du=dx \quad & v=\dfrac{2}{5}(x+3)^{5/2}
+      \end{array}\]
+      So
+      \[\begin{aligned}
+      \int x^2\sqrt{x+3}\,dx
+      &=\dfrac{2}{3}x^2(x+3)^{3/2}
+      -\dfrac{4}{3}\left(\dfrac{2}{5}x(x+3)^{5/2}
+      -\dfrac{2}{5}\int (x+3)^{5/2}\,dx\right) \\
+      &=\dfrac{2}{3}x^2(x+3)^{3/2}-\dfrac{8}{15}x(x+3)^{5/2}
+      +\dfrac{8}{15}\dfrac{2}{7}(x+3)^{7/2}+C \\
+      &=\dfrac{2}{3}x^2(x+3)^{3/2}-\dfrac{8}{15}x(x+3)^{5/2}
+      +\dfrac{16}{105}(x+3)^{7/2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX35">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{2}{3}x^2(x+3)^{3/2}-\dfrac{8}{15}x(x+3)^{5/2}+\dfrac{16}{105}(x+3)^{7/2}\),
+      &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{4}{3}x(x+3)^{3/2}+x^2(x+3)^{1/2}-\dfrac{8}{15}(x+3)^{5/2} \\
+      &\quad-\dfrac{4}{3}x(x+3)^{3/2}+\dfrac{8}{15}(x+3)^{5/2} \\
+      &=x^2\sqrt{x+3}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 36 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int t\sqrt{t+2}\,dt\;\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX36"></button>
+      <button class="toggle has-sol" data-toggle="SolX36"></button>
+      <button class="toggle has-check" data-toggle="CkX36"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX36">
+    <p>
+      \(\displaystyle \int t\sqrt{t+2}\,dt
+      =\dfrac{2}{3}t(t+2)^{3/2}-\dfrac{4}{15}(t+2)^{5/2}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX36">
+    <p>
+      We take the parts
+      \[\begin{array}{ll}
+      u=t & dv=\sqrt{t+2}\,dt \\
+      du=dt \quad  & v=\dfrac{2}{3}(t+2)^{3/2}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int t\sqrt{t+2}\,dt
+      &=\dfrac{2}{3}t(t+2)^{3/2}
+      -\int \dfrac{2}{3}(t+2)^{3/2}\,dt \\
+      &=\dfrac{2}{3}t(t+2)^{3/2}-\dfrac{4}{15}(t+2)^{5/2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX36">
+    <p>
+      We check using the Product Rule. If &ensp;\(f(t)=\dfrac{2}{3}t(t+2)^{3/2}-\dfrac{4}{15}(t+2)^{5/2}\), &ensp; then
+      \[
+      f'(t)=\dfrac{2}{3}(t+2)^{3/2}+t(t+2)^{1/2}-\dfrac{2}{3}(t+2)^{3/2}
+      =t\sqrt{t+2}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 37 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int x^2\sqrt{x-1}\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX37"></button>
+      <button class="toggle has-sol" data-toggle="SolX37"></button>
+      <button class="toggle has-check" data-toggle="CkX37"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX37">
+    <p>
+     \(\displaystyle \int x^2\sqrt{x-1}\,dx
+     =\dfrac{2}{3}x^2(x-1)^{3/2}-\dfrac{8}{15}x(x-1)^{5/2}
+     +\dfrac{16}{105}(x-1)^{7/2}+C\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX37">
+    <p>
+      We use the parts
+      \[\begin{array}{ll}
+      u=x^2 & dv=\sqrt{x-1}\,dx \\
+      du=2x\,dx \quad  & v=\dfrac{2}{3}(x-1)^{3/2}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int x^2\sqrt{x-1}\,dx
+      &=\dfrac{2}{3}x^2(x-1)^{3/2}
+      -\dfrac{4}{3}\int x(x-1)^{3/2}\,dx
+      \end{aligned}\]
+      We apply parts again using:
+      \[\begin{array}{ll}
+      u=x & dv=(x-1)^{3/2}\,dx \\
+      du=dx \quad  & v=\dfrac{2}{5}(x-1)^{5/2}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int x^2\sqrt{x-1}\,dx
+      &=\dfrac{2}{3}x^2(x-1)^{3/2}
+      -\dfrac{4}{3}\left[\dfrac{2}{5}x(x-1)^{5/2}
+      -\dfrac{2}{5}\int (x-1)^{5/2}\,dx\right] \\
+      &=\dfrac{2}{3}x^2(x-1)^{3/2}
+      -\dfrac{8}{15}x(x-1)^{5/2}+\dfrac{8}{15}\int (x-1)^{5/2}\,dx \\
+      &=\dfrac{2}{3}x^2(x-1)^{3/2}
+      -\dfrac{8}{15}x(x-1)^{5/2}+\dfrac{16}{105}(x-1)^{7/2}+C
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX37">
+    <p>
+      We check using the Product Rule. If &ensp;\(f(x)=\dfrac{2}{3}x^2(x-1)^{3/2}-\dfrac{8}{15}x(x-1)^{5/2}+\dfrac{16}{105}(x-1)^{7/2}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{4}{3}x(x-1)^{3/2}+x^2(x-1)^{1/2}-\dfrac{8}{15}(x-1)^{5/2} \\
+      &\quad-\dfrac{4}{3}x(x-1)^{3/2}+\dfrac{8}{15}(x-1)^{5/2} \\
+      &=x^2\sqrt{x-1}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!--Definite Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="Def.html">c. Definite Integrals</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Def.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Use integration by parts to compute the following definite integrals.
+  The formula for definite integrals is:
+  \[
+  \int_a^b u\,dv=\left[u\,v\rule{0pt}{10pt}\right]_a^b-\int_a^b v\,du
+  \]
+  However, it is usually easier to just compute the indefinite integral and then
+  evaluate at the limits. This also gives us a chance to check our
+  intermediate work.
+</p>
+
+<!-- Problem 38 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_0^1 xe^{4x}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX38"></button>
+    	<button class="toggle has-sol" data-toggle="SolX38"></button>
+    	<button class="toggle has-rem" data-toggle="RemX38"></button>
+      <button class="toggle has-check" data-toggle="CkX38"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX38">
+  	<p>
+      \(\displaystyle \int_0^1 xe^{4x}\,dx
+      =\dfrac{3}{16}e^4+\dfrac{1}{16}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX38">
+  	<p>
+      We integrate by parts using:
+      \[\begin{array}{ll}
+      u=x & dv=e^{4x}\,dx \\
+      du=dx \quad & v=\dfrac{1}{4}e^{4x}
+      \end{array}\]
+      So:
+      \[\begin{aligned}
+      \int_0^1 xe^{4x}\,dx
+      &=\left[\dfrac{1}{4}xe^{4x}\right]_0^1-\dfrac{1}{4}\int_0^1 e^{4x}\,dx\\
+      &=\dfrac{1}{4}e^{4}-\left[\dfrac{1}{16}e^{4x}\right]_0^1 \\
+      &=\dfrac{1}{4}e^{4}-\dfrac{1}{16}e^{4}+\dfrac{1}{16} \\
+      &=\dfrac{3}{16}e^{4}+\dfrac{1}{16}
+      \end{aligned}\]
+      Here we have used the fact that \(e^0=1\).
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX38">
+  	<p>
+      Alternatively, we can find the indefinite integral of \(\displaystyle \int xe^{4x}\,dx\):
+      \[\begin{array}{ll}
+      u=x & dv=e^{4x}\,dx \\
+      du=dx \quad & v=\dfrac{1}{4}e^{4x}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int xe^{4x}\,dx
+      &=\dfrac{1}{4}xe^{4x}-\dfrac{1}{4}\int e^{4x}\,dx\\
+      &=\dfrac{1}{4}xe^{4x}-\dfrac{1}{16}e^{4x}+C \\
+      \end{aligned}\]
+      Then we plug in the limits:
+      \[\begin{aligned}
+      \int_0^1 xe^{4x}\,dx
+      &=\left[\dfrac{1}{4}xe^{4x}-\dfrac{1}{16}e^{4x}\right]_0^1 \\
+      &=\dfrac{1}{4}e^{4}-\dfrac{1}{16}e^{4}+\dfrac{1}{16} \\
+      &=\dfrac{3}{16}e^{4}+\dfrac{1}{16}
+      \end{aligned}\]
+      This method allows us to check the antiderivaive.
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX38">
+    <p>
+      We check the indefinite integral by using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{1}{4}xe^{4x}-\dfrac{1}{16}e^{4x}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{1}{4}e^{4x}+xe^{4x}-\dfrac{1}{4}e^{4x} \\
+      &=xe^{4x}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 39 -->
+<li>
+	<div class="dotfillex">
+    <p>
+      \(\displaystyle \int_0^{\pi/2} 2x\cos x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX39"></button>
+    	<button class="toggle has-sol" data-toggle="SolX39"></button>
+      <button class="toggle has-check" data-toggle="CkX39"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX39">
+    <p>
+      \(\displaystyle \int_0^{\pi/2} 2x\cos x\,dx=\pi-2\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX39">
+  	<p>
+      First, we find the indefinite integral of \(\displaystyle \int 2x\cos x\,dx\):
+      \[\begin{array}{ll}
+      u=2x & dv=\cos x\,dx \\
+      du=2\,dx \quad & v=\sin x
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int 2x\cos x\,dx
+      &=2x\sin x-\int 2\sin x\,dx \\
+      &=2x\sin x+2\cos x+C \\
+      \end{aligned}\]
+      Now we plug in the limits:
+      \[\begin{aligned}
+      \int_0^{\pi/2} 2x\cos x\,dx
+      &=\left[2x\sin x+2\cos x\dfrac{}{}\right]_0^{\pi/2} \\
+      &=\pi+0-0-2 \\
+      &=\pi-2
+      \end{aligned}\]
+      Here we have used the facts that \(\sin\dfrac{\pi}{2}=1\) and
+      \(\cos\dfrac{\pi}{2}=0\).
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX39">
+    <p>
+      We check using the Product Rule on the indefinite integral of
+      \(\displaystyle \int 2x\cos x\,dx\). If &ensp;\(f(x)=2x\sin x+2\cos x\),
+      &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=2\sin x+2x\cos x-2\sin x \\
+      &=2x\cos x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 40 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int_{-2}^1 x^2e^x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX40"></button>
+    	<button class="toggle has-sol" data-toggle="SolX40"></button>
+      <button class="toggle has-check" data-toggle="CkX40"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX40">
+    <p>
+      \(\displaystyle \int_{-2}^1 x^2e^x\,dx=e-10e^{-2}\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX40">
+  	<p>
+      To find the indefinite integral
+      \(\displaystyle \int x^2e^x\,dx\), we begin with the parts:
+      \[\begin{array}{ll}
+      u=x^2 & dv=e^x\,dx \\
+      du=2x\,dx \quad & v=e^x
+      \end{array}\]
+      So:
+      \[\begin{aligned}
+      \int x^2e^x\,dx
+      &=x^2e^x-2\int xe^x\,dx \\
+      \end{aligned}\]
+      Then we use the parts:
+      \[\begin{array}{ll}
+      u=x & dv=e^x\,dx \\
+      du=dx \quad & v=e^x
+      \end{array}\]
+      So:
+      \[\begin{aligned}
+      \int x^2e^x\,dx
+      &=x^2e^x-2\left(xe^x-\int e^{x}\,dx\right) \\
+      &=x^2e^x-2xe^x+2e^{x}+C \\
+      \end{aligned}\]
+      Finally, we evaluate at the limits:
+      \[\begin{aligned}
+      \int_{-2}^1 x^2e^x\,dx
+      &=\left[\dfrac{}{}x^2e^x-2xe^x+2e^{x}\right]_{-2}^1 \\
+      &=(e-2e+2e)-(4e^{-2}+4e^{-2}+2e^{-2}) \\
+      &=e-10e^{-2}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX40">
+    <p>
+      We check the indefinite integral using the Product Rule.
+      If &ensp;\(f(x)=x^2e^x-2xe^x+2e^{x}\),
+      &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=2xe^{x}+x^2e^{x}-2e^{x}-2xe^{x}+2e^{x} \\
+      &=x^2e^{x}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 41 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int_1^e x^3\ln x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX41"></button>
+    	<button class="toggle has-sol" data-toggle="SolX41"></button>
+      <button class="toggle has-check" data-toggle="CkX41"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX41">
+    <p>
+      \(\displaystyle \int_1^e x^3\ln x\,dx
+      =\dfrac{3}{16}e^4+\dfrac{1}{16}\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX41">
+  	<p>
+      We first find the indefinite integral using the parts:
+      \[\begin{array}{ll}
+      u=\ln x & dv=x^3\,dx \\
+      du=\dfrac{1}{x}\,dx \quad & v=\dfrac{1}{4}x^4
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int x^3\ln x\,dx
+      &=\dfrac{1}{4}x^4\ln x-\int \dfrac{1}{4}x^3\,dx \\
+      &=\dfrac{1}{4}x^4\ln x-\dfrac{1}{16}x^4+C
+      \end{aligned}\]
+      Now we plug in the limits:
+      \[\begin{aligned}
+      \int_1^e x^3\ln x\,dx
+      &=\left[\dfrac{1}{4}x^4\ln x-\dfrac{1}{16}x^4\right]_1^e \\
+      &=\dfrac{1}{4}e^4-\dfrac{1}{16}e^4-0+\dfrac{1}{16} \\
+      &=\dfrac{3}{16}e^4+\dfrac{1}{16}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX41">
+    <p>
+      We check the indefinite integral by differentiating.
+      If &ensp;\(f(x)=\dfrac{1}{4}x^4\ln x-\dfrac{1}{16}x^4\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=x^3\ln x+\dfrac{1}{4}x^4\dfrac{1}{x}-\dfrac{1}{4}x^3 \\
+      &=x^3\ln x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 42 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int_0^1 (x^2+2x)e^{2x}\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX42"></button>
+    	<button class="toggle has-sol" data-toggle="SolX42"></button>
+      <button class="toggle has-check" data-toggle="CkX42"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX42">
+    <p>
+      \(\displaystyle \int_0^1 (x^2+2x)e^{2x}\,dx
+      =\dfrac{3}{4}e^2+\dfrac{1}{4}\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX42">
+  	<p>
+      To find the indefinite integral, we begin with the parts:
+      \[\begin{array}{ll}
+      u=x^2+2x & dv=e^{2x}\,dx \\
+      du=(2x+2)\,dx \quad & v=\dfrac{1}{2}e^{2x}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int (x^2+2x)e^{2x}\,dx
+      &=(x^2+2x)\dfrac{1}{2}e^{2x}-\int \dfrac{1}{2}e^{2x}(2x+2)\,dx \\
+      &=\dfrac{1}{2}(x^2+2x)e^{2x}-\int (x+1)e^{2x}\,dx
+      \end{aligned}\]
+      Next, we use the parts:
+      \[\begin{array}{ll}
+      u=x+1 & dv=e^{2x}\,dx \\
+      du=dx \quad & v=\dfrac{1}{2}e^{2x}
+      \end{array}\]
+      So:
+      \[\begin{aligned}
+      \int (x^2+2x)e^{2x}\,dx
+      &=\dfrac{1}{2}(x^2+2x)e^{2x}
+      -\left((x+1)\dfrac{1}{2}e^{2x}-\int \dfrac{1}{2}e^{2x}\,dx\right) \\
+      &=\dfrac{1}{2}(x^2+2x)e^{2x}
+      -(x+1)\dfrac{1}{2}e^{2x}+\dfrac{1}{4}e^{2x}+C \\
+      &=\dfrac{1}{4}e^{2x}(2x^2+4x-2x-2+1)+C \\
+      &=\dfrac{1}{4}e^{2x}(2x^2+2x-1)+C
+      \end{aligned}\]
+      Then the definite integral is:
+      \[\begin{aligned}
+      \int_0^1 (x^2+2x)e^{2x}\,dx
+      &=\left[\dfrac{1}{4}e^{2x}(2x^2+2x-1)\right]_0^1 \\
+      &=\dfrac{3}{4}e^2+\dfrac{1}{4}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX42">
+    <p>
+    We check the indefinite integral using the Product Rule. If &ensp;
+    \(f(x)=\dfrac{1}{4}e^{2x}(2x^2+2x-1)\), &ensp; then
+    \[\begin{aligned}
+    f'(x)
+    &=\dfrac{1}{2}e^{2x}(2x^2+2x-1)+\dfrac{1}{4}e^{2x}(4x+2) \\
+    &=\dfrac{1}{2}e^{2x}(2x^2+2x-1+2x+1)
+    =e^{2x}(x^2+2x)
+    \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 43 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int_0^3 x\sqrt{x+1}\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX43"></button>
+    	<button class="toggle has-sol" data-toggle="SolX43"></button>
+      <button class="toggle has-check" data-toggle="CkX43"></button>
+      <button class="toggle has-rem" data-toggle="RemX43"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX43">
+    <p>
+      \(\displaystyle \int_0^3 x\sqrt{x+1}\,dx
+      =\dfrac{116}{15}\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX43">
+  	<p>
+      We first find the indefinite integral of
+      \(\displaystyle \int x\sqrt{x+1}\,dx\) by taking the parts:
+      \[\begin{array}{ll}
+      u=x & dv=(x+1)^{1/2}\,dx \\
+      du=\,dx \quad & v=\dfrac{2}{3}(x+1)^{3/2}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int x\sqrt{x+1}\,dx
+      &=\dfrac{2}{3}x(x+1)^{3/2}-\int \dfrac{2}{3}(x+1)^{3/2}\,dx \\
+      &=\dfrac{2}{3}x(x+1)^{3/2}-\dfrac{4}{15}(x+1)^{5/2}+C
+      \end{aligned}\]
+      Then the definite integral is:
+      \[\begin{aligned}
+      \int_0^3 x\sqrt{x+1}\,dx
+      &=\left[\dfrac{2}{3}x(x+1)^{3/2}-\dfrac{4}{15}(x+1)^{5/2}\right]_0^3 \\[3pt]
+      &=\dfrac{2}{3}3(4)^{3/2}-\dfrac{4}{15}(4)^{5/2}-0+\dfrac{4}{15} \\
+      &=2(8)-\dfrac{4}{15}(32)+\dfrac{4}{15} \\[3pt]
+      &=16-\dfrac{124}{15}
+      = \dfrac{116}{15}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX43">
+    <p>
+    We check using the Product Rule. If &ensp;
+    \(f(x)=\dfrac{2}{3}x(x+1)^{3/2}-\dfrac{4}{15}(x+1)^{5/2}\), &ensp; then
+    \[\begin{aligned}
+    f'(x)
+    &=\dfrac{2}{3}(x+1)^{3/2}+x(x+1)^{1/2}-\dfrac{2}{3}(x+1)^{3/2} \\
+    &=x\sqrt{x+1}
+    \end{aligned}\]
+    </p>
+  </div>
+  <div class="toBeToggled drop-rem" data-toggle="RemX43">
+    <p>
+      It is easier to do this integral by using the ordinary substitution
+      \(u=x+1\). Then \(du=dx\) and \(x=u-1\). So:
+      \[\begin{aligned}
+      \int_0^3 &x\sqrt{x+1}\,dx
+      =\int_1^4 (u-1)u^{1/2}\,du
+      =\int_1^4 u^{3/2}-u^{1/2}\,du \\
+      &=\left[\dfrac{}{}\dfrac{2}{5}u^{5/2}-\dfrac{2}{3}u^{3/2}\right]_1^4
+      =\dfrac{2}{5}32-\dfrac{2}{3}8-\dfrac{2}{5}+\dfrac{2}{3} \\
+      &=\dfrac{62}{5}-\dfrac{14}{3}
+      =\dfrac{116}{15}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 44 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int_{-1}^3 xe^{-4x}\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX44"></button>
+    	<button class="toggle has-sol" data-toggle="SolX44"></button>
+      <button class="toggle has-check" data-toggle="CkX44"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX44">
+    <p>
+      \(\displaystyle \int_{-1}^3 xe^{-4x}\,dx
+      =-\,\dfrac{13}{16}e^{-12}-\dfrac{3}{16}e^4\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX44">
+  	<p>
+      To find the indefinite integral, we take the parts:
+      \[\begin{array}{ll}
+      u=x & dv=e^{-4x}\,dx \\
+      du=dx \quad & v=-\,\dfrac{1}{4}e^{-4x}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int xe^{-4x}\,dx
+      &=-\,\dfrac{1}{4}xe^{-4x}+\int \dfrac{1}{4}e^{-4x}\,dx \\
+      &=-\,\dfrac{1}{4}xe^{-4x}-\dfrac{1}{16}e^{-4x}+C
+      \end{aligned}\]
+      Then the definite integral is:
+      \[\begin{aligned}
+      \int_{-1}^3 xe^{-4x}\,dx
+      &=\left[-\dfrac{1}{4}xe^{-4x}-\dfrac{1}{16}e^{-4x}\right]_{-1}^3 \\
+      &=\left[-\dfrac{3}{4}e^{-12}-\dfrac{1}{16}e^{-12}\right]
+       -\left[\dfrac{1}{4}e^{4}-\dfrac{1}{16}e^{4}\right] \\
+      &=-\,\dfrac{13}{16}e^{-12}-\dfrac{3}{16}e^{4}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX44">
+    <p>
+      We check the indefinite integral using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{1}{4}xe^{-4x}-\dfrac{1}{16}e^{-4x}\), &ensp; then
+      \[
+      f'(x)
+      =-\,\dfrac{1}{4}e^{-4x}+xe^{-4x}+\dfrac{1}{4}e^{-4x}
+      =xe^{-4x}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 45 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_1^e \ln x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX45"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX45"></button>
+    	<button class="toggle has-sol" data-toggle="SolX45"></button>
+      <button class="toggle has-check" data-toggle="CkX45"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX45">
+    <p>
+      You should remember:
+      \[
+      \int \ln x\,dx=x\ln x-x+C
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX45">
+  	<p>
+      \(\displaystyle \int_1^e \ln x\,dx=1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX45">
+  	<p>
+      We remember:
+      \[
+      \int \ln x\,dx=x\ln x-x+C
+      \]
+      Then:
+      \[\begin{aligned}
+      \int_1^e \ln x\,dx
+      &=\left[\dfrac{}{}x\ln x-x\right]_1^e \\
+      &=(e\ln e-e)-(1\ln 1-1)=1
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX45">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\ln x-x\), &ensp; then
+      \[
+      f'(x)
+      =\ln x+x\dfrac{1}{x}-1
+      =\ln x
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 46 -->
+<li>
+	<div class="dotfillex">
+    <p>
+      \(\displaystyle \int_{-\sqrt{3} }^1\arctan x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX46"></button>
+      <button class="toggle has-ans" data-toggle="AnsX46"></button>
+    	<button class="toggle has-sol" data-toggle="SolX46"></button>
+      <button class="toggle has-check" data-toggle="CkX46"></button>
+    </p>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX46">
+    <p>
+      From a
+      <a href="Spec.html#exspec" title="Return using the Back button.">
+      previous exercise</a> (which you don't need to memorize):
+      \[
+      \int \arctan x\,dx=x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX46">
+    <p>
+      \(\displaystyle \int_{-\sqrt{3} }^1\arctan x\,dx
+      =\dfrac{1}{2}\ln 2+\dfrac{\pi}{4}-\dfrac{\pi\sqrt{3}}{3}\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX46">
+  	<p>
+      From a
+      <a href="Spec.html#exspec" title="Return using the Back button.">
+      previous exercise</a>:
+      \[
+      \int \arctan x\,dx=x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C
+      \]
+      Then:
+      \[\begin{aligned}
+      \int_{-\sqrt{3}}^1 &\arctan x\,dx
+      =\left[x\arctan x-\dfrac{1}{2}\ln(1+x^2)\right]_{-\sqrt{3}}^1 \\
+      &=\left(\arctan 1-\dfrac{1}{2}\ln 2\right)-\left(-\sqrt{3}\arctan (-\sqrt{3})-\dfrac{1}{2}\ln 4\right) \\
+      &=\dfrac{\pi}{4}-\dfrac{1}{2}\ln 2-\sqrt{3}\dfrac{\pi}{3}+\dfrac{1}{2}\ln 2^2 \\
+      &=\dfrac{\pi}{4}-\dfrac{1}{2}\ln 2-\dfrac{\sqrt{3}\pi}{3}+\ln 2 \\
+      &=\dfrac{1}{2}\ln 2+\dfrac{\pi}{4}-\dfrac{\sqrt{3}\pi}{3} \\
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX46">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\arctan x-\dfrac{1}{2}\ln(1+x^2)\), &ensp; then
+      \[
+      f'(x)
+      =\arctan x+\dfrac{x}{1+x^2}-\dfrac{x}{1+x^2}
+      =\arctan x
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 47 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_0^{1/2} \arcsin 2x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX47"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX47"></button>
+    	<button class="toggle has-sol" data-toggle="SolX47"></button>
+      <button class="toggle has-check" data-toggle="CkX47"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX47">
+    <p>
+      From a
+      <a href="#x_arcsin2x" title="Return using the Back button.">
+      previous exercise</a> on this page:
+      \[
+      \int \arcsin 2x\,dx
+      =x\arcsin 2x+\dfrac{1}{2}\sqrt{1-4x^2}+C
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX47">
+  	<p>
+      \(\displaystyle \int_0^{1/2} \arcsin 2x\,dx
+      =\dfrac{\pi}{4}-\dfrac{1}{2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX47">
+  	<p>
+      From a
+      <a href="#x_arcsin2x" title="Return using the Back button.">
+      previous exercise</a> on this page:
+      \[
+      \int \arcsin 2x\,dx
+      =x\arcsin 2x+\dfrac{1}{2}\sqrt{1-4x^2}+C
+      \]
+      So:
+      \[\begin{aligned}
+      \int_0^{1/2} \arcsin 2x\,dx
+      &=\left[x\arcsin 2x+\dfrac{1}{2}\sqrt{1-4x^2}\right]_0^{1/2} \\
+      &=\left(\dfrac{1}{2}\arcsin 1+0\right)-\left(0+\dfrac{1}{2}\right) \\
+      &=\dfrac{\pi}{4}-\dfrac{1}{2}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX47">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\arcsin 2x+\dfrac{1}{2}\sqrt{1-4x^2}\), &ensp; then
+      \[
+      f'(x)
+      =\arcsin 2x+\dfrac{2x}{\sqrt{1-4x^2}}-\dfrac{2x}{\sqrt{1-4x^2}}
+      =\arcsin 2x
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 48 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_{-2}^2 x\cos x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX48"></button>
+    	<button class="toggle has-sol" data-toggle="SolX48"></button>
+      <button class="toggle has-check" data-toggle="CkX48"></button>
+      <button class="toggle has-rem" data-toggle="RemX48"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX48">
+  	<p>
+      \(\displaystyle \int_{-2}^2 x\cos x\,dx=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX48">
+  	<p>
+      Let
+      \[\begin{array}{ll}
+      u=x & dv=\cos x\,dx \\
+      du=dx \quad & v=\sin x
+      \end{array}\]
+      Then
+      \[\begin{aligned}
+      \int x\cos x\,dx
+      &=x\sin x-\int \sin x\,dx \\
+      &=x\sin x+\cos x+C
+      \end{aligned}\]
+      We plug in to get the definite integral:
+      \[\begin{aligned}
+      \int_{-2}^2 x\cos x\,dx
+      &=\left[x\sin x+\cos x\rule{0pt}{10pt}\right]_{-2}^2 \\
+      &=[2\sin 2+\cos 2]-\left[-2\sin(-2)+\cos(-2)\right] \\
+      &=2\sin 2+\cos 2-2\sin 2-\cos 2 \\
+      &=0
+      \end{aligned}\]
+      We have used the facts that \(\sin(-x)=-\sin x\) and
+      \(\cos(-x)=\cos x\) for all \(x\).
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX48">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\sin x+\cos x\), &ensp; then
+      \[
+      f'(x)
+      =\sin x+x\cos x-\sin x
+      =x\cos x
+      \]
+    </p>
+  </div>
+</li>
+<div class="toBeToggled drop-rem" data-toggle="RemX48">
+  <div class="column">
+    <p>
+      The answer should have been obvious. Notice that \(f(x)=x\cos x\) is an odd
+      function (i.e. \(f(-x)=-f(x)\)) and the interval \([-2,2]\) is symmetric
+      about \(0\). So the area above the \(x\)-axis must cancel with the area
+      below. Look at the graph. So the integral must be \(0\).
+    </p>
+    <div class="center">
+      <img src="graphics/x_xcosx_symm.jpg" alt="x_xcosx_symm.jpg"/>
+    </div>
+  </div>
+</div>
+
+<!-- Problem 49 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_1^2 x\ln|x|\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX49"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX49"></button>
+    	<button class="toggle has-sol" data-toggle="SolX49"></button>
+      <button class="toggle has-check" data-toggle="CkX49"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX49">
+    <p>
+      Let \(u=\ln|x|\) and \(dv=x\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX49">
+  	<p>
+      \(\displaystyle \int_1^2 x\ln|x|\,dx
+      =2\ln 2-\dfrac{3}{4}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX49">
+  	<p>
+      First we find the indfeinite integral. Let
+      \[\begin{array}{ll}
+      u=\ln|x| & dv=x\,dx \\
+      du=\dfrac{1}{x}\,dx \quad & v=\dfrac{x^2}{2}
+      \end{array}\]
+      Then
+      \[\begin{aligned}
+      \int x\ln|x|\,dx
+      &=\dfrac{x^2}{2}\ln|x|-\int \dfrac{x}{2}\,dx \\
+      &=\dfrac{x^2}{2}\ln|x|-\dfrac{x^2}{4}+C
+      \end{aligned}\]
+      Now we plug in the limits to find the definite integral
+      \[\begin{aligned}
+      \int_1^2 x\ln|x|\,dx
+      &=\left[\dfrac{x^2}{2}\ln|x|-\dfrac{x^2}{4}\right]_1^2 \\
+      &=\dfrac{4}{2}\ln|2|-\dfrac{4}{4}-\dfrac{1}{2}\ln|1|+\dfrac{1}{4} \\
+      &= 2\ln 2-\dfrac{3}{4}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX49">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{x^2}{2}\ln|x|-\dfrac{x^2}{4}\), &ensp; then
+      \[
+      f'(x)
+      =x\ln|x|+\dfrac{x^2}{2}\dfrac{1}{x}-\dfrac{x}{2}
+      =x\ln x
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 50 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_0^3 \ln|x+1|\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX50"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX50"></button>
+    	<button class="toggle has-sol" data-toggle="SolX50"></button>
+      <button class="toggle has-check" data-toggle="CkX50"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX50">
+    <p>
+      Use integration by parts with \(u=\ln|x+1|\) and \(dv=dx\).
+      <br>
+      Alternatively, use a substitution and remember the antiderivative of \(\ln x\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX50">
+  	<p>
+      \(\displaystyle \int_0^3 \ln|x+1|\,dx
+      =4\ln4-3\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX50">
+  	<p class="meth" data-number="1">
+      Let
+      \[\begin{array}{ll}
+      u=\ln|x+1| & dv=dx \\
+      du=\dfrac{1}{x+1}\,dx \quad & v=x
+      \end{array}\]
+      Then
+      \[\begin{aligned}
+      \int \ln|x+1|\,dx
+      &=x\ln|x+1|-\int \dfrac{x}{x+1}\,dx
+      \end{aligned}\]
+      To compute the integral, we can use the long division of polynomials to get:
+      \[\begin{aligned}
+      \int \ln|x+1|\,dx
+      &=x\ln|x+1|-\int 1-\dfrac{1}{x+1}\,dx \\
+      &=x\ln|x+1|-x+\ln|x+1|+C \\
+      \end{aligned}\]
+      We plug in the limits to get the definite integral
+      \[\begin{aligned}
+      \int_0^3 \ln|x+1|\,dx
+      &=\left[\dfrac{}{}x\ln|x+1|+\ln|x+1|-x\right]_0^3 \\
+      &=(3\ln 4+\ln 4-3)-(0\ln 1+\ln 1-0) \\
+      &=4\ln 4-3
+      \end{aligned}\]
+  	</p>
+  	<p class="meth" data-number="2">
+      Alternatively, we make the substitution \(u=x+1\) and \(du=dx\):
+      \[\begin{aligned}
+      \int_0^3 \ln|x+1|\,dx
+      &=\int_1^4 \ln|u|\,du
+      =\left[\dfrac{}{}u\ln|u|-u\right]_1^4 \\
+      &=(4\ln4-4)-(1\ln1-1)
+      =4\ln4-3
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX50">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\ln|x+1|+\ln|x+1|-x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\ln|x+1|+\dfrac{x}{x+1}+\dfrac{1}{x+1}-1 \\
+      &=\ln|x+1|+\dfrac{x+1}{x+1}-1
+      =\ln|x+1|
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 51 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_0^1 x\ln|x+1|\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX51"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX51"></button>
+    	<button class="toggle has-sol" data-toggle="SolX51"></button>
+      <button class="toggle has-check" data-toggle="CkX51"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX51">
+    <p>
+      Let \(u=\ln|x+1|\) and \(dv=x\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX51">
+  	<p>
+      \(\displaystyle \int_0^1 x\ln|x+1|\,dx
+      =\dfrac{1}{4}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX51">
+  	<p>
+      We choose the parts:
+      \[\begin{array}{ll}
+      u=\ln|x+1| & dv=x\,dx \\
+      du=\dfrac{1}{x+1}\,dx \quad & v=\dfrac{x^2}{2}
+      \end{array}\]
+      Then
+      \[\begin{aligned}
+      \int x\ln|x+1|\,dx
+      &=\dfrac{x^2}{2}\ln|x+1|-\dfrac{1}{2}\int \dfrac{x^2}{x+1}\,dx
+      \end{aligned}\]
+      To compute the remaining integral, we use polynomial long division:
+      \[\begin{aligned}
+      \int x\ln|x+1|\,dx
+      &=\dfrac{x^2}{2}\ln|x+1|-\dfrac{1}{2}\int x-1+\dfrac{1}{x+1}\,dx \\
+      &=\dfrac{x^2}{2}\ln|x+1|-\dfrac{1}{2}\left(\dfrac{x^2}{2}-x+\ln|x+1|\right)+C \\
+      &=\dfrac{x^2-1}{2}\ln|x+1|-\dfrac{x^2}{4}+\dfrac{x}{2}+C
+      \end{aligned}\]
+      Finally, we plug in the limits:
+      \[\begin{aligned}
+      \int_0^1 x\ln|x+1|\,dx
+      &=\left[\dfrac{x^2-1}{2}\ln|x+1|-\dfrac{x^2}{4}+\dfrac{x}{2}\right]_0^1 \\
+      &=\left(0\ln2-\dfrac{1}{4}+\dfrac{1}{2}\right)-0
+      =\dfrac{1}{4}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX51">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{x^2-1}{2}\ln|x+1|-\dfrac{x^2}{4}+\dfrac{x}{2}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=x\ln|x+1|+\dfrac{x^2-1}{2(x+1)}-\dfrac{x}{2}+\dfrac{1}{2} \\
+      &=x\ln|x+1|+\dfrac{1}{2}(x-1)-\dfrac{x}{2}+\dfrac{1}{2} \\
+      &=x\ln|x+1|
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 52 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_2^4 (x-2)e^{x+1}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX52"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX52"></button>
+    	<button class="toggle has-sol" data-toggle="SolX52"></button>
+      <button class="toggle has-check" data-toggle="CkX52"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX52">
+    <p>
+      Let \(u=x-2\) and \(dv=e^{x+1}\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX52">
+  	<p>
+      \(\displaystyle \int_2^4 (x-2)e^{x+1}\,dx
+      =e^5+e^3\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX52">
+  	<p>
+      We take the parts
+      \[\begin{array}{ll}
+      u=x-2 & dv=e^{x+1}\,dx \\
+      du=dx \quad & v=e^{x+1}
+      \end{array}\]
+      Then
+      \[\begin{aligned}
+      \int \left(x-2\right)e^{x+1}\,dx
+      &=\left(x-2\right)e^{x+1}-\int e^{x+1}\,dx \\
+      &=(x-2)e^{x+1}-e^{x+1}+C \\
+      &=(x-3)e^{x+1}+C
+      \end{aligned}\]
+      We evaluate at the limits
+      \[\begin{aligned}
+      \int_2^4 \left(x-2\right)e^{x+1}\,dx
+      &=\left[\rule{0pt}{10pt}(x-3)e^{x+1}\right]_2^4 \\
+      &=e^5+e^3
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX52">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=(x-3)e^{x+1}\), &ensp; then
+      \[
+      f'(x)
+      =e^{x+1}+(x-3)e^{x+1}=(x-2)e^{x+1}
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 53 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_0^4 3x\sqrt{2x+1}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX53"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX53"></button>
+    	<button class="toggle has-sol" data-toggle="SolX53"></button>
+      <button class="toggle has-check" data-toggle="CkX53"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX53">
+    <p>
+      There is no reason to use integration by parts. Just make the
+      substitution \(u=2x+1\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX53">
+  	<p>
+      \(\displaystyle \int_0^4 3x\sqrt{2x+1}\,dx
+      =\dfrac{298}{5}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX53">
+  	<p>
+      It is easiest to just make the subsitution \(u=2x+1\) and
+      \(du=2\,dx\). Then \(\dfrac{1}{2}\,du=dx\) and \(x=\dfrac{u-1}{2}\). So:
+      \[\begin{aligned}
+      \int 3x\sqrt{2x+1}\,dx
+      &=\dfrac{3}{2}\int \dfrac{u-1}{2}\sqrt{u}\,du \\
+      &=\dfrac{3}{4}\int u^{3/2}-u^{1/2}\,du \\
+      &=\dfrac{3}{4}\left(\dfrac{2}{5}u^{5/2}-\dfrac{2}{3}u^{3/2}\right)+C \\
+      &=\dfrac{3}{10}(2x+1)^{5/2}-\dfrac{1}{2}(2x+1)^{3/2}+C
+      \end{aligned}\]
+      We now plug in the limits:
+      \[\begin{aligned}
+      \int_0^4 3x\sqrt{2x+1}\,dx
+      &=\left[\dfrac{3}{10}(2x+1)^{5/2}-\dfrac{1}{2}(2x+1)^{3/2}\right]_0^4 \\
+      &=\left[\dfrac{3}{10}9^{5/2}-\dfrac{1}{2}9^{3/2}\right]
+      -\left[\dfrac{3}{10}-\dfrac{1}{2}\right] \\
+      &=\dfrac{3}{10}243-\dfrac{1}{2}27-\dfrac{3}{10}+\dfrac{1}{2} \\
+      &=\dfrac{3}{10}242-\dfrac{1}{2}26=\dfrac{363}{5}-13=\dfrac{298}{5}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX53">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)
+      =\dfrac{3}{10}(2x+1)^{5/2}-\dfrac{1}{2}(2x+1)^{3/2}\),
+      &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{3}{4}(2x+1)^{3/2}2-\dfrac{3}{4}(2x+1)^{1/2}2 \\
+      &=\dfrac{3}{2}(2x+1)^{1/2}(2x+1-1)
+      =3x\sqrt{2x+1}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 54 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_1^4 \dfrac{\ln x}{\sqrt{x}}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX54"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX54"></button>
+    	<button class="toggle has-sol" data-toggle="SolX54"></button>
+      <button class="toggle has-check" data-toggle="CkX54"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX54">
+    <p>
+      Let \(u=\ln x\) and \(dv=x^{-1/2}\,dx\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX54">
+  	<p>
+      \(\displaystyle \int_1^4 \dfrac{\ln x}{\sqrt{x}}\,dx
+      =4\ln 4-4\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX54">
+  	<p>
+      Let:
+      \[\begin{array}{ll}
+      u=\ln x & dv=x^{-1/2}\,dx \\
+      du=\dfrac{1}{x}\,dx \quad & v=2x^{1/2}
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int \dfrac{\ln x}{\sqrt{x}}\,dx
+      &=2x^{1/2}\ln x-\int 2x^{-1/2}\,dx \\
+      &=2x^{1/2}\ln x-4x^{1/2}+C
+      \end{aligned}\]
+      We plug in the limits:
+      \[\begin{aligned}
+      \int_1^4 \dfrac{\ln x}{\sqrt{x}}\,dx
+      &=\left[2x^{1/2}\ln x-4x^{1/2}\right]_1^4 \\
+      &=2(4)^{1/2}\ln 4-4(4)^{1/2}-2\ln 1+4 \\
+      &=4\ln4-4
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX54">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=2x^{1/2}\ln x-4x^{1/2}\), &ensp; then
+      \[
+      f'(x)=x^{-1/2}\ln x+2x^{-1/2}-2x^{-1/2}=\dfrac{\ln x}{\sqrt{x}}
+      \]
+    </p>
+  </div>
+</li>
+
+<hr>
+
+<!-- Problem 55 -->
+<li>
+  <div class="dotfillex">
+    <div class="column">
+  		<p data-col-width="60%">
+        Find the average value of the function \(f(x)=x\sin x\) over the
+        interval \([0,\pi]\).
+			</p>
+      <div class="center" data-col-width="40%">
+          <img src="graphics/x_xsinx.jpg" alt="x_xsinx">
+      </div>
+    </div>
+    <p>
+    	<button class="toggle has-hint" data-toggle="HintX55"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX55"></button>
+    	<button class="toggle has-sol" data-toggle="SolX55"></button>
+      <button class="toggle has-check" data-toggle="CkX55"></button>
+    </p>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX55">
+    <p>
+      Remember that the formula for average value is:
+      \[
+      f_\text{ave}=\dfrac{1}{b-a}\int_a^b f(x)\,dx
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX55">
+  	<p>
+      \(f_\text{ave}=1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX55">
+  	<p>
+      Let:
+      \[\begin{array}{ll}
+      u=x & dv=\sin x\,dx \\
+      du=dx \quad & v=-\cos x
+      \end{array}\]
+      Then
+      \[\begin{aligned}
+      \int x\sin x\,dx
+      &=-x\cos x+\int \cos x\,dx \\
+      &=-x\cos x+\sin x+C
+      \end{aligned}\]
+      So:
+      \[\begin{aligned}
+      \int_0^\pi x\sin x\,dx
+      &=\left[\dfrac{}{}-x\cos x+\sin x\right]_0^\pi \\
+      &=(-\pi\cos\pi)-(0)=\pi
+      \end{aligned}\]
+      and:
+      \[
+      f_\text{ave}=\dfrac{1}{\pi}\int_0^\pi x\sin x\,dx=1
+      \]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX55">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-x\cos x+\sin x\), &ensp; then
+      \[
+      f'(x)=-\cos x+x\sin x+\cos x=x\sin x
+      \]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 56 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      A company's total sales of gallons of sludge is \(P(t)\) where \(t\) is
+      the number of weeks since the sludge product was introduced. Further,
+      the rate of sales is \(P'(t)=3000t^2 e^{-2t}\) gallons per week. How
+      many gallons were sold during the first six weeks?
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX56"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX56"></button>
+    	<button class="toggle has-sol" data-toggle="SolX56"></button>
+      <button class="toggle has-check" data-toggle="CkX56"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX56">
+    <p>
+      This is another application of the Fundamental Theorem. The integral
+      of the rate of sales gives total sales. Hence, we have
+      \(\displaystyle P(t)=\int_0^t 3000x^2 e^{-2x}\,dx\) and we want to know
+      \(\displaystyle P(6)=\int_0^6 3000x^2 e^{-2x}\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX56">
+  	<p>
+      \(P=750-63750e^{-12}\approx749.6\) gallons
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX56">
+  	<p>
+      First read the hint. To compute
+      \(\displaystyle \int 3000x^2 e^{-2x}\,dx\), we let:
+        \[\begin{array}{ll}
+        u=3000x^2 & dv=e^{-2x}\,dx \\
+        du=6000x\,dx \quad & v=-\,\dfrac{1}{2}e^{-2x}
+        \end{array}\]
+        Then
+        \[\begin{aligned}
+        \int 3000x^2 e^{-2x}\,dx
+        &=-1500x^2e^{-2x}+\int 3000xe^{-2x}\,dx \\
+        \end{aligned}\]
+        For the remaining integral, take:
+        \[\begin{array}{ll}
+        u=3000x & dv=e^{-2x}\,dx \\
+        du=3000\,dx \quad & v=-\,\dfrac{1}{2}e^{-2x}
+        \end{array}\]
+        Then
+        \[\begin{aligned}
+        \int 3000x^2 e^{-2x}\,dx
+        &=-1500x^2e^{-2x}-1500xe^{-2x}+\int 1500e^{-2x}\,dx \\
+        &=-1500x^2e^{-2x}-1500xe^{-2x}-750e^{-2x}+C \\
+        &=(-1500x^2-1500x-750)e^{-2x}+C \\
+        \end{aligned}\]
+        So the sales in the first \(6\) weeks are
+        \[\begin{aligned}
+        P(6)
+        &=\int_0^6 3000x^2 e^{-2x}\,dx \\
+        &=\left[\dfrac{}{}(-1500x^2-1500x-750)e^{-2x}\right]_0^6 \\
+        &=(-1500\cdot6^2-1500\cdot6-750)e^{-12}-(-750) \\
+        &=750-63750e^{-12}\approx749.6 \text{gallons}
+        \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX56">
+    <p>
+      We check the indefinite integral by using the Product Rule. If &ensp;
+      \(f(x)=(-1500x^2-1500x-750)e^{-2x}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=(-3000x-1500)e^{-2x}-2(-1500x^2-1500x-750)e^{-2x} \\
+      &=(-3000x-1500+3000x^2+3000x+1500)e^{-2x} \\
+      &=3000x^2e^{-2x}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!--Recurrence of the Integral-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="Recur.html">d. Recurrence of the Integral</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Recur.html">1</a></div>
+      
+        <div><a href="Reduce.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Use integration by parts to compute the following integrals:
+</p>
+
+<!-- Problem 57 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int e^{2x}\cos x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX57"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX57"></button>
+    	<button class="toggle has-sol" data-toggle="SolX57"></button>
+			<button class="toggle has-check" data-toggle="CkX57"></button>
+			<button class="toggle has-rem" data-toggle="RemX57"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX57">
+    <p>
+      Either take \(u=e^{2x}\) for both applications of integration by parts,
+      or take \(u=\cos x\) for the first integration by parts and \(u=\sin x\)
+      for the second one.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX57">
+  	<p>
+      \(\displaystyle \int e^{2x}\cos x\,dx
+      =\dfrac{2}{5}e^{2x}\cos x+\dfrac{1}{5}e^{2x}\sin x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX57">
+  	<p>
+      This is a product of a trig function and an exponential. So LAPTE tells
+      us that \(u\) should be the trig function. So we take the parts:
+      \[\begin{array}{ll}
+      u=\cos x & dv=e^{2x}\,dx \\
+      du=-\sin x\,dx \quad & v=\dfrac{1}{2}e^{2x}
+      \end{array}\]
+      Hence:
+      \[
+      \int e^{2x}\cos x\,dx
+      =\dfrac{1}{2}e^{2x}\cos x+\dfrac{1}{2}\int e^{2x}\sin x\,dx
+      \]
+      Now, we take the parts:
+      \[\begin{array}{ll}
+      u=\sin x & dv=e^{2x}\,dx \\
+      du=\cos x\,dx \quad & v=\dfrac{1}{2}e^{2x}
+      \end{array}\]
+      So:
+      \[\begin{aligned}
+      \int &e^{2x}\cos x\,dx
+      =\dfrac{1}{2}e^{2x}\cos x \\
+      &\quad+\dfrac{1}{2}\left(\dfrac{1}{2}e^{2x}\sin x-\dfrac{1}{2}\int e^{2x}\cos x\,dx\right) \\
+      &=\dfrac{1}{2}e^{2x}\cos x \\
+      &\quad+\dfrac{1}{4}e^{2x}\sin x-\dfrac{1}{4}\int e^{2x}\cos x\,dx
+      \end{aligned}\]
+      Finally, we add \(\displaystyle \dfrac{1}{4}\int e^{2x}\cos x\,dx\) to
+      both sides and multiply by \(\dfrac{4}{5}\):
+      \[\begin{aligned}
+      \dfrac{5}{4}\int e^{2x}\cos x\,dx
+      &=\dfrac{1}{2}e^{2x}\cos x+\dfrac{1}{4}e^{2x}\sin x+K \\
+      \int e^{2x}\cos x\,dx
+      &=\dfrac{2}{5}e^{2x}\cos x+\dfrac{1}{5}e^{2x}\sin x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX57">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{2}{5}e^{2x}\cos x+\dfrac{1}{5}e^{2x}\sin x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{4}{5}e^{2x}\cos x-\dfrac{2}{5}e^{2x}\sin x \\
+      &\quad+\dfrac{2}{5}e^{2x}\sin x+\dfrac{1}{5}e^{2x}\cos x \\
+      &=e^{2x}\cos x
+      \end{aligned}\]
+      which is the original integrand.
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX57">
+    <p>
+      In the solution, \(dv=e^{2x}\,dx\) in both integrations by parts.
+      It can also be done taking \(u=e^{2x}\) in both integrations by parts,
+      as follows:
+    </p>
+    <p>
+      First, we take the parts:
+      \[\begin{array}{ll}
+      u=e^{2x} & dv=\cos x\,dx \\
+      du=2e^{2x}\,dx \quad & v=\sin x
+      \end{array}\]
+      Hence:
+      \[
+      \int e^{2x}\cos x\,dx
+      =e^{2x}\sin x-2\int e^{2x}\sin x\,dx
+      \]
+      Next, we take the parts:
+      \[\begin{array}{ll}
+      u=e^{2x} & dv=\sin x\,dx \\
+      du=2e^{2x}\,dx \quad & v=-\cos x
+      \end{array}\]
+      So:
+      \[\begin{aligned}
+      \int e^{2x}\cos x\,dx
+      &=e^{2x}\sin x-2\left(-e^{2x}\cos x+2\int e^{2x}\cos x\,dx\right) \\
+      &=e^{2x}\sin x+2e^{2x}\cos x-4\int e^{2x}\cos x\,dx
+      \end{aligned}\]
+      Finally, we add \(\displaystyle 4\int e^{2x}\cos x\,dx\) to both sides and
+      divide by \(5\):
+      \[\begin{aligned}
+      5\int e^{2x}\cos x\,dx &=e^{2x}\sin x+2e^{2x}\cos x+K \\
+      \int e^{2x}\cos x\,dx &=\dfrac{1}{5}e^{2x}\sin x+\dfrac{2}{5}e^{2x}\cos x+C
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 58 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int e^{-x}\cos x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX58"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX58"></button>
+    	<button class="toggle has-sol" data-toggle="SolX58"></button>
+			<button class="toggle has-check" data-toggle="CkX58"></button>
+			<button class="toggle has-rem" data-toggle="RemX58"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX58">
+    <p>
+      Take \(u=e^{-x}\) for both applications of integration by parts.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX58">
+  	<p>
+      \(\displaystyle \int e^{-x}\cos x\,dx
+      =\dfrac{1}{2}e^{-x}\sin x-\dfrac{1}{2}e^{-x}\cos x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX58">
+  	<p>
+      We first take the parts:
+      \[\begin{array}{ll}
+      u=e^{-x} & dv=\cos x\,dx \\
+      du=-e^{-x}\,dx \quad & v=\sin x
+      \end{array}\]
+      Then:
+      \[
+      \int e^{-x}\cos x\,dx
+      =e^{-x}\sin x+\int e^{-x}\sin x\,dx
+      \]
+      We now take the parts
+      \[\begin{array}{ll}
+      u=e^{-x} & dv=\sin x\,dx \\
+      du=-e^{-x}\,dx \quad & v=-\cos x
+      \end{array}\]
+      Hence
+      \[
+      \int e^{-x}\cos x\,dx
+      =e^{-x}\sin x-e^{-x}\cos x-\int e^{-x}\cos x\,dx
+      \]
+      Now add \(\displaystyle \int e^{-x}\cos x\,dx\) to both sides and divide by \(2\):
+      \[\begin{aligned}
+      2\int e^{-x}\cos x\,dx
+      &=e^{-x}\sin x-e^{-x}\cos x+K \\
+      \int e^{-x}\cos x\,dx
+      &=\dfrac{1}{2}e^{-x}\sin x-\dfrac{1}{2}e^{-x}\cos x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX58">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{1}{2}e^{-x}\sin x-\dfrac{1}{2}e^{-x}\cos x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-\,\dfrac{1}{2}e^{-x}\sin x+\dfrac{1}{2}e^{-x}\cos x \\
+      &\quad+\dfrac{1}{2}e^{-x}\cos x+\dfrac{1}{2}e^{-x}\sin x \\
+      &=e^{-x}\cos x
+      \end{aligned}\]
+      which agrees with the original integrand.
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX58">
+    <p>
+      In the solution, \(u=e^{-x}\) in both integrations by parts.
+      It can also be done taking \(dv=e^{-x}\,dx\) in both integrations by parts.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 59 -->
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle \int e^x\cos 3x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX59"></button>
+    	<button class="toggle has-sol" data-toggle="SolX59"></button>
+			<button class="toggle has-check" data-toggle="CkX59"></button>
+			<button class="toggle has-rem" data-toggle="RemX59"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX59">
+    <p>
+      \(\displaystyle \int e^x\cos 3x\,dx
+      =\dfrac{1}{10}e^{x}\cos 3x+\dfrac{3}{10}e^{x}\sin 3x+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX59">
+  	<p>
+      We first take the parts:
+      \[\begin{array}{ll}
+      u=\cos 3x & dv=e^{x}\,dx \\
+      du=-3\sin 3x\,dx \quad & v=e^{x}
+      \end{array}\]
+      Then:
+      \[
+      \int e^{x}\cos 3x\,dx
+      =e^{x}\cos 3x+3\int e^{x}\sin 3x\,dx
+      \]
+      We now take the parts
+      \[\begin{array}{ll}
+      u=\sin 3x & dv=e^{x}\,dx \\
+      du=3\cos 3x\,dx \quad & v=e^{x}
+      \end{array}\]
+      Hence
+      \[\begin{aligned}
+      \int &e^{x}\cos 3x\,dx
+      =e^{x}\cos 3x \\
+      &\quad+3\left(e^{x}\sin 3x-3\int e^{x}\cos 3x\,dx\right)
+      \end{aligned}\]
+      We now add \(\displaystyle 9\int e^{x}\cos 3x\,dx\) to both sides
+      and divide by \(10\):
+      \[\begin{aligned}
+      10\int e^{x}\cos 3x\,dx
+      &=e^{x}\cos 3x+3e^{x}\sin 3x+K \\
+      \int e^{x}\cos 3x\,dx
+      &=\dfrac{1}{10}e^{x}\cos 3x+\dfrac{3}{10}e^{x}\sin 3x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX59">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{1}{10}e^{x}\cos 3x+\dfrac{3}{10}e^{x}\sin 3x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{1}{10}e^x\cos 3x-\dfrac{3}{10}e^x\sin 3x \\
+      &\quad+\dfrac{3}{10}e^x\sin 3x+\dfrac{9}{10}e^x\cos 3x \\
+      &=e^x\cos 3x
+      \end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX59">
+    <p>
+      In the solution, \(dv=e^x\,dx\) in both integrations by parts.
+      It can also be done taking \(u=e^x\) in both integrations by parts.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 60 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int e^{2x}\sin 2x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX60"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX60"></button>
+    	<button class="toggle has-sol" data-toggle="SolX60"></button>
+			<button class="toggle has-check" data-toggle="CkX60"></button>
+			<button class="toggle has-rem" data-toggle="RemX60"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX60">
+    <p>
+      Either take \(u=e^{2x}\) for both applications of integration by parts,
+      or take \(u=\sin 2x\) for the first integration by parts and \(u=\cos 2x\)
+      for the second one.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX60">
+  	<p>
+      \(\displaystyle \int e^{2x}\sin 2x\,dx
+      =-\,\dfrac{1}{4}e^{2x}\cos 2x+\dfrac{1}{4}e^{2x}\sin 2x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX60">
+  	<p>
+      We first take the parts:
+      \[\begin{array}{ll}
+      u=e^{2x} & dv=\sin 2x\,dx \\
+      du=2e^{2x}\,dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+      \end{array}\]
+      Then:
+      \[
+      \int e^{2x}\sin 2x\,dx
+      =-\,\dfrac{1}{2}e^{2x}\cos 2x+\int e^{2x}\cos 2x\,dx
+      \]
+      We now take the parts:
+      \[\begin{array}{ll}
+      u=e^{2x} & dv=\cos 2x\,dx \\
+      du=2e^{2x}\,dx \quad & v=\dfrac{1}{2}\sin 2x
+      \end{array}\]
+      Hence
+      \[
+      \int e^{2x}\sin 2x\,dx
+      =-\,\dfrac{1}{2}e^{2x}\cos 2x+\dfrac{1}{2}e^{2x}\sin 2x-\int e^{2x}\sin 2x\,dx
+      \]
+      We now add \(\displaystyle \int e^{2x}\sin 2x\,dx\) to both sides and divide by \(2\):
+      \[\begin{aligned}
+      2\int e^{x}\cos 2x\,dx
+      &=-\,\dfrac{1}{2}e^{2x}\cos 2x+\dfrac{1}{2}e^{2x}\sin 2x+K \\
+      \int e^{2x}\cos 2x\,dx
+      &=-\,\dfrac{1}{4}e^{2x}\cos 2x+\dfrac{1}{4}e^{2x}\sin 2x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX60">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{1}{4}e^{2x}\cos 2x+\dfrac{1}{4}e^{2x}\sin 2x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-\,\dfrac{1}{2}e^{2x}\cos 2x+\dfrac{1}{2}e^{2x}\sin 2x \\
+      &\quad+\dfrac{1}{2}e^{2x}\sin 2x+\dfrac{1}{2}e^{2x}\cos 2x \\
+      &=e^{2x}\sin 2x
+      \end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX60">
+    <p>
+      In the solution, \(u=e^{2x}\) in both integrations by parts.
+      It can also be done taking \(dv=e^{2x}\,dx\) in both integrations by parts.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 61 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int e^{-5x}\sin 3x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX61"></button>
+    	<button class="toggle has-sol" data-toggle="SolX61"></button>
+			<button class="toggle has-check" data-toggle="CkX61"></button>
+			<button class="toggle has-rem" data-toggle="RemX61"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX61">
+  	<p>
+      \(\displaystyle \int e^{-5x}\sin 3x\,dx
+      =-\,\dfrac{3}{34}e^{-5x}\cos 3x-\dfrac{5}{34}e^{-5x}\sin 3x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX61">
+  	<p>
+      We first take the parts:
+      \[\begin{array}{ll}
+      u=e^{-5x} & dv=\sin 3x\,dx \\
+      du=-5e^{-5x}\,dx \quad & v=-\,\dfrac{1}{3}\cos 3x
+      \end{array}\]
+      Then:
+      \[
+      \int e^{-5x}\sin 3x\,dx
+      =-\,\dfrac{1}{3}e^{-5x}\cos 3x-\dfrac{5}{3}\int e^{-5x}\cos 3x\,dx
+      \]
+      We now take the parts again
+      \[\begin{array}{ll}
+      u=e^{-5x} & dv=\cos 3x\,dx \\
+      du=-5e^{-5x}\,dx \quad & v=\dfrac{1}{3}\sin 3x
+      \end{array}\]
+      Hence
+      \[\begin{aligned}
+      \int &e^{-5x}\sin 3x\,dx
+      =-\,\dfrac{1}{3}e^{-5x}\cos 3x \\
+      &-\dfrac{5}{3}\left(\dfrac{1}{3}e^{-5x}\sin 3x
+      +\dfrac{5}{3}\int e^{-5x}\sin 3x\,dx\right)
+      \end{aligned}\]
+      Now add \(\displaystyle \dfrac{25}{9}\int e^{-5x}\sin 3x\,dx\) to both
+      sides and multiply by \(\dfrac{9}{34}\):
+      \[\begin{aligned}
+      \dfrac{34}{9}\int e^{-5x}\sin 3x\,dx
+      &=-\,\dfrac{1}{3}e^{-5x}\cos 3x-\dfrac{5}{9}e^{-5x}\sin 3x+K \\
+      \int e^{-5x}\sin 3x\,dx
+      &=-\,\dfrac{3}{34}e^{-5x}\cos 3x-\dfrac{5}{34}e^{-5x}\sin 3x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX61">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{3}{34}e^{-5x}\cos 3x-\dfrac{5}{34}e^{-5x}\sin 3x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{15}{34}e^{-5x}\cos 3x+\dfrac{9}{34}e^{-5x}\sin 3x \\
+      &\quad+\dfrac{25}{34}e^{-5x}\sin 3x-\dfrac{15}{34}e^{-5x}\cos 3x \\
+      &=e^{-5x}\sin 3x
+      \end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX61">
+    <p>
+      In the solution, \(u=e^{-5x}\) in both integrations by parts.
+      It can also be done taking \(dv=e^{-5x}\,dx\) in both integrations by parts.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 62 -->
+<li>
+  <div class="dotfillex">
+  	<p>
+      \(\displaystyle \int \sin 3x\cos 2x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX62"></button>
+      <button class="toggle has-ans" data-toggle="AnsX62"></button>
+      <button class="toggle has-sol" data-toggle="SolX62"></button>
+			<button class="toggle has-check" data-toggle="CkX62"></button>
+			<button class="toggle has-rem" data-toggle="RemX62"></button>
+    </p>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX62">
+    <p>
+      Either take \(u=\sin 3x\) for the first applications of integration by
+      parts and \(u=\cos 3x\) for the second one,
+      or take \(u=\cos 2x\) for the first integration by parts and \(u=\sin 2x\)
+      for the second one.
+      The important thing is to keep the coefficient of \(x\) the same both
+      times, or else the second integration will undo the first.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX62">
+    <p>
+      \(\displaystyle \int \sin 3x\cos 2x\,dx
+      =-\,\dfrac{2}{5}\sin 3x\sin 2x-\dfrac{3}{5}\cos 3x\cos 2x+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX62">
+  	<p>
+      We first take the parts:
+      \[\begin{array}{ll}
+      u=\sin 3x & dv=\cos 2x\,dx \\
+      du=3\cos 3x\,dx \quad & v=\dfrac{1}{2}\sin 2x
+      \end{array}\]
+      Then:
+      \[
+      \int \sin 3x\cos 2x\,dx
+      =\dfrac{1}{2}\sin 3x\sin 2x-\dfrac{3}{2}\int \cos 3x\sin 2x\,dx
+      \]
+      We now take the parts
+      \[\begin{array}{ll}
+      u=\cos 3x & dv=\sin 2x\,dx \\
+      du=-3\sin 3x\,dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+      \end{array}\]
+      Hence
+      \[\begin{aligned}
+      \int &\sin 3x\cos 2x\,dx=\dfrac{1}{2}\sin 3x\sin 2x \\
+      &-\dfrac{3}{2}\left(-\,\dfrac{1}{2}\cos 3x\cos 2x
+      -\dfrac{3}{2}\int \sin 3x\cos 2x\,dx\right)
+      \end{aligned}\]
+      Now subtract \(\displaystyle \dfrac{9}{4}\int \sin 3x\cos 2x\,dx\) from
+      both sides and multiply by \(-\,\dfrac{4}{5}\):
+      \[\begin{aligned}
+      -\,\dfrac{5}{4}\int \sin 3x\cos 2x\,dx
+      &=\dfrac{1}{2}\sin 3x\sin 2x+\dfrac{3}{4}\cos 3x\cos 2x+K \\
+      \int \sin 3x\cos 2x\,dx
+      &=-\,\dfrac{2}{5}\sin 3x\sin 2x-\dfrac{3}{5}\cos 3x\cos 2x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX62">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{2}{5}\sin 3x\sin 2x-\dfrac{3}{5}\cos 3x\cos 2x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-\,\dfrac{6}{5}\cos 3x\sin 2x-\dfrac{4}{5}\sin 3x\cos 2x \\
+      &\quad+\dfrac{9}{5}\sin 3x\cos 2x+\dfrac{6}{5}\cos 3x\sin 2x \\
+      &=\sin 3x\cos 2x
+      \end{aligned}\]
+    </p>
+  </div>
+  <div class="toBeToggled drop-rem" data-toggle="RemX62">
+	  <p>
+    Another method of computing this integral is in the chapter on
+    <a href="../TrigInt/Prod.html" title="Return using the Back button.">
+    Trig Integrals</a>.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 63 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int xe^x\sin x\,dx\) &ensp;
+      (This one is tough.)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX63"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX63"></button>
+    	<button class="toggle has-sol" data-toggle="SolX63"></button>
+			<button class="toggle has-check" data-toggle="CkX63"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX63">
+    <p>
+      Start with \(u=x\) and \(dv=e^x\sin x\,dx\). But then you will need to
+      work hard to find \(\displaystyle v=\int e^x\sin x\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX63">
+  	<p>
+      \(\displaystyle \int xe^x\sin x\,dx
+      =\dfrac{x}{2}e^x\sin x+\left(-\,\dfrac{x}{2}+\dfrac{1}{2}\right)e^x\cos x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX63">
+  	<p>
+      We first take the parts
+      \[\begin{array}{ll}
+      u=x & dv=e^x\sin x\,dx \\
+      du=dx \quad & v=\text{???}
+      \end{array}\]
+      To find \(\displaystyle v=\int e^x\sin x\,dx\) it is necessary to
+      integrate by parts twice and solve for the recurring integral. In fact,
+      this was done in an example on a
+      <a href="Recur.html#egrecur" title="Return using the Back button.">
+      previous page</a>. The result was:
+      \[\begin{aligned}
+      v=\int e^x\sin x\,dx
+      =\dfrac{1}{2}e^x\sin x-\dfrac{1}{2}e^x\cos x \qquad\qquad(1)
+      \end{aligned}\]
+      Hence
+      \[\begin{aligned}
+      \int xe^x\sin x\,dx
+      &=x\left(\dfrac{1}{2}e^x\sin x-\dfrac{1}{2}e^x\cos x\right) \\
+      &\quad -\int \left(\dfrac{1}{2}e^x\sin x-\dfrac{1}{2}e^x\cos x\right)\,dx \\
+      &=\dfrac{x}{2}e^x\sin x-\dfrac{x}{2}e^x\cos x \\
+      &\quad -\dfrac{1}{2}\int e^x\sin x\,dx+\dfrac{1}{2}\int e^x\cos x\,dx
+      \end{aligned}\]
+      Each of the remaining integrals must be integrated by the recurrence
+      method. The first is equation \((1)\) above. The second is
+      \[
+      \int e^x\cos x\,dx
+      =\dfrac{1}{2}e^x\sin x+\dfrac{1}{2}e^x\cos x \qquad\qquad(2)
+      \]
+      (Check this by differentiating.)
+      Putting it all together gives
+      \[\begin{aligned}
+      \int xe^x\sin x\,dx
+      &=\dfrac{x}{2}e^x\sin x-\dfrac{x}{2}e^x\cos x \\
+      &\quad-\dfrac{1}{2}\left(\dfrac{1}{2}e^x\sin x-\dfrac{1}{2}e^x\cos x\right) \\
+      &\quad+\dfrac{1}{2}\left(\dfrac{1}{2}e^x\sin x+\dfrac{1}{2}e^x\cos x\right)+C \\
+      &=\dfrac{x}{2}e^x\sin x+\left(-\,\dfrac{x}{2}+\dfrac{1}{2}\right)e^x\cos x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX63">
+    <p>
+      We check using the Product Rule. Note that each term is the product of
+      \(3\) functions! If &ensp;
+      \(f(x)=\dfrac{x}{2}e^x\sin x+\left(-\,\dfrac{x}{2}+\dfrac{1}{2}\right)e^x\cos x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{1}{2}e^{x}\sin x+\dfrac{x}{2}e^{x}\sin x+\dfrac{x}{2}e^{x}\cos x \\
+      &\quad-\dfrac{1}{2}e^{x}\cos x+\left(-\,\dfrac{x}{2}+\dfrac{1}{2}\right)e^x\cos x-\left(-\,\dfrac{x}{2}+\dfrac{1}{2}\right)e^x\sin x \\
+      &=\dfrac{1}{2}e^{x}\sin x+\dfrac{x}{2}e^{x}\sin x+\dfrac{x}{2}e^{x}\cos x \\
+      &\quad-\dfrac{1}{2}e^{x}\cos x-\dfrac{x}{2}e^x\cos x+\dfrac{1}{2}e^x\cos x+\dfrac{x}{2}e^x\sin x-\dfrac{1}{2}e^x\sin x \\
+      &=xe^x\sin x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 64 -->
+<li>
+  <p data-title="Sine Reduction Formula">
+    \[
+    \int \sin^n x\,dx
+    =-\,\dfrac{1}{n}\sin^{n-1}x\cos x+\dfrac{n-1}{n}\int \sin^{n-2}x\,dx
+    \]
+    The reduction formula was derived in an
+    <a href="Reduce.html#exsin" title="Return using the Back button.">
+    exercise</a> in the text.
+  </p>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+          Use the reduction formula to compute
+          \(\displaystyle \int \sin^2 x\,dx\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX64a"></button>
+					<button class="toggle has-sol" data-toggle="SolX64a"></button>
+    			<button class="toggle has-check" data-toggle="CkX64a"></button>
+    			<button class="toggle has-rem" data-toggle="RemX64a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX64a">
+				<p>
+					\(\displaystyle \int \sin^2 x\,dx
+          =-\,\dfrac{1}{2}\sin x\cos x+\dfrac{1}{2}x+C\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX64a">
+				<p>
+        Plugging \(n=2\) into the reduction formula, we get
+        \[\begin{aligned}
+        \int \sin^2 x\,dx
+        &=-\,\dfrac{1}{2}\sin x\cos x+\dfrac{1}{2}\int 1\,dx \\
+        &=-\,\dfrac{1}{2}\sin x\cos x+\dfrac{1}{2}x+C
+        \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX64a">
+        <p>
+          We check using the Product Rule. If &ensp;
+          \(f(x)=-\,\dfrac{1}{2}\sin x\cos x+\dfrac{1}{2}x\), &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=-\,\dfrac{1}{2}\cos^2 x+\dfrac{1}{2}\sin^2 x+\dfrac{1}{2} \\
+          &=\dfrac{1}{2}\left(1-\cos^2 x\right)+\dfrac{1}{2}\sin^2 x
+          \end{aligned}\]
+          We use the Pythagorean Identity for Sine and Cosine to subsitute
+          \(1-\cos^2 x=\sin^2 x\)
+          \[\begin{aligned}
+          &=\dfrac{1}{2}\left(\sin^2 x\right)+\dfrac{1}{2}\sin^2 x \\
+          &=\sin^2 x
+          \end{aligned}\]
+        </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX64a">
+    	  <p>
+        Another method of computing this integral is in the chapter on
+        <a href="../TrigInt/SinCosEven.html#sin^2x" title="Return using the Back button.">
+        Trig Integrals</a>.
+        </p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Use the reduction formula to compute
+          \(\displaystyle \int \sin^4 x\,dx\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX64b"></button>
+					<button class="toggle has-sol" data-toggle="SolX64b"></button>
+    			<button class="toggle has-check" data-toggle="CkX64b"></button>
+    			<button class="toggle has-rem" data-toggle="RemX64b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX64b">
+				<p>
+					\(\displaystyle \int \sin^4 x\,dx
+          =-\,\dfrac{1}{4}\sin^3 x\cos x-\dfrac{3}{8}\sin x\cos x+\dfrac{3}{8}x+C\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX64b">
+				<p>
+        Plugging \(n=4\) into the reduction formula, we get:
+        \[
+        \int \sin^4 x\,dx
+        =-\,\dfrac{1}{4}\sin^3 x\cos x+\dfrac{3}{4}\int \sin^2x\,dx
+        \]
+        For the last integral, we substitute in the formula for
+        \(\displaystyle \int \sin^2 x\,dx\):
+        \[\begin{aligned}
+        \int \sin^4 x\,dx
+        &=-\,\dfrac{1}{4}\sin^3 x\cos x
+        +\dfrac{3}{4}\left(-\,\dfrac{1}{2}\sin x\cos x+\dfrac{1}{2}x\right)+C \\
+        &=-\,\dfrac{1}{4}\sin^3 x\cos x-\dfrac{3}{8}\sin x\cos x+\dfrac{3}{8}x+C
+        \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX64b">
+        <p>
+          We check using the Product Rule, To get everything in terms of
+          \(\sin x\), we use the Pythagorean Identity to subsitute
+          \(\cos^2 x=1-\sin^2 x\). If &ensp;
+          \(f(x)=-\,\dfrac{1}{4}\sin^3 x\cos x-\dfrac{3}{8}\sin x\cos x+\dfrac{3}{8}x\),
+          &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=-\,\dfrac{3}{4}\sin^2 x\cos^2 x+\dfrac{1}{4}\sin^4 x-\dfrac{3}{8}\cos^2 x+\dfrac{3}{8}\sin^2 x+\dfrac{3}{8} \\
+          &=-\,\dfrac{3}{4}\sin^2 x(1-\sin^2 x)+\dfrac{1}{4}\sin^4 x-\dfrac{3}{8}(1-\sin^2 x)+\dfrac{3}{8}\sin^2 x+\dfrac{3}{8} \\
+          &=-\,\dfrac{3}{4}\sin^2 x+\dfrac{3}{4}\sin^4 x+\dfrac{1}{4}\sin^4 x-\dfrac{3}{8}+\dfrac{3}{8}\sin^2 x+\dfrac{3}{8}\sin^2 x+\dfrac{3}{8} \\
+          &=\sin^4 x
+          \end{aligned}\]
+        </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX64b">
+        <p>
+        Another method of computing this integral is in the chapter on
+        <a href="../TrigInt/SinCosEven.html" title="Return using the Back button.">
+        Trig Integrals</a>.
+        </p>
+      </div>
+    </li>
+	</ol>
+</li>
+
+<!-- Problem 65 -->
+<li>
+  <p data-title="Cosine Reduction Formula">
+    \[
+    \int \cos^n x\,dx
+    =\dfrac{1}{n}\cos^{n-1}x\sin x+\dfrac{n-1}{n}\int \cos^{n-2}x\,dx
+    \]
+    The reduction formula was derived in an
+    <a href="Reduce.html#egcos" title="Return using the Back button.">
+    example</a> in the text.
+  </p>
+	<ol type="a">
+    <li>
+      <div class="dotfillex">
+        <p>
+          Use the reduction formula to compute
+          \(\displaystyle \int \cos^2 x\,dx\).
+        </p>
+        <p><button class="toggle has-ans" data-toggle="AnsX65a"></button>
+        <button class="toggle has-sol" data-toggle="SolX65a"></button>
+        <button class="toggle has-check" data-toggle="CkX65a"></button>
+        <button class="toggle has-rem" data-toggle="RemX65a"></button>
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX65a">
+        <p>
+  				\(\displaystyle \int \cos^2 x\,dx
+          =\dfrac{1}{2}\cos x\sin x+\dfrac{1}{2}x+C\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX65a">
+        <p>
+        Plugging in \(n=2\) into the reduction formula, we get
+        \[\begin{aligned}
+        \int \cos^2 x\,dx
+        &=\dfrac{1}{2}\cos x\sin x+\dfrac{1}{2}\int 1\,dx \\
+        &=\dfrac{1}{2}\cos x\sin x+\dfrac{1}{2}x+C
+        \end{aligned}\]
+        </p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+      </div>
+      <div class="toBeToggled drop-check" data-toggle="CkX65a">
+        <p>
+          We check using the Product Rule and the Pythagorean Identity
+          for Sine and Cosine to substitute \(\sin^2 x=1-\cos^2 x\). If &ensp;
+          \(f(x)=\dfrac{1}{2}\cos x\sin x+\dfrac{1}{2}x\), &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=-\,\dfrac{1}{2}\sin^2 x+\dfrac{1}{2}\cos^2 x+\dfrac{1}{2} \\
+          &=-\,\dfrac{1}{2}\left(1-\cos^2 x\right)+\dfrac{1}{2}\cos^2 x+\dfrac{1}{2} \\
+          &=-\,\dfrac{1}{2}+\dfrac{1}{2}\cos^2 x+\dfrac{1}{2}\cos^2 x+\dfrac{1}{2} \\
+          &=\cos^2 x
+          \end{aligned}\]
+        </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX65a">
+        <p>
+        Another method of computing this integral is in the chapter on
+        <a href="../TrigInt/SinCosEven.html" title="Return using the Back button.">
+        Trig Integrals</a>.
+        </p>
+      </div>
+    </li>
+    <li>
+			<div class="dotfillex">
+				<p>
+          Use the reduction formula to compute
+          \(\displaystyle \int \cos^3 x\,dx\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX65b"></button>
+					<button class="toggle has-sol" data-toggle="SolX65b"></button>
+    			<button class="toggle has-check" data-toggle="CkX65b"></button>
+    			<button class="toggle has-rem" data-toggle="RemX65b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX65b">
+				<p>
+					\(\displaystyle \int \cos^3 x\,dx
+          =\dfrac{1}{3}\cos^2 x\sin x+\dfrac{2}{3}\sin x+C\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX65b">
+				<p>
+        Plugging in \(n=3\) into the reduction formula, we get
+        \[\begin{aligned}
+        \int \cos^3 x\,dx
+        &=\dfrac{1}{3}\cos^2 x\sin x+\dfrac{2}{3}\int \cos x\,dx \\
+        &=\dfrac{1}{3}\cos^2 x\sin x+\dfrac{2}{3}\sin x+C
+        \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX65b">
+        <p>
+          We check using the Product Rule and the Pythagorean Identity for
+          Sine and Cosine to subsitute \(\sin^2 x=1-\cos^2 x\). If &ensp;
+          \(f(x)=\dfrac{1}{3}\cos^2 x\sin x+\dfrac{2}{3}\sin x\), &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=-\,\dfrac{2}{3}\cos x\sin^2 x+\dfrac{1}{3}\cos^3 x+\dfrac{2}{3}\cos x \\
+          &=-\,\dfrac{2}{3}\cos x\left(1-\cos^2 x\right)+\dfrac{1}{3}\cos^3 x +\dfrac{2}{3}\cos x\\
+          &=\dfrac{2}{3}\cos^3 x+\dfrac{1}{3}\cos^3 x \\
+          &=\cos^3 x
+          \end{aligned}\]
+        </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX65b">
+    	  <p>
+          Another method of computing this integral is in the chapter on
+          <a href="../TrigInt/SinCosOdd.html" title="Return using the Back button.">
+          Trig Integrals</a>.
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<!-- Problem 66 -->
+<li>
+  <p data-title="Log Reduction Formula">
+    \[
+    \int \ln^n x\,dx=x\ln^n x-n\int \ln^{n-1} x\,dx
+    \]
+  </p>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+          Derive the reduction formula.
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX66a"></button>
+					<button class="toggle has-sol" data-toggle="SolX66a"></button>
+    			<button class="toggle has-check" data-toggle="CkX66a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX66a">
+				<p>
+					Use integration by parts with \(u=\ln^n x\) and \(dv=dx\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX66a">
+				<p>
+          We use the parts
+          \[\begin{array}{ll}
+          u=\ln^n x & dv=dx \\
+          du=\dfrac{n\ln^{n-1} x}{x}\,dx \quad & v=x
+          \end{array}\]
+          Hence:
+          \[
+          \int \ln^n x\,dx
+          =x\ln^n x-n\int \ln^{n-1} x\,dx
+          \]
+          which is the reduction formula.
+				</p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX66a">
+        <p>
+          We check using the Product Rule and the first FTC. If &ensp;
+          \(\displaystyle f(x)=x\ln^n x-n\int \ln^{n-1} x\,dx\),
+          &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=\ln^n x+x n\dfrac{\ln^{n-1} x}{x}-n\ln^{n-1} x \\
+          &=\ln^n x
+          \end{aligned}\]
+        </p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Use the reduction formula to compute
+          \(\displaystyle \int \ln^3 x\,dx\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX66b"></button>
+					<button class="toggle has-sol" data-toggle="SolX66b"></button>
+    			<button class="toggle has-check" data-toggle="CkX66b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX66b">
+				<p>
+					\(\displaystyle \int \ln^3 x\,dx
+          =x\ln^3 x-3x\ln^2 x+6x\ln x-6x+C\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX66b">
+				<p>
+        We use the reduction formula three times:
+        \[\begin{aligned}
+        \int \ln^3 x\,dx
+        &=x\ln^3 x-3\int \ln^2 x\,dx \\
+        &=x\ln^3 x-3\left(x\ln^2 x-2\int \ln x\,dx\right) \\
+        &=x\ln^3 x-3x\ln^2 x+6\left(x\ln x-\int 1\,dx\right) \\
+        &=x\ln^3 x-3x\ln^2 x+6x\ln x-6x+C
+        \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX66b">
+        <p>
+          We check using the Product Rule . If &ensp;
+          \(f(x)=x\ln^3 x-3x\ln^2 x+6x\ln x-6x\), &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=\ln^3 x+x3\ln^2x\,\dfrac{1}{x}-3\ln^2 x-3x2\ln x\,\dfrac{1}{x} \\
+          &\quad+6\ln x+6x\,\dfrac{1}{x}-6 \\
+          &=\ln^3 x
+          \end{aligned}\]
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<!-- Problem 67 -->
+<a id="x-sec-reduce"></a>
+<li>
+  <p data-title="Secant Reduction Formula">
+    \[
+    \int \sec^n x\,dx
+    =\dfrac{1}{n-1}\sec^{n-2} x\tan x
+    +\dfrac{n-2}{n-1}\int \sec^{n-2}x\,dx
+    \]
+  </p>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+          Derive the reduction formula.
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX67a"></button>
+					<button class="toggle has-sol" data-toggle="SolX67a"></button>
+    			<button class="toggle has-check" data-toggle="CkX67a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX67a">
+				<p>
+					Use integration by parts with \(u=\sec^{n-2} x\) and \(dv=\sec^2 x\,dx\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX67a">
+				<p>
+          We use the parts
+          \[\begin{array}{ll}
+          u=\sec^{n-2} x & dv=\sec^2 x\,dx \\
+          du=(n-2)\sec^{n-3}x\sec x\tan x\,dx \quad & v=\tan x
+          \end{array}\]
+          Hence:
+          \[\begin{aligned}
+          \int \sec^n x\,dx
+          &=\sec^{n-2} x\tan x \\
+          &\quad-(n-2)\int \sec^{n-2} x\tan^2 x\,dx
+          \end{aligned}\]
+          In the remaining integral, we use the identity
+          \(\tan^2 x=\sec^2 x-1\), distribute the secants and split the
+          integral into two parts:
+          \[\begin{aligned}
+          \int &\sec^n x\,dx
+          =\sec^{n-2} x\tan x \\
+          &\qquad\qquad\quad-(n-2)\int \sec^{n-2} x(\sec^2 x-1)\,dx \\
+          &=\sec^{n-2} x\tan x \\
+          &\quad-(n-2)\int \sec^n x\,dx+(n-2)\int \sec^{n-2}x\,dx
+          \end{aligned}\]
+          The integral \(\int \sec^n x\,dx\) recurs on the right. So we add
+          \((n-2)\int \sec^n x\,dx\) to both sides and then divide by \(n-1\):
+          \[\begin{aligned}
+          (n-1)\int \sec^n x\,dx
+          &=\sec^{n-2} x\tan x+(n-2)\int\sec^{n-2}x\,dx \\
+          \end{aligned}\]
+          \[\begin{aligned}
+          \int \sec^n x\,dx
+          &=\dfrac{1}{n-1}\sec^{n-2} x\tan x+\dfrac{n-2}{n-1}\int \sec^{n-2} x\,dx
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX67a">
+        <p>
+          We check using the Product Rule, the first FTC and the Pythagorean Identity
+          \(\tan^2 x+1=\sec^2 x\). If &ensp;
+          \(\displaystyle f(x)=\dfrac{1}{n-1}\sec^{n-2} x\tan x
+          +\dfrac{n-2}{n-1}\int \sec^{n-2} x\,dx\), &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=\dfrac{n-2}{n-1}\sec^{n-2} x\tan^2 x+\dfrac{1}{n-1}\sec^n x
+          +\dfrac{n-2}{n-1}\sec^{n-2} x \\
+          &=\dfrac{n-2}{n-1}\sec^{n-2} x\left(\tan^2 x+1\right)
+          +\dfrac{1}{n-1}\sec^n x \\
+          &=\dfrac{n-2}{n-1}\sec^{n-2} x\left(\sec^2 x\right)
+          +\dfrac{1}{n-1}\sec^n x \\
+          &=\dfrac{n-2}{n-1}\sec^n x+\dfrac{1}{n-1}\sec^n x \\
+          &=\dfrac{n-1}{n-1}\sec^n x=\sec^n x
+          \end{aligned}\]
+        </p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Use the reduction formula to compute
+          \(\displaystyle \int \sec^4 x\,dx\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX67b"></button>
+					<button class="toggle has-sol" data-toggle="SolX67b"></button>
+    			<button class="toggle has-check" data-toggle="CkX67b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX67b">
+				<p>
+					\(\displaystyle \int \sec^4 x\,dx
+          =\dfrac{1}{3}\sec^2 x\tan x+\dfrac{2}{3}\tan x+C\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX67b">
+				<p>
+        Plugging \(n=4\) into the reduction formula, we get:
+        \[\begin{aligned}
+        \int \sin^4 x\,dx
+        &=\dfrac{1}{3}\sec^2 x\tan x+\dfrac{2}{3}\int \sec^2 x\,dx \\
+        &=\dfrac{1}{3}\sec^2 x\tan x+\dfrac{2}{3}\tan x+C
+        \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          lk&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX67b">
+        <p>
+          We check using the Product Rule and the Pythagorean Identity
+          \(\tan^2 x+1=\sec^2 x\). If &ensp;
+          \(f(x)=\dfrac{1}{3}\sec^{2} x\tan x+\dfrac{2}{3}\tan x\), &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=\dfrac{2}{3}\sec^2 x\tan^2 x+\dfrac{1}{3}\sec^4 x+\dfrac{2}{3}\sec^2 x \\
+          &=\dfrac{2}{3}\sec^2 x\left(\tan^2 x+1\right)+\dfrac{1}{3}\sec^4 x \\
+          &=\dfrac{2}{3}\sec^2 x\left(\sec^2 x\right)+\dfrac{1}{3}\sec^4 x \\
+          &=\dfrac{2}{3}\sec^4 x+\dfrac{1}{3}\sec^4 x \\
+          &=\sec^4 x
+          \end{aligned}\]
+        </p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          Use the reduction formula to compute
+          \(\displaystyle \int \sec^3 x\,dx\).
+          <br><em>Read the hint!</em>
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX67c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX67c"></button>
+					<button class="toggle has-sol" data-toggle="SolX67c"></button>
+    			<button class="toggle has-check" data-toggle="CkX67c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX67c">
+				<p>
+          You will need the integral:
+          \[
+          \int \sec x\,dx=\ln|\sec x+\tan x|+C
+          \]
+          This integral will be derived in the chapter on
+          <a href="../TrigInt/TanSecOther.html#sec_int" title="Return using the Back button.">
+          Trig Integrals</a>. However, it can be easily checked by differentiating:
+          \[\begin{aligned}
+          \dfrac{d}{dx}\ln|\sec x+\tan x|
+        	&=\dfrac{1}{\sec x+\tan x}(\sec x\tan x+\sec^2 x) \\[5pt]
+        	&=\dfrac{\sec x(\tan x+\sec x)}{\sec x+\tan x}
+        	=\sec x
+          \end{aligned}\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX67c">
+				<p>
+					\(\displaystyle \int \sec^3 x\,dx
+          =\dfrac{1}{2}\sec x\tan x+\dfrac{1}{2}\ln|\sec x+\tan x|+C\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX67c">
+				<p>
+        Plugging \(n=3\) into the reduction formula, we get:
+        \[\begin{aligned}
+        \int \sin^3 x\,dx
+        &=\dfrac{1}{2}\sec x\tan x+\dfrac{1}{2}\int \sec x\,dx \\
+        &=\dfrac{1}{2}\sec x\tan x+\dfrac{1}{2}\ln|\sec x+\tan x|+C
+        \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          py&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX67c">
+        <p>
+          We check using the Product Rule and the Pythagorean Identity
+          \(\tan^2 x=\sec^2 x-1\). If &ensp;
+          \(f(x)=\dfrac{1}{2}\sec x\tan x+\dfrac{1}{2}\ln|\sec x+\tan x|\),
+          &ensp; then
+          \[\begin{aligned}
+          f'(x)
+          &=\dfrac{1}{2}\sec x\tan^2 x+\dfrac{1}{2}\sec^3 x+\dfrac{1}{2}\sec x \\
+          &=\dfrac{1}{2}\sec x(\sec^2 x-1)+\dfrac{1}{2}\sec^3 x+\dfrac{1}{2}\sec x \\
+          &=\sec^3 x
+          \end{aligned}\]
+          where we have used \(\dfrac{d}{dx}\ln|\sec x+\tan x|=\sec x\).
+          (See the hint.)
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+        <div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  Evaluate using any appropriate method.
+</p>
+
+<!-- Problem 68 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int x^3 e^x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX68"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX68"></button>
+    	<button class="toggle has-sol" data-toggle="SolX68"></button>
+      <button class="toggle has-check" data-toggle="CkX68"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX68">
+    <p>
+      Apply integration by parts three times.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX68">
+  	<p>
+      \(\displaystyle \int x^3e^x\,dx
+      =x^3e^x-3x^2e^x+6xe^x-6e^x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX68">
+  	<p>
+      First, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x^3 & dv=e^x\,dx \\
+      du=3x^2\,dx \quad & v=e^x
+      \end{array}\)
+      \[
+      \int x^3e^x\,dx=x^3e^x-3\int x^2e^x\,dx
+      \]
+      Second, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x^2 & dv=e^x\,dx \\
+      du=2x\,dx \quad & v=e^x
+      \end{array}\)
+      \[\begin{aligned}
+      \int e^3e^x\,dx
+      &=e^3e^x-3\left(x^2e^x-2\int xe^x\,dx\right) \\
+      &=e^3e^x-3x^2e^x+6\int xe^x\,dx
+      \end{aligned}\]
+      Finally, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x & dv=e^x\,dx \\
+      du=dx \quad & v=e^x
+      \end{array}\)
+      \[\begin{aligned}
+      \int e^3e^x\,dx
+      &=e^3e^x-3x^2e^x+6\left(xe^x-\int e^x\,dx\right) \\
+      &=e^3e^x-3x^2e^x+6xe^x-6e^x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX68">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x^3e^x-3x^2e^x+6xe^x-6e^x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=3x^2e^x+x^3e^x-6xe^x-3x^2e^x+6e^x+6xe^x-6e^x \\
+      &=x^3e^x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 69 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int x^2\cos 2x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX69"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX69"></button>
+    	<button class="toggle has-sol" data-toggle="SolX69"></button>
+      <button class="toggle has-check" data-toggle="CkX69"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX69">
+    <p>
+      Apply integration by parts twice.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX69">
+  	<p>
+      \(\displaystyle \int x^2\cos 2x\,dx
+      =\dfrac{x^2}{2}\sin 2x+\dfrac{x}{2}\cos 2x-\dfrac{1}{4}\sin 2x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX69">
+  	<p>
+      First, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x^2 & dv=\cos 2x\,dx \\
+      du=2x\,dx \quad & v=\dfrac{1}{2}\sin 2x
+      \end{array}\)
+      \[
+      \int x^2\cos 2x\,dx
+      =\dfrac{x^2}{2}\sin 2x-\int x\sin 2x\,dx
+      \]
+      Then, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x & dv=\sin 2x\,dx \\
+      du=dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+      \end{array}\)
+      \[\begin{aligned}
+      \int x^2\cos 2x\,dx
+      &=\dfrac{x^2}{2}\sin 2x-\left(-\,\dfrac{x}{2}\cos 2x
+      +\dfrac{1}{2}\int \cos 2x\,dx\right) \\
+      &=\dfrac{x^2}{2}\sin 2x+\dfrac{x}{2}\cos 2x-\dfrac{1}{4}\sin 2x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX69">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{x^2}{2}\sin 2x+\dfrac{x}{2}\cos 2x-\dfrac{1}{4}\sin 2x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=x\sin 2x+x^2\cos 2x+\dfrac{1}{2}\cos 2x-x\sin 2x-\dfrac{1}{2}\cos 2x \\
+      &=x^2\cos 2x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 70 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int x^2e^{12x}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX70"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX70"></button>
+    	<button class="toggle has-sol" data-toggle="SolX70"></button>
+      <button class="toggle has-check" data-toggle="CkX70"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX70">
+    <p>
+      Apply integration by parts twice.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX70">
+  	<p>
+      \(\displaystyle \int x^2e^{12x}\,dx
+      =\dfrac{x^2}{12}e^{12x}-\dfrac{x}{72}e^{12x}+\dfrac{1}{864}e^{12x}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX70">
+  	<p>
+      First, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x^2 & dv=e^{12x}\,dx \\
+      du=2x\,dx \quad & v=\dfrac{1}{12}e^{12x}
+      \end{array}\)
+      \[
+      \int x^2e^{12x}\,dx
+      =\dfrac{x^2}{12}e^{12x}-\dfrac{1}{6}\int xe^{12x}\,dx
+      \]
+      Then, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x & dv=e^{12x}\,dx \\
+      du=\,dx \quad & v=\dfrac{1}{12}e^{12x}
+      \end{array}\)
+      \[\begin{aligned}
+      \int x^2e^{12x}\,dx
+      &=\dfrac{x^2}{12}e^{12x}-\dfrac{1}{6}\left(\dfrac{x}{12}e^{12x}
+      -\dfrac{1}{12}\int e^{12x}\,dx\right) \\
+      &=\dfrac{x^2}{12}e^{12x}-\dfrac{x}{72}e^{12x}+\dfrac{1}{864}e^{12x}+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX70">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=\dfrac{x^2}{12}e^{12x}-\dfrac{x}{72}e^{12x}+\dfrac{1}{864}e^{12x}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{x}{6}e^{12x}+x^2e^{12x}-\dfrac{1}{72}e^{12x}-\dfrac{x}{6}e^{12x}
+      +\dfrac{1}{72}e^{12x} \\
+      &=x^2e^{12x}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 71 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int x^2\sin 5x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX71"></button>
+    	<button class="toggle has-sol" data-toggle="SolX71"></button>
+      <button class="toggle has-check" data-toggle="CkX71"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX71">
+  	<p>
+      \(\displaystyle \int x^2\sin 5x\,dx
+      =-\,\dfrac{x^2}{5}\cos 5x+\dfrac{2x}{25}\sin 5x+\dfrac{2}{125}\cos 5x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX71">
+  	<p>
+      First, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x^2 & dv=\sin 5x\,dx \\
+      du=2x\,dx \quad & v=-\,\dfrac{1}{5}\cos 5x
+      \end{array}\)
+      \[
+      \int x^2\sin 5x\,dx
+      =-\,\dfrac{x^2}{5}\cos 5x+\dfrac{2}{5}\int x\cos 5x\,dx
+      \]
+      Then, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x & dv=\cos 5x\,dx \\
+      du=\,dx \quad & v=\dfrac{1}{5}\sin 5x
+      \end{array}\)
+      \[\begin{aligned}
+      \int x^2\sin 5x\,dx
+      &=-\,\dfrac{x^2}{5}\cos 5x+\dfrac{2}{5}\left(\dfrac{x}{5}\sin 5x
+      -\dfrac{1}{5}\int \sin 5x\,dx \right) \\
+      &=-\,\dfrac{x^2}{5}\cos 5x+\dfrac{2}{5}\left(\dfrac{x}{5}\sin 5x
+      +\dfrac{1}{25}\cos 5x\right)+C \\
+      &=-\,\dfrac{x^2}{5}\cos 5x+\dfrac{2x}{25}\sin 5x+\dfrac{2}{125}\cos 5x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX71">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{x^2}{5}\cos 5x+\dfrac{2x}{25}\sin 5x+\dfrac{2}{125}\cos 5x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-\,\dfrac{2x}{5}\cos 5x+x^2\sin 5x+\dfrac{2}{25}\sin 5x+\dfrac{2x}{5}\cos 5x
+      -\dfrac{2}{25}\sin 5x \\
+      &=x^2\sin 5x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 72 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int (x-1)^2e^{-x}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX72"></button>
+    	<button class="toggle has-sol" data-toggle="SolX72"></button>
+      <button class="toggle has-check" data-toggle="CkX72"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX72">
+  	<p>
+      \(\displaystyle
+      \int (x-1)^2e^{-x}\,dx=-(x^2+1)e^{-x}+C
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX72">
+  	<p>
+      First, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=(x-1)^2 & dv=e^{-x}\,dx \\
+      du=2(x-1)\,dx \quad & v=-e^{-x}
+      \end{array}\)
+      \[
+      \int (x-1)^2e^{-x}\,dx
+      =-(x-1)^2e^{-x}+2\int (x-1)e^{-x}\,dx
+      \]
+      Then, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=(x-1) & dv=e^{-x}\,dx \\
+      du=dx \quad & v=-e^{-x}
+      \end{array}\)
+      \[\begin{aligned}
+      \int (x-1)^2e^{-x}\,dx
+      &=-(x-1)^2e^{-x}+2\left(-(x-1)e^{-x}+\int e^{-x}\,dx\right) \\
+      &=-(x-1)^2e^{-x}-2(x-1)e^{-x}-2e^{-x}+C\\
+      &=(-x^2+2x-1-2x+2-2)e^{-x}+C\\
+      &=-(x^2+1)e^{-x}+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX72">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-(x^2+1)e^{-x}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-2xe^{-x}+(x^2+1)e^{-x} \\
+      &=(x^2-2x+1)e^{-x} \\
+      &=(x-1)^2e^{-x}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 73 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int x^3\sin 2x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX73"></button>
+    	<button class="toggle has-sol" data-toggle="SolX73"></button>
+      <button class="toggle has-check" data-toggle="CkX73"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX73">
+  	<p>
+      \(\begin{aligned}
+      \int &x^3\sin 2x\,dx \\
+      &=-\,\dfrac{x^3}{2}\cos 2x+\dfrac{3x^2}{4}\sin 2x
+      +\dfrac{3x}{4}\cos 2x-\dfrac{3}{8}\sin 2x+C
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX73">
+  	<p>
+      First, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x^3 & dv=\sin 2x\,dx \\
+      du=3x^2\,dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+      \end{array}\)
+      \[
+      \int x^3\sin 2x\,dx
+      =-\,\dfrac{x^3}{2}\cos 2x+\dfrac{3}{2}\int x^2\cos 2x\,dx
+      \]
+      Second, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x^2 & dv=\cos 2x\,dx \\
+      du=2x\,dx \quad & v=\dfrac{1}{2}\sin 2x
+      \end{array}\)
+      \[\begin{aligned}
+      \int x^3\sin 2x\,dx
+      &=-\,\dfrac{x^3}{2}\cos 2x
+      +\dfrac{3}{2}\left(\dfrac{x^2}{2}\sin 2x-\int x\sin 2x\,dx\right) \\
+      &=-\,\dfrac{x^3}{2}\cos 2x+\dfrac{3x^2}{4}\sin 2x-\dfrac{3}{2}\int x\sin 2x\,dx
+      \end{aligned}\]
+      Finally, using the parts: &emsp;
+      \(\begin{array}{ll}
+      u=x & dv=\sin 2x\,dx \\
+      du=dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+      \end{array}\)
+      \[\begin{aligned}
+      \int x^3\sin 2x\,dx
+      &=-\,\dfrac{x^3}{2}\cos 2x+\dfrac{3x^2}{4}\sin 2x \\
+      &\quad-\dfrac{3}{2}\left(-\,\dfrac{x}{2}\cos 2x+\dfrac{1}{2}\int\cos 2x\,dx\right) \\
+      &=-\,\dfrac{x^3}{2}\cos 2x+\dfrac{3x^2}{4}\sin 2x \\
+      &\quad+\dfrac{3x}{4}\cos 2x-\dfrac{3}{8}\sin 2x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX73">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{x^3}{2}\cos 2x+\dfrac{3x^2}{4}\sin 2x+\dfrac{3x}{4}\cos 2x-\dfrac{3}{8}\sin 2x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-\,\dfrac{3x^2}{2}\cos 2x+x^3\sin 2x+\dfrac{3x}{2}\sin 2x+\dfrac{3x^2}{2}\cos 2x \\
+      &\quad+\dfrac{3}{4}\cos 2x-\dfrac{3x}{2}\sin 2x-\dfrac{3}{4}\cos 2x \\
+      &=x^3\sin 2x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 74 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int\dfrac{\ln 2x}{x^2}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX74"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX74"></button>
+    	<button class="toggle has-sol" data-toggle="SolX74"></button>
+      <button class="toggle has-check" data-toggle="CkX74"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX74">
+    <p>
+      Let \(u=\ln 2x\) and \(dv=\dfrac{1}{x^2}\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX74">
+  	<p>
+      \(\displaystyle \int\dfrac{\ln 2x}{x^2}\,dx
+      =-\,\dfrac{\ln 2x}{x}-\dfrac{1}{x}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX74">
+  	<p>
+      We use the parts
+      \[\begin{array}{ll}
+      u=\ln 2x & dv=\dfrac{1}{x^2}\,dx \\
+      du=\dfrac{1}{x}\,dx \quad & v=-\,\dfrac{1}{x}
+      \end{array}\]
+      Hence:
+      \[\begin{aligned}
+      \int \dfrac{\ln 2x}{x^2}\,dx
+      &=-\,\dfrac{\ln 2x}{x}+\int \dfrac{1}{x^2}\,dx \\
+      &=-\,\dfrac{\ln 2x}{x}-\dfrac{1}{x}+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX74">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-x^{-1}\ln 2x-x^{-1}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=x^{-2}\ln 2x-x^{-2}+x^{-2} \\
+      &=x^{-2}\ln 2x=\dfrac{\ln 2x}{x^2}
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 75 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int \arctan 5x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX75"></button>
+    	<button class="toggle has-sol" data-toggle="SolX75"></button>
+      <button class="toggle has-check" data-toggle="CkX75"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX75">
+  	<p>
+      \(\displaystyle \int \arctan 5x\,dx
+      =x\arctan 5x-\dfrac{1}{10}\ln(1+25x^2)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX75">
+  	<p>
+    	<p class="meth" data-number="1">
+      Take
+      \[\begin{array}{ll}
+      u=\arctan 5x & dv=dx \\
+      du=\dfrac{5}{1+25x^2}\,dx \quad & v=x
+      \end{array}\]
+      Thus
+      \[
+      \int \arctan 5x\,dx=x\arctan 5x-\int \dfrac{5x}{1+25x^2}\,dx
+      \]
+      To compute the second integral, use the substitution \(z=1+25x^2\).
+      Then \(dz=50x\,dx\) and \(5x\,dx=\dfrac{1}{10}\,dz\). Thus:
+      \[\begin{aligned}
+      \int \arctan 5x\,dx
+      &=x\arctan 5x-\dfrac{1}{10}\int \dfrac{1}{z}\,dz \\
+      &=x\arctan 5x-\dfrac{1}{10}\ln z+C \\
+      &=x\arctan 5x-\dfrac{1}{10}\ln(1+25x^2)+C
+      \end{aligned}\]
+    	<p class="meth" data-number="2">
+      If you remember (You are not expected to remember this.)
+      \[
+      \int \arctan u\,du
+      =u\arctan u-\dfrac{1}{2}\ln(1+u^2)+C
+      \]
+      then the substitution \(u=5x\) gives:
+      \[\begin{aligned}
+      \int \arctan 5x\,dx
+      &=\dfrac{1}{5}\int \arctan u\,du \\
+      &=\dfrac{1}{5}\left(u\arctan u-\dfrac{1}{2}\ln(1+u^2)\right)+C \\
+      &=x\arctan 5x-\dfrac{1}{10}\ln(1+25x^2)+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX75">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=x\arctan 5x-\dfrac{1}{10}\ln(1+25x^2)\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\arctan 5x+\dfrac{5x}{1+25x^2}-\dfrac{1}{10}\dfrac{50x}{1+25x^2} \\
+      &=\arctan 5x
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!-- Problem 76 -->
+<li>
+	<div class="dotfillex">
+    <p>
+      \(\displaystyle \int_{-\sqrt{3}}^1 \arctan x\,dx\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX76"></button>
+      <button class="toggle has-ans" data-toggle="AnsX76"></button>
+      <button class="toggle has-sol" data-toggle="SolX76"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX76">
+    <p>
+      Recall or rederive:
+      \[
+      \int \arctan x=x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX76">
+    <p>
+      \(\displaystyle \int_{-\sqrt{3}}^1 \arctan x\,dx
+      =\dfrac{\pi}{4}-\dfrac{\pi\sqrt{3}}{3}+\dfrac{1}{2}\ln 2\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX76">
+    <p>
+      Recall or rederive:
+      \[
+      \int \arctan x=x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C
+      \]
+      Then:
+      \[\begin{aligned}
+      \int_{-\sqrt{3}}^1 \arctan x\,dx
+      &=\left[x\arctan x-\dfrac{1}{2}\ln(1+x^2)\right]_{-\sqrt{3}}^1 \\
+      &=\left(\arctan 1-\dfrac{1}{2}\ln 2\right)
+      -\left(-\sqrt{3}\arctan(-\sqrt{3})-\dfrac{1}{2}\ln 4\right) \\
+      &=\dfrac{\pi}{4}-\dfrac{\pi\sqrt{3}}{3}+\dfrac{1}{2}\ln 2
+      \end{aligned}\]
+      where we have used \(\ln4=2\ln2\), &nbsp; \(\arctan 1=\dfrac{\pi}{4}\)
+      and \(\arctan(-\sqrt{3})=-\,\dfrac{\pi}{3}\).
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+</li>
+
+<!-- Problem 77 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int_{-1}^1 xe^x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX77"></button>
+    	<button class="toggle has-sol" data-toggle="SolX77"></button>
+      <button class="toggle has-check" data-toggle="CkX77"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX77">
+  	<p>
+      \(\displaystyle \int_{-1}^1 xe^x\,dx
+      =2e^{-1}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX77">
+    <p>
+      Let:
+      \[\begin{array}{ll}
+      u=x & dv=e^x\,dx \\
+      du=dx \quad & v=e^x
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int xe^x\,dx
+      &=xe^x-\int e^x\,dx \\
+      &=xe^x-e^x+C
+      \end{aligned}\]
+      We plug in the limits:
+      \[\begin{aligned}
+      \int_{-1}^1 xe^x\,dx
+      &=\left[\dfrac{}{}xe^x-e^x\right]_{-1}^1 \\
+      &=(e-e)-(-e^{-1}-e^{-1})
+      =2e^{-1}
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX77">
+    <p>
+  		If &ensp; \(f(x)=xe^x-e^x\), &ensp; then &ensp;
+      \(f'(x)=e^x+xe^x-e^x=xe^x\)
+  		as desired.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 78 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int e^{3x}\sin 2x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX78"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX78"></button>
+    	<button class="toggle has-sol" data-toggle="SolX78"></button>
+      <button class="toggle has-check" data-toggle="CkX78"></button>
+      <button class="toggle has-rem" data-toggle="RemX78"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX78">
+    <p>
+      Integrate by parts twice and then solve for the integral.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX78">
+  	<p>
+      \(\displaystyle \int e^{3x}\sin 2x\,dx
+      =-\,\dfrac{2}{13}e^{3x}\cos 2x+\dfrac{3}{13}e^{3x}\sin 2x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX78">
+  	<p>
+      We first take the parts:
+      \[\begin{array}{ll}
+      u=e^{3x} & dv=\sin 2x\,dx \\
+      du=3e^{3x}\,dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+      \end{array}\]
+      Hence:
+      \[
+      \int e^{3x}\sin 2x\,dx
+      =-\,\dfrac{1}{2}e^{3x}\cos 2x+\dfrac{3}{2}\int e^{3x}\cos 2x\,dx
+      \]
+      Now we take the parts:
+      \[\begin{array}{ll}
+      u=e^{3x} & dv=\cos 2x\,dx \\
+      du=3e^{3x}\,dx \quad & v=\dfrac{1}{2}\sin 2x
+      \end{array}\]
+      Hence:
+      \[\begin{aligned}
+      \int e^{3x}\sin 2x\,dx
+      &=-\,\dfrac{1}{2}e^{3x}\cos 2x \\
+      &\quad+\dfrac{3}{2}\left(\dfrac{1}{2}e^{3x}\sin 2x
+      -\dfrac{3}{2}\int e^{3x}\sin 2x\,dx\right) \\
+      &=-\,\dfrac{1}{2}e^{3x}\cos 2x+\dfrac{3}{4}e^{3x}\sin 2x \\
+      &\quad-\dfrac{9}{4}\int e^{3x}\sin 2x\,dx
+      \end{aligned}\]
+      The integral \(\displaystyle \int e^{3x}\sin 2x\,dx\) appears on both
+      sides. So we solve for it.
+      \[\begin{aligned}
+      \left(1+\dfrac{9}{4}\right)\int e^{3x}\sin 2x\,dx
+      &=-\,\dfrac{1}{2}e^{3x}\cos 2x+\dfrac{3}{4}e^{3x}\sin 2x+K \\
+      \int e^{3x}\sin 2x\,dx
+      &=-\,\dfrac{2}{13}e^{3x}\cos 2x+\dfrac{3}{13}e^{3x}\sin 2x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX78">
+    <p>
+      We check using the Product Rule. If
+      \(f(x)=-\,\dfrac{2}{13}e^{3x}\cos 2x+\dfrac{3}{13}e^{3x}\sin 2x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-\,\dfrac{6}{13}e^{3x}\cos 2x+\dfrac{4}{13}e^{3x}\sin 2x \\
+      &\quad+\dfrac{9}{13}e^{3x}\sin 2x+\dfrac{6}{13}e^{3x}\cos 2x \\
+      &=e^{3x}\sin 2x
+      \end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX78">
+    <p>
+      In the solution, \(u=e^{3x}\) in both integrations by parts.
+      It can also be done taking \(dv=e^{3x}\,dx\) in both integrations by parts.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 79 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int e^{-x}\sin x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX79"></button>
+    	<button class="toggle has-sol" data-toggle="SolX79"></button>
+      <button class="toggle has-check" data-toggle="CkX79"></button>
+      <button class="toggle has-rem" data-toggle="RemX79"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX79">
+  	<p>
+      \(\displaystyle \int e^{-x}\sin x\,dx
+      =-\,\dfrac{1}{2}e^{-x}\cos x-\dfrac{1}{2}e^{-x}\sin x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX79">
+  	<p>
+      We first take the parts:
+      \[\begin{array}{ll}
+      u=e^{-x} & dv=\sin x\,dx \\
+      du=-e^{-x}\,dx \quad & v=-\cos x
+      \end{array}\]
+      Then:
+      \[
+      \int e^{-x}\sin x\,dx
+      =-e^{-x}\cos x-\int e^{-x}\cos x\,dx
+      \]
+      We now take the parts
+      \[\begin{array}{ll}
+      u=e^{-x} & dv=\cos x\,dx \\
+      du=-e^{-x}\,dx \quad & v=\sin x
+      \end{array}\]
+      Hence
+      \[\begin{aligned}
+      \int e^{-x}\sin x\,dx
+      &=-e^{-x}\cos x \\
+      &\quad-\left(e^{-x}\sin x+\int e^{-x}\sin x\,dx\right) \\
+      &=-e^{-x}\cos x-e^{-x}\sin x-\int e^{-x}\sin x\,dx
+      \end{aligned}\]
+      We now add \(\displaystyle \int e^{-x}\sin x\,dx\) to both sides and
+      divide by \(2\):
+      \[\begin{aligned}
+      2\int e^{-x}\sin x\,dx
+      &=-e^{-x}\cos x-e^{-x}\sin x+K \\
+      \int e^{-x}\sin x\,dx
+      &=-\,\dfrac{1}{2}e^{-x}\cos x-\dfrac{1}{2}e^{-x}\sin x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX79">
+    <p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-\,\dfrac{1}{2}e^{-x}\cos x-\dfrac{1}{2}e^{-x}\sin x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{1}{2}e^{-x}\cos x+\dfrac{1}{2}e^{-x}\sin x
+      +\dfrac{1}{2}e^{-x}\sin x-\dfrac{1}{2}e^{-x}\cos x \\
+      &=e^{-x}\sin x
+      \end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX79">
+    <p>
+      In the solution, \(u=e^{-x}\) in both integrations by parts.
+      It can also be done taking \(dv=e^{-x}\,dx\) in both integrations by parts.
+    </p>
+  </div>
+</li>
+
+<!-- Problem 80 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int x\sin x\cos x\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX80"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX80"></button>
+    	<button class="toggle has-sol" data-toggle="SolX80"></button>
+      <button class="toggle has-check" data-toggle="CkX80"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX80">
+    <p>
+      Use either \(\displaystyle \int \sin x\cos x\,dx=\dfrac{1}{2}\sin^2 x\)
+      or \(\sin x\cos x=\dfrac{1}{2}\sin 2x\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX80">
+  	<p>
+      Here are two equivalent answers:
+      \[\begin{aligned}
+      \int x\sin x\cos x\,dx
+      &=\dfrac{x}{2}\sin^2 x-\dfrac{x}{4}+\dfrac{1}{8}\sin2x+C \\
+      &=-\,\dfrac{x}{4}\cos 2x+\dfrac{1}{8}\sin 2x+C
+      \end{aligned}\]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX80">
+  	<p class="meth" data-number="1">
+      We take the parts:
+      \[\begin{array}{ll}
+      u=x & dv=\sin x\cos x\,dx \\
+      du=dx \quad & v=\dfrac{1}{2}\sin^2 x
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int x\sin x\cos x\,dx
+      &=\dfrac{x}{2}\sin^2 x-\dfrac{1}{2}\int \sin^2 x\,dx \\
+      &=\dfrac{x}{2}\sin^2 x-\dfrac{1}{4}\int (1-\cos 2x)\,dx \\
+      &=\dfrac{x}{2}\sin^2 x-\dfrac{x}{4}+\dfrac{1}{8}\sin2x+C
+      \end{aligned}\]
+      where we have used the the identity \(\sin^2 x=\dfrac{1-\cos 2x}{2}\).
+  	</p>
+  	<p class="meth" data-number="2">
+      It is slightly easier, to start with the identity
+      \(\sin x\cos x=\dfrac{1}{2}\sin 2x\). So:
+      \[
+      \int x\sin x\cos x\,dx=\dfrac{1}{2}\int x\sin 2x\,dx
+      \]
+      We can now use the part:
+      \[\begin{array}{ll}
+      u=x & dv=\sin 2x\,dx \\
+      du=dx \quad & v=-\,\dfrac{1}{2}\cos 2x
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int x\sin x\cos x\,dx
+      &=\dfrac{1}{2}\left(-\dfrac{x}{2}\cos 2x+\dfrac{1}{2}\int \cos 2x\,dx\right) \\
+      &=-\,\dfrac{x}{4}\cos 2x+\dfrac{1}{8}\sin 2x+C
+      \end{aligned}\]
+  	</p>
+    <hr width="80%">
+  	<p>
+      The answers are the same because
+      \[\begin{aligned}
+      \dfrac{x}{2}\sin^2 x-\dfrac{x}{4}+\dfrac{1}{8}\sin 2x
+      &=\dfrac{x}{2}\dfrac{1-\cos 2x}{2}-\dfrac{x}{4}+\dfrac{1}{8}\sin 2x \\
+      &=\dfrac{x}{4}-\dfrac{x}{4}\cos 2x-\dfrac{x}{4}+\dfrac{1}{8}\sin 2x \\
+      &=-\,\dfrac{x}{4}\cos 2x+\dfrac{1}{8}\sin 2x \\
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX80">
+    <p data-title="Method 1">
+      For the Method 1 answer, we check using the Product Rule and the square
+      identity \(\sin^2 x=\dfrac{1-\cos 2x}{2}\). If &ensp;
+      \(f(x)=\dfrac{x}{2}\sin^2 x-\dfrac{x}{4}+\dfrac{1}{8}\sin2x\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=\dfrac{1}{2}\sin^2 x+x\sin x\cos x-\dfrac{1}{4}+\dfrac{1}{4}\cos 2x \\
+      &=\dfrac{1}{4}(1-\cos 2x)+x\sin x\cos x-\dfrac{1}{4}+\dfrac{1}{4}\cos 2x \\
+      &=x\sin x\cos x
+      \end{aligned}\]
+    </p>
+    <p data-title="Method 2">
+        For the Method 2 answer, we check using the Product Rule. If &ensp;
+        \(f(x)=-\,\dfrac{x}{4}\cos 2x+\dfrac{1}{8}\sin 2x\), &ensp; then
+        \[\begin{aligned}
+        f'(x)
+        &=-\,\dfrac{1}{4}\cos 2x+\dfrac{x}{2}\sin 2x+\dfrac{1}{4}\cos 2x \\
+        &=\dfrac{x}{2}\left(2\sin x\cos x\right) \\
+        &=x\sin x\cos x
+        \end{aligned}\]
+      </p>
+  </div>
+</li>
+
+<!-- Problem 81 -->
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \int x^3(x^2+1)^{1/2}\,dx\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX81"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX81"></button>
+    	<button class="toggle has-sol" data-toggle="SolX81"></button>
+      <button class="toggle has-check" data-toggle="CkX81"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX81">
+    <p>
+      The substitution \(u=x^2+1\) is easier than parts.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX81">
+  	<p>
+      \(\displaystyle \int x^3(x^2+1)^{1/2}\,dx
+      =\dfrac{1}{5}(x^2+1)^{5/2}-\dfrac{1}{3}(x^2+1)^{3/2}+C\)
+      <br>
+      If you use parts, you may get a different but equivalent answer.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX81">
+  	<p>
+      We use the substitution \(u=x^2+1\). Then \(du=2x\,dx\), &nbsp;
+      \(x\,dx=\dfrac{1}{2}\,du\) and \(x^2=u-1\). So:
+      \[\begin{aligned}
+      \int x^3(x^2+1)^{1/2}\,dx
+      &=\dfrac{1}{2}\int (u-1)u^{1/2}\,du \\
+      &=\dfrac{1}{2}\int u^{3/2}-u^{1/2}\,du \\
+      &=\dfrac{1}{2}\dfrac{2u^{5/2}}{5}-\dfrac{1}{2}\dfrac{2u^{3/2}}{3}+C \\
+      &=\dfrac{1}{5}(x^2+1)^{5/2}-\dfrac{1}{3}(x^2+1)^{3/2}+C \\
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX81">
+  	<p>
+      We check using the Chain Rule. If &ensp;
+      \(f(x)=\dfrac{1}{5}(x^2+1)^{5/2}-\dfrac{1}{3}(x^2+1)^{3/2}\), &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=x\left(x^2+1\right)^{3/2}-x\left(x^2+1\right)^{1/2} \\
+      &=x\left(x^2+1\right)^{1/2}\left(x^2+1-1\right) \\
+      &=x^3\left(x^2+1\right)^{1/2}
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<hr>
+
+<!-- Problem 82 -->
+<li>
+	<div class="dotfillex">
+    <div class="column">
+  		<p data-col-width="60%">
+        Find the area of the region below \(y=x\sin\left(\dfrac{x}{2}\right)\)
+        above the \(x\)-axis between \(x=0\) to \(x=\pi\).
+			</p>
+      <div class="center" data-col-width="40%">
+          <img src="graphics/x_xsinx2.jpg" alt="x_xsinx2">
+      </div>
+    </div>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX82"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX82"></button>
+    	<button class="toggle has-sol" data-toggle="SolX82"></button>
+      <button class="toggle has-check" data-toggle="CkX82"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX82">
+    <p>
+      The area is \(\displaystyle A=\int_0^\pi x\sin\left(\dfrac{x}{2}\right)\,dx\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX82">
+  	<p>
+      \(\displaystyle A=\int_0^\pi x\sin\left(\dfrac{x}{2}\right)\,dx=4\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX82">
+  	<p>
+      The area is
+      \(\displaystyle A=\int_0^\pi x\sin\left(\dfrac{x}{2}\right)\,dx\).
+      We use the parts:
+      \[\begin{array}{ll}
+      u=x & dv=\sin\left(\dfrac{x}{2}\right)\,dx \\
+      du=dx \quad & v=-2\cos\left(\dfrac{x}{2}\right)
+      \end{array}\]
+      Then:
+      \[\begin{aligned}
+      \int x\sin\left(\dfrac{x}{2}\right)\,dx
+      &=-2x\cos\left(\dfrac{x}{2}\right)+2\int \cos\left(\dfrac{x}{2}\right)\,dx \\
+      &=-2x\cos\left(\dfrac{x}{2}\right)+4\sin\left(\dfrac{x}{2}\right)+C
+      \end{aligned}\]
+      So the area is:
+      \[\begin{aligned}
+      A&=\int_0^\pi x\sin\left(\dfrac{x}{2}\right)\,dx \\
+      &=\left[-2x\cos\left(\dfrac{x}{2}\right)
+               +4\sin\left(\dfrac{x}{2}\right)\right]_0^\pi \\
+      &=\left[-2\pi\cos\left(\dfrac{\pi}{2}\right)
+                 +4\sin\left(\dfrac{\pi}{2}\right)\right]-(0)=4
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX82">
+  	<p>
+      We check using the Product Rule. If &ensp;
+      \(f(x)=-2x\cos\left(\dfrac{x}{2}\right)+4\sin\left(\dfrac{x}{2}\right)\),
+      &ensp; then
+      \[\begin{aligned}
+      f'(x)
+      &=-2\cos\left(\dfrac{x}{2}\right)+x\sin\left(\dfrac{x}{2}\right)
+      +2\cos\left(\dfrac{x}{2}\right) \\
+      &=x\sin\left(\dfrac{x}{2}\right)
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<big>PY: Everything Checked Twice</big>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Converting Volume Integrals to Surface Integrals | 27. Gauss&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplSurf2Vol.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplSurfIndep.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>27. Gauss&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Gauss' Theorem">
+  Let \(V\) be a nice solid region in \(\mathbb{R}^3\) with a nice
+  properly oriented boundary, \(\partial V\), and let \(\vec F\)
+  be a nice vector field on \(V\). Then
+  \[
+  \iiint_V \vec\nabla\cdot\vec F\,dV
+  =\iint_{\partial V} \vec F\cdot d\vec S
+  \]
+  The outer boundary must be oriented outward while any inner
+  boundaries must be oriented inward. This means that all pieces of the
+  boundary are oriented away from the solid.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>2. Converting Volume Integrals to Surface Integrals</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  While Gauss's Theorem is most often used to convert a surface integral over
+  a closed surface into a volume integral over the solid enclosed by the
+  surface, there are a couple of applications where the reverse happens:
+  computing the volume and centroid of the solid inside a closed surface.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Volume</h3>
+
+<p>
+  The standard formula for the volume of a solid region \(R\) is
+  \(\displaystyle V=\iiint_R 1\,dV\).
+</p>
+<p>
+  If we pick \(\vec F\) so that\(\vec\nabla\cdot\vec F=1\) then the volume
+  becomes the left side of Gauss's Theorem and the volume can be computed from
+  the surface integral
+  \(\displaystyle \iint_{\partial R} \vec F\cdot d\vec S\).
+  Four typical choices for \(\vec F\) are:
+    \[\begin{aligned}
+    \vec F=\langle x,0,0\rangle \quad
+    \vec F&=\langle 0,y,0\rangle \quad
+    \vec F=\langle 0,0,z\rangle \\
+    \vec F&=\dfrac{1}{3}\langle x,y,z\rangle
+    \end{aligned}\]
+  Using these four choices, the volume can be written as
+    \[\begin{aligned}
+    V&=\iint_{\partial R} x\,dy\,dz
+    =\iint_{\partial R} y\,dz\,dx
+    =\iint_{\partial R} z\,dx\,dy \\
+    &=\dfrac{1}{3}\iint_{\partial R} x\,dy\,dz+y\,dz\,dx+z\,dx\,dy
+    \end{aligned}\]
+  Use whichever formula is most convenient.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the volume of the vase given in cylindrical coordinates by
+    \[
+    r \le e^{z/4}+e^{-z/4}
+    \quad \text{for} \quad
+    0 \le z \le 8
+    \]
+    as shown at the right.
+  </p>
+  <div class="center">
+    <img src="graphics/ex_appV2S_vase.jpg" alt="ex_appV2S_vase">
+  </div>
+</div>
+<p>
+  <strong>Note:</strong> We can parametrize the side surface by starting
+  with cylindrical coordinates and letting \(z=4w\) and \(r=e^w+e^{-w}\):
+  \[
+  \vec R(\theta,w)
+  =\langle (e^w+e^{-w})\cos\theta,(e^w+e^{-w})\sin\theta,4w\rangle
+  \]
+  for \(0 \le \theta \le 2\pi\) and \(0 \le w \le 2\).
+</p>
+<div class="sol collapse hide">
+  <p>
+    We compute the volume using the formula
+    \(\displaystyle V=\iint\limits_{\partial R} z\,dx\,dy
+    =\iint\limits_{\partial R} \vec F\cdot d\vec S\)
+    with \(\vec F=\langle 0,0,z\rangle\)
+    over the complete boundary surface.
+  </p>
+  <p>
+    <strong>Disks:</strong>&emsp;
+    The top and bottom disks are parametrized by
+    \[\begin{aligned}
+    R&(r,\theta)=(r\cos\theta,r\sin\theta,h) \\
+    \text{where} \qquad &h=8 \qquad \text{or} \qquad h=0, \qquad \text{resp.}
+    \end{aligned}\]
+    The normal vectors are
+    \[
+    \vec N=\vec e_r\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \cos\theta   & \sin\theta   & 0 \\
+    -r\sin\theta & r\cos\theta  & 0
+    \end{vmatrix}
+    =\langle 0,0,r\rangle
+    \]
+    The orientation is correct at the top but needs to be reversed at the bottom:
+    \[
+    \vec N_\text{top}=\langle 0,0,r\rangle \qquad
+    \vec N_\text{bot}=\langle 0,0,-r\rangle
+    \]
+    On the top, \(z=8\) and the radius is \(r=e^2+e^{-2}\). So the vector
+    field is
+    \[
+    \vec F=\langle 0,0,z\rangle=\langle 0,0,8\rangle
+    \]
+    and the surface integral is
+    \[\begin{aligned}
+    \iint\limits_\text{top} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^{e^2+e^{-2}}
+    \langle 0,0,8\rangle\cdot\langle 0,0,r\rangle\,dr\,d\theta \\
+    &=2\pi\left[\rule{0pt}{10pt}4r^2\right]_0^{e^2+e^{-2}}
+    =8\pi(e^2+e^{-2})^2
+    \end{aligned}\]
+    On the bottom, \(z=0\). So the vector field is
+    \[
+    \vec F=\langle 0,0,z\rangle=\langle 0,0,0\rangle
+    \]
+    and the surface integral is
+    \[
+    \iint\limits_\text{bot} \vec F\cdot d\vec S=0
+    \]
+    <strong>Sides:</strong>&emsp;
+    The sides are parametrized by
+    \[\begin{aligned}
+    R(\theta,w)
+    &=((e^w+e^{-w})\cos\theta,(e^w+e^{-w})\sin\theta,4w) \\
+    &\text{for} \quad 0 \le \theta \le 2\pi \quad \text{and} \quad 0 \le w \le 2
+    \end{aligned}\]
+    The normal vector is
+    \[\begin{aligned}
+    \vec N
+    &=\vec e_w\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath}            & \hat{\jmath}           & \hat{k} \\
+    (e^w-e^{-w})\cos\theta  & (e^w-e^{-w})\sin\theta & 4 \\
+    -(e^w+e^{-w})\sin\theta & (e^w+e^{-w})\cos\theta & 0
+    \end{vmatrix} \\
+    &=\hat{\imath}(-4(e^w+e^{-w})\cos\theta)
+     -\hat{\jmath}(4(e^w+e^{-w})\sin\theta) \\
+    &\quad+\hat{k}((e^{2w}-e^{-2w})\cos^2\theta+(e^{2w}-e^{-2w})\sin^2\theta) \\
+    &=\langle -4(e^w+e^{-w})\cos\theta,-4(e^w+e^{-w})\sin\theta,
+    (e^{2w}-e^{-2w})\rangle
+    \end{aligned}\]
+    This is inward, so we reverse it:
+    \[
+    \vec N=\langle 4(e^w+e^{-w})\cos\theta,4(e^w+e^{-w})\sin\theta,
+    -(e^{2w}-e^{-2w})\rangle
+    \]
+    On the surface the vector field is
+    \[
+    \vec F=\langle 0,0,z\rangle=\langle 0,0,4w\rangle
+    \]
+    So the dot product with the normal is
+    \[
+    \vec F\cdot\vec N=-4w(e^{2w}-e^{-2w})
+    \]
+    So the surface integral is
+    \[\begin{aligned}
+    \iint\limits_\text{sides} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^2 \vec F\cdot\vec N\,dw\,d\theta \\
+    &=-\int_0^{2\pi}\int_0^2 4w(e^{2w}-e^{-2w})\,dw\,d\theta \\
+    &=-8\pi\int_0^2 w(e^{2w}-e^{-2w})\,dw
+    \end{aligned}\]
+    Integration by parts gives
+    \[
+    \iint\limits_\text{sides} \vec F\cdot d\vec S
+    =-2\pi(3e^4+5e^{-4})
+    \]
+    <strong>Total:</strong>&emsp;
+    We complete the computation of the volume by adding together the surface
+    integrals from the three pieces of the boundary:
+    \[\begin{aligned}
+    \iint\limits_{\partial R} \vec F\cdot d\vec S
+    &=\iint\limits_\text{top} \vec F\cdot d\vec S
+     +\iint\limits_\text{bot} \vec F\cdot d\vec S
+     +\iint\limits_\text{sides} \vec F\cdot d\vec S \\
+    &=8\pi(e^2+e^{-2})^2+0-2\pi(3e^4+5e^{-4}) \\
+    &=2\pi e^4+16\pi-2\pi e^{-4} \approx 393.2
+    \end{aligned}\]
+  </p>
+</div>
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="2">
+      The area between the cusp \(\vec r(t)=\langle 0,t^3,t^2\rangle\) for
+      \(0 \le t \le 2\) and the \(z\)-axis is rotated about the \(z\)-axis
+      to sweep out a solid. Find its volume using surface integrals.
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX2"></button>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+      <button class="toggle has-check" data-toggle="CkX2"></button>
+      <button class="toggle has-rem" data-toggle="RemX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_appV2S_cusp.jpg" alt="ex_appV2S_cusp">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The sides may be parametrized as \(R(t,\theta)=(t^3\cos\theta,t^3\sin\theta,t^2)\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(V=64\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We compute the volume using the formula
+    \(\displaystyle V=\iint\limits_{\partial R} z\,dx\,dy
+    =\iint\limits_{\partial R} \vec F\cdot d\vec S\)
+    with \(\vec F=\langle 0,0,z\rangle\)
+    over the complete boundary surface which consists of the sides and a
+    disk at the top.
+  </p>
+  <p>
+    <strong>Sides:</strong>&emsp;
+    The sides are parametrized by
+    \[
+    R(t,\theta)=(t^3\cos\theta,t^3\sin\theta,t^2)
+    \]
+    The normal vector is
+    \[\begin{aligned}
+    \vec N&=\vec e_t\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    3t^2\cos\theta   & 3t^2\sin\theta   & 2t \\
+    -t^3\sin\theta & t^3\cos\theta  & 0
+    \end{vmatrix} \\
+    &=\langle -2t^4\cos\theta,-2t^4\sin\theta,3t^5\rangle
+    \end{aligned}\]
+    This is oriented up and in but we need down and out. So we reverse it:
+    \[
+    \vec N=\langle 2t^4\cos\theta,2t^4\sin\theta,-3t^5\rangle
+    \]
+    The vector field is
+    \[
+    \vec F=\langle 0,0,z\rangle=\langle 0,0,t^2\rangle
+    \]
+    and the surface integral is
+    \[\begin{aligned}
+    \iint\limits_\text{sides} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^2 \vec F\cdot\vec N\,dt\,d\theta \\
+    &=\int_0^{2\pi}\int_0^2 -3t^7\,dt\,d\theta \\
+    &=2\pi\left[\dfrac{-3}{8}t^8\right]_0^2
+    =-192\pi
+    \end{aligned}\]
+    <strong>Disk:</strong>&emsp;
+    The disk is parametrized by
+    \(R(r,\theta)=(r\cos\theta,r\sin\theta,4)\) for \(0 \le r \le 8\) and
+    \(0 \le \theta \le 2\pi\).
+    The normal vector is \(\vec N=\langle 0,0,r\rangle\) which is correctly upward.
+    On the disk the vector field is
+    \[
+    \vec F=\langle 0,0,z\rangle=\langle 0,0,4\rangle
+    \]
+    So the surface integral is
+    \[\begin{aligned}
+    \iint\limits_\text{disk} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^8 \vec F\cdot\vec N\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^8 4r\,dr\,d\theta \\
+    &=2\pi\left[\rule{0pt}{10pt} 2r^2\right]_0^8
+    =256\pi
+    \end{aligned}\]
+    <strong>Total:</strong>&emsp;
+    We complete the computation of the volume by adding together the surface
+    integrals from the two pieces of the boundary:
+    \[\begin{aligned}
+    V&=\iint\limits_{\partial R} \vec F\cdot d\vec S
+    =\iint\limits_\text{sides} \vec F\cdot d\vec S
+     +\iint\limits_\text{disk} \vec F\cdot d\vec S \\
+    &=-192\pi+256\pi
+    =64\pi
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by computing the volume directly as \(\displaystyle V=\iiint 1\,dV\).
+    In cylindrical coordinates, the volume differential is \(dV=r\,dr\,d\theta\,dz\).
+    For each value of \(z\) between \(0\) and \(4\), the \(r\) coordinate runs
+    from the \(z\)-axis at \(r=0\) out to the sides at \(r=z^{3/2}\).
+    So the volume is:
+    \[\begin{aligned}
+    V&=\int_0^4\int_0^{2\pi}\int_0^{z^{3/2}} 1\,r\,dr\,d\theta\,dz \\
+    &=2\pi\int_0^4 \left[\dfrac{r^2}{2}\right]_{r=0}^{z^{3/2}} \,dz \\
+    &=2\pi\int_0^4 \dfrac{z^3}{2} \,dz
+    =2\pi\left[\dfrac{z^4}{8}\right]_0^4
+    =64\pi
+    \end{aligned}\]
+    This method seems to have been much simplier than the surface integrals!
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    This volume could have been found in Calculus 2 as a volume of revolution
+    using
+    <a href="../../../MYMACalc2/Part II - Applications of Integration/Vol/Disk.html"
+    title="Return using the Back button.">disks</a> or
+    <a href="../../../MYMACalc2/Part II - Applications of Integration/Vol/Cylin.html"
+    title="Return using the Back button.">cylinders</a>
+    where the curve \(y=x^{2/3}\) is revolved about the \(y\)-axis. Try it!
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Centroid</h3>
+<p>
+  The components of the centroid of a solid region \(R\) are
+  \[
+  \bar{x}=\dfrac{V_x}{V} \qquad
+  \bar{y}=\dfrac{V_y}{V} \qquad
+  \text{and} \qquad
+  \bar{z}=\dfrac{V_z}{V}
+  \]
+  where the moments are
+  \[
+  V_x=\iiint\limits_R x\,dV \qquad
+  V_y=\iiint\limits_R y\,dV \qquad
+  \text{and} \qquad
+  V_z=\iiint\limits_R z\,dV
+  \]
+  Using Gauss' Theorem, the moments can be written as
+  \[\begin{aligned}
+  V_x&=\iint\limits_{\partial R} \dfrac{x^2}{2}\,dy\,dz
+  =\iint\limits_{\partial R} x y\,dz\,dx
+  =\iint\limits_{\partial R} x z\,dx\,dy \\
+  V_y&=\iint\limits_{\partial R} x y\,dy\,dz
+  =\iint\limits_{\partial R} \dfrac{y^2}{2}\,dz\,dx
+  =\iint\limits_{\partial R} y z\,dx\,dy \\
+  V_z&=\iint\limits_{\partial R} x z\,dy\,dz
+  =\iint\limits_{\partial R} y z\,dz\,dx
+  =\iint\limits_{\partial R} \dfrac{z^2}{2}\,dx\,dy \\
+  \end{aligned}\]
+  Use whichever formulas are most convenient.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="3">
+    Find the centroid of the vase given in cylindrical coordinates by
+    \[
+    r \le e^{z/4}+e^{-z/4}
+    \quad \text{for} \quad
+    0 \le z \le 8
+    \]
+    as shown at the right. The volume was found in the previous example.
+  </p>
+  <div class="center">
+    <img src="graphics/ex_appV2S_vase.jpg" alt="ex_appV2S_vase">
+  </div>
+</div>
+<div class="sol collapse hide">
+  <p>
+    By symmetry, \(\bar{x}=\bar{y}=0.\) So we only need to compute \(\bar{z}.\)
+    We will use the formula
+    \[
+    V_z=\iint\limits_{\partial R} \dfrac{z^2}{2}\,dx\,dy
+    =\iint\limits_{\partial R} \vec F\cdot d\vec S
+    \qquad \text{with} \qquad
+    \vec F=\left\langle 0,0,\dfrac{z^2}{2}\right\rangle.
+    \]
+    Many of the quantities were computed in the previous example.
+  </p>
+  <p>
+    <strong>Disks:</strong>&emsp;
+    From the exercise, the top and bottom disks are parametrized by
+    \[\begin{aligned}
+    R&(r,\theta)=(r\cos\theta,r\sin\theta,h) \\
+    \text{where} \qquad &h=8 \qquad \text{or} \qquad h=0, \qquad \text{resp.}
+    \end{aligned}\]
+    The normal vector is \(\vec N=\langle 0,0,r\rangle\) on the top but
+    \(\vec N=\langle 0,0,-r\rangle\) on the bottom. On the top,
+    the vector field is:
+    \[
+    \vec F=\left\langle 0,0,\dfrac{z^2}{2}\right\rangle
+    =\langle 0,0,32\rangle
+    \]
+    and the surface integral is:
+    \[\begin{aligned}
+    \iint\limits_\text{top} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^{e^2+e^{-2} }
+    \langle 0,0,32\rangle\cdot\langle 0,0,r\rangle\,dr\,d\theta \\
+    &=2\pi\left[\rule{0pt}{10pt}16r^2\right]_0^{e^2+e^{-2}}
+    =32\pi(e^2+e^{-2})^2
+    \end{aligned}\]
+    On the bottom, the vector field is:
+    \[
+    \vec F=\left\langle 0,0,\dfrac{z^2}{2}\right\rangle
+    =\langle 0,0,0\rangle
+    \]
+    and the surface integral is:
+    \[
+    \iint\limits_\text{bot} \vec F\cdot d\vec S=0
+    \]
+    <strong>Sides:</strong>&emsp;
+    From the exercise, the sides are parametrized by
+    \[\begin{aligned}
+    \vec R(\theta,w)
+    &=((e^w+e^{-w})\cos\theta,(e^w+e^{-w})\sin\theta,4w) \\
+    &\text{for} \quad 0 \le \theta \le 2\pi \quad \text{and} \quad 0 \le w \le 2
+    \end{aligned}\]
+    and the normal vector (after reversing) is
+    \[
+    \vec N=\langle 4(e^w+e^{-w})\cos\theta,4(e^w+e^{-w})\sin\theta,
+    -(e^{2w}-e^{-2w})\rangle
+    \]
+    On the surface the vector field is
+    \[
+    \vec F=\langle 0,0,\dfrac{z^2}{2}\rangle=\langle 0,0,8 w^2\rangle
+    \]
+    So the dot product with the normal is
+    \[
+    \vec F\cdot\vec N=-8w^2(e^{2w}-e^{-2w})
+    \]
+    So the surface integral is
+    \[\begin{aligned}
+    \iint\limits_\text{sides} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^2 \vec F\cdot\vec N\,dw\,d\theta \\
+    &=-\int_0^{2\pi}\int_0^2 8w^2(e^{2w}-e^{-2w})\,dw\,d\theta \\
+    &=-16\pi\int_0^2 w^2(e^{2w}-e^{-2w})\,dw
+    \end{aligned}\]
+    Integration by parts twice gives
+    \[
+    \iint\limits_\text{sides} \vec F\cdot d\vec S
+    =-4\pi\left(5e^4-2+13e^{-4}\right)
+    \]
+    <strong>Total:</strong>&emsp;
+    We complete the computation of the \(z\)-moment by adding together the surface
+    integrals from the three pieces of the boundary:
+    \[\begin{aligned}
+    V_z
+    &=\iint\limits_\text{top} \vec F\cdot d\vec S
+     +\iint\limits_\text{bot} \vec F\cdot d\vec S
+     +\iint\limits_\text{sides} \vec F\cdot d\vec S \\
+    &=32\pi(e^2+e^{-2})^2+0-4\pi\left(5e^4-2+13e^{-4}\right) \\
+    &=12\pi e^4+72\pi-20\pi e^{-4}\approx2283. 3
+    \end{aligned}\]
+    Since the volume was \(V=2\pi e^4+16\pi-2\pi e^{-4}\), the \(z\)-component
+    of the centroid is:
+    \[
+    \bar{z}=\dfrac{V_z}{V}
+    =\dfrac{12\pi e^4+72\pi-20\pi e^{-4}}{2\pi e^4+16\pi-2\pi e^{-4}}
+    =\dfrac{6e^4+36-10e^{-4} }{e^4+8-e^{-4} }
+    \approx 5. 807
+    \]
+    which is inside the vase but closer to the top since the vase is wider there.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="4">
+      The area between the cusp \(\vec r(t)=\langle 0,t^3,t^2\rangle\) for
+      \(0 \le t \le 2\) and the \(z\)-axis is rotated about the \(z\)-axis
+      to sweep out a solid. Find its centroid using surface integrals.
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX4"></button>
+      <button class="toggle has-sol" data-toggle="SolX4"></button>
+      <button class="toggle has-check" data-toggle="CkX4"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_appV2S_cusp.jpg" alt="ex_appV2S_cusp">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \((\bar x,\bar y,\bar z)
+    =\left(0,0,\dfrac{16}{5}\right)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    By symmetry, \(\bar{x}=\bar{y}=0.\) So we only need to compute \(\bar{z}.\)
+    We will use the formula
+    \[
+    V_z=\iint\limits_{\partial R} \dfrac{z^2}{2}\,dx\,dy
+    =\iint\limits_{\partial R} \vec F\cdot d\vec S
+    \qquad \text{with} \qquad
+    \vec F=\left\langle 0,0,\dfrac{z^2}{2}\right\rangle.
+    \]
+    Many of the quantities were computed in the previous exercise.
+  </p>
+  <p>
+    <strong>Sides:</strong>&emsp;
+    From the exercise, the sides are parametrized by
+    \(R(t,\theta)=(t^3\cos\theta,t^3\sin\theta,t^2)\).
+    and the normal vector (reversed) is
+    \(\vec N=\langle 2t^4\cos\theta,2t^4\sin\theta,-3t^5\rangle\).
+    The vector field is
+    \[
+    \vec F=\left\langle 0,0,\dfrac{z^2}{2}\right\rangle
+    =\left\langle 0,0,\dfrac{t^4}{2}\right\rangle
+    \]
+    and the surface integral is
+    \[\begin{aligned}
+    \iint\limits_\text{sides} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^2 \vec F\cdot\vec N\,dt\,d\theta \\
+    &=\int_0^{2\pi}\int_0^2 \dfrac{-3}{2}t^9\,dt\,d\theta \\
+    &=\pi\left[\dfrac{-3}{10}t^{10}\right]_0^2
+    =-\dfrac{3}{5}512\pi
+    \end{aligned}\]
+    <strong>Disk:</strong>&emsp;
+    From the exercise, the disk is parametrized by
+    \(R(r,\theta)=(r\cos\theta,r\sin\theta,4)\)
+    and the normal vector is \(\vec N=\langle 0,0,r\rangle\).
+    The vector field is
+    \[
+    \vec F=\left\langle 0,0,\dfrac{z^2}{2}\right\rangle
+    =\langle 0,0,8\rangle
+    \]
+    So the surface integral is
+    \[\begin{aligned}
+    \iint\limits_\text{disk} \vec F\cdot d\vec S
+    &=\int_0^{2\pi}\int_0^8 \vec F\cdot\vec N\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^8 8r\,dr\,d\theta \\
+    &=2\pi\left[\rule{0pt}{10pt} 4r^2\right]_0^8
+    =512\pi
+    \end{aligned}\]
+    <strong>Total:</strong>&emsp;
+    We complete the computation of the \(z\)-moment by adding together the surface
+    integrals from the two pieces of the boundary:
+    \[\begin{aligned}
+    V_z
+    &=\iint\limits_\text{sides} \vec F\cdot d\vec S
+     +\iint\limits_\text{disk} \vec F\cdot d\vec S \\
+    &=-\dfrac{3}{5}512\pi+512\pi
+    =\dfrac{1024}{5}\pi
+    \end{aligned}\]
+    Since the volume was \(V=64\pi\), the \(z\)-component of the centroid is:
+    \[
+    \bar{z}=\dfrac{V_z}{V}
+    =\dfrac{1024\pi}{5}\dfrac{1}{64\pi}
+    =\dfrac{16}{5}
+    \]
+    which is inside the solid.
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX4">
+  <p>
+    We check by computing the \(z\)-\(1^\text{st}\)-moment directly as
+    \(\displaystyle V_z=\iiint z\,dV\). In the check of the previous exercise,
+    we found the volume integral is
+    \[
+    V=\int_0^4\int_0^{2\pi}\int_0^{z^{3/2}} 1\,r\,dr\,d\theta\,dz
+    \]
+    So the \(z\)-\(1^\text{st}\)-moment is:
+    \[\begin{aligned}
+    V_z&=\int_0^4\int_0^{2\pi}\int_0^{z^{3/2}} z\,r\,dr\,d\theta\,dz \\
+    &=2\pi\int_0^4 z\left[\dfrac{r^2}{2}\right]_{r=0}^{z^{3/2}} \,dz \\
+    &=2\pi\int_0^4 \dfrac{z^4}{2} \,dz
+    =2\pi\left[\dfrac{z^5}{10}\right]_0^4
+    =\dfrac{1024}{5}\pi
+    \end{aligned}\]
+    This method was again much simplier than the surface integrals!
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

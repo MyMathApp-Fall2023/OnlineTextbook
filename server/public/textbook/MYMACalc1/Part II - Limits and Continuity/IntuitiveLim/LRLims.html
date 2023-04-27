@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Left and Right Limits | 6. Intuitive Limits and Continuity</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NeverTold.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimCont.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Intuitive Limits and Continuity</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Intuitive Definitions</h2>
+
+
+      
+      <h2>1. Left and Right Limits</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Given a function, \(f(x)\), and a point, \(x=a\), there are \(3\) quantities
+  which describe the behavior of \(f(x)\) at and near \(x=a\).
+</p>
+<div class="column">
+  <div class="greybox" data-col-width="60%">
+    <p class="predef" data-title="Value & \(1\)-Sided Limits">
+      <br/>
+      The <span class="defword">value of the function</span> is \(f(a)\).
+      <br/>
+      <button id="button_value">Plot</button>
+      In the plot, \(a=6\) and \(f(6)=8\) which is the solid circle at \((6,8)\).
+    </p>
+    <p>
+      The <span class="defword">limit of the function, \(f(x)\), as \(x\)
+      approaches \(a\) from the left</span> is the number, \(L\), that
+      \(f(x)\) approaches as \(x\) approaches \(a\) from the left. We write:
+      \[
+      \lim_{x\to a^-}f(x)=L
+      \]
+      <button id="button_left">Plot</button>
+      In the plot, \(a=6\) and \(L=5\) which is the open circle  at \((6,5)\).
+    </p>
+    <p>
+      The <span class="defword">limit of the function, \(f(x)\), as \(x\)
+      approaches \(a\) from the right</span> is the number, \(L\), that
+      \(f(x)\) approaches as \(x\) approaches \(a\) from the right. We write:
+      \[
+      \lim_{x\to a^+}f(x)=L
+      \]
+      <button id="button_right">Plot</button>
+      In the plot, \(a=6\) and \(L=3\) which is the open circle  at \((6,3)\).
+      <br>
+      <button id="button_reset">Reset Plot</button>
+    </p>
+  </div>
+  <div data-col-width="40%">
+    <div class="center">
+      <figure>
+        <img src="graphics/def_LR_lim.jpg" alt="def_LR_lim.jpg" id="img_def_LR_lim">
+        <figcaption>
+          For this function:
+          \[\begin{aligned}
+          \lim_{x\to 6^-}f(x)=5 & \qquad
+          \lim_{x\to 6^+}f(x)=3 \\
+          \text{and} \quad & \quad
+          f(6)=8
+          \end{aligned}\]
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+<p class="remark">
+  All three of these numbers may or may not exist and, in general,
+  they can all be different. In the plot above, all three numbers
+  exist and are all different. In the plot on the left below, the function
+  value exists but is different from the limits from the left and right which
+  happen to be equal. In the plot on the right below, the limits from the left
+  and right exist and happen to be equal while the function value does not
+  even exist. This has no effect on the limit. The limits are only concerned
+  with what values \(f(x)\) <em>approaches</em> as \(x\) nears \(a\).
+</p>
+<span class="center">
+  <figure>
+    <img src="graphics/def_LR_val_exists.jpg" alt="def_LR_val_exists">
+    <figcaption>
+      The limits exist but the function value is different.
+    <br>
+      In this case,
+      \(\displaystyle
+      \lim_{x\to 6^-}f(x)
+      =\lim_{x\to 6^+}f(x)
+      =5\)
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/def_LR_val_dne.jpg" alt="def_LR_val_dne">
+    <figcaption>
+      The limits exist but the function value is undefined.
+    <br>
+      Again,
+      \(\displaystyle
+      \lim_{x\to 6^-}f(x)
+      =\lim_{x\to 6^+}f(x)
+      =5\)
+    </figcaption>
+  </figure>
+</span>
+<p class="def">
+  <br>
+  If a limit exists, we say it <span class="defword">converges</span>.
+  <br>
+  If a limit does not exist, we say it <span class="defword">diverges</span>.
+</p>
+<p class="remark">
+  This is a preliminary intuitive definition. The actual precise definition
+  appears on a
+  <a href="../Precise/LRLims.html" title="Return using the Back button.">later page</a>.
+  However, the precise definition is not essential for this course.
+  Everything can be based on the intuitive definition.
+</p>
+
+<h2>When Limits Do Not Exist</h2>
+<p class="example" data-number="1">
+  The six plots below show the six situations in which a limit from the
+  left or right does not exist.
+</p>
+<div class="column">
+  <div data-col-width="33%">
+    <div class="center">
+      <figure>
+        <img src="graphics/def_L_inf.jpg" alt="def_L_inf">
+        <figcaption>
+          \(\displaystyle \lim_{x\to 6^-}f(x)=\infty\)
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div data-col-width="33%">
+    <div class="center">
+      <figure>
+        <img src="graphics/def_L_minf.jpg" alt="def_L_minf">
+        <figcaption>
+          \(\displaystyle \lim_{x\to 6^-}f(x)=-\infty\)
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div data-col-width="33%">
+    <div class="center">
+      <figure>
+        <img src="graphics/def_L_osc.jpg" alt="def_L_osc">
+        <figcaption>
+          \(f(x)\) is oscillatory divergent<br>from the left.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+<div class="column">
+  <div data-col-width="33%">
+    <div class="center">
+      <figure>
+        <img src="graphics/def_R_inf.jpg" alt="def_R_inf">
+        <figcaption>
+          \(\displaystyle \lim_{x\to 6^+}f(x)=\infty\)
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div data-col-width="33%">
+    <div class="center">
+      <figure>
+        <img src="graphics/def_R_minf.jpg" alt="def_R_minf">
+        <figcaption>
+          \(\displaystyle \lim_{x\to 6^+}f(x)=-\infty\)
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div data-col-width="33%">
+    <div class="center">
+      <figure>
+        <img src="graphics/def_R_osc.jpg" alt="def_R_osc" >
+        <figcaption>
+          \(f(x)\) is oscillatory divergent<br>from the right.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+<div class="def greybox">
+  <p class="def"><br/>
+    We say a <span class="defword">left or right limit is positive
+    infinity</span> if \(f(x)\) gets arbitrarily large and positive
+    as \(x\) approaches \(a\) from the left or right (resp.).
+    We also say \(f(x)\) <span class="defword">diverges to \(\infty\)
+    on the left or right</span> and write:
+    \[
+    \lim_{x\to a^-}f(x)=\infty \qquad
+    \lim_{x\to a^+}f(x)=\infty \qquad \text{resp.}
+    \]
+  </p>
+  <p>
+    We say a <span class="defword">left or right limit is negative
+    infinity</span> if \(f(x)\) gets arbitrarily large and negative
+    as \(x\) approaches \(a\) from the left or right (resp.).
+    We also say \(f(x)\) <span class="defword">diverges to \(-\infty\)
+    on the left or right</span> and write:
+    \[
+    \lim_{x\to a^-}f(x)=-\infty \qquad
+    \lim_{x\to a^+}f(x)=-\infty \qquad \text{resp.}
+    \]
+  </p>
+  <p>
+    We say a <span class="defword">left or right limit is oscillitory
+    divergent</span> if the limit does not exist <em>and</em> is neither
+    positive nor negative infinity.
+  </p>
+</div>
+<p class="remark">
+  To say a limit is defined to be \(\pm\infty\) does <em>not</em> say the
+  limit <em>exists</em>, it merely says the <em>way</em> in which it diverges!
+</p>
+
+        <div class="rule" id="ex_graph"></div>
+
+<div class="column">
+  <p class="exercise" data-number="2">
+    For the function plotted, compute each quantity.
+  </p>
+  <div class="center">
+    <img src="graphics/ex_LR_lim.jpg" alt="ex_LR_lim.jpg">
+  </div>
+</div>
+<ol type="a" class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <p>
+        The limit from the left at \(x=3\).
+        <br>
+        \(\displaystyle \lim_{x\to 3^-}f(x)=\,\)
+        <input type="text" id="ex_lim1left" size="6" value="">
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1a"></button>
+        <button class="toggle has-sol" data-toggle="SolX1a"></button>
+        <input type="text" id="ex_lim1leftreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1a">
+      <p>
+        The limit from the left is the height \(f(x)\) approaches as \(x\)
+        approaches \(3\) from the left, i.e. \(x\) is less than \(3\) but
+        getting very close to \(3\).
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1a">
+      <p>
+        \(\displaystyle \lim_{x\to 3^-}f(x)=4\) because the curve
+        on the left goes to height \(4\) as \(x\) goes to \(3\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        The limit from the right at \(x=3\).
+        <br>
+        \(\displaystyle \lim_{x\to 3^+}f(x)=\,\)
+        <input type="text" id="ex_lim1right" size="6" value="">
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1b"></button>
+        <button class="toggle has-sol" data-toggle="SolX1b"></button>
+        <input type="text" id="ex_lim1rightreply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1b">
+      <p>
+        The limit from the right is the value \(f(x)\) approaches as \(x\)
+        approaches \(3\) from the right, i.e. \(x\) is greater than \(3\) but
+        getting very close to \(3\).
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1b">
+      <p>
+        \(\displaystyle \lim_{x\to 3^+}f(x)=2\) because the curve
+        on the right goes to height \(2\) as \(x\) goes to \(3\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        The function value at \(x=3\).
+        <br>
+        \(\displaystyle f(3)=\,\)
+        <input type="text" id="ex_value1" size="6" value="">
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1c"></button>
+        <button class="toggle has-sol" data-toggle="SolX1c"></button>
+        <input type="text" id="ex_value1reply" size="6">
+        <button class="toggle has-show" data-toggle="SolX1c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1c">
+      <p>
+        The value of \(f(x)\) at \(x=3\) is \(f(3)\) if it is defined.
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1c">
+      <p>
+        \(f(3)=2\) because the solid dot above \(x=3\) is at height \(2\).
+      </p>
+    </div>
+  </li>
+</ol>
+
+        <div class="rule" id="ex_piecewise"></div>
+
+<div class="column">
+  <p class="exercise" data-number="3">
+    For the piecewise function shown, compute each quantity.
+  </p>
+  <div class="center">
+    \[
+    f(x)=\left\{
+    \begin{matrix}
+    x-2 & \text{if} & x\lt4 \\
+    2 & \text{if} & x=4 \\
+    x-1 & \text{if} & x\gt4
+    \end{matrix}\right.
+    \]
+  </div>
+</div>
+<ol type="a" class="list-outside">
+    <li>
+      <div class="dotfillex">
+        <p>
+          The limit from the left at \(x=4\).
+          <br>
+          \(\displaystyle \lim_{x\to 4^-}f(x)=\,\)
+          <input type="text" id="ex_lim2left" size="6" value="">
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX2a"></button>
+          <button class="toggle has-sol" data-toggle="SolX2a"></button>
+          <input type="text" id="ex_lim2leftreply" size="6">
+          <button class="toggle has-show" data-toggle="SolX2a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+        <p>
+          The limit from the left is the value \(f(x)\) approaches as \(x\)
+          approaches \(4\) from the left, i.e. \(x\) is less than \(4\) but
+          getting very close to \(4\).
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+        <p>
+          \(\displaystyle \lim_{x\to 4^-}f(x)=2\)
+          because to plug in numbers less than \(4\) we use the first formula.
+          So for \(x=3.9,3.99,3.999\) we get \(f(x)=1.9,1.99,1.999\) which
+          approach \(2\).
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          The limit from the right at \(x=4\).
+          <br>
+          \(\displaystyle \lim_{x\to 4^+}f(x)=\,\)
+          <input type="text" id="ex_lim2right" size="6" value="">
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX2b"></button>
+          <button class="toggle has-sol" data-toggle="SolX2b"></button>
+          <input type="text" id="ex_lim2rightreply" size="6">
+          <button class="toggle has-show" data-toggle="SolX2b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX2b">
+        <p>
+          The limit from the right is the value \(f(x)\) approaches as \(x\)
+          approaches \(4\) from the right, i.e. \(x\) is greater than \(4\) but
+          getting very close to \(4\).
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+        <p>
+          \(\displaystyle \lim_{x\to 4^+}f(x)=3\)
+          because to plug in numbers greater than \(4\) we use the third formula.
+          So for \(x=4.1,4.01,4.001\) we get \(f(x)=3.1,3.01,3.001\) which
+          approach \(3\).
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          The function value at \(x=4\).
+          <br>
+          \(\displaystyle f(4)=\,\)
+          <input type="text" id="ex_value2" size="6" value="">
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX2c"></button>
+          <button class="toggle has-sol" data-toggle="SolX2c"></button>
+          <input type="text" id="ex_value2reply" size="6">
+          <button class="toggle has-show" data-toggle="SolX2c"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX2c">
+        <p>
+          The value of \(f(x)\) at \(x=4\) is \(f(4)\) if it is defined.
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+        <p>
+          \(f(4)=2\)
+          because to plug in \(x=4\) we use the second formula.
+        </p>
+      </div>
+    </li>
+  </ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+  <script>
+    function changeImageSourceOnClick(imgId, buttonId, imgSrc) {
+      const img = document.getElementById(imgId);
+      const button = document.getElementById(buttonId);
+      button.addEventListener("click", () => {
+        img.setAttribute("src", imgSrc);
+      });
+    }
+    changeImageSourceOnClick("img_def_LR_lim", "button_reset", "graphics/def_LR_lim.jpg");
+    changeImageSourceOnClick("img_def_LR_lim", "button_value", "graphics/def_f_val.gif");
+    changeImageSourceOnClick("img_def_LR_lim", "button_left", "graphics/def_L_lim.gif");
+    changeImageSourceOnClick("img_def_LR_lim", "button_right", "graphics/def_R_lim.gif");
+   </script>
+
+</body>
+</html>

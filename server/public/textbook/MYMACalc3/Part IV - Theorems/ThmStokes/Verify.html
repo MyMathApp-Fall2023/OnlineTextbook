@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Verification | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NoBoundary.html" title="Previous">&lArr;</a></li>
+      <li><a href="Proof.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed counterclockwise
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+
+      
+      <h2>b. Verification</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  To <span class="defword">verify</span> a theorem means to check it works
+  for specific examples. (It is not a proof.) On previous pages, we have
+  already verified Stokes' Theorem for several functions and surfaces, with
+  \(0\), \(1\) or more pieces to the boundary. So we here just give a few
+  more exercises for practice.
+</p>
+<div class="column">
+  <p class="exercise" data-number="1">
+    Verify Stokes' Theorem:
+    \[
+    \iint_P \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial P} \vec{F}\cdot d\vec{s}
+    \]
+    for the vector field \(\vec{F}=\langle yz,-xz,z^2\rangle\) on the
+    elliptic paraboloid, \(P\), given by \(z=x^2+y^2\) for \(z \le 4\)
+    oriented down and out. \(P\) is the bowl shape shown at the right
+    which may be parametrized as:
+    \[
+    (x,y,z)=\vec{R}(r,\theta)
+    =(r\cos\theta,r\sin\theta,r^2)
+    \]
+  </p>
+  <div class="center">
+    <img src="graphics/ex_verify_parab.jpg" alt="ex_verify_parab">
+  </div>
+</div>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>LHS - Surface Integral:</strong>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX1a"></button>
+        <button class="toggle has-ans" data-toggle="AnsX1a"></button>
+        <button class="toggle has-sol" data-toggle="SolX1a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1a">
+      <p>
+        Always compute a divergence or curl in rectangular coordinates!
+        It can be done in curvilinear coordinates, but it is much more
+        complicated and we have not covered it in this class. When you are
+        ready to do the integral, then you convert the divergence or curl
+        into the coordinates needed for the integral.
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+      <p>
+        \(\displaystyle \iint_P \vec{\nabla}\times\vec{F}\cdot d\vec{S}=32\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1a">
+      <p>
+        <strong>LHS:</strong> &emsp;
+        Given the parametrization
+        \[
+        (x,y,z)=\vec{R}(r,\theta)
+        =\langle r\cos\theta,r\sin\theta,r^2\rangle
+        \]
+        we compute the tangent vectors \(\vec{e}_r\) and \(\vec{e}_{\theta}\)
+        and the normal \(\vec{N}=\vec{e}_r\times\vec{e}_{\theta}\):
+        \[
+        \begin{array}{c}
+        \\
+        \vec{e}_r= \\
+        \vec{e}_{\theta}=
+        \end{array}
+        \begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        (\quad \cos\theta & \sin\theta & \;2r\;) \\
+        (-r\sin\theta & r\cos\theta & \; 0\;)
+        \end{vmatrix}
+        \]
+        \[\begin{aligned}
+        \vec{N}&=\vec{e}_r\times\vec{e}_{\theta} \\
+        &=\hat{\imath}(-2r^2\cos\theta)
+        -\hat{\jmath}(2r^2\sin\theta)
+        +\hat{k}(r\cos^2\theta--r\sin^2\theta) \\
+        &=\langle-2r^2\cos\theta,-2r^2\sin\theta,r\rangle
+        \end{aligned}\]
+        In the first octant, all the trig functions are positive; so \(N_1\)
+        and \(N_2\) are negative while \(N_3\) is positive; so \(\vec{N}\)
+        points up and in. Since we need down and out, we reverse \(\vec{N}\):
+        \[
+        \vec{N}=\langle 2r^2\cos\theta,2r^2\sin\theta,-r\rangle
+        \]
+        Next, we compute the curl of \(\vec{F}=\langle yz,-xz,z^2\rangle\):
+        \[\begin{aligned}
+        \vec{\nabla}\times\vec{F}
+        &=\begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \partial_x & \partial_y & \partial_z \\
+        yz & -xz & z^2
+        \end{vmatrix} \\
+        &=\hat{\imath}(0--x)-\hat{\jmath}(0-y)+\hat{k}(-z-z) \\
+        &=\langle x,y,-2z\rangle
+        \end{aligned}\]
+        Now we evaluate the curl on the surface and compute its dot product
+        with the normal:
+        \[
+        \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(r,\theta)}
+        =\langle r\cos\theta,r\sin\theta,-2r^2\rangle
+        \]
+        \[
+        \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(r,\theta)}\cdot\vec{N}
+        =2r^3\cos^2\theta+2r^3\sin^2\theta+2r^3=4r^3
+        \]
+        The limits for \(\theta\) are \(0 \le\theta \le 2\pi\). To find the
+        limits on \(r\), we compute
+        \[
+        0 \le z=r^2 \le 4 \qquad \Longrightarrow \qquad 0 \le r \le 2
+        \]
+        So the integral is: (Notice there is no extra \(r\) in front of the
+        \(dr\,d\theta\).)
+        \[\begin{aligned}
+        \iint_P &\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+        =\int_0^{2\pi}\int_0^2
+        \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(\phi,\theta)}\cdot\vec{N}\,dr\,d\theta \\
+        &=\int_0^{2\pi}\int_0^2 4r^3\,dr\,d\theta
+        =2\pi\left[\rule{0pt}{10pt}r^4\right]_0^2=32\pi
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>RHS - Line Integral(s):</strong>
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX1b"></button>
+        <button class="toggle has-sol" data-toggle="SolX1b"></button>
+        <button class="toggle has-rem" data-toggle="RemX1b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+      <p>
+        \(\displaystyle \oint_{\partial P} \vec{F}\cdot d\vec{s}=32\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX1b">
+      <div class="column">
+        <p>
+          <strong>RHS:</strong> &emsp;
+          The boundary, \(\partial P\), is the circle \(x^2+y^2=4\) at \(z=4\).
+          It may be parametrized by setting \(r=2\) in the parametrization of
+          the surface:
+          \[
+          (x,y,z)=\vec{r}(\theta)
+          =\langle 2\cos\theta,2\sin\theta,4\rangle
+          \]
+          The tangent vector is
+          \[
+          \vec{v}=(-2\sin\theta,2\cos\theta,0)
+          \]
+          This is counterclockwise, but we need clockwise.
+          So we reverse it:
+          \[
+          \vec{v}=(2\sin\theta,-2\cos\theta,0)
+          \]
+        </p>
+        <div class="center">
+          <img src="graphics/ex_verify_parab_anim.gif" alt="ex_verify_parab_anim">
+        </div>
+      </div>
+      <p>
+        Next we evaluate \(\vec{F}=\langle yz,-xz,z^2\rangle\) on the
+        curve and compute its dot product with the tangent vector:
+        \[
+        \left.\vec{F}\right|_{\vec{r}(\theta)}
+        =\langle 8\sin\theta,-8\cos\theta,16\rangle
+        \]
+        \[
+        \left.\vec{F}\right|_{\vec{r}(\theta)}\cdot\vec{v}
+        =16\sin^2\theta+16\cos^2\theta=16
+        \]
+        Finally we compute the line integral around the boundary circle:
+        \[
+        \oint_{\partial P} \vec{F}\cdot d\vec{s}
+        =\int_0^{2\pi} \vec{F}\cdot\vec{v}\,d\theta
+        =\int_0^{2\pi} 16\,dt=32\pi
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-rem" data-toggle="RemX1b">
+      <p>
+        <strong>Comparison:</strong> &emsp;
+        The left and the right sides of the equation gave
+        the same answer. Thus Stokes' Theorem is verified for this example.
+        The line integral was easier.
+      </p>
+    </div>
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="exercise" data-number="2">
+    Verify Stokes' Theorem:
+    \[
+    \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial H} \vec{F}\cdot d\vec{s}
+    \]
+    for the vector field
+    \(\vec{F}=\langle-4y,4x,z(x^2+y^2)\rangle\)
+    over the piece of the hemisphere \(x^2+y^2+z^2=16\) for \(0 \le z \le 2\)
+    oriented out and up.
+  </p>
+  <div class="center">
+    <img src="graphics/ex_piece_hemisph.jpg" alt="ex_piece_hemisph">
+  </div>
+</div>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>LHS - Surface Integral:</strong>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX2a"></button>
+        <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+        <button class="toggle has-sol" data-toggle="SolX2a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+      <p>
+        Always compute a divergence or curl in rectangular coordinates!
+        It can be done in curvilinear coordinates, but it is much more
+        complicated and we have not covered it in this class. When you are
+        ready to do the integral, then you convert the divergence or curl
+        into the coordinates needed for the integral.
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+      <p>
+        \(\displaystyle \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}=32\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+      <p>
+        <strong>LHS:</strong> &emsp;
+        We parametrize the hemisphere using spherical coordinates with
+        \(\rho=4\):
+        \[
+        (x,y,z)=\vec{R}(\phi,\theta)
+        =(4\sin\phi\cos\theta,4\sin\phi\sin\theta,4\cos\phi)
+        \]
+        Then we compute the tangent vectors \(\vec{e}_\phi\) and
+        \(\vec{e}_\theta\) and the normal
+        \(\vec{N}=\vec{e}_\phi\times\vec{e}_\theta\):
+        \[
+        \begin{array}{c}
+        \\
+        \vec{e}_\phi= \\
+        \vec{e}_\theta=
+        \end{array}
+        \begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        (4\cos\phi\cos\theta & 4\cos\phi\sin\theta & -4\sin\phi) \\
+        (-4\sin\phi\sin\theta & 4\sin\phi\cos\theta & \quad 0\quad)
+        \end{vmatrix}
+        \]
+        \[\begin{aligned}
+        \vec{N}
+        &=\vec{e}_\phi\times\vec{e}_\theta \\
+        &=\hat{\imath}(0--16\sin^2\phi\cos\theta)
+        -\hat{\jmath}(0-16\sin^2\phi\sin\theta) \\
+        &\quad+\hat{k}(16\sin\phi\cos\phi\cos^2\theta--16\sin\phi\cos\phi\sin^2\theta) \\
+        &=16\sin\phi\langle\sin\phi\cos\theta,\sin\phi\sin\theta,\cos\phi\rangle
+        \end{aligned}\]
+        In the first octant, all the trig functions are positive;
+        so all the components of \(\vec{N}\) are positive; so \(\vec{N}\)
+        points out and up as desired. Also notice that \(\vec N\) is
+        parallel to \(\vec R\) as it should be for a sphere.
+      </p>
+      <p>
+        Next, we compute the curl of
+        \(\vec{F}=\langle-4y,4x,z(x^2+y^2)\rangle\):
+        \[\begin{aligned}
+        \vec{\nabla}\times\vec{F}
+        &=\begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \partial_x & \partial_y & \partial_z \\
+        -4y & 4x & z(x^2+y^2)
+        \end{vmatrix} \\
+        &=\hat{\imath}(2yz-0)-\hat{\jmath}(2xz-0)+\hat{k}(4--4) \\
+        &=\langle 2yz,-2xz,8\rangle
+        \end{aligned}\]
+        Now we evaluate the curl on the surface and compute its dot product
+        with the normal:
+        \[
+        \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(\phi,\theta) }
+        =\langle 32\sin\phi\cos\phi\sin\theta,
+        -32\sin\phi\cos\phi\cos\theta,8\rangle
+        \]
+        \[\begin{aligned}
+        \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(\phi,\theta)}\cdot\vec{N}
+        &=16\sin\phi(32\sin^2\phi\cos\phi\sin\theta\cos\theta \\
+        &\quad-32\sin^2\phi\cos\phi\sin\theta\cos\theta+8\cos\phi) \\
+        &=128\sin\phi\cos\phi
+        \end{aligned}\]
+        The limits for \(\theta\) are \(0 \le \theta \le 2\pi\). To find
+        the limits on \(\phi\), we compute
+        \[\begin{aligned}
+        0 \le z \le 2
+        \qquad 0 \le 4\cos\phi \le 2 \\
+        0 \le \cos\phi \le \dfrac{1}{2}
+        \qquad \phi=\dfrac{\pi}{2},\dfrac{\pi}{3}
+        \end{aligned}\]
+        So the integral is:
+        \[\begin{aligned}
+        \iint_H &\vec{\nabla}\times\vec{F}\cdot d\vec{S}
+        =\int_0^{2\pi}\int_{\pi/3}^{\pi/2}
+        \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(\phi,\theta)}
+        \cdot\vec{N}\,d\phi\,d\theta \\
+        &=\int_0^{2\pi}\int_{\pi/3}^{\pi/2}
+        128\sin\phi\cos\phi\,d\phi\,d\theta \\
+        &=256\pi\left[\dfrac{\sin^2\phi}{2}\right]_{\pi/3}^{\pi/2}
+        =256\pi\left(\dfrac{1}{2}-\dfrac{3}{8}\right)=32\pi
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>RHS - Line Integral(s):</strong>
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+        <button class="toggle has-sol" data-toggle="SolX2b"></button>
+        <button class="toggle has-rem" data-toggle="RemX2b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+      <p>
+        \(\displaystyle \oint_{\partial H} \vec{F}\cdot d\vec{s}=32\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+      <div class="column">
+        <div>
+          <p>
+            <strong>RHS:</strong> &emsp;
+            The boundary of the surface consists of two pieces: a top
+            circle at \(z=2\) or \(\phi=\dfrac{\pi}{3}\) and a bottom
+            circle at \(z=0\) or \(\phi=\dfrac{\pi}{2}\). We must compute
+            the line integral
+            \(\displaystyle \oint_{\partial S} \vec{F}\cdot d\vec{s}\)
+            for the two pieces and add them together.
+          </p>
+          <p>
+            Since the normal to the surface points out, we must traverse
+            the top circle clockwise and the bottom circle counterclockwise
+            as seen from the positive \(z\)-axis. The traversal of the
+            boundary curves are shown in the animation.
+          </p>
+        </div>
+        <div class="center">
+          <img src="graphics/ex_piece_hemisph_anim.gif" alt="ex_piece_hemisph_anim">
+        </div>
+      </div>
+      <p>
+        &emsp; <strong>Top:</strong> &emsp;
+        We parametrize the top circle by substituting \(\phi=\dfrac{\pi}{3}\)
+        into the parametrization of the surface:
+        \[\begin{aligned}
+        (x,y,z)=\vec{r}(\theta)
+        &=\left(4\sin\dfrac{\pi}{3}\cos\theta,4\sin\dfrac{\pi}{3}\sin\theta,
+        4\cos\dfrac{\pi}{3}\right) \\
+        &=(2\sqrt{3}\cos\theta,2\sqrt{3}\sin\theta,2)
+        \end{aligned}\]
+        The tangent vector is
+        \[
+        \vec{v}=(-2\sqrt{3}\sin\theta,2\sqrt{3}\cos\theta,0)
+        \]
+        This is counterclockwise, so we reverse it:
+        \[
+        \vec{v}=(2\sqrt{3}\sin\theta,-2\sqrt{3}\cos\theta,0)
+        \]
+        Next we evaluate \(\vec{F}=\langle-4y,4x,z(x^2+y^2)\rangle\) on the
+        curve and compute its dot product with the tangent vector:
+        \[
+        \left.\vec{F}\right|_{\vec{r}(\theta)}
+        =\langle-8\sqrt{3}\sin\theta,8\sqrt{3}\cos\theta,24\rangle
+        \]
+        \[
+        \left.\vec{F}\right|_{\vec{r}(\theta)}\cdot\vec{v}
+        =-48\sin^2\theta-48\cos^2\theta=-48
+        \]
+        Finally we compute the line integral around the top circle
+        \[
+        \oint_{\text{top}} \vec{F}\cdot d\vec{s}
+        =\int_0^{2\pi} \vec{F}\cdot\vec{v}\,d\theta
+        =-\int_0^{2\pi} 48\,dt=-96\pi
+        \]
+      </p>
+      <p>
+        &emsp; <strong>Bottom:</strong> &emsp;
+        We parametrize the bottom circle by substituting
+        \(\phi=\dfrac{\pi}{2}\) into the parametrization of the surface:
+        \[\begin{aligned}
+        (x,y,z)=\vec{r}(\theta)
+        &=\left(4\sin\dfrac{\pi}{2}\cos\theta,4\sin\dfrac{\pi}{2}\sin\theta,
+               4\cos\dfrac{\pi}{2}\right) \\
+        &=(4\cos\theta,4\sin\theta,0)
+        \end{aligned}\]
+        The tangent vector is
+        \[
+        \vec{v}=(-4\sin\theta,4\cos\theta,0)
+        \]
+        This is counterclockwise, so the orientation is correct.
+        Next we evaluate \(\vec{F}=\langle-4y,4x,z(x^2+y^2)\rangle\) on
+        the curve and compute its dot product with the tangent vector:
+        \[
+        \left.\vec{F}\right|_{\vec{r}(\theta)}
+        =\langle-16\sin\theta,16\cos\theta,0\rangle
+        \]
+        \[
+        \left.\vec{F}\right|_{\vec{r}(\theta)}\cdot\vec{v}
+        =64\sin^2\theta+64\cos^2\theta=64
+        \]
+        Finally we compute the line integral around the bottom circle
+        \[
+        \oint_{\text{bot}} \vec{F}\cdot d\vec{s}
+        =\int_0^{2\pi} \vec{F}\cdot\vec{v}\,d\theta
+        =\int_0^{2\pi} 64\,dt=128\pi
+        \]
+      &emsp; <strong>Total:</strong> &emsp;
+        We complete the computation of the right hand side by adding
+        together the line integrals from the two pieces of the boundary:
+        \[
+        \oint_{\partial S} \vec{F}\cdot d\vec{s}
+        =\oint_{\text{top}} \vec{F}\cdot d\vec{s}
+        +\oint_{\text{bot}} \vec{F}\cdot d\vec{s}
+        =-96\pi+128\pi=32\pi
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-rem" data-toggle="RemX2b">
+      <p>
+        <strong>Comparison:</strong> &emsp;
+        The left and the right sides of the equation gave the same answer.
+        Thus Stokes' Theorem is verified for this example.
+      </p>
+    </div>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

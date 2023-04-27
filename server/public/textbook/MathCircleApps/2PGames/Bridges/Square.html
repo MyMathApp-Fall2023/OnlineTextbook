@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Square Bridges | Bridges</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Hex.html" title="Previous">&lArr;</a></li>
+      <li><a href="../PopTacToe/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Bridges</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Square Bridges</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div data-col-width="60%" style="text-align: center; float: left">
+    <canvas id="cube_1"></canvas>
+  </div>
+  <ul  data-col-width="40%">
+    <li>
+      Click on &emsp;
+      <button id="colorReset">
+        <img src="graphics/refresh.png" style="width: 25px;" />
+      </button> &emsp;
+      to restart the game without changing the number of islands.
+    </li><br>
+    <li>
+      Click on &emsp;
+        <button id="rows_decrease">
+          <img src="graphics/down.png" style="width: 25px;" />
+        </button>
+        <input type="text" id="rows_readout" name="rows_readout" size="2" readonly>
+        <button id="rows_increase">
+          <img src="graphics/up.png" style="width: 25px;" />
+        </button>
+      &emsp; to restart the game and change the number of islands.
+    </li><br>
+    <li>
+      You own the (diamond shaped) islands of your color. You want to build
+      "Bridges" between them to connect your (triangle shaped) major land masses.
+    </li><br>
+    <li>
+      On your turn, click on a "Bridge" of your color to darken it.
+      Blue always goes first. To undo, click on &emsp;
+        <button id="undo">
+          <img src="graphics/back.png" style="width: 25px;" />
+        </button>
+    </li><br>
+    <li>
+      The winner is the first player to form a series of "Bridges" of their
+      color between the two sides with their color.
+    </li><br>
+    <li>
+      <span id="startingPlayerLine">
+        First Player:
+        <input type="radio" id="start1" name="startingPlayer" value="Blue">
+        <label for="start1"><strong>Blue</strong></label>
+        <input type="radio" id="start2" name="startingPlayer" value="Red">
+        <label for="start2"><strong>Red</strong></label>
+      </span>
+      <span id="currentPlayerLine" style="display:none">
+        Current:
+        <input type="text" id="turn_readout" name="turn_readout" size="4" style="font-size:14pt; text-align:center; color:#FFFFFF; background-color:#0000FF" readonly>
+      </span>
+      &emsp;
+      Winner: <input type="text" id="win_readout" name="win_readout" size="4" style="font-size:14pt; text-align:center; color:#FFFFFF" readonly>
+    </li>
+  </ul>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+
+<script src="scripts/three.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+<script src="scripts/TextSprite.js"></script>
+<script src="scripts/SquareBridges.js"></script>
+
+<style>
+  canvas{
+    background: #f0f0f0;
+    height: 200px;
+    width: 200px;
+  }
+  button{
+    background-color:white;
+    border:none;
+    padding:0px 0px;
+  }
+</style>
+
+
+</body>
+</html>

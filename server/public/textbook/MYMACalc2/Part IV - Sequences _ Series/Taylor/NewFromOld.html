@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Constructing New Taylor Series from Old Ones | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Spec.html" title="Previous">&lArr;</a></li>
+      <li><a href="PolyApprox.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>23. Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+
+
+      
+      <h2>c. Constructing New Taylor Series from Old Ones</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the <a href="../PowSer/NewFromOld.html" title="Return using the Back button.">
+  previous chapter</a>, we saw that new power series could be constructed
+  from old ones by applying the operations of
+  <a href="../PowSer/Subs.html" title="Return using the Back button.">
+  substitution</a>,
+  <a href="../PowSer/AddSub.html" title="Return using the Back button.">
+  addition and subtraction</a>,
+  <a href="../PowSer/Mult.html" title="Return using the Back button.">
+  multiplication by a polynomial</a>,
+  <a href="../PowSer/Diff.html" title="Return using the Back button.">
+  differentiation</a> and
+  <a href="../PowSer/Integ.html" title="Return using the Back button.">
+  integration</a>. Since Taylor series are power series, we can apply
+  these operations to old Taylor series to produce new Taylor series. In the
+  previous chapter, the examples all started from the geometric series for the
+  function \(\dfrac{1}{1-x}\). We now look at examples involving exponentials,
+  sines and cosines.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+   The hyperbolic cosine is defined by \(\cosh x=\dfrac{e^x+e^{-x}}{2}\).
+   Find its Maclaurin series.
+</p>
+<p class="sol">
+  We start with the exponential series
+  \[
+  e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+  =1+x+\dfrac{x^2}{2}+\dfrac{x^3}{3!}+\cdots
+  \]
+  We substitute \(x\rightarrow-x\):
+  \[
+  e^{-x}=\sum_{n=0}^\infty \dfrac{(-x)^n}{n!}
+  =1-x+\dfrac{x^2}{2}-\dfrac{x^3}{3!}+\cdots
+  \]
+  We add these two series and divide by \(2\):
+  \[\begin{aligned}
+  \cosh x
+  &=\dfrac{e^x+e^{-x}}{2}
+  =\sum_{n=0}^\infty \left(\dfrac{1+(-1)^n}{2}\right)\dfrac{x^n}{n!} \\
+  &=\dfrac{1}{2}\left(1+x+\dfrac{x^2}{2}+\dfrac{x^3}{3!}+\dfrac{x^4}{4!}+\cdots\right. \\
+  &\quad\;\;+\left.1-x+\dfrac{x^2}{2}-\dfrac{x^3}{3!}+\dfrac{x^4}{4!}-\cdots\right) \\
+  &=1+\dfrac{x^2}{2}+\dfrac{x^4}{4!}+\cdots
+  \end{aligned}\]
+  Notice that the odd power terms cancelled out and the even power terms
+  added up and cancelled the \(\dfrac{1}{2}\). To account for only having
+  even terms, we let \(n=2k\). Thus
+  \[
+  \cosh x=\sum_{k=0}^\infty \dfrac{x^{2k}}{(2k)!}=1+
+  \dfrac{1}{2}x^2+\dfrac{1}{4!}x^4\cdots
+  \]
+</p>
+<p class="remark">
+  Notice that the series for \(\cosh x\) is the same as the series for
+  \(\cos x\) except there are no minus signs. This is one of the reasons the
+  name <span class="hl">hyperbolic cosine</span> is used.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Find the Taylor series for \(\sin^2x\) centered at \(x=0\).
+</p>
+<p class="sol">
+  We use the identity \(\sin^2x=\dfrac{1-\cos 2x}{2}\).
+  We start with the series for \(\cos x\):
+  \[
+  \cos x=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n)!}x^{2n}
+  =1-\dfrac{x^2}{2}+\dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots
+  \]
+  We substitute \(x\rightarrow 2x\):
+  \[\begin{aligned}
+  \cos 2x
+  &=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n)!}(2x)^{2n}
+  =1-\dfrac{(2x)^2}{2}+\dfrac{(2x)^4}{4!}-\dfrac{(2x)^6}{6!}+\cdots \\
+  &=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n)!}2^{2n}x^{2n}
+  =1-\dfrac{2^2x^2}{2}+\dfrac{2^4x^4}{4!}-\dfrac{2^6x^6}{6!}+\cdots
+  \end{aligned}\]
+  We subtract from \(1\) and divide by \(2\). First in expanded form:
+  \[\begin{aligned}
+  1-\cos 2x
+  &=1-\left(1-\dfrac{2^2x^2}{2}+\dfrac{2^4x^4}{4!}-\dfrac{2^6x^6}{6!}+\cdots\right) \\
+  &=\dfrac{2^2x^2}{2}-\dfrac{2^4x^4}{4!}+\dfrac{2^6x^6}{6!}-\cdots
+  \end{aligned}\]
+  \[
+  \sin^2x=\dfrac{1-\cos 2x}{2}=\dfrac{2x^2}{2}-\dfrac{2^3x^4}{4!}+
+  \dfrac{2^5x^6}{6!}+\cdots
+  \]
+  Now in summation form: (Notice how we separate the \(n=0\) term from the
+  rest of the sum.)
+  \[\begin{aligned}
+  1-\cos 2x
+  &=1-\left(1+\sum_{n=1}^\infty \dfrac{(-1)^n}{(2n)!}2^{2n}x^{2n}\right) \\
+  \end{aligned}\]
+  \[\begin{aligned}
+  \sin^2x
+  &=\dfrac{1-\cos 2x}{2}
+  =\sum_{n=1}^\infty \dfrac{(-1)^{n-1}}{(2n)!}2^{2n-1}x^{2n}
+  \end{aligned}\]
+</p>
+
+        <div class="rule" id="ex1"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the Maclaurin series for \(f(x)=
+    \begin{cases}
+    \dfrac{\sin x}{x} \quad&\text{if}& x\neq 0 \\
+    1& \text{if}& x=0
+    \end{cases}
+    \)
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\begin{aligned}\displaystyle
+    f(x)
+    &=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{2n} \\
+    &=1-\dfrac{x^2}{3!}+\dfrac{x^4}{5!}-\dfrac{x^6}{7!}+\cdots
+    \end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The series for \(\sin x\) is
+    \[
+    \sin x
+    =\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{2n+1}
+    =x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!}+\cdots
+    \]
+    So the series for \(\dfrac{\sin x}{x}\) is
+    \[
+    \dfrac{\sin x}{x}
+    =\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{2n}
+    =1-\dfrac{x^2}{3!}+\dfrac{x^4}{5!}-\dfrac{x^6}{7!}+\cdots
+    \]
+    When \(x=0\), the series becomes \(1\). So this is also the series for \(
+    f(x)\)
+  </p>
+</div>
+
+        <div class="rule" id="ex2"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    The <span class="hl">sine integral</span> function is defined by
+    \(\displaystyle \text{Si}(x)
+    =\int_0^x \dfrac{\sin t}{t}dt\). Find its Maclaurin series.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\begin{aligned}
+    \text{Si}(x)
+    &=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}\dfrac{x^{2n+1}}{(2n+1)} \\
+    &=x-\dfrac{x^3}{3\cdot3!}+\dfrac{x^5}{5\cdot5!}-\dfrac{x^7}{7\cdot7!}+\cdots
+    \end{aligned}\)
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    In the previous problem we found
+    \[
+    \dfrac{\sin x}{x}
+    =\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}x^{2n}
+    =1-\dfrac{x^2}{3!}+\dfrac{x^4}{5!}-\dfrac{x^6}{7!}+\cdots
+    \]
+    We integrate this to obtain
+    \[\begin{aligned}
+    \text{Si}(x)&=\int_0^x \dfrac{\sin t}{t}dt
+    =\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}
+    \dfrac{x^{2n+1}}{(2n+1)} \\
+    &=x-\dfrac{x^3}{3\cdot3!}+\dfrac{x^5}{5\cdot5!}-\dfrac{x^7}{7\cdot7!}+\cdots
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

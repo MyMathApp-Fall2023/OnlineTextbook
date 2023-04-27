@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Right Hand Rule | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CrossProp.html" title="Previous">&lArr;</a></li>
+      <li><a href="CrossGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Cross Product and Triple Product</h2>
+
+
+      
+      <h2>4. Right Hand Rule</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+The direction of the cross product, \(\vec u\times\vec v\), is given by the
+right hand rule. So we first need the definition of the right hand rule.
+</p>
+
+<div class="greybox">
+  <p class="def" data-title="Right Hand Rule (RHR)">
+    There are several equivalent descriptions of the right hand rule
+    all involving your right hand.
+  </p>
+  <div class=column>
+    <p data-col-width="60%">
+      Extend your pointer finger out in front of you. Extend your middle
+      finger out in front of your palm (not necessarily perpendicular).
+      And extend your thumb perpendicular to the other two. If \(\vec u\)
+      points along your pointer finger and \(\vec v\) points along your
+      middle finger, then by the right hand rule, \(\vec u\times\vec v\)
+      points along your thumb.
+    </p>
+    <div class="center" data-col-width="40%">
+      <canvas id="figure_1"></canvas>
+    </div>
+  </div>
+  <div class=column>
+    <p data-col-width="60%">
+      Place the fingers of your right hand along \(\hat{u}\) with the palm
+      facing \(\hat{v}\) and your thumb extended perpendicular to the fingers.
+      Rotate your fingers from \(\hat{u}\) to \(\hat{v}\). Then by the right
+      hand rule your thumb points along \(\vec u\times\vec v\).
+    </p>
+    <div class="center" data-col-width="40%">
+      <canvas id="figure_2"></canvas>
+      <p>
+        Hands illustrated and programmed by<br/>
+        Carl Van Huyck<br/>
+        MS in Visualization, TAMU
+      </p>
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  In the exercise below, click the refresh button to get a new problem.
+</p>
+
+<p class="exercise" data-number="1">
+  <button class="toggle has-refresh"id="ranButton"></button>&emsp;
+  Use the hand below to find the direction of the cross product of
+  <span class="center">
+  \(\vec u = \langle\)
+  <input type="text" id="ux_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="uy_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="uz_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(\rangle\)
+  &emsp; and &emsp;
+  \(\vec v = \langle\)
+  <input type="text" id="vx_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="vy_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="vz_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(\rangle\)
+  </span>
+  <br>
+  When you get the direction correct, the direction of the cross product will appear here:
+  <br><br>
+  <span class="center">
+  \(\vec u\times\vec v = \langle\)
+  <input type="text" id="uxvx_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="uxvy_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(,\)
+  <input type="text" id="uxvz_3" style="resize:none; width:50px; height:22px;
+    font-size:12px; vertical-align:text-bottom">
+  </input>
+  \(\rangle\)
+  </span>
+  <br>
+  Check the answer by computing the cross product as a determinant and then
+  finding its unit vector.
+</p>
+
+<div class="column" id="RHRijk">
+  <div data-col-width="40%">
+    <p class="proc" data-title="for Manipulating the Hand.">
+      To find the direction of \(\vec u\times\vec v\):
+    </p>
+    <ul>
+      <li>
+        Orient the pointer finger along \(\vec u\) using the \(\theta\) and
+        \(\phi\) sliders, which give the spherical coordinates of the pointer
+        finger.
+      </li>
+      <li>
+        Then orient the middle finger so \(\vec v\) is in the plane of the
+        pointer and middle fingers, using the \(\alpha\) slider, which gives
+        the angle around the pointer finger.
+      </li>
+      <li>
+        Optionally, align the middle finger with \(\vec v\) using the
+        \(\beta\) slider, which gives the angle between the pointer finger
+        and the middle finger.
+      </li>
+      <li>
+        Then the thumb will point along \(\vec u\times\vec v\).
+      </li>
+    </ul>
+  </div>
+  <div data-col-width="30%">
+    <ul>
+      <li>
+        Pointer:
+        <br>
+        \(\theta=\)
+        <input type="text" id="thetaDisp_3" style="resize:none; width:45px; height:22px;
+          font-size:12px; vertical-align:text-bottom">
+        </input>
+        <br>
+        <input type="range" min="-180" max="180" val="0" step="0.1"
+          id="thetaSlider_3" style="width:160px;">
+        </input>
+        <br>
+        \(\phi=\)
+        <input type="text" id="phiDisp_3" style="resize:none; width:45px; height:22px;
+          font-size:12px; vertical-align:text-bottom">
+        </input>
+        <br>
+        <input type="range" min="0" max="180" val="90" step="0.1"
+          id="phiSlider_3" style="width:160px;">
+        </input>
+      </li>
+      <li>
+        Middle:
+        <br>
+        \(\alpha=\)
+        <input type="text" id="alphaDisp_3" style="resize:none; width:45px; height:22px;
+          font-size:12px; vertical-align:text-bottom">
+        </input>
+        <br>
+        <input type="range" min="-180" max="180" val="0" step="0.1"
+          id="alphaSlider_3" style="width:160px;">
+        </input>
+        <br>
+        \(\beta=\)
+        <input type="text" id="betaDisp_3" style="resize:none; width:45px; height:22px;
+          font-size:12px; vertical-align:text-bottom">
+        </input>
+        <br>
+        <input type="range" min="0" max="180" val="90" step="0.1"
+          id="betaSlider_3" style="width:160px;">
+        </input>
+      </li>
+    </ul>
+  </div>
+  <div data-col-width="30%">
+    <div class="dotfillex">
+      <p>
+    	  <canvas id="figure_3"></canvas>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="Hint1"></button>
+        <button class="toggle has-show" id="solveButton" ></button>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    When aligning the pointer finger, it may help to first rotate the plot so
+    that \(\vec u\) points straight out of the paper.
+  </p>
+  <p>
+    When aligning the middle finger, it may help to first rotate the plot so
+    that \(\vec v\) points straight out of the paper.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Using the right hand rule verify the direction	of the cross product
+  \(\hat{\imath}\times\hat{\jmath}=\hat{k}\).
+</p>
+<p class="sol" data-number="1">
+  Using your real hand, put the fingers of your right hand along
+  the positive \(x\)-axis, the \(\hat{\imath}\) direction, with the palm
+  facing the positive \(y\)-axis, the \(\hat{\jmath}\) direction. As you
+  rotate your fingers from the \(x\)-axis to the \(y\)-axis, your thumb
+  is pointing straight up along the positive \(z\)-axis, which is the
+  \(\hat{k}\) direction. So \(\hat{\imath}\times\hat{\jmath}\)	points
+  in the \(\hat{k}\) direction, which agrees with the algebraic formula.
+</p>
+<p class="sol" data-number="2">
+  Using the graphical hand in the exercise above, type
+  \(\vec u=\hat{\imath}=\langle1,0,0\rangle\) and
+  \(\vec v=\hat{\jmath}=\langle0,1,0\rangle\) in the boxes.
+  Then click on the show button. The hand will automatically
+  rotate so the pointer is along \(\vec u\) and the middle finger
+  is along \(\vec v\). Then the thumb will be along
+  \(\hat{\imath}\times\hat{\jmath}=\langle0,0,1\rangle=\hat{k}\).
+</p>
+<p class="remark">
+  Additionally, use the hand above to check:
+  \[
+  \hat{\jmath}\times\hat{\imath}=-\hat{k} \qquad
+  \hat{\jmath}\times\hat{k}=\hat{\imath} \qquad
+  \hat{k}\times\hat{\imath}=\hat{\jmath}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<h3>Right Hand Rule using Compass Directions</h3>
+
+<div class="dotfillex">
+  <div class="column">
+    <div data-cpl-width="40%">
+      <p class="exercise" data-number="3">
+        <button  class="toggle has-refresh" id="ranButton_2" onclick="doIt()"></button>&emsp;<br><br>
+        If \(\vec u\) points <span id="vecu_2"></span>
+        and \(\vec v\) points <span id="vecv_2"></span>,
+        which way does \(\vec u\times\vec v\) point?
+      </p>
+      <p>
+        Practice this with your real right hand as well.
+      </p>
+    </div>
+    <div data-col-width="25%">
+      <ul>
+        <li>
+          Pointer:
+          <br>
+          \(\theta=\)
+          <input type="text" id="thetaDisp_4" style="resize:none; width:45px; height:22px;
+            font-size:12px; vertical-align:text-bottom">
+          </input>
+          <br>
+          <input type="range" min="-180" max="180" val="0" step="0.1"
+            id="thetaSlider_4" style="width:160px;">
+          </input>
+          <br>
+          \(\phi=\)
+          <input type="text" id="phiDisp_4" style="resize:none; width:45px; height:22px;
+            font-size:12px; vertical-align:text-bottom">
+          </input>
+          <br>
+          <input type="range" min="-90" max="90" val="0" step="0.1"
+            id="phiSlider_4" style="width:160px;">
+          </input>
+        </li>
+        <li>
+          Middle:
+          <br>
+          \(\alpha=\)
+          <input type="text" id="alphaDisp_4" style="resize:none; width:45px; height:22px;
+            font-size:12px; vertical-align:text-bottom">
+          </input>
+          <br>
+          <input type="range" min="-180" max="180" val="0" step="0.1"
+            id="alphaSlider_4" style="width:160px;">
+          </input>
+          <br>
+          \(\beta=\)
+          <input type="text" id="betaDisp_4" style="resize:none; width:45px; height:22px;
+            font-size:12px; vertical-align:text-bottom">
+          </input>
+          <br>
+          <input type="range" min="0" max="180" val="90" step="0.1"
+            id="betaSlider_4" style="width:160px;">
+          </input>
+        </li>
+      </ul>
+    </div>
+    <div data-col-width="25%">
+  	  <canvas  id="figure_4"></canvas>
+    </div>
+  </div>
+  <div>
+    <p id="buttons" class="center">
+      <span><button id="north" class="bullet-blue"></button> North</span> &emsp;
+      <span><button id="east" class="bullet-blue"></button> East</span> &emsp;&nbsp;
+      <span><button id="northeast" class="bullet-blue"></button> Northeast</span> &emsp;&nbsp;
+      <span><button id="southeast" class="bullet-blue"></button> Southeast</span> &emsp;&nbsp;
+      <span><button id="up" class="bullet-blue"></button> Up</span> &emsp;
+    </p>
+    <p class="center">
+      <span><button id="south" class="bullet-blue"></button> South</span> &emsp;
+      <span><button id="west" class="bullet-blue"></button> West</span> &emsp;
+      <span><button id="northwest" class="bullet-blue"></button> Northwest</span> &emsp;
+      <span><button id="southwest" class="bullet-blue"></button> Southwest</span> &emsp;
+      <span><button id="down" class="bullet-blue"></button> Down</span>
+    </p>
+  </div>
+  <p>
+    <button id="SolX1" class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Point <span id="vecu_3"></span> with your index finger on your right hand.
+    With your middle finger pointing perpendicular to the index, rotate your
+    hand so that your palm is facing <span id="vecv_3"></span>. Your thumb is
+    pointing <span id="vecuxv_3"></span>.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script> -->
+<script src="scripts/three.js"></script>
+<script type="module" src="scripts/three.module.js"></script>
+<script type="module" src="scripts/CSS2DRenderer.js"></script>
+<script type="module" src="scripts/TextureLoader.js"></script>
+<script src="scripts/TextSprite.js"></script>
+<script src="scripts/GLTFLoader.js"></script>
+<script src="scripts/OrbitControls.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="scripts/RHR.js"></script>
+<script src="scripts/RHR_Controlled.js"></script>
+<script src="scripts/RHR_Controlled2.js"></script>
+
+<style>
+  canvas{
+    background: #f0f0f0;
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+
+</body>
+</html>

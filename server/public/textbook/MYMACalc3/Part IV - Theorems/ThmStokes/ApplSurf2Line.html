@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Converting Surface Integrals to Line Integrals | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplLine2Surf.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplPathIndep.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed counterclockwise
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>2. Converting Surface Integrals to Line Integrals</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Stokes' Theorem is used to convert a surface integral into a line integral
+  when the boundary curve is simpler than the surface and/or the vector field
+  is simpler than its curl or just simpler on the boundary. These problems
+  are discussed here. (Applications which go in the other direction are
+  discussed on the <a href="ApplLine2Surf.html">previous page</a>).
+</p>
+<div class="column">
+  <p class="example" data-number="1">
+    Use Stokes' Theorem to compute
+    \(\displaystyle \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+    for
+    \(\vec{F}
+    =\left\langle-y+ze^{x^2+y^2},x+ze^{-x^2-y^2},z+x^2+y^2\right\rangle\)
+    over the paraboloid \(P\) given by \(z=9-x^2-y^2\)
+    for \(z \ge 0\) oriented out and up The paraboloid
+    may be parametrized by
+    \(\vec{R}(r,\theta)
+    =(r\cos\theta,r\sin\theta,9-r^2)\).
+  </p>
+  <div class="center">
+    <img src="graphics/eg_s2l_parab.jpg" alt="eg_s2l_parab">
+  </div>
+</div>
+<p class="sol">
+  Clearly the curl of \(\vec{F}\) is ugly, but the boundary curve, which is the
+  circle \(x^2+y^2=9\) for \(z=0\), is simple. Further, on the circle the
+  vector field reduces to
+  \[
+  \vec{F}=\langle-y,x,x^2+y^2\rangle
+  \]
+  which is also simple. So we want to use Stokes' Theorem and compute the line
+  integral \(\displaystyle \oint_{\partial S} \vec{F}\cdot d\vec{s}\).
+  <br>
+  We first parametrize the circle as:
+  \[
+  \vec{r}(\theta)=\vec R(3,\theta)
+  =(3\cos\theta,3\sin\theta,0)
+  \quad \text{for} \quad 0 \le \theta \le 2\pi
+  \]
+  We compute the tangent vector:
+  \[
+  \vec{v}=\langle-3\sin\theta,3\cos\theta,0\rangle
+  \]
+  Since the surface is oriented out and up, the curve must be oriented
+  counterclockwise which it is. On the circle the vector field is
+  \[
+  \vec{F}=\langle-y,x,x^2+y^2\rangle
+  =\langle-3\sin\theta,3\cos\theta,9\rangle
+  \]
+  So the integral is
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  =\int_0^{2\pi} \vec{F}\cdot\vec{v}\,d\theta
+  =\int_0^{2\pi} 9\,d\theta=18\pi
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Use Stokes' Theorem to compute
+      \(\displaystyle \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+      for
+      \(\vec{F}=\langle-y,x,x^2+y^2\rangle\)
+      over the oscillating surface \(S\) shown at the right oriented upward,
+      which may be parametrized by \(\vec{R}(r,\theta)
+      =\langle r\cos\theta,r\sin\theta,r\sin(5\theta)\rangle\) for \(r\le2\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX2"></button>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+      <button class="toggle has-rem" data-toggle="RemX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_s2l_osc_surf.jpg" alt="StokesApps2Exercise">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The boundary curve may be obtained by setting \(r=2\) in the surface
+    \(\vec{R}(r,\theta)\). So:
+    \[
+    \vec r(\theta)=\vec{R}(2,\theta)
+    =\langle 2\cos\theta,2\sin\theta,2\sin(5\theta)\rangle
+    \]
+    Notice how \(x\) and \(y\) go around a circle while \(z\) oscillates
+    up and down \(5\) times.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle
+    \oint_{\partial S} \vec{F}\cdot d\vec{s}=8\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Since we are told to use Stokes' Theorem, we convert the integral into the
+    line integral \(\displaystyle \oint_{\partial S} \vec{F}\cdot d\vec{s}\)
+    around the boundary. The boundary curve may be obtained by setting
+    \(r=2\) in the surface \(\vec{R}(r,\theta)\). So:
+    \[
+    \vec r(\theta)=\vec{R}(2,\theta)
+    =\langle 2\cos\theta,2\sin\theta,2\sin(5\theta)\rangle
+    \]
+    The velocity is:
+    \[
+    \vec v=\langle -2\sin\theta,2\cos\theta,10\cos(5\theta)\rangle
+    \]
+    Since the surface is oriented upward, the boundary must be traversed
+    counterclockwise, which is the direction \(\vec v\) points. On the curve,
+    the vector field becomes:
+    \[
+    \vec{F}=\langle-y,x,x^2+y^2\rangle
+    =\langle-2\sin\theta,2\cos\theta,4\rangle
+    \]
+    So their dot product is:
+    \[
+    \vec{F}\cdot\vec v
+    =4\sin^2\theta+4\cos^2\theta+40\cos(5\theta)
+    =4+40\cos(5\theta)
+    \]
+    So the line integral is:
+    \[
+    \oint_{\partial S} \vec{F}\cdot d\vec{s}
+    =\int_0^{2\pi} [4+40\cos(5\theta)]\,d\theta
+    =\left[\rule{0pt}{10pt}4\theta+8\sin(5\theta)\right]_0^{2\pi}
+    =8\pi
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    Notice that by doing the line integral instead of the surface integral,
+    we did not need to compute the curl of \(\vec F\), nor the normal vector
+    to the surface, nor do a double integral instead of a single integral.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Which Surface Integrals Can be Done Using Stokes' Theorem?</h3>
+
+<p class="remark">
+  Suppose you are asked to compute
+  \(\displaystyle
+  \iint_S \vec F\cdot d\vec{S}\).
+  Can you <em>always</em> use Stokes' Theorem to do this?
+  <span class="redbig">No!</span> If \(\vec F\) has a vector potential,
+  \(\vec A\), then \(\vec F=\vec\nabla\times\vec A\)
+  and by Stokes' Theorem:
+  \[
+  \iint_S \vec F\cdot d\vec{S}
+  =\iint_S \vec\nabla\times\vec A\cdot d\vec{S}
+  =\oint_{\partial S} \vec A\cdot d\vec{s}
+  \]
+  However, if \(\vec F\) does <em>not</em> have a vector potential, then you can
+  <em>not</em> use Stokes' Theorem and you must do the integral directly as:
+  \[
+  \iint_S \vec F\cdot d\vec{S}
+  =\iint_S \vec{F}(\vec R(u,v))\cdot\vec N\,du\,dv
+  \]
+  See the basic definition of the
+  <a href="../../Part%20III%20-%20Integrals/SurfInt/VecSurfDiff.html"
+  title="Return using the back button."> surface integral</a> of a vector.
+  You can check to see if \(\vec F\) has a vector potential, by computing its
+  divergence. If \(\vec\nabla\cdot\vec F\ne0\) then \(\vec F\) does not have a
+  vector potential. If \(\vec\nabla\cdot\vec F=0\) then \(\vec F\) probably has
+  a vector potential and definitely does if \(\vec F\) is continuous on all of
+  \(\mathbb R^3\).
+</p>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="3">
+      Compute the surface integral
+      \(\displaystyle \iint_H \vec{F}\cdot d\vec{S}\)
+      for
+      \(\vec{F}=\langle 2yz,2xz,2xy\rangle\)
+      over the hemisphere \(H\) given by \(z=\sqrt{4-x^2-y^2}\) oriented upward.
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX3"></button>
+      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+      <button class="toggle has-sol" data-toggle="SolX3"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_s2l_hemisph.jpg" alt="ex_s2l_hemisph">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Compute \(\vec\nabla\cdot\vec F\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+  \(\displaystyle
+  \iint_H \vec{F}\cdot d\vec{S}
+  =\oint_{\partial H} \vec A\cdot d\vec{s}
+  =0\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    To see if \(\vec F=\langle 2yz,2xz,2xy\rangle\) has a vector potential, we compute
+    \(\vec\nabla\cdot\vec F=0+0+0=0\). So \(\vec F\) has a vector potential.
+    We write \(\vec F=\vec\nabla\times\vec A\) and assume \(A_3=0\). So we need
+    to solve
+    \[\begin{aligned}
+    -\partial_z A_2&=F_1=2yz \\
+    \partial_z A_1&=F_2=2xz \\
+    \partial_x A_2-\partial_y A_1&=F_3=2xy \\
+    \end{aligned}\]
+    The first two equations say \(A_2=-yz^2+f(x,y)\) and \(A_1=xz^2+g(x,y)\).
+    Then the third equation says \(\partial_xf-\partial_yg=2xy\). This is
+    satisfied by \(f=x^2y\) and \(g=0\). So
+    \[
+    \vec A=\langle xz^2,-yz^2+x^2y,0\rangle
+    \]
+    So
+    \[
+    \iint_H \vec{F}\cdot d\vec{S}
+    =\iint_H \vec\nabla\times\vec A\cdot d\vec{S}
+    =\oint_{\partial H} \vec A\cdot d\vec{s}
+    \]
+    The boundary is the circle \(x^2+y^2=4\) with \(z=0\) traversed
+    counterclockwise. It may be parametrized by
+    \(\vec r=(2\cos\theta,2\sin\theta,0)\) and has velocity
+    \(\vec v=\langle-2\sin\theta,2\cos\theta,0\rangle\).
+    On the curve the vector field is
+    \(\vec A=\langle 0,4\cos^2\theta2\sin\theta,0\rangle\)
+    and its dot product with the velocity is
+    \(\vec A\cdot\vec v=0+4\cos^2\theta2\sin\theta2\cos\theta+0
+    =16\cos^3\theta\sin\theta\).
+    So the integral is
+    \[
+    \oint_{\partial H} \vec A\cdot d\vec{s}
+    =\int_0^{2\pi} 16\cos^3\theta\sin\theta\,d\theta
+    =\left[\rule{0pt}{10pt}-4\cos^4\theta\right]_0^{2\pi}=0
+    \]
+  </p>
+</div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="4">
+      Compute the surface integral
+      \(\displaystyle \iint_H \vec{F}\cdot d\vec{S}\)
+      for
+      \(\vec{F}=\langle 2xz,2yz,2z^2\rangle\)
+      over the hemisphere \(H\) given by \(z=\sqrt{4-x^2-y^2}\) oriented upward.
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX4"></button>
+      <button class="toggle has-ans" data-toggle="AnsX4"></button>
+      <button class="toggle has-sol" data-toggle="SolX4"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_s2l_hemisph.jpg" alt="ex_s2l_hemisph">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    Compute \(\vec\nabla\cdot\vec F\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+  \(\displaystyle
+  \iint_H \vec{F}\cdot d\vec{S}
+  =32\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    To see if \(\vec F=\langle 2xz,2yz,2z^2\rangle\) has a vector potential, we compute
+    \(\vec\nabla\cdot\vec F=2z+2z+4z\ne0\). Since the divergence is non-zero,
+    \(\vec F\) does not have a
+    vector potential and we need to compute the surface integral directly.
+    The hemisphere may be parametrized in spherical coordinates as:
+    \[
+    \vec R(\phi,\theta)=\langle2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\rangle
+    \]
+    for \(0\le\phi\le\pi\) and \(0\le\theta\le2\pi\). The normal is:
+    \[\begin{aligned}
+    \vec{N}&=\vec{e}_\phi\times\vec{e}_\theta
+    =\begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    (2\cos\phi\cos\theta&2\cos\phi\sin\theta&-2\sin\phi) \\
+    (-2\sin\phi\sin\theta&2\sin\phi\cos\theta&\quad0\quad)
+    \end{vmatrix} \\
+    &=\langle4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\rangle
+    \end{aligned}\]
+    Next, we evaluate \(\vec F=\langle 2xz,2yz,2z^2\rangle\) on the surface
+    and compute its dot product with the normal:
+    \[\begin{aligned}
+    \vec F(\vec R(\phi,\theta))
+    &=\langle 8\sin\phi\cos\phi\cos\theta,8\sin\phi\cos\phi\sin\theta,8\cos^2\phi\rangle \\
+    \vec F\cdot\vec N
+    &=32\sin^3\phi\cos\phi\cos^2\theta
+    +32\sin^3\phi\cos\phi\sin^2\theta
+    +32\cos^3\phi\sin\phi \\
+    &=32\sin^3\phi\cos\phi+32\sin\phi\cos^3\phi
+    =32\sin\phi\cos\phi
+    \end{aligned}\]
+    So the integral is:
+    \[\begin{aligned}
+    \iint_H \vec{F}\cdot d\vec{S}
+    &=\int_0^{2\pi}\int_0^{\pi/2} \vec{F}\cdot\vec N\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^{\pi/2} 32\sin\phi\cos\phi\,d\phi\,d\theta \\
+    &=64\pi\left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}
+    =32\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

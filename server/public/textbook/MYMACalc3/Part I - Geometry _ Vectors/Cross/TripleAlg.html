@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Algebraic Definition of Triple Products | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CrossAlg.html" title="Previous">&lArr;</a></li>
+      <li><a href="CrossProp.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Cross Product and Triple Product</h2>
+
+
+      
+      <h2>2. Algebraic Definition of Triple Products</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	Before we can give the geometrical description of the cross product,
+  we need to understand the triple product which is a combination
+	of the dot product and the cross product.
+</p>
+<p class="def">
+  The <span class="defword">triple product</span> of three vectors
+  \(\vec u\), \(\vec v\) and \(\vec w\) is the scalar
+  \(\vec u\cdot\vec v\times\vec w\).
+</p>
+<p class="remark">
+  We do not need parentheses in the formula
+  \(\vec u\cdot\vec v\times\vec w\) because the order
+  \((\vec u\cdot\vec v)\times\vec w\) would not make
+  any sense; we cannot take the cross product of a scalar and a vector. So
+  \(\vec u\cdot\vec v\times\vec w=\vec u\cdot(\vec v\times\vec w)\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  We want a component/determinant formula for the triple product.
+</p>
+<p>
+  Let \(\vec u=\left\langle u_1,u_2,u_3\right\rangle\),
+  \(\vec v=\left\langle v_1,v_2,v_3\right\rangle\) and
+  \(\vec w=\left\langle w_1,w_2,w_3\right\rangle\). Then
+	\[
+	\vec v\times\vec w
+  =\left\langle v_2w_3-v_3w_2,v_3w_1-v_1w_3,v_1w_2-v_2w_1\right\rangle
+	\]
+  and
+	\[
+	\vec u\cdot\vec v\times\vec w
+  =u_1(v_2w_3-v_3w_2)
+	+u_2(v_3w_1-v_1w_3)
+  +u_3(v_1w_2-v_2w_1)
+	\]
+  On the other hand, consider the determinant whose rows are \(\vec u\),
+  \(\vec v\) and \(\vec w\), and expand on the first row:
+	\[\begin{aligned}
+	\det
+	\begin{pmatrix}
+	u_1 & u_2 & u_3 \\
+	v_1 & v_2 & v_3 \\
+	w_1 & w_2 & w_3
+	\end{pmatrix}
+	&=u_1
+	\begin{vmatrix}
+	v_2 & v_3 \\
+	w_2 & w_3
+	\end{vmatrix}
+	-u_2
+	\begin{vmatrix}
+	v_1 & v_3 \\
+	w_1 & w_3
+	\end{vmatrix}
+	+u_3
+	\begin{vmatrix}
+	v_1 & v_2 \\
+	w_1 & w_2
+	\end{vmatrix} \\
+	&=u_1(v_2w_3-v_3w_2)
+   -u_2(v_1w_3-v_3w_1)
+   +u_3(v_1w_2-v_2w_1) \\
+	&=u_1(v_2w_3-v_3w_2)
+   +u_2(v_3w_1-v_1w_3)
+   +u_3(v_1w_2-v_2w_1)
+	\end{aligned}\]
+  This is the same as the triple product. So we have:
+</p>
+<p class="formula">
+  The <span class="hl">triple product</span> of
+  \(\vec u=\left\langle u_1,u_2,u_3\right\rangle\),
+  \(\vec v=\left\langle v_1,v_2,v_3\right\rangle\) and
+  \(\vec w=\left\langle w_1,w_2,w_3\right\rangle\)
+	may be computed using the determinant:
+	\[
+	\vec u\cdot\vec v\times\vec w
+	=\begin{vmatrix}
+	u_1 & u_2 & u_3 \\
+	v_1 & v_2 & v_3 \\
+	w_1 & w_2 & w_3
+	\end{vmatrix}
+	\]
+  which has \(\vec u\) on the first row, \(\vec v\) on the second row
+  and \(\vec w\) on the third row.
+</p>
+
+        <div class="rule" id="TripProps"></div>
+
+<h3>Properties</h3>
+<p>
+  Since a determinant changes sign when two rows are interchanged, the
+  triple product changes sign when any two vectors are interchanged.
+  This combined with the commutativity of the dot product gives \(12\)
+  formulas for the triple product:
+</p>
+<div class="greybox">
+  <p class="prop">
+  </p>
+  <ol start="1">
+  	<li>
+      The Triple Product can be written in any of the following equivalent ways:
+    	\[\begin{aligned}\\[-8pt]
+    	\vec u\cdot\vec v\times\vec w
+      &=-\vec u\cdot\vec w\times\vec v
+      =\vec v\cdot\vec w\times\vec u
+	    =-\vec v\cdot\vec u\times\vec w
+      =\vec w\cdot\vec u\times\vec v
+      =-\vec w\cdot\vec v\times\vec u \\[3pt]
+      =\vec v\times\vec w\cdot\vec u
+      &=-\vec w\times\vec v\cdot\vec u
+      =\vec w\times\vec u\cdot\vec v
+      =-\vec u\times\vec w\cdot\vec v
+      =\vec u\times\vec v\cdot\vec w
+      =-\vec v\times\vec u\cdot\vec w
+      \end{aligned}\]
+    </li>
+  </ol>
+</div>
+<p>
+  Thus you get the same triple product no matter which order you enter
+  the vectors, except for a possible minus sign. Two of these reorderings
+  are especially notable:
+</p>
+<div class="greybox">
+  <p class="prop">
+  </p>
+  <ol start="2">
+  	<li>
+      If the vectors are in the same order, it does not matter if the
+  	  \(\cdot\) or \(\times\) comes first:
+    	\[\begin{aligned}\\[-8pt]
+      \vec u\cdot\vec v\times\vec w
+      =\vec u\times\vec v\cdot\vec w
+      \end{aligned}\]
+  	</li>
+  	<li>
+      If the vectors are rotated cyclically, the sign does not change:
+    	\[\begin{aligned} \\[-8pt]
+    	\vec u\cdot\vec v\times\vec w
+      =\vec v\cdot\vec w\times\vec u
+      =\vec w\cdot\vec u\times\vec v
+      \end{aligned}\]
+  	</li>
+  </ol>
+</div>
+
+        <div class="rule" id="triple2equalzero"></div>
+
+<p>
+  Finally, since a determinant is zero when two rows are equal,
+	the triple product is zero when any two vectors are equal.
+</p>
+<div class="greybox">
+  <p class="prop">
+  </p>
+  <ol start="4">
+  	<li>
+      The Triple Product is zero if any two vectors are equal:
+    	\[\begin{aligned} \\[-8pt]
+      \vec u\cdot\vec u\times\vec v
+      =\vec u\cdot\vec v\times\vec u
+      =\vec v\cdot\vec u\times\vec u=0
+      \end{aligned}\]
+  	</li>
+  </ol>
+</div>
+<p>
+	Before we can give a
+	<a href="TripleGeom.html" title="Return using the Back button.">
+	geometrical description</a>	of the triple product, we need to know more
+	about the cross product and	its applications.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

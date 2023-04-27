@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Linear Approximation | 12. Differentials &amp; Linear Approximation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Differentials.html" title="Previous">&lArr;</a></li>
+      <li><a href="MVT.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>12. Differentials &amp; Linear Approximation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b. Linear Approximation</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      Given a function \(y=f(x)\), pick a fixed point \(x=a\) and nearby
+      variable point \(x\). If \(x\) is close to \(a\), then \(f_{\tan}(x)\)
+      is close to \(f(x)\). Further, since
+      \[
+      df=f_{\tan}(x)-f(a)
+      \]
+      and
+      \[
+      \Delta f=f(x)-f(a),
+      \]
+      we have \(df\) is also close to \(\Delta f\).
+    </p>
+    <p class="remark">
+      Notice in the animation that as \(x\) approaches \(a\), \(f(x)\) seems to
+      merge with \(f_{\tan}(x)\) before they both approach \(f(a)\). Further,
+      \(\Delta f\) gets close to \(df\).
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <figure>
+    	<video src="graphics/LinApprox1.mp4" autoplay controls loop>
+    		Unable to play animation
+    	</video>
+      <figcaption>Linear Approximation to the function<br>\(y=f(x)\) near \(x=a\).
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<p class="prop" data-title="Linear Approximation">
+  If \(x\) is close to \(a\), then \(f_{\tan}(x)\) is a good approximation
+  to \(f(x)\) and \(df\) is a good approximation to \(\Delta f\). In
+  symbols:
+  \[
+  f(x) \approx f_{\tan}(x)
+  \qquad \qquad
+  \Delta f \approx df
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Problems on applications of linear approximations can either be
+  simple and of limited use or moderate difficulty and practical.
+  The former category generally encompasses problems requiring you
+  to estimate the value of an expression:
+</p>
+
+<h3>Estimating the value of an expression</h3>
+
+<p class="example" data-number="1">
+  Use a linear approximation to estimate \(\sqrt{4.1}\).
+</p>
+<p class="sol">
+  We take \(f(x)=\sqrt{x}\), since we know \(f(4)=2\). We then construct
+  the tangent function. We have:
+  \[
+  f'(x)=\dfrac{1}{2\sqrt{x}}
+  \qquad \qquad
+  f'(4)=\dfrac{1}{2\sqrt{4}}=\dfrac{1}{4}
+  \]
+  So:
+  \[f_{\tan}(x)=f(4)+f'(4)(x-4)=2+\dfrac{1}{4}(x-4)\]
+  (Note: We don't simplify because the next step is easier without
+  simplification.) Finally, let \(x=4.1\). Then
+  \[
+  \sqrt{4.1}=f(4.1)\approx f_{\tan}(4.1)
+  =2+\dfrac{1}{4}(4.1-4)=2+\dfrac{.1}{4}=2.025
+  \]
+  (Note: Using a calculator, the actual value is \(\sqrt{4.1}=2.0248456\).
+  So this is a good approximation.)
+</p>
+<p class="remark">
+  Problems like this are "dumb" because it is easier to just plug it into
+  your calculator and get a better value. However, this is basically what
+  a calculator or computer does when it numerically estimates a value.
+  It uses a linear approximation (or higher degree Taylor approximation)
+  to reach the desired degree of accuracy.
+</p>
+
+        <div class="rule" id="1_sqrt15.8"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Use a linear approximation to estimate \(\dfrac{1}{\sqrt{15.8}}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\dfrac{1}{\sqrt{15.8}}\approx.2515625\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We take \(f(x)=\dfrac{1}{\sqrt{x}}\) since we know \(f(16)=\dfrac{1}{4}\).
+    We then construct the tangent function. We have:
+    \[
+    f'(x)=\dfrac{-1}{2x^{3/2}} \qquad f'(16)=\dfrac{-1}{2\cdot16^{3/2}}
+    =\dfrac{-1}{128}
+    \]
+    So:
+    \[\begin{aligned}
+    f_{\tan}(x)
+    &=f(16)+f'(16)(x-16) \\
+    &=\dfrac{1}{4}-\dfrac{1}{128}(x-16)
+    \end{aligned}\]
+    Finally, let \(x=15.8\). Then
+    \[\begin{aligned}
+    \dfrac{1}{\sqrt{15.8}}
+    &=f(15.8) \approx f_{\tan}(15.8) \\
+    &=\dfrac{1}{4}-\dfrac{1}{128}(15.8-16) \\
+    &=.25+\dfrac{.2}{128}=.2515625
+    \end{aligned}\]
+    (Note: Using a calculator, the actual value is \(\dfrac{1}{\sqrt{15.8}}=.251577\).
+    So this is a really good approximation.)
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  More reasonable problems occur in applications.
+</p>
+
+  <h3>Applications of LinearApproximations</h3>
+
+<div class="column">
+  <p class="example" data-col-width="60%" data-number="3">
+    If the radius of a sphere is measured to be \(r=3\) cm \(\pm.02\)
+    cm, find the volume of the sphere and estimate the error in this
+    computed value of the volume. (Give answers as multiples of \(\pi\).)
+    <br><span style="color:tan;">yellow</span>: \(r=2.98\)
+    <br><span style="color:green;">green</span>: \(\ \ r=3\)
+    <br><span style="color:blue;">blue</span>: \(\quad r=3.02\)
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_sphere.gif" alt="eg_sphere"/>
+  </div>
+</div>
+<p class="sol">
+  The volume is
+  \[
+  V=\dfrac{4}{3}\pi r^3=\dfrac{4}{3}\pi3^3=36\pi
+  \]
+  The error in the measurement of the radius can be regarded as a change in
+  the radius:
+  \[\Delta r=.02\]
+  Then the error in the volume is the corresponding change in the volume
+  which may be approximated by the differential:
+  \[
+  \Delta V\approx dV=\dfrac{dV}{dr}\,dr
+  =4\pi r^2\,dr=4\pi3^2\cdot.02=.72\pi
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-col-width="60%" data-number="4">
+    A bucket of sand is hanging from a tree and leaking to form a conical pile
+    whose height is always equal to its radius. At present, the radius (and
+    height) is \(r=h=6\,\text{cm}\) (shown in
+    <span style="color:green;">green</span>) and so the volume is
+    \[
+    V=\dfrac{1}{3}\pi r^2 h=\dfrac{1}{3}\pi r^3
+    =\dfrac{1}{3}\pi6^3=72\pi\,\text{cm}^3
+    \]
+    If the volume is increased by \(6\pi\,\text{cm}^3\) (shown in
+    <span style="color:blue;">blue</span>),
+    use the linear approximation to estimate the the increase in radius
+    (and height).
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_cone.gif" alt="eg_cone"/>
+  </div>
+</div>
+<p class="sol">
+  The change in volume is \(\Delta V=6\pi\) and we want to estimate the
+  change in radius \(\Delta r\). The linear approximation says these are
+  approximated by the differential of volume \(dV\) and the differential of
+  radius \(dr\). Since the volume is \(V=\dfrac{1}{3}\pi r^3\), the
+  differentials are related by
+  \[
+  dV=\dfrac{dV}{dr}\,dr=\pi r^2\,dr
+  \]
+  We solve for \(dr\) and plug in numbers:
+  \[
+  \Delta r\approx dr=\dfrac{dV}{\pi r^2}=\dfrac{6\pi}{\pi 6^2}=\dfrac{1}{6}
+  \]
+</p>
+
+        <div class="rule" id="Boyle"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Boyle's Law says that for an ideal gas at constant Temperature, the
+    Pressure is inversely proportional to the Volume. Suppose the Volume and
+    Pressure are initially \(V_i=30\,\text{cm}^3\) and \(P_i=1.2\,\text{atm}\).
+    If the volume is increased by \(\Delta V=0.2\,\text{cm}^3\), use the
+    linear approximation to estimate the change in the pressure
+    \(\Delta P\) and the final pressure \(P_f\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\Delta P\approx-.008\)
+    <br>
+    \(P_f=1.192\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Boyle's Law says \(P=\dfrac{K}{V}\). We use the initial values of \(P\)
+    and \(V\) to find
+    \[
+    K=PV=(1.2)(30)=36
+    \]
+    The change in pressure is estimated by its differential
+    \[
+    \Delta P\approx dP=\dfrac{dP}{dV}\,dV=\dfrac{-K}{V^2}\,dV
+    =\dfrac{-36}{30^2}0.2=-.008
+    \]
+    So the final pressure is
+    \[
+    P_f=P_i+\Delta P\approx1.2-.008=1.192
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

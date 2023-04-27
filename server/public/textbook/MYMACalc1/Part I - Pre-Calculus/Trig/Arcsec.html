@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inverse Secant &amp; Cosecant | Trigonometry</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Arctan.html" title="Previous">&lArr;</a></li>
+      <li><a href="SimCong.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Trigonometry</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Inverse Secant &amp; Cosecant</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h2>Arc Secant</h2>
+
+<div class="column">
+  <div>
+  	<p>
+      The secant function is not one-to-one, since for example
+      \[
+      \sec(-\theta)=\sec(\theta)
+      \]
+      We pick the branch with \(0 \le \theta \lt \dfrac{\pi}{2}\) or
+      \(\dfrac{\pi}{2} \lt \theta \le \pi\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/arcsec2.jpg" alt="arcsec superimposed on a secant graph">
+  </div>
+</div>
+
+<div class="column">
+  <div>
+    <p class="def">
+      The
+      <span class="defword">inverse function of \(\sec\)</span> is
+      <span class="defword">\(\text{arcsec}\)</span> (read &ldquo;arc secant&rdquo;) or
+      <span class="defword">\(\sec^{-1}\)</span> (read &ldquo;inverse secant&rdquo;)
+      which satisfies
+      \[
+      \text{arcsec}(z)=\theta \qquad \text{where} \qquad z=\sec(\theta)
+      \]
+      provided &ensp; \(|z| \ge 1\)  &ensp; and  &ensp;
+      \(0 \le \theta \lt \dfrac{\pi}{2}\) or
+      \(\dfrac{\pi}{2} \lt \theta \le \pi\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/arcsec.jpg" alt="arcsecant of theta">  </div>
+</div>
+
+<p class="exercise">
+  Which of the following are correct and which are incorrect?
+</p>
+<p class="center">
+  <button class="toggle has-choiceA" data-toggle="ex1a"></button>Answer1a &emsp;
+  <button class="toggle has-choiceB" data-toggle="ex1b"></button>Answer1b &emsp;
+  <button class="toggle has-choiceC" data-toggle="ex1c"></button>Answer1c &emsp;
+  <button class="toggle has-choiceD" data-toggle="ex1d"></button>Answer1d
+</p>
+<div class="toBeToggled drop-ans" data-toggle="ex1a">
+  <p>
+    An answer appears here
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1b">
+  <p>
+    An answer appears here
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1c">
+  <p>
+    An answer appears here
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1d">
+  <p>
+    An answer appears here
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h2>Arc Cosecant</h2>
+
+<div class="column">
+  <div>
+  	<p>
+      The cosecant function is not one-to-one, since for example
+      \[
+      \csc(\pi-\theta)=\csc(\theta)
+      \]
+      We pick the branch with \(-\,\dfrac{\pi}{2} \le \theta \lt 0\) or
+      \(0 \lt \theta \le \dfrac{\pi}{2}\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/arccsc2.jpg" alt="arccsc superimposed on a csc graph">
+  </div>
+</div>
+
+<div class="column">
+  <div>
+    <p class="def">
+      The
+      <span class="defword">inverse function of \(\csc\)</span> is
+      <span class="defword">\(\text{arccsc}\)</span> (read &ldquo;arc cosecant&rdquo;) or
+      <span class="defword">\(\csc^{-1}\)</span> (read &ldquo;inverse cosecant&rdquo;)
+      which satisfies
+      \[
+      \text{arccsc}(z)=\theta \qquad \text{where} \qquad z=\csc(\theta)
+      \]
+      provided &ensp; \(|z| \ge 1\)  &ensp; and  &ensp;
+      \(-\,\dfrac{\pi}{2} \le \theta \lt 0\) or
+      \(0 \lt \theta \le \dfrac{\pi}{2}\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/arccsc.jpg" alt="arccsc of z">
+  </div>
+</div>
+
+<p class="exercise">
+  Which of the following are correct and which are incorrect?
+</p>
+<p class="center">
+  <button class="toggle has-choiceA" data-toggle="ex1a"></button>Answer1a &emsp;
+  <button class="toggle has-choiceB" data-toggle="ex1b"></button>Answer1b &emsp;
+  <button class="toggle has-choiceC" data-toggle="ex1c"></button>Answer1c &emsp;
+  <button class="toggle has-choiceD" data-toggle="ex1d"></button>Answer1d
+</p>
+<div class="toBeToggled drop-ans" data-toggle="ex1a">
+  <p>
+    An answer appears here
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1b">
+  <p>
+    An answer appears here
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1c">
+  <p>
+    An answer appears here
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1d">
+  <p>
+    An answer appears here
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

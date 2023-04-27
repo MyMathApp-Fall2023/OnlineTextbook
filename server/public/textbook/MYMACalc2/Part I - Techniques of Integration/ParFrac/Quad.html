@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Non-Repeated Quadratic Factors | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Decomp.html#examples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2 id="eg">a2. General Decompositions</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="Poly.html">Removing a Polynomial Part</a></li>
+    <br>
+    <li><a href="Lin.html">Non-Repeated Linear Factors</a></li>
+    <li><a href="Lin2.html">Repeated Linear Factors</a></li>
+    <br>
+    <li class="active"><a href="Quad.html">Non-Repeated Quadratic Factors</a></li>
+    <li><a href="Quad2.html">Repeated Quadratic Factors</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>e. Non-Repeated Quadratic Factors</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p class="example" data-number="1">
+  Find the partial fraction decomposition for \(\dfrac{13}{x^3-4x^2+13x}\).
+</p>
+<p class="sol">
+  We factor the denominator:
+  \[
+  x^3-4x^2+13x=x(x^2-4x+13)
+  \]
+  The quadratic factor is irreducible because its discriminant is negative:
+  \[
+  b^2-4ac=16-52=-36.
+  \]
+  So we complete the square on the quadratic term:
+  <button class="toggle btn" data-toggle="Drop1">Why do we complete the square?</button>
+</p>
+<div class="toBeToggled note" data-toggle="Drop1">
+  <p>
+    Completing the square is not necessary but it helps with finding the
+    coefficients in the partial fraction decomposition and it helps with the
+    integration.
+  </p>
+</div>
+<p>
+  \[
+  x^2-4x+13=(x^2-4x+4)+9=(x-2)^2+3^2
+  \]
+  We now write the general partial fraction expansion and clear the
+  denominator:
+  \[
+  \dfrac{13}{x(x^2-4x+13)}
+  =\dfrac{A}{x}+\dfrac{B(x-2)+C}{(x-2)^2+3^2}
+  \]
+  \[
+  13=A\left((x-2)^2+3^2\right)+(B(x-2)+C)x
+  \]
+  To find the coefficient \(A\) for the linear factor, we plug in the root
+  \(x=0\).
+  \[
+  13=A(13) \qquad \Longrightarrow \qquad A=1
+  \]
+  To find the constant coefficient \(C\) for the quadratic term, we plug in
+  \(x=2\):
+  \[
+  13=A(9)+(C)2=9+2C \qquad \Longrightarrow \qquad C=2
+  \]
+  Finally to find the linear coefficient \(B\) for the quadratic term, we plug
+  in any other number, say \(x=1\):
+  \[
+  13=A(10)+(-B+C)(1)=10-B+2 \qquad \Longrightarrow \qquad B=-1
+  \]
+  So the partial fraction expansion is
+  \[
+  \dfrac{13}{x^3-4x^2+13x}=\dfrac{1}{x}+\dfrac{-(x-2)+2}{(x-2)^2+3^2}
+  \]
+  <span style="color: magenta">Don't simplify!</span> This is the form you will need for the
+  quadratic term when you integrate.
+</p>
+<p class="check">
+  We check by multiplying out the answer:
+  \[\begin{aligned}
+  \dfrac{1}{x}&+\dfrac{-(x-2)+2}{(x-2)^2+3^2} \\
+  &=\dfrac{(x-2)^2+3^2+x[-(x-2)+2]}{x((x-2)^2+3^2)} \\
+  &=\dfrac{13}{x^3-4x^2+13x}
+  \end{aligned}\]
+</p>
+<p class="remark">
+  Completing the square in the quadratic term not only helps with the
+  integration (as you will see later), but it also helps identify the number
+  \(x=2\) needed for finding the coefficient \(C\).
+</p>
+
+        <div class="rule" id="ex"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the partial fraction expansion for \(\dfrac{1}{x^4-16}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+    <button class="toggle has-check" data-toggle="Ck2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(\dfrac{1}{x^4-16}
+    =\dfrac{1}{32}\left[-\dfrac{4}{x^2+4}-\dfrac{1}{x+2}+\dfrac{1}{x-2}\right]\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    To find the partial fraction expansion for \(\dfrac{1}{x^4-16}\), we first
+    factor the denominator:
+    \[
+    x^4-16=(x^2+4)(x^2-4)=(x^2+4)(x+2)(x-2)
+    \]
+    The general partial fraction decomposition is
+    \[
+    \dfrac{1}{(x^2+4)(x+2)(x-2)}
+     =\dfrac{Ax+B}{x^2+4}+\dfrac{C}{x+2}+\dfrac{D}{x-2}
+     \]
+    We clear the denominator:
+    \[
+    1=(Ax+B)(x+2)(x-2)+C(x^2+4)(x-2)+D(x^2+4)(x+2)
+    \]
+    To find the coefficients, we plug in \(x=2,-2,0,1\):
+  </p>
+  <ul>
+    <li>
+      \(x=2\):
+      \[\begin{aligned}
+      1&=(2A+B)(4)(0)+C(8)(0)+D(8)(4)=32D \\
+      &\Longrightarrow \qquad D=\dfrac{1}{32}
+      \end{aligned}\]
+    </li>
+    <li>
+      \(x=-2\):
+      \[\begin{aligned}
+      1&=(-2A+B)(0)(-4)+C(8)(-4)+D(8)(0)=-32C \\
+      &\Longrightarrow \qquad C=-\dfrac{1}{32}
+      \end{aligned}\]
+    </li>
+    <li>
+      \(x=0\):
+      \[\begin{aligned}
+      1&=(B)(2)(-2)+C(4)(-2)+D(4)(2)=-4B-8C+8D=-4B+\dfrac{1}{2} \\
+      &\Longrightarrow \qquad B=-\dfrac{1}{8}
+      \end{aligned}\]
+    </li>
+    <li>
+      \(x=1\):
+      \[\begin{aligned}
+      1&=(A+B)(3)(-1)+C(5)(-1)+D(5)(3)=-3A-3B-5C+15D \\
+      &=-3A+\dfrac{3}{8}+\dfrac{5}{32}+\dfrac{15}{32}=-3A+1 \\
+      &\Longrightarrow \qquad A=0
+      \end{aligned}\]
+    </li>
+  </ul>
+  <p>
+    In summary the coefficients are
+    \[
+    A=0 \qquad B=-\dfrac{1}{8} \qquad C=-\dfrac{1}{32} \qquad D=\dfrac{1}{32}
+    \]
+    So the partial fraction expansion is
+    \[
+    \dfrac{1}{x^4-16}
+    =\dfrac{1}{32}\left[-\dfrac{4}{x^2+4}-\dfrac{1}{x+2}+\dfrac{1}{x-2}\right]
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="Ck2">
+  <p>
+    We check by adding up the right side:
+    \[\begin{aligned}
+    \dfrac{1}{32}&\left[-\dfrac{4}{x^2+4}-\dfrac{1}{x+2}+\dfrac{1}{x-2}\right] \\
+    &=\dfrac{1}{32}\left[-\dfrac{4}{x^2+4}+\dfrac{4}{x^2-4}\right] \\
+    &=\dfrac{1}{32}\left[-\dfrac{-4(x^2-4)+4(x^2+4)}{x^4-16}\right] \\
+    &=\dfrac{1}{x^4-16}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

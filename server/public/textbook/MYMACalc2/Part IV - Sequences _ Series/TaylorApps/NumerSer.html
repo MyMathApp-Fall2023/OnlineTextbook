@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d.1. Numeric Series | 24. Applications of Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Integ2.html" title="Previous">&lArr;</a></li>
+      <li><a href="FundConst.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>24. Applications of Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+
+
+      
+      <h2>d.1. Numeric Series</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	When you first learned about numerical series, the only series you could sum
+  were the geometric series and the telescoping series. There are now many
+  other series you can sum by using the known series for
+  \(\dfrac{1}{1-x}\), \(e^x\), \(\sin x\), \(\cos x\), \(\ln(1+x)\)
+  and \(\arctan x\) and series derived from these.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute
+  \(\displaystyle \sum_{n=0}^\infty (-1)^n\dfrac{2^{2n+1}}{(2n+1)!}\).
+</p>
+<p class="sol">
+  This series is alternating and has odd factorials in the denominator.
+  This should tip you off that you should look at the series for \(\sin x\):
+  \[
+  \sin x=\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{(2n+1)!}
+  \]
+  Turn this around and plug in \(x=2\):
+  \[
+  \sum_{n=0}^\infty (-1)^n\dfrac{2^{2n+1}}{(2n+1)!}=\sin 2
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  For each series, identify its sum.
+  <div class="column">
+    <div data-col-width="25%" class="left">
+      <strong>1.</strong>
+      \(\displaystyle \sum_{n=1}^\infty \dfrac{(-1)^{n+1}}{n}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceA incorrect" data-toggle="Ans1A"></button>
+      \(\sin 1\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceB correct" data-toggle="Ans1B"></button>
+      \(\ln 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceC incorrect" data-toggle="Ans1C"></button>
+      \(e^{-1}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceD incorrect" data-toggle="Ans1D"></button>
+      \(\cos 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceE incorrect" data-toggle="Ans1E"></button>
+      \(e\)
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans1A">
+    <p>
+      A Incorrect.
+      \[
+      \sin x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n+1}}{(2n+1)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans1B">
+    <p>
+      B Great! Substitute \(x=1\) into
+      \[
+      \ln(1+x)=\sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n}
+      \]
+      to get
+      \[
+      \ln 2=\sum_{n=1}^\infty \dfrac{(-1)^{n+1}}{n}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans1C">
+    <p>
+      C Not quite.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans1D">
+    <p>
+      D Nope.
+      \[
+      \cos x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n}}{(2n)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans1E">
+    <p>
+      E Try again.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+
+  <div class="column">
+    <div data-col-width="25%" class="left">
+      <strong>2.</strong>
+      \(\displaystyle \sum_{n=0}^\infty \dfrac{(-1)^n2^{2n}}{(2n)!}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceA incorrect" data-toggle="Ans2A"></button>
+      \(\sin 1\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceB incorrect" data-toggle="Ans2B"></button>
+      \(\ln 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceC incorrect" data-toggle="Ans2C"></button>
+      \(e^{-1}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceD correct" data-toggle="Ans2D"></button>
+      \(\cos 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceE incorrect" data-toggle="Ans2E"></button>
+      \(e\)
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans2A">
+    <p>
+      A Incorrect.
+      \[
+      \sin x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n+1}}{(2n+1)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans2B">
+    <p>
+      B Sorry.
+      \[
+      \ln(1+x)=\sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans2C">
+    <p>
+      C Not quite.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans2D">
+    <p>
+      D Correct! Set \(x=2\) in:
+      \[
+      \cos x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n}}{(2n)!}
+      \]
+      producing
+      \[
+      \cos 2=\sum_{n=0}^\infty \dfrac{(-1)^n2^{2n}}{(2n)!}
+      \]
+
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans2E">
+    <p>
+      E Try again.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+
+  <div class="column">
+    <div data-col-width="25%" class="left">
+      <strong>3.</strong>
+      \(\displaystyle \sum_{n=0}^\infty \dfrac{1}{n!}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceA incorrect" data-toggle="Ans3A"></button>
+      \(\sin 1\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceB incorrect" data-toggle="Ans3B"></button>
+      \(\ln 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceC incorrect" data-toggle="Ans3C"></button>
+      \(e^{-1}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceD incorrect" data-toggle="Ans3D"></button>
+      \(\cos 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceE correct" data-toggle="Ans3E"></button>
+      \(e\)
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans3A">
+    <p>
+      A Incorrect.
+      \[
+      \sin x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n+1}}{(2n+1)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans3B">
+    <p>
+      B Sorry.
+      \[
+      \ln(1+x)=\sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans3C">
+    <p>
+      C Not quite.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans3D">
+    <p>
+    D Nope.
+      \[
+      \cos x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n}}{(2n)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans3E">
+    <p>
+      That one is easy. Set \(x=1\) in:
+      \[
+      De^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+      giving
+      \[
+      e^1=\sum_{n=0}^\infty \dfrac{1}{n!}
+      \]
+    </p>
+  </div>
+
+  <div class="column">
+    <div data-col-width="25%" class="left">
+      <strong>4.</strong>
+      \(\displaystyle \sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceA correct" data-toggle="Ans4A"></button>
+      \(\sin 1\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceB incorrect" data-toggle="Ans4B"></button>
+      \(\ln 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceC incorrect" data-toggle="Ans4C"></button>
+      \(e^{-1}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceD incorrect" data-toggle="Ans4D"></button>
+      \(\cos 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceE incorrect" data-toggle="Ans4E"></button>
+      \(e\)
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans4A">
+    <p>
+      A Super. That \(x=1\) in:
+      \[
+      \sin x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n+1}}{(2n+1)!}
+      \]
+      giving
+      \[
+      \sin 1=\sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans4B">
+    <p>
+      B Sorry.
+      \[
+      \ln(1+x)=\sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans4C">
+    <p>
+      C Not quite.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans4D">
+    <p>
+      D Nope.
+      \[
+      \cos x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n}}{(2n)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans4E">
+    <p>
+      E Try again.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+
+  <div class="column">
+    <div data-col-width="25%" class="left">
+      <strong>5.</strong>
+      \(\displaystyle \sum_{n=0}^\infty \dfrac{(-1)^n}{n!}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceA incorrect" data-toggle="Ans5A"></button>
+      \(\sin 1\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceB incorrect" data-toggle="Ans5B"></button>
+      \(\ln 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceC correct" data-toggle="Ans5C"></button>
+      \(e^{-1}\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceD incorrect" data-toggle="Ans5D"></button>
+      \(\cos 2\)
+    </div>
+    <div data-col-width="15%" class="left">
+      <button class="toggle has-choiceE incorrect" data-toggle="Ans5E"></button>
+      \(e\)
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans5A">
+    <p>
+      A Incorrect.
+      \[
+      \sin x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n+1}}{(2n+1)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans5B">
+    <p>
+      B Sorry.
+      \[
+      \ln(1+x)=\sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans5C">
+    <p>
+      C Correct. Just slightly tricky. Set \(x=-1\) in
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+      to give
+      \[
+      e^{-1}=\sum_{n=0}^\infty \dfrac{(-1)^n}{n!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans5D">
+    <p>
+      D Nope.
+      \[
+      \cos x=\sum_{n=0}^\infty \dfrac{(-1)^nx^{2n}}{(2n)!}
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="Ans5E">
+    <p>
+      E Try again.
+      \[
+      e^x=\sum_{n=0}^\infty \dfrac{x^n}{n!}
+      \]
+    </p>
+  </div>
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Sometimes you need to do a little more work to find the appropriate series.
+</p>
+<p class="example" data-number="3">
+  Compute
+  \(\displaystyle \sum_{n=1}^\infty n\left(\dfrac{1}{2}\right)^n\).
+</p>
+<p class="sol">
+  If the series did not have the \(n\) coefficient, it would look like
+  the geometric series (evaluated at \(x=\dfrac{1}{2})\):
+  \[
+  \sum_{n=0}^\infty x^n=\dfrac{1}{1-x}
+  \]
+  To get an \(n\) factor, we differentiate:
+  \[
+  \sum_{n=0}^\infty nx^{n-1}=\dfrac{1}{(1-x)^2}
+  \]
+  But now the power of \(x\) is off. So we multiply by \(x\):
+  \[
+  \sum_{n=0}^\infty nx^n=\dfrac{x}{(1-x)^2}
+  \]
+  Also notice we can drop the \(n=0\) term because the coefficient is \(n\).
+  Finally we plug in \(x=\dfrac{1}{2}\):
+  \[
+  \sum_{n=1}^\infty n\left(\dfrac{1}{2}\right)^n
+  =\dfrac{\left(\dfrac{1}{2}\right)}{\left[1-\left(\dfrac{1}{2}\right)\right]^2}
+  =\dfrac{2}{(2-1)^2}=2
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Compute
+    \(\displaystyle \sum_{n=0}^\infty \dfrac{(-1)^n4}{(2n+1)}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    \(\displaystyle
+    \arctan x=\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{(2n+1)}\)
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle
+		\sum_{n=0}^\infty \dfrac{(-1)^n4}{(2n+1)}
+    =4\arctan 1=\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    This series is alternating and has odd numbers in the denominator without
+    factorials. This looks like the series for \(\arctan x\):
+    \[
+    \arctan x=\sum_{n=0}^\infty (-1)^n\dfrac{x^{2n+1}}{(2n+1)}
+    \]
+    Turn this around and plug in \(x=1\):
+    \[
+    \sum_{n=0}^\infty \dfrac{(-1)^n}{(2n+1)}
+    =\arctan 1
+    \]
+    Finally to get the series we want, we multiply by 4 and remember that
+    \(\arctan 1=\dfrac{\pi}{4}\):
+    \[
+    \sum_{n=0}^\infty \dfrac{(-1)^n4}{(2n+1)}
+    =4\arctan 1=\pi
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Series like these can, in fact, be used to find numerical approximations
+  for the fundamental constants as done on the
+  <a href="FundConst.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

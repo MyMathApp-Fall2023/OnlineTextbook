@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b.1. Chain Rule | 13. Chain Rule &amp; Implicit Differentiation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Comp.html" title="Previous">&lArr;</a></li>
+      <li><a href="Nested.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Chain Rule &amp; Implicit Differentiation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b.1. Chain Rule</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We will often need to take the derivative of a composition of functions.
+  Let's start with a very simple example, the composition of two straight lines.
+</p>
+<p class="example" data-number="1">
+  Suppose \(z=f(y)=4y+2\) and \(y=g(x)=3x+5\). Find the derivative of
+  \(z=(f\circ g)(x)=4(3x+5)+2=12x+22\).
+</p>
+<p class="sol">
+  All three are straight lines. So the derivative is the slope,
+  \(m=\dfrac{\text{rise}}{\text{run}}\).
+  <br>For \(z=4y+2\):
+  \[
+  \dfrac{dz}{dy}=\dfrac{\Delta z}{\Delta y}=4
+  \]
+  For \(y=3x+5\):
+  \[
+  \dfrac{dy}{dx}=\dfrac{\Delta y}{\Delta x}=3
+  \]
+  For \(z=12x+22\):
+  \[
+  \dfrac{dz}{dx}=\dfrac{\Delta z}{\Delta x}=12
+  \]
+  How can we get \(\dfrac{dz}{dx}\) from \(\dfrac{dz}{dy}\) and \(\dfrac{dy}{dx}\)?
+  <br>
+  Answer: We just multiply them:
+  \[\begin{aligned}
+  \dfrac{dz}{dx}=\dfrac{\Delta z}{\Delta x}
+  =\dfrac{\Delta z}{\Delta y}\dfrac{\Delta y}{\Delta x}=(4)(3)=12
+  \end{aligned}\]
+  Or:
+  \[
+  (f\circ g)'(x)=f'(y)g'(x)=(4)(3)=12
+  \]
+  Or:
+  \[
+  \dfrac{dz}{dx}=\dfrac{dz}{dy}\dfrac{dy}{dx}=(4)(3)=12
+  \]
+  So it seems we just multiply derivatives.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  What happens if the functions are not just straight lines?
+</p>
+<p class="example" data-number="2">
+  Suppose \(z=f(y)=4y^5+2\) and \(y=g(x)=3x^2+5\). Find the derivative of
+  \(z=(f\circ g)(x)=4(3x^2+5)^5+2\).
+</p>
+<p class="sol">
+  We know the derivative we want to get. We differentiate using the Extended
+  Power Rule without much simplification:
+  <br>For \(z=4(3x^2+5)^5+2\):
+  \[
+  \dfrac{dz}{dx}=20(3x^2+5)^4(6x)
+  \]
+  What happens if we just multiply derivatives?
+  \[
+  \dfrac{dz}{dx}=\dfrac{dz}{dy}\dfrac{dy}{dx}=[20y^4][6x]
+  \]
+  The problem is that this formula still involves \(y\) but we want
+  \(\dfrac{dz}{dx}\) to be a function of just \(x\). The solution is to simply
+  replace \(y\) by \(y=g(x)=3x^2+5\):
+  \[\begin{aligned}
+  \dfrac{dz}{dx}&=\left.\dfrac{dz}{dy}\right|_{y=g(x)}\dfrac{dy}{dx} \\
+  &=\left[20y^4\dfrac{}{}\right]_{y=3x^2+5}[6x]=20(3x^2+5)^4(6x)
+  \end{aligned}\]
+  In prime notation, this is:
+  \[\begin{aligned}
+  (f\circ g)'(x)&=f'(g(x))g'(x) \\
+  &=\left[20y^4\dfrac{}{}\right]_{y=3x^2+5}(6x)=20(3x^2+5)^4(6x)
+  \end{aligned}\]
+</p>
+<p class="thm" data-title="Chain Rule">
+  If
+  \[
+  p(x)=(f\circ g)(x)=f(g(x))
+  \]
+  then
+  \[
+  p'(x)=f'(g(x)) g'(x).
+  \]
+  In terms of differentials this is
+  \[
+  \dfrac{dp}{dx}=\left.\dfrac{df}{du}\right|_{u=g(x)}\dfrac{dg}{dx}
+  \]
+  Equivalently, if \(z=z(y)\) and \(y=y(x)\), then:
+  \[
+  \dfrac{dz}{dx}=\left.\dfrac{dz}{dy}\right|_{y=y(x)}\dfrac{dy}{dx}
+  \]
+  &ldquo;The derivative of a composition is the derivative of the outer
+  function evaluated at the inner function times the derivative of the inner
+  function.&rdquo;
+  <br>
+  <button class="toggle" data-toggle="Drop1">
+  Justification usng Differentials</button>
+  <button class="toggle" data-toggle="Drop2">
+  Proof using Limits</button>
+</p>
+<div class="toBeToggled drop-just" data-toggle="Drop1">
+  <p>
+    We combine the two differentials
+    \[
+    dz=\dfrac{dz}{dy}\,dy
+    \qquad \text{and} \qquad
+    dy=\dfrac{dy}{dx}\,dx
+    \]
+    to get
+    \[
+    dz=\dfrac{dz}{dy}\dfrac{dy}{dx}\,dx
+    \]
+    and compare this to
+    \[
+    dz=\dfrac{dz}{dx}\,dx
+    \]
+    to conclude
+    \[
+    \dfrac{dz}{dx}=\dfrac{dz}{dy}\dfrac{dy}{dx}.
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Drop2">
+  <p>
+    Let \(p(x)=(f\circ g)(x)=f(g(x))\). We will compute \(p'(a)\). Then
+    \[\begin{aligned}
+    p'(a)&=\lim_{h\rightarrow 0} \dfrac{p(a+h)-p(a)}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{f(g(a+h))-f(g(a))}{h} \\
+    \end{aligned}\]
+    Now assume \(g'(a)\ne0\). (The case \(g'(a)=0\) is beyond the
+    level of this class.) Then the linear approximation says
+    \[
+    g(a+h)\approx g(a)+g'(a)h
+    \]
+    and this approximation gets better as \(h\rightarrow 0\). Now let
+    \(k=g(a+h)-g(a)\). Then by the linear approximation
+    \(k\approx g'(a)h\). So \(h\rightarrow 0\) if and only if \(k\rightarrow 0\).
+    In the limit formula for the derivative, we multiply and divide by
+    \(g(a+h)-g(a)\), split the limit as a product of two limits and re-express
+    the first limit in terms of \(k\):
+    \[\begin{aligned}
+    p'(a)&=\lim_{h\rightarrow 0}
+    \left[\dfrac{f(g(a+h))-f(g(a))}{g(a+h)-g(a)}\right]
+    \left[\dfrac{g(a+h)-g(a)}{h}\right] \\
+    &=\lim_{h\rightarrow 0}\dfrac{f(g(a+h))-f(g(a))}{g(a+h)-g(a)}
+      \lim_{h\rightarrow 0}\dfrac{g(a+h)-g(a)}{h} \\
+    &=\lim_{k\rightarrow 0}\dfrac{f(g(a)+k)-f(g(a))}{k}
+      \lim_{h\rightarrow 0}\dfrac{g(a+h)-g(a)}{h}
+    \end{aligned}\]
+    The first limit is \(f'(g(a))\). The second limit is \(g'(a)\). So
+    \[
+    p'(a)=f'(g(a)) g'(a).
+    \]
+    Finally, replace \(a\) by \(x\).
+  </p>
+</div>
+<p class="remark">
+  Usually, we do not write the evaluation,
+  \[
+  \dfrac{dz}{dx}=\dfrac{dz}{dy}\dfrac{dy}{dx}
+  \]
+  but it is still there. Further, it is OK to think that we are cancelling the
+  \(dy\)'s.
+</p>
+<p class="remark">
+  Also notice that the Extended Power Rule is just the special case of the
+  Chain Rule where the the outer function is a power. If \(z=y^n\) and
+  \(y=g(x)\), then
+  \[\begin{aligned}
+  \dfrac{dz}{dx}&=\left.\dfrac{dz}{dy}\right|_{y=g(x)}\dfrac{dy}{dx} \\
+  &=\left.ny^{n-1}\right|_{y=g(x)}\dfrac{dy}{dx}
+  =ng(x)^{n-1}\dfrac{dg}{dx}
+  \end{aligned}\]
+</p>
+
+				<div class="rule"></div>
+
+<p class="example" data-number="3">
+  Find \(\dfrac{dy}{dt}\) for \(y=x^2\) and \(x=2t^3+5\).
+</p>
+<p class="sol">
+  The chain rule gives
+  \(\dfrac{dy}{dt}=\dfrac{dy}{dx}\dfrac{dx}{dt}\).
+  We first find the derivatives:
+  \[
+  \dfrac{dy}{dx}=2x \qquad \dfrac{dx}{dt}=6t^2
+  \]
+  We then plug these values into the formula for the chain rule:
+  \[
+  \dfrac{dy}{dt}=(2x)(6t^2)
+  \]
+  Then we remember that the derivative of the outer function need to be
+  evaluated at the inner functions.
+  \[\begin{aligned}
+  \dfrac{dy}{dt}
+  &=2(2t^3+5)(6t^2) \\
+  &=24t^5+60t^2
+  \end{aligned}\]
+</p>
+<p class="sol-alt">
+  Since we have <em>complete information</em>, that is, we know the formulas
+  for all the functions involved, we can alternately compute the composition
+  and take its derivative directly:
+  \[\begin{aligned}
+  y(x(t))
+  &=[x(t)]^2=[2t^3+5]^2=4t^6+20t^3+25 \\
+  \dfrac{dy}{dt}
+  &=24t^5+60t^2
+  \end{aligned}\]
+  This is simpler only if the exponent is small and only possible when we have
+  complete information.
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find \(\dfrac{dy}{dt}\) if \(y=\sin(8t+3)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\dfrac{dy}{dt}=8\cos(8t+3)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We split the function as \(y=\sin(x)\) where \(x=8t+3\). The Chain Rule
+    gives \(\dfrac{dy}{dt}=\dfrac{dy}{dx}\dfrac{dx}{dt}\).
+    We first find the derivatives:
+    \[
+    \dfrac{dy}{dx}=\cos(x) \qquad \dfrac{dx}{dt}=8
+    \]
+    We then plug these values into the formula for the chain rule:
+    \[
+    \dfrac{dy}{dt}=\cos(x)(8)
+    \]
+    Finally, we remember that the derivative of the outer function needs to be
+    evaluated at the inner function.
+    \[\begin{aligned}
+    \dfrac{dy}{dt}
+    &=\cos(8t+3)(8) \\
+    &=8\cos(8t+3)
+    \end{aligned}\]
+  </p>
+</div>
+<p class="remark">
+  In practice, we do not separately write out the inner and outer functions
+  and their derivatives. We do it all at once. For example to differentiate
+  \(f(x)=\tan(3x^2+5x)\), we identify the outer function as \(\tan\), write
+  down its derivative which is \(\sec^2\), evaluate it at the inner
+  function \(3x^2+5x\) and finally multiply by the derivative of the inner
+  function which is \(6x+5\). Thus we do it all in one line:
+  \[
+  f'(x)=\sec^2(3x^2+5x)\cdot(6x+5)
+  \]
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

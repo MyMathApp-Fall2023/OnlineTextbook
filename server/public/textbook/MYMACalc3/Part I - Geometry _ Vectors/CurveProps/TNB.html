@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Definitions | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Speed.html" title="Previous">&lArr;</a></li>
+      <li><a href="TNBFormulas.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Tangent, Normal, and Binormal Vectors</h2>
+
+
+      
+      <h2>1. Definitions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  When dealing with vectors in \(\mathbb{R}^{3}\), we use the
+  <a href="../Vectors/ijkNote.html#ijk" title="Return using the Back button.">
+  standard basis vectors</a>
+  \(\hat{\imath}\), \(\hat{\jmath}\) and \(\hat{k}\). These are three
+  mutually perpendicular unit vectors which form a
+  <a href="../Cross/TripleGeom.html#RHSystem" title="Return using the Back button.">
+  right handed system</a>.
+</p>
+<p>
+  When dealing with vectors along a curve, it is nice to have three basis
+  vectors (i.e. three mutually perpendicular unit vectors which form a right
+  handed system) which are adapted to the curve. These are called \(\hat{T}\),
+  \(\hat{N}\) and \(\hat{B}\), and are collectively called a
+  <span class="defword">Frenet frame</span>. To understand the definitions of
+  the Frenet frame, first notice that the velocity, \(\vec{v}\)
+  determines the instantaneous direction of the curve while \(\vec{v}\) and
+  \(\vec{a}\) determine the instantaneous plane of the curve.
+</p>
+<p class="def" data-title="Frenet Frame">
+  The <span class="defword">unit tangent vector</span> \(\hat{T}\) is the unit
+  vector tangent to the curve, i.e. the direction of \(\vec{v}\).
+  <br>
+  The <span class="defword">unit normal vector</span> \(\hat{N}\) is the unit
+  vector perpendicular to \(\vec{v}\) in the plane of \(\vec{v}\) and
+  \(\vec{a}\) on the same side of \(\vec{v}\) as \(\vec{a}\), i.e. \(\hat{N}\)
+  is the unit vector in the direction of \(\text{proj}_{\bot \vec{v}}\vec{a}\).
+  <br>
+  The <span class="defword">unit binormal vector</span> \(\hat{B}\) is the unit
+  vector perpendicular to \(\hat{T}\) and \(\hat{N}\) related by the right
+  hand rule, i.e.
+  \[
+  \hat{B}=\hat{T}\times\hat{N}
+  \]
+</p>
+<div class="column">
+  <p>
+    The figures at the right show:
+    <br>
+    a curve in <span style="color:blue"><strong>blue</strong></span>,
+    <br>
+    the unit tangent vector, \(\hat{T}\), in
+    <span style="color:red"><strong>red</strong></span>,
+    <br>
+    the unit normal vector, \(\hat{N}\), in
+    <span style="color:cyan"><strong>cyan</strong></span> and
+    <br>
+    the unit binormal vector, \(\hat{B}\) in
+    <span style="color:magenta"><strong>magenta</strong></span>.
+    <br><br>
+    In the first figure, use the mouse to rotate the plot until \(\hat{N}\)
+    is pointing straight at you. Notice that the curve instantaneously lies in
+    the plane of \(\hat{T}\) and \(\hat{N}\).
+    <br><br>
+    Now rotate the plot until \(\hat{B}\) is pointing straight at you. Notice
+    that the curve instantaneously bends in the direction of \(\hat{N}\).
+  </p>
+  <div class="center">
+    <x3d width="250px" height="250px">
+      <scene>
+        <inline url="graphics/eg_curve_TNB.x3d"> </inline>
+      </scene>
+    </x3d>
+  </div>
+</div>
+<div class="column">
+  <p>
+    The second figure shows how \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\)
+    change as the point moves along the curve. Notice, \(\hat{T}\) is in the
+    direction of the curve, \(\hat{N}\) is in the direction it is turning and
+    \(\hat{B}\) is perpendicular to the plane of the motion.
+  </p>
+  <div class="center">
+    <figure>
+      <video src="graphics/eg_curve_TNB_anim.mp4" autoplay controls loop></video>
+    </figure>
+  </div>
+</div>
+<p class="remark">
+  We first need to justify that \(\hat{B}\) defined as \(\hat{T}\times\hat{N}\)
+  is in fact a unit vector. However, since \(\hat{T}\) and \(\hat{N}\) are
+  perpendicular unit vectors
+  \[
+  |\hat{T}|=1 \qquad |\hat{N}|=1
+  \qquad \text{and} \qquad \theta=90^\circ
+  \]
+  Hence
+  \[
+  |\hat{B}|
+  =|\hat{T}\times\hat{N}|
+  =|\hat{T}|\,|\hat{N}|\sin\theta
+  =1\cdot1\cdot1=1
+  \]
+</p>
+<p class="remark">
+  Recall that \(\hat{\imath}\), \(\hat{\jmath}\) and \(\hat{k}\) form a
+  right handed triplet of mutually perpendicular unit vectors in that they
+  satisfy:
+  \[
+  \hat{\imath}\times\hat{\jmath}=\hat{k} \qquad
+  \hat{\jmath}\times\hat{k}=\hat{\imath} \qquad
+  \hat{k}\times\hat{\imath}=\hat{\jmath}
+  \]
+  where we cyclically rotate \(\hat{\imath}\), \(\hat{\jmath}\) and \(\hat{k}\) in
+  these formulas. Similarly:
+</p>
+<p class="prop">
+  \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\)  form a right handed triplet of
+  mutually perpendicular unit vectors in that they satisfy:
+  \[
+  \hat{T}\times\hat{N}=\hat{B} \qquad
+  \hat{N}\times\hat{B}=\hat{T} \qquad
+  \hat{B}\times\hat{T}=\hat{N}
+  \]
+  where we cyclically rotate \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) in these
+  formulas. &ensp;
+  <button class="toggle" data-toggle="note1">Justification</button>
+</p>
+<div class="toBeToggled drop-just" data-toggle="note1">
+  <div class="column">
+    <p>
+      To see this, use your right hand to see that \(\hat{T}\times\hat{N}\)
+      points along \(\hat{B}\). Then use the mouse to rotate the figure and
+      use your right hand to see where \(\hat{N}\times\hat{B}\) and
+      \(\hat{B}\times\hat{T}\) point.
+    </p>
+    <div class="center">
+      <x3d width="250px" height="250px">
+        <scene>
+          <inline url="graphics/prop_TNB_RightTriplet.x3d"> </inline>
+        </scene>
+      </x3d>
+    </div>
+  </div>
+</div>
+<a id="circle"></a>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the unit tangent vector, \(\hat{T}\), the unit normal vector
+  \(\hat{N}\), and the unit binormal vector \(\hat{B}\) of the circle of
+  radius \(R\) in the \(xy\)-plane, parametrized as
+  \(\vec{r}(\theta)=(R\cos\theta,R\sin\theta,0)\) for general \(\theta\) and
+  at \(\theta=\dfrac{\pi}{4}\).
+</p>
+<p class="sol">
+  First we find the velocity and its length:
+  \[\begin{aligned}
+  \vec{v}
+  &=\langle -R\sin\theta,R\cos\theta,0\rangle \\
+  |\vec{v}|
+  &=\sqrt{(-R\sin\theta)^2+(R\cos\theta)^2+0^2}=R
+  \end{aligned}\]
+  From these, we calculate the unit tangent vector:
+  \[\begin{aligned}
+  \hat{T}
+  &=\dfrac{\vec{v}}{|\vec{v}|}
+  =\dfrac{1}{R}\langle -R\sin\theta,R\cos\theta,0\rangle \\
+  &=\langle -\sin\theta,\cos\theta,0\rangle
+  \end{aligned}\]
+  Next, we compute the acceleration and notice that it is perpendicular to the
+  velocity:
+  \[\begin{aligned}
+  \vec{a}
+  &=\langle -R\cos\theta,-R\sin\theta,0\rangle \\
+  \vec{v}\cdot\vec{a}
+  &=R^2\sin\theta\cos\theta-R^2\cos\theta\sin\theta=0
+  \end{aligned}\]
+  So the unit normal is the unit vector in the direction of the acceleration.
+  We compute the length of the acceleration and the unit normal vector:
+  \[\begin{aligned}
+  |\hat{a}|
+  &=\sqrt{(-R\cos\theta)^2+(-R\sin\theta)^2+0^2}=R \\
+  \hat{N}
+  &=\dfrac{\vec{a}}{|\vec{a}|}
+  =\dfrac{1}{R}\langle -R\cos\theta,-R\sin\theta,0\rangle \\
+  &=\langle -\cos\theta,-\sin\theta,0\rangle \\
+  \end{aligned}\]
+  Finally, the unit binormal vector is:
+  \[\begin{aligned}
+  \hat{B}
+  &=\hat{T}\times\hat{N}
+  =\begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  -\sin\theta & \cos\theta & 0 \\
+  -\cos\theta & -\sin\theta & 0
+  \end{vmatrix} \\
+  &=\hat\imath(0)-\hat\jmath(0)+\hat k(\sin^2\theta+\cos^2\theta)
+  =\langle 0,0,1\rangle
+  \end{aligned}\]
+</p>
+<div class="column">
+  <p>
+    The figure shows \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\)
+    moving around the circle. In particular, for \(\theta=\dfrac{\pi}{4}\):
+    \[\begin{aligned}
+    \hat{T}
+    &=\left\langle \dfrac{-1}{\sqrt{2}},\dfrac{1}{\sqrt{2}},0\right\rangle \\
+    \hat{N}
+    &=\left\langle \dfrac{-1}{\sqrt{2}},\dfrac{-1}{\sqrt{2}},0\right\rangle \\
+    \hat{B}
+    &=\langle 0,0,1\rangle
+    \end{aligned}\]
+  </p>
+  <div class="center">
+    <figure>
+      <video src="graphics/eg_circ_TNB_anim.mp4" autoplay controls loop>
+      </video>
+    </figure>
+  </div>
+</div>
+<p class="check">
+  We check the three vectors are perpendicular by computing their dot products:
+  \[\begin{aligned}
+  \hat{T}\cdot\hat{N}&=\sin\theta\cos\theta-\cos\theta\sin\theta=0 \\
+  \hat{T}\cdot\hat{B}&=0+0+0=0 \\
+  \hat{B}\cdot\hat{N}&=0+0+0=0
+  \end{aligned}\]
+</p>
+<a id="helix"></a>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the unit tangent vector, \(\hat{T}\), the unit normal vector
+    \(\hat{N}\), and the unit binormal vector \(\hat{B}\) of the helix
+    parametrized as
+    \(\vec{r}(\theta)=(4\cos\theta,4\sin\theta,3\theta)\)
+    for general \(\theta\) and at \(\theta=\dfrac{\pi}{4}\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Like the circle, the acceleration is again perpendicular to the velocity
+    which makes it easy to calculate the unit normal vector.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <div class="column">
+    <p>
+      Generally:
+      \[\begin{aligned}
+      \hat{T}
+      &=\left\langle \dfrac{-4}{5}\sin\theta,\dfrac{4}{5}\cos\theta,\dfrac{3}{5}\right\rangle \\
+      \hat{N}
+      &=\langle -\cos\theta,-\sin\theta,0\rangle \\
+      \hat{B}
+      &=\left\langle \dfrac{3}{5}\sin\theta,\dfrac{-3}{5}\cos\theta,\dfrac{4}{5}\right\rangle
+      \end{aligned}\]
+      For \(\theta=\dfrac{\pi}{4}\):
+      \[\begin{aligned}
+      \hat{T}
+      &=\left\langle \dfrac{-2\sqrt{2}}{5},\dfrac{2\sqrt{2}}{5},\dfrac{3}{5}\right\rangle \\
+      \hat{N}
+      &=\left\langle \dfrac{-1}{\sqrt{2}},\dfrac{-1}{\sqrt{2}},0\right\rangle \\
+      \hat{B}
+      &=\left\langle \dfrac{3}{5\sqrt{2}},\dfrac{-3}{5\sqrt{2}},\dfrac{4}{5}\right\rangle
+      \end{aligned}\]
+    </p>
+    <div class="center">
+      <figure>
+        <video src="graphics/ex_RH_helix_TNB_anim.mp4" autoplay controls loop>
+        </video>
+      </figure>
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    First we find the velocity and its length:
+    \[\begin{aligned}
+    \vec{v}
+    &=\langle -4\sin\theta,4\cos\theta,3\rangle \\
+    |\vec{v}|
+    &=\sqrt{16\sin^2\theta+16\cos^2\theta+9}=5
+    \end{aligned}\]
+    From these, we calculate the unit tangent vector:
+    \[
+    \hat{T}
+    =\dfrac{\vec{v}}{|\vec{v}|}
+    =\left\langle \dfrac{-4}{5}\sin\theta,\dfrac{4}{5}\cos\theta,\dfrac{3}{5}\right\rangle
+    \]
+    Next, we compute the acceleration and check that it is perpendicular to the
+    velocity:
+    \[\begin{aligned}
+    \vec{a}
+    &=\langle -4\cos\theta,-4\sin\theta,0\rangle \\
+    \vec{v}\cdot\vec{a}
+    &=16\sin\theta\cos\theta-16\cos\theta\sin\theta=0
+    \end{aligned}\]
+    So the unit normal is the unit vector in the direction of the acceleration.
+    We compute the length of the acceleration and the unit normal vector:
+    \[\begin{aligned}
+    |\hat{a}|
+    &=\sqrt{(-4\cos\theta)^2+(-4\sin\theta)^2+0^2}=4 \\
+    \hat{N}
+    &=\dfrac{\vec{a}}{|\vec{a}|}
+    =\langle -\cos\theta,-\sin\theta,0\rangle \\
+    \end{aligned}\]
+    Finally, the unit binormal vector is:
+    \[\begin{aligned}
+    \hat{B}
+    &=\hat{T}\times\hat{N}
+    =\begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\[3 pt]
+    \dfrac{-4}{5}\sin\theta & \dfrac{4}{5}\cos\theta & \dfrac{3}{5} \\[3 pt]
+    -\cos\theta & -\sin\theta & 0
+    \end{vmatrix} \\
+    &=\hat\imath\left(\dfrac{3}{5}\sin\theta\right)
+    -\hat\jmath\left(\dfrac{3}{5}\cos\theta\right)
+    +\hat k\left(\dfrac{4}{5}\sin^2\theta+\dfrac{4}{5}\cos^2\theta\right) \\
+    &=\left\langle\dfrac{3}{5}\sin\theta,\dfrac{-3}{5}\cos\theta,\dfrac{4}{5}\right\rangle
+    \end{aligned}\]
+  </p>
+  <div class="column">
+    <p>
+      The figure shows \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\)
+      moving around the helix. In particular, for \(\theta=\dfrac{\pi}{4}\):
+      \[\begin{aligned}
+      \hat{T}
+      &=\left\langle \dfrac{-2\sqrt{2}}{5},\dfrac{2\sqrt{2}}{5},\dfrac{3}{5}\right\rangle \\
+      \hat{N}
+      &=\left\langle \dfrac{-1}{\sqrt{2}},\dfrac{-1}{\sqrt{2}},0\right\rangle \\
+      \hat{B}
+      &=\left\langle \dfrac{3}{5\sqrt{2}},\dfrac{-3}{5\sqrt{2}},\dfrac{4}{5}\right\rangle
+      \end{aligned}\]
+      It is easy to check these are \(3\) mutually perpendicular unit vectors.
+    </p>
+    <div class="center">
+      <figure>
+        <video src="graphics/ex_RH_helix_TNB_anim.mp4" autoplay controls loop>
+        </video>
+      </figure>
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check the three vectors
+    \[\begin{aligned}
+    \hat{T}
+    &=\left\langle \dfrac{-4}{5}\sin\theta,\dfrac{4}{5}\cos\theta,\dfrac{3}{5}\right\rangle \\
+    \hat{N}
+    &=\langle -\cos\theta,-\sin\theta,0\rangle \\
+    \hat{B}
+    &=\left\langle\dfrac{3}{5}\sin\theta,\dfrac{-3}{5}\cos\theta,\dfrac{4}{5}\right\rangle
+    \end{aligned}\]
+    are perpendicular by computing their dot products:
+    \[\begin{aligned}
+    \hat{T}\cdot\hat{N}&=\dfrac{4}{5}\sin\theta\cos\theta-\dfrac{4}{5}\cos\theta\sin\theta=0 \\
+    \hat{T}\cdot\hat{B}&=-\dfrac{12}{25}\sin^2\theta-\dfrac{12}{25}\cos^2\theta+\dfrac{12}{25}=0 \\
+    \hat{B}\cdot\hat{N}&=-\dfrac{3}{5}\sin\theta\cos\theta+\dfrac{3}{5}\cos\theta\sin\theta=0
+    \end{aligned}\]
+  </p>
+</div>
+
+<p>
+  In the examples of a circle and a helix, the acceleration is perpendicular to
+  the velocity. So it is easy to find the normal vector.
+  On the <a href="TNBFormulas.html">next page</a>, we will find formulas which
+  help us compute \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) even if the
+  acceleration is not perpendicular to the velocity.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

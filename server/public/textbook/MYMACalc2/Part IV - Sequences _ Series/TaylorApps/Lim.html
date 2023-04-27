@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Limits | 24. Applications of Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Deriv.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>24. Applications of Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+<p>
+  Taylor series can be used to simplify a variety of exact and approximate
+  computations.  We will look at their use in computing limits and
+  derivatives, approximating definite integrals, summing numerical series,
+  approximating fundamental constants and solving differential equations.
+</p>
+
+
+      
+      <h2>a. Limits</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="example" data-number="1">
+  Compute the limit
+  \(\displaystyle \lim_{x\to 0}
+  \dfrac{x^2-\sin(x^2)}{x^6}\).
+</p>
+<p class="sol" data-number="1">
+  In the first semester of calculus you learned to compute this limit
+  by repeatedly applying l'Hopital's Rule and simplifying:
+  \[\begin{aligned}
+  \lim_{x\to 0}
+  \dfrac{x^2-\sin(x^2)}{x^6}
+  &=\lim_{x\to 0}
+  \dfrac{2x-2x\cos(x^2)}{6x^5} \qquad \text{apply l'Hopital's Rule} \\
+  &=\lim_{x\to 0}
+  \dfrac{1-\cos(x^2)}{3x^4} \qquad \qquad \, \text{simplify} \\
+  &=\lim_{x\to 0}
+  \dfrac{2x\sin(x^2)}{12x^3} \qquad \qquad \text{apply l'Hopital's Rule} \\
+  &=\lim_{x\to 0}
+  \dfrac{\sin(x^2)}{6x^2} \qquad \qquad \qquad \text{simplify} \\
+  &=\lim_{x\to 0}
+  \dfrac{2x\cos(x^2)}{12x} \qquad \qquad \text{apply l'Hopital's Rule} \\
+  &=\lim_{x\to 0}
+  \dfrac{\cos(x^2)}{6}=\dfrac{1}{6} \qquad \qquad \text{simplify}
+  \end{aligned}\]
+  This is a long process.
+</p>
+<p class="sol" data-number="2">
+  We now recompute the limit using a series. We start with the known
+  Maclaurin series:
+  \[
+  \sin x=x-\dfrac{x^3}{6}+\dfrac{x^5}{120}-\cdots
+  \]
+  <button class="toggle btn"  data-toggle="Drop1">
+  How do we know how many terms to keep?</button>
+</p>
+<div class="toBeToggled note" data-toggle="Drop1">
+  <p>
+    We don't! We guess some number of terms and see if it was enough.
+    If not, we go back and add some more terms.
+  </p>
+</div>
+<p>
+  and substitute \(x\to x^2\) to obtain:
+  \[
+  \sin(x^2)=x^2-\dfrac{x^6}{6}+\dfrac{x^{10}}{120}-\cdots
+  \]
+  We now substitute this series into the limit and simplify:
+  \[\begin{aligned}
+  \lim_{x\to 0}
+  \dfrac{x^2-\sin(x^2)}{x^6}
+  &=\lim_{x\to 0}
+  \dfrac{x^2-\left(x^2-\dfrac{x^6}{6}+\dfrac{x^{10}}{120}-\cdots\right)}{x^6} \\
+  &=\lim_{x\to 0}
+  \dfrac{\dfrac{x^6}{6}-\dfrac{x^{10}}{120}+\cdots}{x^6} \\
+  &=\lim_{x\to 0}
+  \left(\dfrac{1}{6}-\dfrac{x^4}{120}+\cdots\right)=\dfrac{1}{6}
+  \end{aligned}\]
+  Notice that the last \(+\cdots\) represents terms in which the power of
+  \(x\) is always greater than \(4\). So the limit of these terms is zero.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Now it's your turn:
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the limit
+    \(\displaystyle \lim_{x\to 0}
+    \dfrac{e^{x^2}-1-x^2}{x^4}\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Remember
+    \[
+    e^x=1+x+\dfrac{x^2}{2}+\dfrac{x^3}{6}+\dfrac{x^4}{24}+\cdots
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle \lim_{x\to 0}
+    \dfrac{e^{x^2}-1-x^2}{x^4}=\dfrac{1}{2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    Substitute \(x\to x^2\) into:
+    \[
+    e^x=1+x+\dfrac{x^2}{2}+\dfrac{x^3}{6}+\dfrac{x^4}{24}+\cdots
+    \]
+    to obtain:
+    \[
+    e^{x^2}=1+x^2+\dfrac{x^4}{2}+\dfrac{x^6}{6}+\dfrac{x^8}{24}+\cdots
+    \]
+    Now substitute this into the limit:
+    \[\begin{aligned}
+    \lim_{x\to 0}
+    \dfrac{e^{x^2}-1-x^2}{x^4}
+    &=\lim_{x\to 0}
+    \dfrac{\left(1+x^2+\dfrac{x^4}{2}+\dfrac{x^6}{6}+\cdots\right)-1-x^2}{x^4} \\
+    &=\lim_{x\to 0}
+    \left(\dfrac{1}{2}+\dfrac{x^2}{6}+\cdots\right)=\dfrac{1}{2}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

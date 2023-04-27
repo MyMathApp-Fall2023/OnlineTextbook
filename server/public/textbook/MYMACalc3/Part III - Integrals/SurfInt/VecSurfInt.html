@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Orientations | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VecSurfDiff.html" title="Previous">&lArr;</a></li>
+      <li><a href="VecSurfIntAlt.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Vector Surface Integrals</h2>
+
+<p>
+  A <span class="defword">vector surface integral</span> is defined as
+  \[
+  \iint_S \vec{F}\cdot\,d\vec{S}
+  =\iint_S \vec{F}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+  \]
+  However, there is one more fine point we need to discuss before computing
+  this type of integral.
+</p>
+
+
+      
+      <h2>2. Orientations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The integral must be independent of the choice of
+  parametrization. Unfortunately, if we do something as simple as reverse
+  the order of the parameters, i.e. \(u\) and \(v\) are interchanged, then
+  the parametrization becomes \(\vec R(v,u)\), the tangent vectors
+  \(\vec e_u\) and \(\vec e_v\) are interchanged and the normal is now
+  \(\vec N=\vec e_v\times\vec e_u\) which is the negative of what it was.
+  So the dot product \(\vec{F}(\vec R(v,u))\cdot\vec{N}\) reverses sign and
+  the integral changes sign. To correct this ambiguity, we need to understand
+  the <span class="hl">orientation</span> of the surface. A surface is
+  <span class="defword">orientable</span> if it has two sides. For example,
+  the surface of a cylinder has an inside and an outside; a horizontal plane
+  has a top and a bottom. However a mobius strip has only one side; so it is
+  not orientable. For a non-orientable surface, one can compute scalar
+  surface integrals but not vector surface integrals.
+</p>
+
+<big>PY: Add plots of cylinder and Mobious strip with animations of normal vectors.</big>
+
+<p class="def">
+  An <span class="defword">orientation</span> of an
+  <span class="hl">orientable</span> surface is a specification of which side
+  of the surface is considered to be the <span class="defword">front</span>
+  of the surface. A parametrization \(\vec R(u,v)\) of a surface is
+  <span class="defword">oriented</span> if the normal vector
+  \(\vec N=\vec e_u\times\vec e_v\) points toward the
+  <span class="hl">front</span> of the surface. From now on, when we want
+  to compute a vector surface integral, we need to specify the
+  <span class="hl">orientation</span> of the surface and use an
+  <span class="hl">oriented</span> parametrization.
+</p>
+<p class="remark">
+  In practice, we don't worry about the orientation when we pick the
+  parametrization. If we end up with the normal pointing toward the wrong
+  side of the surface, then we simply reverse the sign of the normal and
+  proceed. We will see this in the example and exercise below.
+</p>
+
+<hr width="80%">
+
+<h3>Orientations of Line Integrals</h3>
+
+<p>
+  Line integrals also need to be oriented. The vector line integral
+  \[
+  \int_A^B \vec F\cdot d\vec s=\int_A^B \vec F\cdot \vec v\,dt
+  \]
+  is understood to be oriented from \(A\) to \(B\). If we reverse the
+  direction, then the integral will change signs:
+  \[
+  \int_B^A \vec F\cdot d\vec s=-\int_A^B \vec F\cdot d\vec s
+  \]
+  The path is usually parametrized by a curve \(\vec r(t)\) for which \(t\)
+  increases from \(A\) to \(B\), and hence its tangent vector \(\vec v\)
+  points from \(A\) towards \(B\). However, if we (accidentally) parametrize
+  it with \(t\) increasing from \(B\) to \(A\), and notice that the tangent
+  vector points backwards, we don't need to go back and reparametrize it,
+  we just reverse the sign of the tangent and proceed.  We will see
+  examples of this in the next part of the course on the multivariable
+  calculus Theorems.
+</p>
+
+<hr width="80%">
+
+<p class="remark">
+  The importance of the orientation of a surface becomes clear when we
+  discuss the <span class="hl">flux</span> of a vector field through the
+  surface. If \(\vec{V}\) is the velocity field of a fluid then the flux of
+  \(\vec{V}\) through a surface \(S\) is the integral
+  \(\displaystyle \iint_S \vec{V}\cdot\,d\vec{S}\) which measures the amount
+  of fluid which flows through the surface per unit time. If the fluid flows
+  in the direction of the normal, then the flux is positive. If the fluid
+  flows opposite to the normal, then the flux is negative.
+</p>
+<p>
+  Similarly, the orientation of a curve became important when we discussed the
+  <a href="../../Part I - Geometry & Vectors/LineInt/FlowCirc.html"
+  title="Return using the Back button.">
+  circulation</a> of a vector field around a closed curve. If \(\vec{V}\)
+  is the velocity field of a fluid then the circulation of \(\vec{V}\) around
+  a curve \(C\) is the integral
+  \(\displaystyle \int_C \vec{V}\cdot\,d\vec{s}\) which measures the amount
+  of fluid which flows around the curve per unit time. If the fluid flows
+  in the direction of the tangent vector, then the circulation is positive.
+  If it flows opposite to the tangent, then the circulation is negative.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+	<span class="hl">Summary: Vector Surface Integrals</span>
+</p>
+<ol>
+  <li>Parametrize the surface, \(\vec R(u,v)\).</li>
+  <li>Evaluate the vector field, \(\vec F\), on the surface to get
+  \(\vec{F}(\vec R(u,v))\).</li>
+  <li>Find the tangent vectors and normal vector \(\vec{N}\), for the surface.</li>
+  <li>Verify the normal is oriented properly. If necessary, reverse it.</li>
+  <li>Compute the dot product, \(\vec{F}(\vec R(u,v))\cdot\vec{N}\).</li>
+  <li>Evaluate the integral
+  \(\displaystyle \iint_S \vec{F}(\vec R(u,v))\cdot\vec{N}\,du\,dv\).</li>
+</ol>
+
+        <div class="rule"></div>
+
+<p>
+  <em>There is no Jacobian involved anywhere in the calculation</em>. In these
+  integrals, \(\vec{N}\) contains terms that serve the same function as a
+  Jacobian. Often, the parameters one uses to parametrize a surface are similar
+  or even identical to those used for cylindrical coordinates (e.g. \(r\) and
+  \(\theta\)) or spherical coordinates (e.g. \(\rho\) and \(\theta\) or
+  \(\phi\)). It is important to remember that these are
+  <span class="hl">parameters</span> for the surface, and we are not actually
+  integrating in cylindrical or spherical coordinates. There is no extra \(r\)
+  or \(\rho^2\sin\phi\).
+</p>
+
+        <div class="rule" id="polarcap"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \iint_P \vec{F}\cdot\,d\vec{S}\) where
+  \(\vec{F}=\left\langle xz,yz,z^2\right\rangle\) and the surface is the
+  polar cap (\(0 \le \phi \le \dfrac{\pi}{6}\)) of a sphere of radius \(2\)
+  with the orientation <em>outward</em> from the sphere.
+</p>
+
+<big>PY: Add plot.</big>
+
+<p class="sol">
+  The surface is given by the parametrization:
+  \[
+  \vec R(\theta,\phi)
+  =\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+  \]
+  (Note: we have chosen the order of the parameters as \((\theta,\phi)\) to
+  emphasize a point later.) Next, we evaluate the vector field on the surface:
+  \[
+  \vec{F}(\vec R(\theta,\phi))
+  =\left\langle 4\sin\phi\cos\phi\cos\theta,4\sin\phi\cos\phi\sin\theta,
+  4\cos^2\phi\right\rangle
+  \]
+  We now find the normal vector:
+  \[\begin{aligned}
+  \vec{N}=\vec{e}_\theta\times\vec{e}_\phi
+  &=\left|
+  \begin{array}{ccc}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  -2\sin\phi\sin\theta & 2\sin\phi\cos\theta & 0 \\
+  2\cos\phi\cos\theta & 2\cos\phi\sin\theta & -2\sin\phi
+  \end{array}
+  \right| \\
+  &=\hat{\imath}(-4\sin^2\phi\cos\theta)
+   -\hat{\jmath}(4\sin^2\phi\sin\theta) \\
+  &\quad+\hat{k}(-4\sin\phi\cos\phi\sin^2\theta-4\sin\phi\cos\phi\cos^2\theta) \\
+  &=\left\langle -4\sin^2\phi\cos\theta,-4\sin^2\phi\sin\theta,
+  -4\sin\phi\cos\phi\right\rangle
+  \end{aligned}\]
+  To check the orientation of the normal, we look at the \(z\) component of
+  the normal. If it is positive, then the normal points up or outward from
+  the sphere. In the upper hemisphere, \(\sin\phi\) and \(\cos\phi\) are
+  positive. So the \(z\) component of the normal is negative. This means the
+  normal is inwards, opposite of what we need it to be. So we reverse
+  \(\vec{N}\) and use that value for the remainder of our calculations.
+  \[
+  \text{Reverse:}\qquad\vec{N}
+  =\left\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\right\rangle
+  \]
+  Next, we compute and simplify the dot product:
+  \[\begin{aligned}
+  \vec{F}\cdot\vec{N}
+  &=\left\langle 4\sin\phi\cos\phi\cos\theta,4\sin\phi\cos\phi\sin\theta,4\cos^2\phi\right\rangle \\
+  &\quad\cdot\left\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\right\rangle \\
+  &=16\sin^3\phi\cos\phi\cos^2\theta+16\sin^3\phi\cos\phi\sin^2\theta+16\sin\phi\cos^3\phi \\
+  &=16\sin^3\phi\cos\phi(\cos^2\theta+\sin^2\theta)+16\sin\phi\cos^3\phi \\
+  &=16\sin\phi\cos\phi(\sin^2\phi+\cos^2\phi)
+  =16\sin\phi\cos\phi
+  \end{aligned}\]
+  So the integral is
+  \[\begin{aligned}
+  \iint_P \vec{F}\cdot\,d\vec{S}
+  &=\iint_P \vec{F}(\vec R(\theta,\phi))\cdot\vec{N}\,d\theta\,d\phi \\
+  &=\int_0^{\pi/6}\int_0^{2\pi} (16\sin\phi\cos\phi)\,d\theta\,d\phi \\
+  &=2\pi\left[8\sin^2\phi\dfrac{}{}\right]_0^{\pi/6}
+  =16\pi\sin^2\left(\dfrac{\pi}{6}\right)
+  =4\pi
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  When we parametrized the surface, we could have named it
+  \(\vec R(\phi,\theta)\) with \(\theta\) and \(\phi\) reversed.
+  Then the normal would have been
+  \[
+  \vec{N}=\vec{e}_\phi\times\vec{e}_\theta
+  =\left\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\right\rangle
+  \]
+  which is properly oriented and does not need to be flipped. However, in
+  practice, there is no easy way to know in advance which order to use. So use
+  either order and reverse the normal if necessary.
+</p>
+
+        <div class="rule" id="ellipparab"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\displaystyle \iint_P \vec{F}\cdot\,d\vec{S}\) where
+    \(\vec{F}=\left\langle xz^2,yz^2,-2z^3\right\rangle\) and the surface is the
+    piece of the elliptic paraboloid \(z=x^2+y^2\) below \(z=4\) orientated
+    with the normal pointing <em>down and out</em> from the paraboloid.
+    The normal vector was found in a
+    <a href="ScalSurfInt.html#ellipparab" title="Return using the Back button.">
+    previous exercise</a>.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX"></button>
+    <button class="toggle has-ans" data-toggle="AnsX"></button>
+    <button class="toggle has-sol" data-toggle="SolX"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX">
+  <p>
+    Don't forget to check the orientation of the normal and reverse it if
+    necessary.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX">
+  <p>
+  \(\displaystyle
+  \iint_P \vec{F}\cdot\,d\vec{S}=256\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX">
+  <p>
+    From the
+    <a href="ScalSurfInt.html#ellipparab" title="Return using the Back button.">
+    previous exercise</a>, the parametrization and normal vector are:
+    \[\begin{aligned}
+    \vec R(r,\theta)
+    &=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle \\
+    \vec N
+    &=\left\langle -2r^2\cos\theta,-2r^2\sin\theta,r\right\rangle
+    \end{aligned}\]
+    To check the orientation, notice \(N_z=r \gt 0\). So \(\vec N\) points up.
+    Further, in the \(1^\text{st}\) quadrant, \(\sin\theta \gt 0\) and
+    \(\cos\theta \gt 0\). So \(N_x \lt 0\) and \(N_y \lt 0\) and so
+    \(\vec N\) points in. Since we need \(\vec N\) to point down and out,
+    we reverse it:
+    \[
+    \text{Reverse:}\qquad\vec{N}
+    =\left\langle 2r^2\cos\theta,2r^2\sin\theta,-r\right\rangle
+    \]
+    (Notice we reverse the entire vector.)
+  </p>
+  <p>
+    On the surface the vector field,
+    \(\vec{F}=\left\langle xz^2,yz^2,-2z^3\right\rangle\), becomes:
+    \[
+    \vec{F}(\vec R(r,\theta))
+    =\left\langle r^5\cos\theta,r^5\sin\theta,-2r^6\right\rangle
+    \]
+    The integrand is the dot product:
+    \[\begin{aligned}
+    \vec{F}\cdot\vec{N}
+    &=\left\langle r^5\cos\theta,r^5\sin\theta,-2r^6\right\rangle \\
+    &\quad\cdot\left\langle 2r^2\cos\theta,2r^2\sin\theta,-r\right\rangle \\
+    &=2r^7\cos^2\theta+2r^7\sin^2\theta+2r^7
+    =4r^7
+    \end{aligned}\]
+    So the integral is:
+    \[\begin{aligned}
+    \iint_P \vec{F}\cdot\,d\vec{S}
+    &=\iint_P \vec{F}\cdot\vec{N}\,dr\,d\theta
+    =\int_0^{2\pi}\int_0^2 4r^7\,dr\,d\theta \\
+    &=2\pi\left[\dfrac{r^8}{2}\right]_0^2
+    =256\pi
+    \end{aligned}\]
+  </p>
+  <p class="remark">
+    Notice that there is NO extra \(r\) in the integrand before the
+    \(dr\,d\theta\) because \(r\) and \(\theta\) are parameters for a surface
+    which just happen to have the same names as the cylindrical coordinates.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d.2. The Limit Comparison Test - Extreme Cases | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimCompTest.html" title="Previous">&lArr;</a></li>
+      <li><a href="RatioTest.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d.2. The Limit Comparison Test - Extreme Cases</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="greybox">
+  <p class="prop" data-title="The Limit Comparison Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) and
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) are positive series and
+    \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=L\).
+  </p>
+  <ol>
+    <li>
+      If \(0 \lt L \lt \infty\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\)
+      is convergent if and only if \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      convergent.
+    </li>
+    <li>
+      If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent,
+      then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also convergent.
+    </li>
+    <li>
+      If \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      divergent, then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also divergent.
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  Cases (2) and (3) are called the <span class="defword">extreme cases</span>,
+  and arise very rarely.
+  <br>
+  If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is divergent, or
+  \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent, the
+  Limit Comparison Test <span class="wrong">FAILS</span>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  We now look at the extreme cases, \(L=0\) and \(L=\infty\) which are less
+  common.
+</p>
+<p>
+  If \(L=0\), then
+  \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=0\)
+  says the \(a_n\) are much smaller than the \(b_n\). So if
+  \(\displaystyle \sum_{n=n_o}^\infty b_n\) converges, then
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) also converges.
+</p>
+<p>
+  Similarly, if \(L=\infty\), then
+  \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=\infty\)
+  says the \(a_n\) are much bigger than the \(b_n\). So if
+  \(\displaystyle \sum_{n=n_o}^\infty b_n\) diverges, then
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) also diverges.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Determine if \(\displaystyle \sum_{n=2}^\infty \dfrac{\ln n}{n^2}\)
+  is convergent or divergent.
+</p>
+<p class="sol">
+  We try to compare to \(\displaystyle \sum_{n=2}^\infty \dfrac{1}{n^2}\)
+  which is a convergent \(p\)-series since \(p=2 \gt 1\). Thus, we take
+  \(a_n=\dfrac{\ln n}{n^2}\) and \(b_n=\dfrac{1}{n^2}\). We compute
+  \[\begin{aligned}
+  L&=\lim_{n\to\infty}\dfrac{a_n}{b_n}
+  =\lim_{n\to\infty}\dfrac{\ln n}{n^2}\cdot\dfrac{n^2}{1} \\
+  &=\lim_{n\to\infty}\ln n=\infty
+  \end{aligned}\]
+  Since \(L=\infty\) but
+  \(\displaystyle \sum_{n=2}^\infty b_n=\sum_{n=2}^\infty \dfrac{1}{n^2}\)
+  is convergent, the Limit Comparison Test
+  <span class="wrong">FAILS</span>! Back to the drawing board.
+</p>
+<p>
+  This time we compare to
+  \(\displaystyle \sum_{n=2}^\infty \dfrac{1}{n^{3/2}}\)
+  which is also a convergent \(p\)-series since \(p=\dfrac{3}{2}>1\).
+  &emsp; <button class="toggle btn" data-toggle="why">Why \(\dfrac{3}{2}\)?</button>
+</p>
+<div class="toBeToggled" data-toggle="why">
+  <p>
+    We have \(\begin{aligned}\dfrac{\ln n}{n^2} \gt \dfrac{1}{n^2}\end{aligned}\)
+    but to show convergence we need \(\dfrac{\ln n}{n^2} \lt b_n\).
+    So we make \(b_n\) slightly bigger by making the power slightly smaller
+    (\(\begin{aligned}\dfrac{3}{2}\end{aligned}\) is slightly smaller than \(2\)) while still keeping
+    the series convergent.
+  </p>
+</div>
+<p>
+  Thus, we take \(a_n=\dfrac{\ln n}{n^2}\) and \(b_n=\dfrac{1}{n^{3/2}}\).
+  Using l'Hopital's Rule, we compute
+  \[\begin{aligned}
+  L&=\lim_{n\to\infty}\dfrac{a_n}{b_n}
+  =\lim_{n\to\infty}\dfrac{\ln n}{n^2}\cdot\dfrac{n^{3/2}}{1}\\
+  &=\lim_{n\to\infty}\dfrac{\ln n}{n^{1/2}}
+  \;\overset{\text{l'H}}{=}\;
+       \lim_{n\to\infty}\dfrac{1/n}{\dfrac{1}{2}n^{-1/2}} \\
+  &=\lim_{n\to\infty}\dfrac{2n^{1/2}}{n}
+  =\lim_{n\to\infty}\dfrac{2}{n^{1/2}}=0
+  \end{aligned}\]
+  Since \(L=0\) and
+  \(\displaystyle \sum_{n=2}^\infty b_n
+  =\sum_{n=2}^\infty \dfrac{1}{n^{3/2}}\)
+  is convergent, the Limit Comparison Test says
+  \(\displaystyle \sum_{n=2}^\infty a_n
+  =\sum_{n=2}^\infty \dfrac{\ln n}{n^2}\)
+  is also convergent.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Determine if \(\displaystyle \sum_{n=2}^\infty \dfrac{1}{\ln n}\)
+    is convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+    <button class="toggle has-rem" data-toggle="Rem1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Let \(\displaystyle b_n=\sum_{n=2}^\infty \dfrac{1}{n}\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle \sum_{n=2}^\infty \dfrac{1}{\ln n}\) is divergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    We compare to \(\displaystyle \sum_{n=2}^\infty \dfrac{1}{n}\)
+    which is a harmonic series and hence divergent. We take
+    \(a_n=\dfrac{1}{\ln n}\) and \(b_n=\dfrac{1}{n}\).
+    Using l'Hopital's Rule, we compute
+    \[\begin{aligned}
+    L&=\lim_{n\to\infty}\dfrac{a_n}{b_n}
+    =\lim_{n\to\infty}\dfrac{1}{\ln n}\dfrac{n}{1}
+    =\lim_{n\to\infty}\dfrac{n}{\ln n} \\
+    &\overset{\text{l'H}}{=}\;\lim_{n\to\infty}\dfrac{1}{1/n}
+    =\lim_{n\to\infty}n=\infty
+    \end{aligned}\]
+    Since \(L=\infty\) and
+    \(\displaystyle \sum_{n=2}^\infty b_n
+    =\sum_{n=2}^\infty\dfrac{1}{n}\) diverges,
+    we conclude
+    \(\displaystyle \sum_{n=2}^\infty a_n
+    =\sum_{n=2}^\infty \dfrac{1}{\ln n}\) also diverges.
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="Rem1">
+  <p>
+    Notice the Simple Comparison Test would also work here.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

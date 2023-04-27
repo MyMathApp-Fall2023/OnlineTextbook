@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Geometric Interpretation of Triple Products | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Volume.html" title="Previous">&lArr;</a></li>
+      <li><a href="BalTorques.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Volume</h2>
+
+
+      
+      <h2>2. Geometric Interpretation of Triple Products</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	The expression \(\vec u\cdot\vec v\times\vec w\) is the algebraic
+  formula for the triple product. Since the triple product is a	scalar,
+   the geometrical interpretation only needs to explain one number.
+   However, we still give the interpretation in two pieces,
+	the absolute value and the sign of the triple product.
+</p>
+<div class="column">
+  <div data-col-width="60%">
+    <p class="prop" data-title="Absolute Value of the Triple Product">
+      The absolute value of the triple product
+      \(\vec u\cdot\vec v\times\vec w\) is the volume of the
+      parallelepiped with adjacent edges \(\vec u\), \(\vec v\) and \(\vec w\):
+      \[
+      V=|\vec u\cdot\vec v\times\vec w|
+      \]
+    </p>
+    <p>
+      This was proven on the <a href="Volume.html#VolPara">previous page</a>.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/PropTripAbsValVol.jpg" alt="PropTripAbsValVol"/>
+  </div>
+</div>
+
+        <div class="rule" id="RHSystem"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      The sign of the triple product determines the handedness of the \(3\)
+      vectors, as follows:
+    </p>
+  	<p>
+    	The vectors \(\vec u\) and \(\vec v\) span a
+			<span class="hl">plane</span> and the vector
+      \(\vec u\times\vec v\) points to <span class="hl">one side</span>
+			of that plane determined
+    	by the right hand rule. Based on this, we have the following two
+      definitions and a proposition which give the geometric interpretation
+      of the sign of the triple product:
+  	</p>
+  	<p class="def" data-title="Right and Left Handed Systems of Vectors">
+    	The vectors \(\vec u\), \(\vec v\) and \(\vec w\) are called a
+      <span class="defword">right handed system</span> of vectors if:
+    	\[
+      \vec u\times\vec v\cdot\vec w \gt 0
+      \]
+      Equivalently, \(\vec u\), \(\vec v\), \(\vec w\) is a
+      <span class="defword">right handed system</span> if \(\vec w\)
+      forms an acute angle with \(\vec u\times\vec v\); i.e. \(\vec w\)
+      is on the same side of the \(\vec u\vec v\)-plane as
+      \(\vec u\times\vec v\).
+      <br><br>
+      The vectors \(\vec u\), \(\vec v\) and \(\vec w\) are called a
+      <span class="defword">left handed system</span> of vectors if:
+      \[
+      \vec u\times\vec v\cdot\vec w \lt 0
+      \]
+      Equivalently, \(\vec u\), \(\vec v\), \(\vec w\) is a
+      <span class="defword">left handed system</span> if \(\vec w\)
+      forms an obtuse angle with \(\vec u\times\vec v\); i.e. \(\vec w\)
+      is on the opposite side of the \(\vec u\vec v\)-plane as
+      \(\vec u\times\vec v\).
+  	</p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <figure>
+      <img src="graphics/PropTripPosRight.gif" alt="PropTripPosRight"/>
+      <figcaption>Right Handed System</figcaption>
+    </figure>
+    <figure>
+      <img src="graphics/PropTripNegLeft.gif" alt="PropTripNegLeft"/>
+      <figcaption>Left Handed System</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="prop" data-title="Co-Planar Vectors">
+      The vectors \(\vec u\), \(\vec v\) and \(\vec w\) are
+			<span class="hl">co-planar</span> if &emsp;
+      \(\vec u\times\vec v\cdot\vec w=0\) &emsp;
+      <button class="toggle" data-toggle="Proof1">Proof</button>
+    </p>
+    <div class="toBeToggled drop-proof" data-toggle="Proof1">
+      <p>
+        The equation, \(\vec u\times\vec v\cdot\vec w=0\), says
+        \(\vec w\) is perpendicular to \(\vec u\times\vec v\).
+        So \(\vec w\) lies in the same plane as \(\vec u\) and \(\vec v\).
+      </p>
+    </div>
+  </div>
+  <div class="center" data-col-width="40%">
+    <figure>
+      <img src="graphics/PropTripZeroPlanar.gif" alt="PropTripZeroPlanar"/>
+      <figcaption>Co-Planar Vectors</figcaption>
+    </figure>
+  </div>
+</div>
+<p>
+  We summarize:
+</p>
+<div class="greybox">
+  <p class="prop" data-title="Geometric Interpretation of the Triple Product">
+    The sign of the triple product \(\vec u\cdot\vec v\times\vec w\)
+    determines that \(\vec u\), \(\vec v\) and \(\vec w\) are
+  </p>
+  <ol>
+    <li>
+    a right handed system &emsp; if &ensp; \(\vec u\times\vec v\cdot\vec w \gt 0\).
+    </li>
+    <li>
+    a left handed system &emsp;&ensp; if &ensp; \(\vec u\times\vec v\cdot\vec w \lt 0\).
+    </li>
+    <li>
+    co-planar &emsp; &emsp; &emsp; &emsp; &emsp; if &ensp; \(\vec u\times\vec v\cdot\vec w=0\).
+    </li>
+  </ol>
+</div>
+<p class="example" data-number="1">
+  Show the vectors \(\hat\imath\), \(\hat\jmath\) and \(\hat k\) are
+  a right handed system of vectors. Show the vectors
+  \(\hat k\), \(\hat\jmath\) and \(\hat\imath\) are a left handed
+  system of vectors.
+</p>
+<p class="sol">
+  We simply compute
+	\[\begin{aligned}
+	\hat\imath\times\hat\jmath\cdot\hat k &=\hat k\cdot\hat k=1 \gt 0
+	&&\Longrightarrow \quad \hat\imath, \hat\jmath, \hat k\,\text{is right handed.} \\
+	\hat k\times\hat\jmath\cdot\hat\imath &=-\hat\imath\cdot\hat\imath=-1 \lt 0
+	&&\Longrightarrow \quad \hat k, \hat\jmath, \hat\imath\,\text{is left handed.}
+	\end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  Determine whether each of the following systems is right handed, left
+  handed or co-planar.
+</p>
+<ol class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <p>
+		    \(\vec u=\left\langle 2,1,3\right\rangle\),
+        \(\vec v=\left\langle 2,0,1\right\rangle\),
+        \(\vec w=\left\langle 4,-2,1\right\rangle\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+        <button class="toggle has-sol" data-toggle="SolX2a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+      <p>
+        Left-handed
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+      <p>
+        \(\vec u\times\vec v\cdot\vec w=
+        \begin{vmatrix}
+        2 & 1 & 3 \\
+        2 & 0 & 1 \\
+        4 & -2 & 1
+        \end{vmatrix}
+        =-6\qquad\)
+        Therefore, left-handed
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+		    \(\vec a=\left\langle 4,1,-2\right\rangle\),
+        \(\vec b=\left\langle 2,3,0\right\rangle\),
+        \(\vec c=\left\langle -1,3,2\right\rangle\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+        <button class="toggle has-sol" data-toggle="SolX2b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+      <p>
+        Right-handed
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+      <p>
+        \(\vec a\times\vec b\cdot\vec c=
+      \begin{vmatrix}
+      4 & 1 & -2 \\
+      2 & 3 & 0 \\
+      -1 & 3 & 2
+      \end{vmatrix}
+      =2\qquad\)
+      Therefore, right-handed
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+  		  \(\vec p=\left\langle -3,2,4\right\rangle\),
+        \(\vec q=\left\langle 2,1,-3\right\rangle\),
+        \(\vec r=\left\langle 1,4,-2\right\rangle\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2c"></button>
+        <button class="toggle has-sol" data-toggle="SolX2c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+      <p>
+        Co-planar
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+      <p>
+        \(\vec p\times\vec q\cdot\vec r=
+        \begin{vmatrix}
+        -3 & 2 & 4 \\
+        2 & 1 & -3 \\
+        1 & 4 & -2
+        \end{vmatrix}
+        =0\qquad\)
+        Therefore, co-planar
+      </p>
+    </div>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

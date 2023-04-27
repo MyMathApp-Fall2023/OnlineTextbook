@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Converting &amp; Mixing, Rectangular &amp; Spherical Coordinates | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Sph-Appl.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DCurv-Grid.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Integrating in Spherical Coordinates</h2>
+
+
+      
+      <h2>4. Converting &amp; Mixing, Rectangular &amp; Spherical Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Sometimes it is useful to use spherical coordinates instead of rectangular
+  coordinates when computing an integral. Other times it is best to use
+  rectangular coordinates for one part of an integral and spherical
+  coordinates for another part.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Converting Rectangular to Spherical Coordinates</h3>
+<p>
+  Sometimes by converting to spherical coordinates,
+  we can simplify the integral greatly.
+</p>
+
+<div class="column">
+  <div>
+    <p class="example" data-number="1">
+      Use spherical coordinates to find the mass of the ice cream cone
+      between the cone \(z=\sqrt{x^2+y^2}\) and the hemisphere
+      \(z=\sqrt{50-x^2-y^2}\) if the mass density is \(\delta=z(x^2+y^2)\).
+    </p>
+    <p class="remark">
+      This problem was done in cylindrical coordinates in an exercise on a
+      <a href="Cyl-Int.html#ex_icecream_cyl" title="Return using the Back button.">
+      previous page</a>. Notice how much easier the spherical computation is.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/cylint-excercise.jpg" alt="cylint-excercise">
+  </div>
+</div>
+<p class="sol">
+  Computing the mass of a region requires integration of the density function
+  over the region:
+  \[
+  M=\iiint \delta\,dV=\iiint z(x^2+y^2)\,dV
+  \]
+  The density and volume element in spherical coordinates are:
+  \[\begin{aligned}
+  \delta&=z(x^2+y^2)=(\rho\cos\phi)(\rho^2\sin^2\phi)=\rho^3\cos\phi\sin^2\phi \\
+  dV&=\rho^2\sin^\phi\,d\rho\,d\phi\,d\theta
+  \end{aligned}\]
+  The cone is:
+  \[
+  z=\sqrt{x^2+y^2} \quad \Rightarrow \quad
+  \rho\cos\phi=\rho\sin\phi \quad \Rightarrow \quad
+  \tan\phi=1 \quad \Rightarrow \quad
+  \phi=\dfrac{\pi}{4}
+  \]
+  The hemisphere is
+  \[
+  z=\sqrt{50-x^2-y^2} \quad \Rightarrow \quad
+  x^2+y^2+z^2=50
+  \quad \Rightarrow \quad
+  \rho=\sqrt{50}
+  \]
+  So the mass is:
+  \[\begin{aligned}
+  M&=\int_0^{2\pi}\int_0^{\pi/4}\int_0^{\sqrt{50}}
+  (\rho^3\cos\phi\sin^2\phi)\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  &=\int_0^{2\pi}\int_0^{\pi/4}\int_0^{\sqrt{50}}
+  \rho^5\cos\phi\sin^3\phi\,d\rho\,d\phi\,d\theta \\
+  &=2\pi
+  \left[\dfrac{\sin^4\phi}{4}\right]_0^{\pi/4}
+  \left[\dfrac{\rho^6}{6}\right]_0^{\sqrt{50}}
+  =2\pi\dfrac{1}{4}\left(\dfrac{1}{\sqrt{2}}\right)^4\dfrac{\sqrt{50}^{\,6}}{6}\\
+  &=2\pi\dfrac{1}{4}\dfrac{1}{4}\dfrac{50^3}{6}
+  =\dfrac{5^6}{6}\pi
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the volume of the ice cream cone in the previous problem.
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(V=2\pi\left(1-\dfrac{1}{\sqrt{2}}\right)\dfrac{\sqrt{50}^3}{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    This is the same computation, just leaving out the density:
+    \[\begin{aligned}
+    V&=\iiint\limits_R 1\,dV
+    =\int_0^{2\pi}\int_0^{\pi/4}\int_0^{\sqrt{50}}
+    \rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+    &=2\pi\left[-\cos\phi\dfrac{}{}\right]_0^{\pi/4}
+    \left[\dfrac{\rho^3}{3}\right]_0^{\sqrt{50}}
+    =2\pi\left(1-\dfrac{1}{\sqrt{2}}\right)\dfrac{\sqrt{50}^3}{3}
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Mixing Rectangular and Spherical Coordinates</h3>
+
+<p>
+  Sometimes one integral should be done in
+  rectangular coordinates and another should be done in spherical coordinates,
+  such as in the example below.
+</p>
+
+<div class="column">
+  <p class="example" data-number="3">
+    Consider the hemisphere \(0 \le z \le \sqrt{64-x^2-y^2}\) that has a
+    rectangular box cut out of it with dimensions of \(-3 \le x \le 3\) and
+    \(-3 \le y \le 3\) and \(0 \le z \le 3\). Find the average value of the
+    density of the region between the rectangular box and the sphere if the
+    density is given by \(\delta=z\).
+  </p>
+  <div class="center">
+    <img src="graphics/ex_boxinsphere.jpg" alt="ex_boxinsphere">
+  </div>
+</div>
+<p class="sol">
+  We divide the solution into several steps:
+</p>
+<ol>
+  <li>
+    Find the volume and mass of the hemisphere (with no box cut out).
+  </li>
+  <li>
+    Find the volume and mass of the box that is cut out.
+  </li>
+  <li>
+    Subtract the volume of the box from the volume of the hemisphere to find
+    the volume of the 3D region between them.
+  </li>
+  <li>
+    Subtract the mass of the box from the mass of the hemisphere to find the
+    mass of the 3D region between them.
+  </li>
+  <li>
+    Divide the mass of the region by the volume of the region to get the
+    average density.
+  </li>
+</ol>
+<p> <strong>Step 1:</strong> &emsp;
+  First, we use geometry to find the volume of the sphere and use spherical
+  coordinates to find the mass of the sphere.
+  \[
+  V_\text{hemisphere}
+  =\dfrac{1}{2}\left(\dfrac{4}{3}\pi r^3\right)
+  =\dfrac{2}{3}\pi(8)^3
+  =\dfrac{1024}{3}\pi
+  \]
+  The density is \(\delta=z=\rho\cos\phi\). So the mass of the sphere is:
+  \[\begin{aligned}
+  M_\text{hemisphere}
+  &=\iiint \delta\,dV
+  =\int_0^{2\pi}\int_0^{\pi/2}\int_0^8
+  (\rho\cos\phi)\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  &=2\pi\int_0^{\pi/2} \sin\phi\cos\phi\,d\phi\int_0^8\rho^3\,d\rho \\
+  &=2\pi\left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}
+  \left[\dfrac{\rho^4}{4}\right]_0^8
+  =2\pi\left(\dfrac{1}{2}\right)\dfrac{8^4}{4}
+  =1024\pi
+  \end{aligned}\]
+</p>
+<p> <strong>Step 2:</strong> &emsp;
+  Using rectangular coordinates, we can easily find the volume of the box:
+    \[
+    V_\text{box}=6\cdot6\cdot3=108
+    \]
+  And the mass of the box is
+    \[\begin{aligned}
+    M_\text{box}
+    &=\iiint \delta\,dV=\int_{-3}^3\int_{-3}^3\int_0^3 z\,dz\,dy\,dx \\
+    &=36\left[\dfrac{z^2}{2}\right]_0^3
+    =162
+    \end{aligned}\]
+</p>
+<p> <strong>Step 3:</strong> &emsp;
+  Next we subtract the volume of the box from the volume of the sphere:
+    \[
+    V_\text{region}=V_\text{hemisphere}-V_\text{box}
+    =\dfrac{1024}{3}\pi-108\approx964.3
+    \]
+</p>
+<p> <strong>Step 4:</strong> &emsp;
+  Next we subtract the mass of the box from the mass of the hemisphere:
+    \[
+    M_\text{region}=M_\text{hemisphere}-M_\text{box}
+    =1024\pi-162\approx3055.0
+    \]
+</p>
+<p> <strong>Step 5:</strong> &emsp;
+  Finally, we divide the total mass of the region by the total volume of the region:
+    \[
+    \delta_\text{ave}=\dfrac{M_\text{region}}{V_\text{region}}
+    =\dfrac{1024\pi-162}{\dfrac{1024}{3}\pi-108}\approx3.168
+    \]
+</p>
+<p class="check">
+  The density \(\delta=z\) ranges from \(0\) to \(8\). So
+  \(\delta_\text{ave}\approx3.168\) is within this range.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

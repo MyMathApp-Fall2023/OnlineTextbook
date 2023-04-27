@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NoVecPot.html" title="Previous">&lArr;</a></li>
+      <li><a href="../../Part III - Integrals/IteratedInt/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--The Del Operator-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="DelOperator.html">a. The Del Operator</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DelOperator.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Compute the gradient of each scalar field.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f=xyz\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX1"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX1"></button>
+    	<button class="toggle has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX1">
+    <p>
+      \[
+      \vec\nabla f
+      =\left\langle \partial_x f,\partial_y f,\partial_z f\right\rangle
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(\vec\nabla f
+      =\left\langle yz,xz,xy\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      \[\begin {aligned}
+      \vec\nabla f
+      &=\left\langle \partial_x(xyz),\partial_y(xyz),\partial_z(xyz)\right\rangle \\
+      &=\left\langle yz,xz,xy\right\rangle \\
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f=x^2y^3z^4\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(\vec\nabla f
+      =\left\langle 2xy^3z^4,3x^2y^2z^4,4x^2y^3z^3\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      \[\begin {aligned}
+      \vec\nabla f
+      &=\left\langle \partial_x(x^2y^3z^4),\partial_y(x^2y^3z^4),\partial_z(x^2y^3z^4)\right\rangle \\
+      &=\left\langle 2xy^3z^4,3x^2y^2z^4,4x^2y^3z^3\right\rangle \\
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f=x^2+y^2+z^2\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \(\vec\nabla f
+      =\left\langle 2x,2y,2z\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      \[\begin {aligned}
+      \vec\nabla f
+      &=\left\langle \partial_x(x^2+y^2+z^2),
+                     \partial_y(x^2+y^2+z^2),
+                     \partial_z(x^2+y^2+z^2)\right\rangle \\
+      &=\left\langle 2x,2y,2z\right\rangle \\
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f=z\sin x\cos y\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX4"></button>
+    	<button class="toggle has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(\vec\nabla f
+      =\left\langle z\cos x\cos y,-z\sin x\sin y,\sin x\cos y\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+      \[\begin {aligned}
+      \vec\nabla f
+      &=\left\langle \partial_x(z\sin x\cos y),
+                     \partial_y(z\sin x\cos y),
+                     \partial_z(z\sin x\cos y)\right\rangle \\
+      &=\left\langle z\cos x\cos y,-z\sin x\sin y,\sin x\cos y\right\rangle \\
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<!--The Divergence Operator-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="DivAlg.html">b. The Divergence Operator</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DivAlg.html">1</a></div>
+      
+        <div><a href="DivGeom.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Compute the divergence of each vector field.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle xy,yz,zx\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX5"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX5"></button>
+    	<button class="toggle has-sol" data-toggle="SolX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX5">
+    <p>
+      \[
+      \vec\nabla\cdot\vec F
+      =\partial_x F_1+\partial_y F_2+\partial_z F_3
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+      \(\vec\nabla\cdot\vec F=y+z+x\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(xy)+\partial_y(yz)+\partial_z(zx) \\
+      &=y+z+x
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle yz,xz,xy\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+      \(\vec\nabla\cdot\vec F=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(yz)+\partial_y(xz)+\partial_z(xy) \\
+      &=0+0+0=0
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F
+      =\left\langle \dfrac{1}{2}z^2x,\dfrac{1}{2}x^2y,\dfrac{1}{2}y^2z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX7"></button>
+    	<button class="toggle has-sol" data-toggle="SolX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  	<p>
+      \(\vec\nabla\cdot\vec F
+      =\dfrac{1}{2}(x^2+y^2+z^2)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\dfrac{\partial}{\partial x}\left(\dfrac{1}{2}z^2x\right)
+       +\dfrac{\partial}{\partial y}\left(\dfrac{1}{2}x^2y\right)
+       +\dfrac{\partial}{\partial z}\left(\dfrac{1}{2}y^2z\right) \\
+      &=\dfrac{1}{2}(z^2+x^2+y^2)
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle x\cos z,y\cos z,\sin z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX8"></button>
+    	<button class="toggle has-sol" data-toggle="SolX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+      \(\vec\nabla\cdot\vec F=3\cos z\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(x\cos z)+\partial_y(y\cos z)+\partial_z(\sin z) \\
+      &=\cos z+\cos z+\cos z=3\cos z
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F
+      =\left\langle z\cos x\cos y,-z\sin x\sin y,
+                    \sin x\cos y\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+      \(\vec\nabla\cdot\vec F=-2z\sin x\cos y\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(z\cos x\cos y)
+       +\partial_y(-z\sin x\sin y) \\
+      &\quad+\partial_z(\sin x\cos y) \\
+      &=-z\sin x\cos y-z\sin x\cos y+0 \\
+      &=-2z\sin x\cos y
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle x^3,y^3,z^3\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(\vec\nabla\cdot\vec F=3x^2+3y^2+3z^2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(x^3)+\partial_y(y^3)+\partial_z(z^3) \\
+      &=3x^2+3y^2+3z^2
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle e^x,e^y,e^z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX11"></button>
+    	<button class="toggle has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+  	<p>
+      \(\vec\nabla\cdot\vec F=e^x+e^y+e^z\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(e^x)+\partial_y(e^y)+\partial_z(e^z) \\
+      &=e^x+e^y+e^z
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle
+      \ln\left(\dfrac{x}{yz}\right),
+      \ln\left(\dfrac{y}{xz}\right),
+      \ln\left(\dfrac{z}{xy}\right)\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has-sol" data-toggle="SolX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+      \(\vec\nabla\cdot\vec F=\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p class="meth" data-number="1">
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x\ln\left(\dfrac{x}{yz}\right)
+       +\partial_y\ln\left(\dfrac{y}{xz}\right)
+       +\partial_z\ln\left(\dfrac{z}{xy}\right) \\
+      &=\dfrac{yz}{x}\dfrac{1}{yz}
+       +\dfrac{xz}{y}\dfrac{1}{xz}
+       +\dfrac{xy}{z}\dfrac{1}{xy} \\
+      &=\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}
+      \end{aligned}\]
+  	</p>
+  	<p class="meth" data-number="2">
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(\ln x-\ln y-\ln z)
+       +\partial_y(\ln y-\ln x-\ln z) \\
+      &\quad+\partial_z(\ln z-\ln x-\ln y) \\
+      &=\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute the divergence of the gradient of
+      \(f=x^2y^3z^4\),
+      i.e. \(\vec\nabla\cdot\vec\nabla f\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has-sol" data-toggle="SolX13"></button>
+    	<button class="toggle has-rem" data-toggle="RemX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+      \(\vec\nabla\cdot\vec\nabla f=2y^3z^4+6x^2yz^4+12x^2y^3z^2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+      The gradient of \(f\) is:
+      \[
+      \vec\nabla f=\left\langle
+      2xy^3z^4,
+      3x^2y^2z^4,
+      4x^2y^3z^3\right\rangle
+      \]
+      Then the divergence of the gradient is:
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec\nabla f
+      &=\partial_x(2xy^3z^4)+\partial_y(3x^2y^2z^4)+\partial_z(4x^2y^3z^3) \\
+      &=2y^3z^4+6x^2yz^4+12x^2y^3z^2
+      \end{aligned}\]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX13">
+  	<p>
+      The divergence of the gradient is an operation called the
+      <span class="hl">Laplacian</span>,
+      \(\nabla^2=\vec\nabla\cdot\vec\nabla\), which we will study on a
+      <a href="OpDivGrad.html" title="Return using the Back button.">
+      later page</a>. It can be computed directly using the formula:
+      \[
+      \nabla^2f=\vec\nabla\cdot\vec\nabla f
+      =\dfrac{d^2f}{dx^2}+\dfrac{d^2f}{dy^2}+\dfrac{d^2f}{dz^2}
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute the divergence of the gradient of
+      \(f=xyz\),
+      i.e. \(\vec\nabla\cdot\vec\nabla f\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX14"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX14"></button>
+    	<button class="toggle has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX14">
+  	<p>
+      The divergence of the gradient is an operation called the
+      <span class="hl">Laplacian</span>,
+      \(\nabla^2=\vec\nabla\cdot\vec\nabla\), which we will study on a
+      <a href="OpDivGrad.html" title="Return using the Back button.">
+      later page</a>. It can be computed directly using the formula:
+      \[\begin{aligned}
+      \nabla^2f&=\vec\nabla\cdot\vec\nabla f \\
+      &=\dfrac{d^2f}{dx^2}+\dfrac{d^2f}{dy^2}+\dfrac{d^2f}{dz^2} \\
+      &=\partial_x^2f+\partial_y^2f+\partial_z^2f
+      \end{aligned}\]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+  	<p>
+      \(\vec\nabla\cdot\vec\nabla(xyz)=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+  	<p>
+      The Laplacian is:
+      \[\begin{aligned}
+      \nabla^2f
+      &=\vec\nabla\cdot\vec\nabla f \\
+      &=\partial_x^2f+\partial_y^2f+\partial_z^2f
+      \end{aligned}\]
+      We compute the Laplacian directly:
+      \[\begin{aligned}
+      \nabla^2(xyz)
+      &=\vec\nabla\cdot\vec\nabla(xyz) \\
+      &=\partial_x^2(xyz)+\partial_y^2(xyz)+\partial_z^2(xyz) \\
+      &=0+0+0=0
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<!--The Curl Operator-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="CurlAlg.html">c. The Curl Operator</a></h3>
+    <div class="pgs">
+      
+        <div><a href="CurlAlg.html">1</a></div>
+      
+        <div><a href="CurlGeom.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Compute the curl of each vector field.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle xy,yz,zx\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX15"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+    <p>
+      \[
+      \vec\nabla\times\vec F
+      =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      F_1        & F_2        & F_3
+      \end{vmatrix}
+      \]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      \(\vec\nabla\times\vec F
+      =\left\langle -y,-z,-x\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      xy         & yz         & zx
+      \end{vmatrix} \\
+      &=\hat\imath(0-y)-\hat\jmath(z-0)+\hat k(0-x) \\
+      &=\left\langle -y,-z,-x\right\rangle
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle yz,xz,xy\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX16"></button>
+    	<button class="toggle has-sol" data-toggle="SolX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+  	<p>
+      \(\vec\nabla\times\vec F
+      =\vec0\equiv\left\langle 0,0,0\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      yz         & xz         & xy
+      \end{vmatrix} \\
+      &=\hat\imath(x-x)-\hat\jmath(y-y)+\hat k(z-z) \\
+      &=\left\langle 0,0,0\right\rangle=\vec0
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F
+      =\left\langle \dfrac{1}{2}z^2x,\dfrac{1}{2}x^2y,
+                    \dfrac{1}{2}y^2z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX17"></button>
+    	<button class="toggle has-sol" data-toggle="SolX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+  	<p>
+      \(\vec\nabla\times\vec F
+      =\left\langle yz,xz,xy\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      \dfrac{1}{2}z^2x & \dfrac{1}{2}x^2y & \dfrac{1}{2}y^2z
+      \end{vmatrix} \\
+      &=\hat\imath(yz-0)-\hat\jmath(0-zx)+\hat k(xy-0) \\
+      &=\left\langle yz,xz,xy\right\rangle
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle x\cos z,y\cos z,\sin z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX18"></button>
+    	<button class="toggle has-sol" data-toggle="SolX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+  	<p>
+      \(\vec\nabla\times\vec F
+      =\left\langle y\sin z,-x\sin z,0\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      x\cos z    & y\cos z    & \sin z
+      \end{vmatrix} \\
+      &=\hat\imath(y\sin z)-\hat\jmath(0--x\sin z)+\hat k(0-0) \\
+      &=\left\langle y\sin z,-x\sin z,0\right\rangle
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F
+      =\left\langle z\cos x\cos y,-z\sin x\sin y,
+                    \sin x\cos y\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX19"></button>
+    	<button class="toggle has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+  	<p>
+      \(\vec\nabla\times\vec F
+      =\vec0\equiv\left\langle 0,0,0\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      z\cos x\cos y & -z\sin x\sin y & \sin x\cos y
+      \end{vmatrix} \\
+      &=\hat\imath(-\sin x\sin y--\sin x\sin y) \\
+      &\quad-\hat\jmath(\cos x\cos y-\cos x\cos y) \\
+      &\quad+\hat k(-z\cos x\sin y--z\cos x\sin y) \\
+      &=\left\langle 0,0,0\right\rangle=\vec0
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle -y,x,0\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX20"></button>
+    	<button class="toggle has-sol" data-toggle="SolX20"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+  	<p>
+      \(\vec\nabla\times\vec F
+      =\left\langle 0,0,2\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      -y         & x          & 0
+      \end{vmatrix} \\
+      &=\hat\imath(0-0)-\hat\jmath(0-0)+\hat k(1--1) \\
+      &=\left\langle 0,0,2\right\rangle
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle e^{yz},e^{xz},e^{xy}\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX21"></button>
+    	<button class="toggle has-sol" data-toggle="SolX21"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX21">
+  	<p>
+      \(\vec\nabla\times\vec F
+     =\left\langle x(e^{xy}-e^{xz}),
+                   y(e^{yz}-e^{xy}),
+                   z(e^{xz}-e^{yz})\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX21">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      e^{yz}     & e^{xz}     & e^{xy}
+      \end{vmatrix} \\
+      &=\hat\imath(xe^{xy}-xe^{xz})
+       -\hat\jmath(ye^{xy}-ye^{yz})
+       +\hat k(ze^{xz}-ze^{yz}) \\
+      &=\left\langle x(e^{xy}-e^{xz}),
+                     y(e^{yz}-e^{xy}),
+                     z(e^{xz}-e^{yz})\right\rangle
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle
+      \ln\left(\dfrac{x}{yz}\right),
+      \ln\left(\dfrac{y}{xz}\right),
+      \ln\left(\dfrac{z}{xy}\right)\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX22"></button>
+    	<button class="toggle has-sol" data-toggle="SolX22"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX22">
+  	<p>
+      \(\vec\nabla\times\vec F=
+      =\left\langle \dfrac{1}{z}-\,\dfrac{1}{y},
+                    \dfrac{1}{x}-\,\dfrac{1}{z},
+                    \dfrac{1}{y}-\,\dfrac{1}{x}\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX22">
+  	<p>
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      \ln x-\ln y-\ln z & \ln y-\ln x-\ln z & \ln z-\ln x-\ln y
+      \end{vmatrix} \\
+      &=\hat\imath\left(-\,\dfrac{1}{y}--\,\dfrac{1}{z}\right)
+       -\hat\jmath\left(-\,\dfrac{1}{x}--\,\dfrac{1}{z}\right)
+       +\hat k    \left(-\,\dfrac{1}{x}--\,\dfrac{1}{y}\right) \\
+      &=\left\langle \dfrac{1}{z}-\,\dfrac{1}{y},
+                     \dfrac{1}{x}-\,\dfrac{1}{z},
+                     \dfrac{1}{y}-\,\dfrac{1}{x}\right\rangle
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute the curl of the gradient of
+      \(f=x^2y^3z^4\),
+      i.e. \(\vec\nabla\times\vec\nabla f\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX23"></button>
+    	<button class="toggle has-sol" data-toggle="SolX23"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX23">
+  	<p>
+      \(\vec\nabla\times\vec\nabla(x^2y^3z^4)=\vec0\equiv\left\langle 0,0,0\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX23">
+  	<p>
+      The gradient of \(f\) is:
+      \[
+      \vec\nabla f=\left\langle
+      2xy^3z^4,
+      3x^2y^2z^4,
+      4x^2y^3z^3\right\rangle
+      \]
+      Then the curl of the gradient is:
+      \[\begin{aligned}
+      \vec\nabla\times\vec\nabla f
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      2xy^3z^4   & 3x^2y^2z^4 & 4x^2y^3z^3
+      \end{vmatrix} \\
+      &=\hat\imath(12x^2y^2z^3-12x^2y^2z^3) \\
+      &\quad-\hat\jmath(8xy^3z^3-8xy^3z^3) \\
+      &\quad+\hat k    (6xy^2z^4-6xy^2z^4) \\
+      &=\left\langle 0,0,0\right\rangle=\vec0
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute the curl of the gradient of
+      \(f=xyz\),
+      i.e. \(\vec\nabla\times\vec\nabla f\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX24"></button>
+    	<button class="toggle has-sol" data-toggle="SolX24"></button>
+    	<button class="toggle has-rem" data-toggle="RemX24"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX24">
+  	<p>
+      \(\vec\nabla\times\vec\nabla(xyz)=\vec0\equiv\left\langle 0,0,0\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX24">
+  	<p>
+      The gradient of \(f\) is:
+      \[
+      \vec\nabla f=\left\langle
+      yz,
+      xz,
+      xy\right\rangle
+      \]
+      Then the curl of the gradient is:
+      \[\begin{aligned}
+      \vec\nabla\times\vec\nabla f
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      yz         & xz         & xy
+      \end{vmatrix} \\
+      &=\hat\imath(x-x)-\hat\jmath(y-y)+\hat k(z-z) \\
+      &=\left\langle 0,0,0\right\rangle=\vec0
+      \end{aligned}\]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX24">
+  	<p>
+      It is no coincidence that the curl of the gradient is \(\vec0\) in
+      both this and the previous problem. We will see on a
+      <a href="OpCurlGrad.html" title="Return using the Back button.">
+      later page</a> that \(\vec\nabla\times\vec\nabla f=\vec0\) for
+      any function \(f\).
+  	</p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute the divergence of the curl of
+      \(\vec F=\left\langle xy,yz,zx\right\rangle\),
+      i.e. \(\vec\nabla\cdot\vec\nabla\times\vec F\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX25"></button>
+    	<button class="toggle has-sol" data-toggle="SolX25"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX25">
+  	<p>
+      \(\vec\nabla\cdot\vec\nabla\times\left\langle xy,yz,zx\right\rangle
+      =0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX25">
+  	<p>
+      The curl of \(\vec F\) is:
+      \[
+      \vec\nabla\times\vec F
+      =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      xy         & yz         & zx
+      \end{vmatrix}
+      =\left\langle -y,-z,-x\right\rangle
+      \]
+      Then the divergence of the curl is:
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec\nabla\times\vec F
+      &=\partial_x(-y)+\partial_y(-z)+\partial_z(-x) \\
+      &=0+0+0=0
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute the divergence of the curl of
+      \(\vec F=\left\langle e^{yz},e^{xz},e^{xy}\right\rangle\),
+      i.e. \(\vec\nabla\cdot\vec\nabla\times\vec F\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX26"></button>
+    	<button class="toggle has-sol" data-toggle="SolX26"></button>
+    	<button class="toggle has-rem" data-toggle="RemX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+  	<p>
+      \(\vec\nabla\cdot\vec\nabla\times\vec F=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+  	<p>
+      The curl of \(\vec F\) is:
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      e^{yz}     & e^{xz}     & e^{xy}
+      \end{vmatrix} \\
+      &=\left\langle x(e^{xy}-e^{xz}),
+                     y(e^{yz}-e^{xy}),
+                     z(e^{xz}-e^{yz})\right\rangle
+      \end{aligned}\]
+      Then the divergence of the curl is:
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec\nabla\times\vec F
+      &=\partial_x[x(e^{xy}-e^{xz})] \\
+      &\quad+\partial_y[y(e^{yz}-e^{xy})] \\
+      &\quad+\partial_z[z(e^{xz}-e^{yz})] \\
+      &=[(e^{xy}-e^{xz})+x(ye^{xy}-ze^{xz})] \\
+      &\quad+[(e^{yz}-e^{xy})+y(ze^{yz}-xe^{xy})] \\
+      &\quad+[(e^{xz}-e^{yz})+z(xe^{xz}-ye^{yz})] \\
+      &=0
+      \end{aligned}\]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX26">
+  	<p>
+      It is no coincidence that the divergence of the curl is \(0\) in
+      both this and the previous problem. We will see on a
+      <a href="OpDivCurl.html" title="Return using the Back button.">
+      later page</a> that \(\vec\nabla\cdot\vec\nabla\times\vec F=0\) for
+      any vector field \(\vec F\).
+  	</p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute the curl of the curl of
+      \(\vec F=\left\langle xy,yz,zx\right\rangle\),
+      i.e. \(\vec\nabla\times\vec\nabla\times\vec F\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX27"></button>
+    	<button class="toggle has-sol" data-toggle="SolX27"></button>
+    	<button class="toggle has-rem" data-toggle="RemX27"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX27">
+  	<p>
+      \(\vec\nabla\times\vec\nabla\times\left\langle xy,yz,zx\right\rangle
+      =\left\langle 1,1,1\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX27">
+  	<p>
+      The curl of \(\vec F\) is:
+      \[
+      \vec\nabla\times\vec F
+      =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      xy         & yz         & zx
+      \end{vmatrix}
+      =\left\langle -y,-z,-x\right\rangle
+      \]
+      Then the curl of the curl is:
+      \[\begin{aligned}
+      \vec\nabla\times\vec\nabla\times\vec F
+      =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      -y         & -z         & -x
+      \end{vmatrix}
+      =\left\langle 1,1,1\right\rangle
+      \end{aligned}\]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX27">
+  	<p>
+      Although there is an identity for the curl of the curl which we will
+      learn on a
+      <a href="OpCurlCurl.html" title="Return using the Back button.">
+      later page</a>, it is not very useful in computations.
+  	</p>
+  </div>
+</li>
+
+<!--Differential Identities-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="DiffIdent1.html">d. Differential Identities</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DiffIdent1.html">1</a></div>
+      
+        <div><a href="DiffIdent2.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <p>
+    If \(f=2x\cos z\) and \(g=2y\sin z\), compute \(\vec\nabla(fg)\) in two ways.
+  </p>
+  <ol class="list-outside" type="a">
+  	<li>
+  		<div class="dotfillex">
+  			<p>
+  				Find \(f\vec\nabla g\) and \(g\vec\nabla f\) and add them
+          to get \(\vec\nabla(fg)\).
+  			</p>
+  			<p>
+  				<button class="toggle has-ans" data-toggle="AnsX28a"></button>
+  				<button class="toggle has-sol" data-toggle="SolX28a"></button>
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-ans" data-toggle="AnsX28a">
+  			<p>
+  				\(\begin{aligned}
+          \vec\nabla(fg)
+          &=\left\langle 2y\sin(2z),2x\sin(2z),4xy\cos(2z)\right\rangle \\
+          &=\left\langle 4y\sin z\cos z,4x\sin z\cos z,4xy\cos^2 z-4xy\sin^2 z\right\rangle
+          \end{aligned}\)
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-sol" data-toggle="SolX28a">
+  			<p>
+  				\[\begin{aligned}
+          f\vec\nabla g
+          &=2x\cos z\left\langle 0,2\sin z,2y\cos z\right\rangle \\
+          &=\left\langle 0,4x\sin z\cos z,4xy\cos^2 z\right\rangle \\[6pt]
+          g\vec\nabla f
+          &=2y \sin z\left\langle 2\cos z,0,-2x\sin z\right\rangle \\
+          &=\left\langle 4y\sin z\cos z,0,-4xy\sin^2 z\right\rangle \\[6pt]
+          \vec\nabla(fg)
+          &=f\vec\nabla g+g\vec\nabla f \\
+          &=\left\langle 4y\sin z\cos z,4x\sin z\cos z,4xy\cos^2 z-4xy\sin^2 z\right\rangle
+          \end{aligned}\]
+  			</p>
+  		</div>
+  	</li>
+  	<li>
+  		<div class="dotfillex">
+  			<p>
+  				Find \(fg\) and then \(\vec\nabla(fg)\).
+  			</p>
+  			<p>
+  				<button class="toggle has-ans" data-toggle="AnsX28b"></button>
+  				<button class="toggle has-sol" data-toggle="SolX28b"></button>
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-ans" data-toggle="AnsX28b">
+  			<p>
+  				\(\begin{aligned}
+          \vec\nabla(fg)
+          &=\left\langle 2y\sin(2z),2x\sin(2z),4xy\cos(2z)\right\rangle \\
+          &=\left\langle 4y\sin z\cos z,4x\sin z\cos z,4xy\cos^2 z-4xy\sin^2 z\right\rangle
+          \end{aligned}\)
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-sol" data-toggle="SolX28b">
+  			<p>
+  				\[\begin{aligned}
+          fg&=4xy\cos z\sin z=2xy\sin(2z) \\[6pt]
+          \vec\nabla(fg)
+          &=\left\langle 2y\sin(2z),2x\sin(2z),4xy\cos(2z)\right\rangle \\
+          &=\left\langle 4y\sin z\cos z,4x\sin z\cos z,4xy\cos^2 z-4xy\sin^2 z\right\rangle
+          \end{aligned}\]
+  			</p>
+  		</div>
+  	</li>
+  </ol>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      At a point \(P\), we know:
+      \[\begin{aligned}
+      f&=3\qquad&
+      \vec\nabla f&=\left\langle -2,1,3\right\rangle \\
+      g&=2\qquad&
+      \vec\nabla g&=\left\langle 2,-1,4\right\rangle
+      \end{aligned}\]
+      Find \(\vec\nabla(fg)\) at \(P\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX29"></button>
+      <button class="toggle has-sol" data-toggle="SolX29"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX29">
+    <p>
+      \(\vec\nabla(fg)
+      =\left\langle 2,-1,18\right\rangle\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX29">
+    <p>
+      Using the formula, we have:
+      \[\begin{aligned}
+      \vec\nabla(fg)
+      &=f\vec\nabla g+g\vec\nabla f \\
+      &=3\left\langle 2,-1,4\right\rangle+2\left\langle -2,1,3\right\rangle \\
+      &=\left\langle 6,-3,12\right\rangle+\left\langle -4,2,6\right\rangle \\
+      &=\left\langle 2,-1,18\right\rangle
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <p>
+    If \(f=xyz\) and \(\vec G=\left\langle xz,yz,z^2\right\rangle\),
+    compute \(\vec\nabla\cdot (f\vec G)\) in two ways.
+  </p>
+  <ol class="list-outside" type="a">
+  	<li>
+  		<div class="dotfillex">
+  			<p>
+  				Find \((\vec\nabla f)\cdot\vec G\) and \(f\vec\nabla\cdot\vec G\)
+          and add them to get \(\vec\nabla\cdot(f\vec G)\).
+  			</p>
+  			<p>
+  				<button class="toggle has-ans" data-toggle="AnsX30a"></button>
+  				<button class="toggle has-sol" data-toggle="SolX30a"></button>
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-ans" data-toggle="AnsX30a">
+  			<p>
+  				\(\vec\nabla\cdot(f\vec G)
+          =7xyz^2\)
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-sol" data-toggle="SolX30a">
+  			<p>
+  				\[\begin{aligned}
+          \vec\nabla f
+          &=\left\langle yz,xz,xy\right\rangle \\
+          (\vec\nabla f)\cdot\vec G
+          &=xyz^2+xyz^2+xyz^2=3xyz^2 \\[6pt]
+          \vec\nabla\cdot\vec G
+          &=z+z+2z=4z \\
+          f\vec\nabla\cdot\vec G
+          &=4xyz^2 \\[6pt]
+          \vec\nabla\cdot(f\vec G)
+          &=(\vec\nabla f)\cdot\vec G +f\vec\nabla\cdot\vec G \\
+          &=3xyz^2+4xyz^2=7xyz^2
+          \end{aligned}\]
+  			</p>
+  		</div>
+  	</li>
+  	<li>
+  		<div class="dotfillex">
+  			<p>
+  				Find \(f\vec G\) and then \(\vec\nabla\cdot(f\vec G)\).
+  			</p>
+  			<p>
+  				<button class="toggle has-ans" data-toggle="AnsX30b"></button>
+  				<button class="toggle has-sol" data-toggle="SolX30b"></button>
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-ans" data-toggle="AnsX30b">
+  			<p>
+  				\(\vec\nabla\cdot(f\vec G)
+          ==7xyz^2\)
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-sol" data-toggle="SolX30b">
+  			<p>
+  				\[\begin{aligned}
+          f\vec G
+          &=xyz\left\langle xz,yz,z^2\right\rangle \\
+          &=\left\langle x^2yz^2,xy^2z^2,xyz^3\right\rangle \\[6pt]
+          \vec\nabla\cdot(f\vec G)
+          &=2xyz^2+2xyz^2+3xyz^2=7xyz^2
+          \end{aligned}\]
+  			</p>
+  		</div>
+  	</li>
+  </ol>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      At a point \(P\), we know:
+      \[\begin{aligned}
+      \vec F&=\left\langle 4,-2,1\right\rangle\qquad&
+      \vec\nabla\times\vec F&=\left\langle 2,3,-2\right\rangle \\
+      \vec G&=\left\langle 1,-3,2\right\rangle\qquad&
+      \vec\nabla\times\vec G&=\left\langle -2,1,4\right\rangle
+      \end{aligned}\]
+      Find \(\vec\nabla\cdot(\vec F\times\vec G)\) at \(P\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX31"></button>
+      <button class="toggle has-sol" data-toggle="SolX31"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX31">
+    <p>
+      \(\vec\nabla\cdot(\vec F\times\vec G)
+      =-5\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX31">
+    <p>
+      Using the formula, we have:
+      \[\begin{aligned}
+      \vec\nabla\cdot(\vec F\times\vec G)
+      &=\vec\nabla\times\vec F\cdot\vec G-\vec F\cdot\vec\nabla\times\vec G \\
+      &=\left\langle 2,3,-2\right\rangle\cdot\left\langle 1,-3,2\right\rangle
+      -\left\langle 4,-2,1\right\rangle\cdot\left\langle -2,1,4\right\rangle \\
+      &=(2-9-4)-(-8-2+4)=-5
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <p>
+    If \(f=xyz\) and \(\vec G=\left\langle -yz,xz,z^2\right\rangle\),
+    compute \(\vec\nabla\times (f\vec G)\) in two ways.
+  </p>
+  <ol class="list-outside" type="a">
+  	<li>
+  		<div class="dotfillex">
+  			<p>
+  				Find \((\vec\nabla f)\times\vec G\) and \(f\vec\nabla\times\vec G\)
+          and add them to get \(\vec\nabla\times(f\vec G)\).
+  			</p>
+  			<p>
+  				<button class="toggle has-ans" data-toggle="AnsX32a"></button>
+  				<button class="toggle has-sol" data-toggle="SolX32a"></button>
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-ans" data-toggle="AnsX32a">
+  			<p>
+  				\(\vec\nabla\times(f\vec G)
+          =\left\langle xz^3-2x^2yz,-yz^3-2xy^2z,4xyz^2\right\rangle\)
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-sol" data-toggle="SolX32a">
+  			<p>
+  				\[\begin{aligned}
+          \vec\nabla f
+          &=\left\langle yz,xz,xy\right\rangle \\[6pt]
+          (\vec\nabla f)\times\vec G
+          &=\begin{vmatrix}
+          \hat\imath & \hat\jmath & \hat k   \\
+          yz         & xz         & xy \\
+          -yz        & xz         & z^2
+          \end{vmatrix} \\
+          &=\hat\imath(xz^3-x^2yz)-\hat\jmath(yz^3--xy^2z) \\
+          &\quad+\hat k(xyz^2--xyz^2) \\
+          &=\left\langle xz^3-x^2yz,-yz^3-xy^2z,2xyz^2\right\rangle \\[6pt]
+          \vec\nabla\times\vec G
+          &=\begin{vmatrix}
+          \hat\imath & \hat\jmath & \hat k   \\
+          \partial_x & \partial_y & \partial_z \\
+          -yz        & xz         & z^2
+          \end{vmatrix} \\
+          &=\hat\imath(0-x)-\hat\jmath(0--y)
+          +\hat k(z--z) \\
+          &=\left\langle -x,-y,2z\right\rangle \\[6pt]
+          f\vec\nabla\times\vec G
+          &=\left\langle -x^2yz,-xy^2z,2xyz^2\right\rangle \\[6pt]
+          \vec\nabla\times(f\vec G)
+          &=(\vec\nabla f)\times\vec G +f\vec\nabla\times\vec G \\
+          &=\left\langle xz^3-2x^2yz,-yz^3-2xy^2z,4xyz^2\right\rangle
+          \end{aligned}\]
+  			</p>
+  		</div>
+  	</li>
+  	<li>
+  		<div class="dotfillex">
+  			<p>
+  				Find \(f\vec G\) and then \(\vec\nabla\times(f\vec G)\).
+  			</p>
+  			<p>
+  				<button class="toggle has-ans" data-toggle="AnsX32b"></button>
+  				<button class="toggle has-sol" data-toggle="SolX32b"></button>
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-ans" data-toggle="AnsX32b">
+  			<p>
+  				\(\vec\nabla\times(f\vec G)
+          =\left\langle xz^3-2x^2yz,-yz^3-2xy^2z,4xyz^2\right\rangle\)
+  			</p>
+  		</div>
+  		<div class="toBeToggled drop-sol" data-toggle="SolX32b">
+  			<p>
+  				\[\begin{aligned}
+          f\vec G
+          &=\left\langle -xy^2z^2,x^2yz^2,xyz^3\right\rangle \\[6pt]
+          \vec\nabla\times(f\vec G)
+          &=\begin{vmatrix}
+          \hat\imath & \hat\jmath & \hat k   \\
+          \partial_x & \partial_y & \partial_z \\
+          -xy^2z^2   & x^2yz^2    & xyz^3
+          \end{vmatrix} \\
+          &=\hat\imath(xz^3-2x^2yz)-\hat\jmath(yz^3--2xy^2z)
+          +\hat k(2xyz^2--2xyz^2) \\
+          &=\left\langle xz^3-2x^2yz,-yz^3-2xy^2z,4xyz^2\right\rangle
+          \end{aligned}\]
+  			</p>
+  		</div>
+  	</li>
+  </ol>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      At a point \(P\), we know:
+      \[\begin{aligned}
+      f&=3\qquad&
+      \vec\nabla f&=\left\langle 3,4,5\right\rangle \\
+      \vec G&=\left\langle -3,2,4\right\rangle\qquad&
+      \vec\nabla\times\vec G&=\left\langle 2,-1,3\right\rangle
+      \end{aligned}\]
+      Find \(\vec\nabla\times(f\vec G)\) at \(P\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX33"></button>
+      <button class="toggle has-sol" data-toggle="SolX33"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX33">
+    <p>
+      \(\vec\nabla\times(f\vec G)
+      =\left\langle 12,-30,27\right\rangle\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX33">
+    <p>
+      \[\begin{aligned}
+      (\vec\nabla f)\times\vec G
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k   \\
+      3  & 4 & 5 \\
+      -3 & 2 & 4
+      \end{vmatrix} \\
+      &=\hat\imath(16-10)-\hat\jmath(12+15)+\hat k(6+12) \\
+      &=\left\langle 6,-27,18\right\rangle \\[6pt]
+      f\vec\nabla\times\vec G
+      &=3\left\langle 2,-1,3\right\rangle
+      =\left\langle 6,-3,9\right\rangle \\[6pt]
+      \vec\nabla\times(f\vec G)
+      &=(\vec\nabla f)\times\vec G +f\vec\nabla\times\vec G \\
+      &=\left\langle 12,-30,27\right\rangle
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      If \(f=\sin x\cos y\), compute the Laplacian \(\nabla^2f\) and
+      show it satisfies \(\nabla^2f=-2f\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX34"></button>
+      <button class="toggle has-sol" data-toggle="SolX34"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX34">
+    <p>
+      \(\nabla^2f=-2\sin x\cos y=-2f\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX34">
+    <p>
+      \[\begin{aligned}
+      \nabla^2f
+      &=\partial_x^2(\sin x\cos y)+\partial_y^2(\sin x\cos y) \\
+      &=\partial_x(\cos x\cos y)+\partial_y(-\sin x\sin y) \\
+      &=-\sin x\cos y-\sin x\cos y=-2\sin x\cos y=-2f \\
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      If \(f=x^2+y^2-2z^2\), compute the Laplacian \(\nabla^2f\) and
+      show it satisfies the Laplace equation \(\nabla^2f=0\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX35"></button>
+      <button class="toggle has-sol" data-toggle="SolX35"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX35">
+    <p>
+      \(\nabla^2f=0\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX35">
+    <p>
+      \[\begin{aligned}
+      \nabla^2f
+      &=\partial_x^2(x^2+y^2-2z^2)+\partial_y^2(x^2+y^2-2z^2)+\partial_z^2(x^2+y^2-2z^2) \\
+      &=\partial_x(2x)+\partial_y(2y)+\partial_z(-4z) \\
+      &=2+2-4=0 \\
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      If \(f=z\sin x\cos y\), compute the curl of the gradient of \(f\),
+      i.e. \(\vec\nabla\times\vec\nabla f\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX36"></button>
+      <button class="toggle has-sol" data-toggle="SolX36"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX36">
+    <p>
+      \(\vec\nabla\times\vec\nabla f=\vec0\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX36">
+    <p>
+      For any function:
+      \[
+      \vec\nabla\times\vec\nabla f=\vec0
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      If \(\vec F=\left\langle y\sin z,x\cos z,xy\right\rangle\), compute the
+      divergence of the curl of \(\vec F\), i.e.
+      \(\vec\nabla\cdot\vec\nabla\times\vec F\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX37"></button>
+      <button class="toggle has-sol" data-toggle="SolX37"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX37">
+    <p>
+      \(\vec\nabla\cdot\vec\nabla\times\vec F=0\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX37">
+    <p>
+      For any vector field:
+      \[
+      \vec\nabla\cdot\vec\nabla\times\vec F=0
+      \]
+    </p>
+  </div>
+</li>
+
+<!--Generalizing Antiderivatives-->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href="AntiDer.html">e. Generalizing Antiderivatives</a></h3>
+    <div class="pgs">
+      
+        <div><a href="AntiDer.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+	  <p>
+	    Verify that \(F=\cos^2 x\) and \(G=-\sin^2 x\) are both antiderivatives
+			of \(f=-2\sin x\cos x\). Why is this possible?
+	  </p>
+	  <p>
+	    <button class="toggle has-check" data-toggle="CkX38"></button>
+	  </p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX38">
+	  <p>
+			By chain rule:
+	    \[F'=2(\cos x)(-\sin x)=-2\sin x\cos x\]
+			Similarly:
+	    \[G'=-2(\sin x)(\cos x)=-2\sin x\cos x\]
+			This is possible because \(F\) and \(G\) differ by a constant:
+			\[\cos^2 x=-\sin^2 x +1\]
+	  </p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+	  <p>
+	    Verify that \(f=xy^2z^3\) is a scalar potential for
+			\(\vec F=\left\langle y^2z^3,2xyz^3,3xy^2z^2\right\rangle\)
+	  </p>
+	  <p>
+	    <button class="toggle has-check" data-toggle="CkX39"></button>
+	  </p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX39">
+	  <p>
+			The gradient of \(f=xy^2z^3\) is:
+	    \[
+			\vec\nabla f=\left\langle y^2z^3,2xyz^3,3xy^2z^2\right\rangle=\vec F
+			\]
+	  </p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+	  <p>
+	    Verify that \(f=z\sin x\cos y\) is a scalar potential for
+			\(\vec F=\left\langle z\cos x\cos y,-z\sin x\sin y,\sin x\cos y\right\rangle\)
+	  </p>
+	  <p>
+	    <button class="toggle has-check" data-toggle="CkX40"></button>
+	  </p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX40">
+	  <p>
+			The gradient of \(f=z\sin x\cos y\) is:
+	    \[
+			\vec\nabla f
+      =\left\langle z\cos x\cos y,-z\sin x\sin y,\sin x\cos y\right\rangle
+      =\vec F
+			\]
+	  </p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+	  <p>
+	    Verify that \(\vec A=\langle xy,yz,zx\rangle\) is
+			a vector potential for
+			\(\vec F=\left\langle -y,-z,-x\right\rangle\)
+	  </p>
+	  <p>
+	    <button class="toggle has-check" data-toggle="CkX41"></button>
+	  </p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX41">
+	  <p>
+			The curl of \(\vec A=\left\langle yz,xz,xy\right\rangle\) is:
+		  \[\begin{aligned}
+		  \vec\nabla\times\vec A
+		  &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      xy         & yz         & zx
+      \end{vmatrix} \\
+		  &=\left\langle 0-y,0-z,0-x\right\rangle=\vec F
+		  \end{aligned}\]
+	  </p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+	  <p>
+	    Verify that \(\vec A=\left\langle z\sin y,x\sin z,y\sin x\right\rangle\)
+      and \(\vec A=\left\langle z\sin y-yz\cos x,x\sin z-z\sin x,0\right\rangle\)
+      are both vector potentials for
+			\(\vec F=\left\langle \sin x-x\cos z,\sin y-y\cos x,\sin z-z\cos y\right\rangle\)
+	  </p>
+	  <p>
+	    <button class="toggle has-check" data-toggle="CkX42"></button>
+	  </p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX42">
+	  <p>
+			The curl of \(\vec A=\left\langle x\sin y,y\sin z,z\sin x\right\rangle\) is:
+		  \[\begin{aligned}
+		  \vec\nabla&\times\vec A
+		  =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      z\sin y    & x\sin z    & y\sin x
+      \end{vmatrix} \\
+		  &=\left\langle \sin x-x\cos z,\sin y-y\cos x,\sin z-z\cos y\right\rangle \\
+      &=\vec F
+		  \end{aligned}\]
+	  </p>
+	  <p>
+			The curl of
+      \(\vec A=\left\langle z\sin y-yz\cos x,x\sin z-z\sin x,0\right\rangle\)
+      is:
+		  \[\begin{aligned}
+		  \vec\nabla&\times\vec A
+		  =\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      z\sin y-yz\cos x & x\sin z-z\sin x & 0
+      \end{vmatrix} \\
+		  &=\left\langle -x\cos z+\sin x,\sin y-y\cos x,\right. \\
+      &\qquad\qquad\qquad\left.\sin z-z\cos x-z\cos y+z\cos x\right\rangle \\
+		  &=\left\langle \sin x-x\cos z,\sin y-y\cos x,\sin z-z\cos y\right\rangle \\
+      &=\vec F
+		  \end{aligned}\]
+	  </p>
+	</div>
+</li>
+
+<!--Scalar Potentials-->
+
+  
+  
+  
+  <div class="rule" id="topic6"></div>
+  <div class="heading">
+    <h3><a
+          href="ScalPots.html">f. Scalar Potentials</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ScalPots.html">1</a></div>
+      
+        <div><a href="NoScalPot.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Find a scalar potential for each vector field or show one does not exist.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle y+z,x+z,x+y\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX43"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX43"></button>
+    	<button class="toggle has-sol" data-toggle="SolX43"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX43">
+    <p>
+      A scalar potential for \(\vec F\) is any function \(f\) satisfying
+      \(\vec\nabla f=\vec F\). Solve the equations:
+      \[
+      \partial_x f=F_1 \qquad \partial_y f=F_2 \qquad \partial_z f=F_3
+      \]
+      for a single function \(f\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX43">
+  	<p>
+      \(f=xy+xz+yz\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX43">
+  	<p>
+      We solve:
+      \[
+      \partial_x f=y+z \qquad \partial_y f=x+z \qquad \partial_z f=x+y
+      \]
+      The \(x\)-antiderivative of the \(1^\text{st}\) equation is:
+      \[
+      f=xy+xz+g(y,z)
+      \]
+      The \(y\)-antiderivative of the \(2^\text{nd}\) equation is:
+      \[
+      f=xy+yz+h(x,z)
+      \]
+      The \(z\)-antiderivative of the \(3^\text{rd}\) equation is:
+      \[
+      f=xz+yz+k(x,y)
+      \]
+      A scalar potential which satisfies all three conditions is:
+      \[
+      f=xy+xz+yz
+      \]
+      where \(g(y,z)=yz\), \(h(x,z)=xz\) and \(k(x,y)=xy\).
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle yz\cos(xyz),xz\cos(xyz),xy\cos(xyz)\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX44"></button>
+    	<button class="toggle has-sol" data-toggle="SolX44"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX44">
+  	<p>
+      \(f=\sin(xyz)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX44">
+  	<p>
+      We solve:
+      \[
+      \partial_x f=yz\cos(xyz) \qquad \partial_y f=xz\cos(xyz) \qquad \partial_z f=xy\cos(xyz)
+      \]
+      The \(x\)-antiderivative of the \(1^\text{st}\) equation,
+      the \(y\)-antiderivative of the \(2^\text{nd}\) equation and
+      the \(z\)-antiderivative of the \(3^\text{rd}\) equation are all:
+      \[
+      f=\sin(xyz)
+      \]
+      which is therefore the scalar potential.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle y^2+2xz,2xy-3y^2z,x^2-y^3-2z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX45"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX45"></button>
+    	<button class="toggle has-sol" data-toggle="SolX45"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX45">
+    <p>
+      Successively solve the equations:
+      \[
+      \partial_x f=F_1 \qquad \partial_y f=F_2 \qquad \partial_z f=F_3
+      \]
+      If you reach a contradiction, there is no solution.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX45">
+  	<p>
+      \(f=xy^2+x^2z-y^3z-z^2+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX45">
+  	<p>
+      We solve:
+      \[
+      \partial_x f=y^2+2xz \qquad \partial_y f=2xy-3y^2z \qquad \partial_z f=x^2-y^3-2z
+      \]
+      The \(x\)-antiderivative of the \(1^\text{st}\) equation is:
+      \[
+      f=xy^2+x^2z+g(y,z)
+      \]
+      This needs to satisfy the  the \(2^\text{nd}\) equation. So we compute
+      \(\partial_y f\) and plug into the \(2^\text{nd}\) equation:
+      \[
+      2xy+\partial_y g=2xy-3y^2z
+      \qquad \text{or} \qquad
+      \partial_y g=-3y^2z
+      \]
+      The solution is \(g(y,z)=-y^3z+h(z)\). So:
+      \[
+      f=xy^2+x^2z-y^3z+h(z)
+      \]
+      This needs to satisfy the  the \(3^\text{rd}\) equation. So we compute
+      \(\partial_z f\) and plug into the \(3^\text{rd}\) equation:
+      \[
+      x^2-y^3+h'(z)=x^2-y^3-2z
+      \qquad \text{or} \qquad
+      h'(z)=-2z
+      \]
+      A solution is \(h(z)=-z^2+C\). So a scalar potential is:
+      \[
+      f=xy^2+x^2z-y^3z-z^2+C
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle y^2+2xz,2xy+3y^2z,x^2-y^3-2z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX46"></button>
+    	<button class="toggle has-sol" data-toggle="SolX46"></button>
+    	<button class="toggle has-check" data-toggle="CkX46"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX46">
+  	<p>
+      There is no scalar potential. The contradiction is shown in the solution
+      and in the remark.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX46">
+  	<p>
+      We solve:
+      \[
+      \partial_x f=y^2+2xz \qquad \partial_y f=2xy+3y^2z \qquad \partial_z f=x^2-y^3-2z
+      \]
+      The \(x\)-antiderivative of the \(1^\text{st}\) equation is:
+      \[
+      f=xy^2+x^2z+g(y,z)
+      \]
+      This needs to satisfy the  the \(2^\text{nd}\) equation. So we compute
+      \(\partial_y f\) and plug into the \(2^\text{nd}\) equation:
+      \[
+      2xy+\partial_y g=2xy+3y^2z
+      \qquad \text{or} \qquad
+      \partial_y g=3y^2z
+      \]
+      The solution is \(g(y,z)=y^3z+h(z)\). So:
+      \[
+      f=xy^2+x^2z+y^3z+h(z)
+      \]
+      This needs to satisfy the  the \(3^\text{rd}\) equation. So we compute
+      \(\partial_z f\) and plug into the \(3^\text{rd}\) equation:
+      \[
+      x^2+y^3+h'(z)=x^2-y^3-2z
+      \qquad \text{or} \qquad
+      h'(z)=-2y^3-2z
+      \]
+      This is a contradiction because \(h\) cannot be a function of \(y\).
+      So there is no scalar potential.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX46">
+  	<p>
+      To verify there is no scalar potential, we compute the curl:
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      y^2+2xz    & 2xy+3y^2z  & x^2-y^3-2z
+      \end{vmatrix} \\
+      &=\hat\imath(-3y^2-3y^2)
+       -\hat\jmath(2x-2x)
+       +\hat k    (2y-2y) \\
+      &=\left\langle -6y^2,0,0\right\rangle
+      \end{aligned}\]
+      Since this is not \(\vec0\), there cannot be a scalar potential.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle \cos x\cos y,\sin x\sin y,\sec^2 z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX47"></button>
+    	<button class="toggle has-sol" data-toggle="SolX47"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX47">
+  	<p>
+      There is no scalar potential, since the curl of \(\vec F\) is not \(\vec0\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX47">
+  	<p>
+      We first compute the curl:
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      \cos x\cos y & \sin x\sin y & \sec^2 z
+      \end{vmatrix} \\
+      &=\hat\imath(0-0)
+       -\hat\jmath(0-0)
+       +\hat k    (\cos x\sin y+\cos x\sin y)\\
+      &=\left\langle 0,0,2\cos x\sin y\right\rangle
+      \end{aligned}\]
+      Since this is not \(\vec0\), there is no scalar potential.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle \cos x\cos y,-\sin x\sin y,\sec^2 z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX48"></button>
+    	<button class="toggle has-sol" data-toggle="SolX48"></button>
+    	<button class="toggle has-rem" data-toggle="RemX48"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX48">
+  	<p>
+      \(f=\sin x\cos y+\tan z\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX48">
+  	<p>
+      We first compute the curl:
+      \[\begin{aligned}
+      \vec\nabla\times\vec F
+      &=\begin{vmatrix}
+      \hat\imath & \hat\jmath & \hat k \\
+      \partial_x & \partial_y & \partial_z \\
+      \cos x\cos y & -\sin x\sin y & \sec^2 z
+      \end{vmatrix} \\
+      &=\hat\imath(0-0)
+       -\hat\jmath(0-0)
+       +\hat k    (-\cos x\sin y+\cos x\sin y)
+       =\vec0
+      \end{aligned}\]
+      Since this is \(\vec0\), we expect there is a potential and solve:
+      \[
+      \partial_x f=\cos x\cos y \qquad \partial_y f=-\sin x\sin y \qquad \partial_z f=\sec^2 z
+      \]
+      The \(x\)-antiderivative of the \(1^\text{st}\) equation is:
+      \[
+      f=\sin x\cos y+g(y,z)
+      \]
+      This needs to satisfy the  the \(2^\text{nd}\) equation. So we compute
+      \(\partial_y f\) and plug into the \(2^\text{nd}\) equation:
+      \[
+      -\sin x\sin y+\partial_y g=-\sin x\sin y
+      \qquad \text{or} \qquad
+      \partial_y g=0
+      \]
+      The solution is \(g(y,z)=h(z)\). (Don't say \(g=0\) or you will not
+      get a solution!) So:
+      \[
+      f=\sin x\cos y+h(z)
+      \]
+      This needs to satisfy the  the \(3^\text{rd}\) equation. So we compute
+      \(\partial_z f\) and plug into the \(3^\text{rd}\) equation:
+      \[
+      h'(z)=\sec^2 z
+      \qquad \text{or} \qquad
+      h(z)=\tan z
+      \]
+      Therefore, a scalar potential is:
+      \[
+      f=\sin x\cos y+\tan z
+      \]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX48">
+  	<p>
+      In this case, computing the curl was a waste of time. But we could not
+     know this in advance!
+  	</p>
+  </div>
+</li>
+
+<!--Vector Potentials-->
+
+  
+  
+  
+  <div class="rule" id="topic7"></div>
+  <div class="heading">
+    <h3><a
+          href="VecPots.html">g. Vector Potentials</a></h3>
+    <div class="pgs">
+      
+        <div><a href="VecPots.html">1</a></div>
+      
+        <div><a href="NoVecPot.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Find a vector potential for each vector field or show one does not exist.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle -x,y,y-x\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX49"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX49"></button>
+    	<button class="toggle has-sol" data-toggle="SolX49"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX49">
+    <p>
+      A vector potential for \(\vec F=\left\langle F_1,F_2,F_3\right\rangle\)
+      is any vector field \(\vec A=\left\langle A_1,A_2,A_3\right\rangle\)
+      satisfying \(\vec\nabla\times\vec A=\vec F\). So we need to solve
+      the equations:
+      \[\begin{aligned}
+      \partial_y A_3-\partial_z A_2&=F_1 \\
+      \partial_z A_1-\partial_x A_3&=F_2 \\
+      \partial_x A_2-\partial_y A_1&=F_3
+      \end{aligned}\]
+      for \(A_1\), \(A_2\) and \(A_3\). There is always a solution with
+      \(A_3=0\). So we actually need to solve:
+      \[\begin{aligned}
+      \partial_z A_2&=-F_1 \\
+      \partial_z A_1&=F_2 \\
+      \partial_x A_2-\partial_y A_1&=F_3
+      \end{aligned}\]
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX49">
+  	<p>
+      \(\vec A=\left\langle yz+xy,xz+xy,0\right\rangle\)
+      <br>
+      There are many other solutions.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX49">
+  	<p>
+      We assume \(A_3=0\). So we need to solve:
+      \[\begin{aligned}
+      \partial_z A_2&=-F_1=x \\
+      \partial_z A_1&=F_2=y \\
+      \partial_x A_2-\partial_y A_1&=F_3=y-x
+      \end{aligned}\]
+      The first \(2\) equations say:
+      \[
+      A_2=xz+f(x,y) \qquad A_1=yz+g(x,y)
+      \]
+      We substitute into the \(3^\text{rd}\) equation:
+      \[
+      z+\partial_x f-z-\partial_y g=y-x
+      \]
+      One solution is \(f=xy\) and \(g=xy\). So
+      \[
+      \vec A=\left\langle yz+xy,xz+xy,0\right\rangle
+      \]
+      There are many other solutions.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle x\cos z,y\cos z,2x-2\sin z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX50"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX50"></button>
+    	<button class="toggle has-sol" data-toggle="SolX50"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX50">
+    <p>
+      Successively solve the equations:
+      \[\begin{aligned}
+      \partial_z A_2&=-F_1 \\
+      \partial_z A_1&=F_2 \\
+      \partial_x A_2-\partial_y A_1&=F_3
+      \end{aligned}\]
+      If you reach a contradiction, there is no solution.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX50">
+  	<p>
+      \(\vec A=\left\langle y\sin z,-x\sin z+x^2,0\right\rangle\)
+      <br>
+      There are many other solutions.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX50">
+  	<p>
+      We assume \(A_3=0\). So we need to solve:
+      \[\begin{aligned}
+      \partial_z A_2&=-F_1=-x\cos z \\
+      \partial_z A_1&=F_2=y\cos z \\
+      \partial_x A_2-\partial_y A_1&=F_3=2x-2\sin z
+      \end{aligned}\]
+      The first \(2\) equations say:
+      \[
+      A_2=-x\sin z+f(x,y) \qquad A_1=y\sin z+g(x,y)
+      \]
+      We substitute into the \(3^\text{rd}\) equation:
+      \[
+      -\sin z+\partial_x f-\sin z-\partial_y g=2x-2\sin z
+      \qquad \text{or} \qquad
+      \partial_x f-\partial_y g=2x
+      \]
+      One solution is \(f=x^2\) and \(g=0\). So
+      \[
+      \vec A=\left\langle y\sin z,-x\sin z+x^2,0\right\rangle
+      \]
+      There are many other solutions.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle x\cos z,y\cos z,2x-\sin z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX51"></button>
+    	<button class="toggle has-sol" data-toggle="SolX51"></button>
+    	<button class="toggle has-check" data-toggle="CkX51"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX51">
+  	<p>
+      There is no vector potential. The contradiction is shown in the
+      solution and in the remark.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX51">
+  	<p>
+      We assume \(A_3=0\). So we need to solve:
+      \[\begin{aligned}
+      \partial_z A_2&=-F_1=-x\cos z \\
+      \partial_z A_1&=F_2=y\cos z \\
+      \partial_x A_2-\partial_y A_1&=F_3=2x-\sin z
+      \end{aligned}\]
+      The first \(2\) equations say:
+      \[
+      A_2=-x\sin z+f(x,y) \qquad A_1=y\sin z+g(x,y)
+      \]
+      We substitute into the \(3^\text{rd}\) equation:
+      \[
+      -\sin z+\partial_x f-\sin z-\partial_y g=2x-\sin z
+      \qquad \text{or} \qquad
+      \partial_x f-\partial_y g=2x+\sin z
+      \]
+      This is a contradiction because \(f\) and \(g\) cannot be functions of
+      \(z\). So there is no vector potential.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX51">
+  	<p>
+      To verify there is no vector potential, we compute the divergence:
+      \[\begin{aligned}
+      \vec\nabla\cdot\vec F
+      &=\partial_x(x\cos z)+\partial_y(y\cos z)+\partial_z(2x-\sin z) \\
+      &=\cos z+\cos z-\cos z=\cos z \ne 0
+      \end{aligned}\]
+      Since this is not \(0\), there cannot be a vector potential.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle yz,xz,xy\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX52"></button>
+    	<button class="toggle has-sol" data-toggle="SolX52"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX52">
+  	<p>
+    \(\vec A
+    =\left\langle \dfrac{xz^2}{2},-\,\dfrac{yz^2}{2}+\dfrac{x^2y}{2},0\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX52">
+  	<p>
+      We first compute the divergence:
+      \[
+      \vec\nabla\cdot\vec F
+      =\partial_x(yz)+\partial_y(xz)+\partial_z(xy)
+      =0+0+0=0
+      \]
+      Since this is 0, we expect there is a potential and solve:
+      \[\begin{aligned}
+      \partial_z A_2&=-F_1=-yz \\
+      \partial_z A_1&=F_2=xz \\
+      \partial_x A_2-\partial_y A_1&=F_3=xy
+      \end{aligned}\]
+      The first \(2\) equations say:
+      \[
+      A_2=-\,\dfrac{yz^2}{2}+f(x,y) \qquad A_1=\dfrac{xz^2}{2}+g(x,y)
+      \]
+      We substitute into the \(3^\text{rd}\) equation:
+      \[
+      \partial_x f-\partial_y g=xy
+      \]
+      A solution is \(f=\dfrac{x^2y}{2}\) and \(g=0\). So a vector potential is:
+      \[
+      \vec A
+      =\left\langle \dfrac{xz^2}{2},-\,\dfrac{yz^2}{2}+\dfrac{x^2y}{2},0\right\rangle
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\vec F=\left\langle x,y,z\right\rangle\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX53"></button>
+    	<button class="toggle has-sol" data-toggle="SolX53"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX53">
+  	<p>
+      There is no vector potential because \(\vec\nabla\cdot\vec F=3\ne0\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX53">
+  	<p>
+      We first compute the divergence:
+      \[
+      \vec\nabla\cdot\vec F
+      =\partial_x(x)+\partial_y(y)+\partial_z(z)
+      =1+1+1=3
+      \]
+      Since this is not \(0\), there is no vector potential.
+  	</p>
+  </div>
+</li>
+
+<big>PY: Checked to here.</big>
+
+				<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Q1
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX54"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX54"></button>
+    	<button class="toggle has-sol" data-toggle="SolX54"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX54">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX54">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX54">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Q1
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX55"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX55"></button>
+    	<button class="toggle has-sol" data-toggle="SolX55"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX55">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX55">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX55">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial on Chain Rule | Chain Rule &amp; Implicit Differentiation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Nested.html" title="Previous">&lArr;</a></li>
+      <li><a href="ImplicitDiff.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Chain Rule &amp; Implicit Differentiation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+<!--
+ _________________________________________________
+╱╱╱╱╱╱╭╮╱╭╮╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮ ╱╱╱╱╱\
+|╱╱╱╱╱╭╯╰┳╯╰╮╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╯╰╮╱╱╱╱╱|
+|╭━━┳━┻╮╭╋╮╭╋╮╭┳━╯┣━━┳━━┳╮╭━━┳━┳━━┳━━┳━━┳━╋╮╭╋━━┳╮╱|
+|┃╭╮┃╭╮┃┃┣┫┃┃┃┃┃╭╮┃┃━┫╭╮┣┫┃╭╮┃╭┫┃━┫━━┫┃━┫╭╮┫┃┃━━╋╯╱|
+|┃╭╮┃╰╯┃╰┫┃╰┫╰╯┃╰╯┃┃━┫╰╯┃┃┃╰╯┃┃┃┃━╋━━┃┃━┫┃┃┃╰╋━━┣╮╱|
+|╰╯╰┫╭━┻━┻┻━┻━━┻━━┻━━┫╭━┻╯┃╭━┻╯╰━━┻━━┻━━┻╯╰┻━┻━━┻╯╱|
+|╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃┃╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱|
+\╱╱╱╰╯╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰╯╱╱╱╰╯╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱/
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+*****/////////////////////////////////////////////////////////////////////////////////////////////////////////////*****************************,,,,,,,
+/*****////////(((((((//////(((((((((((//(((((/(((((((////////////////(((((///////////////////////////////////////////////////*//*/********************
+**//////////////////////////////((//////////////////((((/////////(////(/(((((////(((///////////////////////////////////((/(/((/////////**/************
+////((((((((((((((((((((((((((((((((((((((((((((((((((#########(((((((((((##&&&&&&&#/,... ,,,*(%%&&%#(/(&/((((//(((((((//(((//(((//////////*****//****
+*******///////////////////////////////////////////////////////((, %&&&&%%%%%%###%&&%##%%%%%##(#(/**///(((((((((##%&(///////////////////////***////////
+//////////////////////////////////////////////////////////( .&&%%##########((#(##(((((**,/*,,,,,*//((//     ..   .*#####%%(///(((/////(((//(((///*****
+*////////////////////////////////////////////////@&%%/.*&&%%%%#########((((((////**(** ..,*//((((((#########/,. ..**%&&#####%&/////((/********,,////**
+/////////////////////////////////////////////////*  &%%%%#######(((((((((/(//*////**..,*//(/((((((#(%%#(########....,%#%&%##(/*/(%#,*/.,**  #%########
+((((//////////////////////(##///////////*,,,**#(/&%%%############(((#((((/////(*, ,,,*((&&%%%%%%%//((((/*//, .. .**///**,,.%(/////////(,%%%%.%########
+******/////*/*/***#%/*,..,,*#,,*/(%%#%&&%&&%%&&%%%%############(((((/**/(/**//*.***/..,,,,,,,,*(#,#/*,*******///((((##/##(,(##(((//#(((###%&/#########
+,,,,,,,,,,,,,,,&%#(((#%..,/#&&&&%%%%%%%##############%%%(///**********//////**.*******,....,,,,,,,,,,,**//((#######,,,*,,,.####((###%%%/ .  *#########
+#############%%%%##&,*(%%%%#######((((((((((%%,,,,,......    .//%%/,. ,..,,,.*/.........      ..*/(####*  .,,,,,,,, **,,,*//(#####%## **,**,, *#######
+###########(.%&%&#####%%#####(((((///(%%**,,,,.......*/%(&%%#/*,.,/((###%%%%%%%#%//./,((#(*..  .,,,,,,,,,,,,,,,.     ,.*((((######(/,,%,,,,,(, #######
+##########(/,&%%%%%%######(((((((#%(/******,,,,,*//#%##&((//*,,###%%%%%.       .*%%%*,,**,.. ,(*,...............,,,,,//*#%#####(//,,,,,.,**,*(, ######
+#########//&%%%%####@####((((((#///////****//&/////(((#((//**%#%%%##  .********/.  %#/,,.. /(....... ........,,, ((((,*#%##((/*,,,..*.,**,.,*,, ######
+(((#(((#*/% .***.,#####((((((///////////////(((((((((((((/*%%%##(/ .*,*(%,***,,#.*.  (/##,...............,,./(#((/*# ,,,,,,,,,,,, .,,,*%*..,*,,,#####(
+((((((((*.,,(@& ./,,. /#. (((((((* .      #/.., .... ,...%%##((/  *,*#,,,.,,,,,**/ ,  //*..........,,.*((#(((/*** .,,,,,.......,, .*,*(#(/.,/# ##(((((
+((((((((/@@@@@%.@/@,*,,,@@@///*/(((((((((((/////////*** ###(/** .*,%,.....,,,**,*,, , ,(**...../((((((/*,,.(*    ..........,,,,, ...,,*/*,,/#.((((((((
+(((((((/((@@@@. .%/    .@@@,.,,,,,,,,,,,************.* #((****  ,,%,,. ,*((/*..****%,  ***((/**.     **.,,(%%%#(((..            ...,./*,**(,,//(((((((
+(((((//#((/@@.(, .,,*, (//*................../,,     .(***,,*. ...,...*/%&%,.,..,**(. .*,,    ,,,###########%%%...,,.......,,,,,,,........ **/////*//(
+(((((//&%((/**(@@@*...//***//**,......................*,,,,,*  ..%,,.,*/,,/**,.,*/*%. .*(,(/****//////((((%#/*.,....,*,  ....,,,,,**////////(((/(((((/
+((////*%%#((//****,.. .,. ......,,. ..,,*******,,..../*,,,,,*  ..%*,,,*/%#%%/,.,*/(,  *,,.****///((#/%,,...,,    ..,,,*/////////((((((((((((((((((((((
+//////**,&%#(*,   .,...      , .. .,   .  , .*, ,.,. *,,,,%,*  .,.(,,,,**//,,,,/(#,. .*,.. *%(.,....     ..,**///////(((((((((((((((((((((((((((((((((
+///////**,............,,,....,******,,,,,.....,., ..*,,,,,,,*  ..,.#,,,,***,.//(&,  (**,,.     ..,,*/////*/(((((((((((((((((((((((((((((((((((((((((((
+////////////******,,,,%#((((((((((((((((((((((((((,,,.....,,,,  ..,. #///////%,.   ....,,*/////*//((((((((((((((((((((((((((((((((((((((((((((((((((((
+//(///(/////////////**,,...           .  ... ..             .     ..... ...   ,,*///////((((((((((((((((((((((((((((((((((((((((((((((#(((((((((((((((
+/((/(/////((((///((/////////*,,,,,.......................,,,,,,,,,,,,,,*/*///((((((((((((((((((((((((((((((((((((((((((((#(#((#(((((((((((((((((((((((
+/////(/////(((((((((((((((((((((((((/////(///////**////*///////////(((((((((((((((((((((((((((((((((((((((((((((((((###(((((((((((((((((((((((((((((((
+-->
+
+<p class="recall">
+  The derivative of a composition is the derivative of the outer function
+  evaluated at the inner function times the derivative of the inner function.
+  \[
+  (f\circ g)'(x) = f'(g(x)) g'(x)
+  \]
+  Click the refresh button <button class="has-refresh"></button> below,
+  to get a new problem.
+</p>
+
+
+      
+      <h2>Tutorial on Chain Rule</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  <button class="has-refresh"></button>
+  Use the chain rule to differentiate the composite function:
+  <br>
+  <span class="center" id="Formula_fog">\((f\circ g)(x)=\)</span>
+</p>
+
+<ol type="1" class="list-outside">
+  <li>
+    <!--1-->
+    <div class="dotfillex">
+      <p>
+        Identify the outer function: (Write it as a function of \(u\).)
+        <br>
+        <span id="Formula_fu">\(f(u)=\)</span>
+        &nbsp;
+        <input type="text" id="Input_fu" />
+        \(=\)
+        <span id="Latex_fu">
+          \( \)
+        </span>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHint_fu" data-toggle="Hint_fu"></button>
+        <button class="toggle has-check" id="BCheck_fu" data-toggle="Check_fu"></button>
+        <input type="text" size="6" id="Reply_fu" align="center" readonly="readonly" autocomplete="off"></input>
+        <button class="toggle has-show" id="BShow_fu" data-toggle="Show_fu"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" id="Hint_fu" data-toggle="Hint_fu">
+      <p>
+        \(f(u)\) is the outer function.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" id="Check_fu" data-toggle="Check_fu">
+
+    </div>
+    <div class="toBeToggled drop-show" id="Show_fu" data-toggle="Show_fu">
+
+    </div>
+  </li>
+  <li>
+    <!--2-->
+    <div class="dotfillex">
+      <p>
+        Identify the inner function:
+        <br>
+        <span id="Formula_gx">\(g(x)=\)</span>
+        &nbsp;
+        <input type="text" id="Input_gx" />
+        \(=\)
+        <span id="Latex_gx">
+          \( \)
+        </span>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="Hint_gx"></button>
+        <button class="toggle has-check" id="BCheck_gx" data-toggle="Check_gx"></button>
+        <input type="text" size="6" id="Reply_gx" align="center" readonly="readonly" autocomplete="off"></input>
+        <button class="toggle has-show" id="BShow_gx" data-toggle="Show_gx"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" id="Hint_gx" data-toggle="Hint_gx">
+      <p>
+        \(g(x)\) is the inner function.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" id="Check_gx" data-toggle="Check_gx">
+
+    </div>
+    <div class="toBeToggled drop-show" id="Show_gx" data-toggle="Show_gx">
+
+    </div>
+  </li>
+  <li>
+    <!--3-->
+    <div class="dotfillex">
+      <p>
+        Find the derivative of the outer function: (Write it as a function of \(u\))
+        <br>
+        <span id="Formula_fpu">\(f'(u)=\)</span>
+        &nbsp;
+        <input type="text" id="Input_fpu" />
+        \(=\)
+        <span id="Latex_fpu">
+          \( \)
+        </span>
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="Hint_fpu"></button>
+        <button class="toggle has-check" id="BCheck_fpu" data-toggle="Check_fpu"></button>
+        <input type="text" size="6" id="Reply_fpu" align="center" readonly="readonly" autocomplete="off"></input>
+        <button class="toggle has-show" id="BShow_fpu" data-toggle="Show_fpu"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" id="Hint_fpu" data-toggle="Hint_fpu">
+      <p>
+        \(f'(u)\) is the derivative of the outer function \(f(u)\)
+        identified in question 1.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" id="Check_fpu" data-toggle="Check_fpu">
+
+    </div>
+    <div class="toBeToggled drop-show" id="Show_fpu" data-toggle="Show_fpu">
+
+    </div>
+  </li>
+  <li>
+    <!--4-->
+    <div class="dotfillex">
+      <p>
+        Find the derivative of the inner function:
+        <br>
+        <span class="Formula_gpx">\(g'(x)=\)</span>
+        &nbsp;
+        <input type="text" id="Input_gpx" />
+        \(=\)
+        <span id="Latex_gpx">
+          \(\)
+        </span>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHint_gpx" data-toggle="Hint_gpx"></button>
+        <button class="toggle has-check" id="BCheck_gpx" data-toggle="Check_gpx"></button>
+        <input type="text" size="6" id="Reply_gpx" align="center" readonly="readonly" autocomplete="off"></input>
+        <button class="toggle has-show" id="BShow_gpx" data-toggle="Show_gpx"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" id="Hint_gpx" data-toggle="Hint_gpx">
+      <p>
+        \(g'(x)\) is the derivative of the inner function \(g(x)\).
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" id="Check_gpx" data-toggle="Check_gpx">
+
+    </div>
+    <div class="toBeToggled drop-show" id="Show_gpx" data-toggle="Show_gpx">
+
+    </div>
+  </li>
+  <li>
+    <!--5-->
+    <div class="dotfillex">
+      <p>
+        Find the derivative of the outer function evaluated at the inner function:
+        <br>
+        <span class="Formula_fpgx">\(f'(g(x))=\)</span>
+        &nbsp;
+        <input type="text" id="Input_fpgx" />
+        \(=\)
+        <span id="Latex_fpgx">
+          \(\)
+        </span>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHint_fpgx" data-toggle="Hint_fpgx"></button>
+        <button class="toggle has-check" id="BCheck_fpgx" data-toggle="Check_fpgx"></button>
+        <input type="text" size="6" id="Reply_fpgx" align="center" readonly="readonly" autocomplete="off"></input>
+        <button class="toggle has-show" id="BShow_fpgx" data-toggle="Show_fpgx"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" id="Hint_fpgx" data-toggle="Hint_fpgx">
+      <p>
+        \(f'(g(x))\) is \(f'(u)\) evaluated at \(u = g(x)\).
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" id="Check_fpgx" data-toggle="Check_fpgx">
+
+    </div>
+    <div class="toBeToggled drop-show" id="Show_fpgx" data-toggle="Show_fpgx">
+
+    </div>
+  </li>
+  <li>
+    <!--6-->
+    <div class="dotfillex">
+      <p>
+        Find the derivative of the composite function.
+        <br>
+        <span class="Formula_fogpx">\((f\circ g)'(x)=\)</span>
+        &nbsp;
+        <input type="text" id="Input_fogpx" />
+        \(=\)
+        <span id="Latex_fogpx">
+          \(\)
+        </span>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHint_fogpx" data-toggle="Hint_fogpx"></button>
+        <button class="toggle has-check" id="BCheck_fogpx" data-toggle="Check_fogpx"></button>
+        <input type="text" size="6" id="Reply_fogpx" align="center" readonly="readonly" autocomplete="off"></input>
+        <button class="toggle has-show" id="BShow_fogpx" data-toggle="Show_fogpx"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" id="Hint_fogpx" data-toggle="Hint_fogpx">
+      <p>
+        \((f\circ g)'(x) = f'(g(x)) g'(x)\), the product \(f'(g(x))\) and \(g'(x)\).
+        <br>
+        In words: "The derivative of a composition is the derivative of the
+        outer function evaluated at the inner function times the derivative
+        of the inner function."
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" id="Check_fogpx" data-toggle="Check_fogpx">
+
+    </div>
+    <div class="toBeToggled drop-show" id="Show_fogpx" data-toggle="Show_fogpx">
+
+    </div>
+  </li>
+</ol>
+<p style="text-align:right">db&ensp;</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+
+    
+      
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+  
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../scripts/mathlex.min.js"></script>
+<!-- <script src="../../../scripts/MYMAthree.min.js"></script> -->
+<script src="scripts/TutChain.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>

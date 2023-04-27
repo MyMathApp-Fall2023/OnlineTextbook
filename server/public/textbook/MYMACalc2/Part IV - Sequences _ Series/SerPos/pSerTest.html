@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b.2. The \(p\)-Series | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="IntegTest.html" title="Previous">&lArr;</a></li>
+      <li><a href="SimpCompTest.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b.2. The \(p\)-Series</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+  The series \(\displaystyle \sum_{n=n_o}^\infty \dfrac{1}{n^p}\) is called a
+  <span class="defword">\(p\)-series</span>.
+  <br>
+  The <span class="defword">harmonic series</span>
+  \(\displaystyle \sum_{n=n_o}^\infty \dfrac{1}{n}\)
+  is the special case of the <span class="defword">\(p\)-series</span> with \(p=1\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="prop" data-title="The \(p\)-Series Test">
+  The \(p\)-series \(\displaystyle \sum_{n=n_o}^\infty \dfrac{1}{n^p}\)
+  is convergent if \(p \gt 1\) and is divergent if \(p \le 1\).
+  <br>
+  <button class="toggle btn" data-toggle="Drop1">Proof</button>
+  \(\Longleftarrow\) Read this! It's easy.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p class="proof">
+    We check the different values of \(p\).
+  </p>
+  <ol>
+    <li>
+      The harmonic series with \(p=1\) was shown to be divergent in an
+      exercise at the bottom of the <a href="IntegTest.html#harmonic">previous page</a>.
+    </li>
+    <li>
+      For \(p \le 0\), the series
+      \(\displaystyle \sum_{n=n_o}^\infty \dfrac{1}{n^p}
+      = \sum_{n=n_o}^\infty n^{-p}\)
+      is divergent by the
+      \(n^\text{th}\)-Term Divergence Test.
+    </li>
+    <li>
+      For \(p \gt 0\) but \(p \ne 1\), we apply the Integral Test:
+      <br>
+      &emsp; The function \(f(x)=\dfrac{1}{x^p}\) is continuous,
+      positive and decreasing. Further,
+      \[\begin{aligned}
+      \int_{n_o}^\infty \dfrac{1}{x^p}\,dx
+      &=\int_{n_o}^\infty x^{-p}\,dx
+      =\left[\dfrac{x^{-p+1}}{-p+1}\right]_{n_o}^\infty \\
+      &=\lim_{b\to\infty}\left[\dfrac{b^{-p+1}}{-p+1}\right]
+      -\left[\dfrac{n_o^{-p+1}}{-p+1}\right]
+      \end{aligned}\]
+      <ol>
+        <li>
+          If \(0< p< 1\), then \(-p+1>0\) and
+          \(\displaystyle \lim_{b\to\infty}\left[\dfrac{b^{-p+1}}{-p+1}\right]
+          =\infty\).
+          <br>
+          Consequently, \(\displaystyle \int_{n_o}^\infty \dfrac{1}{x^p}\,dx\)
+          and hence \(\displaystyle \sum_{n=n_o}^\infty \dfrac{1}{n^p}\) are divergent.
+        </li>
+        <li>
+          If \(p>1\), then \(-p+1< 0\) and
+          \(\displaystyle \lim_{b\to\infty}\left[\dfrac{b^{-p+1}}{-p+1}\right]
+          =0\).
+          <br>
+          Consequently, \(\displaystyle \int_{n_o}^\infty \dfrac{1}{x^p}\,dx\)
+          and hence \(\displaystyle \sum_{n=n_o}^\infty \dfrac{1}{n^p}\) are convergent.
+        </li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{3}{n^2}\)
+  is convergent or divergent.
+</p>
+<p class="sol">
+  You can apply the Integral Test directly, or simply say
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{3}{n^2}\) is \(3\) times
+  a \(p\)-series with \(p=2 \gt 1\). Consequently,
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{3}{n^2}\) is convergent.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{\sqrt[\scriptsize3]{n}}\)
+    is convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{\sqrt[\scriptsize3]{n}}\) is divergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{\sqrt[\scriptsize3]{n}}\) is a
+    \(p\)-series with \(p=\dfrac{1}{3}<1\). So it is divergent.
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{\sqrt[\scriptsize3]{n^4}}\)
+    is convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{\sqrt[\scriptsize3]{n^4}}\) is convergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{\sqrt[\scriptsize3]{n^4}}\) is a
+    \(p\)-series with \(p=\dfrac{4}{3} \gt 1\). So it is convergent.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

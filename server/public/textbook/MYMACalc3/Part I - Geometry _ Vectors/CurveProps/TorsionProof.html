@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2.a. Torsion Formula Proof | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Torsion.html#TorsionFormula" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>8. Properties of Curves</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>f. Curvature and Torsion</h2>
+
+
+      
+      <h2>2.a. Torsion Formula Proof</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  By definition,
+  \[
+  \tau=-\,\dfrac{d\hat{B}}{ds}\cdot\hat{N}
+  \]
+  We want to prove
+  \[
+  \tau=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+  \]
+</p>
+  <hr width="80%">
+<p>
+  We start by converting \(\dfrac{d\hat{B}}{ds}\) from an \(s\) derivative to
+  a \(t\) derivative, and then apply the quotient rule to
+  \(\hat{B}=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}\).
+  \[
+  \dfrac{d\hat{B}}{ds}
+  =\dfrac{1}{|\vec{v}|}\dfrac{d\hat{B}}{dt}
+  =\dfrac{1}{|\vec{v}|}\dfrac
+      {|\vec{v}\times\vec{a}|\dfrac{d}{dt}(\vec{v}\times\vec{a})
+       -\,\dfrac{d}{dt}|\vec{v}\times\vec{a}|(\vec{v}\times\vec{a})}
+      {|\vec{v}\times\vec{a}|^2}
+  \]
+  This quotient simplifies because \(\vec{v}\times\vec{a}\) cancels in the
+  first term and \(\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}=\hat{B}\)
+  in the second term:
+  \[
+  \dfrac{d\hat{B}}{ds}
+  =\dfrac{1}{|\vec{v}|\,|\vec{v}\times\vec{a}|}
+  \left(\dfrac{d}{dt}(\vec{v}\times\vec{a})
+       -\,\dfrac{d}{dt}|\vec{v}\times\vec{a}|\hat{B}\right)
+  \]
+  In the first term, we apply the product rule. (Note when you apply the
+  product rule to a cross product, you cannot reverse the order of the
+  factors, or else you get a minus sign error.) Then we use the definitions
+  of acceleration and jerk and the fact that the cross product of a vector
+  with itself is \(0\).
+  \[\begin{aligned}
+  \dfrac{d}{dt}(\vec{v}\times\vec{a})
+  &=\dfrac{d\vec{v}}{dt}\times\vec{a}+\vec{v}\times\dfrac{d\vec{a}}{dt} \\
+  &=\vec{a}\times\vec{a}+\vec{v}\times\vec{j}
+  =\vec{v}\times\vec{j}
+  \end{aligned}\]
+  So
+  \[
+  \dfrac{d\hat{B}}{ds
+  }=\dfrac{1}{|\vec{v}|\,|\vec{v}\times\vec{a}|}
+  \left(\vec{v}\times\vec{j}-\,\dfrac{d}{dt}|\vec{v}\times\vec{a}|\hat{B}\right)
+  \]
+  We now use the definition of torsion and the fact that \(\hat{B}\) and
+  \(\hat{N}\) are orthogonal.
+  \[\begin{aligned}
+  \tau&=-\,\dfrac{d\hat{B}}{ds}\cdot\hat{N}
+  =\dfrac{-1}{|\vec{v}|\,|\vec{v}\times\vec{a}|}
+  \left(\vec{v}\times\vec{j}-\,\dfrac{d}{dt}|\vec{v}\times\vec{a}|\hat{B}\right)\cdot\hat{N} \\
+  &=\dfrac{-1}{|\vec{v}|\,|\vec{v}\times\vec{a}|}\vec{v}\times\vec{j}\cdot\hat{N}
+  \end{aligned}\]
+  Finally, we make use of one of the
+  <a href="TNB.html#UnitNormal" title="Return using the Back button.">formulas</a>
+  for \(\hat{N}\):
+  \[
+  \hat{N}
+  =\dfrac{\text{proj}_{\bot \vec{v}}\vec{a}}
+  {\left|\text{proj}_{\bot \vec{v}}\vec{a}\right|}
+  =\dfrac{|\vec{v}|}{|\vec{v}\times\vec{a}|}
+  \left(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\right)
+  \]
+  So the torsion is:
+  \[\begin{aligned}
+  \tau&=\dfrac{-1}{|\vec{v}\times\vec{a}|^2}\vec{v}\times\vec{j}
+  \cdot\left(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\right) \\
+  &=\dfrac{-\vec{v}\times\vec{j}\cdot\vec{a}}{|\vec{v}\times\vec{a}|^2}
+  =\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+  \end{aligned}\]
+  since \(\vec{v}\times\vec{j}\) is perpendicular to \(\vec{v}\) and the
+  triple product changes sign when two vectors are interchanged.
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

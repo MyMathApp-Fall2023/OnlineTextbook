@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Log Examples | 4. Integration by Parts</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Choice.html#choices" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>4. Integration by Parts</h1>
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall: &emsp; &emsp; &emsp;
+  \(\displaystyle \int u\,dv=u\,v-\int v\,du\) &emsp; where &emsp;
+  \(du=\dfrac{du}{dx}\,dx\) &emsp; and &emsp; \(dv=\dfrac{dv}{dx}\,dx\)
+</p>
+
+<h2>b1. Choosing the 'Parts'</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="Choice1.html">Polynomial Examples</a></li> &emsp;
+    <li class="active"><a href="Choice2.html">Log Examples</a></li> &emsp;
+    <li><a href="Choice3.html">Inverse Trig Examples</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>b. Log Examples</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int x^4\ln x\,dx\).
+</p>
+<div class="toBeToggled shown uparr" data-toggle="sol">
+  <p class="sol">
+    Normally we would take the polynomial \(x^4\) as \(u\).
+    However, since it is hard to integrate \(\ln x\), we take
+    \[\begin{array}{ll}
+    u=\ln x & dv=x^4\,dx \\
+    du=\dfrac{1}{x}\,dx \quad & v=\dfrac{x^5}{5}
+    \end{array}\]
+    This is the &ldquo;L&rdquo; in LAPTE. Then, the integration by parts gives:
+    \[\begin{aligned}
+    \int x^4\ln x\,dx
+    &=\dfrac{x^5}{5}\ln x-\int \dfrac{x^5}{5}\dfrac{1}{x}\,dx \\
+    &=\dfrac{x^5}{5}\ln x-\int \dfrac{x^4}{5}\,dx \\
+    &=\dfrac{x^5}{5}\ln x-\dfrac{x^5}{25}+C
+    \end{aligned}\]
+  </p>
+  <p class="check">
+    We check by differentiating (using the Product Rule):
+    If &ensp; \(f(x)=\dfrac{x^5}{5}\ln x-\dfrac{x^5}{25}\), &ensp; then
+    \[
+    f'(x)=x^4\ln x+\dfrac{x^5}{5}\dfrac{1}{x}-\dfrac{x^4}{5}
+    =x^4\ln x
+    \]
+    which is the integrand we started with.
+  </p>
+</div>
+<p class="remark">
+  In this example, the general rule about selecting for \(dv\) a function easy
+  to integrate supersedes the rule about taking \(u\) as the polynomial.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the integral \(\displaystyle \int x^9\ln x\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \int x^9\ln x\,dx
+    =\dfrac{1}{10}x^{10}\ln x-\dfrac{1}{100}x^{10}+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We let:
+    \[\begin{array}{ll}
+    u=\ln x & dv=x^9\,dx\\
+    du=\dfrac{1}{x}\,dx \quad & v=\dfrac{1}{10}x^{10}
+    \end{array}\]
+    So we get:
+    \[\begin{aligned}
+    \int x^9\ln x\,dx
+    &=\dfrac{1}{10}x^{10}\ln x-\int \dfrac{1}{10}x^9\,dx \\
+    &=\dfrac{1}{10}x^{10}\ln x-\dfrac{1}{100}x^{10}+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p class="check">
+    We check using the Product Rule:
+    \[\begin{aligned}
+    \dfrac{d}{dx}&\left(\dfrac{1}{10}x^{10}\ln x-\dfrac{1}{100}x^{10}\right) \\
+    &=x^9\ln x+\dfrac{1}{10}x^{10}\dfrac{1}{x}-\dfrac{1}{10}x^9
+    =x^9\ln x
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

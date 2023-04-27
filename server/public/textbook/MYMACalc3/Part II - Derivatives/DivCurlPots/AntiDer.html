@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Generalizing Antiderivatives | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DiffIdent2.html" title="Previous">&lArr;</a></li>
+      <li><a href="ScalPots.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>e. Generalizing Antiderivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Antiderivatives</h3>
+
+<p>
+  For a function of \(1\) variable, \(F(x)\), if we take the derivative,
+  we get another function \(f(x)=\dfrac{dF}{dx}\). Conversely:
+</p>
+<p class="def" data-title="Antiderivative">
+  An <span class="defword">antiderivative</span> of a function \(f(x)\)
+  is any function \(F(x)\) whose derivative is \(f(x)\), i.e.
+  \[
+  \dfrac{dF}{dx}=f(x)
+  \]
+</p>
+<p>
+  If \(f(x)\) is continuous on some interval, then an antiderivative is
+  guaranteed to exist in that interval. An antiderivative is never unique,
+  but any two antiderivatives will always differ by a constant:
+  \[
+  \text{If} \qquad
+  \dfrac{dF}{dx}=\dfrac{dG}{dx}=f(x)
+  \qquad \text{then} \qquad
+  F(x)=G(x)+C
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<h3>Scalar Potentials</h3>
+
+<p>
+  For a function of several variables (i.e. a scalar field), \(f(x,y,z)\),
+  if we take all the partial derivatives, we get the gradient:
+  \[
+  \vec F=\vec\nabla f
+  =\left\langle \partial_x f,\partial_y f,\partial_z f\right\rangle
+  \]
+  which is a vector field. Conversely:
+</p>
+<p class="def" data-title="Scalar Potential">
+  A <span class="defword">scalar potential</span> for a vector field
+  \(\vec F(x,y,z)\) is any function \(f(x,y,z)\) whose gradient is \(\vec F\), i.e.
+  \[
+  \vec\nabla f=\vec F
+  \]
+  <button class="toggle" data-toggle="Drop1">
+  Note on upper and lower case.</button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    When finding antiderivatives, it is customary to take the original function
+    as lower case \(f\) and the antiderivative as upper case \(F\).
+  </p>
+  <p>
+    When finding scalar potentials, it is customary to take the original
+    vector field as upper case \(\vec F\) and the scalar potential
+    (analogous to the antiderivative) as lower case \(f\).
+  </p>
+  <p>
+    This reversal of upper and lower case is just something one gets used to.
+  </p>
+</div>
+<p>
+  Unlike antiderivatives, even if the vector field \(\vec F\) has continuous
+  derivatives of all orders, there is no guarantee that it will have a scalar
+  potential. Like antiderivatives, if there is a scalar potential, it will
+  not be unique and again the difference between two scalar potentials
+  will be a constant. On the <a href="ScalPots.html">next two pages</a>, we
+  will discuss the existence and non-uniqueness of scalar potentials and
+  how to find them.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Vector Potentials</h3>
+
+<p>
+  In discussing several variables, we can also take a derivative of
+  a vector field \(\vec A(x,y,z)\). It is most interesting to take this
+  derivative to be the curl:
+  \[
+  \vec F=\vec\nabla\times\vec A
+  \]
+  which is also a vector field. Conversely:
+</p>
+<p class="def" data-title="Vector Potential">
+  A <span class="defword">vector potential</span> for a vector field
+  \(\vec F(x,y,z)\) is any other vector field \(\vec A(x,y,z)\) whose curl
+  is \(\vec F\), i.e.
+  \[
+  \vec\nabla\times\vec A=\vec F
+  \]
+</p>
+<p>
+  Like scalar potentials, even if the vector field \(\vec F\) has continuous
+  derivatives of all orders, there is no guarantee that it will have a vector
+  potential. Further, if there is a vector potential, it will not be unique
+  but this time the difference between two vector potentials will not be
+  just a constant. On the
+  <a href="VecPots.html" title="Return using the Back button.">subsequent two
+  pages</a>, we will discuss the existence and non-uniqueness of vector
+  potentials and how to find them.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

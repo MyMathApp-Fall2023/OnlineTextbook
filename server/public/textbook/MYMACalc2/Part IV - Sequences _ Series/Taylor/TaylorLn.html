@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. \(\ln x\) about \(x=1\) | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PolyApprox.html#EgTaylorPoly" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>23. Taylor Series</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>d.1. Taylor Polynomial Approximation</h2>
+
+<!-- NOTE: the "active" class indicates which page is displayed -->
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="TaylorSin.html">
+      \(\underline{\sin x \quad \text{about } x=0}\)</a></li> &emsp;
+    <li class="active"><a href="TaylorLn.html">
+      \(\underline{\ln x \quad \text{about } x=1}\)</a></li> &emsp;
+    <li><a href="TaylorCBRT.html">
+      \(\underline{x^{1/3} \quad \text{about } x=8}\)</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>b. \(\ln x\) about \(x=1\)</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  The Taylor series for \(\ln x\) about \(x=1\) is:
+  \[\begin{aligned}
+  \ln x=&(x-1)-\dfrac{(x-1)^2}{2}+\dfrac{(x-1)^3}{3} \\
+  &-\dfrac{(x-1)^4}{4}+\dfrac{(x-1)^5}{5}-\dfrac{(x-1)^6}{6}+\cdots
+  \end{aligned}\]
+  Here are the graphs of \(\ln x\) (in <span class="hl">BLUE</span>) with the
+  \(1^\text{st}\) through \(10^\text{th}\) degree Taylor polynomial approximations
+  (in <span style="color:red;">RED</span>):
+</p>
+<div class="center">
+  <video src="graphics/eg_taylor_ln1.mp4" autoplay loop controls></video>
+</div>
+<p class="remark">
+  The interval of convergence of this Taylor series is \((0,2]\). It is
+  obvious from the plots that the series does not converge for \(x \gt 2\)
+  and the function \(\ln x\) is not even defined for \(x \lt 0\).
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

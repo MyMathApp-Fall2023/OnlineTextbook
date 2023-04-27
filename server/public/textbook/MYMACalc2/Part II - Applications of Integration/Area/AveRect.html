@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Average Value and Area | 10. Area and Average Value</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Ave.html" title="Previous">&lArr;</a></li>
+      <li><a href="MVT.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Area and Average Value</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Average Value and Mean Value Theorem</h2>
+
+<p>
+  Recall: &emsp;
+  The <span class="defword">average value of a function</span> \(f(x)\) on
+  an interval \([a,b]\) is:
+  \[
+  f_\text{ave}=\dfrac{1}{b-a}\int_a^b f(x)\,dx
+  \]
+</p>
+
+
+      
+      <h2>2. Average Value and Area</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p class="remark">
+  Notice that the formula for the average value of a function can be
+  rewritten as
+  \[
+  \int_a^b f(x)\,dx=(b-a)f_\text{ave}
+  \]
+</p>
+<p>
+  When \(f(x)\) is positive, the integral on the left is just
+  the area under \(y=f(x)\) and the product on the right is the area of a
+  rectangle with width \(b-a\) and height \(f_\text{ave}\). Thus we conclude:
+</p>
+
+<p class="prop" data-title="Average Value and Area">
+  The average value \(f_\text{ave}\) of a positive function \(f(x)\)
+  is the height of a rectangle of width \(b-a\) whose area is the same as the
+  area under \(y=f(x)\) over the interval \([a,b]\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+    <p class="example" data-number="1">
+      Plot the function \(y=x^2\) and its average value on the interval
+      \([1,4]\) and note the relation between the areas below the curves.
+    </p>
+  	<p class="sol">
+      The average value was found in a
+      <a href="Ave.html#eg_x^2" title="Return using the Back button.">
+      previous example</a>
+      to be \(f_\text{ave}=7\). Notice in the graph to the right, that the area
+      under the <span style="color:blue">blue</span> curve and the area under
+      the <span style="color:green">green</span> line are both \(21\). The part
+      of the area under the <span style="color:blue">blue</span> curve above
+      the <span style="color:green">green</span> line balances the part below
+      the <span style="color:green">green</span> line above the
+      <span style="color:blue">blue</span> curve.
+    </p>
+  </div>
+  <div class="center">
+      <img src="graphics/eg_ave_x^2.jpg" alt="eg_ave_x^2">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Now you try it:
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Plot the function \(y=(x-2)^2\) and its average value on the interval
+    \([1,3]\) and note the relation between the areas below the curves.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <div class="column">
+    <div>
+      <p>
+        The average value was found, in a
+        <a href="Ave.html#ex_(x-2)^2" title="Return using the Back button.">
+        previous exercise</a>,
+        to be \(f_\text{ave}=\dfrac{1}{3}\). Thus the graph is:
+      </p>
+      <p>
+        Notice that the area below the <span style="color:blue">blue</span>
+        curve and the area below the <span style="color:green">green</span>
+        line are both \(\dfrac{2}{3}\). The parts of the area between the
+        <span style="color:blue">blue</span> curve and the
+        <span style="color:green">green</span> line balance out.
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/ex_ave_(x-2)^2_sol.jpg" alt="ex_ave_(x-2)^2_sol">
+    </div>
+  </div>
+</div>
+
+      	<div class="rule"></div>
+
+<p>
+  And now an application:
+</p>
+
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="3">
+      A fish tank which is \(40\) cm long and \(25\) cm deep has a water
+      wave whose shape (at one instant of time) is given by
+      \[
+      y(x)=\dfrac{1}{1000}x^3-\dfrac{11}{200}x^2+\dfrac{4}{5}x+16
+      \]
+      as shown in the figure. If the water is allowed to come to equilibrium
+      (so the water level is constant), what will be the depth of the water?
+      Assume the water is incompressible.
+      <br><br>
+    </p>
+    <div class="center">
+      <img src="graphics/ex_fishtank_anim.gif" alt="ex_fishtank_anim">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Since the water is incompressible, the volume of the water is the same
+    before and after it reaches equilibrium. So the area under the curve will
+    equal the area of the final rectangle whose height is the average of the
+    height of the curve.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    The equilibrium depth will be the average depth
+    \(y_\text{ave}=\dfrac{56}{3}\approx 18.7\) cm.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Since the water is incompressible, the volume of the water is the same
+    before and after it reaches equilibrium. So the area under the curve will
+    equal the area of the final rectangle whose height is the average of the
+    height of the curve.
+    \[\begin{aligned}
+    y_\text{ave}
+    &=\dfrac{1}{40}\int_0^{40}
+    \left(\dfrac{1}{1000}x^3-\dfrac{11}{200}x^2+\dfrac{4}{5}x+16\right)\,dx \\
+    &=\dfrac{1}{40}
+    \left[\dfrac{x^4}{4000}-\dfrac{11x^3}{600}+\dfrac{2x^2}{5}+16x\right]_0^{40} \\
+    &=\dfrac{1}{40}
+    \left(\dfrac{40^4}{4000}-\dfrac{11\cdot40^3}{600}+\dfrac{2\cdot40^2}{5}+16\cdot40\right) \\
+    &=\dfrac{56}{3}\approx18.7\text{cm}
+    \end{aligned}\]
+  </p>
+</div>
+
+      	<div class="rule"></div>
+
+<p class="tutorial-ref">
+  You can practice estimating and computing Average Values by using the
+  <a href="TutAveVal.html#aveval">Tutorial</a> at the end of this chapter.
+  In the first half of the Tutorial, you get to estimate the average
+  value using areas, while in the second half you compute it exactly.
+</p>
+
+      	<div class="rule"></div>
+
+<p class="maplet">
+  You can also practice estimating and computing Average Values by using
+  the following Maplet (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/AverageValue1var.maplet" download>Average Value of a Function</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p>
+  In the first half of the Maplet, you get to estimate the average
+  value using areas, while in the second half you compute it exactly.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

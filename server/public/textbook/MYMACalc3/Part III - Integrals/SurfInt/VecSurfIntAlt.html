@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Alternate Notations | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VecSurfInt.html" title="Previous">&lArr;</a></li>
+      <li><a href="Flux.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Vector Surface Integrals</h2>
+
+<p>
+  Recall that for a curve \(\vec r(t)=\left\langle x(t),y(t),z(t)\right\rangle\),
+  the tangent vector is
+  \(\vec v(t)
+  =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle\)
+  and the vector differential is:
+  \[
+  d\vec{s}=\vec{v}\,dt
+  =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle\,dt
+  \]
+  We frequently cancel the \(dt\)'s and write simply:
+  \[
+  d\vec{s}=\vec{v}\,dt=\left\langle dx,dy,dz\right\rangle
+  \]
+  Then the line integral of a vector
+  \(\vec F=\left\langle F_1,F_2,F_3\right\rangle\) is
+  \[
+  \int_A^B \vec{F}\cdot\,d\vec{s}
+  =\int_A^B F_1\,dx+F_2\,dy+F_3\,dz
+  \]
+  When we use this form of the integral, we need to remember to evaluate
+  \(F_1\), \(F_2\) and \(F_3\) at \((x(t),y(t),z(t))\) and to substitute the
+  differentials \(dx=\dfrac{dx}{dt}\,dt\), \(dy=\dfrac{dy}{dt}\,dt\) and
+  \(dz=\dfrac{dz}{dt}\,dt\).
+</p>
+<p>
+  For an example, see the second example on the page on
+  <a href="../../Part I - Geometry & Vectors/LineInt/VectorInt.html#altlineintnotation"
+  title="Return using the Back button.">
+  Line Integrals of Vectors</a>
+</p>
+
+
+      
+      <h2>3. Alternate Notations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Similarly, for a surface
+  \(\vec R(u,v)=\left\langle x(u,v),y(u,v),z(u,v)\right\rangle\),
+  the normal vector \(\vec{N}=\vec{e}_u\times\vec{e}_v\) can be written as:
+  \[\begin{aligned}
+  \vec{N}
+  &=\left\langle \dfrac{\partial(y,z)}{\partial(u,v)},
+              -\,\dfrac{\partial(x,z)}{\partial(u,v)},
+                 \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle \\
+  &=\left\langle \dfrac{\partial(y,z)}{\partial(u,v)},
+                 \dfrac{\partial(z,x)}{\partial(u,v)},
+                 \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle
+  \end{aligned}\]
+  where the terms are \(2\) dimensional Jacobian determinants. In the second
+  version, we have absorbed the minus (\(-\)) sign into the second determinant
+  by reversing the columns from \((x,z)\) to \((z,x)\).
+</p>
+<p>
+  Substituting the first version of \(\vec N\) into \(d\vec{S}=\vec{N}\,du\,dv\),
+  we get:
+  \[
+  d\vec{S}
+  =\left\langle \dfrac{\partial(y,z)}{\partial(u,v)},
+             -\,\dfrac{\partial(x,z)}{\partial(u,v)},
+                \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle\,du\,dv
+  \]
+  Like cancelling \(dt\)'s, we sometimes cancel the \(\partial(u,v)\)
+  in the bottom of each Jacobian with the \(du\,dv\) terms that are outside
+  the parentheses. This results in the expression:
+  \[
+  d\vec{S}=\left\langle dy\,dz,-dx\,dz,dx\,dy\right\rangle
+  \]
+  where in the above expression, the products of differentials mean
+  \[\begin{aligned}
+  dy\,dz=\dfrac{\partial(y,z)}{\partial(u,v)}\,du\,dv
+  \qquad
+  dx\,dz=\dfrac{\partial(x,z)}{\partial(u,v)}\,du\,dv
+  \qquad
+  dx\,dy=\dfrac{\partial(x,y)}{\partial(u,v)}\,du\,dv
+  \end{aligned}\]
+</p>
+<p>
+  Similarly, substituting the second version of \(\vec N\) into
+  \(d\vec{S}=\vec{N}\,du\,dv\), we get:
+  \[\begin{aligned}
+  d\vec{S}
+  &=\left\langle \dfrac{\partial(y,z)}{\partial(u,v)},
+                 \dfrac{\partial(z,x)}{\partial(u,v)},
+                 \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle\,du\,dv \\
+  &=\left\langle dy\,dz,dz\,dx,dx\,dy\right\rangle
+  \end{aligned}\]
+  where this time the second product of differentials means
+  \[
+  dz\,dx=\dfrac{\partial(z,x)}{\partial(u,v)}\,du\,dv
+  \]
+</p>
+<p>
+  Notice that
+  \(\dfrac{\partial(z,x)}{\partial(u,v)}=-\,\dfrac{\partial(x,z)}{\partial(u,v)}\)
+  since they are the same determinant except that the two columns are reversed.
+  Consequently, \(dx\,dz \neq dz\,dx\). Rather,
+  \[
+  dx\,dz=-dz\,dx
+  \]
+  This is shocking at first but one gets used to it. The expression is
+  similar to a cross product in that interchanging two vectors will result
+  in a minus sign in the cross product. Similarly, when multiplying
+  differentials, interchanging the two, results in a minus sign in the product.
+  The differentials can be written in either order when computing an integral
+  provided the appropriate minus sign is included. In particular, alphabetical
+  order, \(dx\,dz\), needs a minus, while cylic order, \(dz\,dx\) does not.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Using this alternate version of \(d\vec S\), the surface integral of a
+  vector \(\vec F=\left\langle F_1,F_2,F_3\right\rangle\) is
+  \[\begin{aligned}
+  \iint_S \vec{F}\cdot\,d\vec{S}
+  &=\iint_S F_1\,dy\,dz-F_2\,dx\,dz+F_3\,dx\,dy \\
+  &=\iint_S F_1\,dy\,dz+F_2\,dz\,dx+F_3\,dx\,dy
+  \end{aligned}\]
+  Notice that in the expression with a minus the differentials are in
+  alphabetical order; in the expression with a plus the differentials are in
+  cyclic order. As  usual, limits need to be put on the surface integral to
+  describe the boundary.
+</p>
+<p>
+  When we use this form of the integral, we need to remember to evaluate
+  \(F_1\), \(F_2\) and \(F_3\) at \(\vec R(u,v)\) and to substitute for the
+  differentials \(dy\,dz\), \(dx\,dz\) or \(dz\,dx\) and \(dx\,dy\) in
+  terms of Jacobians.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \iint_P xz^2\,dy\,dz-yz^2\,dx\,dz-2z^3\,dx\,dy\)
+  over the piece of the elliptic paraboloid \(z=x^2+y^2\) below \(z=4\)
+  orientated with the normal pointing <em>down and out</em> from the
+  paraboloid.
+</p>
+
+<big>PY: Add plot.</big>
+
+<p class="sol">
+  The paraboloid may be parametrized by:
+  \[
+  x=r\cos\theta \qquad y=r\sin\theta \qquad z=r^2
+  \]
+  The differentials are:
+  \[\begin{aligned}
+  dy\,dz&=\dfrac{\partial(y,z)}{\partial(r,\theta)}\,dr\,d\theta
+  =\left(\dfrac{\partial y}{\partial r}\dfrac{\partial z}{\partial \theta}
+  -\dfrac{\partial z}{\partial r}\dfrac{\partial y}{\partial \theta}\right)\,dr\,d\theta \\
+  &=(\sin\theta\cdot0-2r\cdot r\cos\theta)\,dr\,d\theta
+  =-2r^2\cos\theta\,dr\,d\theta \\
+  dx\,dz&=\dfrac{\partial(x,z)}{\partial(r,\theta)}\,dr\,d\theta
+  =\left(\dfrac{\partial x}{\partial r}\dfrac{\partial z}{\partial \theta}
+  -\dfrac{\partial z}{\partial r}\dfrac{\partial x}{\partial \theta}\right)\,dr\,d\theta \\
+  &=(\cos\theta\cdot0+2r\cdot r\sin\theta)\,dr\,d\theta
+  =2r^2\sin\theta\,dr\,d\theta \\
+  dx\,dy&=\begin{vmatrix}
+  \dfrac{\partial x}{\partial r} & \dfrac{\partial y}{\partial r} \\[8pt]
+  \dfrac{\partial x}{\partial \theta} & \dfrac{\partial y}{\partial \theta}
+  \end{vmatrix}\,dr\,d\theta
+  =\begin{vmatrix}
+  \cos\theta & \sin\theta \\[8pt]
+  -r\sin\theta & r\cos\theta
+  \end{vmatrix}\,dr\,d\theta \\
+  &=(r\cos^2\theta+r\sin^2\theta)\,dr\,d\theta
+  =r\,dr\,d\theta \\
+  \end{aligned}\]
+  Notice that in the computation of \(dx\,dy\), we used a different notation
+  for the computation. You can pick either one.
+</p>
+<p>
+  To check the orientation, we still need to look at the normal or the
+  differential:
+  \[\begin{aligned}
+  d\vec{S}&=\left\langle dy\,dz,-dx\,dz,dx\,dy\right\rangle \\
+  &=\left\langle -2r^2\cos\theta,-2r^2\sin\theta,r\right\rangle\,dr\,d\theta
+  \end{aligned}\]
+  Be careful with the minus on the second component! Since the first \(2\)
+  components are negative (in the \(1^\text{st}\) quadrant) and the
+  \(3^\text{rd}\) component is positive, the normal points in and up. Since
+  we need it down and out, we need to reverse it. We do this by reversing
+  the sign of all \(3\) differentials:
+  \[\begin{aligned}
+  dy\,dz=2r^2\cos\theta&\,dr\,d\theta \qquad
+  dx\,dz=-2r^2\sin\theta\,dr\,d\theta \\
+  &dx\,dy=-r\,dr\,d\theta
+  \end{aligned}\]
+  We are ready to compute the integral. We substitute for each coordinate
+  and each differential:
+  \[\begin{aligned}
+  \iint_P &(x)(z)^2(dy\,dz)-(y)(z)^2(dx\,dz)-2(z)^3(dx\,dy) \\
+  &=\iint_P \left[(r\cos\theta)(r^2)^2(2r^2\cos\theta)\dfrac{}{}\right. \\
+  &\quad\left.-(r\sin\theta)(r^2)^2(-2r^2\sin\theta)
+  -2(r^2)^3(-r)\dfrac{}{}\right]\,dr\,d\theta \\
+  &=\int_0^{2\pi}\int_0^2 (2r^7\cos^2\theta+2r^7\sin^2\theta+2r^7)\,dr\,d\theta \\
+  &=\int_0^{2\pi}\int_0^2 4r^7\,dr\,d\theta
+  =2\pi\left[\dfrac{r^8}{2}\right]_0^2
+  =256\pi
+  \end{aligned}\]
+</p>
+<p class="remark">
+  If we prefer, we can always convert back to the
+  \(\displaystyle \iint_S \vec{F}\cdot\,d\vec{S}\) notation by identifying
+  the components of \(\vec F\) as the coefficients of
+  \(dy\,dz\), \(-dx\,dz\) and \(dx\,dy\). In this example, given the integral
+  \(\displaystyle \iint_P xz^2\,dy\,dz-yz^2\,dx\,dz-2z^3\,dx\,dy\), we
+  identify the vector field as
+  \[
+  \vec F=\left\langle xz^2,yz^2,-2z^3\right\rangle
+  \]
+  (Be careful with the sign of the \(y\) component.)
+  Notice, this is the same integral as in the exercise on the
+  <a href="VecSurfInt.html#ellipparab" title="Return using the Back button.">
+  previous page</a>. In both versions, we need to compute the Jacobians
+  which are the components of the normal. However, to check the orientation
+  in the differentail version, we need to reconstruct the normal anyway.
+  So the first version is probably more direct.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\displaystyle \iint_P xz\,dy\,dz+yz\,dz\,dx+z^2\,dx\,dy\)
+    over the polar cap (\(0 \le \phi \le \dfrac{\pi}{6}\)) of a sphere of
+    radius \(2\) with the orientation <em>outward</em> from the sphere.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle
+  \iint_P xz\,dy\,dz+yz\,dz\,dx+z^2\,dx\,dy=4\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The sphere may be parametrized by:
+    \[
+    x=2\sin\phi\cos\theta \qquad
+    y=2\sin\phi\sin\theta \qquad
+    z=2\cos\phi
+    \]
+    The differentials are:
+    \[\begin{aligned}
+    dy\,dz&=\dfrac{\partial(y,z)}{\partial(\phi,\theta)}\,d\phi\,d\theta
+    =\left(\dfrac{\partial y}{\partial \phi}\dfrac{\partial z}{\partial \theta}
+    -\dfrac{\partial z}{\partial \phi}\dfrac{\partial y}{\partial \theta}\right)\,d\phi\,d\theta \\
+    &=(2\cos\phi\sin\theta\cdot0--2\sin\phi\cdot2\sin\phi\cos\theta)\,d\phi\,d\theta \\
+    &=4\sin^2\phi\cos\theta\,d\phi\,d\theta \\
+    dz\,dx&=\dfrac{\partial(z,x)}{\partial(\phi,\theta)}\,d\phi\,d\theta
+    =\left(\dfrac{\partial z}{\partial \phi}\dfrac{\partial x}{\partial \theta}
+    -\dfrac{\partial x}{\partial \phi}\dfrac{\partial z}{\partial \theta}\right)\,d\phi\,d\theta \\
+    &=(--2\sin\phi\cdot2\sin\phi\sin\theta-2\cos\phi\cos\theta\cdot0)\,d\phi\,d\theta \\
+    &=4\sin^2\phi\sin\theta\,d\phi\,d\theta \\
+    dx\,dy&=\dfrac{\partial(x,y)}{\partial(\phi,\theta)}\,d\phi\,d\theta
+    =\left(\dfrac{\partial x}{\partial \phi}\dfrac{\partial y}{\partial \theta}
+    -\dfrac{\partial y}{\partial \phi}\dfrac{\partial x}{\partial \theta}\right)\,d\phi\,d\theta \\
+    &=(2\cos\phi\cos\theta\cdot2\sin\phi\cos\theta \\
+    &\qquad--2\cos\phi\sin\theta\cdot2\sin\phi\sin\theta)\,d\phi\,d\theta \\
+    &=4\cos\phi\sin\phi\,d\phi\,d\theta \\
+    \end{aligned}\]
+    From these differentials we can read off the normal vector:
+    \[
+    \vec{N}=\left\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,
+    4\cos\phi\sin\phi\right\rangle
+    \]
+    Since all \(3\) components are positive (in the \(1^\text{st}\) octant),
+    the normal points outward as required.
+    We are ready to compute the integral. We substitute for each coordinate
+    and each differential:
+    \[\begin{aligned}
+    \iint_P &xz\,dy\,dz+yz\,dz\,dx+z^2\,dx\,dy \\
+    &=\iint_P \left[(2\sin\phi\cos\theta)(2\cos\phi)(4\sin^2\phi\cos\theta)\dfrac{}{}\right. \\
+    &\qquad\qquad+(2\sin\phi\sin\theta)(2\cos\phi)(4\sin^2\phi\sin\theta) \\
+    &\qquad\qquad+\left.(2\cos\phi)^2(4\cos\phi\sin\phi)\dfrac{}{}\right]\,d\phi\,d\theta \\
+    &=16\int_0^{2\pi}\int_0^{\pi/6} (\sin^3\phi\cos\phi+\cos^3\phi\sin\phi)\,d\phi\,d\theta \\
+    &=16\int_0^{2\pi}\int_0^{\pi/6} \sin\phi\cos\phi\,dr\,d\theta
+    =32\pi\left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/6}
+    =4\pi
+    \end{aligned}\]
+  </p>
+  <p class="remark">
+    Notice, this is the same integral as in the example on the
+    <a href="VecSurfInt.html#polarcap" title="Return using the Back button.">
+    previous page</a>. This time the normal was correctly oriented because we
+    ordered the coordinates as \((\phi,\theta)\) instead of \((\theta,\phi)\).
+    If we did not need to construct the normal to check the orientation, the
+    second method might be faster. But since we do need the normal, the
+    first method is probably more direct. Given the integral
+    \(\displaystyle \iint_P xz\,dy\,dz+yz\,dz\,dx+z^2\,dx\,dy\), we
+    identify the vector field as
+    \(\vec F=\left\langle xz,yz,z^2\right\rangle\) (Be careful with the
+    sign of the \(y\) component.) and proceed to compute the integral
+    \(\displaystyle \iint_P \vec{F}\cdot\,d\vec{S}\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

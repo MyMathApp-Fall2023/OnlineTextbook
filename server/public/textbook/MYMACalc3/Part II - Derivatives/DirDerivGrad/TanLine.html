@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Tangent Lines to Level Curves in \(\mathbb R^2\) | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PropGradApps34.html" title="Previous">&lArr;</a></li>
+      <li><a href="TanPlane.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Tangent and Normal, Lines and Planes to Level Sets</h2>
+
+<p>
+  Since the gradient vector is perpendicular to each level set of a function,
+  it is useful in finding
+  <br>1. the tangent line to a level curve in \(\mathbb R^2\)
+  (this page)
+  <br>2. the tangent plane to a level surface in \(\mathbb R^3\)
+  (the <a href="TanPlane.html" title="Return using the Back button.">
+  next page</a>)
+  <br>3. the normal line to a level curve in \(\mathbb R^2\)
+  (the <a href="NormalLine.html" title="Return using the Back button.">
+  subsequent page</a>)
+  <br>4. the normal line to a level surface in \(\mathbb R^3\)
+  (the <a href="NormalLine.html" title="Return using the Back button.">
+  subsequent page</a>)
+</p>
+
+
+      
+      <h2>1. Tangent Lines to Level Curves in \(\mathbb R^2\)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  A curve in the plane is frequently defined as the graph of an equation.
+  In that case, the curve can be regarded as the level set of a function
+  \(F(x,y)\). To determine the tangent line to the curve at a point
+  \(P=(a,b)\), we can find the normal vector at \(P\), which in turn,
+  is the gradient of \(F\) at \(P\).
+</p>
+<p class="example" data-number="1">
+  Find the line tangent to the curve \(x^3y^2=4\)
+  at the point \((x,y)=(1,2)\).
+</p>
+<p class="sol">
+  Recall from the chapter on
+  <a href="../../Part I - Geometry & Vectors/LinePlane/LineNonParam3.html#NormalLine"
+  title="Return using the Back button.">Lines and Planes</a>
+  that the normal equation for a line in \(\mathbb R^2\) is given by
+  \[
+  \vec n\cdot X=\vec n\cdot P
+  \]
+  where \(P\) is a particular point on the line, \(\vec n\) is a normal
+  vector to the line and \(X=(x,y)\) is a general point on the line. In the
+  case of a tangent line to a level curve of a function \(F\), \(P\) is the
+  point of tangency and \(\vec n\) is the normal to the level curve, i.e.
+  the gradient of \(F\) at \(P\).
+</p>
+<p>
+  In this example, the function is \(F(x,y)=x^3y^2\), its gradient is
+  \[
+  \vec\nabla F=\langle 3x^2y^2,2x^3y\rangle
+  \]
+  and the normal at \(P=(1,2)\) is
+  \[
+  \vec n=\left.\vec\nabla F\right|_{(1,2)}
+  =\langle 12,4\rangle
+  \]
+  So the normal equation of the line is
+  \[
+  \vec n\cdot X
+  =\vec n\cdot P
+  \qquad \text{or} \qquad
+  \langle 12,4\rangle\cdot(x,y)
+  =\langle 12,4\rangle\cdot(1,2)
+  \]
+  or
+  \[
+  12x+4y=20
+  \qquad \text{or} \qquad
+  3x+y=5.
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the line tangent to the ellipse \(\dfrac{x^2}{9}+\dfrac{y^2}{4}=2\)
+    at the point \((x,y)=(3,2)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(2x+3y=12\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The gradient of the function \(f=\dfrac{x^2}{9}+\dfrac{y^2}{4}\) is
+    \[
+    \vec\nabla f=\left\langle \dfrac{2x}{9},\dfrac{y}{2}\right\rangle
+    \]
+    Its value at \(P=(3,2)\) is the normal:
+    \[
+    \vec n=\left.\vec\nabla f\right|_P
+    =\left\langle \dfrac{2}{3},1\right\rangle
+    \]
+    So the tangent line \(\vec n\cdot X=\vec n\cdot P\) is
+    \[
+    \dfrac{2}{3}x+y=\dfrac{2}{3}3+2=4
+    \]
+    or equivalently,
+    \[
+    2x+3y=12
+    \]
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<p class=remark>
+  It is important to distinguish between three (or four) methods of finding
+  the tangent line to a curve.
+  <ol>
+    <li>
+      If the curve is given as the graph of the a function, \(y=f(x)\), then
+      the tangent line at \(x=a\) is:
+      \[
+      y=f_{\tan}(x)=f(a)+f'(a)(x-a)
+      \]
+    </li>
+    <li>
+      If the curve is given as a parametric curve,
+      \(\vec r(t)=(x(t),y(t))\), then
+      the tangent vector at \(t=a\) is
+      \(\vec v(a)=(x'(a),y'(a))\)
+      and the tangent line at \(\vec r(a)=(x(a),y(a))\) is:
+      \[
+      \vec r_{\tan}(t)=\vec r(a)+t\,\vec v(a)
+      \]
+    </li>
+    <li>
+      If the curve is given as the graph of an equation \(F(x,y)=C\),
+      (equivalently, the level curve of the function \(F(x,y)\)
+      with value \(C\)), then the normal vector is
+      \(\vec n=\left.\vec\nabla F\right|_{(a,b)}\) and the tangent line at
+      \(P=(a,b)\) is:
+      \[
+      \vec n\cdot X=\vec n\cdot P
+      \]
+    </li>
+    <li>
+      If the curve is given as the graph of an equation \(F(x,y)=C\),
+      then an alternate method to find the tangent line at \((a,b)\)
+      is to apply method (1) to the implicitly defined function \(y=f(x)\):
+      Since the point is \((a,b)\), the function value is \(f(a)=b\).
+      Using implicit differentiation the slope is
+      \(f'(a)=\left.\dfrac{dy}{dx}\right|_{(a,b)}\).
+      Then the tangent line at \((a,b)\) is:
+      \[
+      y=f_{\tan}(x)=f(a)+f'(a)(x-a)
+      \]
+      This implicit differentiation method is the least useful of the four.
+      In general, if the curve is a level set \(F(x,y)=C\), then it is much
+      easier to compute the gradient, \(\vec\nabla F\), than to use implicit
+      differentiation to compute the slope, \(\dfrac{dy}{dx}\).
+    </li>
+  </ol>
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the tangent line to the graph of the function \(y=f(x)=x^2\) at
+    \((2,4)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(y=4x-4\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The derivative is \(f'(x)=2x\). At \(x=2\), the slope is \(m=4\).
+    So the tangent line is
+    \[
+    y=f_{\tan}(x)=f(2)+f'(2)(x-2)=4+4(x-2)=4x-4
+    \]
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the tangent line to the parametric curve \(\vec r(t)=(t,t^2)\) at
+    \((2,4)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(x=2+t \qquad y=4+4t\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The tangent vector at a general point is
+    \(\vec v=\langle 1,2t\rangle\).
+    The tangent vector at \(t=2\) is \(\vec v(2)=\langle 1,4\rangle\).
+    So the tangent line is
+    \[
+    X=(x,y)=\vec r_{\tan}(t)=\vec r(2)+t\,\vec v(2)
+    =\langle 2,4\rangle+t\,\langle 1,4\rangle
+    \]
+    or
+    \[
+    x=2+t \qquad y=4+4t
+    \]
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Find the tangent line to the level set of the function \(F(x,y)=y-x^2\) at
+    \((2,4)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(4x-y=4\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    The gradient is \(\vec\nabla F=\langle -2x,1\rangle\). The normal is
+    \(\vec n=\left.\vec\nabla F\right|_{(2,4)}=\langle -4,1\rangle\).
+    So the tangent line \(\vec n\cdot X=\vec n\cdot P\) is
+    \[
+    -4x+y=-8+4=-4 \qquad \text{or} \qquad 4x-y=4
+    \]
+  </p>
+</div>
+
+<p class="remark">
+  Notice that these three exercises were all the same problem.
+  Which method did you think was easiest? For more complex problems, different
+  methods may have a distinct advantage, depending on the way the problem
+  is stated.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

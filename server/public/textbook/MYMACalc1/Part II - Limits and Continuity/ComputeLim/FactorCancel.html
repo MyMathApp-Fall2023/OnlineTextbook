@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Factor and Cancel | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html#tricks" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>7. Computing Limits</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>b. When Limit Laws Don't Apply</h2>
+<h2>1. Limit Tricks</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="FactorCancel.html" class="active">Factor and Cancel</a></li>
+    <li><a href="ExpandCancel.html">Expand and Cancel</a></li>
+    <br>
+    <li><a href="DivLargeTerm.html">Divide by the Largest Term in the Denominator</a></li>
+    <br>
+    <li><a href="CommDenom.html">Put Terms over a Common Denominator</a></li>
+    <br>
+    <li><a href="MultConj.html">Multiply by the Conjugate</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>a. Factor and Cancel</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  This trick says to factor the numerator and the denominator and then cancel
+  any common factors. It is most appropriate for the indeterminate form
+  \(\dfrac{0}{0}\) when the numerator and denominator are
+  <button class="toggle" data-toggle="Drop1">generalized polynomials</button>.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p data-title="Generalized Polynomials">
+    A <span class="defword">generalized polynomial</span> is a sum of terms
+    each of which is a coefficient times the variable to a numerical power,
+    not necessarily non-negative integers. If all the powers are non-negative
+    integers, then it is a polynomial.
+  </p>
+</div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \lim_{x\to3}\dfrac{x^2-8x+15}{x-3}\).
+</p>
+<p class="sol">
+  If we plug \(x=3\) into the numerator and denominator, we see this has the
+  indeterminate form \(\dfrac{0}{0}\). To simplify this, we factor the
+  numerator and cancel:
+  \[\begin{aligned}
+  \lim_{x\to3}\dfrac{x^2-8x+15}{x-3}
+  &=\lim_{x\to3}\dfrac{(x-3)(x-5)}{x-3} \\
+  &=\lim_{x\to3}(x-5)
+  =-2
+  \end{aligned}\]
+</p>
+
+<p class="example" data-number="2">
+  Compute \(\displaystyle \lim_{x\to4}\dfrac{x^2-5x+4}{x^{3/2}-4x^{1/2}}\).
+</p>
+<p class="sol">
+  If we plug \(x=4\) into the numerator and denominator, we see this has the
+  indeterminate form \(\dfrac{0}{0}\). To simplify this, we factor the
+  numerator and denominator and cancel:
+  \[\begin{aligned}
+  \lim_{x\to4}\dfrac{x^2-5x+4}{x^{3/2}-4x^{1/2}}
+  &=\lim_{x\to4}\dfrac{(x-4)(x-1)}{\sqrt{x}(x-4)} \\
+  &=\lim_{x\to4}\dfrac{x-1}{\sqrt{x}}
+  =\dfrac{3}{2}
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\displaystyle \lim_{x\to3}\dfrac{x-3}{x^3-27}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Recall:
+    \[\begin{aligned}
+    (a-b)(a^2+ab+b^2)&=(a^3+a^2b+ab^2)-(a^2b+ab^2+b^3) \\
+    &=a^3-b^3
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle
+  \lim_{x\to3}\dfrac{x-3}{x^3-27}=\dfrac{1}{27}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    If we plug \(x=3\) into the numerator and denominator, we see this has the
+    indeterminate form \(\dfrac{0}{0}\). To simplify this, we factor the
+    denominator and cancel:
+    \[\begin{aligned}
+    \lim_{x\to3}\dfrac{x-3}{x^3-27}
+    &=\lim_{x\to3}\dfrac{x-3}{(x-3)(x^2+3x+9)} \\
+    &=\lim_{x\to3}\dfrac{1}{x^2+3x+9}
+    =\dfrac{1}{27}
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Compute \(\displaystyle \lim_{x\to25}\dfrac{\sqrt{x}-5}{x-25}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Recall:
+    \[
+    a^2-b^2=(a-b)(a+b)
+    \]
+    This works even if \(a\) and/or \(b\) is a square root.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle
+  \lim_{x\to25}\dfrac{\sqrt{x}-5}{x-25}=\dfrac{1}{10}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Notice:
+    \[
+    x-25=(\sqrt{x}-5)(\sqrt{x}+5)
+    \]
+    So:
+    \[\begin{aligned}
+    \lim_{x\to25}\dfrac{\sqrt{x}-5}{x-25}
+    &\lim_{x\to25}\dfrac{\sqrt{x}-5}{(\sqrt{x}-5)(\sqrt{x}+5)} \\
+    &=\lim_{x\to25}\dfrac{1}{\sqrt{x}+5}
+    =\dfrac{1}{10}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

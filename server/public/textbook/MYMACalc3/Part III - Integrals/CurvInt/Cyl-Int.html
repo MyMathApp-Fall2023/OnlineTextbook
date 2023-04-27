@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Integral over a Cylindrical Region | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Cyl-Grid.html" title="Previous">&lArr;</a></li>
+      <li><a href="Cyl-Appl.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Integrating in Cylindrical Coordinates</h2>
+
+
+      
+      <h2>2. Integral over a Cylindrical Region</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We now explore integration in cylindrical
+  coordinates with constant and non-constant limits.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Integral over a Cylindrical Box</h3>
+
+<p>
+  We first want to integrate over the cylindrical box
+  \[
+  r_1 \le r \le r_2 \qquad
+  \theta_1 \le \theta \le \theta_2 \qquad
+  z_1 \le z \le z_2
+  \]
+  Using the Riemann Sum definition with
+  \(\Delta V_{ijk}=r_i^*\,\Delta r_i\,\Delta\theta_j\,\Delta z_k\),
+  the integral is:
+  \[
+  \iiint_R f(r,\theta,z)\,dV
+  =\lim_{p\rightarrow\infty}
+  \lim_{q\rightarrow\infty}
+  \lim_{s\rightarrow\infty}
+  \sum_{i=1}^p\sum_{j=1}^q\sum_{k=1}^s
+  f(r_i^*,\theta_j^*,z_k^*)\,r_i^*\Delta r_i\Delta\theta_j\Delta z_k
+  \]
+  We recognize this as the triple iterated integral:
+  \[
+  \iiint\limits_R f(r,\theta,z)\,dV
+  =\int_{z_1}^{z_2}\int_{\theta_1}^{\theta_2}\int_{r_1}^{r_2}
+  f(r,\theta,z)\,r\,dr\,d\theta\,dz
+  \]
+  By <span class="hl">Fubini's Theorem</span>, there are five other orders
+  of integrations obtained by reordering the differentials and the
+  corresponding limits.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Other Integrals in Cylindrical Coordinates</h3>
+
+<p>
+  In addition to integrating over cylindrical boxes, cylindrical coordinates
+  can be used to integrate over other types of regions with appropriate
+  definitions of the regions. The resulting integrals have the forms:
+</p>
+<p class="greybox">
+  <span class="hl">Type</span> \(r\theta\):
+    \[
+    \iiint\limits_R f(r,\theta,z)\,dV
+    =\int_{r_1}^{r_2}\int_{g(r)}^{h(r)}\int_{p(r,\theta)}^{q(r,\theta)}
+    f(r,\theta,z)\,r\,dz\,d\theta\,dr
+    \]
+  <span class="hl">Type</span> \(\theta r\):
+    \[
+    \iiint\limits_R f(r,\theta,z)\,dV
+    =\int_{\theta_1}^{\theta_2}\int_{g(\theta)}^{h(\theta)}
+    \int_{p(r,\theta)}^{q(r,\theta)} f(r,\theta,z)\,r\,dz\,dr\,d\theta
+    \]
+  <span class="hl">Type</span> \(rz\):
+    \[
+    \iiint\limits_R f(r,\theta,z)\,dV
+    =\int_{r_1}^{r_2}\int_{g(r)}^{h(r)}\int_{p(r,z)}^{q(r,z)}
+    f(r,\theta,z)\,r\,d\theta\,dz\,dr
+    \]
+  <span class="hl">Type</span> \(zr\):
+    \[
+    \iiint\limits_R f(r,\theta,z)\,dV
+    =\int_{z_1}^{z_2}\int_{g(z)}^{h(z)}\int_{p(r,z)}^{q(r,z)}
+    f(r,\theta,z)\,r\,d\theta\,dr\,dz
+    \]
+  <span class="hl">Type</span> \(\theta z\):
+    \[
+    \iiint\limits_R f(r,\theta,z)\,dV
+    =\int_{\theta_1}^{\theta_2}\int_{g(\theta)}^{h(\theta)}
+    \int_{p(\theta,z)}^{q(\theta,z)} f(r,\theta,z)\,r\,dr\,dz\,d\theta
+    \]
+  <span class="hl">Type</span> \(z\theta\):
+    \[
+    \iiint\limits_R f(r,\theta,z)\,dV
+    =\int_{z_1}^{z_2}\int_{g(z)}^{h(z)}\int_{p(\theta,z)}^{q(\theta,z)}
+    f(r,\theta,z)\,r\,dr\,d\theta\,dz
+    \]
+</p>
+<p>
+  Notice that each integral can have limits which depend only on the variables
+  outside that integral.
+</p>
+
+        <div class="rule" id="volume"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    The top surface of this spiral ramp is given in cylindrical coordinates by
+    \(z=\theta\) independent of \(r\). Its radius is \(r=2\). The ramp will
+    be 3D printed with a density \(\delta=2(\theta-z)\). (The point on the
+    ramp directly above the point \((r,\theta,z)\) is \((r,\theta,\theta)\).
+    So this density says that at each point the density is proportional to the
+    distance up to the ramp directly above that point.) Find the total mass
+    of the spiral ramp.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_cyl_ramp.jpg" alt="eg_cyl_ramp">
+  </div>
+</div>
+<p class="remark">
+  The volume of the spiral ramp could be computed using the triple integral
+  \(\displaystyle V=\int_0^2\int_0^{2\pi}\int_0^\theta 1\,r\,dz\,d\theta\,dr\)
+  or using the double integral
+  \(\displaystyle V=\int_0^2\int_0^{2\pi} \theta\,r\,d\theta\,dr\),
+  but the mass must be computed using a triple integral.
+</p>
+
+<p class="sol">
+  The mass is given by
+  \[\begin{aligned}
+  M&=\iiint \delta\,dV
+  =\int_0^2\int_0^{2\pi}\int_0^\theta 2(\theta-z)\,r\,dz\,d\theta\,dr \\
+  &=\int_0^2 2r\,dr\int_0^{2\pi}\int_0^\theta (\theta-z)\,dz\,d\theta \\
+  &=\left[r^2\dfrac{}{}\right]_0^2\int_0^{2\pi}
+  \left[\theta z-\,\dfrac{z^2}{2}\right]_0^\theta\,d\theta \\
+  &=4\int_0^{2\pi} \dfrac{\theta^2}{2}\,d\theta
+  =4\left[\dfrac{\theta^3}{6}\right]_0^{2\pi}
+  =4\dfrac{(2\pi)^3}{6}
+  =\dfrac{16}{3}\pi^3
+  \end{aligned}\]
+</p>
+<div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Find the volume of the spiral ramp in the previous example.
+    </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(V=4\pi^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The volume is given by
+    \[\begin{aligned}
+    V&=\int_0^2\int_0^{2\pi} \theta\,r\,d\theta\,dr \\
+    &=\int_0^2 r\,dr\int_0^{2\pi} \theta\,d\theta
+    =\left[\dfrac{r^2}{2}\right]_0^2\left[\dfrac{\theta^2}{2}\right]_0^{2\pi} \\
+    &=2\dfrac{(2\pi)^2}{2}
+    =4\pi^2
+    \end{aligned}\]
+  </p>
+</div>
+<a id="ex_icecream_cyl"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+      <p class="exercise" data-number="3">
+        Use cylindrical coordinates to find the mass of the ice cream cone
+        between the cone \(z=\sqrt{x^2+y^2}\) and the hemisphere
+        \(z=\sqrt{50-x^2-y^2}\) if the mass density is \(\delta=z(x^2+y^2)\).
+      </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+      <button class="toggle has-sol" data-toggle="SolX3"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/cylint-excercise.jpg" alt="cylint-excercise">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(M=\dfrac{5^6}{6}\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Computing the mass of a region requires integration of the density function
+    over the region:
+    \[
+    M=\iiint \delta\,dV=\iiint z(x^2+y^2)\,dV
+    \]
+    First, we express the integrand and volume element \(dV\) in cylindrical
+    coordinates:
+    \[
+    M=\iiint \,z(r^2)\,r\,dr\,d\theta\,dz=\iiint zr^3\,dr\,d\theta\,dz
+    \]
+    Next, we consider the bounds on the integral. The given equations for the
+    hemisphere and cone can be expressed as functions of \(r\) in
+    cylindrical coordinates:
+    \[\begin{aligned}
+    z&=\sqrt{x^2+y^2}=r \\
+    z&=\sqrt{50-x^2-y^2}=\sqrt{50-r^2}
+    \end{aligned}\]
+    Equating these, we find the intersection of the two:
+    \[
+    r=\sqrt{50-r^2}
+    \quad \Rightarrow \quad
+    2r^2=50
+    \quad \Rightarrow \quad
+    r=5
+    \]
+    The \(\theta\) parameter goes all \(2\pi\) around and the \(z\) bounds
+    are from the cone to the hemisphere.
+    Thus the bounds are
+    \[
+    0 \le r \le5 \qquad 0 \le \theta \le 2\pi \qquad
+    r \le z \le \sqrt{50-r^2}
+    \]
+    The bounds on \(z\) are the only non-constant bounds, so they go on the inside
+    and the integral is set up and computed as
+      \[\begin{aligned}
+      M&=\int_0^{2\pi}\int_0^5\int_r^{\sqrt{50-r^2}} zr^3\,dz\,dr\,d\theta
+      =\int_0^{2\pi} \,d\theta\int_0^5
+      \left[\dfrac{z^2}{2}r^3\right]_{z=r}^{\sqrt{50-r^2}}\,dr \\
+      &=\pi\int_0^5 ((50-r^2)r^3-r^5)\,dr
+      =\pi\int_0^5 (50r^3-2r^5)\,dr \\
+      &=\pi\left[\dfrac{25r^4}{2}-\,\dfrac{r^6}{3}\right]_0^5
+      =\pi\left(\dfrac{25(5^4)}{2}-\,\dfrac{5^6}{3}\right)
+      =\dfrac{5^6}{6}\pi
+      \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

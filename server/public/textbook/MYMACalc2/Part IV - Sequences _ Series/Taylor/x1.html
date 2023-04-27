@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Higher Derivatives</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MVT2.html" title="Previous">&lArr;</a></li>
+      <li><a href="../ParamCurves/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Higher Derivatives</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Higher Derivatives-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">a. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the first, second and third derivatives of \(f(x)=3x^4+x^2+2x\).
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX1"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX1"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX1">
+    <p>
+      This is simply repeatedly taking the derivative.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(\begin{aligned}
+      f'(x)&=12x^3+2x+2 \\
+      f''(x)&=36x^2+2 \\
+      f'''(x)&=72x
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      The first derivative is:
+      \[f'(x)=12x^3+2x+2\]
+      The second derivative is:
+      \[f''(x)=36x^2+2\]
+      The third derivative is:
+      \[f'''(x)=72x\]
+  	</p>
+    <p style="text-align:right">
+      ls&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the first and second derivatives of \(p(x)=\sin x+e^x+5x^3+x^2\)
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(\begin{aligned}
+      p'(x)&=\cos x+e^x+15x^2+2x \\
+      p''(x)&=-\sin x+e^x+30x+2
+      \end{aligned}\)
+      	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      The first derivative is:
+      \[
+      p'(x)=\cos x+e^x+15x^2+2x
+      \]
+      And the second derivative is:
+      \[
+      p''(x)=-\sin x+e^x+30x+2
+      \]
+  	</p>
+    <p style="text-align:right">
+      ls&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find \(p'(t)\) and \(p''(t)\), if \(p(t)=\dfrac{12t^7-5^t}{2t^4}\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \(\begin{aligned}
+      p'(t)
+      &=\dfrac{84t^6-\ln(5)5^t}{2t^4}-\dfrac{2(12t^7-5^t)}{t^5} \\
+      p''(t)
+      &=\dfrac{504t^5-(\ln(5))^2 5^t}{2t^4}
+      -\dfrac{4[84t^6-\ln(5)5^t]}{t^5}
+      +\dfrac{10(12t^7-5^t)}{t^6}
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      The first derivative is:
+      \[\begin{aligned}
+      p'(t)
+      &=\dfrac{2t^4\dfrac{d}{dx}(12t^7-5^t)-(12t^7-5^t)\dfrac{d}{dx}(2t^4)}
+      {(2t^4)^2} \\
+      &=\dfrac{2t^4(84t^6-\ln(5)5^t)-(12t^7-5^t)8t^3}{4t^8} \\
+      &=\dfrac{84t^6-\ln(5)5^t}{2t^4}-\dfrac{2(12t^7-5^t)}{t^5}
+      \end{aligned}\]
+      The second derivative is:
+      \[\begin{aligned}
+      p''(t)
+      &=\dfrac{2t^4\dfrac{d}{dx}[84t^6-\ln(5)5^t]-[84t^6-\ln(5)5^t]\dfrac{d}{dx}(2t^4)}
+      {(2t^4)^2} \\
+      &\quad-\dfrac{t^5\dfrac{d}{dx}[2(12t^7-5^t)]-2(12t^7-5^t)\dfrac{d}{dx}(t^5)}
+      {(t^5)^2} \\
+      &=\dfrac{2t^4[504t^5-(\ln(5))^2 5^t]-[84t^6-\ln(5)5^t](8t^3)}{4t^8} \\
+      &\quad-\dfrac{t^5[2(84t^6-\ln(5)5^t)]-2(12t^7-5^t)(5t^4)}{t^{10}} \\
+      &=\dfrac{504t^5-(\ln(5))^2 5^t}{2t^4}
+      -\dfrac{2[84t^6-\ln(5)5^t]}{t^5} \\
+      &\quad-\dfrac{2(84t^6-\ln(5)5^t)}{t^5}
+      +\dfrac{10(12t^7-5^t)}{t^6} \\
+      &=\dfrac{504t^5-(\ln(5))^2 5^t}{2t^4}
+      -\dfrac{4[84t^6-\ln(5)5^t]}{t^5}
+      +\dfrac{10(12t^7-5^t)}{t^6} \\
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ls&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the \(71^\text{st}\) derivative of \(f(x)=\sin x\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX4"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX4"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX4"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX4">
+    <p>
+      The fourth derivative of \(\sin x\) is \(\sin x\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(f^{[71]}(x)=-\cos x\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+      Since
+      \[\begin{aligned}
+      f'(x)=\dfrac{d}{dx}\sin x&=\cos x
+      &f'''(x)=\dfrac{d}{dx}(-\sin x)&=-\cos x \\
+      f''(x)=\dfrac{d}{dx}\cos x&=-\sin x \qquad
+      &f^{[4]}(x)=\dfrac{d}{dx}(-\cos x)&=\sin x
+      \end{aligned}\]
+      the higher derivatives of \(\sin x\) repeat every \(4^\text{th}\)
+      derivative. Since \(68\) is a multiple of \(4\), we conclude
+      \(f^{[68]}(x)=\sin x\) and:
+      \[f^{[71]}(x)=-\cos x\]
+  	</p>
+    <p style="text-align:right">
+      ls&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX4">
+    <p>
+      Some of you may recognize how we used the repetition of the higher
+      derivatives of \(\sin x\) as modular or clock arithmetic, where:
+      \[\begin{aligned}
+      1\equiv1\mod 4 \qquad \qquad
+      &2\equiv2\mod 4 \\
+      3\equiv3\mod 4 \qquad \qquad
+      &4\equiv0\mod 4 \\
+      5\equiv1\mod 4 \qquad \qquad
+      &6\equiv2\mod 4 \\
+      \qquad \vdots \qquad \qquad \qquad \qquad &\qquad \vdots \\
+      71\equiv3\mod 4 \qquad \qquad
+      &72\equiv0\mod 4
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<!--Curvature-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">b. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	Consider the function \(g(x)=x^6-30x^4\). Find:
+	<ol type="a">
+    <li>
+      the interval(s) on which \(g\) is increasing.
+    </li>
+    <li>
+      the interval(s) on which \(g\) is decreasing.
+    </li>
+		<li>
+			<div class="dotfillex">
+        <div>
+  				<p>
+            all local minima and maxima of \(g\).
+          </p>
+        </div>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX5c"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX5c"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX5c"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX5c">
+        <p>
+          The local minima and maxima are the points where \(g(x)\) changes
+          from increasing to decreasing and vice-versa.
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX5c">
+				<p>
+          \(g(x)\) is decreasing on \(\left(-\infty,-\sqrt{20}\right]\)
+          and \(\left[0,\sqrt{20}\right]\) and is
+          increasing on \(\left[-\sqrt{20},0\right]\) and \(\left[\sqrt{20},\infty\right)\).
+          There is a local maximum at \(x=0\) and local minima at
+          \(x=-\sqrt{20}\) and \(x=\sqrt{20}\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX5c">
+				<p>
+          We first find and factor the derivative:
+          \[
+          g'(x)=6x^5-120x^3=6x^3(x^2-20)
+          \]
+          The critical points are where \(g'(x)=0\), i.e.
+          \(x=0,\sqrt{20},-\sqrt{20}\).
+          <span class="center">
+            <img src="graphics/x_x^6-30x^4_number_line_crit.jpg"
+            alt="x_x^6-30x^4_number_line_crit">
+          </span>
+          We now test a point in each interval to see if \(g'(x)=6x^3(x^2-20)\) is
+          positive or negative in that interval.
+          \[\begin{aligned}
+          &g'(-5)=6(-125)(25-20)=-3750 \lt 0 \\
+          &g'(-1)=6(-1)(1-20)=114 \gt 0 \\
+          &g'(1)=6(1)(1-20)=-114 \lt 0 \\
+          &g'(5)=6(125)(25-20)=3750 \gt 0
+          \end{aligned}\]
+          We have marked these on the number line:
+          <span class="center">
+            <img src="graphics/x_x^6-30x^4_number_line_dersigns.jpg"
+            alt="x_x^6-30x^4_number_line_dersigns">
+          </span>
+          So \(g(x)\) is decreasing on \(\left(-\infty,-\sqrt{20}\right]\)
+          and \(\left[0,\sqrt{20}\right]\) and is
+          increasing on \(\left[-\sqrt{20},0\right]\) and \(\left[\sqrt{20},\infty\right)\).
+          <span class="center">
+            <img src="graphics/x_x^6-30x^4_number_line_incdec.jpg"
+            alt="x_x^6-30x^4_number_line_incdec">
+          </span>
+          So the graph has a local maximum at \(x=0\) and local minima at
+          \(x=-\sqrt{20}\) and \(x=\sqrt{20}\).
+				</p>
+        <p style="text-align:right">
+          ls&ensp;
+        </p>
+			</div>
+		</li>
+    <li>
+      the interval(s) on which \(g\) is concave up.
+    </li>
+    <li>
+      the interval(s) on which \(g\) is concave down.
+    </li>
+		<li>
+			<div class="dotfillex">
+        <div>
+  				<p>
+            the inflection point(s) of \(g\).
+          </p>
+        </div>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX5f"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX5f"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX5f"></button>
+          <button class="toggle has has-rem" data-toggle="RemX5f"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX5f">
+        <p>
+          Factor the second derivative and determine where it is
+          positive and negative.
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX5f">
+				<p>
+          \(g(x)\) is concave up for \((-\infty,-\sqrt{12}]\) and \([\sqrt{12},\infty)\)
+          and is concave down for \([-\sqrt{12},\sqrt{12}]\). The inflection points are
+          \(x=-\sqrt{12}\), and \(x=\sqrt{12}\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX5f">
+				<p>
+          The first derivative was \(g'(x)=6x^5-120x^3\). So the second
+          derivative is:
+          \[
+          g''(x)=30x^4-360x^2=30x^2(x^2-12)
+          \]
+          The potential inflection points are where \(g''(x)=0\), i.e.
+          \(x=0,\sqrt{12},-\sqrt{12}\).
+          <span class="center">
+            <img src="graphics/x_x^6-30x^4_number_line_potinfl.jpg"
+            alt="x_x^6-30x^4_number_line_potinfl">
+          </span>
+          We now test a point in each interval to see if
+          \(g''(x)=30x^2(x^2-12)\) is positive or negative in that interval:
+          \[\begin{aligned}
+          &g''(-4)=30(16)(16-12)=1920 \gt 0 \\
+          &g''(-1)=30(1)(1-12)=-330 \lt 0 \\
+          &g''(1)=30(1)(1-12)=-330 \lt 0 \\
+          &g''(4)=30(16)(16-12)=1920 \gt 0
+          \end{aligned}\]
+          We have marked the signs on the number line:
+          <span class="center">
+            <img src="graphics/x_x^6-30x^4_number_line_secdersigns.jpg"
+            alt="x_x^6-30x^4_number_line_secdersigns">
+          </span>
+          So, \(g(x)\) is concave up for \((-\infty,-\sqrt{12}]\) and \([\sqrt{12},\infty)\)
+          and is concave down for \([-\sqrt{12},\sqrt{12}]\).
+          <span class="center">
+            <img src="graphics/x_x^6-30x^4_number_line_updown.jpg"
+            alt="x_x^6-30x^4_number_line_updown">
+          </span>
+          There are inflection points at \(x=-\sqrt{12}\), and \(x=\sqrt{12}\).
+          Note: \(x=0\) is NOT an inflection point since the concavity did not
+          change.
+          </p>
+          <p style="text-align:right">
+            ls&ensp;
+          </p>
+        </div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX5f">
+        <p>
+          We have found the function is increasing on the intervals
+          \(\left[-\sqrt{20},0\right]\) and \(\left[\sqrt{20},\infty\right)\),
+          and decreasing on \(\left(-\infty,-\sqrt{20}\right]\)
+          and \(\left[0,\sqrt{20}\right]\). Further it is concave up on the
+          intervals \((-\infty,-\sqrt{12}]\) and \([\sqrt{12},\infty)\)
+          and concave down on \([-\sqrt{12},\sqrt{12}]\).
+          In addition there are local minima at \(\pm \sqrt{20}\), a local
+          maximum at \(0\), and inflection points at \(\pm \sqrt{12}\).
+          All of this can be seen in the following graph of our function
+          \(g(x)=x^6-30x^4\).
+          <span class="center">
+            <img src="graphics/x_x^6-30x^4_number_line_combined.jpg"
+            alt="x_x^6-30x^4_number_line_combined">
+          </span>
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the point(s) on the graph of the function
+      \(f(x)=\dfrac{x^6}{120}-\dfrac{x^4}{24}\)
+      where the concavity (second derivative) has a local minimum or local
+      maximum and find the global minimum and maximum if they exist.
+  	</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX6"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+      The concavity is \(f''(x)\) which has extrema when \(f'''(x)=0\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+      The local minima of the concavity are \(x=-1\) and \(x=1\) and the
+      local maxima is \(x=0\).
+      <br>
+      The global minima are \(x=-1\) and \(x=1\) but there is no global maximum.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      The first derivative is:
+      \[
+      f'(x)=\dfrac{x^5}{20}-\dfrac{x^3}{6}
+      \]
+      The concavity is the second derivative:
+      \[
+      f''(x)=\dfrac{x^4}{4}-\dfrac{x^2}{2}
+      \]
+      To extremize the concavity, we set its derivative equal to \(0\) and
+      solve for any critical points. However, the derivative of the concavity
+      is the third derivative of \(f\):
+      \[\begin{aligned}
+      f'''(x)=x^3-x&=0 \\
+      x(x-1)(x+1)&=0
+      \end{aligned}\]
+      So the critical points are: \(-1\), \(0\) and \(1\). To find out which
+      ones are local minima or maxima, we apply the second derivative test.
+      (If the second derivative is positive, the critical point is a local minimum.
+      If the second derivative is negative, the critical point is a local maximum.)
+      Here, the second derivative of the concavity is the fourth derivative of \(f\):
+      \[
+      f^{(4)}(x)=3x^2-1
+      \]
+      So:
+      \[
+      f^{(4)}(-1)=2 \gt 0 \qquad f^{(4)}(0)=-1 \lt 0 \qquad f^{(4)}(1)=2 \gt 0
+      \]
+      Hence, \(x=-1\) and \(x=1\) are local minima of the concavity while
+      \(x=0\) is a local maximum.
+  	</p>
+    <div class="column">
+    	<p>
+        A plot of the concavity, \(f''(x)=\dfrac{x^4}{4}-\dfrac{x^2}{2}\),
+        shows that \(x=-1\) and \(x=1\) are global
+        minima but there is no global maximum.
+      </p>
+      <div class="center">
+        <img src="graphics/x_concavity_maxmin.jpg" alt="x_concavity_maxmin">
+      </div>
+    </div>
+    <p style="text-align:right">
+      ls&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the concavity of the general parabola \(y=ax^2+bx+c\) where \(a\),
+      \(b\) and \(c\) are constants.
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX7"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX7"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+      The concavity is the second derivative.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  	<p>
+      \(y''=2a\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+      The first derivative is:
+      \[y'=2ax+b\]
+      Then the concavity, which is the second derivative, is:
+      \[y''=2a\]
+  	</p>
+  </div>
+</li>
+
+<big>PY: Checked to here</big>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX8"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX8"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX8"></button>
+    	<button class="toggle has has-check" data-toggle="CkX8"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX8">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX8">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX9"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX9"></button>
+    	<button class="toggle has has-check" data-toggle="CkX9"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX9">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX9">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX9">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<!--Acceleration & Jerk-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">c. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If the position is \(x=3t^4-t^3+5t^2\), find the velocity, acceleration
+      and jerk.
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX10"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX10">
+    <p>
+      Velocity is the derivative of the position, acceleration is the derivative
+      of the velocity, and jerk is the derivative of the acceleration.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(\begin{aligned}
+      v&=x'=12t^3-3t^2+10t \\
+      a&=x''=36t^2-6t+10 \\
+      j&=x'''=72t-6
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+      Velocity is the derivative of postion:
+      \[
+      v=x'=12t^3-3t^2+10t
+      \]
+      Acceleration is the derivative of velocity:
+      \[
+      a=x''=36t^2-6t+10
+      \]
+      Jerk is the derivative of acceleration:
+      \[
+      j=x'''=72t-6
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      The position of a harmonic oscillator is
+      \(y=5\sin(2t+4)\), find its velocity, acceleration and jerk.
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX11"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX11"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX11">
+    <p>
+      Velocity is the derivative of the position, acceleration is the derivative
+      of the velocity, and jerk is the derivative of the acceleration.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+  	<p>
+      \(\begin{aligned}
+      v&=y'=10\cos(2t+4) \\
+      a&=y''=-20\sin(2t+4) \\
+      j&=y'''=-40\cos(2t+4)
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  	<p>
+      Velocity is the derivative of postion:
+      \[
+      v=y'=5\cos(2t+4)(2)=10\cos(2t+4) \qquad
+      \]
+      Acceleration is the derivative of velocity:
+      \[
+      a=y''=-10\sin(2t+4)(2)=-20\sin(2t+4)
+      \]
+      Jerk is the derivative of acceleration:
+      \[
+      j=y'''=-20\cos(2t+4)(2)=-40\cos(2t+4)
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      The position of any harmonic oscillator is
+      \(z=A\sin\left(\dfrac{2\pi t-\phi}{P}\right)\),
+      where \(A\) is the amplitude, \(P\) is the period and \(\phi\)
+      is the phase shift. Find its velocity, acceleration and jerk.
+      <br>
+      Note: \(A\), \(P\) and \(\phi\) are constants.
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX12"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX12">
+    <p>
+      Since \(A\), \(P\) and \(\phi\) are constants, they don't get
+      differentiated.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+      \(\begin{aligned}
+    v&=z'=\dfrac{2\pi A}{P}\cos\left(\dfrac{2\pi t-\phi}{P}\right) \\
+    a&=z''=-\,\dfrac{4\pi^2 A}{P^2}\sin\left(\dfrac{2\pi t-\phi}{P}\right) \\
+    j&=z'''=-\,\dfrac{8\pi^3 A}{P^3}\cos\left(\dfrac{2\pi t-\phi}{P}\right)
+    \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p>
+      Velocity is the derivative of the position \(z\):
+      \[\begin{aligned}
+      v=z'&=A\dfrac{d}{dt}\sin\left(\dfrac{2\pi t-\phi}{P}\right) \\
+      &=A\cos\left(\dfrac{2\pi t-\phi}{P}\right)\dfrac{2\pi}{P} \\
+      &=\dfrac{2\pi A}{P}\cos\left(\dfrac{2\pi t-\phi}{P}\right) \\
+      \end{aligned}\]
+      Acceleration is the derivative of the velocity \(z'\):
+      \[\begin{aligned}
+      a=z''&=\dfrac{2\pi A}{P}\dfrac{d}{dt}\cos\left(\dfrac{2\pi t-\phi}{P}\right) \\
+      &=-\,\dfrac{2\pi A}{P}\sin\left(\dfrac{2\pi t-\phi}{P}\right)\dfrac{2\pi}{P} \\
+      &=-\,\dfrac{4\pi^2 A}{P^2}\sin\left(\dfrac{2\pi t-\phi}{P}\right) \\
+      \end{aligned}\]
+      Jerk is the derivative of the acceleration \(z''\):
+      \[\begin{aligned}
+      j=z'''&=-\,\dfrac{4\pi^2 A}{P^2}\dfrac{d}{dt}\sin\left(\dfrac{2\pi t-\phi}{P}\right) \\
+      &=-\,\dfrac{4\pi^2 A}{P^2}\cos\left(\dfrac{2\pi t-\phi}{P}\right)\dfrac{2\pi}{P} \\
+      &=-\,\dfrac{8\pi^3 A}{P^3}\cos\left(\dfrac{2\pi t-\phi}{P}\right)
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ls&ensp;
+    </p>
+  </div>
+</li>
+
+<big>PY: Checked 10-12</big>
+
+<!--Higher Order Approximations (Optional)-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">d. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+<p>
+xxx
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX13"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX13"></button>
+    	<button class="toggle has has-check" data-toggle="CkX13"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX13">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	Approximate \(\sqrt[\scriptsize 3]{8.3}\) by using the linear, quadratic and cubic
+	approximations to \(f(x)=\sqrt[\scriptsize 3]{x}\) centered at \(x=8\). How many decimal
+	places of accuracy do you get	from each approzimation, given that
+	\(\sqrt[\scriptsize 3]{8.3}\approx2.0246938520054570739\)?
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Linear approximation.
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX14a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX14a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX14a"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX14a">
+        <p>
+					The linear approximation at \(x=a\) is:
+					\[
+					f(x)\approx f_{\tan}(x)\equiv f(a)+f'(a)(x-a)
+					\]
+					So the linear approximation at \(x=8\) is:
+					\[
+					f(x)\approx f_{\tan}(x)\equiv f(8)+f'(8)(x-8)
+					\]
+					So you need to compute \(f(8)\) and \(f'(8)\).
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14a">
+				<p>
+				Using the linear approximation we get
+				\[
+				\sqrt[\scriptsize 3]{8.3}=f(8.3)\approx f_{\tan}(8.3)=2.025
+				\]
+				which agrees with the exact value to \(4\) digits after rounding.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14a">
+				<p>
+					To find the linear approximation, we need the function and its
+					derivative at \(x=8\):
+					\[\begin{aligned}
+					f(x)&=x^{1/3} \quad &f(8)&=8^{1/3}=2 \\
+					f'(x)&=\dfrac{1}{3}x^{-2/3}=\dfrac{1}{3x^{2/3}} \quad
+					&f'(8)&=\dfrac{1}{3\cdot8^{2/3}}=\dfrac{1}{12}
+					\end{aligned}\]
+					Then linear approximation is:
+					\[\begin{aligned}
+				  f(x)\approx f_{\tan}(x)&\equiv f(8)+f'(8)(x-8) \\
+					&=2+\dfrac{1}{12}(x-8)
+				  \end{aligned}\]
+					Consequently:
+					\[\begin{aligned}
+					\sqrt[\scriptsize 3]{8.3}&=f(8.3)\approx f_{\tan}(8.3) \\
+					&=2+\dfrac{1}{12}(8.3-8) \\
+					&=2+.025=2.025
+				  \end{aligned}\]
+					This agrees with the exact value to \(4\) digits after rounding.
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Quadratic approximation.
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX14b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX14b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX14b"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX14b">
+        <p>
+					The quadratic approximation at \(x=a\) is:
+					\[\begin{aligned}
+					f(x)&\approx f_\text{quad}(x) \\
+					&\equiv f(a)+f'(a)(x-a)+\dfrac{1}{2}f''(a)(x-a)^2
+					\end{aligned}\]
+					So the quadratic approximation at \(x=8\) is:
+					\[\begin{aligned}
+					f(x)&\approx f_\text{quad}(x) \\
+					&\equiv f(8)+f'(8)(x-8)+\dfrac{1}{2}f''(8)(x-8)^2
+					\end{aligned}\]
+					So you need to compute \(f''(8)\) in addition to what you used for
+					the linear approximation.
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14b">
+				<p>
+					Using the quadratic approximation we get
+					\[
+					\sqrt[\scriptsize 3]{8.3}
+					=f(8.3)\approx f_{\text{quad}}(8.3)=2.0246875
+					\]
+					which agrees with the exact value to \(6\) digits after rounding.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14b">
+				<p>
+					To find the quadratic approximation, we also need the second
+					derivative at \(x=8\):
+					\[\begin{aligned}
+					f''(x)&=-\,\dfrac{2}{9}x^{-5/3}=-\,\dfrac{2}{9x^{5/3}} \\
+					f''(8)&=-\,\dfrac{2}{9\cdot8^{5/3}}=-\,\dfrac{1}{144}
+					\end{aligned}\]
+					Then quadratic approximation is:
+					\[\begin{aligned}
+					f(x)\approx f_{\text{quad}}(x)&\equiv f(8)+f'(8)(x-8)+\dfrac{1}{2}f''(8)(x-8)^2 \\
+					&=2+\dfrac{1}{12}(x-8)-\dfrac{1}{288}(x-8)^2
+				  \end{aligned}\]
+					Consequently:
+					\[\begin{aligned}
+					\sqrt[\scriptsize 3]{8.3}
+					&=f(8.3)\approx f_{\text{quad}}(8.3) \\
+					&=2+\dfrac{1}{12}(8.3-8)-\dfrac{1}{288}(8.3-8)^2 \\
+					&=2+.025-.0003125=2.0246875
+				  \end{aligned}\]
+					This agrees with the exact value to \(6\) digits after rounding.
+				</p>
+      </div>
+		</li>
+		<li>
+				<div class="dotfillex">
+					<p>
+						Cubic approximation.
+					</p>
+					<p>
+	        	<button class="toggle has has-hint" data-toggle="HintX14c"></button>
+	        	<button class="toggle has has-ans" data-toggle="AnsX14c"></button>
+	        	<button class="toggle has has-sol" data-toggle="SolX14c"></button>
+					</p>
+				</div>
+	    	<div class="toBeToggled drop-hint" data-toggle="HintX14c">
+	        <p>
+						The cubic approximation at \(x=a\) is:
+						\[\begin{aligned}
+						f(x)&\approx f_\text{cubic}(x) \\
+						&\equiv f(a)+f'(a)(x-a)+\dfrac{1}{2}f''(a)(x-a)^2 \\
+						&\quad+\dfrac{1}{6}f'''(a)(x-a)^3
+						\end{aligned}\]
+						So the cubic approximation at \(x=8\) is:
+						\[\begin{aligned}
+						f(x)&\approx f_\text{cubic}(x) \\
+						&\equiv f(8)+f'(8)(x-8)+\dfrac{1}{2}f''(8)(x-8)^2 \\
+						&\quad+\dfrac{1}{6}f'''(8)(x-8)^3
+						\end{aligned}\]
+						So you need to compute \(f'''(8)\) in addition to what you used for
+						the quadratic approximation.
+	        </p>
+	      </div>
+				<div class="toBeToggled drop-ans" data-toggle="AnsX14c">
+					<p>
+						Using the cubic approximation we get
+						\[
+						\sqrt[\scriptsize 3]{8.3}
+						=f(8.3)\approx f_{\text{cubic}}(8.3)=2.024\,694\,010\,416\,\bar6
+						\]
+						which agrees with the exact value to \(7\) digits after rounding.
+					</p>
+				</div>
+				<div class="toBeToggled drop-sol" data-toggle="SolX14c">
+					<p>
+						To find the cubic approximation, we also need the third
+						derivative at \(x=8\):
+						\[\begin{aligned}
+						f'''(x)&=\dfrac{10}{27}x^{-8/3}=\dfrac{10}{27x^{8/3}} \\
+						f'''(8)&=\dfrac{10}{27\cdot8^{8/3}}=\dfrac{5}{3456}
+						\end{aligned}\]
+						Then cubic approximation is:
+						\[\begin{aligned}
+						f(x)&\approx f_{\text{cubic}}(x) \\
+						&\equiv f(8)+f'(8)(x-8)+\dfrac{1}{2}f''(8)(x-8)^2+\dfrac{1}{6}f'''(8)(x-8)^3 \\
+						&=2+\dfrac{1}{12}(x-8)-\dfrac{1}{288}(x-8)^2+\dfrac{5}{6\cdot3456}(x-8)^3
+					  \end{aligned}\]
+						Consequently:
+						\[\begin{aligned}
+						\sqrt[\scriptsize 3]{8.3}
+						&=f(8.3)\approx f_{\text{cubic}}(8.3) \\
+						&=2+\dfrac{1}{12}(8.3-8)-\dfrac{1}{288}(8.3-8)^2+\dfrac{5}{6\cdot3456}(8.3-8)^3 \\
+						&=2+.025-.000\,3125+.000\,006\,510\,416\,\bar6 \\
+						&=2.024\,694\,010\,416\,\bar6
+					  \end{aligned}\]
+						This agrees with the exact value to \(7\) digits after rounding.
+					</p>
+				</div>
+		</li>
+	</ol>
+</li>
+
+<big>PY: Checked 14</big>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the cubic approximation to \(f(x)=\sin(x)\) centered at \(0\).
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX15"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX15"></button>
+    	<button class="toggle has has-check" data-toggle="CkX15"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<!--Extended Mean Value Theorem (Optional)-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">a. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+<p>
+xxx
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX16"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX16"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX16"></button>
+    	<button class="toggle has has-check" data-toggle="CkX16"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX16">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX16">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX16">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	xxx
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX17a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX17a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX17a"></button>
+        	<button class="toggle has has-check" data-toggle="CkX17a"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX17a"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX17a">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX17a">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX17a">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX17a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX17a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX17b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX17ab"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX17b"></button>
+        	<button class="toggle has has-check" data-toggle="CkX17b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX17b"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX17b">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX17b">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX17b">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX17b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX17b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX18"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX18"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX18"></button>
+    	<button class="toggle has has-check" data-toggle="CkX18"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX18">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX18">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX18">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+		<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  xxx
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX19"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX19"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX19"></button>
+    	<button class="toggle has has-check" data-toggle="CkX19"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX19">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX19">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX19">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	xxx
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX20a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX20a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX20a"></button>
+        	<button class="toggle has has-check" data-toggle="CkX20a"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX20a"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX20a">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20a">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX20a">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX20a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX20a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX20b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX20b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX20b"></button>
+        	<button class="toggle has has-check" data-toggle="CkX20b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX20b"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX20b">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX20b">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX20b">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX20b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX20b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX21"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX21"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX21"></button>
+    	<button class="toggle has has-check" data-toggle="CkX21"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX21"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX21">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX21">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX21">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX21">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX21">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

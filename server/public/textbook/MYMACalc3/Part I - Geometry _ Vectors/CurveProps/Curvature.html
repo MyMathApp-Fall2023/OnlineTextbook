@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Curvature | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TNBFormulas.html" title="Previous">&lArr;</a></li>
+      <li><a href="Torsion.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>f. Curvature and Torsion</h2>
+
+
+      
+      <h2>1. Curvature</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<p>
+    The curvature of a curve, denoted by the Greek letter
+    kappa, \(\kappa\), is a measure of how much a curve is bending.
+    For example, the parabola at the right is more curved
+    near \(x=2\) than near \(x=8.\)
+	</p>
+  <div class="center">
+    <img src="graphics/eg_curv_scale.jpg" alt="eg_curv_scale">
+  </div>
+</div>
+<div class="column">
+  <p>
+    Similarly, a circle with a small radius is more curved than a
+    circle with a large radius, and a straight line (a circle with
+    infinite radius) has no curvature at all. In fact, as we will see
+    shortly, the curvature of a circle is the reciprocal of its radius:
+    \[
+		\kappa=\dfrac{1}{R}
+		\]
+	  We measure the curvature by calculating how fast the unit tangent vector
+		is changing direction with respect to arc length.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_curv_comp_circles.jpg" alt="eg_curv_comp_circles">
+  </div>
+</div>
+<a id="defcurv"></a>
+<p class="def" data-title="Curvature">
+  The <span class="defword">curvature</span>, \(\kappa\), of a parametric
+	curve, \(\vec{r}(t)\), is
+	\[
+  \kappa=\left|\dfrac{d\hat{T}}{ds}\right|
+	\]
+  where \(\hat{T}\) is the unit tangent vector to the curve and \(s\) is
+	the arc length parameter on the curve.
+</p>
+<p class="remark"> <br>
+  1) We use the unit tangent vector \(\hat{T}\) instead of the velocity
+  vector \(\vec{v}\) because \(\vec{v}\) includes information about the
+	speed \(|\vec{v}|\) while the curvature is only supposed to measure the
+	change in the direction of the tangent vector which is \(\hat{T}\).
+</p>
+<p>
+  2) We take the derivative with respect to arc length \(s\) instead of the
+  parameter \(t\) because we don't want the curvature to depand on how fast
+	we travel on the curve. So \(\dfrac{d\hat{T}}{ds}\) measures the rate of
+  change of the direction of the tangent vector, \(\hat{T}\), with respect
+	to arc length, \(s\).
+	<br>
+  3) We take the magnitude of \(\dfrac{d\hat{T}}{ds}\) because we want the
+	curvature to be a single number rather than a vector.
+</p>
+
+        <div class="rule" id="CurvatureFormula"></div>
+
+<p>
+  It is often easier to calculate curvature using one of the following
+  formulas:
+</p>
+<p class="prop">
+  The curvature can be calculated from:
+  \[
+  \kappa=\dfrac{1}{|\vec{v}|}\left|\dfrac{d\hat{T}}{dt}\right|
+  =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}
+  \]
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    First, using the Chain Rule and the formula for the speed
+		\(\dfrac{ds}{dt}=|\vec{v}|\) we have
+    \[
+    \dfrac{d\hat{T}}{ds}=\dfrac{dt}{ds}\dfrac{d\hat{T}}{dt}
+		=\dfrac{1}{|\vec{v}|}\dfrac{d\hat{T}}{dt}
+    \]
+    So
+    \[
+    \kappa=\left|\dfrac{d\hat{T}}{ds}\right|
+		=\dfrac{1}{|\vec{v}|}\left|\dfrac{d\hat{T}}{dt}\right|
+    \]
+    Next, using the Product Rule to differentiate the unit tangent
+    vector \(\hat{T}=\dfrac{1}{|\vec{v}|}\vec{v}\) we have
+    \[
+    \dfrac{d\hat{T}}{dt}
+		=\dfrac{1}{|\vec{v}|}\dfrac{d\vec{v}}{dt}
+		+\dfrac{-1}{|\vec{v}|^2}\dfrac{d|\vec{v}|}{dt}\vec{v}
+    \]
+    Now \(\dfrac{d\vec{v}}{dt}=\vec{a}\) and
+    \[\begin{aligned}
+    \dfrac{d|\vec{v}|}{dt}
+		&=\dfrac{d}{dt}\sqrt{\vec{v}\cdot\vec{v}}
+		=\dfrac{1}{2\sqrt{\vec{v}\cdot\vec{v}}}
+		\left(\dfrac{d\vec{v}}{dt}\cdot\vec{v}+\vec{v}\cdot\dfrac{d\vec{v}}{dt}\right) \\
+		&=\dfrac{1}{2|\vec{v}|}\left(2\dfrac{d\vec{v}}{dt}\cdot\vec{v}\right)
+		=\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|}
+    \end{aligned}\]
+    So
+    \[
+    \dfrac{d\hat{T}}{dt}
+		=\dfrac{1}{|\vec{v}|}\vec{a}
+		+\dfrac{-1}{|\vec{v}|^2}\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|}\vec{v}
+		=\dfrac{1}{|\vec{v}|}
+		\left(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\right)
+    \]
+    Now,
+	  \(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}
+		=\text{proj}_{\bot \vec{v}}\vec{a}\)
+		and we saw on the
+		<a href="TNBFormulas.html#UnitNormal" title="Return using the Back button.">
+		previous page</a> that
+	  \(\left|\text{proj}_{\bot \vec{v}}\vec{a}\right|
+	  =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|}\). So:
+    \[
+    \left|\dfrac{d\hat{T}}{dt}\right|
+		=\dfrac{1}{|\vec{v}|}\left|\text{proj}_{\bot \vec{v}}\vec{a}\right|
+		=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^2}
+    \]
+		Therefore:
+    \[
+    \kappa=\dfrac{1}{|\vec{v}|}\left|\dfrac{d\hat{T}}{dt}\right|
+	  =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}
+    \]
+  </p>
+</div>
+<a id="cubic"></a>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the curvature \(\kappa\) of the twisted cubic
+	\(\vec{r}=\left\langle t,t^2,\dfrac{2}{3}t^{3}\right\rangle\).
+</p>
+<p class="sol">
+  On the <a href="TNBFormulas.html#cubic">previous page</a>, in the example to find
+	\(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) for this twisted cubic, we found:
+  \[\begin{aligned}
+  &\vec{v}=\langle 1,2t,2t^2\rangle
+	&&|\vec{v}|=1+2t^2 \\
+	&\vec{a}=\langle 0,2,4t\rangle
+	&&|\vec{v}\times\vec{a}|=2(1+2t^2)
+  \end{aligned}\]
+  So
+  \[
+  \kappa=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}
+  =\dfrac{2(1+2t^2)}{(1+2t^2)^{3}}=\dfrac{2}{(1+2t^2)^2}
+  \]
+</p>
+
+        <div class="rule" id="circle"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+	  Find the curvature \(\kappa\) of the circle
+		\(\vec{r}(\theta)=\langle R\cos\theta,R\sin\theta,0\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+	<p>
+    \(\kappa=\dfrac{1}{R}\)
+	</p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+	<p>
+	  On a <a href="TNB.html#circle" title="Return using the Back button.">
+		previous page</a>, in the example to find
+		\(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) for this circle, we found:
+	  \[\begin{aligned}
+	  &\vec{v}=\langle -R\sin\theta,R\cos\theta,0\rangle
+		&&|\vec{v}|=R \\
+		&\vec{a}=\left\langle -R\cos\theta,-R\sin\theta,0\right\rangle
+		&&|\vec{v}\times\vec{a}|=R^2
+	  \end{aligned}\]
+	  So
+    \[
+		\kappa=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}
+    =\dfrac{R^2}{R^{3}}=\dfrac{1}{R}
+    \]
+	</p>
+</div>
+<p>
+  As promised, the curvature, \(\kappa\), of a circle is the reciprocal
+	of its radius, \(R\). Based on this fact, we define:
+</p>
+<p class="def" data-title="Radius of Curvature">
+  The <span class="defword">radius of curvature</span> of a curve is
+	the reciprocal of its curvature:
+  \[
+	R=\dfrac{1}{\kappa}
+	\]
+</p>
+<p>
+  Thus, the <span class="hl">radius of curvature</span> at a point on the curve
+	is the radius of the circle which best fits the curve at that point. That
+	circle is called the
+	<button class="toggle" data-toggle="Drop1"><span class="hl">osculating circle
+	</span></button>.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+	<p>
+		The word osculate comes from the Latin word osculum which means to kiss.
+		So go home and ask your significant other if they would like to
+		osculate tonight.
+	</p>
+</div>
+<p class="def" data-title="Osculating Circle">
+  The <span class="defword">osculating circle</span> at a point on a curve is
+	the circle which instantaneously lies in the same	plane as the circle
+	(the \(\hat T\hat N\)-plane), is tangent to the curve at that point,
+	bends in the same direction as the curve and
+	has radius equal to the radius of curvature of the curve at that point.
+	It is regarded as the best fit circle at that point.
+</p>
+<p class="formula" data-title="Osculating Circle">
+  If \(R\) is the radius of curvature at a point \(\vec{r}(a)\) on a
+  curve \(\vec{r}(t)\), then the <span class="hl">osculating circle</span>
+	at the point \(\vec{r}(a)\) may be parametrized by:
+  \[
+	\vec{r}_a(\phi)
+  =\vec{r}(a)+R\vec{N}+R\cos\phi\,\hat{T}+R\sin\phi\,\hat{N}
+	\]
+	<button class="toggle" data-toggle="Drop2">Derivation</button>
+</p>
+<div class="toBeToggled drop-derivation" data-toggle="Drop2">
+  <h4>Derivation</h4>
+  <p>
+		We first find the center of the circle. Starting from the point
+		\(\vec{r}(a)\) on the curve, we move a distance \(R\) in the direction
+		perpendicular to the curve on the side the curve is bending, i.e. in
+		the direction \(\hat N\). So the center is at \(P=\vec{r}(a)+R\vec{N}\).
+		A circle centered at the origin in the \(\hat T\hat N\)-plane may be
+		parametrized by	\(\vec{r}(\phi)=R\cos\phi\,\hat{T}+R\sin\phi\,\hat{N}\).
+		Moving this so it is centered at \(P\), gives the osculating circle
+		parametrized by:
+	  \[
+		\vec{r}_a(\phi)
+	  =\vec{r}(a)+R\vec{N}+R\cos\phi\,\hat{T}+R\sin\phi\,\hat{N}
+		\]
+  </p>
+</div>
+
+        <div class="rule" id="helix"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the curvature \(\kappa\) and radius of curvature \(R\) of the helix
+		\(\vec{r}(\theta)=\langle 4\cos\theta,4\sin\theta,3\theta\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\kappa=\dfrac{4}{25}\)
+		&emsp;
+		\(R=\dfrac{25}{4}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+	  On a <a href="TNB.html#helix" title="Return using the Back button.">
+		previous page</a>, in the exercise to find
+		\(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) for this helix, we found:
+	  \[\begin{aligned}
+	  &\vec{v}=\langle -4\sin\theta,4\cos\theta,3\rangle
+		&&|\vec{v}|=5 \\
+		&\vec{a}=\langle -4\cos\theta,-4\sin\theta,0\rangle
+		&&|\vec{v}\times\vec{a}|=20
+	  \end{aligned}\]
+    So the curvature is:
+    \[
+    \kappa=\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}
+    =\dfrac{20}{5^{3}}=\dfrac{4}{25}
+    \]
+    and then the radius of curvature is:
+    \[R=\dfrac{1}{\kappa}=\dfrac{25}{4}\]
+  </p>
+</div>
+
+<div class="column">
+  <div class="dotfillex">
+	  <div>
+	  	<p class="exercise" data-number="4">
+		    Find a parametrization for the osculating circle for this helix at the point
+		    \(\vec{r}(a)=\langle 4\cos a,4\sin a,3a\rangle\).
+	    </p>
+			<p>
+			  The movie shows the osculating circle "rolling" along this helix.
+			</p>
+	  </div>
+    <p>
+	    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+	    <button class="toggle has-sol" data-toggle="SolX4"></button>
+    </p>
+  </div>
+  <div class="center">
+		<video src="graphics/ex_RH_helix_osc_anim.mp4" autoplay controls loop></video>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+		Since the components are so long, we have written the vector as a column:
+    \[
+    \vec{r}_a(\phi)=
+    \begin{pmatrix}
+		-\,\dfrac{9}{4}\cos a-5\sin a\cos\phi-\,\dfrac{25}{4}\cos a\sin\phi \\[8pt]
+		-\,\dfrac{9}{4}\sin a+5\cos a\cos\phi-\,\dfrac{25}{4}\sin a\sin\phi \\[8pt]
+		3a+\dfrac{15}{4}\cos\phi
+		\end{pmatrix}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+		The osculating circle can be parameterized by
+		\[
+		\vec{r}_a(\phi)
+	  =\vec{r}(a)+R\vec{N}+R\cos\phi\,\hat{T}+R\sin\phi\,\hat{N}
+		\]
+		We know the point is
+		\(\vec{r}(a)=\langle 4\cos a,4\sin a,3 a\rangle\) and the radius of
+		curvature is \(R=\dfrac{1}{\kappa}=\dfrac{25}{4}\). From the exercise on a
+		<a href="TNB.html#helix" title="Return using the Back button.">
+		previous page</a>, we know:
+		\[
+		\hat{T}
+		=\left\langle -\,\dfrac{4}{5}\sin\theta,\dfrac{4}{5}\cos\theta,\dfrac{3}{5}\right\rangle
+		\qquad
+		\hat{N}
+		=\langle -\cos\theta,-\sin\theta,0\rangle
+		\]
+		At the point where \(\theta=a\) these become:
+		\[
+		\hat{T}
+		=\left\langle -\,\dfrac{4}{5}\sin a,\dfrac{4}{5}\cos a,\dfrac{3}{5}\right\rangle
+		\qquad
+		\hat{N}
+		=\langle -\cos a,-\sin a,0\rangle
+		\]
+		Now we plug into the formula: (Since the components are so long, we
+		switch to column vectors for the last two steps.)
+		\[\begin{aligned}
+		\vec{r}_a(\phi)
+	  &=\vec{r}(a)+R\vec{N}+R\cos\phi\,\hat{T}+R\sin\phi\,\hat{N} \\
+		&=\langle 4\cos a,4\sin a,3a\rangle
+		+\dfrac{25}{4}\langle -\cos a,-\sin a,0\rangle \\
+		&+\dfrac{25}{4}\cos\phi\left\langle -\,\dfrac{4}{5}\sin a,
+		\dfrac{4}{5}\cos a,\dfrac{3}{5}\right\rangle
+		+\dfrac{25}{4}\sin\phi\langle 	-\cos a,-\sin a,0\rangle \\[8pt]
+		&=\begin{pmatrix}
+		4\cos a-\,\dfrac{25}{4}\cos a-5\sin a\cos\phi-\,\dfrac{25}{4}\cos a\sin\phi \\[8pt]
+		4\sin a-\,\dfrac{25}{4}\sin a+5\cos a\cos\phi-\,\dfrac{25}{4}\sin a\sin\phi \\[8pt]
+		3a+\dfrac{15}{4}\cos\phi
+		\end{pmatrix} \\[8pt]
+		&=\begin{pmatrix}
+		-\,\dfrac{9}{4}\cos a-5\sin a\cos\phi-\,\dfrac{25}{4}\cos a\sin\phi \\[8pt]
+		-\,\dfrac{9}{4}\sin a+5\cos a\cos\phi-\,\dfrac{25}{4}\sin a\sin\phi \\[8pt]
+		3a+\dfrac{15}{4}\cos\phi
+		\end{pmatrix}
+		\end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

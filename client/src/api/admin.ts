@@ -14,6 +14,13 @@ export function getAllPurchaseCodeData():Promise<any>{
     })
 }
 
+export function getAllEmailSubscriptionData():Promise<any>{
+    return request({
+        method: 'get',
+        url: 'api/admin/emailSubscription',
+    })
+}
+
 export function getTransactionRecordData():Promise<any>{
     return request({
         method: 'get',
@@ -37,8 +44,6 @@ export function addCodeApi(data:any):Promise<any> {
 }
 
 export function deleteCodeApi(data:any):Promise<any> {
-    console.log("client admin");
-    console.log(data);
     return request({
         method: 'post',
         url: `api/admin/delete-code`,
@@ -50,6 +55,32 @@ export function updateCodeApi(data:any):Promise<any> {
     return request({
         method: 'post',
         url: `api/admin/update-code`,
+        data:data
+    })
+}
+
+export function addEmailSubApi(data:any):Promise<any> {
+    return request({
+        method: 'post',
+        url: `api/admin/add-emailsub`,
+        data:data
+    })
+}
+
+export function deleteEmailSubApi(data:any):Promise<any> {
+    console.log("client admin");
+    console.log(data);
+    return request({
+        method: 'post',
+        url: `api/admin/delete-emailsub`,
+        data:data
+    })
+}
+
+export function updateEmailSubApi(data:any):Promise<any> {
+    return request({
+        method: 'post',
+        url: `api/admin/update-emailsub`,
         data:data
     })
 }

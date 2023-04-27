@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Vector Projections | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Angles.html" title="Previous">&lArr;</a></li>
+      <li><a href="ProjScalar.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Dot Product</h2>
+
+
+      
+      <h2>5. Vector Projections</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	It is often useful to write a vector \(\vec v\) as the sum of two vectors,
+  one parallel to a given direction \(\vec u\) and	one perpendicular to that
+  direction. (See the application section on computing
+	<a href="Work.html" title="Return using the Back button.">
+	Work</a>) These are called <span class="hl">(vector) projections</span>.
+</p>
+<p class="def" data-title="Vector Projections">
+	The	<span class="defword">projection of the vector \(\vec v\) parallel to
+	the direction of \(\vec u\)</span> is denoted by \(\text{proj}_{\vec u}\vec v\)
+	while the <span class="defword">projection of the vector \(\vec v\)
+	perpendicular to the direction of \(\vec u\)</span> is denoted by
+	\(\text{proj}_{\perp\vec u} \vec v\). These satisfy
+  \[
+	\vec v=\text{proj}_{\vec u}\vec v+\text{proj}_{\perp\vec u}\vec v \qquad \text{(*)}
+	\]
+	<!-- \vec v=\text{proj}_{\vec u}\vec v+\text{proj}_{\perp\vec u}\vec v  \tag{*} -->
+	The figures below show the projections in the cases when the angle
+	between the	vectors is acute or obtuse.
+</p>
+<div class="center">
+	<figure>
+		&emsp;
+	  <img src="graphics/DefProjAcute.jpg" alt="DefProjAcute"/>
+		&emsp;
+	  <img src="graphics/DefProjObtuse.jpg" alt="DefProjObtuse"/>
+		<figcaption>
+			Here &emsp;
+		  \(\vec p=\text{proj}_{\vec u}\vec v\) &emsp; and &emsp;
+			\(\vec q=\text{proj}_{\perp\vec u}\vec v\). &emsp;
+		</figcaption>
+	</figure>
+</div>
+
+				<div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    The figure shows the projections of the vector
+		\(\vec a=\left\langle 5,5\right\rangle\) parallel and perpendicular to
+		\(\vec b=\left\langle 9,3\right\rangle\).
+    Here, \(\vec p=\text{proj}_{\vec b}\vec a=\left\langle 6,2\right\rangle\) and
+    \(\vec q=\text{proj}_{\perp\vec b}\vec a=\left\langle -1,3\right\rangle\).
+		\[
+		\vec a
+		=\left\langle 5,5\right\rangle
+		=\left\langle 6,2\right\rangle+\left\langle -1,3\right\rangle
+		=\text{proj}_{\vec b}\vec a+\text{proj}_{\perp\vec b}\vec a
+		\]
+  </p>
+  <div class="center">
+    <img src="graphics/EgProj5593.jpg" alt="EgProj5593"/>
+  </div>
+</div>
+<p class="remark">
+  \((6,2)\parallel\vec b\) because
+  \((6,2)=\dfrac{2}{3}(9,3)\)
+  (It's a multiple.) and
+  \((-1,3)\perp\vec b\) because
+  \((-1,3)\cdot(9,3)=0\).
+</p>
+
+				<div class="rule"></div>
+
+<p>
+	We would like to have formulas for the parallel and perpendicular projections.
+	First \(\text{proj}_{\vec u}\vec v\):
+</p>
+<p class="formula" data-title="Parallel Vector Projection">
+  The <span class="defword">(vector) projection of \(\vec v\) parallel to
+  \(\vec u\)</span> is
+	\[
+  \text{proj}_{\vec u}\vec v=\dfrac{\vec v\cdot\vec u}{|\vec u|^2}\vec u
+  \]
+	<button class="toggle" data-toggle="ubot">
+	How do you remember \(\vec u\) is in the bottom?</button>
+	<button class="toggle" data-toggle="Der1">Derivation</button>
+</p>
+<div class="toBeToggled" data-toggle="ubot">
+  <p>
+    You can remember that in the notation \(\text{proj}_{\vec u}\vec v\),
+		\(\vec u\) is a subscript. So \(\vec u\) goes in the bottom.
+  </p>
+  <p>
+    But, why is it true? If you look at the diagrams, you should see that if
+		the length of \(\vec u\) is changed, the projection of \(\vec v\) does
+		not change. So if we double the length of \(\vec u\), we get:
+		\[
+	  \text{proj}_{2\vec u}\vec v=\dfrac{\vec v\cdot(2\vec u)}{|2\vec u|^2}(2\vec u)
+	  =\dfrac{\vec v\cdot\vec u}{|\vec u|^2}\vec u
+		\]
+		The \(2\)'s cancel out. This would not happen if \(\vec v\) were in
+		the bottom.
+  </p>
+</div>
+<div class="toBeToggled drop-der" data-toggle="Der1">
+	<p class="der">
+		We want to find a formula for \(\vec p=\text{proj}_{\vec u}\vec v\). Recall that
+		<a href="../Vectors/ScalMultAlg.html#magdir" title="Return with the Back button.">
+		any vector is the product of its magnitude and	direction</a>:
+		\[
+		\vec p=|\vec p|\,\hat p
+		\]
+		So we will separately find \(|\vec p|\)	and	\(\hat p\) and then combine them.
+	</p>
+	<div class="column">
+	  <p class="case" data-number="1" data-col-width="60%">
+	    <em>Let's first look at the <span class="hl">acute case</span>.</em>
+	    <br> To find \(|\vec p|\), let
+	    \(\theta\) denote the angle between the	two vectors. From the right
+			triangle in the diagram, we have:
+			\[
+			\cos\theta=\dfrac{|\vec p|}{|\vec v|}
+			\qquad \text{or} \qquad
+		  |\vec p|=|\vec v|\cos\theta
+			\]
+		  </p>
+	  <div class="center" data-col-width="40%">
+	    <img src="graphics/DefProjAcute.jpg" alt="DefProjAcute"/>
+	  </div>
+	</div>
+	<p>
+		Using the formula \(\cos\theta=\dfrac{\vec v\cdot\vec u}{|\vec v|\,|\vec u|}\)
+		this becomes
+		\[
+		|\vec p|=\dfrac{\vec v\cdot\vec u}{|\vec u|}
+		\]
+	  What about the direction of \(\vec p\)? Since the projection points in the
+	  same direction as \(\vec u\), we have
+		\[\hat p=\hat u=\dfrac{\vec u}{|\vec u|}\]
+	  Combining these, we get
+		\[
+		\text{proj}_{\vec u}\vec v=\vec p=|\vec p|\,\hat p
+	  =\dfrac{\vec v\cdot\vec u}{|\vec u|}\dfrac{\vec u}{|\vec u|}
+	  =\dfrac{\vec v\cdot\vec u}{|\vec u|^2}\,\vec u
+		\]
+	</p>
+	<div class="column">
+	  <p class="case" data-number="2" data-col-width="60%">
+	    <em>Now for the <span class="hl">obtuse case</span>.</em>
+	    <br>
+	    The computations are almost the same except for two minus signs. One is in
+			the formula for the cosine:
+		  <button class="toggle" data-toggle="cosine">Why the minus sign?</button>
+			\[
+			\cos\theta=\dfrac{-|\vec p|}{|\vec v|}
+			\]
+			which gives the length as:
+			\[
+		  |\vec p|=-|\vec v|\cos\theta=-\,\dfrac{\vec v\cdot\vec u}{|\vec u|}
+			\]
+	  </p>
+	  <div class="center" data-col-width="40%">
+	    <img src="graphics/DefProjObtuse.jpg" alt="DefProjObtuse"/>
+	  </div>
+	</div>
+	<div class="toBeToggled" data-toggle="cosine">
+	  <div class="column">
+	    <div data-col-width="60%">
+	      <p>
+	        Take a look at the graph of \(\cos\theta\):
+	      </p>
+	      <p class="center">
+					\(\cos\theta \gt 0\ \) if \(\ \theta\ \) is acute, i.e. \(\ \theta \lt 90^\circ\).
+	      </p>
+	      <p class="center">
+					\(\cos\theta \lt 0\ \) if \(\ \theta\ \) is obtuse, i.e. \(\ \theta \gt 90^\circ\).
+	      </p>
+	      <p>
+	      	Since the lengths \(|\vec p|\) and \(|\vec v|\)	are positive, the minus
+	        is needed in the formula \(\cos\theta=\dfrac{-|\vec p|}{|\vec v|}\)
+	      	for the obtuse case.
+	      </p>
+	    </div>
+	    <div class="center" data-col-width="40%">
+	      <figure>
+	  	    <img src="graphics/DefProjObtuseCos.jpg" alt="DefProjObtuseCos">
+	        <figcaption>
+	          \(\cos\theta\)
+	        </figcaption>
+	      </figure>
+		  </div>
+	  </div>
+	</div>
+	<p>
+		The other is in the formula for the direction vector:
+ 	  <button class="toggle btn" data-toggle="dirvec">Why the minus sign?</button>
+		\[
+		\hat p=-\hat u=-\,\dfrac{\vec u}{|\vec u|}
+		\]
+	</p>
+	<div class="toBeToggled" data-toggle="dirvec">
+	  <p>
+	    In the obtuse case, \(\vec p\) is in the opposite direction from \(\vec u\).
+			So a minus is	needed in the formula \(\hat p=-\hat u\).
+	  </p>
+	</div>
+	<p>
+		Again we combine the formulas:
+		\[
+		\text{proj}_{\vec u}\vec v=\vec p=|\vec p|\,\hat p
+	  =\left(-\dfrac{\vec v\cdot\vec u}{|\vec u|}\right)
+		 \left(-\dfrac{\vec u}{|\vec u|}\right)
+	  =\dfrac{\vec v\cdot\vec u}{|\vec u|^2}\,\vec u
+		\]
+	  The minus signs cancel and we get the same formula as in the acute case.
+	</p>
+</div>
+
+      	<div class="rule"></div>
+
+<p>
+	The formula for \(\text{proj}_{\perp\vec u}\vec v\) is much easier to derive. We
+	just solve equation (*):
+</p>
+<p class="formula" data-title="Perpendicular Vector Projection">
+  The <span class="defword">(vector) projection of \(\vec v\) perpendicular to
+  \(\vec u\)</span> is
+	\[
+  \text{proj}_{\perp\vec u}\vec v=\vec v-\text{proj}_{\vec u}\vec v
+  \]
+</p>
+
+      	<div class="rule" id="eg-proj"></div>
+
+<p class="example" data-number="2">
+	Resolve the vector \(\vec w=\left\langle -3,11\right\rangle\) into the sum of two
+	vectors, one parallel to \(\vec v=\left\langle 1,3\right\rangle\) and the other
+	perpendicular to \(\vec v\).
+</p>
+<p class="sol">
+	The parallel projection is:
+	\[\begin{aligned}
+	\text{proj}_{\vec v}\vec w
+	&=\dfrac{\vec w\cdot\vec v}{|\vec v|^2}\vec v
+	=\dfrac{\left\langle -3,11\right\rangle\cdot\left\langle 1,3\right\rangle}
+	       {|\left\langle 1,3\right\rangle|^2}\left\langle 1,3\right\rangle \\
+	&=\dfrac{30}{10}\left\langle 1,3\right\rangle
+	=\left\langle 3,9\right\rangle
+	\end{aligned}\]
+	And the perpendicular projection is:
+	\[\begin{aligned}
+	\text{proj}_{\perp\vec v}\vec w
+	&=\vec w-\text{proj}_{\vec v}\vec w
+	=\left\langle -3,11\right\rangle-\left\langle 3,9\right\rangle \\
+	&=\left\langle -6,2\right\rangle
+	\end{aligned}\]
+	In summary:
+	\[\begin{aligned}
+	\left\langle -3,11\right\rangle
+	&=\text{proj}_{\vec v}\vec w+\text{proj}_{\perp\vec v}\vec w \\
+	&=\left\langle 3,9\right\rangle+\left\langle -6,2\right\rangle
+	\end{aligned}\]
+</p>
+<div class="check">
+	<p>
+		We check:
+		\[\begin{aligned}
+		\text{proj}_{\vec v}\vec w+\text{proj}_{\perp\vec v}\vec w
+		&=\left\langle 3,9\right\rangle+\left\langle -6,2\right\rangle \\
+		&=\left\langle -3,11\right\rangle=\vec w
+		\end{aligned}\]
+		We note that the first summand
+		\(\left\langle 3,9\right\rangle\) is parallel to
+		\(\vec v=\left\langle 1,3\right\rangle\), (It's a multiple.) and
+		the second summand \(\left\langle -6,2\right\rangle\) is perpendicular to
+		\(\vec v=\left\langle 1,3\right\rangle\) since their dot product is zero:
+		\[
+		\left\langle -6,2\right\rangle\cdot\left\langle 1,3\right\rangle
+		=-6+6=0
+		\]
+	</p>
+	<p class="greenbig remark">
+		It is always useful to check this last dot product!
+	</p>
+</div>
+
+      	<div class="rule" id="ex-proj"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+		Resolve the vector \(\vec a=\left\langle 7,-4\right\rangle\) into the sum of two
+		vectors, one parallel to \(\vec b=\left\langle -1,2\right\rangle\) and the other
+		perpendicular to \(\vec b\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\text{proj}_{\vec b}\vec a=\left\langle 3,-6\right\rangle\)
+  </p>
+  <p>
+    \(\text{proj}_{\perp\vec b}\vec a=\left\langle 4,2\right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<p>
+		The parallel projection is:
+		\[\begin{aligned}
+		\text{proj}_{\vec b}\vec a
+		&=\dfrac{\vec a\cdot\vec b}{|\vec b|^2}\vec b
+		=\dfrac{\left\langle 7,-4\right\rangle\cdot\left\langle -1,2\right\rangle}
+		       {|\left\langle -1,2\right\rangle|^2}\left\langle -1,2\right\rangle \\
+		&=\dfrac{-15}{5}\left\langle -1,2\right\rangle
+		=\left\langle 3,-6\right\rangle
+		\end{aligned}\]
+		And the perpendicular projection is:
+		\[\begin{aligned}
+		\text{proj}_{\perp\vec b}\vec a
+		&=\vec a-\text{proj}_{\vec b}\vec a
+		=\left\langle 7,-4\right\rangle-\left\langle 3,-6\right\rangle \\
+		&=\left\langle 4,2\right\rangle
+		\end{aligned}\]
+		In summary:
+		\[\begin{aligned}
+		\left\langle 7,-4\right\rangle
+		&=\text{proj}_{\vec v}\vec w+\text{proj}_{\perp\vec v}\vec w \\
+		&=\left\langle 3,-6\right\rangle+\left\langle 4,2\right\rangle
+		\end{aligned}\]
+	</p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+	<p>
+		We check:
+		\[
+		\text{proj}_{\vec b}\vec a+\text{proj}_{\perp\vec b}\vec a
+		=\left\langle 3,-6\right\rangle+\left\langle 4,2\right\rangle
+		=\left\langle 7,-4\right\rangle=\vec a
+		\]
+		We note that the first summand
+		\(\left\langle 3,-6\right\rangle\) is parallel to
+		\(\vec b=\left\langle -1,2\right\rangle\), (It's a multiple.) and the
+		second summand \(\left\langle 4,2\right\rangle\) is perpendicular to
+		\(\vec b=\left\langle -1,2\right\rangle\) since their dot product is zero:
+		\[
+		\left\langle 4,2\right\rangle\cdot
+		\left\langle -1,2\right\rangle
+		=-4+4=0
+		\]
+	</p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

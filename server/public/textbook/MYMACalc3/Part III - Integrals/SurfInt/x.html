@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Flux.html" title="Previous">&lArr;</a></li>
+      <li><a href="../../Part IV - Theorems/ThmPrevRev/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Introduction to Parametric Surfaces-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="PosPlots.html">a. Introduction to Parametric Surfaces</a></h3>
+    <div class="pgs">
+      
+        <div><a href="PosPlots.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="column">
+		<div class="dotfillex" data-col-width="60%">
+  		<p>
+        Parametrize the paraboloid \(z=x^2+y^2\) in terms of \(r\) and \(\theta\).
+			</p>
+			<p>
+	    	<button class="toggle has-hint" data-toggle="HintX1"></button>
+	    	<button class="toggle has-ans" data-toggle="AnsX1"></button>
+	    	<button class="toggle has-sol" data-toggle="SolX1"></button>
+			</p>
+		</div>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x1.jpg" alt="x1">
+    </div>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX1">
+    <p>
+      Start with cylindrical coordinates.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(\vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      We start with the cylindrical coordinate system:
+      \[
+      \vec R(r,\theta,z)=\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+      \]
+      We write the equation of the paraboloid in cylindrical coordinates:
+      \[
+      z=x^2+y^2=r^2\cos^2\theta+r^2\sin^2\theta=r^2
+      \]
+      Thus the parametrization of the paraboloid becomes:
+      \[
+      \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+      \]
+  	</p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="column">
+		<div class="dotfillex" data-col-width="60%">
+  		<p>
+        Parametrize the cone \(z=5r\) in terms of \(r\) and \(\theta\)
+        and find the point \((x,y,z)\) where \(r=3\) and \(\theta=\pi\)
+			</p>
+			<p>
+	    	<button class="toggle has-hint" data-toggle="HintX2"></button>
+	    	<button class="toggle has-ans" data-toggle="AnsX2"></button>
+	    	<button class="toggle has-sol" data-toggle="SolX2"></button>
+			</p>
+		</div>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x2.jpg" alt="x2">
+    </div>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX2">
+    <p>
+      Start with cylindrical coordinates.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(\vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,5r\right\rangle\)
+      <br>
+      \(\vec R(3,\pi)=\left\langle -3,0,15\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      Again we start with the cylindrical coordinate system:
+      \[\vec R(r,\theta,z)=\left\langle r\cos\theta,r\sin\theta,z\right\rangle\]
+      This time our constraint is \(z=5r\) which we can simply plug in:
+      Thus the parametrization of the paraboloid becomes:
+      \[
+      \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,5r\right\rangle
+      \]
+      To find where \(r=3\) and \(\theta=\pi\), we plug in:
+      \[\begin{aligned}
+      x&=r\cos\theta=3\cos\pi=-3 \\
+      y&=r\sin\theta=3\sin\pi=0 \\
+      z&=5r=15
+      \end{aligned}\]
+      Or \(\vec R(3,\pi)=\left\langle -3,0,15\right\rangle\).
+  	</p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="column">
+		<div class="dotfillex" data-col-width="60%">
+  		<p>
+        Parametrize the cylinder \(y^2+z^2=25\) (centered on the \(x\)-axis)
+        in terms of \(x\) and \(\theta\). Be sure \(\theta=0\) is on the
+        positive \(y\) axis and \(\theta=\dfrac{\pi}{2}\) is on the positive
+        \(z\) axis. Then find the rectangular coordinates of the point where
+        \(x=1\) and \(\theta=\dfrac{\pi}{4}\).
+			</p>
+			<p>
+	    	<button class="toggle has-hint" data-toggle="HintX3"></button>
+	    	<button class="toggle has-ans" data-toggle="AnsX3"></button>
+	    	<button class="toggle has-sol" data-toggle="SolX3"></button>
+			</p>
+		</div>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x3.jpg" alt="x3">
+    </div>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX3">
+    <p>
+      Start with cylindrical coordinates centered around the \(x\) axis.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \(\vec R(x,\theta)
+      =\left\langle x,5\cos\theta,5\sin\theta\right\rangle\)
+      <br>
+      \(\vec R\left(1,\dfrac{\pi}{4}\right)
+      =\left\langle 1,5\dfrac{\sqrt{2}}{2},5\dfrac{\sqrt{2}}{2}\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      This time we start with the cylindrical coordinate system oriented
+      along the x axis:
+      \[
+      \vec R=\left\langle x,r\cos\theta,r\sin\theta\right\rangle
+      \]
+      This time our constraint is \(y^2+z^2=25\) which we use to eliminate \(r\):
+      \[
+      y^2+z^2=r^2\cos^2\theta+r^2\sin^2\theta=r^2=25
+      \quad \rightarrow \quad
+      r=5
+      \]
+      Therefore
+      \[
+      \vec R(x,\theta)=\left\langle x,5\cos\theta,5\sin\theta\right\rangle
+      \]
+      To find where \(x=1\) and \(\theta=\dfrac{\pi}{4}\), we plug in:
+      \[\begin{aligned}
+      x&=1 \\
+      y&=5\cos\pi/4=5\dfrac{\sqrt{2}}{2} \\
+      z&=5\sin\pi/4=5\dfrac{\sqrt{2}}{2}
+      \end{aligned}\]
+      Or \(\vec R\left(1,\dfrac{\pi}{4}\right)
+      =\left\langle 1,5\dfrac{\sqrt{2}}{2},5\dfrac{\sqrt{2}}{2}\right\rangle\).
+  	</p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="column">
+		<div class="dotfillex" data-col-width="60%">
+  		<p>
+        Parametrize the apple \(\rho=1-\cos\phi\) in terms of \(\theta\)
+        and \(\phi\)
+			</p>
+			<p>
+	    	<button class="toggle has-hint" data-toggle="HintX4"></button>
+	    	<button class="toggle has-ans" data-toggle="AnsX4"></button>
+	    	<button class="toggle has-sol" data-toggle="SolX4"></button>
+			</p>
+		</div>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x4.jpg" alt="x4">
+    </div>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX4">
+    <p>
+      Begin with spherical coordinates and then eliminate one of the
+      variables by using the constraint equation given.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(\vec R(\theta,\phi)
+      =\left\langle (1-\cos\phi)\sin\phi\cos\theta,
+      (1-\cos\phi)\sin\phi\sin\theta,(1-\cos\phi)\cos\phi\right\rangle\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+      This time we start with the spherical coordinates:
+      \[
+      \vec R
+      =\left\langle \rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi\right\rangle
+      \]
+      This time our constraint is \(\rho=1-\cos\phi\) which we plug in for
+      \(\rho\):
+      \[
+      \vec R(\theta,\phi)
+      =\left\langle (1-\cos\phi)\sin\phi\cos\theta,
+      (1-\cos\phi)\sin\phi\sin\theta,(1-\cos\phi)\cos\phi\right\rangle
+      \]
+  	</p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<!--Tangent and Normal Vectors-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="CoordCurves.html">b. Tangent and Normal Vectors</a></h3>
+    <div class="pgs">
+      
+        <div><a href="CoordCurves.html">1</a></div>
+      
+        <div><a href="TanVecs.html">2</a></div>
+      
+        <div><a href="NormalVec.html">3</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the cone that was parameterized above as
+      \(\vec R(r,\theta)
+      =\left\langle r\cos\theta,r\sin\theta,5r\right\rangle\).
+      Find the tangent and normal vectors to the surface of the cone.
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX5"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX5"></button>
+    	<button class="toggle has-sol" data-toggle="SolX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX5">
+    <p>
+      Differentiate the parametrization with respect to the parameters.
+      Then take their cross product.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+      \(\begin{aligned}
+      \vec{e}_r&=\left\langle \cos\theta,\sin\theta,5\right\rangle \\
+      \vec{e}_\theta&=\left\langle -r\sin\theta,r\cos\theta,0\right\rangle \\
+      \vec{N}&=\left\langle -5r\cos\theta,-5r\sin\theta,r\right\rangle
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+      To find the tangent vectors, we differentiate the parametrization:
+      \[
+      \vec R(r,\theta)
+      =\left\langle r\cos\theta,r\sin\theta,5r\right\rangle
+      \]
+      to get:
+      \[
+      \begin{aligned}
+      \vec{e}_r&=\dfrac{\partial\vec R}{\partial r}
+      =\left\langle \cos\theta,\sin\theta,5\right\rangle \\
+      \vec{e}_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+      =\left\langle -r\sin\theta,r\cos\theta,0\right\rangle
+      \end{aligned}
+      \]
+      To find the normal vector, we compute the cross product of the
+      tangent vectors:
+      \[\begin{aligned}
+      \vec{N}&=\vec{e}_\phi\times\vec{e}_\theta
+    	=\left|
+      \begin{array}{ccc}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      \left\langle \cos\theta\right. & \sin\theta & \left.5\right\rangle\\
+      \left\langle -r\sin\theta\right. & r\cos\theta& \left.
+      \quad 0\quad\right\rangle
+      \end{array}
+      \right| \\
+      &=\hat{\imath}(-5r\cos\theta)-\hat{\jmath}(5r\sin\theta) \\
+    	&\quad+\hat{k}(r\cos^2\theta+r\sin^2\theta) \\
+      &=\left\langle -5r\cos\theta,-5r\sin\theta,r\right\rangle
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the cylinder that was parameterized above as
+      \(\vec R(x,\theta)
+      =\left\langle x,5\cos\theta,5\sin\theta\right\rangle\).
+      Find the tangent and normal vectors to the surface of the cylinder.
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX6"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+      Differentiate the parametrization with respect to the parameters.
+      Then take their cross product.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+      \(\begin{aligned}
+      \vec{e}_x&=\left\langle 1,0,0\right\rangle \\
+      \vec{e}_\theta&=\left\langle 0,-5\sin\theta,5\cos\theta\right\rangle \\
+      \vec{N}&=\left\langle 0,-5\cos\theta,-5\sin\theta\right\rangle
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      To find the tangent vectors, we differentiate the parametrization:
+      \[
+      \vec R(x,\theta)
+      =\left\langle x,5\cos\theta,5\sin\theta\right\rangle
+      \]
+      to get:
+      \[
+      \begin{aligned}
+      \vec{e}_x&=\dfrac{\partial\vec R}{\partial x}
+      =\left\langle 1,0,0\right\rangle \\
+      \vec{e}_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+      =\left\langle 0,-5\sin\theta,5\cos\theta\right\rangle
+      \end{aligned}
+      \]
+      To find the normal vector, we compute the cross product of the
+      tangent vectors:
+      \[\begin{aligned}
+      \vec{N}&=\vec{e}_x\times\vec{e}_\theta
+    	=\left|
+      \begin{array}{ccc}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      \left\langle 1\right. & 0 & \left.0\right\rangle\\
+      \left\langle 0\right. & -5\sin\theta& \left.5\cos\theta\right\rangle
+      \end{array}
+      \right| \\
+      &=\hat{\imath}(0)-\hat{\jmath}(5\cos\theta)+\hat{k}(-5\sin\theta\theta) \\
+      &=\left\langle 0,-5\cos\theta,-5\sin\theta\right\rangle
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="column">
+		<p data-col-width="60%">
+      Consider the hyperbolic paraboloid \(z=x^2-y^2\)
+		</p>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x5.jpg" alt="x5">
+    </div>
+  </div>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Parametrize the surface starting from cylindrical coordinates.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX7a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX7a"></button>
+					<button class="toggle has-sol" data-toggle="SolX7a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX7a">
+				<p>
+					What is \(z=x^2-y^2\) in cylindrical coordinates?
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7a">
+				<p>
+          \(\vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,r^2(\cos^2\theta-\sin^2\theta)\right\rangle
+          \)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7a">
+				<p>
+          Cylindrical coordinates are:
+          \[
+          \vec R(r,\theta,z)
+          =\left\langle r\cos\theta,r\sin\theta,z\right\rangle
+          \]
+          But
+          \[
+          z=x^2-y^2=r^2\cos^2\theta-r^2\sin^2\theta
+          \]
+          So the hyperbolic paraboloid can be parametrized as:
+          \[\vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,r^2(\cos^2\theta-\sin^2\theta)\right\rangle
+          \]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the tangent vectors to the surface.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX7b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX7b"></button>
+					<button class="toggle has-sol" data-toggle="SolX7b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX7b">
+				<p>
+					Compute the \(r\) and \(\theta\) derivatives of the parametrization.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7b">
+				<p>
+        \(\begin{aligned}
+        \vec{e}_r&=(\cos\theta,\sin\theta,2r(\cos^2\theta-\sin^2\theta)) \\
+        \vec{e}_\theta&=(-r\sin\theta,r\cos\theta,-4r^2\sin\theta\cos\theta)
+        \end{aligned}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7b">
+				<p>
+          The hyperbolic paraboloid is parametrized as:
+          \[
+          \vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,r^2(\cos^2\theta-\sin^2\theta)\right\rangle
+          \]
+          Now we find \(\vec{e}_r\) and \(\vec{e}_\theta\) by taking partial
+          derivatives:
+          \[\begin{aligned}
+          \vec{e}_r=\dfrac{\partial\vec R}{\partial r}
+          &=(\cos\theta,\sin\theta,2r(\cos^2\theta-\sin^2\theta)) \\
+          \vec{e}_\theta=\dfrac{\partial\vec R}{\partial\theta}
+          &=\left\langle -r\sin\theta,r\cos\theta,
+          r^2(-2\cos\theta\sin\theta-2\sin\theta\cos\theta\right\rangle \\
+          &=\left\langle -r\sin\theta,r\cos\theta,
+          -4r^2\sin\theta\cos\theta\right\rangle \\
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the normal vector to the surface.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX7c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX7c"></button>
+					<button class="toggle has-sol" data-toggle="SolX7c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX7c">
+				<p>
+					Take the cross product of the tangent vectors.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7c">
+				<p>
+          \(\vec{N}
+          =\left\langle -2r^2\cos\theta,2r^2\sin\theta,r\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7c">
+				<p>
+          We take their cross product of the tangent vectors to get the
+          normal vector:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_r\times\vec{e}_\theta
+          =\begin{vmatrix}
+          \hat\imath   & \hat \jmath & \hat k \\
+          \cos\theta   & \sin\theta  & 2r(\cos^2\theta-\sin^2\theta)  \\
+          -r\sin\theta & r\cos\theta & -4r^2\sin\theta\cos\theta
+          \end{vmatrix} \\[2pt]
+          &=\quad\hat{\imath}(-4r^2\sin^2\theta\cos\theta
+                  -2r^2\cos\theta(\cos^2\theta-\sin^2\theta)) \\
+          &\quad-\hat{\jmath}(-4r^2\sin\theta\cos^2\theta
+                  +2r^2\sin\theta(\cos^2\theta-\sin^2\theta)) \\
+          &\quad+\hat{k}(r\cos^2\theta+r\sin^2\theta) \\[2pt]
+          &=\left\langle -2r^2\cos\theta,2r^2\sin\theta,r\right\rangle
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+  <div class="column">
+		<p data-col-width="60%">
+      Consider the heart-shaped surface given in spherical coordinates by
+      \(\rho=\phi\).
+		</p>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x6.jpg" alt="x6">
+    </div>
+  </div>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Parametrize the surface starting from spherical coordinates.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX8a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX8a"></button>
+					<button class="toggle has-sol" data-toggle="SolX8a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8a">
+				<p>
+					Start with the spherical coordinates and replace \(\rho\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8a">
+				<p>
+          \(\vec R(\theta,\phi)
+          =\left\langle \phi\sin\phi\cos\theta,\phi\sin\phi\sin\theta,
+          \phi\cos\phi\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8a">
+				<p>
+          We start with the spherical coordinates:
+          \[
+          \vec R
+          =\left\langle \rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,
+          \rho\cos\phi\right\rangle
+          \]
+          We use the constraint \(\rho=\phi\) to eliminate \(\rho\):
+          \[
+          \vec R(\theta,\phi)
+          =\left\langle \phi\sin\phi\cos\theta,\phi\sin\phi\sin\theta,\phi\cos\phi\right\rangle
+          \]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the tangent vectors to the surface.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX8b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX8b"></button>
+					<button class="toggle has-sol" data-toggle="SolX8b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8b">
+				<p>
+					The tangent vectors are the partial derivatives of the
+          parametrization with respect to the parameters.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8b">
+				<p>
+        \(\begin{aligned}
+        \vec{e}_\theta
+        &=(-\phi\sin\phi\sin\theta,\phi\sin\phi\cos\theta,0) \\
+        \vec{e}_\phi
+        &=(\sin\phi\cos\theta+\phi\cos\phi\cos\theta,
+        \sin\phi\sin\theta+\phi\cos\phi\sin\theta,\cos\phi-\phi\sin\phi)
+        \end{aligned}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8b">
+				<p>
+          The tangent vectors are:
+          \[\begin{aligned}
+          \vec{e}_\theta
+          &=(-\phi\sin\phi\sin\theta,\phi\sin\phi\cos\theta,0) \\
+          \vec{e}_\phi
+          &=(\sin\phi\cos\theta+\phi\cos\phi\cos\theta,
+          \sin\phi\sin\theta+\phi\cos\phi\sin\theta,\cos\phi-\phi\sin\phi)
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the normal vector to the surface.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX8c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX8c"></button>
+					<button class="toggle has-sol" data-toggle="SolX8c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8c">
+				<p>
+					The normal is  the cross product of the tangent vectors.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8c">
+				<p>
+          \(\begin{aligned}
+          \vec{N}
+          &=\left\langle \phi\sin\phi\cos\theta(\cos\phi-\phi\sin\phi),\right. \\
+          &\qquad\quad\phi\sin\phi\sin\theta(\cos\phi-\phi\sin\phi), \\
+          &\qquad\qquad\left.-\phi\sin^2\phi-\phi^2\sin\phi\cos\phi\right\rangle
+          \end{aligned}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8c">
+				<p>
+          The normal is  the cross product of the tangent vectors:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_\theta\times\vec{e}_\phi \\
+          &=\begin{vmatrix}
+          i & j & k \\
+          -\phi\sin\phi\sin\theta & \phi\sin\phi\cos\theta & 0 \\
+          \sin\phi\cos\theta+\phi\cos\phi\cos\theta & \sin\phi\sin\theta
+          +\phi\cos\phi\sin\theta & \cos\phi-\phi\sin\phi
+          \end{vmatrix} \\
+          &=\quad\hat{\imath}(\phi\sin\phi\cos\phi\cos\theta-\phi^2\sin^2\phi\cos\theta) \\
+          &\quad-\hat{\jmath}(-\phi\sin\phi\cos\phi\sin\theta+\phi^2\sin^2\phi\sin\theta) \\
+          &\quad+\hat{k}(-\phi\sin^2\phi\sin^2\theta-\phi^2\sin\phi\cos\phi\sin^2\theta \\
+          &\qquad-\phi\sin^2\phi\cos^2\theta-\phi^2\sin\phi\cos\phi\cos^2\theta) \\
+          &=\left\langle \phi\sin\phi\cos\theta(\cos\phi-\phi\sin\phi),\right. \\
+          &\qquad\quad\phi\sin\phi\sin\theta(\cos\phi-\phi\sin\phi), \\
+          &\qquad\qquad\left.-\phi\sin^2\phi-\phi^2\sin\phi\cos\phi\right\rangle
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Consider the cylinder from problem 3, \(y^2+z^2=25\). Find the
+      tangent vectors and the magnitude of the normal vector to the
+      surface.
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX9"></button>
+      <button class="toggle has-sol" data-toggle="SolX9"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX9">
+    <p>
+      The tangent vectors are:
+      <br>
+      \(\vec{e}_x=\dfrac{\partial R}{\partial x}
+      =\left\langle 1,0,0\right\rangle\)
+      <br>
+      \(\vec{e}_\theta=\dfrac{\partial R}{\partial\theta}
+      =\left\langle 0,-5\sin\theta,5\cos\theta\right\rangle\)
+      <br>
+      The magnitude of the normal vector is
+      <br>
+      \(|\vec{N}|=5\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX9">
+    <p>
+      We already know that the surface is parametrized by
+      \(\vec R(x,\theta)
+      =\left\langle x,5\cos\theta,5\sin\theta\right\rangle\)
+      <br>
+      The tangent vectors are:
+      \[\begin{aligned}
+      \vec{e}_x&=\dfrac{\partial R}{\partial x}
+      =\left\langle 1,0,0\right\rangle \\
+      \vec{e}_\theta&=\dfrac{\partial R}{\partial\theta}
+      =\left\langle 0,-5\sin\theta,5\cos\theta\right\rangle
+      \end{aligned}\]
+      <br>
+      The normal vector is found from the cross product:
+      \[\begin{aligned}
+      \vec{N}&=\vec{e}_x\times\vec{e}_\theta
+      =\begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      1 & 0 & 0 \\
+      0 &-5\sin\theta & 5\cos\theta
+      \end{vmatrix} \\
+      &=\hat{\imath}(0)-\hat{\jmath}(5\cos\theta)+\hat{k}(-5\sin\theta) \\
+      &=\left\langle 0,-5\cos\theta,-5\sin\theta\right\rangle
+      \end{aligned}\]
+      and its length is:
+      \[
+      |\vec{N}|=\sqrt{25\cos^2\theta+25\sin^2\theta}
+      =5
+      \]
+    </p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<!--Scalar Surface Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="ScalSurfDiff.html">c. Scalar Surface Integrals</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ScalSurfDiff.html">1</a></div>
+      
+        <div><a href="ScalSurfInt.html">2</a></div>
+      
+    </div>
+  </div>
+
+<div class="rule" id="sphereradius6"></div>
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the normal vector and the scalar differential of surface area of
+      the sphere \(x^2+y^2+z^2=36\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX10"></button>
+      <button class="toggle has-ans" data-toggle="AnsX10"></button>
+      <button class="toggle has-sol" data-toggle="SolX10"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX10">
+    <p>
+      The scalar differential of surface area is
+      \(dS=|\vec N|\,dr\,d\theta\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX10">
+    <p>
+      \(\vec{N}=\langle-36\sin^2\phi\cos\theta,-36\sin^2\phi\sin\theta,
+        -36\sin\phi\cos\phi\rangle\)
+      <br>
+      \(dS=36\sin\phi\,d\phi\,d\theta\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX10">
+    <p>
+      First, parametrize the sphere by
+      \[\vec R(\theta,\phi)
+      =\left\langle 6\sin\phi\cos\theta,6\sin\phi\sin\theta,6\cos\phi\right\rangle\]
+      Now find the tangent vectors \(\vec{e}_\theta\) and \(\vec{e}_\phi\):
+
+      \[\vec{e}_\theta=\left\langle-6\sin\phi\sin\theta,6\sin\phi\cos\theta,0\right\rangle\]
+      \[\vec{e}_\phi=\left\langle6\cos\phi\cos\theta,6\cos\phi\sin\theta,-6\sin\phi\right\rangle\]
+      Now find the normal vector
+      \[\begin{aligned}
+      \vec{N}
+      &=\vec{e}_\theta\times\vec{e}_\phi
+      =\begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      -6\sin\phi\sin\theta & 6\sin\phi\cos\theta & 0 \\
+      6\cos\phi\cos\theta & 6\cos\phi\sin\theta & -6\sin\phi
+      \end{vmatrix} \\
+      &=\hat\imath(-36\sin^2\phi\cos\theta)
+        -\hat\jmath(36\sin^2\phi\sin\theta) \\
+      &\quad+\hat k(-36\sin\phi\cos\phi\sin^2\theta-
+        36\sin\phi\cos\phi\cos^2\theta) \\
+      &=\langle-36\sin^2\phi\cos\theta,-36\sin^2\phi\sin\theta,
+        -36\sin\phi\cos\phi\rangle
+      \end{aligned}\]
+      and now we can find the magnitude of the normal vector
+      \[\begin{aligned}
+      |\vec{N}|
+      &=36\sqrt{\sin^4\phi\cos^2\theta+\sin^4\phi\sin^2\theta+\sin^2\phi\cos^2\phi} \\
+      &=36\sqrt{\sin^2\phi(\sin^2\phi\cos^2\theta+\sin^2\phi\sin^2\theta+\cos^2\phi)} \\
+      &=36\sqrt{\sin^2\phi(\sin^2\phi+\cos^2\phi)}
+      =36\sin\phi.
+      \end{aligned}\]
+      Recalling the general definition of the scalar differential for surface area
+      is \(dS = |\vec N|\,d\phi\,d\theta\), we find that
+      \[
+      dS=|\vec N|\,d\phi\,d\theta
+      =36\sin\phi\,d\phi\,d\theta.
+      \]
+    </p>
+    <p style="text-align:right">
+      dm,lk&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the normal vector and the scalar differential of surface area of
+      the cylinder \(x^2+y^2=36\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX11"></button>
+      <button class="toggle has-sol" data-toggle="SolX11"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX11">
+    <p>
+      \(\vec{N}=\left\langle 6\cos\theta,6\sin\theta,0\right\rangle\)
+      <br>
+      \(dS=6\,d\theta\,dz\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX11">
+    <p>
+      First, we parametrize the cylinder by:
+      \[
+      \vec R(\theta,z)=\left\langle 6\cos\theta,6\sin\theta,z\right\rangle
+      \]
+      Now we find the tangent vectors \(\vec{e}_\theta\) and \(\vec{e}_z\):
+      \[\begin{aligned}
+      \vec{e}_\theta&=(-6\sin\theta,6\cos\theta,0) \\
+      \vec{e}_z&=(0,0,1)
+      \end{aligned}\]
+      and the normal vector:
+      \[\begin{aligned}
+      \vec{N}&=\vec{e}_\theta\times\vec{e}_z
+      =\begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      -6\sin\theta & 6\cos\theta & 0 \\
+      0 & 0 & 1
+      \end{vmatrix} \\
+      &=\hat{\imath}(6\cos\theta)-\hat{\jmath}(-6\sin\theta)+\hat{k}(0)
+      =\left\langle 6\cos\theta,6\sin\theta,0\right\rangle
+      \end{aligned}\]
+      and its magnitude:
+      \[|\vec{N}|=\sqrt{N_x^2+N_y^2+N_z^2}
+      =\sqrt{36\cos^2\theta+36\sin^2\theta+0}=6\]
+      So the scalar differential is
+      \[dS=|\vec{N}|\,d\theta\,dz=6\,d\theta\,dz\]
+    </p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Parametrize the plane \(2x-3y+z=-1\) and find the normal vector. Is there more than one way to find
+      the normal vector? Then find the scalar surface differential of the
+      plane.
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX12"></button>
+      <button class="toggle has-sol" data-toggle="SolX12"></button>
+      <button class="toggle has-rem" data-toggle="RemX12"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX12">
+    <p>
+      \[\vec{N}=\left\langle 2,-3,1\right\rangle\]
+      You can also find the normal vector as the coefficients in the plane equation
+      or as the gradient of the function \(f(x,y,z)=2x-3y+z\).
+      \[dS=|\vec{N}|\,dx\,dy=\sqrt{14}\,dx\,dy\]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX12">
+    <p>
+      To parametrize, let's start with the rectangular coordinates:
+      \[\vec R=\left\langle x,y,z\right\rangle\]
+      The equation of the plane relates these three variables, so we can eliminate
+      one of them. Let's eliminate \(z\), since \(z=-2x+3y-1\) we see that
+      \[\vec R=\left\langle x,y,-2x+3y-1\right\rangle\]
+      Now to find the tangent vectors \(\vec{e}_x\) and \(\vec{e}_y\):
+      \[\vec{e}_x=(1,0,-2)\]
+      \[\vec{e}_y=(0,1,3)\]
+      Now find the normal vector
+      \[\begin{aligned}
+      \vec{N}&=\vec{e}_x\times\vec{e}_y=
+      \begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      1 & 0 & -2 \\
+      0 & 1 & 3
+      \end{vmatrix} \\
+      &=\hat{\imath}(2)-\hat{\jmath}(3)+\hat{k}(
+      1)=\left\langle 2,-3,1\right\rangle
+      \end{aligned}\]
+      The scalar surface differential \(dS\) is
+      \[dS=|\vec{N}|=\sqrt{2^2+(-3)^2+1^2}\,dx\,dy
+      =\sqrt{14}\,dx\,dy\]
+      Note that since the equation of a plane is \(\vec N \cdot X=\vec N \cdot P\),
+      the components of \(\vec N\) can be read off as the coefficients
+      in the plane equation. Also note that the plane is a level
+      set of the function \(f(x,y,z)=2x-3y+z\). So the normal is it gradient,
+      \(\vec \nabla f = \langle 2,-3,1\rangle\).
+    <p style="text-align:right">
+      dm,lk&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-rem" data-toggle="RemX12">
+    <p class = "caution">
+      Reading off the coefficients in the equation of a plane (or computing the
+      gradient of the equation defining the surface) may not give the correct
+      area of the surface. Only the normal found as the cross product of the
+      tangent vectors gives the correct area.
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the normal vector and the scalar differential of surface area of
+      the paraboloid \(z=x^2+y^2\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX13"></button>
+      <button class="toggle has-sol" data-toggle="SolX13"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX13">
+    <p>
+      \[\vec N=\left\langle -2r^2\cos\theta,-2r^2\sin\theta,r\right\rangle\]
+      \[dS=\sqrt{4r^4+r^2}\,dr\,d\theta\]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX13">
+    <p>
+      Again, we must first parametrize the surface. We start with cylindrical
+      coordinates and substitute \(z=x^2+y^2=r^2\):
+      \[
+      \vec R(r,\theta)
+      =\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+      \]
+      Now we find the tangent vectors:
+      \[\begin{aligned}
+      \vec{e}_r&=\left\langle \cos\theta,\sin\theta,2r\right\rangle \\
+      \vec{e}_\theta&=\left\langle -r\sin\theta,r\cos\theta,0\right\rangle
+      \end{aligned}\]
+      And now the normal vector:
+      \[\begin{aligned}
+      \vec{N}&=
+      \begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      \cos\theta   & \sin\theta   & 2r \\
+      -r\sin\theta & r\cos\theta  & 0
+      \end{vmatrix} \\
+      &=\hat{\imath}(-2r^2\cos\theta)-\hat{\jmath}(2r^2\sin\theta) \\
+      &\quad+\hat{k}(r\cos^2\theta+r\sin^2\theta) \\
+      &=\left\langle -2r^2\cos\theta,-2r^2\sin\theta,r\right\rangle
+      \end{aligned}\]
+      Then the length of the normal is:
+      \[\begin{aligned}
+      |\vec N|&=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2} \\
+      &=\sqrt{4r^4+r^2}=r\sqrt{4r^2+1}
+      \end{aligned}\]
+      And the scalar differential of surface area is:
+      \[
+      dS=|\vec N|\,dr\,d\theta
+      =r\sqrt{4r^2+1}\,dr\,d\theta
+      \]
+    </p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the surface area of the sphere, \(x^2+y^2+z^2=36\), by using the
+      scalar surface differential \(dS\) found in a
+      <a href="x.html#sphereradius6" title="Return using the Back button.">
+      previous problem</a>.
+      Check your answer with the formula for sphere surface area, \(A=4\pi r^2\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX14"></button>
+      <button class="toggle has-sol" data-toggle="SolX14"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX14">
+    <p>
+      \(A=144\pi\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX14">
+    <p>
+      Recall from that we alredy know from a
+      <a href="x.html#sphereradius6" title="Return using the Back button.">
+      previous problem</a> the scalar surface differential
+      \[
+      dS = 36\sin(\phi)\,d\phi\,d\theta
+      \]
+      Notice that the ranges are \(0\le \theta \le 2\pi\) and \(0\le \phi\le \pi\).
+      Then the area is the surface integral
+      \[\begin{aligned}
+      A&=\iint_{\vec R}1\,dS=\int_{0}^{2\pi}\int_{0}^{\pi}
+      36\sin(\phi)\,d\phi\,d\theta\\
+      &=-36\int_{0}^{2\pi}\left[\rule{0pt}{10pt}\cos(\phi)\right]_{0}^{\pi}d\,\theta
+      =72\int_{0}^{2\pi}1\,d\theta \\
+      &=72\left[\rule{0pt}{10pt}\theta\right]_{0}^{2\pi}=144\pi\text{.}
+      \end{aligned}\]
+    </p>
+    <p class="check">
+      Now, recall the area of a sphere is \(A=4\pi r^2\). With
+      \(r=6\), this is \(A=4\pi (6)^2=144\pi\), and we have verified our
+      answer.
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the area of the bowl shaped surface \(z=x^2+y^2\) for \(z \le 4\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX15"></button>
+      <button class="toggle has-sol" data-toggle="SolX15"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX15">
+    <p>
+      \[
+      A=\dfrac{\pi}{6}(17^{3/2}-1)
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX15">
+    <p>
+      To parametrize the bowl, we start with cylindrical
+      coordinates and plug in \(z=x^2+y^2=r^2\):
+      \[
+      \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+      \]
+      We find the tangent vectors
+      \[
+      \vec{e}_r=\left\langle \cos\theta,\sin\theta,2r\right\rangle
+      \]
+      \[
+      \vec{e}_\theta=\left\langle -r\sin\theta,r\cos\theta,0\right\rangle
+      \]
+      The normal vector and its length are:
+      \[\begin{aligned}
+      \vec{N}&=\vec{e}_r\times\vec{e}_\theta=\det
+      \begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      \cos\theta   & \sin\theta   & 2r \\
+      -r\sin\theta & r\cos\theta  & 0
+      \end{vmatrix} \\
+      &=\hat{\imath}(-2r^2\cos\theta)
+       -\hat{\jmath}(2r^2\sin\theta)
+       +\hat{k}(r\cos^2\theta+r\sin^2\theta)\\
+      &=\left\langle -2r^2\cos\theta,-2r^2\sin\theta,r\right\rangle \\
+      |\vec N|&=\sqrt{4r^4\cos^2\theta+4r^4\sin^2\theta+r^2} \\
+      &=\sqrt{4r^4+r^2}
+      =r\sqrt{4r+1}
+      \end{aligned}\]
+      So the scalar surface differential is:
+      \[
+      dS=|\vec{N}|\,dr\,d\theta
+      =r\sqrt{4r^2+1}\,dr\,d\theta .
+      \]
+      To find the surface area we compute \(\displaystyle A=\iint dS\), but first
+      we need to find the bounds of \(r\) and \(\theta\). The bounds are
+      \(0\le\theta \le 2\pi\) since the bowl goes all the way around. The minimum
+      value of \(r\) is \(0\) and the maximum value occurs at
+      \(z=4=r^2\) or \(r=2\). Now, we can calculate the area:
+      \[\begin{aligned}
+      A&=\iint dS
+      =\int_0^{2\pi}\int_0^2 r\sqrt{4r^2+1}\,dr\,d\theta  \\
+      &=\int_0^{2\pi} \,d\theta\int_0^2 r\sqrt{4r^2+1}\,dr=2\pi
+      \int_0^2 r\sqrt{4r^2+1}\,dr .
+      \end{aligned}\]
+      Now, we make the substitution \(u=4r^2+1\) and \(du=8r\,dr\).
+      \[\begin{aligned}
+      A&=2\pi\int_0^2 r\sqrt{4r^2+1}\,dr\,d\theta
+      =2\pi\int_1^{17} \dfrac{1}{8}\sqrt{u}\,du \\
+      &=\dfrac{\pi}{4}\left[\dfrac{2u^{3/2}}{3}\right]_1^{17}
+      =\dfrac{\pi}{6}(17^{3/2}-1)
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Compute \(\displaystyle \iint_S 15xy\,dS\) over the
+      piece of the elliptic paraboloid \(z=x^2+y^2\) above the rectangle
+      \([0,2]\times[0,1]\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX16"></button>
+      <button class="toggle has-sol" data-toggle="SolX16"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX16">
+    <p>
+      \(\displaystyle \iint_S 15xy\,dS
+      =\dfrac{1}{16}(21^{5/2}-5^{5/2}-17^{5/2}+1)\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX16">
+    <p>
+      In a
+      <a href="PosPlots.html#RectEllipticParab" title="Return using the Back button.">
+      previous example</a>, we parametrized the surface as
+      \[
+      \vec R(u,v)=\left\langle u,v,u^2+v^2\right\rangle
+      \qquad \text{where} \qquad
+      0 \le u \le 2 \quad \text{and} \quad 0 \le v \le 1
+      \]
+      Then the tangent and normal vectors are:
+      \[
+      \begin{array}{c}
+      \\[8pt]
+      \vec{e}_u=\dfrac{\partial R}{\partial u}=\, \\[8pt]
+      \vec{e}_v=\dfrac{\partial R}{\partial v}=\,
+      \end{array}
+      \left|
+      \begin{array}{ccc}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\[8pt]
+      \left\langle 1 \right. & 0  & \left. 2u\right\rangle \\[8pt]
+      \left\langle 0 \right. & 1  & \left. 2v\right\rangle
+      \end{array}
+      \right|=\vec N
+      \]
+      \[\begin{aligned}
+      \vec N
+      &=\vec{e}_u\times\vec{e}_v \\
+      &=\hat{\imath}(0-2u)-\hat{\jmath}(2v-0)+\hat{k}(1-0)
+      =\left\langle -2u,-2v,1\right\rangle
+      \end{aligned}\]
+      The length of the normal vector is
+      \[
+      |\vec N|
+      =\sqrt{4u^2+4v^2+1}
+      \]
+      The integrand is \(15xy=15uv\). So the integral is
+      \[\begin{aligned}
+      \iint_S 15xy\,dS
+      &=\int_0^1\int_0^2 15uv|\vec N|\,du\,dv \\
+      &=\int_0^1\int_0^2 15uv\sqrt{4u^2+4v^2+1}\,du\,dv \\
+      &=\int_0^1 \left[\dfrac{5}{4}v(4u^2+4v^2+1)^{3/2}\right]_{u=0}^2\,dv \\
+      &=\int_0^1 \dfrac{5}{4}v(4v^2+17)^{3/2}
+      -\dfrac{5}{4}v(4v^2+1)^{3/2}\,dv \\
+      &=\left[\dfrac{1}{16}(4v^2+17)^{5/2}
+              -\,\dfrac{1}{16}(4v^2+1)^{5/2}\right]_0^1 \\
+      &=\dfrac{1}{16}(21^{5/2}-5^{5/2}-17^{5/2}+1) \\
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+	Consider the cone \(z=2r\) from \(z=0\) to \(z=10\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the <em>lateral</em> surface area of the cone.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX17a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX17a"></button>
+					<button class="toggle has-sol" data-toggle="SolX17a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX17a">
+				<p>
+					The lateral surface is the sides of the cone. Start with cylindrical
+          coordinates and set \(z=2r\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX17a">
+				<p>
+					\(A_\text{lateral}=25\sqrt{5}\,\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX17a">
+				<p>
+					First we need to parametrize the lateral surface of the cone.
+          Starting with cylindrical coordinates, we plug in \(z=2r\):
+          \[
+          \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,2r\right\rangle
+          \]
+          The tangent vectors and the normal vector and its length are:
+          \[\begin{aligned}
+          \vec{e}_r&=\left\langle \cos\theta,\sin\theta,2\right\rangle \\
+          \vec{e}_\theta&=\left\langle -r\sin\theta,r\cos\theta,0\right\rangle
+          \end{aligned}\]
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_r\times\vec{e}_\theta=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \cos\theta   & \sin\theta   & 2 \\
+          -r\sin\theta & r\cos\theta  & 0
+          \end{vmatrix} \\
+          &=\hat{\imath}(-2r\cos\theta) -\hat{\jmath}(2r\sin\theta)
+          +\hat{k}(r\cos^2\theta+r\sin^2\theta) \\
+          &=\left\langle -2r\cos\theta,-2r\sin\theta,r\right\rangle
+          \end{aligned}\]
+          \[\begin{aligned}
+          |\vec{N}|&=\sqrt{4r^2\cos^2\theta+4r^2\sin^2\theta+r^2} \\
+          &=\sqrt{5r^2}
+          =\sqrt{5}\,r
+          \end{aligned}\]
+          To compute the integral, we need to know the bounds. The maximum
+          height is \(z=10\). So the maximum radius is \(r=5\). Then the
+          lateral area is:
+          \[\begin{aligned}
+          A_\text{lateral}&=\int_0^{2\pi}\int_0^5 \sqrt{5}\,r\,dr\,d\theta
+          =2\pi\int_0^5\sqrt{5}\,r\,dr \\
+          &=2\pi\left[\dfrac{\sqrt{5}}{2}r^2\right]_0^5
+          =25\sqrt{5}\,\pi
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the surface area of the top of the cone.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX17b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX17b"></button>
+					<button class="toggle has-sol" data-toggle="SolX17b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX17b">
+				<p>
+					Just find the area of a circle, no integral.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX17b">
+				<p>
+					\(A_\text{top}=25\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX17b">
+				<p>
+          The top of the cone is at \(z=10\). So \(r=5\). A circle with radius
+          \(r=5\) has area
+          \[
+          A_\text{top}=\pi r^2=25\pi
+          \]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					What is the total surface area of the cone?
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX17c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX17c"></button>
+					<button class="toggle has-sol" data-toggle="SolX17c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX17c">
+				<p>
+					Just add.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX17c">
+				<p>
+					\(A_\text{total}=25\pi(\sqrt{5}+1)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX17c">
+				<p>
+					We simply add the lateral and top surface areas to find the
+          total surfacea area of the cone:
+          <br>
+          \[\begin{aligned}
+          A_\text{total}&=A_\text{lateral}+A_\text{top} \\
+          &=25\sqrt{5}\pi+25\pi\\
+          &=25\pi(\sqrt{5}+1)
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<!--Applications of Scalar Surface Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="SurfArea.html">d. Applications of Scalar Surface Integrals</a></h3>
+    <div class="pgs">
+      
+        <div><a href="SurfArea.html">1</a></div>
+      
+        <div><a href="AveVal.html">2</a></div>
+      
+        <div><a href="Centroid.html">3</a></div>
+      
+        <div><a href="Mass.html">4</a></div>
+      
+        <div><a href="CM.html">5</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the mass of a cylindrical surface \(x^2+y^2=9\) between \(z=0\)
+      and \(z=1\) if the surface density is given by
+      \(\delta=z(2x^2+2y^2)\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX18"></button>
+      <button class="toggle has-ans" data-toggle="AnsX18"></button>
+      <button class="toggle has-sol" data-toggle="SolX18"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX18">
+    <p>
+      Parametrize the cylinder starting from cylindrical coordinates.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX18">
+    <p>
+      \(\displaystyle
+      M=\iint \delta\,dS=54\pi
+      \)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX18">
+    <p>
+      In terms of cylindrical coordinates, we can parametrize the surface as
+      \[
+      \vec R=\left\langle 3\cos\theta,3\sin\theta,z\right\rangle
+      \]
+      and our density function becomes \(\delta=2zr^2=18z\).
+      We find the tangent vectors
+      \[\begin{aligned}
+      e_\theta&=\langle -3\sin\theta,3\cos\theta,0\rangle \\
+      e_z&=\langle 0,0,1\rangle
+      \end{aligned}\]
+      and the normal vector
+      \[\begin{aligned}
+      \vec{N}&=
+      \begin{vmatrix}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      -3\sin\theta & 3\cos\theta & 0 \\
+      0 & 0 & 1
+      \end{vmatrix} \\
+      &=\hat{\imath}(3\cos\theta)-\hat{\jmath}(-3\sin\theta)+\hat{k}(0) \\
+      &=\left\langle 3\cos\theta,3\sin\theta,0\right\rangle
+      \end{aligned}\]
+      Thus, the surface differential is
+      \[
+      dS=|\vec{N}|d\theta\,dz=\sqrt{9\cos^2\theta+9\sin^2\theta}\,d\theta\,dz
+      =3\,d\theta\,dz
+      \]
+      To find the mass, we integrate the density function over the surface,
+      remembering to include the scalar surface area differential:
+      \[\begin{aligned}
+      M&=\iint \delta\,dS
+      =\int_0^1\int_0^{2\pi} (18z)3\,d\theta\,dz \\
+      &=54\int_0^1 z\,dz\int_0^{2\pi} \,d\theta
+      =54\left[\dfrac{1}{2}z^2\right]_0^1 2\pi \\
+      &=54\pi
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      dm,lk&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	An ice cream cone with ice cream on top consists of a cone at an angle
+  of \(\phi=\dfrac{\pi}{6}\) measured from the north pole, and the piece of
+  the sphere \(\rho=3\) above the cone. We
+  emphasize that we are discussing
+  the surface of the ice cream cone and not discussing the volume inside.
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the total surface area of the cone and the ice cream.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX19a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX19a"></button>
+					<button class="toggle has-sol" data-toggle="SolX19a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX19a">
+				<p>
+					The sides of the ice cream cone is the cone \(\phi=\dfrac{\pi}{6}\).
+          The top is the piece of the sphere \(\rho=3\) above the angle
+          \(\phi=\dfrac{\pi}{6}\). You need to separately parametrize both surfaces.
+          For the cone, start from cylindrical coordinates. For the sphere, start
+          from spherical coordinates.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX19a">
+				<p>
+					\(A_\text{tot}=\dfrac{45}{2}\pi-9\pi\sqrt{3}\approx 21.7\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX19a">
+				<p>
+					The ice cream on top of the cone is the piece of the sphere with
+          radius \(\rho=3\) for \(0<\phi<\dfrac{\pi}{6}\). To find its area,
+          we parametrize the sphere as
+          \[
+          \vec R(\phi,\theta)
+          =\left\langle 3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi\right\rangle
+          \]
+          Then the tangent vectors are
+          \[\begin{aligned}
+          \vec{e}_\phi
+          &=\left\langle 3\cos\phi\cos\theta,3\cos\phi\sin\theta,-3\sin\phi\right\rangle \\
+          \vec{e}_\theta
+          &=\left\langle -3\sin\phi\sin\theta,3\sin\phi\cos\theta,0\right\rangle
+          \end{aligned}\]
+          and the normal vector is
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_\phi\times\vec{e}_\theta=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          3\cos\phi\cos\theta & 3\cos\phi\sin\theta & -3\sin\phi\\
+          -3\sin\phi\sin\theta & 3\sin\phi\cos\theta & 0
+          \end{vmatrix} \\
+          &=\hat{\imath}(9\sin^2\phi\cos\theta)
+          -\hat{\jmath}(-9\sin^2\phi\sin\theta)\\
+          &\qquad +\hat{k}(9\sin\phi\cos\phi\cos^2\theta+9\sin\phi\cos\phi\sin^2\theta) \\
+          &=\left\langle 9\sin^2\phi\cos\theta,9\sin^2\phi\sin\theta,
+          9\sin\phi\cos\phi\right\rangle
+          \end{aligned}\]
+          The length of the normal is:
+          \[\begin{aligned}
+          |\vec{N}|&=\sqrt{81\sin^4\phi\cos^2\theta
+          +81\sin^4\phi\sin^2\theta+81\sin^2\phi\cos^2\phi} \\
+          &9\sqrt{\sin^2\phi(\sin^2\phi(\cos^2\theta+\sin^2\theta)+\cos^2\phi)}
+          =9\sin\phi
+          \end{aligned}\]
+          So the surface area is
+          \[\begin{aligned}
+          A_\text{top}&=\iint \,dS
+          =\int_0^{2\pi}\int_0^{\pi/6} 9\sin\phi\,d\phi\,d\theta \\
+          &=18\pi\left[-\cos\phi\dfrac{}{}\right]_0^{\pi/6} \\
+          &=18\pi\left(-\,\dfrac{\sqrt{3}}{2}+1\right)
+          =9\pi(2-\sqrt{3})
+          \end{aligned}\]
+          To find the area of the cone, we need to parametrize the cone at \(\phi=\pi
+          /6\). We start with cylindrical coordinates
+          \[
+          (x,y,z)=(r\cos\theta,r\sin\theta,z)
+          \]
+          We need to relate \(r\) and \(z\) to eliminate one of them. Using the relation
+          between cylindrical and spherical coordinates
+          \[
+          \dfrac{r}{z}=\tan\phi=\tan\dfrac{\pi}{6}=\dfrac{1}{\sqrt{3}}
+          \]
+          we have \(z=\sqrt{3}r\). So the parametrization is
+          \[
+          \vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,\sqrt{3}r\right\rangle
+          \]
+          The tangent vectors are:
+          \[\begin{aligned}
+          \vec{e}_r&=\left\langle \cos\theta,\sin\theta,\sqrt{3}\right\rangle
+          \\
+          \vec{e}_\theta&=\left\langle -r\sin\theta,r\cos\theta,0\right\rangle
+          \end{aligned}\]
+          with the normal vector being:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_r\times\vec{e}_\theta
+          =\begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          \cos\theta   & \sin\theta   & \sqrt{3} \\
+          -r\sin\theta & r\cos\theta  & 0
+          \end{vmatrix} \\
+          &=\hat{\imath}(-\sqrt{3}r\cos\theta)
+           -\hat{\jmath}(\sqrt{3}r\sin\theta)
+           +\hat{k}(r\cos^2\theta+r\sin^2\theta) \\
+          &=\left\langle -\sqrt{3}r\cos\theta,-\sqrt{3}r\sin\theta,r\right\rangle
+          \end{aligned}\]
+          Then the length of the normal vector is
+          \[
+          |\vec{N}|=\sqrt{3r^2\cos^2\theta+3r^2\sin^2\theta+r^2}=\sqrt{4r^2}=2r
+          \]
+          Finally, since \(\rho \le 3\), we have
+          \[
+          r=\rho\sin\phi=\rho\sin\dfrac{\pi}{6}=\dfrac{\rho}{2} \le \dfrac{3}{2}
+          \]
+          So the surface area of the cone is: (Don't forget the magnitude of the normal.)
+          \[\begin{aligned}
+          A_\text{cone}&=\iint \,dS=\int_0^{2\pi}\int_0^{3/2} 2r\,dr\,d\theta \\
+          &=2\pi\left[\rule{0pt}{10pt}r^2\right]_0^{3/2}
+          =\dfrac{9}{2}\pi
+          \end{aligned}\]
+          Finally we add the two areas together to find the total surface area of
+          the ice cream cone:
+          \[\begin{aligned}
+          A_\text{tot}&=A_\text{top}+A_\text{cone}
+          =9\pi(2-\sqrt{3})+\dfrac{9}{2}\pi \\
+          &=\dfrac{45}{2}\pi-9\pi\sqrt{3}
+          \approx 21.7
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm,lk&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the mass of the cone (without the ice cream) if the density of
+          the cone is given by \(\delta(r,\theta)=6-z\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX19b"></button>
+					<button class="toggle has-sol" data-toggle="SolX19b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX19b">
+				<p>
+					\(\displaystyle
+          M=\iint \delta\,dS=27\pi-\,\dfrac{9\pi}{2}\sqrt{3}\approx 60.3\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX19b">
+				<p>
+          We continue using the parametrization of the cone given by:
+          \[
+          \vec R(r,\theta)
+          =\left\langle r\cos\theta,r\sin\theta,\sqrt{3}r\right\rangle
+          \]and the differential \(dS=2r\,dr\,d\theta\).
+					Since \(z=\sqrt{3}r\), the density is \(\delta=6-z=6-\sqrt{3}r\).
+          We find the mass by integrating the density over the surface
+          of the cone:
+          \[\begin{aligned}
+          M&=\iint \delta\,dS
+          =\int_0^{2\pi}\int_0^{3/2} (6-\sqrt{3}r)2r\,dr\,d\theta \\
+          &=2\pi\left[6r^2-2\sqrt{3}\dfrac{r^3}{3}\right]_0^{3/2} \\
+          &=2\pi\left(6\left(\dfrac{3}{2}\right)^2
+          -\,\dfrac{2\sqrt{3}}{3}\left(\dfrac{3}{2}\right)^3\right) \\
+          &=27\pi-\,\dfrac{9\pi}{2}\sqrt{3}\approx 60.3
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the center of mass of the cone (without the ice cream)
+          in rectangular coordinates.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX19c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX19c"></button>
+					<button class="toggle has-sol" data-toggle="SolX19c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX19c">
+				<p>
+					By symmetry, what are \(\bar{x}\) and \(\bar{y}\)?
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX19c">
+				<p>
+					\((\bar{x},\bar{y},\bar{z})=(0,0,1.644)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX19c">
+				<p>
+					From symmetry, we know that \(\bar{x}=\bar{y}=0\), thus we just need
+          to find the center of mass along the \(z\) axis. We recall the mass is:
+          \[
+          M=27\pi-\,\dfrac{9\pi}{2}\sqrt{3}\approx 60.337
+          \]
+          We compute the \(z\)-moment of the mass, we recall \(z=\sqrt{3}r\)
+          and \(|\vec{N}|=2r\)
+          \[\begin{aligned}
+          M_z&=\iint z\delta\,dS
+          =\int_0^{2\pi}\int_0^{3/2} \sqrt{3}r(6-\sqrt{3}r)2r\,dr\,d\theta\\
+          &=2\pi\left[4\sqrt{3}r^3-\,\dfrac{3}{2}r^4\right]_0^{3/2} \\
+          &=2\pi\left(4\sqrt{3}\left(\dfrac{3}{2}\right)^3
+          -\,\dfrac{3}{2}\left(\dfrac{3}{2}\right)^4\right) \\
+          &=27\sqrt{3}\pi-\,\dfrac{243}{16}\pi\approx 99.2
+          \end{aligned}\]
+          Finally, we divide the moment by the mass to get
+          center of mass along the \(z\) axis:
+          \[
+          \bar{z}=\dfrac{M_z}{M}\approx \dfrac{99.2}{60.3}=1.644
+          \]
+          Putting everything together we find the center of mass to be
+          \[(\bar x,\bar y, \bar z)=(0,0,1.644)\]
+				</p>
+        <p style="text-align:right">
+          dm,lk&ensp;
+        </p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute ...
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX20"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX20"></button>
+    	<button class="toggle has-sol" data-toggle="SolX20"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX20">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<!--Vector Surface Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href="VecSurfDiff.html">e. Vector Surface Integrals</a></h3>
+    <div class="pgs">
+      
+        <div><a href="VecSurfDiff.html">1</a></div>
+      
+        <div><a href="VecSurfInt.html">2</a></div>
+      
+        <div><a href="VecSurfInt.html">3</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  Consider a sphere with radius \(\rho=3\) and the vector field
+  \(\vec{F}=\left\langle \dfrac{x^2}{z},0,\dfrac{xz^2}{9}\right\rangle\)
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Parameterize the sphere and express the vector on the surface.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX21a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX21a"></button>
+					<button class="toggle has-sol" data-toggle="SolX21a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX21a">
+				<p>
+					Start from spherical coordinates.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX21a">
+				<p>
+					\(\vec R(\phi,\theta)
+          =\left\langle 3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi\right\rangle\)
+          <br>
+          \(\vec{F}(\vec R(\phi,\theta))
+          =\left\langle 3\sin^2\phi\cos\theta,0,3\sin\phi\cos\phi\cos^2\theta\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX21a">
+				<p>
+					The spherical to rectangular conversion is
+          \[\begin{aligned}
+          x&=\rho\sin\phi\cos\theta \\
+          y&=\rho\sin\phi\sin\theta \\
+          z&=\rho\cos\phi
+          \end{aligned}\]
+          We substitute \(\rho=3\) to get the parameterization:
+          \[
+          \vec R(\phi,\theta)
+          =\left\langle 3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi\right\rangle
+          \]
+          We evaluate the vector \(\vec{F}
+          =\left\langle \dfrac{x^2}{z},0,\dfrac{xz^2}{9}\right\rangle
+          \) on the surface to get:
+          \[\begin{aligned}
+          \vec{F}(\vec R(\phi,\theta))
+          &=\left\langle \dfrac{9\sin^2\phi\cos^2\theta}{3\cos\theta},0,
+          \dfrac{27\sin\phi\cos\phi\cos^2\theta}{9}\right\rangle \\
+          &=\left\langle 3\sin^2\phi\cos\theta,0,3\sin\phi\cos\phi\cos^2\theta\right\rangle
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm,lk&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the tangent and normal vectors of the sphere. Orient the normal
+          vector to point radially outwards.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX21b"></button>
+					<button class="toggle has-sol" data-toggle="SolX21b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX21b">
+				<p>
+          \(\vec{e}_\phi=\left\langle 3\cos\phi\cos\theta,3\cos\phi\sin\theta,
+          -3\sin\phi\right\rangle\)
+          <br>
+          \(\vec{e}_\theta
+          =\left\langle -3\sin\phi\sin\theta,3\sin\phi\cos\theta,0\right\rangle\)
+          <br>
+          \(\vec{N}=\left\langle 9\sin^2\phi\cos\theta,9\sin^2\phi\sin\theta,
+          9\sin\phi\cos\phi\right\rangle\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX21b">
+				<p>
+          Recall that the parametrization of the surface is:
+          \[
+          \vec R(\phi,\theta)
+          =\left\langle 3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi\right\rangle
+          \]
+          The tangent vectors are:
+          \[\begin{aligned}
+          \vec{e}_\phi&=\dfrac{\partial\vec R}{\partial\phi}
+          =\left\langle 3\cos\phi\cos\theta,3\cos\phi\sin\theta,-3\sin\phi\right\rangle \\
+          \vec{e}_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+          =\left\langle -3\sin\phi\sin\theta,3\sin\phi\cos\theta,0\right\rangle
+          \end{aligned}\]
+          So the normal vector is
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_\phi\times\vec{e}_\theta=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          3\cos\phi\cos\theta & 3\cos\phi\sin\theta & -3\sin\phi \\
+          -3\sin\phi\sin\theta & 3\sin\phi\cos\theta & 0
+          \end{vmatrix} \\
+          &=\hat{\imath}(9\sin^2\phi\cos\theta)
+           -\hat{\jmath}(-9\sin^2\phi\sin\theta) \\
+          &\quad+\hat{k}(9\sin\phi\cos\phi\cos^2\theta+9\sin\phi\cos\phi\sin^2\theta) \\
+          &=\left\langle 9\sin^2\phi\cos\theta,9\sin^2\phi\sin\theta,
+           9\sin\phi\cos\phi\right\rangle
+         \end{aligned}\]
+          We look at how this normal vector is oriented. All components are
+          positive in the \(1^\text{st}\) octant, which means that the normal
+          vector is pointing outward as desired.
+				</p>
+        <p style="text-align:right">
+          dm,lk&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(\displaystyle \iint \vec{F}\cdot\,d\vec{S}\) over the quarter sphere \(
+          0< \theta <\dfrac{\pi}{2}\) oriented outward.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX21c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX21c"></button>
+					<button class="toggle has-sol" data-toggle="SolX21c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX21c">
+				<p>
+					\[
+          \iint_S \vec{F}\cdot\,d\vec{S}
+          =\iint_S \vec{F}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+          \]
+          When integrating, be careful with the bounds of \(\theta\)!
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX21c">
+				<p>
+					\(\displaystyle
+          \iint_S \vec{F}\cdot\,d\vec{S}=\dfrac{27}{8}\pi^2
+          \)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX21c">
+				<p>
+					We have already found \(\vec{F}\) on the surface of the sphere:
+          \[
+          \vec{F}(\vec R(\phi,\theta))
+          =\left\langle 3\sin^2\phi\cos\theta,0,
+          3\sin\phi\cos\phi\cos^2\theta\right\rangle
+          \]
+          and the normal vector:
+          \[
+          \vec{N}
+          =\left\langle 9\sin^2\phi\cos\theta,9\sin^2\phi\sin\theta,
+          9\sin\phi\cos\phi\right\rangle
+          \]
+          We can now compute their dot product and integrate
+          \[\begin{aligned}
+          \vec{F}(\vec R(u,v)) \cdot\vec{N}
+          &=27\sin^4\phi\cos^2\theta+0+27\sin^2\phi\cos^2\phi\cos^2\theta \\
+          &=27\sin^2\phi\cos^2\theta(\sin^2\phi+\cos^2\phi) \\
+          &=27\sin^2\phi\cos^2\theta
+          \end{aligned}\]
+          \[\begin{aligned}
+          \iint_S \vec{F}\cdot\,d\vec{S}&=\int_0^{\pi/2}\int_0^\pi (27\sin^2\phi\cos^2\theta)\,d\phi\,d\theta \\
+          &=27\int_0^{\pi/2} \cos^2\theta\,d\theta\int_0^\pi \sin^2\phi\,d\phi\\
+          &=27\int_0^{\pi/2} \dfrac{1}{2}+\dfrac{\cos(2\theta)}{2}\,d\theta
+          \int_0^\pi \dfrac{1}{2}-\,\dfrac{\cos(2\phi)}{2}\,d\phi\\
+          &=27\left[\dfrac{\theta}{2}+\dfrac{\sin(2\theta)}{4}\right]_0^{\pi/2}
+          \left[\dfrac{\phi}{2}-\,\dfrac{\sin(2\phi)}{4}\right]_0^\pi \\
+          &=27\left(\dfrac{\pi}{4}\right)\left(\dfrac{\pi}{2}\right)
+          =\dfrac{27}{8}\pi^2
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm,lk&ensp;
+        </p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<big>PY: Checked to here.</big>
+
+<li>
+  Consider the paraboloid \(z=4x^2+4y^2\) and the vector field
+  \(\vec{G}=\left\langle z,3y,xy\right\rangle\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+						Parameterize the paraboloid and evaluate \(\vec{G}\) on the surface.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX22a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX22a"></button>
+					<button class="toggle has-sol" data-toggle="SolX22a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX22a">
+				<p>
+          xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22a">
+				<p>
+          \[\begin{aligned}
+          \vec R(r,\theta)
+          &=\left\langle r\cos\theta,r\sin\theta,4r^2\right\rangle \\
+          \vec{G}(\vec R(r,\theta))
+          &=\left\langle 4r^2,3r\sin\theta,r^2\sin\theta\cos\theta\right\rangle
+          \end{aligned}\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22a">
+				<p>
+					We can paramterize this paraboloid using cylindrical coordinates, recall
+          that
+          \[x=r\cos\theta\]
+          \[y=r\sin\theta\]
+          \[z=z\]
+          where \(r=\sqrt{x^2+y^2}\). Thus, we get that
+          \[\vec R(r,\theta)=\langle r\cos\theta,r\sin\theta,4r^2\rangle.\]
+          Now, we substitute into the vector \(\vec{G}=\left\langle z,3y,xy\right\rangle\)
+          and find
+          \[\vec G(\vec R(r,\theta))=\langle 4r^2,3r\sin\theta,r^2\sin\theta\cos\theta\rangle.\]
+          This vector \(\vec G\) is at all points of the paraboloid.
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find and orient the normal vector to point out and down from the
+          paraboloid.
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX22b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX22b"></button>
+					<button class="toggle has-sol" data-toggle="SolX22b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX22b">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22b">
+				<p>
+					\[
+          \vec{N}=\left\langle 8r^2\cos\theta,8r^2\sin\theta,-r\right\rangle
+          \]
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22b">
+				<p>
+          First, we need to calculate the tangent vectors:
+          \[\vec e_r=\langle 8r,3\sin\theta,2r\sin\theta\cos\theta\rangle\]
+          \[\vec e_\theta=\langle 0,3r\cos\theta,r^2\cos2\theta\rangle\]
+          and now we can calculate the normal vector:
+          \[\begin{aligned}
+          \vec{N}&=\vec{e}_r\times\vec{e}_\theta=
+          \begin{vmatrix}
+          \hat{\imath} & \hat{\jmath} & \hat{k} \\
+          8r & 3\sin\theta & 2r\sin\theta\cos\theta \\
+          0 & 3r\cos\theta & r^2\cos 2\theta
+          \end{vmatrix} \\
+          &=\hat{\imath}(3r^2\sin\theta\cos 2\theta-6r^2\sin\theta\cos^2\theta)
+           -\hat{\jmath}(8r^3\cos 2\theta)+\hat{k}(24r^2\cos\theta) \\
+           &=\hat{\imath}(3r^2\sin\theta(\cos 2\theta-2\cos^2\theta))
+            -\hat{\jmath}(8r^3\cos 2\theta)+\hat{k}(24r^2\cos\theta)\\
+            &=\hat{\imath}(3r^2\sin\theta(-\sin^2\theta-\cos^2\theta))
+             -\hat{\jmath}(8r^3\cos 2\theta)+\hat{k}(24r^2\cos\theta) \\
+             &=\langle -3r^2\sin\theta,
+              -8r^3\cos 2\theta,24r^2\cos\theta\rangle
+         \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(\displaystyle \iint_S\vec{G}\cdot\,d\vec{S}\)
+          over the region \(0 < r < 3\) and \(0 < \theta < \pi\).
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX22c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX22c"></button>
+					<button class="toggle has-sol" data-toggle="SolX22c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX22c">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22c">
+				<p>
+					\(\displaystyle \iint_S \vec{G}\cdot\,d\vec{S}=243\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22c">
+				<p>
+					\[
+          \vec{G}(\vec R(r,\theta))
+          =\left\langle 4r^2,3r\sin\theta,r^2\cos\theta\sin\theta\right\rangle
+          \]
+          \[
+          \vec{N}
+          =\left\langle 8r^2\cos\theta,8r^2\sin\theta,-r\right\rangle
+          \]
+          \[\begin{aligned}
+          \iint_S \vec{G}\cdot\,d\vec{S}
+          &=\int_0^\pi\int_0^3
+          (32r^4\cos\theta+24r^3\sin^2\theta-r^3\cos\theta\sin\theta)\,dr\,d\theta \\
+          &=\int_0^\pi \cos\theta\,d\theta\int_0^3 32r^4\,dr
+          +\int_0^\pi \dfrac{1}{2}-\,\dfrac{\cos2\theta}{2}\,d\theta\int_0^3 24r^3\,dr
+          -\int_0^\pi \cos\theta\sin\theta\,d\theta\int_0^3 r^3\,dr \\
+          &=\left[\sin\theta\dfrac{}{}\right]_0^\pi\left[\dfrac{32}{5}r^5\right]_0^3
+          +\left[\dfrac{\theta}{2}-\,\dfrac{\sin2\theta}{4}\right]_0^\pi
+          \left[6r^4\dfrac{}{}\right]_0^3
+          -\left[\dfrac{\sin^2\theta}{2}\right]_0^\pi\left[\dfrac{r^4}{4}\right]_0^3 \\
+          &=0+\dfrac{\pi}{2}\cdot6\cdot3^4+0=243\pi
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          dm&ensp;
+        </p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<!--Applications of Vector Surface Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic6"></div>
+  <div class="heading">
+    <h3><a
+          href="Flux.html">f. Applications of Vector Surface Integrals</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Flux.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the flux of the vector function \(\vec{F}
+      =\left\langle x,y,z\right\rangle\) through the plane \(2x-3y+6z=6\)
+      from \(x=0\) to \(x=5\) and \(y=0\) to \(y=3\), oriented upward.
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX23"></button>
+      <button class="toggle has-ans" data-toggle="AnsX23"></button>
+      <button class="toggle has-sol" data-toggle="SolX23"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX23">
+    <p>
+      xxx
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX23">
+    <p>
+      \[
+      \text{Flux}=15
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX23">
+    <p>
+      First we should parameterize the plane by eliminating one of the variables.
+      Let's pick \(z\):
+      <br>
+      \[
+      z=\dfrac{6-2x+3y}{6}=1-\,\dfrac{x}{3}+\dfrac{y}{2}
+      \]
+      <br>
+      \[
+      \vec R(x,y)
+      =\left\langle x,y,1-\,\dfrac{x}{3}+\dfrac{y}{2}\right\rangle
+      \]
+      <br>
+      Next we can parameterize the vector function on the plane:
+      <br>
+      \[
+      \vec{F}(\vec R(x,y))
+      =\left\langle x,y,1-\,\dfrac{x}{3}+\dfrac{y}{2}\right\rangle
+      \]
+      <br>
+      We also need to find the normal vector from the parametrization:
+      \[
+      \vec{N}=\left|
+      \begin{array}{ccc}
+      \hat{\imath} & \hat{\jmath} & \hat{k} \\
+      1 & 0 & -\,\dfrac{1}{3} \\
+      0 & 1 & \dfrac{1}{2}
+      \end{array}
+      \right|=\left\langle \dfrac{1}{3},-\,\dfrac{1}{2},1\right\rangle
+      \]
+      <br>
+      Now we can compute the dot product
+      <br>
+      \[
+      \vec{F}\cdot\vec{N}=\dfrac{x}{3}-\,\dfrac{y}{2}+1-\,\dfrac{x}{3}+\dfrac{y}{2}=1
+      \]
+      <br>
+      Finally we can integrate over the surface
+      <br>
+      \[\begin{aligned}
+      \text{Flux}&=\iint_R \vec{F}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+      =\int_0^3\int_0^5 1\,dx\,dy \\
+      &=(3-0)(5-0)=15
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Compute \(\displaystyle \iint \vec{G}\cdot\,d\vec{S}\) vector function \(\vec{G}
+      =\left\langle xy^2,yx^2,z(x^2+y^2)\right\rangle\) over
+      the complete surface of the solid above the paraboloid \(z=x^2+y^2\) and
+      below the disk in the plane \(z=4\), oriented outward.
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX24"></button>
+      <button class="toggle has-ans" data-toggle="AnsX24"></button>
+      <button class="toggle has-sol" data-toggle="SolX24"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX24">
+    <p>
+      xxx
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX24">
+    <p>
+      \[
+      \text{Flux}
+      =\iint_R \vec{G}(\vec R(u,v))\cdot\vec{N}\,du\,dv=3007
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX24">
+    <p>
+      \[
+      \text{Flux}
+      =\iint_R \vec{G}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+      \]
+      <br>
+      We have to split this into two parts: one for the paraboloid and one for
+      the disk.
+      <br>
+      1) The paraboloid:
+      \[\begin{aligned}
+      R&=(r\cos\theta,r\sin\theta,r^2) \\
+      \vec{N}&=\left\langle 2r^2\cos\theta,2r^2\sin\theta,-r\right\rangle \\
+      \vec{G}&=\left\langle 8r^6\cos\theta\sin^2\theta,
+      8r^6\sin\theta\cos^2\theta,-2r^3)\right\rangle \\
+      \vec{G}\cdot\vec{N}
+      &=16r^8\cos^2\theta\sin^2\theta+16r^8\sin^2\theta\cos^2\theta+2r^4 \\
+      &=32r^8\sin^2\theta\cos^2\theta+2r^4
+      \end{aligned}\]
+      \[
+      z=4=x^2+y^2=r^2\rightarrow r=2
+      \]
+      \[\begin{aligned}
+      \text{Flux}
+      &=\int_0^{2\pi}\int_0^2 (32r^8\sin^2\theta\cos^2\theta+2r^4)\,dr\,d,\theta
+      =\int_0^{2\pi}
+      \left[\dfrac{32}{9}r^9\sin^2\theta\cos^2\theta+\dfrac{2}{5}r^5\right]_0^2\,d,\theta \\
+      &=\int_0^{2\pi}
+      \left(\dfrac{16\,384}{9}\cos^2\theta\sin^2\theta+\dfrac{64}{5}\right)\,d\theta
+      =\int_0^{2\pi}\dfrac{16\,384}{9}\cos^2\theta\sin^2\theta\,d\theta
+      +\int_0^{2\pi}\dfrac{64}{5}\,d\theta \\
+      &=\dfrac{16\,384}{9}\int_0^{2\pi}
+      \dfrac{1}{4}\left[1+\cos2\theta\right]
+      \left[1+\sin2\theta\right]\,d\theta+\,dfrac{64}{5} 2\pi \\
+      &=\dfrac{4096}{9}\int_0^{2\pi}
+      (1+\cos2\theta+\sin2\theta+\sin2\theta\cos2\theta)\,d\theta+\dfrac{128}{5}\pi \\
+      &=\dfrac{4096}{9}\left[2\pi
+      +\left[\dfrac{1}{2}(\sin2\theta-\cos2\theta)\right]_0^{2\pi}
+      +\int_0^{2\pi} \sin2\theta\cos2\theta\,d\theta\right]+\dfrac{128}{5}\pi\\
+      &=\dfrac{4096}{9}(2\pi+0+0)+\dfrac{128}{5}\pi\\
+      &=\dfrac{42\,112}{45}\pi
+      \end{aligned}\]
+      2) The disk:
+      \[\begin{aligned}
+      R&=(r\cos\theta,r\sin\theta,4) \\
+      \vec{N}&=\left\langle 0,0,1\right\rangle \\
+      \vec{G}&=\left\langle r^3\cos\theta\sin^2\theta,
+      r^3\cos^2\theta\sin\theta,4r^2\right\rangle \\
+      \vec{G}\cdot\vec{N}&=4r^2
+      \end{aligned}\]
+      \[\begin{aligned}
+      \text{Flux}
+      &=\iint_R \vec{G}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+      =\int \int 4 r^2\,dr\,d\theta\\
+      &=\int_0^{2\pi}\int_0^2 4r^2\,dr\,d\theta
+      =2\pi\left[\dfrac{4}{3}r^3\right]_0^2 \\
+      &=\dfrac{64}{3}\pi
+      \end{aligned}\]
+      To find the total flux we add these up:
+      \[
+      \text{Total Flux}=\dfrac{42\,112}{45}\pi+\dfrac{64}{3}\pi\approx3007.
+      \]
+    </p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      What is the expansion of the vector function \(\vec{H}
+      =\left\langle x,y,z\right\rangle\) through the hemisphere
+      \(x^2+y^2+z^2=16\) where \(z>0\), where the hemisphere and the plane that bounds it are oriented
+      outward.
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX25"></button>
+      <button class="toggle has-ans" data-toggle="AnsX25"></button>
+      <button class="toggle has-sol" data-toggle="SolX25"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX25">
+    <p>
+      xxx
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX25">
+    <p>
+      \[
+      \iint\limits_\text{total} \vec{H}(\vec R(u,v))\cdot\vec{N}\,du\,dv=128\pi
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX25">
+    <p>
+      This problem is split into two parts, the hemisphere and the
+      plane at the bottom.
+      <br>
+      The sphere is parameterized as
+      <br>
+      \[\begin{aligned}
+      \vec R(\theta,\phi)
+      &=\left\langle 4\sin\phi\cos\theta,4\sin\phi\sin\theta,4\cos\phi\right\rangle \\
+      \vec{H}(\vec R(\theta,\phi))
+      &=\left\langle 4\sin\phi\cos\theta,4\sin\phi\sin\theta,4\cos\phi\right\rangle
+      \end{aligned}\]
+      <br>
+      \[\begin{aligned}
+      \vec{e}_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+      =\left\langle -4\sin\phi\sin\theta,4\sin\phi\cos\theta,0\right\rangle
+      \\
+      \vec{e}_\phi&=\dfrac{\partial\vec R}{\partial\phi}
+      =\left\langle 4\cos\phi\cos\theta,4\cos\phi\sin\theta,-4\sin\phi\right\rangle
+      \end{aligned}\]
+      <br>
+      \[\begin{aligned}
+      \vec{N}
+      &=\left\langle 16\sin^2\phi\cos\theta,16\sin^2\phi\sin\theta,
+      16\sin\phi\cos\phi\right\rangle \\
+      \vec{H}\cdot\vec{N}
+      &=64\sin^3\phi\cos^2\theta+64\sin^3\phi\sin^2\theta+64\sin\phi\cos^2\phi\\
+      &=64\sin^3\phi+64\sin\phi\cos^2\phi
+      =64\sin\phi(\sin^2\phi+\cos^2\phi) \\
+      &=64\sin\phi
+      \end{aligned}\]
+      \[\begin{aligned}
+      \iint\limits_\text{hemi} \vec{H}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+      &=64\int_0^{2\pi}\int_0^{\pi/2} \sin\phi\,d\phi\d\theta \\
+      &=128\pi
+      \end{aligned}\]
+      <br>
+      \vspace{1pt}
+      <br>
+      The circular plane is parameterized as
+      <br>
+      \[\begin{aligned}
+      R&=(r\cos\theta,r\sin\theta,0) \\
+      \vec{N}&=\left\langle 0,0,-1\right\rangle \\
+      \vec{H}&=\left\langle r\cos\theta,r\sin\theta,0\right\rangle \\
+      \vec{H}\cdot\vec{N}&=0
+      \end{aligned}\]
+      <br>
+      \[
+      \iint\limits_\text{plane} \vec{H}(\vec R(u,v))\cdot\vec{N}\,du\,dv=0
+      \]
+      <br>
+      So the total expansion is the sum of the two integrals:
+      \[
+      \iint\limits_\text{total} \vec{H}(\vec R(u,v))\cdot\vec{N}\,du\,dv
+      =128\pi+0=128\pi
+      \]
+    </p>
+    <p style="text-align:right">
+      dm&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  The electric field of a positive point charge is given by:
+  \[\begin{aligned}
+  \vec E&(x,y,z)=\dfrac{\hat r}{r^2}=\dfrac{\vec r}{r^3} \\
+  &=\left\langle \dfrac{x}{\left(x^2+y^2+z^2\right)^{3/2}},
+                 \dfrac{y}{\left(x^2+y^2+z^2\right)^{3/2}},
+                 \dfrac{z}{\left(x^2+y^2+z^2\right)^{3/2}}\right\rangle
+  \end{aligned}\]
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+  	      Find the expansion of the electric field out of the sphere, \(S\),
+          given by \(x^2+y^2+z^2 \le 4\).
+				</p>
+				<p>
+  	    	<button class="toggle has-hint" data-toggle="HintX26a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX26a"></button>
+					<button class="toggle has-sol" data-toggle="SolX26a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX26a">
+				<p>
+          To find the parametrization, start with spherical coordinates and
+          set \(\rho=2\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX26a">
+				<p>
+          \(\displaystyle \text{Expansion}=\iint_S \vec E\cdot d\vec S=4\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX26a">
+				<p>
+          The surface of the sphere is parametrized in spherical coordinates
+          by setting \(\rho=2\):
+          \[
+          \vec R(\phi,\theta)
+          =\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+          \]
+          The tangent and normal vectors are:
+          \[\begin{aligned}
+          \vec e_\phi&=\left\langle 2\cos\phi\cos\theta,2\cos\phi\sin\theta,-2\sin\phi\right\rangle \\
+          \vec e_\theta&=\left\langle -2\sin\phi\sin\theta,2\sin\phi\cos\theta,0\right\rangle \\
+          \vec N&=\left\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\right\rangle
+          \end{aligned}\]
+          As should be expected, the normal is parallel to the
+          position vector, and it points outward, as required.
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+          \[
+          \vec E(\theta,z)
+          =\left\langle \dfrac{\sin\phi\cos\theta}{4},
+                        \dfrac{\sin\phi\sin\theta}{4},
+                        \dfrac{\cos\phi}{4}\right\rangle
+          \]
+          and its dot product with the normal is:
+          \[\begin{aligned}
+  	      \vec E\cdot\vec N
+          &=\dfrac{4\sin^3\phi\cos^2\theta}{4}
+          +\dfrac{4\sin^3\phi\sin^2\theta}{4}
+          +\dfrac{4\sin\phi\cos^2\phi}{4} \\
+          &=\sin^3\phi+\sin\phi\cos^2\phi
+          =\sin\phi
+          \end{aligned}\]
+          So the flux is:
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=\iint_S \vec E\cdot d\vec S
+          =\iint_S \vec E\cdot \vec N\,d\phi\,d\theta \\
+          &=\int_0^{2\pi}\int_0^\pi \sin\phi\,d\phi\,d\theta
+          =2\pi\left[-\cos\phi\dfrac{}{}\right]_0^\pi
+          =4\pi
+          \end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+  	      Find the expansion of the electric field out of the sphere, \(S\),
+          given by \(x^2+y^2+z^2 \le R^2\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX26b"></button>
+					<button class="toggle has-sol" data-toggle="SolX26b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX26b">
+				<p>
+          \(\displaystyle \text{Expansion}=\iint_S \vec E\cdot d\vec S=4\pi\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX26b">
+        <p>
+          The surface of the sphere is parametrized in spherical coordinates
+          by setting \(\rho=R\):
+          \[
+          \vec R(\phi,\theta)
+          =\left\langle R\sin\phi\cos\theta,R\sin\phi\sin\theta,R\cos\phi\right\rangle
+          \]
+          The tangent and normal vectors are:
+          \[\begin{aligned}
+          \vec e_\phi&=\left\langle R\cos\phi\cos\theta,R\cos\phi\sin\theta,-R\sin\phi\right\rangle \\
+          \vec e_\theta&=\left\langle -R\sin\phi\sin\theta,R\sin\phi\cos\theta,0\right\rangle \\
+          \vec N&=\left\langle R^2\sin^2\phi\cos\theta,R^2\sin^2\phi\sin\theta,R^2\sin\phi\cos\phi\right\rangle
+          \end{aligned}\]
+          As should be expected, the normal is parallel to the
+          position vector, and it points outward, as required.
+  	    </p>
+        <p>
+          On the surface, the electric field becomes:
+          \[\begin{aligned}
+          \vec E(\theta,z)
+          &=\left\langle \dfrac{R\sin\phi\cos\theta}{R^3},
+                        \dfrac{R\sin\phi\sin\theta}{R^3},
+                        \dfrac{R\cos\phi}{R^3}\right\rangle \\
+          &=\left\langle \dfrac{\sin\phi\cos\theta}{R^2},
+                        \dfrac{\sin\phi\sin\theta}{R^2},
+                        \dfrac{\cos\phi}{R^2}\right\rangle
+          \end{aligned}\]
+          and its dot product with the normal is:
+          \[\begin{aligned}
+  	      \vec E\cdot\vec N
+          &=\dfrac{R^2\sin^3\phi\cos^2\theta}{R^2}
+          +\dfrac{R^2\sin^3\phi\sin^2\theta}{R^2}
+          +\dfrac{R^2\sin\phi\cos^2\phi}{R^2} \\
+          &=\sin^3\phi+\sin\phi\cos^2\phi
+          =\sin\phi
+          \end{aligned}\]
+          So the flux is:
+          \[\begin{aligned}
+          \text{Flux}_S
+          &=\iint_S \vec E\cdot d\vec S
+          =\iint_S \vec E\cdot \vec N\,d\phi\,d\theta \\
+          &=\int_0^{2\pi}\int_0^\pi \sin\phi\,d\phi\,d\theta
+          =2\pi\left[-\cos\phi\dfrac{}{}\right]_0^\pi
+          =4\pi
+          \end{aligned}\]
+  	    </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+  	      Compare the expansion for various values of \(R\).
+          Does the expansion get larger or smaller as \(R\) gets bigger.
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX26c"></button>
+					<button class="toggle has-sol" data-toggle="SolX26c"></button>
+					<button class="toggle has-rem" data-toggle="RemX26c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX26c">
+				<p>
+  	      The expansion is independent of \(R\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX26c">
+				<p>
+  	      The expansion,
+          \(\displaystyle \iint_S \vec E\cdot d\vec S=4\pi\),
+          is independent of \(R\).
+				</p>
+			</div>
+  	  <div class="toBeToggled drop-rem" data-toggle="RemX26c">
+  	    <p>
+  	      In a
+          <a href="../../Part IV - Theorems/ThmGauss/ApplSurfIndep.html"
+          title="Return using the Back button.">
+          later chapter</a>, we will learn that Gauss' Theorem says
+          this integral is surface independent. Consequently, changing the
+          value of \(R\) does not change the value of the integral.
+  	    </p>
+  	  </div>
+		</li>
+	</ol>
+  <big>PY: Checked 26.</big>
+</li>
+
+        <div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Find the mass of the piece of the hyperbolic paraboloid \(z=x^2-y^2\)
+      within the cylinder \(x^2+y^2 \le 4\) if the density is \(\delta=z^2\).
+      The hyperbolic paraboloid was considered in a
+      <a href="NormalVec.html#hyperparab" title="Return using the Back button.">
+      previous exercise</a>.
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX27"></button>
+      <button class="toggle has-sol" data-toggle="SolX27"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX27">
+    <p>
+    \(\displaystyle
+    M=\dfrac{\pi}{105}\left(457\cdot17^{3/2}+1\right)\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX27">
+    <p>
+      The hyperbolic paraboloid is parametrized by:
+      \[\begin{aligned}
+      \vec R(r,\theta)
+      &=\left\langle r\cos\theta,r\sin\theta,r^2(\cos^2\theta-\sin^2\theta)\right\rangle \\
+      &=\left\langle r\cos\theta,r\sin\theta,r^2\cos(2\theta)\right\rangle
+      \end{aligned}\]
+      In a
+      <a href="NormalVec.html#hyperparab" title="Return using the Back button.">
+      previous exercise</a> the length of the normal was found to be:
+      \[
+      |\vec N|=r\sqrt{4r^2+1}
+      \]
+      We evaluate the density on the surface:
+      \[
+      \delta=z^2=r^4\cos^2(2\theta)
+      \]
+      So the mass is:
+      \[\begin{aligned}
+      M=\iint_S \delta\,dS
+      &=\int_0^{2\pi}\int_0^2 r^4\cos^2(2\theta)r\sqrt{4r^2+1}\,dr\,d\theta \\
+      &=\int_0^{2\pi} \cos^2(2\theta)\,d\theta\int_0^2 r^5\sqrt{4r^2+1}\,dr
+      \end{aligned}\]
+      The first factor is
+      \[\begin{aligned}
+      \int_0^{2\pi} \cos^2(2\theta)\,d\theta
+      &=\int_0^{2\pi} \dfrac{1+\cos(4\theta)}{2}\,d\theta \\
+      &=\dfrac{1}{2}\left[\theta+\dfrac{\sin(4\theta)}{4}\right]_0^{2\pi}
+      =\pi
+      \end{aligned}\]
+      In the second factor, we make the substitution \(u=4r^2+1\) with
+      \(du=8r\,dr\). Then \(r^2=\dfrac{u-1}{4}\) and \(r^4=\dfrac{u^2-2u+1}{16}\).
+      \[\begin{aligned}
+      \int_0^2 r^5\sqrt{4r^2+1}\,dr
+      &=\int_1^{17} \dfrac{u^2-2u+1}{16}\sqrt{u}\,du \\
+      &=\dfrac{1}{16}\int_1^{17} (u^{5/2}-2u^{3/2}+u^{1/2})\,du \\
+      &=\dfrac{1}{16}\left[\dfrac{2u^{7/2})}{7}-\dfrac{4u^{5/2})}{5}
+      +\dfrac{2u^{3/2})}{3}\right]_1^{17} \\
+      &=\dfrac{1}{16}\left(\dfrac{2\cdot17^{7/2})}{7}-\dfrac{4\cdot17^{5/2})}{5}
+      +\dfrac{2\cdot17^{3/2})}{3}-\dfrac{2)}{7}+\dfrac{4)}{5}-\dfrac{2)}{3}\right) \\
+      &=\dfrac{1}{840}\left(15\cdot17^2\cdot17^{3/2}-42\cdot17\cdot17^{3/2}
+      +35\cdot17^{3/2}-15+42-35\right) \\
+      &=\dfrac{1}{105}\left(457\cdot17^{3/2}+1\right) \\
+      \end{aligned}\]
+      So the mass is:
+      \[
+      M=\dfrac{\pi}{105}\left(457\cdot17^{3/2}+1\right)
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute ...
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX28"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX28"></button>
+    	<button class="toggle has-sol" data-toggle="SolX28"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX28">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX28">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX28">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

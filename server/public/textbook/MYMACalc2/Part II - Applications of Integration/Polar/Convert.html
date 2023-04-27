@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Converting Between Rectangular and Polar Coordinates | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Def.html" title="Previous">&lArr;</a></li>
+      <li><a href="PolarEq.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Polar Coordinate System</h2>
+
+
+      
+      <h2>2. Converting Between Rectangular and Polar Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="maplet">
+  If you need to review the definitions of the trig functions, you can use the following Maplets
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/TrigFnTriDef.maplet" download>Triangle Definitions of Trigonometric Functions</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/TrigFnCircDef.maplet" download>Circle Definitions of Trigonometric Functions</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/TrigFnCircDefVisual.maplet" download>Visualizing Circle Definitions of Trig Functions</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p>
+		It is easy to convert between rectangular coordinates and polar coordinates
+		because of the Pythagorean Theorem and the definitions of sine and cosine:
+	  \[
+		x^2+y^2=r^2
+		\]
+		\[
+		\cos\theta=\dfrac{x}{r} \qquad \sin\theta=\dfrac{y}{r}
+		\]
+		Consequently:
+  </p>
+  <div class="center">
+    <img src="graphics/PolarCoordSTD.jpg" alt="PolarCoordSTD">
+  </div>
+</div>
+<p class="formula" data-title="Converting Between Rectangular and Polar Coordinates">
+	If you know the polar coordinates \((r,\theta)\), then the rectangular
+	coordinates \((x,y)\) are
+	\[
+	x=r\cos\theta
+	\qquad \text{and} \qquad
+	y=r\sin\theta \qquad \qquad \text{(1)}
+	\]
+	 <!-- \tag{1} -->
+  Conversely, if you know the rectangular coordinates \((x,y)\), then the
+	polar coordinates \((r,\theta)\) are found from
+  \[
+	r^2=x^2+y^2
+	\qquad \text{and} \qquad
+	\tan\theta=\dfrac{y}{x} \qquad \qquad \text{(2)}
+	\]
+	 <!-- \tag{2} -->
+</p>
+<p class="remark">
+	Most often, \(r\) is the positive square root: \(r=\sqrt{x^2+y^2}\).
+	<br>
+	On rare occations, as in plotting, \(r\) is the negative square root:
+	\(r=-\sqrt{x^2+y^2}\).
+	<br>
+	It is tempting to also solve for \(\theta\) and write
+	\(\theta=\arctan{\dfrac{y}{x}}\), but this is not quite right.
+  <button class="toggle" data-toggle="Drop1">Why?</button>
+	The correct formula is:
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>
+		Why is the formula \(\theta=\arctan{\dfrac{y}{x}}\) not always correct?
+	</h4>
+  <div class="column">
+    <div data-col-width="50%">
+			<p>
+				Looking at the graph of \(\theta=\arctan{z}\) we see that \(\arctan\)
+				always produces an angle between \(\dfrac{-\pi}{2}\) and \(\dfrac{\pi}{2}\),
+				which is in quadrant I or IV.
+			</p>
+		</div>
+    <div class="center" data-col-width="50%">
+			<img src="graphics/arctanz.jpg" alt="arctanz"/>
+		</div>
+	</div>
+  <div class="column">
+    <div data-col-width="50%">
+			<p>
+				When the point, \((x,y)\), is in quadrant II or III (where \(x\) is
+				negative), the formula
+				\[
+				\theta=\arctan{\dfrac{y}{x}}=\arctan{\dfrac{-y}{-x}}
+				\]
+				gives an angle in quadrant IV or I respectively. We fix this by adding
+				\(\pi\) or \({180^\circ}\) to	the \(\arctan\):
+				\[
+				\theta=\arctan{\dfrac{y}{x}}+\pi
+				\]
+			</p>
+		</div>
+    <div class="center" data-col-width="50%">
+			<img src="graphics/CorrectTheta.jpg" alt="CorrectTheta"/>
+		</div>
+	</div>
+</div>
+<p class="formula" data-title="Polar Angle Formula">
+	\[
+	\theta=\arctan{\dfrac{y}{x}}+
+	\begin{cases}
+	0 \quad \text{if} \quad (x,y) \quad \text{is in quadrant I or IV} \\
+	\pi \quad \text{if} \quad (x,y) \quad \text{is in quadrant II or III}
+	\end{cases}
+	\]
+</p>
+<p>
+However, in practice, we usually use the equation \(\tan\theta=\dfrac{y}{x}\) and
+adjust \(\theta\) to give the correct quadrant.
+On the rare occasions when we take \(r\) to be negative, we must add \(\pi\)
+to these values of \(\theta\).
+</p>
+
+				<div class="rule"></div>
+
+<p class="example" data-number="1">
+  For the point \(P\) with rectangular coordinates \((-\sqrt{3},1)\), find
+  polar coordinates for \(P\) with a positive \(r\).
+</p>
+<p class="sol">
+  Algebraically,
+  \[
+	r^2=(-\sqrt{3})^2+(1)^2=4
+	\qquad \text{and} \qquad
+	\tan\theta=\dfrac{1}{-\sqrt{3}}
+	\]
+  The positive solution for the radius is \(r=2\). Next,
+	\(\arctan\dfrac{1}{-\sqrt{3}}=-\,\dfrac{\pi}{6}\) which is in quadrant IV.
+	However, \((-\sqrt{3},1)\) is quadrant II. So we add \(\pi\) and conclude:
+	\[
+	\theta=\arctan\dfrac{1}{-\sqrt{3}}+\pi
+	=-\,\dfrac{\pi}{6}+\pi=\dfrac{5\pi}{6}
+	\]
+	So a pair of polar coordinates is \(\left(2,\dfrac{5\pi}{6}\right)\).
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+	  For the point \(P\) with rectangular coordinates \((-\sqrt{3},1)\), find
+		polar coordinates for \(P\) with a negative \(r\).
+	</p>
+	<p>
+		<button class="toggle has-hint" data-toggle="HintX1"></button>
+		<button class="toggle has-ans" data-toggle="AnsX1"></button>
+		<button class="toggle has-sol" data-toggle="SolX1"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+	<p>
+		Add or subtract \(\pi\) from the angle and reverse the sign of the radius.
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+	<p>
+		\(\left(-2,\dfrac{11\pi}{6}\right)\) or
+		\(\left(-2,-\,\dfrac{\pi}{6}\right)\)
+		<br>
+		Other answers are possible.
+	</p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<p>
+		One pair of polar coordinates is \(\left(2,\dfrac{5\pi}{6}\right)\).
+		We add or subtract \(\pi\) from the angle and reverse the sign of the radius.
+		So the alternate coordinates are:
+		\[
+		\left(-2,\dfrac{11\pi}{6}\right)
+		\qquad \text{or} \qquad
+		\left(-2,-\,\dfrac{\pi}{6}\right)
+		\]
+		<br>
+		Now you can add any multiple of \(2\pi\) to the angle.
+	</p>
+</div>
+
+				<div class="rule"></div>
+
+<p class="example" data-number="3">
+  A point \(Q\) has polar coordinates \((-2,\dfrac{3\pi}{4})\). Obtain a pair
+	of rectangular coordinates for \(Q\).
+</p>
+<p class="sol">
+  When converting from polar to rectangular coordinates, it does not matter
+	if the radius is positive or negative. The formula will automatically
+	put the point in the correct quadrant. We compute:
+  \[
+  x=r\cos\theta
+  =-2\cos\dfrac{3\pi}{4}
+  =-2\left(-\,\dfrac{1}{\sqrt{2}}\right)
+  =\sqrt{2}
+  \]
+	\[
+	y=r\sin\theta
+	=-2\sin\dfrac{3\pi}{4}
+  =-2\left(\dfrac{1}{\sqrt{2}}\right)
+  =-\sqrt{2}
+	\]
+  Therefore, the rectangular coordinates are \((x,y)=(\sqrt{2},-\sqrt{2})\).
+  We notice this point is in the quadrant IV, which is correct.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the rectangular coordinates for the point \(R\) whose polar coordinates
+    are \((6,-\,\dfrac{3\pi}{4})\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \((-3\sqrt{2},-3\sqrt{2})\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+		We compute:
+	  \[
+	  x=r\cos\theta
+	  =6\cos\left(-\,\dfrac{3\pi}{4}\right)
+	  =6\left(-\,\dfrac{1}{\sqrt{2}}\right)
+	  =-3\sqrt{2}
+	  \]
+		\[
+		y=r\sin\theta
+		=6\sin\left(-\,\dfrac{3\pi}{4}\right)
+	  =6\left(-\,\dfrac{1}{\sqrt{2}}\right)
+	  =-3\sqrt{2}
+		\]
+	  Therefore, the rectangular coordinates are \((x,y)=(-3\sqrt{2},-3\sqrt{2})\).
+	  We notice this point is in the quadrant III, which is correct.
+	</p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

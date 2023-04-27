@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Geometric Interpretation of the Curl | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CurlAlg.html" title="Previous">&lArr;</a></li>
+      <li><a href="DiffIdent1.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. The Curl Operator</h2>
+
+
+      
+      <h2>2. Geometric Interpretation of the Curl</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The curl of a vector field measures how much the vector field
+  is rotating at each point. More concretely, if the vector field
+  \(\vec V\) is the velocity field of a fluid, then the curl of the
+  velocity field, \(\vec\nabla\times\vec V\),  is also a vector field
+  and we need to give a description of its <span class="hl">magnitude</span>
+  and <span class="hl">direction</span> at each point.
+  The <span class="hl">direction</span> of the curl is the axis of rotation.
+  The <span class="hl">magnitude</span> of the curl
+  is the rate at which the fluid is rotating. The direction of rotation
+  is determined by the right hand rule. In particular, if you hold your right
+  hand in a fist and point your thumb along the direction of the curl, then
+  the fluid rotates in the direction of your fingers, i.e. counterclockwise
+  as seen from the tip of your thumb.
+</p>
+<p>
+  When we discussed the
+  <a href="DivGeom.html" title="Return using the Back button.">
+  Geometric Interpretation of the Divergence</a>,
+  it was easier to visual the vector field in \(\mathbb R^2\). We would like
+  to do the same for the curl. However, just as the cross product of two
+  vectors is only defined in \(\mathbb R^3\), likewise, the curl of a vector
+  field is (officially) only defined in \(\mathbb R^3\). Luckily, we have the
+  following work-around: Given a vector field in \(\mathbb R^2\):
+  \[
+  \vec F=\left\langle F_1, F_2\right\rangle
+  \]
+  we observe that \(F_1\) and \(F_2\) are only functions of \(x\) and \(y\).
+  Then we can regard this vector field as a vector field in \(\mathbb R^3\)
+  whose third component is \(0\) and whose first and second components are
+  only functions of \(x\) and \(y\). Thus,
+  \[
+  \vec F=\left\langle F_1(x,y), F_2(x,y), 0\right\rangle
+  \]
+  When we compute the curl, we get
+  \[\begin{aligned}
+  \text{curl} \vec F
+  &=\vec\nabla\times\vec F
+  =\begin{vmatrix}
+  \hat\imath & \hat\jmath & \hat k \; \\
+  \partial_x & \partial_y & \partial_z \; \\
+  F_1(x,y)   & F_2(x,y)   & 0 \;
+  \end{vmatrix} \\
+  &=\hat\imath(0-0)
+  -\hat\jmath(0-0)
+  +\hat k    (\partial_x F_2-\partial_y F_1) \\
+  &=\left\langle 0, 0, \partial_x F_2-\partial_y F_1\right\rangle
+  \end{aligned}\]
+  which only has a \(z\)-component:
+  \[
+  (\vec\nabla\times\vec F)_z=\partial_x F_2-\partial_y F_1
+  \]
+  This means that the curl points along the positive \(z\)-axis if
+  \(\partial_x F_2-\partial_y F_1 \gt 0\) and the negative \(z\)-axis if
+  \(\partial_x F_2-\partial_y F_1 \lt 0\).
+  We would like to see that:
+</p>
+<p class="center">
+  If \(\ \partial_x F_2-\partial_y F_1 \gt 0\ \) then the
+  fluid flows counterclockwise.
+</p>
+<p>
+  and:
+</p>
+<p class="center">
+  If \(\ \partial_x F_2-\partial_y F_1 \lt 0\ \) then the
+  fluid flows clockwise.
+</p>
+<p>
+  This would justify the right hand rule.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  To understand which direction the vector field is rotating, we first look at
+  a vector field in the \(xy\)-plane with only one component.
+  <br>
+  <em>In the figures below, use your mouse to drag the center of the circle to
+  move it, or drag the circumference to change the radius.</em>
+</p>
+<p class="genexample" data-number="1">
+  Consider the vector field:
+  \[
+  \vec F=\left\langle 0, F_2(x,y), 0\right\rangle
+  \]
+  In the figure on the left \(\partial_x F_2 \gt 0\) which means \(F_2\) gets
+  bigger from left to right. In other words, on each circle, the counterclockwise
+  <span style="color:blue">blue</span> arrows are bigger.
+  In this case, \((\vec\nabla\times\vec F)_z=\partial_x F_2-\partial_y F_1 \gt 0\).
+  <br>
+  In the figure on the right \(\partial_x F_2 \lt 0\) which means \(F_2\) gets
+  smaller from left to right. In other words, on each circle, the clockwise
+  <span style="color:red">red</span> arrows are bigger.
+  In this case, \((\vec\nabla\times\vec F)_z=\partial_x F_2-\partial_y F_1 \lt 0\).
+</p>
+<div class="column">
+  <div class="center">
+    <!-- <img src="graphics/eg_curlfield1n.jpg" alt="eg_curlfield1n"> -->
+    <canvas id="curlfieldVertPos" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+  <div class="center">
+    <!-- <img src="graphics/eg_curlfield1p.jpg" alt="eg_curlfield1p"> -->
+    <canvas id="curlfieldVertNeg" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<p class="genexample" data-number="2">
+  Now consider the vector field:
+  \[
+  \vec F=\left\langle F_1(x,y), 0, 0\right\rangle
+  \]
+  In the figure on the left \(\partial_y F_1 \gt 0\) and so
+  \((\vec\nabla\times\vec F)_z \lt 0\). On each circle,
+  the <span style="color:red">red</span> clockwise arrows are bigger.
+  <br>
+  In the figure on the right \(\partial_y F_1 \lt 0\) and so
+  \((\vec\nabla\times\vec F)_z \gt 0\). On each circle,
+  the <span style="color:blue">blue</span> counterclockwise arrows are bigger.
+</p>
+<div class="column">
+  <div class="center">
+    <!-- <img src="graphics/eg_curlfield2n.jpg" alt="eg_curlfield2n"> -->
+    <canvas id="curlfieldHorNeg" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+  <div class="center">
+    <!-- <img src="graphics/eg_curlfield2p.jpg" alt="eg_curlfield2p"> -->
+    <canvas id="curlfieldHorPos" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<p>
+  For a vector field with both components,
+  \(\vec F=\left\langle F_1(x,y), F_2(x,y), 0\right\rangle\),
+  the direction of rotation depends on which of \(\partial_x F_2\) or
+  \(\partial_y F_1\) is bigger.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="70%">
+    <div class="dotfillex">
+      <p class="exercise" data-number="3">
+        The plot shows a vector field of the form:
+        \[
+        \vec F=\left\langle F_1(x,y), F_2(x,y), 0\right\rangle
+        \]
+        Determine the regions in the plot where
+        \((\vec\nabla\times\vec F)_z \gt 0\) and where
+        \((\vec\nabla\times\vec F)_z \lt 0\).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX3"></button>
+        <button class="toggle has-ans" data-toggle="AnsX3"></button>
+        <button class="toggle has-sol" data-toggle="SolX3"></button>
+      </p>
+    </div>
+  </div>
+  <div data-col-width="30%">
+    <!-- <img src="graphics/ex_curlplot1.jpg" alt="ex_curlplot1"> -->
+    <canvas id="curlfieldEx1" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Imagine drawing a small circle at each point.
+    Are the arrows pointing counterclockwise bigger or
+    smaller than those pointing clockwise?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        \((\vec\nabla\times\vec F)_z \gt 0\) in the blue region, quadrants
+        I and II.
+        <br>
+        \((\vec\nabla\times\vec F)_z \lt 0\) in the red region, quadrants
+        III and IV.
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_curlplot1A.jpg" alt="ex_curlplot1A">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        We draw circles at a bunch of points.
+        Those centered in quadrants I and II have bigger arrows
+        pointing counterclockwise than clockwise. So
+        \((\vec\nabla\times\vec F)_z \gt 0\) there.
+        Those centered in quadrants III and IV have bigger arrows
+        pointing clockwise than counterclockwise. So
+        \((\vec\nabla\times\vec F)_z \lt 0\) there.
+        See the Answer for a summary plot.
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_curlplot1S.jpg" alt="ex_curlplot1S">
+    </div>
+  </div>
+</div>
+<div class="column">
+  <div data-col-width="70%">
+    <div class="dotfillex">
+      <p class="exercise" data-number="4">
+        The plot shows a vector field of the form:
+        \[
+        \vec F=\left\langle F_1(x,y), F_2(x,y), 0\right\rangle
+        \]
+        Determine the regions in the plot where \((\vec\nabla\times\vec F)_z \gt 0\)
+        and where \((\vec\nabla\times\vec F)_z \lt 0\).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX4"></button>
+        <button class="toggle has-ans" data-toggle="AnsX4"></button>
+        <button class="toggle has-sol" data-toggle="SolX4"></button>
+      </p>
+    </div>
+  </div>
+  <div data-col-width="30%">
+    <!-- <img src="graphics/ex_curlplot2.jpg" alt="ex_curlplot2"> -->
+    <canvas id="curlfieldEx2" style="background-color: #f0f0f0; height: 250px; width: 250px;">
+    </canvas>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    Imagine drawing a small circle at each point.
+    Are the arrows pointing counterclockwise bigger or
+    smaller than those pointing clockwise?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        \((\vec\nabla\times\vec F)_z \gt 0\) in the blue region, above
+        the diagonal.
+        <br>
+        \((\vec\nabla\times\vec F)_z \lt 0\) in the red region, below
+        the diagonal.
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+    <img src="graphics/ex_curlplot2A.jpg" alt="ex_curlplot2A">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        We draw circles at a bunch of points.
+        Those centered along the line \(y=x\) have as many big arrows going
+        clockwise as counterclockwise. So \(\vec\nabla\cdot\vec F=0\) there.
+        Those centered above and to the left of this line have bigger arrows
+        pointing counterclockwise. So \(\vec\nabla\cdot\vec F \gt 0\) there.
+        Those centered below and to the right of this line have bigger arrows
+        pointing clockwise. So \(\vec\nabla\cdot\vec F \lt 0\) there.
+        See the Answer for a summary plot.
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_curlplot2S.jpg" alt="ex_curlplot2S">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  A fuller geometrical discussion of the curl uses an integral to sum up the
+  arrows going around the boundary circle and takes the limit as the radius
+  goes to \(0\). This discussion appears in the chapter on the
+  <a href="../../Part IV - Theorems/InterpDivCurl/Curl.html"
+  title="Return using the Back button.">
+  Interpretation of Divergence and Curl</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+<script src="https://threejs.org/examples/js/controls/DragControls.js"></script>
+<script src="../../../scripts/mathlex.min.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script type="module" src="./scripts/CurlGeomInterp.js"></script>
+
+
+</body>
+</html>

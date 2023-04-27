@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Long Division of Polynomials - Review | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Decomp.html#LongDiv" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2 id="eg">a2. General Decompositions</h2>
+
+
+      
+      <h2>a. Long Division of Polynomials - Review</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Recall from high school Algebra that the division of numbers can be written as:
+	\[\begin{aligned}
+	&\quad\;\text{quotient}\;+\;\dfrac{\text{remainder}}{\text{divisor}}\\
+	\text{divisor}\;&\overline{\left)\quad\text{dividend}\qquad\qquad\right.}
+	\end{aligned}\]
+	or
+	\[
+	\dfrac{\text{dividend}}{\text{divisor}}=\text{quotient}
+  +\dfrac{\text{remainder}}{\text{divisor}}
+	\]
+</p>
+<p>
+  For example, the division
+	\[\begin{aligned}
+	&\quad31+\dfrac{7}{15} \\
+	15&\overline{\left)\,472\right.\quad}
+	\end{aligned}\]
+	can also be written as
+	\[
+	\dfrac{472}{15}=31+\dfrac{7}{15}
+	\]
+</p>
+<p class="check">
+	We check this by computing
+	\[
+	\text{divisor}\cdot\text{quotient}+\text{remainder}=\text{dividend}
+	\]
+	For example,
+	\[15\cdot31+7=472
+	\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The above formulas work for polynomials as well as for numbers. Here's how:<br>
+</p>
+<p class="example" data-number="1">
+  Perform the division \(\dfrac{3x^3-x^2+12}{x^2+x+2}\). In other words,
+  find the quotient and remainder when \(3x^3-x^2+12\) is divided by
+	\(x^2+x+2\).
+</p>
+<p class="sol">
+  <ol>
+    <li>
+			Arrange both polynomials in descending powers of the variable. Leave
+	    space in the dividend for missing powers of the variable.
+	    \[
+	    x^2+x+2\overline{\left)3x^3-x^2+0\,x+12\right.}
+	    \]
+    </li>
+    <li>
+			Divide the leading term in the dividend by the leading term in the
+	    divisor; i.e. divide \(3x^3\) by \(x^2\). Write the quotient above the
+	    \(3x^3\) term.
+	    \[\begin{aligned}
+	    &\;\;3x \\
+	    x^2+x+2&\overline{\left)3x^3-x^2+0\,x+12\right.}
+	    \end{aligned}\]
+	  </li>
+    <li>
+			Multiply the divisor by \(3x\), lining up like terms below those in
+	    the dividend.
+	    \[\begin{aligned}
+	    &\;\;3x \\
+	    x^2+x+2&\overline{\left)3x^3-x^2+0\,x+12\right.} \\
+	    &\;\;3x^3+3x^2+6x
+	    \end{aligned}\]
+ 		</li>
+    <li>
+			Subtract and bring down all remaining terms in the dividend.
+			\[\begin{aligned}
+	    &\;\;3x \\
+	    x^2+x+2&\overline{\left)3x^3-x^2+0\,x+12\right.} \\
+	    &\;\underline{\;3x^3+3x^2+6x\qquad} \\
+	    &\qquad-4x^2-6x+12
+	    \end{aligned}\]
+	  </li>
+    <li>
+			Now divide the leading term on the bottom line \(-4x^2\) by the
+	    leading term in the divisor \(x^2\), writing the quotient \(-4\) above the
+	    next term in the dividend.
+			\[\begin{aligned}
+	    &\;\;3x\;-\;4 \\
+	    x^2+x+2&\overline{\left)3x^3-x^2+0\,x+12\right.} \\
+	    &\;\underline{\;3x^3+3x^2+6x\qquad} \\
+	    &\qquad-4x^2-6x+12
+	    \end{aligned}\]
+	  </li>
+    <li>
+			Multiply the divisor by \(-4\) and subtract
+			\[\begin{aligned}
+			&\;\;3x\;-\;4 \\
+			x^2+x+2&\overline{\left)3x^3-x^2+0\,x+12\right.} \\
+			&\;\underline{\;3x^3+3x^2+6x\qquad} \\
+			&\qquad-4x^2-6x+12 \\
+	    &\qquad\;\,\underline{-4x^2-4x-8\quad} \\
+	    &\qquad\qquad\;\;-2x+20
+			\end{aligned}\]
+  	</li>
+    <li>
+			Repeat steps 5 and 6 until the result upon subtraction is a polynomial
+	    of degree less than that of the divisor (as has just occurred in this
+	    example.)
+	  </li>
+	  <li>
+	    The quotient \(3x-4\) is at the top, and the remainder \(-2x+20\) is
+		  at the bottom. To display your result, add the remainder divided by
+			the divisor to the quotient.
+			\[\begin{aligned}
+			&\;\;3x\;-\;4\;+\;\dfrac{-2x+20}{x^2+x+2} \\
+			x^2+x+2&\overline{\left)3x^3-x^2+0\,x+12\right.} \\
+			&\;\underline{\;3x^3+3x^2+6x\qquad} \\
+			&\qquad-4x^2-6x+12 \\
+	    &\qquad\;\,\underline{-4x^2-4x-8\quad} \\
+	    &\qquad\qquad\;\;-2x+20
+			\end{aligned}\]
+		</li>
+		<li>
+			Finally we can write this as
+			\[
+			\dfrac{3x^3-x^2+12}{x^2+x+2}=3x-4+\dfrac{-2x+20}{x^2+x+2}
+			\]
+		</li>
+		<li class="check">
+			We check this by computing
+			\[
+			(x^2+x+2)(3x-4)+(-2x+20)=3x^3-x^2+12
+			\]
+		</li>
+  </ol>
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Now you try one.
+</p>
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+    Perform the division \(\dfrac{3x^3-x+12}{x^2+x+2}\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+    <button class="toggle has-check" data-toggle="Ck1"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\dfrac{3x^3-x+12}{x^2+x+2}=3x-3+\dfrac{-4x+18}{x^2+x+2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+		\[\begin{aligned}
+    & \quad 3x\;-\;3\quad+\quad \dfrac{-4x+18}{x^2+x+2} \\
+    x^2+x+2&\overline{\left)3x^3+0\,x^2-x+12\quad\right.} \\
+    &\;\,\underline{3x^3+3x^2+6x\qquad\quad} \\
+    &\qquad-3x^2-7x+12 \\
+    &\qquad\;\,\underline{-3x^2-3x-6\qquad} \\
+    &\qquad\qquad\;\;-4x+18
+		\end{aligned}\]
+    Equivalently,
+    \[
+		\dfrac{3x^3-x+12}{x^2+x+2}=3x-3+\dfrac{-4x+18}{x^2+x+2}
+		\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="Ck1">
+	<p>
+		We check
+		\[
+		(x^2+x+2)(3x-3)+(-4x+18)=3x^3-x+12
+		\]
+	</p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

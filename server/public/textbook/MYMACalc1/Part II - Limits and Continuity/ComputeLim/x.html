@@ -1,0 +1,2659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimatInfWOLaws.html" title="Previous">&lArr;</a></li>
+      <li><a href="../LimAppl/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>4. Computing Limits</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Limit Laws-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="LimSpec.html">a. Limit Laws</a></h3>
+    <div class="pgs">
+      
+        <div><a href="LimSpec.html">1</a></div>
+      
+        <div><a href="LimLaws.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+Use the Limit Laws to compute each of the following limits. Identify which
+Limit Laws you used.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{t\to23}30\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX1"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX1"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX1">
+    <p>
+      What is the limit of a constant?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(\displaystyle\lim_{t\to23}30=30\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      \(30\) is a constant. So:
+      \[
+      \lim_{t\to23}30
+      =30
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to2}5^x\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX2"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX2">
+    <p>
+      Use the Exponential Law.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(\displaystyle\lim_{x\to2}5^x=25\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      We use the Exponential Law:
+      \[\begin{aligned}
+      \lim_{x\to2}5^x
+      &=5^{\lim\limits_{x\to2}x} \\
+      &=5^2
+      =25
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to-3}(x+x^2)\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX3"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX3">
+    <p>
+      Use the addition and power laws.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \(\displaystyle\lim_{x\to-3}(x+x^2)=6\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      We use the addition law:
+      \[\begin{aligned}
+      \lim_{x\to-3}(x+x^2)
+      &=\lim_{x\to-3}x+\lim_{x\to-3}x^2 \\
+      &=-3+\lim_{x\to-3}x^2
+      \end{aligned}\]
+      Now, we use the power law:
+      \[\begin{aligned}
+      \lim_{x\to-3}(x+x^2)
+      &=-3+(\lim_{x\to-3}x)^2 \\
+      &=-3+(-3)^2 \\
+      &=-3+9
+      =6
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{t\to6}\dfrac{t^2+1}{t}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX4"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX4"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX4">
+    <p>
+      Use the quotient law, the addition law, and the power law.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(\displaystyle\lim_{t\to6}\dfrac{t^2+1}{t}=\dfrac{37}{6}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+      We use the quotient law:
+      \[\begin{aligned}
+      \lim_{t\to6}\dfrac{t^2+1}{t}
+      &=\dfrac{\lim\limits_{t\to6}(t^2+1)}{\lim\limits_{t\to6}t} \\
+      &= \dfrac{\lim\limits_{t\to6}(t^2+1)}{6}
+      \end{aligned}\]
+      Notice the quotient law is valid because the denominator is
+      \(\lim\limits_{t\to6}t=6\ne0\).
+      Now, we use the addition law:
+      \[\begin{aligned}
+      \lim_{t\to6}\dfrac{t^2+1}{t}
+      &=\dfrac{\lim\limits_{t\to6}t^2+\lim\limits_{t\to6}1}{6} \\
+      &=\dfrac{\lim\limits_{t\to6}t^2+1}{6}
+      \end{aligned}\]
+      Finally, we use the power law:
+      \[\begin{aligned}
+      \lim_{t\to6}\dfrac{t^2+1}{t}
+      &=\dfrac{(\lim\limits_{t\to6}t)^2+1}{6} \\
+      &=\dfrac{6^2+1}{6}
+      =\dfrac{37}{6}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(\displaystyle\lim_{y\to0}\dfrac{1}{y^2+1}\)
+    </p>
+    <p>
+      <button class="toggle has has-hint" data-toggle="HintX5"></button>
+      <button class="toggle has has-ans" data-toggle="AnsX5"></button>
+      <button class="toggle has has-sol" data-toggle="SolX5"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX5">
+    <p>
+      Use the quotient rule and the power rule.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX5">
+    <p>
+      \(\displaystyle\lim_{y\to0}\dfrac{1}{y^2+1}=1\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX5">
+    <p>
+      We use the quotient rule:
+      \[
+      \lim_{y\to0}\dfrac{1}{y^2+1}
+      =\dfrac{1}{\lim\limits_{y\to0}(y^2+1)}
+      \]
+      Now, we use the power rule:
+      \[\begin{aligned}
+      \lim_{y\to0}\dfrac{1}{y^2+1}
+      &=\dfrac{1}{\lim\limits_{y\to0}(y^2)+1}\\
+      &=\dfrac{1}{0^2+1}
+      =\dfrac{1}{1}
+      =1
+      \end{aligned}\]
+      Notice the quotient law was valid because the denominator came out to be
+      \(\displaystyle \lim_{y\to0}(y^2+1)=1\ne0\).
+    </p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{y\to4}3y\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX6"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+      Use the constant multiple rule.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+      \(\displaystyle\lim_{y\to4}3y=12\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      We use the constant multiple rule:
+      \[\begin{aligned}
+      \lim_{y\to4}3y
+      =3\cdot\lim_{y\to4}y
+      =3\cdot4
+      =12
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<li>
+  <div class="dotfillex">
+    <p>
+      If \(\displaystyle\lim_{x\to3}f(x)=7\) and
+      \(\displaystyle \lim_{x\to3}g(x)=4\), compute:
+      \[\lim_{x\to3}
+      \dfrac{g(x)^2-4f(x)g(x)+3f(x)^2}{-2g(x)^2+f(x)g(x)+f(x)^2}
+      \]
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX7"></button>
+      <button class="toggle has-ans" data-toggle="AnsX7"></button>
+      <button class="toggle has-sol" data-toggle="SolX7"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+      Use the Limit Laws.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX7">
+    <p>
+    \(\displaystyle\lim_{x\to3}
+    \dfrac{g(x)^2-4f(x)g(x)+3f(x)^2}{-2g(x)^2+f(x)g(x)+f(x)^2}=\dfrac{17}{15}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX7">
+    <p>
+      We use the quotient rule:
+      \[\begin{aligned}
+      \lim_{x\to3}&
+      \dfrac{g(x)^2-4f(x)g(x)+3f(x)^2}{-2g(x)^2+f(x)g(x)+f(x)^2}\\
+
+      &=\dfrac{\lim\limits_{x\to3}\left(g(x)^2-4f(x)g(x)+3f(x)^2\right)}
+      {\lim\limits_{x\to3}\left(-2g(x)^2+f(x)g(x)+f(x)^2\right)}
+      \end{aligned}\]
+      We use the addition and subtraction rules and the constant multiple rule:
+      \[\begin{aligned}
+      \lim_{x\to3}&
+      \dfrac{g(x)^2-4f(x)g(x)+3f(x)^2}{-2g(x)^2+f(x)g(x)+f(x)^2}\\
+
+      &=\dfrac{\lim\limits_{x\to3}\left(g(x)^2\right)-4\lim\limits_{x\to3}\left(
+      f(x)g(x)\right)+3\lim\limits_{x\to3}\left(f(x)^2\right)}
+      {-2\lim\limits_{x\to3}\left(g(x)^2\right)+
+      \lim\limits_{x\to3}\left(f(x)g(x)\right)+\lim\limits_{x\to3}\left(
+      f(x)^2\right)}
+      \end{aligned}\]
+
+      We use the power and product laws:
+      \[\begin{aligned}
+      \lim_{x\to3}&
+      \dfrac{g(x)^2-4f(x)g(x)+3f(x)^2}{-2g(x)^2+f(x)g(x)+f(x)^2}\\
+
+      &=\dfrac{16-112+147}{-32+28+49}=\dfrac{51}{45}=\dfrac{17}{15}
+      \end{aligned}\]
+      Since the limit of the denominator came out to be \(45\)
+      which is non-zero, the quotient rule used at the start is valid.
+    </p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+
+<!--When Limit Laws Do Not Apply-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="LimWOLaws.html">b. When Limit Laws Don&#39;t Apply</a></h3>
+    <div class="pgs">
+      
+        <div><a href="LimWOLaws.html">1</a></div>
+      
+    </div>
+  </div>
+
+<p>
+  Compute each limit. (Identify the trick used.)
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to2}\dfrac{x^2+2x-8}{x-2}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX8"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX8"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      Factor the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+      \(\displaystyle \lim_{x\to2}\dfrac{x^2+2x-8}{x-2}=6\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+      We factor the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{x\to2}\dfrac{x^2+2x-8}{x-2}
+      &=\lim_{x\to2}\dfrac{(x-2)(x+4)}{x-2} \\
+      &=\lim_{x\to2}(x+4)=6
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to-2}\dfrac{x^2-x-6}{x+2}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX9"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX9">
+    <p>
+      Factor the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+      \(\displaystyle \lim_{x\to-2}\dfrac{x^2-x-6}{x+2}=-5\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+      We factor the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{x\to-2}\dfrac{x^2-x-6}{x+2}
+      &=\lim_{x\to-2}\dfrac{(x+2)(x-3)}{x+2} \\
+      &=\lim_{x\to-2}(x-3)=-5
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{k\to7}\dfrac{k^2-4k-21}{k-7}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX10"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX10">
+    <p>
+      Factor the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(\displaystyle\lim_{k\to7}\dfrac{k^2-4k-21}{k-7}=10\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+      We expand the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{k\to7}\dfrac{k^2-4k-21}{k-7}
+      &=\lim_{k\to7}\dfrac{(k+3)(k-7)}{k-7}\\
+      &=\lim_{k\to7}(k+3)
+      =10
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{k\to-5}\dfrac{k+5}{k^2+2k-15}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX11"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX11"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX11">
+    <p>
+      Factor the denominator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+  	<p>
+      \(\displaystyle\lim_{k\to-5}\dfrac{k+5}{k^2+2k-15}
+      =-\dfrac{1}{8}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  	<p>
+      We factor the denominator and cancel:
+      \[\begin{aligned}
+      \lim_{k\to-5}\dfrac{k+5}{k^2+2k-15}
+      &=\lim_{k\to-5}\dfrac{k+5}{(k+5)(k-3)}\\
+      &=\lim_{k\to-5}\dfrac{1}{k-3}
+      =-\dfrac{1}{8}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to21}\dfrac{x^2-441}{x-21}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX12"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX12">
+    <p>
+      Factor the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+      \(\lim_{x\to21}\dfrac{x^2-441}{x-21}=42\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p>
+      We factor the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{x\to21}&\dfrac{x^2-441}{x-21}
+      =\lim_{x\to21}\dfrac{(x+21)(x-21)}{x-21}\\
+      &=\lim_{x\to21}(x+21)
+      =21+21
+      =42
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to0}\dfrac{(x-4)^2-16}{x}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX13"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX13">
+    <p>
+      Expand the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+      \(\displaystyle \lim_{x\to0}\dfrac{(x-4)^2-16}{x}
+      =-8\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+      We expand the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{x\to0}&\dfrac{(x-4)^2-16}{x}
+      =\lim_{x\to0}\dfrac{x^2-8x}{x} \\
+      &=\lim_{x\to0}(x-8)
+      =-8
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to3}\dfrac{(5-x)^2-4}{x-3}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX14"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX14"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX14">
+    <p>
+      Expand and then factor the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+  	<p>
+      \(\displaystyle \lim_{x\to3}\dfrac{(5-x)^2-4}{x-3}=-4\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+  	<p>
+      We expand and then factor the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{x\to3}&\dfrac{(5-x)^2-4}{x-3}
+      =\lim_{x\to3}\dfrac{x^2-10x+21}{x-3} \\
+      &=\lim_{x\to3}\dfrac{(x-3)(x-7)}{x-3}
+      =\lim_{x\to3}(x-7)
+      =-4
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{h\to0}\dfrac{(4+h)^2-16}{h}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX15"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+    <p>
+      Expand the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      \(\displaystyle \lim_{h\to0}\dfrac{(4+h)^2-16}{h}=8\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+      We expand the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{h\to0}&\dfrac{(4+h)^2-16}{h}
+      =\lim_{h\to0}\dfrac{8h+h^2}{h} \\
+      &=\lim_{x\to0}(8+h)
+      =8
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+<li>
+
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{h\to0}\dfrac{(x+h)^2-x^2}{h}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX16"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX16"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX16"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX16">
+    <p>
+      Expand the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+  	<p>
+      \(\displaystyle \lim_{h\to0}\dfrac{(x+h)^2-x^2}{h}=2x\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+  	<p>
+      We expand the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{h\to0}&\dfrac{(x+h)^2-x^2}{h}
+      =\lim_{h\to0}\dfrac{2hx+h^2}{h} \\
+      &=\lim_{h\to0}(2x+h)
+      =2x
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX16">
+  	<p>
+      We will shortly learn that this is one way to compute the derivative of
+      \(x^2\).
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to5} \dfrac{ (x-10)^2 - 25 }{ x - 5 } \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX17"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX17"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX17">
+    <p>
+      Expand and then factor the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+  	<p>
+      \(\displaystyle\lim_{x\to5} \dfrac{ (x-10)^2 - 25 }{ x - 5 } = -10 \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+  	<p>
+      We expand and then factor the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{x\to5}&\dfrac{ (x-10)^2 - 25 }{ x - 5 }
+      =\lim_{x\to5} \dfrac{ x^2 - 20x + 100 - 25 }{ x - 5 }\\
+      &=\lim_{x\to5} \dfrac{ x^2 - 20x + 75 }{ x - 5 }
+      =\lim_{x\to5} \dfrac{ (x - 5)(x - 15) }{ x - 5 }\\
+      &=\lim_{x\to5} (x-15)
+      =5-15
+      =-10
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{x\to0} \left(\dfrac{8x^3}{3}-4x^2\right)\left(\dfrac{2}{x^2}+6\right)
+      \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX18"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX18"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX18">
+    <p>
+      Try multiplying it out.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+  	<p>
+      \(
+      \lim_{x\to0} \left(\dfrac{8x^3}{3}-4x^2\right)\left(\dfrac{2}{x^2}+6\right)
+      =-8\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+  	<p>
+      We can solve this problem by multiplying the terms out.
+      \[\begin{aligned}
+      \lim_{x\to0} \left(\dfrac{8x^3}{3}-4x^2\right)\left(\dfrac{2}{x^2}+6\right)
+      &= \lim_{x\to0} \left(\dfrac{16x}{3}+16x^3-8-24x^2\right) \\
+      &= \left(0+0-8-0\right)
+      = -8
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{8x^2-3x}{x^2+5x}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX19"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX19"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX19">
+    <p>
+      Divide both the numerator and the denominator by the largest term in the
+      denominator. For \(x\) close to \(0\), which is larger: \(x\) or \(x^2\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+  	<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{8x^2-3x}{x^2+5x}=-\dfrac{3}{5}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+  	<p>
+      For \(x\) close to \(0\), which is larger: \(x\) or \(x^2\)? At \(x=.1\),
+      we have \(x^2=.01\) and so \(x\) is larger.
+      We divide both the numerator and the denominator by the largest term in
+      the denominator which is \(x\):
+      \[\begin{aligned}
+      \lim_{x\to0}&\dfrac{8x^2-3x}{x^2+5x}
+      =\lim_{x\to0}\dfrac{(8x^2-3x)}{(x^2+5x)}
+      \dfrac{\dfrac{1}{x}}{\dfrac{1}{x}}\\
+      &=\lim_{x\to0}\dfrac{8x-3}{x+5}
+      =-\,\dfrac{3}{5}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{x^2+3x}{2x^2-7x}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX20"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX20"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX20"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX20">
+    <p>
+      Divide both the numerator and the denominator by the largest term in the
+      denominator. For \(x\) colse to \(0\), which is larger: \(x\) or \(x^2\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+  	<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{x^2+3x}{2x^2-7x}=-\,\dfrac{3}{7}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+  	<p>
+      For \(x\) close to \(0\), which is larger: \(x\) or \(x^2\)? At \(x=.1\),
+      we have \(x^2=.01\) and so \(x\) is larger.
+      We divide both the numerator and the denominator by the largest term in
+      the denominator:
+      \[\begin{aligned}
+      \lim_{x\to0}\dfrac{x^2+3x}{2x^2-7x}
+      &=\lim_{x\to0}\dfrac{(x^2+3x)\cdot\dfrac{1}{x}}{(2x^2-7x)\cdot\dfrac{1}{x}
+      }\\
+      &=\lim_{x\to0}\dfrac{x+3}{2x-7}
+      =-\,\dfrac{3}{7}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{6x-3x^4}{3x+9x^3}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX21"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX21"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX21"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX21">
+    <p>
+      Divide the numerator and denominator by largest term in the denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX21">
+  	<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{6x-3x^4}{3x+9x^3}=2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX21">
+  	<p>
+      We divide the numerator and denominator by largest term in the
+      denominator:
+      \[\begin{aligned}
+      \lim_{x\to0}&\dfrac{6x-3x^4}{3x+9x^3}
+      =\lim_{x\to0}\dfrac{(6x-3x^4)\cdot\dfrac{1}{x}}{(3x+9x^3)\cdot\dfrac{1}{x}}\\
+      &=\lim_{x\to0}\dfrac{6-3x^3}{3+9x^2}
+      =\dfrac{6}{3}
+      =2
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{4x^2-3x^5}{3x+8x^2}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX22"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX22"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX22"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX22">
+    <p>
+      Divide the numerator and denominator by largest term in the denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX22">
+  	<p>
+      \(\displaystyle\lim_{x\to0}\dfrac{4x^2-3x^5}{3x+8x^2}=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX22">
+  	<p>
+      We divide the numerator and denominator by largest term in the denominator:
+      \[\begin{aligned}
+      \lim_{x\to0}\dfrac{4x^2-3x^5}{3x+8x^2}
+      &=\lim_{x\to0}\dfrac{(4x^2-3x^5)\cdot\dfrac{1}{x}}{(3x+8x^2)\cdot\dfrac{1}{x}}\\
+      &=\lim_{x\to0}\dfrac{4x-3x^4}{3+8x}
+      =\dfrac{0}{3}
+      =0
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to0}\dfrac{3x^3-7x^4}{4x^3+x^4} \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX23"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX23"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX23"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX23">
+    <p>
+      Divide the numerator and denominator by largest term in the denominator.
+      For \(x\) colse to \(0\), which is larger: \(x^3\) or \(x^4\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX23">
+  	<p>
+      \(\displaystyle \lim_{x\to0}\dfrac{3x^3-7x^4}{4x^3+x^4} = \dfrac{3}{4} \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX23">
+  	<p>
+      For \(x\) close to \(0\), which is larger: \(x^3\) or \(x^4\)? At \(x=.1\),
+      we have \(x^3=.001\) and \(x^4=.0001\). So \(x^3\) is larger.
+      We divide the numerator and denominator by largest term in the denominator:
+      \[\begin{aligned}
+      \lim_{x\to0}\dfrac{3x^3-7x^4}{4x^3+x^4}
+
+      &=\lim_{x\to0}\dfrac{(3x^3-7x^4) \cdot \dfrac{1}{x^3} }{ ( 4x^3+x^4 ) \cdot
+     \dfrac{1}{x^3}}\\
+
+      &=\lim_{x\to0}\dfrac{3-7x}{4+x}
+
+      =\dfrac{3}{4}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to0} \left( \dfrac{1}{x}-\dfrac{1}{x+x^2+x^3}  \right) \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX24"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX24"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX24"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX24">
+    <p>
+      Put the terms over a common denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX24">
+  	<p>
+      \(\displaystyle \lim_{x\to0} \left( \dfrac{1}{x}-\dfrac{1}{x+x^2+x^3}  \right) = 1 \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX24">
+  	<p>
+      We put the terms over a common denominator:
+      \[\begin{aligned}
+      \lim_{x\to0} &\left( \dfrac{1}{x}-\dfrac{1}{x+x^2+x^3}  \right) \\
+      &=\lim_{x\to0} \left(\dfrac{1+x+x^2}{x+x^2+x^3}-\dfrac{1}{x+x^2+x^3}\right)\\
+      &=\lim_{x\to0}\dfrac{x+x^2}{x+x^2+x^3}
+      =\lim_{x\to0}\dfrac{1+x}{1+x+x^2}
+      =1
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to0} \left( \dfrac{1}{3x+x^2}-\dfrac{1}{3x} \right) \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX25"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX25"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX25"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX25">
+    <p>
+      Put the terms over a common denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX25">
+  	<p>
+      \(\displaystyle
+      \lim_{x\to0} \left( \dfrac{1}{3x+x^2}-\dfrac{1}{3x} \right) = -\dfrac{1}{9} \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX25">
+  	<p>
+      We put the terms over a common denominator:
+      \[\begin{aligned}
+      \lim_{x\to0} &\left( \dfrac{1}{3x+x^2}-\dfrac{1}{3x} \right)
+
+      =\lim_{x\to0} \left( \dfrac{3}{9x+3x^2}-\dfrac{3+x}{9x+3x^2} \right)\\
+      &=\lim_{x\to0} \left( -\,\dfrac{x}{9x+3x^2}\right)
+
+      =\lim_{x\to0} \left( -\,\dfrac{1}{9+3x} \right)
+
+      =-\dfrac{1}{9}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{x \to \infty} \left(\dfrac{x^2}{2x+1}-\dfrac{x^2}{2x-2}\right)
+      \)
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX26"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+  	<p>
+      \(
+      \dfrac{-3}{4}
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+  	<p>
+      Plugging in
+      \(
+      x=\infty
+      \)
+      gives us an indeterminate form of
+      \(\infty-\infty\)
+      We can solve this problem by combining the fractions using the common
+      denominator.
+      \[\begin{aligned}
+      \lim_{x \to \infty} \left(\dfrac{x^2}{2x+1}-\dfrac{x^2}{2x-2}\right)
+      &= \lim_{x\to\infty} \dfrac{2x^3-2x^2-2x^3-x^2}{(2x+1)(2x-2)} \\
+      &= \lim_{x\to\infty} \dfrac{-3x^2}{4x^2-2x-2} \\
+      &=-\dfrac{3}{4}
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}\left(\dfrac{1}{x}-\dfrac{1}{x+2x^2}\right)\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX27"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX27"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX27"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX27">
+    <p>
+      Put the terms over a common denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX27">
+  	<p>
+      \(\displaystyle\lim_{x\to0}\left(\dfrac{1}{x}-\dfrac{1}{x+2x^2}\right)=2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX27">
+  	<p>
+      We put the terms over a common denominator:
+      \[\begin{aligned}
+      \lim_{x\to0}&\left(\dfrac{1}{x}-\dfrac{1}{x+2x^2}\right)
+      =\lim_{x\to0}\left(\dfrac{1+2x}{x+2x^2}-\dfrac{1}{x+2x^2}\right) \\
+      &=\lim_{x\to0}\dfrac{2x}{x+2x^2}
+      =\lim_{x\to0}\dfrac{2}{1+2x}
+      =2
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}
+			\left(\dfrac{3+2x^3}{x+4x^3}-\dfrac{x^3+6}{2x+x^3}\right)\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX28"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX28"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX28"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX28">
+    <p>
+      Put the terms over a common denominator
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX28">
+  	<p>
+      \(\displaystyle\lim_{x\to0} \left( \dfrac{3+2x^3}{x+4x^3} -
+      \dfrac{x^3+6}{2x+x^3} \right) = 0 \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX28">
+  	<p>
+      We put the terms over a common denominator:
+      \[\begin{aligned}
+      \lim_{x\to0}& \left( \dfrac{3+2x^3}{x+4x^3} -
+      \dfrac{x^3+6}{2x+x^3} \right) \\
+
+      &=\lim_{x\to0} \left( \dfrac{(3+2x^3)(2x+x^3)}{(x+4x^3)(2x+x^3)} -
+      \dfrac{(x^3+6)(x+4x^3)}{(2x+x^3)(x+4x^3)} \right)\\
+
+      &=\lim_{x\to0} \left( \dfrac{6x+3x^3+4x^4+2x^6}{2x^2+9x^4+4x^6} -
+      \dfrac{x^4+4x^6+6x+24x^3}{2x^2+9x^4+4x^6} \right)\\
+
+      &=\lim_{x\to0} \dfrac{-21x^3+3x^4-2x^6}{2x^2+9x^4+4x^6}
+
+      =\lim_{x\to0} \dfrac{-21x+3x^2-2x^4}{2+9x^2+4x^4}
+
+      =0
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to0}
+			\left(\dfrac{8x^2-7x^3}{x^2+3x^3}+\dfrac{9x^2+9x^3}{4x+x^3}\right)\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX29"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX29"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX29"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX29"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX29">
+    <p>
+      Put the terms over a common denominator or try cancelling first.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX29">
+  	<p>
+      \(\displaystyle \lim_{x\to0}\left( \dfrac{8x^2-7x^3}{x^2+3x^3}
+      + \dfrac{9x^2+9x^3}{4x+x^3} \right)=8 \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX29">
+  	<p>
+      We simplify before putting the terms over a common denominator:
+      \[
+      \lim_{x\to0}\left( \dfrac{8x^2-7x^3}{x^2+3x^3}
+      + \dfrac{9x^2+9x^3}{4x+x^3} \right)
+      =\lim_{x\to0}\left(  \dfrac{8-7x}{1+3x}
+      + \dfrac{9x+9x^2}{4+x^2}  \right)
+      \]
+      Turns out we don't need to put it over a common denominator.
+      \[
+      \lim_{x\to0}\left( \dfrac{8x^2-7x^3}{x^2+3x^3}
+      + \dfrac{9x^2+9x^3}{4x+x^3} \right)
+      =\dfrac{8-7\cdot0}{1+3\cdot0}
+      + \dfrac{9\cdot0+9\cdot0^2}{4+0^2}
+      =8
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX29">
+    <p>
+      It will also work if you put the terms over a common denominator but
+      it is much harder!
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to3}\dfrac{ \sqrt{3x-6} - \sqrt{x} }{ x-3 } \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX30"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX30"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX30"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX30">
+    <p>
+      Multiply by the conjugate.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX30">
+  	<p>
+      \(\displaystyle \lim_{x\to3}\dfrac{ \sqrt{3x-6} - \sqrt{x} }{ x-3 }
+      =\dfrac{1}{\sqrt{3}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX30">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{x\to3}\dfrac{ \sqrt{3x-6} - \sqrt{x} }{ x-3 }
+
+      &=\lim_{x\to3}\left(\dfrac{ \sqrt{3x-6} - \sqrt{x} }{ x-3 }
+      \cdot\dfrac{ \sqrt{3x-6} + \sqrt{x} }{ \sqrt{3x-6} + \sqrt{x} }\right)\\
+
+      &=\lim_{x\to3}\dfrac{ (3x-6) - (x) }{ (x-3)(\sqrt{3x-6} + \sqrt{x}) }\\
+
+      &=\lim_{x\to3}\dfrac{ 2x - 6 }{ (x-3)(\sqrt{3x-6} + \sqrt{x}) }\\
+
+      &=\lim_{x\to3}\dfrac{ 2 }{ \sqrt{3x-6} + \sqrt{x} }\\
+
+      &=\dfrac{2}{\sqrt{3}+\sqrt{3}}
+
+      =\dfrac{1}{\sqrt{3}}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{x\to6}\dfrac{\sqrt{2x-6}-\sqrt{x}}{x-6}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX31"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX31"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX31"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX31">
+    <p>
+      Multiply by the conjugate of the numerator.
+      <br/>
+      Remember \((a-b)(a+b)=a^2-b^2\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX31">
+  	<p>
+      \(\displaystyle
+      \lim_{x\to6}\dfrac{\sqrt{2x-6}-\sqrt{x}}{x-6}=\dfrac{\sqrt{6}}{12}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX31">
+  	<p>
+      We multiply by the conjugate of the numerator and then multiply out the numerator:
+      \[\begin{aligned}
+      \lim_{x\to6}&\dfrac{\sqrt{2x-6}-\sqrt{x}}{x-6} \\
+      &=\lim_{x\to6}\left(\dfrac{\sqrt{2x-6}-\sqrt{x}}{x-6} \cdot
+      \dfrac{ \sqrt{2x-6}+\sqrt{x} }{ \sqrt{2x-6}+\sqrt{x} } \right) \\
+      &=\lim_{x\to0}\dfrac{(2x-6)-(x)}{(x-6)(\sqrt{2x-6}+\sqrt{x})}\\
+      &=\lim_{x\to6}\dfrac{1}{\sqrt{2x-6}+\sqrt{x}}
+      =\dfrac{1}{2\sqrt{6}}
+      =\dfrac{\sqrt{6}}{12}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{x\to3}\left(\dfrac{\sqrt{1+x}-\sqrt{7-x}}{x-3}\right)\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX32"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX32"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX32"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX32">
+    <p>
+      Multiply by the conjugate.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX32">
+  	<p>
+      \(\displaystyle
+      \lim_{x\to3}\left(\dfrac{\sqrt{1+x}-\sqrt{7-x}}{x-3}\right)=\dfrac{1}{2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX32">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{x\to3}\left(\dfrac{\sqrt{1+x}-\sqrt{7-x}}{x-3}\right)
+
+      &=\lim_{x\to3}\left(\dfrac{\sqrt{1+x}-\sqrt{7-x}}{x-3}\cdot\dfrac{
+        \sqrt{1+x}+\sqrt{7-x}}{\sqrt{1+x}+\sqrt{7-x}}\right)\\
+
+      &=\lim_{x\to3}\left( \dfrac { (1+x) - (7-x) } { (x-3)( \sqrt{1+x}+
+      \sqrt{7-x} ) } \right)\\
+
+      &=\lim_{x\to3}\left( \dfrac { 2x-6 } { (x-3)( \sqrt{1+x}+
+      \sqrt{7-x} ) } \right)\\
+
+      &=\lim_{x\to3}\left( \dfrac { 2 } { \sqrt{1+x}+
+      \sqrt{7-x} } \right)
+
+      =\dfrac{2}{4}
+
+      =\dfrac{1}{2}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to4}\dfrac{\sqrt{x^2+x}-\sqrt{9x-x^2}}{x^2-4x}
+      \)
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX33"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX33"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX33">
+  	<p>
+      \(\displaystyle \lim_{x\to4}\dfrac{\sqrt{x^2+x}-\sqrt{9x-x^2}}{x^2-4x}
+      =\dfrac{1}{\sqrt{20}} \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX33">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{x\to4}&\dfrac{\sqrt{x^2+x}-\sqrt{9x-x^2}}{x^2-4x} \\
+
+      &=\lim_{x\to4} \left( \dfrac{\sqrt{x^2+x}-\sqrt{9x-x^2}}{x^2-4x}\cdot
+      \dfrac{ \sqrt{x^2+x}+\sqrt{9x-x^2} }{ \sqrt{x^2+x}+\sqrt{9x-x^2} } \right)\\
+
+      &=\lim_{x\to4} \dfrac{(x^2+x)-(9x-x^2)}{(x^2-4x)(\sqrt{x^2+x}+\sqrt{9x-x^2})}\\
+
+      &=\lim_{x\to4} \dfrac{2x^2-8x}{(x^2-4x)(\sqrt{x^2+x}+\sqrt{9x-x^2})}\\
+
+      &=\lim_{x\to4} \dfrac{2}{\sqrt{x^2+x}+\sqrt{9x-x^2}}
+
+      =\dfrac{1}{\sqrt{20}}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to4}\dfrac{ x-4 }{ \sqrt{x+1} - \sqrt{9-x} } \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX34"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX34"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX34"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX34">
+    <p>
+      Multiply by the conjugate.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX34">
+  	<p>
+      \(\displaystyle \lim_{x\to4}\dfrac{ x-4 }{ \sqrt{x+1} - \sqrt{9-x} } = \sqrt{5}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX34">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{x\to4}&\dfrac{ x-4 }{ \sqrt{x+1} - \sqrt{9-x} }\\
+
+      &=\lim_{x\to4} \left( \dfrac{ x-4 }{ \sqrt{x+1} - \sqrt{9-x} } \cdot
+      \dfrac{ \sqrt{x+1} + \sqrt{9-x} }{ \sqrt{x+1} + \sqrt{9-x} }\right)\\
+
+      &=\lim_{x\to4} \left( \dfrac{ (x-4)(\sqrt{x+1} + \sqrt{9-x})  }{ (x+1) -
+      (9-x) } \right)\\
+
+      &=\lim_{x\to4} \left( \dfrac{ (x-4)(\sqrt{x+1} + \sqrt{9-x})  }{ 2x-8 }
+      \right)\\
+
+      &=\lim_{x\to4} \left( \dfrac{ \sqrt{x+1} + \sqrt{9-x} }{ 2 }\right)
+
+       =\dfrac{\sqrt{5}+\sqrt{5}}{2}
+
+       =\sqrt{5}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{\theta\to0}\dfrac{\sin^2\theta}{1-\cos\theta}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX35"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX35"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX35"></button>
+      <button class="toggle has has-rem" data-toggle="RemX35"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX35">
+    <p>
+      What is the conjugate of \(1-\cos\theta\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX35">
+  	<p>
+      \(\displaystyle
+      \lim_{\theta\to0}\dfrac{\sin^2\theta}{1-\cos\theta}=2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX35">
+  	<p>
+      We multiply by the congugate:
+      \[\begin{aligned}
+      \lim_{\theta\to0}\dfrac{\sin^2\theta}{1-\cos\theta}
+
+      &=\lim_{\theta\to0}\dfrac{\sin^2\theta}{1-\cos\theta}\dfrac{1+\cos\theta}{1+\cos\theta}\\
+
+      &=\lim_{\theta\to0}\dfrac{\sin^2\theta(1+\cos\theta)}{1-\cos^2\theta} \\
+
+      &=\lim_{x\to0}(1+\cos\theta)
+
+      =2
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX35">
+  	<p>
+      As an alternate we can just use a trig identity:
+      \[\begin{aligned}
+      \lim_{\theta\to0}\dfrac{\sin^2\theta}{1-\cos\theta}
+
+      &=\lim_{\theta\to0}\dfrac{1-\cos^2\theta}{1-\cos\theta}\\
+
+      &=\lim_{\theta\to0}\dfrac{(1-\cos\theta)(1+\cos\theta)}{1-\cos\theta}\\
+
+      &=\lim_{x\to0}(1+\cos\theta)
+
+      =2
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to4}\dfrac{x-4}{\sqrt{2x-4}-\sqrt{x}} \)
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX36"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX36"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX36">
+  	<p>
+      \(\displaystyle \lim_{x\to4}\dfrac{x-4}{\sqrt{2x-4}-\sqrt{x}} =4\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX36">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{x\to4}\dfrac{x-4}{\sqrt{2x-4}-\sqrt{x}}
+
+      &=\lim_{x\to4} \left( \dfrac{x-4}{\sqrt{2x-4}-\sqrt{x}}
+      \cdot \dfrac{ \sqrt{2x-4}+\sqrt{x} }{ \sqrt{2x-4}+\sqrt{x} } \right)\\
+
+      &=\lim_{x\to4} \left( \dfrac{(x-4)(\sqrt{2x-4}+\sqrt{x})}
+      {(2x-4)-(x)}\right)\\
+
+      &=\lim_{x\to4} \left( \dfrac{(x-4)(\sqrt{2x-4}+\sqrt{x})}
+      {x-4}\right)\\
+
+      &=\lim_{x\to4} \left(\sqrt{2x-4}+\sqrt{x} \right)
+
+      =4
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to3}\dfrac{x-3}{\sqrt{2x^2-14}-\sqrt{x^2-5}}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX37"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX37"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX37"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX37">
+    <p>
+      Multiply by the conjugate.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX37">
+  	<p>
+      \(\displaystyle
+      \lim_{x\to3}\dfrac{x-3}{\sqrt{2x^2-14}-\sqrt{x^2-5}}=\dfrac{2}{3}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX37">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{x\to3}&\dfrac{x-3}{\sqrt{2x^2-14}-\sqrt{x^2-5}} \\
+
+      &=\lim_{x\to3} \left( \dfrac{x-3}{\sqrt{2x^2-14}-\sqrt{x^2-5}}\cdot
+      \dfrac{\sqrt{2x^2-14}+\sqrt{x^2-5}}{\sqrt{2x^2-14}+\sqrt{x^2-5}}  \right) \\
+
+      &=\lim_{x\to3} \dfrac{(x-3)(\sqrt{2x^2-14}+\sqrt{x^2-5})}
+      {(2x^2-14)-(x^2-5)} \\
+
+      &=\lim_{x\to3} \dfrac{(x-3)(\sqrt{2x^2-14}+\sqrt{x^2-5})}
+      {x^2-9} \\
+
+      &=\lim_{x\to3} \dfrac{\sqrt{2x^2-14}+\sqrt{x^2-5}}
+      {x+3}
+
+      =\dfrac{4}{6}=\dfrac{2}{3}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<!--Sandwich Theorem-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="Sandwich.html">c. Sandwich Theorem</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Sandwich.html">1</a></div>
+      
+        <div><a href="SinCos.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+Use the Sandwich Theorem to compute each of the following limits.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}x\sin\left(\dfrac{1}{x}\right)\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX38"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX38"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX38"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX38">
+    <p>
+      Start with \(-1 \le \sin\left(\dfrac{1}{x}\right) \le 1\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX38">
+  	<p>
+      \(\displaystyle\lim_{x\to0}x\sin\left(\dfrac{1}{x}\right)=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX38">
+  	<p>
+      Since \(-1 \le \sin\left(\dfrac{1}{x}\right) \le 1\), we have:
+      <br>
+      if \(x \ge 0\) then: &emsp;
+      \(
+      -x \le x\sin\left(\dfrac{1}{x}\right) \le x
+      \)
+      <br>
+      and if \(x \lt 0\) then: &emsp;
+      \(
+      -x \ge x\sin\left(\dfrac{1}{x}\right) \ge x
+      \)
+      <br>
+      In either case,
+      \(
+      -|x| \le x\sin\left(\dfrac{1}{x}\right) \le |x|
+      \)
+      <br>
+      This says \( x\sin\left(\dfrac{1}{x}\right)\) is squeezed between
+      \(-|x|\) and \(|x|\). Since,
+      \[
+      \lim_{x\to0}-|x|=\lim_{x\to0}|x|=0
+      \]
+      we conclude:
+      \[
+      \lim_{x\to0}x\sin\left(\dfrac{1}{x}\right)
+      =0
+      \]
+      also.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}x^2\left[1-\cos\left(\dfrac{1}{x}\right)\right]\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX39"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX39"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX39"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX39">
+    <p>
+      Start with \(-1 \le \cos\left(\dfrac{1}{x}\right) \le 1\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX39">
+  	<p>
+      \(\displaystyle\lim_{x\to0}x^2\left[1-\cos\left(\dfrac{1}{x}\right)\right]
+      =0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX39">
+  	<p>
+      We build up inequalities surrounding our function:
+      \[
+      -1 \le \cos\left(\dfrac{1}{x}\right) \le 1
+      \]\[
+      -1 \le -\cos\left(\dfrac{1}{x}\right) \le 1
+      \]\[
+      0 \le 1-\cos\left(\dfrac{1}{x}\right) \le 2
+      \]\[
+      0 \le x^2\left[1-\cos\left(\dfrac{1}{x}\right)\right] \le 2x^2
+      \]
+      Using this inequality and
+      \[
+      \lim_{x\to0}0=\lim_{x\to0}2x^2=0
+      \]
+      the Sandwich Theorem says:
+      \[
+      \lim_{x\to0}x^2\left[1-\cos\left(\dfrac{1}{x}\right)\right]=0
+      \]
+      also.
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<hr width="80%">
+<p>
+  Use the limit \(\displaystyle \lim_{x\to0}\dfrac{\sin x}{x}=1\) to
+  compute each of the following limits.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{\theta\to0}\dfrac{1-\cos^4\theta}{\theta^2}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX40"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX40"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX40"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX40">
+    <p>
+    Factor \(1-\cos^4\theta\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX40">
+  	<p>
+      \(\displaystyle\lim_{\theta\to0}\dfrac{1-\cos^4\theta}{\theta^2}=2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX40">
+  	<p>
+      We manipulate the limit into a form where the limit
+      \(\displaystyle\lim_{x\to0}\dfrac{\sin x}{x}=1\) can be used:
+      \[\begin{aligned}
+      \lim_{\theta\to0}\dfrac{1-\cos^4\theta}{\theta^2}
+
+      &=\lim_{\theta\to0}\dfrac{ (1+\cos^2\theta) ( 1-\cos^2\theta ) }{\theta^2}\\
+
+      &=\lim_{x\to0}( 1+\cos^2\theta ) \cdot \lim_{\theta\to0}
+      \dfrac{ \sin^2\theta }{\theta^2}\\
+
+      &=2\cdot(1)^2
+      =2
+      \end{aligned}\]
+
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{\theta\to0}\dfrac{1-\sec\theta}{\theta^2}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX41"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX41"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX41"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX41">
+    <p>
+      What is the conjugate of \(1-\sec\theta\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX41">
+  	<p>
+      \(\displaystyle
+      \lim_{\theta\to0}\dfrac{1-\sec\theta}{\theta^2}=-\dfrac{1}{2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX41">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{\theta\to0}&\dfrac{1-\sec\theta}{\theta^2}
+
+      =\lim_{\theta\to0} \left( \dfrac{1-\sec\theta}{\theta^2} \cdot
+      \dfrac{1+\sec\theta}{1+\sec\theta} \right)\\
+
+      &=\lim_{\theta\to0}\dfrac{1-\sec^2\theta}{(\theta^2)(1+\sec\theta)}
+
+      =\lim_{\theta\to0}\dfrac{-\tan^2\theta}{(\theta^2)(1+\sec\theta)}\\
+
+      &=-\lim_{\theta\to0}\dfrac{\sin^2\theta}{\theta^2}
+      \lim_{\theta\to0}\dfrac{1}{\cos^2\theta(1+\sec\theta)}\\
+      &=-\left(\lim_{\theta\to0}\dfrac{\sin\theta}{\theta}\right)^2
+      \lim_{\theta\to0}\dfrac{1}{\cos^2\theta+\cos\theta}
+
+      =-\dfrac{1}{2}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+       \lim_{\theta\to0} \sqrt{ \dfrac{ \tan^2(\theta) }{ \theta } +3 } \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX42"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX42"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX42"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX42">
+    <p>
+      Start with using the continuous function law to move the limit inside
+      the square root.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX42">
+  	<p>
+      \(\displaystyle
+       \lim_{\theta\to0} \sqrt{ \dfrac{ \tan^2(\theta) }{\theta}+3}=\sqrt{3}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX42">
+  	<p>
+      We use the continuous function law:
+      \[
+      \lim_{\theta\to0} \sqrt{ \dfrac{ \tan^2(\theta) }{ \theta } +3}
+
+      =\sqrt{ \left(\lim_{\theta\to0}\dfrac{\tan^2(\theta) }{ \theta }\right)+3}
+      \]
+      Now, we need to find \(\displaystyle
+      \lim_{\theta\to0}\dfrac{\tan^2(\theta)}{ \theta }\):
+      \[\begin{aligned}
+      \lim_{\theta\to0}\dfrac{\tan^2(\theta)}{ \theta }
+
+      &=\lim_{\theta\to0}\dfrac{\theta\cdot\sin^2(\theta)}
+      { \theta^2\cdot\cos^2(\theta) }\\
+
+      &=\lim_{x\to0}\left(\dfrac{\sin\theta}{\theta}\right)^2
+      \lim_{\theta\to0}\dfrac{\theta}{\cos^2(\theta) }\\
+
+      &=1\cdot\dfrac{0}{1}
+
+      =0
+      \end{aligned}\]
+      Finally, we plug in \(\displaystyle
+      \lim_{\theta\to0}\dfrac{\tan^2(\theta)}{ \theta }=0\):
+      \[
+      \lim_{\theta\to0} \sqrt{ \dfrac{ \tan^2(\theta) }{ \theta } +3}
+      =\sqrt{ \left(\lim_{\theta\to0}\dfrac{\tan^2(\theta) }{ \theta }\right)+3}
+
+      =\sqrt{3}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<!--Limits at Infinity & Infinite Limits-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="LimatInfSpec.html">d. Limits at Infinity</a></h3>
+    <div class="pgs">
+      
+        <div><a href="LimatInfSpec.html">1</a></div>
+      
+        <div><a href="LimatInfLaws.html">2</a></div>
+      
+        <div><a href="LimatInfWOLaws.html">3</a></div>
+      
+    </div>
+  </div>
+
+<p>
+Evaluate the limit.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to\infty}\dfrac{1}{x}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX43"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX43"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX43"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX43">
+    <p>
+      \(\displaystyle x = x^1\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX43">
+  	<p>
+      \(\displaystyle\lim_{x\to\infty}\dfrac{1}{x}=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX43">
+  	<p>
+      We use one of the power laws:
+      \[
+      \lim_{x\to\infty}\dfrac{1}{x}
+
+      =\lim_{x\to\infty}\dfrac{1}{x^1}
+
+      =0
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{x}{x+1}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX44"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX44"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX44"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX44">
+    <p>
+      Divide by the largest term in the denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX44">
+  	<p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{x}{x+1}=1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX44">
+  	<p>
+      If we plug in \(x=\infty\), we get the indeterminate form \(\dfrac{\infty}
+      {\infty}\). This means we need to use a trick to find the limit. In this
+      case, dividing by the largest term in the denominator works:
+      \[
+      \lim_{x\to\infty}\dfrac{x}{x+1}
+
+      =\lim_{x\to\infty}\dfrac{x\cdot\dfrac{1}{x}}{(x+1)\cdot\dfrac{1}{x}}
+
+      =\lim_{x\to\infty}\dfrac{1}{1+\dfrac{1}{x}}
+
+      =1
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to\infty}\left(x-\dfrac{x^2+3}{x+4}\right) \)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX45"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX45"></button>
+    	<button class="toggle has-sol" data-toggle="SolX45"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX45">
+    <p>
+      Put the terms over a common denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX45">
+  	<p>
+      \(\displaystyle
+      \lim_{x\to\infty}\left(x-\dfrac{x^2+3}{x+4}\right)=4\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX45">
+  	<p>
+      We put the terms over a common denominator:
+      \[\begin{aligned}
+      \lim_{x\to\infty}\left(x-\dfrac{x^2+3}{x+4}\right)
+
+      &=\lim_{x\to\infty}\left(\dfrac{x^2+4x}{x+4}-\dfrac{x^2+3}{x+4}\right)\\
+
+      &=\lim_{x\to\infty}\dfrac{4x-3}{x+4}
+
+      =4
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{x\to\infty}\left(\sqrt{x+x^2}-\sqrt{5x+3x^2}\right)\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX46"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX46"></button>
+    	<button class="toggle has-sol" data-toggle="SolX46"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX46">
+    <p>
+      Multiply by the conjugate. Then divide by the largest term in the denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX46">
+  	<p>
+      \(\displaystyle
+      \lim_{x\to\infty}\left(\sqrt{x+x^2}-\sqrt{5x+3x^2}\right)=-\infty\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX46">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim_{x\to\infty}&\left(\sqrt{x+x^2}-\sqrt{5x+3x^2}\right)\\
+
+      &=\lim_{x\to\infty}\left(\sqrt{x+x^2}-\sqrt{5x+3x^2}\right) \cdot
+      \dfrac{\sqrt{x+x^2}+\sqrt{5x+3x^2}}{\sqrt{x+x^2}+\sqrt{5x+3x^2}}\\
+
+      &=\lim_{x\to\infty}\dfrac{(x+x^2)-(5x+3x^2)}{\sqrt{x+x^2}+\sqrt{5x+3x^2}}\\
+
+      &=\lim_{x\to\infty}\dfrac{-4x-2x^2}{\sqrt{x+x^2}+\sqrt{5x+3x^2}}
+      \end{aligned}\]
+      We now divide the numerator and denominator by the largest power of
+      \(x\) in the denominator, which is \(\sqrt{x^2}=x\):
+      \[\begin{aligned}
+      \lim_{x\to\infty}&\left(\sqrt{x+x^2}-\sqrt{5x+3x^2}\right)\\
+      &=\lim_{x\to\infty}
+      \dfrac{-4x-2x^2}{\sqrt{x+x^2}+\sqrt{5x+3x^2}}\cdot
+      \dfrac{\dfrac{1}{x}}{\dfrac{1}{\sqrt{x^2}}} \\
+      &=\lim_{x\to\infty}
+      \dfrac{-4-2x}{\sqrt{\dfrac{1}{x}+1}+\sqrt{\dfrac{5}{x}+3}}
+      =-\infty
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{x\to\infty}\left(x-x\cos\left(\dfrac{1}{x}\right)\right)\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX47"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX47"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX47"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX47">
+    <p>
+      Replace \(x\) with its reciprocal.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX47">
+  	<p>
+      \(\displaystyle
+      \lim_{x\to\infty}\left(x-x\cos\left(\dfrac{1}{x}\right)\right)=0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX47">
+  	<p>
+      We replace \(x\) with its reciprocal:
+      \[\begin{aligned}
+      \lim_{x\to\infty}\left(x-x\cos\left(\dfrac{1}{x}\right)\right)
+
+      &=\lim_{t\to0^+}\left(\dfrac{1}{t}-\dfrac{1}{t}\cos\left(t\right)\right)\\
+
+      &=\lim_{t\to0^+}\dfrac{1-\cos\left(t\right)}{t}
+      =0
+      \end{aligned}\]
+      which is a
+      <a href="SinCos.html" title="Return using the Back button.">
+      standard trig limit</a>.
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+		<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  Solve the limits.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to0}\dfrac{x^3-4x^2+2x+3}{7x^2+5x-1} \)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX48"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX48"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX48"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX48">
+    <p>
+      Use the limit laws.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX48">
+  	<p>
+      \(\displaystyle \lim_{x\to0}\dfrac{x^3-4x^2+2x+3}{7x^2+5x-1} = -3\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX48">
+  	<p>
+      We use the limit laws:
+      \[\begin{aligned}
+      \lim_{x\to0}\dfrac{x^3-4x^2+2x+3}{7x^2+5x-1}
+
+      &=\dfrac{\lim\limits_{x\to0}\left(x^3-4x^2+2x+3\right)}{\lim\limits_{x\to0}
+      \left(7x^2+5x-1\right)} \\
+
+      &=\dfrac{0^3-4\cdot0^2+2\cdot0+3}{7\cdot0^2+5\cdot0-1}
+
+      =-3
+      \end{aligned}\]
+      The Quotient Rule was valid because the limit of the denominator came
+      out to be \(-1\).
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle
+      \lim_{\theta\to0}\dfrac{\sin^2\theta}{1-\cos\theta}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX49"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX49"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX49"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX49">
+    <p>
+      Factor the numerator and cancel.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX49">
+  	<p>
+      \(\displaystyle
+      \lim_{\theta\to0}\dfrac{\sin^2\theta}{1-\cos\theta}=2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX49">
+  	<p>
+      We factor the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{\theta\to0}&\dfrac{\sin^2\theta}{1-\cos\theta}
+
+      =\lim_{\theta\to0}\dfrac{1-\cos^2\theta}{1-\cos\theta}\\
+
+      &=\lim_{\theta\to0}\dfrac{ (1+\cos\theta)(1-\cos\theta) }{1-\cos\theta}\\
+
+      &=\lim_{\theta\to0}(1+\cos\theta)
+
+      =2
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to0}x\sec x\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX50"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX50"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX50"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX50">
+    <p>
+      Use the product rule.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX50">
+  	<p>
+      \(\displaystyle\lim_{x\to0}x\sec x = 0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX50">
+  	<p>
+      We use the product rule:
+      \[\begin{aligned}
+      \lim_{x\to0}x\sec x
+      &=\lim_{x\to0}x \cdot \lim_{x\to0}\sec x \\
+      &=0\cdot1
+      =0
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle\lim_{x\to3}\dfrac{x^2+x-12}{x-3}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX51"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX51"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX51"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX51">
+    <p>
+      Factor the numerator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX51">
+  	<p>
+      \(\displaystyle\lim_{x\to3}\dfrac{x^2+x-12}{x-3}=7\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX51">
+  	<p>
+      We factor the numerator and cancel:
+      \[\begin{aligned}
+      \lim_{x\to3}\dfrac{x^2+x-12}{x-3}
+      &=\lim_{x\to3}\dfrac{(x-3)(x+4)}{x-3} \\
+      &\qquad\quad=\lim_{x\to3}(x+4)
+      =7
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	\(\displaystyle\lim_{x\to0}\dfrac{x^3+2x^2+2}{x+4}\)
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Solve with the Sandwich Theorem.
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX52a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX52a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX52a"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX52a">
+        <p>
+          Start with \(-1 < x < 1 \).
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX52a">
+				<p>
+					\(\displaystyle\lim_{x\to0}\dfrac{x^3+2x^2+2}{x+4}=\dfrac{1}{2}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX52a">
+				<p>
+					We know that \(x\) goes to \(0\), so we will try this:
+          \[
+          -1 < x < 1
+          \]
+          Now, we need to build up the function in the middle:
+          \[
+          -1 < x < 1
+          \]
+          \[
+          1 < x + 2 < 3
+          \]
+          \[
+          x^2 < x^3 + 2x^2 < 3x^2
+          \]
+          \[
+          x^2 + 2 < x^3 + 2x^2 +2 < 3x^2 + 2
+          \]
+          \[
+          \dfrac{ x^2 + 2 }{ x + 4 } < \dfrac{ x^3 + 2x^2 + 2 }{ x + 4 } < \dfrac{ 3x^2 + 2 }{ x + 4 }
+          \]
+          Next, we need to evaluate
+          \(\displaystyle \lim_{x\to0}\dfrac{ x^2 + 2 }{ x + 4 }\) and
+          \(\displaystyle \lim_{x\to0}\dfrac{ 3x^2 + 2 }{ x + 4 }\):
+          \[\begin{aligned}
+          \lim_{x\to0}\dfrac{ x^2 + 2 }{ x + 4 }
+          &=\dfrac{ \lim\limits_{x\to0}(x^2 + 2) }{ \lim\limits_{x\to0}(x + 4) }\\
+          &=\dfrac{ 0 + 2 }{ 0 + 4 }
+          =\dfrac{2}{4}
+          =\dfrac{1}{2}
+          \end{aligned}\]
+          \[\begin{aligned}
+          \lim_{x\to0}\dfrac{ 3x^2 + 2 }{ x + 4 }
+          &=\dfrac{ \lim\limits_{x\to0}(3x^2 + 2) }{ \lim\limits_{x\to0}(x + 4) }\\
+          &=\dfrac{ 0 + 2 }{ 0 + 4 }
+          =\dfrac{ 2 }{ 4 }
+          =\dfrac{ 1 }{ 2 }
+          \end{aligned}\]
+          Since:
+          \[
+          \lim_{x\to0}\dfrac{ x^2 + 2 }{ x + 4 }=\lim_{x\to0}\dfrac{ 3x^2 + 2 }{ x + 4 }
+          =\dfrac{ 1 }{ 2 }
+          \] we conclude:
+          \[
+          \lim_{x\to0}\dfrac{x^3+2x^2+2}{x+4}
+          =\dfrac{1}{2}
+          \]
+          also.
+				</p>
+        <p style="text-align:right">
+          tj&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Solve without the Sandwich Theorem.
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX52b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX52b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX52b"></button>
+          <button class="toggle has has-check" data-toggle="CkX52b"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX52b">
+        <p>
+          Use the quotient rule.
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX52b">
+				<p>
+					\(\displaystyle\lim_{x\to0}\dfrac{x^3+2x^2+2}{x+4}=\dfrac{1}{2}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX52b">
+				<p>
+					We just use the quotient rule:
+          \[\begin{aligned}
+          \lim_{x\to0}\dfrac{x^3+2x^2+2}{x+4}
+          &=\dfrac{\lim\limits_{x\to0}(x^3+2x^2+2)}{\lim\limits_{x\to0}(x+4)}\\
+          &=\dfrac{\lim\limits_{x\to0}x^3+\lim\limits_{x\to0}2x^2+\lim\limits_{x\to0}2}{\lim\limits_{x\to0}x+\lim\limits_{x\to0}4}\\
+          &\qquad=\dfrac{0+0+2}{0+4}
+          =\dfrac{2}{4}
+          =\dfrac{1}{2}
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          tj&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-check" data-toggle="CkX52b">
+      	<p>
+          We get \(\displaystyle\lim_{x\to0}\dfrac{x^3+2x^2+2}{x+4}=\dfrac{1}{2}\), which matches what we got in part A.
+      	</p>
+      </div>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+     \(\displaystyle \lim_{x\to\infty}
+     \left(\sqrt{x^{2}+3x+3}-\sqrt{x^{2}-x+4}\right)  \)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX53"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX53"></button>
+    	<button class="toggle has-sol" data-toggle="SolX53"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX53">
+    <p>
+      Multiply by the conjugate and then divide by the largest term in
+      the denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX53">
+  	<p>
+       \(\displaystyle \lim_{x\to\infty}
+       \left(\sqrt{x^{2}+3x+3}-\sqrt{x^{2}-x+4}\right)=2  \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX53">
+  	<p>
+      We multiply by the conjugate:
+      \[\begin{aligned}
+      \lim&_{x\to\infty}
+      \left(\sqrt{x^{2}+3x+3}-\sqrt{x^{2}-x+4}\right)\\
+
+      &=\lim_{x\to\infty}
+      \left(\sqrt{x^{2}+3x+3}-\sqrt{x^{2}-x+4}\right) \\
+      &\qquad\qquad\cdot
+      \dfrac{\sqrt{x^{2}+3x+3}+\sqrt{x^{2}-x+4}}{\sqrt{x^{2}+3x+3}+
+      \sqrt{x^{2}-x+4}}\\
+
+      &=\lim_{x\to\infty}
+      \dfrac{\left(x^{2}+3x+3\right)-\left(x^{2}-x+4\right)}
+      {\sqrt{x^{2}+3x+3}+\sqrt{x^{2}-x+4}} \\
+
+      &=\lim_{x\to\infty}
+      \dfrac{4x-1}{\sqrt{x^{2}+3x+3}+\sqrt{x^{2}-x+4}}
+
+      \end{aligned}\]
+      We now divide the numerator and denominator by the largest power of
+      \(x\) in the denominator, which is \(\sqrt{x^2}=x\):
+      \[\begin{aligned}
+      \lim&_{x\to\infty}
+      \left(\sqrt{x^{2}+3x+3}-\sqrt{x^{2}-x+4}\right)\\
+      &=\lim_{x\to\infty}
+      \dfrac{4x-1}{\sqrt{x^{2}+3x+3}+\sqrt{x^{2}-x+4}}\cdot
+      \dfrac{\dfrac{1}{x}}{\dfrac{1}{\sqrt{x^2}}} \\
+      &=\lim_{x\to\infty}
+      \dfrac{4-\dfrac{1}{x}}{\sqrt{1+\dfrac{3}{x}+\dfrac{3}{x^2}}
+      +\sqrt{1-\dfrac{1}{x}+\dfrac{4}{x^2}}}
+      =\dfrac{4}{2}
+      =2
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+  <big>PY: Checked to here</big>
+
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Proof | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimCompTest.html#" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>20. Convergence of Positive Series</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>d.1. The Limit Comparison Test</h2>
+
+
+      
+      <h2>a. Proof</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<div class="greybox">
+  <p class="prop" data-title="The Limit Comparison Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) and
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) are positive series and
+    \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=L\).
+  </p>
+  <ol>
+    <li>
+      If \(0 \lt L \lt \infty\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\)
+      is convergent if and only if \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      convergent.
+    </li>
+    <li>
+      If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent,
+      then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also convergent.
+    </li>
+    <li>
+      If \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      divergent, then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also divergent.
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  Cases (2) and (3) are called the <span class="defword">extreme cases</span>,
+  and arise very rarely.
+  <br>
+  If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is divergent, or
+  \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent, the
+  Limit Comparison Test <span class="wrong">FAILS</span>.
+</p>
+
+        <div class="rule"></div>
+
+<p class="proof">
+  We will only prove Case (1) where \(0 \lt L \lt \infty\). The
+  statement \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=L\) means:
+</p>
+<p class="center">
+  For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+  &ensp; \(N\), &ensp; such that
+</p>
+<p class="center">
+  if &ensp; \(n \gt N\) &ensp; then &ensp; \(L-\varepsilon \lt \dfrac{a_n}{b_n} \lt L+\varepsilon\).
+</p>
+<p>
+  We pick \(\varepsilon=\dfrac{L}{2}\). Then there is an \(N\) such that if
+  \(n \ge N\) then:
+  \[
+  L-\dfrac{L}{2} \lt \dfrac{a_n}{b_n} \gt L+\dfrac{L}{2}
+  \]
+  Consequently,
+  \[
+  \dfrac{L}{2}b_n \lt a_n \lt \dfrac{3L}{2}b_n
+  \]
+  Now we apply the Simple Comparison Test to the tail of the series starting
+  at \(n=N\):
+</p>
+<p>
+  If \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent, then
+  \(\displaystyle \dfrac{3L}{2}\sum_{n=N}^\infty b_n\) is convergent
+  and hence \(\displaystyle \sum_{n=N}^\infty a_n\) is convergent
+  and so \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent.
+</p>
+<p>
+  If \(\displaystyle \sum_{n=n_o}^\infty b_n\) is divergent, then
+  \(\displaystyle \dfrac{L}{2}\sum_{n=N}^\infty b_n\) is divergent
+  and hence \(\displaystyle \sum_{n=N}^\infty a_n\) is divergent
+  and so \(\displaystyle \sum_{n=n_o}^\infty a_n\) is divergent.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  If you understood this proof, try proving Cases (2) and (3). For Case (2),
+  you should pick \(\varepsilon=1\). Case (3) can be proved using a proof
+  by contradiction and the fact that if
+  \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=\infty\) then
+  \(\displaystyle \lim_{n\to\infty}\dfrac{b_n}{a_n}=0\).
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

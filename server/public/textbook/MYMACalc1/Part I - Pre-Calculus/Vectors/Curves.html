@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Parametric Curves | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LinesIntersect.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Parametric Curves</h2>
+
+<div class="greybox">
+  <p class="def">
+    A <span class="defword">curve</span> (also called a
+    <span class="defword">planar curve</span>)
+    may be specified in one of three ways:
+  </p>
+  <ol>
+    <li>
+      as the <span class="hl">graph of a function</span> of \(1\) variable:
+      &emsp; \(y=f(x)\).
+    </li>
+    <li>
+      as the <span class="hl">graph of an equation</span> in \(2\) variables:
+      &emsp; \(F(x,y)=0\).
+    </li>
+    <li>
+      as a <span class="hl">parametric curve</span>:
+      &emsp; \(\vec r(t)=\left\langle x(t),y(t)\right\rangle\).
+    </li>
+  </ol>
+</div>
+<p>
+  So far we have discussed parametric lines. Now we introduce parametric curves
+  in general. They will be discussed in much more detail in the full chapter on
+  <a href="../../Part IV - Applications of Derivatives/ParamCurves/Position.html"
+  title="Return using the Back button.">Parametric Curves</a>.
+</p>
+
+
+      
+      <h2>3. Parametric Curves</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+  A <span class="defword">parametric curve</span> is a vector function
+  \[
+  \vec r(t)=\left\langle x(t),y(t)\right\rangle
+  \]
+  which gives the <span class="defword">position</span>
+  of a point as a function of a <span class="defword">parameter</span> \(t\).
+  It can also be written as \(2\) component equations:
+  \[
+  x=x(t) \qquad y=y(t)
+  \]
+  A <span class="defword">graph of the parametric curve</span> is a plot of
+  the points \((x(t),y(t))\) for some range of \(t\).
+</p>
+<p data-title="Physical Interpretation">
+  If we take the parameter \(t\) to represent <span class="hl">time</span>,
+  then \(\vec r(t)\) gives the <span class="defword">position</span>
+  of a <span class="hl">particle</span> at time \(t\).
+</p>
+<div class="column">
+  <p class="example" data-number="1">
+    For example, the parabolic trajectory of a baseball could be given by:
+    \[
+    \vec r(t)=\left\langle 72t,96t-64t^2\right\rangle
+    \]
+    or:
+    \[
+    x=72t \qquad y=96t-64t^2
+    \]
+    Its graph is shown.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_param_baseball_anim.gif" alt="eg_param_baseball_anim">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Although the parameter is frequently the time, it can represent many other
+  quantities, in which case the letter is frequently changed to match. A
+  common parameter is the angle \(\theta\) from polar coordinates.
+</p>
+<div class="column">
+  <p class="example" data-number="2">
+    A circle of radius \(2\) can be parametrized as:
+    \[
+    \vec r(\theta)=\left\langle 2\cos\theta,2\sin\theta\right\rangle
+    \]
+    and graphed as shown. The components are just polar coordinate
+    \((x,y)=(r\cos\theta,r\sin\theta)\) with \(r=2\).
+  </p>
+  <div class="center">
+    <img src="graphics/eg_param_circle_anim.gif" alt="eg_param_circle_anim">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+    <p class="example" data-number="3">
+      A more complicated "polar" curve is the starfish:
+      \[
+      \vec r(\theta)
+      =\left\langle	(3+\sin(5\theta))\cos\theta,(3+\sin(5\theta))\sin\theta\right\rangle
+      \]
+      which may be graphed as shown.
+    </p>
+    <p class="remark">
+      The reason it is called a <span class="hl">polar curve</span> is that if
+      we compare the parametrization with the polar coordinates
+      \((x,y)=(r\cos\theta,r\sin\theta)\) then we see the curve can be
+      specified in terms of polar coordinates as \(r=3+\sin(5\theta)\); as
+      \(\theta\) goes around the circle from \(0\) to \(2\pi\), the radius
+      \(r\) oscillates \(5\) times between \(2\) and \(4\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_param_starfish_anim.gif" alt="eg_param_starfish_anim">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Plot the line \(\vec r(t)=\langle 1+2t,3-t\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Plot the starting point \(P=(1,3)\) and the direction vector
+    \(\vec v=\langle2,-1\rangle\) located at \(P\). Then draw the line.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <div class="center">
+    <img src="graphics/ex_param_line_anim.gif" alt="ex_param_line_anim">
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <div class="column">
+    <p>
+      We plot the starting point \(P=(1,3)\) and then the direction vector
+      \(\vec v=\langle2,-1\rangle\) located at \(P\). Finally, we draw a line
+      through \(P\) in the direction \(\vec v\)..
+    </p>
+    <div class="center">
+      <img src="graphics/ex_param_line_anim.gif" alt="ex_param_line_anim">
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Mean Value Theorem | 12. Differentials &amp; Linear Approximation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LinApprox.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>12. Differentials &amp; Linear Approximation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. Mean Value Theorem</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p id="MVT">
+  The linear approximation formula can be made exact if we replace the
+	slope at the tangent point by the slope at another point in the interval.
+	However, this formula is purely theoretical since we have no way to know
+	which point in the interval to use.
+</p>
+<p class="thm" data-title="The Mean Value Theorem">
+  If \(f(x)\) is a function on the interval \([a,b]\) with a continuous
+  derivative, \(f'(x) \), then there is a number \(c\) in \((a,b)\) such that:
+  \[
+  f'(c)=\dfrac{f(b)-f(a)}{b-a}
+  \]
+  or equivalently,
+  \[
+  f(b)=f(a)+f'(c)(b-a)
+  \]
+  <button class="toggle" data-toggle="JustX1">Justification</button>
+  <a href="MVTProof.html"><button>Proof</button></a>
+  &emsp; \(\Leftarrow\Leftarrow\) &emsp;
+  <em>The proof is actually understandable.</em>
+</p>
+<p>
+  The first version says there is a point \(x=c\) where the slope of the
+  function \(f'(c)\) is equal to the slope of the straight line between the
+  endpoints.
+</p>
+<div class="toBeToggled drop-just" data-toggle="JustX1">
+  <div class="column">
+  	<p>
+      The plot shows the function (in black), the line between the endpoints
+      (in blue) and an animated line (in red) which is parallel to the
+      line between the endpoints. Notice that for this curve, there are two
+      places where the animated line becomes tangent to the
+      curve (and turns cyan). The theorem says there is always such a point.
+    </p>
+    <div class="center">
+      <video src="graphics/just_MVT.mp4" autoplay loop controls></video>
+      <!-- <img src="graphics/just_MVT.gif" alt="just_MVT.gif"> -->
+    </div>
+  </div>
+</div>
+<hr width="80%">
+<p>
+  The second version is easier to understand if we replace \(b\)
+  by \(x\). Then the second version says there is a number \(c\) in
+  \((a,x)\) where
+  \[
+  f(x)=f(a) +f'(c)(x-a)
+  \]
+  This looks like the <span class="hl">linear approximation</span>:
+  \[
+  f(x)\approx f(a)+f'(a)(x-a)
+  \]
+  but the equation becomes exact when the derivative \(f'(a)\) is replaced
+  by the \(f'(c)\). Unfortunately, there is no way to know which point to use
+  since the theorem only says such a point exists, but not how to find it.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Consider the function \(f(x)=\dfrac{4}{3}x^3+x^2\) on the interval
+  \([-3,3]\). Find the number(s) \(c\in(-3,3)\) which are guaranteed to
+  exist by the Mean Value Theorem.
+</p>
+<p class="sol">
+  The values at the endpoints are:
+  \[
+  f(-3)=-36+9=-27 \qquad
+  f(3)=36+9=45
+  \]
+  The slope between the endpoints is:
+  \[
+  m=\dfrac{f(3)-f(-3)}{3--3}=\dfrac{45--27}{6}=12
+  \]
+  The derivative is
+  \[
+  f'(x)=4x^2+2x
+  \]
+  So the Mean Value Theorem guarantees there is a number \(c\in(-3,3)\)  where
+  \[
+  f'(c)=4c^2+2c=12
+  \]
+  We rewrite the quadratic equation, factor it and solve:
+  \[\begin{aligned}
+  4c^2+2c-12&=0 \qquad 2c^2+c-6=(c+2)(2c-3)=0 \\ c&=-2\quad\text{or}\quad\dfrac{3}{2}
+  \end{aligned}\]
+  The solutions could also be found using the quadratic formula:
+  \[
+  c=\dfrac{-1\pm\sqrt{1-4(2)(-6)}}{4}
+  =-2,\ \dfrac{3}{2}
+  \]
+</p>
+<div class="check">
+  <div class="column">
+    <p>
+      We check by evaluating the slopes at the two values of \(c\):
+      \[\begin{aligned}
+      f'(-2)&=4(-2)^2+2(-2)=12 \\
+      f'\left(\dfrac{3}{2}\right)&=4\left(\dfrac{3}{2}\right)^2+2\left(\dfrac{3}{2}\right)=12
+      \end{aligned}\]
+      The plot shows the function (in blue), the line between the endpoints
+      (in magenta) and the tangent lines at \(c=-2\) and \(c=\dfrac{3}{2}\)
+      (in red). Notice the tangent lines are parallel to the the line
+      between the endpoints.
+    </p>
+    <div class="center">
+      <img src="graphics/eg_MVT_43x^3+x^2.jpg" alt="eg_MVT_43x^3+x^2">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Consider the function \(f(x)=x^2\) on the interval \([-1,2]\). Find
+    the number(s) \(c\in(-1,2)\) which are guaranteed to
+    exist by the Mean Value Theorem.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Find where the derivative is equal to the slope between the endpoints.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle
+  c=\dfrac{1}{2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The values at the endpoints are:
+    \[
+    f(-1)=1 \qquad
+    f(2)=4
+    \]
+    The slope between the endpoints is:
+    \[
+    m=\dfrac{f(2)-f(-1)}{2--1}=\dfrac{4-1}{3}=1
+    \]
+    The derivative is
+    \[
+    f'(x)=2x
+    \]
+    So the Mean Value Theorem guarantee there is a number \(c\in(-1,2)\)  where
+    \[
+    f'(c)=2c=1
+    \]
+    So \(c=\dfrac{1}{2}\).
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <div class="column">
+    <p>
+      We check by evaluating the derivative \(f'(x)=2x\) at \(c=\dfrac{1}{2}\):
+      \[
+      f'\left(\dfrac{1}{2}\right)=2\dfrac{1}{2}=1
+      \]
+      The plot shows the function (in blue), the line between the endpoints
+      (in magenta) and the tangent line at \(c=\dfrac{1}{2}\) (in red).
+      Notice the tangent line is parallel to the the line between
+      the endpoints.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_MVT_x^2.jpg" alt="ex_MVT_x^2">
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

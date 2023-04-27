@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a1. Indefinite Integrals | 4. Integration by Parts</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Multi.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>4. Integration by Parts</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Looking at the table of
+  <a href="../RiemSum/IntRulesAlg.html" title="Return using the Back button.">
+  Derivative and Integral Rules</a>,
+  we are missing an integral version of the Product Rule. It is called
+  Integration by Parts which is the topic of this chapter.
+</p>
+
+
+      
+      <h2>a1. Indefinite Integrals</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In general, a <span class="hl">derivative rule</span> produces an
+  <span class="hl">indefinite integral rule:</span>
+  \[
+  \dfrac{d}{dx}\left[F(x)\right]=f(x)
+	\qquad \text{becomes} \qquad \int f(x)\,dx=F(x)+C
+  \]
+  So the <span class="hl">Product Rule</span>
+  \[
+  \dfrac{d}{dx}[u(x)v(x)]=u(x)\dfrac{dv}{dx}+v(x)\dfrac{du}{dx}
+  \]
+  produces the <span class="hl">indefinite integral rule</span>
+  \[
+  \int \left[u(x)\dfrac{dv}{dx}+v(x)\dfrac{du}{dx}\right]\,dx=u(x)v(x)+C
+  \]
+  This integral rule is not yet in a useful form. A useful form is produced
+  if we split up the integral on the left as the sum of two integrals and take
+  one of them to the other side of the equation:
+</p>
+
+        <div class="rule"></div>
+
+<p class="thm" data-title="Integration by Parts">
+  \[
+  \int u(x)\dfrac{dv}{dx}\,dx=u(x)v(x)-\int v(x)\dfrac{du}{dx}\,dx
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Notice that we have dropped the constant of integration since there is an
+  indefinite integral on both sides which (when evaluated) will provide the
+  constant.
+</p>
+
+<p class="remark">
+  This form is more useful because it helps us compute the integral of a
+  product. If the integrand is the product of \(u(x)\) and \(\dfrac{dv}{dx}\),
+  then we can rewrite the integral with the integrand being  the product of
+  \(v(x)\) and \(\dfrac{du}{dx}\). Hopefully, the integral
+  \(\displaystyle \int v(x)\dfrac{du}{dx}\,dx\) will be easier to compute.
+</p>
+
+<p class="remark">
+  Frequently, students incorrectly assume:
+</p>
+<p class="center">
+  <span class="redbig"><em>Wrong!</em> &emsp;
+  The integral of a product &emsp; &emsp; &emsp; &emsp;
+  <br>
+  &emsp; &emsp; &emsp; is the product of the integrals.
+  &ensp; <em>Wrong!</em></span>
+</p>
+<p>
+  It is NOT!
+</p>
+
+<p>
+  By introducing the differentials
+  \[
+  du=\dfrac{du}{dx}\,dx \qquad \text{and}\qquad dv=\dfrac{dv}{dx}\,dx
+  \]
+  the integration by parts formula may be written in a form which is easier to
+  remember:
+</p>
+<p class="thm" data-title="Integration by Parts">
+  \[
+  \int u\,dv=u\,v-\int v\,du
+  \]
+  where \(du=\dfrac{du}{dx}\,dx\) and \(dv=\dfrac{dv}{dx}\,dx\).
+</p>
+<p class="center">
+  <span class="greenbig"><em>Memorize this!</em></span>
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+	Notice that the integration by parts formula does not compute the integral
+  but rather transforms it into another integral which is hopefully easier to
+  compute. This should be clarified by the following example:
+</p>
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int x\cos x\,dx.\)
+</p>
+<p class="sol">
+  To apply the formula, we need to identify \(u\) and \(dv.\)
+  If we take \(u=x\) and \(dv=\cos x\,dx\), then \(du=dx\) and \(v=\sin x.\)
+  <button class="toggle btn" data-toggle="Drop1">Why?</button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+		\[u=x \qquad \Longrightarrow \qquad \dfrac{du}{dx}=1
+    \qquad \Longrightarrow \qquad du=\dfrac{du}{dx}\,dx=1\,dx=dx\]
+    \[dv=\cos x\,dx=\dfrac{dv}{dx}\,dx \qquad \Longrightarrow \qquad \dfrac{dv}{dx}
+    =\cos x
+    \qquad \Longrightarrow \qquad v=\sin x\]
+	</p>
+</div>
+<p>
+  So:
+  \[\int x\cos x\,dx=u\,v-\int v\,du=x\sin x-\int \sin x\,dx\]
+  Now the final integral is easy to perform:
+  \[
+	\int x\cos x\,dx=x\sin x-(-\cos x)+C=x\sin x+\cos x+C .
+	\]
+</p>
+<p class="check">
+  We check by differentiating (using the Product Rule). If
+  \(f(x)=x\sin x+\cos x\), then:
+  \[
+  f'(x)=(\sin x+x\cos x)-\sin x=x\cos x
+  \]
+	which is the integrand we started with.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+	We usually write \(u\), \(dv\), \(du\) and \(v\) in an array such as:
+  \[\begin{array}{ll}
+  u=x & dv=\cos x\,dx \\
+  du=dx \quad & v=\sin x
+  \end{array}\]
+  Get in this habit.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute the integral \(\displaystyle \int x\sin x\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle \int x\sin x\,dx\,=-x\cos x+\sin x+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Let
+    \[\begin{array}{ll}
+    u=x & dv=\sin x\,dx \\
+    du=dx \quad & v=-\cos x
+    \end{array}\]
+    Then
+    \[\begin{aligned}
+    \int x\sin x\,dx
+    &=-x\cos x-\int -\cos x\,dx \\
+    &=-x\cos x+\int \cos x\,dx \\
+    &=-x\cos x+\sin x+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    We check (using the Product Rule).
+    If \(f(x)=-x\cos x+\sin x\), then:
+    \[
+    f'(x)=-\cos x+x\sin x+\cos x=x\sin x
+    \]
+    which is the integrand we started with.
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute the integral \(\displaystyle \int e^x x\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The main difficulty is deciding what to take for \(u\) and what to take
+    for \(dv\). Suppose we first try
+    \[\begin{array}{ll}
+    u=e^x & dv=x\,dx \\
+    du=e^x\,dx \quad & v=\dfrac{x^2}{2}
+    \end{array}\]
+    Then:
+    \[
+    \int e^x x\,dx=e^x\dfrac{x^2 }{2}-\int e^x\dfrac{x^2 }{2}\,dx
+    \]
+    This is correct but notice that the remaining integral is more complicated
+    than the original integral. So it is better to choose the parts according to:
+    \[\begin{array}{ll}
+    u=x & dv=e^x\,dx \\
+    du=dx \quad & v=e^x
+    \end{array}\]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \int e^x x\,dx=xe^x-e^x+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Let:
+    \[\begin{array}{ll}
+    u=x & dv=e^x\,dx \\
+    du=dx \quad & v=e^x
+    \end{array}\]
+    Then:
+    \[\begin{aligned}
+    \int e^x x\,dx
+    &=xe^x-\int e^x\,dx \\
+    &=xe^x-e^x+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    Using the Product Rule, if \(f(x)=xe^x-e^x\), then
+    \[
+    f'(x)=(e^x+xe^x)-e^x=xe^x
+    \]
+    as desired.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

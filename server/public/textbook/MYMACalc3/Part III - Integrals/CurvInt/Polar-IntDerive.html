@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Derivation | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Polar-Int.html#Fubini" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>a. Integrating in Polar Coordinates</h2>
+<h2>2. Integral over a Polar Rectangle</h2>
+
+
+      
+      <h2>a. Derivation</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  We want to derive:
+</p>
+<p class="thm" data-title="Fubini's Theorem for a Polar Rectangle">
+  If \(R\) is the polar rectangle \([a,b]\times[\alpha,\beta]\), then
+  \[
+  \iint\limits_R f(x,y)\,dA
+  =\int_\alpha^\beta\int_a^b f(r,\theta)\,r\,dr\,d\theta
+  =\int_a^b\int_\alpha^\beta f(r,\theta)\,r\,d\theta\,dr
+  \]
+  In particular, for a polar rectangle, the iterated integral is independent
+  of the order of integration.
+</p>
+<big>Add plots.</big>
+<p class="proof">
+  Recall the
+  <a href="../RiemInt/2DRiem.html" title="Return using the Back button.">
+  Riemann sum definition of a double integral</a>, and its implementation for
+  a <a href="../RiemInt/2DRect.html" title="Return using the Back button.">
+  rectangle in rectangular coordinates</a>. We now compute the double integral
+  \(\displaystyle \iint\limits_R f(r,\theta)\,dA\) over a region \(R\) which
+  is the polar rectangle, \(a \le r \le b\) and \(\alpha \le \theta \le \beta\).
+</p>
+<div class="column">
+  <p data-col-width="60%">
+    <strong><big>Step 1</big></strong> &emsp;
+    To partition \(R\) into subregions, first partition the \(r\) and
+    \(\theta\) intervals into subintervals using partition points:
+    \[\begin{aligned}
+    r_0&=a \lt r_1 \lt r_2 \lt \cdots \lt r_{p-1} \lt r_p=b \\
+    \theta_0
+    &=\alpha \lt \theta_1 \lt \theta_2 \lt \cdots \lt \theta_{q-1} \lt \theta_q=\beta
+    \end{aligned}\]
+    Then the subregions are the polar rectangles:
+    \[
+    R_{ij}=[r_{i-1},r_i]\times[\theta_{j-1},\theta_j]
+    \]
+    which have area:
+    \[
+    \Delta A_{ij}=\bar{r}\Delta r_i\,\Delta\theta_j
+    \]
+    where the coordinate intervals are:
+    \[
+    \Delta r_i=r_i-r_{i-1}
+    \qquad \text{and} \qquad
+    \Delta\theta_j=\theta_j-\theta_{j-1}
+    \]
+    and the average radius is:
+    \[
+    \bar{r}=\dfrac{r_{i-1}+r_i}{2}
+    \]
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/2DPolarRectlabels.jpg" alt="2DPolarRectlabels">
+  </div>
+</div>
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      <strong><big>Step 2.</big></strong> &emsp;
+      Pick an evaluation point \(r_i^*\) in the subinterval
+      \([r_{i-1},r_i]\) and an evaluation point \(\theta_j^*\) in the
+      subinterval \([\theta_{j-1},\theta_j]\).
+      Then \((r_i^*,\theta_j^*)\) is the evaluation point for the region
+      \(R_{ij}\). In addition, approximate the average radius by
+      the radius at the evaluation point in the area of a cell:
+      \[
+      \Delta A_{ij}\approx r_i^*\Delta r_i\,\Delta\theta_j
+      \]
+    </p>
+    <p>
+      <strong><big>Step 3.</big></strong> &emsp;
+      Evaluate the function \(f(r,\theta)\) at each evaluation point
+      and multiply by the area of the polar cell. Add these up to get
+      the Riemann sum:
+      \[
+      \sum_{j=1}^q\sum_{i=1}^p f(r_i^*,\theta_j^*)\,r_i^*\,\Delta r_i\,\Delta\theta_j
+      \]
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/2DPolarRecteval.jpg" alt="2DPolarRecteval">
+  </div>
+</div>
+<p>
+  <strong><big>Step 4.</big></strong> &emsp;
+  Then the double integral of \(f(r,\theta)\) over the
+  region \(R\) is the limit of Riemann sums:
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\lim_{\begin{aligned}&\scriptstyle\quad q\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta\theta_j\rightarrow0\end{aligned}}
+   \lim_{\begin{aligned}&\scriptstyle\quad p\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta r_i\rightarrow0\end{aligned}}
+  \sum_{j=1}^q\sum_{i=1}^p f(r_i^*,\theta_j^*)\,r_i^*\,\Delta r_i\,\Delta\theta_j
+  \]
+</p>
+<p>
+  <strong><big>Step 5a.</big></strong> &emsp;
+  Since the limit of a sum is the sum of the limits, and \(\Delta\theta_j\)
+  is independent of the index \(i\) and the limit variable \(p\),
+  we can write this as
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\lim_{\begin{aligned}&\scriptstyle\quad q\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta\theta_j\rightarrow0\end{aligned}}
+  \sum_{j=1}^q \left(
+   \lim_{\begin{aligned}&\scriptstyle\quad p\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta r_i\rightarrow0\end{aligned}}
+  \sum_{i=1}^p f(r_i^*,\theta_j^*)\,r_i^*\,\Delta r_i
+  \right)\Delta\theta_j
+  \]
+  We recognize this as the double iterated integral:
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\int_\alpha^\beta\int_a^b f(r,\theta)\,r\,dr\,d\theta
+  \]
+  where we first compute the \(r\) integral holding \(\theta\) fixed and
+  then do the \(\theta\) integral.
+</p>
+<p>
+  <strong><big>Step 5b.</big></strong> &emsp;
+  The original double integral, in Step 4, can also be written as
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\lim_{\begin{aligned}&\scriptstyle\quad p\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta r_i\rightarrow0\end{aligned}}
+   \lim_{\begin{aligned}&\scriptstyle\quad q\rightarrow\infty \\
+                        &\scriptstyle\text{max}\Delta\theta_j\rightarrow0\end{aligned}}
+  \sum_{i=1}^p\sum_{j=1}^q f(r_i^*,\theta_j^*)\,r_i^*\Delta\theta_j\,\Delta r_i\,
+  \]
+  by interchanging the order of the limits and sums. The same argument, as
+  in Step 5a but interchanging \(r\) and \(\theta\), \(p\) and \(q\), and
+  \(i\) and \(j\), gives
+  \[
+  \iint\limits_R f(x,y)\,dA
+  =\int_a^b\int_\alpha^\beta f(r,\theta)\,r\,d\theta\,dr
+  \]
+  where we first compute the \(\theta\) integral holding \(r\) fixed and
+  then do the \(r\) integral.
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Gauss&#39; Law | 27. Gauss&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplFluidFlow.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>27. Gauss&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Gauss' Theorem">
+  Let \(V\) be a nice solid region in \(\mathbb{R}^3\) with a nice
+  properly oriented boundary, \(\partial V\), and let \(\vec F\)
+  be a nice vector field on \(V\). Then
+  \[
+  \iiint_V \vec\nabla\cdot\vec F\,dV
+  =\iint_{\partial V} \vec F\cdot d\vec S
+  \]
+  The outer boundary must be oriented outward while any inner
+  boundaries must be oriented inward. This means that all pieces of the
+  boundary are oriented away from the solid.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>5. Gauss&#39; Law</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  <strong>Gauss' Law</strong> is a law of physics relating electric charge
+  to the electric field. It can be written in a differential or integral
+  version, which are related by Gauss' Theorem.
+  The differential version states that the divergence of the electric field is
+  equal to \(4\pi\) times the electric charge density \(\delta_e\). The
+  integral version states that the flux of the electric field through a closed
+  surface is equal to \(4\pi\) times the net electric charge \(Q\) contained
+  within the volume whose boundary is the given closed surface.
+  (The coefficient \(4\pi\) may change for other choices of units.)
+</p>
+<ol>
+  <li>
+    <strong>Differential version:</strong>&emsp;
+    \(\vec\nabla\cdot\vec E=4\pi\delta_e\)
+  </li>
+  <li>
+    <strong>Integral version:</strong>&emsp;
+    \(\displaystyle \iint_{\partial V} \vec E\cdot d\vec S
+    =4\pi Q\)
+  </li>
+</ol>
+
+<p class="remark">
+  \(\delta_e\) is the electric charge density and \(Q\) is the net electric
+  charge in a solid region \(V\) which can be computed from the integral
+  \(\displaystyle Q=\iiint_V \delta_e\,dV\). And the closed surface
+  \(\partial V\) is the boundary of \(V\).
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Prove the differential version of Gauss' Law implies the integral version,
+    using Gauss' Theorem.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Start by applying Gauss' Theorem to the integral
+    \(\displaystyle \iint_{\partial V} \vec E\cdot d\vec S\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We start by applying Gauss' Theorem to the left side of the integral
+    version of Gauss' Law:
+      \[
+      \iint_{\partial V} \vec E\cdot d\vec S
+      =\iiint_V \vec\nabla\cdot\vec E\,dV
+      \]
+    Then, we use the differential version of Gauss' Law,
+      \(\vec\nabla\cdot\vec E=4\pi\delta_e\),
+    to get
+      \[
+      \iint_{\partial V} \vec E\cdot d\vec S
+      =4\pi\iiint_V \delta_e\,dV
+      \]
+    Finally, we use the formula for the net charge as the integral of the
+    charge density
+      \(\displaystyle Q=\iiint_V \delta_e\,dV\)
+    to obtain:
+      \[
+      \iint_{\partial V} \vec E\cdot d\vec S
+      =4\pi Q
+      \]
+    Thus, we have proven the integral version of Gauss' Law by using
+    Gauss' Theorem and the differential version of Gauss' Law.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  In the following example, we will use Gauss' Law to find the charge \(Q\)
+  inside a sphere from the electric field \(\vec E\) in two different ways,
+  once from a volume integral of the density and once from a surface integral
+  over a sphere.
+</p>
+<p class="example" data-number="2">
+  Assume the electric field in a region of space is
+  \[
+  \vec E=\left\langle
+  \dfrac{x}{(x^2+y^2+z^2)^{1/2}},
+  \dfrac{y}{(x^2+y^2+z^2)^{1/2}},
+  \dfrac{z}{(x^2+y^2+z^2)^{1/2}}
+  \right\rangle
+  \]
+</p>
+<div class="column">
+  <div>
+    <p>
+      Compute the total charge inside the sphere of radius \(3\) centered at
+      the origin in two ways.
+    </p>
+    <p class="remark">
+      In spherical coordinates, if \(\vec r=\langle x,y,z\rangle\) then
+      \(|\vec r|=\sqrt{x^2+y^2+z^2}=\rho\) and
+      \(\hat r=\left\langle \dfrac{x}{\rho},\dfrac{y}{\rho},\dfrac{z}{\rho}\right\rangle\).
+      Consequently, \(\vec E=\hat r\), the unit vector in the radial direction
+      as shown in the plot.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_GaussLaw_sph.jpg" alt="eg_GaussLaw_sph">
+  </div>
+</div>
+<p class="sol" data-number="Method 1">
+  &emsp; We first find \(\delta_e\) using Gauss' law, and then compute \(Q\) as a volume
+  integral.
+</p>
+<p>
+  To use the differential version of Gauss' Law, we need to find the
+  divergence of \(\vec E\). By the quotient rule,
+  \[\begin{aligned}
+  \dfrac{\partial E_1}{\partial x}
+  &=\dfrac
+    {(x^2+y^2+z^2)^{1/2}\cdot1-x\cdot\dfrac{1}{2}(x^2+y^2+z^2)^{-1/2}2x}
+    {x^2+y^2+z^2 } \\[2pt]
+  &=\dfrac{(x^2+y^2+z^2)-x^2}{(x^2+y^2+z^2)^{3/2}}
+  =\dfrac{y^2+z^2}{(x^2+y^2+z^2)^{3/2}}
+  \end{aligned}\]
+  Similarly
+  \[
+  \dfrac{\partial E_2}{\partial y}
+  =\dfrac{x^2+z^2}{(x^2+y^2+z^2)^{3/2}}
+  \qquad \text{and} \qquad
+  \dfrac{\partial E_3}{\partial z}
+  =\dfrac{x^2+y^2}{(x^2+y^2+z^2)^{3/2}}
+  \]
+  So
+  \[\begin{aligned}
+  \vec\nabla\cdot\vec E
+  &=\dfrac{y^2+z^2}{(x^2+y^2+z^2)^{3/2}}
+   +\dfrac{x^2+z^2}{(x^2+y^2+z^2)^{3/2}}
+   +\dfrac{x^2+y^2}{(x^2+y^2+z^2)^{3/2}} \\[2pt]
+  &=\dfrac{2(x^2+y^2+z^2)}{(x^2+y^2+z^2)^{3/2}}
+  =\dfrac{2}{\sqrt{x^2+y^2+z^2}}
+  \end{aligned}\]
+  By Gauss' Law,
+  \[
+  \delta_e=\dfrac{1}{4\pi}\vec\nabla\cdot\vec E
+  =\dfrac{1}{2\pi\sqrt{x^2+y^2+z^2 } }.
+  \]
+  This is the charge density at each point in the sphere.
+  In spherical coordinates, \(\delta_e=\dfrac{1}{2\pi\rho}\).
+  To find the charge, we use spherical coordinates and integrate over the volume
+  \[\begin{aligned}
+  Q&=\iiint_V \delta_e\,dV
+  =\int_0^{2\pi}\int_0^\pi\int_0^3 \dfrac{1}{2\pi\rho}
+  \rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  &=\dfrac{1}{2\pi}\int_0^{2\pi} 1\,d\theta \int_0^\pi \sin\phi\,d\phi
+  \int_0^3 \rho\,d\rho \\
+  &=\left[\rule{0pt}{10pt}-\cos\phi\right]_0^\pi \left[\dfrac{\rho^2 }{2}\right]_0^3
+  =(1-(-1))\dfrac{9}{2}=9
+  \end{aligned}\]
+</p>
+<p class="sol" data-number="Method 2">
+  &emsp; Alternatively, use Gauss' Law to find
+  \(\displaystyle Q=\dfrac{1}{4\pi}\iint_{\partial V} \vec E\cdot d\vec S\)
+</p>
+<p>
+  Here the integral is computed over the surface of the sphere parametrized
+  as:
+  \[
+  \vec R(\phi,\theta)
+  =(3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi)
+  \]
+  The normal is:
+  \[
+  \vec N
+  =\langle 9\sin^2\phi\cos\theta,9\sin^2\phi\sin\theta,9\sin\phi\cos\phi\rangle
+  \]
+  On the sphere, the electric field \(\vec E\) is
+  \[\begin{aligned}
+  \vec E(\vec R(\phi,\theta))
+  &=\left\langle
+  \dfrac{x}{(x^2+y^2+z^2)^{1/2}},
+  \dfrac{y}{(x^2+y^2+z^2)^{1/2}},
+  \dfrac{z}{(x^2+y^2+z^2)^{1/2}}
+  \right\rangle\\
+  &=\left\langle
+  \dfrac{3\sin\phi\cos\theta}{3},
+  \dfrac{3\sin\phi\sin\theta}{3},
+  \dfrac{3\cos\phi}{3}\right\rangle\\
+  &=\langle \sin\phi\cos\theta,\sin\phi\sin\theta,\cos\phi\rangle
+  \end{aligned}\]
+  Their dot product is:
+  \[\begin{aligned}
+  \vec E\cdot\vec N
+  &=9\sin^3\phi\cos^2\theta+9\sin^3\phi\sin^2\theta+9\sin\phi\cos^2\phi \\
+  &=9\sin^3\phi+9\sin\phi\cos^2\phi \\
+  &=9\sin\phi(\sin^2\phi+\cos^2\phi)
+  =9\sin\phi
+  \end{aligned}\]
+  We can now integrate:
+  \[\begin{aligned}
+  \iint_{\partial V} &\vec E\cdot d\vec S
+  =\int_0^{2\pi}\int_0^\pi \vec E\cdot\vec N\,d\phi\,d\theta
+   =\int_0^{2\pi}\int_0^\pi 9\sin\phi\,d\phi\,d\theta\\
+  &=9(2\pi)\left[\rule{0pt}{10pt}-\cos\phi\right]_0^\pi
+  =18\pi(-(-1)-(-1))=36\pi
+  \end{aligned}\]
+  Finally we use the integral version of Gauss' Law to compute the charge:
+  \[
+  Q=\dfrac{1}{4\pi}\iint_{\partial V} \vec E\cdot d\vec S=
+  \dfrac{36\pi}{4\pi}=9
+  \]
+  This agrees with our other method of calculating \(Q\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="exercise" data-number="3">
+    The electric field inside a block of semiconductor with dimensions
+    \(0 \le x \le 4\), \(0 \le y \le 3\) and \(0 \le z \le 2\) is
+    \[
+    \vec E=\langle 3x+5y-4z,x-2y+5z,3x-2y+5z\rangle
+    \]
+    Compute the net charge inside the block in two ways.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_GaussLaw_box.jpg" alt="eg_GaussLaw_box">
+  </div>
+</div>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Use the differential form of Gauss' Law to find the charge density and
+        integrate to find the net charge.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX3a"></button>
+        <button class="toggle has-sol" data-toggle="SolX3a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX3a">
+      <p>
+        \(Q=\dfrac{36}{\pi}\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX3a">
+      <p>
+        We use Gauss' Law to find the charge density:
+        \[
+        \delta_e=\dfrac{1}{4\pi}\vec\nabla\cdot\vec E
+        =\dfrac{1}{4\pi}(3-2+5)=\dfrac{3}{2\pi}
+        \]
+        Then we integrate to get the net charge:
+        \[
+        Q=\iiint_V \delta_e\,dV
+        =\int_0^2\int_0^3\int_0^4 \dfrac{3}{2\pi}\,dx\,dy\,dz
+        =24\dfrac{3}{2\pi}=\dfrac{36}{\pi}
+        \]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Use the integral form of Gauss' Law to find the net charge.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX3b"></button>
+        <button class="toggle has-sol" data-toggle="SolX3b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX3b">
+      <p>
+        \(Q=\dfrac{36}{\pi}\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX3b">
+      <p>
+        We need to do \(6\) surface integrals. Everything is in
+        rectangular coordinates. Recall:
+        \(\vec E=\langle 3x+5y-4z,x-2y+5z,3x-2y+5z\rangle\)
+      </p>
+      <p>
+        \(x=0\):&emsp; The normal is \(\vec N=-\hat\imath\) and its dot
+        product with \(\vec E\) on the surface is
+        \(\vec E\cdot\vec N=-(5y-4z)\).
+        \[
+        \iint_{x=0} \vec E\cdot d\vec S
+        =-\int_0^2\int_0^3 (5y-4z)\,dy\,dz
+        =-21
+        \]
+        \(x=4\):&emsp; The normal is \(\vec N=\hat\imath\) and its dot
+        product with \(\vec E\) on the surface is
+        \(\vec E\cdot\vec N=(12+5y-4z)\).
+        \[
+        \iint_{x=0} \vec E\cdot d\vec S
+        =\int_0^2\int_0^3 (12+5y-4z)\,dy\,dz
+        =93
+        \]
+        \(y=0\):&emsp; The normal is \(\vec N=-\hat\jmath\) and its dot
+        product with \(\vec E\) on the surface is
+        \(\vec E\cdot\vec N=-(x+5z)\).
+        \[
+        \iint_{y=0} \vec E\cdot d\vec S
+        =-\int_0^2\int_0^4 (x+5z)\,dx\,dz
+        =-56
+        \]
+        \(y=3\):&emsp; The normal is \(\vec N=\hat\jmath\) and its dot
+        product with \(\vec E\) on the surface is
+        \(\vec E\cdot\vec N=(x-6+5z)\).
+        \[
+        \iint_{y=3} \vec E\cdot d\vec S
+        =\int_0^2\int_0^4 (x-6+5z)\,dx\,dz
+        =8
+        \]
+        \(z=0\):&emsp; The normal is \(\vec N=-\hat k\) and its dot
+        product with \(\vec E\) on the surface is
+        \(\vec E\cdot\vec N=-(3x-2y)\).
+        \[
+        \iint_{y=0} \vec E\cdot d\vec S
+        =-\int_0^3\int_0^4 (3x-2y)\,dx\,dy
+        =-36
+        \]
+        \(z=2\):&emsp; The normal is \(\vec N=\hat k\) and its dot
+        product with \(\vec E\) on the surface is
+        \(\vec E\cdot\vec N=(3x-2y+10)\).
+        \[
+        \iint_{y=3} \vec E\cdot d\vec S
+        =\int_0^3\int_0^4 (3x-2y+10)\,dx\,dy
+        =156
+        \]
+        We add the \(6\) integrals to get the total flux. So the charge is:
+        \[\begin{aligned}
+        Q&=\dfrac{1}{4\pi}\iint_{\partial V} \vec E\cdot d\vec S \\
+        &=\dfrac{1}{4\pi}(-21+93-56+8-36+156)
+        =\dfrac{36}{\pi}
+        \end{aligned}\]
+        This is the same as part (a).
+      </p>
+    </div>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Area Below a Curve | 10. Area and Average Value</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Between.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Area and Average Value</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a. Area Below a Curve</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  You already know how to solve problems of the following type:
+</p>
+<div class="column">
+  <div>
+    <p class="genexample" data-number="1">
+      Find the area below a positive function \(y=f(x)\) above
+			the \(x\)-axis between \(x=a\) and \(x=b\).
+    </p>
+    <p class="remark">
+      Recall that this area is the integral:
+			\[
+      A=\int_a^b f(x)\,dx
+      \]
+			However, you should also recall the derivation of this formula,
+			since it is the model for all the other applications of integration.
+    </p>
+    <p class="der">
+			The formula for the area is derived by slicing up the region into
+			\(n\) rectangles each of width \(\Delta x=\dfrac{b-a}{n}\) and
+			height \(f(x_i^*)\) where \(x_i^*\) is a
+      point in the \(i^\text{th}\) interval \([x_{i-1},x_i]\).
+    </p>
+    <p>
+      The area is then obtained by adding up the areas of the rectangles and
+      taking the limit as the number of rectangles becomes large,
+			(\(n\rightarrow\infty\)):
+      \[
+      A=\lim_{n\rightarrow\infty}\sum_{i=1}^n
+			f(x_i^*)\Delta x
+      \]
+      This limit of a sum is recognized as the integral
+			\(\displaystyle A=\int_a^b f(x)\,dx\).
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_below1.jpg" alt="eg_below1">
+    <img src="graphics/eg_below1rect.jpg" alt="eg_below1rect">
+    <img src="graphics/eg_below1rect_anim.gif" alt="eg_below1rect_anim">
+  </div>
+</div>
+<p class="formula" data-title="Area Below a Curve">
+  The area below a positive function \(y=f(x)\) above the \(x\)-axis
+  between \(x=a\) and \(x=b\) is
+  \[A=\int_a^b f(x)\,dx\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+		<p class="example" data-number="2">
+		  Find the area below the curve \(y=x(x-3)^2\) and
+		  above the \(x\)-axis between \(x=0\) and \(x=3.\)
+		</p>
+		<p class="sol">
+			The area is
+		  \[\begin{aligned}
+	    A&=\int_0^3 x(x-3)^2\,dx \\
+	    &=\int_0^3 (x^3-6x^2+9x)\,dx \\
+	    &=\left[\dfrac{x^4}{4}-2x^3+\dfrac{9}{2}x^2\right]_{x=0}^3
+			=\dfrac{27}{4}
+		  \end{aligned}\]
+		</p>
+	</div>
+	<div class="center">
+	  <img src="graphics/eg_below_x(x-3)^2.jpg" alt="eg_below_x(x-3)^2">
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  Now try it yourself:
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Plot the parabola \(y=9-x^2\) and find the area below the parabola above the
+    \(x\)-axis.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Find the limits by solving \(9-x^2=0\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+	<div class="column">
+	  <div>
+			<p>
+				\(\displaystyle A=\int_{-3}^3 (9-x^2)\,dx=36\)
+			</p>
+		</div>
+	  <div class="center">
+	      <img src="graphics/ex_below_9-x^2.jpg" alt="ex_below_9-x^2">
+	  </div>
+	</div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+	<div class="column">
+	  <div>
+			<p>
+		    To find the limits on the integral, we solve the equation \(9-x^2=0\)
+				to get \(x=-3,3\). So the area is
+		    \[\begin{aligned}
+	      A&=\int_{-3}^3 (9-x^2)\,dx
+				=\left[9x-\dfrac{x^3}{3}\right]_{-3}^3 \\
+	      &=(27-9)-(-27+9)
+				=36
+		    \end{aligned}\]
+			</p>
+		</div>
+	  <div class="center">
+	      <img src="graphics/ex_below_9-x^2.jpg" alt="ex_below_9-x^2">
+	  </div>
+	</div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c.2. Applications of Directional Derivatives | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DirecDeriv.html" title="Previous">&lArr;</a></li>
+      <li><a href="PropGrad.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c.2. Applications of Directional Derivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="example" data-number="1">
+  The temperature in a room is given by
+  \(T=(275+\sin(\pi x)\cos(\pi y)+\sin(\pi z))^\circ K\). Find the rate of change of
+  \(T\) at \((2,-1,2)\) in the direction toward \((3,-3,4)\). Assume \(x\),
+  \(y\) and \(z\) are in meters and \(T\) is in \(^\circ\text{K}\).
+</p>
+<p class="sol">
+  We need to find the rate of change of the temperature in the direction of
+  the vector from \(P=(2,-1,2)\) to \(Q=(3,-3,4)\). This is a directional
+  derivative. The vector from \(P\) to \(Q\) is:
+  \[
+  \overrightarrow{PQ}=\langle 1,-2,2\rangle
+  \]
+  Its length is \(\left|\overrightarrow{PQ}\right|=\sqrt{1+4+4}=3\) and the
+  unit vector is:
+  \[
+  \widehat{PQ}
+  =\left\langle \dfrac{1}{3},\dfrac{-2}{3},\dfrac{2}{3}\right\rangle
+  \]
+  The gradient of the temperature is:
+  \[\begin{aligned}
+  \vec\nabla T
+  &=\left\langle \dfrac{\partial T}{\partial x},
+                 \dfrac{\partial T}{\partial y},
+                 \dfrac{\partial T}{\partial z}\right\rangle \\
+  &=\langle \pi\cos(\pi x)\cos(\pi y),
+            -\pi\sin(\pi x)\sin(\pi y),
+            \pi\cos(\pi z)\rangle
+  \end{aligned}\]
+  At \(P=(2,-1,2)\) this is
+  \[\begin{aligned}
+  \left.\vec\nabla T\right|_P
+  &=\langle \pi\cos(2\pi)\cos(-\pi),
+            -\pi\sin(2\pi)\sin(-\pi),
+            \pi\cos(2\pi)\rangle \\
+  &=\langle-\pi,0,\pi\rangle
+  \end{aligned}\]
+  So the directional derivative is:
+  \[\begin{aligned}
+  \nabla_{\widehat{PQ}}T
+  &=\widehat{PQ}\cdot\left.\vec\nabla T\right|_P
+  =\left\langle \dfrac{1}{3},\dfrac{-2}{3},\dfrac{2}{3}\right\rangle
+  \cdot\langle-\pi,0,\pi\rangle \\
+  &=-\,\dfrac{\pi}{3}+0+\dfrac{2\pi}{3}=\dfrac{\pi}{3}
+  \end{aligned}\]
+  The derivative \(\dfrac{\partial T}{\partial x}\) has units
+  \(\dfrac{^\circ\text{K}}{\text{m}}\). So those are the units of the
+  gradient. The displacement vector, \(\overrightarrow{PQ}\), and its length
+  \(|\overrightarrow{PQ}|\), have units of \(\text{m}\). So the direction
+  vector, \(\widehat{PQ}\), is dimensionless. So the directional derivative,
+  \(\widehat{PQ}\cdot\left.\vec\nabla T\right|_P\), has units
+  \(\dfrac{^\circ\text{K}}{\text{m}}\). So the answer is
+  \[
+  \nabla_{\widehat{PQ}}T=\dfrac{\pi}{3}\,\dfrac{^\circ\text{K}}{\text{m}}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the rate of change of the temperature \(T=xy^2+yz^2\) at the point
+    \(P=(3,1,2)\) if we move toward the point \(Q=(1,3,3)\) with speed
+    \(6\,\dfrac{\text{m}}{\text{sec}}\). Assume \(x\), \(y\) and \(z\) are
+    in meters and \(T\) is in \(^\circ\text{K}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Get the velocity by combining the speed with the direction.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\nabla_{\vec v}T=44\,\dfrac{^\circ\text{K}}{\text{sec}}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The vector from \(P\) to \(Q\) is
+    \(\overrightarrow{PQ}=Q-P=\langle -2,2,1\rangle\).
+    Its length is
+    \(|\overrightarrow{PQ}|=\sqrt{4+4+1}=3\).
+    So its direction is:
+    \[
+    \hat v=\widehat{PQ}
+    =\left\langle \dfrac{-2}{3},\dfrac{2}{3},\dfrac{1}{3}\right\rangle
+    \]
+    The speed is \(|\vec v|=6\). So the velocity is
+    \[
+    \vec v=|\vec v|\hat v
+    =\langle -4,4,2\rangle
+    \]
+    The gradient of \(T\) is
+    \(\vec\nabla T=\langle y^2,2xy+z^2,2yz\rangle\).
+    At the point \(P=(3,1,2)\), this is:
+    \[
+    \left.\vec\nabla T\right|_P
+    =\langle 1,10,4\rangle
+    \]
+    So the derivative of \(T\) with respect to \(\vec v\) is:
+    \[\begin{aligned}
+    \nabla_{\vec v}T
+    &=\vec v\cdot\left.\vec\nabla T\right|_P
+    =\langle -4,4,2\rangle\cdot\langle 1,10,4\rangle \\
+    &-4+40+8=44\,\dfrac{^\circ\text{K}}{\text{sec}}
+    \end{aligned}\]
+    Alternatively, we can find the directional derivative of \(T\) along
+    \(\hat v\) which is:
+    \[\begin{aligned}
+    \nabla_{\hat v}T
+    &=\hat v\cdot\left.\vec\nabla T\right|_P
+    =\left\langle \dfrac{-2}{3},
+    \dfrac{2}{3},\dfrac{1}{3}\right\rangle\cdot\langle 1,10,4\rangle \\
+    &=\dfrac{-2}{3}+\dfrac{20}{3}+\dfrac{4}{3}
+    =\dfrac{22}{3}\,\dfrac{^\circ\text{K}}{\text{m}}
+    \end{aligned}\]
+    and multiply by the speed to get:
+    \[
+    \nabla_{\vec v}T
+    =|\vec v|\nabla_{\hat v}T
+    =6\,\dfrac{\text{m}}{\text{sec}}
+    \cdot\dfrac{22}{3}\,\dfrac{^\circ\text{K}}{\text{m}}
+    =44\,\dfrac{^\circ\text{K}}{\text{sec}}
+   \]
+  </p>
+</div>
+<p class="remark">
+  It is interesting to note the difference in units between the answers to the
+  example and the exercise. The directional derivative in the example gives
+  rate of change with respect to distance while the derivative along a vector
+  in the exercise gives the rate of change with  respect to time.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Balancing Torques | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TripleGeom.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Applications</h2>
+
+
+      
+      <h2>1. Balancing Torques</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<div>
+		<p>
+		  A simple application of cross products occurs in physics when we
+			balance torques to analyze a static rotational situation in mechanics.
+		</p>
+		<p  class="def" data-title="Torque">
+			Suppose a rigid object is fixed at a
+			<span class="defword">pivot point</span>, \(O\) but is free to rotate
+			about that point. If we push on the	object	with a
+			<span class="hl">force</span>, \(\vec F\), applied at an
+			<span class="defword">application point</span>, \(P\), then
+			we are applying the <span class="defword">torque</span>:
+			\[
+			\vec\tau=\vec r\times\vec F
+			\]
+			where \(\vec r=\overrightarrow{OP}\) is the
+			<span class="defword">position vector</span> of the
+			<span class="hl">application point</span>, \(P\).
+		</p>
+		<p>
+			We want to analize this rotational motion.
+		</p>
+	</div>
+	<div class="center">
+		<img src="graphics/DefTorque.jpg" alt="DefTorque"/>
+	</div>
+</div>
+<p  class="def" data-title="Angular Velocity and Angular Acceleration">
+	If the object rotates about a fixed
+	<span class="defword">rotation axis</span>, \(\hat N\), by a
+	<span class="defword">rotation angle</span>, \(\theta\),
+	then its <span class="defword">angular velocity</span> is:
+	\[
+	\vec\omega=\dfrac{d\theta}{dt}\hat N
+	\]
+	and its	<span class="defword">angular acceleration</span> is:
+	\[
+	\vec\alpha=\dfrac{d^2\theta}{dt^2}\hat N
+	\]
+</p>
+<p>
+	<span class="hl">Newton's Second Law of Motion</span> can be generalized to
+	his <span class="hl">Newton's Second Law of Rotational Motion</span>:
+</p>
+<p class="appl" data-title="Newton's Second Law of (Linear) Motion">
+	If one or more unbalanced <span class="hl">forces</span> act on an object,
+	then the object will move with	a <span class="hl">(linear) acceleration</span>
+	\(\vec a\) satisfying:
+	\[
+  m\,\vec a=\vec F
+  \]
+	where \(m\) is the <span class="hl">mass</span> of the object and
+	\(\vec F\) is the sum of all forces acting on the object.
+</p>
+<p>
+	Analogously:
+</p>
+<p class="appl" data-title="Newton's Second Law of Rotational Motion">
+	If one or more unbalanced <span class="hl">torques</span> act on an object,
+	then the object will rotate with an	<span class="hl">angular acceleration</span>
+	\(\vec\alpha\) satisfying:
+	\[
+	I\,\vec\alpha=\vec\tau
+  \]
+	where \(I\) is the <span class="hl">moment of inertia</span> of the object and
+	\(\vec\tau\) is the sum of all torques acting on the object.
+</p>
+<p>
+	If the object is static	(not moving) then its angular acceleration is
+	\(\vec\alpha=\vec 0\) and the sum of the torques must be zero. We can use
+	this to find one or more torques when we know the other torques in a static
+	situation.
+</p>
+<p class="remark">
+	Since \(\vec\alpha=\vec 0\), we will not need to understand the
+	moment of inertia in this chapter.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+		A bar is initially at rest along the \(y\)-axis between
+		\(y=-4\) and \(y=5\). The bar is held fixed at the origin,
+		\(O=(0,0,0)\). Two torques are applied with the forces
+		and application points given here:
+	  \[\begin{aligned}
+    \vec F_1&=\left\langle 2,-1,-1\right\rangle
+		&\quad P_1&=(0,3,0) \\
+    \vec F_2&=\left\langle 3,1,-2\right\rangle
+		&\quad P_2&=(0,-2,0)
+	  \end{aligned}\]
+		Would the object start rotating or not? If it would start rotating,
+		what force, \(\vec F_3=\left\langle a,b,c\right\rangle\), can be
+		applied at the point, \(P_3=(0,1,0)\) to
+		counteract the other forces and keep the object static?
+  </p>
+  <div class="center">
+    <img src="graphics/eg_BalTorques.jpg" alt="eg_BalTorques"/>
+  </div>
+</div>
+<p class="sol">
+	The lever arms and torques are:
+	\[\begin{aligned}
+	&\vec r_1=P_1-O=\left\langle 0,3,0\right\rangle &\quad
+	&\vec\tau_1=\vec r_1\times\vec F_1
+	=\begin{vmatrix}
+	\hat\imath & \hat\jmath & \hat k \\
+	0 & 3 & 0 \\
+	2 & -1 & -1
+	\end{vmatrix}
+	=\left\langle -3,0,-6\right\rangle \\
+	&\vec r_2=P_2-O=\left\langle 0,-2,0\right\rangle &\quad
+	&\vec\tau_2=\vec r_2\times\vec F_2
+	=\begin{vmatrix}
+	\hat\imath & \hat\jmath & \hat k \\
+	0 & -2 & 0 \\
+	3 & 1 & -2
+	\end{vmatrix}
+	=\left\langle 4,0,6\right\rangle
+	\end{aligned}\]
+	So the sum of the torques is:
+	\[
+	\vec\tau_1+\vec\tau_2
+	=\left\langle -3,0,-6\right\rangle+\left\langle 4,0,6\right\rangle
+	=\left\langle 1,0,0\right\rangle
+	\]
+	and the object would start rotating. To counteract this torque, the
+	third torque must be \(\vec\tau_3=\left\langle -1,0,0\right\rangle\).
+	If the force, \(\vec F_3=\left\langle a,b,c\right\rangle\), is applied at
+	the	point, \(P_3=(0,1,0)\) then the lever arm and the torque are:
+	\[
+	\vec r_3=P_3-O=\left\langle 0,1,0\right\rangle \qquad
+	\vec\tau_3=\vec r_3\times\vec F_3
+	=\begin{vmatrix}
+	\hat\imath & \hat\jmath & \hat k \\
+	0 & 1 & 0 \\
+	a & b & c
+	\end{vmatrix}
+	=\left\langle c,0,-a\right\rangle
+	\]
+	Equating the two expressions for \(\vec\tau_3\) we get
+	\(c=-1\), \(a=0\) and \(\vec b\) is abitrary.
+	So the torque is balanced by a force of the form,
+	\(\vec F_3=\left\langle 0,b,-1\right\rangle\), for any \(b\).
+</p>
+<p class="remark">
+	Notice that \(b\) is arbitrary because the vector
+	\(\left\langle 0,b,0\right\rangle\) is parallel	to the lever arm
+	\(\overrightarrow{OP_3}=\left\langle 0,1,0\right\rangle\) and
+	so has no effect on the torque.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+	<div class="column">
+	  <p class="exercise" data-number="2">
+	  	A bar is initially at rest along the \(y\)-axis between \(y=-4\)
+			and \(y=5\). The bar is held fixed at the origin,
+			\(O=(0,0,0)\). Two torques are applied with
+			the forces and application points given here:
+		  \[\begin{aligned}
+	    \vec F_1&=\left\langle 3,5,3\right\rangle
+			&\quad P_1&=(0,4,0) \\
+	    \vec F_2&=\left\langle 4,-1,4\right\rangle
+			&\quad P_2&=(0,-3,0)
+		  \end{aligned}\]
+	    Would the object start rotating or not? If it would start rotating,
+			what force, \(\vec F_3=\left\langle a,b,c\right\rangle\), can be
+			applied at the point, \(P_3=(0,1,0)\) to
+			counteract the other forces and keep the object static?
+	  </p>
+	  <div class="center">
+	    <img src="graphics/ex_BalTorques.jpg" alt="ex_BalTorques"/>
+	  </div>
+	</div>
+	<p class="center">
+		<button class="toggle has-ans" data-toggle="AnsX2"></button>
+		<button class="toggle has-sol" data-toggle="SolX2"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    The object will not start rotating.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The lever arms and torques are:
+		\[\begin{aligned}
+		&\vec r_1=P_1-O=\left\langle 0,4,0\right\rangle &\quad
+		&\vec\tau_1=\vec r_1\times\vec F_1
+		=\begin{vmatrix}
+		\hat\imath & \hat\jmath & \hat k \\
+    0 & 4 & 0 \\
+    3 & 5 & 3
+		\end{vmatrix}
+		=\left\langle 12,0,-12\right\rangle \\
+		&\vec r_2=P_2-O=\left\langle 0,-3,0\right\rangle &\quad
+		&\vec\tau_2=\vec r_2\times\vec F_2
+		=\begin{vmatrix}
+		\hat\imath & \hat\jmath & \hat k \\
+    0 & -3 & 0 \\
+    4 & -1 & 4
+		\end{vmatrix}
+		=\left\langle -12,0,12\right\rangle
+		\end{aligned}\]
+    So the sum of the torques is
+		\(\vec\tau_1+\vec\tau_2=\left\langle 0,0,0\right\rangle\)
+    and the object will not start rotating.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+	<div class="column">
+	  <p class="exercise" data-number="3">
+	  	A cube with side length \(2\), is sitting with its center at the
+			origin and its faces parallel to the coordinate planes. The pivot
+			point is at the origin, \(O=(0,0,0)\). Two torques
+			are applied with the forces and application points given here:
+		  \[\begin{aligned}
+	    \vec F_1&=\left\langle 1,1,3\right\rangle
+			&\quad P_1&=(1,1,0) \\
+	    \vec F_2&=\left\langle 0,-1,1\right\rangle
+			&\quad P_2&=(0,-1,-1)
+		  \end{aligned}\]
+	    Would the object start rotating or not? If it would start rotating,
+			what force, \(\vec F_3=\left\langle a,b,c\right\rangle\), can be
+			applied at the point \(P_3=(0,0,1)\) to
+			counteract the other forces and keep the object static?
+	  </p>
+	  <div class="center">
+	    <img src="graphics/ex_cubetorque.jpg" alt="ex_cubetorque"/>
+	  </div>
+	</div>
+	<p class="center">
+		<button class="toggle has-ans" data-toggle="AnsX3"></button>
+		<button class="toggle has-sol" data-toggle="SolX3"></button>
+		<button class="toggle has-rem" data-toggle="RemX3"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    The object will start rotating. A force of the form,
+		\(\vec F_3=\left\langle 3,1,c\right\rangle\) applied at the point
+		\(P_3=(0,0,1)\) will keep it from rotating.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The lever arms and torques are:
+		\[\begin{aligned}
+		&\vec r_1=P_1-O=\left\langle 1,1,0\right\rangle &\quad
+		&\vec\tau_1=\vec r_1\times\vec F_1
+		=\begin{vmatrix}
+		\hat\imath & \hat\jmath & \hat k \\
+		1 & 1 & 0 \\
+		1 & 1 & 3
+		\end{vmatrix}
+		=\left\langle 3,-3,0\right\rangle \\
+		&\vec r_2=P_2-O=\left\langle 0,-1,-1\right\rangle &\quad
+		&\vec\tau_2=\vec r_2\times\vec F_2
+		=\begin{vmatrix}
+		\hat\imath & \hat\jmath & \hat k \\
+		0 & -1 & -1 \\
+		0 & -1 & 1
+		\end{vmatrix}
+		=\left\langle -2,0,0\right\rangle
+		\end{aligned}\]
+    So the sum of the torques is:
+		\[
+		\vec\tau_1+\vec\tau_2
+		=\left\langle 3,-3,0\right\rangle+\left\langle -2,0,0\right\rangle
+		=\left\langle 1,-3,0\right\rangle
+		\]
+		and the object would start rotating. To counteract this torque,
+		the third torque must be \(\vec\tau_3=\left\langle -1,3,0\right\rangle\).
+		If the force, \(\vec F_3=\left\langle a,b,c\right\rangle\), is applied
+		at the point, \(P_3=(0,0,1)\), then the lever	arm is
+		\(\vec r=\left\langle 0,0,1\right\rangle\) and the torque is:
+		\[
+		\vec\tau_3=\vec r_3\times\vec F_3
+		=\begin{vmatrix}
+		\hat\imath & \hat\jmath & \hat k \\
+		0 & 0 & 1 \\
+		a & b & c
+		\end{vmatrix}
+		=\left\langle -b,a,0\right\rangle
+		\]
+		Equating this to \(\vec\tau_3=\left\langle -1,3,0\right\rangle\) we get:
+		\[
+		b=1 \qquad a=3 \qquad \text{and} \qquad c\,\text{is arbitrary}
+		\]
+		So the torque is balanced by a force of the form,
+		\(\vec F_3=\left\langle 3,1,c\right\rangle\), for any \(c\).
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX3">
+  <p>
+		The reason \(c\) is arbitrary is that the vector
+		\(\left\langle 0,0,c\right\rangle\) is parallel	to the lever arm
+		\(\overrightarrow{OP}=\left\langle 0,0,1\right\rangle\) and
+		so has no effect on the torque.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

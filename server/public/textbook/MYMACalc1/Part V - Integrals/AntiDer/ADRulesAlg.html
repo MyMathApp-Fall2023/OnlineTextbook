@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Algebraic Operations | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NonUniq.html" title="Previous">&lArr;</a></li>
+      <li><a href="ADRulesExp.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Antiderivative Rules</h2>
+
+<p>
+  In general, a <span style="hl">derivative rule</span> produces an
+  <span style="hl">antiderivative rule</span>:
+  \[
+  \text{If} \qquad \dfrac{d}{dx}[F(x)]=f(x) \qquad \text{then} \qquad
+  F(x) \quad \text{is an antiderivative of} \quad f(x)\text{.}
+  \]
+</p>
+
+
+      
+      <h2>1. Algebraic Operations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We have learned how to differentiate many kinds of functions including
+  <span class="hl">powers of \(x\), exponentials, logarithms, trig functions
+  and inverse trig functions</span>
+  and how to combine these functions to produce other functions using the
+  <span class="hl">Sum, Constant Multiple, Product, Quotient, Extended Power
+  and Chain Rules</span>. All of
+  these can be reversed to give antiderivative rules. These are
+  shown in this table about algebraic operations and the ones on the
+  <a href="ADRulesExp.html" title="Return using the Back button.">
+  next three pages</a> about special functions. In each of the tables,
+  \(F(x)\) is an antiderivative of \(f(x)\),
+  \(P(x)\) is an antiderivative of \(p(x)\) and
+  \(Q(x)\) is an antiderivative of \(q(x)\). You can check each line of
+  the table by differentiating the quantity on the right to see you get the
+  quantity on the left.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Antiderivative Rules for Algebraic Operations</caption>
+  <thead class="thead">
+    <th></th>
+    <th><span style="font-weight:normal">If the</span> Function
+        <span style="font-weight:normal">is</span></th>
+    <th><span style="font-weight:normal">then the</span> General Antiderivative
+        <span style="font-weight:normal">is</span></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Constant</td>
+      <td>\(f(x)=0\)</td>
+      <td>\(F(x)=C\)<br>Antiderivatives are only determined up to a constant.</td>
+    </tr>
+    <tr>
+      <td>Identity</td>
+      <td>\(f(x)=1\)</td>
+      <td>\(F(x)=x+C\)</td>
+    </tr>
+    <tr>
+      <td>Power</td>
+      <td>\(f(x)=x^n\)</td>
+      <td>\(F(x)=\dfrac{x^{n+1}}{n+1}+C\)</td>
+    </tr>
+    <tr>
+      <td>Sum</td>
+      <td>\(f(x)=p(x)+q(x)\)</td>
+      <td>\(F(x)=P(x)+Q(x)+C\)</td>
+    </tr>
+    <tr>
+      <td>Constant Multiple</td>
+      <td>\(f(x)=c p(x)\)</td>
+      <td>\(F(x)=c P(x)+C\)</td>
+    </tr>
+    <tr>
+      <td>Product</td>
+      <td>\(f(x)=P(x) q(x)+Q(x) p(x)\)</td>
+      <td>\(F(x)=P(x) Q(x)+C\)</td>
+    </tr>
+    <tr>
+      <td>Quotient</td>
+      <td>\(f(x)=\dfrac{Q(x) p(x)- P(x) q(x)}{Q(x)^2}\)</td>
+      <td>\(F(x)=\dfrac{P(x)}{Q(x)}+C\)</td>
+    </tr>
+    <tr>
+      <td>Extended Power \(^*\)</td>
+      <td>\(f(x)=Q(x)^n q(x)\)</td>
+      <td>\(F(x)=\dfrac{Q(x)^{n+1}}{n+1}+C\)</td>
+    </tr>
+    <tr>
+      <td>Chain</td>
+      <td>\(f(x)=p(Q(x)) q(x)\)</td>
+      <td>\(F(x)=P(Q(x))+C\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  \(^*\)
+  The Extended Power Rule is the special case of the Chain Rule where
+  \(p(u)=u^n\) and so \(P(u)=\dfrac{u^{n+1}}{n+1}\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  The Product Rule, Quotient Rule and Chain Rule, as stated here for
+  antiderivatives, are not very useful. In a later chapter, we will
+  see another reversal of the Chain Rule as
+  <a href="../IntSubs/ChContents.html" title="Return using the Back button.">
+  Integration by Substitution</a>
+  and in Calculus 2 we will see a reversal of the Product Rule as
+  <a href="../../../MYMACalc2/Part I - Techniques of Integration/IntParts/ChContents.html"
+  title="Return using the Back button.">
+  Integration by Parts</a>.
+  There is no nice antiderivative rule corresponding to the Quotient Rule.
+</p>
+<a id="ADRules"></a>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the general antiderivative of
+    \(f(x)=12x^5-9x^2+4x+5\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(F=2x^6-3x^3+2x^2+5x+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    If \(f(x)=12x^5-9x^2+4x+5\), then by the Sum, Constant
+    Multiple and Power Rules, the general antiderivative is:
+    \[\begin{aligned}
+    F(x)&=12\left(\dfrac{x^6}{6}\right)-9\left(\dfrac{x^3}{3}\right)
+    +4\left(\dfrac{x^2}{2}\right)+5x+C \\
+    &=2x^6-3x^3+2x^2+5x+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    We check by differentiating. If \(F=2x^6-3x^3+2x^2+5x\), then:
+    \[
+    F'(x)=2\cdot6x^5-3\cdot3x^2+2\cdot2x+5=12x^5-9x^2+4x+5
+    \]
+  </p>
+</div>
+
+          <div class="rule"></div>
+
+<p>
+The Extended Power Rule is frequently used with trig functions:
+</p>
+<div class="dotfillex">
+<p class="exercise" data-number="2">
+Find the general antiderivative of
+\(g(x)=\tan^{11}x\sec^2x\).
+</p>
+<p>
+<button class="toggle has-ans" data-toggle="AnsX2"></button>
+<button class="toggle has-sol" data-toggle="SolX2"></button>
+<button class="toggle has-check" data-toggle="CkX2"></button>
+</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+<p>
+\(g(x)=\dfrac{\tan^{12}x}{12}+C\)
+</p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+<p>
+Recall \(\dfrac{d}{dx}\tan x=\sec^2x\). So by the Extended Power Rule,
+the general antiderivative of \(g(x)=\tan^{11}x\sec^2x\) is:
+\[
+G(x)=\dfrac{\tan^{12}x}{12}+C
+\]
+</p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+<p>
+We check by differentiating. If \(G(x)=\dfrac{\tan^{12}x}{12}\), then
+by the Chain Rule:
+\[
+G'(x)=\dfrac{1}{12}12\tan^{11}x\dfrac{d}{dx}\tan x
+=\tan^{11}x\sec^2x
+\]
+</p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

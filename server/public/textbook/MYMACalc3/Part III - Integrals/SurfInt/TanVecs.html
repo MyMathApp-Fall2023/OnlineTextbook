@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Tangent Vectors | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CoordCurves.html" title="Previous">&lArr;</a></li>
+      <li><a href="NormalVec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Tangent and Normal Vectors</h2>
+
+
+      
+      <h2>2. Tangent Vectors</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  For a 2D curvilinear coordinate system \(\vec R(u,v)\), the
+  coordinate tangent vectors are the tangent vectors to the coordinate curves.
+	\[
+	\vec e_u=\dfrac{\partial\vec R}{\partial u}
+	\qquad \text{and} \qquad
+	\vec e_v=\dfrac{\partial\vec R}{\partial v}
+	\]
+	\(\vec e_u\) is tangent to the \(u\)-curves and points in the direction
+	of increasing \(u\). \(\vec e_v\) is tangent to the \(v\)-curves and points
+	in the direction of increasing \(v\). We do the same thing for parametric
+	surfaces:
+</p>
+<div class="column">
+	<p class="def" data-title="Coordinate Tangent Vectors">
+	  The <span class="defword">tangent vector</span> to the \(u\)-curves is
+	  \[
+	  \vec{e}_u=\dfrac{\partial\vec R}{\partial u}
+		=\left\langle
+		\dfrac{\partial x}{\partial u},
+		\dfrac{\partial y}{\partial u},
+		\dfrac{\partial z}{\partial u}
+	  \right\rangle
+	  \]
+		and points in the direction of increasing \(u\).
+		<br>
+	  The <span class="defword">tangent vector</span> to the \(v\)-curves is
+	  \[
+	  \vec{e}_v=\dfrac{\partial\vec R}{\partial v}
+		=\left\langle
+		\dfrac{\partial x}{\partial v},
+		\dfrac{\partial y}{\partial v},
+		\dfrac{\partial z}{\partial v}
+	  \right\rangle
+	  \]
+		and points in the direction of increasing \(v\).
+		<br>
+		<big>PY: Make the blue vector shorter.</big>
+	</p>
+	<div class="center">
+		<img src="graphics/surfgrid-tanvec.jpg" alt="surfgrid-tanvec">
+	</div>
+</div>
+<p class="remark">
+  The vector \(\vec{e}_u\) (as well as \(\vec{e}_v\)) is analogous to the to
+	tangent (or velocity) vector to a parametric curve,
+  \(\vec r(t)=\left\langle x(t),y(t),z(t)\right\rangle\), given by:
+  \[
+	\vec{v}=\dfrac{d\vec r}{dt}
+	=\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle
+	\]
+  with the following exceptions:
+</p>
+<ol>
+  <li>
+    The parameter for \(\vec R(u,v_0)\) is \(u\) rather than \(t\); so
+    we need to differentiate the with respect to \(u\).
+  </li>
+  <li>
+    Since the \(v\)-coordinate is held constant at \(v_0\), the derivative
+    needs to be a partial derivative with respect to \(u\) instead of a total
+    derivative with respect to \(t\).
+  </li>
+  <li>
+    We do not refer to the tangent vector as a velocity because the
+    parameter, \(u\), represents a coordinate on the surface, not a time.
+  </li>
+  <li>
+    We use the symbols \(\vec e_u\) and \(\vec e_v\) rather than the letter
+		\(\vec{v}\) for the	tangent vectors, because they are not velocities and
+		also because we have already used \(v\) for a parameter.
+  </li>
+</ol>
+
+				<div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    Find the tangent vectors to the sphere of radius \(\rho=2\), parametrized by:
+		\[
+		\vec R(\phi,\theta)
+		=\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+		\]
+		<big>PY: Add the tangent vectors to the plot.</big>
+  </p>
+  <div class="center">
+    <img src="graphics/Sphere_coordcurves.jpg" alt="Sphere_coordcurves">
+  </div>
+</div>
+<p class="sol">
+  The tangent vectors to the \(\phi\) and \(\theta\) curves are
+  \[\begin{aligned}
+  \vec{e}_\phi&=\dfrac{\partial\vec R}{\partial\phi}
+	=\left\langle 2\cos\phi\cos\theta,2\cos\phi\sin\theta,-2\sin\phi\right\rangle \\
+  \vec{e}_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+	=\left\langle -2\sin\phi\sin\theta,2\sin\phi\cos\theta,\quad 0\quad \right\rangle
+  \end{aligned}\]
+	Notice that \(\vec{e}_\theta\) is horizontal since it is tangent to a line
+	of latitude and it points East in the direction of increasing \(\theta\).
+	Similarly, \(\vec{e}_\phi\) points South, tangent to a line of longitude,
+	in the direction of increasing \(\phi\).
+</p>
+
+				<div class="rule" id="ellipparab"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="2">
+	    Compute the tangent vectors to the elliptic paraboloid \(z=x^2+y^2\)
+			parametrized by:
+			\[
+			\vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+			\]
+			<big>PY: Change the grid on the paraboloid to polar. Add tangent vectors.</big>
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/EllipticParaboloid2.jpg" alt="EllipticParaboloid2">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+		\(\begin{aligned}
+		\vec e_r&=\left\langle \cos\theta,\sin\theta,2r\right\rangle \\
+		\vec e_\theta&=\left\langle -r\sin\theta,r\cos\theta,0\right\rangle
+		\end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+	  We simply compute:
+		\[\begin{aligned}
+	  \vec e_r&=\dfrac{\partial\vec R}{\partial r}
+		=\left\langle \cos\theta,\sin\theta,2r\right\rangle \\
+		\vec e_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+		=\left\langle -r\sin\theta,r\cos\theta,0\right\rangle
+		\end{aligned}\]
+  </p>
+</div>
+
+				<div class="rule" id="cylinder"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="3">
+			Find the tangent vectors to the piece of the cylinder \(x^2+z^2=4\)
+			between \(y=0\) and \(y=6+2x+3z\) parametrized by:
+	    \[
+			\vec R(\theta,y)=\left\langle 2\cos\theta,y,2\sin\theta\right\rangle
+			\]
+			<big>PY: Fix the grid to y theta. Add tangent vectors.</big>
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+      <button class="toggle has-sol" data-toggle="SolX3"></button>
+      <button class="toggle has-rem" data-toggle="RemX3"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/Cylinder_exercise2.jpg" alt="Cylinder_exercise2">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+	\(\begin{aligned}
+	\vec e_\theta&=\left\langle -2\sin\theta,0,2\cos\theta\right\rangle \\
+	\vec e_y&=\left\langle 0,1,0\right\rangle
+	\end{aligned}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+	  We simply compute:
+		\[\begin{aligned}
+	  \vec e_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+		=\left\langle -2\sin\theta,0,2\cos\theta\right\rangle \\
+		\vec e_y&=\dfrac{\partial\vec R}{\partial y}
+		=\left\langle 0,1,0\right\rangle
+		\end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX3">
+  <p>
+		Notice the parameter ranges have absolutely nothing to do with the
+		tangent vectors. They only affect the limits of integration.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

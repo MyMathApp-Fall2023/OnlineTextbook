@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Lagrange Multiplier Method | 16. Max-Min Problems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Constraint.html" title="Previous">&lArr;</a></li>
+      <li><a href="Parametrize.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>16. Max-Min Problems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Constrained Max-Min Problems</h2>
+
+
+      
+      <h2>2. Lagrange Multiplier Method</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p>
+    The method of Lagrange multipliers is best explained by looking at a
+    typical example. Suppose we want to maximize a function, \(f(x,y)\),
+    along a constraint curve, \(g(x,y)=C\). In the plots at the right, the
+    constraint, \(g(x,y)=C\), is shown in
+    <span style="color:blue"><strong>blue</strong></span>
+    and the level curves of the extremal, \(f\), are shown in
+    <span style="color:magenta"><strong>magenta</strong></span>.
+    It is obvious from the \(1^\text{st}\) plot that the maximum value of
+    \(f\) on the constraint is \(f=6\) which occurs at the point \(M\) where
+    the level curve \(f=6\) is tangent to the constraint \(g=C\).
+    If we were at any other point \(P\) where they are not tangent, then
+    we could move in the direction toward bigger values of \(f\) until we reach
+    \(M\).
+  </p>
+  <div class="center">
+    <img src="graphics/der_lagrange_max.gif" alt="der_lagrange_max">
+  </div>
+</div>
+<div class="column">
+  <p>
+    Similarly, the minimum \(f=-1\) occurs at the
+    point \(m\) where the level curve \(f=-1\) is also tangent to the
+    constraint \(g=C\).
+    If we were at any other point \(P\) where they are not tangent, then
+    we could move in the direction toward smaller values of \(f\) until we reach
+    \(m\).
+  </p>
+  <div class="center">
+    <img src="graphics/der_lagrange_min.gif" alt="der_lagrange_min">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Since the maximum and minimum of a function \(f\) on a constraint \(g=C\)
+  occur at points where the level curve of \(f\) is tangent to the constraint,
+  which is itself a level curve of \(g\). Since the level curves are tangent,
+  their normals are parallel. Further, the normals are the gradients of the
+  functions \(f\) and \(g\). However, although the gradients
+  \(\vec\nabla f\) and \(\vec\nabla g\) are parallel, their lengths can be
+  different, i.e.:
+  \[
+  \vec\nabla f=\lambda\vec\nabla g
+  \]
+  for some number \(\lambda\) (the Greek letter lambda) which is called the
+  <span class="defword">Lagrange multiplier</span>. These equations are
+  called the <span class="defword">Lagrange equations</span>. Since \(f\) and
+  \(g\) are functions of \(2\) variables, there are \(2\) components in
+  the gradients (the \(2\) partial derivatives) and so the Lagrange equations
+  provide \(2\) equations for the \(3\) variables \(x\), \(y\) and \(\lambda\).
+  We need one more equation. It is the constraint equation \(g=C\). So
+  we solve the Lagrange equations together with the constraint for \(x\),
+  \(y\) and \(\lambda\). Similar results hold for functions of more variables.
+  (See <a href="#morevar">below</a>.)
+</p>
+<p class="remark">
+  Although in principal, we are solving for \(\lambda\). In fact, we don't
+  really care about its value. It is merely a mathematical construct
+  that helps us solve for the extrema.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Let's start with an example with only \(2\) variables which could be
+  solved by the methods used in single-variable calculus, although with
+  a lot more work.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the maximum and minimum values of the function \(f=x^2+y^2\)
+  on the ellipse
+  \(\dfrac{(x+y)^2}{16}+\dfrac{(x-y)^2}{9}=1\).
+</p>
+<div class="column">
+  <p class="sol">
+    The <span class="hl">extremal function</span> is \(f=x^2+y^2\) and the
+    <span class="hl">constraint equation</span> is
+    \[
+    g=\dfrac{(x+y)^2}{16}+\dfrac{(x-y)^2}{9}=1
+    \]
+    In the plot, the constraint is shown in blue and the level curves of
+    the extremal are shown in magenta. From the plot, it is clear that the
+    minimum and maximum are both between \(4\) and \(9\).
+  </p>
+  <div class="center">
+    <img src="graphics/lagrangeeg.jpg" alt="lagrangeeg">
+  </div>
+</div>
+<p>
+  Since we are solving this equation using the Lagrange multiplier method,
+  the first thing we need are the gradients of the two functions:
+  \[\begin{aligned}
+  \vec{\nabla}f&=\langle 2x,2y\rangle \\
+  \vec{\nabla}g&=\left\langle \dfrac{2(x+y) }{16}+\dfrac{2(x-y)}{9},
+  \dfrac{2(x+y) }{16}+\dfrac{-2(x-y) }{9}\right\rangle
+  \end{aligned}\]
+  We now insert these gradients into the Lagrange equations,
+  \[
+  \vec{\nabla}f=\lambda\vec{\nabla}g
+  \]
+  The \(x\) and \(y\) components are:
+  \[\begin{aligned}
+  2x&=\lambda \left(\dfrac{2(x+y)}{16}+\dfrac{2(x-y)}{9}\right)
+  \qquad \text{(1)} \\
+  2y&=\lambda \left(\dfrac{2(x+y)}{16}-\,\dfrac{2(x-y)}{9}\right)
+  \qquad \text{(2)}
+  \end{aligned}\]
+  <!-- 2x&=\lambda \left(\dfrac{2(x+y)}{16}+\dfrac{2(x-y)}{9}\right) \tag{1} \\
+  2y&=\lambda \left(\dfrac{2(x+y)}{16}-\,\dfrac{2(x-y)}{9}\right) \tag{2} -->
+  This is \(2\) equations, but there are \(3\) unknowns, \(x\), \(y\) and
+  \(\lambda\). So we need a third equation. It is the constraint
+  equation:
+  \[
+  \dfrac{(x+y)^2}{16}+\dfrac{(x-y)^2}{9}=1 \qquad \text{(3)}
+  \]
+  <!-- \dfrac{(x+y)^2}{16}+\dfrac{(x-y)^2}{9}=1 \tag{3} -->
+  To solve these, we divide equations (1) and (2) by \(2\) and then add and
+  subtract them:
+  \[\begin{aligned}
+  x+y&=\lambda\dfrac{2(x+y)}{16} \qquad \text{(5)} \\
+  x-y&=\lambda\dfrac{2(x-y)}{9} \qquad \text{(6)}
+  \end{aligned}\]
+  <!-- x+y&=\lambda\dfrac{2(x+y)}{16} \tag{5} \\
+  x-y&=\lambda\dfrac{2(x-y)}{9} \tag{6} -->
+  We now rearrange (5) and (6) to factor out \(x+y\) and \(x-y\):
+    \[\begin{aligned}
+    (x+y)\left(1-\,\dfrac{\lambda}{8}\right)=0 \qquad \text{(7)} \\
+    (x-y)\left(1-\,\dfrac{2\lambda}{9}\right)=0 \qquad \text{(8)}
+    \end{aligned}\]
+    <!-- (x+y)\left(1-\,\dfrac{\lambda}{8}\right)=0 \tag{7} \\
+    (x-y)\left(1-\,\dfrac{2\lambda}{9}\right)=0 \tag{8} -->
+  Equation (7) gives the cases \(x+y=0\) or \(\lambda=8\).
+  Equation (8) gives the cases \(x-y=0\) or \(\lambda=\dfrac{9}{2}\).
+  Together, these give only two cases:
+</p>
+<ul>
+  <li>
+    Case 1: \(\lambda=\dfrac{9}{2}\) and \(x+y=0\):
+    <br>
+    With \(y=-x\), the constraint equation (3) gives:
+    \[
+    (2x)^2=9 \qquad \text{or} \qquad x=\pm\dfrac{3}{2}
+    \]
+    So the critical points are \(\left(\dfrac{3}{2},-\,\dfrac{3}{2}\right)\)
+    and \(\left(-\,\dfrac{3}{2},\dfrac{3}{2}\right)\). At both of these points
+    the function value is:
+    \[
+    f=x^2+y^2=\dfrac{9}{4}+\dfrac{9}{4}=\dfrac{9}{2}
+    \]
+  </li>
+  <li>
+    Case 2: \(\lambda=8\) and \(x-y=0\):
+    <br>
+    With \(y=x\), the constraint equation (3) gives:
+    \[
+    (2x)^2=16 \qquad \text{or} \qquad x=\pm2
+    \]
+    So the critical points are \((2,2)\) and \((-2,-2)\). At both
+    of these points the function value is:
+    \[
+    f=x^2+y^2=4+4=8
+    \]
+  </li>
+</ul>
+<p>
+  So the maximum is \(f=8\) at \((2,2)\) and \((-2,-2)\) and the minimum
+  is \(f=\dfrac{9}{2}\) at \(\left(\dfrac{3}{2},-\,\dfrac{3}{2}\right)\)
+  and \(\left(-\,\dfrac{3}{2},\dfrac{3}{2}\right)\). Check these are
+  reasonable in the plot. Notice that we don't care about the values of \(\lambda\).
+</p>
+<p class="remark">
+  Notice that in a problem like this we do not need to use the Second
+  Derivative Test because we know we have found all the critical points.
+  The one with the largest function value must be the maximum and the
+  one with the smallest function value must be the minimum.
+</p>
+
+        <div class="rule" id="morevar"></div>
+
+<h3>More Variables</h3>
+<p>
+  The same works for any number of variables. The maximum and minimum of a
+  function \(f\) on a constraint \(g=C\) occur at points where the level
+  set (surface or higher dimensional surface) of \(f\) is tangent
+  to the constraint, which is a level set of \(g\). Since the level sets
+  are tangent, their normals are parallel. Further, the normals are the
+  gradients of the functions \(f\) and \(g\). Once again, although the gradients
+  \(\vec\nabla f\) and \(\vec\nabla g\) are parallel, their lengths can be
+  different, i.e.:
+  \[
+  \vec\nabla f=\lambda\vec\nabla g
+  \]
+  for some Lagrange multiplier \(\lambda\). If \(f\) and \(g\) are functions
+  of \(n\) variables, namely \(x_1, x_2, \cdots, x_n\), then there are
+  \(n\) components in the gradients (the \(n\) partial derivatives) and
+  so the Lagrange equations provide \(n\) equations for the \(n+1\) unknowns
+  \(x_1, x_2, \cdots, x_n\) and the Lagrange multiplier \(\lambda\).
+  We need one more equation. It is the constraint equation \(g=C\).
+  We solve the Lagrange equations together with the constraint. Once again,
+  we don't really care about the value of \(\lambda\). It is merely a
+  mathematical construct that helps us solve for the extrema.
+</p>
+
+        <div class="rule" id="ex_rectell"></div>
+
+<p>
+  We now redo an exercise from the
+  <a href="Constraint.html#ex_rectell" title="Return using the Back button.">
+  previous page</a>
+  which was difficult because the derivatives involved square roots.
+  The Lagrange multiplier method avoids the square roots.
+</p>
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Find the dimensions and volume of the largest rectangular box
+      inscribed in the ellipsoid \(x^2+\dfrac{y^2}{4}+\dfrac{z^2}{16}=1\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX1"></button>
+      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+      <button class="toggle has-sol" data-toggle="SolX1"></button>
+    </p>
+  </div>
+  <div  class="center">
+    <video autoplay controls loop>
+      <source src="graphics/ellipex.mp4" alt="ellipex">
+    </video>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Note: "Inscribed" means all \(8\) vertices lie on the ellipsoid.
+    What are the length, width and height?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    The length, width and height are:
+    \[
+    L=\dfrac{2}{\sqrt{3}} \qquad W=\dfrac{4}{\sqrt{3}} \qquad H=\dfrac{8}{\sqrt{3}}
+    \]
+    So the volume is:
+    \[
+    V=\dfrac{64}{3\sqrt{3}}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The <span class="hl">extremal</span> is the volume:
+    \[
+    V=LWH=(2x)(2y)(2z)=8xyz
+    \]
+    and the <span class="hl">constraint</span> is the equation of the ellipsoid:
+    \[
+    g=x^2+\dfrac{y^2}{4}+\dfrac{z^2}{16}=1
+    \]
+    We compute their gradients:
+    \[\begin{aligned}
+    \vec{\nabla}V&=\langle 8yz,8xz,8xy\rangle \\
+    \vec{\nabla}g&=\left\langle 2x,\dfrac{y}{2},\dfrac{z}{8}\right\rangle
+    \end{aligned}\]
+    The Lagrange equations, \(\vec\nabla V=\lambda\vec\nabla g\) are:
+    \[\begin{aligned}
+    8yz&=\lambda 2x \qquad \text{(1)} \\
+    8xz&=\lambda \dfrac{y}{2} \qquad \text{(2)} \\
+    8xy&=\lambda \dfrac{z}{8} \qquad \text{(3)}
+    \end{aligned}\]
+    <!-- 8yz&=\lambda 2x \tag{1} \\
+    8xz&=\lambda \dfrac{y}{2} \tag{2} \\
+    8xy&=\lambda \dfrac{z}{8} \tag{3} -->
+    We need to solve these \(3\) equations and the constraint for \(x\), \(y\),
+    \(z\) and \(\lambda\). A frequently used trick is to multiply
+    the first equation by \(x\), the second by \(y\) and the third
+    by \(z\) making the left sides all equal. We can then equate them and get
+    the \(\lambda\) to cancel out:
+    \[
+    8xyz=\lambda 2x^2=\lambda \dfrac{y^2}{2}=\lambda \dfrac{z^2}{8}
+    \]
+    The \(x\) and \(y\) pieces say \(y^2=4x^2\) or \(y=2x\).
+    <br>
+    The \(x\) and \(z\) pieces say \(z^2=16x^2\) or \(z=4x\).
+    <br>
+    Substituting these into the constraint gives:
+    \[
+    g=x^2+\dfrac{4x^2}{4}+\dfrac{16x^2}{16}=3x^2=1
+    \]
+    Consequently,
+    \[
+    x=\dfrac{1}{\sqrt{3}} \qquad y=\dfrac{2}{\sqrt{3}} \qquad z=\dfrac{4}{\sqrt{3}}
+    \]
+    So, the length, width and height are:
+    \[
+    L=2x=\dfrac{2}{\sqrt{3}} \qquad W=2y=\dfrac{4}{\sqrt{3}} \qquad H=2z=\dfrac{8}{\sqrt{3}}
+    \]
+    and the volume is:
+    \[
+    V=LWH=\dfrac{64}{3\sqrt{3}}
+    \]
+  </p>
+</div>
+<p>
+  From this exercise, you should notice that the Lagrange multiplier method
+  is much easier than eliminating a variable, about half as much work.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

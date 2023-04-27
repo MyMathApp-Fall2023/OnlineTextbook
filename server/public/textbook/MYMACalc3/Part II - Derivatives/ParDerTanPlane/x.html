@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Partial Derivatives and Tangent Planes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TutTanPlane.html" title="Previous">&lArr;</a></li>
+      <li><a href="../LinApprox/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Partial Derivatives and Tangent Planes</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Computation of Partial Derivatives-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Compute.html">a. Computation of Partial Derivatives</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Compute.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find \(f_x\) for the function: \(f(x,y)=x^2y+xy^2\).
+    </p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX1"></button>
+			<button class="toggle has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+		<p>
+			\(f_x=2xy+y^2\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+		<p>
+			We differentiate \(f(x,y)\) with respect to \(x\) assuming \(y\) is a
+			constant:
+			\[
+			f_x=\dfrac{\partial}{\partial x}(x^2y+xy^2)=2xy+y^2
+			\]
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find
+			\(\dfrac{\partial f}{\partial x}\) and \(\dfrac{\partial f}{\partial y}\)
+			for the function:
+			\(f(x,y)=y\sin x+x\sin y+\sin(xy)+2\).
+    </p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX2"></button>
+			<button class="toggle has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+		<p>
+			\(\dfrac{\partial f}{\partial x}=y\cos x+\sin y+y\cos(xy)\)
+			<br>
+			\(\dfrac{\partial f}{\partial y}=\sin x+x\cos y+x\cos(xy)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+		<p>
+			To find \(\dfrac{\partial f}{\partial x}\), we differentiate \(f(x,y)\) with respect to \(x\), while keeping
+			\(y\) constant:
+			\[
+			\dfrac{\partial f}{\partial x}=y\cos x+\sin y+y\cos(xy)
+			\]
+			Similarly, we find \(\dfrac{\partial f}{\partial y}\) by differentiating \(f(x,y)\) with respect to \(y\),
+			while keeping \(x\) constant:
+			\[
+			\dfrac{\partial f}{\partial y}=\sin x+x\cos y+x\cos(xy)
+			\]
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	Consider the function \(f=x(\ln y)\sin(xy)+\cos(xy)\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find \(f_x\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX3a"></button>
+					<button class="toggle has-sol" data-toggle="SolX3a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX3a">
+				<p>
+					\(f_x=(\ln y)\sin(xy)+xy(\ln y)\cos(xy)-y\sin(xy)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX3a">
+				<p>
+					We differentiate \(f\) with respect to \(x\) holding \(y\) constant:
+					\[
+						f_x=(\ln y)\sin(xy)+xy(\ln y)\cos(xy)-y\sin(xy)
+					\]
+				</p>
+				<p style="text-align:right">
+				  dm&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find \(f_y\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX3b"></button>
+					<button class="toggle has-sol" data-toggle="SolX3b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX3b">
+				<p>
+					\(f_y=\dfrac{x\sin(xy)}{y}+x^2(\ln y)\cos(xy)-x\sin(xy)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX3b">
+				<p>
+					We differentiate \(f\) with respect to \(y\) holding \(x\) constant:
+					\[
+						f_y=\dfrac{x\sin(xy)}{y}+x^2(\ln y)\cos(xy)-x\sin(xy)
+					\]
+				</p>
+				<p style="text-align:right">
+				  dm&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<!--Algebraic Definition of Partial Derivatives-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="ParDerAlg.html">b. Algebraic Definition of Partial Derivatives</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ParDerAlg.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the \(x\)-partial derivative of \(f(x,y)=x^2y^3\) using
+			the limit definition of partial derivatives.
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX4"></button>
+			<button class="toggle has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+		<p>
+			\(f_x(x,y)=2xy^3\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+		<p>
+			According to the algebraic definition of partial derivatives:
+			\[\begin{aligned}
+			f_x(x,y)
+			&=\lim_{h\rightarrow 0} \dfrac{f(x+h,y)-f(x,y)}{h}
+			=\lim_{h\rightarrow 0} \dfrac{(x+h)^2y^3-x^2y^3}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{(x^2+2hx+h^2)y^3-x^2y^3}{h}
+			=\lim_{h\rightarrow 0} \dfrac{2hxy^3+h^2y^3}{h} \\
+			&=\lim_{h\rightarrow 0} \left(2xy^3+hy^3\right)=2xy^3
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the value of
+			\(\displaystyle \lim_{h\rightarrow 0}
+			\dfrac{\sin(xy^2+2xyh+xh^2)-\sin(xy^2)}{h}\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX5"></button>
+			<button class="toggle has-sol" data-toggle="SolX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+		<p>
+			\(\displaystyle \lim_{h\rightarrow 0}
+			\dfrac{\sin(xy^2+2xyh+xh^2)-\sin(xy^2)}{h}
+			=2xy\cos(xy^2)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+		<p>
+			\[\begin{aligned}
+			\lim_{h\rightarrow 0}
+			&\dfrac{\sin(xy^2+2xyh+xh^2)-\sin(xy^2)}{h} \\
+			&=\lim_{h\rightarrow 0}
+			\dfrac{\sin(x(y^2+2yh+h^2))-\sin(xy^2)}{h} \\
+			&=\lim_{h\rightarrow 0}
+			\dfrac{\sin(x(y+h)^2)-\sin(xy^2)}{h}
+			\end{aligned}\]
+			According to the algebraic definition of partial derivatives, this is equal to
+			the \(y\)-partial derivative of \(\sin(xy^2)\):
+			\[
+			=\dfrac{\partial}{\partial y}\sin(xy^2)
+			=2xy\cos(xy^2)
+			\]
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<!--Geometric Interpretation of Partial Derivatives-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="ParDerGeom.html">c. Geometric Interpretation of Partial Derivatives</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ParDerGeom.html">1</a></div>
+      
+    </div>
+  </div>
+
+<a id="x^y+y_y"></a>
+
+<li>
+	For the graph of the function \(f=x^2y+\dfrac{x}{y}\), compute
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					the slope of the \(x\)-trace at the point \((2,1)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX6a"></button>
+					<button class="toggle has-sol" data-toggle="SolX6a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX6a">
+				<p>
+					\(f_x(2,1)=5\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX6a">
+				<p>
+					First, we find the partial derivative with respect to \(x\):
+					\[
+					f_x=2xy+\dfrac{1}{y}
+					\]
+				</p>
+				<p>
+					Then we plug in the point \((2,1)\):
+					\[f_x(2,1)=4+\dfrac{1}{1}=5\]
+				</p>
+				<p style="text-align:right">
+				  dm,jb&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the tangent line to the \(x\)-trace at the point \((2,1)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX6b"></button>
+					<button class="toggle has-sol" data-toggle="SolX6b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX6b">
+				<p>
+					\(z=5x-4\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX6b">
+				<p>
+					We plug the point \((a,b)=(2,1)\) into the function:
+					\[
+					f(2,1)=2^2 1+\dfrac{2}{1}=6
+					\]
+					Using this and the \(x\)-slope, \(f_x(2,1)=5\),
+					we find the tangent line:
+					\[\begin{aligned}
+					z&=f(a,b)+f_x(a,b)(x-a) \\
+					z&=f(2,1)+f_x(2,1)(x-2) \\
+					&=6+5(x-2) \\
+					&=5x-4
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  dm,jb&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the slope of the \(y\)-trace at the point \((2,1)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX6c"></button>
+					<button class="toggle has-sol" data-toggle="SolX6c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX6c">
+				<p>
+					\(f_y(2,1)=2\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX6c">
+				<p>
+					 First, we find the partial derivative with respect to \(y\):
+					 \[
+					 f_y=x^2-\,\dfrac{x}{y^2}
+					 \]
+					 Then we plug in the point \((2,1)\):
+					 \[
+					 f_y(2,1)=4-\,\dfrac{2}{1}=2
+					 \]
+				</p>
+				<p style="text-align:right">
+				  dm,jb&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					the tangent line to the \(y\)-trace at the point \((2,1)\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX6d"></button>
+					<button class="toggle has-sol" data-toggle="SolX6d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX6d">
+				<p>
+					\(z=2y+4\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX6d">
+				<p>
+					We plug the point \((a,b)=(2,1)\) into the function:
+					\[
+					f(2,1)=2^2 1+\dfrac{2}{1}=6
+					\]
+					Using this and the \(y\)-slope, \(f_y(2,1)=2\),
+					we find the tangent line:
+					\[\begin{aligned}
+					z&=f(a,b)+f_y(a,b)(y-b) \\
+					z&=f(2,1)+f_y(2,1)(y-1) \\
+					&=6+2(y-1) \\
+					&=2y+4
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+				  dm,jb&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+
+<!--Tangent Plane to the Graph of a Function-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="TanPlaneGeom.html">d. Tangent Plane to the Graph of a Function</a></h3>
+    <div class="pgs">
+      
+        <div><a href="TanPlaneGeom.html">1</a></div>
+      
+        <div><a href="TanPlaneAlg.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+			For the graph of the function \(f=x^2y+\dfrac{x}{y}\),
+			discussed in a
+			<a href="#x^y+y_y" title="Return using the Back button.">
+			 previous exercise</a>, find
+			the equation of the plane tangent at \((2,1)\).
+			Then, find the \(z\)-intercept of the plane.
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX7"></button>
+			<button class="toggle has-ans" data-toggle="AnsX7"></button>
+			<button class="toggle has-sol" data-toggle="SolX7"></button>
+			<button class="toggle has-rem" data-toggle="RemX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX7">
+	  <p>
+	    Evaluate the function and its partial derivatives at
+	    \((x,y)=(2,1)\). Then use the formula:
+			\[
+			z=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
+			\]
+	  </p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+		<p>
+			\(z=5x+2y-6\)
+			<br>
+			The \(z\)-intercept is \(-6\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+		<p>
+			In the
+			<a href="#x^y+y_y" title="Return using the Back button.">
+			 previous exercise</a>, we found
+			\[\begin{aligned}
+			f(2,1)&=6 \\
+			f_x(2,1)&=5 \\
+			f_y(2,1)&=2 \\
+			\end{aligned}\]
+			We plug these into the formula:
+			\[\begin{aligned}
+			z&=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b) \\
+			z&=f(2,1)+f_x(2,1)(x-2)+f_y(2,1)(y-1) \\
+			&=6+5(x-2)+2(y-1) \\
+			&=5x+2y-6
+			\end{aligned}\]
+			The \(z\)-intercept is \(-6\).
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX7">
+	  <p>
+	    We have found the tangent plane at \((x,y)=(2,1)\) is: \(z=5x+2y-6\).
+			<br>
+			Plugging in \(y=1\), the tangent line to the \(x\)-trace is: \(z=5x-4\).
+			<br>
+			Plugging in \(x=2\), the tangent line to the \(y\)-trace is: \(z=2y+4\).
+			<br>
+			These agree with the
+			<a href="#x^y+y_y" title="Return using the Back button.">
+			 previous exercise</a>.
+	  </p>
+	</div>
+</li>
+
+<li>
+	<div class="column">
+		<div class="dotfillex" data-col-width="50%">
+			<p>
+				Find the equation of the plane tangent to \(z=x^2+y^3\) at the point
+	      \((x,y)=(2,1)\). Then find its \(z\)-intercept.
+			</p>
+			<p>
+				<button class="toggle has-hint" data-toggle="HintX8"></button>
+				<button class="toggle has-ans" data-toggle="AnsX8"></button>
+				<button class="toggle has-sol" data-toggle="SolX8"></button>
+			</p>
+		</div>
+	  <div class="center" data-col-width="50%">
+	    <img src="graphics/tanplexample1.jpg" alt="tanplexample1">
+	  </div>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+		<p>
+			Find the values of the function and its partial derivatives at
+			\((2,1)\).
+			<br>
+	    Then plug into the formula for the tangent plane:
+			\[
+			z=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
+			\]
+			Read off the \(z\)-intercept \(c\) from the equation \(z=mx+ny+c\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+		<p>
+			The tangent plane is \(z=4x+3y-6\).
+			<br>
+			The \(z\)-intercept is \(-6\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+		<p>
+		We identify \(f(x,y)=x^2+y^3\), \(a=2\) and \(b=1\).
+		For the tangent plane equation, we need \(f(2,1)\), \(f_x(2,1)\), and \(f_y(2,1)\).
+		It is good to make a table:
+		\[\begin{aligned}
+		&f=x^2+y^3 \qquad &f(2,1)=5 \\
+		&f_x=2x  \qquad &f_x(2,1)=4 \\
+		&f_y=3y^2 \qquad &f_y(2,1)=3
+		\end{aligned}\]
+		So the equation of the tangent plane is:
+		\[\begin{aligned}
+		z&=f(2,1)+f_x(2,1)(x-2)+f_y(2,1)(y-1) \\
+		&=5+4(x-2)+3(y-1) \\
+		&=4x+3y-6
+		\end{aligned}\]
+		We identify the \(z\)-intercept as \(-6\).
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="column">
+		<div class="dotfillex" data-col-width="50%">
+			<p>
+				Find the equation of the plane tangent to \(z=x^2y+xy^2\) at
+	      \((x,y)=(1,2)\). Then find the \(z\)-intercept.
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX9"></button>
+				<button class="toggle has-sol" data-toggle="SolX9"></button>
+			</p>
+		</div>
+	  <div class="center" data-col-width="50%">
+	   <img src="graphics/tanplexample2.jpg" alt="tanplexample2">
+		 <!-- <big>Point has been changed as well as the color of the point AS</big> -->
+	  </div>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+		<p>
+			The tangent plane is \(z=8x+5y-12\).
+			<br>
+			The \(z\)-intercept is \(-12\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+		<p>
+	    We identify \(a=1\) and \(b=2\):
+      \[\begin{aligned}
+      &f=x^2y+xy^2 \qquad &f(1,2)=6 \\
+      &f_x=2xy+y^2 \qquad &f_x(1,2)=8 \\
+      &f_y=x^2+2xy \qquad &f_y(1,2)=5
+      \end{aligned}\]
+	    We now plug this information into the equation for a tangent plane:
+      \[\begin{aligned}
+      z&=f(1,2)+f_x(1,2)(x-1)+f_y(1,2)(y-2) \\
+      &=6+8(x-1)+5(y-2) \\
+      &=8x+5y-12
+      \end{aligned}\]
+			We identify the \(z\)-intercept as \(-12\).
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the equation of the plane tangent to
+			\(z=x^2+y^2\) at the point \((3,1)\).
+			 Then, find the \(z\)-intercept of the plane.
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX10"></button>
+			<button class="toggle has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+		<p>
+			The tangent plane is \(z=6x+2y-10\).
+			<br>
+			The \(z\)-intercept is \(-10\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+		<p>
+			First, we find the value of the function, \(f(x,y)=x^2+y^2\), at the point \((3,1)\):
+			\[
+			f(3,1)=3^2+1^2=10
+			\]
+			Next, we calculate \(f_x\) and \(f_y\) at the point \((3,1)\):
+			\[\begin{aligned}
+			f_x&=2x \qquad f_x(3,1)=6 \\
+			f_y&=2y \qquad f_y(3,1)=2
+			\end{aligned}\]
+			Finally, we plug these values into the equation for the tangent plane:
+			\[\begin{aligned}
+			z&=f(3,1)+f_x(3,1)(x-3)+f_y(3,1)(y-1) \\
+			&=10+6(x-3)+2(y-1)\\
+			&=6x+2y-10
+			\end{aligned}\]
+			So the \(z\)-intercept is \(-10\).
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the equation of the tangent plane at the point \((2,4)\) for the function
+			\(z=x^2y-x(y+3)+4\). Then, find the \(z\)-intercept of the plane.
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX11"></button>
+			<button class="toggle has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+		<p>
+			The tangent line is \(z=9x+2y-20\)
+			<br>
+			The \(z\)-interept is \(-20\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+		<p>
+			We evaluate the function, \(f(x,y)=x^2y-x(y+3)+4\), at the point \((2,4)\):
+			\[
+			f(2,4)=2^24-2(4+3)+4=6
+			\]
+			Next, we calculate \(f_x\) and \(f_y\) at \((2,4)\):
+			\[\begin{aligned}
+			&f_x=2xy-y-3 \qquad &f_x(2,4)=9 \\
+			&f_y=x^2-x \qquad &f_y(2,4)=2
+			\end{aligned}\]
+			Finally, we plug these values into the tangent plane:
+			\[\begin{aligned}
+			z&=f(2,4)+f_x(2,4)(x-2)+f_y(2,4)(y-4) \\
+			&=6+9(x-2)+2(y-4) \\
+			&=9x+2y-20
+			\end{aligned}\]
+			So the \(z\)-interept is \(-20\).
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+	  <p>
+	    Compute the tangent plane to \(z=\sin x\cos y\) at
+	    \((x,y)=\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)\).
+	    Then find the \(z\)-intercept.
+	  </p>
+	  <p>
+	    <button class="toggle has-hint" data-toggle="HintX12"></button>
+	    <button class="toggle has-ans" data-toggle="AnsX12"></button>
+	    <button class="toggle has-sol" data-toggle="SolX12"></button>
+	  </p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX12">
+	  <p>
+	    What are the values of \(\sin\) and \(\cos\) at
+	    \(\dfrac{\pi}{3}\) and \(\dfrac{\pi}{6}\)?
+	  </p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+	  <p>
+			The tangent plane is:
+	    \(z=\dfrac{\sqrt{3}}{4}x-\,\dfrac{\sqrt{3}}{4}y
+	    +\dfrac{3}{4}-\,\dfrac{\sqrt{3}\,\pi}{24}\)
+	    <br><br>
+	    The \(z\)-intercept is
+	    \(\dfrac{3}{4}-\,\dfrac{\sqrt{3}\,\pi}{24}\).
+	  </p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+	  <p>
+	    The function, its partial derivatives, and their values at
+	    \((x,y)=\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)\) are:
+	    \[\begin{aligned}
+	    f&=\sin x\cos y \ &
+			f\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)
+	    &=\sin\dfrac{\pi}{3}\cos\dfrac{\pi}{6}
+	    =\dfrac{\sqrt{3}}{2}\dfrac{\sqrt{3}}{2}
+	    =\dfrac{3}{4} \\
+	    f_x&=\cos x\cos y \ &
+			f_x\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)
+	    &=\cos\dfrac{\pi}{3}\cos\dfrac{\pi}{6}
+	    =\dfrac{1}{2}\dfrac{\sqrt{3}}{2}
+	    =\dfrac{\sqrt{3}}{4} \\
+	    f_y&=-\sin x\sin y \ &
+			f_y\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)
+	    &=-\sin\dfrac{\pi}{3}\sin\dfrac{\pi}{6}
+	    =-\,\dfrac{\sqrt{3}}{2}\dfrac{1}{2}
+	    =-\,\dfrac{\sqrt{3}}{4}
+	    \end{aligned}\]
+	    So the equation of the tangent plane is:
+	    \[\begin{aligned}
+	    z&=f\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)
+	    +f_x\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)\left(x-\,\dfrac{\pi}{3}\right)
+	    +f_y\left(\dfrac{\pi}{3},\dfrac{\pi}{6}\right)\left(y-\,\dfrac{\pi}{6}\right) \\
+	    &=\dfrac{3}{4}
+	    +\dfrac{\sqrt{3}}{4}\left(x-\,\dfrac{\pi}{3}\right)
+	    -\,\dfrac{\sqrt{3}}{4}\left(y-\,\dfrac{\pi}{6}\right) \\
+	    &=\dfrac{\sqrt{3}}{4}x-\,\dfrac{\sqrt{3}}{4}y
+	    +\dfrac{3}{4}
+	    -\,\dfrac{\sqrt{3}\,\pi}{12}
+	    +\dfrac{\sqrt{3}\,\pi}{24} \\
+	    &=\dfrac{\sqrt{3}}{4}x-\,\dfrac{\sqrt{3}}{4}y
+	    +\dfrac{3}{4}-\,\dfrac{\sqrt{3}\,\pi}{24}
+	    \end{aligned}\]
+	    We identify the \(z\)-intercept as
+	    \(\dfrac{3}{4}-\dfrac{\sqrt{3}\,\pi}{24}\).
+	  </p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<!--More Variables-->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href="MoreVars.html">e. More Variables</a></h3>
+    <div class="pgs">
+      
+        <div><a href="MoreVars.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find \(f_x\), \(f_y\) \(f_z\) for the function \(f=x\sin(yz)\).
+    </p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX13"></button>
+			<button class="toggle has-sol" data-toggle="SolX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+		<p>
+			\(f_x=\sin(yz)\)
+			<br>
+			\(f_y=xz\cos(yz)\)
+			<br>
+			\(f_z=xy\cos(yz)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+		<p>
+			We differentiate \(f=x\sin(yz)\) with respect to \(x\), \(y\), and \(z\).
+			We get:
+			\[\begin{aligned}
+			f_x&=\sin(yz) \\
+			f_y&=xz\cos(yz) \\
+			f_z&=xy\cos(yz) \\
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the equation of the tangent hyperplane to the function
+			\(w=f(x,y,z)=x^3y^2z\) at the point \((1,2,3)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX14"></button>
+			<button class="toggle has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+		<p>
+			The tangent hyperplane is:
+			\(w=36x+12y+4z-60\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+		<p>
+			We first find the value of \(f=x\sin(yz)\) at the point \((1,2,3)\):
+			\[
+			f(1,2,3)=(1^3)(2^2)(3)=12
+			\]
+			Next, we calculate \(f_x\), \(f_y\) and \(f_z\) at the point \((1,2,3)\):
+			\[\begin{aligned}
+			f_x&=3x^2y^2z \qquad &f_x(1,2,3)&=36 \\
+			f_y&=2x^3yz \qquad &f_y(1,2,3)&=12 \\
+			f_z&=x^3y^2 \qquad &f_z(1,2,3)&=4
+			\end{aligned}\]
+			Then, we plug these into the tangent hyperplane:
+			\[\begin{aligned}
+			w&=f_{\tan}(x,y,z) \\
+			&=f(1,2,3)+f_x(1,2,3)(x-1)+f_y(1,2,3)(y-2)+f_z(1,2,3)(z-3) \\
+			&=12+36(x-1)+12(y-2)+4(z-3) \\
+			&=36x+12y+4z-60 \\
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+        <div class="rule" id="rev"> </div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the slopes of the \(x\)-trace and the \(y\)-trace of the function
+			\(f(x,y)=x^3y^4\) at the point \((3,1)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX15"></button>
+			<button class="toggle has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+		<p>
+			The slope of the \(x\)-trace is \(27\).
+			<br>
+			The slope of the \(y\)-trace is \(108\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+		<p>
+			We find the partial derivatives with respect to \(x\) and \(y\) and
+			evaluate at \((3,1)\):
+			\[\begin{aligned}
+			f_x&=3x^2y^4 \qquad &f_x(3,1)&=3(3^2)(1^4)=27 \\
+			f_y&=4x^3y^3 \qquad &f_y(3,1)&=4(3^3)(1^3)=108
+			\end{aligned}\]
+			So the slope of the \(x\)-trace is \(27\) and slope of the \(y\)-trace is \(108\).
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the equation of the tangent hyperplane to the function
+			\(w=f(x,y,z)=x^2yz^3\) at the point \((1,3,3)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX16"></button>
+			<button class="toggle has-sol" data-toggle="SolX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+		<p>
+			The tangent hyperplane is:
+			\(w=162x+27y+81z-405\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+		<p>
+			First we find the value of \(f(x,y,z)=x^2yz^3\) at the point \((1,3,3)\):
+			\[
+			f(1,3,3)=(1^2)(3)(3^3)=81
+			\]
+			Then we calculate \(f_x(1,3,3)\), \(f_y(1,3,3)\), and \(f_z(1,3,3)\):
+			\[\begin{aligned}
+			f_x&=2xyz^3 \qquad &f_x(1,3,3)&=162 \\
+			f_y&=x^2z^3 \qquad &f_y(1,3,3)&=27 \\
+			f_z&=3x^2yz^2 \qquad &f_z(1,3,3)&=81
+			\end{aligned}\]
+			Finally, we substitute these into the equation of the tangent hyperplane:
+			\[\begin{aligned}
+			w&=f_{\tan}(x,y,z) \\
+	    &=f(1,3,3)+f_x(1,3,3)(x-a)+f_y(1,3,3)(y-b)+f_z(1,3,3)(z-c) \\
+			&=81+162(x-1)+27(y-3)+81(z-3) \\
+			&=81+162x-162+27y-81+81z-243 \\
+			&=162x+27y+81z-405 \\
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+		  dm,jb&ensp;
+		</p>
+	</div>
+</li>
+
+<big>PY: All Checked.</big>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>f. Fundamental Theorem of Calculus for Area | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="AreaAD.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>f. Fundamental Theorem of Calculus for Area</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the <a href="AreaAD.html">previous page</a> we learned that the area
+  function, \(A_a(x)\), is an antiderivative of the original function,
+  \(f(x)\). This is actually the first version of the Fundamental Theorem of Calculus:
+</p>
+<p class="thm" data-title="The (\(1^\text{st}\)) Fundamental Theorem of Calculus (in terms of the Area Function)">
+  Given a positive function \(f(x)\) defined on an interval \([a,b]\), then
+  its area function, \(A_a(x)\), is an antiderivative of the original function,
+  \(f(x)\). In a formula:
+  \[
+  \dfrac{d}{dx}A_a(x)=f(x)
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The area function, \(A_a(x)\) is a specific antiderivative of \(f(x)\). So
+  it differs from an arbitrary antiderivative \(F(x)\) by a constant. This
+  constant is found by using the initial condition \(A_a(a)=0\). On the
+  previous page, we did this for several specific functions \(f(x)\).
+	Let's do this now for a general function \(f(x)\). In the process
+	we will derive a general formula for \(A(a,b)\).
+</p>
+<p class="genexample">
+  Find the area below a positive function \(y=f(x)\) above the
+  \(x\)-axis between \(x=a\) and \(x=b.\)
+</p>
+<div class="column">
+  <p class="der">
+	  Let \(A_a(x)\) be the area function for \(f(x)\) starting at \(x=a\).
+		So \(A_a(x)\) is a specific antiderivative of \(f(x)\) which we write as:
+	  \[
+		A_a(x)=F(x)+C
+	  \]
+	  where \(F(x)\) is any antiderivative of \(f(x)\) and \(C\) is some constant.
+	  To find \(C\), we use the initial condition \(A_a(a)=0\) which says
+	  \[
+		A_a(a)=F(a)+C=0.
+	  \]
+	  Thus \(C=-F(a)\). Substituting back we find \(A_a(x)=F(x)-F(a)\).
+	  Then the area under \(f(x)\) above the interval \([a,b]\) is:
+	  \[
+		A(a,b)=A_a(b)=F(b)-F(a)
+	  \]
+	  This is the second version of the Fundamental Theorem of Calculus:
+  </p>
+  <div class="center">
+    <img src="graphics/pf_FTCareafndef_ab_anim.gif" alt="pf_FTCareafndef_ab_anim">
+    <!-- Graphic made in RiemSum chapter -->
+  </div>
+</div>
+
+<p class="thm" data-title="The (\(2^\text{nd}\)) Fundamental Theorem of Calculus (in terms of the Area Function)">
+  Given a positive function \(f(x)\) defined on an interval \([a,b]\), then the area
+  under \(f(x)\) above the interval \([a,b]\) is:
+  \[
+  A(a,b)=F(b)-F(a)
+  \]
+  where \(F(x)\) is any antiderivative of \(f(x)\).
+</p>
+
+<p>
+  We frequently write the right hand side of the last equation as
+  \(\left.F(x)\rule{0pt}{10pt}\right|_a^b\) to mean that the function \(F(x)\)
+  is evaluated at \(x=b\) and at \(x=a\) and then these values are subtracted.
+  So we have:
+  \[
+  A(a,b)=\left.F(x)\rule{0pt}{10pt}\right|_a^b=F(b)-F(a)
+  \]
+</p>
+<a id="AreaFTC"></a>
+
+        <div class="rule"></div>
+
+<p>
+  The following are the same example and exercise as on the
+  <a href="AreaAD.html#AreaAD">previous page</a>
+  except solved by the Fundamental Theorem of Calculus.
+</p>
+<div class="column">
+  <p class="example" data-number="1">
+    Find the area below \(y=x^2\) above the \(x\)-axis between \(x=1\) and \(x=4\).
+  </p>
+  <div class=center>
+    <img src="graphics/eg_AreaIVP_x^2_anim.gif" alt="eg_AreaIVP_x^2_anim">
+    <!-- Graphic made in RiemSum chapter -->
+  </div>
+</div>
+<p class="sol">
+  Let \(f(x)=x^2\). An antiderivative is \(F(x)=\dfrac{x^3}{3}\).
+  So the area is
+  \[
+  A(1,4)=\left.\dfrac{x^3}{3}\right|_1^4
+  =\dfrac{4^3}{3}-\dfrac{1^3}{3}=21
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="2">
+      Find the area below \(y=\sin(x)\) above the interval \([0,\pi]\).
+    </p>
+    <div class=center>
+      <img src="graphics/ex_AreaIVP_sinx_anim.gif" alt="ex_AreaIVP_sinx_anim">
+      <!-- Graphic made in RiemSum chapter -->
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    The area below \(y=\sin(x)\) above the interval \([0,\pi]\) is \(A(0,\pi)=2\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    An antiderivative of \(f(x)=\sin(x)\) is \(F(x)=-\cos(x)\).
+    So the area is
+    \[\begin{aligned}
+    A(0,\pi)&=\left[\dfrac{}{}-\cos(x)\right]_0^\pi
+    =-\cos(\pi)+\cos(0) \\
+    &=--1+1=2
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

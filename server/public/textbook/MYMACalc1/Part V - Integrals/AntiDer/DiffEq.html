@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d. Differential Equations and Initial Value Problems | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="AccVelPos.html" title="Previous">&lArr;</a></li>
+      <li><a href="AreaAD.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d. Differential Equations and Initial Value Problems</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def" data-title="Differential Equation">
+	A <span class="defword">differential equation</span> is an equation
+	involving derivatives which we solve for a function.
+</p>
+<p>
+  So the equation
+	\(\dfrac{dx}{dt}=v(t)\) to be solved for \(x(t)\) is an example of a
+	differential equation. So is \(\dfrac{dv}{dt}=a(t)\) to be solved for
+	\(v(t)\). When we solve these differential equations, there is an arbitrary
+	constant in the solution.
+</p>
+<p class="def" data-title="Initial Value Problem">
+	An <span class="defword">initial value problem</span> is a
+	<span class="hl">differential	equation</span> together with an
+	<span class="hl">initial condition</span> which is used to determine
+	the arbitrary constant.
+</p>
+<p>
+  So the equation \(\dfrac{dx}{dt}=v(t)\) together with the initial condition
+  \(x(t_0)=x_0\) is an example of an initial value problem. So is
+  \(\dfrac{dv}{dt}=a(t)\) together with the initial condition \(v(t_0)=v_0\).
+</p>
+
+				<div class="rule"></div>
+
+<p>
+  The example and exercise on the
+  <a href="AccVelPos.html#V2P">previous page</a> were
+	examples of solving an initial value problem. Here is another exercise
+	with two equations and two initial conditions.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    A rocket is fired straight up. At time \(t=0\) sec it starts from a
+    platform which is \(y(0)=10\) m above the ground with no initial velocity,
+    \(v(0)=0\) m/sec. If its acceleration is \(a(t)=100 e^{-t}\) m/sec\(^2\),
+    find its height at \(t=60\) sec.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Although the initial velocity is \(0\), the constant is not.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(y(60)=100e^{-60}+5910\approx5910 \,\text{m}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+		We start from the acceleration, \(a(t)=100 e^{-t}\).
+		<br>
+    Since the velocity is an antiderivative of the acceleration,
+    \[
+    v(t)=-100e^{-t}+C
+    \]
+    To find C, we use the initial condition for the velocity:
+    \[
+    v(0)=-100+C=0 \qquad \Longrightarrow \qquad C=100
+    \]
+    So the velocity at time \(t\) is:
+    \[
+    v(t)=-100e^{-t}+100
+    \]
+    Since the position is an antiderivative of the velocity,
+    \[
+    y(t)=100e^{-t}+100t+K
+    \]
+    To find \(K\), we use the initial condition for the position:
+    \[
+    y(0)=100+K=10 \qquad \Longrightarrow \qquad K=-90
+    \]
+    So the position at time \(t\) is:
+    \[
+    y(t)=100e^{-t}+100t-90
+    \]
+    and the height at \(t=60\) sec is:
+		\[\begin{aligned}
+    y(60)&=100e^{-60}+100\cdot60-90 \\
+		&=100e^{-60}+5910\approx5910 \,\text{m}
+		\end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    We check by differentiating the position \(y(t)=100e^{-t}+100t-90\) to get
+    the velocity and the acceleration:
+    \[\begin{aligned}
+    v(t)&=y'(t)=-100e^{-t}+100 \\
+    a(t)&=v'(t)=100e^{-t}
+    \end{aligned}\]
+    Further, we check the initial conditions:
+    \[\begin{aligned}
+		y(0)&=100e^{-0}+100\cdot0-90=10 \\
+    v(0)&=-100e^{-0}+100=0
+    \end{aligned}\]
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing the velocity and position from the
+  acceleration by using
+  the following Maplet (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/AccVelPos.maplet" download>From Acceleration to Velocity and Position</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

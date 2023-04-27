@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Expansion.html" title="Previous">&lArr;</a></li>
+      <li><a href="../../Part II - Derivatives/LimCont/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Arc Length-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">a. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the length of the curve
+			\(\vec r(t)=\left(3t^2+1,4\sqrt{2}t^{3/2},6t-12\right)\)
+			from \(t=0\) to \(t=2\).
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX1"></button>
+			<button class="toggle has-ans" data-toggle="AnsX1"></button>
+			<button class="toggle has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX1">
+		<p>
+			In computing \(|\vec v|\), the quantity inside the square root is a perfect square.
+			<br>
+			\(\displaystyle L=\int_A^B \,ds=\int_a^b |\vec v|\,dt\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+		<p>
+			\(L=24\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+		<p>
+			The velocity and its length are:
+			\[
+			\vec v=(6t,6\sqrt{2}t^{1/2},6)
+			\]
+			\[
+			|\vec v|=\sqrt{36t^2+72t+36}=\sqrt{(6t+6)^2}=6t+6
+			\]
+			So the arclength is:
+			\[
+			L=\int_0^2 |\vec v|\,dt
+			=\int_0^2 6t+6\,dt=\left[\rule{0pt}{10pt}3t^2+6t\right]_0^2=24
+			\]
+		</p>
+		<p style="text-align:right">
+		 as&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Compute the arc length of the curve
+			\(\vec r(t)=\left(4t^2+1,2t^2-5,4t^2\right)\) from \(t=6\) to \(t=10\)
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX2"></button>
+			<button class="toggle has-ans" data-toggle="AnsX2"></button>
+			<button class="toggle has-sol" data-toggle="SolX2"></button>
+			<button class="toggle has-rem" data-toggle="RemX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX2">
+		<p>
+			Simplify the quantity inside the square root.
+			\[
+			L=\int_A^B \,ds=\int_a^b |\vec v|\,dt
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+		<p>
+			\(L=384\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+		<p>
+			The velocity and its length are:
+			\[
+			\vec v=(8t,4t,8t)
+			\]
+			\[
+			|\vec v|=\sqrt{64t^2+16t^2+64t^2}=\sqrt{144t^2}=12t
+			\]
+			So the arclength is:
+			\[\begin{aligned}
+			L&=\int_6^{10} |\vec v|\,dt
+			=\int_6^{10} 12t\,dt
+			=\left[\rule{0pt}{10pt}6t^2\right]_6^{10} \\
+			&=6(100-36)
+			=384
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+		 as&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX2">
+		<p>
+			This curve is actually a straight line from \((145,67,144)\) to
+			\((401,195,400)\). So its length is
+			\[\begin{aligned}
+			L&=\sqrt{(401-145)^2+(195-67)^2+(400-144)^2} \\
+			&=\sqrt{256^2+128^2+256^2}
+			=\sqrt{147456}=384
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Compute the arc length of the helix
+			\(y=6\sin\left(\dfrac{x}{2}\right)\), \(z=6\cos\left(\dfrac{x}{2}\right)\)
+			between \(x=0\) and \(x=2\pi\).
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX3"></button>
+			<button class="toggle has-ans" data-toggle="AnsX3"></button>
+			<button class="toggle has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX3">
+		<p>
+			For curves given with \(x\) as the parameter,
+			<br>
+			\(\displaystyle L=\int_a^b
+			\sqrt{1+\left(\dfrac{dy}{dx}\right)^2+\left(\dfrac{dz}{dx}\right)^2}dx\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+		<p>
+			\(L=2\pi\sqrt{10}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+		<p>
+			When \(x\) is the parameter, the arclength is:
+			\[
+			L=\int_0^{2\pi}
+			\sqrt{1+\left(\dfrac{dy}{dx}\right)^2+\left(\dfrac{dz}{dx}\right)^2}dx
+			\]
+			Here:
+			\[
+			\dfrac{dy}{dx}=3\cos\left(\dfrac{x}{2}\right)
+			\qquad
+			\dfrac{dz}{dx}=-3\sin\left(\dfrac{x}{2}\right)
+			\]
+			So
+			\[\begin{aligned}
+			L&=\int_0^{2\pi} \sqrt{1^2+9\cos^2\left(\dfrac{x}{2}\right)
+			+9\sin^2\left(\dfrac{x}{2}\right)}\,dx \\
+			&=\int_0^{2\pi} \sqrt{1+9}\,dx=2\pi\sqrt{10}
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+		 as&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the length of the curve
+			\(\vec r(t)=\left(4t,\dfrac{5}{2}t^2,3t\right)\)
+			between \(t=0\) and \(t=\dfrac{3}{4}\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX4"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX4"></button>
+    	<button class="toggle has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX4">
+    <p>
+      You will need a trig substitution and the integral
+			\[
+			\int \sec^3\theta\,d\theta
+			=\dfrac{1}{2}\sec\theta\tan\theta+\dfrac{1}{2}\ln|\sec\theta+\tan\theta|+C
+			\]
+			See the chapter on
+			<a href="../../../MYMACalc2/Part I - Techniques of Integration/TrigInt/TanSecOther.html#sec^3"
+			title="Return using the Back button.">
+			Trigonometric Integrals</a> in Calculus 2.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(\displaystyle
+      L=\dfrac{75}{32}+\dfrac{5}{2}\ln2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+			The velocity and its length are:
+			\[
+			\vec v=(4,5t,3)
+			\]
+			\[
+			|\vec v|=\sqrt{16+25t^2+9}=5\sqrt{t^2+1}
+			\]
+			So the arclength is:
+			\[
+			L=\int_0^{3/4} |\vec v|\,dt
+			=\int_0^{3/4} 5\sqrt{t^2+1}\,dt
+			\]
+			We now use the trig substitution \(t=\tan\theta\) and \(dt=\sec^2\theta\,d\theta\):
+			\[\begin{aligned}
+			L&=\int_{t=0}^{3/4} 5\sqrt{\tan^2\theta+1}\sec^2\theta\,d\theta \\
+			&=5\int_{t=0}^{3/4} \sec^3\theta\,d\theta
+			\end{aligned}\]
+			We now use the
+			<a href="../../../MYMACalc2/Part I - Techniques of Integration/TrigInt/TanSecOther.html#sec^3"
+			title="Return using the Back button.">Trig Integral</a>:
+			\[
+			\int \sec^3\theta\,d\theta
+			=\dfrac{1}{2}\sec\theta\tan\theta+\dfrac{1}{2}\ln|\sec\theta+\tan\theta|+C
+			\]
+			and then substitute back using
+			\[
+			\tan\theta=t \quad \text{ and } \quad \sec\theta=\sqrt{\tan^2\theta+1}=\sqrt{t^2+1}
+			\]
+			\[\begin{aligned}
+			L&=5\left[\dfrac{1}{2}\sec\theta\tan\theta
+			+\dfrac{1}{2}\ln|\sec\theta+\tan\theta|\right]_{t=0}^{3/4} \\
+			&=5\left[\dfrac{1}{2}t\sqrt{t^2+1}
+			+\dfrac{1}{2}\ln\left|\sqrt{t^2+1}+t\right|\right]_{t=0}^{3/4} \\
+			&=5\left[\dfrac{1}{2}\dfrac{3}{4}\dfrac{5}{4}
+			+\dfrac{1}{2}\ln\left|\dfrac{5}{4}+\dfrac{3}{4}\right|\right] \\
+			&=\dfrac{75}{32}+\dfrac{5}{2}\ln2 \\
+			\end{aligned}\]
+  	</p>
+		<p style="text-align:right">
+			py&ensp;
+		</p>
+  </div>
+</li>
+<a id="x_helix43_len"></a>
+
+<big>PY: 1-4 Checked</big>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Compute the arc length of the helix
+			\(\vec r(\theta)=(4\cos \theta,4\sin \theta,3\theta)\)
+			 between \(A=\left(2\sqrt{3},2,\dfrac{\pi}{2}\right)\)
+			 and		 \(B=\left(2,2\sqrt{3},\pi\right)\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX5"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX5"></button>
+    	<button class="toggle has-sol" data-toggle="SolX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX5">
+    <p>
+      What are the values of \(\theta\) at the \(2\) endpoints?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+      \(\displaystyle
+      xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+<a id="x_twistedcubic_len"></a>
+
+<big>PY: 5 Not Checked</big>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the arc length of the twisted cubic
+			\(\vec r(t)=\left(t,t^2,\dfrac{2}{3}t^3\right)\)
+			between \(A=(-3,9,-18)\) and \(B=(3,9,18)\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX6"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+      What are the values of \(\theta\) at the \(2\) endpoints?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+      \(\displaystyle
+      xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<big>PY: 6 Not Checked</big>
+
+<!--Line Integrals of Scalars-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">b. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	 <div class="dotfillex">
+		 <p>
+		 Compute \(\displaystyle \int \dfrac{y^2}{xz}\,ds\) along the curve
+		 \(\vec r(t)=\left(\dfrac{1}{2}t^2,\dfrac{4}{3}t^{3/2},2t\right)\) from
+		 \(t=1\) to \(t=3\).
+		 </p>
+		 <p>
+			 <button class="toggle has-hint" data-toggle="HintX7"></button>
+			 <button class="toggle has-ans" data-toggle="AnsX7"></button>
+			 <button class="toggle has-sol" data-toggle="SolX7"></button>
+		 </p>
+	 </div>
+	 <div class="toBeToggled drop-hint" data-toggle="HintX7">
+		 <p>
+		 Set up the integral:
+		 \(\displaystyle
+		 \int_A^B f\,ds=\int_a^b f(\vec r(t))|\vec v|\,dt\)
+		 </p>
+	 </div>
+	 <div class="toBeToggled drop-ans" data-toggle="AnsX7">
+		 <p>
+		 \(\displaystyle
+		 \int_1^3 \dfrac{y^2}{xz}\,ds=\dfrac{128}{9}\)
+		 </p>
+	 </div>
+	 <div class="toBeToggled drop-sol" data-toggle="SolX7">
+		 <p>
+			 On the curve, the integrand is
+			 \[
+			 f=\dfrac{y^2}{xz}=\dfrac{\dfrac{16}{9}t^3}{t^3}=\dfrac{16}{9}
+			 \]
+			 The velocity of the curve and its length are:
+			 \[\begin{aligned}
+			 \vec v&=(t,2t^{1/2},2) \\
+			 |\vec v|&=\sqrt{t^2+4t+4}=\sqrt{(t+2)^2}=t+2 \\
+			 \end{aligned}\]
+			 In general a scalar line integral is:
+			 \[
+			 \int_A^B f\,ds=\int_a^b f(\vec r(t))|\vec v|\,dt
+			 \]
+			 In this case it is:
+			 \[\begin{aligned}
+			 \int_{\vec r(1)}^{\vec r(3)} &\dfrac{y^2}{xz}\,ds
+			 =\int_1^3 \dfrac{16}{9}(t+2)\,dt \\
+			 &=\dfrac{16}{9}\left[\dfrac{t^2}{2}+2t\right]_1^3 \\
+			 &=\dfrac{16}{9}\left(\dfrac{9}{2}+6-\dfrac{1}{2}-2\right)
+			 =\dfrac{128}{9}
+			 \end{aligned}\]
+		 </p>
+		 <p style="text-align:right">
+		   as,py&ensp;
+		 </p>
+	 </div>
+ </li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Compute \(\displaystyle \int xyz\,ds\) along the curve
+			\(r(t)=(3t,4t,5t)\) from the point \((0,0,0)\) to the point \((6,8,10)\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX8"></button>
+			<button class="toggle has-sol" data-toggle="SolX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+		<p>
+			\(\displaystyle \int_{(0,0,0)}^{(6,8,10)} xyz\,ds
+			=1200\sqrt{2}\)
+		</p>
+ </div>
+ <div class="toBeToggled drop-sol" data-toggle="SolX8">
+	 <p>
+		 At the endpoints, the values of \(t\) are \(t=0\) and \(t=2\).
+		 The velocity is \(v=(3,4,5)\) and its length is:
+		 \[
+		 |v|=\sqrt{9+16+25}=\sqrt{50}=5\sqrt{2}
+		 \]
+		 The integral becomes:
+ 		 \[\begin{aligned}
+		 \int_{(0,0,0)}^{(6,8,10)} &xyz\,ds
+		 =\int_0^2 (3t\cdot4t\cdot5t)|v|\,dt \\
+		 &=\int_0^2 60t^3 5\sqrt{2}\,dt
+		 =300\sqrt{2}\left[\dfrac{t^4}{4}\right]_0^2 \\
+		 &=300\sqrt{2}\,(4)=1200\sqrt{2}
+		 \end{aligned}\]
+	 </p>
+	 <p style="text-align:right">
+		 as,py&ensp;
+	 </p>
+ </div>
+</li>
+<a id="x_helix43_scallineint"></a>
+
+<big>PY: 7-8 Checked</big>
+
+<li>
+	<div class="dotfillex">
+		<p>
+	    Compute \(\displaystyle \int_A^B xy\,ds\)
+	    along the helix \(\vec r(\theta)=(4\cos \theta,4\sin \theta,3\theta)\)
+			between \(A=\left(2\sqrt{3},2,\dfrac{\pi}{2}\right)\)
+			and		 \(B=\left(2,2\sqrt{3},\pi\right)\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX9"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX9">
+    <p>
+      Use the identity \(\sin\theta\cos\theta=\dfrac{1}{2}\sin(2\theta)\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+      \(\displaystyle \int_A^B xyz\,ds
+			=xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+<a id="x_twistedcubic_scallineint"></a>
+
+<li>
+	<div class="dotfillex">
+		<p>
+		  Compute
+			\(\displaystyle \int_{(-3,9,-18)}^{(3,9,18)} \left(y+\dfrac{3z}{x}\right)\,ds\)
+			along the twisted cubic \(\vec r(t)=\left(t,t^2,\dfrac{2}{3}t^3\right)\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX10"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX10">
+    <p>
+      What are the values of \(t\) at the \(2\) endpoints?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(\displaystyle
+       \int_{(-3,9,-18)}^{(3,9,18)} \left(y+\dfrac{3z}{x}\right)\,ds
+			 =xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+<!--Applications of Scalar Line Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">c. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+<a id="x_helix43_ave"></a>
+
+<li>
+	<p>
+		Consider the function \(f(x,y,z)=xy\)
+		along the helix \(\vec r(\theta)=(4\cos \theta,4\sin \theta,3\theta)\)
+		between \(A=\left(2\sqrt{3},2,\dfrac{\pi}{2}\right)\)
+		and		  \(B=\left(2,2\sqrt{3},\pi\right)\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average value of the function, \(f\), along the helix.
+					<br>
+					See two previous problems,
+					<a href="#x_helix43_len" title="Return using the Back button.">
+					here</a> and
+					<a href="#x_helix43_scallineint" title="Return using the Back button.">
+					here</a>.
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX11a"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX11a"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX11a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX11a">
+		    <p>
+					The length was computed
+					<a href="#x_helix43_len" title="Return using the Back button.">
+					here</a> and the integral of \(f\) was computed
+					<a href="#x_helix43_scallineint" title="Return using the Back button.">
+					here</a>.
+		    </p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX11a">
+				<p>
+					\(f_\text{ave}=xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX11a">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the weighted average of the function, \(f\), along the helix if
+					the weight factor is \(\delta=z\).
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX11b"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX11b"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX11b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX11b">
+		  	<p>
+		      Use the identity \(\sin\theta\cos\theta=\dfrac{1}{2}\sin(2\theta)\)
+					and then integrate by parts.
+		  	</p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX11b">
+				<p>
+				\(f_{\delta\text{-ave}}=xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX11b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+	</ol>
+</li>
+
+<a id="x_twistedcubic_ave"></a>
+
+<li>
+	<p>
+		Consider the function \(f(x,y,z)=y+\dfrac{3z}{x}\) along the twisted
+		cubic \(r(t)=\left(t,t^2,\dfrac{2}{3}t^3\right)\)
+		between the points \(A=(-3,9,-18)\) and \(B=(3,9,18)\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average value of the function, \(f\), along the curve.
+					<br>
+					See two previous problems,
+					<a href="#x_twistedcubic_len" title="Return using the Back button.">
+					here</a> and
+					<a href="#x_twistedcubic_scallineint" title="Return using the Back button.">
+					here</a>.
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX12a"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX12a"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX12a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX12a">
+		    <p>
+					The length was computed
+					<a href="#x_twistedcubic_len" title="Return using the Back button.">
+					here</a> and the integral of \(f\) was computed
+					<a href="#x_twistedcubic_scallineint" title="Return using the Back button.">
+					here</a>.
+		    </p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12a">
+				<p>
+					\(f_\text{ave}=xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12a">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the weighted average of the function, \(f\), along the curve if
+					the weight factor is \(\delta=y\).
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX12b"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX12b"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX12b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX12b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12b">
+				<p>
+				\(f_{\delta\text{-ave}}=xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		A wire has the shape of the helix
+		and has mass density \(\delta=\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the total mass.
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX13a"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX13a"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX13a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX13a">
+		    <p>
+					xxx
+		    </p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX13a">
+				<p>
+					\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX13a">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the \(z\)-component of the center of mass.
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX13b"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX13b"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX13b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX13b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX13b">
+				<p>
+				\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX13b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+		A wire has the shape of the twisted cubic
+		and has mass density \(\delta=\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the total mass.
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX14a"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX14a"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX14a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX14a">
+		    <p>
+					xxx
+		    </p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14a">
+				<p>
+					\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14a">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the \(x\)-component of the center of mass.
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX14b"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX14b"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX14b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX14b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14b">
+				<p>
+				\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="column">
+	  <div class="dotfillex">
+	    <p>
+	      Find the mass and center of mass of the cusp \(y^3=x^2\) for \(0 \le x \le 8\)
+	      if the linear density is \(\delta=y\). The cusp may be parametrized as
+	      \(\vec r(t)=(t^3,t^2)\) from \(t=0\) to \(t=2\).
+	  	</p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX15"></button>
+	      <button class="toggle has-sol" data-toggle="SolX15"></button>
+	    </p>
+	  </div>
+	  <div class="center">
+	    <img src="graphics/Mass-CM-Exercise-Cusp.jpg" alt="Mass-CM-Exercise-Cusp">
+	  </div>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+	  <p>
+	    \(M=(\bar{x},\bar{y},\bar{z})=\)
+	  </p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+	  <p>
+	    The velocity is \(\vec v=\langle 3t^2,2t\rangle\) and its magnitude is
+	    \(|\vec v|=\sqrt{9t^4+4t^2}=t\sqrt{9t^2+4}\). The density on the curve
+	    is \(\delta=y=t^2\). So the mass is
+	    \[
+	    M=\int_A^B \delta\,ds=\int_0^2 t^2\cdot t\sqrt{9t^2+4}\,dt
+	    \]
+	    To do the integral, we use a substitution \(u=9t^2+4\). So \(du=18t\,dt\)
+	    and \(t^2=\dfrac{u-4}{9}\):
+	    \[
+	    M=\dfrac{1}{18}\int_4^{40} \dfrac{u-4}{9}\sqrt{u}\,du
+	    =\dfrac{1}{162}\left[\dfrac{2u^{5/2}}{5}-4\dfrac{2u^{3/2}}{3}\right]_4^{40}
+	    \]
+	    For the \(x\) moment, we substitute \(x=t^3\) and compute:
+	    \[
+	    M_x=\int_A^B x\,ds=\int_0^2 t^3\cdot t^2\cdot t\sqrt{9t^2+4}\,dt
+	    \]
+	    And, for the \(y\) moment, we substitute \(y=t^2\) and compute:
+	    \[
+	    M_y=\int_A^B y\,ds=\int_0^2 t^2\cdot t^2\cdot t\sqrt{9t^2+4}\,dt
+	    \]
+	    Now we divide each moment by the mass:
+	    \[
+	    \bar{x}=
+			\qquad
+	    \bar{y}=
+	    \]
+	    So the center of mass is at:
+	    \[
+	    (\bar{x},\bar{y})=\left(\right)
+	    \]
+	  </p>
+	</div>
+</li>
+
+<hr width="80%">
+
+<p>
+	In the next two problems, set up the integrals but use a calculator or
+	computer to numerically evaluate the integrals.
+</p>
+
+<li>
+	<big>PY: Maybe change this poroblem to be \(\delta=e^x\)</big>
+	<br>
+ <p>
+	 Consider a piece of wire bent into a curve shaped like the
+		 exponential function \(y=e^x\) on the interval \(0< x< 3\) with a linear density
+		 of the wire given by \(\delta(x,y)=x+\dfrac{1}{y}\)
+ </p>
+ <ol>
+	<li>
+		<div class="dotfillex">
+			 <p>
+			 Find the total mass of the wire (HINT: Use a calculator once you've
+			 set up the problem!)
+			 </p>
+			 <p>
+				 <button class="toggle has-ans" data-toggle="AnsX16a"></button>
+				 <button class="toggle has-sol" data-toggle="SolX16a"></button>
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-ans" data-toggle="AnsX16a">
+			 <p>
+			 \(M\approx44.8\)
+			 </p>
+		 </div>
+	 <div class="toBeToggled drop-sol" data-toggle="SolX16a">
+			 <p>
+			 \(\displaystyle M=\int_a^b \delta(r(t))|\vec v|\,dt\)
+			 <br>
+			 \(r(t)=(t,e^t) \qquad 0 \le t \le 3\)
+			 <br>
+			 \(v=(1,e^t)\)
+			 <br>
+			 \(|v|=\sqrt{1+e^{2t}}\)
+			 <br>
+			 \(\delta(r(t))=t+\dfrac{1}{e^t}\)
+			 <br>
+			 \(\displaystyle M=\int_0^3 \left(t+\dfrac{1}{e^t}\right)\sqrt{1+e^{2t}}\,dt
+			 \approx44.8\)
+			 </p>
+			 <p style="text-align:right">
+				 as&ensp;
+			 </p>
+		 </div>
+ 	</li>
+	<li>
+		<div class="dotfillex">
+			 <p>
+			 Find the first moment of mass in the \(x\) and \(y\) directions (again, use a calculator)
+			 </p>
+			 <p>
+				 <button class="toggle has-ans" data-toggle="AnsX16b"></button>
+				 <button class="toggle has-sol" data-toggle="SolX16b"></button>
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-ans" data-toggle="AnsX16b">
+			 <p>
+			 \(M_x\approx103.6\)
+			 <br>
+			 \(M_y\approx526.3\)
+			 </p>
+		 </div>
+	 <div class="toBeToggled drop-sol" data-toggle="SolX16b">
+			 <p>
+ 			\(x(t)=t \qquad y(t)=e^t\)
+ 			<br>
+ 			\(\delta(r(t))=t+\dfrac{1}{e^t}\)
+ 			<br>
+ 			\(|\vec v|=\sqrt{1+e^{2t}}\)
+ 			<br>
+			\(\displaystyle M_x=\int_a^b x(t)\delta(r(t))|\vec v|\,dt\)
+ 			<br>
+			\(\displaystyle \qquad=\int_0^3 t\left(t+\dfrac{1}{e^t}\right)\sqrt{1+e^{2t}}\,dt
+			\approx103.6\)
+			<br>
+			\(\displaystyle M_y=\int_a^b y(t)\delta(r(t))|\vec v|\,dt\)
+			<br>
+			\(\displaystyle=\int_0^3 e^t\left(t+\dfrac{1}{e^t}\right)\sqrt{1+e^{2t}}\,dt
+			\approx526.3\)
+			 </p>
+			 <p style="text-align:right">
+				 as&ensp;
+			 </p>
+		 </div>
+ 	</li>
+	<li>
+		<div class="dotfillex">
+			 <p>
+				 Find the approximate center of mass
+			 </p>
+			 <p>
+				 <button class="toggle has-ans" data-toggle="AnsX16c"></button>
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-ans" data-toggle="AnsX16c">
+			 <p>
+			 \((\bar{x},\bar{y})
+			 \approx\left(\dfrac{103.6}{44.8},\dfrac{526.3}{44.8}\right)=(2.31,11.75)\)
+			 </p>
+			 <p style="text-align:right">
+				 as&ensp;
+			 </p>
+		 </div>
+ 	</li>
+ </ol>
+</li>
+
+<!-- <li> -->
+	<p>
+		<b>(Unnumbered Problem)</b>
+		Consider a piece of wire in the shape of the parabola \(y=2x^2\) on
+		the interval \(-2< x< 2\) and a linear density given by \(\delta(x,y)=x+y\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the total mass of the wire (HINT: Use a calculator once you've
+					set up the problem!)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX15a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX15a"></button>
+					<button class="toggle has-sol" data-toggle="SolX15a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX15a">
+				<p>
+					The total mass is given by
+					<br>
+					\(\displaystyle M=\int_a^b \delta(r(t))|\vec v|\,dt\)
+				</p>
+			</div>
+ 		  <div class="toBeToggled drop-ans" data-toggle="AnsX15a">
+ 			  <p>
+			    \(M=64.\,98\)
+ 			  </p>
+ 		  </div>
+		  <div class="toBeToggled drop-sol" data-toggle="SolX15a">
+ 			  <p>
+			    \(\displaystyle M=\int_a^b \delta(r(t))|\vec v|\,dt\)
+				  <br>
+				  \(r(t)=(t,2t^2) \qquad -2 \le t \le 2\)
+				  <br>
+				  \(v=(1,4t)\)
+				  <br>
+				  \(|v|=\sqrt{1+16t^2}\)
+				  <br>
+				  \(\delta(r(t))=t+2t^2\)
+				  <br>
+				  \(\displaystyle M=\int_{-2}^2 (2t^2+t)\sqrt{1+16t^2}\,dt=64.98\)
+				</p>
+				<p style="text-align:right">
+					as&ensp;
+				</p>
+ 		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				 <p>
+				 Find the first moment of mass in the \(x\) and \(y\) directions (again,
+				 use a calculator)
+				 </p>
+				 <p>
+					 <button class="toggle has-hint" data-toggle="HintX15b"></button>
+					 <button class="toggle has-ans" data-toggle="AnsX15b"></button>
+					 <button class="toggle has-sol" data-toggle="SolX15b"></button>
+				 </p>
+			 </div>
+			 <div class="toBeToggled drop-hint" data-toggle="HintX15b">
+				 <p>
+				 The first moment of the mass is given by
+				 <br>
+				 \(\displaystyle M_{1x}=\int_a^b x(t)\delta(r(t))|\vec v|\,dt\)
+				 <br>
+				 The first moment in the y-direction is the same, except the y function is in
+				 the integrand instead of the x function.
+				 </p>
+			 </div>
+			 <div class="toBeToggled drop-ans" data-toggle="AnsX15b">
+				 <p>
+				 \(M_{1x}=32.49\)
+				 <br>
+				 \(M_{1y}=345.3\)
+				 </p>
+			 </div>
+		 <div class="toBeToggled drop-sol" data-toggle="SolX15b">
+ 			 <p>
+				 \(\displaystyle M_{1x}=\int_a^b x(t)\delta(r(t))|\vec v|\,dt\)
+				 <br>
+				 \(x(t)=t\)
+				 <br>
+				 \(\delta(r(t))=2t^2+t\)
+				 <br>
+				 \(|\vec v|=\sqrt{1+16t^2}\)
+				 <br>
+				 \(\displaystyle M_{1x}=\int_{-2}^2 t(2t^2+t)\sqrt{1+16t^2}\,dt=32.49\)
+				 <br>
+				 \(\displaystyle M_{1y}=\int_a^b y(t)\delta(r(t))|\vec v|\,dt\)
+				 <br>
+				 \(y(t)=2t^2\)
+				 <br>
+				 \(\displaystyle M_{1y}=\int_{-2}^2 2t^2(2t^2+t)\sqrt{1+16t^2}\,dt=345.3\)
+ 			 </p>
+				<p style="text-align:right">
+				as&ensp;
+				</p>
+ 		 </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+ 			 <p>
+				 Find the approximate center of mass
+ 			 </p>
+ 			 <p>
+ 				 <button class="toggle has-hint" data-toggle="HintX15c"></button>
+ 				 <button class="toggle has-ans" data-toggle="AnsX15c"></button>
+ 			 </p>
+ 		 </div>
+ 		 <div class="toBeToggled drop-hint" data-toggle="HintX15c">
+ 			 <p>
+				 The center of mass is given by
+				 <br>
+				 \((\bar{x},\bar{y})=\left(\dfrac{M_{1x}}{M},\dfrac{M_{1y}}{M}\right)\)
+ 			 </p>
+ 		 </div>
+ 		 <div class="toBeToggled drop-ans" data-toggle="AnsX15c">
+ 			 <p>
+				 \((\bar{x},\bar{y})=\left(\dfrac{32.49}{64.98},\dfrac{345.3}{64.98}\right)
+				 =\left(\dfrac{1}{2},5.314\right)\)
+ 			 </p>
+ 		 </div>
+		</li>
+	</ol>
+<!-- </li> -->
+
+<!--Line Integrals of Vectors-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">d. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+ <div class="dotfillex">
+	 <p>
+		 Compute \(\displaystyle \int_{(3,3,2)}^{(6,12,16)} \vec F\cdot d\vec s\)
+		 along the twisted cubic \(\vec r(t)=(3t,3t^2,2t^3)\) for the vector
+		 field \(\vec F=(2y,2z,x^2)\).
+	 </p>
+	 <p>
+		 <button class="toggle has-hint" data-toggle="HintX17"></button>
+		 <button class="toggle has-ans" data-toggle="AnsX17"></button>
+		 <button class="toggle has-sol" data-toggle="SolX17"></button>
+	 </p>
+ </div>
+ <div class="toBeToggled drop-hint" data-toggle="HintX17">
+	 <p>
+		 First, find \(F(\vec r(t))\), then find \(d\vec s=\vec v\,dt\). Dot the
+		 two expressions (you should have both in terms of t), and then integrate
+		 the result from \(1\) to \(2\), since those are values of \(t\) that
+		 correspond with the points on the curve for the limits.
+	 </p>
+ </div>
+ <div class="toBeToggled drop-ans" data-toggle="AnsX17">
+	 <p>
+		 \(525.6\)
+	 </p>
+ </div>
+ <div class="toBeToggled drop-sol" data-toggle="SolX17">
+	 <p>
+		 \(\displaystyle \int_{(3,3,2)}^{(6,12,16)} \vec F\cdot d\vec s\)
+		 <br>
+		 \(\vec F(\vec r(t))=(6t^2,4t^3,9t^2)\)
+		 <br>
+		 \(d\vec s=\vec v\,dt=(3,6t,6t^2)\,dt\)
+		 <br>
+		 \(\vec F\cdot d\vec s=(18t^2+24t^4+54t^4)=78t^4+18t^2\)
+		 <br>
+		 \(\displaystyle \int_{(3,3,2)}^{(6,12,16)} \vec F\cdot d\vec s
+		 =\int_1^2 (78t^4+18t^2)\,dt=\)
+		 <br>
+		 \(\displaystyle=\left[\dfrac{78t^5}{5}+6t^3\right]_1^2
+		 =\left(\dfrac{78\cdot32}{5}+48\right)-\left(\dfrac{78}{5}+6\right)=525.6\)
+	 </p>
+	 <p style="text-align:right">
+		 as&ensp;
+	 </p>
+ </div>
+</li>
+
+<li>
+<div class="dotfillex">
+	<p>
+		Compute \(\displaystyle \int_{(0,0,0)}^{(2,4,8)} \vec F\cdot d\vec s\)
+		along the twisted cubic \(\vec r(t)=(t,t^2,t^3)\) for the vector field
+		\(\vec F=(yz,xz,xy)\)
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX18"></button>
+		<button class="toggle has-sol" data-toggle="SolX18"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+	<p>
+		\(\displaystyle \int_{(0,0,0)}^{(2,4,8)} \vec F\cdot d\vec s=135.62\)
+	</p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX18">
+	<p>
+		\(\vec F(\vec r(t))=(t^5,t^4,t^3)\)
+		<br>
+		\(d\vec s=\vec v\,dt=(1,2t,3t^2)\,dt\)
+		<br>
+		\(\vec F\cdot\vec v=t^5+2t^5+3t^5=6t^5\)
+		<br>
+		\(\displaystyle \int_{(0,0,0)}^{(2,4,8)} \vec F\cdot d\vec s
+		=\int_0^2 (6t^5)\,dt\)
+		<br>
+		\(=\left[t^6\right]_0^2=64\)
+	</p>
+	<p style="text-align:right">
+		as&ensp;
+	</p>
+</div>
+</li>
+
+<li>
+ <div class="dotfillex">
+	 <p>
+		 Compute \(\displaystyle \int_{(0,1,0)}^{(0,-1,\pi^2)} 2ydx-2xdy+zdz\)
+		 along the curve \(\vec r(t)=(\sin t,\cos t,t^2)\).
+	 </p>
+	 <p>
+		 <button class="toggle has-ans" data-toggle="AnsX19"></button>
+		 <button class="toggle has-sol" data-toggle="SolX19"></button>
+	 </p>
+ </div>
+ <div class="toBeToggled drop-ans" data-toggle="AnsX19">
+	 <p>
+		 \(\displaystyle \int_{(0,1,0)}^{(0,-1,\pi^2)} 2ydx+2xdy+zdz
+		 =2\pi+\dfrac{\pi^4}{2}\)
+	 </p>
+ </div>
+ <div class="toBeToggled drop-sol" data-toggle="SolX19">
+	 <p>
+		 \(dx=\cos t\,dt\)
+		 <br>
+		 \(dy=-\sin t\,dt\)
+		 <br>
+		 \(dz=2t\,dt\)
+		 <br>
+		 lower bound \(=0\)
+		 <br>
+		 upper bound \(=\pi\)
+		 <br>
+		 \(\displaystyle \int_{(0,1,0)}^{(0,-1,\pi^2)} 2ydx+2xdy+zdz
+		 =\int_0^\pi 2\cos^2(t)\,dt+2\sin^2(t)dy+2t^3\,dt\)
+		 <br>
+		 \(\displaystyle
+		 =\int_0^\pi (2+2t^3)\,dt=\left[2t+\dfrac{t^4}{2}\right]_0^\pi
+		 =2\pi+\dfrac{\pi^4}{2}\)
+	 </p>
+	 <p style="text-align:right">
+		 as&ensp;
+	 </p>
+ </div>
+</li>
+
+<!--Applications of Vector Line Integrals-->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">e. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	 <div class="dotfillex">
+		 <p>
+		 Find the work done by the force \(\vec F=(x+y,x^2+z,y^2+z)\) on an
+		 object which moves it along the curve defined by \(\vec r(t)=(t,2t,3t^2)\)
+		 from \((-1,-2,3)\) to \((3,6,27)\).
+		 </p>
+		 <p>
+			 <button class="toggle has-hint" data-toggle="HintX20"></button>
+			 <button class="toggle has-ans" data-toggle="AnsX20"></button>
+			 <button class="toggle has-sol" data-toggle="SolX20"></button>
+		 </p>
+	 </div>
+ <div class="toBeToggled drop-hint" data-toggle="HintX20">
+		 <p>
+			 \(\displaystyle W=\int_A^B \vec F\cdot d\vec s\)
+		 </p>
+	 </div>
+	 <div class="toBeToggled drop-ans" data-toggle="AnsX20">
+		 <p>
+			 \(W=\dfrac{2780}{3}\)
+		 </p>
+	 </div>
+	 <div class="toBeToggled drop-sol" data-toggle="SolX20">
+		 <p>
+			 \(\displaystyle W=\int_A^B \vec F\cdot d\vec s\)
+		 <br>
+		 \(A=-1,B=3\)
+		 <br>
+		 \(\vec F=(t+2t,t^2+3t^2,4t^2+3t^2)\)
+		 <br>
+		 \(=(3t,4t^2,7t^2)\)
+		 <br>
+		 \(d\vec s=\vec v\,dt=(1,2,6t)\,dt\)
+		 <br>
+		 \(\vec F\cdot d\vec s=3t+8t^2+42t^3\)
+		 <br>
+		 \(\displaystyle W=\int_{-1}^3 (3t+8t^2+42t^3)\,dt=\dfrac{2780}{3}\)
+		 </p>
+		 <p style="text-align:right">
+			 as&ensp;
+		 </p>
+	 </div>
+ </li>
+
+<li>
+<div class="dotfillex">
+	<p>
+		Find the flow of the velocity field \(\vec V=(yz,xz,xy)\) along the
+		curve \(\vec r(t)=(t+1,-4t^2,t^3)\) from \((1,0,0)\) to \((3,-16,8)\)
+	</p>
+	<p>
+		<button class="toggle has-hint" data-toggle="HintX21"></button>
+		<button class="toggle has-ans" data-toggle="AnsX21"></button>
+		<button class="toggle has-sol" data-toggle="SolX21"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX21">
+	<p>
+		Be sure to distinguish between the velocity field \(\vec V=(yz,xz,xy)\)
+		and the tangent vector to the curve \(\vec v=\dfrac{dr}{dt}\).
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX21">
+	<p>
+		\(Flow=-384\)
+	</p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX21">
+	<p>
+		\(\displaystyle Flow=\int_A^B \vec V\cdot d\vec s\)
+		<br>
+		\(a=0,b=2\)
+		<br>
+		\(V=(-4t^2\cdot t^3,(t+1)\cdot t^3,-4t^2(t+1))\)
+		<br>
+		\(=(-4t^5,t^4+t^3,-4t^3-4t^2)\)
+		<br>
+		\(d\vec s=\vec v\,dt=(1,-8t,3t^2)\,dt\)
+		<br>
+		\(\vec V\cdot d\vec s=-4t^5-8t^5-8t^4-12t^5-12t^4\)
+		<br>
+		\(=-(24t^5+20t^4)\,dt\)
+		<br>
+		\(\displaystyle Flow=\int_{(1,0,0)}^{(3,-16,8)} \vec V\cdot d\vec s
+		=\int_0^2 -(24t^5+20t^4)\,dt\)
+		<br>
+		\(=-[4t^6+4t^5]_0^2=-384\)
+	</p>
+	<p style="text-align:right">
+		as&ensp;
+	</p>
+</div>
+</li>
+<a id="x_circ_circ"></a>
+<br>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the circulation of the velocity field \(\vec V=(-x^2y,x^3)\)
+			counterclockwise around the circle \(x^2+y^2=9\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX22"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX22"></button>
+    	<button class="toggle has-sol" data-toggle="SolX22"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX22">
+    <p>
+			Be sure to distinguish between the velocity field \(\vec V=(yz,xz,xy)\)
+			and the tangent vector to the curve \(\vec v=\dfrac{dr}{dt}\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX22">
+  	<p>
+      \(\displaystyle
+      xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX22">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+<a id="x_circ_parab"></a>
+<br>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the circulation of the magnetic field \(\vec B=(-y^3,xy^2)\)
+			counterclockwise around the parabola \(y=x^2\) and the line segment
+			\(y=4\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX23"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX23"></button>
+    	<button class="toggle has-sol" data-toggle="SolX23"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX23">
+    <p>
+      The parabola may be parametrized as \(\vec r=(t,t^2)\).
+			<br>
+      The line segment may be parametrized as \(\vec r=(-t,4)\).
+			Notice that as \(t\) increases, we move leftward on the line segment.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX23">
+  	<p>
+      \(\displaystyle
+      xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX23">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<!--Normal Line Integrals in \(\mathbb{R}^2\) (Optional)-->
+
+  
+  
+  
+  <div class="rule" id="topic6"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">f. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	<p>
+		For each vector, \(\vec v\), find find its normal, \(\vec n=\vec v^\perp\),
+		and	the normal (non-parametric) equation of the line through the given
+		point, \(P\),	perpendicular to \(\vec n\).
+	</p>
+	<ol>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(\vec v=\langle3,5\rangle\) and \(P=(1,4)\).
+				</p>
+				<p>
+		    	<button class="toggle has-hint" data-toggle="HintX24a"></button>
+		    	<button class="toggle has-ans" data-toggle="AnsX24a"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX24a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX24a">
+		    <p>
+					If \(\vec v=\langle a,b\rangle\) then
+					\(\vec v^\perp=\langle b,-a\rangle\).
+					<br>
+					The line through \(P\) perpendicular to \(\vec n\) is
+					\(\vec n\cdot X=\vec n\cdot P\) where \(X=(x,y)\).
+		    </p>
+		  </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX24a">
+				<p>
+					\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX24a">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(\vec v=\langle-4,2\rangle\) and \(P=(3,1)\).
+				</p>
+				<p>
+		    	<button class="toggle has-ans" data-toggle="AnsX24b"></button>
+		    	<button class="toggle has-sol" data-toggle="SolX24b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX24b">
+				<p>
+				\(xxx\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX24b">
+		  	<p>
+		      xxx
+		  	</p>
+		  </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Compute \(\displaystyle \oint \vec F\cdot d\vec n\) for
+			\(\vec F=\langle x^3,x^2y\rangle\) <em>counterclockwise</em> around
+			the circle \(x^2+y^2=9\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX25"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX25"></button>
+    	<button class="toggle has-sol" data-toggle="SolX25"></button>
+    	<button class="toggle has-rem" data-toggle="RemX25"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX25">
+    <p>
+      \(d\vec n=d\vec s^\perp\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX25">
+  	<p>
+      \(\displaystyle
+      xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX25">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX25">
+  	<p>
+			Notice that this is the same integral as in a
+			<a href="#x_circ_circ" title="Return using the Back button.">
+			previous problem</a>. In that problem, we computed:
+			\[
+			\oint \vec V\cdot d\vec s \quad \text{for} \quad \vec V=(-x^2y,x^3)
+			\]
+			In this problem, we computed:
+			\[
+			\oint \vec F\cdot d\vec n \quad \text{for} \quad \vec F=(x^3,x^2y)
+			\]
+			They are the same because \(\vec F=\vec V^\perp\) or \(\vec V=-\vec F^\perp\).
+  	</p>
+  </div>
+</li>
+
+<!--Applications of Normal Line Integrals (Optional)-->
+
+  
+  
+  
+  <div class="rule" id="topic7"></div>
+  <div class="heading">
+    <h3><a
+          href=".html">g. </a></h3>
+    <div class="pgs">
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the expansion of the velocity field \(\vec V=\langle xy^2,y^3\rangle\)
+			<em>outward</em> from the region bounded by the parabola \(y=x^2\) and
+			the line segment \(y=4\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX26"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX26"></button>
+    	<button class="toggle has-sol" data-toggle="SolX26"></button>
+    	<button class="toggle has-rem" data-toggle="RemX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX26">
+    <p>
+      The expansion is \(\displaystyle \oint \vec V\cdot d\vec n\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+  	<p>
+      \(\displaystyle
+      xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX26">
+  	<p>
+			Notice that this is the same integral as in a
+			<a href="#x_circ_parab" title="Return using the Back button.">
+			previous problem</a>. In that problem, we computed
+			\[
+			\oint \vec B\cdot d\vec s \quad \text{for} \quad \vec B=(-y^3,xy^2)
+			\]
+			In this problem,   we computed
+			\[
+			\oint \vec V\cdot d\vec n \quad \text{for} \quad \vec V=(xy^2,y^3)
+			\]
+			They are the same because \(\vec V=\vec B^\perp\) or \(\vec B=-\vec V^\perp\).
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX27"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX27"></button>
+    	<button class="toggle has-sol" data-toggle="SolX27"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX27">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX27">
+  	<p>
+      \(\displaystyle
+      xxx\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX27">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+			<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+<p>
+	Consider a wire in the shape of the curve \(\vec r(t)
+	=\left(2t\cos t,2t\sin t,\dfrac{1}{3}t^3\right)\).
+	Compute each of the following. Simplify where possible.
+</p>
+<ol>
+	<li>
+		<div class="dotfillex">
+ 		 <p>
+			 The mass of the wire between \(t=0\) and \(t=1\) with linear density
+			 \(\delta=x^2+y^2\).
+ 		 </p>
+ 		 <p>
+ 			 <button class="toggle has-ans" data-toggle="AnsX28a"></button>
+			 <button class="toggle has-sol" data-toggle="SolX28a"></button>
+ 		 </p>
+ 	 </div>
+ 	 <div class="toBeToggled drop-ans" data-toggle="AnsX28a">
+ 		 <p>
+			 \(M=\dfrac{52}{15}\)
+ 		 </p>
+ 	 </div>
+	 <div class="toBeToggled drop-sol" data-toggle="SolX28a">
+ 		 <p>
+			 The density on the curve is \(\delta(r(t))=4t^2\). The velocity is:
+			 \[
+			 \vec v=(2\cos t-2t\sin t,2\sin(t)+2t\cos t,t^2)
+			 \]
+			 The speed is:
+			 \[\begin{aligned}
+			 |\vec v(t)|
+			 &=\sqrt{(2\cos t-2t\sin t)^2+(2\sin t+2t\cos t)^2+(t^2)^2} \\
+			 &=\sqrt{4+4t^2+t^4}=2+t^2
+			 \end{aligned}\]
+			 So the mass is:
+			 \[\begin{aligned}
+			 M&=\int_{(0,0,0)}^{(2\cos 1,2\sin 1,1/3)} \delta\,ds
+			 =\int_0^1 \delta(r(t))|\vec v|\,dt \\
+			 &=\int_0^1 (4t^2)(2+t^2)\,dt
+			 =\left[8\dfrac{t^3}{3}+4\dfrac{t^5}{5}\right]_0^1 \\
+			 &=\dfrac{8}{3}+\dfrac{4}{5}=\dfrac{52}{15}
+			 \end{aligned}\]
+ 		 </p>
+ 	 </div>
+	</li>
+<li>
+	<div class="dotfillex">
+		 <p>
+		 The \(z\)-component of the center of mass of the wire between \(t=0\)
+		 and \(t=1\) with linear density \(\delta=x^2+y^2\).
+		 </p>
+		 <p>
+			 <button class="toggle has-hint" data-toggle="HintX28b"></button>
+			 <button class="toggle has-ans" data-toggle="AnsX28b"></button>
+			 <button class="toggle has-sol" data-toggle="SolX28b"></button>
+		 </p>
+	 </div>
+	 <div class="toBeToggled drop-hint" data-toggle="HintX28b">
+		 <p>
+			 \(\bar{z}=\dfrac{M_{1z}}{M}\)
+			 <br>
+			 where the mass is \(M\) and the \(z\)-\(1^\text{st}\) moment is
+			 <br>
+			 \(\displaystyle M_{1z}=\int_a^b z(t)\delta(r(t))|\vec v|\,dt\)
+		 </p>
+	 </div>
+	 <div class="toBeToggled drop-ans" data-toggle="AnsX28b">
+		 <p>
+			 \(\bar{z}=\dfrac{55}{312}\approx0.176\)
+		 </p>
+		 <p align="right">as&nbsp;
+	 </div>
+	 <div class="toBeToggled drop-sol" data-toggle="SolX28b">
+ 		 <p>
+			 From part (a), \(z(t)=\dfrac{1}{3}t^3\),
+			 \(\delta(\vec r(t))=4t^2\) and \(|\vec v|=2+t^2\). So the
+			 \(z\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1z}&=\int_a^b z(t)\delta(r(t))|\vec v|\,dt
+				=\int_0^1 \dfrac{1}{3}t^3\cdot4t^2\cdot(2+t^2)\,dt \\
+				&=\dfrac{4}{3}\int_0^1 (2t^5+t^7)\,dt
+				=\dfrac{4}{3}\left[\dfrac{t^6}{3}+\dfrac{t^8}{8}\right]_0^1 \\
+				&=\dfrac{4}{3}\left(\dfrac{1}{3}+\dfrac{1}{8}\right)
+				=\dfrac{11}{18}
+				\end{aligned}\]
+ 			From part (a), the total mass of the wire is
+			\(M=\dfrac{52}{15}\), so the	center of mass is:
+ 			\[
+ 			\bar{z}
+			=\dfrac{M_{1z}}{M}
+ 			=\dfrac{11}{18}\dfrac{15}{52}
+			=\dfrac{55}{312}
+ 			\approx0.176
+ 			\]
+ 		 </p>
+		 <p align="right">as&nbsp;
+ 	 </div>
+	</li>
+	<li>
+		<div class="dotfillex">
+ 		 <p>
+			 The work to move a bead along the wire from \(t=0\) to \(t=1\) if the
+			 force is \(\vec F=(-y,x,0)\)
+ 		 </p>
+ 		 <p>
+ 			 <button class="toggle has-ans" data-toggle="AnsX28c"></button>
+			 <button class="toggle has-sol" data-toggle="SolX28c"></button>
+ 		 </p>
+ 	 </div>
+ 	 <div class="toBeToggled drop-ans" data-toggle="AnsX28c">
+ 		 <p>
+			 \(W=\dfrac{4}{3}\)
+ 		 </p>
+ 	 </div>
+	 <div class="toBeToggled drop-sol" data-toggle="SolX28c">
+ 		 <p>
+			 From part (a),
+			 \[
+			 \vec v(t)=(2\cos t-2t\sin t,2\sin(t)+2t\cos t,t^2)
+			 \]
+			 The force along the curve is
+			 \[
+			 \vec F(\vec r(t))=(-2t\sin t,2t\cos t,0)
+			 \]
+			 So the work is:
+				\[\begin{aligned}
+			 W&=\int_{(0,0,0)}^{(2\cos 1,2\,\sin 1,1/3)} \vec F\cdot d\vec s
+			 =\int_0^1 \vec F(r(t))\cdot\vec v(t)\,dt \\
+			 &=\int_0^1 -2t\sin t(2\cos t-2t\sin t)+2t\cos t(2\sin t+2t\cos t)\,dt \\
+			 &=\int_0^1 4t^2\,dt
+			 =\left[4\dfrac{t^3}{3}\right]_0^1
+			 =\dfrac{4}{3}
+			 \end{aligned}\]
+ 		 </p>
+ 	 </div>
+	</li>
+</ol>
+</li>
+
+<li>
+	<p>
+	 Consider a wire in the shape of the curve \(\vec r(t)=(e^t\cos(t),e^t\sin(t),e^t)\).
+	 Compute each of the following. Simplify where possible.
+	</p>
+	<ol>
+		<li>
+		<div class="dotfillex">
+			 <p>
+			 The mass of the wire between \(t=0\) and \(t=1\) with linear density \(\delta=z\).
+			 </p>
+			 <p>
+				 <button class="toggle has-hint" data-toggle="HintX29a"></button>
+				 <button class="toggle has-ans" data-toggle="AnsX29a"></button>
+				 <button class="toggle has-sol" data-toggle="SolX29a"></button>
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-hint" data-toggle="HintX29a">
+			 <p>
+				 \[
+				 M=\int_A^B \delta\,ds
+				 \]
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-ans" data-toggle="AnsX29a">
+			 <p>
+				 The mass of the wire is \(\dfrac{\sqrt{3}}{2}(e^2-1)\approx 5.53\)
+			 </p>
+			 <p align="right">as&nbsp;
+		 </div>
+		 <div class="toBeToggled drop-sol" data-toggle="SolX29a">
+	 		 <p>
+				 The density on the curve is \(\delta(r(t))=e^t\). The velocity is:
+				 \[\begin{aligned}
+				 \\
+				 \vec v&=(e^t\cos(t)-e^t\sin(t),e^t\cos(t)+e^t\sin(t),e^t)\\
+				 \end{aligned}\]
+				 The speed is:
+				 \[\begin{aligned}
+				 |\vec v(t)|
+				 &=\sqrt{(e^t\cos(t)-e^t\sin(t))^2+(e^t\cos(t)+e^t\sin(t))^2+(e^t)^2}\\
+				 &=\sqrt{e^{2t}+e^{2t}+e^{2t}}=\sqrt{3}e^t\\
+				 \end{aligned}\]
+				 So the mass is:
+				 \[\begin{aligned}
+				 M&=\int_{(\cos(0),\sin(0),1)}^{(e\cos(1),e\sin(1),e)} \delta\,ds
+				 =\int_0^1 \delta(r(t))|\vec v|\,dt
+				 \end{aligned}\]
+
+				 \[\begin{aligned}
+				 \int_0^1 e^t(\sqrt{3}e^t)\,dt
+				 &=\left[\dfrac{\sqrt{3}}{2}e^{2t}\right]_0^1=\dfrac{\sqrt{3}}{2}(e^2-1)
+				 \approx 5.53
+				 \end{aligned}\]
+	 		 </p>
+			 <p align="right">as&nbsp;
+	 	 </div>
+		</li>
+	<li>
+		<div class="dotfillex">
+			 <p>
+			 The center of mass of the wire between \(t=0\) and \(t=1\) with linear
+			 density \(\delta=z\) along the \(z\) axis.
+			 </p>
+			 <p>
+				 <button class="toggle has-hint" data-toggle="HintX29b"></button>
+				 <button class="toggle has-ans" data-toggle="AnsX29b"></button>
+				 <button class="toggle has-sol" data-toggle="SolX29b"></button>
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-hint" data-toggle="HintX29b">
+			 <p>
+				 \(\bar{z}=\dfrac{M}{M_{1z}}\)<br>
+				 \(\displaystyle M_{1z}=\int_a^b z(t)\delta(r(t))|\vec v|\,dt\)
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-ans" data-toggle="AnsX29b">
+			 <p>
+				 \(\bar{z}=\dfrac{2(e^2+e+1)}{3(e+1)}\approx1.99\)
+			 </p>
+			 <p align="right">as&nbsp;
+		 </div>
+		 <div class="toBeToggled drop-sol" data-toggle="SolX29b">
+	 		 <p>
+				 From part (a), \(z(t)=e^t\),
+				 \(\delta(r(t))=e^t\) and \(|\vec v|=\sqrt{3}e^t\). So the
+				 \(z\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+	 			M_{1z}&=\int_a^b z(t)\delta(r(t))|\vec v|\,dt
+	 			=\int_0^1 e^t\cdot e^t\cdot\sqrt{3}e^t\,dt\\
+				&=\int_0^1 \sqrt{3}e^{3t}\,dt
+	 			=\left[\dfrac{\sqrt{3}}{3}e^{3t}\right]_0^1\\
+				&=\dfrac{\sqrt{3}}{3}(e^3-1)\\
+	 			\end{aligned}\]
+
+				From part (a), the total mass of the wire is
+				\(M=\dfrac{\sqrt{3}}{2}(e^2-1)\), so the	center of mass is:
+	 			\[
+	 			\bar{z}
+	 			=\dfrac{\dfrac{\sqrt{3}}{3}(e^3-1)}{\dfrac{\sqrt{3}}{2}(e^2-1)}
+				=\dfrac{2(e-1)(e^2+e+1)}{3(e-1)(e+1)}
+				=\dfrac{2(e^2+e+1)}{3(e+1)}
+	 			\approx1.99
+	 			\]
+	 		 </p>
+			 <p align="right">as&nbsp;
+	 	 </div>
+		</li>
+	<li>
+		<div class="dotfillex">
+			 <p>
+			 The work to move a bead along the wire from \(t=0\) to \(t=1\) if the
+			 force is \(\vec F=(-y,x,0)\).
+			 </p>
+			 <p>
+				 <button class="toggle has-hint" data-toggle="HintX29c"></button>
+				 <button class="toggle has-ans" data-toggle="AnsX29c"></button>
+				 <button class="toggle has-sol" data-toggle="SolX29c"></button>
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-hint" data-toggle="HintX29c">
+			 <p>
+				 \(\displaystyle W=\int_A^B \vec F\cdot d\vec s\)
+			 </p>
+		 </div>
+		 <div class="toBeToggled drop-ans" data-toggle="AnsX29c">
+			 <p>
+				 \(W=\dfrac{1}{2}(e^2-1)\approx 3.19\)
+			 </p>
+			 <p align="right">as&nbsp;
+		 </div>
+		 <div class="toBeToggled drop-sol" data-toggle="SolX29c">
+			 <p>
+				 From part (a),
+				 \[
+				 \vec v(t)=(e^t\cos(t)-e^t\sin(t),e^t\cos(t)+e^t\sin(t),e^t)
+				 \]
+				 The force along the curve is
+				 \[\begin{aligned}
+				 \vec F(\vec r(t))=(-e^t\sin(t),e^t\cos(t),0)\\
+				 \end{aligned}\]
+				 So the work is:
+				 \[\begin{aligned}
+				 W&=\int_{(\cos(0),\sin(0),1)}^{(e^t\cos(t),e^t\sin(t),e^t)}
+				 \vec F\cdot d\vec s
+				 =\int_0^1 \vec F(r(t))\cdot\vec v(t)\,dt\\
+				 &\quad=\int_0^1 e^{2t}\sin^2(t)+e^{2t}\cos^2(t)\,dt\\
+				 &=\int_0^1 e^{2t}\,dt
+				 =\left[\dfrac{1}{2}e^{2t}\right]_0^1
+				 =\dfrac{1}{2}(e^2-1)
+				 \approx 3.19
+				 \end{aligned}\]
+	 		 </p>
+			 <p align="right">as&nbsp;
+	 	 </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+	 Consider a wire in the shape of the curve \(\vec r(t)=(3t^2,4t^3,3t^4)\).
+	 Compute each of the following. Simplify where possible.
+	</p>
+	<ol>
+		<li>
+		<div class="dotfillex">
+			<p>
+			The mass of the wire between \(t=1\) and \(t=2\) with linear density \(\delta=x\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX30a"></button>
+				<button class="toggle has-sol" data-toggle="SolX30a"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX30a">
+			<p>
+				The mass of the wire is \(445.5\)
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX30a">
+			<p>
+				The density on the curve is \(\delta(r(t))=3t^2\). The velocity is:
+				\[\begin{aligned}
+				\vec v&=(6t,12t^2,12t^3)
+				\end{aligned}\]
+				The speed is:
+				\[\begin{aligned}
+				|\vec v(t)|
+				&=\sqrt{(6t)^2+(12t^2)^2+(12t^3)^2}\\
+				&=\sqrt{36t^2+144t^4+144t^6}=6t(2t^2+1)\\
+				\end{aligned}\]
+				So the mass is:
+				\[\begin{aligned}
+				M&=\int_{(3,4,3)}^{(12,32,48)} \delta\,ds
+				=\int_1^2 \delta(r(t))|\vec v|\,dt\\
+				&=\int_1^2 18t^3(2t^2+1)\,dt
+				=\left[6t^6+\dfrac{9}{2}t^4\right]_1^2\\
+				&=384+72-6-\,\dfrac{9}{2}
+				=445.5
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+			<p>
+			The center of mass of the wire between \(t=1\) and \(t=2\) with linear
+			density \(\delta=x\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX30b"></button>
+				<button class="toggle has-sol" data-toggle="SolX30b"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX30b">
+			<p>
+				\((\bar{x},\bar{y},\bar{z})\approx(9,21.28,28.66)\)
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX30b">
+			<p>
+				From part (a), \(x(t)=3t^2\),\(y(t)=4t^3\), \(z(t)=3t^4\),
+				\(\delta(r(t))=3t^2\), and \(|\vec v|=12t^3+6t\).
+				<br>
+				So the \(x\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1x}&=\int_a^b x(t)\delta(r(t))|\vec v|\,dt
+				=\int_1^2 3t^2\cdot3t^2\cdot(12t^3+6t)\,dt\\
+				&=\int_1^2 54(2t^7+t^5)\,dt
+				=[13.5t^8+9t^6]_1^2\\
+				&=13.5(2)^8+9(2)^6-13.5-9=4009.5\\
+				\end{aligned}\]
+
+				The \(y\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1y}&=\int_a^b y(t)\delta(r(t))|\vec v|\,dt
+				=\int_1^2 4t^3\cdot3t^2\cdot(12t^3+6t)\,dt\\
+				&=\int_1^2 72\cdot(2t^8+t^6)\,dt
+				=\left[16t^9+\dfrac{72}{7}t^7\right]_1^2\\
+				&=16(2)^9+\dfrac{72}{7}(2)^7-16-\,\dfrac{72}{7}=9482\dfrac{2}{7}\\
+				\end{aligned}\]
+
+				The \(z\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1z}&=\int_a^b z(t)\delta(r(t))|\vec v|\,dt
+				=\int_1^2 3t^4\cdot3t^2\cdot(12t^3+6t)\,dt\\
+				&=\int_1^2 54\cdot(2t^9+t^7)\,dt
+				=\left[10.8t^{10}+6.75t^8\right]_1^2\\
+				&=10.8(2)^{10}+6.75(2)^8-10.8-6.75=12769.65\\
+				\end{aligned}\]
+
+				From part(a), the total mass of the wire is
+				\(M=445.5\), so the center of mass is:
+				\[
+				(\bar{x},\bar{y},\bar{z})
+				\approx\left(\dfrac{4009.5}{445.5},\dfrac{9482.29}{445.5},
+				\dfrac{12769.65}{445.5}\right)
+				=(9,21.28,28.66)
+				\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+			<p>
+			The work to move a bead along the wire from \(t=1\) to \(t=2\) if the
+			force is \(\vec F=(0,y,x)\).
+			</p>
+			<p>
+				<button class="toggle has-ans" data-toggle="AnsX30c"></button>
+				<button class="toggle has-sol" data-toggle="SolX30c"></button>
+			</p>
+		</div>
+		<div class="toBeToggled drop-ans" data-toggle="AnsX30c">
+			<p>
+				\(W=882\)
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX30c">
+			<p>
+				From part (a),
+				\[\begin{aligned}
+				\vec v(t)=(6t,12t^2,12t^3)
+				\end{aligned}\]
+				The force along the curve is
+				\[\begin{aligned}
+				\vec F(\vec r(t))=(0,4t^3,3t^2)
+				\end{aligned}\]
+				So the work is:
+				\[\begin{aligned}
+				W&=\int_{(3,4,3)}^{(12,32,48)} \vec F\cdot d\vec s
+				=\int_1^2 \vec F(r(t))\cdot\vec v(t)\,dt\\
+				&=\int_1^2 12t^2\cdot4t^3+12t^3\cdot3t^2\,dt\\
+				&\quad=\int_1^2 84t^5\,dt
+				=\left[14t^6\right]_1^2
+				=882
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+	 Consider a wire in the shape of the curve \(\vec r(t)=(e^t,\sqrt{2}t,e^{-t})\).
+	 Compute each of the following. Simplify where possible.
+	</p>
+	<ol>
+		<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The mass of the wire between \(t=0\) and \(t=1\) with linear density \(\delta=x\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX31a"></button>
+			 <button class="toggle has-sol" data-toggle="SolX31a"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX31a">
+	 	 <p>
+			 \(M=\dfrac{1}{2}(e^2+1)\approx 4.19\)
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX31a">
+			<p>
+				The density on the curve is \(\delta(r(t))=e^t\). The velocity is:
+				\[\begin{aligned}
+				\vec v&=(e^t,\sqrt{2},-e^{-t})\\
+				\end{aligned}\]
+				The speed is:
+				\[\begin{aligned}
+				|\vec v(t)|
+				&=\sqrt{e^{2t}+2+e^{-2t}}=e^t+e^{-t}\\
+				\end{aligned}\]
+				So the mass is:
+				\[\begin{aligned}
+				M&=\int_{(1,0,1)}^{(e,\sqrt{2},e^{-1})} \delta\,ds
+				=\int_0^1 \delta(r(t))|\vec v|\,dt\\
+				&=\int_0^1 e^t(e^t+e^{-t})\,dt
+				=\left[\dfrac{1}{2}e^{2t}+t\right]_0^1\\
+				&=\dfrac{1}{2}e^2+1-\,\dfrac{1}{2}e^0
+				=\dfrac{1}{2}(e^2+1)
+				\approx 4.19
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The center of mass of the wire between \(t=0\) and \(t=1\) with linear
+			 density \(\delta=x\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX31b"></button>
+			 <button class="toggle has-sol" data-toggle="SolX31b"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX31b">
+	 	 <p>
+			 \[\begin{aligned}
+			 (\bar{x},\bar{y},\bar{z})
+			 &=\left(\dfrac{\dfrac{1}{3}(e-1)(e^2+e+4)}{\dfrac{1}{2}(e^2+1)},
+			 \dfrac{\dfrac{\sqrt{2}}{4}(e^2+1)}{\dfrac{1}{2}(e^2+1)},
+			 \dfrac{e-e^{-1}}{\dfrac{1}{2}(e^2+1)}\right)\\
+			 &\approx(1.93,0.707,0.56)
+			 \end{aligned}\]
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX31b">
+			<p>
+				From part (a), \(x(t)=e^t\), \(y(t)=\sqrt{2}t\), \(z(t)=e^{-t}\),
+				\(\delta(\vec r(t))=e^t\), and \(|\vec v|=e^t+e^{-t}\).
+				<br>
+				So the
+				\(x\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1x}&=\int_a^b x(t)\delta(r(t))|\vec v|\,dt
+				=\int_0^1 e^{2t}\cdot(e^t+e^{-t})\,dt\\
+				&=\int_0^1 e^{3t}+e^t\,dt
+				=\left[\dfrac{1}{3}e^{3t}+e^t\right]_0^1\\
+				&=\dfrac{1}{3}e^3+e-\,\dfrac{1}{3}e^0-e^0
+				=\dfrac{1}{3}(e-1)(e^2+e+4)\\
+				\end{aligned}\]
+
+				The\(y\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1y}&=\int_a^b y(t)\delta(r(t))|\vec v|\,dt
+				=\int_0^1 \sqrt{2}t\cdot e^t\cdot(e^t+e^{-t})\,dt\\
+				&=\int_0^1 \sqrt{2}t(e^{2t}+1)\,dt
+				=\dfrac{\sqrt{2}}{4}\left[2t^2-e^{2t}+2te^{2t}\right]_0^1\\
+				&=\dfrac{\sqrt{2}}{4}(2-e^2+2e^2+e^0)
+				=\dfrac{\sqrt{2}}{4}(e^2+1)\\
+				\end{aligned}\]
+
+				The\(z\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1z}&=\int_a^b z(t)\delta(r(t))|\vec v|\,dt
+				=\int_0^1 e^{-t}\cdot e^t\cdot(e^t+e^{-t})\,dt\\
+				&=\int_0^1 e^t+e^{-t}\,dt
+				=\left[e^t-e^{-t}\right]_0^1\\
+				&=e-e^{-1}\\
+				\end{aligned}\]
+
+				From the previous problem, the total mass of the wire is \(\dfrac{1}{2}(e^2+1)\), so the
+				center of Mass is then calculated by:
+				\[\begin{aligned}
+				(\bar{x},\bar{y},\bar{z})
+				&=\left(\dfrac{\dfrac{1}{3}(e-1)(e^2+e+4)}{\dfrac{1}{2}(e^2+1)},
+				\dfrac{\dfrac{\sqrt{2}}{4}(e^2+1)}{\dfrac{1}{2}(e^2+1)},
+				\dfrac{e-e^{-1}}{\dfrac{1}{2}(e^2+1)}\right)\\
+				&\approx (1.93,0.707,0.56)
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The work to move a bead along the wire from \(t=0\) to \(t=1\) if the
+			 force is \(\vec F=(z,0,-x)\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX31c"></button>
+			 <button class="toggle has-sol" data-toggle="SolX31c"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX31c">
+	 	 <p>
+			 \(W=\sqrt{2}(e-2)\approx 1.02\)
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX31c">
+			<p>
+				From part (a),
+				\[
+				\vec v(t)=(e^t,\sqrt{2},-e^{-t})
+				\]
+				The force along the curve is
+				\[
+				\vec F(\vec r(t))=(-\sqrt{2}t,e^t,0)
+				\]
+				So the work is:
+				\[\begin{aligned}
+				W&=\int_{(1,0,1)}^{(e,\sqrt{2},e^{-1})} \vec F\cdot d\vec s
+				=\int_0^1 \vec F(r(t))\cdot\vec v(t)\,dt\\
+				&\quad=\int_0^1 \sqrt{2}e^t(-t+1)\,dt
+				=\left[-\sqrt{2}(t-2)e^t\right]_0^1\\
+				&=\sqrt{2}e-2\sqrt{2}
+				=\sqrt{2}(e-2)
+				\approx 1.02
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+	 Consider a wire in the shape of the curve \(\vec r(t)=(t^2,2t,\ln t\).
+	 Compute each of the following. Simplify where possible.
+	</p>
+	<ol>
+		<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The mass of the wire between \(t=1\) and \(t=2\) with linear density \(\delta=x\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX32a"></button>
+			 <button class="toggle has-sol" data-toggle="SolX32a"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX32a">
+	 	 <p>
+			 \(M=9\)
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX32a">
+			<p>
+				The density on the curve is \(\delta(r(t))=t^2\). The velocity is:
+				\[\begin{aligned}
+				\vec v&=\left(2t,2,\dfrac{1}{t}\right)\\
+				\end{aligned}\]
+				The speed is:
+				\[\begin{aligned}
+				|\vec v(t)|
+				&=\sqrt{4t^2+4+\dfrac{1}{t^2}}
+				=\dfrac{1}{t}(2t^2+1)\\
+				\end{aligned}\]
+				So the mass is:
+				\[\begin{aligned}
+				M&=\int_{(1,2,0)}^{(4,4,\ln2)} \delta\,ds
+				=\int_1^2 \delta(r(t))|\vec v|\,dt\\
+				&=\int_1^2 2t^3+t\,dt
+				=\left[\dfrac{2}{4}t^4+\dfrac{1}{2}t^2\right]_1^2\\
+				&=\dfrac{2}{4}(2)^4+\dfrac{1}{2}(2)^2-1=9
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The center of mass of the wire between \(t=1\) and \(t=2\) with linear
+			 density \(\delta=x\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX32b"></button>
+			 <button class="toggle has-sol" data-toggle="SolX32b"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX32b">
+	 	 <p>
+			 \((\bar{x},\bar{y},\bar{z})
+			 =\left(\dfrac{24.75}{9},\dfrac{29\dfrac{7}{15}}{9},
+			 \dfrac{10\ln2-2\dfrac{5}{8}}{9}\right)
+			 \approx(2.75,3.27,0.48)\)
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX32b">
+			<p>
+				From part (a), \(x(t)=t^2\), \(y(t)=2t\), \(z(t)=\ln t\),
+				\(\delta(\vec r(t))=t^2\) and \(|\vec v|=\dfrac{1}{t}(2t^2+1)\).
+				<br>
+				So the \(x\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1x}&=\int_a^b x(t)\delta(r(t))|\vec v|\,dt
+				=\int_1^2 t^2\cdot t^2\cdot\dfrac{1}{t}(2t^2+1)\,dt\\
+				&=\int_1^2 t^3(2t^2+1)\,dt
+				=\left[\dfrac{2}{6}t^6+\dfrac{1}{4}t^4\right]_1^2\\
+				&=\dfrac{2}{6}(2)^6+\dfrac{1}{4}(2)^4-\,\dfrac{1}{3}-\,\dfrac{1}{4}=24.75\\
+				\end{aligned}\]
+
+				The \(y\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1y}&=\int_a^b y(t)\delta(r(t))|\vec v|\,dt
+				=\int_1^2 2t\cdot t^2\cdot\dfrac{1}{t}(2t^2+1)\,dt\\
+				&=\int_1^2 2t^2(2t^2+1)\,dt
+				=\left[\dfrac{4}{5}t^5+\dfrac{2}{3}t^3\right]_1^2\\
+				&=\dfrac{4}{5}(2)^5+\dfrac{2}{3}(2)^3-\,\dfrac{4}{5}-\,\dfrac{2}{3}
+				=29\dfrac{7}{15}
+				\end{aligned}\]
+
+				The \(z\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1z}&=\int_a^b z(t)\delta(r(t))|\vec v|\,dt
+				=\int_1^2 \ln t\cdot t^2\cdot\dfrac{1}{t}(2t^2+1)\,dt\\
+				&=\int_1^2 \ln t\cdot t(2t^2+1)
+				=\left[\dfrac{t^2}{8}(4t^2\ln t-t^2+4\ln t-2)\right]_1^2\\
+				&=\dfrac{2^2}{8}(4(2)^2\ln2-2^2+4\ln2-2)+\dfrac{3}{8}
+				=10\ln2-2\dfrac{5}{8}
+				\end{aligned}\]
+
+				From the previous problem, the total mass of the wire is \(9\), so the
+				center of Mass is then calculated by:
+				\[
+				(\bar{x},\bar{y},\bar{z})
+				=\left(\dfrac{24.75}{9},\dfrac{29\dfrac{7}{15}}{9},\dfrac{10\ln2-2\dfrac{5}{8}}{9}\right)
+				\approx(2.75,3.27,0.48)
+				\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The work to move a bead along the wire from \(t=1\) to \(t=2\) if the
+			 force is \(\vec F=(-y,x,0)\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX32c"></button>
+			 <button class="toggle has-sol" data-toggle="SolX32c"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX32c">
+	 	 <p>
+			 \(W=-\,\dfrac{14}{3}\)
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX32c">
+			<p>
+				From part (a),
+				\[\begin{aligned}
+				\vec v(t)&=\left(2t,2,\dfrac{1}{t}\right)
+				\end{aligned}\]
+				The force along the curve is
+				\[\begin{aligned}
+				\vec F(\vec r(t))&=(-2t,t^2,0)
+				\end{aligned}\]
+				So the work is:
+				\[\begin{aligned}
+				W&=\int_{(1,2,0)}^{(4,4,\ln2)} \vec F\cdot d\vec s
+				=\int_1^2 \vec F(r(t))\cdot\vec v(t)\,dt\\
+				&\quad=\int_1^2 -2t^2\,dt
+				=\left[-\,\dfrac{2}{3}t^3\right]_1^2
+				=-\,\dfrac{14}{3}
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<p>
+	 Consider a wire in the shape of the curve \(\vec r(t)=(\sinh t,\cosh t,t)\).
+	 Compute each of the following. Simplify where possible.
+	</p>
+	<ol>
+		<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The mass of the wire between \(t=0\) and \(t=1\) with linear density \(\delta=x\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX33a"></button>
+			 <button class="toggle has-sol" data-toggle="SolX33a"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX33a">
+	 	 <p>
+			 The mass of the wire is \(\dfrac{\sqrt{2}}{2}\sinh^2(1)\)
+	 	 </p>
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX33a">
+			<p>
+				The density on the curve is \(\delta(r(t))=\sinh(t)\). The velocity is:
+				\[\begin{aligned}
+				\vec v&=(\cosh(t),\sinh(t),1)
+				\end{aligned}\]
+				The speed is:
+				\[\begin{aligned}
+				|\vec v(t)|
+				&=\sqrt{\cosh^2(t)+\sinh^2(t)+1}=\sqrt{2}\cosh(t)\\
+				\end{aligned}\]
+				So the mass is:
+				\[\begin{aligned}
+				M&=\int_{(0,1,0)}^{\sinh(1),\cosh(1),1} \delta\,ds
+				=\int_0^1 \delta(r(t))|\vec v|\,dt\\
+				&=\int_0^1 \sqrt{2}\sinh(t)\cosh(t)\,dt
+				=\left[\dfrac{\sqrt{2}}{2}\sinh^2(t)\right]_0^1\\
+				&=\dfrac{\sqrt{2}}{2}\sinh^2(1)
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The center of mass on the x-axis of the wire between \(t=0\) and \(t=1\)
+			 with linear density \(\delta=x\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX33b"></button>
+			 <button class="toggle has-sol" data-toggle="SolX33b"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX33b">
+	 	 <p>
+			 \(\bar{x}=\dfrac{2}{3}\sinh(1)\approx0.78\)
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX33b">
+			<p>
+				From part (a), \(x(t)=\sinh(t)\),
+				\(\delta(\vec r(t))=\sinh(t)\) and \(|\vec v|=\sqrt{2}\cosh(t)\). So the
+				\(x\)-\(1^\text{st}\) moment is:
+				\[\begin{aligned}
+				M_{1x}&=\int_a^b x(t)\delta(r(t))|\vec v|\,dt
+				=\int_0^1 \sqrt{2}\sinh^2(t)\cosh(t)\,dt\\
+				&=\left[\dfrac{\sqrt{2}}{3}\sinh^3(t)\right]_0^1=\dfrac{\sqrt{2}}{3}\sinh^3(1)\\
+				\end{aligned}\]
+
+				From the previous problem, the total mass of the wire is \(\dfrac{\sqrt{2}}{2}\sinh^2(1)\), so the
+				center of Mass is then calculated by:
+				\[
+				\bar{x}
+				=\dfrac{2}{3}\sinh(1)
+				\approx0.78
+				\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	<li>
+		<div class="dotfillex">
+	 	 <p>
+			 The work to move a bead along the wire from \(t=0\) to \(t=1\) if the
+			 force is \(\vec F=(-y,x,0)\).
+	 	 </p>
+	 	 <p>
+	 		 <button class="toggle has-ans" data-toggle="AnsX33c"></button>
+			 <button class="toggle has-sol" data-toggle="SolX33c"></button>
+	 	 </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX33c">
+	 	 <p>
+			 \(W=-1\)
+	 	 </p>
+		 <p align="right">as&nbsp;
+	  </div>
+		<div class="toBeToggled drop-sol" data-toggle="SolX33c">
+			<p>
+				From part (a),
+				\[\begin{aligned}
+				\vec v(t)&=(\cosh(t),\sinh(t),1)\\
+				\end{aligned}\]
+				The force along the curve is
+				\[\begin{aligned}
+				\vec F(\vec r(t))&=(-\cosh(t),\sinh(t),0)\\
+				\end{aligned}\]
+				So the work is:
+				\[\begin{aligned}
+				W&=\int_{(0,1,0)}^{(\sinh(1),\cosh(1),1)} \vec F\cdot d\vec s
+				=\int_0^1 \vec F(r(t))\cdot\vec v(t)\,dt\\
+				&\quad=\int_0^1 -\cosh^2(t)+\sinh^2(t)\,dt
+				=\left[-t\right]_0^1
+				=-1
+				\end{aligned}\]
+			</p>
+			<p align="right">as&nbsp;
+		</div>
+		</li>
+	</ol>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

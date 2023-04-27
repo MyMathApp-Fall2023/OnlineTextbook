@@ -1,0 +1,2790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Derivatives and Tangent Lines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MaxMin.html" title="Previous">&lArr;</a></li>
+      <li><a href="../DerRules/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Derivatives and Tangent Lines</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+
+<ol class="xlist">
+
+<!--	Derivative at a Point-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="DerivPt.html">a. Derivative at a Point</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DerivPt.html">1</a></div>
+      
+        <div><a href="DerivPtAppl.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<p>
+		E.T. releases a projectile straight up into the air through the power of telekinesis.
+		The projectile's initial speed is \(400\) ft/sec, its height after \(t\) seconds is given by the function
+		\(f(t)=400t-25t^2\).
+	</p>
+	<ol class="list-outside" type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=6\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX1a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX1a"></button>
+					<button class="toggle has-sol" data-toggle="SolX1a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX1a">
+				<p>
+					Remember that the speed(e.g., velocity) is the rate of change between 2 points.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+				<p>
+					The average velocity between \(t=5\) and \(t=6\) is \(125\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1a">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=6\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(6)}{5-6} \\
+					&=-([400(5)-25(5)^2]-[400(6)-25(6)^2]) \\
+					&=[400(6)-25(6)^2]-[400(5)-25(5)^2] \\
+					&=[400(6-5) -25(6+5)(6-5) \\
+					&=400-275=125
+					\end{aligned}\]
+					Therefore the average velocity between \(t=5\) and \(t=6\) is \(125\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=5.1\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1b"></button>
+					<button class="toggle has-sol" data-toggle="SolX1b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+				<p>
+					The average velocity between \(t=5\) and \(t=5.1\) is \(147.5\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1b">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=5.1\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(5.1)}{5-5.1} \\
+					&=-\dfrac{[400(5)-25(5)^2]-[400(5.1)-25(5.1)^2]}{0.1} \\
+					&=-\dfrac{400(-0.1)-25(5+5.1)(5-5.1)}{0.1} \\
+					&=-\dfrac{400(-0.1)-25(10.1)(-0.1)}{0.1} \\
+					&=\dfrac{400(0.1)-25(10.1)(0.1)}{0.1} \\
+					&=400-25(10.1) \\
+					&=400-252.5=147.5
+					\end{aligned}\]
+					Therefore the average velocity between \(t=5\) and \(t=5.1\) is \(147.5\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=5.01\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1c"></button>
+					<button class="toggle has-sol" data-toggle="SolX1c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1c">
+				<p>
+					The average velocity between \(t=5\) and \(t=5.01\) is \(149.75\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1c">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=5.01\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(5.01)}{5-5.01} \\
+					&=-\dfrac{[400(5)-25(5)^2]-[400(5.01)-25(5.01)^2]}{0.01} \\
+					&=-\dfrac{400(5-5.01)-25(5+5.01)(5-5.01)}{0.01} \\
+					&=-\dfrac{400(-0.01)-25(10.01)(-.01)}{0.01} \\
+					&=\dfrac{400(0.01)-25(10.01)(0.01)}{0.01} \\
+					&=400-25(10.01) = 400-250.25=149.75
+					\end{aligned}\]
+					Therefore the average velocity between \(t=5\) and \(t=5.01\) is \(149.75\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=5.001\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1d"></button>
+					<button class="toggle has-sol" data-toggle="SolX1d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1d">
+				<p>
+					Therefore the average velocity between \(t=5\) and \(t=5.001\) is \(149.975\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1d">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=5.001\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(5.001)}{5-5.001} \\
+					&=-\dfrac{[400(5)-25(5)^2]-[400(5.001)-25(5.001)^2]}{0.001} \\
+					&=-\dfrac{400(5-5.001)-25(5+5.001)(5-5.001)}{0.001} \\
+					&=-\dfrac{400(-0.001)-25(10.001)(-0.001)}{0.001} \\
+					&=\dfrac{400(0.001)-25(10.001)(0.001)}{0.001} \\
+					&=400-25(10.001)=400-250.025=149.975
+					\end{aligned}\]
+					The average velocity between \(t=5\) and \(t=5.001\) is \(149.975\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=4\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1e"></button>
+					<button class="toggle has-sol" data-toggle="SolX1e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1e">
+				<p>
+					The average velocity between \(t=5\) and \(t=4\) is \(175\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1e">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=4\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(4)}{5-4} \\
+					&=[400(5)-25(5)^2]-[400(4)-25(4)^2] \\
+					&=2000-25(25)-1600+25(16) \\
+					&=400-625+400=175
+					\end{aligned}\]
+					Therefore, the average velocity between \(t=5\) and \(t=4\) is \(175\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=4.9\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1f"></button>
+					<button class="toggle has-sol" data-toggle="SolX1f"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1f">
+				<p>
+					The average velocity between \(t=5\) and \(t=4.9\) is \(152.5\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1f">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=4.9\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(4.9)}{5-4.9} \\
+					&=\dfrac{[400(5)-25(5)^2]-[400(4.9)-25(4.9)^2]}{0.1} \\
+					&=\dfrac{400(0.1)-25(5+4.9)(5-4.9)}{0.1} \\
+					&=\dfrac{400(0.1)-25(9.9)(0.1)}{0.1} \\
+					&=400-247.5=152.5
+					\end{aligned}\]
+					Therefore the average velocity between \(t=5\) and \(t=4.9\) is \(152.5\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=4.99\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1g"></button>
+					<button class="toggle has-sol" data-toggle="SolX1g"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1g">
+				<p>
+					The average velocity between \(t=5\) and \(t=4.99\) is \(150.25\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1g">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=4.99\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(4.99)}{5-4.99} \\
+					&=\dfrac{[400(5)-25(5)^2]-[400(4.99)-25(4.99)^2]}{0.01} \\
+					&=\dfrac{400(0.01)-25(5+4.99)(5-4.99)}{0.01} \\
+					&=\dfrac{400(0.01)-25(9.99)(0.01)}{0.01} \\
+					&=400-249.75=150.25
+					\end{aligned}\]
+					Therefore the average velocity between \(t=5\) and \(t=4.99\) is \(150.25\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the average velocity, \(v\) between \(t=5\) and \(t=4.999\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1h"></button>
+					<button class="toggle has-sol" data-toggle="SolX1h"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1h">
+				<p>
+					Therefore the average velocity between \(t=5\) and \(t=4.999\) is \(150.025\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1h">
+				<p>
+					We find the rate of change (or velocity, \(v\))
+					between the points \(t=5\) and \(t=4.999\) to obtain the average velocity:
+					\[\begin{aligned}
+					v&=\dfrac{f(5)-f(4.999)}{5-4.999} \\
+					&=\dfrac{[400(5)-25(5)^2]-[400(4.999)-25(4.999)^2]}{0.001} \\
+					&=\dfrac{400(0.001)-25(5+4.999)(5-4.999)}{0.001} \\
+					&=\dfrac{400(0.001)-25(9.999)(0.001)}{0.001} \\
+					&=400-249.975=150.025
+					\end{aligned}\]
+					Therefore the average velocity between \(t=5\) and \(t=4.999\) is \(150.025\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Based on the results of the answers above, guess the instantaneous velocity of the projectile at
+					\(t=5\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1i"></button>
+					<button class="toggle has-sol" data-toggle="SolX1i"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1i">
+				<p>
+					The instantaneous velocity of the projectile at \(t=5\) is
+					\(v_{\text{inst}}=150\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1i">
+				<p>
+					The average velocity between \(t=5\) and \(t=6\) is \(125\) ft/sec. <br />
+					The average velocity between \(t=5\) and \(t=5.1\) is \(147.5\) ft/sec. <br />
+					The average velocity between \(t=5\) and \(t=5.01\) is \(149.75\) ft/sec. <br />
+					The average velocity between \(t=5\) and \(t=5.001\) is \(149.975\) ft/sec.
+				</p>
+					<hr width="80%">
+				<p>
+					The average velocity between \(t=5\) and \(t=4\) is \(175\) ft/sec. <br />
+					The average velocity between \(t=5\) and \(t=4.9\) is \(152.5\) ft/sec. <br />
+					The average velocity between \(t=5\) and \(t=4.99\) is \(150.25\) ft/sec. <br />
+					The average velocity between \(t=5\) and \(t=4.999\) is \(150.025\) ft/sec.
+				</p>
+					<hr width="80%">
+				<p>
+					We can see that the average velocity approaches \(150\) ft/sec
+					as \(t\) approaches \(5\). <br />
+					Therefore, the instantaneous velocity seems to be \(v_{\text{inst}}=150\) ft/sec.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Finally, use the limit definition to find the instantaneous
+					velocity of the projectile at \(t=5\).
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX1j"></button>
+					<button class="toggle has-ans" data-toggle="AnsX1j"></button>
+					<button class="toggle has-sol" data-toggle="SolX1j"></button>
+					<button class="toggle has-check" data-toggle="CkX1j"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX1j">
+				<p>
+					To do the limit, multiply by a conjugate.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1j">
+				<p>
+					The instantaneous velocity of the projectile at \(t=5\) is
+					\(v_{\text{inst}}=150\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1j">
+				<p class="meth" data-number="1">
+					You can also take the derivative at the point \(t=5\)
+					on the function \(f(t)=400t-25t^2\).
+					\[\begin{aligned}
+					f'(5)&=\lim_{h\to0} \dfrac{f(5+h)-f(5)}{h} \\
+					&=\lim_{h\to0} \dfrac{[400(5+h)-25(5+h)^2]-[400(5)-25(5)^2]}{h} \\
+					&=\lim_{h\to0} \dfrac{400h-25(25+10h+h^2-25)}{h} \\
+					&=\lim_{h\to0} \dfrac{400h-250h-25h^2}{h} \\
+					&=\lim_{h\to0} \dfrac{150h-25h^2}{h}
+					=\lim_{h\to0} 150-25h=150
+					\end{aligned}\]
+					Therefore, the instantaneous velocity is \(v_{\text{inst}}=150\) ft/sec.
+				</p>
+			</div>
+			<div class="toBeToggled drop-check" data-toggle="CkX1j">
+				<p class="meth" data-number="2">
+					We check by using the alternate definition to find the derivative of
+					the function \(f(t)=400t-25t^2\) at the point \(t=5\). We take the
+					limit by multiplying by a conjugate:
+					\[\begin{aligned}
+					f'(5)&=\lim_{t\to 5} \dfrac{f(t)-f(5)}{t-5} \\
+					&=\lim_{t\to 5} \dfrac{(400t-25t^2)- (400(5)-25(5)^2)}{t-5} \\
+					&=\lim_{t\to 5} \dfrac{400(t-5) - 25(t+5)(t-5)}{t-5} \\
+					&=\lim_{t\to 5} [400 - 25(t+5)] \\
+					&= 400 - 250 = 150
+					\end{aligned}\]
+					Therefore, the instantaneous velocity  at \(x=5\) is
+					 \(v_{\text{inst}}=150\) ft/sec.
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="column">
+		<div>
+			<p>
+				The point \(P=(4, 2)\) lies on the curve \(y=\sqrt{x}\).
+				Let \(Q\) be the point \(Q=(x, \sqrt{x})\). Find the slope \(m\) of the
+				secant line \(PQ\) for the following values of \(x\):
+				(Answers should be correct to at least \(4\) places after the decimal point.
+				Feel free to use a calculator.)
+			</p>
+			<p>
+				The figure shows the visualization of the secant line to a curve.
+			</p>
+		</div>
+		<div class="center">
+			<video src="graphics/x_sec_sqrtx_at_4_prob.mp4" autoplay loop controls></video>
+		</div>
+	</div>
+	<ol class="list-outside" type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope of \(PQ\) when \(x=5\):
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2a"></button>
+					<button class="toggle has-sol" data-toggle="SolX2a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX2a">
+				<p>
+					Remember:
+					\[\begin{aligned}
+					m=\dfrac{y_2 - y_1}{x_2 - x_1}
+					\end{aligned}\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+				<p>
+					The slope of \(PQ\) at \(x=5\) is \(m\approx0.236068\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2a">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=(5, \sqrt{5})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(5)-f(4)}{5-4}
+					=\sqrt{5}-2 \\
+					&\approx2.236068-2=0.236068
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope of \(PQ\) when \(x=4.1\):
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2b"></button>
+					<button class="toggle has-sol" data-toggle="SolX2b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+				<p>
+					The slope (\(m\)) of the secant line PQ is \(m\approx0.248456\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2b">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=Q=(4.1, \sqrt{4.1})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(4.1)-f(4)}{4.1-4}
+					=\dfrac{\sqrt{4.1}-2}{4.1-4} \\
+					&\approx\dfrac{2.0248457-2}{0.1}
+					=0.248457
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope of \(PQ\) when \(x=4.01\):
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2c"></button>
+					<button class="toggle has-sol" data-toggle="SolX2c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+				<p>
+					The slope (\(m\)) of the secant line PQ is \(m\approx0.024984\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2c">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=Q=(4.01, \sqrt{4.01})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(4.01)-f(4)}{4.01-4}
+					=\dfrac{\sqrt{4.01}-2}{4.01-4} \\
+					&\approx\dfrac{2.0024984-2}{0.01}
+					=0.024984
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope of \(PQ\) when \(x=4.001\):
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2d"></button>
+					<button class="toggle has-sol" data-toggle="SolX2d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2d">
+				<p>
+					The slope (\(m\)) of the secant line PQ is \(m\approx0.249984\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2d">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=Q=(4.001, \sqrt{4.001})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(4.001)-f(4)}{4.001-4}
+					=\dfrac{\sqrt{4.001}-2}{0.001} \\
+					&\approx\dfrac{2.000249984-2}{0.001}
+					=0.249984
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope \(m\) of \(PQ\) when \(x=3\):
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2e"></button>
+					<button class="toggle has-sol" data-toggle="SolX2e"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2e">
+				<p>
+					The slope (\(m\)) of the secant line \(PQ\) is \(m\approx0.267949\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2e">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=(3, \sqrt{3})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(4)-f(3)}{4-3}
+					=2-\sqrt{3} \\
+					&\approx2-1.732050808=0.267949
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope \(m\) of \(PQ\) when \(x=3.9\):
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2f"></button>
+					<button class="toggle has-sol" data-toggle="SolX2f"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2f">
+				<p>
+					The slope (\(m\)) of the secant line PQ is \(m\approx0.251582\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2f">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=(3.9, \sqrt{3.9})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(4)-f(3.9)}{4-3.9}
+					=\dfrac{2-\sqrt{3.9}}{4-3.9} \\
+					&\approx\dfrac{2-1.974841766}{.1}
+					=0.251582
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope of \(PQ\) when \(x=3.99\):
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2g"></button>
+					<button class="toggle has-sol" data-toggle="SolX2g"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2g">
+				<p>
+					The slope (\(m\)) of the secant line PQ is \(m\approx0.250156\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2g">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=(3.99, \sqrt{3.99})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(4)-f(3.99)}{4-3.99}
+					=\dfrac{2-\sqrt{3.99}}{4-3.99} \\
+					&\approx\dfrac{2-1.997498436}{.01}
+					=0.250156
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the slope of \(PQ\) when \(x=3.999\):
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2h"></button>
+					<button class="toggle has-sol" data-toggle="SolX2h"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2h">
+				<p>
+					The slope (\(m\)) of the secant line PQ is \(m\approx0.250016\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2h">
+				<p>
+					We find the slope, \(m\), between the points \(P=(4, 2)\) and
+					\(Q=(3.999, \sqrt{3.999})\):
+					\[\begin{aligned}
+					m&=\dfrac{f(4)-f(3.999)}{4-3.999}
+					=\dfrac{2-\sqrt{3.999}}{4-3.999} \\
+					&\approx\dfrac{2-1.999749984}{.001}
+					=0.250016
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Based on the results of the answers above, guess the slope of the
+					tangent line at \(P\) where \(x=4\).
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX2i"></button>
+					<button class="toggle has-sol" data-toggle="SolX2i"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2i">
+				<p>
+					The slope of tangent line at \(P\) where \(x=4\) is \(m=\dfrac{1}{4}=0.25\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2i">
+				<div class="column">
+					<div>
+						<p>
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(5, \sqrt{5})\) is
+							\(m\approx0.236068\). <br />
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(4.1, \sqrt{4.1})\) is
+							\(m\approx0.248456\). <br />
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(4.01, \sqrt{4.01})\) is
+							\(m\approx0.024984\). <br />
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(4.001, \sqrt{4.001})\) is
+							\(m\approx0.249984\).
+						</p>
+							<hr width="80%">
+						<p>
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(3, \sqrt{3})\) is
+							\(m\approx0.267949\). <br />
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(3.9, \sqrt{3.9})\) is
+							\(m\approx0.251582\). <br />
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(3.99, \sqrt{3.99})\) is
+							\(m\approx0.250156\). <br />
+							The slope, \(m\), between the points \(P=(4, 2)\) and \(Q=(3.999, \sqrt{3.999})\) is
+							\(m\approx0.250016\).
+						</p>
+							<hr width="80%">
+					</div>
+					<div class="center">
+						<figure>
+							<video src="graphics/x_sec_sqrtx_at_4_sol.mp4" autoplay loop controls></video>
+							<figcaption>
+								The figure shows the derivative as the limit of the slopes of secant lines.
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<p>
+					We can see that the slope (\(m\)) of line \(PQ\) approaches \(m=0.25\) as \(Q\)
+					approaches \(P=(4,2)\).
+					Therefore, we guess the slope of tangent line at \(P\) where \(x=4\) is \(m=0.25\).
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Finally use the limit definition to find the slope of the
+					tangent line at \(P\) where \(x=4\).
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2j"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2j"></button>
+					<button class="toggle has-sol" data-toggle="SolX2j"></button>
+					<button class="toggle has-check" data-toggle="CkX2j"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX2j">
+				<p>
+					To do the limit, multiply by a conjugate.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2j">
+				<p>
+					The slope of tangent line at \(P\) where \(x=4\) is \(m=\dfrac{1}{4}=0.25\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2j">
+				<p class="meth" data-number="1">
+					We take the derivative at the point \(x=4\) of the function
+					\(f(x)=\sqrt{x}\). We take the limit by multiplying by a conjugate:
+					\[\begin{aligned}
+					f'(4)&=\lim_{h\to0} \dfrac{f(4+h)-f(4)}{h} \\
+					&=\lim_{h\to0} \dfrac{\sqrt{4+h}-2}{h} \\
+					&=\lim_{h\to0} \dfrac{\sqrt{4+h}-2}{h}\cdot
+					\dfrac{\sqrt{4+h}+2}{\sqrt{4+h}+2} \\
+					&=\lim_{h\to0} \dfrac{4+h-4}{h(\sqrt{4+h}+2)} \\
+					&=\lim_{h\to0} \dfrac{1}{\sqrt{4+h}+2}=\dfrac{1}{4} \\
+					\end{aligned}\]
+					Therefore, the slope of tangent line at \(x=4\) is
+					\(m=\dfrac{1}{4}=0.25\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-check" data-toggle="CkX2j">
+				<p class="meth" data-number="2">
+					We check by using the alternate definition to find the derivative of
+					the function \(f(x)=\sqrt{x}\) at the point \(x=4\). We take the
+					limit by multiplying by a conjugate:
+					\[\begin{aligned}
+					f'(4)&=\lim_{x\to 4} \dfrac{f(x)-f(4)}{x-4} \\
+					&=\lim_{x\to 4} \dfrac{\sqrt{x}-\sqrt{4}}{x-4} \\
+					&=\lim_{x\to 4} \dfrac{\sqrt{x}-\sqrt{4}}{x-4}\cdot
+					\dfrac{\sqrt{x}+\sqrt{4}}{\sqrt{x}+\sqrt{4}} \\
+					&=\lim_{x\to 4} \dfrac{(x-4)}{(x-4)(\sqrt{x}+\sqrt{4})} \\
+					&=\lim_{x\to 4} \dfrac{1}{\sqrt{x}+\sqrt{4}}
+					=\dfrac{1}{2\sqrt{4}}
+					\end{aligned}\]
+					Therefore, the slope of tangent line at \(x=4\) is
+					\(m=\dfrac{1}{4}=0.25\)
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<hr width="80%">
+
+<p>
+	Find the derivative of each function at the indicated point by computing the
+	appropriate limit.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(f(x)=x^3\) at \(a=2\).
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX3"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX3"></button>
+			<button class="toggle has has-sol" data-toggle="SolX3"></button>
+			<button class="toggle has has-rem" data-toggle="RemX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX3">
+		<p>
+			There are 2 formulas for computing the derivative of the function
+			\(f(x)\) at the point \(x=a\):
+			\[
+			f'(a)=\lim_{h\to0} \dfrac{f(a+h)-f(a)}{h}
+			\]
+			\[
+			f'(a)=\lim_{x\to a} \dfrac{f(x)-f(a)}{x-a}
+			\]
+			Use whichever formula is convenient.
+		</p>
+		<p>
+			Also remember:
+			\[
+			(a+h)^3=a^3+3a^2h+3ah^2+h^3
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+		<p>
+			\(f'(2)=12\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+		<p class="meth" data-number="1">
+			Solve for the limit by using the first method. In this case, \(f(x)=x^3\)
+			and \(a=2\).
+			\[\begin{aligned}
+			f'(2)&=\lim_{h\to0} \dfrac{f(2+h)-f(2)}{h} \\
+			&=\lim_{h\to0} \dfrac{(2+h)^3 - 8}{h} \\
+			&=\lim_{h\to0} \dfrac{12h + 6h^2 + h^3}{h} \\
+			&=\lim_{h\to0} (12+6h + h^2)
+			= 12
+			\end{aligned}\]
+		</p>
+		<p class="meth" data-number="2">
+			You can also solve using the second method, with \(f(x)=x^3\)
+			and \(a=2\).
+			\[\begin{aligned}
+			f'(2)&=\lim_{x\to2} \dfrac{f(x) - f(2)}{x-2} \\
+			&=\lim_{x\to2} \dfrac{x^3 - 8}{x-2} \\
+			&=\lim_{x\to2} \dfrac{(x-2)(x^2 + 2x + 4)}{x-2} \\
+			&=\lim_{x\to2} (x^2 + 2x + 4)
+			= 12
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX3">
+		<p>
+			<em>Does it matter which formula we use for the derivative?</em>
+			<strong>No!</strong> We can use which ever formula seems easier.
+			Of course, we can't know which will be easier until we do them,
+			so we just pick one.
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(h(x)=x^{1/2}\) at \(a=9\).
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX4"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX4"></button>
+			<button class="toggle has has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX4">
+		<p>
+			There are 2 formulas for computing the derivative of the function
+			\(f(x)\) at the point \(x=a\):
+			\[
+			f'(a)=\lim_{h\to0} \dfrac{f(a+h)-f(a)}{h}
+			\]
+			\[
+			f'(a)=\lim_{x\to a} \dfrac{f(x)-f(a)}{x-a}
+			\]
+			Use whichever formula is convenient.
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+		<p>
+			\(h'(9)=\dfrac{1}{6}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+		<p class="meth" data-number="1">
+			\(h(x)=x^{1/2}\) and \(a=9\).
+			\[\begin{aligned}
+			h'(9)&=\lim_{h\to0} \dfrac{f(9+h)-f(9)}{h} \\
+			&=\lim_{h\to0} \dfrac{\sqrt{9+h} -3}{h} \\
+			&=\lim_{h\to0} \dfrac{\sqrt{9+h} -3}{h}
+			\dfrac{\sqrt{9+h} +3}{\sqrt{9+h} +3} \\
+			&=\lim_{h\to0} \dfrac{9+h-9}{h(\sqrt{9+h} +3)} \\
+			&=\lim_{h\to0} \dfrac{1}{\sqrt{9+h} +3}
+			=\dfrac{1}{6}
+			\end{aligned}\]
+		</p>
+		<p class="meth" data-number="2">
+			\(h(x)=x^{1/2}\) and \(a=9\).
+			\[\begin{aligned}
+			g'(9)&=\lim_{x\to9} \dfrac{f(x) - f(9)}{x-9} \\
+			&=\lim_{x\to9} \dfrac{\sqrt{x} -3}{x-9} \\
+			&=\lim_{x\to9} \dfrac{\sqrt{x} -3}{x-9}
+			\dfrac{\sqrt{x}+3}{\sqrt{x}+3} \\
+			&=\lim_{x\to9} \dfrac{(x-9)}{(x-9)(\sqrt{x}+3)} \\
+			&=\lim_{x\to9} \dfrac{1}{\sqrt{x}+3}
+			=\dfrac{1}{6}
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(j(k)=\dfrac{1}{k^{1/2}}\) at \(a=4\).
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX5"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX5"></button>
+			<button class="toggle has has-sol" data-toggle="SolX5"></button>
+			<button class="toggle has has-check" data-toggle="CkX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX5">
+		<p>
+			First put the limit over a common denominator.
+			Then, multiply the numerator and denominator by a conjugate.
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+		<p>
+			\(j'(4)=-\,\dfrac{1}{16}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+		<p>
+			We choose to use method 1 to compute the derivative. We can use method
+			2 as a check.
+		</p>
+		<p>
+			We first write out the definition and put the terms over a common denominator:
+			\[\begin{aligned}
+			j'(9)&=\lim_{h\to0} \dfrac{f(4+h)-f(4)}{h} \\
+			&=\lim_{h\to0}
+			\dfrac{\dfrac{1}{\sqrt{4+h}} -\dfrac{1}{2}}{h} \\
+			&=\lim_{h\to0}
+			\dfrac{1}{h}\,\dfrac{(2-\sqrt{4+h})}{2\sqrt{4+h}}
+			\end{aligned}\]
+			Now we multiply and divide by the conjugate:
+			\[\begin{aligned}
+			j'(9)&=\lim_{h\to0}
+			\dfrac{1}{h}\dfrac{(2-\sqrt{4+h})}{2\sqrt{4+h}}
+			\dfrac{(2+\sqrt{4+h})}{(2+\sqrt{4+h})} \\
+			&=\lim_{h\to0} \dfrac{4-(4+h)}{2h\sqrt{4+h}(2+\sqrt{4+h})} \\
+			&=\lim_{h\to0} \dfrac{-1}{2\sqrt{4+h}(2+\sqrt{4+h})} \\
+			&=-\,\dfrac{1}{2\sqrt{4}(2+\sqrt{4})}
+			=-\,\dfrac{1}{16}
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX5">
+		<p>
+			We check using method 2.
+		</p>
+		<p>
+			We first write out the definition and put the terms over a common denominator:
+			\[\begin{aligned}
+			j'(4)&=\lim_{k\to4} \dfrac{j(k) - j(4)}{x-4} \\
+			&=\lim_{k\to4} \dfrac{\dfrac{1}{\sqrt{k}} -\,\dfrac{1}{2}}{k-4} \\
+			&=\lim_{k\to4} \dfrac{1}{k-4}\dfrac{(2-\sqrt{k})}{2\sqrt{k}} \\
+			\end{aligned}\]
+			Now we multiply and divide by the conjugate:
+			\[\begin{aligned}
+			&=\lim_{k\to4} \dfrac{1}{k-4}\dfrac{(2-\sqrt{k})}{2\sqrt{k}}
+			\dfrac{2+\sqrt{k}}{(2+\sqrt{k})} \\
+			&=\lim_{k\to4} \dfrac{1}{k-4}\dfrac{4-k}{2\sqrt{k}(2+\sqrt{k})} \\
+			&=\lim_{k\to4} -\,\dfrac{1}{2\sqrt{k}(2+\sqrt{k})} \\
+			&=-\,\dfrac{1}{2\sqrt{4}(2+\sqrt{4})}
+			=-\,\dfrac{1}{16}
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(k(b)=b^4\) at \(a=-2\).
+		</p>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX6"></button>
+			<button class="toggle has-ans" data-toggle="AnsX6"></button>
+			<button class="toggle has-sol" data-toggle="SolX6"></button>
+			<button class="toggle has-check" data-toggle="CkX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+		<p>
+			There are 2 formulas for computing the derivative of the function
+			\(f(x)\) at the point \(x=a\):
+			\[
+			f'(a)=\lim_{h\to0} \dfrac{f(a+h)-f(a)}{h}
+			\]
+			\[
+			f'(a)=\lim_{x\to a} \dfrac{f(x)-f(a)}{x-a}
+			\]
+			Use whichever formula is convenient.
+			Also, remeber the fromula for the Difference of Squares: \(a^2-b^2=(a+b)(a-b)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+		<p>
+			\(k'(-2)=-32\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+		<p>
+			We choose to use method 1 to compute the derivative. We can use method
+			2 as a check.
+		</p>
+		<p>
+			\[\begin{aligned}
+			k'(-2)&=\lim_{h\to0} \dfrac{f(-2+h)-f(-2)}{h} \\
+			&=\lim_{h\to0} \dfrac{(-2+h)^4-16}{h} \\
+			&=\lim_{h\to0} \dfrac{[(-2+h)^2+4][(-2+h)^2-4]}{h} \\
+			&=\lim_{h\to0} \dfrac{[4-4h+h^2+4][4-4h+h^2-4]}{h} \\
+			&=\lim_{h\to0} \dfrac{[8-4h+h^2][h][-4+h]}{h} \\
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX6">
+		<p>
+			\[
+			k'(x)=\lim_{x\to -2} \dfrac{f(x)-f(-2)}{x+2} \\
+			k'(x)=\lim_{x\to -2} \dfrac{x^4-16}{x+2} \\
+			k'(x)=\lim_{x\to -2} \dfrac{(x^2+4)(x^2-4)}{x+2} \\
+			k'(x)=\lim_{x\to -2} \dfrac{(x^2+4)(x+2)(x-2)}{x+2} \\
+			k'(x)=\lim_{x\to -2} (x^2+4)(x-2) \\
+			k'(x)= (8)(-4) = -32
+			\]
+		</p>
+	</div>
+</li>
+
+<hr width="80%">
+
+<li>
+	Find the derivative of \(g(x)=3x^2\) at the points listed
+	below:
+	<ol type="a">
+
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(a=4\).
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX7a"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX7a"></button>
+					<button class="toggle has has-sol" data-toggle="SolX7a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX7a">
+				<p>
+					There are 2 formulas for computing the derivative of the function \(f(x)\) at the point
+					\(x=a\):
+					\[
+					f'(a)=\lim_{h\to0} \dfrac{f(a+h)-f(a)}{h}
+					\]
+					\[
+					f'(a)=\lim_{x\to a} \dfrac{f(x)-f(a)}{x-a}
+					\]
+					Use whichever formula is convenient.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7a">
+				<p>
+					\(g'(4)=24\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7a">
+				<p class="meth" data-number="1">
+					Solve for the limit by using the first method, with \(g(x)=3x^2\)
+					and \(a=4\).
+					\[\begin{aligned}
+					g'(4)&=\lim_{h\to0} \dfrac{3(4+h)^2 - 48}{h} \\
+					&=\lim_{h\to0} \dfrac{24h + 3h^2}{h} \\
+					&=\lim_{h\to0} (24 + 3h)
+					= 24
+					\end{aligned}\]
+				</p>
+				<p class="meth" data-number="2">
+					You can also solve using the second method, with \(g(x)=3x^2\)
+					and \(a=4\).
+					\[\begin{aligned}
+					g'(4)&=\lim_{x\to4} \dfrac{3x^2 - 48}{x-4} \\
+					&=\lim_{x\to4} \dfrac{3(x+4)(x-4)}{x-4} \\
+					&=\lim_{x\to4} 3(x+4)
+					= 24
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(a=7\).
+				</p>
+				<p>
+					<button class="toggle has has-ans" data-toggle="AnsX7b"></button>
+					<button class="toggle has has-sol" data-toggle="SolX7b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX7b">
+				<p>
+					\(g'(7)=42\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX7b">
+				<p class="meth" data-number="1">
+					Solve for the limit by using the first method, with \(g(x)=3x^2\)
+					and \(a=7\).
+					\[\begin{aligned}
+					g'(7)&=\lim_{h\to0} \dfrac{3(7+h)^2 - 147}{h} \\
+					&=\lim_{h\to0} \dfrac{42h+3h^2}{h} \\
+					&=\lim_{h\to0} (42+3h)
+					= 42
+					\end{aligned}\]
+				</p>
+				<p class="meth" data-number="2">
+					You can also solve using the second method, with \(f(x)=3x^2\)
+					and \(a=7\).
+					\[\begin{aligned}
+					g'(7)&=\lim_{x\to7} \dfrac{3x^2 - 147}{x-7} \\
+					&=\lim_{x\to7} \dfrac{3(x+7)(x-7)}{x-7} \\
+					&=\lim_{x\to7} 3(x+7) \\
+					&=\lim_{x\to7} (3x + 21)
+					= 42
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	Find the derivative of the functions below at the point \(a=10\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(w(z)=4z^2\).
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX8a"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX8a"></button>
+					<button class="toggle has has-sol" data-toggle="SolX8a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8a">
+				<p>
+					There are 2 formulas for computing the derivative of the function
+					\(f(x)\) at the point \(x=a\):
+					\[
+					f'(a)=\lim_{h\to0} \dfrac{f(a+h)-f(a)}{h}
+					\]
+					\[
+					f'(a)=\lim_{x\to a} \dfrac{f(x)-f(a)}{x-a}
+					\]
+					Use whichever formula is convenient.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8a">
+				<p>
+					\(w'(10)=80\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8a">
+				<p class="meth" data-number="1">
+					Solve for the limit by using the first method, with \(w(z)=4z^2\)
+					and \(a=10\).
+					\[\begin{aligned}
+					w'(10)&=\lim_{h\to0} \dfrac{4(10+h)^2 - 400}{h} \\
+					&=\lim_{h\to0} \dfrac{80h+4h^2}{h} \\
+					&=\lim_{h\to0} (80+4h)
+					= 80
+					\end{aligned}\]
+				</p>
+				<p class="meth" data-number="2">
+					You can also solve using the second method, with \(w(z)=4z^2\)
+					and \(a=10\).
+					\[\begin{aligned}
+					w'(10)&=\lim_{z\to10} \dfrac{4z^2 - 400}{z-10} \\
+					&=\lim_{z\to10} \dfrac{4(z+10)(z-10)}{z-10} \\
+					&=\lim_{z\to10} (4z + 40)
+					= 80
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(p(t)=3t^3\).
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX8b"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX8b"></button>
+					<button class="toggle has has-sol" data-toggle="SolX8b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX8b">
+				<p>
+					Remember:
+					\[
+					(a+h)^3=a^3+3a^2h+3ah^2+h^3
+					\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX8b">
+				<p>
+					\(p'(10)=900\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX8b">
+				<p class="meth" data-number="1">
+					Solve for the limit by using the first method, with \(p(t)=3t^3\)
+					and \(t=10\).
+					\[\begin{aligned}
+					p'(10)&=\lim_{h\to0} \dfrac{3(10+h)^3 - 3000}{h} \\
+					&=\lim_{h\to0} \dfrac{900h + 90h^2+3h^3}{h} \\
+					&=\lim_{h\to0} (900+90h+3h^2)
+					= 900
+					\end{aligned}\]
+				</p>
+				<p class="meth" data-number="2">
+					You can also solve using the second method, with \(p(t)=3t^3\)
+					and \(a=10\).
+					\[\begin{aligned}
+					p'(10)&=\lim_{t\to10} \dfrac{3t^3 - 3000}{t-10} \\
+					&=\lim_{t\to10} \dfrac{3(t-10)(t^2 + 10t + 100)}{t-10} \\
+					&=\lim_{t\to10} (3t^2 + 30t + 300)
+					= 900
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<!--Tangent Lines-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="TanLine.html">b. Tangent Lines</a></h3>
+    <div class="pgs">
+      
+        <div><a href="TanLine.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<div class="column">
+			<div>
+				<p>
+				Compute the tangent line to \(y=\sqrt{x}\) at \(x=4\).
+				Then find its \(y\)-intercept.
+				</p>
+				<p>
+					The figure shows the visualization of the tangent line to a curve.
+				</p>
+			</div>
+			<div class="center">
+				<img src="graphics/x_tan_y_int_sqrt_x.jpg" alt="x_tan_y_int_sqrt_x">
+			</div>
+		</div>
+		<p>
+			<button class="toggle has-hint" data-toggle="HintX9"></button>
+			<button class="toggle has-ans" data-toggle="AnsX9"></button>
+			<button class="toggle has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX9">
+		<p>
+			Evaluate the function and find its derivative at \(x=4\).
+			Then use the formula:
+			\[
+			f_{\tan}(x)=f(4)+f'(4)(x-4)
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+		<p>
+			\(y=\dfrac{1}{4}x+1\)
+			<br>
+			The \(y\)-intercept is \(b=1\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+		<p>
+			We identify \(f(x)=\sqrt{x}\) and \(a=4\). Then:
+			\[
+			f(4)=2
+			\]
+			In a
+			<a href="#guess_der_sqrt" title="Return using the Back button.">
+				previous problem
+			</a> we found
+			\[
+			f'(4)=\dfrac{1}{4}
+			\]
+			So the equation of the tangent line is:
+			\[\begin{aligned}
+			y&=f(a)+f'(a)(x-a) \\
+			&=f(4)+f'(4)(x-4) \\
+			&=2+\dfrac{1}{4}(x-4) \\
+			&=\dfrac{1}{4}x+1
+			\end{aligned}\]
+			We identify the \(y\)-intercept as \(b=1\).
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the slope of the tangent line to a function, \(z(y)=3y^2-2y^3\),
+			at \(y=2\).
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX10"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX10"></button>
+			<button class="toggle has has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX10">
+		<p>
+			The slope of the tangent line to a function, \(f(y)\), at a point \(y=a\)
+			is the derivative of the function at \(y=a\), that is \(m=f'(a)\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+		<p>
+			The slope at \(y=2\) is \(m=-12\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+		<p>
+			\[\begin{aligned}
+			m&=l'(2)=\lim_{h\rightarrow 0} \dfrac{z(2+h)-z(2)}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{[3(2+h)^2-2(2+h)^3]-[3\cdot2^2-2(2^3)]}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{1}{h}\Big([3(4+4h+h^2) \\
+			&\qquad\qquad-2(8+12h+6h^2+h^3)]-[12-16]\Big) \\
+			&=\lim_{h\rightarrow 0} \dfrac{1}{h}\Big(12+12h+3h^2 \\
+			&\qquad\qquad-16-24h-12h^2-2h^3+4\Big) \\
+			&=\lim_{h\rightarrow 0} \dfrac{-12h-9h^2-2h^3}{h} \\
+			&=\lim_{h\rightarrow 0} (-12-9h-2h^2)=-12 \\
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Compute the tangent line to \(y=x\sqrt{x}\) at \(x=3\).
+			Then find its \(x\)-intercept.
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX11"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX11"></button>
+			<button class="toggle has has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX11">
+		<p>
+			Evaluate the function and find its derivative at \(x=3\).
+			Then use the formula:
+			\[
+			f_{\tan}(x)=f(3)+f'(3)(x-3)
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+		<p>
+			The tangent line is \(y=\dfrac{3\sqrt{3}}{2}x-\dfrac{3\sqrt{3}}{2}\).
+			<br>
+			The \(x\)-intercept is \(x=1\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+		<p>
+			We identify \(f(x)=x\sqrt{x}\) and \(x=a=3\). Then:
+			\[
+			f(3)=3\sqrt{3}
+			\]
+			We compute the slope:
+			\[\begin{aligned}
+			f'(3)&=\lim_{h\to0} \dfrac{f(3+h)-f(3)}{h} \\
+			&=\lim_{h\to0} \dfrac{(3+h)\sqrt{3+h}-3\sqrt{3}}{h} \\
+			&=\lim_{h\to0} \dfrac{((3+h)\sqrt{3+h}-3\sqrt{3})}{h}
+			\dfrac{[(3+h)\sqrt{3+h}+3\sqrt{3}]}{[(3+h)\sqrt{3+h}+3\sqrt{3}]} \\
+			&=\lim_{h\to0} \dfrac{(3+h)^3-(3)^3}{h[(3+h)\sqrt{3+h}+3\sqrt{3}]} \\
+			&=\lim_{h\to0} \dfrac{27+27h+9h^2+h^3-27}{h[(3+h)\sqrt{3+h}+3\sqrt{3}]} \\
+			&=\lim_{h\to0} \dfrac{(27+9h+h^2)}{(3+h)\sqrt{3+h}+3\sqrt{3}} \\
+			&=\dfrac{27}{6\sqrt{3}}
+			=\dfrac{3\sqrt{3}}{2}
+			\end{aligned}\]
+			So the equation of the tangent line is:
+			\[\begin{aligned}
+			y&=f(3)+f'(3)(x-3) \\
+			&=3\sqrt{3}+\dfrac{3\sqrt{3}}{2}(x-3) \\
+			&=\dfrac{3\sqrt{3}}{2}x-\dfrac{3\sqrt{3}}{2}
+			\end{aligned}\]
+			After that, we set \(y=0\) to find the \(x\)-intercept.
+			\[\begin{aligned}
+			\dfrac{3\sqrt{3}}{2}x-\dfrac{3\sqrt{3}}{2}&=0 \\
+			\dfrac{3\sqrt{3}}{2}(x-1)=0 \\
+			x=1
+			\end{aligned}\]
+			We identify the \(x\)-intercept as \(x=1\).
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	Find the tangent line to \(y=x^2\) at the following points. Also find the
+	\(y\)-intercept of each tangent line.
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(x=3\)
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX12a"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX12a"></button>
+					<button class="toggle has has-sol" data-toggle="SolX12a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX12a">
+				<p>
+					Evaluate the function and find its derivative at \(x=3\).
+					Then use the formula:
+					\[
+					f_{\tan}(x)=f(3)+f'(3)(x-3)
+					\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12a">
+				<p>
+					The equation of the tangent line is \(y=6x-9\).
+					<br>
+					The \(y\)-intercept is \(y=-9\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12a">
+				<p>
+					We identify \(f(x)=x^2\) and \(x=a=3\). Then:
+					\(f(3)=9\)
+					We compute the slope:
+					\[\begin{aligned}
+					f'(3)&=\lim_{h\to0} \dfrac{f(3+h)-f(3)}{h} \\
+					&=\lim_{h\to0} \dfrac{(3+h)^2-9}{h} \\
+					&=\lim_{h\to0} \dfrac{9+6h+h^2-9}{h} \\
+					&=\lim_{h\to0} \dfrac{6h+h^2}{h} \\
+					&=\lim_{h\to0} (6+h)
+					=6
+					\end{aligned}\]
+					So, the equation of the tangent line is:
+					\[\begin{aligned}
+					y&=f(3)+f'(3)(x-3) \\
+					&=9+6(x-3) \\
+					&=9+6x-18
+					=6x-9
+					\end{aligned}\]
+					So the \(y\)-intercept is \(y=-9\).
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(x=6\)
+				</p>
+				<p>
+					<button class="toggle has has-ans" data-toggle="AnsX12b"></button>
+					<button class="toggle has has-sol" data-toggle="SolX12b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX12b">
+				<p>
+					The equation of the tangent line is \(y=12x-36\).
+					<br>
+					The \(y\)-intercept is \(y=-36\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX12b">
+				<p>
+					We identify \(f(x)=x^2\) and \(x=a=6\). Then:
+					\(f(6)=36\)
+					We compute the slope:
+					\[\begin{aligned}
+					f'(6)&=\lim_{h\to0} \dfrac{f(6+h)-f(6)}{h} \\
+					&=\lim_{h\to0} \dfrac{(6+h)^2-36}{h} \\
+					&=\lim_{h\to0} \dfrac{36+12h+h^2-36}{h} \\
+					&=\lim_{h\to0} \dfrac{12h+h^2}{h} \\
+					&=\lim_{h\to0} (12+h)
+					=12
+					\end{aligned}\]
+					So, the equation of the tangent line is:
+					\[\begin{aligned}
+					y&=f(6)+f'(6)(x-6) \\
+					&=36+12(x-6) \\
+					&=36+12x-72
+					=12x-36
+					\end{aligned}\]
+					and the \(y\)-intercept is \(y=-36\).
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	Find the tangent line to \(y=x^3\) at the following points. Also find the
+	\(y\)-intercept of each tangent line.
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(x=2\)
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX13a"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX13a"></button>
+					<button class="toggle has has-sol" data-toggle="SolX13a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX13a">
+				<p>
+					Evaluate the function and find its derivative at \(x=2\).
+					Then use the formula:
+					\[
+					f_{\tan}(x)=f(2)+f'(2)(x-2)
+					\]
+					For this exercise, you will need:
+					\[
+					z^3-x^3=(z-x)(z^2+zx+x^2)
+					\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX13a">
+				<p>
+					The tangent line is \(y=8+12(x-2)=12x-16\).
+					<br>
+					The \(y\)-intercept is \(y=-16\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX13a">
+				<p>
+					We identify \(f(x)=x^3\) and \(x=a=2\). Then:
+					\[
+					f(2)=2^3=8
+					\]
+					We compute the slope:
+					\[\begin{aligned}
+					f'(2)&=\lim_{h\to0} \dfrac{f(2+h)-f(2)}{h} \\
+					&=\lim_{h\to0} \dfrac{(2+h)^3-8}{h} \\
+					&=\lim_{h\to0} \dfrac{(8+12h+6h^2+h^3)-8}{h} \\
+					&=\lim_{h\to0} \dfrac{12h+6h^2+h^3}{h} \\
+					&=\lim_{h\to0} (12+6h+h^2)
+					=12
+					\end{aligned}\]
+					So the equation of the tangent line is:
+					\[\begin{aligned}
+					y&=f(2)+f'(2)(x-2) \\
+					&=8+12(x-2)
+					=12x -16
+					\end{aligned}\]
+					So the \(y\)-intercept is \(b=-16\).
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(x=3\)
+				</p>
+				<p>
+					<button class="toggle has has-ans" data-toggle="AnsX13b"></button>
+					<button class="toggle has has-sol" data-toggle="SolX13b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX13b">
+				<p>
+					The equation of the tangent line is \(y=27+27(x-3)=27x-54\).
+					<br>
+					The \(y\)-intercept is \(y=-54\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX13b">
+				<p>
+					We identify \(f(x)=x^3\) and \(x=a=3\). Then:
+					\[
+					f(3)=3^3=27
+					\]
+					We compute the slope:
+					\[\begin{aligned}
+					f'(3)&=\lim_{h\to0} \dfrac{f(3+h)-f(3)}{h} \\
+					&=\lim_{h\to0} \dfrac{(3+h)^3-27}{h} \\
+					&=\lim_{h\to0} \dfrac{(27+27h+9h^2+h^3)-27}{h} \\
+					&=\lim_{h\to0} \dfrac{27h+9h^2+h^3}{h} \\
+					&=\lim_{h\to0} (27+9h+h^2)
+					=27
+					\end{aligned}\]
+					So the equation of the tangent line is:
+					\[\begin{aligned}
+					y&=f(3)+f'(3)(x-3) \\
+					&=27+27(x-3)
+					=27x-54
+					\end{aligned}\]
+					So the \(y\)-intercept is \(y=-54\).
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the tangent line to \(y=-\sqrt{x}\) at \(x=4\) and its \(y\)-intercept.
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX14"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX14"></button>
+			<button class="toggle has has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX14">
+		<p>
+			Evaluate the function and find its derivative at \(x=6\).
+			Then use the formula:
+			\[
+			f_{\tan}(x)=f(4)+f'(4)(x-4)
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+		<p>
+			The tangent line is \(y=-\,\dfrac{1}{4}x - 1\).
+			<br>
+			The \(y\)-intercept is \(y=-1\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+		<p>
+			We identify \(f(x)=-\sqrt{x}\) and \(x=a=4\). Then:
+			\[
+			f(4)=-\sqrt{4}=-2
+			\]
+			We compute the slope:
+			\[\begin{aligned}
+			f'(4)&=\lim_{h\to0} \dfrac{f(4+h)-f(4)}{h} \\
+			&=\lim_{h\to0} \dfrac{-\sqrt{4+h}+2}{h} \\
+			&=\lim_{h\to0} \dfrac{-\sqrt{4+h}+2}{h}\cdot
+			\dfrac{\sqrt{4+h}+2}{\sqrt{4+h}+2} \\
+			&=\lim_{h\to0} \dfrac{4-(4+h)}{h(\sqrt{4+h}+2)} \\
+			&=\lim_{h\to0} \dfrac{-1}{\sqrt{4+h}+2}
+			=-\,\dfrac{1}{4}
+			\end{aligned}\]
+			So the equation of the tangent line is:
+			\[\begin{aligned}
+			y&=f(4)+f'(4)(x-4) \\
+			&=-2-\dfrac{1}{4}(x-4) \\
+			&=-2-\dfrac{1}{4}x + 1
+			=-\dfrac{1}{4}x - 1
+			\end{aligned}\]
+			So the \(y\)-intercept is \(y=-1\).
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+
+<!--Derivative as a Function-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="DerivFn.html">c. Derivative as a Function</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DerivFn.html">1</a></div>
+      
+        <div><a href="Slope.html">2</a></div>
+      
+        <div><a href="VelAccOther.html">3</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+	Every question in this section will be solved using Method 1, and checked
+	using Method 2. You can use either one.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<div class="column">
+			<div>
+				<p>
+					If \(g(x)=\sqrt{x}\), find its derivative \(\dfrac{dg}{dx}\).<br>
+					Use it to find \(\dfrac{dg}{dx}(1)\), \(\dfrac{dg}{dx}(4)\) and
+					\(\dfrac{dg}{dx}(9)\).
+				</p>
+				<p>
+					The figure shows the visualization of the tangent line to the curve.
+				</p>
+			</div>
+			<div class="center">
+				<video src="graphics/x_tan_sqrtx_at_4_prob.mp4" autoplay loop controls></video>
+			</div>
+		</div>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX15"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX15"></button>
+			<button class="toggle has has-sol" data-toggle="SolX15"></button>
+			<button class="toggle has has-check" data-toggle="CkX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+		<p>
+			The <span class="defword">derivative of the function \(f(x)\)</span>
+			is the function \(f'(x)\) given by either of the limits:
+			\[\begin{aligned}
+			f'(x)&=\lim_{h\rightarrow 0} \dfrac{f(x+h)-f(x)}{h} \\
+			&=\lim_{z\rightarrow x} \dfrac{f(z)-f(x)}{z-x}
+			\end{aligned}\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+		<p>
+			\(\dfrac{dg}{dx}=\dfrac{1}{2\sqrt{x}}\)
+			<br>
+			\(\begin{aligned}
+			g'(1)&=\dfrac{1}{2} \\
+			g'(4)&=\dfrac{1}{4} \\
+			g'(9)&=\dfrac{1}{6} \\
+			\end{aligned}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+		<div class="column">
+			<div>
+				<p class="meth" data-number="1">
+					To do the limit, we multiply by the conjugate:
+					\[\begin{aligned}
+					g'(x)&=\lim_{h\to0} \dfrac{g(x+h)-g(x)}{h} \\
+					&=\lim_{h\to0} \dfrac{\sqrt{x+h}-\sqrt{x}}{h} \\
+					&=\lim_{h\to0} \dfrac{\sqrt{x+h}-\sqrt{x}}{h}\cdot
+					\dfrac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}} \\
+					&=\lim_{h\to0} \dfrac{(x+h)-x}{h(\sqrt{x+h}+\sqrt{x})} \\
+					&=\lim_{h\to0} \dfrac{1}{(\sqrt{x+h}+\sqrt{x})}
+					=\dfrac{1}{2\sqrt{x}}
+					\end{aligned}\]
+					Plugging in \(x=1\), \(x=4\) and \(x=9\), we get:
+					\[\begin{aligned}
+					g'(1)&=\dfrac{1}{2} \\
+					g'(4)&=\dfrac{1}{4} \\
+					g'(9)&=\dfrac{1}{6} \\
+					\end{aligned}\]
+					Notice that the answer \(g'(4)=\dfrac{1}{4}\) is the same as that
+					found in a
+					<a href="" title="Return using the Back button.">
+						previous problem
+					</a>.
+				</p>
+			</div>
+			<div class="center">
+				<video src="graphics/x_tan_sqrtx_at_4_sol.mp4" autoplay loop controls></video>
+			</div>
+		</div>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX15">
+		<p class="meth" data-number="2">
+			To do the limit, we multiply by the conjugate:
+			\[\begin{aligned}
+			\dfrac{dg}{dx}&=\lim_{z\to x} \dfrac{g(z)-g(x)}{z-x} \\
+			&=\lim_{z\to x} \dfrac{\sqrt{z}-\sqrt{x}}{z-x} \\
+			&=\lim_{z\to x} \dfrac{\sqrt{z}-\sqrt{x}}{z-x}\cdot
+			\dfrac{\sqrt{z}+\sqrt{x}}{\sqrt{z}+\sqrt{x}} \\
+			&=\lim_{z\to x} \dfrac{(z-x)}{(z-x)(\sqrt{z}+\sqrt{x})} \\
+			&=\lim_{z\to x} \dfrac{1}{\sqrt{z}+\sqrt{x}}
+			=\dfrac{1}{2\sqrt{x}}
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+
+<li>
+	Consider the \(g(x)=3x^2\):
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the derivative \(g'(x)\) as a function of \(x\).
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX16a"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX16a"></button>
+					<button class="toggle has has-sol" data-toggle="SolX16a"></button>
+					<button class="toggle has has-check" data-toggle="CkX16a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX16a">
+				<p>
+					There are 2 formulas for computing the derivative of the function \(f(x)\) at the point
+					\(x=a\):
+					\[
+					f'(a)=\lim_{h\to0} \dfrac{f(a+h)-f(a)}{h}
+					\]
+					\[
+					f'(a)=\lim_{x\to a} \dfrac{f(x)-f(a)}{x-a}
+					\]
+					Use whichever formula is convenient.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX16a">
+				<p>
+					\(g'(x)=6x\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX16a">
+				<p class="meth" data-number="1">
+					We find the derivative by using the first method, with \(g(x)=3x^2\).
+					\[\begin{aligned}
+					g'(x)&=\lim_{h\to0} \dfrac{3(x+h)^2 - 3x^2}{h} \\
+					&=\lim_{h\to0} \dfrac{3(x^2+2xh+h^2)-3x^2}{h} \\
+					&=\lim_{h\to0} \dfrac{6xh+3h^2}{h}
+					= 6x + 3h = 6x
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+			<div class="toBeToggled drop-check" data-toggle="CkX16a">
+				<p class="meth" data-number="2">
+					We can also solve using the second method, with \(f(x)=3x^2\).
+					\[\begin{aligned}
+					g'(x)&=\lim_{z\to x} \dfrac{3z^2 - 3x^2}{z-x} \\
+					&=\lim_{z\to x} \dfrac{3(z+x)(z-x)}{z-x} \\
+					&=\lim_{z\to x} 3(z+x) \\
+					&=\lim_{z\to x} (3z + 3x)
+					= 6x
+					\end{aligned}\]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Use the derivative to find \(g'(4)\).
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX16b"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX16b"></button>
+					<button class="toggle has has-sol" data-toggle="SolX16b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX16b">
+				<p>
+					Just plug in a number into \(g'(x)\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX16b">
+				<p>
+					\(g'(4)=24\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX16b">
+				<p>
+					We simply plug \(x=4\) into \(g'(x)=6x\):
+					\[\begin{aligned}
+					g'(4)=24
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Use the derivative to find \(g'(7)\).
+				</p>
+				<p>
+					<button class="toggle has has-ans" data-toggle="AnsX16c"></button>
+					<button class="toggle has has-sol" data-toggle="SolX16c"></button>
+					<button class="toggle has has-rem" data-toggle="RemX16c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX16c">
+				<p>
+					\(g'(7)=42\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX16c">
+				<p>
+					We simply plug \(x=7\) into \(g'(x)=6x\):
+					\[\begin{aligned}
+					g'(7)=42
+					\end{aligned}\]
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+			<div class="toBeToggled drop-rem" data-toggle="RemX16c">
+				<p>
+					<b>Compare this exercise to a
+						<a href="#3x^2" title="Return using the Back button.">
+							previous exercise</a>.</b>
+					By now you have probably figured out how much <em>easier</em> it is
+					to take a derivative as a function, and then plug it in, rather than
+					taking the derivatives separately at each point.
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			If \(f(x)=4x^3\), find its derivative \(f'(x)\).
+			Use it to find \(f'(4)\).
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX17"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX17"></button>
+			<button class="toggle has has-sol" data-toggle="SolX17"></button>
+			<button class="toggle has has-check" data-toggle="CkX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX17">
+		<p>
+			The <span class="defword">derivative of the function \(f(x)\)</span>
+			is the function \(f'(x)\) given by the limit:
+			\[
+			f'(x)=\lim_{h\rightarrow 0} \dfrac{f(x+h)-f(x)}{h}
+			=\lim_{z\rightarrow x} \dfrac{f(z)-f(x)}{z-x}
+			\]
+			For the first method you will need:
+			\[
+			(x+h)^3=x^3+3x^2h+3xh^2+h^3
+			\]
+			For the second method you will need:
+			\[
+			z^3-x^3=(z-x)(z^2+zx+x^2)
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+		<p>
+			\(f'(x)=12x^2\).
+			<br>
+			\(f'(4)=192\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+		<p class="meth" data-number="1">
+			\[\begin{aligned}
+			f'(x)&=\lim_{h\to0} \dfrac{f(x+h)-f(x)}{h} \\
+			&=\lim_{h\to0} \dfrac{4(x+h)^3-4x^3}{h} \\
+			&=\lim_{h\to0} \dfrac{4(x^3+3x^2h+3xh^2+h^3)-4x^3}{h} \\
+			&=\lim_{h\to0} \dfrac{4x^3+12x^2h+12xh^2+4h^3-4x^3}{h} \\
+			&=\lim_{h\to0} (12x^2+12xh+4h^2)
+			=12x^2
+			\end{aligned}\]
+		</p>
+		<p>
+			\[\begin{aligned}
+			f'(4)=192
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX17">
+		<p class="meth" data-number="2">
+			We use the identity
+			\[
+			z^3-x^3=(z-x)(z^2+xz+x^2)
+			\]
+			\[\begin{aligned}
+			f'(x)&=\lim_{z\to x} \dfrac{f(z)-f(x)}{z-x} \\
+			&=\lim_{z\to x} \dfrac{4z^3-4x^3}{z-x} \\
+			&=\lim_{z\to x} \dfrac{4(z-x)(z^2+xz+x^2)}{z-x} \\
+			&=\lim_{z\to x} (4z^2+4xz+4x^2)
+			=12x^2
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			If \(j(x)=x^{1/3}\), find its derivative \(\dfrac{d}{dx}j(x)\).
+			Use it to find \(\dfrac{d}{dx}j(8)\).
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX18"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX18"></button>
+			<button class="toggle has has-sol" data-toggle="SolX18"></button>
+			<button class="toggle has has-check" data-toggle="CkX18"></button>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX18">
+		<p>
+			The <span class="defword">derivative of the function \(f(x)\)</span>
+			is the function \(\dfrac{d}{dx}f(x)\) given by the limit:
+			\[
+			\dfrac{d}{dx}f(x)=\lim_{h\rightarrow 0} \dfrac{f(x+h)-f(x)}{h}
+			=\lim_{z\rightarrow x} \dfrac{h(z)-f(x)}{z-x}
+			\]
+			You will need the following for this problem:
+			\[
+			(a-b)(a^2+ab+b^2)=a^3-b^3
+			\]
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+		<p>
+			\(\dfrac{d}{dx}h(x)=\dfrac{1}{3x^{2/3}}\).
+			<br><br>
+			\(\dfrac{d}{dx}h(4)=\dfrac{1}{12}\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+		<p class="meth" data-number="1">
+			To do the limit we multiply by a generalized conjugate using
+			\[
+			(a-b)(a^2+ab+b^2)=a^3-b^3
+			\]
+			where \(a\) and \(b\) are cube roots.
+			\[\begin{aligned}
+			f'(x)&=\lim_{h\to0} \dfrac{j(x+h)-j(x)}{h} \\
+			&=\lim_{h\to0} \dfrac{(x+h)^{1/3}-(x)^{1/3}}{h} \\
+			&=\lim_{h\to0} \dfrac{(x+h)^{1/3}-(x)^{1/3}}{h}\cdot
+			\dfrac{(x+h)^{2/3}+x^{1/3}(x+h)^{1/3}+x^{2/3}}{(x+h)^{2/3}+x^{1/3}(x+h)^{1/3}+x^{2/3}} \\
+			&=\lim_{h\to0} \dfrac{x+h-x}{h((x+h)^{2/3}+x^{1/3}(x+h)^{1/3}+x^{2/3}} \\
+			&=\lim_{h\to0} \dfrac{1}{(x+h)^{2/3}+x^{1/3}(x+h)^{1/3}+x^{2/3}}
+			=\dfrac{1}{3x^{2/3}}
+			\end{aligned}\]
+			\[\begin{aligned}
+			f'(8)=\dfrac{1}{12}
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX18">
+		<p class="meth" data-number="2">
+			We again do the limit by multipling by a generalized conjugate using
+			\[
+			(a-b)(a^2+ab+b^2)=a^3-b^3
+			\]
+			where \(a\) and \(b\) are cube roots.
+			\[\begin{aligned}
+			f'(x)&=\lim_{z\to x} \dfrac{j(z)-j(x)}{z-x} \\
+			&=\lim_{z\to x} \dfrac{z^{1/3}-x^{1/3}}{z-x} \\
+			&=\lim_{z\to x} \dfrac{z^{1/3}-x^{1/3}}{z-x}\cdot
+			\dfrac{z^{2/3}+x^{1/3}z^{1/3}+x^{2/3}}{z^{2/3}+x^{1/3}z^{1/3}+x^{2/3}} \\
+			&=\lim_{z\to x} \dfrac{(z-x)}{(z^{2/3}+x^{1/3}z^{1/3}+x^{2/3})(z-x)} \\
+			&=\lim_{z\to x} \dfrac{1}{z^{2/3}+x^{1/3}z^{1/3}+x^{2/3}}
+			=\dfrac{1}{3x^{2/3}}
+			\end{aligned}\]
+		</p>
+	</div>
+</li>
+<p>
+	Find the following rates of change.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			E.T. takes a walk from \(x=0\) to \(x=9\) and back.
+			His position at time \(t\) is \(x(t)=9-(t-3)^2\).
+			What is his velocity function?
+			What is his velocity at \(t=7\)?
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX19"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX19"></button>
+			<button class="toggle has has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX19">
+		<p>
+			If a particle is at position \(x(t)\) as a function of time \(t\), then
+			its velocity at time \(t=a\), is the derivative of the position at \(t=a\),
+			that is \(v(a)=x'(a)\), .
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+		<p>
+			\(v(7)=-8\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+		<p>
+			\[\begin{aligned}
+			v(7)&=x'(7)=\lim_{h\rightarrow 0} \dfrac{x(7+h)-x(7)}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{[9-(7+h-3)^2]-[9-(7-3)^2]}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{[-(4+h)^2]-[-(4)^2]}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{-8h-h^2}{h} \\
+			&=\lim_{h\rightarrow 0} (-8-h)=-8 \\
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			A Porsche 918 Spyder (hypercar) travels from point \(x=0\) at time
+			\(t=0\) to \(x=225\) at time \(t=15\) and back to \(x=0\) at time \(t=30\).
+			The car's position at time \(t\) is \(x(t)=225-(t-15)^2\).
+			Find the car's velocity as a function of time \(t\), its acceleration
+			at time \(t\), and its acceleration at time \(t=5\).
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX20"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX20"></button>
+			<button class="toggle has has-sol" data-toggle="SolX20"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX20">
+		<p>
+			The acceleration is the rate of change of the velocity.
+			So it can be found by taking the derivative of the velocity.
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+		<p>
+			\(v(t)=-2t+30\)
+			<br>
+			\(a(t)=-2\)
+			<br>
+			\(a(5)=-2\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+		<p>
+			We first find the car's velocity, \(v\), by taking the derivative of \(x(t)\):
+			\[\begin{aligned}
+			v(t)&=x'(t)=\lim_{h\rightarrow 0} \dfrac{x(t+h)-x(t)}{h} \\
+			&=\lim_{h\to0} \dfrac{[225-(t+h-15)^2]-[225-(t-15)^2]}{h} \\
+			&=\lim_{h\to0} \dfrac{[-((t-15)^2-2(t-15)h+h^2)]-[-(t-15)^2]}{h} \\
+			&=\lim_{h\to0} \dfrac{[-2(t-15)h+h^2]}{h} \\
+			&=\lim_{h\to0} (-2(t-15)+h)=-2t+30 \\
+			\end{aligned}\]
+			Then, we take the derivative of \(v(t)\) to find the acceleration.
+			\[\begin{aligned}
+			a(t)&=v'(t)=\lim_{h\to0} \dfrac{[-2(t+h)+30]-[-2t+30]}{h} \\
+			&=\lim_{h\to0} \dfrac{[-2t-2h]-[-2t]}{h} \\
+			&=\lim_{h\to0} (-2) = -2
+			\end{aligned}\]
+			So \(a(5)=-2\) also.
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+			The amount of water in a bucket at time \(t\) is given by
+			\(B(t)=t\sqrt{t}\). What is the rate at which the bucket is filling
+			as a function of \(t\)? What is the rate at \(t=9\)?
+		</p>
+		<p>
+			<button class="toggle has has-hint" data-toggle="HintX21"></button>
+			<button class="toggle has has-ans" data-toggle="AnsX21"></button>
+			<button class="toggle has has-sol" data-toggle="SolX21"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX21">
+		<p>
+			The rate of change of any quantity, \(Q(t)\), at time \(t=a\) is the
+			derivative of the quantity at \(t=a\), that is \(Q'(a)\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX21">
+		<p>
+			\(B'(t)=\dfrac{3}{2}\sqrt{t}\)
+			<br><br>
+			\(B'(9)=\dfrac{9}{2}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX21">
+		<p>
+			We first rewrite the function as \(B(t)=t^{3/2}\). We do the limit
+			by multiplying by the conjugate.
+			\[\begin{aligned}
+			B'(t)&=\lim_{h\rightarrow 0} \dfrac{B(t+h)-B(t)}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{(t+h)^{3/2}-t^{3/2}}{h} \\
+			&=\lim_{h\rightarrow 0} \dfrac{(t+h)^{3/2}-t^{3/2}}{h}
+			\cdot\dfrac{(t+h)^{3/2}+t^{3/2}}{(t+h)^{3/2}+t^{3/2}} \\
+			&=\lim_{h\rightarrow 0} \dfrac{(t+h)^3-t^3}{h[(t+h)^{3/2}+t^{3/2}]} \\
+			&=\lim_{h\rightarrow 0} \dfrac{3t^2h+3th^2+h^3}{h[(t+h)^{3/2}+t^{3/2}]} \\
+			&=\lim_{h\rightarrow 0} \dfrac{3t^2+3th+h^2}{(t+h)^{3/2}+t^{3/2}} \\
+			&=\dfrac{3t^2}{t^{3/2}+t^{3/2}}
+			=\dfrac{3t^2}{2t^{3/2}}
+			=\dfrac{3}{2}t^{1/2}
+			=\dfrac{3}{2}\sqrt{t}
+			\end{aligned}\]
+			So, the rate at \(t=9\) is:
+			\[\begin{aligned}
+			B'(9)=\dfrac{3}{2}\sqrt{9}=\dfrac{9}{2}
+			\end{aligned}\]
+		</p>
+		<p style="text-align:right">
+			db&ensp;
+		</p>
+	</div>
+</li>
+
+<!--The First Derivative Test for Maxima and Minima-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="MaxMin.html">d. The First Derivative Test for Maxima and Minima</a></h3>
+    <div class="pgs">
+      
+        <div><a href="MaxMin.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	Let \(f(x)=\dfrac{1}{5}x^5-16x\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find its derivative \(f'(x)\) using the limit definition.
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX22a"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX22a"></button>
+					<button class="toggle has has-sol" data-toggle="SolX22a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX22a">
+				<p>
+					The derivative is the limit:
+					\[
+					f'(x)=\lim_{h\to0}
+					\dfrac{\left[\dfrac{1}{5}(x+h)^5-16(x+h)\right]
+					-\left[\dfrac{1}{5}x^5-16x\right]}{h}
+					\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22a">
+				<p>
+					\(f'(x)=x^4-16\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22a">
+				<p>
+					The derivative is the limit:
+					\[\begin{aligned}
+					f'(x)&=\lim_{h\to0} \dfrac{
+					\left[\dfrac{1}{5}(x+h)^5-16(x+h)\right]-\left[\dfrac{1}{5}x^5-16x\right]
+					}{h} \\
+					&=\lim_{h\to0} \dfrac{1}{h}\left[\dfrac{1}{5}(x^5+5x^4h+10x^3h^2+10x^2h^3+5xh^4+h^5)\right. \\
+					&\quad\left.-16x-16h-\dfrac{1}{5}x^5+16x\right] \\
+					&=\lim_{h\to0} \dfrac{1}{h}\left[\dfrac{1}{5}(5x^4h+10x^3h^2+10x^2h^3+5xh^4+h^5) -16h\right] \\
+					&=\lim_{h\to0} \left[\dfrac{1}{5}(5x^4+10x^3h+10x^2h^2+5xh^3+h^4)-16\right] \\
+					&=x^4-16
+					\end{aligned}\]
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Where is \(f(x)\) increasing or decreasing?
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX22b"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX22b"></button>
+					<button class="toggle has has-sol" data-toggle="SolX22b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX22b">
+				<p>
+					The function is increasing when \(f'(x)\) is positive. It is
+					decreasing when \(f'(x)\) is negative.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22b">
+				<p>
+					\(f(x)\) is increasing on \((-\infty,-2]\) and \([2,\infty)\).
+					<br>
+					\(f(x)\) is decreasing on \([-2,2]\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22b">
+				<p>
+					We factor the derivative:
+					\[
+					f'(x)=x^4-16=(x^2+4)(x+2)(x-2)
+					\]
+					This is zero when \(x=-2\) or \(x=2\). So we need to check the sign
+					of the derivative \(f'(x)=x^4-16\) on each of the intervals:
+					\((-\infty,-2]\), \([-2,2]\) and \([2,\infty)\). We evaluate \(f'(x)\)
+					at a point in each interval and observe its sign:
+					\[\begin{aligned}
+					f'(-3)&=(-3)^4-16=65 \gt 0 \\
+					f'(0)&=0^4-16=-16 \lt 0\\
+					f'(3)&=(3)^4-16=65 \gt 0 \\
+					\end{aligned}\]
+					So the function is increasing on \((-\infty,-2]\) and \([2,\infty)\)
+					but decreasing on \([-2,2]\).
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the local maxima and minima of \(f(x)\) and any horizontal
+					inflection points.
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX22c"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX22c"></button>
+					<button class="toggle has has-sol" data-toggle="SolX22c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX22c">
+				<p>
+					By the First Derivative Test, a local maximum occurs at a point
+					where the function changes from	increasing to decreasing, and
+					a local minimum occurs at a point	where the function changes
+					from decreasing to increasing
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX22c">
+				<p>
+					The maximum value is \(f(-2)=\dfrac{128}{5}\) and the minimum
+					value is \(f(2)=-\,\dfrac{128}{5}\). There are no horizontal
+					inflection points.
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX22c">
+				<p>
+					We previously found the function is increasing on \((-\infty,-2]\)
+					and \([2,\infty)\) but decreasing on \([-2,2]\). A local maximum
+					occurs at a point where the function changes from increasing to
+					decreasing, and a local minimum occurs at a point where the function
+					changes from decreasing to increasing. So, we conclude that
+					\(f(x)\) has a local maximum at \(x=-2\) and a local minimum at \(x=2\).
+					The function values of \(f(x)=\dfrac{1}{5}x^5 - 16x\) are:
+					\[\begin{aligned}
+					f(-2)&=\dfrac{1}{5}(-2)^5 - 16(-2)=\dfrac{128}{5} \\
+					f(2)&=\dfrac{1}{5}(2)^5 - 16(2)=-\,\dfrac{128}{5}
+					\end{aligned}\]
+					So the maximum value is \(f(-2)=\dfrac{128}{5}\) and the minimum
+					value is \(f(2)=-\,\dfrac{128}{5}\). There are no horizontal
+					inflection points.
+				</p>
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	Let \(f(x)=x^4-8x^3+18x^2\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find its derivative \(f'(x)\) using the limit definition.
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX23a"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX23a"></button>
+					<button class="toggle has has-sol" data-toggle="SolX23a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX23a">
+				<p>
+					The derivative is the limit:
+					\[\begin{aligned}
+					f'(x)&=\lim_{h\to0} \dfrac{1}{h}
+					\left[\rule{0pt}{10pt}(x+h)^4-8(x+h)^3+18(x+h)^2\right. \\
+					&\qquad\left.\rule{0pt}{10pt}-\,(x^4-8x^3+18x^2)\right]
+					\end{aligned}\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX23a">
+				<p>
+					\(f'(x)=4x^3-24x^2+36x\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX23a">
+				<p>
+					The derivative is the limit:
+					\[\begin{aligned}
+					f'(x)&=\lim_{h\to0} \dfrac{1}{h}
+					\left[\rule{0pt}{10pt}(x+h)^4-8(x+h)^3+18(x+h)^2\right. \\
+					&\qquad\left.\rule{0pt}{10pt}-\,(x^4-8x^3+18x^2)\right] \\
+					&=\lim_{h\to0} \dfrac{1}{h}
+					\left[\rule{0pt}{10pt}(x^4+4x^3h+6x^2h^2+4xh^3+h^4)\right. \\
+					&\qquad-\,8(x^3+3x^2h+3xh^2+h^3)+18(x^2+2xh^2) \\
+					&\qquad\left.-\rule{0pt}{10pt}(x^4-8x^3+18x^2)\right] \\
+					&=\lim_{h\to0} \dfrac{1}{h}\left[\rule{0pt}{10pt}(4x^3h+6x^2h^2+4xh^3+h^4)\right. \\
+					&\qquad\left.\rule{0pt}{10pt}-\,8(3x^2h+3xh^2+h^3)+18(2xh+h^2)\right] \\
+					&=\lim_{h\to0} \left[\rule{0pt}{10pt}(4x^3+6x^2h+4xh^2+h^3)\right. \\
+					&\qquad\left.-\rule{0pt}{10pt}\,8(3x^2+3xh+h^2)+18(2x+h)\right] \\
+					&=4x^3-24x^2+36x
+					\end{aligned}\]
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Where is \(f(x)\) increasing or decreasing?
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX23b"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX23b"></button>
+					<button class="toggle has has-sol" data-toggle="SolX23b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX23b">
+				<p>
+					The function is increasing when \(f'(x)\) is positive. It is
+					decreasing when \(f'(x)\) is negative.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX23b">
+				<p>
+					\(f(x)\) is decreasing on \((-\infty,0]\).
+					<br>
+					\(f(x)\) is increasing on \([0,3]\) and \([3,\infty)\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX23b">
+				<p>
+					We factor the derivative:
+					\[\begin{aligned}
+					f'(x)&=4x^3-24x^2+36x \\
+					&=4x(x^2-6x+9)=4x(x-3)^2
+					\end{aligned}\]
+					This is zero when \(x=0\) or \(x=3\). So we need to check the sign
+					of the derivative \(f'(x)\) on each of the intervals:
+					\((-\infty,0]\), \([0,3]\) and \([3,\infty)\). We evaluate
+					\(f'(x)=4x(x-3)^2\) at a point in each interval and observe its sign:
+					\[\begin{aligned}
+					f'(-1)&=4(-1)(-1-3)^2-16=-64\lt 0 \\
+					f'(1)&=4(1)(1-3)^2=16 \gt 0\\
+					f'(4)&=4(4)(4-3)^2=16 \gt 0
+					\end{aligned}\]
+					So the function is decreasing on \((-\infty,0]\)
+					and increasing on \([0,3]\) and \([3,\infty)\).
+				<p style="text-align:right">
+					db&ensp;
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the local maxima and minima of \(f(x)\) and any horizontal
+					inflection points.
+				</p>
+				<p>
+					<button class="toggle has has-hint" data-toggle="HintX23c"></button>
+					<button class="toggle has has-ans" data-toggle="AnsX23c"></button>
+					<button class="toggle has has-sol" data-toggle="SolX23c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX23c">
+				<p>
+					By the First Derivative Test, a local maximum occurs at a point
+					where the function changes from	increasing to decreasing, and
+					a local minimum occurs at a point	where the function changes
+					from decreasing to increasing. A horizontal inflection point
+					occurs if the function stays increasing or decreasing on both
+					sides of the critical point.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX23c">
+				<p>
+					\(x=0\) is a local minimum and \(f(0)=0\).
+					<br>
+					\(x=3\) is a horizontal inflection point and \(f(3)=27\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX23c">
+				<p>
+					We previously found the function is decreasing on \((-\infty,0]\)
+					and increasing on \([0,3]\). So \(x=0\) is a local minimum and \(f(0)=0\).
+					We also found the function is	increasing on \([0,3]\) and \([3,\infty]\).
+					So \(x=3\) is a horizontal inflection point and
+					\[
+					f(3)=3^4-8\cdot3^3+18\cdot3^2=3^3(3-8+6)=27
+					\]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<big>PY: All Checked</big>
+
+<div class="rule" id="rev"></div>
+
+<div class="heading">
+	<h3>Review</h3>
+</div>
+
+
+
+</ol>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

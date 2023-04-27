@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Angles | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DotProdGeom.html" title="Previous">&lArr;</a></li>
+      <li><a href="ProjVector.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Dot Product</h2>
+
+
+      
+      <h2>4. Angles</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The reason the dot product is useful is that the geometric relationship
+	\[
+	\vec u\cdot\vec v=|\vec u|\,|\vec v|\cos\theta
+	\]
+  allows us to find the angle between two vectors.
+</p>
+<p class="formula" data-title="The Angle between Two Vectors">
+  The <span class="defword">angle</span>, \(\theta\), between the
+  vectors \(\vec u\) and \(\vec v\) satisfies:
+	\[
+	\cos\theta=\dfrac{\vec u\cdot\vec v}{|\vec u|\,|\vec v|}
+	\]
+    <span class="greenbig center"><em>Memorize this!</em></span>
+</p>
+
+      	<div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the angle between the two vectors
+  \(\langle \sqrt{3},1\rangle\) and \(\langle 1,\sqrt{3}\rangle\).
+</p>
+<p class="sol">
+  From the formula, we have
+	\[
+	\cos\theta
+  =\dfrac{\langle \sqrt{3},1\rangle\cdot\langle 1,\sqrt{3}\rangle}
+	{|\langle \sqrt{3},1\rangle|\,|\langle 1,\sqrt{3}\rangle|}
+	=\dfrac{2\sqrt{3}}{2\cdot2}=\dfrac{\sqrt{3}}{2}
+	\]
+  Thus, \(\theta=30^\circ=\dfrac{\pi}{6}\,\text{rad}\).
+</p>
+
+      	<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the angle between the two vectors
+    \(\vec a=\left\langle 2,2\right\rangle\) and
+    \(\vec b=\left\langle 0,3\right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\theta=45^\circ=\dfrac{\pi}{4}\,\text{rad}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We compute:
+    \[\begin{aligned}
+    |\vec a|=\sqrt{4+4}=2\sqrt{2}& \qquad
+    |\vec b|=\sqrt{0+9}=3 \\
+    \text{and} \quad \vec a\cdot\vec b&=0+6=6
+  	\end{aligned}\]
+    So:
+    \[
+  	\cos\theta=\dfrac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}
+    =\dfrac{6}{2\sqrt{2}\cdot3}=\dfrac{1}{\sqrt{2}}
+    \]
+    Thus, \(\theta=45^\circ=\dfrac{\pi}{4}\,\text{rad}\).
+  </p>
+</div>
+
+      	<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the angle between the two vectors
+    \(\vec p=\langle -\sqrt{3},1\rangle\) and \(\vec q=\langle 1,\sqrt{3}\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\theta=90^\circ=\dfrac{\pi}{2}\,\text{rad}\) The vectors are
+    perpendicular.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We compute:
+    \[\begin{aligned}
+    |\vec p|=\sqrt{3+1}=2& \qquad
+    |\vec q|=\sqrt{1+3}=2 \\
+    \text{and} \quad \vec p\cdot\vec q&=-\sqrt{3}+\sqrt{3}=0
+  	\end{aligned}\]
+    So:
+    \[
+  	\cos\theta=\dfrac{\vec p\cdot\vec q}{|\vec p|\,|\vec q|}=0
+    \]
+    Thus, \(\theta=90^\circ=\dfrac{\pi}{2}\,\text{rad}\). The vectors are
+    perpendicular.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+	You can also practice computing an angle of a triangle using vectors and
+	dot products in	3D by using the following Maplet
+	(requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/TriAngles.maplet" download>Angles of Triangles in 3D Space</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p class="maplet-ref"></p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

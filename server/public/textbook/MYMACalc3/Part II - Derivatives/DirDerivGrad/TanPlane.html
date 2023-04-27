@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Tangent Planes to Level Surfaces in \(\mathbb R^3\) | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TanLine.html" title="Previous">&lArr;</a></li>
+      <li><a href="NormalLine.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Tangent and Normal, Lines and Planes to Level Sets</h2>
+
+
+      
+      <h2>2. Tangent Planes to Level Surfaces in \(\mathbb R^3\)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  A surface in space is frequently defined as the graph of an equation. In
+  that case, the surface can be regarded as the level set of a function
+  \(F(x,y,z)\). To determine the tangent plane to the surface at a point
+  \(P=(a,b,c)\), we need to find the normal vector at \(P\), which in turn,
+  is the gradient of \(F\) at \(P\).
+</p>
+<p class="example" data-number="1">
+  Find the plane tangent to the ellipsoid \(36x^2+9y^2+4z^2=108\)
+  at the point \((x,y,z)=(1,2,3)\).
+</p>
+<p class="sol">
+  Recall from the chapter on
+  <a href="../../Part I - Geometry & Vectors/LinePlane/PlaneNonParam2.html#NormalPlane"
+  title="Return using the Back button.">
+  Lines and Planes</a> that the normal equation for a plane in \(\mathbb R^3\)
+  is given by
+  \[
+  \vec N\cdot X=\vec N\cdot P
+  \]
+  where \(P\) is a particular point on the plane, \(\vec N\) is a normal
+  vector to the plane and \(X=(x,y,z)\) is a general point on the plane.
+  In the case of a tangent plane to a level surface of a function \(F\),
+  \(P\) is the point of tangency and \(\vec N\) is the normal to the level
+  surface, i.e. the gradient of \(F\) at \(P\).
+</p>
+<p>
+  In this example, the function is \(F(x,y,z)=36x^2+9y^2+4z^2\), its gradient is
+  \[
+  \vec\nabla F=\langle 72x,18y,8z\rangle
+  \]
+  and the normal at \(P=(1,2,3)\) is
+  \[
+  \vec N=\left.\vec\nabla F\right|_{(1,2,3)}=\langle 72,36,24\rangle
+  \]
+  So the normal equation of the plane is
+  \[
+  \langle 72,36,24\rangle\cdot(x,y,z)
+  =\langle 72,36,24\rangle\cdot(1,2,3)
+  \]
+  or
+  \[
+  72x+36y+24z=216
+  \]
+  or
+  \[
+  6x+3y+2z=18.
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the plane tangent to the surface \(x^2+y^2+z^2+x^2y^2+x^2z^2=59\)
+    at the point \((x,y,z)=(3,2,1)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(9x+10y+5z=52\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    This is a level set of the function \(f(x,y,z)=x^2+y^2+z^2+x^2y^2+x^2z^2\).
+    Its gradient is
+    \[
+    \vec\nabla f=\langle 2x+2xy^2+2xz^2,2y+2x^2y,2z+2x^2z\rangle
+    \]
+    and the normal at \(P=(3,2,1)\) is
+    \[
+    \vec N=\left.\vec\nabla f\right|_{(3,2,1)}
+    =\langle6+24+6,4+36,2+18\rangle
+    =\langle36,40,20\rangle
+    \]
+    So the normal equation of the plane is
+    \[
+    \langle 36,40,20\rangle\cdot(x,y,z)
+    =\langle 36,40,20\rangle\cdot(3,2,1)
+    \]
+    or
+    \[
+    36x+40y+20z=208
+    \]
+    or:
+    \[
+    9x+10y+5z=52
+    \]
+  </p>
+</div>
+
+				<div class="rule"></div>
+
+<p class=remark>
+  It is important to distinguish between three (or four) methods of finding
+  the tangent plane to a surface.
+  <ol>
+    <li>
+      If the surface is given as the graph of the a function, \(z=f(x,y)\),
+      then the tangent plane at \((x,y)=(a,b)\) is:
+      \[
+      z=f_{\tan}(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
+      \]
+    </li>
+    <li>
+      If the surface is given as a parametric surface,
+      \(\vec R(s,t)=\langle x(s,t),y(s,t),z(s,t)\rangle\),
+      then there is a parametric equation for the tangent plane which will
+      be given in the chapter on
+      <a href="../../Part III - Integrals/SurfInt/ChContents.html"
+      title="Return using the Back button.">parametric surfaces</a>.
+    </li>
+    <li>
+      If the surface is given as the graph of an equation \(F(x,y,z)=C\),
+      (equivalently, the level surface of the function \(F(x,y,z)\)
+      with value \(C\)),
+      then the normal vector is \(\vec N=\left.\vec\nabla F\right|_{(a,b,c)}\)
+      and the tangent plane at \(P=(a,b,c)\) is:
+      \[
+      \vec N\cdot X=\vec N\cdot P
+      \]
+    </li>
+    <li>
+      If the surface is given as the graph of an equation \(F(x,y,z)=C\),
+      then an alternate method to find the tangent plane at \((a,b,c)\)
+      is to apply method (1) to the implicitly defined function \(z=f(x,y)\):
+      Since the point is \((a,b,c)\), the function value is \(f(a,b)=c\).
+      Using implicit differentiation the \(x\) and \(y\) slopes are
+      \(f_x(a,b)=\left.\dfrac{\partial z}{\partial x}\right|_{(a,b,c)}\)
+      and
+      \(f_y(a,b)=\left.\dfrac{\partial z}{\partial y}\right|_{(a,b,c)}\).
+      Then the tangent plane at \((a,b,c)\) is:
+      \[
+      z=f_{\tan}(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
+      \]
+      This implicit differentiation method is the least useful of the four:
+      In general, if the surface is a level set \(F(x,y,z)=C\), then it is
+      much easier to compute the gradient, \(\vec\nabla F\), than to use
+      implicit differentiation to compute the slopes,
+      \(\dfrac{\partial z}{\partial x}\) and \(\dfrac{\partial z}{\partial y}\).
+    </li>
+  </ol>
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+  Find the tangent plane to the graph of the function \(z=f(x,y)=x^2+y^2\) at
+  \((3,4,25)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(z=6x+8y-25\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The partial derivatives are \(f_x=2x\) and \(f_y=2y\).
+    At the point \((3,4)\), these are \(f_x(3,4)=6\) and \(f_y(3,4)=8\).
+    So the tangent plane is
+    \[\begin{aligned}
+    z&=f_{\tan}(x,y)=f(3,4)+f_x(3,4)(x-3)+f_y(3,4)(y-4) \\
+    &=25+6(x-3)+8(y-4)=6x+8y-25
+    \end{aligned}\]
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the tangent plane to the level set of the function
+    \(F(x,y,z)=z-x^2-y^2\) at \((3,4,25)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(6x+8y-z=25\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The gradient is \(\vec\nabla F=\langle -2x,-2y,1\rangle\).
+    The normal is
+    \(\vec N=\left.\vec\nabla F\right|_{(3,4,25)}
+    =\langle -6,-8,1\rangle\).
+    So the tangent line \(\vec N\cdot X=\vec N\cdot P\) is
+    \[
+    -6x-8y+z=-6(3)-8(4)+1(25)=-25
+    \]
+    or
+    \[
+    6x+8y-z=25
+    \]
+  </p>
+</div>
+
+<p class="remark">
+  Notice that these two exercises were the same problem.
+  Which method did you think was easier? For more complex problems, different
+  methods may have a distinct advantage, depending on the way the problem
+  is stated.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

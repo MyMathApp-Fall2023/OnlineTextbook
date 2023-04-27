@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Proof | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="RatioTest.html#" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>20. Convergence of Positive Series</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>e.1. The Ratio Test</h2>
+
+
+      
+      <h2>a. Proof</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<div class="greybox">
+  <p class="prop" data-title="The Ratio Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) is a positive
+    series and the <span class="defword">limit of the ratio of successive
+    terms</span> is
+    \(\displaystyle \rho=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}\).
+  </p>
+  <ol>
+    <li>
+      If \(\rho<1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent.
+    </li>
+    <li>
+      If \(\rho>1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is divergent.
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  If \(\rho=1\) the Ratio Test <span class="wrong">FAILS</span> and says
+  nothing about \(\displaystyle \sum_{n=n_o}^\infty a_n\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="proof">
+  The statement \(\displaystyle \lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}=\rho\) means:
+</p>
+<p class="center">
+  For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+  &ensp; \(N\), &ensp; such that
+</p>
+<p class="center">
+  if &ensp; \(n \gt N\) &ensp; then &ensp; \(\rho-\varepsilon \lt \dfrac{a_{n+1}}{a_n} \lt \rho+\varepsilon\).
+</p>
+<ol>
+  <li>
+    First suppose \(\rho< 1\). We want to apply the Simple Comparison Test by
+    comparing the series \(\displaystyle \sum_{n=n_o}^\infty a_n\) to a
+    geometric series whose ratio \(r\) is slightly larger than \(\rho\).
+    <br/><br/>
+    So pick \(\varepsilon \gt 0\) such that \(\rho+\varepsilon \lt 1\) and let
+    \(r=\rho+\varepsilon\). Then there is an \(N \gt 0\), such that for all
+    \(n \ge N\) we have \(\dfrac{a_{n+1}}{a_n} \lt \rho+\varepsilon=r\) or
+    \(a_{n+1} \lt a_n r\). By induction \(a_n \lt a_N\,r^{n-N}\). Since
+    \(r \lt 1\), the geometric series
+    \(\displaystyle \sum_{n=N}^\infty \dfrac{a_N}{r^N}\,r^n\) converges.
+    By the Simple Comparison Test the series
+    \(\displaystyle \sum_{n=n_o}^\infty a_n\) also converges.
+  </li>
+  <li>
+    Now suppose \(\rho \gt 1\). We want to apply the Simple Comparison Test by
+    comparing the series \(\displaystyle \sum_{n=n_o}^\infty a_n\) to a
+    geometric series whose ratio \(r\) is slightly smaller than \(\rho\).
+    <br/><br/>
+    So pick \(\varepsilon \gt 0\) such that \(\rho-\varepsilon \gt 1\) and let
+    \(r=\rho-\varepsilon\). Then there is an \(N \gt 0\), such that for all
+    \(n \ge N\) we have \(\dfrac{a_{n+1}}{a_n} \gt \rho-\varepsilon=r\) or
+    \(a_{n+1} \gt a_n r\). By induction \(a_n \gt a_N\,r^{n-N}\). Since
+    \(r \gt 1\), the geometric series
+    \(\displaystyle \sum_{n=N}^\infty \dfrac{a_N}{r^N}\,r^n\) diverges.
+    By the Simple Comparison Test the series
+    \(\displaystyle \sum_{n=n_o}^\infty a_n\) also diverges.
+  </li>
+</ol>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

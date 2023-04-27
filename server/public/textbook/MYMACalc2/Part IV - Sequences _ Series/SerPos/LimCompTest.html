@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d.1. The Limit Comparison Test | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="SimpCompTest.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimCompTest2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d.1. The Limit Comparison Test</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Sometimes in applying the Simple Comparison Test to a series
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) we may be able to identify a
+  comparison series \(\displaystyle \sum_{n=n_o}^\infty b_n\) and show that the
+  comparison series converges or diverges. However, we may not be able to
+  show \(b_n \ge a_n\) or \(b_n \le a_n\) (respectively) or it may not
+  even be true. In that case, we should try the Limit Comparison Test:
+</p>
+<div class="greybox">
+  <p class="prop" data-title="The Limit Comparison Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) and
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) are positive series and
+    \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=L\).
+  </p>
+  <ol>
+    <li>
+      If \(0 \lt L \lt \infty\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\)
+      is convergent if and only if \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      convergent.
+    </li>
+    <li>
+      If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent,
+      then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also convergent.
+    </li>
+    <li>
+      If \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      divergent, then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also divergent.
+    </li>
+  </ol>
+  <p>
+    &nbsp;<button class="toggle btn" data-toggle="Drop1">Justification</button>
+    \(\Longleftarrow\) Read this! It's easy.
+    <br/>
+  	&nbsp;<a href="LimCompPf.html">
+    <button class= 'btn'>Proof</button></a> \(\Longleftarrow\) The proof requires the
+    <a href="../Seq/PrecDef.html" title="Return using the Back button.">
+    precise definition</a> of the limit of a sequence.
+  </p>
+</div>
+<p class="remark">
+  Cases (2) and (3) are called the <span class="defword">extreme cases</span>,
+  and arise very rarely.
+  <br>
+  If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is divergent, or
+  \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent, the
+  Limit Comparison Test <span class="wrong">FAILS</span>.
+</p>
+<div class="toBeToggled drop-just" data-toggle="Drop1">
+  <p>
+    The most common case is Case 1 where \(0  \lt  L  \lt  \infty\). In that
+    case, the limit \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=L\)
+    says, for large \(n\), that \(a_n\approx L\,b_n\). So for large \(N\), the tails
+    of the series satisfy
+    \(\displaystyle \sum_{n=N}^\infty a_n \approx L \sum_{n=N}^\infty b_n\). So
+    \(\displaystyle \sum_{n=n_o}^\infty a_n\) is finite if and only if
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) is finite.
+  </p>
+  <p>
+    In Case 2, the extreme case with \(L=0\), the limit
+    \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=0\) says, for
+    large \(n\), that \(a_n\) is much smaller than \(b_n\). So if
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) is finite, then
+    \(\displaystyle \sum_{n=n_o}^\infty a_n\) is even more finite.
+  </p>
+  <p>
+    In Case 3, the extreme case with \(L=\infty\), the limit
+    \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=\infty\) says,
+    for large \(n\), that \(a_n\) is much larger than \(b_n\). So if
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) is infinite, then
+    \(\displaystyle \sum_{n=n_o}^\infty a_n\) is even more infinite.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{n^2-n-1}{n^{5/2}}\) is
+  convergent or divergent.
+</p>
+<p class="sol">
+  This is similar to the exercise on the
+  <a href="SimpCompTest.html#ex1">previous page</a> except for the
+  signs in the numerator. We have \(a_n=\dfrac{n^2-n-1}{n^{5/2}}\).
+  For large \(n\), the term \(n^2\) is larger than both \(n\) and \(1\).
+  So we take \(b_n=\dfrac{n^2}{n^{5/2}}=\dfrac{1}{n^{1/2}}\). Now
+  \(\displaystyle \sum_{n=1}^\infty b_n=\sum_{n=1}^\infty \dfrac{1}{n^{1/2}}\)
+  diverges because it is a \(p\)-series with \(p=\dfrac{1}{2} \lt 1\).
+  Finally, we need to compare \(a_n\) and \(b_n\). Since, \(n^2-n-1 \lt n^2\),
+  we have \(a_n=\dfrac{n^2-n-1}{n^{5/2}} \lt \dfrac{n^2}{n^{5/2}}=b_n\).
+  Unfortunately, this inequality is in the wrong direction to be able to
+  conclude \(\displaystyle \sum_{n=1}^\infty a_n\) is divergent
+  using the Simple Comparison Test. So we try the Limit Comparison Test
+  by computing: (Notice how we divide by \(b_n\) by multiplying by its reciprocal.)
+  \[\begin{aligned}
+  L&=\lim_{n\to\infty}\dfrac{a_n}{b_n}
+  =\lim_{n\to\infty}\dfrac{n^2-n-1}{n^{5/2}}\cdot\dfrac{n^{1/2}}{1} \\
+  &=\lim_{n\to\infty}\dfrac{n^2-n-1}{n^2}
+  =\lim_{n\to\infty}\left(1-\dfrac{1}{n}-\dfrac{1}{n^2}\right)=1
+  \end{aligned}\]
+  Since \(0 \lt L \lt \infty\) and
+  \(\displaystyle \sum_{n=1}^\infty b_n\) diverges, we conclude
+  \(\displaystyle \sum_{n=1}^\infty a_n\) also diverges.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Determine if \(\displaystyle \sum_{n=1}^\infty \dfrac{n^2+n}{n^4+\sin n}\) is
+  convergent or divergent.
+</p>
+<p class="sol">
+  We have \(a_n=\dfrac{n^2+n}{n^4+\sin n}\).
+  For large \(n\), the term \(n^2\) is larger than \(n\) and
+  the term \(n^4\) is larger than \(\sin n\).
+  So we take \(b_n=\dfrac{n^2}{n^4}=\dfrac{1}{n^2}\). Now
+  \(\displaystyle \sum_{n=1}^\infty b_n
+  =\sum_{n=1}^\infty \dfrac{1}{n^2}\) converges because it
+  is a \(p\)-series with \(p=2 \gt 1\). Finally, we need to compare
+  \(a_n\) and \(b_n\). We know \(n^2+n \gt n^2\), but we cannot say whether
+  \(n^4+\sin n\) is bigger or smaller than \(n^4\). So we are unable to
+  apply the Simple Comparison Test. So we try the Limit Comparison Test
+  by computing:
+  \[\begin{aligned}
+  L&=\lim_{n\to\infty}\dfrac{a_n}{b_n}
+  =\lim_{n\to\infty}\dfrac{n^2+n}{n^4+\sin n}\cdot\dfrac{n^2}{1} \\
+  &=\lim_{n\to\infty}\dfrac{n^4+n^3}{n^4+\sin n}
+  =1
+  \end{aligned}\]
+  Since \(0 \lt L \lt \infty\) and
+  \(\displaystyle \sum_{n=1}^\infty b_n\) converges, we conclude
+  \(\displaystyle \sum_{n=1}^\infty a_n\) also converges.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Determine if
+    \(\displaystyle \sum_{n=0}^\infty \dfrac{n^2-n}{n^{7/3}}\)
+    is convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Let \(b_n=\dfrac{n^2}{n^{7/3}}=\dfrac{1}{n^{1/3}}\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle \sum_{n=0}^\infty \dfrac{n^2-n}{n^{7/3}}\) is divergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    We have \(a_n=\dfrac{n^2-n}{n^{7/3}}\). For large \(n\), the \(-n\) term
+    is negligible, so we take \(b_n=\dfrac{n^2}{n^{7/3}}=\dfrac{1}{n^{1/3}}\).
+    The series, \(\displaystyle \sum_{n=0}^\infty \dfrac{1}{n^{1/3}}\),
+    is a divergent \(p\)-series with \(p=1/3 \lt 1\). Finally, we need to
+    compare \(a_n\) and \(b_n\). Since, \(n^2-n \lt n^2\), we have
+    \(a_n=\dfrac{n^2-n}{n^{7/3}} \lt \dfrac{n^2}{n^{7/3}}=b_n\).
+    This inequality is in the wrong direction to be able to
+    conclude \(\displaystyle \sum_{n=1}^\infty a_n\) diverges
+    using the Simple Comparison Test. So, we try the Limit Comparison Test,
+    \[\begin{aligned}
+    L&=\lim_{n\to\infty}\dfrac{a_n}{b_n}
+    =\lim_{n\to\infty}\dfrac{n^2-n}{n^{7/3}}\cdot\dfrac{n^{1/3}}{1} \\
+    &=\lim_{n\to\infty}\dfrac{n^2-n}{n^2}
+    =1
+    \end{aligned}\]
+    Since \(0 \lt L \lt \infty\) and
+    \(\displaystyle \sum_{n=1}^\infty b_n\) diverges, we conclude
+    \(\displaystyle \sum_{n=1}^\infty a_n\) also diverges.
+  </p>
+  <p align=right> dd &nbsp </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Determine if
+    \(\displaystyle \sum_{n=0}^\infty \dfrac{2^n+n^2}{4^n-n^4}\)
+    is convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint2"></button>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-hint" data-toggle="Hint2">
+  <p>
+    Let \(b_n=\dfrac{2^n}{4^n}=\left(\dfrac{1}{2}\right)^n\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(\displaystyle \sum_{n=0}^\infty \dfrac{2^n+n^2}{4^n-n^4}\) is convergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    We have \(a_n=\dfrac{2^n+n^2}{4^n-n^4}\). For large \(n\), \(2^n\)
+    is much larger than \(n^2\), and \(4^n\) is much larger than \(n^4\) (Try
+    \(n=100\)). So we take \(b_n=\dfrac{2^n}{4^n}=\left(\dfrac{1}{2}\right)^n\).
+    The series
+    \(\displaystyle \sum_{n=0}^\infty b_n
+    =\sum_{n=0}^\infty \left(\dfrac{1}{2}\right)^n\)
+    is convergent because it is a geometric series with ratio
+    \(r=\dfrac{1}{2}< 1\). To apply the Limit Comparison Test we compute
+    \[\begin{aligned}
+    L&=\lim_{n\to\infty}\dfrac{a_n}{b_n}
+    =\lim_{n\to\infty}\dfrac{2^n+n^2}{4^n-n^4}\cdot\dfrac{4^n}{2^n} \\
+    &=\lim_{n\to\infty}\dfrac{2^n+n^2}{4^n-n^4}\cdot\dfrac{2^{-n}}{4^{-n}}
+    =\lim_{n\to\infty}\dfrac{1+\dfrac{n^2}{2^n}}{1-\dfrac{n^4}{4^n}}
+    =1
+    \end{aligned}\]
+    So the series \(\displaystyle \sum_{n=0}^\infty a_n\) also converges.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The other two cases, the extreme cases with \(L=0\) or \(L=\infty\), are less common
+  but are covered on the <a href="LimCompTest2.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

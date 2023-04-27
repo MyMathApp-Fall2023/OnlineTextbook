@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a.1. Derivative at a Point | 10. Derivatives and Tangent Lines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="DerivPtAppl.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Derivatives and Tangent Lines</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a.1. Derivative at a Point</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the chapter on
+  <a href="../../Part%20II%20-%20Limits%20and%20Continuity/LimAppl/Rates.html"
+    title="Return using the Back button.">
+    Applications of Limits</a>, in discussing rates of change, the same limit
+  occurs every time. Consequently, we give it a name:
+</p>
+<div class="column">
+  <div>
+    <p class="def" data-title="Derivative at a Point">
+      The <span class="defword">derivative of the function \(f(x)\) at the point
+        \(x=a\)</span>, denoted by \(f'(a)\), is the limit:
+      \[
+      f'(a)=\lim_{h\rightarrow 0} \dfrac{f(a+h)-f(a)}{h}
+      \]
+    </p>
+    <p>
+      The figure shows the derivative is the slope of the tangent line
+      regarded as the limit of the slopes of the secant lines.
+    </p>
+  </div>
+  <div class="center">
+    <video src="graphics/def_Sec2TanLine_anim.mp4" autoplay loop controls></video>
+  </div>
+</div>
+<p class="prop" data-title="Derivative at a Point">
+  The <span class="hl">derivative of the function \(f(x)\) at the point
+    \(x=a\)</span> can also be written as the limit:
+  \[
+  f'(a)=\lim_{x\rightarrow a} \dfrac{f(x)-f(a)}{x-a}
+  \]
+  <button class="toggle btn" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    Let \(x=a+h\). Then \(x-a=h\) and \(x\rightarrow a\) is the same as
+    \(h\rightarrow 0\). Consequently:
+    \[
+    \lim_{x\rightarrow a} \dfrac{f(x)-f(a)}{x-a}
+    =\lim_{h\rightarrow 0} \dfrac{f(a+h)-f(a)}{h}=f'(a)
+    \]
+  </p>
+</div>
+<p class="remark">
+  The above formula gives the derivative as the limit of the difference (or
+  change) in the \(y\) values, \(\Delta f=f(x)-f(a)\), divided by the
+  difference (or change) in the \(x\) values, \(\Delta x=x-a\); the rise over
+  the run. Consequently, we frequently say the derivative is a
+  <span class="defword">limit of a difference quotient</span>:
+  \[
+  f'(a)=\lim_{\Delta x\to0}\dfrac{\Delta f}{\Delta x}
+  \]
+  This leads to several alternate notations for the derivative:
+  \[
+  f'(a)=\dfrac{df}{dx}(a)=\left.\dfrac{df}{dx}\right|_a
+  =\dfrac{dy}{dx}(a)=\left.\dfrac{dy}{dx}\right|_a
+  \]
+  This is called <span class="defword">differential notation</span> while
+  \(dx\) and \(dy=df\) are called the <span class="defword">differentials</span>
+  which can be thought of as infinitesimal changes in \(x\) and \(y\). More
+  details will be given in a
+  <a href="../../Part III - Derivatives/DiffLinApprox/ChContents.html" title="Return using the Back button.">
+    later chapter on Differentials</a>.
+</p>
+
+<div class="rule" id="eg_limquo"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="example" data-number="1">
+      Find the derivative of \(f(x)=x^2\) at \(x=3\).
+    </p>
+    <p class="sol" data-number="1">
+      We write out and compute the limit definition with \(a=3\):
+      \[\begin{aligned}
+      f'(3)&=\lim_{h\rightarrow 0} \dfrac{f(3+h)-f(3)}{h}
+      =\lim_{h\rightarrow 0} \dfrac{(3+h)^2-(3)^2}{h} \\
+      &=\lim_{h\rightarrow 0} \dfrac{3^2+6h+h^2-3^2}{h}
+      =\lim_{h\rightarrow 0} \dfrac{6h+h^2}{h} \\
+      &=\lim_{h\rightarrow 0} (6+h)
+      =6
+      \end{aligned}\]
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_tan_deriv_pt.jpg" alt="eg_tan_deriv_pt">
+  </div>
+</div>
+<p class="sol" data-number="2">
+  This time we use the alternate formula with \(a=3\):
+  \[\begin{aligned}
+  f'(3)&=\lim_{x\rightarrow 3} \dfrac{f(x)-f(3)}{x-3}
+  =\lim_{x\rightarrow 3} \dfrac{x^2-3^2}{x-3} \\
+  &=\lim_{x\rightarrow 3} (x+3)
+  =6
+  \end{aligned}\]
+</p>
+
+<div class="rule" id="ex_limquo"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="2">
+      If \(f(x)=\dfrac{3}{x}\), compute \(\dfrac{df}{dx}(6)\).
+      Compute it by \(2\) methods.
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_tan_deriv_pt.jpg" alt="ex_tan_deriv_pt">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\dfrac{df}{dx}(6)=-\,\dfrac{1}{12}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p class="meth" data-number="1">
+    We write out and compute the limit definition with \(a=6\):
+    \[\begin{aligned}
+    \dfrac{df}{dx}(6)&=\lim_{h\rightarrow 0} \dfrac{f(6+h)-f(6)}{h}
+    =\lim_{h\rightarrow 0} \dfrac{\dfrac{3}{6+h}-\dfrac{3}{6}}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{3[6-(6+h)]}{6h(6+h)}
+    =\lim_{h\rightarrow 0} \dfrac{-3h}{6h(6+h)} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-1}{2(6+h)}
+    =-\,\dfrac{1}{12}
+    \end{aligned}\]
+  </p>
+  <p class="meth" data-number="2">
+    This time we use the alternate formula with \(a=6\):
+    \[\begin{aligned}
+    \dfrac{df}{dx}(6)&=\lim_{x\rightarrow 6} \dfrac{f(x)-f(6)}{x-6}
+    =\lim_{x\rightarrow 6} \dfrac{\dfrac{3}{x}-\dfrac{1}{2}}{x-6} \\
+    &=\lim_{x\rightarrow 6} \dfrac{6-x}{2x(x-6)}
+    =\lim_{x\rightarrow 6} \dfrac{-1}{2x}
+    =-\,\dfrac{1}{12}
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="rule"></div>
+
+<p class="remark">
+  <em>Does it matter which formula we use for the derivative?</em>
+  <strong>No!</strong> We can use which ever formula seems easier.
+  Of course, we can't know which will be easier until we do them.
+  So we just pick one.
+</p>
+<p class="remark">
+  We will develop better ways to compute derivatives, called Derivative Rules,
+  in the
+  <a href="../DerRules/ChContents.html" title="Return using the Back button.">
+    next chapter</a>. For now we restrict to simple functions for which the
+  limits are straightforward.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

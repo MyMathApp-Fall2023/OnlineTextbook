@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Intuitive Limits and Continuity</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimatInf.html" title="Previous">&lArr;</a></li>
+      <li><a href="../ComputeLim/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>3. Intuitive Limits and Continuity</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--What my Algebra Teacher Never Told me!-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="NeverTold.html">a. What my Algebra Teacher Never Told me!</a></h3>
+    <div class="pgs">
+      
+        <div><a href="NeverTold.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Simplify the function \(f(x)=\dfrac{3+2x-x^2}{x+1}\) and graph it.
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX1"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+		<div class="column">
+	  	<p>
+				\(
+				f(x)=\left\{\begin{matrix}
+				3-x & \text{if} & x\ne-1 \\
+				\text{undefined} & \text{if} & x=-1
+				\end{matrix}\right.
+				\)
+	  	</p>
+		  <div class="center">
+		    <img src="graphics/x_(3+2x-x^2)_(x+1).jpg" alt="x_(3+2x-x^2)_(x+1)">
+		  </div>
+		</div>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+		<div class="column">
+	  	<p>
+	      We factor and cancel:
+				\[\begin{aligned}
+				f(x)&=\dfrac{3+2x-x^2}{x+1} \\
+				&=\dfrac{-(x-3)(x+1)}{x+1}=-x+3
+				\end{aligned}\]
+				This is true if and only if \(x \ne -1\).
+				So, the correct simplification is:
+				\[
+				f(x)=\left\{\begin{matrix}
+				3-x & \text{if} & x\ne-1 \\
+				\text{undefined} & \text{if} & x=-1
+				\end{matrix}\right.
+				\]
+	  	</p>
+		  <div class="center">
+			  <figure>
+			    <img src="graphics/x_(3+2x-x^2)_(x+1).jpg" alt="x_(3+2x-x^2)_(x+1)">
+			    <figcaption>
+			     The graph has a hole at \(x=-1\).
+			    </figcaption>
+			  </figure>
+		  </div>
+		</div>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Simplify the function \(g(x)=\dfrac{x^3-2x^2}{x-2}\) and graph it.
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+		<div class="column">
+	  	<p>
+				\(
+				f(x)=\left\{\begin{matrix}
+				x^2 & \text{if} & x\ne2 \\
+				\text{undefined} & \text{if} & x=2
+				\end{matrix}\right.
+				\)
+	  	</p>
+		  <div class="center">
+		    <img src="graphics/x_(x^3-2x^2)_(x-2).jpg" alt="x_(x^3-2x^2)_(x-2)">
+		  </div>
+		</div>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+		<div class="column">
+	  	<p>
+	      We factor and cancel to get:
+				\[\begin{aligned}
+				f(x)&=\dfrac{x^3-2x^2}{x-2} \\
+				&=\dfrac{x^2(x-2)}{x-2}=x^2
+				\end{aligned}\]
+				This is true if and only if \(x \ne 2\).
+				So, the correct simplification is:
+				\[
+				f(x)=\left\{\begin{matrix}
+				x^2 & \text{if} & x\ne2 \\
+				\text{undefined} & \text{if} & x=2
+				\end{matrix}\right.
+				\]
+	  	</p>
+		  <div class="center">
+			  <figure>
+			    <img src="graphics/x_(x^3-2x^2)_(x-2).jpg" alt="x_(x^3-2x^2)_(x-2)">
+			    <figcaption>
+			     The graph has a hole at \(x=2\).
+			    </figcaption>
+			  </figure>
+		  </div>
+		</div>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Simplify the function \(h(x)=\dfrac{x^2-5x+6}{x^2-9}\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+		<div class="column">
+	  	<p>
+				\[
+				h(x)=\left\{\begin{matrix}
+				\dfrac{x-2}{x+3} & \text{if} & x\ne-3,3 \\[2pt]
+				\text{undefined} & \text{if} & x=-3,3
+				\end{matrix}\right.
+				\]
+	  	</p>
+		  <div class="center">
+				<img src="graphics/x_(x^2-5x+6)_(x^2-9).jpg" alt="x_(x^2-5x+6)_(x^2-9)">
+		  </div>
+		</div>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+		<div class="column">
+	  	<p>
+	      We factor the numerator and denominator and simplify to get:
+				\[
+				h(x)=\dfrac{x^2-5x+6}{x^2-9}=\dfrac{(x-3)(x-2)}{(x-3)(x+3)}
+				=\dfrac{x-2}{x+3}
+				\]
+				The simplified function is undefined at \(x=-3\) because we would be
+				dividing by \(0\). (The point, \(x=-3\), is called a vertical asymptote.)
+				However, the original function, \(h(x)\), is also undefined at \(x=3\) -- there is a hole
+				in the graph. So the correct simplification is:
+				\[
+		    h(x)=\left\{\begin{matrix}
+		    \dfrac{x-2}{x+3} & \text{if} & x\ne-3,3 \\[2pt]
+		    \text{undefined} & \text{if} & x=-3,3
+		    \end{matrix}\right.
+				\]
+	  	</p>
+		  <div class="center">
+			  <figure>
+			    <img src="graphics/x_(x^2-5x+6)_(x^2-9).jpg" alt="x_(x^2-5x+6)_(x^2-9)">
+			    <figcaption>
+			     The graph has a hole at \(x=3\).
+			    </figcaption>
+			  </figure>
+		  </div>
+		</div>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<!--Intuitive Definitions-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="LRLims.html">b. Intuitive Definitions</a></h3>
+    <div class="pgs">
+      
+        <div><a href="LRLims.html">1</a></div>
+      
+        <div><a href="LimCont.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  <div class="column">
+		<div class="dotfillex" data-col-width="60%">
+  		<p>
+        For the function whose graph is shown, find
+				\[
+				\lim_{x\to3^-}f(x) \qquad \lim_{x\to3^+}f(x) \qquad
+				\text{and} \qquad f(3)
+				\]
+				Does \(\displaystyle \lim_{x\to3}f(x)\) exist and if so give it's value.
+				<br>
+				Is the function continuous from the left, continuous from the right
+				or continuous?
+			</p>
+			<p>
+	    	<button class="toggle has-hint" data-toggle="HintX4"></button>
+	    	<button class="toggle has-ans" data-toggle="AnsX4"></button>
+	    	<button class="toggle has-sol" data-toggle="SolX4"></button>
+			</p>
+		</div>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x_2lim_exists.jpg" alt="x_2lim_exists">
+    </div>
+  </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX4">
+    <p>
+			The limit from the left is the height \(f(x)\) approaches as \(x\)
+			approaches \(3\) from the left, i.e. \(x\) is less than \(3\) but
+			getting very close to \(3\).
+			<br>
+			The limit from the right is the value \(f(x)\) approaches as \(x\)
+			approaches \(3\) from the right, i.e. \(x\) is greater than \(3\) but
+			getting very close to \(3\).
+			<br>
+			The value of \(f(x)\) at \(x=3\) is \(f(3)\) if it is defined.
+			<br>
+      The (\(2\)-sided) limit exists if the limits from the left and right
+      exist and are equal:
+      \[
+      \lim_{x\to 3^-}f(x)=\lim_{x\to 3^+}f(x)=L
+      \]
+      We then write:
+      \[
+      \lim_{x\to 3}f(x)=L
+      \]
+			\(f(x)\) is continuous from the left at \(x=3\) if
+			\(\displaystyle \lim_{x\to 3^-}f(x)=f(3)\).
+			<br>
+			\(f(x)\) is continuous from the right at \(x=3\) if
+			\(\displaystyle \lim_{x\to 3^+}f(x)=f(3)\).
+			<br>
+			\(f(x)\) is continuous at \(x=3\) if
+			\(\displaystyle \lim_{x\to 3^-}f(x)=\lim_{x\to 3^+}f(x)=f(3)\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+     \(\displaystyle \lim_{x\to 3^-}f(x)=2\)
+		 <br>
+		 \(\displaystyle \lim_{x\to 3^+}f(x)=2\)
+		 <br>
+		 \(f(3)=4\)
+		 <br>
+		 \(\displaystyle \lim_{x\to3}f(x)=2\)
+		 <br>
+		 The function is neither continous from the left nor continuous from the
+		 right nor continuous.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+			\(\displaystyle \lim_{x\to 3^-}f(x)=2\) because the curve
+			on the left goes to height \(2\) as \(x\) goes to \(3\).
+			<br>
+			\(\displaystyle \lim_{x\to 3^+}f(x)=2\) because the curve
+			on the right goes to height \(2\) as \(x\) goes to \(3\).
+			<br>
+			\(f(3)=4\) because the solid dot above \(x=3\) is at height \(4\).
+			<br>
+			Since \(\displaystyle \lim_{x\to 3^-}f(x)=\lim_{x\to 3^+}f(x)=2\),
+			we find \(\displaystyle \lim_{x\to3}f(x)\) exists, and its value is \(2\).
+			<br>
+			The function is neither continuous from the left, nor continuous from the
+			right, nor continuous because \(\displaystyle \lim_{x\to3^+}f(x)\ne
+			f(3)\ne\lim_{x\to3^+}f(x)\).
+  	</p>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+  <div class="column">
+		<div class="dotfillex" data-col-width="60%">
+  		<p>
+        For the function whose graph is shown, find
+				\[
+				\lim_{x\to2^-}f(x) \qquad \lim_{x\to2^+}f(x) \qquad
+				\text{and} \qquad f(2)
+				\]
+				Does \(\displaystyle \lim_{x\to2}f(x)\) exist and if so give it's value.
+				<br>
+				Is the function continuous from the left, continuous from the right
+				or continuous?
+			</p>
+			<p>
+	    	<button class="toggle has-ans" data-toggle="AnsX5"></button>
+	    	<button class="toggle has-sol" data-toggle="SolX5"></button>
+			</p>
+		</div>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x_cont_right.jpg" alt="x_cont_right">
+    </div>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+			\(\displaystyle \lim_{x\to 2^-}f(x)=4\).
+			<br>
+			\(\displaystyle \lim_{x\to 2^+}f(x)=3)\).
+			<br>
+			\(f(2)=3\)
+			<br>
+			\(\displaystyle \lim_{x\to2}f(x)\) does not exist.
+			<br>
+			The function is continuous from the right only.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+			\(\displaystyle \lim_{x\to 2^-}f(x)=4\) because the curve
+			on the left goes to height \(4\) as \(x\) goes to \(2\).
+			<br>
+			\(\displaystyle \lim_{x\to 2^+}f(x)=3\) because the curve
+			on the right goes to height \(3\) as \(x\) goes to \(2\).
+			<br>
+			\(f(2)=3\) because the solid dot above \(x=2\) is at height \(3\).
+			<br>
+			Since \(\displaystyle \lim_{x\to 2^-}f(x)\ne\lim_{x\to 2^+}f(x)\),
+			we find \(\displaystyle \lim_{x\to2}f(x)\) does not exist.
+			<br>
+			The function is continuous from the right because \(\displaystyle
+			\lim_{x\to2^+}f(x)=f(2)=3\). However it is not continuous from the left
+			nor continuous because \(\displaystyle \lim_{x\to2^-}f(x)=4\ne3\).
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+  <div class="column">
+		<div class="dotfillex" data-col-width="60%">
+  		<p>
+        For the function whose graph is shown, find
+				\[
+				\lim_{x\to5^-}f(x) \qquad \lim_{x\to5^+}f(x) \qquad
+				\text{and} \qquad f(5)
+				\]
+				Does \(\displaystyle \lim_{x\to5}f(x)\) exist and if so give it's value.
+				<br>
+				Is the function continuous from the left, continuous from the right
+				or continuous?
+			</p>
+			<p>
+	    	<button class="toggle has-ans" data-toggle="AnsX6"></button>
+	    	<button class="toggle has-sol" data-toggle="SolX6"></button>
+			</p>
+		</div>
+    <div class="center" data-col-width="40%">
+        <img src="graphics/x_cont_left.jpg" alt="x_cont_left">
+    </div>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+			\(\displaystyle \lim_{x\to 5^-}f(x)=2\).
+			<br>
+			\(\displaystyle \lim_{x\to 5^+}f(x)=4\).
+			<br>
+			\(f(5)=2\).
+			<br>
+			\(\displaystyle \lim_{x\to5}f(x)\) does not exist.
+			<br>
+			The function is continous from the left only.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+			\(\displaystyle \lim_{x\to 5^-}f(x)=2\) because the curve
+			on the left goes to height \(2\) as \(x\) goes to \(5\).
+			<br>
+			\(\displaystyle \lim_{x\to 5^+}f(x)=4\) because the curve
+			on the right goes to height \(4\) as \(x\) goes to \(5\).
+			<br>
+			\(f(5)=2\) because the solid dot above \(x=5\) is at height \(2\).
+			<br>
+			Since \(\displaystyle \lim_{x\to 5^-}f(x)\ne\lim_{x\to 5^+}f(x)\),
+			we find \(\displaystyle \lim_{x\to5}f(x)\) does not exist.
+			<br>
+			The function is continous from the left, because \(\displaystyle
+			\lim_{x\to5^-}f(x)=f(5)=2\). However it is not continuous from the right
+			nor continuous because \(\displaystyle \lim_{x\to2^+}f(x)=4\ne2\).
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function \(f(x)=\dfrac{3+2x-x^2}{x+1}\) find:
+			\[
+			\lim_{x\to-1^-}f(x) \qquad \lim_{x\to-1^+}f(x) \qquad
+			\text{and} \qquad f(-1)
+			\]
+			Does \(\displaystyle \lim_{x\to-1}f(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right
+			or continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX7"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX7"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+      \(f(x)\) is simplified in a previous problem. Use it.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  	<p>
+      \(\displaystyle \lim_{x\to-1^-}f(x)=\lim_{x\to-1^+}f(x)=4\)
+			<br>
+			\(f(-1)\) is undefined.
+			<br>
+			The \(2\)-sided limit exists and
+			\(\displaystyle \lim_{x\to-1^-}f(x)=4\).
+			<br>
+			\(f(x)\) is not continuous from the left or right or continuous.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+			In a previous problem we found:
+			\[
+			f(x)=\left\{\begin{matrix}
+			3-x & \text{if} & x\ne-1 \\
+			\text{undefined} & \text{if} & x=-1
+			\end{matrix}\right.
+			\]
+			So \(f(-1)\) is undefined and the limits for \(f(x)\) are the same as
+			those for \(3-x\). For the limit from the left, we compute:
+			\[
+			\lim_{x\to-1^-}f(x)=\lim_{x\to-1^-}\dfrac{-(x-3)(x+1)}{x+1}=\lim_{x\to-1^-}(3-x)=4
+			\]
+			(This is called factor and cancel.)
+			Similarly for the limit from the right, we compute:
+			\[
+			\lim_{x\to-1^+}f(x)=\lim_{x\to-1^+}(3-x)=4
+			\]
+			Since \(\displaystyle \lim_{x\to-1^-}f(x)=\lim_{x\to-1^+}f(x)=4\), we have
+			\(\displaystyle \lim_{x\to-1}f(x)\) exists, and it's value is
+			\(\displaystyle \lim_{x\to-1}f(x)=4\).
+			Since \(f(-1)\) does not exist, \(f(x)\) is not continuous from the left
+			or right or continuous.
+  	</p>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function \(g(x)=\dfrac{x^3-2x^2}{x-2}\) find:
+			\[
+			\lim_{x\to2^-}g(x) \qquad \lim_{x\to2^+}g(x) \qquad
+			\text{and} \qquad g(2)
+			\]
+			Does \(\displaystyle \lim_{x\to2}g(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right
+			or continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX8"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX8"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      \(g(x)\) is simplified in a previous problem. Use it.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+			\(\displaystyle \lim_{x\to2^-}g(x)=\lim_{x\to2^+}g(x)=4\)
+			<br>
+			\(g(2)\) is undefined.
+			<br>
+			The \(2\)-sided limit exists and
+			\(\displaystyle \lim_{x\to2^-}g(x)=4\).
+			<br>
+			\(g(x)\) is not continuous from the left or right or continuous.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+			In a previous problem we found:
+			\[
+			g(x)=\left\{\begin{matrix}
+			x^2 & \text{if} & x\ne2 \\
+			\text{undefined} & \text{if} & x=2
+			\end{matrix}\right.
+			\]
+			So \(g(2)\) is undefined and the limits for \(g(x)\) are the same as
+			those for \(x^2\). For the limit from the left, we compute:
+			\[
+			\lim_{x\to2^-}g(x)=\lim_{x\to2^-}\dfrac{x^2(x-2)}{x-2}=\lim_{x\to1^-}x^2=4
+			\]
+			(This is called factor and cancel.)
+			Similarly for the limit from the right, we compute:
+			\[
+			\lim_{x\to2^+}g(x)=\lim_{x\to2^+}x^2=4
+			\]
+			Since \(\displaystyle \lim_{x\to2^-}g(x)=\lim_{x\to2^+}g(x)=4\), we have
+			\(\displaystyle \lim_{x\to2}g(x)\) exists, and it's value is
+			\(\displaystyle \lim_{x\to2}g(x)=4\).
+			Since \(g(2)\) does not exist, \(g(x)\) is not continuous from the left
+			or right or continuous.
+  	</p>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function
+			\(
+	    h(x)=\left\{
+	    \begin{matrix}
+	    x+2 & \text{if} & x\lt3 \\
+	    5 & \text{if} & x=3 \\
+	    7-x & \text{if} & x\gt3
+	    \end{matrix}\right.
+			\) find:
+			\[
+			\lim_{x\to3^-}h(x) \qquad \lim_{x\to3^+}h(x) \qquad
+			\text{and} \qquad h(3)
+			\]
+			Does \(\displaystyle \lim_{x\to3}h(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right
+			or continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+     \(\displaystyle \lim_{x\to3^-}h(x)=5\)
+		 <br>
+		 \(\displaystyle \lim_{x\to3^+}h(x)=4\)
+		 <br>
+		 \(h(3)=5\)
+		 <br>
+		 \(\displaystyle \lim_{x\to3}h(x)\) does not exist.
+		 <br>
+		  \(f(x)\) is continuous from the left but not continuous from the right
+			nor continuous.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+		 To compute the limit from the left, we plug in numbers less
+ 		 than \(3\) using the formula for \(x \lt 3\). This gives:
+		 \[\begin{aligned}
+		 x&=    2.9&    &2.99&    &2.999&   &\to 3 \\
+		 h(x)&= 4.9&    &4.99&    &4.999&   &\to 5
+		 \end{aligned}\]
+		 So, as \(x\) approaches \(3\), \(y\) approaches \(5\). Therefore:
+		 \[
+		 \lim_{x\to3^-}h(x)=5
+		 \]
+		 Similarly, to compute the limit from the right, we plug in numbers greater
+ 		 than \(3\) using the formula for \(x \gt 3\). This gives:
+		 \[\begin{aligned}
+		 x&=    3.1&    &3.01&    &3.001&   &\to 3 \\
+		 h(x)&= 3.9&    &3.99&    &3.999&   &\to 4
+		 \end{aligned}\]
+		 Therefore:
+		 \[
+		 \lim_{x\to3^+}h(x)=4
+		 \]
+		 To find \(h(3)\), we use the second formula to get \(h(3)=5\).
+  	</p>
+  	<p>
+		 \(\displaystyle \lim_{x\to3}h(x)\) does not exist, because
+		 \(\displaystyle \lim_{x\to3^-}h(x)=5\) and
+		 \(\displaystyle \lim_{x\to3^+}h(x)=4\) which are not equal.
+		 The function is continous from the left, because
+		 \(\displaystyle \lim_{x\to3^-}h(x)=h(3)=5\).
+		 It is not continuous from the right nor continuous since
+		 \(\displaystyle \lim_{x\to3^+}h(x)=4\) and
+		 \(h(3)=5\) which are not equal.
+  	</p>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function
+			\(
+	    p(x)=\left\{
+	    \begin{matrix}
+	    x^2 & \text{if} & x\lt2 \\
+		 	4 & \text{if} & x=2 \\
+	    8-x^2 & \text{if} & x\gt2
+	    \end{matrix}\right.
+			\) find:
+			\[
+			\lim_{x\to2^-}p(x) \qquad \lim_{x\to2^+}p(x) \qquad
+			\text{and} \qquad p(2)
+			\]
+			Does \(\displaystyle \lim_{x\to2}p(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right or
+			continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(\displaystyle \lim_{x\to2^-}p(x)
+			=\lim_{x\to2^+}p(x)
+			=p(2)=4\)
+			<br>
+			\(2\)-sided limit exists and \(\displaystyle \lim_{x\to2}p(x)=4\).
+			<br>
+			\(p(x)\) is continuous and hence also continuous from the left and right.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+			To compute the limit from the left, we plug in numbers less
+  		 than \(2\) using the formula for \(x \lt 2\). This gives:
+ 		 \[\begin{aligned}
+ 		 x&=    1.9&    &1.99&    &1.999&   &\to 2 \\
+ 		 p(x)&= 3.61&    &3.9601&    &3.996001&   &\to 4
+ 		 \end{aligned}\]
+ 		 So, as \(x\) approaches \(2\), \(y\) approaches \(4\). Therefore:
+ 		 \[
+ 		 \lim_{x\to2^-}p(x)=4
+ 		 \]
+ 		 Similarly, to compute the limit from the right, we plug in numbers greater
+  		 than \(2\) using the formula for \(x \gt 2\). This gives:
+ 		 \[\begin{aligned}
+ 		 x&=    2.1&    &2.01&    &2.001&   &\to 2 \\
+ 		 p(x)&= 3.59&    &3.9599&    &3.995999&   &\to 4
+ 		 \end{aligned}\]
+ 		 Therefore:
+ 		 \[
+ 		 \lim_{x\to2^+}p(x)=4
+ 		 \]
+ 		 To find \(p(2)\), we use the second formula to get \(p(2)=4\).
+		 Since \(\displaystyle \lim_{x\to2^-}p(x)=\lim_{x\to2^+}p(x)=p(2)=4\),
+		 the function is continuous and consequently continuous from the left and
+		 right and the \(2\)-sided limit exists and
+		 \(\displaystyle \lim_{x\to2}p(x)=4\).
+	 </p>
+	 <p style="text-align:right">
+		 abs&ensp;
+	 </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function
+			\(
+	    q(x)=\left\{
+	    \begin{matrix}
+	    x+1 & \text{if} & x\lt5 \\
+	    x+2 & \text{if} & x=5 \\
+	    x+3 & \text{if} & x\gt5
+	    \end{matrix}\right.
+			\) find:
+			\[
+			\lim_{x\to 5^-}q(x) \qquad \lim_{x\to 5^+}q(x) \qquad
+			\text{and} \qquad q(5)
+			\]
+			Does \(\displaystyle \lim_{x\to 5}q(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right or
+			continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX11"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+  	<p>
+			\(\displaystyle \lim_{x\to 5^-}q(x)=6\)
+			<br>
+      \(\displaystyle \lim_{x\to 5^+}q(x)=8\)
+      <br>
+			\(q(5)=7\)
+			<br>
+		  \(\displaystyle \lim_{x\to5}q(x)\) does not exist.
+			<br>
+			\(q(x)\) is neither continuous from the left, nor the right nor continuous.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  	<p>
+			To compute the limit from the left, we plug in numbers less
+			 than \(5\) using the formula for \(x \lt 5\). This gives:
+		 \[\begin{aligned}
+		 x&=    4.9&    &4.99&    &4.999&   &\to 5 \\
+		 q(x)&= 5.9&    &5.99&    &5.999&   &\to 6
+		 \end{aligned}\]
+		 So, as \(x\) approaches \(5\), \(y\) approaches \(6\). Therefore:
+		 \[
+		 \lim_{x\to5^-}q(x)=6
+		 \]
+		 Similarly, to compute the limit from the right, we plug in numbers greater
+			 than \(5\) using the formula for \(x \gt 5\). This gives:
+		 \[\begin{aligned}
+		 x&=    5.1&    &5.01&    &5.001&   &\to 5 \\
+		 q(x)&= 8.1&    &8.01&    &8.001&   &\to 8
+		 \end{aligned}\]
+		 Therefore:
+		 \[
+		 \lim_{x\to5^+}q(x)=8
+		 \]
+		 To find \(q(5)\), we use the second formula to get \(q(5)=7\).
+		 \(\displaystyle \lim_{x\to5}q(x)\) does not exist since
+		 \(\displaystyle \lim_{x\to5^-}q(x)=6\ne\lim_{x\to5^+}=8\).
+		 Since \(\displaystyle \lim_{x\to5^-}q(x)=6\ne\lim_{x\to5^+}q(x)=8\ne
+		 q(2)=4\),
+		 the function is neither continous, nor continuous from the left, nor
+		 continuous from the right.
+  	</p>
+		<p style="text-align:right">
+		  abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function
+			\(
+	    k(x)=\left\{
+	    \begin{matrix}
+	    3-x & \text{if} & x\lt2 \\
+	    x-1 & \text{if} & x\gt2
+	    \end{matrix}\right.
+			\) find:
+			\[
+			\lim_{x\to 2^-}k(x) \qquad \lim_{x\to 2^+}k(x) \qquad
+			\text{and} \qquad k(2)
+			\]
+			Does \(\displaystyle \lim_{x\to 2}k(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right or
+			continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+			\(\displaystyle \lim_{x\to 2^-}k(x)=\lim_{x\to 2^+}k(x)=1\)
+      <br>
+			\(k(2)\) is undefined.
+			<br>
+		  \(\displaystyle \lim_{x\to2}k(x)\) does exist, and its value is \(1\).
+			<br>
+			The function is not continuous.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p>
+			To compute the limit from the left, we plug in numbers less
+			 than \(2\) using the formula for \(x \lt 2\). This gives:
+		 \[\begin{aligned}
+		 x&=    1.9&    &1.99&    &1.999&   &\to 2 \\
+		 k(x)&= 1.1&    &1.01&    &1.001&   &\to 1
+		 \end{aligned}\]
+		 So, as \(x\) approaches \(2\), \(y\) approaches \(1\). Therefore:
+		 \[
+		 \lim_{x\to2^-}k(x)=1
+		 \]
+		 Similarly, to compute the limit from the right, we plug in numbers greater
+			 than \(2\) using the formula for \(x \gt 2\). This gives:
+		 \[\begin{aligned}
+		 x&=    2.1&    &2.01&    &2.001&   &\to 2 \\
+		 k(x)&= 1.1&    &1.01&    &1.001&   &\to 1
+		 \end{aligned}\]
+		 Therefore:
+		 \[
+		 \lim_{x\to2^+}k(x)=1
+		 \]
+		 \(k(2)\)is undefined, because there is no value given for \(x=2\).
+		 Since \(\displaystyle \lim_{x\to2^-}k(x)=\lim_{x\to2^+}k(x)=1\),
+		 \(\displaystyle \lim_{x\to2}\) exists, and its value is \(\displaystyle \lim_{x\to2}=1\).
+		 The function is not continuous because \(f(2)\) does not exist.
+	 </p>
+	 <p style="text-align:right">
+		 abs&ensp;
+	 </p>
+ </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function
+			\(
+	    l(x)=\left\{
+	    \begin{matrix}
+	    x-1 & \text{if} & x\lt7 \\
+	    -3 & \text{if} & x=7 \\
+	    4-x & \text{if} & x\gt7
+	    \end{matrix}\right.
+			\) find:
+			\[
+			\lim_{x\to 7^-}l(x) \qquad \lim_{x\to 7^+}l(x) \qquad
+			\text{and} \qquad l(7)
+			\]
+			Does \(\displaystyle \lim_{x\to 7}l(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right or
+			continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+			\(\displaystyle \lim_{x\to 7^-}l(x)=6\)
+			<br>
+      \(\displaystyle \lim_{x\to 7^+}l(x)=l(7)=-3\)
+			<br>
+		  \(\displaystyle \lim_{x\to7}l(x)\) does not exist.
+			<br>
+			The function is continuous from the right but not continuous from the
+			left nor continuous.
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+			To compute the limit from the left, we plug in numbers less
+			 than \(7\) using the formula for \(x \lt 7\). This gives:
+		 \[\begin{aligned}
+		 x&=    6.9&    &6.99&    &6.999&   &\to 7 \\
+		 l(x)&= 5.9&    &5.99&    &5.999&   &\to 6
+		 \end{aligned}\]
+		 So, as \(x\) approaches \(7\), \(y\) approaches \(6\). Therefore:
+		 \[
+		 \lim_{x\to7^-}l(x)=6
+		 \]
+		 Similarly, to compute the limit from the right, we plug in numbers greater
+		 than \(7\) using the formula for \(x \gt 7\). This gives:
+		 \[\begin{aligned}
+		 x&=&7.1&&7.01&&7.001&&\to&&7& \\
+		 l(x)&=&-3.1&&-3.01&&-3.001&&\to&&-3&
+		 \end{aligned}\]
+		 Therefore:
+		 \[
+		 \lim_{x\to7^+}l(x)=-3
+		 \]
+		 To find \(l(7)\), we use the second formula to get \(l(7)=-3\).
+		 Since \(\displaystyle \lim_{x\to7^-}l(x)=6\ne l(7)=\lim_{x\to7^+}l(x)=-3\),
+		 \(\displaystyle \lim_{x\to7}l(x)\)
+		 does not exist, \(l(x)\) is not continuous from the left nor continuous, but
+		 it is continuous from the right.
+	 </p>
+	 <p style="text-align:right">
+		 abs&ensp;
+	 </p>
+ </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For the function
+			\(
+	    m(x)=\left\{
+	    \begin{matrix}
+	    3-x & \text{if} & x\lt3 \\
+	    3+x & \text{if} & x\ge3
+	    \end{matrix}\right.
+			\) find:
+			\[
+			\lim_{x\to 3^-}m(x) \qquad \lim_{x\to 3^+}m(x) \qquad
+			\text{and} \qquad m(3)
+			\]
+			Does \(\displaystyle \lim_{x\to 3}m(x)\) exist and if so give it's value.
+			<br>
+			Is the function continuous from the left, continuous from the right or
+			continuous?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX14"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+  	<p>
+			\(\displaystyle \lim_{x\to 3^-}m(x)=0\)
+			<br>
+      \(\displaystyle \lim_{x\to 3^+}m(x)=m(3)=6\)
+			<br>
+		  So \(\displaystyle \lim_{x\to3}m(x)\) does not exist.
+			<br>
+			The function is continuous from the right but not continuous from the
+			left nor continuous.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+  	<p>
+			To compute the limit from the left, we plug in numbers less
+			than \(3\) using the formula for \(x \lt 3\). This gives:
+			\[\begin{aligned}
+			x&=    2.9&    &2.99&    &2.999&   &\to 3 \\
+			m(x)&= 0.1&    &0.01&    &0.001&   &\to 0
+			\end{aligned}\]
+			So, as \(x\) approaches \(3\), \(y\) approaches \(0\). Therefore:
+			\[
+			\lim_{x\to3^-}m(x)=0
+			\]
+			Similarly, to compute the limit from the right, we plug in numbers greater
+			than \(3\) using the formula for \(x \ge 3\). This gives:
+		 \[\begin{aligned}
+		 x&=    3.1&    &3.01&    &3.001&   &\to 3 \\
+		 m(x)&= 6.1&    &6.01&    &6.001&   &\to 6
+		 \end{aligned}\]
+		 Therefore:
+		 \[
+		 \lim_{x\to3^+}m(x)=6
+		 \]
+     To find \(m(3)\) we use the formula for \(x \ge 3\) to get \(m(3)=6\).
+		 Since \(\displaystyle \lim_{x\to3^-}m(x)\ne\lim_{x\to3^+}m(x)\),
+		 \(\displaystyle \lim_{x\to3}m(x)\)
+		 does not exist.
+		 Since \(\displaystyle \lim_{x\to3^-}m(x)=0\ne m(3)=6\),
+		 \(m(x)\) is not continuous from the left nor continuous. However, since
+		 \(\displaystyle \lim_{x\to3^+}m(x)=m(3)=6\), the function is continuous from the right.
+	 </p>
+	 <p style="text-align:right">
+		 abs&ensp;
+	 </p>
+ </div>
+</li>
+
+<!--Tutorial on Limits and Continuity-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="TutLimCont.html">c. Tutorial on Limits and Continuity</a></h3>
+    <div class="pgs">
+      
+        <div><a href="TutLimCont.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+	Do the tutorial repeatedly until you have done one which is continuous,
+	one which is continuous from the left but not continuous,
+	one which is continuous from the right but not continuous,
+	and one which has a \(2\)-sided limit but is not continuous.
+</p>
+
+<!--Continuity on an Interval-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="IntervalCont.html">d. Continuity on an Interval</a></h3>
+    <div class="pgs">
+      
+        <div><a href="IntervalCont.html">1</a></div>
+      
+    </div>
+  </div>
+
+<p>
+For each function, find the interval(s) on which it is continuous.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=\dfrac{1}{x^2-9}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX15"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+    <p>
+      The function is continous as long as the denominator is defined and
+			non-zero.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+     \(f(x)\) is continuous on the intervals \((-\infty,-3)\), \((-3, 3)\), and
+ 		\((3,\infty)\).
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+    Since \(f(x)\) is undefined when \(x=-3\) and when \(x=3\), those are the
+		only points at which the function is not continuous. Therefore, the function is
+		continuous on the intervals \((-\infty,-3)\), \((-3, 3)\), and
+		\((3,\infty)\).
+		</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(g(x)=\dfrac{1}{\sqrt{4-x^2}}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX16"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX16"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX16">
+    <p>
+      The function is continous as long as the denominator is defined and
+			non-zero.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+  	<p>
+     The function is continuous on the open interval \((-2, 2)\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+  	<p>
+     \(g(x)\) is undefined when the quantity in the square root is negative or
+		 zero. It is positive when \(4-x^2 \gt 0\) or \(x^2 \lt 4\) or \(|x| \lt 2\)
+		 or \(-2 \lt x \lt 2\). This is the open interval \((-2, 2)\).
+	 </p>
+	 <p style="text-align:right">
+		 abs&ensp;
+	 </p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+    \(h(x)=\dfrac{1}{x^3-27}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX17"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX17"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX17">
+    <p>
+      The function is continous as long as the denominator is defined and
+			non-zero.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+  	<p>
+      The function is continous in the open intervals \((-\infty, 3)\) and
+			\((3,\infty)\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+  	<p>
+			\(h(x)\) is only undefined when \(x=3\). Therefore it is continuous
+			on the intervals \((-\infty, 3)\) and \((3,\infty)\).
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(p(x)=\sqrt{6-x}+\dfrac{1}{\sqrt{6+x}}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX18"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX18"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX18">
+    <p>
+			The function is continuous as long as the denominator is non-zero and
+			the quantities in the square roots are non-negative.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+  	<p>
+		 The function is continuous in the open interval \((-6,6]\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+  	<p>
+			The first square root is defined when \(6-x \ge 0\) or \(x \le 6\) which
+			is the interval \((-\infty, 6]\). The second square root is in the
+			denominator and so is defined only when
+			\(6+x \gt 0\) or \(x \gt -6\) which is the interval \((-6,\infty)\).
+			The function is defined and continuous on the intersection \((-6,6]\).
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(q(x)=\dfrac{x^2-4}{x^2-4x+8}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX19"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX19"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX19">
+    <p>
+			The function is continous as long as the denominator is defined and
+			non-zero.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+  	<p>
+		 The function is continous in the interval \((-\infty, \infty)\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+  	<p>
+			Using the quadratic formula, the zeroes of the denominator are
+			\[
+			x=\dfrac{4\pm\sqrt{16-32}}{2}=\dfrac{4\pm4i}{2}=2\pm2i
+			\]
+			Since there are no real roots, the function is defined and continuous for
+			all \(x\). So the function is continous on the interval \((-\infty, \infty)\).
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<!--Limits at Infinity-->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href="LimatInf.html">e. Limits at Infinity</a></h3>
+    <div class="pgs">
+      
+        <div><a href="LimatInf.html">1</a></div>
+      
+    </div>
+  </div>
+
+<p>
+Compute the following limits at infinity.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+     \(\displaystyle \lim_{x\to\infty}\dfrac{3x}{x+1}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX20"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX20"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX20"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX20">
+    <p>
+      Divide the numerator and denominator by \(x\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+  	<p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{3x}{x+1}=3\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+  	<p>
+			We divide the numerator and denominator by \(x\):
+ 		 \[
+ 		 \lim\limits_{x\to\infty}\dfrac{3x}{x+1}
+		 =\lim\limits_{x\to\infty}\dfrac{3x}{1+x}\dfrac{\;\dfrac{1}{x}\;}{\dfrac{1}{x}}
+ 		 =\lim\limits_{x\to\infty}\dfrac{3}{\dfrac{1}{x}+1}
+ 		 \]
+ 		 As \(x\) gets large, \(\dfrac{1}{x}\) approaches \(0\). So:
+ 		 \[
+ 		 \lim\limits_{x\to\infty}\dfrac{3x}{x+1}
+ 		 =\dfrac{3}{0+1}=3
+ 		 \]
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{7x^2}{3x^3+3}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX21"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX21"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX21"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX21">
+    <p>
+      Divide the numerator and denominator by \(x^3\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX21">
+  	<p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{7x^2}{3x^3+3}=0\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX21">
+  	<p>
+			We divide the numerator and denominator by \(x^3\):
+ 		 \[
+ 		 \lim\limits_{x\to\infty}\dfrac{7x^2}{3x^3+3}
+		 =\lim\limits_{x\to\infty}\dfrac{7x^2}{3x^3+3}\dfrac{\;\dfrac{1}{x^3}\;}{\dfrac{1}{x^3}}
+ 		 =\lim\limits_{x\to\infty}\dfrac{\dfrac{7}{x}}{3+\dfrac{3}{x^3}}
+ 		 \]
+ 		 As \(x\) gets large, \(\dfrac{1}{x}\) and \(\dfrac{1}{x^3}\) approach \(0\). So:
+ 		 \[
+ 		 \lim\limits_{x\to\infty}\dfrac{7x^2}{3x^3+3}
+ 		 =\dfrac{0}{3+0}=0
+ 		 \]
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+     \(\displaystyle \lim_{x\to\infty}\dfrac{6x^4}{3x^3+2x}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX22"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX22"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX22"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX22">
+    <p>
+      Divide the numerator and denominator by \(x^3\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX22">
+  	<p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{6x^4}{3x^3+2x}=\infty\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX22">
+  	<p>
+			We divide the numerator and denominator by \(x^3\):
+			\[
+			\lim\limits_{x\to\infty}\dfrac{6x^4}{3x^3+2x}
+			=\lim\limits_{x\to\infty}\dfrac{6x^4}{3x^3+2x}
+			\dfrac{\;\dfrac{1}{x^3}\;}{\dfrac{1}{x^3}}
+			=\lim\limits_{x\to\infty}\dfrac{6x}{3+\dfrac{2}{x^2}}
+			\]
+			As \(x\) gets large, \(\dfrac{2}{x^2}\) approach \(0\). So:
+			\[
+			\lim\limits_{x\to\infty}\dfrac{6x^4}{3x^3+2x}
+			=\lim\limits_{x\to\infty}2x=\infty
+			\]
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+     \(\displaystyle \lim_{x\to\infty}\dfrac{\sqrt{4x^2-1}}{4x+3}\)
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX23"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX23"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX23"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX23">
+    <p>
+    Divide the numerator and denominator by \(x\).
+		<br>
+		Also, for \(x \gt 0\), \(\dfrac{1}{x}=\sqrt{\dfrac{1}{x^2}}\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX23">
+  	<p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{\sqrt{4x^2-1}}{4x+3}=\dfrac{1}{2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX23">
+  	<p>
+			We divide the numerator and denominator by \(x\):
+			\[\begin{aligned}
+			\lim_{x\to\infty}\dfrac{\sqrt{4x^2-1}}{4x+3}
+			&=\lim_{x\to\infty}\dfrac{\sqrt{4x^2-1}}{4x+3}
+			\dfrac{\;\dfrac{1}{x}\;}{\dfrac{1}{x}} \\
+			&=\lim_{x\to\infty}\dfrac{\sqrt{4x^2-1}}{4x+3}
+			\dfrac{\;\dfrac{1}{\sqrt{x^2}}\;}{\dfrac{1}{x}} \\
+			&=\lim_{x\to\infty}\dfrac{\sqrt{4-\dfrac{1}{x^2}}}{4+\dfrac{3}{x}}
+			\end{aligned}\]
+			As \(x\) gets large, \(\dfrac{3}{x}\) and \(\dfrac{1}{x^2}\) approach \(0\). So:
+			\[
+			\lim_{x\to\infty}\dfrac{\sqrt{4x^2-1}}{4x+3}
+			=\dfrac{\sqrt{4}}{4}=\dfrac{1}{2}
+			\]
+  	</p>
+		<p style="text-align:right">
+			abs&ensp;
+		</p>
+  </div>
+</li>
+
+<big>PY: Checked to here.</big>
+
+		<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  xxx
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX24"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX24"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX24"></button>
+    	<button class="toggle has has-check" data-toggle="CkX24"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX24"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX24">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX24">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX24">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX24">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX24">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	xxx
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX25a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX25a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX25a"></button>
+        	<button class="toggle has has-check" data-toggle="CkX25a"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX25a"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX25a">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25a">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25a">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX25a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX25a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX25b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX25b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX25b"></button>
+        	<button class="toggle has has-check" data-toggle="CkX25b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX25b"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX25b">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX25b">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX25b">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX25b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX25b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX26"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX26"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX26"></button>
+    	<button class="toggle has has-check" data-toggle="CkX26"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX26">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX26">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX26">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

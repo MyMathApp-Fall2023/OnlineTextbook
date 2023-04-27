@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Geometric Interpretation of Partial Derivatives | 11. Partial Derivatives and Tangent Planes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ParDerAlg.html" title="Previous">&lArr;</a></li>
+      <li><a href="TanPlaneGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Partial Derivatives and Tangent Planes</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. Geometric Interpretation of Partial Derivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We would like to have a geometrical understanding of partial derivatives.
+  Since a partial derivative is the derivative with respect to one variable
+  while holding the other fixed, it is the slope of the tangent line to the
+  curve obtained by letting one variable vary while holding the other fixed.
+  This curve is called a <span class="hl">trace</span>.
+</p>
+
+<h3>Traces and their Tangent Lines</h3>
+
+<p>
+  Consider the graph of a function of two variables:
+  \[
+  z=f(x,y)
+  \]
+</p>
+<p class="def" data-title="\(x\)-Trace, its Tangent Line and the \(x\)-Partial Derivative">
+  Fix a value of \(y\), say \(y=b\). This determines a vertical plane
+  parallel to the \(xz\)-plane that contains every point whose
+  \(y\)-coordinate is \(b\). The graph of the function \(f(x,y)\) intersects
+  this plane in a curve called the
+  <span class="defword">\(x\)-trace with \(y=b\)</span>.
+  Since \(y=b\), the \(x\)-trace is:
+  \[
+  z=f(x,b)
+  \]
+  The <span class="defword">\(x\)-partial derivative of \(f\) at \(x=a\)
+  with \(y\) held fixed at \(y=b\)</span>, denoted \(f_x(a,b)\), is the
+  <button class="toggle" data-toggle="Drop1">slope of the tangent line</button>
+  to the \(x\)-trace at \(y=b\). So the
+  <span class="defword">tangent line to the \(x\)-trace at \((a,b)\)</span> is:
+  \[
+  z=f(a,b)+f_x(a,b)(x-a)
+  \]
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    Recall that the slope of a function \(z=f(x)\) at \(x=a\) is \(f'(a)\)
+    and the tangent line is \(z=f(a)+f'(a)(x-a)\). For a function of \(2\)
+    variables, the \(y\) coordinate \(y=b\) just comes along for the ride.
+  </p>
+</div>
+<p>
+  Similarly:
+</p>
+<p class="def" data-title="\(y\)-Trace, its Tangent Line and the \(y\)-Partial Derivative">
+  Fix a value of \(x\), say \(x=a\). This determines a vertical plane
+  parallel to the \(yz\)-plane that contains every point whose
+  \(x\)-coordinate is \(a\). The graph of the function \(f(x,y)\) intersects
+  this plane in a curve called the
+  <span class="defword">\(y\)-trace with \(x=a\)</span>.
+  Since \(x=a\), the \(y\)-trace is:
+  \[
+  z=f(a,y)
+  \]
+  The <span class="defword">\(y\)-partial derivative of \(f\) at \(y=b\)
+  with \(x\) held fixed at \(x=a\)</span>, denoted \(f_y(a,b)\), is the
+  slope of the tangent line to the \(y\)-trace at \(x=a\). So the
+  <span class="defword">tangent line to the \(y\)-trace at \((a,b)\)</span> is:
+  \[
+  z=f(a,b)+f_y(a,b)(y-b)
+  \]
+</p>
+
+        <div class="rule" id="ex_x_trace"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="exercise" data-title="\(x\)-Trace and its Tangent Line" data-number="1">
+      The plot at the right shows the graph of the function:
+      \[
+      f(x,y)=-x^2-y^2
+      \]
+      Complete the below steps in order.
+      (You will see a <img src="../../../graphics/check.jpg" height="25">
+      as you complete each one.)
+    </p>
+    <ul style="list-style-type:none;">
+      <li>
+        <img src="../../../graphics/bullet1.jpg" id="ex-1a"/ height="25">
+        Select the <span class="hl">\(xz\)-Slice</span> checkbox below the plot,
+        to show a vertical plane parallel to the \(xz\) plane.
+        Move the \(y\)-slider, so the \(xz\)-Slice is at \(y=5\).
+      </li>
+      <li>
+        <img src="../../../graphics/bullet2.jpg" id="ex-1b"/ height="25">
+        Select the  <span class="hl">\(x\)-Trace</span> checkbox to show the
+        intersection of the \(xz\)-Slice and the graph of \(z=f(x,y)\)
+        which is called the \(x\)-Trace at \(y=5\).
+      </li>
+      <li>
+        <img src="../../../graphics/bullet3.jpg" id="ex-1c"/ height="25">
+        Move the \(x\)-slider, so the dot on the \(x\)-Trace is at \(x=6\).
+      </li>
+      <li>
+        <img src="../../../graphics/bullet4.jpg" id="ex-1d"/ height="25">
+        Select the  <span class="hl">\(x\)-Tangent</span> checkbox to show a
+        small tangent line to the \(x\)-Trace at \(y=5\).
+        <strong>The slope of this tangent line is the \(x\)-partial derivative,
+        \(f_x(6,5)\).</strong>
+      </li>
+      <li>
+        <img src="../../../graphics/bullet5.jpg" id="ex-1e"/ height="25">
+        Click on Play \(x\) to animate the point moving along the \(x\)-Trace.
+      </li>
+      <li>
+        <img src="../../../graphics/rem.jpg" id="ex-1rem"/ height="25">
+        Note: You can rotate the entire plot with your mouse.
+      </li>
+      <li>
+        <img src="../../../graphics/bullet6.jpg" id="ex-1f"/ height="25">
+        Find the equation of the tangent line at \(x=6\) to the \(x\)-trace
+        with \(y=5\).
+        <div class="dotfillex">
+          <p>
+            <button class="toggle has-hint" data-toggle="HintX1"></button>
+            <button class="toggle has-ans" data-toggle="AnsX1"></button>
+            <button class="toggle has-sol" data-toggle="SolX1"></button>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="center" data-col-width="40%">
+    <textarea id="zFunction_1" hidden> return -(Math.pow(x,2)+Math.pow(y,2))/20 </textarea>
+  	<canvas id="figure_1"></canvas>
+    <div>
+      <br>
+      <input type="checkbox" id="cbxplane_1">\(xz\)-Slice</input>
+      <input type="checkbox" id="cbxline_1">\(x\)-Trace</input>
+      <input type="checkbox" id="cbxtline_1">\(x\)-Tangent</input>
+      <input type="checkbox" id="cbxplay_1">Play \(x\)</input>
+      <br><br>
+    </div>
+    <canvas id="xyslider_1" hidden alt="Graphic unavailable"></canvas>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="xslider_1" style="width:275px;"></input>
+      \(x=\)
+      <input type="text" id="xdisp_1" style="resize:none; width:30px; height:22px;
+        font-size:12px; vertical-align:text-bottom"></input>
+    </div>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="yslider_1" style="width:275px;">
+      </input>
+      \(y=\)
+      <input type="text" id="ydisp_1" style="resize:none; width:30px; height:22px;
+        font-size:12px; vertical-align:text-bottom"></input>
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Find \(f(6,5)\) and \(f_x(6,5)\). Then use the formula:
+    \[
+    z=f(6,5)+f_x(6,5)(x-6)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(z=-12x+11\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Let's find \(f(6,5)\) and \(f_x(6,5)\). We make a table:
+    \[\begin{aligned}
+    f(x,y)&=-x^2-y^2 \quad &f(6,5)&=-6^2-5^2=-61 \\
+    f_x(x,y)&=-2x \quad &f_x(6,5)&=-12
+    \end{aligned}\]
+    So, the tangent line to the \(x\)-trace at the point \((6,5)\) is:
+    \[\begin{aligned}
+    z&=f(6,5)+f_x(6,5)(x-6) \\
+    &=-61-12(x-6) \\
+    &=-12x+11
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule" id="ex_y_trace"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="exercise" data-title="\(y\)-Trace and its Tangent Line" data-number="2">
+      The plot at the right again shows the graph of the function:
+      \[
+      f(x,y)=-x^2-y^2
+      \]
+    </p>
+    <ul style="list-style-type:none;">
+      <li>
+        <img src="../../../graphics/bullet1.jpg" id="ex-2a"/ height="25">
+        Select the <span class="hl">\(yz\)-Slice</span> checkbox below the plot,
+        to show a vertical plane parallel to the \(yz\) plane.
+        Move the \(x\)-slider, so the \(yz\)-Slice is at \(x=6\).
+      </li>
+      <li>
+        <img src="../../../graphics/bullet2.jpg" id="ex-2b"/ height="25">
+        Select the  <span class="hl">\(y\)-Trace</span> checkbox to show the
+        intersection of the \(yz\)-Slice and the graph of \(z=f(x,y)\)
+        which is called the \(y\)-Trace at \(x=6\).
+      </li>
+      <li>
+        <img src="../../../graphics/bullet3.jpg" id="ex-2c"/ height="25">
+        Move the \(y\)-slider, so the dot on the \(y\)-Trace is at \(y=5\).
+      </li>
+      <li>
+        <img src="../../../graphics/bullet4.jpg" id="ex-2d"/ height="25">
+        Select the  <span class="hl">\(y\)-Tangent</span> checkbox to show a
+        small tangent line to the \(y\)-Trace at \(x=6\).
+        <strong>The slope of this tangent line is the \(y\)-partial derivative,
+        \(f_y(6,5)\).</strong>
+      </li>
+      <li>
+        <img src="../../../graphics/bullet5.jpg" id="ex-2e"/ height="25">
+        Click on Play \(y\) to animate the point moving along the \(y\)-Trace.
+      </li>
+      <li>
+        <img src="../../../graphics/bullet6.jpg" id="ex-2f"/ height="25">
+        Find the equation of the tangent line at \(y=5\) to the \(y\)-trace
+        with \(x=6\).
+        <div class="dotfillex">
+          <p>
+            <button class="toggle has-hint" data-toggle="HintX2"></button>
+            <button class="toggle has-ans" data-toggle="AnsX2"></button>
+            <button class="toggle has-sol" data-toggle="SolX2"></button>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="center" data-col-width="40%">
+    <textarea id="zFunction_2" hidden> return -(Math.pow(x,2)+Math.pow(y,2))/20 </textarea>
+  	<canvas id="figure_2"></canvas>
+    <div>
+      <br>
+      <input type="checkbox" id="cbyplane_2">\(yz\)-Slice</input>
+      <input type="checkbox" id="cbyline_2">\(y\)-Trace</input>
+      <input type="checkbox" id="cbytline_2">\(y\)-Tangent</input>
+      <input type="checkbox" id="cbyplay_2">Play \(y\)</input>
+      <br><br>
+    </div>
+    <canvas id="xyslider_2" hidden alt="Graphic unavailable"></canvas>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="xslider_2" style="width:275px;">
+      </input>
+      \(x=\)
+      <input type="text" id="xdisp_2" style="resize:none; width:30px; height:22px;
+        font-size:12px; vertical-align:text-bottom"></input>
+    </div>
+    <div>
+      <input type="range" min="-10" max="10" val="0" step="0.1"
+        id="yslider_2" style="width:275px;">
+      </input>
+      \(y=\)
+      <input type="text" id="ydisp_2" style="resize:none; width:30px; height:22px;
+        font-size:12px; vertical-align:text-bottom"></input>
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Find \(f(6,5)\) and \(f_y(6,5)\). Then use the formula:
+    \[
+    z=f(6,5)+f_y(6,5)(y-5)
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(z=-10y-11\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Let's find \(f(6,5)\) and \(f_y(6,5)\). We make a table:
+    \[\begin{aligned}
+    f(x,y)&=-x^2-y^2 \quad &f(6,5)&=-6^2-5^2=-61 \\
+    f_y(x,y)&=-2y \quad &f_y(6,5)&=-10
+    \end{aligned}\]
+    So, the tangent line to the \(y\)-trace at the point \((6,5)\) is:
+    \[\begin{aligned}
+    z&=f(6,5)+f_y(6,5)(y-5) \\
+    z&=-61-10(y-5) \\
+    z&=-10y-11
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  At a point \((a,b)\) the <span class="hl">tangent plane</span> to the
+  surface \(z=f(x,y)\) is the plane containing the
+  <span class="hl">tangent lines</span> to the \(x\)-trace and \(y\)-trace
+  at \((a,b)\). This is discussed geometrically on the
+  <a href="TanPlaneGeom.html">next page</a> and algebraically on the
+  <a href="TanPlaneAlg.html" title="Return using the Back button.">
+  following page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+  <script src="scripts/OrbitControls.js"></script>
+  <script src="scripts/DragControls.js"></script>
+  <script src="scripts/TextSprite.js"></script>
+  <script src="../../../scripts/MYMAthree.min.js"></script>
+  <!-- <script src="scripts/MYMAthree.js"></script> -->
+  <script src="scripts/CreateTanPlane.js"></script>
+  <script src="scripts/ParDerGeom.js"></script>
+  <script src="scripts/ParDerGeomResp.js"></script>
+  <!-- <script src="scripts/TanPlaneGeom.js"></script> -->
+  <!-- <script src="scripts/TanPlaneGeomResp.js"></script> -->
+  <!-- <script src="scripts/TutTanPlane.js"></script> -->
+  <style>
+    canvas{
+      background: #f0f0f0;
+      height: 400px;
+      width: 400px;
+    }
+  </style>
+
+</body>
+</html>

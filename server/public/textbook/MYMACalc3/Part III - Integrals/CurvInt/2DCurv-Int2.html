@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Diamond Shaped Examples | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DCurv-Int.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DCurv-Appl.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Integrating in 2D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>5. Diamond Shaped Examples</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Below is an example of using curvilinear coordinates to compute
+  an integral over a &ldquo;diamond shaped&rdquo; region.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-title="Diamond Shaped Region" data-number="1">
+    Compute the integral \(\displaystyle \iint xy\,dA\) over the
+    diamond shaped region, \(R\), in the first quadrant bounded by
+    <br/><br/>
+    <span class="center">
+    &ensp; \(y=1+x^2\) &ensp; and &ensp; \(y=2+x^2\) &ensp; in &ensp; <span style="color:red">red</span>
+    </span>
+    and
+    <span class="center">
+    &ensp; \(y=3-x^2\) &ensp; and &ensp; \(y=5-x^2\) &ensp; in &ensp; <span style="color:blue">blue</span>.
+    </span>
+  </p>
+  <div class="center">
+    <img src="graphics/2Dcurvint-diamond_parabs.jpg" alt="2Dcurvint-diamond_parabs">
+  </div>
+</div>
+<p class="sol">
+  We look at the boundary curves to determine a useful coordinate system
+  (\(u\) and \(v\)) for this problem. The first two curves, \(y=1+x^2\)
+  and \(y=2+x^2\), can be written as:
+  \[
+  y-x^2=1 \quad \text{and} \quad y-x^2=2
+  \]
+  If we let \(u=y-x^2\), then the bounds for \(u\) become
+  \[
+  u=1 \quad \text{and} \quad u=2
+  \]
+  Similarly, the other two curves, \(y=3-x^2\) and \(y=5-x^2\), can be written as:
+  \[
+  y+x^2=3 \quad \text{and} \quad y+x^2=5
+  \]
+  If we let \(v=y+x^2\), then the bounds for \(v\) become
+  \[
+  v=3 \quad \text{and} \quad v=5
+  \]
+  Summarizing,
+  \[
+  u=y-x^2 \qquad \text{and} \qquad v=y+x^2 \qquad \text{(*)}
+  \]
+  <!-- \tag{*} -->
+  Next we need to find the Jacobian
+  \(J=\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|\).
+  This requires us to know \(x\) and \(y\) as functions of \(u\) and \(v\),
+  but unfortunately, we know \(u\) and \(v\) as functions of \(x\) and \(y\).
+  So we need to solve (*) for \(x\) and \(y\). There are two way to do this:
+</p>
+<p>
+  First, we can solve one equation for one variable and plug into the other.
+  For example, if we solve the first equation for \(y=u+x^2\) then the second
+  equation becomes \(v=u+2x^2\) or \(x^2=\dfrac{v-u}{2}\) or
+  \(x=\sqrt{\dfrac{v-u}{2}}\). We plug this back into \(y=u+x^2\) to get
+  \(y=u+\dfrac{v-u}{2}=\dfrac{v+u}{2}\).
+</p>
+<p>
+  Alternatively, we can add and subtract the equations. If we add, we
+  get \(u+v=2y\) or \(y=\dfrac{v+u}{2}\). If we subtract, we get
+  \(u-v=-2x^2\) or \(x=\sqrt{\dfrac{v-u}{2}}\).
+</p>
+<p>
+  By either method we get: (It's beneficial to split off the \(\sqrt{2}\)
+  in the denominator since we are going to differentiate.)
+  \[
+  x=\sqrt{\dfrac{v-u}{2}}=\dfrac{\sqrt{v-u}}{\sqrt{2}}
+  \qquad \text{and} \qquad
+  y=\dfrac{v+u}{2} \qquad \text{(**)}
+  \]
+  <!-- \tag{**} -->
+</p>
+<p>
+  Now we can compute the Jacobian:
+  \[\begin{aligned}
+  J&=\left|\begin{vmatrix}
+  \dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} \\[8pt]
+  \dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v}
+  \end{vmatrix}\right|
+  =\left|\begin{vmatrix}
+  \dfrac{-1}{2\sqrt{2}\sqrt{v-u}} & \dfrac{1}{2} \\[8pt]
+  \dfrac{1}{2\sqrt{2}\sqrt{v-u}} & \dfrac{1}{2}
+  \end{vmatrix}\right| \\
+  &=\left|\dfrac{-1}{4\sqrt{2}\sqrt{v-u}}-\,\dfrac{1}{4\sqrt{2}\sqrt{v-u}}\right|
+  =\left|\dfrac{-1}{2\sqrt{2}\sqrt{v-u}}\right|=\dfrac{1}{2\sqrt{2}\sqrt{v-u}}
+  \end{aligned}\]
+  We dropped the minus sign because a square root is always posiitve.
+  The last thing we need is the integrand:
+  \[
+  xy=\dfrac{\sqrt{v-u}(v+u)}{2\sqrt{2}}
+  \]
+  We can now compute the integral:
+  \[\begin{aligned}
+  I&=\iint xy\,dA
+  =\iint xy \,J\,du\,dv \\
+  &=\int_3^5\int_1^2 \dfrac{\sqrt{v-u}(v+u)}{2\sqrt{2}}\dfrac{1}{2\sqrt{2}\sqrt{v-u}}\,du\,dv \\
+  &=\dfrac{1}{8}\int_3^5\int_1^2 (v+u)\,du\,dv \\
+  &=\dfrac{1}{8}\left[\dfrac{v^2}{2}\dfrac{}{}\right]_3^5\left[u\dfrac{}{}\right]_1^2
+  +\dfrac{1}{8}\left[v\dfrac{}{}\right]_3^5\left[\dfrac{u^2}{2}\right]_1^2 \\
+  &=\dfrac{1}{8}\left(\dfrac{25-9}{2}(1)+(2)\dfrac{4-1}{2}\right)
+  =\dfrac{1}{8}\left(8+3\right)=\dfrac{11}{8}
+  \end{aligned}\]
+</p>
+<p class="remark">
+  Notice how easy this integral was once we had the coordinate system and the
+  Jacobian. Imagine doing it in rectangular coordinates. We would have to
+  find all the intersection points, break the integral into \(3\) regions
+  and integrate with bounds which were quadratic.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  The <a href="2DCurv-Appl.html">next page</a> on applications of 2D
+  curvilinear coordinates has lots of additional examples and exercises
+  using diamond shaped regions.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

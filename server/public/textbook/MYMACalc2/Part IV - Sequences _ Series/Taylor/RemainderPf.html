@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Proof | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Remainder.html#TayThm" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>23. Taylor Series</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>e. Taylor Remainder</h2>
+
+<p class="def" data-title="Taylor Remainder">
+  The <span class="defword">Taylor remainder of degree \(k\)</span>
+  <span class="hl">centered at</span> \(x=a\) <span class="hl">for
+  the function</span>
+  \(f(x)\) is
+  \[
+  R_k f(x)=f(x)-T_k f(x)
+  \]
+  where the <span class="hl">Taylor polynomial of degree</span>  \(k\) is
+  \[
+  T_k f(x)=\sum_{n=0}^k \dfrac{\,f^{(n)}(a)}{n!}(x-a)^n
+  \]
+</p>
+
+<h2>1. Formula and Inequality</h2>
+
+<p class="thm" data-title="Taylor Remainder Formula Theorem (Extended Mean Value Theorem)">
+  If the \((k+1)^\text{st}\) derivative exists on an open
+  interval containing \(a\) and \(x\), then there is a number \(c\) between
+  \(a\) and \(x\) such that the Taylor remainder of degree \(k\) is
+  \[
+  R_k f(x)=\dfrac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}
+  \]
+</p>
+<p>
+  Notice that in the case when \(k=0\), the remainder is \(R_0 f(x)=f(x)-f(a)\),
+  and so the Taylor Remainder Formula Theorem is just the Mean Value Theorem
+  for Derivatives:
+</p>
+<p class="thm" data-title="Mean Value Theorem for Derivatives">
+  If \(f'(x)\) exists on an open interval containing \(a\) and \(x\),
+  then there is a number \(c\) between \(a\) and \(x\) such that
+  \[
+  f'(c)=\dfrac{f(x)-f(a)}{x-a}
+  \]
+  or equivalently,
+  \[
+  f(x)=f(a)+f'(c)(x-a)
+  \]
+</p>
+<p class="remark">
+  Notice that the second version looks like the equation of the tangent
+  line except that the derivative \(f'(c)\) is evaluated at \(c\) instead of
+  \(a\).
+</p>
+<p class="remark">
+  The Mean Value Theorem was proved in
+  <a href="../../../MYMACalc1/Part III - Derivatives/DiffLinApprox/MVT.html"
+  title="Return using the Back button.">Calculus 1</a> and
+  is the basis of the following proof.
+</p>
+
+
+      
+      <h2>a. Proof</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Since the \((k+1)^\text{st}\) derivative of \(f(x)\) exists on an open
+  interval containing \(a\) and \(x\), \(f^{(k)}(x)\) is a function
+  satisfying the hypotheses of the Mean Value Theorem for derivatives.
+  So we conclude there is a number \(c\) between \(a\) and \(x\) such that
+  \[
+  f^{(k)}(x)=f^{(k)}(a)+f^{(k+1)}(c)(x-a)
+  \qquad\qquad \text{(0)}
+  \]
+  The antiderivative of equation \((0)\) is
+  \[
+  f^{(k-1)}(x)
+  =f^{(k)}(a)(x-a)+\dfrac{f^{(k+1)}(c)}{2}(x-a)^2+C_1
+  \]
+  <button class="center toggle btn" data-toggle="Proof1">
+  Why is the right side the antiderivative?</button>
+</p>
+<div class="toBeToggled note" data-toggle="Proof1">
+  <p>
+    Because
+    \[\begin{aligned}
+    \dfrac{d}{dx}&\left[f^{(k)}(a)(x-a)+\dfrac{f^{(k+1)}(c)}{2}(x-a)^2\right] \\
+    &=f^{(k)}(a)+f^{(k+1)}(c)(x-a)
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  To find \(C_1\), set \(x=a\) to get \(C_1=f^{(k-1)}(a)\). Thus
+  \[\begin{aligned}
+  f^{(k-1)}(x)
+  &=f^{(k-1)}(a)+f^{(k)}(a)(x-a) \\
+  &\quad+\dfrac{f^{(k+1)}(c)}{2}(x-a)^2
+  \qquad\qquad \text{(1)}
+  \end{aligned}\]
+  The antiderivative of equation \((1)\) is:
+  \[\begin{aligned}
+  f^{(k-2)}(x)
+  &=f^{(k-1)}(a)(x-a)+\dfrac{f^{(k)}(a)}{2}(x-a)^2 \\
+  &\quad+\dfrac{f^{(k+1)}(c)}{3!}(x-a)^3+C_2
+  \end{aligned}\]
+  To find \(C_2\), set \(x=a\) to get \(C_2=f^{(k-2)}(a)\). Thus
+  \[\begin{aligned}
+  f^{(k-2)}(x)
+  &=f^{(k-2)}(a)+f^{(k-1)}(a)(x-a)+\dfrac{f^{(k)}(a)}{2}(x-a)^2 \\
+  &\quad+\dfrac{f^{(k+1)}(c)}{3!}(x-a)^3
+  \qquad\qquad \text{(2)}
+  \end{aligned}\]
+  Proceeding in this manner for \(k\) steps (by induction) we finally obtain
+  \[\begin{aligned}
+  f(x)
+  &=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2 \\
+  &\quad+\cdots+\dfrac{\,f^{(k)}(a)}{k!}(x-a)^k
+  +\dfrac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}
+  \qquad\qquad\text{(k)}
+  \end{aligned}\]
+  The terms up to degree \(k\) are the Taylor polynomial for \(f\) of degree
+  \(k\), i.e. \(T_kf(x)\). So the last term is the Taylor remainder, i.e.
+  \[
+  R_kf(x)=\dfrac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}
+  \]
+</p>
+<p class="remark">
+  Notice that the right side of equation (k) looks like the Taylor polynomial
+  for \(f\) of degree \(k+1\), i.e. \(T_{k+1}f(x)\), except that the
+  derivative \(f^{(k+1)}(c)\) is evaluated at \(c\) instead of \(a\).
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

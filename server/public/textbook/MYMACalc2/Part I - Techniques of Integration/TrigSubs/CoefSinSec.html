@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b2. Substitutions for \(a^2x^2-b^2\) | 7. Trigonometric Substitutions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CoefTan.html" title="Previous">&lArr;</a></li>
+      <li><a href="CompSq.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Trigonometric Substitutions</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  On the <a href="CoefTan.html">previous page</a>, we looked at
+	tangent substitutions with coefficients.
+	We now look a sine and secant substitutions with coefficients.
+</p>
+
+
+      
+      <h2>b2. Substitutions for \(a^2x^2-b^2\)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="proc" data-title="Sine Substitutions with Coefficients">
+  	If the integrand involves the quantity \(b^2-a^2x^2\) (or \(a^2x^2-b^2\))
+  	and you know that \(|x| \le \dfrac{b}{a}\), then it may be useful to make
+  	a substitution so that \(a^2x^2=b^2\sin^2\theta\). To do this,
+  	\(x=\dfrac{b}{a}\sin\theta\). (This is where you need
+    \(|x| \le \dfrac{b}{a}\).) Then \(dx=\dfrac{b}{a}\cos\theta\,d\theta\) and:
+    <br><br>
+  	\[\begin{aligned}
+    b^2-a^2x^2
+  	&=b^2-b^2\sin^2\theta=b^2(1-\sin^2\theta) \\
+  	&=b^2\cos^2\theta
+    \end{aligned}\]
+    So it may be possible to re-express the
+  	integrand in terms of \(\sin\theta\) and \(\cos\theta\) only.
+  </p>
+</div>
+<hr width="80%">
+<div class="greybox">
+  <p class="proc" data-title="Secant Substitutions with Coefficients">
+    If the integrand involves the quantity \(a^2x^2-b^2\) (or \(b^2-a^2x^2\))
+    and you know that \(|x| \ge \dfrac{b}{a}\), then it may be useful to make
+    a substitution so that \(a^2x^2=b^2\sec^2\theta\). To do this,
+    \(x=\dfrac{b}{a}\sec\theta\). (This is where you need
+    \(|x| \ge \dfrac{b}{a}\).) Then \(dx=\dfrac{b}{a}\sec\theta\tan\theta\,d\theta\)
+    and:
+    <br><br>
+    \[\begin{aligned}
+    a^2x^2-b^2
+    &=b^2\sec^2\theta-b^2=b^2(\sec^2\theta-1) \\
+    &=b^2\tan^2\theta
+    \end{aligned}\]
+    So it may be possible to re-express the
+    integrand in terms of \(\tan\theta\) and \(\sec\theta\) only.
+  </p>
+</div>
+<p class="center">
+  <button class="toggle" data-toggle="Drop1">
+    How do you know if \(|x| \le \dfrac{b}{a}\) or
+    \(|x| \ge \dfrac{b}{a}\)?
+  </button>
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>
+    How do you know if \(|x| \le \dfrac{b}{a}\) or
+    \(|x| \ge \dfrac{b}{a}\)?
+  </h4>
+  <p>
+    You look at any quantities inside square roots such as \(\sqrt{b^2-a^2x^2}\)
+    which needs a \(\sin\) substitution or \(\sqrt{a^2x^2-b^2}\) which needs a
+    \(\sec\) substitution or you look at the limits on the integral.
+    <br />
+    Sometimes, it is even easier to check whether \(x=0\) is an allowed value.
+    If it is, then use a \(\sin\) substitution. If not, then use a \(\sec\)
+    substitution.
+    <br />
+		If there is no square root, then we need to look at the limits on the
+		integral, if any.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int \dfrac{1}{\sqrt{4x^2-1}}\,dx\).
+</p>
+<p class="sol">
+  We need \(4x^2-1 \ge 0\) which means \(|x| \ge \dfrac{1}{2}\).
+	So we substitute \(x=\dfrac{1}{2}\sec\theta\). Then
+	\(dx=\dfrac{1}{2}\sec\theta\tan\theta\,d\theta\) and:
+  \[\begin{aligned}
+  \int \dfrac{1}{\sqrt{4x^2-1}}\,dx
+	&=\int \dfrac{1}{\sqrt{\sec^2\theta-1}}\dfrac{1}{2}\sec\theta\tan\theta\,d\theta \\
+  &=\dfrac{1}{2}\int \dfrac{1}{\sqrt{\tan^2\theta}}\sec\theta\tan\theta\,d\theta
+	=\dfrac{1}{2}\int \sec\theta\,d\theta \\
+  &=\dfrac{1}{2}\ln|\sec\theta+\tan\theta|+C
+  \end{aligned}\]
+  To substitute back, we already know that \(\sec\theta=2x\) from the
+  definition of the substitution. We also need a formula for \(\tan\theta\) in
+  terms of \(x\).
+	We can find from it the Pythagorean identity
+	\(\tan^2\theta=\sec^2\theta-1\). Then
+	\[
+	\tan\theta=\sqrt{\sec^2\theta-1}=\sqrt{4x^2-1}
+	\]
+</p>
+<div class="column">
+  <div data-col-width="50%">
+		<p>
+			Or we can draw a right triangle with hypotenuse \(2x\) and adjacent
+      side \(1\), so that \(\sec\theta=\dfrac{2x}{1}=2x\).
+		  Then the opposite side is \(\sqrt{4x^2-1}\) and
+		  \(\tan\theta=\dfrac{\sqrt{4x^2-1}}{1}=\sqrt{4x^2-1}\).
+		</p>
+  </div>
+  <div data-col-width="50%" class="center">
+	  <img src="graphics/trisec21.jpg" alt="trisec21"	style="width: 250; height: 150;"/>
+  </div>
+</div>
+<p>
+  Returning to the problem at hand, we conclude:
+  \[
+	\int \dfrac{1}{\sqrt{4x^2-1}}\,dx
+	=\dfrac{1}{2}\ln\left|2x+\sqrt{4x^2-1}\right|+C
+	\]
+</p>
+<p class="check">
+  We check by differentiating.
+  If \(f(x)=\dfrac{1}{2}\ln\left|2x+\sqrt{4x^2-1}\right|\), then
+  \[\begin{aligned}
+	f'(x)
+	&=\dfrac{1}{2}\dfrac{1}{2x+\sqrt{4x^2-1}}\left(2+\dfrac{1}{2}\dfrac{8x}{\sqrt{4x^2-1}}\right) \\
+	&=\dfrac{1}{2x+\sqrt{4x^2-1}}\left(\dfrac{\sqrt{4x^2-1}+2x}{\sqrt{4x^2-1}}\right)
+	=\dfrac{1}{\sqrt{4x^2-1}}
+  \end{aligned}\]
+  which is the integrand we started with.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Compute \(\displaystyle \int_0^2 \dfrac{1}{x^2-16}\,dx\).
+<p class="sol">
+  From the limits, we know \(0 \le x \le 2\). So \(|x| \le 4\). So we
+	substitute \(x=4\sin\theta\). Then \(dx=4\cos\theta\,d\theta\) and:
+  \[\begin{aligned}
+  \int_0^2 \dfrac{1}{x^2-16}\,dx
+	&=\int_{x=0}^2 \dfrac{1}{16\sin^2\theta-16}4\cos\theta\,d\theta \\
+  &=\dfrac{1}{4}\int_{x=0}^2 \dfrac{\cos\theta}{-\cos^2\theta}\,d\theta
+	=-\,\dfrac{1}{4}\int_{x=0}^2 \sec\theta\,d\theta \\
+  &=\left[-\,\dfrac{1}{4}\ln|\sec\theta+\tan\theta|\right]_{x=0}^2
+  \end{aligned}\]
+</p>
+<div class="column">
+  <div data-col-width="50%">
+		<p>
+			To substitute back, we know \(\sin\theta=\dfrac{x}{4}\).
+		  So we draw a right triangle with opposite side \(x\) and hypotenuse \(4\),
+		  so that \(\sin\theta=\dfrac{x}{4}\).
+		  Then the adjacent side is \(\sqrt{16-x^2}\). Consequently,
+			\[
+			\tan\theta=\dfrac{x}{\sqrt{16-x^2}}
+			\quad \text{and} \quad
+			\sec\theta=\dfrac{4}{\sqrt{16-x^2}}
+			\]
+		</p>
+  </div>
+  <div data-col-width="50%" class="center">
+	  <img src="graphics/trisin14.jpg" alt="trisin14"	style="width: 200; height: 150;"/>
+  </div>
+</div>
+<p>
+  Returning to the problem at hand, we conclude:
+  \[\begin{aligned}
+  \int_0^2 \dfrac{1}{x^2-16}\,dx
+  &=\left[-\,\dfrac{1}{4}\ln\left|\dfrac{4+x}{\sqrt{16-x^2}}\right|\right]_0^2 \\
+  &=-\,\dfrac{1}{4}\ln\dfrac{4+2}{\sqrt{16-2^2}}+\dfrac{1}{4}\ln\dfrac{4}{\sqrt{16}} \\
+  &=-\,\dfrac{1}{4}\ln(\sqrt{3})
+  \end{aligned}\]
+</p>
+<p class="remark">
+	When we see the expression \(x^2-16\), we normally think we should use a
+	\(\sec\) substitution. However in this case, the limits on the integral
+	say differently.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\displaystyle \int \dfrac{1}{\sqrt{4-9x^2}}\,dx\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Let \(3x=2\sin\theta\)
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle \int \dfrac{1}{\sqrt{4-9x^2}}\,dx
+    =\dfrac{1}{3}\arcsin\dfrac{3x}{2}+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Let \(9x^2=4\sin^2\theta\) or \(x=\dfrac{2}{3}\sin\theta\). Then
+    \(dx=\dfrac{2}{3}\cos\theta\,d\theta\) and
+    \[\begin{aligned}
+    \int \dfrac{1}{\sqrt{4-9x^2}}\,dx
+    &=\int \dfrac{1}{\sqrt{4-4\sin^2\theta}}\dfrac{2}{3}\cos\theta\,d\theta \\
+    &=\dfrac{1}{3}\int \dfrac{1}{\sqrt{\cos^2\theta}}\cos\theta\,d\theta
+    =\dfrac{1}{3}\theta+C \\
+    &=\dfrac{1}{3}\arcsin\dfrac{3x}{2}+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    We check by differentiating.
+    If \(f(x)=\dfrac{1}{3}\arcsin\dfrac{3x}{2}\) then
+    \[
+    f'(x)
+    =\dfrac{1}{3}\dfrac{1}{   \sqrt{1-\dfrac{9x^2}{4}}    }\dfrac{3}{2}
+    =\dfrac{1}{\sqrt{4-9x^2}}
+    \]
+    which is the integrand we started with.
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Compute \(\displaystyle \int \dfrac{1}{\sqrt{9x^2-4}}\,dx\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Let \(3x=2\sec\theta\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \int \dfrac{1}{\sqrt{9x^2-4}}\,dx
+    =\dfrac{1}{3}\ln\left|\dfrac{3x}{2}+\dfrac{\sqrt{9x^2-4}}{2}\right|+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Let \(9x^2=4\sec^2\theta\) or \(x=\dfrac{2}{3}\sec\theta\). Then
+    \(dx=\dfrac{2}{3}\sec\theta\tan\theta\,d\theta\). So:
+    \[\begin{aligned}
+    \int \dfrac{1}{\sqrt{9x^2-4}}\,dx
+    &=\int \dfrac{1}{\sqrt{4\sec^2\theta-4}}\dfrac{2}{3}\sec\theta\tan\theta\,d\theta \\
+    &=\dfrac{1}{3}\int \dfrac{\sec\theta\tan\theta}{\sqrt{\sec^2\theta-1}}\,d\theta
+    =\dfrac{1}{3}\int \dfrac{\sec\theta\tan\theta}{\sqrt{\tan^2\theta}}\,d\theta \\
+    &=\dfrac{1}{3}\int \sec\theta\,d\theta
+    =\dfrac{1}{3}\ln|\sec\theta+\tan\theta|+C
+    \end{aligned}\]
+  </p>
+  <div class="column">
+    <div data-col-width="50%">
+      <p>
+        To substitute back, we know \(\sec\theta=\dfrac{3x}{2}\). So:
+        \[\begin{aligned}
+        \tan\theta&=\sqrt{\sec^2\theta-1}
+        =\sqrt{\dfrac{9x^2}{4}-1} \\
+        &=\dfrac{\sqrt{9x^2-4}}{2}
+        \end{aligned}\]
+        Or we can look at the triangle and conclude
+        \(\tan\theta=\dfrac{\sqrt{9x^2-4}}{2}\).
+      </p>
+    </div>
+    <div data-col-width="50%" class="center">
+      <img src="graphics/trisec32.jpg" alt="trisec32"	style="width: 250; height: 150;" />
+    </div>
+  </div>
+  <p>
+    Then:
+    \[\begin{aligned}
+    \int \dfrac{1}{\sqrt{9x^2-4}}\,dx
+    &=\dfrac{1}{3}\ln\left|\dfrac{3x}{2}+\dfrac{\sqrt{9x^2-4}}{2}\right|+C \\
+    &=\dfrac{1}{3}\ln\left|3x+\sqrt{9x^2-4}\right|-\dfrac{1}{3}\ln 2+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by differentiating.
+    If \(f(x)=\dfrac{1}{3}\ln\left|3x+\sqrt{9x^2-4}\right|\), then
+    \[\begin{aligned}
+    f'(x)
+    &=\dfrac{1}{3}\dfrac{1}{3x+\sqrt{9x^2-4}}
+    \left(3+\dfrac{9x}{\sqrt{9x^2-4}}\right) \\
+    &=\dfrac{1}{3x+\sqrt{9x^2-4}}\left(\dfrac{\sqrt{9x^2-4}+3x}{\sqrt{9x^2-4}}\right)
+    =\dfrac{1}{\sqrt{9x^2-4}}
+    \end{aligned}\]
+    which is the integrand we started with.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

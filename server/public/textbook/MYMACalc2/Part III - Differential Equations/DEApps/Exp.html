@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Exponential Growth and Decay | 17. Applications of Differential Equations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Cooling.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Applications of Differential Equations</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a. Exponential Growth and Decay</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The most well-known example of a differential equation is
+  \(\dfrac{dy}{dt}=\pm k y\), in which the rate of change of a quantity is
+  proportional to the amount of the quantity. The solutions describe
+  <span class="hl">exponential growth</span> when the coefficient is positive
+  and <span class="hl">exponential decay</span> when the coefficient is negative.
+  These were covered briefly in the
+  <a href="../DEIVP/Sep3.html#ExpGrowth" title="Return using the Back button.">
+  previous chapter</a>. We now solve these equations in general and use them in
+  applications. Since growth and decay usually occur over time, we usually take
+  the independent variable to be \(t\).
+</p>
+<p class="genexample" data-title="Exponential Growth" data-number="1">
+  Find the general solution of:
+  \[\dfrac{dy}{dt}=ky
+  \qquad \text{where} \qquad
+  k>0\]
+  and then find the specific solution satisfying the initial condition:
+  \[
+  y(0)=y_o
+  \]
+</p>
+<p class="gensol">
+  We solve the differential equation by separating variables and integrating:
+  \[
+    \int \dfrac{dy}{y}=\int k\,dt
+    \qquad \Longrightarrow \qquad
+    \ln|y|=kt+C
+  \]
+  To solve for \(y\), we exponentiate and then remove the absolute values:
+  \[
+    |y|=e^C e^{kt}
+    \qquad \Longrightarrow \qquad
+    y=\pm e^C e^{kt}
+  \]
+  To get a final form for the solution, we switch from an
+  <span class="hl">additive constant of integration</span> \(C\), to a
+  <span class="defword">multiplicative constant of integration</span> defined
+  by \(A=\pm e^C\). So the general solution is:
+  \[
+  y=Ae^{kt}
+  \]
+  The initial condition \(y(0)=y_o\) says \(y=y_o\) when \(t=0\). Plugging into
+  the solution says \(y_o=Ae^{k0}=A\). So the specific solution is:
+  \[
+  y=y_o e^{kt}
+  \]
+</p>
+<p class="remark">
+  The original definition, \(A=\pm e^C\), says \(A\ne0\) since \(e^C\) is
+  never zero. However, the exceptional case, \(A=0\), is also allowed since
+  \(y=0\) is also a solution of \(\dfrac{dy}{dt}=ky\). This execptional
+  solution was lost when we separated variables and divided by \(y\) to get
+  \(\dfrac{dy}{y}=k\,dt\).
+</p>
+
+  				<div class="rule"></div>
+
+<p class="example" data-title="Bacteria Growth" data-number="2">
+  The bacteria in a culture reproduce at a rate which is proportional to the
+  amount of bacteria present. Consequently, the number of bacteria \(N(t)\) satisfies
+  \[\dfrac{dN}{dt}=kN
+  \qquad \text{where} \qquad
+  k>0\]
+  If there are initially \(N(0)=4\times10^6\) bacteria
+  and after \(3\) hours there are \(N(3)=7\times10^6\)
+  bacteria, how many bacteria will there be after \(5\) hours?
+</p>
+<p class="sol">
+  At present, we do not know the constant \(k\). However, we do know the
+  solution is:
+  \[
+  N=N_o e^{kt} \qquad \text{where} \qquad N_o=4\times10^6
+  \]
+  This is <span class="hl">exponential growth</span>. We now use the second
+  data point, \(N(3)=7\times10^6\), to find the growth constant
+  \[
+  N(3)=4\times10^6e^{k3}=7\times10^6
+  \qquad \Longrightarrow \qquad
+  e^{k3}=\dfrac{7}{4}
+  \qquad \Longrightarrow \qquad
+  k=\dfrac{1}{3}\ln\dfrac{7}{4}
+  \]
+  So the solution is
+  \[
+  N(t)=4\times10^6e^{(t/3)\ln(7/4)}
+  \]
+  Finally, we compute the number of bacteria at \(t=5\):
+  \[
+  N(5)=4\times10^6e^{(5/3)\ln(7/4)}
+  \approx1.0165\times10^{7}\]
+</p>
+
+				<div class="rule"></div>
+
+<p class="genexample" data-title="Exponential Decay" data-number="3">
+  Find the general solution of:
+  \[\dfrac{dy}{dt}=-ky
+  \qquad \text{where} \qquad
+  k>0\]
+  and then find the specific solution satisfying the initial condition:
+  \[
+  y(0)=y_o
+  \]
+</p>
+<p class="gensol">
+  The solution is the same as that for exponential growth, except \(k\) is
+  replaced everywhere by \(-k\). So the general solution is:
+  \[
+  y=Ae^{-kt}
+  \]
+  and the specific solution satisfying the initial condition is:
+  \[
+  y=y_o e^{-kt}
+  \]
+</p>
+
+  				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-title="Radioactive Decay" data-number="4">
+    When a radioactive element decays, it decays at a rate which is proportional
+    to the amount of the element present. Consequently, the quantity of the
+    element \(Q(t)\) satisfies:
+    \[\dfrac{dQ}{dt}=-kQ
+    \qquad \text{where} \qquad
+    k>0\]
+    (The minus sign says the quantity is decreasing.) The
+    <span class="hl">half-life</span> of
+    Radium is \(1590\) years. This means that after \(1590\) years, half of a
+    sample will have decayed. If there are initially \(Q(0)=40\) g of
+    Radium, how much Radium will there be after \(500\) years?.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+    <button class="toggle has-rem" data-toggle="RemX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(Q(500)=40e^{-(500/1590)\ln2}\approx32.17\) g
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    The solution of the differential value problem is:
+    \[
+    Q(t)=40e^{-kt}
+    \]
+    After \(1590\) years, there is only half left. So \(Q(1590)=20\) g. So
+    \[\begin{aligned}
+    Q(1590)&=40e^{-k1590}=20 \\
+    e^{-k1590}&=\dfrac{1}{2} \\
+    -k1590&=\ln\dfrac{1}{2}=-\ln2 \\
+    k&=\dfrac{\ln2}{1590}
+    \end{aligned}\]
+    So the solution is
+    \[
+    Q(t)=40e^{-(t/1590)\ln2}
+    \]
+    After \(500\) years, the amount of Radium is
+    \[
+    Q(500)=40e^{-(500/1590)\ln2}\approx32.17\,\text{g}
+    \]
+  </p>
+</div>
+<p class="remark">
+  Notice that the solution can be rewritten as:
+  \[
+  Q(t)=40e^{-(t/1590)\ln2}=40\left(e^{-\ln2}\right)^{t/1590}=40\left(\dfrac{1}{2}\right)^{t/1590}
+  \]
+  This can be interpreted as saying every time the time increases by \(1590\),
+  the quantity gets multiplied by \(\dfrac{1}{2}\).
+</p>
+<p>
+  In general, if the initial amount is \(Q_o\) and the half-life is \(\tau\),
+  then the formula is \(Q(t)=Q_o\left(\dfrac{1}{2}\right)^{t/\tau}\).
+</p>
+<p>
+  Similarly, if the initial amount (of bacteria) is \(N_o\) and the doubling
+  time is \(\tau\), then the formula is \(N(t)=N_o2^{t/\tau}\).
+</p>
+
+  				<div class="rule"></div>
+
+<p class="remark">
+  The exponential growth and decay equations are examples of
+  <span class="defword">autonomous differential equations</span> which
+  involve the dependent function and its derivatives but have no explicit
+  dependence on the independent variable. A first order autonomous
+  differential equation would have the form:
+  \[
+  \dfrac{dy}{dt}=F(y)
+  \qquad \text{for some function} \qquad
+  F(y)
+  \]
+  These equations can usually be solved by separation of variables. The
+  example on this page and most of the rest of this chapter are autonomous
+  differential equations.
+</p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

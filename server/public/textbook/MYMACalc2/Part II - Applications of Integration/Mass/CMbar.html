@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b2. Bar with Non-Uniform Density | 11. Mass and Center of Mass</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CMDiscrete.html" title="Previous">&lArr;</a></li>
+      <li><a href="MomInertia.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Mass and Center of Mass</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Center of Mass</h2>
+
+
+      
+      <h2>b2. Bar with Non-Uniform Density</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+  On this page, we compute the center of mass of a bar whose mass is not
+  uniformly distributed over the bar, i.e. when the linear density
+  \(\delta(x)\) is a function of the position \(x\) along the bar.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+    <p class="genexample" data-number="1">
+      Find the center of mass of a bar between \(x=a\) and \(x=b\) whose
+      linear density is \(\delta(x)\).
+    </p>
+    <p class="gensol">
+      As when we computed the total mass, we first cut up the bar into
+      \(n\) small pieces each of width \(\Delta x=\dfrac{b-a}{n}\).
+  	</p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_cmbar.jpg" alt="eg_cmbar">
+    <img src="graphics/eg_cmbarpc.jpg" alt="eg_cmbarpc">
+  </div>
+</div>
+<p>
+  Since the density is not constant, we approximate the density of the
+  \(i^\text{th}\) piece as \(\delta(x_i^*)\) where \(x_i^*\)
+  is a point in the \(i^\text{th}\) region. Then the mass of the
+  \(i^\text{th}\) region is \(m_i=\delta(x_i^*)\Delta x\).
+  If we think of the bar as a balance beam as on the
+  <a href="CMDiscrete.html">previous page</a>, with masses
+  \(m_1,m_2,\ldots m_n\) located at \(x_1^*,x_2^*,\ldots x_n^*\) then the
+  center of mass is approximately at:
+  \[
+  \bar{x}\approx \dfrac{M_1}{M}
+  =\dfrac{\sum\limits_{i=1}^n m_i x_i^*}{\sum\limits_{i=1}^n m_i}
+  =\dfrac{\sum\limits_{i=1}^n x_i^*\delta(x_i^*)\Delta x}
+         {\sum\limits_{i=1}^n    \delta(x_i^*)\Delta x}
+  \]
+  As the length of each piece gets smaller, the approximation gets better.
+  So the center of mass of the bar is obtained by taking the limit as the
+  number of pieces becomes large (\(n\rightarrow\infty\)) and
+  hence the length of each piece gets small (\(\Delta x\rightarrow 0\)):
+  <br>
+  (Note: The limit of a quotient is the quotient of the limits.)
+  \[
+  \bar{x}
+  =\dfrac{\displaystyle\lim_{n\rightarrow\infty}\sum\limits_{i=1}^n
+         x_i^*\delta(x_i^*)\Delta x}
+         {\displaystyle\lim_{n\rightarrow\infty}\sum\limits_{i=1}^n
+         \delta(x_i^*)\Delta x}
+  \]
+  The limit of the sum in the denominator is the integral
+  \(\displaystyle \int_a^b \delta(x)\,dx\) which we recognize as the
+  <span class="hl">total mass</span>:
+  \[
+  M=\int_a^b \delta(x)\,dx
+  \]
+  The limit of the sum in the numerator is the integral
+  \(\displaystyle \int_a^b x \delta(x)\,dx\) which is called the
+  <span class="defword">first moment of the mass</span>:
+  \[
+  M_1=\int_a^b x\delta(x)\,dx
+	\]
+  In terms of these, the <span class="defword">center of mass</span> is:
+  \[
+	\bar{x}=\dfrac{M_1}{M}
+	\]
+  <button class="toggle btn" data-toggle="Note1">Are there higher moments?</button>
+</p>
+<div class="toBeToggled note" data-toggle="Note1">
+  <p>
+    When you hear the word <strong>first</strong> moment, you naturally ask:
+    "What are the second and higher moments?""
+    <br><br>
+    The <span class="defword">second moment of the mass</span> is:
+    \[
+    M_2=\int_a^b x^2\delta(x)\,dx
+    \]
+    and similarly, the
+    <span class="defword">\(k^\text{th}\) moment of the mass</span> is:
+    \[
+    M_k=\int_a^b x^k\delta(x)\,dx
+    \]
+    These are used in various physical applications, for example, the second
+    moment occurs in the formulas for moment of inertia on a
+    <a href="MomInertia.html">next page</a>.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Center of Mass of a Bar with Non-Uniform Density">
+  The <span class="defword">center of mass</span> of a bar with linear
+	density \(\delta(x)\) between \(x=a\) and \(x=b\) is:
+  \[
+  \bar{x}=\dfrac{M_1}{M}
+  \]
+  where the <span class="defword">total mass</span> is:
+  \[
+  M=\int_a^b \delta(x)\,dx
+  \]
+  and the <span class="defword">first moment of the mass</span> is:
+  \[
+  M_1=\int_a^b x\delta(x)\,dx
+  \]
+</p>
+<a id="cmeg"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="2">
+    Find the center of mass of an \(8\,\text{m}\) bar whose linear
+    density is \(\delta(x)=(1+x)\dfrac{\text{kg}}{\text{m}}\)
+    where \(x\) is measured from one end as discussed in a
+  	<a href="Mass.html#masseg" title="return using the Back button.">
+  	previous example</a>.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_1+x_mass.jpg" alt="eg_1+x_mass">
+  </div>
+</div>
+<p class="sol">
+  The total mass was found to be \(M=40\,\text{kg}\).
+  The first moment is:
+  \[\begin{aligned}
+    M_1&=\int_0^8 x\delta(x)\,dx
+    =\int_0^8 x(1+x)\,dx \\
+    &=\left[\dfrac{x^2}{2}+\dfrac{x^3}{3}\right]_{x=0}^8
+    =\dfrac{64}{2}+\dfrac{512}{3}=\dfrac{608}{3} \text{kg-m}
+  \end{aligned}\]
+  So the center of mass is:
+  \[
+  \bar{x}=\dfrac{M_1}{M}=\dfrac{608\,\text{kg-m}}{3}\dfrac{1}{40\,\text{kg}}
+  =\dfrac{76}{15}\text{m}\approx 5.07\text{m}
+  \]
+</p>
+<p class="remark check">
+  You should always check that your center of mass is within the
+  bar. In this case, \(\bar{x}\approx 5.07\,\text{m}\) is within
+  the \(8\,\text{m}\) bar.
+</p>
+<a id="cmex"></a>
+
+        <div class="rule"></div>
+
+<p>
+  Now you do it:
+</p>
+<div class="dotfillex">
+  <div>
+    <div class="column">
+    	<p class="exercise" data-number="3">
+        Find the center of mass of a \(10\,\text{ft}\) bar whose
+        linear weight	density is
+        \(\delta(x)=\dfrac{1}{1+x}\dfrac{\text{lb}}{\text{ft}}\)
+        where \(x\) is measured from one end as discussed in a
+      	<a href="Mass.html#massex" title="return using the Back button.">
+      	previous exercise</a>.
+      </p>
+      <div class="center">
+        <img src="graphics/ex_1_(1+x)_mass.jpg" alt="ex_1_(1+x)_mass">
+      </div>
+    </div>
+    <p>
+    Note: If we are given a weight density instead of a mass density, then we
+    use the weight \(W\) and its first moment \(W_1\) instead of the mass \(M\)
+    and its first moment \(M_1\).
+    </p>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+    <button class="toggle has-check" data-toggle="CkX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\bar{x}=\dfrac{10-\ln(11)}{\ln(11))}\text{ft}
+    \approx 3.170\,\text{ft}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+	  The total mass (weight) was found in a
+		<a href="Mass.html#massex" title="return using the Back button.">
+			previous exercise</a>
+		to be \(W=\ln(11)\,\text{lb}\).
+	  The first moment of the weight is:
+	  \[\begin{aligned}
+	    W_1&=\int_0^{10} \dfrac{x}{1+x}\,dx
+			=\int_0^{10} \dfrac{1+x-1}{1+x}\,dx \\
+			&=\int_0^{10} 1-\dfrac{1}{1+x}\,dx
+			=[x-\ln(1+x)]_0^{10} \\
+			&=[10-\ln(11)]-[0-\ln(1)]
+			=10-\ln(11)\,\text{ft-lb}
+	  \end{aligned}\]
+	  So the center of mass is:
+    \[
+		\bar{x}=\dfrac{W_1}{W}
+		=\dfrac{10-\ln(11)\,\text{ft-lb}}{\ln(11))\,\text{lb}}\approx 3.170\,\text{ft}
+		\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX3">
+  <p>
+		We check the center of mass \(\bar{x}\approx 3.170\,\text{ft}\) is within
+		the \(10\,\text{ft}\) bar.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can practice computing Mass and Center of Mass of a Bar by using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/CenterOfMassBar.maplet" download>Center of Mass of a Bar</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

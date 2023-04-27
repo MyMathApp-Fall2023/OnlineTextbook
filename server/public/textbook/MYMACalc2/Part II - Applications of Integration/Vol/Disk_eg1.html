@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c1a. Volume using Thin Disks - Example 1 | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Disk.html#disk_egs" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>13. Volume</h1>
+    <div id="pg-wrapper">
+      
+<p>
+  Recall: &emsp; The Volume of a Solid computed using Thin Disks is
+  \[
+	V=\int_a^b \pi f(x)^2\,dx
+  \qquad \text{or} \qquad
+	V=\int_a^b \pi f(y)^2\,dy
+  \]
+</p>
+
+      
+      <h2>c1a. Volume using Thin Disks - Example 1</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+<div style="margin:auto;width:400px;text-align:center">
+  <ul style="list-style-type: none">
+    <li style="display:inline-block;margin: 10px;background-color:yellow"><a href="Disk_eg1.html">Example 1</a></li>
+    <li style="display:inline-block;margin: 10px"><a href="Disk_eg2.html">Example 2</a></li>
+  </ul>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  We start with two examples which could also be computed from high school
+  geometry.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the volume of the cone obtained by rotating the region under the
+  straight line \(y=x\) between \(x=0\) and \(x=1\) around the \(x\)-axis.
+</p>
+<div class="center">
+	<figure>
+    <img src="graphics/eg_cone_about_y_crv.jpg" alt="eg_cone_about_y_crv">
+		<figcaption>The Curve</figcaption>
+	</figure>
+  <figure>
+    <img src="graphics/eg_cone_about_y_solid.jpg" alt="eg_cone_about_y_solid">
+    <figcaption>The Solid</figcaption>
+  </figure>
+</div>
+<div class="column">
+	<div data-col-width="60%">
+		<p class="sol">
+		  We draw the line \(y=x\) between \(x=0\) and \(x=1\) and one Riemann sum
+      rectangle. We rotate the rectangle and see it sweeps out a disk.
+		</p>
+		<p>
+		  We apply the disk formula, with \(a=0\) and \(b=1\) to get the volume:
+	    \[
+			V=\pi\int_0^1 x^2\,dx
+			=\left.\pi\dfrac{x^3}{3}\right|_0^1
+			=\dfrac{\pi}{3}
+			\]
+		</p>
+	</div>
+	<div class="center" data-col-width="40%">
+	  <img src="graphics/eg_cone_about_y_disk.jpg" alt="eg_cone_about_y_disk">
+	</div>
+</div>
+<p class="check">
+  This volume could also have been computed from high school geometry as
+	\(V=\dfrac{1}{3}\pi r^2h
+	=\dfrac{1}{3}\pi(1)^2(1)
+	=\dfrac{\pi}{3}\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="2">
+      Find the volume of a sphere of radius \(2\), regarded as
+      the solid of revolution of the region bounded by a semicircle of
+      radius \(2\) rotated about the \(x\)-axis.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_sphere_about_x_solid_anim.gif"
+      alt="ex_sphere_about_x_solid_anim">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-answer" data-toggle="AnsX1">
+  <p>
+    \(V=\dfrac{32}{3}\pi\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+  	The (upper) semicircle satisfies the equation \(y=\sqrt{4-x^2}\).
+  	Applying the formula for the volume of revolution using disks
+    with \(a=-2\) and \(b=2\), we obtain
+    \[\begin{aligned}
+    V&=\int_{-2}^2 \pi\left(\sqrt{4-x^2}\right)^2\,dx \\
+  	&=\pi\int_{-2}^2 (4-x^2)\,dx
+    =\pi\left[4x-\dfrac{x^3}{3}\right]_{-2}^2 \\
+  	&=\pi\left(8-\dfrac{8}{3}\right)-\pi\left(-8+\dfrac{8}{3}\right)
+  	=\dfrac{32}{3}\pi
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    Again there is agreement with the classical formula. From geometry, we know
+  	that the volume of a sphere of radius \(r=2\) is
+  	\(V=\dfrac{4}{3}\pi r^3
+  	=\dfrac{4}{3}\pi 2^3=\dfrac{32}{3}\pi\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The agreement between the results of the integral formulas and the geometry
+  formulas gives us a little confidence in it. However, the integral
+  formula for volume is more powerful than a handbook of volume formulas.
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

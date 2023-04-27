@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Grid Cell Area | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DCurv-Grid.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DCurv-Jac.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Integrating in 2D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>2. Grid Cell Area</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We continue our investigation of how to integrate in general 2D curvilinear
+  coordinate systems. We continue to use polar coordinates as a concrete
+  example. Once again, here are the polar coordinate grid and the general
+  curvilinear coordinate grid with a tangent vector to each coordinate curve:
+</p>
+<div class="center">
+<img src="graphics/coordtanvec-polar.jpg" alt="coordtanvec-polar">
+&emsp;
+<img src="graphics/coordtanvec-gen.jpg" alt="coordtanvec-gen">
+</div>
+<p class="example" data-number="1">
+  To integrate in polar coordinates, we need to know (or be able to
+  approximate) the area of each polar rectangle (or grid cell):
+  \[
+  r_0 \le r \le r_0+\Delta r
+  \qquad
+  \theta_0 \le \theta  \le \theta_0+\Delta\theta
+  \]
+  In the <a href="Polar-Grid.html" title="Return using the Back button.">
+  section on polar coordinates</a>, we found this area is
+  \[
+  \Delta A=\bar{r}\,\Delta r\,\Delta\theta
+  \]
+  where \(\bar{r}\) is the average radius in the box. Then the differential of
+  area is:
+  \[
+  dA=r\,dr\,d\theta
+  \]
+</p>
+<big> Add plot of one grid cell.</big>
+<p class="def">
+  To integrate in 2D curvilinear coordinates, we need to know (or be able to
+  approximate) the area of each
+  <span class="defword">curvilinear rectangle</span>
+  or <span class="defword">grid cell</span>:
+  \[
+  u_0 \le u \le u_0+\Delta u
+  \qquad
+  v_0 \le v \le v_0+\Delta v
+  \]
+  It turns out that this area is:
+  \[
+  \Delta A=J\,\Delta u\,\Delta v
+  \]
+  where \(J\) is a function, called the
+  <span class="defword">Jacobian factor</span>, which differs from one
+  coordinate system to another. Then the differential of area will be:
+  \[
+  dA=J\,du\,dv
+  \]
+  From this the integral \(\displaystyle \iint_R f\,dA\) can be computed as
+  \[
+  \iint_R f\,dA=\iint f(u,v)\,J\,du\,dv
+  \]
+  where the limits are put on the integrals to describe the region \(R\).
+</p>
+<p class="remark">
+  For 2D rectangular coordinates, \(dA=dx\,dy\). So \(J=1\).
+    <br>
+  For polar coordinates, \(dA=r\,dr\,d\theta\). So \(J=r\).
+    <br>
+  Our job is to find \(J\) for other coordinate systems.
+</p>
+
+        <div class="rule" id="areaderive"></div>
+
+<h3>Area of a Coordinate Rectangle or Grid Cell</h3>
+
+<p>
+  We need to compute (or approximate) the area of the curvilinear
+  <span class="hl">rectangle</span> or <span class="hl">grid cell</span>:
+  \[
+  u_0 \le u \le u_0+\Delta u
+  \qquad
+  v_0 \le v \le v_0+\Delta v
+  \]
+  To do this, we stretch (or shrink) the tangent vectors \(\vec{e}_u\) and
+  \(\vec{e}_v\) to vectors \(\vec{U}\) and \(\vec{V}\), respectively, which
+  just touch the next coordinate curve, and approximate the area of the
+  curvilinear rectangle by the area of the parallelogram with edges
+  \(\vec{U}\) and \(\vec{V}\). These vectors and the parallelogram are
+  added to the plots below:
+</p>
+<div class="center">
+<img src="graphics/coordpara-polar.jpg" alt="coordpara-polar">
+&emsp;
+<img src="graphics/coordpara-gen.jpg" alt="coordpara-gen">
+</div>
+<p>
+  Let's look at how the vector \(\vec{U}\) is constructed. We want \(\vec{U}\)
+  to point in the same direction as \(\vec{e}_u\):
+  \[
+  \hat{U}=\hat{e}_u=\dfrac{\vec{e}_u}{|\vec{e}_u|}
+  \]
+  and we want the length of \(\vec{U}\) to be the arclength of the \(u\)-curve
+  from \(u=u_0\) to \(u=u_0+\Delta u\):
+  \[
+  |\vec{U}|=\int_{u_0}^{u_0+\Delta u} |\vec{e}_u|\,du
+  \]
+  Notice that the parameter is \(u\) and the tangent vector (velocity) is
+  \(\vec{e}_u\), so the integrand is the magnitude of the tangent vector
+  \(|\vec{e}_u|\) (speed). In this integral, we can assume that \(\Delta u\)
+  is very small and \(|\vec{e}_u|\) is almost constant on the interval
+  of integration. So we can approximate the integral by:
+  \[
+  |\vec{U}|\approx|\vec{e}_u|\int_{u_0}^{u_0+\Delta u} 1\,du
+  =|\vec{e}_u|\,\Delta u
+  \]
+  From the magnitude and direction of \(\vec{U}\), we can reconstruct \(\vec{U}\):
+  \[
+  \vec{U}=|\vec{U}|\hat{U}
+  \approx|\vec{e}_u|\,\Delta u\,\dfrac{\vec{e}_u}{|\vec{e}_u|}
+  =\Delta u\,\vec{e}_u
+  \]
+  Similarly
+  \[
+  \vec{V}\approx\Delta v\,\vec{e}_v
+  \]
+  The area of the coordinate rectangle, \(\Delta A\), is approximately
+  the area of the parallelogram which is the length of the
+  cross product, \(|\vec{U}\times\vec{V}|\).
+  (See the applications of the
+  <a href="../../Part I - Geometry & Vectors/Cross/Area.html"
+  title="Return using the Back button.">cross product</a>.) So:
+  \[
+  \Delta A
+  \approx|\vec{U}\times\vec{V}|
+  \approx|\Delta u\,\vec{e}_u\times\Delta v\,\vec{e}_v|
+  =|\vec{e}_u\times\vec{e}_v|\,\Delta u\,\Delta v
+  \]
+  In the limit as \(\Delta u\) and \(\Delta v\) get small, all the
+  approximations go away and the differential of area becomes:
+  \[
+  dA=|\vec{e}_u\times\vec{e}_v|\,du\,dv
+  \]
+  Comparing this to the formula:
+  \[
+  dA=J\,du\,dv
+  \]
+  we see that the Jacobian factor is:
+  \[
+  J=|\vec{e}_u\times\vec{e}_v|
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the Jacobian factor for polar coordinates.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    When you compute the cross product of \(\vec{e}_r\) and \(\vec{e}_\theta\),
+    append \(0\) as the third component.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle J=r\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Recall that in polar coordinates,
+    \(\vec{R}(r,\theta)=\left\langle r\cos\theta,r\sin\theta\right\rangle\).
+    So the tangent vectors are:
+    \[
+    \vec{e}_r=\left\langle \cos\theta,\sin\theta\right\rangle
+    \qquad \text{and} \qquad
+    \vec{e}_\theta=\left\langle -r\sin\theta,r\cos\theta\right\rangle
+    \]
+    The Jacobian is \(J=|\vec{e}_r\times\vec{e}_\theta|\). However, the
+    cross product only works in 3 dimensions while \(\vec{e}_r\) and
+    \(\vec{e}_\theta\) only have 2 components. So we append \(0\) as the
+    third components and compute:
+    \[\begin{aligned}
+    J&=|\vec{e}_r\times\vec{e}_\theta|
+    =\left|
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \cos\theta & \sin\theta & 0 \\
+    -r\sin\theta & r\cos\theta & 0
+    \end{vmatrix}
+    \right| \\
+    &=|\hat{\imath}(0)-\hat{\jmath}(0)+\hat{k}(r\cos^2\theta-(-r\sin^2\theta))|
+    =|\left\langle 0,0,r\right\rangle|=r
+    \end{aligned}\]
+    Using the general formula for the Jacobian, we have rederived the
+    Jacobian for polar coordinates, \(J=r\). Consequently, \(dA=r\,dr\,d\theta\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  The Jacobian will be simplified on the <a href="2DCurv-Jac.html">next page</a>,
+  but this is the basic requirement for integrating in general curvilinear
+  coordinates on the
+  <a href="2DCurv-Int.html" title="Return using the Back button.">page after next</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

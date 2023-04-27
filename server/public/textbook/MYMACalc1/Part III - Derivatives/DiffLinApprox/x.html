@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Differentials &amp; Linear Approximation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MVT.html" title="Previous">&lArr;</a></li>
+      <li><a href="../Chain/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Differentials &amp; Linear Approximation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Differences & Differentials-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Differentials.html">a. Differences &amp; Differentials</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Differentials.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	Consider the function \(f(x)=x^2\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the tangent line at \(x=3\).
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX1a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX1a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX1a"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX1a">
+        <p>
+          The equation of the tangent line at \(x=a\) is:
+          \[
+          y=f(a)+f'(a)(x-a)
+          \]
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+				<p>
+					\(y=9+6(x-3)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1a">
+        <div class="column">
+          <div>
+    				<p>
+              The function is:
+              \[
+              f(x)=x^2
+              \]
+              The function value at \(x=3\) is:
+              \[
+              f(3)=9
+              \]
+    					The derivative is:
+              \[
+              f'(x)=2x
+              \]
+              At \(x=3\) the derivative is:
+              \[
+              f'(3)=6
+              \]
+            </p>
+    			</div>
+          <div class="center">
+            <img src="graphics/x_tanx^2.jpg" alt="x_tanx^2">
+          </div>
+        </div>
+        <p>
+          So the tangent line is:
+          \[\begin{aligned}
+          y&=f(3)+f'(3)(x-3) \\
+          &=9+6(x-3)
+          \end{aligned}\]
+          The plots of the function and the tangent line are shown.
+        </p>
+        <p style="text-align:right">
+          sw&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the change in \(x\) and the change in the function between
+          \(a=3\) and \(x=3.2\).
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX1b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX1b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX1b"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX1b">
+        <p>
+          The changes are
+          \[ \Delta x=x-a \]
+          <br>
+          \( \Delta f=f(x)-f(a) \)
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+				<p>
+          \(\Delta x=.2\)
+          <br>
+					\(\Delta f=1.24\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1b">
+				<p>
+					The change in \( x \) is:
+          \[
+          \Delta x=x-a=3.2-3=0.2
+          \]
+          The change in \( f \) is:
+          \[\begin{aligned}
+          \Delta f&=f(x)-f(a)=f(3.2)-f(3) \\
+          &=3.2^2-3^2=1.24
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          sw&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Find the differential of \(x\) and the differential of the function
+          between \(a=3\) and \(x=3.2\).
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX1c"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX1c"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX1c"></button>
+        	<button class="toggle has has-check" data-toggle="CkX1c"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX1c">
+        <p>
+          The differential of \( x \) is:
+          \[
+          dx=x-a
+          \]
+          The differential of \( f(x) \) is:
+          \[
+          df=f_{\text{tan}}(x)-f(a)=f'(a)\, dx
+          df=f_{\text{tan}}(x)-f(a)=f'(a)\,dx
+          \]
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1c">
+				<p>
+					\( dx=0.2\)
+          <br>
+          \( df=1.2 \)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1c">
+				<p>
+					The differential of x is
+          \[
+          dx=3.2-3=0.2
+          \]
+          The differential of f(x) is
+          \[
+          df=f_{\text{tan}}(3.2)-f(3)
+          =f'(3)\, dx=6\cdot 0.2=1.2
+          df=f'(3)dx=6\cdot 0.2=1.2
+          \]
+				</p>
+        <p style="text-align:right">
+          sw&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX1c">
+      	<p>
+          We check by computing the differential by a different method:
+          \[
+          df=f_{\text{tan}}(3.2)-f(3)
+          =(9+6(3.2-3))-9=1.2
+          \]
+      	</p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+  Consider the function \( g(x)=2x^2+3x+5 \).
+  <ol type="a">
+    <li>
+    	<div class="dotfillex">
+        <p>
+          Find the tangent line at \( x=2 \).
+        </p>
+    		<p>
+        	<button class="toggle has has-hint" data-toggle="HintX2a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX2a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX2a"></button>
+    		</p>
+    	</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX2a">
+        <p>
+          The tangent line to a function at \( x=a \) is:
+          \[
+          y=g(a)+g'(a)(x-a)
+          \]
+        </p>
+      </div>
+    	<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+      	<p>
+          \( y=19+11(x-2) \)
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-sol" data-toggle="SolX2a">
+        <div class="column">
+          <div>
+            	<p>
+                The function at \( x=2 \) is:
+                \[
+                g(2)=2\cdot 2^2+3\cdot 2+5=19
+                \]
+                The derivative is:
+                \[
+                g'(x)=4x+3
+                \]
+                The derivative at \( x=2 \) is:
+                \[
+                g'(2)=4\cdot 2+3=11
+                \]
+                The tangent line at \( x=2 \) is:
+                \[
+                y=g(2)+g'(2)(x-2)=19+11(x-2)
+                \]
+                The plot of the function and the tangent line are shown.
+            	</p>
+          </div>
+          <div class="center">
+            <img src="graphics/x_tan2x^2+3x+5.jpg" alt="x_tan2x^2+3x+5">
+          </div>
+        </div>
+        <p style="text-align:right">
+          sw&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+    <div class="dotfillex">
+      <p>
+        Find the change in \( x \) the function between \( a=2\) and \( x=2.1 \).
+      </p>
+      <p>
+        <button class="toggle has has-hint" data-toggle="HintX2b"></button>
+        <button class="toggle has has-ans" data-toggle="AnsX2b"></button>
+        <button class="toggle has has-sol" data-toggle="SolX2b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2b">
+      <p>
+        The change in \( x \) is:
+        \[
+        \Delta x=x-a
+        \]
+        The change in \( g \) is:
+        \[
+        \Delta g=g(x)-g(a)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+      <p>
+        \( \Delta x=0.1 \)
+        <br>
+        \( \Delta g=1.12 \)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+      <p>
+        The change in \( x \) is:
+        \[
+        \Delta x=x-a=2.1-2=0.1
+        \]
+        Since \(g(2.1)=2(2.1)^2+3(2.1)+5=20.12\), the change in \( g \) is:
+        \[
+        \begin{aligned}
+        \Delta g &=g(x)-g(a)=g(2.1)-g(2)\\
+        &=20.12-19=1.12
+        \end{aligned}
+        \]
+      </p>
+      <p style="text-align:right">
+        sw&ensp;
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the differential of \( x \) and the differential of the function between \( a=2 \) and \( x=2.1 \).
+      </p>
+      <p>
+        <button class="toggle has has-hint" data-toggle="HintX2c"></button>
+        <button class="toggle has has-ans" data-toggle="AnsX2c"></button>
+        <button class="toggle has has-sol" data-toggle="SolX2c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2c">
+      <p>
+        The differential of \( x \) is:
+        \[
+        dx=x-a
+        \]
+        The differential of \( g(x) \) is:
+        \[
+        dg=g_{\text{tan}}(x)-g(a)=g'(a)\, dx
+        dg=g_{\text{tan}}(x)-g(a)=g'(3)dx
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+      <p>
+        \( dx=0.1 \)
+        <br>
+        \( dg=1.1 \)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+      <p>
+        The differential of \( x \) is:
+        \[
+        \, dx=x-a=2.1-2=0.1
+        \]
+        The differential of \( g(x) \) is:
+        \[
+        \, dg=g_{\text{tan}}(x)-g(a)=g'(3)\, dx=11\cdot 0.1=1.1
+        dg=g'(3)dx=11\cdot 0.1=1.1
+        \]
+      </p>
+      <p style="text-align:right">
+        sw&ensp;
+      </p>
+    </div>
+  </li>
+  </ol>
+</li>
+
+<li>
+  Consider the function \( v(x)=x^3-\dfrac{17}{4x} \).
+  <ol type="a">
+    <li>
+      <div class="dotfillex">
+    		<p>
+          Find the tangent line at \( x=2 \).
+    		</p>
+    		<p>
+        	<button class="toggle has has-hint" data-toggle="HintX3a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX3a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX3a"></button>
+    		</p>
+    	</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX3a">
+        <p>
+          The tangent line to a function at \( x=a \) is:
+          \[
+          y=v(a)+v'(a)(x-a)
+          \]
+        </p>
+      </div>
+    	<div class="toBeToggled drop-ans" data-toggle="AnsX3a">
+      	<p>
+          \( y=5.88+13.06(x-2) \)
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-sol" data-toggle="SolX3a">
+        <div class="column">
+          <div>
+          	<p>
+              The function at \( x=2 \) is:
+              \[
+              v(2)=2^3-\frac{17}{4\cdot 2}=\dfrac{47}{8}=5.875
+              \]
+              The derivative is:
+              \[
+              v'(x)=3x^2-\left(-\frac{17}{4\cdot x^2}\right)=3x^2+\frac{17}{4x^2}
+              \]
+              The derivative at \( x=2 \) is:
+              \[
+              v'(2)=3\cdot 2^2+\frac{17}{4\cdot 2^2}=\dfrac{209}{16}\approx13.06
+              \]
+          	</p>
+    			</div>
+          <div class="center">
+            <img src="graphics/x_tanx^3-174x.jpg" alt="x_tanx^3-174x">
+          </div>
+        </div>
+        <p>
+          So the tangent line is:
+          \[\begin{aligned}
+          y&=v(2)+v'(2)(x-2) \\
+          &=\dfrac{47}{8}+\dfrac{209}{16}(x-2)
+          \end{aligned}\]
+          The plots of the function and the tangent line are shown.
+        </p>
+        <p style="text-align:right">
+          sw&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+    		<p>
+          Find the change in \( x \) and the change in the function between \( a=2 \) and \( x=2.3 \).
+    		</p>
+    		<p>
+        	<button class="toggle has has-hint" data-toggle="HintX3b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX3b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX3b"></button>
+    		</p>
+    	</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX3b">
+        <p>
+          The change in \( x \) is:
+          \[
+          \Delta x=x-a
+          \]
+          The change in \( v \) is:
+          \[
+          \Delta v=v(x)-v(a)
+          \]
+        </p>
+      </div>
+    	<div class="toBeToggled drop-ans" data-toggle="AnsX3b">
+      	<p>
+          The change in \( x \) is:
+          \[
+          \Delta x=0.3
+          \]
+          The change \( v \) is:
+          \[
+          \Delta v=4.44
+          \]
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-sol" data-toggle="SolX3b">
+      	<p>
+          The change in \( x \) is:
+          \[
+          \Delta x=x-a=2.3-2=0.3
+          \]
+          Since \(v(2.3)=(2.3)^3+\dfrac{17}{4\cdot2.3}=10.32\), the change
+          in \( v \) is:
+          \[
+          \Delta v=v(x)-v(a)=v(2.3)-v(2)=10.32-5.88=4.44
+          \]
+      	</p>
+        <p style="text-align:right">
+          sw&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+    		<p>
+          Find the differential of \( x \) and the differential of the function between \( a=2 \) and \( x=2.3 \).
+    		</p>
+    		<p>
+        	<button class="toggle has has-hint" data-toggle="HintX3c"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX3c"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX3c"></button>
+    		</p>
+    	</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX3c">
+        <p>
+          The differential of \( x \) is:
+          \[
+          \, dx=x-a
+          \]
+          The differential of \( v(x) \) is:
+          \[
+          \, dv=v_{\text{tan}}(x)-v(a)=v'(a)\, dx
+          dv=v_{\text{tan}}(x)-v(a)=v'(2)dx
+          \]
+        </p>
+      </div>
+    	<div class="toBeToggled drop-ans" data-toggle="AnsX3c">
+      	<p>
+          The differential of \( x \) is:
+          \[
+          \, dx=0.3
+          \]
+          The differential of \( v(x) \) is:
+          \[
+          \, dv=3.76
+          dv=3.92
+          \]
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-sol" data-toggle="SolX3c">
+      	<p>
+          The differential of \( x \) is:
+          \[
+          \, dx=x-a=2.3-2=0.3
+          \]
+          The differential of \( v(x) \) is:
+          \[
+          \, dv=v_{\text{tan}}(x)-v(a)=v'(2)\, dx=12.53\cdot 0.3=3.76
+          dv=v'(2)\,dx=13.06\cdot 0.3=3.92
+          \]
+      	</p>
+        <p style="text-align:right">
+          sw&ensp;
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+    <div class=column>
+  		<p>
+        A spherical ballon of radius \( r=6 \) cm slowly leaks.
+        If the radius of the ballon decreases \( 0.4 \) cm, find the
+        change and differential of the volume of the balloon.
+        (The volume of a sphere is \(\dfrac{4}{3}\pi r^3\).)
+  		</p>
+      <div class="center">
+        <img src="graphics/x_sphere.gif" alt="x_sphere">
+      </div>
+    </div>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX4"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(\Delta V=-169.16\)
+      <br>
+      \(dV=-180.96\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+      The old volume was:
+      \[
+      V_i=\dfrac{4}{3}\pi 6^3=288\pi
+      \]
+      The new volume is:
+      \[
+      V_f=\dfrac{4}{3}\pi 5.6^3=234.154\overline{6}\pi
+      \]
+      So the change in volume is:
+      \[\begin{aligned}
+      \Delta V&=234.154\overline{6}\pi-288\pi\\
+      &=-53.845\overline{3}\pi=-169.16
+      \end{aligned}\]
+      To find the differential we need the derivative::
+      \[\begin{aligned}
+      V'(r)&=4\pi r^2\\
+      V'(6)&=4\pi (6)^2=144\pi
+      \end{aligned}\]
+      Then, the differential is:
+      \[\begin{aligned}
+      dV&=V'(6)\,dr
+      =144\pi(-0.4) \\
+      &=-57.6\pi=-180.96
+      \end{aligned}\]
+      So the differential is a reasonable approximation to the change.
+      The plot shows the old and new volumes
+    </p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+  </div>
+</li>
+
+<!--Linear Approximation-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="LinApprox.html">b. Linear Approximation</a></h3>
+    <div class="pgs">
+      
+        <div><a href="LinApprox.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Use a linear approximation to estimate \( \sqrt[\scriptsize3]{27.4} \).
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX5"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX5"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX5"></button>
+    	<button class="toggle has has-check" data-toggle="CkX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX5">
+    <p>
+      Which value \(x\) near \(27.4\) gives a simple value for \(\sqrt[\scriptsize3]{x}\)? Approximate near that value.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+      \(\sqrt[\scriptsize3]{27.4}\approx3.0\overline{148}\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+      We take \( f(x)=\sqrt[\scriptsize3]{x} \), since we know \(f(27)=3\).
+      We then construct the tangent function. We have:
+      \[\begin{aligned}
+      f'(x)&=\dfrac{1}{3\sqrt[\scriptsize3]{x^2}} \\
+      f'(27)&=\dfrac{1}{3\sqrt[\scriptsize3]{27^2}}=\dfrac{1}{27}
+      \end{aligned}\]
+      So the tangent function is:
+      \[
+      f_{\text{tan}}(x)=f(27)+f'(27)(x-27)=3+\dfrac{1}{27}(x-27)
+      \]
+      Finally, let \( x=27.4 \). Then:
+      \[\begin{aligned}
+      \sqrt[\scriptsize3]{27.4}&=f(27.4)\approx f_{\text{tan}}(27.4) \\
+      &=3+\dfrac{1}{27}(27.4-27) \\
+      &=3+\dfrac{0.4}{27}=3.0\overline{148}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX5">
+  	<p>
+      The actual value of \( \sqrt[\scriptsize3]{27.4} \) is \( 3.01474 \).
+      Our approximation is \(3.0\overline{148}\).
+      Since these are so close our approximation is an accurate one.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Use a linear approximation to estimate \( \dfrac{1}{\sqrt[\scriptsize4]{16.3}} \).
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX6"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX6"></button>
+    	<button class="toggle has has-check" data-toggle="CkX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+      Which value \(x\) near \(16.3\) gives a simple value for \(\dfrac{1}{\sqrt[\scriptsize4]{x}}\)? Approximate near that value.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+      \( \dfrac{1}{\sqrt[\scriptsize4]{16.3}}\approx0.49766\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      We take \( f(x)=\dfrac{1}{\sqrt[\scriptsize4]{x}} \), since we know \(f(16)=\dfrac{1}{2}\).
+      We then construct the tangent function. We have:
+      \[\begin{aligned}
+      f'(x)&=-\dfrac{1}{4\sqrt[\scriptsize4]{x^5}} \\
+      f'(16)&=-\dfrac{1}{4\sqrt[\scriptsize4]{16^5}}=-\dfrac{1}{128}
+      \end{aligned}\]
+      So the tangent function is:
+      \[
+      f_{\text{tan}}(x)=f(16)+f'(16)(x-16)=\dfrac{1}{2}-\dfrac{1}{128}(x-16)
+      \]
+      Finally, let \( x=16.3 \). Then:
+      \[\begin{aligned}
+      \dfrac{1}{\sqrt[\scriptsize4]{16.3}}&=f(16.3)\approx f_{\text{tan}}(16.3) \\
+      &=\dfrac{1}{2}-\dfrac{1}{128}(16.3-16) \\
+      &=\dfrac{1}{2}-\dfrac{0.3}{128}=0.49766
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX6">
+  	<p>
+      The actual value of \(\dfrac{1}{\sqrt[\scriptsize4]{16.3}}\) is \( 0.49768 \).
+      Our approximation was \(0.49766\)
+      , since these are so close our approximation is an accurate one.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<div class="column">
+			<p>
+	      A conical cup is filled with water to a height \( h=9 \) cm and radius
+				\( r=2 \) cm, but it is leaking. If \( 0.5 \) cubic cm leaks out,
+	      estimate the change in the height of the water.
+	      (The volume of a cone is \(V=\dfrac{1}{3}\pi r^2h\).)
+			</p>
+      <div class="center">
+        <img src="graphics/x_cone_cup.gif" alt="x_cone_cup">
+      </div>
+		</div>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX7"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX7"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX7"></button>
+    	<button class="toggle has has-check" data-toggle="CkX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+      Implicitly differentiate the volume equation.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  	<p>
+      \(\Delta h\approx0.0398\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+      Since \(\dfrac{h}{r}=\dfrac{9}{2}\), we can write \(r\) as
+      \(r=\dfrac{2}{9}h\). Plugging that into the volume of the cone we get:
+      \[
+      V=\dfrac{1}{3}\pi \left(\dfrac{2}{9}h\right)^2h
+      =\dfrac{4}{243}\pi h^3
+      \]
+      To get the change in the height, we first approximate the change in the volume
+      using differentials:
+      \[
+      \Delta V\approx dV=\dfrac{dV}{dh}\,dh\approx\dfrac{4}{81}\pi h^2\Delta h
+      \]
+      We now solve for \(\Delta h\):
+      \[
+      \Delta h\approx\dfrac{81}{4\pi h^2}\Delta V
+      =\dfrac{81}{4\pi (9)^2}0.5=\dfrac{1}{8\pi}
+      =0.0398
+      \]
+  	</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX7">
+  	<p>
+      The initial volume is
+      \[
+      V_i=\dfrac{4}{243}\pi (9)^3=12\pi
+      \]
+      The final volume is
+      \[
+      V_f=12\pi-.5
+      \]
+      The initial height is
+      \[
+      h_i=9
+      \]
+      The final height is
+      \[
+      h_f=\left(\dfrac{243(12\pi-.5)}{4\pi}\right)^{1/3}
+      =8.9601
+      \]
+      The actual change in height is:
+      \[
+      \Delta h=9-8.9601=.0399
+      \]
+      Our estimate is:
+      \[
+      \Delta h\approx0.0398
+      \]
+      Since these are so close our estimate is an accurate one.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<div class="column">
+			<p>
+	      A little girl is pouring sand from a bucket forming a cone whose radius
+	      is always twice it height. Currently, the radius is \(r=4\) cm.
+	      If she pours \(5\) cm\(^3\) more sand on the pile, how much does the
+	      radius change?
+	       (The volume of a cone is \(V=\dfrac{1}{3}\pi r^2h\).)
+			</p>
+      <div class="center">
+        <img src="graphics/x_sand.gif" alt="x_sand">
+      </div>
+		</div>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX8"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX8"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX8"></button>
+    	<button class="toggle has has-check" data-toggle="CkX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      Express the volume in terms of \(r\) and differentiate.
+      Then find the differential of the volume.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+      \(\Delta r=\dfrac{5}{8\pi}\approx0.199\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+      Since the radius is always twice the height, we have \(r=2h\) or
+      \(h=\dfrac{r}{2}\). We can write the volume of the sand as:
+      \[
+      V=\dfrac{1}{3}\pi r^2h
+      =\dfrac{1}{3}\pi r^2\dfrac{r}{2}
+      =\dfrac{1}{6}\pi r^3
+      \]
+      So \(\dfrac{dV}{dr}=\dfrac{1}{2}\pi r^2\). To get the change in the
+      radius, we compute the change in the volume using differentials:
+      \[
+      \Delta V\approx dV=\dfrac{dV}{dr}\,dr\approx \dfrac{1}{2}\pi r^2\Delta r
+      \]
+      We now solve for \(\Delta r\):
+      \[
+      \Delta r\approx\dfrac{2}{\pi r^2}\Delta V
+      =\dfrac{2}{\pi (4)^2}5=\dfrac{5}{8\pi}
+      \approx0.199
+      \]
+  	</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX8">
+  	<p>
+      The initial volume is
+      \[
+      V_i=\dfrac{1}{12}\pi (4)^3=16.76
+      \]
+      The final volume is
+      \[
+      V_f=16.767+5=21.76
+      \]
+      The initial radius is
+      \[
+      r_i=4
+      \]
+      The final radius is
+      \[
+      r_f=\sqrt[\scriptsize 3]{\dfrac{12V_f}{\pi}}
+      =\sqrt[\scriptsize 3]{\dfrac{12(21.76)}{\pi}}
+      \approx 4.364
+      \]
+      So the actual change in radius is:
+      \[
+      \Delta r=4.364-4=0.364
+      \]
+      Our estimate is:
+      \[
+      \Delta r\approx0.398
+      \]
+      Since these are close our estimate is reasonable.
+  	</p>
+  </div>
+</li>
+
+<!--Mean Value Theorem-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="MVT.html">c. Mean Value Theorem</a></h3>
+    <div class="pgs">
+      
+        <div><a href="MVT.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the function \(f(x)=x^3\) on the interval \([-3,3]\).
+      Find the number(s) \(c\in (-3,3)\) which are guaranteed to exist by the MVT.
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX9"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX9"></button>
+    	<button class="toggle has has-check" data-toggle="CkX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX9">
+    <p>
+      Find where the derivative is equal to the slope between the endpoints.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+      \(c=\sqrt{3},-\sqrt{3}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+      The values at the endpoints are:
+      \[
+      f(-3)=-27 \qquad
+      f(3)=27
+      \]
+      The slope between the endpoints is:
+      \[
+      m=\dfrac{f(3)-f(-3)}{3-(-3)}=\dfrac{27-(-27)}{6}=9
+      \]
+      The derivative is:
+      \[
+      f'(x)=3x^2
+      \]
+      So the Mean Value Theorem guarantees there is a number \(c\in(-3,3)\) where:
+      \[
+      f'(c)=3c^2=9
+      \]
+      So \(c=\sqrt{3},-\sqrt{3}\).
+  	</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX9">
+    <div class="column">
+    	<p>
+        We check by evaluating the derivative \(f'(x)=3x^2\) at \(c=\sqrt{3}\)
+        and \(c=-\sqrt{3}\):
+        \[\begin{aligned}
+        f'(\sqrt{3})&=3(\sqrt{3})^2=9 \\
+        f'(-\sqrt{3})&=3(-\sqrt{3})^2=9
+        \end{aligned}\]
+        Here is a plot of the function, the line between the endpoints and the
+        tangent lines at \(c=\sqrt{3}\) and \(c=-\sqrt{3}\).
+        Notice the tangent lines are parallel to the line between the endpoints.
+    	</p>
+      <div class="center">
+        <img src="graphics/x_MVT_x^3.jpg" alt="x_MVT_x^3">
+      </div>
+    </div>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the function \(f(x)=2x^3+3x\) on the interval \([-2,4]\).
+      Find the number(s) \(c\in (-2,4)\) which are guaranteed to
+      exist by the MVT.
+		</p>
+		<p>
+      <button class="toggle has has-hint" data-toggle="HintX10"></button>
+      <button class="toggle has has-ans" data-toggle="AnsX10"></button>
+      <button class="toggle has has-sol" data-toggle="SolX10"></button>
+      <button class="toggle has has-check" data-toggle="CkX10"></button>
+		</p>
+	</div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX10">
+    <p>
+      Find where the derivative is equal to the slope between the endpoints.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+		<p>
+			\(c=2,-2\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+		<p>
+      The values at the endpoints are:
+      \[
+      f(-2)=-16-6=-22 \qquad
+      f(4)=128+12=140
+      \]
+      The slope between the endpoints is:
+      \[
+      m=\dfrac{f(4)-f(-2)}{4-(-2)}=\dfrac{140-(-22)}{6}=27
+      \]
+      The derivative is:
+      \[
+      f'(x)=6x^2+3
+      \]
+      So the Mean Value Theorem guarantees there is a number \(c\in(-2,4)\) where:
+      \[
+      f'(c)=6c^2+3=27
+      \]
+      or \(6c^2=24\) or \(c=2,-2\).
+		</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+	</div>
+  <div class="toBeToggled drop-check" data-toggle="CkX10">
+    <div class="column">
+      <p>
+        We check by evaluating the derivative \(f'(x)=6x^2+3\) at \(c=2\) and \(c=-2\):
+        \[
+        f'(2)=6(2)^2+3=27 \qquad f'(-2)=6(-2)^2+3=27
+        \]
+        Here is a plot of the function, the line between the endpoints and the
+        tangent lines at \(c=2\) and \(c=-2\).
+        Notice the tangent lines are parallel to the line between the endpoints.
+      </p>
+      <div class="center">
+        <img src="graphics/x_MVT_2x^3+3x.jpg" alt="x_MVT_2x^3+3x">
+      </div>
+    </div>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Consider the function \( g(x)=x^2+2x \) on the interval \( [-1,1] \).
+      Find the number(s) \(c\in (-1,1)\) which are guaranteed to exist by the MVT.
+		</p>
+		<p>
+      <button class="toggle has has-hint" data-toggle="HintX11"></button>
+      <button class="toggle has has-ans" data-toggle="AnsX11"></button>
+      <button class="toggle has has-sol" data-toggle="SolX11"></button>
+      <button class="toggle has has-check" data-toggle="CkX11"></button>
+		</p>
+	</div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX11">
+    <p>
+      Find where the derivative is equal to the slope between the endpoints.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+		<p>
+			\(c=0\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+		<p>
+			The values at the endpoints are:
+      \[
+      g(-1)=-1 \qquad
+      g(1)=3
+      \]
+      The slope between the endpoints is:
+      \[
+      m=\dfrac{g(1)-g(-1)}{1-(-1))}=\dfrac{3-(-1)}{2}=2
+      \]
+      The derivative is:
+      \[
+      g'(x)=2x+2
+      \]
+      So the Mean Value Theorem guarantees there is a number \(c\in (-1,1)\) where:
+      \[
+      g'(c)=2c+2=2
+      \]
+      So \(c=0\)
+		</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+	</div>
+  <div class="toBeToggled drop-check" data-toggle="CkX11">
+    <div class="column">
+      <p>
+        We check by evaluating the derivative \(g'(x)=2x+2\) at \(c=0\):
+        \[
+        g'(0)=2(0)+2=2
+        \]
+        Here is a plot of the function, the line between the endpoints and the
+        tangent line at \(c=0\).
+        Notice the tangent line is parallel to the line between the endpoints.
+      </p>
+      <div class="center">
+        <img src="graphics/x_MVT_x^2+2x.jpg" alt="x_MVT_x^2+2x">
+      </div>
+    </div>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the function \(v(x)=4x^3+6x^2-12x\) on the interval \((-6,6)\).
+      Find the number(s) which are guaranteed to exist by the MVT.
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX12"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX12"></button>
+    	<button class="toggle has has-check" data-toggle="CkX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX12">
+    <p>
+      Find where the derivative is equal to the slope between the endpoints.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+      \(c=-4,3\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p>
+      The values at the endpoints are:
+      \[\begin{aligned}
+      f(-6)&=-4(216)+6(36)+12(6)=-864+216+72=-576 \\
+      f(6)&=4(216)+6(36)-12(6)=864+216-72=1008
+      \end{aligned}\]
+      The slope between the endpoints is:
+      \[
+      m=\dfrac{v(6)-v(-6)}{6-(-6)}=\dfrac{1008-(-576)}{12}=132
+      \]
+      The derivative is:
+      \[
+      v'(x)=12x^2+12x-12
+      \]
+      So the Mean Value Theorem guarantees there is a number \( c\in (-6,6) \) where:
+      \[
+      v'(c)=12c^2+12c-12=132
+      \]
+      If we factor we get:
+      \[
+      0=12c^2+12c-144=12(c+4)(c-3)
+      \]
+      So \(c=-4,3\).
+  	</p>
+    <p style="text-align:right">
+      sw&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX12">
+		<div class="column">
+	  	<p>
+	      We check by evaluating the derivative \(v'(x)=12c^2+12c-12\) at \(c=-4\)
+	      and \(c=3\):
+	      \[\begin{aligned}
+	      v'(-4)&=12(16)+12(-4)-12=132 \\
+	      v'(3)&=12(9)+12(3)-12=132
+	      \end{aligned}\]
+        Here is a plot of the function, the line between the endpoints and the
+        tangent lines at \(c=-4\) and \(c=3\).
+        Notice the tangent lines are parallel to the line between the endpoints.
+	  	</p>
+      <div class="center">
+        <img src="graphics/x_MVT_4x^3+6x^2-12x.jpg" alt="x_MVT_4x^3+6x^2-12x">
+      </div>
+		</div>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Aggie drives from College Station to Houston, a 96 mile drive
+			with a maximum speed limit of 70 mi per hour.
+			She texts her mom she is leaving at 9:47 AM and arrives home at 10:58.
+			A policeman takes her to court over these numbers. How can the
+			policeman prove to the mathematicain on the jury that she was speeding?
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX13"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX13"></button>
+    	<button class="toggle has has-check" data-toggle="CkX13"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX13">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<big>PY: 13 not Checked</big>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  xxx
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX13"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX13"></button>
+    	<button class="toggle has has-check" data-toggle="CkX13"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX13">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX13">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+<li>
+	xxx
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX14a"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX14a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX14a"></button>
+        	<button class="toggle has has-check" data-toggle="CkX14a"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX14a"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX14a">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14a">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14a">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX14a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX14a">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					xxx
+				</p>
+				<p>
+        	<button class="toggle has has-hint" data-toggle="HintX14b"></button>
+        	<button class="toggle has has-ans" data-toggle="AnsX14b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX14b"></button>
+        	<button class="toggle has has-check" data-toggle="CkX14b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX14b"></button>
+				</p>
+			</div>
+    	<div class="toBeToggled drop-hint" data-toggle="HintX14b">
+        <p>
+          xxx
+        </p>
+      </div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX14b">
+				<p>
+					xxx
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX14b">
+				<p>
+					xxx
+				</p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX14b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX14b">
+      	<p>
+          xxx
+      	</p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      xxx
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX15"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX15"></button>
+    	<button class="toggle has has-check" data-toggle="CkX15"></button>
+    	<button class="toggle has has-rem" data-toggle="RemX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX15">
+    <p>
+      xxx
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-rem" data-toggle="RemX15">
+  	<p>
+      xxx
+  	</p>
+  </div>
+</li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d. A Robot Car | 17. Applications of Differential Equations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Mixing.html" title="Previous">&lArr;</a></li>
+      <li><a href="FreeFall.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Applications of Differential Equations</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d. A Robot Car</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h4>Contributed by David Barrow</h4>
+
+<p>
+  We will consider a factory which uses a robotic car to move along a linear
+  track on the plant floor to pick up and deliver parts to various locations.
+  The car moves along a straight path on the floor which contains magnetically
+  encoded speed instructions which the car is able to sense. In other words,
+  if we let \(x\) denote the distance along the path from some fixed starting
+  point, then the robot is to move with velocity \(\dfrac{dx}{dt}=v(x)\)
+  with a specific function \(v(x)\). The dependence of \(v\) on \(x\)
+  reflects the fact that the speed instruction is encoded in the floor at
+  position \(x\).
+</p>
+
+<p class="example" data-number="1">
+  Suppose the speed of a robot car at position \(x\) is
+  \(v(x)=\dfrac{10}{3x^2+1}\,\dfrac{\text{m}}{\text{sec}}\) and it travels
+  from \(x=0\) to \(x=5\) m. Find the total elapsed time.
+</p>
+<p class="sol">
+  The position of the robot can be obtained from the initial value problem:
+  \[
+  \dfrac{dx}{dt}=v(x)=\dfrac{10}{3x^2+1}
+  \qquad \text{with} \qquad
+  x(0)=0
+  \]
+  The solution is obtained by separation of variables:
+  \[
+    \int (3x^2+1)\,dx=\int 10\,dt
+    \qquad \Longrightarrow \qquad
+    x^3+x=10t+C
+  \]
+  Using the initial condition, \(x=0\) when \(t=0\), we find \(C=0\). So the
+  solution is
+  \[
+  x^3+x=10t
+  \]
+  Solving for \(t\) we have:
+  \[
+  t=\dfrac{x^3+x}{10}
+  \]
+  Since the total elapsed distance is \(x=5\) m, the total elapsed time is:
+  \[
+  t=\dfrac{5^3+5}{10}=13\,\text{sec}
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Suppose the speed of a robot car is
+    \(v(x)=\dfrac{x^2+1}{4} \dfrac{\text{m}}{\text{sec}}\) and it travels
+    a total distance of \(6\) m starting from an initial position of
+    \(x(0)=1\) m. Find the total elapsed time.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Since the car starts at \(x(0)=1\) m and travels \(6\) m, the final
+    position is \(x(t)=7\) m.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(t=4\arctan 7-\pi\approx2.574\) sec
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The position satisfies
+    \[
+    \dfrac{dx}{dt}=v(x)=\dfrac{x^2+1}{4}
+    \]
+    We separate variables and integrate:
+    \[
+    \int \dfrac{dx}{x^2+1}=\int \dfrac{1}{4}\,dt
+    \qquad \Longrightarrow \qquad
+    \arctan x=\dfrac{t}{4}+C
+    \]
+    Using the initial condition \(x=1\) when \(t=0\), we have
+    \[
+    \arctan 1=C
+    \qquad \Longrightarrow \qquad
+    C=\dfrac{\pi}{4}
+    \]
+    So the solution is
+    \[
+    \arctan x=\dfrac{t}{4}+\dfrac{\pi}{4}
+    \qquad \Longrightarrow \qquad
+    t=4\arctan x-\pi
+    \]
+    Since the car starts at \(x(0)=1\) m and travels \(6\) m, the final
+    position is \(x(t)=7\) m which occurs at time:
+    \[
+    t=4\arctan 7-\pi\approx2.574\,\text{sec}
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

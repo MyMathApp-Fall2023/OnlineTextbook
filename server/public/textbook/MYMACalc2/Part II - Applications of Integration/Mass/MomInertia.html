@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Bar with Non-Uniform Density | 11. Mass and Center of Mass</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CMBar.html" title="Previous">&lArr;</a></li>
+      <li><a href="Charge.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Mass and Center of Mass</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Moment of Inertia</h2>
+
+
+      
+      <h2>1. Bar with Non-Uniform Density</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+  When a point particle with mass \(m\) moves along any path, its motion is
+  controlled by <span class="hl">Newton's Second Law for Linear Motion</span>:
+  \[
+  \vec{F}=m\vec{a}
+  \]
+  where \(\vec{F}\) is the force and \(\vec{a}=\dfrac{d^2\vec{x}}{dt^2}\) is its
+  acceleration. The mass \(m\) measures the inertia which is the amount the
+  body resists the force which is accelerating the body.
+</p>
+<p>
+  In the special case, when a point mass \(m\) moves around a circle of radius
+  \(r\) centered at some <span class="defword">pivot point</span>,
+  its motion is controlled by <span class="hl">Newton's Second Law for
+  Rotational Motion</span>:
+  \[
+  \tau=I\alpha
+  \]
+  where \(\tau=rF_\perp\) is the <span class="defword">torque</span>,
+  \(F_\perp\) is the component of the force perpendicular to the radius,
+  \(I=mr^2\) is the <span class="defword">moment of inertia</span> and
+  \(\alpha=\dfrac{d^2\theta}{dt^2}\) is its <span class="defword">angular
+  acceleration</span>. The moment of inertia \(I\) measures the amount
+  the inertia of the body resists the torque which is changing the rotation
+  of the body.
+</p>
+<p>
+  If there are several point masses \(m_1,m_2,\ldots,m_n\) at radii
+  \(r_1,r_2,\ldots,r_n\) from the pivot point, acted on by forces
+  \(F_1,F_2,\ldots F_n\), respectively, then the
+  <span class="defword">total torque</span> is the sum:
+  \[
+  \tau=r_1F_{\perp 1}+r_2F_{\perp 2}+\cdots+r_n F_{\perp n}
+  \]
+  and the <span class="defword">total moment of inertia</span> is the sum:
+  \[
+  I=m_1r_1^2+m_2r_2^2+\cdots+m_n r_n^2
+  \]
+  We here concentrate on finding the total moment of inertia of an extended
+  object in the shape of a bar.
+</p>
+
+        <div class="rule"></div>
+
+<p class="genexample">
+  Find the moment of inertia of a bar between \(x=a\) and \(x=b\) whose
+  linear density is \(\delta(x)\) which is rotating about the pivot
+  point \(x=x_0\).
+</p>
+<div class="column">
+  <p class="gensol">
+    As when we computed the total mass, we first cut up the
+    bar into \(n\) small pieces each of width \(\Delta x=\dfrac{b-a}{n}\).
+  </p>
+  <div class="center">
+    <img src="graphics/eg_mombarpc.jpg" alt="eg_mombarpc">
+  </div>
+</div>
+
+<p>
+  Since the density is not constant, we approximate the density of the
+  \(i^\text{th}\) piece as \(\delta(x_i^*)\) where \(x_i^*\)
+  is a point in the \(i^\text{th}\) region. Then the mass of the \(i^\text{th}\)
+  region is approximately \(m_i=\delta(x_i^*)\Delta x\). This piece of mass is
+  located at a radius of \(r_i=x_i^*-x_0\) from the pivot at \(x=x_0\). So
+  its moment of inertia about \(x=x_0\) is approximately:
+  \[
+  I_i=m_i(x_i^*-x_0)^2
+  =(x_i^*-x_0)^2\delta(x_i^*)\Delta x
+  \]
+  And the total moment of inertia is approximately:
+  \[
+  I\approx \sum_{i=1}^n m_i(x_i^*-x_0)^2=\sum_{i=1}^n(x_i^*-x_0)^2\delta(x_i^*)\,\Delta x
+  \]
+  The approximation gets better as the number of pieces becomes large,
+  (\(n\rightarrow\infty\)). In the limit, the moment of inertia of the bar is:
+  \[
+  I=\lim_{n\rightarrow\infty}\sum_{i=1}^n
+   (x_i^*-x_0)^2\delta(x_i^*)\Delta x
+  \]
+  We recognize this limit of a sum as the integral
+  \(\displaystyle \int_a^b (x-x_0)^2\delta(x)\,dx\).
+  By expanding the square and using the fact that \(x_0\) is a constant,
+  we can rewrite the <span class="hl">moment of inertia</span> as
+  \[\begin{aligned}
+    I&=\int_a^b (x-x_0)^2\delta(x)\,dx \\
+    &=\int_a^b x^2\delta(x)\,dx-2x_0\int_a^b x\delta(x)\,dx
+    +x_0^2\int_a^b \delta(x)\,dx
+  \end{aligned}\]
+  These three integrals are just the <span class="hl">total mass</span> and the
+  <span class="hl">first and second moments</span> of the bar.
+</p>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Moment of Inertia of a Bar with Non-Uniform Density">
+  The <span class="defword">moment of inertia</span> of a bar with linear density
+  \(\delta(x))\) between \(x=a\) and \(x=b\) which is rotating about \(x=x_0\) is
+  \[
+  I=\int_a^b (x-x_0)^2\delta(x)\,dx
+  \]
+  or equivalently
+  \[
+  I=M_2-2x_0M_1+x_0^2M
+  \]
+  where the <span class="defword">total mass</span> is:
+  \(\displaystyle M=\int_a^b \delta(x)\,dx\)
+  <br>
+  the <span class="defword">first moment of the mass</span> is:
+  \(\displaystyle M_1=\int_a^b x\delta(x)\,dx\)
+  <br>
+  and the <span class="defword">second moment of the mass</span> is:
+  \(\displaystyle M_2=\int_a^b x^2\delta(x)\,dx\)
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  If a center of rotation is not specified, it is understood to be at \(x_0=0\),
+  and then the moment of inertia is just the second moment:
+  \[
+  I=\int_a^b x^2\delta(x)\,dx=M_2
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the moment of inertia of an \(8\,\text{m}\) bar whose linear density
+    is \(\delta(x)=(1+x)\dfrac{\text{kg}}{\text{m}}\) if \(x\) is
+    measured from one end and it rotates around the point \(x_0=4\,\text{m}\).
+  </p>
+  <div class="center">
+    <img src="graphics/eg_1+x_mass.jpg" alt="eg_1+x_mass">
+  </div>
+</div>
+<p class="sol" data-number="Method 1">
+  On the one hand, the moment of inertia is
+  \[
+  I=\int_0^8 (x-4)^2\delta(x)\,dx
+  =\int_0^8 (x-4)^2(1+x)\,dx
+  \]
+  To do this integral, we could expand it out. However, it is easier to make
+  the substitution: \(u=x-4\), so that \(du=dx\) and \(x=u+4\). (Don't forget to
+  change the limits.)
+  \[\begin{aligned}
+  I&=\int_{-4}^4 u^2(u+5)\,dx
+  =\int_{-4}^4 (u^3+5u^2)\,dx \\
+  &=\left[\dfrac{u^4}{4}+\dfrac{5u^3}{3}\right]_{-4}^4 \\
+  &=\left[\dfrac{4^4}{4}+5\dfrac{4^3}{3}\right]
+  -\left[\dfrac{(-4)^4}{4}+5\dfrac{(-4)^3}{3}\right] \\
+  &=5\dfrac{4^3}{3}+5\dfrac{4^3}{3}
+  =\dfrac{640}{3}\,\text{kg-m}^2
+  \end{aligned}\]
+</p>
+<p class="sol" data-number="Method 2">
+  On the other hand, in two previous examples, we computed the
+  <a href="Mass.html#masseg">total mass</a> is \(M=40\,\text{kg}\) and the
+  <a href="CMbar.html#cmeg">first moment</a> is
+  \(\displaystyle M_1=\dfrac{608}{3}\,\text{kg-m}\). Similarly,
+  the second moment is
+  \[\begin{aligned}
+  M_2&=\int_0^8 x^2\delta(x)\,dx
+  =\int_0^8 x^2(1+x)\,dx \\
+  &=\int_0^8 x^2+x^3\,dx
+  =\left[\dfrac{x^3}{3}+\dfrac{x^4}{4}\right]_0^8 \\
+  &=\dfrac{8^3}{3}+\dfrac{8^4}{4}
+  =\dfrac{3584}{3}\,\text{kg-m}^2
+  \end{aligned}\]
+  So the moment of inertia is again
+  \[\begin{aligned}
+  I&=M_2-2x_0M_1+x_0^2M \\
+  &=\dfrac{3584}{3}-2\cdot4\cdot\dfrac{608}{3}+4^2\cdot40
+  =\dfrac{640}{3}\,\text{kg-m}^2
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Now you try:
+</p>
+
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-number="2">
+      Find the moment of inertia of a \(10\,\text{ft}\) bar whose linear
+      weight density is
+      \(\delta(x)=\dfrac{1}{1+x}\dfrac{\text{lb}}{\text{ft}}\) if \(x\)
+      is measured from one end and it rotates about the end at \(x_0=0\).
+    </p>
+    <div class="center">
+      <img src="graphics/ex_1_(1+x)_mass.jpg" alt="ex_1_(1+x)_mass">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    Since \(x_0=0\), the moment of inertia is just the second moment of the weight:
+    \[
+    I=\int_a^b x^2\delta(x)\,dx=W_2
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(I=40+\ln 11\approx 42.4\,\text{lb-ft}^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    Since \(x_0=0\), the moment of inertia is just the second moment of the weight:
+    \[
+    I=W_2=\int_0^{10} x^2\delta(x)\,dx
+    =\int_0^{10} \dfrac{x^2}{1+x}\,dx
+    \]
+    To do the integral, we use the substitution \(u=1+x\). Then \(x=u-1\) and
+    \(dx=du\). So
+    \[\begin{aligned}
+    I&=\int_1^{11} \dfrac{(u-1)^2}{u}\,du
+    =\int_1^{11} \dfrac{u^2-2u+1}{u}\,du \\
+    &=\int_1^{11} u-2+\dfrac{1}{u}\,du
+    =\left[\dfrac{u^2}{2}-2u+\ln u\right]_1^{11} \\
+    &=\left[\dfrac{121}{2}-22+\ln 11\right]-\left[\dfrac{1}{2}-2+\ln 1\right] \\
+    &=\dfrac{120}{2}-20+\ln 11
+    =40+\ln 11\approx 42.4\,\text{lb-ft}^2
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

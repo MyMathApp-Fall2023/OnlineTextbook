@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Bar with Non-Uniform Charge Density | 11. Mass and Center of Mass</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MomInertia.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>11. Mass and Center of Mass</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Electric Charge</h2>
+
+
+      
+      <h2>1. Bar with Non-Uniform Charge Density</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p>
+    On the previous pages, we considered a bar with a non-uniform distribution
+    of <span class="hl">mass</span> specified by a
+    <span class="hl">linear mass density</span> \(\delta(x)\).
+    We now consider a bar with a non-uniform distribution of
+    <span class="defword">electric charge</span> specified by a
+    <span class="defword">linear electric charge density</span> \(\delta_e(x)\).
+    The main difference is that the mass density is always <em>positive</em>
+    while the charge density can be <em>positive</em> or <em>negative</em>
+    indicating that some parts of the bar have positive charge and other
+    parts have negative charge.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_chargebar.jpg" alt="eg_chargebar">
+  </div>
+</div>
+<p>
+  The computation of the <span class="defword">total charge</span> on the
+  bar is exactly the same as the computation of the
+  <span class="hl">total mass</span> but using \(\delta_e(x)\) instead of
+  \(\delta(x)\). However, the <span class="hl">total charge</span> is
+  usually called the <span class="defword">net charge</span> because the
+  positive charge cancels with the negative charge leaving a net charge.
+</p>
+
+				<div class="rule"></div>
+
+<p class="formula" data-title="Net Electric Charge on a Bar with Non-Uniform Charge Density">
+  The <span class="defword">net electric charge</span> on a bar with linear charge
+  density \(\delta_e(x)\) between \(x=a\) and \(x=b\) is:
+  \[
+  Q=\int_a^b \delta_e(x)\,dx
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the net charge on an \(8\,\text{m}\) bar whose linear charge density
+    is \(\delta_e(x)=(1-x)\dfrac{\text{coul}}{\text{m}}\) if \(x\) is measured
+    from one end.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_1-x_charge.jpg" alt="eg_1-x_charge">
+  </div>
+</div>
+<p class="sol">
+  The net charge is
+  \[\begin{aligned}
+  Q&=\int_0^8 \delta_e(x)\,dx
+  =\int_0^8 (1-x)\,dx \\
+  &=\left[x-\dfrac{x^2}{2}\right]_{x=0}^8
+  =8-\dfrac{64}{2}=-24\,\text{coul}
+  \end{aligned}\]
+</p>
+
+				<div class="rule"></div>
+
+<p>
+  Here's one for you:
+</p>
+
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-number="2">
+      Find the net charge on an \(6\,\text{ft}\) bar whose linear charge
+      density is \(\delta_e(x)=(x^2-4)\dfrac{\text{coul}}{\text{ft}}\)
+  		where \(x\) is measured from one end.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_x^2-4_charge.jpg" alt="ex_x^2-4_charge">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(Q=48\,\text{coul}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+  \[\begin{aligned}
+    Q&=\int_0^6 \delta_e(x)\,dx
+    =\int_0^6 (x^2-4)\,dx \\
+    &=\left[\dfrac{x^3}{3}-4x\right]_0^6
+    =\dfrac{216}{3}-24=48\,\text{coul}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

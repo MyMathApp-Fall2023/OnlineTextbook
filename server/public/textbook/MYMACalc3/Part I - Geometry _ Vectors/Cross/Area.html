@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Areas | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="CrossGeom.html" title="Previous">&lArr;</a></li>
+      <li><a href="Volume.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. Areas</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Parallelogram</h3>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+    	Consider a parallelogram whose sides are the vectors \(\vec u\)
+      and \(\vec v\). Take \(\vec u\) as the base. Let \(\theta\) be
+    	the angle between these vectors.
+  	</p>
+    <p>
+    	The area of the parallelogram is the product of its base and its height
+    	\[
+      A_{\textstyle\diamond}=bh
+      \]
+    	where the base is \(b=|\vec u|\) and the height
+      is \(h=|\vec v|\sin\theta\). Thus
+    	\[
+      A_{\textstyle\diamond}=bh=|\vec u|\,|\vec v|\sin\theta
+      \]
+    	However this is is just the length of the cross product
+      \(|\vec u\times\vec v|\). Therefore:
+  	</p>
+    <p class="formula" data-title="Area of a Parallelogram">
+      The Area of a Parallelogram with adjacent edges \(\vec u\) and
+      \(\vec v\) is:
+      \[
+      A_{\textstyle\diamond}=|\vec u\times\vec v|
+      \]
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+	  <img src="graphics/DefAreaPara.jpg" alt="DefAreaPara"/>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the area of the parallelogram with adjacent edges
+  \(\vec u=\left\langle 2,3,1\right\rangle\) and
+  \(\vec v=\left\langle 2,0,-1\right\rangle\).
+</p>
+<p class="sol">
+	The cross product is
+	\[\begin{aligned}
+	\vec u\times\vec v
+  &=\left\langle 2,3,1\right\rangle\times\left\langle 2,0,-1\right\rangle \\
+	&=\begin{vmatrix}
+	\hat\imath & \hat\jmath & \hat k \\
+	2 & 3 & 1 \\
+	2 & 0 & -1
+	\end{vmatrix}
+  =\hat\imath(-3)-\hat\jmath(-2-2)+\hat k(-6) \\
+	&=\left\langle -3,4,-6\right\rangle
+	\end{aligned}\]
+	So the area is
+	\[
+  A_{\textstyle\diamond}=|\vec u\times\vec v|=\sqrt{9+16+36}=\sqrt{61}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the area of the parallelogram with adjacent edges
+    \(\vec a=\left\langle 4,3,2\right\rangle\) and
+    \(\vec b=\left\langle 1,2,3\right\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(A_{\textstyle\diamond}=5\sqrt{6}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+  	The cross product is
+  	\[\begin{aligned}
+  	\vec a\times\vec b
+  	&=\begin{vmatrix}
+  	\hat\imath & \hat\jmath & \hat k \\
+  	4 & 3 & 2 \\
+  	1 & 2 & 3
+  	\end{vmatrix}
+    =\hat\imath(5)-\hat\jmath(10)+\hat k(5) \\
+  	&=\left\langle 5,-10,5\right\rangle
+  	\end{aligned}\]
+  	So the area is
+  	\[
+    A_{\textstyle\diamond}=|\vec a\times\vec b|=\sqrt{25+100+25}=5\sqrt{6}
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Triangle</h3>
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+  	  A triangle is just half of a parallelogram.
+  	</p>
+    <p class="formula" data-title="Area of a Triangle">
+      The Area of a Triangle with adjacent edges \(\vec u\) and
+      \(\vec v\) is:
+      \[
+      A_\Delta=\dfrac{1}{2}|\vec u\times\vec v|
+      \]
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+	  <img src="graphics/DefAreaTri.jpg" alt="DefAreaTri"/>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+  	Find the area of the triangle with vertices \(A=\left\langle 3,1,0\right\rangle\),
+    \(B=\left\langle 3,0,2\right\rangle\) and \(C=\left\langle 4,1,3\right\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(A_\Delta=\dfrac{1}{2}\sqrt{14}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Two adjacent edges are
+    \[\begin{aligned}
+    \overrightarrow{AB}&=B-A
+    =\left\langle 3,0,2\right\rangle-\left\langle 3,1,0\right\rangle
+    =\left\langle 0,-1,2\right\rangle \\
+    \overrightarrow{AC}&=C-A
+    =\left\langle 4,1,3\right\rangle-\left\langle 3,1,0\right\rangle
+    =\left\langle 1,0,3\right\rangle
+    \end{aligned}\]
+    Their cross product is
+    \[
+    \overrightarrow{AB}\times\overrightarrow{AC}
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    0 & -1 & 2 \\
+    1 & 0 & 3
+    \end{vmatrix}
+    =\hat\imath(-3)-\hat\jmath(-2)+\hat k(1)
+    \]
+    So the area is
+    \[
+    A_\Delta
+    =\dfrac{1}{2}\left|\overrightarrow{AB}\times\overrightarrow{AC}\right|
+    =\dfrac{1}{2}\sqrt{14}
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+	You can also practice computing the area of a triangle using vectors
+  and cross products in 3D by using the following	Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/TriAreas.maplet" download>Areas of Triangles in 3D Space</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

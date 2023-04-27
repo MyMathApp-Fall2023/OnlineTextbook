@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Multiply by the Conjugate | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimatInfWOLaws.html#tricks" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>7. Computing Limits</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>d. Limits at Infinity</h2>
+
+<h2>3. When Limit Laws Don't Apply</h2>
+
+<h3>Limit Tricks</h3>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="DivLargeTermatInf.html">Divide by the Largest Term in the Denominator</a></li>
+    <br>
+    <li><a href="CommDenomatInf.html">Put Terms over a Common Denominator</a></li>
+    <br>
+    <li><a href="MultConjatInf.html" class="active">Multiply by the Conjugate</a></li>
+    <br>
+    <li><a href="ReciprocalatInf.html">Replace Variable by its Reciprocal</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>c. Multiply by the Conjugate</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  The <span class="defword">conjugate</span> of a difference \(a-b\) is
+  the sum \(a+b\). This is useful because their product is the difference
+  of squares, \((a-b)(a+b)=a^2-b^2\). Consequently, if \(a\) and/or \(b\)
+  is a square root, then \(a^2-b^2\) eliminates the square root.
+</p>
+<p>
+  This trick says if numerator or denominator contains a difference where
+  one or both terms is a square root, then multiply the numerator and
+  denominator by the conjugate. Multiply out the numerator or denominator
+  which had the original difference. It is most appropriate for the
+  indeterminate forms \(\dfrac{0}{0}\), \(\dfrac{\infty}{\infty}\),
+  \(0\cdot\infty\) or \(\infty-\infty\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\lim\limits_{x\to\infty}
+    \left(\sqrt{x+\sqrt{x}}-\sqrt{x}\right)\).
+</p>
+<p class="sol">
+  This limit has the form \(\infty-\infty\).
+  We multiply and divide by the conjugate, \(\sqrt{x+\sqrt{x}}+\sqrt{x}\):
+	\[\begin{aligned}
+    \lim_{x\to\infty}
+      &\left(\sqrt{x+\sqrt{x}}-\sqrt{x}\right) \\
+    &=\lim_{x\to\infty}
+      \dfrac{\left(\sqrt{x+\sqrt{x}}-\sqrt{x}\right)\left(\sqrt{x+\sqrt{x}}+\sqrt{x}\right)}
+            {\left(\sqrt{x+\sqrt{x}}+\sqrt{x}\right)} \\
+    &=\lim_{x\to\infty}
+      \dfrac{x+\sqrt{x}-x}
+            {\sqrt{x+\sqrt{x}}+\sqrt{x}} \\
+    &=\lim_{x\to\infty}
+      \dfrac{\sqrt{x}}
+            {\sqrt{x+\sqrt{x}}+\sqrt{x}} \\
+    &=\lim_{x\to\infty}
+      \dfrac{1}
+            {\sqrt{1+\dfrac{1}{\sqrt{x}}}+1}=\dfrac{1}{2}
+	\end{aligned}\]
+  In the next to last step, we divided the numerator and denominator by \(\sqrt{x}\).
+</p>
+
+        <div class="rule"></div>
+
+<div class= "dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\lim\limits_{x\to\infty}
+      \left(\sqrt{x^2+4x}-\sqrt{x^2+5x}\right)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    The conjugate is \(\sqrt{x^2+4x}+\sqrt{x^2+5x}\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+		\(\lim\limits_{x\to\infty}
+      \left(\sqrt{x^2+4x}-\sqrt{x^2+5x}\right)=\dfrac{-1}{2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    We multiply and divide by the conjugate,
+    \(\sqrt{x^2+4x}+\sqrt{x^2+5x})\):
+		\[\begin{aligned}
+      \lim_{x\to\infty}
+        &\left(\sqrt{x^2+4x}-\sqrt{x^2+5x}\right) \\
+      &=\lim_{x\to\infty}
+        \dfrac{\left(\sqrt{x^2+4x}-\sqrt{x^2+5x}\right)\left(\sqrt{x^2+4x}+\sqrt{x^2+5x}\right)}
+              {\left(\sqrt{x^2+4x}+\sqrt{x^2+5x}\right)} \\
+      &=\lim_{x\to\infty}
+        \dfrac{(x^2+4x)-(x^2+5x)}
+              {\left(\sqrt{x^2+4x}+\sqrt{x^2+5x}\right)} \\
+      &=\lim_{x\to\infty}
+        \dfrac{-x}
+              {\left(\sqrt{x^2+4x}+\sqrt{x^2+5x}\right)} \\
+      &=\lim_{x\to\infty}
+        \dfrac{-1}
+              {\sqrt{1+\dfrac{4}{x}}+\sqrt{1+\dfrac{5}{x}}}=\dfrac{-1}{2}
+		\end{aligned}\]
+    In the next to last step, we divided the numerator and denominator by \(x\).
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

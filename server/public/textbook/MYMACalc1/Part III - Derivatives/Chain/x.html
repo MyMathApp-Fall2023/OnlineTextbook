@@ -1,0 +1,3578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Chain Rule &amp; Implicit Differentiation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ImplicitDiff.html" title="Previous">&lArr;</a></li>
+      <li><a href="../Inverse/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Chain Rule &amp; Implicit Differentiation</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Compositions-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Comp.html">a. Compositions</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Comp.html">1</a></div>
+      
+    </div>
+  </div>
+
+<p>
+Compute the composition of the pair of functions.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the functions \(f(x)=3x\) and \(g(x)=2x\).
+      Compute \(g(4)\) and \(f(g(4))\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX1"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(g(4)=8\)
+      <br>
+      \(f(g(4))=24\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      We replace the \(x\) in \(g(x)=2x\) by \(4\):
+      \[
+      g(4)=2\cdot4=8
+      \]
+      Next we replace the \(x\) in \(f(x)=3x\) by \(g(4)=8\):
+      \[
+      f(g(4))=3\cdot8=24
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the functions \(f(x)=3x^2+2\) and \(g(x)=4x+1\).
+      Compute \(g(2)\) and \(f(g(2))\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(g(2)=9\)
+      <br>
+      \(f(g(2))=245\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      We replace the \(x\) in \(g(x)=4x+1\) by \(2\):
+      \[
+      g(2)=4\cdot2+1=8+1=9
+      \]
+      Next we replace the \(x\) in \(f(x)=3x^2+2\) by \(g(2)=9\):
+      \[
+      f(g(2))=3\cdot9^2+2=3\cdot81+2=243+2=245
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the functions \(f(x)=3\cos(\pi x)\) and \(g(x)=\sin(\pi x)\).
+      Compute \(f\left(\dfrac{1}{3}\right)\) and
+      \(g\left(f\left(\dfrac{1}{3}\right)\right)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \(f\left(\dfrac{1}{3}\right)=\dfrac{3}{2}\)
+      <br>
+      <br>
+      \(g\left(f\left(\dfrac{1}{3}\right)\right)=-1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      We replace the \(x\) in \(f(x)=3\cos(\pi x)\) by \(\dfrac{1}{3}\):
+      \[
+      f\left(\dfrac{1}{3}\right)=3\cos\left(\dfrac{\pi}{3}\right)
+      =3\cdot\dfrac{1}{2}=\dfrac{3}{2}
+      \]
+      Next we replace the \(x\) in \(g(x)=\sin(\pi x)\) by
+      \(f\left(\dfrac{1}{3}\right)=\dfrac{3}{2}\):
+      \[
+      g\left(f\left(\dfrac{1}{3}\right)\right)=\sin\left(\dfrac{3\pi}{2}\right)
+      =-1
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	Consider the functions \(f(x)=3x^2+5\) and \(g(x)=4x^2+1\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(g(1)\) and \(f(g(1))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX4a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX4a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX4a">
+				<p>
+					\(g(1)=5\)
+          <br>
+          \(f(g(1))=80\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX4a">
+				<p>
+					We replace the \(x\) in \(g(x)=4x^2+1\) by \(1\):
+          \[
+          g(1)=4\cdot1^2+1=4+1=5
+          \]
+          Next we replace the \(x\) in \(f(x)=3x^2+5\) by \(g(1)=5\):
+          \[
+          f(g(1))=3\cdot5^2+5=3\cdot25+5=75+5=80
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(f(1)\) and \(g(f(1))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX4b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX4b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX4b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX4b">
+				<p>
+					\(f(1)=8\)
+          <br>
+          \(g(f(1))=257\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX4b">
+				<p>
+					We replace the \(x\) in \(f(x)=3x^2+5\) by \(1\):
+          \[
+          f(1)=3\cdot1^2+5=3+5=8
+          \]
+          Next we replace the \(x\) in \(g(x)=4x^2+1\) by \(f(1)=8\):
+          \[
+          g(f(1))=4\cdot8^2+1=4\cdot64+1=256+1=257
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX4b">
+      	<p>
+          Notice that \(g(f(1))\) is not the same as \(f(g(1))\).
+      	</p>
+      </div>
+		</li>
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+  					Compute \(f(g(x))\).
+  				</p>
+  				<p>
+          	<button class="toggle has has-ans" data-toggle="AnsX4c"></button>
+          	<button class="toggle has has-sol" data-toggle="SolX4c"></button>
+          	<button class="toggle has has-check" data-toggle="CkX4c"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX4c">
+  				<p>
+  					\(f(g(x))=48x^4+24x^2+8\)
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX4c">
+  				<p>
+            We replace the \(x\) in \(f(x)=3x^2+5\) by \(g(x)=4x^2+1\):
+            \[\begin{aligned}
+            f(g(x))&=f(4x^2+1) \\
+            &=3(4x^2+1)^2+5 \\
+            &=3(16x^4+8x^2+1)+5 \\
+            &=48x^4+24x^2+3+5 \\
+            &=48x^4+24x^2+8
+            \end{aligned}\]
+  				</p>
+          <p style="text-align:right">
+            ad&ensp;
+          </p>
+  			</div>
+      	<div class="toBeToggled drop-check" data-toggle="CkX4c">
+        	<p>
+            Since \(f(g(x))=48x^4+24x^2+8\), we compute:
+            \[\begin{aligned}
+            f(g(1))&=48\cdot1^4+24\cdot1^2+8 \\
+            &=48+24+8=80
+            \end{aligned}\]
+            which agrees with the answer in part (a).
+        	</p>
+        </div>
+  		</li>
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+  					Compute \(g(f(x))\).
+  				</p>
+  				<p>
+          	<button class="toggle has has-ans" data-toggle="AnsX4d"></button>
+          	<button class="toggle has has-sol" data-toggle="SolX4d"></button>
+          	<button class="toggle has has-check" data-toggle="CkX4d"></button>
+          	<button class="toggle has has-rem" data-toggle="RemX4d"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX4d">
+  				<p>
+  					\(g(f(x))=36x^4+120x^2+101\)
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX4d">
+  				<p>
+            We replace the \(x\) in \(g(x)=4x^2+1\) by \(f(x)=3x^2+5\):
+            \[\begin{aligned}
+            g(f(x))&=g(3x^2+5) \\
+            &=4(3x^2+5)^2+1 \\
+            &=4(9x^4+30x^2+25)+1 \\
+            &=36x^4+120x^2+100+1 \\
+            &=36x^4+120x^2+101
+            \end{aligned}\]
+  				</p>
+          <p style="text-align:right">
+            ad&ensp;
+          </p>
+  			</div>
+      	<div class="toBeToggled drop-check" data-toggle="CkX4d">
+        	<p>
+            Since \(g(f(x))=36x^4+120x^2+101\), we compute:
+            \[\begin{aligned}
+            g(f(1))&=36\cdot1^4+120\cdot1^2+101 \\
+            &=36+120+101=257
+            \end{aligned}\]
+            which agreees with the answer in part (b).
+        	</p>
+        </div>
+      	<div class="toBeToggled drop-rem" data-toggle="RemX4d">
+        	<p>
+            Notice that \(g(f(x))\) is not the same as \(f(g(x))\).
+        	</p>
+        </div>
+  		</li>
+	</ol>
+</li>
+
+<li>
+	Consider the functions \(f(x)=x^2+2x\) and \(g(x)=x^3-4x\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(g(3)\) and \(f(g(3))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX5a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX5a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX5a">
+				<p>
+					\(g(3)=15\)
+          <br>
+          \(f(g(3))=255\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX5a">
+				<p>
+					We replace the \(x\) in \(g(x)=x^3-4x\) by \(3\):
+          \[
+          g(3)=3^3-4\cdot3=27-12=15
+          \]
+          Next we replace the \(x\) in \(f(x)=x^2+2x\) by \(g(3)=15\):
+          \[
+          f(g(3))=(15)^2+2(15)=225+30=255
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(f(3)\) and \(g(f(3))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX5b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX5b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX5b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX5b">
+				<p>
+					\(f(3)=15\)
+          <br>
+          \(g(f(3))=3315\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX5b">
+				<p>
+					We replace the \(x\) in \(f(x)=x^2+2x\) by \(3\):
+          \[
+          f(3)=3^2+2\cdot3=9+6=15
+          \]
+          Next we replace the \(x\) in \(g(x)=x^3-4x\) by \(f(3)=15\):
+          \[
+          g(f(3))=(15)^3-4(15)=3375-60=3315
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX5b">
+      	<p>
+          Notice that \(g(f(3))\) is not the same as \(f(g(3))\).
+      	</p>
+      </div>
+		</li>
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+  					Compute \(f(g(x))\).
+  				</p>
+  				<p>
+          	<button class="toggle has has-ans" data-toggle="AnsX5c"></button>
+          	<button class="toggle has has-sol" data-toggle="SolX5c"></button>
+          	<button class="toggle has has-check" data-toggle="CkX5c"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX5c">
+  				<p>
+  					\(f(g(x))=x^6-8x^4+2x^3+16x^2-8x\)
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX5c">
+  				<p>
+            We replace the \(x\) in \(f(x)=x^2+2x\) by \(g(x)=x^3-4x\):
+            \[\begin{aligned}
+            f(g(x))&=f(x^3-4x) \\
+            &=(x^3-4x)^2+2(x^3-4x) \\
+            &=x^6-8x^4+16x^2+2x^3-8x \\
+            &=x^6-8x^4+2x^3+16x^2-8x
+            \end{aligned}\]
+  				</p>
+          <p style="text-align:right">
+            ad&ensp;
+          </p>
+  			</div>
+      	<div class="toBeToggled drop-check" data-toggle="CkX5c">
+        	<p>
+            If \(f(g(x))=x^6-8x^4+2x^3+16x^2-8x\), then
+            \[\begin{aligned}
+            f(g(3))&=3^6-8\cdot3^4+2\cdot3^3+16\cdot3^2-8\cdot3 \\
+            &=729-648+54+144-24
+            =255
+            \end{aligned}\]
+            which agrees with the answer in part (a).
+        	</p>
+        </div>
+  		</li>
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+  					Compute \(g(f(x))\).
+  				</p>
+  				<p>
+          	<button class="toggle has has-ans" data-toggle="AnsX5d"></button>
+          	<button class="toggle has has-sol" data-toggle="SolX5d"></button>
+          	<button class="toggle has has-check" data-toggle="CkX5d"></button>
+          	<button class="toggle has has-rem" data-toggle="RemX5d"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX5d">
+  				<p>
+  					\(g(f(x))=x^6+6x^5+12x^4+8x^3-4x^2-8x\)
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX5d">
+  				<p>
+            We replace the \(x\) in \(g(x)=x^3-4x\) by \(f(x)=x^2+2x\):
+            \[\begin{aligned}
+            g(f(x))&=g(x^2+2x) \\
+            &=(x^2+2x)^3-4(x^2+2x) \\
+            &=x^6+6x^5+12x^4+8x^3-4x^2-8x
+            \end{aligned}\]
+  				</p>
+          <p style="text-align:right">
+            ad&ensp;
+          </p>
+  			</div>
+      	<div class="toBeToggled drop-check" data-toggle="CkX5d">
+        	<p>
+            If \(g(f(x))=x^6+6x^5+12x^4+8x^3-4x^2-8x\), then
+            \[\begin{aligned}
+            g(f(3))&=3^6+6\cdot3^5+12\cdot3^4+8\cdot3^3-4\cdot3^2-8\cdot3 \\
+            &=729+1458+972+216-36-24
+            =3315
+            \end{aligned}\]
+            which agreees with the answer in part (b).
+        	</p>
+        </div>
+      	<div class="toBeToggled drop-rem" data-toggle="RemX5d">
+        	<p>
+            Notice that \(g(f(x))\) is not the same as \(f(g(x))\).
+        	</p>
+        </div>
+  		</li>
+	</ol>
+</li>
+
+<li>
+	Consider the functions \(f(u)=\cos(\pi u)\) and
+  \(g(u)=\sin(\pi u)\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(g\left(\dfrac{1}{6}\right)\) and
+          \(f\left(g\left(\dfrac{1}{6}\right)\right)\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX6a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX6a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX6a">
+				<p>
+					\(g\left(\dfrac{1}{6}\right)=\dfrac{1}{2}\)
+          <br>
+          <br>
+          \(f\left(g\left(\dfrac{1}{6}\right)\right)=0\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX6a">
+				<p>
+					We replace the \(u\) in \(g(u)=\sin(\pi u)\) by \(\dfrac{1}{6}\):
+          \[
+          g\left(\dfrac{1}{6}\right)=\sin\left(\dfrac{\pi}{6}\right)=\dfrac{1}{2}
+          \]
+          Next we replace the \(u\) in \(f(u)=\cos(\pi u)\) by \(g\left(\dfrac{1}{6}\right)=\dfrac{1}{2}\):
+          \[
+          f\left(g\left(\dfrac{1}{6}\right)\right)=\cos\left(\frac{\pi}{2}\right)=0
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(f\left(\dfrac{1}{6}\right)\) and
+          \(g\left(f\left(\dfrac{1}{6}\right)\right)\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX6b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX6b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX6b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX6b">
+				<p>
+					\(f\left(\dfrac{1}{6}\right)=\dfrac{\sqrt{3}}{2}\)
+          <br>
+          \(g\left(f\left(\dfrac{1}{6}\right)\right)=\sin\left({\dfrac{\pi\sqrt{3}}{2}}\right)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX6b">
+				<p>
+					We replace the \(u\) in \(f(u)=\cos(\pi u)\) by \(\dfrac{1}{6}\):
+          \[
+          f\left(\dfrac{1}{6}\right)=\cos\left(\dfrac{\pi}{6}\right)=\dfrac{\sqrt{3}}{2}
+          \]
+          Next we replace the \(u\) in \(g(u)=\sin(\pi u)\) by
+          \(f\left(\dfrac{1}{6}\right)=\dfrac{\sqrt{3}}{2}\):
+          \[
+          g\left(f\left(\dfrac{1}{6}\right)\right)=\sin\left(\dfrac{\pi\sqrt{3}}{2}\right)
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX6b">
+      	<p>
+          Notice that \(g\left(f\left(\dfrac{1}{6}\right)\right)\) is not the
+          same as \(f\left(g\left(\dfrac{1}{6}\right)\right)\).
+      	</p>
+      </div>
+		</li>
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+  					Compute \(f(g(u))\).
+  				</p>
+  				<p>
+          	<button class="toggle has has-ans" data-toggle="AnsX6c"></button>
+          	<button class="toggle has has-sol" data-toggle="SolX6c"></button>
+          	<button class="toggle has has-check" data-toggle="CkX6c"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX6c">
+  				<p>
+  					\(f(g(u))=\cos(\pi\sin(\pi u))\)
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX6c">
+  				<p>
+            We replace the \(u\) in \(f(u)=\cos(\pi u)\) by \(g(u)=\sin(\pi u)\):
+            \[\begin{aligned}
+            f(g(u))=\cos(\pi\sin(\pi u))
+            \end{aligned}\]
+  				</p>
+          <p style="text-align:right">
+            ad&ensp;
+          </p>
+  			</div>
+      	<div class="toBeToggled drop-check" data-toggle="CkX6c">
+        	<p>
+            If \(f(g(u))=\cos(\pi\sin(\pi u))\), then
+            \[\begin{aligned}
+            f\left(g\left(\dfrac{1}{6}\right)\right)&=\cos\left(\pi\sin\left(\dfrac{\pi}{6}\right)\right) \\
+            &=\cos\left(\dfrac{\pi}{2}\right) \\
+            &=0\end{aligned}\]
+            which agrees with the answer in part (a).
+        	</p>
+        </div>
+  		</li>
+  		<li>
+  			<div class="dotfillex">
+  				<p>
+  					Compute \(g(f(u))\).
+  				</p>
+  				<p>
+          	<button class="toggle has has-ans" data-toggle="AnsX6d"></button>
+          	<button class="toggle has has-sol" data-toggle="SolX6d"></button>
+          	<button class="toggle has has-check" data-toggle="CkX6d"></button>
+          	<button class="toggle has has-rem" data-toggle="RemX6d"></button>
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-ans" data-toggle="AnsX6d">
+  				<p>
+  					\(g(f(u))=\sin(\pi\cos(\pi u))\)
+  				</p>
+  			</div>
+  			<div class="toBeToggled drop-sol" data-toggle="SolX6d">
+  				<p>
+            We replace the \(u\) in \(g(u)=\sin(\pi u)\) by \(f(u)=\cos(\pi u)\):
+            \[\begin{aligned}
+            g(f(u))&=\sin(\pi\cos(\pi u))
+            \end{aligned}\]
+  				</p>
+          <p style="text-align:right">
+            ad&ensp;
+          </p>
+  			</div>
+      	<div class="toBeToggled drop-check" data-toggle="CkX6d">
+        	<p>
+            If \(g(f(u))=\sin(\pi\cos(\pi u))\), then
+            \[\begin{aligned}
+            g\left(f\left(\dfrac{1}{6}\right)\right)&=\sin\left(\pi\cos\left(\dfrac{\pi}{6}\right)\right) \\
+            &=\sin\left(\dfrac{\pi\sqrt{3}}{2}\right)
+            \end{aligned}\]
+            which agreees with the answer in part (b).
+        	</p>
+        </div>
+      	<div class="toBeToggled drop-rem" data-toggle="RemX6d">
+        	<p>
+            Notice that \(g(f(x))\) is not the same as \(f(g(x))\).
+        	</p>
+        </div>
+  		</li>
+	</ol>
+</li>
+
+<!--Chain Rule-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="Chain.html">b. Chain Rule</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Chain.html">1</a></div>
+      
+        <div><a href="Nested.html">2</a></div>
+      
+    </div>
+  </div>
+
+<p>
+Find the derivative of a function using the chain rule.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the derivative of \(y\) with respect to \(t\) for \(y=4x\) and
+      \(x=7t\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX7"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX7"></button>
+    	<button class="toggle has has-check" data-toggle="CkX7"></button>
+		</p>
+	</div>
+
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  	<p>
+      \(\dfrac{dy}{dt}=28\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+      The chain rule gives \(\dfrac{dy}{dt}=\dfrac{dy}{dx}\dfrac{dx}{dt}\).<br>
+      First, we find the information we need for the formula:
+      \[
+      \dfrac{dy}{dx}=4\qquad\dfrac{dx}{dt}=7
+      \]<br>
+      We then plug these values into the formula for the chain rule:
+      \[\begin{aligned}
+      \dfrac{dy}{dt}&=4\cdot7=28
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX7">
+  	<p>
+      Since we have <em>complete information</em>, we check by computing the
+      composition and taking its derivative directly:
+      \[\begin{aligned}
+      y(x(t))&=4(7t)=28t \\
+      \dfrac{dy}{dt}&=28
+      \end{aligned}\]
+  	</p>
+  </div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the derivative of \(y\) with respect to \(t\) for \(y=5x^2+2x+3\) and
+      \(x=3t^2+4\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX8"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX8"></button>
+    	<button class="toggle has has-check" data-toggle="CkX8"></button>
+		</p>
+	</div>
+
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+      \(\dfrac{dy}{dt}=180t^3+252t\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+      The chain rule gives \(\dfrac{dy}{dt}=\dfrac{dy}{dx}\dfrac{dx}{dt}\).<br>
+      First, we find the information we need for the formula:
+      \[
+      \dfrac{dy}{dx}=10x+2\qquad\dfrac{dx}{dt}=6t
+      \]<br>
+      We then plug these values into the formula for the chain rule:
+      \[
+      \dfrac{dy}{dt}=(10x+2)6t=10x(6t)+2(6t)
+      \]<br>
+      Then we remember that the derivative of the outer function needs to be
+      evaluated at the inner function.
+      \[\begin{aligned}
+      \dfrac{dy}{dt}&=(10(3t^2+4)+2)(6t)=(30t^2+40+2)(6t) \\
+      &=6t(30t^2+40+2) \\
+      &=180t^3+240t+12t \\
+      &=180t^3+252t
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX8">
+  	<p>
+      Since we have <em>complete information</em>, we check by computing the
+      composition and taking its derivative directly:
+      \[\begin{aligned}
+      y(x(t))&=5(3t^2+4)^2+2(3t^2+4)+3 \\
+      &=5(9t^4+24t^2+16)+6t^2+8+3 \\
+      &=45t^4+120t^2+80+6t^2+11 \\
+      &=45t^4+126t^2+91 \\
+      \dfrac{dy}{dt}&=180t^3+252t
+      \end{aligned}\]
+  	</p>
+  </div>
+
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the derivative of \(z\) with respect to \(x\) for \(z=\cos(y)\) and
+      \(y=\sin(x)\).
+		</p>
+		<p>
+      <button class="toggle has has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX9"></button>
+		</p>
+	</div>
+
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+		<p>
+			\(\dfrac{dz}{dx}=-\sin(\sin(x))\cos(x)\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+		<p>
+			The chain rule gives \(\dfrac{dz}{dx}=\dfrac{dz}{dy}\dfrac{dy}{dx}\).<br>
+      First, we find the information we need for the formula:
+      \[
+      \dfrac{dz}{dy}=-\sin(y)\qquad\dfrac{dy}{dx}=\cos(x)
+      \]<br>
+      We then plug these values into the formula for the chain rule:
+      \[
+      \dfrac{dz}{dx}=-\sin(y)\cos(x)
+      \]<br>
+      Then we remember that the derivative of the outer function needs to be
+      evaluated at the inner function.
+      \[
+      \dfrac{dz}{dx}=-\sin(\sin(x))\cos(x)
+      \]
+		</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find \(\dfrac{dy}{dt}\) if \(y=3x^2+11x\) and
+      \(x=4t^2+3t+6\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX10"></button>
+    	<button class="toggle has has-check" data-toggle="CkX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(\dfrac{dy}{dt}=192t^3+216t^2+430t+141\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+     The chain rule gives
+     \(\dfrac{dy}{dt}=\left.\dfrac{dy}{dx}\right|_{x(t)}\dfrac{dx}{dt}\).<br>
+     First, we find the two derivatives:
+     \[
+     \dfrac{dy}{dx}=6x+11\qquad\dfrac{dx}{dt}=8t+3
+     \]
+     and evaluate the outer derivative at the inner function:
+     \[
+     \left.\dfrac{dy}{dx}\right|_{x(t)}=6(4t^2+3t+6)+11
+     =24t^2+18t+47
+     \]
+     We then plug these values into the formula for the chain rule:
+     \[\begin{aligned}
+     \dfrac{dy}{dt}&=(24t^2+18t+47)(8t+3) \\
+     &=192t^3+216t^2+430t+141
+     \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX10">
+  	<p>
+      Since we have <em>complete information</em>, we check by computing the
+      composition and taking its derivative directly:
+      \[\begin{aligned}
+      y(x(t))&=3(4t^2+3t+6)^2+11(4t^2+3t+6) \\
+      &=3(16t^4+9t^2+36+24t^3+48t^2+36t)+44t^2+33t+66 \\
+      &=48t^4+27t^2+108+72t^3+144t^2+108t+44t^2+33t+66 \\
+      &=48t^4+72t^3+215t^2+141t+174 \\
+      \dfrac{dy}{dt}&=192t^3+216t^2+430t+141
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find \(\dfrac{dy}{dt}\) if
+      \(y=x^3+2x^2+x+2\) and \(x=2t^2+5t\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX11"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX11"></button>
+    	<button class="toggle has has-check" data-toggle="CkX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+  	<p>
+      \(\dfrac{dy}{dt}=48t^5+300t^4+632t^3+495t^2+104t+5\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  	<p>
+      The chain rule gives \(\dfrac{dy}{dt}=
+      \left.\dfrac{dy}{dx}\right|_{x(t)}\dfrac{dx}{dt}\).<br>
+      First, we find the two derivatives:
+      \[
+      \dfrac{dy}{dx}=3x^2+4x+1\qquad\dfrac{dx}{dt}=4t+5
+      \]<br>
+      and evaluate the outer derivative at the inner function:
+      \[\begin{aligned}
+      \left.\dfrac{dy}{dx}\right|_{x(t)}&=3(2t^2+5t)^2+4(2t^2+5t)+1 \\
+      &=3(4t^4+20t^3+25t^2)+8t^2+20t+1 \\
+      &=12t^4+60t^3+75t^2+8t^2+20t+1 \\
+      &=12t^4+60t^3+83t^2+20t+1
+      \end{aligned}\]<br>
+      We then plug these values into the formula for the chain rule:
+      \[\begin{aligned}
+      \dfrac{dy}{dt}&=(12t^4+60t^3+83t^2+20t+1)(4t+5) \\
+      &=48t^5+240t^4+332t^3+80t^2+4t+60t^4+300t^3+415t^2+100t+5 \\
+      &=48t^5+300t^4+632t^3+495t^2+104t+5
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX11">
+  	<p>
+      Since we have <em>complete information</em>, we check by computing the
+      composition and taking its derivative directly:
+      \[\begin{aligned}
+      y(x(t))&=(2t^2+5t)^3+2(2t^2+5t)^2+2t^2+5t+2 \\
+      &=8t^6+60t^5+150t^4+125t^3+2(4t^4+20t^3+25t^2)+2t^2+5t+2 \\
+      &=8t^6+60t^5+150t^4+125t^3+8t^4+40t^3+50t^2+2t^2+5t+2 \\
+      &=8t^6+60t^5+158t^4+165t^3+52t^2+5t+2 \\
+      \dfrac{dy}{dt}&=48t^5+300t^4+632t^3+495t^2+104t+5
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the derivative of \(y=\cos(\pi\sin(\pi x))\).
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX12"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX12">
+  	<p>
+      What are the outer and inner functions?
+  	</p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+      \(\dfrac{dy}{dx}=-\pi^2\sin(\pi \sin(\pi x))\cos(\pi x)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p>
+      We identify the outer function as \(y(u)=\cos(\pi u)\) and the inner
+      function as \(u(x)=\sin(\pi x)\). Then the chain rule gives:
+      \[
+      \dfrac{dy}{dx}=\left.\dfrac{dy}{du}\right|_{u(x)}\dfrac{du}{dx}
+      \]
+      First, we find the derivatives:
+      \[
+      \dfrac{dy}{du}=-\pi\sin(\pi u)
+      \qquad
+      \dfrac{du}{dx}=\pi\cos(\pi x)
+      \]
+      and evaluate the derivative of the outer function at the inner function:
+      \[
+      \left.\dfrac{dy}{du}\right|_{u(x)}=-\pi\sin(\pi \sin(\pi x))
+      \]
+      We use the chain rule:
+      \[\begin{aligned}
+      \dfrac{dy}{dx}&=-\pi\sin(\pi \sin(\pi x))\pi\cos(\pi x) \\
+      &=-\pi^2\sin(\pi \sin(\pi x))\cos(\pi x)
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the derivative of \(y\) with respect to \(t\) for \(y=e^x\) and
+      \(x=5t\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+      \(\dfrac{dy}{dt}=5e^{5t}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+      The chain rule gives \(\dfrac{dy}{dt}=\left.\dfrac{dy}{dx}\right|_{x(t)}
+      \dfrac{dx}{dt}\).<br>
+      First, we find the derivatives:
+      \[
+      \dfrac{dy}{dx}=e^x\qquad\dfrac{dx}{dt}=5
+      \]
+      and evaluate the outer derivative at the inner function:
+      \[
+      \left.\dfrac{dy}{dx}\right|_{x(t)}=e^{5t}
+      \]
+      We then plug these values into the formula for the chain rule:
+      \[
+      \dfrac{dy}{dt}=e^{5t}5=5e^{5t}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the derivative of \(y\) with respect to \(t\) for \(y=7^x\) and
+      \(x=5t^2+4t\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX14"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+  	<p>
+      \(\dfrac{dy}{dt}=\ln(7)7^{5t^2+4t}(10t+4)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+  	<p>
+      The chain rule gives
+      \(\dfrac{dy}{dt}=\left.\dfrac{dy}{dx}\right|_{x(t)}\dfrac{dx}{dt}\).
+      <br>
+      First, we find the derivatives:
+      \[
+      \dfrac{dy}{dx}=\ln(7)7^x\qquad\dfrac{dx}{dt}=10t+4
+      \]
+      and evaluate the outer derivative at the inner function:
+      \[
+      \left.\dfrac{dy}{dx}\right|_{x(t)}=\ln(7)7^{5t^2+4t}
+      \]
+      We then plug these values into the formula for the chain rule:
+      \[
+      \dfrac{dy}{dt}=\ln(7)7^{5t^2+4t}(10t+4)
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the derivative of \(y\) with respect to \(t\) for \(y=4^x\) and
+      \(x=\sin(t)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX15"></button>
+		</p>
+	</div>
+
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      \(\dfrac{dy}{dt}=\cos(t)\ln(4)4^{\sin(t)}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+      The chain rule gives \(\dfrac{dy}{dt}=\left.\dfrac{dy}{dx}\right|_{x(t)}
+      \dfrac{dx}{dt}\).<br>
+      First, we find the derivatives:
+      \[
+      \dfrac{dy}{dx}=\ln(4)4^x\qquad\dfrac{dx}{dt}=\cos(t)
+      \]<br>
+      and evaluate the outer derivative at the inner function:
+      \[
+      \left.\dfrac{dy}{dx}\right|_{x(t)}=\ln(4)4^{\sin(t)}
+      \]<br>
+      We then plug these values into the formula for the chain rule:
+      \[
+      \dfrac{dy}{dt}=\cos(t)\ln(4)4^{\sin(t)}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Differentiate \(f(x)=(x^3-4x+7)^{15}\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX16"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX16"></button>
+    	<button class="toggle has-sol" data-toggle="SolX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX16">
+    <p>
+      Think of two functions, neither of them identical to \(f\), that when you
+      take their composite, it makes \(f\). Use those functions to find the answer.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+  	<p>
+      \(\dfrac{df}{dx}=15(x^3-4x+7)^{14}(3x^2-4)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+  	<p>
+      We identify the outer function as \(f(y)=y^{15}\) and the inner function
+      as \(y(x)=x^3-4x+7\). Then the chain rule gives
+      \[
+      \dfrac{df}{dx}=\left.\dfrac{df}{dy}\right|_{y(x)}\dfrac{dy}{dx}
+      \]
+      First, we find the derivatives:
+      \[
+      \dfrac{df}{dy}=15y^{14}\qquad\dfrac{dy}{dx}=3x^2-4
+      \]
+      and evaluate the derivative of the outer function at the inner function:
+      \[
+      \left.\dfrac{df}{dy}\right|_{y(x)}=15(x^3-4x+7)^{14}
+      \]
+      We use the chain rule:
+      \[
+      \dfrac{df}{dx}=15(x^3-4x+7)^{14}(3x^2-4)
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Differentiate \(g(y)=\cos(y^2)\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX17"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX17"></button>
+    	<button class="toggle has-sol" data-toggle="SolX17"></button>
+		</p>
+	</div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX17">
+    <p>
+      \(g\) is a composition of two functions, namely an outer function and an
+      inner function. Figure out those two functions.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+  	<p>
+      \(g'(y)=-2y\sin(y^2)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+  	<p>
+      We identify the outer function as \(g(u)=\cos(u)\) and the inner function
+      as \(u(y)=y^2\). Their derivatives are
+      \[
+      g'(u)=-\sin(u) \qquad \text{and} \qquad u'(y)=2y
+      \]
+      Then the chain rule gives:
+      \[\begin{aligned}
+      (g\circ u)'(y)&=g'(u(y))u'(y) \\
+      &=-\sin(y^2)2y
+      =-2y\sin(y^2)
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+        Differentiate \(g(y)=\cos^2(y)\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX18"></button>
+    	<button class="toggle has-sol" data-toggle="SolX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+  	<p>
+      \(g'(y)=-2\sin(y)\cos(y)=-\sin(2y)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+  	<p>
+      We identify the outer function as \(g(u)=u^2\) and the inner function
+      as \(u(y)=\cos(y)\). Their derivatives are
+      \[
+      g'(u)=2u \qquad \text{and} \qquad u'(y)=-\sin(u)
+      \]
+      Then the chain rule gives:
+      \[\begin{aligned}
+      (g\circ u)'(y)&=g'(u(y))u'(y)
+      =2\cos(y)(-\sin(y)) \\
+      &=-2\sin(y)\cos(y)
+      =-\sin(2y)
+      \end{aligned}\]
+      where in the last step we used the trig identity
+      \(\sin(2y)=2\sin(y)\cos(y)\).
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+        Differentiate \(g(y)=\cos^2(y^2)\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX19"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX19"></button>
+    	<button class="toggle has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX19">
+  	<p>
+      This is a double chain rule with an outer function, an intermediate
+      function and an inner function.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+  	<p>
+      \(\dfrac{dg}{dy}=-4y\cos(y^2)\sin(y^2)
+      =-2y\sin(2y^2)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+  	<p>
+      This is a double chain rule. The outer function is \(g(u)=u^2\). The
+      intermediate function is \(u(z)=\cos(z)\) and the inner function
+      as \(z(y)=y^2\). Their derivatives are:
+      \[
+      g'(u)=2u \qquad u'(z)=-\sin(z) \qquad z'(y)=2y
+      \]
+      Then the chain rule gives
+      \[\begin{aligned}
+      (g\circ u\circ z)'(y)&=g'(u(z(y)))u'(z(y))z'(y) \\
+      &=2(\cos(y^2))(-\sin(y^2))2y \\
+      &=-4y\cos(y^2)\sin(y^2)
+      =-2y\sin(2y^2)
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+        Differentiate \(F(\theta)=\tan^2(7\theta)\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX20"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX20"></button>
+    	<button class="toggle has-sol" data-toggle="SolX20"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX20">
+  	<p>
+      This is a double chain rule with an outer function, an intermediate
+      function and an inner function.
+  	</p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+  	<p>
+      \(F'(\theta)=14\tan(7\theta)\sec^2(7\theta)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+  	<p>
+      This is a double chain rule. The outer function is \(F(u)=u^2\). The
+      intermediate function is \(u(j)=\tan(j)\) and the inner function
+      as \(j(\theta)=7\theta\). So that
+      \[
+      (F\circ u\circ j)(y)=(\tan(7\theta))^2
+      \]
+      Then their derivatives are:
+      \[
+      F'(u)=2u \qquad u'(j)=\sec^2(j) \qquad j'(\theta)=7
+      \]
+      And the chain rule gives:
+      \[\begin{aligned}
+      (F\circ u\circ j)'(\theta)&=F'(u(j(\theta)))u'(j(\theta))j'(\theta) \\
+      &=2(\tan(7\theta))(\sec^2(7\theta))7 \\
+      &=14\tan(7\theta)\sec^2(7\theta)
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Differentiate \(w(\theta)=\csc^2(\cot(\theta))\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX21"></button>
+      <button class="toggle has-ans" data-toggle="AnsX21"></button>
+      <button class="toggle has-sol" data-toggle="SolX21"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX21">
+    <p>
+      This is a double chain rule with an outer function, an intermediate
+      function and an inner function.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX21">
+    <p>
+    \(\dfrac{dw}{d\theta}=2\cot(\cot(\theta))\csc^2(\cot(\theta))\csc^2(\theta)\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX21">
+    <p>
+      This is a double chain rule. The outer function is squaring and the
+      intermediate function is \(\csc\) and the inner function is \(\cot\). To
+      apply the chain rule we differentiate the outer function and evaluate it
+      at the intermediate function composed with the inner function and then
+      multiply by the derivative of the intermediate function and evaluate it
+      at the inner function and then multiply by the derivative of the inner
+      function:
+      \[\begin{aligned}
+      w'(\theta)&=2\csc(\cot\theta)\cdot(-\csc(\cot\theta)\cot(\cot\theta))\cdot
+      (-\csc^2\theta) \\
+      &=2\cot(\cot\theta)\csc^2(\cot\theta)\csc^2\theta
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Differentiate \(f(x)=\sin^2(x)\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX22"></button>
+      <button class="toggle has-sol" data-toggle="SolX22"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX22">
+    <p>
+    \(f'(x)=2\sin(x)\cos(x)=\sin(2x)\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX22">
+    <p>
+      The outer function is squaring and the inner function is
+      \(\sin\). To apply the chain rule we differentiate the outer function
+      and evaluate it at the inner function and then multiply by the derivative
+      of the inner function:
+      \[
+      f'(x)=2\sin(x)\cos(x)
+      =\sin(2x)
+      \]
+    </p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Differentiate \(z(x)=\sin^2(\cos^2(x))\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX23"></button>
+      <button class="toggle has-sol" data-toggle="SolX23"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX23">
+    <p>
+    \(\begin{aligned}
+    z'(x)&=4\sin(\cos^2(x))\cos(\cos^2(x))\cos(x)\sin(x) \\
+    &=\sin(2\cos^2(x))\sin(2x)
+    \end{aligned}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX23">
+    <p>
+      It is useful to rewrite the function as:
+      \[
+      z(x)=[\sin([\cos(x)]^2)]^2
+      \]
+      There are \(4\) levels of functions: squaring, \(\sin\), squaring and \(\cos\).
+      To apply the chain rule we differentiate each level of function and
+      multiply them:
+      \[\begin{aligned}
+      z'(x)&=2[\sin([\cos(x)]^2)]\cdot[-\cos([\cos(x)]^2)]\cdot2[\cos(x)]\cdot[-\sin(x)] \\
+      &=4\sin([\cos(x)]^2)\cos([\cos(x)]^2)\cos(x)\sin(x) \\
+      &=4\sin(\cos^2(x))\cos(\cos^2(x))\cos(x)\sin(x) \\
+      &=\sin(2\cos^2(x))\sin(2x)
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      Differentiate \(g(y)=\cot^2(y)\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX24"></button>
+      <button class="toggle has-sol" data-toggle="SolX24"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX24">
+    <p>
+    \(g'(y)=-2\cot(y)\csc^2(y)\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX24">
+    <p>
+      The outer function is squaring and the inner function is \(\cot\). To
+      apply the chain rule we differentiate the outer function and evaluate it
+      at the inner function and then multiply by the derivative of the inner
+      function:
+      \[
+      g'(y)=2\cot(y)\cdot(-\csc^2(y))=-2\cot(y)\csc^2(y)
+      \]
+    </p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      If \(z(t)=\cot^2(\cos^2(t))\), find \(\dfrac{dz}{dt}.\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX25"></button>
+      <button class="toggle has-ans" data-toggle="AnsX25"></button>
+      <button class="toggle has-sol" data-toggle="SolX25"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX25">
+    <p>
+      In previous problems we found:
+      \[
+      \dfrac{d}{dy}(\cot^2(y))=-2\cot(y)\csc^2(y)
+      \]
+      \[
+      \dfrac{d}{dy}(\cos^2(y))=-\sin(2y)
+      \]
+      So use these as the outer and inner functions.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX25">
+    <p>
+      \(z'(t)=2\cot(\cos^2(t))\csc^2(\cos^2(t))\sin(2t)\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX25">
+    <p>
+      In previous problems we found:
+      \[
+      \dfrac{d}{dy}(\cot^2(y))=-2\cot(y)\csc^2(y)
+      \]
+      \[
+      \dfrac{d}{dy}(\cos^2(y))=-\sin(2y)
+      \]
+      We use these as the outer and inner functions. To
+      apply the chain rule we differentiate the outer function and evaluate it
+      at the inner function and then multiply by the derivative of the inner
+      function:
+      \[\begin{aligned}
+      z'(t)&=-2\cot(\cos^2(t))\csc^2(\cos^2(t))\cdot(-\sin(2t)) \\
+      &=2\cot(\cos^2(t))\csc^2(\cos^2(t))\sin(2t)
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(f(x)=\sin(5^x)\), find \(\dfrac{df}{dx}\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX26"></button>
+    	<button class="toggle has-sol" data-toggle="SolX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+  	<p>
+      \(f'(x)=5^x\ln(5)\cos(5^x)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+  	<p>
+      The outer function is \(\sin\) and the inner function is \(5^x\). To apply
+      the chain rule we differentiate the outer function and evaluate it at the
+      inner function and then multiply by the derivative of the inner function:
+      \[
+      f'(x)=\cos(5^x)\ln(5)5^x=5^x\ln(5)\cos(5^x)
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(g(y)=\sec(\sin(y))\), find \(\dfrac{dg}{dy}\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX27"></button>
+    	<button class="toggle has-sol" data-toggle="SolX27"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX27">
+  	<p>
+      \(g'(y)=\sec(\sin(y))\tan(\sin(y))\cos(y)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX27">
+  	<p>
+      The outer function is \(\sec\) and the inner function is \(\sin\). To
+      apply the chain rule we differentiate the outer function and evaluate it
+      at the inner function and then multiply by the derivative of the inner
+      function:
+      \[
+      g'(y)=\sec(\sin(y))\tan(\sin(y))\cos(y)
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(f(y)=\sin(y^2+2y+2)\), find \(\dfrac{df}{dy}\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX28"></button>
+    	<button class="toggle has-sol" data-toggle="SolX28"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX28">
+  	<p>
+      \(f'(y)=\cos(y^2+2y+2)(2y+2)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX28">
+  	<p>
+      The outer function is \(\sin\) and the inner function is \(y^2+2y+2\).
+      To apply the chain rule we differentiate the outer function and evaluate
+      it at the inner function and then multiply by the derivative of the inner
+      function:
+      \[
+      f'(y)=\cos(y^2+2y+2)(2y+2)
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(g(x)=\cot(\sin(x))\), find \(\dfrac{dg}{dx}\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX29"></button>
+    	<button class="toggle has-sol" data-toggle="SolX29"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX29">
+  	<p>
+      \(g'(x)=-\csc^2(\sin(x))\cos(x)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX29">
+  	<p>
+      The outer function is \(\cot\) and the inner function is \(\sin\). To
+      apply the chain rule we differentiate the outer function and evaluate it
+      at the inner function and then multiply by the derivative of the inner
+      function:
+      \[
+      g'(x)=-\csc^2(\sin(x))\cos(x)
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(f(x)=\tan((x^2+2x+2)^{50})\), find \(\dfrac{df}{dx}\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX30"></button>
+    	<button class="toggle has-sol" data-toggle="SolX30"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX30">
+  	<p>
+      \(f'(x)=100(x+1)(x^2+2x+2)^{49}\sec^2((x^2+2x+2)^{50})\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX30">
+  	<p>
+      This is a double chain rule. The outer function is \(\tan\) and the
+      intermediate function is \(u^{50}\) and the inner function is
+      \(u=x^2+2x+2\). To apply the chain rule we differentiate the outer function
+      and evaluate it at the intermediate function composed with the inner function
+      and then multiply by the derivative of the intermediate function at the
+      inner function and then multiply by the derivative of the inner function.
+      \[\begin{aligned}
+      f'(x)&=\sec^2((x^2+2x+2)^{50})50(x^2+2x+2)^{49}(2x+2) \\
+      &=100(x+1)(x^2+2x+2)^{49}\sec^2((x^2+2x+2)^{50})
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(r(\theta)=(\sin^3(\theta)+\cos(2\theta))^{12}\), find \(\dfrac{dr}{d\theta}\).
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX31"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX31"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX31"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX31">
+    <p>
+      Use the chain rule, then the sum rule and the chain rule.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX31">
+  	<p>
+      \(r'(\theta)=12[\sin^3(\theta)+\cos(2\theta)]^{11}[3\sin^2(\theta)
+      \cos(\theta)-2\sin(2\theta)]\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX31">
+  	<p>
+      The outer function is \(x^{12}\) and the inner function is
+      \(x=\sin^3(\theta)+\cos(2\theta)\). The derivative of the outer
+      function is \(12x^{11}\). To calculate the derivative of the
+      inner function we use the Sum Rule and then the Chain Rule:
+      \[\begin{aligned}
+      \dfrac{dx}{d\theta}&=\dfrac{d}{d\theta}(\sin^3(\theta)+\cos(2\theta)) \\
+      &=\dfrac{d}{d\theta}(\sin^3(\theta))+\dfrac{d}{d\theta}(\cos(2\theta)) \\
+      &=3\sin^2(\theta)\cos(\theta)-2\sin(2\theta)
+      \end{aligned}\]
+      To apply the chain rule to the function \(r\) we take the derivative of
+      the outer function and evaluate it at the inner function and then
+      multiply by the derivative of the inner function:
+      \[
+      r'(\theta)=12[\sin^3(\theta)+\cos(2\theta)]^{11}[3\sin^2(\theta)
+      \cos(\theta)-2\sin(2\theta)]
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+  <li>
+  	<div class="dotfillex">
+  		<p>
+        If \(f(x)=e^{\tan(\sin(x))+\cos^4(x)}\), find \(\dfrac{df}{dx}\).
+  		</p>
+  		<p>
+      	<button class="toggle has-hint" data-toggle="HintX32"></button>
+      	<button class="toggle has-ans" data-toggle="AnsX32"></button>
+      	<button class="toggle has-sol" data-toggle="SolX32"></button>
+  		</p>
+  	</div>
+  	<div class="toBeToggled drop-hint" data-toggle="HintX32">
+      <p>
+        Use the chain rule, then the sum rule and the chain rule.
+      </p>
+    </div>
+  	<div class="toBeToggled drop-ans" data-toggle="AnsX32">
+    	<p>
+        \(f'(x)=e^{\tan(\sin(x))+\cos^4(x)}(\sec^2(\sin(x))\cos(x)-4\cos^3(x)
+        \sin(x))\)
+    	</p>
+    </div>
+  	<div class="toBeToggled drop-sol" data-toggle="SolX32">
+    	<p>
+        The outer function is \(e^y\) and the inner function is \(y=\tan(\sin(
+        x))+\cos^4(x)\). The derivative of the outer function is \(e^y\). To
+        calculate the derivative of the inner function we use the Sum rule and
+        then the Chain rule:
+        \[\begin{aligned}
+        \dfrac{dy}{dx}&=\dfrac{d}{dx}(\tan(\sin(x))+\cos^4(x)) \\
+        &=\dfrac{d}{dx}(\tan(\sin(x)))+\dfrac{d}{dx}(\cos^4(x)) \\
+        &=\sec^2(\sin(x))\cos(x)-4\cos^3(x)\sin(x)
+        \end{aligned}\]
+        To apply the chain rule to the function \(f\) we take the derivative of
+        the outer function and evaluate it at the inner function and multiply by
+        the derivative of the inner function:
+        \[
+        f'(x)=e^{\tan(\sin(x))+\cos^4(x)}(\sec^2(\sin(x))\cos(x)-4\cos^3(x)\sin(
+        x))
+        \]
+    	</p>
+      <p style="text-align:right">
+        ad&ensp;
+      </p>
+    </div>
+  </li>
+
+  <li>
+  	<div class="dotfillex">
+  		<p>
+        If \(f(x)=(5^{\sin(x)}+e^{\cot(x)})^{100}\), find \(f'(x)\).
+  		</p>
+  		<p>
+      	<button class="toggle has-ans" data-toggle="AnsX33"></button>
+      	<button class="toggle has-sol" data-toggle="SolX33"></button>
+  		</p>
+  	</div>
+  	<div class="toBeToggled drop-ans" data-toggle="AnsX33">
+    	<p>
+        \(f'(x)=100(5^{\sin(x)}+e^{\cot(x)})^{99}[5^{\sin(x)}\ln(5)\cos(x)-e^{
+        \cot(x)}\csc^2(x)]\)
+    	</p>
+    </div>
+  	<div class="toBeToggled drop-sol" data-toggle="SolX33">
+    	<p>
+        The outer function is \(u^{100}\) and the inner function is \(u=5^{\sin(
+        x)}+e^{\cot(x)}\). The derivative of the outer function is \(100u^{99}\).
+        To calculate the derivative of the inner function we use the Sum rule
+        and then the Chain rule:
+        \[\begin{aligned}
+        u'(x)&=\dfrac{d}{dx}(5^{\sin(x)}+e^{\cot(x)}) \\
+        &=\dfrac{d}{dx}(5^{\sin(x)})+\dfrac{d}{dx}(e^{\cot(x)}) \\
+        &=5^{\sin(x)}\ln(5)\cos(x)-e^{\cot(x)}\csc^2(x)
+        \end{aligned}\]
+        To apply the chain rule to the function \(f\) we take the derivative of
+        the outer function and evaluate it at the inner function and multiply by
+        the derivative of the inner function:
+        \[
+        f'(x)=100(5^{\sin(x)}+e^{\cot(x)})^{99}[5^{\sin(x)}\ln(5)\cos(x)
+        -e^{\cot(x)}\csc^2(x)]
+        \]
+    	</p>
+      <p style="text-align:right">
+        ad&ensp;
+      </p>
+    </div>
+  </li>
+
+  <li>
+  	<div class="dotfillex">
+  		<p>
+        If \(f(x)=\sin(\sin(x)\tan(2x))\), find \(f'(x)\).
+  		</p>
+  		<p>
+      	<button class="toggle has-hint" data-toggle="HintX34"></button>
+      	<button class="toggle has-ans" data-toggle="AnsX34"></button>
+      	<button class="toggle has-sol" data-toggle="SolX34"></button>
+  		</p>
+  	</div>
+  	<div class="toBeToggled drop-hint" data-toggle="HintX34">
+      <p>
+        Use the chain rule, then the product rule and the chain rule.
+      </p>
+    </div>
+  	<div class="toBeToggled drop-ans" data-toggle="AnsX34">
+    	<p>
+        \(f'(x)=\cos(\sin(x)\tan(2x))[2\sin(x)\sec^2(2x)+\tan(2x)\cos(x)]\)
+    	</p>
+    </div>
+  	<div class="toBeToggled drop-sol" data-toggle="SolX34">
+    	<p>
+        The outer function is \(\sin\) and the inner function is \(\sin(x)\tan(2
+        x)\). The derivative of the outer function is \(\cos\). To calculate the
+        derivative of the inner function we use the Product rule and then the
+        Chain rule:
+        \[\begin{aligned}
+        \dfrac{d}{dx}(\sin(x)\tan(2x))&=\sin(x)\dfrac{d}{dx}(\tan(2x))+\tan(2x)
+        \dfrac{d}{dx}(\sin(x)) \\
+        &=2\sin(x)\sec^2(2x)+\tan(2x)\cos(x)
+        \end{aligned}\]
+        To apply the chain rule to the function \(f\) we take the derivative of
+        the outer function and evaluate it at the inner function and multiply by
+        the derivative of the inner function:
+        \[
+        f'(x)=\cos(\sin(x)\tan(2x))[2\sin(x)\sec^2(2x)+\tan(2x)\cos(x)]
+        \]
+    	</p>
+      <p style="text-align:right">
+        ad&ensp;
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        If \(f(x)=\sin(3^{\sin(x)}\cos(\cos(x)))\), find \(f'(x)\).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX35"></button>
+        <button class="toggle has-ans" data-toggle="AnsX35"></button>
+        <button class="toggle has-sol" data-toggle="SolX35"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX35">
+      <p>
+        Use the chain rule, then the product rule and the chain rule.
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX35">
+      <p>
+        \(\begin{aligned}
+        f'(x)&=\cos(3^{\sin(x)}\cos(\cos(x)))3^{\sin(x)} \\
+        &\quad[\sin(x)\sin(\cos(x))+\ln(3)\cos(x)\cos(\cos(x))]
+        \end{aligned}\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX35">
+      <p>
+        The outer function is \(\sin\) and the inner function is \(3^{\sin(x)}
+        \cos(\cos(x))\). The derivative of the outer function is \(\cos\). To
+        calculate the derivative of the inner function we use the Product rule
+        and then the Chain rule:
+        \[\begin{aligned}
+        &\dfrac{d}{dx}(3^{\sin(x)}\cos(\cos(x))) \\
+        &=3^{\sin(x)}\dfrac{d}{dx}(\cos(\cos(x)))+\cos(\cos(x))\dfrac{d}{dx}(3^{
+        \sin(x)}) \\
+        &=3^{\sin(x)}\sin(\cos(x))\sin(x)+\cos(\cos(x))3^{\sin(x)}\ln(3)\cos(x) \\
+        &=3^{\sin(x)}[\sin(x)\sin(\cos(x))+\ln(3)\cos(x)\cos(\cos(x))]
+        \end{aligned}\]
+        To apply the chain rule to the function \(f\), we take the derivative of
+        the outer function evaluated at the inner function and then multiply by
+        the derivative of the inner function:
+        \[\begin{aligned}
+        f'(x)&=\cos(3^{\sin(x)}\cos(\cos(x)))3^{\sin(x)} \\
+        &\quad[\sin(x)\sin(\cos(x))+\ln(3)\cos(x)\cos(\cos(x))]
+        \end{aligned}\]
+      </p>
+      <p style="text-align:right">
+        ad&ensp;
+      </p>
+    </div>
+  </li>
+
+  <li>
+  	<div class="dotfillex">
+  		<p>
+        If \(f(x)=\cos\left(\dfrac{3^x}{\sin(x^5)}\right)\), find \(f'(x)\).
+  		</p>
+  		<p>
+      	<button class="toggle has-hint" data-toggle="HintX36"></button>
+      	<button class="toggle has-ans" data-toggle="AnsX36"></button>
+      	<button class="toggle has-sol" data-toggle="SolX36"></button>
+  		</p>
+  	</div>
+  	<div class="toBeToggled drop-hint" data-toggle="HintX36">
+      <p>
+        Use the chain rule, then the quotient rule and the chain rule.
+      </p>
+    </div>
+  	<div class="toBeToggled drop-ans" data-toggle="AnsX36">
+    	<p>
+        \(f'(x)=-\sin\left(\dfrac{3^x}{\sin(x^5)}\right)\dfrac{3^x\ln(3)\tan(x^5
+        )-5x^43^x\cos(x^5)}{\sin^2(x^5)}\)
+    	</p>
+    </div>
+  	<div class="toBeToggled drop-sol" data-toggle="SolX36">
+    	<p>
+        The outer function is \(\cos\) and the inner function is \(\dfrac{3^x}{
+        \sin(x^5)}\). The derivative of the outer function is \(-\sin\). To
+        calculate the derivative of the inner function we use the Quotient rule
+        and then the Chain rule:
+        \[\begin{aligned}
+        \dfrac{d}{dx}\left(\dfrac{3^x}{\sin(x^5)}\right)
+        &=\dfrac{\sin(x^5)\dfrac{d}{dx}(3^x)-3^x\dfrac{d}{dx}(\sin(x^5))}{\sin^2(x^5)} \\
+        &=\dfrac{3^x\ln(3)\sin(x^5)-5x^43^x\cos(x^5)}{\sin^2(x^5)}
+        \end{aligned}\]
+        To apply the chain rule to the function \(f\) we take the derivative of
+        the outer function evaluated at the inner function and multiply by the
+        derivative of the inner function:
+        \[
+        f'(x)=-\sin\left(\dfrac{3^x}{\sin(x^5)}\right)\dfrac{3^x\ln(3)\tan(x^5)-
+        5x^43^x\cos(x^5)}{\sin^2(x^5)}
+        \]
+    	</p>
+      <p style="text-align:right">
+        ad&ensp;
+      </p>
+    </div>
+  </li>
+
+  <li>
+  	<div class="dotfillex">
+  		<p>
+        If \(u(v)=\sin^{23}\left(3^x+\dfrac{v^4}{\sin(2v)}\right)\), find \(u'(v
+        )\).
+  		</p>
+  		<p>
+      	<button class="toggle has-hint" data-toggle="HintX37"></button>
+      	<button class="toggle has-ans" data-toggle="AnsX37"></button>
+      	<button class="toggle has-sol" data-toggle="SolX37"></button>
+  		</p>
+  	</div>
+  	<div class="toBeToggled drop-hint" data-toggle="HintX37">
+      <p>
+        Use the chain, sum, quotient, and chain rules. This is also a double
+        chain rule.
+      </p>
+    </div>
+  	<div class="toBeToggled drop-ans" data-toggle="AnsX37">
+    	<p>
+        \(\begin{aligned}
+        u'(v)&=23\sin^{22}\left(3^x+\dfrac{v^4}{\sin(2v)}\right)
+        \cos\left(3^x+\dfrac{v^4}{\sin(2v)}\right) \\
+        &\quad\left(3^x\ln(3)+\dfrac{4v^3\sin(2v)-2v^4\cos(2v)}{\sin^2(2v)}\right)
+        \end{aligned}\)
+    	</p>
+    </div>
+  	<div class="toBeToggled drop-sol" data-toggle="SolX37">
+    	<p>
+        This is a double chain rule. The outer function is \(s^{23}\) and the
+        intermediate function is \(s=\sin(l)\) and the inner function is \(l=3^x
+        +\dfrac{v^4}{\sin(2v)}\). The derivatives of the outer and intermediate
+        functions are \(23s^{22}\) and \(\cos\), respectively. To calculate the
+        derivative of the inner function we use the Sum Rule, Exponential Rule,
+        Quotient Rule and then the Chain Rule:
+        \[\begin{aligned}
+        l'(v)&=\dfrac{d}{dv}\left(3^x+\dfrac{v^4}{\sin(2v)}\right) \\
+        &=\dfrac{d}{dv}(3^x)+\dfrac{d}{dv}\left(\dfrac{v^4}{\sin(2v)}\right) \\
+        &=3^x\ln(3)+\dfrac{\sin(2v)\dfrac{d}{dv}(v^4)-v^4\dfrac{d}{dv}(\sin(2v))
+        }{\sin^2(2v)} \\
+        &=3^x\ln(3)+\dfrac{4v^3\sin(2v)-2v^4\cos(2v)}{\sin^2(2v)}
+        \end{aligned}\]
+        To apply the chain rule to the function \(u\) we differentiate each
+        level of function and multiply them:
+        \[\begin{aligned}
+        u'(v)&=23\sin^{22}\left(3^x+\dfrac{v^4}{\sin(2v)}\right)
+        \cos\left(3^x+\dfrac{v^4}{\sin(2v)}\right) \\
+        &\quad\left(3^x\ln(3)+\dfrac{4v^3\sin(2v)-2v^4\cos(2v)}{\sin^2(2v)}\right)
+        \end{aligned}\]
+    	</p>
+      <p style="text-align:right">
+        ad&ensp;
+      </p>
+    </div>
+  </li>
+
+  <!--Tutorial on Chain Rule-->
+  
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="TutChain.html">c. Tutorial on Chain Rule</a></h3>
+    <div class="pgs">
+      
+        <div><a href="TutChain.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<!--Implicit Differentiation-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="ImplicitDiff.html">d. Implicit Differentiation</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ImplicitDiff.html">1</a></div>
+      
+    </div>
+  </div>
+
+<p>
+Find the derivative of an implicitly defined function.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by \(x^2+2xy+y=13\), find the
+      derivative of \(y\) with respect to \(x\) at \((1,4)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX38"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX38"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX38">
+  	<p>
+      \(\left.\dfrac{dy}{dx}\right|_{(1,4)}=-\dfrac{10}{3}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX38">
+  	<p>
+      We differentiate both sides with respect to \(x\), using the Sum, Power,
+      and Product rules:
+      \[
+      2x+2x\dfrac{dy}{dx}+2y+\dfrac{dy}{dx}=0
+      \]
+      Now we evaluate at \((x,y)=(1,4)\) and solve for the derivative:
+      \[\begin{aligned}
+      2+2\dfrac{dy}{dx}+8+\dfrac{dy}{dx}&=0 \\
+      10+3\dfrac{dy}{dx}&=0 \\
+      3\dfrac{dy}{dx}&=-10 \\
+      \left.\dfrac{dy}{dx}\right|_{(1,4)}&=-\dfrac{10}{3}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by \(x^3+3x^2y+3xy+y^3=89\), find the
+      derivative of \(x\) with respect to \(y\), \(\dfrac{dx}{dy}\), at \((x,y)=(2,3)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX39"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX39"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX39">
+		<p>
+			\(\left.\dfrac{dx}{dy}\right|_{(2,3)}=-\dfrac{15}{19}\)
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX39">
+		<p>
+      We differentiate both sides with respect to \(y\), using the Sum,
+      Power, Product and Chain rules:
+      \[
+      3x^2\dfrac{dx}{dy}+3x^2+6xy\dfrac{dx}{dy}+3x+3y\dfrac{dx}{dy}+3y^2=0
+      \]
+      Now we evaluate at \((x,y)=(2,3)\) and solve for the derivative:
+      \[\begin{aligned}
+      12\dfrac{dx}{dy}+12+36\dfrac{dx}{dy}&+6+9\dfrac{dx}{dy}+27=0 \\
+      57\dfrac{dx}{dy}+45&=0 \\
+      \left.\dfrac{dx}{dy}\right|_{(2,3)}
+      &=-\dfrac{45}{57}=-\dfrac{15}{19}
+      \end{aligned}\]
+		</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(y\) and \(z\) are related by
+      \(y^2+2y\sin\left(\dfrac{\pi z}{2}\right)+\sin(\pi z)=3\), find the
+      derivative of \(z\) with respect to \(y\) at \((y,z)=(3,3)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX40"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX40"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX40">
+  	<p>
+      \(\left.\dfrac{dz}{dy}\right|_{(3,3)}=\dfrac{4}{\pi}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX40">
+  	<p>
+      We apply \(\dfrac{d}{dy}\) to both sides, using the Sum, Power,
+      Product and Chain rules:
+      \[
+      2y+\pi y\cos\left(\dfrac{\pi z}{2}\right)\dfrac{dz}{dy}
+      +2\sin\left(\dfrac{\pi z}{2}\right)+\pi\cos(\pi z)\dfrac{dz}{dy}=0
+      \]
+      Now we evaluate at \((y,z)=(3,3)\) and solve for the derivative:
+      \[\begin{aligned}
+      6-2-\pi\dfrac{dz}{dy}&=0 \\
+      4-\pi\dfrac{dz}{dy}&=0 \\
+      \left.\dfrac{dz}{dy}\right|_{(3,3)}&=\dfrac{4}{\pi}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by \(x^2y+y^2x=6\), find \(\dfrac{dy}{dx}\) at \((1,2)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX41"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX41"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX41">
+  	<p>
+      \(\left.\dfrac{dy}{dx}\right|_{(1,2)}=-\,\dfrac{8}{5}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX41">
+  	<p>
+      We differentiate both sides, using the Sum, Product, Power and Chain rules:
+      \[
+      x^2\dfrac{dy}{dx}+2xy+y^2+2xy\dfrac{dy}{dx}=0
+      \]
+      Now we evaluate at \((x,y)=(1,2)\) and solve for the derivative:
+      \[\begin{aligned}
+      \dfrac{dy}{dx}+4+4+4\dfrac{dy}{dx}&=0 \\
+      5\dfrac{dy}{dx}+8&=0 \\
+      \left.\dfrac{dy}{dx}\right|_{(1,2)}&=-\,\dfrac{8}{5}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(y\) and \(z\) are related by \(y^2+z^2=24-y^2z^2\),
+      find \(\dfrac{dz}{dy}\) at \((y,z)=(2,2)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX42"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX42"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX42">
+  	<p>
+      \(\left.\dfrac{dz}{dy}\right|_{(2,2)}=-1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX42">
+  	<p>
+      We apply \(\dfrac{d}{dy}\) to both sides, using the Sum, Power, Product
+      and Chain rules:
+      \[
+      2y+2z\dfrac{dz}{dy}=-2y^2z\dfrac{dz}{dy}-2yz^2
+      \]
+      Now we evaluate at \((y,z)=(2,2)\) and solve for the derivative:
+      \[\begin{aligned}
+      4+4\dfrac{dz}{dy}&=-16\dfrac{dz}{dy}-16 \\
+      20\dfrac{dz}{dy}&=-20 \\
+      \left.\dfrac{dz}{dy}\right|_{(2,2)}&=-1
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(z\) are related by \(x^2+z^2+\cos(\pi xz)=14\),
+      find \(\dfrac{dz}{dx}\) at \((x,z)=(2,3)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX43"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX43"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX43">
+  	<p>
+      \(\left.\dfrac{dz}{dx}\right|_{(2,3)}=-\dfrac{2}{3}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX43">
+  	<p>
+      We differentiate both sides, using the Sum, Power, Chain, and Product rules:
+      \[
+      2x+2z\dfrac{dz}{dx}-\pi\sin(\pi xz)\left(x\dfrac{dz}{dx}+z\right)=0
+      \]
+      Now we evaluate at \((x,z)=(2,3)\) and solve for the derivative:
+      \[\begin{aligned}
+      4+6\dfrac{dz}{dx}&=0 \\
+      \left.\dfrac{dz}{dx}\right|_{(2,3)}&=-\dfrac{4}{6}=-\dfrac{2}{3}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(z\) are related by \(2^x+2^z=6\),
+      find \(\dfrac{dz}{dx}\) at \((x,z)=(1,2)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX44"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX44"></button>
+    	<button class="toggle has has-check" data-toggle="CkX44"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX44">
+  	<p>
+      \(\left.\dfrac{dz}{dx}\right|_{(1,2)}=-\dfrac{1}{2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX44">
+  	<p>
+      We differentiate both sides, using the Sum and Exponential rules:
+      \[
+      2^x\ln(2)+2^z\ln(2)\dfrac{dz}{dx}=0
+      \]
+      Now we evaluate at \((x,z)=(1,2)\) and solve for the derivative:
+      \[\begin{aligned}
+      2\ln(2)+4\ln(2)\dfrac{dz}{dx}&=0 \\
+      4\dfrac{dz}{dx}&=-2 \\
+      \left.\dfrac{dz}{dx}\right|_{(1,2)}&=-\dfrac{1}{2}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX44">
+  	<p>
+      In this equation we can solve for
+      \[
+      z=\log_2\left(6-2^x\right)
+      \]
+      So we can differentiate explicitly:
+      \[
+      \dfrac{dz}{dx}=\dfrac{1}{\ln(2)}\dfrac{-2^x\ln(2)}{6-2^x}
+      =\dfrac{-2^x}{6-2^x}
+      \]
+      \[
+      \left.\dfrac{dz}{dx}\right|_{x=1}=\dfrac{-2}{6-2}=-\dfrac{1}{2}
+      \]
+      But implicit differentiation was easier.
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For an ideal gas the pressure \(P\) and the volume \(V\) are
+      related by \(PV=K\) for some constant \(K\). Currently, the
+      pressure of a sample in a box is \(P=1.1\,\text{atm}\) and the volume is
+      \(V=15\,\text{m}^3\). Find the rate of change of the pressure with
+      respect to the volume.
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX45"></button>
+    	<button class="toggle has-sol" data-toggle="SolX45"></button>
+    	<button class="toggle has-check" data-toggle="CkX45"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX45">
+  	<p>
+      \(\left.\dfrac{dP}{dV}\right|_{(15\,\text{m}^3,1.1\,\text{atm})}
+      =-\,\dfrac{1.1\,\text{atm}}{15\,\text{m}^3}
+      =-.0733\dfrac{\text{atm}}{\text{m}^3}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX45">
+  	<p>
+      We apply \(\dfrac{d}{dV}\) to both sides using the Product rule, and solve
+      for \(\dfrac{dP}{dV}\):
+      \[\begin{aligned}
+      P+V\dfrac{dP}{dV}&=0 \\
+      \dfrac{dP}{dV}&=-\,\dfrac{P}{V}
+      \end{aligned}\]
+      Now we evaluate at \((V,P)=(15\,\text{m}^3,1.1\,\text{atm})\):
+      \[
+      \left.\dfrac{dP}{dV}\right|_{(15\,\text{m}^3,1.1\,\text{atm})}
+      =-\,\dfrac{1.1\,\text{atm}}{15\,\text{m}^3}
+      =-.0733\dfrac{\text{atm}}{\text{m}^3}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX45">
+  	<p>
+      In this equation we can solve for
+      \[
+      P=\dfrac{K}{V}
+      \]
+      So we can differentiate explicitly using the Power rule and substituting
+      for \(P\):
+      \[
+      \dfrac{dP}{dV}=-\dfrac{K}{V^2}=-\dfrac{P}{V}
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      A boy is running such that the relationship between the distance covered,
+      \(S\), and time, \(t\), is \(S^3+t^3=K\) for some constant \(K\).
+      Currently, the distance traveled is \(S=12\,\text{m}\) and the time is \(t
+      =10\,\text{s}\). Find the rate of change of the distance traveled with
+      respect to time.
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX46"></button>
+    	<button class="toggle has-sol" data-toggle="SolX46"></button>
+    	<button class="toggle has-check" data-toggle="CkX46"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX46">
+  	<p>
+      \(\left.\dfrac{dS}{dt}\right|_{(10\,\text{m},12\,\text{s})}
+      =-\,\dfrac{36\,\text{s}^2}{25\,\text{m}^2}
+      =-1.44\dfrac{\text{s}^2}{\text{m}^2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX46">
+  	<p>
+      We apply \(\dfrac{d}{dt}\) to both sides, using the Sum rule, the Power
+      rule, and the Chain rule, and solve for \(\dfrac{dS}{dt}\):
+      \[\begin{aligned}
+      3S^2\dfrac{dS}{dt}+3t^2&=0 \\
+      \dfrac{dS}{dt}&=-\,\dfrac{t^2}{S^2}
+      \end{aligned}\]
+      Now we evaluate at \((t,S)=(10\,\text{m},12\,\text{s})\):
+      \[
+      \left.\dfrac{dS}{dt}\right|_{(10\,\text{m},12\,\text{s})}
+      =-\,\dfrac{144\,\text{s}^2}{100\,\text{m}^2}
+      =-\,\dfrac{36\,\text{s}^2}{25\,\text{m}^2}
+      =-1.44\dfrac{\text{s}^2}{\text{m}^2}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX46">
+  	<p>
+      In this equation we can solve for
+      \[
+      S=\sqrt[\scriptstyle3]{K-t^3}
+      \]
+      So we can differentiate explicitly using the Chain and Difference and
+      Power rules and substituting for \(S\):
+      \[
+      \dfrac{dS}{dt}
+      =-\,\dfrac{t^2}{\sqrt[\scriptstyle3]{K-t^3\,}^{\,2}}
+      =-\,\dfrac{t^2}{S^2}
+      \]
+      But implicit differentiation was easier.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Two charges, \(q_1\), and \(q_2\), are repelling each other. The distance
+      between them, \(r\), and the force, \(F\), are related by
+      \(r^2F=kq_1q_2\) and where \(k\) is
+      Coulomb's constant. When \(r=2\,\text{m}\) the force is \(F=15\,\text{N}\),
+      what is the rate of change of \(r\) with respect to \(F\)?
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX47"></button>
+    	<button class="toggle has-sol" data-toggle="SolX47"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX47">
+  	<p>
+      \(\left.\dfrac{dr}{dF}\right|_{((15\,\text{N},2\,\text{m}))}
+      =-\,\dfrac{1}{15}\dfrac{\text{m}}{\text{N}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX47">
+  	<p>
+      We apply \(\dfrac{d}{dF}\) to both sides, using the the Power
+      rule and solve for \(\dfrac{dr}{dF}\):
+      \[\begin{aligned}
+      r^2&+F2r\dfrac{dr}{dF}=0 \\
+      &\dfrac{dr}{dF}=-\,\dfrac{r}{2F}
+      \end{aligned}\]
+      Now we evaluate at \((F,r)=(15\,\text{N},2\,\text{m})\):
+      \[
+      \left.\dfrac{dr}{dF}\right|_{((15\,\text{N},2\,\text{m}))}
+      =-\,\dfrac{1}{15}\dfrac{\text{m}}{\text{N}}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      The position on a rod is given by the position, \(x\). The total mass
+      between \(x=0\) and \(x=a\) is \(m\). They are related by
+      \(\dfrac{m^3}{a^2}=K\) for some constant \(K\). When \(a=3\,\text{m}\),
+      we have \(m=0.02\,\text{kg}\). What is the rate of change of \(m\)
+      with respect to \(a\) (the density of the rod at the point \(x=a\))?
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX48"></button>
+    	<button class="toggle has-sol" data-toggle="SolX48"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX48">
+  	<p>
+      \(\left.\dfrac{dm}{dx}\right|_{(3\,\text{m},0.02\,\text{kg})}
+      =\dfrac{0.04\,\text{kg}}{9\,\text{m}}
+      =.0044\overline{4}\,\dfrac{\text{kg}}{\text{m}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX48">
+  	<p>
+      We apply \(\dfrac{d}{da}\) to both sides using the Quotient rule and
+      solve for \(\dfrac{dm}{da}\):
+      \[\begin{aligned}
+      \dfrac{a^2 3m^2\dfrac{dm}{da}-m^3 2a}{a^4}&=0 \\
+      3a\dfrac{dm}{da}-2m&=0 \\
+      \dfrac{dm}{da}=\dfrac{2m}{3a}&
+      \end{aligned}\]
+      Now we evaluate at \((a,m)=(3\,\text{m},0.02\,\text{kg})\):
+      \[
+      \left.\dfrac{dm}{da}\right|_{(3\,\text{m},0.02\,\text{kg})}
+      =\dfrac{0.04}{9}\dfrac{\text{kg}}{\text{m}}
+      =.0044\overline{4}\,\dfrac{\text{kg}}{\text{m}}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      For a pendulum, the period \(T\) and the acceleration of gravity \(g\)
+      are related by \(T\sqrt{g}=2\pi\sqrt{L}\) where \(L\) is the length
+      of the pendulum. When
+      \(g=2\,\dfrac{\text{m}}{\text{sec}^2}\) and \(T=1\,\text{sec}\), what is
+      \(\dfrac{dT}{dg}\)?
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX49"></button>
+    	<button class="toggle has-sol" data-toggle="SolX49"></button>
+      <button class="toggle has-check" data-toggle="CkX49"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX49">
+  	<p>
+      \(\left.\dfrac{dT}{dg}\right|_{(2,1)}
+      =-\dfrac{1}{4}\,\dfrac{\text{sec}^3}{\text{m}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX49">
+  	<p>
+      We apply \(\dfrac{d}{dg}\) to both sides using the Product and Power rules
+      and solve for \(\dfrac{dT}{dg}\):
+      \[\begin{aligned}
+      \dfrac{T}{2\sqrt{g}}+\sqrt{g}\dfrac{dT}{dg}&=0 \\
+      \dfrac{dT}{dg}&=-\,\dfrac{T}{2g}
+      \end{aligned}\]
+      Now we evaluate at \((g,T)=
+      \left(2\,\dfrac{\text{m}}{\text{sec}^2},1\,\text{sec}\right)\):
+      \[
+      \left.\dfrac{dT}{dg}\right|_{(2,1)}
+      =-\dfrac{1}{4}\,\dfrac{\text{sec}^3}{\text{m}}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX49">
+  	<p>
+      In this equation we can solve for:
+      \[
+      T=\dfrac{K}{\sqrt{g}}
+      \]
+      So we can differentiate explicitly:
+      \[
+      \dfrac{dT}{dg}=-\dfrac{K}{2g\sqrt{g}}=-\dfrac{T}{2g}
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      A rod is heating up. The length \(L\) and the temperature \(T\) are related
+      by \(\dfrac{L-L_0}{T-T_0}=\alpha L_0\) where \(\alpha\) is the coefficient
+      of linear expansion and \(L_0\) is the original length \(2\,\text{m}\) and
+      \(T_0\) is the original temperature \(25\,^{\circ}\text{C}\). If
+      \(L=3\,\text{m}\) and \(T=50^\circ\text{C}\), what is \(\dfrac{dL}{dT}\)?
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX50"></button>
+    	<button class="toggle has-sol" data-toggle="SolX50"></button>
+      <button class="toggle has-check" data-toggle="CkX50"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX50">
+  	<p>
+      \(\left.\dfrac{dL}{dT}\right|_{(50\,^{\circ}\text{C},3\,\text{m})}
+      =\dfrac{1}{25}\,\dfrac{\text{m}}{^{\circ}\text{C}}
+      =0.04\,\dfrac{\text{m}}{^{\circ}\text{C}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX50">
+  	<p>
+      We apply \(\dfrac{d}{dT}\) to both sides using the Quotient rule
+      and solve for \(\dfrac{dL}{dT}\):
+      \[\begin{aligned}
+      \dfrac{(T-T_0)\dfrac{dL}{dT}-(L-L_0)}{(T-T_0)^2}&=0 \\
+      (T-T_0)\dfrac{dL}{dT}-(L-L_0)&=0 \\
+      \dfrac{dL}{dT}=\dfrac{L-L_0}{T-T_0}
+      \end{aligned}\]
+      Now we evaluate at \((T,L)=(50^\circ\text{C},3\,\text{m})\):
+      \[
+      \left.\dfrac{dL}{dT}\right|_{(50,3)}
+      =\dfrac{1}{25}\,\dfrac{\text{m}}{^{\circ}\text{C}}
+      =0.04\,\dfrac{\text{m}}{^{\circ}\text{C}}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX50">
+  	<p>
+      In this equation we can solve for:
+      \[
+      L=\alpha L_0(T-T_0)+L_0
+      \]
+      So we can differentiate explicitly:
+      \[
+      \dfrac{dL}{dT}=\alpha L_0=\dfrac{L-L_0}{T-T_0}
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(z\) are related by \(3x^2+z^2=21\), find
+      \(\dfrac{dz}{dx}\) at \((x,z)=(2,-3)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX51"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX51"></button>
+      <button class="toggle has has-check" data-toggle="CkX51"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX51">
+  	<p>
+      \(\left.\dfrac{dz}{dx}\right|_{(2,-3)}=2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX51">
+  	<p>
+      We differentiate both sides, using the Sum and Power rules:
+      \[
+      6x+2z\dfrac{dz}{dx}=0
+      \]
+      Now we evaluate at \((x,z)=(2,-3)\) and solve for the derivative:
+      \[\begin{aligned}
+      12-6\dfrac{dz}{dx}&=0 \\
+      \left.\dfrac{dz}{dx}\right|_{(2,-3)}&=2
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX51">
+  	<p>
+      In this equation we can solve for:
+      \[
+      z=-\sqrt{21-3x^2}
+      \]
+      We take the negative square root because \(z=-3\) is negative.
+      So we can differentiate explicitly using the Chain and Power rules and
+      substituting for \(z\):
+      \[\begin{aligned}
+      \dfrac{dz}{dx}&=\dfrac{3x}{\sqrt{21-3x^2}} \\
+      \dfrac{dz}{dx}(2)&=\dfrac{6}{3}=2
+      \end{aligned}\]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(z\) are related by \(3xz^2=14-2x^2\), find
+      \(\dfrac{dz}{dx}\) at \((x,z)=(2,1)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX52"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX52"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX52">
+  	<p>
+      \(\left.\dfrac{dz}{dx}\right|_{(2,1)}=-\,\dfrac{11}{12}=-0.91\overline{6}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX52">
+  	<p>
+      We differentiate both sides, using the Sum, Product, and Power rules:
+      \[
+      6xz\dfrac{dz}{dx}+3z^2=-4x
+      \]
+      Now we evaluate at \((x,z)=(2,1)\) and solve for the derivative:
+      \[\begin{aligned}
+      12\dfrac{dz}{dx}+3&=-8 \\
+      \left.\dfrac{dz}{dx}\right|_{(2,1)}&=-\,\dfrac{11}{12}
+      =-0.91\overline{6}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by \(x^2+y^3=9\), find the equation of the
+      tangent line at \((1,2)\).
+		</p>
+		<p>
+      <button class="toggle has has-hint" data-toggle="HintX53"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX53"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX53"></button>
+		</p>
+	</div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX53">
+    <p>
+      The equation for a straight line is \(y=mx+b\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX53">
+  	<p>
+      The equation of the tangent line at \((1,2)\) is:<br><br>
+      \(y=-\,\dfrac{1}{6}x+\dfrac{13}{6}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX53">
+  	<p>
+      The equation for a straight line is \(y=mx+b\).
+      We find the slope \(m=\dfrac{dy}{dx}\) by implicit differentiation:
+      \[\begin{aligned}
+      2x+3y^2\dfrac{dy}{dx}&=0 \\
+      \dfrac{dy}{dx}&=-\dfrac{2x}{3y^2}
+      \end{aligned}\]
+      Now we evaluate at \((x,y)=(1,2)\):
+      \[
+      m=\left.\dfrac{dy}{dx}\right|_{(1,2)}=-\,\dfrac{2}{12}=-\,\dfrac{1}{6}
+      \]
+      We plug in \(x=1\), \(y=2\) and \(m=-\,\dfrac{1}{6}\) into the equation
+      for a line and solve for \(b\):
+      \[\begin{aligned}
+      y&=mx+b \\
+      2&=-\,\dfrac{1}{6}(1)+b \\
+      b&=2+\dfrac{1}{6}=\dfrac{13}{6}
+      \end{aligned}\]
+      So the equation is:
+      \[
+      y=-\,\dfrac{1}{6}x+\dfrac{13}{6}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+		<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+<p>
+  These are Composition, Chain rule, and Implicit Differentiation problems.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Consider the functions \(f(x)=x+4\) and \(g(x)=2x\). Compute \(g(4)\) and
+      \(f(g(4))\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX54"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX54"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX54">
+  	<p>
+      \(g(4)=8\)<br>
+      \(f(g(4))=12\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX54">
+  	<p>
+      We replace the \(x\) in \(g(x)=2x\) by \(4\):
+      \[
+      g(4)=2\cdot4=8
+      \]
+      Next we replace the \(x\) in \(f(x)=x+4\) by \(g(4)=8\):
+      \[
+      f(g(4))=8+4=12
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(g(x)=\left(\dfrac{x}{x^4+1}+5^x\right)^{500}\), find \(\dfrac{dg}{dx}\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX55"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX55"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX55">
+  	<p>
+      \(g'(x)=500\left(\dfrac{x}{x^4+1}+5^x\right)^{499}
+      \left(\dfrac{1-3x^4}{(x^4+1)^2}+5^x\ln(5)\right)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX55">
+  	<p>
+      The outer function is \(u^{500}\) and the inner function is \(u
+      =\dfrac{x}{x^4+1}+5^x\). The derivative of the outer function is \(
+      500u^{499}\). To calculate the derivative of the inner function we use the
+      Sum, Exponential, Quotient, Sum, and Power rules:
+      \[\begin{aligned}
+      &\dfrac{d}{dx}\left(\dfrac{x}{x^4+1}+5^x\right) \\
+      &=\dfrac{d}{dx}\left(\dfrac{x}{x^4+1}\right)+\dfrac{d}{dx}(5^x) \\
+      &=\dfrac{(x^4+1)\dfrac{d}{dx}(x)-x\dfrac{d}{dx}(x^4+1)}{(x^4+1)^2}
+      +5^x\ln(5) \\
+      &=\dfrac{x^4+1-4x^4}{(x^4+1)^2}+5^x\ln(5) \\
+      &=\dfrac{1-3x^4}{(x^4+1)^2}+5^x\ln(5) \\
+      \end{aligned}\]
+      To apply the chain rule to the function \(g\), we take the derivative of
+      the outer function evaluated at the inner function and then multiply by the
+      derivative of the inner function:
+      \[
+      g'(x)=500\left(\dfrac{x}{x^4+1}+5^x\right)^{499}
+      \left(\dfrac{1-3x^4}{(x^4+1)^2}+5^x\ln(5)\right)
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by \(x^2+2x+2y+y^2=11\), find \(\dfrac{dy}{dx}\)
+      at \((1,2)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX56"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX56"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX56">
+  	<p>
+      \(\left.\dfrac{dy}{dx}\right|_{(1,2)}=-\,\dfrac{2}{3}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX56">
+  	<p>
+      We differentiate both sides, using the Sum and Power rules:
+      \[
+      2x+2+(2+2y)\dfrac{dy}{dx}=0
+      \]
+      Now we evaluate at \((x,y)=(1,2)\) and solve for \(\dfrac{dy}{dx}\):
+      \[\begin{aligned}
+      4+6\left.\dfrac{dy}{dx}\right|_{(1,2)}&=0 \\
+      \left.\dfrac{dy}{dx}\right|_{(1,2)}&=-\,\dfrac{2}{3}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	Consider the functions \(f(x)=x^2+2x+3\) and \(g(x)=2x+4\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(g(1)\) and \(f(g(1))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX57a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX57a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX57a">
+				<p>
+					\(g(1)=6\)<br>
+          \(f(g(1))=51\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX57a">
+				<p>
+					We replace the \(x\) in \(g(x)=2x+4\) by \(1\):
+          \[
+          g(1)=2\cdot1+4=6
+          \]
+          Next we replace the \(x\) in \(f(x)=x^2+2x+3\) by \(g(1)=6\):
+          \[
+          f(g(1))=6^2+2\cdot6+3=36+12+3=51
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(f(1)\) and \(g(f(1))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX57b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX57b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX57b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX57b">
+				<p>
+          \(f(1)=6\)<br>
+          \(g(f(1))=16\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX57b">
+				<p>
+          We replace the \(x\) in \(f(x)=x^2+2x+3\) by \(1\):
+          \[
+          f(1)=1^2+2\cdot1+3=1+2+3=6
+          \]
+          Next we replace the \(x\) in \(g(x)=2x+4\) by \(f(x)=6\):
+          \[
+          f(g(1))=2\cdot6+4=12+4=16
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX57b">
+      	<p>
+          Notice that \(g(f(1))\) is not the same as \(f(g(1))\).
+      	</p>
+      </div>
+		</li>
+    <li>
+			<div class="dotfillex">
+				<p>
+					Compute \(f(g(x))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX57c"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX57c"></button>
+        	<button class="toggle has has-check" data-toggle="CkX57c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX57c">
+				<p>
+					\(f(g(x))=4x^2+20x+27\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX57c">
+				<p>
+					We replace the \(x\) in \(f(x)=x^2+2x+3\) by \(g(x)=2x+4\):
+          \[\begin{aligned}
+          f(g(x))&=(2x+4)^2+2(2x+4)+3 \\
+          &=4x^2+16x+16+4x+8+3 \\
+          &=4x^2+20x+27
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX57c">
+      	<p>
+          If \(f(g(x))=4x^2+20x+27\), then
+          \[\begin{aligned}
+          f(g(1))&=4\cdot1^2+20\cdot1+27 \\
+          &=4+20+27=51
+          \end{aligned}\]
+          which agrees with the answer from part (a).
+      	</p>
+      </div>
+		</li>
+    <li>
+			<div class="dotfillex">
+				<p>
+					Compute \(g(f(x))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX57d"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX57d"></button>
+        	<button class="toggle has has-check" data-toggle="CkX57d"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX57d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX57d">
+				<p>
+					\(g(f(x))=2x^2+4x+10\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX57d">
+				<p>
+					We replace the \(x\) in \(g(x)=2x+4\) by \(f(x)=x^2+2x+3\):
+          \[\begin{aligned}
+          g(f(x))&=2(x^2+2x+3)+4 \\
+          &=2x^2+4x+6+4 \\
+          &=2x^2+4x+10
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX57d">
+      	<p>
+          If \(g(f(x))=2x^2+4x+10\), then:
+          \[\begin{aligned}
+          g(f(1))&=2\cdot1^2+4\cdot1+10 \\
+          &=2+4+10=16
+          \end{aligned}\]
+          which agrees with the answer in part (b).
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX57d">
+      	<p>
+          Notice that \(g(f(x))\) is not equal to \(f(g(x))\).
+      	</p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(f(x)=\sin^2(\cot^2(x^3+5))\), what is \(
+      \dfrac{df}{dx}\)?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX58"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX58"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX58">
+  	<p>
+      \(f'(x)=-3x^2\sin(2\cot^2(x^3+5))\cot(x^3+5)\csc^2(x^3+5)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX58">
+  	<p>
+      It is useful to rewrite the function as:
+      \[
+      f(x)=[\sin([\cot(x^3+5)]^2)]^2
+      \]
+      There are \(5\) levels of functions: squaring, \(\sin\), squaring, \(\cot\),
+      and \(x^3+5\). To apply the chain rule we differentiate each level of function
+      and multiply them:
+      \[\begin{aligned}
+      f'(x)&=2\sin([\cot(x^3+5)]^2)\cdot\cos([\cot(x^3+5)]^2)\cdot2\cot(x^3+5)
+      \cdot[-\csc^2(x^3+5)]\cdot3x^2 \\
+      &=-6x^2\sin([\cot(x^3+5)]^2)\cos([\cot(x^3+5)]^2)\cot(x^3+5)\csc^2(x^3+5) \\
+      &=-6x^2\sin(\cot^2(x^3+5))\cos(\cot^2(x^3+5))\cot(x^3+5)\csc^2(x^3+5) \\
+      &=-3x^2\sin(2\cot^2(x^3+5))\cot(x^3+5)\csc^2(x^3+5)
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by \(xy^2+x^2y=30\), find the equation
+      of the tangent line at \((2,3)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX59"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX59"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX59">
+  	<p>
+      The equation of the tangent line at \((2,3)\) is:<br><br>
+      \(y=-\,\dfrac{21}{16}x+\dfrac{45}{8}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX59">
+  	<p>
+      We differentiate both sides, using the Sum, Product, and Power rules and
+      solve for \(\dfrac{dy}{dx}\):
+      \[\begin{aligned}
+      2xy\dfrac{dy}{dx}+y^2+x^2\dfrac{dy}{dx}+2xy=0 \\
+      \dfrac{dy}{dx}=-\,\dfrac{y^2+2xy}{x^2+2xy}
+      \end{aligned}\]
+      Now we evaluate at \((x,y)=(2,3)\):
+      \[
+      \left.\dfrac{dy}{dx}\right|_{(2,3)}=-\,\dfrac{21}{16}
+      \]
+      We plug in \(\dfrac{dy}{dx}\), \(x\), and \(y\) into \(y=mx+c\) and solve
+      for \(c\):
+      \[\begin{aligned}
+      -\,\dfrac{21}{16}+c&=3 \\
+      c&=\dfrac{45}{8}
+      \end{aligned}\]
+      So the equation is:
+      \[
+      y=-\,\dfrac{21}{8}x+\dfrac{45}{8}
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	Consider the functions \(f(x)=x^3+5x^2\) and \(g(x)=2x+3\).
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(g(1)\) and \(f(g(1))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX60a"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX60a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX60a">
+				<p>
+					\(g(1)=5\)<br>
+          \(f(g(1))=250\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX60a">
+				<p>
+					We replace the \(x\) in \(g(x)=2x+3\) by \(x=1\):
+          \[
+          g(1)=2\cdot1+3=5
+          \]
+          Next we replace the \(x\) in \(f(x)=x^3+5x^2\) by \(g(1)=5\):
+          \[
+          f(g(1))=5^3+5\cdot5^2=125+125=250
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					Compute \(f(1)\) and \(g(f(1))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX60b"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX60b"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX60b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX60b">
+				<p>
+          \(f(1)=6\)<br>
+          \(g(f(1))=15\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX60b">
+				<p>
+          We replace the \(x\) in \(f(x)=x^3+5x^2\) by \(x=1\):
+          \[
+          f(1)=1^3+5\cdot1^2=1+5=6
+          \]
+          Next we replace the \(x\) in \(g(x)=2x+3\) by \(f(x)=6\):
+          \[
+          g(f(1))=2\cdot6+3=12+3=15
+          \]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX60b">
+      	<p>
+          Notice that \(g(f(1))\) is not the same as \(f(g(1))\).
+      	</p>
+      </div>
+		</li>
+    <li>
+			<div class="dotfillex">
+				<p>
+					Compute \(f(g(x))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX60c"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX60c"></button>
+        	<button class="toggle has has-check" data-toggle="CkX60c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX60c">
+				<p>
+					\(f(g(x))=8x^3+56x^2+114x+72\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX60c">
+				<p>
+					We replace the \(x\) in \(f(x)=x^3+5x^2\) by \(g(x)=2x+3\):
+          \[\begin{aligned}
+          f(g(x))&=(2x+3)^3+5(2x+3)^2 \\
+          &=8x^3+36x^2+54x+27+20x^2+60x+45 \\
+          &=8x^3+56x^2+114x+72
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX60c">
+      	<p>
+          If \(f(g(x))=8x^3+56x^2+114x+72\), then
+          \[\begin{aligned}
+          f(g(1))&=8\cdot1^3+56\cdot1^2+114\cdot1+72 \\
+          &=8+56+114+72=250
+          \end{aligned}\]
+          which agrees with the answer from part (a).
+      	</p>
+      </div>
+		</li>
+    <li>
+			<div class="dotfillex">
+				<p>
+					Compute \(g(f(x))\).
+				</p>
+				<p>
+        	<button class="toggle has has-ans" data-toggle="AnsX60d"></button>
+        	<button class="toggle has has-sol" data-toggle="SolX60d"></button>
+        	<button class="toggle has has-check" data-toggle="CkX60d"></button>
+        	<button class="toggle has has-rem" data-toggle="RemX60d"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX60d">
+				<p>
+					\(g(f(x))=2x^3+10x^2+3\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX60d">
+				<p>
+					We replace the \(x\) in \(g(x)=2x+3\) by \(f(x)=x^3+5x^2\):
+          \[\begin{aligned}
+          g(f(x))&=2(x^3+5x^2)+3 \\
+          &=2x^3+10x^2+3
+          \end{aligned}\]
+				</p>
+        <p style="text-align:right">
+          ad&ensp;
+        </p>
+			</div>
+    	<div class="toBeToggled drop-check" data-toggle="CkX60d">
+      	<p>
+          If \(g(f(x))=2x^3+10x^2+3\), then:
+          \[\begin{aligned}
+          g(f(1))&=2\cdot1^3+10\cdot1^2+3 \\
+          &=2+10+3=15
+          \end{aligned}\]
+          which agrees with the answer in part (b).
+      	</p>
+      </div>
+    	<div class="toBeToggled drop-rem" data-toggle="RemX60d">
+      	<p>
+          Notice that \(g(f(x))\) is not equal to \(f(g(x))\).
+      	</p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(f(x)=\sec^3\left(x+\sqrt{x^2+1}\right)\), what
+      is \(\dfrac{df}{dx}\)?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX61"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX61"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX61">
+  	<p>
+      \(f'(x)=3\sec^3\left(x+\sqrt{x^2+1}\right)\tan\left(x+\sqrt{x^2+1}\right)
+      \left(1+\dfrac{x}{\sqrt{x^2+1}}\right)\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX61">
+  	<p>
+      The outer function is \(u^3\) and the intermediate function is \(u=\sec(r)\) and
+      the inner function is \(r=x+\sqrt{x^2+1}\). The derivative of the outer
+      function is \(3u^2\) and the derivative of the intermediate function is
+      \(\sec(r)\tan(r)\). To calculate the derivative of the inner function, we
+      use the Sum, Chain, Sum, and Power rules:
+      \[\begin{aligned}
+      &\dfrac{d}{dx}\left(x+\sqrt{x^2+1}\right) \\
+      &=\dfrac{d}{dx}(x)+\dfrac{d}{dx}
+      \left(\sqrt{x^2+1}\right) \\
+      &=1+\dfrac{x}{\sqrt{x^2+1}}
+      \end{aligned}\]
+      To apply the chain rule to the function \(f\) we take the derivative of
+      the outer function at the intermediate function composed with the inner
+      function multiplied by the derivative of the intermediate function evaluated
+      at the inner function multiplied by the derivative of the inner function:
+      \[\begin{aligned}
+      f'(x)&=\left[3\sec^2\left(x+\sqrt{x^2+1}\right)\right]\left[\sec\left(x+\sqrt{x^2+1}\right)
+      \tan\left(x+\sqrt{x^2+1}\right)\right]
+      \left[1+\dfrac{x}{\sqrt{x^2+1}}\right] \\
+      &=3\sec^3\left(x+\sqrt{x^2+1}\right)\tan\left(x+\sqrt{x^2+1}\right)
+      \left(1+\dfrac{x}{\sqrt{x^2+1}}\right)
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by
+      \(x\sin(\pi y)-y^2\cos(\pi x)=\dfrac{1}{4}\left(1-\dfrac{1}{\sqrt{2}}\right)\),
+      find the equation of the tangent line at \(\left(\dfrac{1}{4},\dfrac{1}{2}\right)\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX62"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX62"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX62">
+  	<p>
+      The equation of the tangent line at \(\left(\dfrac{1}{4},\dfrac{1}{2}\right)\)
+      is:
+      \[
+      y=-\left(\sqrt{2}+\dfrac{\pi}{4}\right)x+\dfrac{1}{2}+\dfrac{\sqrt{2}}{4}+\dfrac{\pi}{16}
+      \]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX62">
+  	<p>
+      We differentiate both sides, using the Difference, Product, Power, and Chain
+      rules and solve for \(\dfrac{dy}{dx}\):
+      \[\begin{aligned}
+      \pi x\cos(\pi y)&\dfrac{dy}{dx}+\sin(\pi y)+\pi y^2\sin(\pi x)+2y\cos(\pi x)
+      \dfrac{dy}{dx}=0 \\
+      &\dfrac{dy}{dx}=-\,\dfrac{\sin(\pi y)+\pi y^2\sin(\pi x)}
+      {\pi x\cos(\pi y)+2y\cos(\pi x)}
+      \end{aligned}\]
+      Now we evaluate at \((x, y)=\left(\dfrac{1}{4},\dfrac{1}{2}\right)\):
+      \[\begin{aligned}
+      \left.\dfrac{dy}{dx}\right|_{(\frac{1}{4},\frac{1}{2})}
+      &=-\,\dfrac{1+\dfrac{\pi}{4}\dfrac{1}{\sqrt{2}}}
+      {0+\dfrac{1}{\sqrt{2}}} \\
+      &=-\sqrt{2}-\dfrac{\pi}{4}
+      \end{aligned}\]
+      So the equation of the tangent line is:
+      \[\begin{aligned}
+      y&=y_0+m(x-x_0) \\
+      &=\dfrac{1}{2}-\left(\sqrt{2}+\dfrac{\pi}{4}\right)\left(x-\dfrac{1}{4}\right) \\
+      &=-\left(\sqrt{2}+\dfrac{\pi}{4}\right)x+\dfrac{1}{2}+\dfrac{\sqrt{2}}{4}+\dfrac{\pi}{16}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Differentiate
+      \(p(x)=\sin(\cos[\tan(\cot[\sec(\csc[x])])])\).
+      This is a challenge problem, make sure to keep track of your work.
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX63"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX63"></button>
+    	<button class="toggle has-sol" data-toggle="SolX63"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX63">
+    <p>
+      Apply the Chain Rule \(5\) times. Be careful with the last two steps.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX63">
+  	<p>
+      \(\begin{aligned}
+      p'(x)=&-\cos(\cos[\tan(\cot[\sec(\csc[x])])]) \\
+      &\cdot\sin[\tan(\cot[\sec(\csc[x])])] \\
+      &\cdot\sec^2(\cot[\sec(\csc[x])]) \\
+      &\cdot\csc^2[\sec(\csc[x])] \\
+      &\cdot\sec(\csc[x])\tan(\csc[x]) \\
+      &\cdot\csc[x]\cot[x] \\
+      \end{aligned}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX63">
+  	<p>
+      Apply the Chain Rule \(5\) times:
+      \[\begin{aligned}
+      p'(x)=
+      &\cos(\cos[\tan(\cot[\sec(\csc[x])])]) \\
+      &\cdot(-\sin[\tan(\cot[\sec(\csc[x])])]) \\
+      &\cdot\sec^2(\cot[\sec(\csc[x])]) \\
+      &\cdot(-\csc^2[\sec(\csc[x])]) \\
+      &\cdot\sec(\csc[x])\tan(\csc[x]) \\
+      &\cdot(-\csc[x]\cot[x]) \\
+      =&-\cos(\cos[\tan(\cot[\sec(\csc[x])])]) \\
+      &\cdot\sin[\tan(\cot[\sec(\csc[x])])] \\
+      &\cdot\sec^2(\cot[\sec(\csc[x])]) \\
+      &\cdot\csc^2[\sec(\csc[x])] \\
+      &\cdot\sec(\csc[x])\tan(\csc[x]) \\
+      &\cdot\csc[x]\cot[x]
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      ls&ensp;
+    </p>
+  </div>
+</li>
+
+<big>PY: Checked to here.</big>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

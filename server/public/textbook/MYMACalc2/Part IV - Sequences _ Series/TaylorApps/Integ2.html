@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c.2. Integrals (Requiring the Taylor Bound on the Remainder) | 24. Applications of Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Integ.html" title="Previous">&lArr;</a></li>
+      <li><a href="NumerSer.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>24. Applications of Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<div class="center">
+  <button class="btn"
+    onclick="window.open('StdSer.html',
+                       'newwindow',
+                       'top=0,left=0,width=600,height=560');
+            return false;">
+  Table of Standard Maclaurin Series</button>
+</div>
+
+
+      
+      <h2>c.2. Integrals (Requiring the Taylor Bound on the Remainder)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the examples and exercises on the
+  <a href="Integ.html">
+  previous page</a>, the series were all alternating. So
+  we could use the alternating series bound to bound the remainder. In the
+  following exercises, the series is not alternating. So you will need to
+  use the Taylor bound on the remainder.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the Maclaurin series for
+    \(\displaystyle f(x)=\int_0^x \dfrac{\ln(1-t)}{t}\,dt\).
+    Find its radius of convergence.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint3"></button>
+    <button class="toggle has-ans" data-toggle="Ans3"></button>
+    <button class="toggle has-sol" data-toggle="Sol3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint3">
+  <p>
+    \[
+    \log(1-t)
+    =\sum_{n=1}^\infty \dfrac{-t^n}{n}
+    =-\,t-\dfrac{t^2}{2}-\dfrac{t^3}{3}-\dfrac{t^4}{4}-\cdots
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans3">
+  <p>
+    \(\begin{aligned}\displaystyle
+    \int_0^x \dfrac{\ln(1-t)}{t}\,dt
+    &=\sum_{n=1}^\infty \dfrac{-x^n}{n^2} \\
+    &=-x-\dfrac{x^2}{4}-\dfrac{x^3}{9}-\dfrac{x^4}{16}-\cdots
+    \end{aligned}\)
+    <br>
+    \(R=1\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol3">
+  <p>
+    Start with the series:
+    \[
+    \ln(1-t)
+    =\sum_{n=1}^\infty \dfrac{-t^n}{n}
+    =-\,t-\dfrac{t^2}{2}-\dfrac{t^3}{3}-\dfrac{t^4}{4}-\cdots
+    \]
+    Divide by \(t\):
+    \[
+    \dfrac{\ln(1-t)}{t}
+    =\sum_{n=1}^\infty \dfrac{-t^{n-1}}{n}
+    =-1-\dfrac{t}{2}-\dfrac{t^2}{3}-\dfrac{t^3}{4}-\cdots
+    \]
+    And integrate:
+    \[\begin{aligned}
+    \int_0^x \dfrac{\ln(1-t)}{t}\,dt
+    &=\left[\sum_{n=1}^\infty \dfrac{-t^n}{n^2}\right]_0^x
+    =\sum_{n=1}^\infty \dfrac{-x^n}{n^2} \\
+    &=-x-\dfrac{x^2}{4}-\dfrac{x^3}{9}-\dfrac{x^4}{16}-\cdots
+    \end{aligned}\]
+    To find the radius of convergence, we apply the ratio test:
+    \[\begin{aligned}
+    \lim_{n\to\infty}\left|\dfrac{a_{n+1}}{a_n}\right|
+    &=\lim_{n\to\infty}
+    \left|\dfrac{-x^{n+1}}{(n+1)^2}\cdot\dfrac{n^2}{-x^n}\right| \\
+    &=|x| \lt 1
+    \end{aligned}\]
+    So the radius of covergence is \(R=1\).
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Approximate
+    \(\displaystyle\int_0^{0.1} \dfrac{\ln(1-t)}{t}\,dt\)
+    by the first  two terms of the Maclaurin series for
+    \(\displaystyle f(x)=\int_0^x \dfrac{\ln(1-t)}{t}\,dt\).
+    Find a bound on the error in this approximation.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint4"></button>
+    <button class="toggle has-ans" data-toggle="Ans4"></button>
+    <button class="toggle has-sol" data-toggle="Sol4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint4">
+  <p>
+    \[\begin{aligned}
+    \int_0^x \dfrac{\ln(1-t)}{t}\,dt
+    &=\sum_{n=1}^\infty \dfrac{-x^n}{n^2} \\
+    &=-x-\dfrac{x^2}{4}-\dfrac{x^3}{9}-\dfrac{x^4}{16}-\cdots
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans4">
+  <p>
+    \(\displaystyle \int_0^{0.1} \dfrac{\ln(1-t)}{t}\,dt
+    \approx-0.1025\)
+    <br>
+    \(\left|R_2f(0.1)\right| \le 1.4\times10^{-4}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol4">
+  <p>
+    From
+    \[\begin{aligned}
+    \int_0^x \dfrac{\ln(1-t)}{t}\,dt
+    &=\sum_{n=1}^\infty \dfrac{-x^n}{n^2} \\
+    &=-x-\dfrac{x^2}{4}-\dfrac{x^3}{9}-\dfrac{x^4}{16}-\cdots
+    \end{aligned}\]
+    we get
+    \[\begin{aligned}
+    \int_0^{0.1} \dfrac{\ln(1-t)}{t}\,dt
+    &=\sum_{n=1}^\infty \dfrac{-(0.1)^n}{n^2} \\
+    &=-(0.1)-\dfrac{(0.1)^2}{4}-\dfrac{(0.1)^3}{9}-\dfrac{(0.1)^4}{16}-\cdots
+    \end{aligned}\]
+    We approximate this by the first \(2\) terms:
+    \[
+    \int_0^{0.1} \dfrac{\ln(1-t)}{t}\,dt
+    \approx-(0.1)-\dfrac{(0.1)^2}{4}=-0.1025
+    \]
+    Since the series is not alternating, we need to use the Taylor bound
+    on the remainder.
+    \[
+    \left|R_2f(0.1)\right| \le \dfrac{M}{3!}|0.1|^3
+    \qquad \text{where} \qquad
+    M \ge |f\,^{(3)}(t)|
+    \quad \text{on} \quad
+    [0,0.1]
+    \]
+    So we need the \(3^\text{rd}\) derivative:
+    \[\begin{aligned}
+    f(x)&=\int_0^x \dfrac{\ln(1-t)}{t}\,dt \\
+    f'(x)&=\dfrac{\ln(1-x)}{x} \\
+    f''(x)&=\dfrac{-1}{x(1-x)}-\dfrac{\ln(1-x)}{x^2} \\
+    f'''(x)&=\dfrac{(1-2x)}{x^2(1-x)^2}
+    +\dfrac{1}{x^2(1-x)}+2\dfrac{\ln(1-x)}{x^3}
+    \end{aligned}\]
+  </p>
+  <div class="column">
+  	<p>
+      We need the maximum of \(|f\,^{(3)}(x)|\) on \([0,.1]\).
+      So we plot \(|f\,^{(3)}(x)|\).
+      The maximum is at \(x=0.1\).
+    </p>
+    <div class="center">
+      <img src="graphics/ex_TaylorError_ln1-t_t.jpg" alt="ex_TaylorError_ln1-t_t">
+    </div>
+  </div>
+  <p>
+    \[
+    M=|f\,^{(3)}(0.1)|=\dfrac{(1-2(0.1))}{(0.1)^2(1-(0.1))^2}
+    +\dfrac{1}{(0.1)^2(1-(0.1))}+2\dfrac{\ln(1-(0.1))}{(0.1)^3}
+    =0.844
+    \]
+    Thus,
+    \[
+      \left|R_2f(0.1)\right| \le \dfrac{M}{3!}|0.1|^3
+      =\dfrac{0.844}{6}|0.1|^3=1.4\cdot10^{-4}
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

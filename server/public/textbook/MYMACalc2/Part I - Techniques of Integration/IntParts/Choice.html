@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b1. Choosing the &#39;Parts&#39; | 4. Integration by Parts</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Multi.html" title="Previous">&lArr;</a></li>
+      <li><a href="Spec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>4. Integration by Parts</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall: &emsp; &emsp; &emsp;
+  \(\displaystyle \int u\,dv=u\,v-\int v\,du\) &emsp; where &emsp;
+  \(du=\dfrac{du}{dx}\,dx\) &emsp; and &emsp; \(dv=\dfrac{dv}{dx}\,dx\)
+</p>
+
+
+      
+      <h2>b1. Choosing the &#39;Parts&#39;</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In applying the integration by parts formula, the difficult part is deciding
+  what to pick as \(u\) and as \(dv\). Here are some guidelines.
+</p>
+
+        <div class="rule"></div>
+
+<h3>General Rules:</h3>
+<ul>
+  <li>
+    Pick \(u\) as a function which is easy to differentiate.
+  </li>
+  <li>
+    Pick \(dv\) as a function which is easy to integrate.
+  </li>
+  <li>
+    Pick \(u\) and \(dv\) so that \(v\,du\) is simpler than \(u\,dv.\)
+  </li>
+</ul>
+
+<h3>Special Rules:</h3>
+<ul>
+  <li>
+    Polynomials are easy to differentiate or integrate, but the derivative
+    is simpler. So it is a good idea to take a polynomial for \(u\).
+  </li>
+  <li>
+    The functions \(e^x\), \(\sin x\) and \(\cos x\) are easy to
+    differentiate or integrate and don't get more complicated. So it is a
+    good idea to take these functions for \(dv\).
+  </li>
+  <li>
+    The functions \(\ln x\), \(\arcsin x\) and \(\arctan x\) are easy to
+    differentiate but hard to integrate. So it is a good idea to take these
+    functions for \(u\).
+  </li>
+</ul>
+<p>
+  These rules are summarized in the following:
+</p>
+
+<table class="center outside-border cell-border-light">
+  <caption>LAPTE Mnemonic for Selecting \(u\)</caption>
+  <tbody>
+    <tr>
+      <td><span class="greenbig">L:</span>
+      </td>
+      <td style="text-align:left"><span class="greenbig">\(\ln\) or \(\log\) factor</span>
+      </td>
+    </tr>
+    <tr>
+      <td><span class="greenbig">A:</span>
+      </td>
+      <td style="text-align:left"><span class="greenbig">\(\arcsin\) or \(\arctan\) factor</span>
+      </td>
+    </tr>
+    <tr>
+      <td><span class="greenbig">P:</span>
+      </td>
+      <td style="text-align:left"><span class="greenbig">polynomial factor</span>
+      </td>
+    </tr>
+    <tr>
+      <td><span class="greenbig">T:</span>
+      </td>
+      <td style="text-align:left"><span class="greenbig">trigonometric factor</span>
+      </td>
+    </tr>
+    <tr>
+      <td><span class="greenbig">E:</span>
+      </td>
+      <td style="text-align:left"><span class="greenbig">exponential factor</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  \(\displaystyle \int x\sec^2x\,dx\)
+</p>
+<p class="sol">
+  Since \(x\) is a polynomial (the &ldquo;P&rdquo; in LAPTE.) and \(\sec^2 x\)
+  can be easily integrated, we take the parts:
+  \[\begin{array}{ll}
+  u=x & dv=\sec^2x\,dx \\
+  du=dx \quad & v=\tan x
+  \end{array}\]
+	This gives
+	\[\begin{aligned}
+	\displaystyle\int x\sec^2x\,dx
+  &=x\tan x-\int \tan x\,dx \\
+  &=x\tan x-\int \dfrac{\sin x}{\cos x}\,dx
+	\end{aligned}\]
+	We now use the substitution \(u=\cos x\), with \(du=-\sin x\,dx\) to get
+	\[\begin{aligned}
+	\displaystyle \int x\sec^2x\,dx
+  &=x\tan x+\int \dfrac{1}{u}\,du \\
+	&=x\tan x+\ln|u|+C \\
+	&=x\tan x+\ln|\cos x|+C
+	\end{aligned}\]
+</p>
+<p class="check">
+  We check by differentiating. If &ensp; \(f(x)=x\tan x+\ln|\cos x|\),
+  &ensp; then
+  \[
+  f'(x)=\tan x+x\sec^2 x+\dfrac{-\sin x}{\cos x}=x\sec^2 x
+  \]
+</p>
+<a id="choices"></a>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Here are some more examples:
+  <br>
+  <table class="center"> <tbody> <tr>
+		<td><a href="Choice1.html">Polynomial Examples</a></td>
+		<td><a href="Choice2.html">Log Examples</a></td>
+		<td><a href="Choice3.html">Inverse Trig Examples</a></td>
+	</tr> </tbody> </table>
+</p>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="3">
+  We wish to compute the following integrals using integration by parts.
+  What 'parts' should be selected
+</p>
+<ol>
+  <li>\(\displaystyle \int x\sin 2x\,dx\)
+  <div class="column" align="center">
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceA incorrect" data-toggle="AnsX1A"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=\sin 2x \\ &dv=x\,dx\end{aligned}\)
+      </p>
+    </div>
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceB incorrect" data-toggle="AnsX1B"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=x \\ &dv=\sin x\,dx\end{aligned}\)
+      </p>
+    </div>
+      <div data-col-width="5%">
+        <p align="left">
+          <button class="toggle has-choiceC incorrect" data-toggle="AnsX1C"></button>
+        </p>
+      </div>
+      <div data-col-width="20%">
+        <p align="left">
+          \(\displaystyle\begin{aligned}&u=x\sin 2x \\ &dv=dx\end{aligned}\)
+        </p>
+      </div>
+      <div data-col-width="5%">
+        <p align="left">
+          <button class="toggle has-choiceD correct" data-toggle="AnsX1D"></button>
+        </p>
+      </div>
+      <div data-col-width="20%">
+        <p align="left">
+          \(\displaystyle\begin{aligned}&u=x \\ &dv=\sin 2x\,dx\end{aligned}\)
+        </p>
+      </div>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX1A">
+      <p>
+        A. Incorrect. This selection of parts gives
+        \(du=2\cos 2x\,dx\) and \(v=\dfrac{1}{2}x^2\). This gives
+        \[
+        \int x\sin 2x\,dx=\dfrac{1}{2}x^2\sin 2x-\int x^2\sin 2xdx
+        \]
+        The problem is more complex than before.
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX1B">
+      <p>
+        B. Sorry. There is no expression \(\sin x\) in this problem.
+        Read the problem carefully.
+        Try again.
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX1C">
+      <p>
+        C. Incorrect. Beginning with \(u=x\sin 2x\)and \(dv=dx\), we
+        have \(du=\left(\sin 2x+2x\cos 2x\right)\,dx\) and \(v=x\). Then:
+        \[\int x\sin 2x\,dx=x^2\sin 2x-\int x\left(\sin 2x+2x\cos 2x\right)\,dx\]
+        This is far more complex than the original integral.
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX1D">
+      <p>
+        D. Correct. With these parts, \(du=dx\) and \(v=-\,\dfrac{1}{2}\cos 2x\).
+        So:
+        \[\begin{aligned}
+        \int x\sin 2x\,dx&=-\,\dfrac{1}{2}x\cos 2x+\dfrac{1}{2}\int \cos 2x\,dx \\
+        &=-\,\dfrac{1}{2}x\cos 2x+\dfrac{1}{4}\sin 2x+C
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>\(\displaystyle \int x^3 \ln 4x\,dx\)
+  <div class="column" align="center">
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceA incorrect" data-toggle="AnsX2A"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=x^3 \\ &dv=\ln 4x\,dx\end{aligned}\)
+      </p>
+    </div>
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceB correct" data-toggle="AnsX2B"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=\ln 4x \\ &dv=x^3\,dx\end{aligned}\)
+      </p>
+    </div>
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceC incorrect" data-toggle="AnsX2C"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=\ln 4x \\ &dv=x^3\end{aligned}\)
+      </p>
+    </div>
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceD incorrect" data-toggle="AnsX2D"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=\ln 4x \\ &dv=x\,dx\end{aligned}\)
+      </p>
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX2A">
+    <p>
+      A. Sorry. This doesn't follow the order given by LAPTE. We don't want
+      to include \(\displaystyle \ln 4x\) in the \(\displaystyle dv\)
+      expression because it is not easy to take its antiderivative.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX2B">
+    <p>
+      B. Correct. With these parts we get \(\displaystyle du=\dfrac{1}{x}\,dx\)
+      and \(v=\dfrac{x^4}{4}\). So:
+      \[\begin{aligned}
+      \int x^3\ln 4x\,dx
+      &=\dfrac{x^4}{4}\ln 4x-\dfrac{1}{4}\int x^3\,dx \\
+      &=\dfrac{x^4}{4}\ln 4x-\dfrac{1}{16}x^4+C
+      \end{aligned}\]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX2C">
+    <p>
+      C. Sorry. The \(dx\) needs to go in the \(dv\) expression.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX2D">
+    <p>
+      D. Incorrect. After choosing the parts, there is still an \(x^2\) left
+      in the integrand.
+    </p>
+  </div>
+  </li>
+  <li>\(\displaystyle \int (4x^3+2x)\arctan x\,dx\)
+  <div class="column" align="center">
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceA incorrect" data-toggle="AnsX3A"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=4x^3 \\ &dv=\arctan x\end{aligned}\)
+      </p>
+    </div>
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceB incorrect" data-toggle="AnsX3B"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=2x \\ &dv=\arctan x\,dx\end{aligned}\)
+      </p>
+    </div>
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceC incorrect" data-toggle="AnsX3C"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=4x^3+2x \\ &dv=\arctan x\,dx\end{aligned}\)
+      </p>
+    </div>
+    <div data-col-width="5%">
+      <p align="left">
+        <button class="toggle has-choiceD correct" data-toggle="AnsX3D"></button>
+      </p>
+    </div>
+    <div data-col-width="20%">
+      <p align="left">
+        \(\displaystyle\begin{aligned}&u=\arctan x \\ &dv=(4x^3+2x)\,dx\end{aligned}\)
+      </p>
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX3A">
+    <p>
+      A. Sorry that's not right. It looks like you forgot to include \(\displaystyle dx\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX3B">
+    <p>
+      B. It's close, but it's not quite right. You've forgotten about the
+      \(\displaystyle 4x^3\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX3C">
+    <p>
+      C. While this answer is technically correct, it will be significantly
+      harder to integrate \(\displaystyle dv=\arctan x\,dx\).
+      Pay attention to LAPTE.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX3D">
+    <p>
+      D. Correct. After choosing these parts, we get
+      \(\displaystyle du=\dfrac{1}{1+x^2}\,dx\)
+      and \(\displaystyle v=x^4+x^2\). So:
+      \[\begin{aligned}
+      \int (4x^3+2x)\arctan x\,dx
+      &=(x^4+x^2)\arctan x-\int\dfrac{x^4+x^2 }{1+x^2}\,dx \\
+      &=(x^4+x^2)\arctan x-\int \dfrac{x^2(x^2+1)}{1+x^2}\,dx \\
+      &=(x^4+x^2)\arctan x-\int x^2\,dx \\
+      &=(x^4+x^2)\arctan x-\dfrac{x^3}{3}+C
+      \end{aligned}\]
+    </p>
+  </div>
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice
+  computing indefinite integrals using Integration by Parts by using
+  the following Maplet (requires Maple on the computer where this is executed):
+</p>
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/IntByParts.maplet" download>Integration by Parts</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+  <center><span class="greenbig">At this point, you should only click on the
+  Indefinite Integral button.</span></center>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Limits at Infinity | 6. Intuitive Limits and Continuity</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="IntervalCont.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Intuitive Limits and Continuity</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  We have discussed limits as \(x\) approaches a finite number. We now turn to
+  limits at infinity.
+</p>
+
+
+      
+      <h2>e. Limits at Infinity</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The limit of a function \(f(x)\) as \(x\) approaches \(\infty\), denoted
+	\(\lim\limits_{x\to\infty}f(x)\), tells what number the function
+	approaches as \(x\) gets arbitrarily large. The precise definition of the
+  limit at infinity is in the chapter on
+	<a href="../PreciseLim/LimatInf.html" title="Return using the Back button.">
+  Precise Limits</a>. However for most of this course, it is sufficient to
+	understand the following intuitive definition:
+</p>
+
+<p class="predef" data-title="Limit at Infinity">
+  A function \(f(x)\) has a <span class= "defword">limit at (positive)
+  infinity</span>
+  if the values of the function get closer and closer to a <em>finite</em>
+  number \(L\) as \(x\) gets arbitrarily large and positive.
+  In that case, we say \(\lim\limits_{x\to\infty}f(x)\) exists and
+  is equal to \(L\), and we write:
+	\[
+  \lim\limits_{x\to\infty}f(x)=L
+	\]
+  Similarly, a function \(f(x)\) has a <span class= "defword">limit at negative
+  infinity</span>
+  if the values of the function get closer and closer to a <em>finite</em>
+  number \(L\) as \(x\) gets arbitrarily large and negative.
+  In that case, we say \(\lim\limits_{x\to-\infty}f(x)\) exists and
+  is equal to \(L\), and we write:
+	\[
+  \lim\limits_{x\to-\infty}f(x)=L
+	\]
+  If a function has a limit \(L\), we say it is
+	<span class="defword">convergent</span> and that it
+  <span class="defword">converges to</span> \(L\).
+  <br>
+  If a function does not have a limit, we say it is
+	<span class="defword">divergent</span> or that it
+	<span class="defword">diverges</span>.
+</p>
+<div class="column">
+	<p class="example" data-number="1">
+		The function \(f(x)=\dfrac{3\cdot2^{-x}}{1+2^{-x}}\) converges to \(0\) at
+    \(\infty\) and converges to \(3\) at \(-\infty\). Here is the plot:
+	</p>
+  <div class="center">
+    <img src="graphics/eg_0at_inf_3at_-inf.jpg" alt="eg_0at_inf_3at_-inf">
+  </div>
+</div>
+<p>
+  If the function diverges, it may still have an
+  <span class="hl">infinite limit</span>.
+</p>
+<p class="predef" data-title="Infinite Limit at Infinity">
+  If the values of a function \(f(x)\) get <span class="hl">arbitrarily large
+  and	positive</span> as \(x\) gets arbitrarily large, then we say the
+	function <span class="defword">diverges to (positive) infinity</span>
+	(\(+\infty\)) or that the <span class="defword">limit	is
+	\(+\infty\)</span> and write:
+	\[
+  \lim\limits_{x\to\infty}f(x)=\infty
+	\]
+  If the values of a function \(f(x)\) get <span class="hl">arbitrarily large
+  and negative</span> as \(x\) gets arbitrarily large, then we say the
+  function <span class="defword">diverges to negative infinity</span>
+	(\(-\infty\)) or that the <span class="defword">limit	is
+	\(-\infty\)</span> and write:
+	\[
+  \lim\limits_{x\to\infty}f(x)=-\infty
+	\]
+  There are similar definitions for limits at \(-\infty\) which are
+  \(\pm\infty\).
+  <br>
+	If a function is divergent but does not diverge to either \(\infty\)
+	or \(-\infty\), then we say it is  <span class="defword">oscillatory
+  divergent</span>.
+</p>
+<p class="remark">
+  To say that the limit is plus or minus infinity does
+	<span class="hl"><em>not</em></span> say that the limit exists! It merely says the
+	<span class="hl">way</span> in which it does not exist, i.e. the
+	<span class="hl">way</span> in which it <span class="hl">diverges</span>.
+</p>
+<div class="column">
+	<p class="example" data-number="2">
+		The function \(f(x)=-5+x^2\) diverges to \(\infty\) because
+		\(-5+x^2\) gets arbitrarily large and positive as \(x\) gets
+		large. Its plot is:
+	</p>
+  <div class="center">
+    <img src="graphics/eg_inf_at_inf.jpg" alt="eg_inf_at_inf">
+  </div>
+</div>
+<div class="column">
+	<p class="example" data-number="3">
+		The function \(f(x)=5-x^2\) diverges to \(-\infty\) because
+    \(5-x^2\) gets arbitrarily large and negative as \(x\) gets
+    large.  Its plot is:
+	</p>
+	<div class="center">
+		<img src="graphics/eg_-inf_at_inf.jpg" alt="eg_-inf_at_inf">
+	</div>
+</div>
+<p class="remark">
+  It is certainly possible to diverge without diverging to
+  \(\infty\) or \(-\infty\).
+</p>
+<div class="column">
+	<p class="example" data-number="4">
+		Since the function \(f(x)=2\sin(x)\) oscillates between \(2\) and \(-2\),
+    it does not converge; it diverges. However, it does not diverge to
+    \(\infty\) or \(-\infty\). So it is
+    <span class="hl">oscillatory divergent</span>. Its plot is:
+	</p>
+	<div class="center">
+		<img src="graphics/eg_sin_osc_at_inf.jpg" alt="eg_sin_osc_at_inf">
+	</div>
+</div>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Find the limit
+    \(\displaystyle \lim\limits_{x\to\infty}\dfrac{2x}{4+x}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Divide the numerator and denominator by \(x\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <div class="column">
+    <p>
+      \(\displaystyle \lim_{x\to\infty}\dfrac{2x}{4+x}=2\).
+    </p>
+    <div class="center">
+      <img src="graphics/ex_2x_(4+x).jpg" alt="ex_2x_(4+x)">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <div class="column">
+    <p>
+      We divide the numerator and denominator by \(x\):
+      \[
+      \lim\limits_{x\to\infty}\dfrac{2x}{4+x}
+      =\lim\limits_{x\to\infty}\dfrac{2}{\dfrac{4}{x}+1}
+      \]
+      As \(x\) gets large, \(\dfrac{1}{x}\) approaches \(0\). So:
+      \[
+      \lim\limits_{x\to\infty}\dfrac{2x}{4+x}
+      =\dfrac{2}{0+1}=2
+      \]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_2x_(4+x).jpg" alt="ex_2x_(4+x)">
+    </div>
+  </div>
+</div>
+
+				<div class="rule"></div>
+
+<p>
+  Techniques for computing limits appear in the
+  <a href="../ComputeLim/ChContents.html" title="Return using the Back button.">
+    next chapter</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

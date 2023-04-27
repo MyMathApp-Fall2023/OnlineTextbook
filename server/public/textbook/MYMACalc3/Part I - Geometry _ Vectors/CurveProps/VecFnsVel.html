@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Vector Functions: Velocity and Force | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VecFnsPosPlot.html" title="Previous">&lArr;</a></li>
+      <li><a href="Lim.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Vector Functions, Position, Velocity and Plots</h2>
+
+<p>
+  Not all vector functions are <span class="hl">position vectors</span>
+  or <span class="hl">parametric curves</span>.
+</p>
+
+
+      
+      <h2>2. Vector Functions: Velocity and Force</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+        <div class="rule"></div>
+
+<h3>Velocity</h3>
+<p>
+  <a href="VelAccelJerk.html" title="Return using the Back button.">
+  Three pages from now</a>, we will define the velocity
+  of a curve as the derivative of the position vector.
+  \[
+  \vec{v}(t)=\langle v_1(t),v_2(t),v_3(t)\rangle
+  =\dfrac{d\vec{r}}{dt}
+  =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle
+  \]
+  We do not regard the velocity vectors as located at the origin. Rather, we
+  regard the velocity vector \(\vec{v}(t)\) at time \(t\) to be
+  located at the point \(\vec{r}(t)\), the tip of the position
+  vector.
+</p>
+<p class="example" data-number="1">
+  Plot the spiral \(\vec{r}(t)=(t\cos t,t\sin t)\),
+  its position vector and its velocity vector
+  \[
+  \vec{v}(t)=\langle \cos t-t\sin t,\sin t+t\cos t\rangle
+  \]
+  for \(\pi \le t \le 4\pi\).
+  (You are not yet expected to be able to do all this yourself.)
+</p>
+<p class="sol">
+  <br/>The parametric curve is in <span style="color:blue">blue</span>.
+  <br/>Its position vector is in <span style="color:red">red</span>.
+  <br/>Its velocity vector is in <span style="color:magenta">magenta</span>.
+</p>
+<div class="center">
+  <figure>
+    <img src="graphics/eg_curve_pos_vel.jpg" alt="eg_curve_pos_vel">
+  </figure>
+  <figure>
+    <video src="graphics/eg_curve_pos_vel_anim.mp4" autoplay controls loop>
+    </video>
+  </figure>
+</div>
+<p>
+  Before defining the velocity, we need to define a derivative and before we
+  define a derivative we need to define a limit.
+</p>
+<a id="force"></a>
+
+        <div class="rule"></div>
+
+<h3>Force</h3>
+<p>
+  A force is an example of a vector field which we defined in the chapter on
+  <a href="../Vectors/LocatedVsField.html" title="Return using the Back button.">
+  Vectors</a>. To plot the force vector we put the tail of each vector at the
+  point where it is evaluated. If an object moves along a curve due to the
+  action of a force, then the force must be evaluated at the position of the
+  particle, and we only plot the force vectors at points on the curve.
+</p>
+<p class="example" data-number="2">
+  A charged particle moves along the parabola \(y=16-(x-4)^2\)
+  parametrized as \(\vec{r}(t)=\left\langle t,16-(t-4)^2\right\rangle\)
+  under the action of an electric field
+  \(\vec{F}(x,y)=\left\langle x,10-y\right\rangle\) which on the curve is
+  \(\vec{F}(t)=\left\langle t,(t-4)^2-6\right\rangle\).
+  Plot the curve and the vector field for \(-2 \le t \le 10\).
+</p>
+<p class="sol">
+  The first two graphics show the curve and the electric field separately.
+  The third graphic contains both the curve and the electric field
+  superimposed in the same plot, and the last graphic shows the electric field
+  expressed along the curve at integers from \(x=-2\) to \(x=10\).
+  (Note: All the vectors have been shortened by a factor of \(8\) so
+  the arrows will not overlap.)
+</p>
+<div class="center">
+  <figure>
+    <img src="graphics/eg_parab.jpg" alt="eg_parab">
+    <figcaption>
+      The curve.
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/eg_vecfld.jpg" alt="eg_vecfld">
+    <figcaption>
+      The electric field at all points.
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/eg_vecfld_parab.jpg" alt="eg_vecfld_parab">
+    <figcaption>
+      The curve in the electric field.
+    </figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/eg_vecfld_on_parab.jpg" alt="eg_vecfld_on_parab">
+    <figcaption>
+      The electric field on the curve.
+    </figcaption>
+  </figure>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

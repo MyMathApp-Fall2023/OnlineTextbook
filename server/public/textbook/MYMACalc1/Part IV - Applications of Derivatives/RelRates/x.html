@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Related Rates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="WordProbs.html" title="Previous">&lArr;</a></li>
+      <li><a href="../GraphProps/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Related Rates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--For Variables Related by an Equation-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="RelEq.html">a. For Variables Related by an Equation</a></h3>
+    <div class="pgs">
+      
+        <div><a href="RelEq.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(x\) and \(y\) are related by \(x^2y+xy^3=12\) and currently
+      \(x=3\), \(y=1\) and \(\dfrac{dx}{dt}=3\), find \(\dfrac{dy}{dt}\).
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX1"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX1"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX1">
+    <p>
+      Differentiate using the chain rule and product rule.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(\dfrac{dy}{dt}=-\,\dfrac{7}{6}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      We differentiate using the chain rule and product rule:
+      \[
+      \dfrac{d}{dt}\left[x^2y+xy^3\right]=
+      \dfrac{d}{dt}\left[12\right]
+      \]
+      \[
+      2xy\cdot\dfrac{dx}{dt}+x^2\cdot\dfrac{dy}{dt}+
+      y^3\cdot\dfrac{dx}{dt}+3xy^2\cdot\dfrac{dy}{dt}
+      =0
+      \]
+      We plug in \(x=3\), \(y=1\) and \(\dfrac{dx}{dt}=3\):
+      \[
+      2(3)(1)(3)+(3)^2\cdot\dfrac{dy}{dt}+(1)^3(3)+3(3)(1)^2\cdot
+      \dfrac{dy}{dt}=0
+      \]
+      \[
+      18+9\cdot\dfrac{dy}{dt}+3+9\cdot\dfrac{dy}{dt}
+      =0
+      \]
+      and solve for \(\dfrac{dy}{dt}\):
+      \[
+      18\cdot\dfrac{dy}{dt}=-21
+      \]
+      \[
+      \dfrac{dy}{dt}=-\,\dfrac{7}{6}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Two variables, \(a\) and \(b\), are related by the equation \(a^3b+2ab^3=3\).
+      When \(a=1\), \(b=1\) and \(\dfrac{da}{dt}=2\), what is \(\dfrac{db}{dt}\)?
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX2"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX2">
+    <p>
+      Differentiate using the chain rule and the product rule.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(\dfrac{db}{dt}=-\,\dfrac{10}{7}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      We differentiate using the chain rule and the product rule:
+      \[
+      a^3b+2ab^3=3
+      \]
+      \[
+      3a^2b\dfrac{da}{dt}+a^3\dfrac{db}{dt}+2b^3\dfrac{da}{dt}+6ab^2\dfrac{db}{
+        dt}=0
+      \]
+      We plug in numbers:
+      \[
+      3\left(1\right)^2\left(1\right)2+\left(1\right)^3\dfrac{db}{dt}+2\left(
+      1\right)^3 2+6\left(1\right)\left(1\right)^2\dfrac{db}{dt}=0
+      \]
+      \[
+      10+7\dfrac{db}{dt}=0
+      \]
+      \[
+      \dfrac{db}{dt}=-\,\dfrac{10}{7}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      The variables \(x\) and \(y\) are related by \(4xy^4+x^4y=24\). When \(x=2\)
+      and \(y=1\), what is \(\dfrac{dy}{dt}\), assuming \(\dfrac{dx}{dt}=-3\)?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \(\dfrac{dy}{dt}=\dfrac{9}{4}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      We differentiate using the chain rule and the product rule:
+      \[
+      4xy^4+x^4y=5
+      \]
+      \[
+      4y^4\dfrac{dx}{dt}+16xy^3\dfrac{dy}{dt}+4x^3y\dfrac{dx}{dt}+x^4\dfrac{dy}{dt}
+      =0
+      \]
+      We plug in:
+      \[
+      4(1)^4(-3)+16(2)(1)^3\dfrac{dy}{dt}+4(2)^3(1)(-3)+(2)^4\dfrac{dy}{dt}
+      =0
+      \]
+      \[
+      -108+48\dfrac{dy}{dt}=0
+      \]
+      \[
+      \dfrac{dy}{dt}
+      =\dfrac{108}{48}
+      =\dfrac{9}{4}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(\alpha\) and \(\beta\) are related by
+      \(\alpha\cos\beta+\beta\sin\alpha=\dfrac{\pi}{4}\), find
+      \(\dfrac{d\beta}{dt}\) when \(\alpha=\dfrac{\pi}{6}\),
+      \(\beta=\dfrac{\pi}{3}\) and \(\dfrac{d\alpha}{dt}=\dfrac{\pi}{12}\).
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX4"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(
+      \dfrac{d\beta}{dt}=
+      \dfrac{3\pi+\pi^2\sqrt{3}}{6\pi\sqrt{3}-36}
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+      We differentiate using the chain rule and the product rule:
+      \[
+      \alpha\cos\beta+\beta\sin\alpha=\dfrac{\pi}{4}
+      \]
+      \[
+      \cos\beta \dfrac{d\alpha}{dt}-
+      \alpha\sin\beta \dfrac{d\beta}{dt}+
+      \sin\alpha \dfrac{d\beta}{dt}+
+      \beta\cos\alpha \dfrac{d\alpha}{dt}=0
+      \]
+      We plug in:
+      \[
+      \dfrac{\pi}{24}-
+      \dfrac{\pi\sqrt{3}}{12} \dfrac{d\beta}{dt}+
+      \dfrac{1}{2} \dfrac{d\beta}{dt}+
+      \dfrac{\pi^2\sqrt{3}}{72}=0
+      \]
+      \[
+      \dfrac{3\pi+\pi^2\sqrt{3}}{72}-
+      \dfrac{\pi\sqrt{3}-6}{12} \dfrac{d\beta}{dt}=0
+      \]
+      \[
+      \dfrac{\pi\sqrt{3}-6}{12} \dfrac{d\beta}{dt}=
+      \dfrac{3\pi+\pi^2\sqrt{3}}{72}
+      \]
+      \[
+      \dfrac{d\beta}{dt}=
+      \dfrac{3\pi+\pi^2\sqrt{3}}{6\pi\sqrt{3}-36}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      The equation \(\dfrac{j+l^2}{j^2+l}=-1\) relates
+      the variables \(l\) and \(j\). When \(j=-0.6\) and \(l=0.2\), what
+      is \(\dfrac{dl}{dt}\), assuming \(\dfrac{dj}{dt}=2\)?
+		</p>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX5"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX5"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX5">
+    <p>
+      Multiply both sides by the denominator.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+      \(\dfrac{dl}{dt}=\dfrac{2}{7}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+      We first rewrite the equation as:
+      \[
+      j+l^2=-j^2-l
+      \]
+      We differentiate using the chain rule and the power rule:
+      \[
+      \dfrac{dj}{dt}+2l\dfrac{dl}{dt}=-2j\dfrac{dj}{dt}-\dfrac{dl}{dt}
+      \]
+      We plug in:
+      \[
+      2+2(0.2)\dfrac{dl}{dt}=-2(-0.6)(2)-\dfrac{dl}{dt}
+      \]
+      \[
+      -0.4=-1.4\dfrac{dl}{dt}
+      \]
+      \[
+      \dfrac{dl}{dt}=\dfrac{2}{7}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If \(h=\dfrac{\pi}{4}\), \(k=\dfrac{\pi}{4}\), and
+      \(\dfrac{dk}{dt}=2\), what is \(\dfrac{dh}{dt}\),
+      assuming \(h\) and \(k\) are related by \(h\sin(k)-k\cos(h)=0\)?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+      \(\dfrac{dh}{dt}=\dfrac{8-2\pi}{\pi+4}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      We differentiate using the chain rule:
+      \[
+      h\sin(k)-k\cos(h)=0
+      \]
+      \[
+      \sin(k)\cdot\dfrac{dh}{dt}+h\cos(k)\cdot\dfrac{dk}{dt}-\cos(h)\cdot\dfrac{
+        dk}{dt}+k\sin(h)\cdot\dfrac{dh}{dt}=0
+      \]
+      \[
+      \left( \sin(k)+k\sin(h) \right)\cdot\dfrac{dh}{dt}+\left( h\cos(k)
+      - \cos(h) \right)\cdot\dfrac{dk}{dt}=0
+      \]
+      \[
+      \left( \dfrac{\sqrt{2}}{2}+\dfrac{\pi}{4}\cdot\dfrac{\sqrt{2}}{2} \right)
+      \cdot\dfrac{dh}{dt}+2\left( \dfrac{\pi}{4}\cdot\dfrac{\sqrt{2}}{2}-
+      \dfrac{\sqrt{2}}{2}\right)=0
+      \]
+      \[
+      \left( \dfrac{1}{2}+\dfrac{\pi}{4}\cdot\dfrac{1}{2} \right)
+      \cdot\dfrac{dh}{dt}+\dfrac{\pi}{4}-1=0
+      \]
+      \[
+      \left( \dfrac{1}{2}+\dfrac{\pi}{8} \right)
+      \cdot\dfrac{dh}{dt}=1-\dfrac{\pi}{4}
+      \]
+      \[
+      \left(\dfrac{\pi+4}{8} \right)
+      \cdot\dfrac{dh}{dt}=\dfrac{4-\pi}{4}
+      \]
+      \[
+      \dfrac{dh}{dt}=\dfrac{\left(\dfrac{4-\pi}{4}\right)}{
+      \left(\dfrac{\pi+4}{8}\right)}
+      \]
+      \[
+      \dfrac{dh}{dt}=\dfrac{8-2\pi}{\pi+4}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<!--Word Problems-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="WordProbs.html">b. Word Problems</a></h3>
+    <div class="pgs">
+      
+        <div><a href="WordProbs.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+    <div class="dotfillex">
+      <div class="column">
+	<p>
+          A girl is blowing up a spherical balloon. Currently the radius is
+          \(r=6\,\text{cm}\). If the volume is increasing at
+          \(4\,\dfrac{\text{cm}^3}{\text{sec}}\). How fast is the radius increasing?
+        </p>
+        <div class="center">
+          <img src="graphics/x_RR_balloonInflate.gif" alt="x_RR_balloonInflate">
+        </div>
+      </div>
+        <p>
+    	  <button class="toggle has has-hint" data-toggle="HintX7"></button>
+    	  <button class="toggle has has-ans" data-toggle="AnsX7"></button>
+    	  <button class="toggle has has-sol" data-toggle="SolX7"></button>
+	</p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+      You need to find \(\dfrac{dr}{dt}\).
+      <br>
+      What is the formula for the volume of a sphere?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  	<p>
+      \(\dfrac{dr}{dt}=\dfrac{1}{36\pi}\dfrac{\text{cm}}{\text{sec}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+      The volume of a sphere is \(V=\dfrac{4}{3}\pi r^3\). We apply
+      \(\dfrac{d}{dt}\) to both sides:
+      \[
+      \dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}
+      \]
+      We solve for \(\dfrac{dr}{dt}\) and plug in numbers:
+      \[\begin{aligned}
+      \dfrac{dr}{dt}&=\dfrac{1}{4\pi r^2}\dfrac{dV}{dt} \\
+      &=\dfrac{1}{4\pi (6)^2}(4)
+      =\dfrac{1}{36\pi}\dfrac{\text{cm}}{\text{sec}}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A sponge cube is absorbing water and expanding.
+        Currently, it has side length \(s=5\,\text{in}\). The side
+        length is increasing at a rate of \(0.1\dfrac{\text{in}}{\text{sec}}\).
+        At what rate is the volume increasing?
+      </p>
+      <div class="center">
+        <img src="graphics/x_RR_sponge.gif" alt="x_RR_sponge">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has has-hint" data-toggle="HintX8"></button>
+      <button class="toggle has has-ans" data-toggle="AnsX8"></button>
+      <button class="toggle has has-sol" data-toggle="SolX8"></button>
+    </p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      What is the volume of a cube?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+      \(\dfrac{dV}{dt} = 7.5\dfrac{\text{in}^3}{\text{sec}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+    The volume of a cube is \(V=s^3\). We differentiate both sides and plug
+    in numbers:
+    \[
+    \dfrac{dV}{dt} = 3s^2\dfrac{ds}{dt}
+    =3(5)^2(0.1)=7.5\dfrac{\text{in}}{\text{sec}}
+    \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      A \(5\,\text{ft}\) tall woman is walking away from a \(15\,\text{ft}\)
+      tall light pole at a speed of \(2\,\dfrac{\text{ft}}{\text{sec}}\).
+      How fast is the tip of her shadow moving when she is \(20\,\text{ft}\)
+      away from the pole?
+    </p>
+    <div class="center">
+      <img src="graphics/x_RR_shadow.gif" alt="x_RR_shadow">
+    </div>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX9"></button>
+      <button class="toggle has-ans" data-toggle="AnsX9"></button>
+      <button class="toggle has-sol" data-toggle="SolX9"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX9">
+    <p>
+      Use similar triangles.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX9">
+    <p>
+    \(\displaystyle
+    \dfrac{d x_{S}}{dt}=3\dfrac{\text{ft}}{\text{sec}}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX9">
+    <p>
+			We look at two similar triangles: The first has corners at the top of
+			the pole, the point on the pole at the same height as the person's head,
+			and the top of the person's head. The second has corners at the top of
+			the pole, the bottom of the pole, and the tip of the person's shadow.
+      Therefore, \(\dfrac{x_{S}}{h_{L}}=\dfrac{x_{P}}{h_{L}-h_{P}}\).
+      This means that:
+      \[
+      x_{S}=\dfrac{h_{L}}{h_{L}-h_{P}}x_{P}=\dfrac{15}{15-5}x_{P}=1.5x_{P}
+      \]
+      We differentiate and plug in the woman's speed:
+      \[
+      \dfrac{d x_{S}}{dt}=1.5\dfrac{d x_{P}}{dt}
+      =1.5\cdot2\,\dfrac{\text{ft}}{\text{sec}}
+      =3\,\dfrac{\text{ft}}{\text{sec}}
+      \]
+    </p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        Water is being poured into a cylindrical tank at a rate of
+        \(2\,\dfrac{\text{m}^3}{\text{sec}}\). If the tank has a radius of \(5\,
+        \text{m}\), how fast is the height going up?
+      </p>
+      <div class="center">
+        <img src="graphics/x_RR_tank.gif" alt="x_RR_tank">
+      </div>
+    </div>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX10"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX10">
+    <p>
+      What is the formula for the volume of a cylinder?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(
+      \dfrac{dh}{dt}=\dfrac{2}{25\pi}\,\dfrac{\text{m}}{\text{sec}}
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+      The volume of a cylinder is \(V=\pi r^2 h\). Since the radius is \(5\),
+      the volume becomes:
+      \[
+      V=25\pi h
+      \]
+      We solve for \(h\) and differentiate:
+      \[
+      h=\dfrac{1}{25\pi}V
+      \]
+      \[
+      \dfrac{dh}{dt}=\dfrac{1}{25\pi}\dfrac{dV}{dt}
+      =\dfrac{1}{25\pi}2
+      =\dfrac{2}{25\pi}\dfrac{\text{m}}{\text{sec}}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A \( 5 \,\text{m}\) long ladder is sliding down a wall. The top of the
+        ladder is at a height \(a\,\text{m}\) on the wall and the base is a distance
+        \(b\,\text{m}\) from the wall. If it is sliding down at the rate
+        \(\dfrac{da}{dt}=-2\dfrac{\text{m}}{\text{sec}}\), how fast is the base
+        moving away from the wall when the top of the ladder is \(a=3\text{m}\)
+        above the ground?
+      </p>
+      <div class="center">
+        <img src="graphics/x_RR_ladder.gif" alt="x_RR_ladder">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX11"></button>
+      <button class="toggle has-ans" data-toggle="AnsX11"></button>
+      <button class="toggle has-sol" data-toggle="SolX11"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX11">
+    <p>
+      Use the Pythagorean Theorem.
+      Notice that \(\dfrac{da}{dt}\) is negative. This is because the ladder is sliding
+      down the wall, not up it.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX11">
+    <p>
+    \(\displaystyle
+    \dfrac{db}{dt}=\dfrac{3}{2}\dfrac{\text{m}}{\text{sec}}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX11">
+    <p>
+      \(a\) and \(b\) are related by the Pythagorean Theorem:
+      \[
+      a^2+b^2=25
+      \]
+      So when \(a=3\), we have \(b=4\). We differentiate the Pythagorean Theorem,
+      and solve for \(\dfrac{db}{dt}\):
+      \[
+      2a\dfrac{da}{dt}+2b\dfrac{db}{dt}=0
+      \]
+      \[
+      \dfrac{db}{dt}=-\dfrac{a}{b}\dfrac{da}{dt}
+      \]
+      Finally, we plug in numbers:
+      \[
+        \dfrac{db}{dt}=-\dfrac{3}{4}(-2)=\dfrac{3}{2}\dfrac{\text{m}}{\text{sec}}
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A spherical balloon currently has a radius of \(r=8\,\text{cm}\). The balloon is
+        deflating at a rate of
+        \(2\,\dfrac{\text{cm}^3}{\text{sec}}\). How fast is the radius
+        decreasing?
+       </p>
+        <div class="center">
+          <img src="graphics/x_RR_balloonDeflate.gif" alt="x_RR_balloonDeflate">
+        </div>
+      </div>
+      <p>
+      	<button class="toggle has has-hint" data-toggle="HintX12"></button>
+      	<button class="toggle has has-ans" data-toggle="AnsX12"></button>
+        <button class="toggle has has-sol" data-toggle="SolX12"></button>
+      </p>
+    </div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX12">
+    <p>
+      The volume is decreasing.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+      \(\dfrac{dr}{dt}=
+      -\,\dfrac{1}{128\pi}\,\dfrac{\text{cm}}{\text{sec}}\)
+      <br>
+      So the radius is decreasing
+      at \(\dfrac{1}{128\pi}\,\dfrac{\text{cm}}{\text{sec}}\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p>
+      The volume of a sphere is \(V=\dfrac{4}{3}\pi r^3\). We differentiate
+      and solve for \(\dfrac{dr}{dt}\):
+      \[\begin{aligned}
+      \dfrac{dV}{dt}&=4\pi r^2\dfrac{dr}{dt} \\
+      \dfrac{dr}{dt}&=\dfrac{1}{4\pi r^2}\dfrac{dV}{dt} \\
+      &=\dfrac{1}{4\pi(8)^2}\left(-2\right)
+      =-\,\dfrac{1}{128\pi}\,\dfrac{\text{cm}}{\text{sec}}
+      \end{aligned}\]
+      Notice that \(\dfrac{dV}{dt}\) is negative because
+      the volume is decreasing. So the radius is also decreasing
+      at \(\dfrac{1}{128\pi}\,\dfrac{\text{cm}}{\text{sec}}\).
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A baseball diamond is a square with side length \(90 \,\text{ft}\). A
+        baseball player is running from home plate to first base at a speed of
+        \(5 \,\dfrac{\text{ft}}{\text{sec}}\). How fast is the distance between
+        the runner and second base changing when she is halfway to first base?
+      </p>
+      <div class="center">
+        <img src="graphics/x_RR_BaseballDiamond.gif" alt="x_RR_BaseballDiamond">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX13"></button>
+      <button class="toggle has-ans" data-toggle="AnsX13"></button>
+      <button class="toggle has-sol" data-toggle="SolX13"></button>
+    </p>
+  </div>
+<div class="toBeToggled drop-hint" data-toggle="HintX13">
+  <p>
+    Use the Pythagorean theorem.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  <p>
+  The distance between the runner and second plate is decreasing at
+  \(\dfrac{dc}{dt}=-\sqrt{5}\,\dfrac{\text{ft}}{\text{sec}}\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  <div class="column">
+    <p>
+      Let \(a\) be the distance from the runner to first base,
+      \(b\) be the distance from first base to second base and
+      \(c\) be the distance from second base to the runner.
+      By the Pythagorean Theorem:
+      \[
+      c^2=a^2+b^2=a^2+90^2
+      \]
+      We differentiate this and solve for \(\dfrac{dc}{dt}\):
+      \[\begin{aligned}
+      2c\dfrac{dc}{dt}&=2a\dfrac{da}{dt} \\
+      \dfrac{dc}{dt}&=\dfrac{a}{c}\dfrac{da}{dt}
+      \end{aligned}\]
+    </p>
+    <div class="center">
+      <img src="graphics/x_RR_BaseballDiamondSolution.gif" alt="x_RR_BaseballDiamond">
+    </div>
+  </div>
+  <p>
+    From the problem \(a=45 \text{ft}\) and
+    \(\dfrac{da}{dt}=-5 \,\dfrac{\text{ft}}{\text{sec}}\). (The minus is
+    because the distance \(a\) is decreasing.) We need to find \(c\):
+    \[\begin{aligned}
+    c^2&=45^2+90^2 \\
+    c&=\sqrt{45^2+90^2}=45\sqrt{5}
+    \end{aligned}\]
+    Now, we plug in:
+    \[
+    \dfrac{dc}{dt}=\dfrac{45}{45\sqrt{5}}(-5)
+    =-\sqrt{5}\,\dfrac{\text{ft}}{\text{sec}}
+    \]
+  </p>
+</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+    <div class="column">
+	  	<p>
+        A cat is drinking milk from a cylindrical bowl. The height of the milk is
+        going down at a rate of \(2\,\dfrac{\text{mm}}{\text{sec}}\). If the bowl
+        has a radius of \(6\, \text{cm}\), how fast is the volume of the milk
+        left in the bowl decreasing?
+	  	</p>
+        <div class="center">
+          <img src="graphics/x_RR_catMilk.gif" alt="x_RR_catMilk">
+        </div>
+      </div>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX14"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX14"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX14">
+    <p>
+      Remember to convert from mm to cm.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+  	<p>
+      \(\dfrac{dV}{dt}=-7.2\pi\,\dfrac{\text{cm}^3}{\text{sec}}\)
+      <br>
+      So the volume is decreasing at \(7.2\pi\,\dfrac{\text{cm}^3}{\text{sec}}\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+  	<p>
+      The volume of a cylinder is \(V=\pi r^2 h\). We plug in the radius
+      and differentiate:
+      \[
+      V=36\pi h
+      \]
+      \[
+      \dfrac{dV}{dt}=36\pi\dfrac{dh}{dt}
+      \]
+      We need to convert the rate the height is changing from mm to cm. So
+      \[
+      \dfrac{dh}{dt}=-0.2 \dfrac{\text{cm}}{\text{sec}}
+      \]
+      Therefore the volume is changing at:
+      \[
+      \dfrac{dV}{dt}=-36\pi0.2
+      =-7.2\pi\,\dfrac{\text{cm}^3}{\text{sec}}
+      \]
+      So the volume is decreasing at \(7.2\pi\,\dfrac{\text{cm}^3}{\text{sec}}\).
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+<div class="dotfillex">
+  <div class="column">
+  <p>
+    A car is \(3\,\text{mi}\) east of an intersection moving east at an unknown
+    speed. The speed limit is \(60\,\text{mph}\). A police car is
+    \(4\,\text{mi}\) south of the intersection moving north at
+    \(60\,\text{mph}\). The officer's radar gun indicates \(90\,\text{mph}\)
+    when pointed at the other car. (That means the straight-line distance between
+    the cars is increasing at \(90\,\text{mph}\).) How fast is the other car
+    moving? Is it speeding?
+    <br/><br/>
+  </p>
+  <div class="center">
+    <img src="graphics/x_RR_cars.gif" alt="x_RR_Cars">
+  </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX15"></button>
+    <button class="toggle has-ans" data-toggle="AnsX15"></button>
+    <button class="toggle has-sol" data-toggle="SolX15"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX15">
+  <p>
+    Start with the Pythagorean Theoerem.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  <p>
+  The other car is speeding at \(70\,\text{mph}\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  <p>
+    Let \(a\) be the distance from the police car to the intersection and
+    let \(b\) be the distance from the intersection to the other car. Then
+    the distance between the cars, \(c\), is given by the Pythagorean Theoerem,
+    \(c^2=a^2+b^2\). We differentiate:
+    \[
+    2c\dfrac{dc}{dt}=2a\dfrac{da}{dt}+2b\dfrac{db}{dt}
+    \]
+    We know \(a=4\) and \(b=3\). So: \(c=\sqrt{3^2+4^2}=5\). We also know
+    \(\dfrac{da}{dt}=60\,\text{mph}\) and \(\dfrac{dc}{dt}=90\,\text{mph}\).
+    We cancel a \(2\) and plug in:
+    \[
+    (5)(90)=(4)(60)+(3)\dfrac{db}{dt}
+    \]
+    Finally, we solve:
+    \[
+    \dfrac{db}{dt}=\dfrac{1}{3}(450-240)=\dfrac{210}{3}=70\,\text{mph}
+    \]
+    So, the other car is moving at \(70\,\text{mph}\) which is speeding.
+  </p>
+</div>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        The area of a rectangle is staying constant at \(A=30\,\text{cm}^2\).
+        Its length is increasing at a rate of
+        \(\dfrac{dl}{dt}=4\,\dfrac{\text{cm}}{\text{sec}}\). How fast is the
+        width changing when the length is \(l=6\,\text{cm}\)? Is the width
+        increasing or decreasing?
+      </p>
+      <div class="center">
+        <img src="graphics/x_RR_rectangle.gif" alt="x_RR_rectangle">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX16"></button>
+      <button class="toggle has-sol" data-toggle="SolX16"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX16">
+    <p>
+      \(\dfrac{dw}{dt}=-\,\dfrac{10}{3}\dfrac{\text{cm}}{\text{sec}}\)
+      \(w\) is decreasing.
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX16">
+    <p>
+      The area of a rectangle is \(A=lw\) where the length and width are given
+      in \(\text{cm}\).
+      Since the area is \(A=30\,\text{cm}^2\) and the length is
+      currently \(l=6\,\text{cm}\), the width is curently:
+      \[
+      w=\dfrac{A}{l}=\dfrac{30}{6}=5\,\text{cm}
+      \]
+      We differentiate \(A=lw\), and plug in numbers to get:
+      \[
+      \dfrac{dA}{dt}=w\dfrac{dl}{dt}+l\dfrac{dw}{dt}
+      \]
+      \[
+      0=5(4)+6\dfrac{dw}{dt}
+      \]
+      We solve to get:
+      \[
+      \dfrac{dw}{dt}=-\,\dfrac{20}{6}
+      =-\,\dfrac{10}{3}\dfrac{\text{cm}}{\text{sec}}
+      \]
+      So the width is decreasing.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+    <div class="column">
+		<p>
+      Water is evaporating from a circular swimming pool at a rate of
+      \(4\,\dfrac{\text{cm}^3}{\text{hr}}\). At the same time water is flowing in
+      at a rate of \(2\,\dfrac{\text{cm}^3}{\text{hr}}\). If the swimming pool
+      has a radius of \(20\,\text{m}\), how fast is the height decreasing?
+      Assume the swimming pool has the shape of a cylinder with uniform depth, \(h\).
+		</p>
+      <div class="center">
+        <img src="graphics/x_RR_pool.gif">
+      </div>
+    </div>
+		<p>
+    	<button class="toggle has has-hint" data-toggle="HintX17"></button>
+    	<button class="toggle has has-ans" data-toggle="AnsX17"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX17">
+    <p>
+      Don't forget to convert units.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+  	<p>
+      \(\dfrac{dh}{dt}
+      =-\,\dfrac{1}{2\pi}\times10^{-6}\dfrac{\text{cm}}{\text{hr}}
+      \approx-1.59\times10^{-7}\dfrac{\text{cm}}{\text{hr}}\)
+      <br />So the height is decreasing at approximately
+      \(1.59\times10^{-7}\dfrac{\text{cm}}{\text{hr}}\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+  	<p>
+      We first find the value of \(\dfrac{dV}{dt}\):
+      \[
+      \dfrac{dV}{dt}=2\,\dfrac{\text{cm}^3}{\text{hr}}-
+      4\,\dfrac{\text{cm}^3}{\text{hr}}=-2\,\dfrac{\text{cm}^3}{\text{hr}}
+      \]
+      Notice the rate is negative because more water is evaporating than
+      flowing in. We also convert the radius from \(\text{m}\) to \(\text{cm}\):
+      \[
+      r=20\,\text{m}=2000\,\text{cm}=2\times10^{3}\,\text{cm}
+      \]
+      The volume of a cylinder is \(V=\pi r^2 h\). We plug in the radius
+      and differentiate:
+      \[\begin{aligned}
+      V&=4\times10^{6}\pi\,h \\
+      \dfrac{dV}{dt}&=4\times10^{6}\pi\,\dfrac{dh}{dt} \\
+      \end{aligned}\]
+      We solve for the rate of change of the height:
+      \[\begin{aligned}
+      \dfrac{dh}{dt}&=\dfrac{1}{4\times10^{6}\pi}\dfrac{dV}{dt}
+      =-\,\dfrac{2}{4\times10^{6}\pi} \\
+      &=-\,\dfrac{1}{2\pi}\times10^{-6}
+      \approx-1.59\times10^{-7}\dfrac{\text{cm}}{\text{hr}}
+      \end{aligned}\]
+      So the height is decreasing at approximately
+      \(1.59\times10^{-7}\dfrac{\text{cm}}{\text{hr}}\).
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+		<div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      The equation \(h^3k-4h^2k+2hk^3=30\) relates variables \(h\) and \(k\).
+      If \(\dfrac{dh}{dt}=3\), what is \(\dfrac{dk}{dt}\) when \(h=3\) and \(k=2\)?
+		</p>
+		<p>
+    	<button class="toggle has has-ans" data-toggle="AnsX18"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+  	<p>
+      \(\dfrac{dk}{dt}=-\,\dfrac{22}{21}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+  	<p>
+      We differentiate using the chain rule and the product rule:
+      \[
+      h^3k-4h^2k+2hk^3=30
+      \]
+      \[
+      3h^2k\dfrac{dh}{dt}+h^3\dfrac{dk}{dt}-8hk\dfrac{dh}{dt}-4h^2\dfrac{dk}{dt}
+      +2k^3\dfrac{dh}{dt}+6hk^2\dfrac{dk}{dt}=0
+      \]
+      We plug in and solve:
+      \[
+      3(3)^2(2)(3)+(3)^3\dfrac{dk}{dt}-8(3)(2)(3)-4(3)^2\dfrac{dk}{dt}
+      +2(2)^3(3)+6(3)(2)^2\dfrac{dk}{dt}=0
+      \]
+      \[
+      162+27\dfrac{dk}{dt}-144-36\dfrac{dk}{dt}
+      +48+72\dfrac{dk}{dt}=0
+      \]
+      \[
+      63\dfrac{dk}{dt}=-66
+      \]
+      \[
+      \dfrac{dk}{dt}=-\,\dfrac{22}{21}
+      \]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        Some water is being boiled in a cylindrical pot with a radius of
+        \(3\,\text{in}\). The height is going down at a rate of
+        \(0.2\dfrac{\text{in}}{\text{min}}\). How fast is the volume decreasing?
+      </p>
+      <div class="center">
+        <img src="graphics/x_RR_pot.gif" alt="x_RR_pot">
+      </div>
+    </div>
+    <p>
+    	<button class="toggle has has-ans" data-toggle="AnsX19"></button>
+    	<button class="toggle has has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+  	<p>
+      \(\dfrac{dV}{dt}=1.8\pi \dfrac{\text{in}^3}{\text{min}}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+  	<p>
+      The volume of the cylindrical pot is \(V=\pi r^2 h\). Now, we plug in the radius
+      and differentiate:
+      \[
+      V=9\pi h \,\text{in}^2
+      \]
+      \[\begin{aligned}
+      \dfrac{dV}{dt}&=9\pi \,\text{in}^2 \dfrac{dh}{dt} \\
+      &=1.8\pi \dfrac{\text{in}^3}{\text{min}}
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+      A glass of milk is spilled on the floor. It forms a circular puddle
+      in the shape of a cylinder. The radius is currently \(6\,\text{cm}\)
+      and the height is currently \(0.5\,\text{cm}\). Find the rate the height
+      is decreasing if the radius is increasing at
+      \(0.4 \dfrac{\text{cm}}{\text{sec}}\), assuming a constant volume.
+      </p>
+      <div class="center">
+      <img src="graphics/x_RR_spilledMilk.gif">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has has-ans" data-toggle="AnsX20"></button>
+      <button class="toggle has has-sol" data-toggle="SolX20"></button>
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+  	<p>
+      \(\dfrac{dh}{dt}=-\,\dfrac{1}{15}\dfrac{\text{cm}}{\text{sec}}\)
+      <br>
+      So the height is decreasing at
+      \(\dfrac{1}{15}\dfrac{\text{cm}}{\text{sec}}\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+  	<p>
+      The volume of a cylinder is \(V=\pi r^2 h\). So:
+      \[
+      \dfrac{dV}{dt}=2\pi r h \dfrac{dr}{dt}+ \pi r^2 \dfrac{dh}{dt}
+      \]
+      Since the amount of milk does not change, the volume does not change.
+      We plug in numbers:
+      \[
+      0=2\pi(6)(.5)(.4)+\pi(6)^2\dfrac{dh}{dt}
+      \]
+      And solve for \(\dfrac{dh}{dt}\):
+      \[
+      0=2.4+36\dfrac{dh}{dt}
+      \]
+      \[
+      \dfrac{dh}{dt}=-\,\dfrac{1}{15}\dfrac{\text{cm}}{\text{sec}}
+      \]
+      So the height is decreasing at
+      \(\dfrac{1}{15}\dfrac{\text{cm}}{\text{sec}}\).
+  	</p>
+    <p style="text-align:right">
+      tj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <div class="column">
+      <p>
+        A conical cup with height \(H=10\,\text{cm}\) and radius \(R=2\,\text{cm}\)
+        is being filled up with water at a rate of
+        \(8\dfrac{\text{cm}^3}{\text{sec}}\).
+        How fast is the height of the water increasing when it is \(5\,\text{cm}\) deep?
+      </p>
+      <div class="center">
+        <img src="graphics/x_RR_cone.gif" alt="x_RR_cone">
+      </div>
+    </div>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX21"></button>
+      <button class="toggle has-ans" data-toggle="AnsX21"></button>
+      <button class="toggle has-sol" data-toggle="SolX21"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX21">
+    <p>
+      The volume of a cone is \(V=\dfrac{1}{3}\pi r^2h\). Use similar triangles.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX21">
+    <p>
+    \(\displaystyle\dfrac{dh}{dt}=\dfrac{8}{\pi}\dfrac{\text{cm}}{\text{sec}}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX21">
+    <p>
+      We start with the volume of a cone:
+      \[
+      V=\dfrac{1}{3}\pi r^2h
+      \]
+      By similar triangles, the ratio between the height of the water and the
+      radius of the water is:
+      \[
+      \dfrac{r}{h}=\dfrac{R}{H}=\dfrac{2}{10}=\dfrac{1}{5}
+      \]
+      This means that we can replace \(r=\dfrac{1}{5}h\):
+      \[
+      V=\dfrac{1}{75}\pi h^3
+      \]
+      We take the derivative:
+      \[
+      \dfrac{dV}{dt}=\dfrac{1}{25}\pi h^2\dfrac{dh}{dt}
+      \]
+      The current height is \(5 \text{cm}\) and the volume is increasing at
+      \(\dfrac{dV}{dt}=8\dfrac{\text{cm}^3}{\text{sec}}\). We plug in and solve
+      for the rate of change of the height:
+      \[
+      8=\dfrac{1}{25}\pi 5^2\dfrac{dh}{dt}
+      \]
+      \[
+      \dfrac{dh}{dt}=\dfrac{8}{\pi}
+      \]
+      So, the height is increasing at a speed of
+      \(\dfrac{dh}{dt}=\dfrac{8}{\pi}\dfrac{\text{cm}}{\text{sec}}\).
+    </p>
+  </div>
+</li>
+
+<big>PY: All Checked</big>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Area Between Polar Graphs | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Area.html" title="Previous">&lArr;</a></li>
+      <li><a href="ArcLength.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Area Enclosed by a Polar Graph</h2>
+
+
+      
+      <h2>2. Area Between Polar Graphs</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	So far, we have seen how to compute the area between a polar curve and the
+	origin. We now look at computing the area between two polar curves.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="genexample" data-number="1">
+		Find the area bounded by the graphs of \(r=f(\theta)\) and
+		\(r=g(\theta)\) between the rays \(\theta=\alpha\) and
+	  \(\theta=\beta\). Assume \(f(\theta) \ge g(\theta) \ge 0\).
+	</p>
+	<div class="center">
+	  <img src="graphics/betwgeneral.jpg" alt="betwgeneral">
+	</div>
+</div>
+<p class="gensol">
+  The area enclosed by \(r=f(\theta)\) is
+	\(\displaystyle A=\int_\alpha^\beta \dfrac{1}{2}f(\theta)^2\,d\theta\),
+  while the area enclosed by \(r=g(\theta)\) is
+	\(\displaystyle A=\int_\alpha^\beta \dfrac{1}{2}g(\theta)^2\,d\theta\).
+  We simply subtract to obtain:
+</p>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Area Between Polar Graph">
+  The area bounded by the graphs of \(r=f(\theta)\) and \(r=g(x)\) between
+	the rays \(\theta=\alpha\) and \(\theta=\beta\) is
+  \[
+  A=\int_\alpha^\beta \dfrac{1}{2}[f(\theta)^2-g(\theta)^2]\,d\theta
+  \]
+  provided \(f(\theta) \ge g(\theta) \ge 0\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="2">
+	  Find the area of the region outside the circle \(r=1\) but inside the
+	  cardioid, \(r=2+2\sin\theta\).
+	</p>
+	<div class="center">
+		<img src="graphics/betwcardcirc.jpg" alt="betwcardcirc">
+	</div>
+</div>
+<p class="sol">
+  The only difficulty is finding the limits of integration.
+  These are where the two curves intersect. So we equate the functions and
+  solve:
+  \[
+	2+2\sin\theta=1
+	\qquad \Rightarrow \qquad
+	2\sin\theta=-1
+	\qquad \Rightarrow \qquad
+	\sin\theta=-\,\dfrac{1}{2}
+	\]
+  The intersection in the \(4^\text{th}\) quadrant is at \(\theta=-\,\dfrac{\pi}{6}\).
+  The intersection in the \(3^\text{rd}\) quadrant is at \(\theta=\dfrac{7\pi}{6}\).
+  So the area is
+  \[\begin{aligned}
+  A &=\dfrac{1}{2}\int_{-\pi/6}^{7\pi/6}
+		[(2+2\sin\theta)^2-1^2]\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/6}^{7\pi/6}
+		[3+8\sin\theta+4\sin^2]\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/6}^{7\pi/6}
+		[3+8\sin\theta+2(1-\cos(2\theta))]\,d\theta \\
+    &=\dfrac{1}{2}\int_{-\pi/6}^{7\pi/6}
+		[5+8\sin\theta-2\cos(2\theta)]\,d\theta \\
+    &=\dfrac{1}{2}[5\theta-8\cos\theta-\sin(2\theta)]_{-\pi/6}^{7\pi/6}
+		=\dfrac{10\pi}{3}+\dfrac{7\sqrt{3}}{2}
+  \end{aligned}\]
+</p>
+<p class="remark">
+	It is important to integrate from \(\theta=-\,\dfrac{\pi}{6}\) to
+	\(\theta=\dfrac{7\pi}{6}\) which covers the area between the curves,
+	including \(\theta=0\), \(\dfrac{\pi}{2}\) and \(\pi\). If one instead
+	integrates from \(\theta=\dfrac{7\pi}{6}\) to \(\theta=\dfrac{11\pi}{6}\),
+	then one gets the area at the bottom inside the circle outside
+	the cardioid.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  <span class="redbig">Caution:</span> It is not always possible to find
+	the points of intersection of two polar graphs by simply equating the
+	functions as was done in the preceeding example. Recall the discussion on
+	<a href="Intersect.html" title="Return using the Back button.">
+	Intersections of Polar Graphs</a>.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the area of the region enclosed by both polar graphs,
+		\(r=2\sin\theta\) and \(r=2\cos\theta\).
+  </p>
+  <p>
+		<button class="toggle has-hint" data-toggle="HintX1"></button>
+		<button class="toggle has-ans" data-toggle="AnsX1"></button>
+		<button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+	<div class="column">
+	  <p>
+	    The graphs are circles. By symmetry, you can compute half of the area
+			and double it.
+	  </p>
+	  <div class="center">
+	    <img src="graphics/betwcirccirc.jpg" alt="betwcirccirc">
+	  </div>
+	</div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(A=\dfrac{\pi}{2}-1\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<div class="column">
+	  <p>
+	    The graphs are circles. In a
+			<a href="Intersect.html#intersectcirclesex" title="Return using the Back button.">
+			previous exercise</a>, we found the graphs intersect at
+			\((r,\theta)=\left(\sqrt{2},\dfrac{\pi}{4}\right)\) and at the origin.
+			By symmetry, we split the region in half (as shown) and double the area.
+			The bottom half is bounded by the ray at \(\theta=\dfrac{\pi}{4}\)
+	    and the red circle \(r=2\sin\theta\) which comes into the origin
+			at \(\theta=0\). So the area is:
+	  </p>
+	  <div class="center">
+	    <img src="graphics/betwcirccirc.jpg" alt="betwcirccirc">
+	  </div>
+	</div>
+  <p>
+		\[\begin{aligned}
+		A&=2\int_0^{\pi/4} \dfrac{1}{2}r(\theta)^2\,d\theta
+		=2\int_0^{\pi/4} \dfrac{1}{2}(2\sin\theta)^2\,d\theta \\
+		&=4\int_0^{\pi/4} \sin^2\theta\,d\theta
+		=2\int_0^{\pi/4} (1-\cos(2\theta))\,d\theta \\
+		&=2\left[\theta-\,\dfrac{\sin(2\theta)}{2}\right]_0^{\pi/4}
+		=\dfrac{\pi}{2}-1
+		\end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

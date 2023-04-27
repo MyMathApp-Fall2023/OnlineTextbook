@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Slope, Increasing and Decreasing | 10. Derivatives and Tangent Lines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DerivFn.html" title="Previous">&lArr;</a></li>
+      <li><a href="VelAccOther.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Derivatives and Tangent Lines</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Derivative as a Function</h2>
+
+
+      
+      <h2>2. Slope, Increasing and Decreasing</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  All the <a href="DerivPtAppl.html" title="Return using the Back button.">
+  Applications of Derivatives at a Point</a>, can now be done using functions.
+  And there are several additional applications, like acceleration and jerk
+  on the <a href="VelAccOther.html">next page.</a>
+</p>
+
+        <div class="rule" id="ex_slope_x^3"></div>
+
+<h3>Slope</h3>
+<p>
+  The derivative of the function, \(f(x)\), is the function, \(f'(x)\), which
+  gives the slope of the tangent line at each point.
+</p>
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="1">
+      Find the slope of the tangent line to a function, \(f(x)=x^3\), at each
+      of the points \(x=1\), \(x=2\) and \(x=3\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX1"></button>
+      <button class="toggle has-sol" data-toggle="SolX1"></button>
+    </p>
+  </div>
+  <div class="center">
+    <video src="graphics/ex_slope_x_cubed_prob.mp4" autoplay loop controls></video>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(f'(x)=3x^2\)
+    <br>
+    \(f'(1)=3 \qquad f'(2)=12 \qquad f'(3)=27\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <div class="column">
+    <div data-col-width="50%">
+      <p>
+        Rather than compute the \(3\) slopes separately, we compute them all at once:
+        \[\begin{aligned}
+        f'(x)&=\lim_{h\to0} \dfrac{f(x+h)-f(x)}{h} \\
+        &=\lim_{h\to0} \dfrac{(x+h)^3-x^3}{h} \\
+        &=\lim_{h\to0} \dfrac{(x^3+3x^2h+3xh^2+h^3)-x^3}{h} \\
+        &=\lim_{h\to0} \dfrac{3x^2h+3xh^2+h^3}{h} \\
+        &=\lim_{h\to0} (3x^2+3xh+h^2)=3x^2
+        \end{aligned}\]
+        Then
+        \[
+        f'(1)=3 \qquad f'(2)=12 \qquad f'(3)=27
+        \]
+      </p>
+    </div>
+    <div class="center" data-col-width="50%">
+      <video src="graphics/ex_slope_x_cubed_sol.mp4" autoplay loop controls></video>
+    </div>
+  </div>
+</div>
+
+        <div class="rule" id="ex_incrdecr"></div>
+
+<h3>Increasing and Decreasing</h3>
+
+<p>
+  Since the first derivative of \(f(x)\) is the slope of the tangent line,
+  we can use it to tell if the function is increasing or decreasing.
+</p>
+<div class="column">
+  <p class="def" data-title="Increasing and Decreasing">
+    In a region where the function is getting bigger as we move from left to right,
+    the curve is <span class="defword">increasing</span>. If the derivative is
+    positive, \(f'(x)\gt0\), then the slope is positive and the function is
+    increasing.
+  </p>
+  <div class="center">
+    <img src="graphics/def_incr_x^4-8x^2.jpg" alt="def_incr_x^4-8x^2">
+  </div>
+</div>
+<div class="column">
+  <p class="greybox">
+    In a region where the function is getting smaller as we move from left to right,
+    the curve is <span class="defword">decreasing</span>. If the derivative is
+    negative, \(f'(x)\lt0\), then the slope is negative and the function is
+    decreasing.
+  </p>
+  <div class="center">
+    <img src="graphics/def_decr_x^4-8x^2.jpg" alt="def_decr_x^4-8x^2">
+  </div>
+</div>
+
+<hr width="0" id="eg_x^4-8x^2">
+
+<p class="example" data-number="2">
+  Find the intervals where the graph of \(f(x)=x^4-8x^2\) is increasing and
+  decreasing.
+</p>
+<p class="sol">
+  We find the derivative and factor it:
+  \[\begin{aligned}
+  f'(x)&=\lim_{h\to0} \dfrac{f(x+h)-f(x)}{h} \\
+  &=\lim_{h\to0} \dfrac{[(x+h)^4-8(x+h)^2]-(x^4-8x^2)}{h} \\
+  &=\lim_{h\to0} \dfrac{1}{h}\left[(x^4+4x^3h+6x^2h^2+4xh^3+h^4)\right. \\
+  &\qquad\qquad\quad\left.-8(x^2+2xh+h^2)-(x^4-8x^2)\right] \\
+  &=\lim_{h\to0} \dfrac{4x^3h+6x^2h^2+4xh^3+h^4-16xh-8h^2}{h} \\
+  &=\lim_{h\to0} (4x^3+6x^2h+4xh^2+h^3-16x-8h) \\
+  &=4x^3-16x
+  =4x(x-2)(x+2)
+  \end{aligned}\]
+  The interesting points are where \(f'(x)=0\), i.e. \(x=0,2,-2\).
+  These are called the critical points of the function.
+  We draw a number line and mark in the critical points:
+  <span class="center">
+    \(\begin{array}{r}
+      f'(x)= \\
+      x=
+      \end{array}\)
+    <img src="graphics/eg_number_line-202.jpg" alt="eg_number_line-202">
+  </span>
+  We now test a point in each interval to see if \(f'(x)=4x(x-2)(x+2)\) is
+  positive or negative.
+  \[\begin{aligned}
+  f'(-3)&=4(-3)(-5)(-1)=-60 \\
+  f'(-1)&=4(-1)(-3)(1)=12 \\
+  f'(1)&=4(1)(-1)(3)=-12 \\
+  f'(3)&=4(3)(1)(5)=60 \\
+  \end{aligned}\]
+  We have marked these on the number line:
+  <span class="center">
+    \(\begin{array}{r}
+      f'(x)= \\
+      x=
+      \end{array}\)
+    <img src="graphics/eg_number_line-202marked.jpg" alt="eg_number_line-202marked">
+  </span>
+</p>
+<p>
+  So \(f(x)\) is decreasing on \((-\infty,-2]\cup[0,2]\) and is
+  increasing on \([-2,0]\cup[2,\infty)\). These are marked on the number line:
+  <span class="center">
+    &emsp; &emsp; &emsp; &ensp;
+    <img src="graphics/eg_number_line-202arrows.jpg" alt="eg_number_line-202arrows">
+  </span>
+</p>
+        <div class="rule" id="ex_3x^4-16x^3+24x^2"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the intervals where the graph of \(f(x)=3x^4-16x^3+24x^2\) is
+    increasing and decreasing.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Factor the derivative and determine where it is positive and negative.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(f(x)\) is decreasing on \((-\infty,0]\) and is
+  increasing on \([0,\infty)\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We find the derivative and factor it:
+    \[\begin{aligned}
+    f'(x)&=\lim_{h\to0} \dfrac{f(x+h)-f(x)}{h} \\
+    &=\lim_{h\to0} \dfrac{1}{h}\left([3(x+h)^4-16(x+h)^3+24(x+h)^2]\right. \\
+    &\qquad\qquad\quad-\left.[3x^4-16x^3+24x^2]\right) \\
+    &=\lim_{h\to0} \dfrac{1}{h}\left(\Big[3(x^4+4x^3h+O(h^2))-16(x^3+3x^2h+O(h^2))\right. \\
+    &\qquad\qquad\quad\left.+24(x^2+2xh+h^2)\Big]-\Big[3x^4-16x^3+24x^2\Big]\right) \\
+    &=\lim_{h\to0} \dfrac{1}{h}\left(12x^3h-48x^2h+48xh+O(h^2)\right) \\
+    &=\lim_{h\to0} \left(12x^3-48x^2+48x+O(h)\right) \\
+    &=12x^3-48x^2+48x=12x(x^2-4x+4)=12x(x-2)^2
+    \end{aligned}\]
+    Where \(O(h^n)\) means terms with powers of \(h\) of degree \(n\) or higher.
+    The interesting points are where \(f'(x)=0\), i.e. \(x=0,2\).
+    We draw a number line and mark in these critical points:
+    <span class="center">
+      \(\begin{array}{r}
+      f'(x)= \\
+      x=
+      \end{array}\)
+      <img src="graphics/ex_number_line02.jpg" alt="ex_number_line02">
+    </span>
+    We now test a point in each interval to see if \(f'(x)=12x(x-2)^2\) is
+    positive or negative.
+    \[\begin{aligned}
+    f'(-1)&=12(-1)(-3)^2=-108 \\
+    f'(1)&=12(1)(-1)^2=12 \\
+    f'(3)&=12(3)(1)^2=36 \\
+    \end{aligned}\]
+    We have marked these on the number line:
+    <span class="center">
+      \(\begin{array}{r}
+      f'(x)= \\
+      x=
+      \end{array}\)
+      <img src="graphics/ex_number_line02marked.jpg" alt="ex_number_line02marked">
+    </span>
+    So \(f(x)\) is decreasing on \((-\infty,0]\) and is
+    increasing on \([0,\infty)\). These are marked on the number line:
+  </p>
+  <span class="center">
+    &emsp; &emsp; &emsp; &ensp;
+    <img src="graphics/ex_number_line02arrows.jpg" alt="ex_number_line02arrows">
+  </span>
+  <p>
+    Notice \(f(x)\) is decreasing on \((-\infty,0]\)
+    and is increasing on \([0,\infty)\), even though it becomes
+    horizontal at
+    \(x=2\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

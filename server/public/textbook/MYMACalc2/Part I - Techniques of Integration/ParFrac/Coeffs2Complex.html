@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Complex Methods (Optional) | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Coeffs2.html#complex" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>b2. Finding Coefficients - Quadratic</h2>
+
+
+      
+      <h2>a. Complex Methods (Optional)</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  When we discussed finding the coefficients for terms with a linear
+  denominators, \(x-a\), we found that plugging in the "obvious" value
+  \(x=a\) gave the numerator of the linear denominator if it was non-repeating
+  and the numerator of the highest power if it was repeating. Repeatedly
+  differentiating and plugging in the obvious value gave the other coefficients.
+</p>
+<p>
+  However, when trying to find the coefficients for terms with a quadratic
+  denominators, \((x-b)^2+c^2\), plugging in the "obvious" value \(x=b\) only
+  reduced these factors to \(c^2\) and did not completely eliminate all
+  factors other than the desired \(B(x-b)+C\) factor. However, the quadratic
+  denominator can actually be factored into linear factors, if we allow complex
+  numbers:
+  \[
+  (x-b)^2+c^2=(x-b+c\,{\rm i})(x-b-c\,{\rm i})
+  \]
+  (Check this by multiplying out the right side and using \({\rm i}^2=-1\).)
+  So \(x=b\) is not really the correct "obvious" value to plug in;
+  \(x=b\pm c\,{\rm i}\) is!
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Before discussing finding the coefficients for quadratic terms using
+  complex methods, we need to review some facts about complex numbers.
+</p>
+<div class="greybox">
+  <p class="def">
+    Given the complex number \(z=x+y\,{\rm i}\),
+  </p>
+  <ul>
+    <li>
+      the <span class="defword">length</span> or
+      <span class="defword">magnitude</span> of the complex number is:
+      \[
+      |z|=\sqrt{x^2+y^2}
+      \]
+      Note: This is the distance from the point \((x,y)\) to the origin in
+      the \(xy\)-plane, or the length of the vector \(\left< x,y \right>\).
+    </li>
+    <li>
+      the <span class="defword">complex conjugate</span> of the complex number is:
+      \[
+      \bar z=x-y\,{\rm i}
+      \]
+      Note: To construct a complex conjugate, just replace all \({\rm i}\)'s
+      by \(-{\rm i}\)'s.
+      <br>
+      Note: The product of a complex number and its conjugate is the square of its magnitude:
+      \[
+      z\bar z=\bar z z=|z|^2
+      \]
+      To see this just multiply it out:
+      \[
+      z\bar z=(x+y\,{\rm i})(x-y\,{\rm i})=x^2+y^2=|z|^2
+      \]
+    </li>
+    <li>
+      the <span class="defword">inverse</span> of the complex number is:
+      \[
+      z^{-1}=\dfrac{\bar z}{|z|^2}
+      \]
+      To see it really is the multiplicative inverse, we multiply:
+      \[\begin{aligned}
+      z^{-1}z=\dfrac{\bar z}{|z|^2}z=\dfrac{|z|^2}{|z|^2}=1
+      \end{aligned}\]
+    </li>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  So if you are willing to use complex numbers, the procedure is to clear
+  the denominator and then follow this method:
+</p>
+<p class="step" data-number="2 Method D"
+data-title='Plug in the Obvious Complex Values of \(x\), Differentiate and Repeat'>
+</p>
+<p class="example" data-number="1">
+  Find the partial fraction expansion for:
+  \[
+  \dfrac{16x+128}{\left[(x-3)^2+4\right]\left[(x-1)^2+4\right]^2}
+  =\dfrac{A(x-3)+B}{(x-3)^2+4}+\dfrac{C(x-1)+D}{(x-1)^2+4}
+  +\dfrac{E(x-1)+F}{\left[(x-1)^2+4\right]^2}
+  \]
+</p>
+<p class="remark">
+  This has one non-repeated and one repeated quadratic factor in the denominator.
+  Since there are \(6\) coefficients, it would be very difficult to find the
+  coefficients using the techniques of the previous page. So we here use the
+  complex methods.
+</p>
+<p class="sol">
+  As usual, we first clear the denominator:
+  \[\begin{aligned}
+  16x+128
+  =&[A(x-3)+B]\left[(x-1)^2+4\right]^2 \\
+  &+[C(x-1)+D]\left[(x-3)^2+4\right]\left[(x-1)^2+4\right] \\
+  &+[E(x-1)+F]\left[(x-3)^2+4\right] \qquad \qquad \text{(*)}
+  \end{aligned}\]
+  The roots of \((x-3)^2+4\) are \(x=3\pm2\,{\rm i}\).
+  The roots of \((x-1)^2+4\) are \(x=1\pm2\,{\rm i}\).
+  So we plug in one of each of these:
+</p>
+<ul>
+  <li>
+    \(x=3+2\,{\rm i}\):
+    \[\begin{aligned}
+    48+32\,{\rm i}+128
+    &=[A(2\,{\rm i})+B][(2+2\,{\rm i})^2+4]^2 \\
+    &\Longrightarrow \qquad B+2A\,{\rm i}=-1-2\,{\rm i} \\
+    &\Longrightarrow \qquad A=-1, \quad B=-1
+    \end{aligned}\]
+    <button class="toggle btn" data-toggle="DropHow1">More Details</button>
+  </li>
+  <div class="toBeToggled note" data-toggle="DropHow1">
+    <h4>How do we solve &ensp;
+      \(
+      176+32\,{\rm i}
+      =[A(2\,{\rm i})+B][(2+2\,{\rm i})^2+4]^2
+      \)?
+    </h4>
+    <p>
+      We first compute that:
+      \[\begin{aligned}
+      [(2+2\,{\rm i})^2+4]^2
+      &=[4+8\,{\rm i}+4\,{\rm i}^2+4]^2
+      =[4+8\,{\rm i}]^2 \\
+      &=16+64\,{\rm i}+64\,{\rm i}^2
+      =-48+64\,{\rm i}
+      \end{aligned}\]
+      Then the inverse (reciprocal) of \(-48+64\,{\rm i}\) is
+      \[
+      (-48+64\,{\rm i})^{-1}
+      =\dfrac{-48-64\,{\rm i}}{48^2+64^2}
+      =\dfrac{-1}{400}(3+4\,{\rm i})
+      \]
+      So we multiply both sides of our equation by
+      \(\dfrac{-1}{400}(3+4\,{\rm i})\) to get:
+      \[\begin{aligned}
+      [A(2\,{\rm i})+B]
+      &=\dfrac{-1}{400}(3+4\,{\rm i})(176+32\,{\rm i}) \\
+      &=\dfrac{-1}{400}(528+96\,{\rm i}+704\,{\rm i}+128\,{\rm i}^2) \\
+      &=\dfrac{-1}{400}(400+800\,{\rm i})
+      =-1-2\,{\rm i}
+      \end{aligned}\]
+      We finally equate real and imaginary parts to get \(A=-1\) and \(B=-1\).
+    </p>
+  </div>
+  <br>
+  <li>
+    \(x=1+2\,{\rm i}\):
+    \[\begin{aligned}
+    16+32\,{\rm i}+128
+    &=[E(2\,{\rm i})+F][(-2+2\,{\rm i})^2+4] \\
+    &\Longrightarrow \qquad F+2E\,{\rm i}=4+16\,{\rm i} \\
+    &\Longrightarrow \qquad E=8, \quad F=4
+    \end{aligned}\]
+    <button class="toggle btn" data-toggle="DropHow2">More Details</button>
+  </li>
+  <div class="toBeToggled" data-toggle="DropHow2">
+    <h4>How do we solve &ensp;
+      \(
+      144+32\,{\rm i}
+      =[E(2\,{\rm i})+F][(-2+2\,{\rm i})^2+4]
+      \)?
+    </h4>
+    <p>
+      We first compute that:
+      \[
+      [(-2+2\,{\rm i})^2+4]
+      =[4-8\,{\rm i}+4\,{\rm i}^2+4]
+      =4-8\,{\rm i}
+      \]
+      Then the inverse (reciprocal) of \(4-8\,{\rm i}\) is
+      \[
+      (4-8\,{\rm i})^{-1}
+      =\dfrac{4+8\,{\rm i}}{4^2+8^2}
+      =\dfrac{1}{20}(1+2\,{\rm i})
+      \]
+      So we multiply both sides of our equation by
+      \(\dfrac{1}{20}(1+2\,{\rm i})\) to get:
+      \[\begin{aligned}
+      [E(2\,{\rm i})+F]
+      &=\dfrac{1}{20}(1+2\,{\rm i})(144+32\,{\rm i}) \\
+      &=\dfrac{1}{20}(144+32\,{\rm i}+288\,{\rm i}+64\,{\rm i}^2) \\
+      &=\dfrac{1}{20}(80+320\,{\rm i})
+      =4+16\,{\rm i}
+      \end{aligned}\]
+      We finally equate real and imaginary parts to get \(E=8\) and \(F=4\).
+    </p>
+  </div>
+</ul>
+<p class="remark">
+  Notice that this gave us both coefficients in the numerator of
+  \((x-3)^2+4\) and both coefficients in the numerator of the highest power of
+  \((x-1)^2+4\).
+</p>
+<p>
+  To find the last \(2\) coefficients, we differentate (*) to get:
+  \[\begin{aligned}
+  16=&A\left[(x-1)^2+4\right]^2+[A(x-3)+B]2\left[(x-1)^2+4\right]2(x-1) \\
+  &+C\left[(x-3)^2+4\right]\left[(x-1)^2+4\right] \\
+  &+[C(x-1)+D]\left[(x-3)^2+4\right]2(x-1) \\
+  &+[C(x-1)+D]2(x-3)\left[(x-1)^2+4\right] \\
+  &+E\left[(x-3)^2+4\right]+[E(x-1)+F]2(x-3) \qquad \qquad \text{(**)}
+  \end{aligned}\]
+  <span class="greenbig">Notice we used the product rule and did not simplify!</span>
+  <br>
+  We now plug in \(x=1+2\,{\rm i}\) and use the values of \(E\) and \(F\):
+</p>
+<ul>
+  <li>
+    \(x=1+2\,{\rm i}\):
+    \[\begin{aligned}
+    16&=[C(2\,{\rm i})+D]\left[(-2+2\,{\rm i})^2+4\right]2(2\,{\rm i}) \\
+    &\quad+E[(-2+2\,{\rm i})^2+4]+[E(2\,{\rm i})+F]2(-2+2\,{\rm i}) \\
+    &=[C(2\,{\rm i})+D][32+16\,{\rm i}] \\
+    &\quad+E[4-8\,{\rm i}]+[E(2\,{\rm i})+F](-4+4\,{\rm i}) \\
+    &=[C(2\,{\rm i})+D][32+16\,{\rm i}]-48-112\,{\rm i} \\
+    &\Longrightarrow \qquad D+2C\,{\rm i}=3+2\,{\rm i} \\
+    &\Longrightarrow \qquad C=1, \quad D=3
+    \end{aligned}\]
+    <button class="toggle btn" data-toggle="DropHow3">More Details</button>
+  </li>
+  <div class="toBeToggled note" data-toggle="DropHow3">
+    <h4>How do we solve &ensp;
+      \(
+      16=[C(2\,{\rm i})+D][32+16\,{\rm i}]-48-112\,{\rm i}
+      \)?
+    </h4>
+    <p>
+      We first rewrite the equation as
+      \[
+      [D+2C\,{\rm i}][32+16\,{\rm i}]=64+112\,{\rm i}
+      \]
+      Then the inverse (reciprocal) of \(32+16\,{\rm i}\) is
+      \[
+      (32+16\,{\rm i})^{-1}
+      =\dfrac{32-16\,{\rm i}}{32^2+16^2}
+      =\dfrac{1}{80}(2-{\rm i})
+      \]
+      So we multiply both sides of our equation by
+      \(\dfrac{1}{80}(2-{\rm i})\) to get:
+      \[\begin{aligned}
+      D+2C\,{\rm i}
+      &=\dfrac{1}{80}(2-{\rm i})(64+112\,{\rm i}) \\
+      &=\dfrac{1}{80}(128+224\,{\rm i}-64\,{\rm i}-112{\rm i}^2) \\
+      &=\dfrac{1}{80}(240+160\,{\rm i})
+      =3+2\,{\rm i}
+      \end{aligned}\]
+      We finally equate real and imaginary parts to get \(C=1\) and \(D=3\).
+    </p>
+  </div>
+</ul>
+<p>
+  So the partial fraction expansion is
+  \[
+  \dfrac{16x+128}{\left[(x-3)^2+4\right]\left[(x-1)^2+4\right]^2}
+  =\dfrac{-(x-3)-1}{(x-3)^2+4}+\dfrac{(x-1)+3}{(x-1)^2+4}
+  +\dfrac{8(x-1)+4}{\left[(x-1)^2+4\right]^2}
+  \]
+</p>
+<p class="remark">
+  It's <em>amazing</em> how much easier complex numbers made this process.
+  Well, it wasn't <em>really</em> easy! But it was still much easier then
+  solving \(6\) equations for \(6\) unknowns.
+</p>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice finding the Coefficients in a Partial Fraction
+  Expansion by using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ParFracFindCoeff.maplet" download>Partial Fractions: Finding Coefficients</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p class="maplet-ref"></p>
+
+        <div class="rule"></div>
+
+<p>
+  We are now ready to do the integrals.
+</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

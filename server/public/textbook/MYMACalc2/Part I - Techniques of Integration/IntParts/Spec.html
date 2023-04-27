@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b2. Integrals of Special Functions | 4. Integration by Parts</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Choice.html" title="Previous">&lArr;</a></li>
+      <li><a href="Def.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>4. Integration by Parts</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall: &emsp; &emsp; &emsp;
+  \(\displaystyle \int u\,dv=u\,v-\int v\,du\) &emsp; where &emsp;
+  \(du=\dfrac{du}{dx}\,dx\) &emsp; and &emsp; \(dv=\dfrac{dv}{dx}\,dx\)
+</p>
+
+
+      
+      <h2>b2. Integrals of Special Functions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Integration by parts can be used to find the integrals of many additional
+  special functions.
+</p>
+<a id="egspec"></a>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int \arcsin x\,dx\).
+</p>
+<div class="toBeToggled uparr shown" data-toggle="sol1">
+  <p class="sol">
+    We do not appear to have the product of two functions here.  However,
+    one of the functions can be taken as \(1\).  So we take
+    \[\begin{array}{ll}
+    u=\arcsin x & dv=1\,dx=dx \\
+    du=\dfrac{1}{\sqrt{1-x^2}}\,dx \quad & v=x
+    \end{array}\]
+    Thus
+    \[
+    \int \arcsin x\,dx
+    =x\arcsin x-\int \dfrac{x}{\sqrt{1-x^2}}\,dx
+    \]
+    To compute the remaining integral, we make the substitution \(u=1-x^2\).
+    Then \(du=-2x\,dx\) and so \(x\,dx=-\,\dfrac{1}{2}\,du\).  Thus,
+    \[\begin{aligned}
+    \int \arcsin x\,dx
+    &=x\arcsin x+\dfrac{1}{2}\int \dfrac{1}{\sqrt{u}}\,du \\
+    &=x\arcsin x+\sqrt{u}+C \\
+    &=x\arcsin x+\sqrt{1-x^2}+C
+    \end{aligned}\]
+  </p>
+  <p class="check">
+    We check by differentiating:
+    If &ensp; \(f(x)=x\arcsin x+\sqrt{1-x^2}\), &ensp; then
+    \[
+    f'(x)=\arcsin x+x\dfrac{1}{\sqrt{1-x^2}}
+    +\dfrac{1}{2}\dfrac{-2x}{\sqrt{1-x^2}}=\arcsin x
+    \]
+    which is the original integrand.
+	</p>
+</div>
+<a id="exspec"></a>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  To compute \(\displaystyle \int \arccos x\,dx\), what 'parts' should be selected?
+</p>
+<div class="column" align="center">
+  <div data-col-width="5%">
+    <p align="left">
+      <button class="toggle has-choiceA correct" data-toggle="AnsX2A"></button>
+    </p>
+  </div>
+  <div data-col-width="20%">
+    <p align="left">
+      \(\displaystyle\begin{aligned}&u=\arccos x \\ &dv=dx\end{aligned}\)
+    </p>
+  </div>
+  <div data-col-width="5%">
+    <p align="left">
+      <button class="toggle has-choiceB incorrect" data-toggle="AnsX2B"></button>
+    </p>
+  </div>
+  <div data-col-width="20%">
+    <p align="left">
+      \(\displaystyle\begin{aligned}&u=\arccos x \\ &dv=\cos x\,dx\end{aligned}\)
+    </p>
+  </div>
+  <div data-col-width="5%">
+    <p align="left">
+      <button class="toggle has-choiceC incorrect" data-toggle="AnsX2C"></button>
+    </p>
+  </div>
+  <div data-col-width="20%">
+    <p align="left">
+      \(\displaystyle\begin{aligned}&u=1 \\ &dv=\arccos x\,dx\end{aligned}\)
+    </p>
+  </div>
+  <div data-col-width="5%">
+    <p align="left">
+      <button class="toggle has-choiceD incorrect" data-toggle="AnsX2D"></button>
+    </p>
+  </div>
+  <div data-col-width="20%">
+    <p align="left">
+      \(\displaystyle\begin{aligned}&u=\cos x \\ &dv=dx\end{aligned}\)
+    </p>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2A">
+  <p>
+    A. Correct. This selection of parts gives
+    \[
+    du=\dfrac{-1}{\sqrt{1-x^2}} \qquad \text{and} \qquad v=x
+    \]
+    This gives
+    \[
+    \int \arccos x\,dx=x\arccos x+\int \dfrac{x}{\sqrt{1-x^2}}dx
+    \]
+    The problem is now very much like the one worked out above. Use the
+    substitution \(u=1-x^2\) to finish the problem.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2B">
+  <p>
+    B. Sorry. You seem to have separated the \(\arccos\) function
+    into two parts. The expression \(\arccos\) denotes a function --- and
+    cannot be grammatically split even if both parts make mathematical sense.
+    (In this case they don't.)
+    Try again.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2C">
+  <p>
+    C. Incorrect. Resolving the problem this way involves finding \(v\) and
+    that is the problem we started with.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2D">
+  <p>
+    D. Sorry. This problem involves the \(\arccos\) function, which
+    is the inverse of the \(\cos\) function.
+    Try again.
+  </p>
+</div>
+<a id="int_ln"></a>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\displaystyle \int \ln x\,dx\).
+  </p>
+   <p>
+     <button class="toggle has-hint" data-toggle="HintX3"></button>
+     <button class="toggle has-ans" data-toggle="AnsX3"></button>
+     <button class="toggle has-sol" data-toggle="SolX3"></button>
+   </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Take \(u=\ln x\) and \(dv=dx\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\displaystyle \int \ln x\,dx=x\ln x-x+C\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Take
+    \[\begin{array}{ll}
+    u=\ln x & dv=dx \\
+    du=\dfrac{1}{x}\,dx \quad & v=x
+    \end{array}\]
+    Then
+    \[
+    \int \ln x\,dx=x\ln x-\int x\dfrac{1}{x}\,dx=x\ln x-x+C
+    \]
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Compute\(\displaystyle \int \arctan x\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX4"></button>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    Take \(u=\arctan x\) and \(dv=dx\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(\displaystyle \int \arctan x\,dx
+    =x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    Take
+    \[\begin{array}{ll}
+    u=\arctan x & dv=dx \\
+    du=\dfrac{1}{1+x^2}\,dx \quad & v=x
+    \end{array}\]
+    Then
+    \[
+    \int \arctan x\,dx=x\arctan x-\int \dfrac{x}{1+x^2}\,dx
+    \]
+    Now make the substitution \(u=1+x^2\). Then \(du=2x\,dx\).
+    So
+    \[\begin{aligned}
+    \int \arctan x\,dx
+    &=x\arctan x-\dfrac{1}{2}\int \dfrac{1}{u}\,du\  \\
+    &=x\arctan x-\dfrac{1}{2}\ln|u|+C\  \\
+    &=x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C
+    \end{aligned}\]
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    Compute\(\displaystyle \int \text{arcsec}\,x\,dx\).
+    (Look at \(x \ge 1\) and \(x \le -1\) separately.)
+    <br>
+    This one is tricky. <em>Read the hint.</em>
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX5"></button>
+    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+    <button class="toggle has-sol" data-toggle="SolX5"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX5">
+  <p>
+    First, recall that \(\text{arcsec}\,x \) is only defined for \(|x| \ge 1\)
+    because \(|\sec\theta| \ge 1\) because \(|\cos\theta| \le 1\). So you need
+    to do \(x \ge 1\) and \(x \le -1\) separately.
+    <br>
+    Second, the solution uses the derivative:
+    \[
+    \dfrac{d}{dx}\text{arcsec}\,x=\dfrac{1}{|x|\sqrt{x^2-1}}
+    \]
+    and the integral:
+    \[
+    \int \sec\theta\,d\theta=\ln|\sec\theta+\tan\theta|+C
+    \]
+    This integral will be derived in the chapter on
+    <a href="../TrigInt/TanSecOther.html#sec_int" title="Return using the Back button.">
+    Trig Integrals</a>. However, it can be easily checked by differentiating:
+    \[\begin{aligned}
+    \dfrac{d}{d\theta}\ln|\sec\theta+\tan\theta|
+  	&=\dfrac{1}{\sec\theta+\tan\theta}(\sec\theta\tan\theta+\sec^2\theta) \\[5pt]
+  	&=\dfrac{\sec\theta(\tan\theta+\sec\theta)}{\sec\theta+\tan\theta}
+  	=\sec\theta
+    \end{aligned}\]
+    <br>
+    Third, to do the integration by parts, take \(u=\text{arcsec}\,x\) and \(dv=dx\).
+    Then make the substitution \(x=\sec\theta\) and use the Pythagorean
+    identity for \(\tan\) and \(\sec\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    \(\displaystyle \int \text{arcsec}\,x\,dx
+    =\left\{
+      \begin{array}{ll}
+      x\,\text{arcsec}\,x-\ln|x+\sqrt{x^2-1}|+C & \text{for } x \ge 1 \\
+      x\,\text{arcsec}\,x+\ln|x+\sqrt{x^2-1}|+C & \text{for } x \le -1
+      \end{array}
+    \right.
+    \)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <p>
+    We do integration by parts with:
+    \[\begin{array}{ll}
+    u=\text{arcsec}\,x & dv=dx \\
+    du=\dfrac{1}{|x|\sqrt{x^2-1}}\,dx \quad & v=x
+    \end{array}\]
+    For \(x \ge 1\), this gives:
+    \[
+    \int \text{arcsec}\,x\,dx=x\,\text{arcsec}\,x-\int \dfrac{1}{\sqrt{x^2-1}}\,dx
+    \]
+    We now make the substitution \(x=\sec\theta\). Then
+    \(dx=\sec\theta\tan\theta\,d\theta\) and \(x^2-1=\sec^2\theta-1=\tan^2\theta\).
+    We get:
+    \[\begin{aligned}
+    \int \text{arcsec}\,x\,dx
+    &=x\,\text{arcsec}\,x-\int \dfrac{\sec\theta\tan\theta}{\sqrt{\sec^2\theta-1}}\,d\theta \\
+    &=x\,\text{arcsec}\,x-\int \dfrac{\sec\theta\tan\theta}{\tan\theta}\,d\theta \\
+    &=x\,\text{arcsec}\,x-\int \sec\theta\,d\theta \\
+    &=x\,\text{arcsec}\,x-\ln|\sec\theta+\tan\theta|+C \\
+    &=x\,\text{arcsec}\,x-\ln|x+\sqrt{x^2-1}|+C \\
+    \end{aligned}\]
+  </p>
+  <p class="check">
+    We check by differentiating:
+    \[\begin{aligned}
+    \dfrac{d}{dx}&(x\,\text{arcsec}\,x-\ln|x+\sqrt{x^2-1}|) \\
+    &=\text{arcsec}\,x+\dfrac{x}{|x|\sqrt{x^2-1}}
+    -\dfrac{1}{x+\sqrt{x^2-1}}\left(1+\dfrac{x}{\sqrt{x^2-1}}\right)\\
+    &=\text{arcsec}\,x+\dfrac{x}{|x|\sqrt{x^2-1}}-\dfrac{1}{\sqrt{x^2-1}} \\
+    &=\text{arcsec}\,x\\
+    \end{aligned}\]
+    since we have assumed \(x \ge 1\).
+  </p>
+  <p>
+    To redo the derivation assuming \(x \le -1\), we need to remember that
+    \(|x|=-x\). Then we would get:
+    \[
+    \int \text{arcsec}\,x\,dx
+    =x\,\text{arcsec}\,x+\ln|x+\sqrt{x^2-1}|+C
+    \]
+    Try it! Together they say:
+    \[
+    \int \text{arcsec}\,x\,dx
+    =\left\{
+      \begin{array}{ll}
+      x\,\text{arcsec}\,x-\ln|x+\sqrt{x^2-1}|+C & \text{for } x \ge 1 \\
+      x\,\text{arcsec}\,x+\ln|x+\sqrt{x^2-1}|+C & \text{for } x \le -1
+      \end{array}
+    \right.
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  As a result of these computations, we now know:
+</p>
+<p class="formula" data-title="Integrals of Special Functions">
+  \[\begin{aligned}
+  &\int \ln x\,dx=x\ln x-x+C \\
+  &\int \arcsin x\,dx=x\arcsin x+\sqrt{1-x^2}+C \\
+  &\int \arctan x\,dx=x\arctan x-\dfrac{1}{2}\ln(1+x^2)+C \\
+  &\int \text{arcsec}\,x\,dx=x\,\text{arcsec}\,x\mp\ln|x+\sqrt{x^2-1}|+C \\
+  &\qquad\qquad\qquad\qquad\qquad \text{for } \left\{
+    \begin{array}{l}
+    x \ge 1 \\
+    x \le -1
+    \end{array}
+  \right.
+  \end{aligned}\]
+  Only \(\displaystyle \int \ln x\,dx\) is worth <em>memorizing</em>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

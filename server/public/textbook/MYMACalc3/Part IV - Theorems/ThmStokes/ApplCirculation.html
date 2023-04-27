@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Circulation and Vorticity of a Fluid | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplSurfIndep.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplAmpere.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed counterclockwise
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>5. Circulation and Vorticity of a Fluid</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<h3>Circulation</h3>
+
+<p class="def">
+  In fluid dynamics, the <span class="hl">circulation of a fluid around a closed
+  curve</span> \(C\) is the line integral of the fluid velocity field, \(\vec{V}\),
+  around the curve. It is a scalar quantity that can be thought of as the net
+  amount of fluid flowing around the closed loop. It is defined mathematically
+  as
+  \[
+  \text{Circulation}=\oint_C \vec{V}\cdot d\vec{s}
+  \]
+  where \(d\vec{s}=\vec{v}\,dt\) is the vector differential of arc length along
+  the curve \(C\).
+</p>
+<p class="remark">
+  Be careful not to get confused between \(\vec{V}\) which is the velocity of
+  the fluid and \(\vec{v}\) which is the velocity or tangent vector of the
+  parametric curve \(\vec{r}(t)\).
+</p>
+<p class="remark">
+  You always need to specify the orientation of the curve, i.e. the direction
+  it is traversed. If the circulation comes out positive, then the fluid is
+  flowing in the direction of the orientation of the curve; if negative, then
+  the fluid is flowing opposite to the orientation of the curve. If
+  you reverse the orientation of the curve, the sign of the circulation will
+  change.
+</p>
+<p class="example" data-number="1">
+  The air inside an oven is flowing with velocity
+  \(\vec{V}=\langle-2y,xz,yz\rangle\). Find the circulation of the air around
+  the circle \(x^2+y^2=4\) at \(z=2\) traversed counterclockwise as seen from the positive
+  \(z\)-axis.
+</p>
+<p class="sol">
+  The first step is to parameterize the circle.
+  \[
+  \vec{r}(\theta)
+  =\langle 2\cos\theta,2\sin\theta,2\rangle \qquad \text{for} \quad 0 \lt \theta \lt 2\pi
+  \]
+  This is counterclockwise; so the orientation is correct. From this, we find
+  the tangent vector (or velocity) \(\vec{v}\):
+  \[
+  \vec{v}=\langle-2\sin\theta,2\cos\theta,0\rangle
+  \]
+  Next we evaluate the fluid velocity on the curve and its dot product with
+  the tangent vector of the curve:
+  \[
+  \left.\vec{V}\right|_{\vec{r}(\theta)}=\langle-2y,xz,yz\rangle
+  =\langle-4\sin\theta,4\cos\theta,4\sin\theta\rangle
+  \]
+  \[\begin{aligned}
+  \vec{V}\cdot\vec{v}
+  &=\langle-4\sin\theta,4\cos\theta,4\sin\theta\rangle
+  \cdot\langle-2\sin\theta,2\cos\theta,0\rangle \\
+  &=8\sin^2\theta+8\cos^2\theta+0=8
+  \end{aligned}\]
+  Thus the circulation is:
+  \[
+  \text{Circulation}=\oint_C \vec{V}\cdot d\vec{s}
+  =\int_0^{2\pi} \vec{V}\cdot\vec{v}\,d\theta
+  =\int_0^{2\pi} 8\,d\theta=16\pi
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<h3>Vorticity of a Fluid</h3>
+
+<p class="def">
+  The <span class="hl">vorticity</span> of a fluid is the vector field that
+  describes the <em>local</em> rotational motion of a fluid at each point.
+  In other words, vorticity describes the spinning of the fluid near the point.
+  Mathematically it is defined as the curl of the fluid velocity vector:
+  \[
+  \vec{W}=\vec{\nabla}\times\vec{V}
+  \]
+  where \(\vec{W}\) is the vorticity and \(\vec{V}\) is the fluid velocity vector.
+  The direction of the vorticity is the axis of the rotation and the magnitude
+  of the vorticity gives the rate of rotation about that axis.
+</p>
+<p>
+  Vorticity is a useful concept that helps us understand and model various
+  phenomena such as tornados, smoke rings, blowing out candles, the lift on
+  helicopters and airplanes, and even
+  <a href="https://en.wikipedia.org/wiki/Vortex_ring" target="_blank">vortex rings</a>
+  that are formed by blood flow in the human heart.
+</p>
+<p class="example" data-number="2">
+  The air inside an oven is flowing with velocity \(\vec{V}
+  =\langle-2y,xz,yz\rangle\). Find the vorticity of the gas.
+</p>
+<p class="sol">
+  The vorticity is
+  \[\begin{aligned}
+  \vec{W}&=\vec{\nabla}\times\vec{V}=
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  \partial_x & \partial_y & \partial_z \\
+  -2y & xz & yz
+  \end{vmatrix}
+  \\
+  &=\hat{\imath}(z-x)-\hat{\jmath}(0)+\hat{k}(z+2)
+  =\langle z-x,0,z+2\rangle
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<h3>Relation by Stokes' Theorem</h3>
+
+<p>
+  Stokes' Theorem can be used to relate the circulation to the vorticity of a
+  fluid. If the closed path \(C\) is the boundary curve of a surface \(S\) then
+  the circulation of the fluid around \(C\) is also the flux of the vorticity
+  through the surface \(S\). To see this, we apply Stokes' Theorem to the
+  formula for the circulation to change the line integral into a surface
+  integral and then use the definition of vorticity:
+  \[
+  \text{Circulation}=\oint_C \vec{V}\cdot d\vec{s}
+  =\oint_{\partial S} \vec{V}\cdot d\vec{s}
+  =\iint_S \vec{\nabla}\times\vec{V}\cdot d\vec{S}
+  =\iint_S \vec{W}\cdot d\vec{S}
+  \]
+  Thus, the circulation around a closed curve, \(C\), is the flux of vorticity
+  through any the surface, \(S\), whose boundary is \(C\). Consequently, the
+  vorticity is interpreted as the circulation per unit area.
+</p>
+<p class="example" data-number="3">
+  The air inside an oven is flowing with velocity
+  \(\vec{V}=\langle-2y,xz,yz\rangle\). Recompute the circulation
+  of the air counterclockwise around the circle \(x^2+y^2=4\)at \(z=2\)
+  but this time using its vorticity.
+</p>
+<p class="sol">
+  We parameterize the disk as
+  \[
+  \vec{R}(r,\theta)=(r\cos\theta,r\sin\theta,2)
+  \text{ with }0 \le r \le 2\text{ and }0 \lt \theta \lt 2\pi
+  \]
+  The normal is
+  \[\begin{aligned}
+  \vec{N}&=\vec{e}_r\times\vec{e}_\theta=
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  \cos\theta & \sin\theta & 0 \\
+  -r\sin\theta & r\cos\theta & 0
+  \end{vmatrix} \\
+  &=\hat{\imath}(0)-\hat{\jmath}(0)+\hat{k}(r\cos^2\theta+r\sin^2\theta)
+  =\langle 0,0,r\rangle
+  \end{aligned}\]
+  The vorticity (previously found in Example 2) restricted to the surface is:
+  \[
+  \vec{W}=\vec{\nabla}\times\vec{V}
+  =\langle z-x,0,z+2\rangle
+  =\langle 2-r\cos\theta,0,4\rangle
+  \]
+  So finally, the circulation is:
+  \[\begin{aligned}
+  \text{Circulation}
+  &=\iint \vec{W}\cdot d\vec{S}
+  =\int_0^{2\pi}\int_0^2 \langle2-r\cos\theta,0,4\rangle
+  \cdot\langle0,0,r\rangle\,dr\,d\theta \\
+  &=2\pi\int_0^2 4r\,dr
+  =2\pi\left[\rule{0pt}{10pt}2r^2\right]_0^2=16\pi
+  \end{aligned}\]
+</p>
+<p class="exercise" data-number="4">
+  In a hot tub, jets are pumping water out so that it is flowing around the
+  circular tub with velocity vector \(\vec{V}=\langle-y,x,0\rangle\).
+  Find the circulation of the water along the horizontal circle of radius \(5\)
+  at height \(z=1\) in two different ways.
+</p>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Calculate the circulation as the line integral of the velocity vector.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX4a"></button>
+        <button class="toggle has-sol" data-toggle="SolX4a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX4a">
+      <p>
+        \(\displaystyle
+        \text{Circulation}=\oint_C \vec{V}\cdot d\vec{s}=50\pi
+        \)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX4a">
+      <p>
+        The circle is parameterized as \(\vec{r}(\theta)
+        =(5\cos\theta,5\sin\theta,1)\) with bounds of
+        \(0 \lt \theta \lt 2\pi\). So the differential of arc length is
+        \[
+        d\vec{s}=\langle-5\sin\theta,5\cos\theta,0\rangle\,d\theta
+        \]
+        Next we evaluate the water's velocity on the circle as
+        \[
+        \left.\vec{V}\right|_{\vec{r}(\theta)}=\langle-y,x,0\rangle
+        =\langle-5\sin\theta,5\cos\theta,0\rangle
+        \]
+        Then we compute the line integral:
+        \[\begin{aligned}
+        &\text{Circulation}
+        =\oint_C \vec{V}\cdot d\vec{s} \\
+        &\quad=\int \langle-5\sin\theta,5\cos\theta,0\rangle
+        \cdot\langle-5\sin\theta,5\cos\theta,0\rangle\,d\theta \\
+        &\quad=\int_0^{2\pi} (25\sin^2\theta+25\cos^2\theta)\,d\theta
+        =25\int_0^{2\pi} d\theta=50\pi
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Calculate the circulation as the flux of the vorticity.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX4b"></button>
+        <button class="toggle has-sol" data-toggle="SolX4b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX4b">
+      <p>
+        \(\vec{W}=\vec{\nabla}\times\vec{V}=\langle 0,0,2\rangle\)
+        <br>
+        \(\displaystyle
+        \text{Circulation}=\iint_S \vec{W}\cdot d\vec{S}
+        =50\pi
+        \)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX4b">
+      <p>
+        We parametrize the disk as
+        \(\vec{R}(r,\theta)=(r\cos\theta,r\sin\theta,1)\)
+        where \(0 \lt r \lt 5\) and \(0 \lt \theta \lt 2\pi\).
+        Then the normal is
+        \[\begin{aligned}
+        \vec{N}&=\vec{e}_r\times\vec{e}_\theta=
+        \begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \cos\theta & \sin\theta & 0 \\
+        -r\sin\theta & r\cos\theta & 0
+        \end{vmatrix} \\
+        &=\langle 0,0,r\rangle
+        \end{aligned}\]
+        Next, the vorticity is the curl of the velocity field:
+        \[\begin{aligned}
+        \vec{W}&=\vec{\nabla}\times\vec{V}=
+        \begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \partial_x & \partial_y & \partial_z \\
+        -y & x & 0
+        \end{vmatrix} \\
+        &=\langle 0,0,2\rangle
+        \end{aligned}\]
+        Finally, we compute its flux to find the circulation:
+        \[\begin{aligned}
+        \text{Circulation}
+        &=\iint_S \vec{W}\cdot d\vec{S}
+        =\iint \vec{W}\cdot\vec{N}\,dr\,d\theta \\
+        &=\int_0^{2\pi}\int_0^5 \langle0,0,2\rangle\cdot\langle 0,0,r\rangle\,dr\,d\theta \\
+        &=\int_0^{2\pi}\int_0^5 2r\,dr\,d\theta
+        =2\pi\left[\rule{0pt}{10pt}r^2\right]_0^5=50\pi
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+</ol>
+
+<p class="remark">
+  Method (a) is easier in this problem, but you may need to use method (2) if
+  you are only given the vorticity.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Computational Formulas | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TNB.html" title="Previous">&lArr;</a></li>
+      <li><a href="Curvature.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Tangent, Normal, and Binormal Vectors</h2>
+<p>
+  In the examples on the
+  <a href="TNB.html#circle">
+  previous page</a> the acceleration was perpendicular to the velocity,
+  which made it easy to compute the unit normal vector. We now derive formulas
+  which are more convenient even when the acceleration is not perpendicular to
+  the velocity.
+</p>
+
+
+      
+      <h2>2. Computational Formulas</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<a id="UnitTangent"></a>
+
+<h3>Unit Tangent Vector, \(\hat T\)</h3>
+<p>
+  Given the curve, \(\vec{r}(t)\), it is easy to compute the
+  velocity, \(\vec{v}=\dfrac{d\vec{r}}{dt}\).
+  Then \(\hat{T}\) is the unit vector in the direction of \(\vec{v}\).
+</p>
+<p class="formula">
+  \[
+  \hat{T}=\hat{v}=\dfrac{\vec{v}}{|\vec{v}|}
+  \]
+</p>
+<a id="UnitNormal"></a>
+
+        <div class="rule"></div>
+
+<h3>Unit Normal Vector, \(\hat N\)</h3>
+<p>
+  Given the velocity, \(\vec{v}=\dfrac{d\vec{r}}{dt}\), it is easy to compute
+  the acceleration \(\vec{a}=\dfrac{d\vec{v}}{dt}\). Recall from the discussion
+  of <a href="../Dot/ProjVector.html#projections" title="Return using the Back button">
+  projections</a> that the projection of \(\vec a\) perpendicular to \(\vec v\) is
+  \[
+  \text{proj}_{\bot \vec{v}}\vec{a}
+  =\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}
+  \]
+  Then \(\hat{N}\) is the unit vector in the direction of
+  \(\text{proj}_{\bot \vec{v}}\vec{a}\):
+  \[
+  \hat{N}
+  =\dfrac{\text{proj}_{\bot\vec{v}}\vec{a}}
+  {\left|\text{proj}_{\bot\vec{v}}\vec{a}\right|}
+  =\dfrac{|\vec{v}|}{|\vec{v}\times\vec{a}|}
+  \left(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\right)
+  \]
+  where the second formula used the equation
+  \(\left|\text{proj}_{\bot \vec{v}}\vec{a}\right|
+  =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|}\). &ensp;
+  <button class="toggle" data-toggle="Proof1">Derivation</button>
+</p>
+<div class="toBeToggled" data-toggle="Proof1">
+  <p>
+    \[\begin{aligned}
+    \left|\text{proj}_{\bot \vec{v}}\vec{a}\right|
+    &=\sqrt{\left(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\right)
+       \cdot\left(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\right)} \\
+    &=\sqrt{\vec{a}\cdot\vec{a}
+    -2\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\cdot\vec{a}
+    +\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}
+    \cdot\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}} \\
+    &=\sqrt{\vec{a}\cdot\vec{a}-\,\dfrac{(\vec{a}\cdot\vec{v})^2}{|\vec{v}|^2}}
+    =\dfrac{\sqrt{|\vec{a}|^2|\vec{v}|^2-(\vec{v}\cdot\vec{a})^2}}{|\vec{v}|}
+    =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|}
+    \end{aligned}\]
+    In the last step we used the
+    <a href="../Cross/CrossProp.html#Pythag" title="Return using the Back button.">
+    Pythagorean Identity for Dot and Cross Products</a>,
+    \(|\vec{a}|^2|\vec{v}|^2-(\vec{v}\cdot\vec{a})^2
+    =|\vec{v}\times\vec{a}|^2\).
+  </p>
+</div>
+<p>
+  Besides this definition, there are two simpler formulas which are useful in
+  different situations. The first is useful when the formula for \(\hat{T}\)
+  is simple. The second is useful if we compute \(\hat{B}\) before \(\hat{N}\).
+</p>
+<p class="formula">
+  \[
+  \hat{N}
+  =\dfrac{\dfrac{d\hat{T}}{dt}}{\;\left|\dfrac{d\hat{T}}{dt}\right|\;}
+  =\dfrac{\dfrac{d\hat{T}}{ds}}{\;\left|\dfrac{d\hat{T}}{ds}\right|\;}
+  =\hat{B}\times\hat{T}
+  \]
+  <!-- =\genfrac{}{}{2}{0}{\dfrac{d\hat{T}}{dt}}{\left|\dfrac{d\hat{T}}{dt}\right|} -->
+  <button class="toggle" data-toggle="Proof2">Derivation</button>
+</p>
+<div class="toBeToggled" data-toggle="Proof2">
+  <p data-title="First formula">
+    We have two things to prove:
+    <br>
+    (1) \(\dfrac{d\hat{T}}{dt}\) lies in the plane of \(\vec{v}\) and \(\vec{a}\)
+    and is on the same side of \(\vec{v}\) as \(\vec{a}\).
+    <br>
+    (2) \(\dfrac{d\hat{T}}{dt}\) is perpendicular to \(\vec{v}\).
+    <br>
+    Then, \(\left.\dfrac{d\hat{T}}{dt}\middle/\left|\dfrac{d\hat{T}}{dt}\right|\right.\)
+    will be the unit vector perpendicular to \(\vec{v}\) in the plane of \(\vec{v}\) and
+    \(\vec{a}\) on the same side of \(\vec{v}\) as \(\vec{a}\), which
+    is the definition of \(\hat{N}\).
+  </p>
+  <p>
+    First, we compute the derivative of \(\hat T=\dfrac{1}{|\vec{v}|}\vec{v}\)
+    using the product rule:
+    \[\begin{aligned}
+    \dfrac{d\hat{T}}{dt}
+    &=\dfrac{1}{|\vec{v}|}\dfrac{d\vec{v}}{dt}
+    +\dfrac{d}{dt}\left(\dfrac{1}{|\vec{v}|}\right)\vec{v} \\
+    &=\dfrac{1}{|\vec{v}|}\vec{a}
+    +\dfrac{d}{dt}\left(\dfrac{1}{|\vec{v}|}\right)\vec{v}
+    \end{aligned}\]
+    So \(\dfrac{d\hat{T}}{dt}\) lies in the plane of \(\vec{v}\) and
+    \(\vec{a}\) and is on the same side of \(\vec{v}\) as \(\vec{a}\)
+    since the coefficient of \(\vec{a}\) is positive.
+  </p>
+  <p>
+    Second, since \(\hat T\) is a unit vector, we have \(\hat T\cdot\hat T=1\).
+    We take the derivative using the product rule:
+    \[
+    \dfrac{d\hat{T}}{dt}\cdot\hat T+\hat T\cdot\dfrac{d\hat{T}}{dt}=0
+    \]
+    So \(\dfrac{d\hat{T}}{dt}\cdot\hat T=0\) and \(\dfrac{d\hat{T}}{dt}\) is
+    perpendicular to \(\hat T\), and hence \(\vec v\).
+  </p>
+  <p data-title="Second Formula">
+    Converting the derivatives from \(t\) to \(s\) is just the Chain Rule:
+    \[
+    =\dfrac{\dfrac{d\hat{T}}{dt}}{\;\left|\dfrac{d\hat{T}}{dt}\right|\;}
+    =\dfrac{\dfrac{ds}{dt}\dfrac{d\hat{T}}{ds}}{\;\left|\dfrac{ds}{dt}\dfrac{d\hat{T}}{ds}\right|\;}
+    =\dfrac{|\vec v|\dfrac{d\hat{T}}{ds}}{\;|\vec v|\left|\dfrac{d\hat{T}}{ds}\right|\;}
+    =\dfrac{\dfrac{d\hat{T}}{ds}}{\;\left|\dfrac{d\hat{T}}{ds}\right|\;}
+    \]
+  </p>
+  <p data-title="Third Formula">
+    We note that \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\) are a right handed
+    triplet of unit vectors. So \(\hat{N}=\hat{B}\times\hat{T}\).
+  </p>
+</div>
+<p class="remark">
+  The formula \(\hat{N}=\hat{B}\times\hat{T}\) is much simpler than the
+  definition
+  \(\hat{N}=\dfrac{\text{proj}_{\bot \vec{v}}\vec{a}}
+  {\left|\text{proj}_{\bot\vec{v}}\vec{a}\right|}\).
+  However, you should remember that \(\hat{N}\) is defined before \(\hat{B}\)
+  and is the second vector in the basis triplet \(\hat{T}\), \(\hat{N}\)
+  and \(\hat{B}\) which are related by the right hand rule.
+</p>
+
+        <div class="rule" id="UnitBinormal"></div>
+
+<h3>Unit Binormal Vector, \(\hat B\)</h3>
+<p>
+  By definition,
+  \[
+  \hat{B}=\hat{T}\times\hat{N}
+  \]
+  However, there is an easier formula for computing \(\hat{B}\), which does not
+  depend on first computing \(\hat{N}\).
+</p>
+<p class="formula">
+  \[
+  \hat{B}=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+  \]
+  <button class="toggle" data-toggle="Proof3">Derivation</button>
+</p>
+<div class="toBeToggled" data-toggle="Proof3">
+  <p>
+    Since \(\hat{T}\) and \(\hat{N}\) define the same plane as \(\vec{v}\)
+    and \(\vec{a}\) and \(\hat{N}\) is on the same side of \(\vec{v}\) as
+    \(\vec{a}\), the cross product \(\hat{T}\times\hat{N}\) is in the same
+    direction as \(\vec{v}\times\vec{a}\). However,
+    \(\hat{B}=\hat{T}\times\hat{N}\) is a unit vector. So we make
+    \(\vec{v}\times\vec{a}\) into a unit vector and get the formula:
+    \[
+    \hat{B}=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+    \]
+  </p>
+</div>
+<a id="cubic"></a>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the unit tangent vector, \(\hat{T}\), the unit normal vector
+  \(\hat{N}\), and the unit binormal vector \(\hat{B}\) of the twisted cubic
+  \(\vec{r}=\left\langle t,t^2,\dfrac{2}{3}t^{3}\right\rangle\) for general \(t\)
+  and at \(t=2\).
+</p>
+<p class="sol">
+  The velocity and acceleration are:
+  \[
+  \vec{v}
+  =\langle 1,2t,2t^2\rangle
+  \qquad
+  \vec{a}
+  =\langle 0,2,4t\rangle
+  \]
+  The magnitude of the velocity is: (Notice the quantity in the square root
+  is a perfect square.
+  <button class="toggle" data-toggle="Note1">Note</button>)
+  \[\begin{aligned}
+  |\vec{v}|
+  &=\sqrt{1^2+(2t)^2+(2t^2)^2} \\
+  &=\sqrt{1+4t^2+4t^{4}}
+  =1+2t^2
+  \end{aligned}\]
+</p>
+<div class="toBeToggled" data-toggle="Note1">
+  <p>
+    This was why we chose to put the \(\dfrac{2}{3}\) in the version of the
+    twisted cubic in this exercise.
+  </p>
+</div>
+<p>
+  Then the unit tangent vector is
+  \[\begin{aligned}
+  \hat{T}
+  &=\dfrac{\vec{v}}{|\vec{v}|}
+  =\dfrac{1}{1+2t^2}\langle 1,2t,2t^2\rangle \\
+  &=\left\langle \dfrac{1}{1+2t^2},\dfrac{2t}{1+2t^2},
+  \dfrac{2t^2}{1+2t^2}\right\rangle
+  \end{aligned}\]
+  To find the unit binormal vector, we first find \(\vec{v}\times\vec{a}\) and
+  its length:
+  \[\begin{aligned}
+  \vec{v}\times\vec{a}
+  &=\begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  1 & 2t & 2t^2 \\
+  0 & 2 & 4t
+  \end{vmatrix}
+  =\hat{\imath}(8t^2-4t^2)-\hat{\jmath}(4t-0)+\hat{k}(2-0) \\
+  &=\langle 4t^2,-4t,2\rangle \\
+  |\vec{v}\times\vec{a}|
+  &=\sqrt{(4t^2)^2+(4t)^2+(2)^2}
+  =2\sqrt{4t^{4}+4t^2+1} \\
+  &=2(1+2t^2)
+  \end{aligned}\]
+  where we again identify the quantity in the square root as a perfect square.
+  So the unit binormal vector is
+  \[\begin{aligned}
+  \hat{B}
+  &=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+  =\dfrac{1}{2(1+2t^2)}\langle 4t^2,-4t,2\rangle \\
+  &=\dfrac{1}{1+2t^2}\langle 2t^2,-2t,1\rangle
+  =\left\langle \dfrac{2t^2}{1+2t^2},\dfrac{-2t}{1+2t^2},
+  \dfrac{1}{1+2t^2}\right\rangle
+  \end{aligned}\]
+  Finally we compute the unit normal vector as \(\hat{N}=\hat{B}\times\hat{T}\).
+  In doing this, we simplify our work by using one of the
+  <a href="../Cross/CrossProp.html#assoc_comm" title="Return using the Back button.">
+  properties of the cross product</a>:
+  \((a\vec{u})\times(b\vec{v})=ab(\vec{u}\times\vec{v})\).
+  \[\begin{aligned}
+  \hat{N}
+  &=\hat{B}\times\hat{T}
+  =\dfrac{1}{1+2t^2}\langle 2t^2,-2t,1\rangle\times
+   \dfrac{1}{1+2t^2}\langle 1,2t,2t^2\rangle \\
+  &=\dfrac{1}{(1+2t^2)^2}\langle 2t^2,-2t,1\rangle\times\langle 1,2t,2t^2\rangle \\
+  &=\dfrac{1}{(1+2t^2)^2}
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  2t^2 & -2t & 1 \\
+  1 & 2t & 2t^2
+  \end{vmatrix} \\
+  &=\dfrac{1}{(1+2t^2)^2}
+  \left(\hat{\imath}(-4t^{3}-2t)
+       -\hat{\jmath}(4t^{4}-1)
+       +\hat{k}(4t^{3}+2t)\right) \\
+  &=\dfrac{1}{(1+2t^2)^2}\langle -4t^{3}-2t,1-4t^{4},4t^{3}+2t\rangle
+  \end{aligned}\]
+  We now factor each term and cancel one factor of \(1+2t^2\):
+  \[\begin{aligned}
+  \hat{N}
+  &=\dfrac{1}{1+2t^2}\langle -2t,1-2t^2,2t\rangle \\
+  &=\left\langle \dfrac{-2t}{1+2t^2},\dfrac{1-2t^2}{1+2t^2},
+  \dfrac{2t}{1+2t^2}\right\rangle
+  \end{aligned}\]
+</p>
+<div class="column">
+  <p>
+    The figure shows \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\)
+    moving along the curve. In particular, at \(t=2\) we have
+    \[\begin{aligned}
+    \hat{T}&=\left\langle \dfrac{1}{9},\dfrac{4}{9},\dfrac{8}{9}\right\rangle \\
+    \hat{B}&=\left\langle \dfrac{8}{9},\dfrac{-4}{9},\dfrac{1}{9}\right\rangle \\
+    \hat{N}&=\left\langle \dfrac{-4}{9},\dfrac{-7}{9},\dfrac{4}{9}\right\rangle
+    \end{aligned}\]
+    It is easy to check these are \(3\) mutually perpendicular unit vectors.
+  </p>
+  <div class="center">
+    <figure>
+      <video src="graphics/eg_cubic_TNB_anim.mp4" autoplay controls loop>
+      </video>
+    </figure>
+  </div>
+</div>
+<hr width="80%">
+<p>
+  That was a bit long, but still straightforward.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the unit tangent vector, \(\hat{T}\), the unit normal vector
+    \(\hat{N}\), and the unit binormal vector \(\hat{B}\) for the twisted quartic
+    \(\vec{r}=\left\langle t^2,\dfrac{2}{3}t^3,\dfrac{1}{4}t^4\right\rangle\)
+    for general \(t\) and at \(t=1\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The quantities in square roots are again perfect squares.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <div class="column">
+    <p>
+      Generally:
+      \[\begin{aligned}
+      \hat{T}&=\left\langle\dfrac{2}{2+t^2},\dfrac{2t}{2+t^2},\dfrac{t^2}{2+t^2}\right\rangle \\
+      \hat{B}&=\left\langle \dfrac{t^2}{2+t^2},\dfrac{-2t}{2+t^2},\dfrac{2}{2+t^2}\right\rangle \\
+      \hat{N}&=\left\langle \dfrac{-2t}{2+t^2},\dfrac{2-t^2}{2+t^2},\dfrac{2t}{2+t^2}\right\rangle
+      \end{aligned}\]
+      For \(t=1\):
+      \[\begin{aligned}
+      \hat{T}
+      &=\left\langle\dfrac{2}{3},\dfrac{2}{3},\dfrac{1}{3}\right\rangle \\
+      \hat{B}
+      &=\left\langle \dfrac{1}{3},\dfrac{-2}{3},\dfrac{2}{3}\right\rangle \\
+      \hat{N}
+      &=\left\langle \dfrac{-2}{3},\dfrac{1}{3},\dfrac{2}{3}\right\rangle
+      \end{aligned}\]
+    </p>
+    <div class="center">
+      <figure>
+        <video src="graphics/ex_quartic_TNB_anim.mp4" autoplay controls loop>
+        </video>
+      </figure>
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The velocity and acceleration are:
+    \[
+    \vec{v}
+    =\left\langle2t,2t^2,t^3\right\rangle
+    \qquad
+    \vec{a}
+    =\left\langle2,4t,3t^2\right\rangle
+    \]
+    The magnitude of the velocity is: (Notice the quantity in the square root
+    is a perfect square.)
+    \[\begin{aligned}
+    |\vec{v}|
+    &=\sqrt{4t^2+4t^4+t^6}
+    =t\sqrt{4+4t^2+t^4} \\
+    &=t\sqrt{(2+t^2)^2}
+    =t(2+t^2)=2t+t^3
+    \end{aligned}\]
+    Then the unit tangent vector is
+    \[\begin{aligned}
+    \hat{T}
+    &=\dfrac{\vec{v}}{|\vec{v}|}
+    =\dfrac{1}{t(2+t^2)}\left\langle2t,2t^2,t^3\right\rangle \\
+    &=\left\langle\dfrac{2}{2+t^2},\dfrac{2t}{2+t^2},\dfrac{t^2}{2+t^2}\right\rangle
+    \end{aligned}\]
+    To find the unit binormal vector, we first find \(\vec{v}\times\vec{a}\) and
+    its length:
+    \[\begin{aligned}
+    \vec{v}\times\vec{a}
+    &=\begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    2t & 2t^2 & t^3 \\
+    2  & 4t   & 3t^2
+    \end{vmatrix} \\
+    &=\hat{\imath}(6t^4-4t^4)-\hat{\jmath}(6t^3-2t^3)+\hat{k}(8t^2-4t^2) \\
+    &=\langle 2t^4,-4t^3,4t^2\rangle \\
+    |\vec{v}\times\vec{a}|
+    &=\sqrt{4t^8+16t^6+16t^4}
+    =2t^2\sqrt{t^4+4t^2+4} \\
+    &=2t^2\sqrt{(t^2+2)^2)}
+    =2t^2(2+t^2)
+    =4t^2+2t^4
+    \end{aligned}\]
+    where we again identify the quantity in the square root as a perfect square.
+    So the unit binormal vector is
+    \[\begin{aligned}
+    \hat{B}
+    &=\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}
+    =\dfrac{1}{2t^2(2+t^2)}\langle 2t^4,-4t^3,4t^2\rangle \\
+    &=\left\langle\dfrac{t^2}{2+t^2},\dfrac{-2t}{2+t^2},
+    \dfrac{2}{2+t^2}\right\rangle
+    \end{aligned}\]
+    Finally we compute the unit normal vector as \(\hat{N}=\hat{B}\times\hat{T}\).
+    In doing this, we simplify our work by using the property:
+    \((a\vec{u})\times(b\vec{v})=ab(\vec{u}\times\vec{v})\).
+    \[\begin{aligned}
+    \hat{N}
+    &=\hat{B}\times\hat{T}
+    =\dfrac{1}{2+t^2}\langle t^2,-2t,2\rangle\times
+     \dfrac{1}{2+t^2}\left\langle2,2t,t^2\right\rangle \\
+    &=\dfrac{1}{(2+t^2)^2}
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    t^2 & -2t & 2 \\
+    2   & 2t  & t^2
+    \end{vmatrix} \\
+    &=\dfrac{1}{(2+t^2)^2}
+    \left(\hat{\imath}(-2t^3-4t)
+         -\hat{\jmath}(t^4-4)
+         +\hat{k}(2t^3+4t)\right) \\
+    &=\dfrac{1}{(2+t^2)^2}\langle -2t^3-4t,4-t^4,2t^3+4t\rangle
+    \end{aligned}\]
+    We now factor each term and cancel one factor of \(2+t^2\):
+    \[\begin{aligned}
+    \hat{N}
+    &=\dfrac{1}{2+t^2}\langle -2t,1-2t^2,2t\rangle \\
+    &=\left\langle \dfrac{-2t}{2+t^2},\dfrac{2-t^2}{2+t^2},
+    \dfrac{2t}{2+t^2}\right\rangle
+    \end{aligned}\]
+  </p>
+  <div class="column">
+    <p>
+      The figure shows \(\hat{T}\), \(\hat{N}\) and \(\hat{B}\)
+      moving along the curve. In particular, for \(t=1\) we have
+      \[\begin{aligned}
+      \hat{T}&=\left\langle\dfrac{2}{3},\dfrac{2}{3},\dfrac{1}{3}\right\rangle \\
+      \hat{B}&=\left\langle \dfrac{1}{3},\dfrac{-2}{3},\dfrac{2}{3}\right\rangle \\
+      \hat{N}&=\left\langle \dfrac{-2}{3},\dfrac{1}{3},\dfrac{2}{3}\right\rangle
+      \end{aligned}\]
+      It is easy to check these are \(3\) mutually perpendicular unit vectors.
+    </p>
+    <div class="center">
+      <figure>
+        <video src="graphics/ex_quartic_TNB_anim.mp4" autoplay controls loop>
+        </video>
+      </figure>
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

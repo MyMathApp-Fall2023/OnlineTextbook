@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Eliminate a Variable Method | 16. Max-Min Problems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="SecondDerTest2.html" title="Previous">&lArr;</a></li>
+      <li><a href="Lagrange.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>16. Max-Min Problems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Constrained Max-Min Problems</h2>
+
+<p>
+  In a constrained max-min problem, we <span class="defword">extremize</span>
+  or <span class="defword">optimize</span> a function of several variables
+  called the <span class="defword">extremal</span> or
+  <span class="defword">optimized function</span> subject to a
+  <span class="defword">constraint equation</span> satisfied by the variables.
+  This means we find the <span class="hl">maximum</span> or
+  <span class="hl">minimum</span> (the <span class="hl">extremum</span>) of
+  the optimized function while requiring the varibles to satisfy the
+  <span class="hl">constraint equation</span>. We  will look
+  at three methods of solving constrained max-min problems:
+  <span class="hl">eliminate a variable</span>, introduce a
+  <a href="Lagrange.html" title="Return using the Back button.">
+  <span class="hl">Lagrange multiplier</span></a> or
+  <a href="Parametrize.html" title="Return using the Back button.">
+  <span class="hl">parametrize the constraint</span></a>.
+  We discuss these on this and subsequent pages.
+</p>
+
+
+      
+      <h2>1. Eliminate a Variable Method</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The first strategy for solving a constrained max-min problem is the
+  <span class="defword">Eliminate a Variable Method</span> in which we solve
+  the constraint for one variable and eliminate that variable from the
+  optimized function. We can then set the partial derivatives of this new
+  function equal to zero to find the critical points and thus the maximum
+  or minimum values. This is best understood by using an example.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the dimensions and volume of the largest rectangular box with base
+  on the \(xy\)-plane and upper vertices on the elliptic paraboloid
+  \(z=9-4x^2-y^2\).
+</p>
+<div class="column">
+  <p class="sol">
+    One first needs to recognize that, in this problem, the word "largest"
+    means to maximize the volume of the box. Since the upper \(4\) vertices
+    are on the parabola, if one of the vertices is \((x,y,z)\) with \(x\)
+    and \(y\) positive, then the other \(3\) are\((-x,y,z)\), \((x,-y,z)\)
+    and \((-x,-y,z)\). So the length is \(L=2x\), the width is \(W=2y\)
+    and the height is \(H=z\). So the volume is
+    \[
+    V=LWH=(2x)(2y)(z)=4xyz
+    \]
+    We need to maximize this volume while requiring the point \((x,y,z)\)
+    to lie on the paraboloid:
+    \[
+    z=9-4x^2-y^2
+    \]
+  </p>
+  <div  class="center">
+    <video autoplay controls loop>
+      <source src="graphics/parabeg.mp4" alt="parabeg">
+    </video>
+  </div>
+</div>
+<p>
+  Now we need to solve the constraint for a variable and replace that variable
+  in the optimized function by its value from the constraint. In this case,
+  \(z\) is the easiest variable to replace, since it is already given
+  explicitly by the constraint equation. Substituting into the volume gives
+  \[
+  V=4xy(9-4x^2-y^2)=36xy-16x^3y-4xy^3
+  \]
+  This is the function we need to maximize. Remember to simplify before
+  differentiating. We set the partial derivatives equal to zero:
+  \[
+  V_x=36y-48x^2y-4y^3=0
+  \]
+  \[
+  V_y=36x-16x^3-12xy^2=0
+  \]
+  and solve for \(x\) and \(y\). Normally we would factor a \(y\) out of the
+  first equation and an \(x\) out of the second equation and then do case
+  work, but for this problem, \(y=0\) or \(x=0\) would give \(0\) volume,
+  which obviously is not a maximum. Therefore, we can simply divide the
+  first equation by \(y\) and the second equation by \(x\) to get:
+  \[\begin{aligned}
+  48x^2+4y^2&=36 \\
+  16x^2+12y^2&=36
+  \end{aligned}\]
+  To find \(x\), eliminate \(y\) by multiplying the first equation by \(3\)
+  and subtracting the second equations:
+  \[
+  (144-16)x^2=108-36
+  \qquad \text{or}\qquad
+  128x^2=72
+  \]
+  \[
+  x^2=\dfrac{9}{16}
+  \qquad \text{or}\qquad
+  x=\dfrac{3}{4}
+  \]
+  To find \(y\), eliminate \(x\) by multiplying the second equation by \(3\)
+  and subtracting the first equation:
+  \[
+  (36-4)y^2=108-36
+  \qquad \text{or}\qquad
+  32y^2=72
+  \]
+  \[
+  y^2=\dfrac{9}{4}
+  \qquad \text{or}\qquad
+  y=\dfrac{3}{2}
+  \]
+  (Alternatively, substitute \(x=\dfrac{3}{4}\) into either equation to find
+  \(y=\dfrac{3}{2}\).)
+  Before saying we are finished, we must carefully reread the problem to
+  be sure we have found what the question asks for. We need to find the
+  dimensions and the volume. We plug the values of \(x\) and \(y\) into
+  the constraint to get \(z\).
+  \[
+  z=9-4x^2-y^2=9-4\left(\dfrac{9}{16}\right)-\,\dfrac{9}{4}=\dfrac{9}{2}
+  \]
+  <span class="redbig">Caution:</span> The dimensions are not just
+  \(x\), \(y\) and \(z\)! They are the length, width and height:
+  \[
+  L=2x=\dfrac{3}{2} \qquad W=2y=3
+  \qquad H=z=\dfrac{9}{2}
+  \]
+  So the volume is:
+  \[
+  V=LWH=\dfrac{3}{2}3\dfrac{9}{2}=\dfrac{81}{4}
+  \]
+</p>
+
+        <div class="rule" id="ex_rectell"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Find the dimensions and volume of the largest rectangular box
+      inscribed in the ellipsoid \(x^2+\dfrac{y^2}{4}+\dfrac{z^2}{16}=1\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX2"></button>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+    </p>
+  </div>
+  <div  class="center">
+    <video autoplay controls loop>
+      <source src="graphics/ellipex.mp4" alt="ellipex">
+    </video>
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Note: "Inscribed" means all \(8\) vertices lie on the ellipsoid.
+    What are the length, width and height?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    The length, width and height are:
+    \[
+    L=\dfrac{2}{\sqrt{3}} \qquad W=\dfrac{4}{\sqrt{3}}
+    \qquad H=\dfrac{8}{\sqrt{3}}
+    \]
+    So the volume is:
+    \[
+    V=\dfrac{64}{3\sqrt{3}}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    One first needs to recognize that, in this problem, the word "largest"
+    means to maximize the volume of the box. Since all \(8\) vertices are
+    on the ellipsoid, if one of the vertices is \((x,y,z)\) with \(x\),
+    \(y\) and \(z\) positive, then the \(8\) are\((\pm x,\pm y,\pm z)\).
+    So the length is \(L=2x\), the width is \(W=2y\), the height is
+    \(H=2z\) and the volume is
+    \[
+    V=LWH=(2x)(2y)(2z)=8xyz
+    \]
+    We need to maximize this volume while requiring the point \((x,y,z)\)
+    to lie on the ellipsoid constraint:
+    \[
+    x^2+\dfrac{y^2}{4}+\dfrac{z^2}{16}=1
+    \]
+  </p>
+  <p>
+    Now we need to solve the constraint for a variable and replace that
+    variable in the optimal function by its value from the constraint.
+    In this case, \(x\) is the easiest variable to replace, since it is
+    easier to solve for:
+    \[
+    x=\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}
+    \]
+    Substituting into the volume gives
+    \[
+    V=8yz\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}
+    \]
+    This is the function we need to maximize. We set the partial derivatives
+    equal to zero:
+    \[\begin{aligned}
+    V_y&=8z\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}
+    +\dfrac{8yz}{2\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}}
+    \left(\dfrac{-2y}{4}\right)=0 \qquad \text{(1)} \\
+    V_z&=8y\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}
+    +\dfrac{8yz}{2\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}}
+    \left(\dfrac{-2z}{16}\right)=0 \qquad \text{(2)}
+    \end{aligned}\]
+    <!-- V_y&=8z\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}
+    +\dfrac{8yz}{2\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}}
+    \left(\dfrac{-2y}{4}\right)=0 \tag{1} \\
+    V_z&=8y\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}
+    +\dfrac{8yz}{2\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}}
+    \left(\dfrac{-2z}{16}\right)=0 \tag{2} -->
+    and solve for \(x\) and \(y\).  We start by clearing the denominators
+    in equations (1) and (2):
+    \[\begin{aligned}
+    &16z\left(1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}\right)-4y^2z=0 \\
+    &16y\left(1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}\right)-yz^2=0
+    \end{aligned}\]
+    and simplify:
+    \[\begin{aligned}
+    &16z-4y^2z-z^3-4y^2z=0 \\
+    &16y-4y^3-yz^2-yz^2=0
+    \end{aligned}\]
+    or:
+    \[\begin{aligned}
+    &z(16-8y^2-z^2)=0 \\
+    &2y(8-2y^2-z^2)=0
+    \end{aligned}\]
+    Notice that \(y\) and \(z\) cannot be \(0\) or else the volume would
+    be \(0\). So the equations say:
+    \[\begin{aligned}
+    &8y^2+z^2=16 \qquad \text{(3)} \\
+    &2y^2+z^2=8 \qquad \enspace \text{(4)}
+    \end{aligned}\]
+    <!-- &8y^2+z^2=16 \tag{3} \\
+    &2y^2+z^2=8 \tag{4} -->
+    Equation (3) minus equation (4) says \(6y^2=8\).
+    So \(y=\dfrac{2}{\sqrt{3}}\).
+    Similarly, \(4\) times equation (4) minus equation(3) says \(3z^2=16\).
+    So \(z=\dfrac{4}{\sqrt{3}}\). Consequently,
+    \[
+    x=\sqrt{1-\,\dfrac{y^2}{4}-\,\dfrac{z^2}{16}}
+     =\sqrt{1-\,\dfrac{1}{3}-\,\dfrac{1}{3}}=\dfrac{1}{\sqrt{3}}
+    \]
+    Finally, we carefully reread the problem. We need to find the dimensions
+    and the volume. The length, width and height are:
+    \[
+    L=2x=\dfrac{2}{\sqrt{3}} \qquad W=2y=\dfrac{4}{\sqrt{3}}
+    \qquad H=2z=\dfrac{8}{\sqrt{3}}
+    \]
+    So the volume is:
+    \[
+    V=LWH=\dfrac{64}{3\sqrt{3}}
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<big>PY: Replace with problem 2 from /LinePlane/DistPoint2Plane.html</big>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the point on the plane \(3x-y+z=2\) that is closest to the
+    point \((7,1,4)\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX3"></button>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+    <button class="toggle has-rem" data-toggle="RemX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX3">
+  <p>
+    Note: "Closest" means to minimize the distance. Equivalently, we can
+    minimize the square of the distance.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+  \((x,y,z)=(1,3,2)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <div class="column">
+    <p>
+      It is important to recognize that the word "closest" means that we should
+      minimize the distance. In this case, we need to minimize the distance from
+      the point \(P=(7,1,4)\) to a general point \(Q=(x,y,z)\) on the plane. This
+      distance is:
+      \[
+      D=\sqrt{(x-7)^2+(y-1)^2+(z-4)^2}
+      \]
+      Now if the distance is a minimum, then so is the square of the distance. So
+      we will actually minimize the function:
+      \[
+      f=D^2=(x-7)^2+(y-1)^2+(z-4)^2
+      \]
+    </p>
+    <div class="center">
+      <img src="graphics/point2planeex.jpg" alt="point2planeex">
+    </div>
+  </div>
+  <p>
+    The constraint is the equation of the plane, which we solve for \(z\):
+    \[
+    z=2-3x+y
+    \]
+    Substituting into the extremal, we need to minimize
+    \[
+    f=(x-7)^2+(y-1)^2+(-3x+y-2)^2
+    \]
+    We set the partials equal to \(0\):
+    \[\begin{aligned}
+    f_x&=2(x-7)+2(-3x+y-2)(-3)=0 \\
+    f_y&=2(y-1)+2(-3x+y-2)=0
+    \end{aligned}\]
+    We divide these equations by \(2\) and simplify:
+    \[\begin{aligned}
+    10x-3y&=1 \\
+    -3x+2y&=3
+    \end{aligned}\]
+    We solve these equations to find \(x=1\) and \(y=3\) and so
+    \(z=2-3x+y=2-3(1)+(3)=2\).
+    So the point is:
+    \[
+    (x,y,z)=(1,3,2)
+    \]
+    If we were asked for the distance, it would be:
+    \[\begin{aligned}
+    D&=\sqrt{(1-7)^2+(3-1)^2+(2-4)^2} \\
+    &=\sqrt{(6)^2+(2)^2+(2)^2}=\sqrt{44}
+    \end{aligned}\]
+    <em>Don't forget the square root!</em>
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX3">
+  <p>
+    Notice that this problem could also be solved by using projections as done
+    <a href="../../Part I - Geometry & Vectors/LinePlane/DistPoint2Plane.html#eg_min_dist"
+    title="Return using the Back button.">previously</a>.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

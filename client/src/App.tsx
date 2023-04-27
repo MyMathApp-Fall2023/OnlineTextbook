@@ -12,7 +12,6 @@ import MYMACalc3 from "./pages/MYMACalc3";
 import MYMACalc2 from "./pages/MYMACalc2";
 import FinancePreview from "./pages/FinancePreview";
 import Checkout from "./pages/Checkout";
-import Products from "./pages/Products";
 import User from "./entities/user";
 import Subscription from "./entities/subscription";
 import Home from "./pages/Home";
@@ -30,6 +29,8 @@ import Records from "./pages/Records";
 
 import AdminTransactionRecord from "./pages/Admin/TransactionRecord"
 import Prices from "./pages/Price";
+import AdminEmailSubscription from "./pages/Admin/EmailSubscription"
+import EmailSubscription from "./pages/Admin/EmailSubscription";
 
 
 
@@ -116,6 +117,9 @@ const App: React.FC = (): JSX.Element => {
 								</Route>
 								<Route exact path="/admin/transaction">
 									<AdminTransactionRecord />
+								</Route>
+								<Route exact path="/admin/email-subscription">
+									<EmailSubscription />
 								</Route>
 								<Route exact path="/read">
 									<ReadBook />

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c.1. The Simple Comparison Test | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="pSerTest.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimCompTest.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c.1. The Simple Comparison Test</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="greybox">
+  <p class="prop" data-title="The Simple Comparison Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) and
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) are positive series.
+  </p>
+  <ol>
+    <li>
+      If \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent and
+      \(b_n \ge a_n\) for all \(n\), then
+      \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also convergent.
+    </li>
+    <li>
+      If \(\displaystyle \sum_{n=n_o}^\infty b_n\) is divergent and
+      \(b_n \le a_n\) for all \(n\), then
+      \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also divergent.
+    </li>
+  </ol>
+  <p>
+  &nbsp;<button class="toggle btn" data-toggle="Drop1">Proof</button>
+  \(\Longleftarrow\) Read this! It's easy.
+  </p>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Drop1">
+  <ol>
+    <li>
+      If \(b_n \ge a_n\), then
+      \(\displaystyle \sum_{n=n_o}^\infty b_n \ge \sum_{n=n_o}^\infty a_n\).
+      So if \(\displaystyle \sum_{n=n_o}^\infty b_n\) is finite, so is
+      \(\displaystyle \sum_{n=n_o}^\infty a_n\).
+    </li>
+    <li>
+      If \(b_n \le a_n\), then
+      \(\displaystyle \sum_{n=n_o}^\infty b_n \le \sum_{n=n_o}^\infty a_n\).
+      So if \(\displaystyle \sum_{n=n_o}^\infty b_n\) is infinite, so is
+      \(\displaystyle \sum_{n=n_o}^\infty a_n\).
+    </li>
+  </ol>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  To apply the test, given a series
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) we try to find either a
+  convergent series \(\displaystyle \sum_{n=n_o}^\infty b_n\) which
+  is bigger than \(\displaystyle \sum_{n=n_o}^\infty a_n\) or a
+  divergent series \(\displaystyle \sum_{n=n_o}^\infty b_n\) which is
+  smaller than \(\displaystyle \sum_{n=n_o}^\infty a_n\). To construct
+  the terms \(b_n\), we look at the terms \(a_n\) and throw away pieces
+  which are negligible for large \(n\). Then we must check the convergence of
+  \(\displaystyle \sum_{n=n_o}^\infty b_n\) and the inequality between
+  \(b_n\) and \(a_n\). Hopefully, this will become clearer in the examples:
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Determine if
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{n^2-\sin^2(n)}{n^2+n^4}\)
+  is convergent or divergent.
+</p>
+<p class="sol">
+  We start with \(a_n=\dfrac{n^2-\sin^2(n)}{n^2+n^4}\).
+  <br>
+  For large \(n\), the term \(\sin^2(n)\) is negligible compared to \(n^2\).
+  &emsp; <button class="toggle btn" data-toggle="why1">Why?</button>
+</p>
+<div class="toBeToggled" data-toggle="why1">
+  <p>
+    \(\sin^2(n) \le 1 \le n\). So \(\sin^2(n)\) is negligible.
+  </p>
+</div>
+<p>
+  Also the term \(n^2\) is negligible compared to \(n^4\).
+  &emsp; <button class="toggle btn" data-toggle="why2">Why?</button>
+</p>
+<div class="toBeToggled" data-toggle="why2">
+  <p>
+    If \(n=1,000\) then \(n^2=1,000,000\) and \(n^4=1,000,000,000,000\).
+    So \(n^2\) is negligible.
+  </p>
+</div>
+<p>
+  So we take \(b_n=\dfrac{n^2}{n^4}=\dfrac{1}{n^2}\).
+  Now we need to compare \(b_n\) to \(a_n\).
+</p>
+<p>
+  First, \(n^2+n^4 \gt n^4\), because there is more on the left. So
+  \(\dfrac{1}{n^2+n^4} \lt \dfrac{1}{n^4}\).
+  &emsp; <button class="toggle btn" data-toggle="why3">Why?</button>
+</p>
+<div class="toBeToggled" data-toggle="why3">
+  <p>
+    E.g. since \(4 \gt 3\), we know \(\dfrac{1}{4} \lt \dfrac{1}{3}\).
+  </p>
+</div>
+<p>
+  Second, \(n^2-\sin^2(n) \lt n^2\), because there is less on the left.
+  Multiplying these two inequalities, we have
+  \[
+  \dfrac{n^2-\sin^2(n)}{n^2+n^4} \lt \dfrac{n^2}{n^4}=\dfrac{1}{n^2}
+  \qquad \text{or} \qquad a_n \le b_n.
+  \]
+  Finally, \(\displaystyle \sum_{n=1}^\infty b_n
+  =\sum_{n=1}^\infty \dfrac{1}{n^2}\) converges because it is a
+  \(p\)-series with \(p=2>1\). So
+  \(\displaystyle \sum_{n=1}^\infty a_n
+  =\sum_{n=1}^\infty \dfrac{n^2-\sin^2(n)}{n^2+n^4}\)
+  also converges.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Determine if
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{e^n}{ne^n-e^{-n}}\) is
+  convergent or divergent.
+</p>
+<p class="sol">
+  We have \(a_n=\dfrac{e^n}{ne^n-e^{-n}}\). For large \(n\), the term
+  \(e^{-n}\) is negligible compared to \(ne^n\). So we take
+  \(b_n=\dfrac{e^n}{ne^n}=\dfrac{1}{n}\). Now
+  \(\displaystyle \sum_{n=1}^\infty b_n=\sum_{n=1}^\infty \dfrac{1}{n}\)
+  diverges because it is the harmonic series. Finally, we need to compare
+  \(a_n\) and \(b_n\). First, \(ne^n-e^{-n} \lt ne^n\) because there is less
+  on the left. So \(\dfrac{1}{ne^n-e^{-n}} \gt \dfrac{1}{ne^n}\), and consequently,
+  \(\dfrac{e^n}{ne^n-e^{-n}} \gt \dfrac{e^n}{ne^n}=\dfrac{1}{n}\) or
+  \(a_n \gt b_n\). Therefore, \(\displaystyle \sum_{n=1}^\infty a_n\) also diverges.
+</p>
+
+        <div class="rule" id="ex1"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Determine if
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{n^2+n+1}{n^{5/2}}\)
+    is convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint1"></button>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint1">
+  <p>
+    \(n^2+n+1 \gt n^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{n^2+n+1}{n^{5/2}}\) is divergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    We have \(a_n=\dfrac{n^2+n+1}{n^{5/2}}\). For large \(n\), the term
+    \(n^2\) is larger than both \(n\) and \(1\). So we take
+    \(b_n=\dfrac{n^2}{n^{5/2}}=\dfrac{1}{n^{1/2}}\). Now
+    \(\displaystyle \sum_{n=1}^\infty b_n
+    =\sum_{n=1}^\infty \dfrac{1}{n^{1/2}}\)
+    diverges because it is a \(p\)-series with \(p=\dfrac{1}{2} \lt 1\).
+    Finally, we need to compare \(a_n\) and \(b_n\). Since,
+    \(n^2+n+1 \gt n^2\), we have
+    \(\dfrac{n^2+n+1}{n^{5/2}} \gt \dfrac{n^2}{n^{5/2}}=\dfrac{1}{n^{1/2}}\)
+    or \(a_n \gt b_n\). Therefore, \(\displaystyle \sum_{n=1}^\infty a_n\)
+    also diverges.
+  </p>
+</div>
+
+        <div class="rule" id="ex2"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Determine if
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{n^2-n-1}{n^{7/2}}\)
+    is convergent or divergent.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="Hint2"></button>
+    <button class="toggle has-ans" data-toggle="Ans2"></button>
+    <button class="toggle has-sol" data-toggle="Sol2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="Hint2">
+  <p>
+    \(n^2-n-1 \le n^2\)
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans2">
+  <p>
+    \(\displaystyle \sum_{n=1}^\infty \dfrac{n^2-n-1}{n^{7/2}}\) is convergent.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol2">
+  <p>
+    We have \(a_n=\dfrac{n^2-n-1}{n^{7/2}}\). For large \(n\), the term
+    \(n^2\) is larger than both \(n\) and \(1\). So we take
+    \(b_n=\dfrac{n^2}{n^{7/2}}=\dfrac{1}{n^{3/2}}\). Now
+    \(\displaystyle \sum_{n=1}^\infty b_n=\sum_{n=1}^\infty \dfrac{1}{n^{3/2}}\)
+    converges because it is a \(p\)-series with \(p=\dfrac{3}{2} > 1\).
+    Finally, we need to compare \(a_n\) and \(b_n\). Since, \(n^2-n-1 \lt n^2\), we have
+    \(\dfrac{n^2-n-1}{n^{7/2}} \lt \dfrac{n^2}{n^{7/2}}=\dfrac{1}{n^{3/2}}\) or
+    \(a_n \lt b_n\). Therefore, \(\displaystyle \sum_{n=1}^\infty a_n\) also converges.
+    <p align=right> dd &nbsp </p>
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

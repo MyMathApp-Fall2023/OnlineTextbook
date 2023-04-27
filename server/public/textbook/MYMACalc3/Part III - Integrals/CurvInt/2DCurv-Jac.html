@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. The Jacobian | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DCurv-GridArea.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DCurv-Int.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Integrating in 2D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>3. The Jacobian</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the <a href="2DCurv-GridArea.html">previous page</a>
+  we found that a double integral may be computed in a curvilinear
+  coordinate system, \((u,v)\), as:
+  \[
+  \iint_R f\,dA=\iint_R f(u,v)\,J\,du\,dv
+  \]
+  where the differential of area is
+  \[
+  dA=J\,du\,dv
+  \]
+  and where \(J\) is the <span class="hl">Jacobian factor</span>:
+  \[
+  J=|\vec{e}_u\times\vec{e}_v|
+  \]
+  However, <span style="color:red"><em>there is a problem with this formula for
+  the Jacobian</em></span>, namely the cross product is only defined in \(3\)
+  dimensions, but \(\vec{e}_u\) and \(\vec{e}_v\) are \(2\) dimensional
+  vectors. To fix this, we simply let \(\vec{e}_u\) and \(\vec{e}_v\) have
+  a third component of \(0\). Then:
+  \[
+  \vec{e}_u\times\vec{e}_v
+  =\begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat k \\[4pt]
+  \dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} & 0 \\[8pt]
+  \dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v} & 0
+  \end{vmatrix}
+  =\hat{\imath}(0)-\hat{\jmath}(0)+\hat{k}
+  \left(\dfrac{\partial x}{\partial u}\dfrac{\partial y}{\partial v}
+     -\,\dfrac{\partial y}{\partial u}\dfrac{\partial x}{\partial v}\right)
+  \]
+  and:
+  \[
+  J=|\vec{e}_u\times\vec{e}_v|
+  =\sqrt{0^2+0^2
+  +\left(\dfrac{\partial x}{\partial u}\dfrac{\partial y}{\partial v}
+      -\,\dfrac{\partial y}{\partial u}\dfrac{\partial x}{\partial v}\right)^2}
+  =\left|\dfrac{\partial x}{\partial u}\dfrac{\partial y}{\partial v}
+      -\,\dfrac{\partial y}{\partial u}\dfrac{\partial x}{\partial v}\right|
+  \]
+  Notice that this expression for the <span class="hl">Jacobian factor</span>
+  is the <span class="hl">absolute value</span> of a determinant called the
+  <span class="hl">Jacobian determinant</span> which is usually denoted by
+  \[
+  \dfrac{\partial(x,y)}{\partial(u,v)}=
+  \begin{vmatrix}
+  \dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} \\[6pt]
+  \dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v}
+  \end{vmatrix}
+  =\det
+  \begin{pmatrix}
+  \dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} \\[6pt]
+  \dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v}
+  \end{pmatrix}
+  \qquad \text{(*)}
+  \]
+  <!-- \tag{*} -->
+</p>
+<p class="remark">
+  Notice that the rows of the Jacobian determinant are the tangent vectors
+  \(\vec{e}_u\) and \(\vec{e}_v\).
+  \[
+  \dfrac{\partial(x,y)}{\partial(u,v)}=
+  \begin{vmatrix}
+  \leftarrow & \vec e_u & \rightarrow \\
+  \leftarrow & \vec e_v & \rightarrow
+  \end{vmatrix}
+  \]
+</p>
+<p class="remark">
+  Recall that the area is always positive. Likewise the Jacobian factor is
+  always positive and requires an absolute value.
+</p>
+<p>
+  In summary:
+</p>
+<p class="formula" data-title="Jacobian factor">
+  The <span class="defword">Jacobian factor</span> is the absolute value of
+  the <span class="defword">Jacobian determinant</span>:
+  \[
+  J=\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|
+  \]
+  and appears in the <span class="defword">differential of area</span>:
+  \[
+  dA=J\,du\,dv
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<h3>3 Meanings of Jacobian</h3>
+<p>
+  Actually, there are three different quantities which are frequently called
+  the <span class="hl">Jacobian</span>. They are:
+</p>
+<div class="greybox">
+  <p class="def" data-title="3 Meanings of Jacobian">
+  </p>
+  <ol>
+    <li>
+      The <span class="defword">Jacobian Matrix:</span> &emsp;
+      \(
+      \begin{pmatrix}
+      \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} \\
+      \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
+      \end{pmatrix}
+      \)
+      <br/>
+      Note: This is actually the transpose of the matrix displayed in (*).
+      This transpose has no affect on the determinant.
+    </li>
+    <li>
+      The <span class="defword">Jacobian Determinant:</span> &emsp;
+      \(
+      \dfrac{\partial(x,y)}{\partial(u,v)}
+      =\begin{vmatrix}
+      \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} \\
+      \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
+      \end{vmatrix}
+      \)
+      <br/>
+      Note:
+      This defines the symbol
+      \(\dfrac{\partial(x,y)}{\partial(u,v)}\) as the Jacobian determinant.
+    </li>
+    <li>
+      The <span class="defword">Jacobian Factor:</span> &emsp;
+      \(
+      J=\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|
+      =\left|
+      \begin{vmatrix}
+      \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} \\
+      \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
+      \end{vmatrix}
+      \right|
+      \)
+      <br/>
+      Note:The double bars around the matrix indicate that we first take a
+      determinant and then an absolute value.
+    </li>
+  </ol>
+</div>
+<p>
+  The <span class="hl">Jacobian factor</span> is what appears in an integral.
+  Thus the area element is \(dA=J\,du\,dv\).
+  <br>
+  The <span class="hl">Jacobian determinant</span> is useful in surface
+  integtrals, which we study in the
+  <a href="../SurfInt/ChContents.html" title="Return using the Back button.">
+  next chapter</a>.
+  <br>
+  The <span class="hl">Jacobian matrix</span> is used frequently in linear
+  algebra, but not in this course.
+  <br>
+  So, if someone refers to the Jacobian, you need to ask which one. However, in
+  this book, if we just say Jacobian, we will mean the Jacobian factor.
+</p>
+<p>
+  <button class="toggle" data-toggle="note1">Note about Vertical Bars</button>
+</p>
+<div class="toBeToggled" data-toggle="note1">
+  <p>
+    As you may have noticed in the previous formulas, multiple vertical bars can
+    be quite confusing. A pair of vertical bars can have one of three meanings:
+    <br>
+    1) Absolute value
+    <br>
+    2) Length
+    <br>
+    3) Determinant
+  </p>
+  <p>
+    The meaning of the vertical bars is determined by the quantity inside them.
+    <br>
+    1) Vertical bars around a <span class="hl">scalar</span> mean the
+    <span class="hl">absolute value</span> of that scalar.
+    <br>
+    2) Vertical bars around a <span class="hl">vector</span> mean the
+    <span class="hl">length</span> of that vector.
+    <br>
+    3) Vertical bars around a <span class="hl">matrix</span> mean the
+    <span class="hl">determinant</span> of that matrix.
+  </p>
+  <p>
+    Notice that in formula for the Jacobian factor there are two pairs of
+    vertical bars. The inner pair encloses a matrix. So this is a determinant
+    which produces a scalar. So the outer pair of vertical bars is an
+    absolute value.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>The Jacobian for Polar Coordinates</h3>
+
+<p class="example" data-number="1">
+  Recompute the Jacobian factor for polar coordinates (again).
+</p>
+<p class="sol">
+  Recall that in polar coordinates,
+  \(\vec{R}(r,\theta)=\left\langle r\cos\theta,r\sin\theta\right\rangle\).
+  So the tangent vectors are:
+  \[
+  \vec{e}_r=\left\langle \cos\theta,\sin\theta\right\rangle
+  \qquad \text{and} \qquad
+  \vec{e}_\theta=\left\langle -r\sin\theta,r\cos\theta\right\rangle
+  \]
+  So
+  \[\begin{aligned}
+  J&=\left|\dfrac{\partial(x,y)}{\partial(r,\theta)}\right|
+  =\left|
+  \begin{vmatrix}
+  \dfrac{\partial x}{\partial r} & \dfrac{\partial y}{\partial r} \\[6pt]
+  \dfrac{\partial x}{\partial \theta} & \dfrac{\partial y}{\partial \theta}
+  \end{vmatrix}
+  \right|
+  =\left|
+  \begin{vmatrix}
+  \leftarrow & \vec e_r & \rightarrow \\
+  \leftarrow & \vec e_\theta & \rightarrow
+  \end{vmatrix}
+  \right| \\
+  &=\left|
+  \begin{vmatrix}
+  \cos\theta & \sin\theta \\
+  -r\sin\theta & r\cos\theta
+  \end{vmatrix}
+  \right|
+  =|r\cos^2\theta-(-r\sin^2\theta)|
+  =r
+  \end{aligned}\]
+  Using the general formulas for the Jacobian, we have just derived the
+  Jacobian for polar coordinates, \(J=r\). Consequently, \(dA=r\,dr\,d\theta\).
+</p>
+<p class="remark">
+  Notice that this requires us to take \(r\) positive when we compute integrals.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  On the next two pages we look at
+  <a href="2DCurv-Int.html#elliptic" title="Return using the Back button.">
+  elliptic</a>, and &ldquo;
+  <a href="2DCurv-Int2.html" title="Return using the Back button.">
+  diamond shaped</a>&rdquo; coordinate systems and use them to compute integrals.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

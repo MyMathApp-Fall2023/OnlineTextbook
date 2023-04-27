@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Expansion and Contraction | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="NormalInt.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic7">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>g. Applications of Normal Line Integrals (Optional)</h2>
+
+
+      
+      <h2>1. Expansion and Contraction</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="greybox">
+  <p class="def" data-title="Expansion and Contraction">
+  </p>
+  <div class="column">
+    <div>
+      <p>
+        Let \(\vec V(x,y)\) be the <span class="hl">velocity of a fluid</span> at
+        the point \((x,y)\) and let \(\vec r(t)\) be a closed curve.
+      </p>
+      <p>
+        Recall, the integral of the tangential component of \(\vec V\)
+        \[
+        \oint_{\vec r} \vec V\cdot d\vec s
+        =\oint_{\vec r} \vec V\cdot\hat v\,ds
+        \]
+        is the <span class="hl">circulation of the fluid</span> around the curve, as
+        <a href="FlowCirc.html" title="Return using the Back button.">
+        previously discussed</a>.
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/def_circ_ccw.jpg" alt="def_circ_ccw">
+    </div>
+  </div>
+  <div class="column">
+    <div>
+    	<p>
+        Also recall that if you look in the direction of \(\vec v\), then
+        \(\vec n\) points along your right arm.
+      </p>
+      <p>
+        Consequently, if the curve is traversed
+        <span class="hl">counterclockwise</span>, so that \(\hat n\) points outward,
+        then the integral of the normal component of \(\vec V\)
+        \[
+        \oint_{\vec r} \vec V\cdot d\vec n
+        =\oint_{\vec r} \vec V\cdot\hat n\,ds
+        \]
+        is called the <span class="defword">expansion of the fluid</span> out of
+        the curve \(\vec r(t)\).
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/def_exp.jpg" alt="def_exp">
+    </div>
+  </div>
+  <div class="column">
+  	<p>
+      On the other hand, if the curve is traversed
+      <span class="hl">clockwise</span>, so that \(\hat n\) points inward,
+      then the integral \(\displaystyle \oint_{\vec r} \vec V\cdot d\vec n\)
+      is called the <span class="defword">contraction of the fluid</span> into
+      the curve \(\vec r(t)\).
+    </p>
+    <div class="center">
+      <img src="graphics/def_contr.jpg" alt="def_contr">
+    </div>
+  </div>
+  <p>
+    More generally, for any vector field \(\vec F\) the integral
+    \(\displaystyle \oint_{\vec r} \vec F\cdot d\vec n\) is called the
+    <span class="defword">expansion (or contraction) of the vector field</span>
+    through the <em>closed</em> curve provided the curve is traversed
+    counterclockwise (or clockwise, resp.).
+  </p>
+</div>
+
+<p class="remark">
+  If the <span class="hl">expansion</span> is positive or the
+  <span class="hl">contraction</span> is negative, then the
+  <span class="defword">fluid is expanding</span>.
+  If the <span class="hl">expansion</span> is negative or the
+  <span class="hl">contraction</span> is positive, then the
+  <span class="defword">fluid is contracting</span>.
+</p>
+
+        <div class="rule" id="eg_expansion"></div>
+
+<p class="example" data-number="1">
+  Find the expansion of the fluid velocity field
+  \(\vec V=\langle 2x,3y\rangle\) through the circle
+  \(x^2+y^2=16\).
+</p>
+<p class="sol">
+  We parametrize the circle by \(\vec r(\theta)=(4\cos\theta,4\sin\theta)\).
+  Then the tangent vector is
+  \(\vec v=\langle -4\sin\theta,4\cos\theta\rangle\)
+  and the normal vector is
+  \(\vec n=\langle 4\cos\theta,4\sin\theta\rangle\).
+  This is outward since it is the same as the radius vector.
+  The fluid velocity field along the curve is
+  \[
+  \vec V=\langle 8\cos\theta,12\sin\theta\rangle
+  \]
+  Their dot product is
+  \[\begin{aligned}
+  \vec V\cdot\vec n
+  &=32\cos^2\theta+48\sin^2\theta \\
+  &=16(1+\cos2\theta)+24(1-\cos2\theta)
+  =40-8\cos2\theta
+  \end{aligned}\]
+  So the expansion is
+  \[\begin{aligned}
+  \text{Expansion}&=\int_0^{2\pi} \vec V\cdot\vec n\,d\theta
+  =\int_0^{2\pi} (40-8\cos2\theta)\,d\theta \\
+  &=\left[40\theta-4\sin2\theta\rule{0pt}{10pt}\right]_0^{2\pi}=80\pi
+  \end{aligned}\]
+</p>
+
+        <div class="rule" id="ex_expansion"></div>
+
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-number="2" data-col-width="60%">
+      Find the expansion of the vector field
+      \(\vec G=\langle2x+2y,3x-3y\rangle\) out of the rectangle
+      \(0 \le x \le 3\) and \(0 \le y \le 2\).
+      Integrate over the \(4\) edges and add them up.
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_expansion_rect.jpg" alt="ex_expansion_rect">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <div class="column">
+    <p data-col-width="60%">
+      Traverse the rectangle counterclockwise. Parametrize each of the \(4\) edges
+      using \(\vec r(t)=P+t\overrightarrow{PQ}\) where \(P\) and \(Q\) are the
+      starting and finishing points of each edge. The plot shows \(P\) and \(Q\)
+      for the edge \(\vec r_3\).
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_expansion_edge3.jpg" alt="ex_expansion_edge3">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\text{Expansion}=-6\). Since the expansion is negative, the
+    the vector field \(\vec G\) is contracting.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We parametrize each of the \(4\) edges, counterclockwise,
+    using \(\vec r(t)=P+t\overrightarrow{PQ}\) where \(P\) and \(Q\) are the
+    starting and finishing points of each edge. For each, the parameter range
+    is \(0 \le t \le 1\).
+    <br>
+    For each of the \(4\) edges, click the Plot button. Here are the endpoints,
+    parametrization, and tangent vector.
+  </p>
+  <div class="column">
+  	<p data-col-width="60%">
+      <button id="button_Edge1">Plot</button>
+      \(P=(0,0)\) &ensp; \(Q=(3,0)\) &ensp; \(\vec r_1=(3t,0)\)
+      &emsp; &emsp; \(\vec v_1=\langle 3,0\rangle\)
+      <br>
+      <button id="button_Edge2">Plot</button>
+      \(P=(3,0)\) &ensp; \(Q=(3,2)\) &ensp; \(\vec r_2=(3,2t)\)
+      &emsp; &emsp; \(\vec v_2=\langle 0,2\rangle\)
+      <br>
+      <button id="button_Edge3">Plot</button>
+      \(P=(3,2)\) &ensp; \(Q=(0,2)\) &ensp; \(\vec r_3=(3-3t,2)\)
+      &ensp; \(\vec v_3=\langle -3,0\rangle\)
+      <br>
+      <button id="button_Edge4">Plot</button>
+      \(P=(0,2)\) &ensp; \(Q=(0,0)\) &ensp; \(\vec r_4=(0,2-2t)\)
+      &ensp; \(\vec v_4=\langle 0,-2\rangle\)
+      <br>
+      <button id="button_Rect">Reset Plot</button>
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_expansion_rect.jpg"
+      alt="ex_expansion_rect" id="img_ex_expansion">
+    </div>
+  </div>
+  <p>
+    For each of the \(4\) edges, here are the normal vector, the vector field
+    \(\vec G=\langle2x+2y,3x-3y\rangle\) evaluated on the curve, and their dot product.
+    \[\begin{aligned}
+    \vec n_1&=\langle 0,-3\rangle
+    &\vec G_1&=\vec G(3t,0)=\langle 6t,9t\rangle
+    &\vec G_1\cdot\vec n_1&=-27t \\
+    \vec n_2&=\langle 2,0\rangle
+    &\vec G_2&=\vec G(3,2t)=\langle 6+4t,9-6t\rangle
+    &\vec G_2\cdot\vec n_2&=12+8t \\
+    \vec n_3&=\langle 0,3\rangle
+    &\vec G_3&=\vec G(3-3t,2)=\langle 10-6t,3-9t)\rangle
+    &\vec G_3\cdot\vec n_3&=9-27t \\
+    \vec n_4&=\langle -2,0\rangle
+    &\vec G_4&=\vec G(0,2-2t)=\langle 4-4t,-6+6t\rangle
+    &\vec G_4\cdot\vec n_4&=-8+8t
+    \end{aligned}\]
+    For each of the \(4\) edges, here is the normal line integral of \(\vec G\).
+    \[\begin{aligned}
+    \int_{\vec r_1} \vec G\cdot\,d\vec n
+    &=\int_0^1 -27t\,dt=\left[\rule{0pt}{10pt}-\dfrac{27}{2}t^2\right]_0^1=-\dfrac{27}{2} \\
+    \int_{\vec r_2} \vec G\cdot\,d\vec n
+    &=\int_0^1 12+8t\,dt=\left[\rule{0pt}{10pt}12t+4t^2\right]_0^1=16 \\
+    \int_{\vec r_3} \vec G\cdot\,d\vec n
+    &=\int_0^1 9-27t\,dt=\left[\rule{0pt}{10pt}9t-\dfrac{27}{2}t^2\right]_0^1=-\,\dfrac{9}{2} \\
+    \int_{\vec r_4} \vec G\cdot\,d\vec n
+    &=\int_0^1 -8+8t\,dt=\left[\rule{0pt}{10pt}-8t+4t^2\right]_0^1=-4
+    \end{aligned}\]
+    Finally, we total the \(4\) integrals:
+    \[
+    \text{Expansion}
+    =\oint \vec G\cdot\,d\vec n
+    =-\dfrac{27}{2}+16+-\,\dfrac{9}{2}-4=-6
+    \]
+    The fact that the expansion is negative says that the
+    vector field \(\vec G\) is contracting.
+  </p>
+</div>
+<p class="remark">
+  In the chapter on
+  <a href="../../Part IV - Theorems/ThmGreen/2DGauss.html#2DGauss"
+  title="Return using the Back button.">
+  Green's Theorem</a> we will learn a much easier way to compute the integrals
+  in the last two problems.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+  <script>
+    function changeImageSourceOnClick(imgId, buttonId, imgSrc) {
+      const img = document.getElementById(imgId);
+      const button = document.getElementById(buttonId);
+      button.addEventListener("click", () => {
+        img.setAttribute("src", imgSrc);
+      });
+    }
+    changeImageSourceOnClick("img_ex_expansion", "button_Rect", "graphics/ex_expansion_rect.jpg");
+    changeImageSourceOnClick("img_ex_expansion", "button_Edge1", "graphics/ex_expansion_edge1.jpg");
+    changeImageSourceOnClick("img_ex_expansion", "button_Edge2", "graphics/ex_expansion_edge2.jpg");
+    changeImageSourceOnClick("img_ex_expansion", "button_Edge3", "graphics/ex_expansion_edge3.jpg");
+    changeImageSourceOnClick("img_ex_expansion", "button_Edge4", "graphics/ex_expansion_edge4.jpg");
+   </script>
+
+</body>
+</html>

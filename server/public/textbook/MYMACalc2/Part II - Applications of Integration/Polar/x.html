@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ArcLength.html" title="Previous">&lArr;</a></li>
+      <li><a href="../../Part III - Differential Equations/DEIVP/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!-- Polar Coordinate System -->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Def.html">a. Polar Coordinate System</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Def.html">1</a></div>
+      
+        <div><a href="Convert.html">2</a></div>
+      
+        <div><a href="PolarEq.html">3</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  Convert the rectangular coordinates \((x,y)\) into polar coordinates \((r,\theta)\):
+	<ol type="a">
+    <li>
+      <div class="dotfillex">
+        <p>
+          \((x,y)=(3,3)\)
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX1a"></button>
+          <button class="toggle has-ans" data-toggle="AnsX1a"></button>
+          <button class="toggle has-sol" data-toggle="SolX1a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX1a">
+        <p>
+    			The relations between rectangular coordinates \((x,y)\), the
+    			polar coordinates \((r,\theta)\) are
+  				\[\begin{array}{ll}
+  				x=r\cos\theta\qquad \qquad &r=\sqrt{x^2+y^2} \\
+  				y=r\sin\theta&\tan\theta=\dfrac{y}{x}
+  				\end{array}\]
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX1a">
+        <p>
+          \((r,\theta)=\left(3\sqrt{2}, \dfrac{\pi}{4}\right)\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX1a">
+				<p>
+      		Since the point is \((x,y)=(3,3)\) which is in the \(1^\text{st}\)
+          quadrant, we have:
+          \[\begin{aligned}
+          r&=\sqrt{x^2+y^2}=\sqrt{9+9}=\sqrt{2\cdot9}=3\sqrt{2} \\
+          \theta&=\arctan\left(\dfrac{y}{x}\right)
+          =\arctan\left(\dfrac{3}{3}\right)
+          =\dfrac{\pi}{4}
+          \end{aligned}\]
+      		So the point is:
+          \[
+          (r,\theta)=\left(3\sqrt{2},\dfrac{\pi}{4}\right)
+          \]
+				</p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          \((x,y)=(-2,-2\sqrt{3})\)
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX1b"></button>
+          <button class="toggle has-ans" data-toggle="AnsX1b"></button>
+          <button class="toggle has-sol" data-toggle="SolX1b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX1b">
+        <p>
+    			Be careful to check the quadrant.
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX1b">
+        <p>
+        \((r,\theta)=\left(4,\dfrac{4\pi}{3}\right)\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX1b">
+				<p>
+      		Since the point is \((x,y)=(-2,-2\sqrt{3})\), we have:
+          \[
+          r=\sqrt{x^2+y^2}=\sqrt{4+12}=4
+          \]
+      		Notice that \((x,y)=(-2,-2\sqrt{3})\) is in quadrant III.
+      		So to find \(\theta\), we add \(\pi\) radians to the \(\arctan\):
+      		\[\begin{aligned}
+          \theta&=\arctan\left(\dfrac{y}{x}\right)+\pi
+                =\arctan\left(\dfrac{-2\sqrt{3}}{-2}\right)+\pi\\
+                &=\dfrac{\pi}{3}+\pi=\dfrac{4\pi}{3}
+          \end{aligned}\]
+      		So the point is:
+          \[
+          (r,\theta)=\left(4,\dfrac{4\pi}{3}\right)
+          \]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+    </li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          \((x,y)=(-2,5)\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX1c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX1c"></button>
+					<button class="toggle has-sol" data-toggle="SolX1c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX1c">
+				<p>
+    			Be careful to check the quadrant.
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX1c">
+				<p>
+          \(\begin{aligned}
+          (r,\theta)&=\left(\sqrt{29},\arctan\left(\dfrac{5}{-2}\right)+\pi\right) \\
+          &\approx(5.385,1.95\,\text{rad})
+          \approx(5.385,111.8^\circ)
+          \end{aligned}\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX1c">
+				<p>
+      		Since the point is \((x,y)=(-2,5)\), we have:
+          \[\begin{aligned}
+          r&=\sqrt{x^2+y^2}=\sqrt{4+25}=\sqrt{29} \\
+          &\approx5.385
+          \end{aligned}\]
+      		Notice that \((x,y)=(-2,5)\) is in quadrant II.
+      		So to find \(\theta\), we add \(\pi\) radians to the \(\arctan\):
+      		\[\begin{aligned}
+          \theta&=\arctan\left(\dfrac{y}{x}\right)+\pi
+                =\arctan\left(\dfrac{5}{-2}\right)+\pi\\
+                &\approx 1.95\,\text{rad}
+          \end{aligned}\]
+      		In degrees we have:
+      		\[\begin{aligned}
+          \theta&\approx1.95\,\text{rad} \times\dfrac{180^\circ}{\pi\,\text{rad}} \\
+          &\approx112^\circ
+          \end{aligned}\]
+      		So the point is:
+          \[\begin{aligned}
+          (r,\theta)&=\left(\sqrt{29},\arctan\left(\dfrac{5}{-2}\right)+\pi\right) \\
+          &\approx(5.385,1.95\,\text{rad})
+          \approx(5.385,112^\circ)
+          \end{aligned}\]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          \((x,y)=\left(\dfrac{1}{2},\dfrac{\sqrt{3}}{2}\right)\)
+				</p>
+				<p>
+					<button class="toggle has-ans" data-toggle="AnsX1d"></button>
+					<button class="toggle has-sol" data-toggle="SolX1d"></button>
+				</p>
+			</div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX1d">
+        <p>
+          \((r,\theta)=\left(1,\dfrac{\pi}{3}\right)\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX1d">
+        <p>
+          We compute:
+          \[\begin{aligned}
+          r&=\sqrt{x^2+y^2}
+          =\sqrt{\left(\dfrac{1}{2}\right)^2+\left(\dfrac{\sqrt{3}}{2}\right)^2} \\
+          &=\sqrt{\dfrac{1}{4}+\dfrac{3}{4}}=1\\
+          \end{aligned}\]
+          Since both \(x\) and \(y\) are both positive, we know that \(P\)  is in quadrant \(I\)
+          and thus we compute:
+          \[\begin{aligned}
+          \theta&=\arctan\left(\dfrac{\frac{\sqrt{3}}{2}}{\frac{1}{2}}\right) \\
+          &=\arctan(\sqrt{3}) \\
+          &=\dfrac{\pi}{3}
+          \end{aligned}\]
+          So the  point is:
+          \[
+          (r,\theta)=\left(1,\dfrac{\pi}{3}\right)
+          \]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<li>
+  Convert the polar coordinates \((r,\theta)\) into rectangular coordinates \((x,y)\):
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+          \((r,\theta)=\left(4,\dfrac{\pi}{3}\right)\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2a"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2a"></button>
+					<button class="toggle has-sol" data-toggle="SolX2a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX2a">
+				<p>
+    			The relations between rectangular coordinates \((x,y)\), the
+    			polar coordinates \((r,\theta)\) are
+  				\[\begin{array}{ll}
+  				x=r\cos\theta \qquad \qquad &r=\sqrt{x^2+y^2} \\
+  				y=r\sin\theta&\tan\theta=\dfrac{y}{x}
+  				\end{array}\]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+				<p>
+          \((x,y)=(2,2\sqrt{3})\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2a">
+				<p>
+      		Using \(r=4\) and \(\theta=\dfrac{\pi}{3}\), we compute
+          \[\begin{aligned}
+          x&=r\cos\theta=4\cos\left(\dfrac{\pi}{3}\right)
+          =4\cdot\dfrac{1}{2}=2 \\
+          y&=r\sin\theta=4\sin\left(\dfrac{\pi}{3}\right)
+          =4\cdot\dfrac{\sqrt{3}}{2}=2\sqrt{3}
+          \end{aligned}\]
+      		So the point is \((x,y)=(2,2\sqrt{3})\).
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          \((r,\theta)=\left(3,\dfrac{\pi}{2}\right)\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2b"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2b"></button>
+					<button class="toggle has-sol" data-toggle="SolX2b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX2b">
+				<p>
+          What does \(\theta=\dfrac{\pi}{2}\) mean?
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+				<p>
+          \((x,y)=(0,3)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2b">
+				<p>
+          Since \(\theta=\dfrac{\pi}{2}\), the point lies on the positive
+          \(y\)-axis at a distance \(y=r=3\) from the origin. So the point is
+          \((x,y)=(0,3)\). Of course the formulas would also work.
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+          \((r,\theta)=\left(2,\dfrac{5\pi}{6}\right)\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX2c"></button>
+					<button class="toggle has-ans" data-toggle="AnsX2c"></button>
+					<button class="toggle has-sol" data-toggle="SolX2c"></button>
+					<button class="toggle has-rem" data-toggle="RemX2c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX2c">
+				<p>
+    			The transformation equations from polar \((r,\theta)\)
+          to rectangular \((x,y)\), work in any quadrant.
+  				\[
+  				x=r\cos\theta \qquad y=r\sin\theta
+          \]
+				</p>
+			</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+				<p>
+          \((x,y)=(-\sqrt{3},1)\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX2c">
+				<p>
+      		Using \(r=2\) and \(\theta=\dfrac{5\pi}{6}\), we compute
+          \[\begin{aligned}
+          x&=r\cos\theta=2\cos\left(\dfrac{5\pi}{6}\right)
+          =2\cdot\dfrac{-\sqrt{3}}{2}=-\sqrt{3} \\
+          y&=r\sin\theta=2\sin\left(\dfrac{5\pi}{6}\right)
+          =2\cdot\dfrac{1}{2}=1
+          \end{aligned}\]
+      		So the point is \((x,y)=(-\sqrt{3},1)\).
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+			</div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX2c">
+        <p>
+          Notice that \(\theta=\dfrac{5\pi}{6}\) says the point is in quadrant
+          II which agrees with the solution. The formulas work and there is
+          nothing special to do for quadrants II and III.
+        </p>
+      </div>
+		</li>
+	</ol>
+</li>
+
+<!-- Graphs of Polar Equations -->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="Graph.html">b. Graphs of Polar Equations</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Graph.html">1</a></div>
+      
+        <div><a href="Plotting.html">2</a></div>
+      
+        <div><a href="PlottingRect.html">3</a></div>
+      
+        <div><a href="Intersect.html">4</a></div>
+      
+    </div>
+  </div>
+
+
+Graph the following polar equations:
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=4+4\sin\theta\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX3"></button>
+      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+      <button class="toggle has-sol" data-toggle="SolX3"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX3">
+    <p>
+      First graph a rectangular plot and use it to make the polar plot.
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX3">
+    <div class="center">
+      <img src="graphics/r=4p4sinthetaP.jpg" alt="r=4p4sinthetaP.jpg">
+    </div>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX3">
+    <div class="column">
+      <p>
+        The rectangular plot is a sine curve stretched vertically
+        by a factor of \(4\) and shifted up by \(4\). So it goes between
+        \(0\) and \(8\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=4p4sinthetaR.jpg" alt="r=4p4sinthetaR.jpg">
+      </div>
+    </div>
+    <div class="column">
+      <p>
+        A table of important values is:
+      </p>
+      <div class="center">
+    		<table><tbody>
+    			<tr>
+    				<td>\(\theta=\)</td>
+            <td>\(0\)</td>
+            <td>\(\dfrac{\pi}{2}\)</td>
+            <td>\(\pi\)</td>
+    				<td>\(\dfrac{3\pi}{2}\)</td>
+            <td>\(2 \pi\)</td>
+    			</tr>
+          <tr>
+    				<td>\(r=\)</td>
+            <td>\(4\)</td>
+            <td>\(8\)</td>
+            <td>\(4\)</td>
+            <td>\(0\)</td>
+    				<td>\(4\)</td>
+    			</tr>
+    		</tbody></table>
+      </div>
+    </div>
+    <div class="column">
+      <p>
+        So the polar plot starts at \(r=4\) when \(\theta=0\),
+        goes up to \(r=8\) when \(\theta=\dfrac{\pi}{2}\),
+        falls back to \(r=4\) when \(\theta=\pi\),
+        falls to \(r=0\) when \(\theta=\dfrac{3\pi}{2}\),
+        and finally closes back to \(r=4\) when \(\theta=2\pi\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=4p4sinthetaP.jpg" alt="r=4p4sinthetaP.jpg">
+      </div>
+    </div>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=1+3\cos\theta\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX4"></button>
+      <button class="toggle has-sol" data-toggle="SolX4"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX4">
+    <div class="center">
+      <img src="graphics/r=1p3costhetaP.jpg" alt="r=1p3costhetaP.jpg">
+    </div>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX4">
+    <div class="column">
+      <p>
+        The rectangular plot is a cosine curve stretched vertically
+        by a factor of \(3\) and shifted up by \(1\). So it goes between
+        \(-2\) and \(4\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=1p3costhetaR.jpg" alt="r=1p3costhetaR.jpg">
+      </div>
+    </div>
+    <p>
+      To find where the graph passes through the origin, we solve
+      \(r=1+3\cos\theta=0\) to get
+      \[
+      \theta=\arccos\left(\dfrac{-1}{3}\right)
+      \approx.6\pi
+      \]
+      which is a little more than \(\dfrac{\pi}{2}\). A table of
+      important values is:
+    </p>
+    <div class="center" data-col-width="60%">
+  		<table><tbody>
+  			<tr>
+  				<td>\(\theta=\)</td>
+          <td>\(0\)</td>
+          <td>\(\dfrac{\pi}{2}\)</td>
+  				<td>\(.6\pi\)</td>
+          <td>\(\pi\)</td>
+          <td>\(1.4\pi\)</td>
+  				<td>\(\dfrac{3\pi}{2}\)</td>
+          <td>\(2 \pi\)</td>
+  			</tr>
+        <tr>
+  				<td>\(r=\)</td>
+          <td>\(4\)</td>
+          <td>\(1\)</td>
+          <td>\(0\)</td>
+          <td>\(-2\)</td>
+  				<td>\(0\)</td>
+          <td>\(1\)</td>
+          <td>\(4\)</td>
+  			</tr>
+  		</tbody></table>
+    </div>
+    <div class="column">
+      <p>
+        So the polar plot starts at \(r=4\) when \(\theta=0\),
+        drops to \(r=1\) when \(\theta=\dfrac{\pi}{2}\) and to
+        \(r=0\) when \(\theta=.6\pi\). Then it is negative which
+        goes backwards until it reaches \(r=-2\) at \(\theta=\pi\).
+        After that it is a mirror image.
+      </p>
+      <div class="center">
+        <img src="graphics/r=1p3costhetaP.jpg" alt="r=1p3costhetaP.jpg">
+      </div>
+    </div>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=2\cos2\theta\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX5"></button>
+      <button class="toggle has-sol" data-toggle="SolX5"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX5">
+    <div class="center">
+      <img src="graphics/r=2cos2thetaP.jpg" alt="r=2cos2thetaP.jpg">
+    </div>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX5">
+    <div class="column">
+      <p>
+        The rectangular plot is a sine curve stretched vertically
+        by a factor of \(2\) and compressed horizontally by a factor of \(2\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=2cos2thetaR.jpg" alt="r=2cos2thetaR.jpg">
+      </div>
+    </div>
+    <p>
+      To find where the graph passes through the origin, we solve
+      \(r=2\cos2\theta=0\) to get
+      \[
+      \theta=\dfrac{\pi}{4},\dfrac{3\pi}{4},\dfrac{5\pi}{4},\dfrac{7\pi}{4}
+      \]
+      A table of important values is:
+    </p>
+    <div class="center" data-col-width="60%">
+  		<table><tbody>
+  			<tr>
+  				<td>\(\theta=\)</td>
+          <td>\(0\)</td>
+          <td>\(\dfrac{\pi}{4}\)</td>
+          <td>\(\dfrac{\pi}{2}\)</td>
+          <td>\(\dfrac{3\pi}{4}\)</td>
+          <td>\(\pi\)</td>
+          <td>\(\dfrac{5\pi}{4}\)</td>
+          <td>\(\dfrac{3\pi}{2}\)</td>
+          <td>\(\dfrac{7\pi}{4}\)</td>
+          <td>\(2\pi\)</td>
+  			</tr>
+        <tr>
+  				<td>\(r=\)</td>
+          <td>\(2\)</td>
+          <td>\(0\)</td>
+          <td>\(-2\)</td>
+          <td>\(0\)</td>
+          <td>\(2\)</td>
+          <td>\(0\)</td>
+          <td>\(-2\)</td>
+          <td>\(0\)</td>
+          <td>\(2\)</td>
+  			</tr>
+  		</tbody></table>
+    </div>
+    <div class="column">
+      <p>
+        So the plot starts at \(r=2\) when \(\theta=0\),
+        falls to \(r=0\) when \(\theta=\dfrac{\pi}{4}\),
+        goes backwards to \(r=-2\) when \(\theta=\dfrac{\pi}{2}\),
+        goes back to \(r=0\) when \(\theta=\dfrac{3\pi}{4}\),
+        and continues this pattern until
+        it closes back to \(r=2\) when \(\theta=2\pi\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=2cos2thetaP.jpg" alt="r=2cos2thetaP.jpg">
+      </div>
+    </div>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=2+2\cos2\theta\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX6"></button>
+      <button class="toggle has-sol" data-toggle="SolX6"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX6">
+    <div class="center">
+      <img src="graphics/r=2p2cos2thetaP.jpg" alt="r=2p2cos2thetaP.jpg">
+    </div>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX6">
+    <div class="column">
+      <p>
+        The rectangular plot is a cosine curve stretched vertically
+        by a factor of \(2\), compressed horizontally by a factor of \(2\),
+         and shifted up by \(2\). So it goes between
+        \(0\) and \(4\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=2p2cos2thetaR.jpg" alt="r=2p2cos2thetaR.jpg">
+      </div>
+    </div>
+    <div class="column">
+      <p>
+        A table of important values is:
+      </p>
+      <div class="center">
+    		<table><tbody>
+    			<tr>
+    				<td>\(\theta=\)</td>
+            <td>\(0\)</td>
+            <td>\(\dfrac{\pi}{2}\)</td>
+            <td>\(\pi\)</td>
+            <td>\(\dfrac{3\pi}{2}\)</td>
+            <td>\(2\pi\)</td>
+    			</tr>
+          <tr>
+    				<td>\(r=\)</td>
+            <td>\(4\)</td>
+            <td>\(0\)</td>
+            <td>\(4\)</td>
+            <td>\(0\)</td>
+            <td>\(4\)</td>
+    			</tr>
+    		</tbody></table>
+      </div>
+    </div>
+    <div class="column">
+      <p>
+        So the polar plot starts at \(r=4\) when \(\theta=0\),
+        falls to \(r=0\) when \(\theta=\dfrac{\pi}{2}\),
+        goes back up to \(r=4\) when \(\theta=\pi\),
+        and has a mirror image back to \(\theta=2\pi\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=2p2cos2thetaP.jpg" alt="r=2p2cos2thetaP.jpg">
+      </div>
+    </div>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=\sin4\theta\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX7"></button>
+      <button class="toggle has-sol" data-toggle="SolX7"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX7">
+    <div class="center">
+      <img src="graphics/r=sin4thetaP.jpg" alt="r=sin4thetaP.jpg">
+    </div>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX7">
+    <div class="column">
+      <p>
+        The rectangular plot is a sine curve compressed horizontally
+        by a factor of \(4\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=sin4thetaR.jpg" alt="r=sin4thetaR.jpg">
+      </div>
+    </div>
+    <p>
+      To find where the graph passes through the origin, we solve
+      \(r=\sin4\theta=0\). The zeros occurs when \(4\theta=k\pi\). So:
+      \[
+      \theta=\dfrac{k\pi}{4}
+      \quad \text{for} \quad
+      k=0,1,\cdot,8
+      \]
+    </p>
+    <div class="column">
+      <p>
+        Looking at the rectangular plot, we see there will be a positive loop
+        between \(0\) and \(\dfrac{\pi}{4}\) which reaches \(r=1\), then a
+        negative loop between \(\dfrac{\pi}{4}\) and \(\dfrac{\pi}{2}\).
+        These repeat \(3\) more times. It is important to notice that
+        the negative loops never coincide with the positive loops.
+        So we get an \(8\) leaf rose.
+      </p>
+      <div class="center">
+        <img src="graphics/r=sin4thetaP.jpg" alt="r=sin4thetaP.jpg">
+      </div>
+    </div>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=2\sin5\theta\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX8"></button>
+      <button class="toggle has-sol" data-toggle="SolX8"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX8">
+    <div class="center">
+      <img src="graphics/r=2sin5thetaP.jpg" alt="r=2sin5thetaP.jpg">
+    </div>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX8">
+    <div class="column">
+      <p>
+        The rectangular plot is a sine curve compressed horizontally
+        by a factor of \(5\) and stretched vertically by a factor of \(2\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=2sin5thetaR.jpg" alt="r=2sin5thetaR.jpg">
+      </div>
+    </div>
+    <p>
+      To find where the graph passes through the origin, we solve
+      \(r=\sin5\theta=0\). The zeros occur when \(5\theta=k\pi\). So:
+      \[
+      \theta=\dfrac{k\pi}{5}
+      \quad \text{for} \quad
+      k=0,1,\cdot,10
+      \]
+    </p>
+    <div class="column">
+      <p>
+        Looking at the rectangular plot, we see there will be a positive loop
+        between \(0\) and \(\dfrac{\pi}{5}\) which reaches \(r=2\), then a
+        negative loop between \(\dfrac{\pi}{5}\) and \(\dfrac{2\pi}{5}\).
+        These repeat \(4\) more times. This seems to say there should be
+        \(10\) loops. However, looking at the polar plot, after
+        \(\theta=\pi\) each loop overwrites
+        one of the previous loops. For example, the loop between
+        \(\pi\) and \(\dfrac{6\pi}{5}\) is negative and overwrites the positive
+        loop between \(0\) and \(\dfrac{6\pi}{5}\).
+        So we only get an \(5\) leaf rose.
+      </p>
+      <div class="center">
+        <img src="graphics/r=2sin5thetaP.jpg" alt="r=2sin5thetaP.jpg">
+      </div>
+    </div>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<!-- Slope of a Polar Graph -->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="Slope.html">c. Slope of a Polar Graph</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Slope.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+  Find the slope of the function \(r=2\cos\theta\)
+  for the following values of \(\theta\):
+	<ol type="a">
+
+    <li>
+      <div class="dotfillex">
+        <p>
+          \(\theta=\dfrac{\pi}{6}\)
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX9a"></button>
+          <button class="toggle has-ans" data-toggle="AnsX9a"></button>
+          <button class="toggle has-sol" data-toggle="SolX9a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX9a">
+        <p>
+          Given a polar function \(r(\theta)\), the slope of that function at a
+          given value of \(\theta\) is
+          \[
+            \dfrac{dy}{dx}=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+                                 {r'(\theta)\cos\theta-r(\theta)\sin\theta }
+          \]
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX9a">
+        <p>
+        \(\dfrac{dy}{dx}=-\,\dfrac{1}{\sqrt{3}}\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX9a">
+				<p>
+          Given \(r(\theta)=2\cos\theta\), the derivative is
+          \(r'=-2\sin\theta\). We have:
+          \[\begin{aligned}
+          \sin\left(\dfrac{\pi}{6}\right)&=\dfrac{1}{2}
+          &\qquad
+          \cos\left(\dfrac{\pi}{6}\right)&=\dfrac{\sqrt{3}}{2} \\[6pt]
+          r\left(\dfrac{\pi}{6}\right)&=\sqrt{3}
+          &\qquad
+          r'\left(\dfrac{\pi}{6}\right)&=-1
+          \end{aligned}\]
+          So:
+          \[\begin{aligned}
+          \left.\dfrac{dy}{dx}\right|_{\pi/6}
+          &=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+           {r'(\theta)\cos\theta-r(\theta)\sin\theta }\\
+           &=\dfrac{-1\left(\dfrac{1}{2}\right)+\sqrt{3}\left(\dfrac{\sqrt{3}}{2}\right)}
+                   {-1\left(\dfrac{\sqrt{3}}{2}\right)-\sqrt{3}\left(\dfrac{1}{2}\right)} \\
+           &=\dfrac{-1+3}{-\sqrt{3}-\sqrt{3}}
+           =-\,\dfrac{1}{\sqrt{3}}
+          \end{aligned}\]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          \(\theta=\dfrac{\pi}{4}\)
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX9b"></button>
+          <button class="toggle has-sol" data-toggle="SolX9b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX9b">
+        <p>
+          \(\dfrac{dy}{dx}=0\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX9b">
+				<p>
+      	   Given \(r(\theta)=2\cos\theta\), the derivative is
+           \(r'=-2\sin\theta\). We have:
+           \[\begin{aligned}
+           \sin\left(\dfrac{\pi}{4}\right)&=\dfrac{1}{\sqrt{2}}
+           &\qquad
+           \cos\left(\dfrac{\pi}{4}\right)&=\dfrac{1}{\sqrt{2}} \\
+           r\left(\dfrac{\pi}{4}\right)&=\sqrt{2}
+           &\qquad
+           r'\left(\dfrac{\pi}{4}\right)&=-\sqrt{2}
+           \end{aligned}\]
+           So:
+           \[\begin{aligned}
+           \left.\dfrac{dy}{dx}\right|_{\pi/4}&=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+                                {r'(\theta)\cos\theta-r(\theta)\sin\theta }\\
+            &=\dfrac{-\sqrt{2}\left(\dfrac{1}{\sqrt{2}}\right)
+                     +\sqrt{2}\left(\dfrac{1}{\sqrt{2}}\right)}
+                    {-\sqrt{2}\left(\dfrac{1}{\sqrt{2}}\right)
+                     -\sqrt{2}\left(\dfrac{1}{\sqrt{2}}\right)} \\
+            &=\dfrac{-1+1}{-1-1}=\dfrac{0}{-2}=0
+           \end{aligned}\]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          \(\theta=\dfrac{13\pi}{6}\)
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX9c"></button>
+          <button class="toggle has-sol" data-toggle="SolX9c"></button>
+          <button class="toggle has-rem" data-toggle="RemX9c"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX9c">
+        <p>
+        \(\dfrac{dy}{dx}=-\,\dfrac{1}{\sqrt{3}}\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX9c">
+        <p>
+          Given \(r(\theta)=2\cos\theta\), the derivative is
+          \(r'=-2\sin\theta\). So:
+          \[\begin{aligned}
+          \sin\left(\dfrac{13\pi}{6}\right)&=\dfrac{1}{2}
+          &\qquad
+          \cos\left(\dfrac{13\pi}{6}\right)&=\dfrac{\sqrt{3}}{2} \\[6pt]
+          r\left(\dfrac{13\pi}{6}\right)&=\sqrt{3}
+          &\qquad
+          r'\left(\dfrac{13\pi}{6}\right)&=-1
+          \end{aligned}\]
+          So:
+          \[\begin{aligned}
+          \left.\dfrac{dy}{dx}\right|_{13\pi/6}
+          &=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+           {r'(\theta)\cos\theta-r(\theta)\sin\theta }\\
+           &=\dfrac{-1\left(\dfrac{1}{2}\right)+\sqrt{3}\left(\dfrac{\sqrt{3}}{2}\right)}
+                   {-1\left(\dfrac{\sqrt{3}}{2}\right)-\sqrt{3}\left(\dfrac{1}{2}\right)} \\
+           &=\dfrac{-1+3}{-\sqrt{3}-\sqrt{3}}
+           =-\,\dfrac{1}{\sqrt{3}}
+          \end{aligned}\]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX9c">
+        <p>
+          The fact that parts (a) and (c) have the same answer
+          should be no suprise! The period of \(2\cos\theta\) is \(2\pi\).
+          So \(\theta=\dfrac{13\pi}{6}=2\pi+\dfrac{\pi}{6}\) gives the same
+          answer as  \(\theta=\dfrac{\pi}{6}\).
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+<li>
+  Find the slope of the function \(r=1+2\sin\theta\)
+  for the follwing values of \(\theta\):
+	<ol type="a">
+    <li>
+      <div class="dotfillex">
+        <p>
+          \(\theta=-\,\dfrac{\pi}{4}\)
+        </p>
+        <p>
+          <button class="toggle has-hint" data-toggle="HintX10a"></button>
+          <button class="toggle has-ans" data-toggle="AnsX10a"></button>
+          <button class="toggle has-sol" data-toggle="SolX10a"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-hint" data-toggle="HintX10a">
+        <p>
+          Given a polar function \(r(\theta)\), the slope of that function at a
+          given value of \(\theta\) is
+          \[
+            \dfrac{dy}{dx}=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+                                 {r'(\theta)\cos\theta-r(\theta)\sin\theta }
+          \]
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX10a">
+        <p>
+          \(\dfrac{dy}{dx}=1-2\sqrt{2}\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX10a">
+        <p>
+          Given \(r(\theta)=1+2\sin\theta\), the derivative is
+          \(r'=2\cos\theta\). We know:
+          \[\begin{aligned}
+          \sin\left(-\,\dfrac{\pi}{4}\right)&=-\,\dfrac{1}{\sqrt{2}}
+          &\qquad
+          \cos\left(-\,\dfrac{\pi}{4}\right)&=\dfrac{1}{\sqrt{2}} \\
+          r\left(-\,\dfrac{\pi}{4}\right)&=1-\sqrt{2}
+          &\qquad
+          r'\left(-\,\dfrac{\pi}{4}\right)&=\sqrt{2}
+          \end{aligned}\]
+          So:
+          \[\begin{aligned}
+          \left.\dfrac{dy}{dx}\right|_{-\pi/4}&=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+                               {r'(\theta)\cos\theta-r(\theta)\sin\theta }\\
+           &=\dfrac{\sqrt{2}\left(-\,\dfrac{1}{\sqrt{2}}\right)
+                  +(1-\sqrt{2})\left(\dfrac{1}{\sqrt{2}}\right)}
+                     {\sqrt{2}\left(\dfrac{1}{\sqrt{2}}\right)
+                  -(1-\sqrt{2})\left(-\,\dfrac{1}{\sqrt{2}}\right)} \\
+           &=\dfrac{-1+\dfrac{1}{\sqrt{2}}-1}
+           {1+\dfrac{1}{\sqrt{2}}-1} \\
+           &=\dfrac{\dfrac{1}{\sqrt{2}}-2}{\dfrac{1}{\sqrt{2}}}=1-2\sqrt{2}
+          \end{aligned}\]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          \(\theta=\dfrac{11\pi}{6}\)
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX10b"></button>
+          <button class="toggle has-sol" data-toggle="SolX10b"></button>
+          <button class="toggle has-rem" data-toggle="RemX10b"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX10b">
+        <p>
+        \(\dfrac{dy}{dx}=-\,\dfrac{1}{\sqrt{3}}\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX10b">
+      <p>
+        Given \(r(\theta)=1+2\sin\theta\), the derivative is
+        \(r'=2\cos\theta\). We have:
+        \[\begin{aligned}
+        \sin\left(\dfrac{11\pi}{6}\right)&=-\,\dfrac{1}{2}
+        &\qquad
+        \cos\left(\dfrac{11\pi}{6}\right)&=\dfrac{\sqrt{3}}{2} \\[6pt]
+        r\left(\dfrac{11\pi}{6}\right)&=0
+        &\qquad
+        r'\left(\dfrac{11\pi}{6}\right)&=\sqrt{3}
+        \end{aligned}\]
+        So:
+        \[\begin{aligned}
+        \left.\dfrac{dy}{dx}\right|_{11\pi/6}
+         &=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+              {r'(\theta)\cos\theta-r(\theta)\sin\theta }\\
+         &=\dfrac{\sqrt{3} \left(-\,\dfrac{1}{2} \right)
+                  +(0)\left(\dfrac{\sqrt{3}}{2}\right)}
+                 {\sqrt{3}\left(\dfrac{\sqrt{3}}{2}\right)
+                   -(0)\left(-\,\dfrac{1}{2}\right)} \\
+         &=\dfrac{-\sqrt{3}}{3}
+         =-\,\dfrac{1}{\sqrt{3}}
+        \end{aligned}\]
+      </p>
+      </div>
+      <div class="toBeToggled drop-rem" data-toggle="RemX10b">
+				<p>
+      		This is a special case where \(r(\theta)=0\). So the formula
+          reduces to:
+          \[\begin{aligned}
+          \dfrac{dy}{dx}
+          &=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+                  {r'(\theta)\cos\theta-r(\theta)\sin\theta} \\
+          &=\dfrac{\sin\theta}{\cos\theta}=\tan\theta
+          \end{aligned}\]
+          and
+          \(\dfrac{dy}{dx}=\tan\left(\dfrac{11\pi}{6}\right)
+          =-\,\dfrac{1}{\sqrt{3}}\).
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="dotfillex">
+        <p>
+          \(\theta=\pi\)
+        </p>
+        <p>
+          <button class="toggle has-ans" data-toggle="AnsX10c"></button>
+          <button class="toggle has-sol" data-toggle="SolX10c"></button>
+        </p>
+      </div>
+      <div class="toBeToggled drop-ans" data-toggle="AnsX10c">
+        <p>
+        \(\dfrac{dy}{dx}=-\,\dfrac{1}{2}\)
+        </p>
+      </div>
+      <div class="toBeToggled drop-sol" data-toggle="SolX10c">
+				<p>
+          Given \(r(\theta)=1+2\sin\theta\), the derivative is
+          \(r'=2\cos\theta\). We have:
+          \[\begin{aligned}
+          \sin(\pi)&=0
+          &\qquad
+          \cos(\pi)&=-1 \\
+          r(\pi)&=1
+          &\qquad
+          r'(\pi)&=-2
+          \end{aligned}\]
+          So:
+          \[\begin{aligned}
+          \left.\dfrac{dy}{dx}\right|_\pi
+           &=\dfrac{r'(\theta)\sin\theta+r(\theta)\cos\theta}
+                {r'(\theta)\cos\theta-r(\theta)\sin\theta }\\
+           &=\dfrac{-2(0)
+                    +1(-1)}
+                   {-2(-1)
+                    -1(0)}
+           =-\,\dfrac{1}{2}
+          \end{aligned}\]
+        </p>
+        <p style="text-align:right">
+          js&ensp;
+        </p>
+      </div>
+    </li>
+  </ol>
+</li>
+
+<!-- Area Enclosed by a Polar Graph -->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="Area.html">d. Area Enclosed by a Polar Graph</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Area.html">1</a></div>
+      
+        <div><a href="AreaBetween.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Find the area enclosed by each curve:
+</p>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=2\cos\theta\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX11"></button>
+      <button class="toggle has-ans" data-toggle="AnsX11"></button>
+      <button class="toggle has-sol" data-toggle="SolX11"></button>
+      <button class="toggle has-rem" data-toggle="RemX11"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX11">
+    <p>
+      The area of a polar region bounded by the function \(r(\theta)\)
+      and spanning from \(\theta=\alpha\) to \(\theta=\beta\) is
+      \[
+      A=\int_\alpha^\beta \dfrac{1}{2}(r(\theta))^2\,d\theta
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX11">
+    <p>
+      \(A=\pi\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX11">
+    <div class="column">
+      <p>
+        Looking at the plot, we see we need to integrate between
+        \(\theta=-\,\dfrac{\pi}{2}\) and \(\theta=\dfrac{\pi}{2}\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=2costhetaF.jpg" alt="r=2costhetaF.jpg">
+      </div>
+    </div>
+    <p>
+      We thus compute:
+    </p>
+      \[\begin{aligned}
+      A&=\int_\alpha^\beta \dfrac{1}{2}(r(\theta))^2\,d\theta \\
+      &=\int_0^\pi \dfrac{1}{2}(2\cos\theta)^2\,d\theta \\
+      &=2\int_0^\pi \cos^2\theta\,d\theta \\
+      \end{aligned}\]
+    <p>
+      We then apply the trig identity \(\cos^2\theta=\dfrac{1+\cos2\theta}{2}\):
+    </p>
+      \[\begin{aligned}
+      A&=2\int_0^\pi \dfrac{1+\cos2\theta}{2}\,d\theta \\
+      &=\left[\theta+\dfrac{\sin2\theta}{2} \right]_0^\pi \\
+      &=(\pi+0)-(0+0) \\
+      &=\pi
+      \end{aligned}\]
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="RemX11">
+    <p>
+      Without doing any calculus, we should have know the answer immediately as
+      \(r=2\cos\theta\) is a circle centered at \((1,0)\) with radius \(1\).
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      One leaf of the rose \(r=3\sin2\theta\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX12"></button>
+      <button class="toggle has-ans" data-toggle="AnsX12"></button>
+      <button class="toggle has-sol" data-toggle="SolX12"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX12">
+    <div class="center">
+      <img src="graphics/r=3sin2theta.jpg" alt="r=3sin2theta.jpg">
+    </div>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX12">
+    <p>
+      \(A=\dfrac{9\pi}{8}\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX12">
+    <div class="column">
+      <p>
+        Looking at the plot, we see this is a \(4\)-leaf rose.
+        The radius goes to \(0\) when \(2\theta=k\pi\) or
+        \(\theta=k\dfrac{\pi}{2}\). We can pick any leaf but the obvious one is
+        \(0 \le \theta \le \dfrac{\pi}{2}\).
+      </p>
+      <div class="center">
+        <img src="graphics/r=3sin2theta.jpg" alt="r=3sin2theta.jpg">
+      </div>
+    </div>
+    <p>
+      We thus compute:
+      \[\begin{aligned}
+      A&=\int_\alpha^\beta \dfrac{1}{2}(r(\theta))^2\,d\theta \\
+      &=\int_0^{\pi/2} \dfrac{1}{2}(3\sin2\theta)^2\,d\theta \\
+      &=\dfrac{9}{2}\int_0^{\pi/2} \sin^2 2\theta\,d\theta \\
+      \end{aligned}\]
+    </p>
+    <p>
+      We then apply the trig identity \(\sin^2\theta=\dfrac{1-\cos2\theta}{2}\):
+      \[\begin{aligned}
+      A&=\dfrac{9}{4}\int_0^{\pi/2} 1-\cos4\theta\,d\theta \\
+      &=\dfrac{9}{4}\left[\theta-\dfrac{\sin4\theta}{4} \right]_0^{\pi/2} \\
+      &=\dfrac{9}{4}\left[\left(\dfrac{\pi}{2}+0\right)-(0+0)\right] \\
+      &=\dfrac{9\pi}{8}
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      One petal of the flower \(r=2+2\sin3\theta\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX13"></button>
+      <button class="toggle has-ans" data-toggle="AnsX13"></button>
+      <button class="toggle has-sol" data-toggle="SolX13"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX13">
+    <p>
+      You first need to find when \(r=0\).
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX13">
+    <p>
+      \(A=2\pi\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX13">
+    <div class="column">
+      <p>
+        We first need to know when \(r=0\). So we solve:
+        \[\begin{aligned}
+        r=2+2\sin3\theta&=0 \\
+        2\sin3\theta&=-2 \\
+        \sin3\theta&=-1 \\
+        3\theta&=-\,\dfrac{\pi}{2}+2\pi k \\
+        \theta&=-\,\dfrac{\pi}{6}+\dfrac{2\pi}{3} k \\
+        \theta&=\dfrac{-\pi+4\pi k}{6} \\
+        \end{aligned}\]
+      </p>
+      <div class="center">
+        <img src="graphics/r=2p2sin3theta.jpg" alt="r=2p2sin3theta.jpg">
+      </div>
+    </div>
+    <p>
+      For \(0 \le \theta \le 2\pi\) this gives us \(r=0\) when
+      \(\theta=\dfrac{\pi}{2},\dfrac{7\pi}{6},\dfrac{11\pi}{6}\).
+      We take \(2\) consecutive values of \(\theta\) as our interval of
+      integration and compute:
+      \[\begin{aligned}
+      A&=\int_{\pi/2}^{7\pi/6} \dfrac{1}{2}(r(\theta))^2\,d\theta \\
+      &=\int_{\pi/2}^{7\pi/6} \dfrac{1}{2}(2+2\sin3\theta)^2\,d\theta \\
+      &=\dfrac{1}{2}\int_{\pi/2}^{7\pi/6} 4+8\sin3\theta+4\sin^2 3\theta \,d\theta \\
+      &=\int_{\pi/2}^{7\pi/6} 2+4\sin3\theta+2\sin^2 3\theta \,d\theta \\
+      \end{aligned}\]
+      We then apply the trig identity \(\sin^2\theta=\dfrac{1-\cos2\theta}{2}\):
+      \[\begin{aligned}
+      A&=\int_{\pi/2}^{7\pi/6} 2+4\sin3\theta+(1-\cos6\theta)\,d\theta \\
+      &=\int_{\pi/2}^{7\pi/6} 3+4\sin3\theta -\cos6\theta \,d\theta \\
+      &=\left[3\theta -\dfrac{4}{3}\cos3\theta -\dfrac{1}{6}\sin6\theta \right]_{\pi/2}^{7\pi/6} \\
+      &=\left[(\dfrac{7\pi}{2}-0-0)-(\dfrac{3\pi}{2}-0-0)\right]\\
+      &=\dfrac{4\pi}{2}=2\pi
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<!-- Arc Length of a Polar Graph -->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href="ArcLength.html">e. Arc Length of a Polar Graph</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ArcLength.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  Find the arc length of each curve on the indicated interval.
+</p>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=\cos\theta+\sin\theta\) over the inteval \([0,\pi]\)
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX14"></button>
+      <button class="toggle has-ans" data-toggle="AnsX14"></button>
+      <button class="toggle has-sol" data-toggle="SolX14"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX14">
+    <p>
+      The arc length of a polar curve \(r=r(\theta)\) from \(\theta=\alpha\)
+      to \(\theta=\beta\) is
+      \[
+        L=\int_\alpha^\beta \sqrt{\,r(\theta)^2+\left(\dfrac{dr}{d\theta}\right)^2}\,d\theta
+      \]
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX14">
+    <p>
+      \(L=\sqrt{2}\,\pi\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX14">
+    <p>
+      We compute
+      \[\begin{aligned}
+      L&=\int_\alpha^\beta \sqrt{
+      r(\theta)^2+\left(\dfrac{dr}{d\theta}\right)^2
+      }\,d\theta \\
+      &=\int_0^\pi \sqrt{(\cos\theta+\sin\theta)^2
+                       +(-\sin\theta+\cos\theta)^2}\,d\theta \\
+      &=\int_0^\pi \sqrt{
+      (\cos^2\theta+2\cos\theta\sin\theta+\sin^2\theta)
+      +(\sin^2\theta-2\sin\theta\cos\theta+\cos^2\theta)}\,d\theta \\
+      &=\int_0^\pi \sqrt{2\cos^2\theta+2\sin^2\theta}\,d\theta \\
+      &=\int_0^\pi \sqrt{2}\,d\theta
+      =\left.\sqrt{2}\,\theta\rule{0pt}{10pt}\right|_0^\pi
+      =\sqrt{2}\,\pi
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=\sin^2\dfrac{\theta}{2}\) over the interval \([0,\pi]\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX15"></button>
+      <button class="toggle has-sol" data-toggle="SolX15"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX15">
+    <p>
+      \(L=2\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX15">
+    <p>
+      We compute
+      \[\begin{aligned}
+      L&=\int_\alpha^\beta \sqrt{
+      r(\theta)^2+\left(\dfrac{dr}{d\theta}\right)^2}\,d\theta \\
+      &=\int_0^\pi \sqrt{
+      \left(\sin^2\left(\dfrac{\theta}{2}\right)\right)^2
+      +\left(\sin\left(\dfrac{\theta}{2}\right)\cos\left(\dfrac{\theta}{2}\right)\right)^2
+      }\,d\theta \\
+      &=\int_0^\pi \sqrt{
+      \sin^4\left(\dfrac{\theta}{2}\right)
+      +\sin^2\left(\dfrac{\theta}{2}\right)\cos^2\left(\dfrac{\theta}{2}\right)
+      }\,d\theta \\
+      &=\int_0^\pi \sqrt{
+      \sin^2\left(\dfrac{\theta}{2}\right)
+      \left(
+      \sin^2\left(\dfrac{\theta}{2}\right)+\cos^2\left(\dfrac{\theta}{2}\right)
+      \right)
+      }\,d\theta \\
+      &=\int_0^\pi \sqrt{
+      \sin^2\left(\dfrac{\theta}{2}\right)
+      }\,d\theta \\
+      &=\int_0^\pi
+      \left|\sin\left(\dfrac{\theta}{2}\right)\right|
+      \,d\theta
+      \end{aligned}\]
+      Since \(\sin\left(\dfrac{\theta}{2}\right) \ge 0\) on the interval \([0,\pi]\),
+      we can get rid of the absolute value:
+      \[\begin{aligned}
+      L&=\int_0^\pi \sin\left(\dfrac{\theta}{2}\right)\,d\theta \\
+      &=\left[-2\cos\left(\dfrac{\theta}{2}\right)\right]_0^\pi \\
+      &=[-2(0)-(-2(1))]
+      =2
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      \(r=\sec\theta\) over the interval \(\left[-\,\dfrac{\pi}{4},\dfrac{\pi}{4}\right]\)
+    </p>
+    <p>
+      <button class="toggle has has-ans" data-toggle="AnsX16"></button>
+      <button class="toggle has has-sol" data-toggle="SolX16"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX16">
+    <p>
+      \(L=2\)
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX16">
+    <p>
+      We compute:
+      \[\begin{aligned}
+      L&=\int_\alpha^\beta \sqrt{r(\theta)^2+\left(\dfrac{dr}{d\theta}\right)^2}\,d\theta \\
+      &=\int_{-\pi/4}^{\pi/4} \sqrt{(\sec\theta)^2+(\sec\theta\tan\theta)^2}\,d\theta \\
+      &=\int_{-\pi/4}^{\pi/4} \sqrt{\sec^2\theta+\sec^2\theta\tan^2\theta}\,d\theta \\
+      &=\int_{-\pi/4}^{\pi/4} \sqrt{\sec^2\theta(1+\tan^2\theta)}\,d\theta \\
+      &=\int_{-\pi/4}^{\pi/4} \sqrt{\sec^4\theta}\,d\theta
+      =\int_{-\pi/4}^{\pi/4} \sec^2\theta\,d\theta \\
+      &=\left.\tan\theta\rule{0pt}{10pt}\right|_{-\pi/4}^{\pi/4}
+      =1-(-1)=2
+      \end{aligned}\]
+    </p>
+    <p style="text-align:right">
+      js&ensp;
+    </p>
+  </div>
+</li>
+
+<big>PY: Checked to here.</big>
+
+        <div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      xxx
+    </p>
+    <p>
+      <button class="toggle has has-hint" data-toggle="HintX17"></button>
+      <button class="toggle has has-ans" data-toggle="AnsX17"></button>
+      <button class="toggle has has-sol" data-toggle="SolX17"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX17">
+    <p>
+      xxx
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX17">
+    <p>
+      xxx
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX17">
+    <p>
+      xxx
+    </p>
+  </div>
+</li>
+
+<li>
+  <div class="dotfillex">
+    <p>
+      xxx
+    </p>
+    <p>
+      <button class="toggle has has-hint" data-toggle="HintX18"></button>
+      <button class="toggle has has-ans" data-toggle="AnsX18"></button>
+      <button class="toggle has has-sol" data-toggle="SolX18"></button>
+    </p>
+  </div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX18">
+    <p>
+      xxx
+    </p>
+  </div>
+  <div class="toBeToggled drop-ans" data-toggle="AnsX18">
+    <p>
+      xxx
+    </p>
+  </div>
+  <div class="toBeToggled drop-sol" data-toggle="SolX18">
+    <p>
+      xxx
+    </p>
+  </div>
+</li>
+</ol>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

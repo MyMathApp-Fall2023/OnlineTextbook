@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. Mass | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Centroid.html" title="Previous">&lArr;</a></li>
+      <li><a href="CM.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Applications of Scalar Surface Integrals</h2>
+
+
+      
+      <h2>4. Mass</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The total mass is always the integral of the density, \(\delta\), over the
+  region. In the case of parametric surfaces, the density is given in units of
+  \(\dfrac{\text{mass}}{\text{area}}\) and the mass is then
+  \[
+  M=\iint_S \delta\,dS
+   =\iint_S \delta(\vec R(u,v))\,|\vec{N}|\,du\,dv
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    A polar ice cap covers the top of a sphere of radius \(2\) down to the
+    angle \(\phi=\dfrac{\pi}{6}\). Find the mass of the ice cap, given that
+    the surface density is \(\delta=z^2-3\).
+  </p>
+  <div class="center">
+    <img src="graphics/Polaricecap.jpg" alt="Polaricecap">
+  </div>
+</div>
+<p class="sol">
+  The sphere is parametrized by:
+  \[
+  \vec R(\phi,\theta)
+  =\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+  \]
+  In these coordinates, the density is \(\delta=z^2-3=4\cos^2\phi-3\).
+  On a <a href="SurfArea.html#icecap" title="Return using the Back button.">
+  previous page</a>, we found that \(|\vec{N}|=4\sin\phi\).
+  So the total mass is:
+  \[\begin{aligned}
+  M&=\iint_P \delta\,dS
+    =\iint_P \delta(\theta,\phi)|\vec{N}|\,d\phi\,d\theta \\
+  &=\int_0^{2\pi}\int_0^{\pi/6} (4\cos^2\phi-3)4\sin\phi\,d\phi\,d\theta \\
+  &=8\pi\int_0^{\pi/6} (4\cos^2\phi-3)\sin\phi\,d\phi \\
+  \end{aligned}\]
+</p>
+<p>
+  Here we use the substitution \(u=\cos\phi\). So \(du=-\sin\phi\,d\phi\).
+  Therefore, the mass becomes:
+  \[\begin{aligned}
+  M&=-8\pi\int_1^{\sqrt{3}/2} (4u^2-3)\,du
+    =-8\pi\left[4\dfrac{u^3}{3}-3u\right]_1^{\sqrt{3}/2} \\
+   &=-8\pi\left[\left(4\dfrac{3\sqrt{3}}{3\cdot8}-\,\dfrac{3\sqrt{3}}{2}\right)
+             -\left(\dfrac{4}{3}-3\right)\right] \\
+  &=8\pi\sqrt{3}-\,\dfrac{40}{3}\pi \\
+  \end{aligned}\]
+</p>
+
+        <div class="rule" id="ellipparab"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the mass of the piece of the elliptic paraboloid \(z=x^2+y^2\)
+    below \(z=4\) if the surface density is \(\delta=\dfrac{1}{\sqrt{4z+1}}\).
+    The length of the normal vector was found in a
+    <a href="ScalSurfInt.html#ellipparab" title="Return using the Back button.">
+    previous exercises</a>.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle M=4\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The paraboloid is parametrized by:
+    \[
+    \vec R(r,\theta)=\left\langle r\cos\theta,r\sin\theta,r^2\right\rangle
+    \]
+    and the length of the normal is:
+    \[
+    |\vec N|=r\sqrt{4r^2+1}
+    \]
+    We compute the density:
+    \[
+    \delta=\dfrac{1}{\sqrt{4z+1}}
+    =\dfrac{1}{\sqrt{4r^2+1}}
+    \]
+    So the mass is:
+    \[\begin{aligned}
+    M&=\iint_S \delta\,dS
+    =\int_0^{2\pi}\int_0^2 \dfrac{1}{\sqrt{4r^2+1}}r\sqrt{4r^2+1}\,dr\,d\theta \\
+    &=2\pi\int_0^2 r\,dr
+    =\pi\left[r^2\dfrac{}{}\right]_0^2
+    =4\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

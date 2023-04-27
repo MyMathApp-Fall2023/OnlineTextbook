@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Grid Cells | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Polar-Int.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Integrating in Polar Coordinates</h2>
+
+
+      
+      <h2>1. Grid Cells</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the <a href="../RectInt/ChContents.html" title="Return using the Back button.">
+  previous chapter</a>, you learned how to integrate in rectangular coodinates
+  in 2 and 3 dimensions. You will now learn how to integrate in polar,
+  cylindrical, spherical and other curvilinear coordinate systems.
+</p>
+<p>
+  In the <a href="../RiemInt/2DRiem.html" title="Return using the Back button.">
+  Riemann sum definition of a double integral</a>, we break up the region of
+  integration \(R\) into \(n\) subregions \(R_k\) for \(k=1,2,\ldots,n\) in
+  such a way that you know (or can approximate) <span class="hl">the area
+  \(\Delta A_k\) of the \(k^\text{th}\) subregion \(R_k\).</span>
+  When integrating in rectangular coordinates, the subregions are small
+  rectangles whose areas are \(\Delta A=\Delta x\Delta y\). In the limit
+  as \(\Delta x\) and \(\Delta y\) get small, we write the
+  <span class="defword">rectangular differential of area</span> as
+  \(dA=dx\,dy\). To integrate in <span class="hl">polar</span> coordinates,
+  the subregions are <span class="hl">polar rectangles</span> and we need
+  to know the area of these cells.
+</p>
+<div class="column">
+  <p class="def" data-col-width="60%">
+    A <span class="defword">polar rectangle</span> or
+    <span class="defword">polar grid cell</span> is a region of the form:
+    \[
+    r_1 \le r \le r_2
+    \qquad \text{and} \qquad
+    \theta_1 \le \theta \le \theta_2
+    \]
+    See the figure at the right.
+    The <span class="defword">coordinate center</span> of the cell is at:
+    \[
+    \bar{r}=\dfrac{r_1+r_2}{2}
+    \qquad \text{and} \qquad
+    \bar{\theta}=\dfrac{\theta_1+\theta_2}{2}
+    \]
+    and the <span class="defword">coordinate dimensions</span> of the cell are:
+    \[
+    \Delta r=r_2-r_1
+    \qquad \text{and} \qquad
+    \Delta\theta=\theta_2-\theta_1
+    \]
+  </p>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/polargridcell1.jpg" alt="polargridcell1">
+  </div>
+</div>
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      At first thought, you might guess the area of the grid cell is
+    </p>
+    <p class="center">
+      <span class="redbig">WRONG!</span> &emsp; &emsp;
+      \(
+      \Delta A=\Delta r\Delta\theta
+      \)
+       &emsp; &emsp; <span class="redbig">WRONG!</span>
+    </p>
+    <p>
+      However, this can't be correct because the area must get bigger as
+      \(r\) gets bigger even when \(\Delta r\) and \(\Delta\theta\) stay
+      the same. See the figure at the right.
+    </p>
+    <p>
+      Further, \(\Delta A\) must have units of area but \(\Delta r\Delta\theta\)
+      has units of length times angle.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/polargridcell2.jpg" alt="polargridcell2">
+  </div>
+</div>
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      The <span class="greenbig">correct area</span> is found as follows:
+      <br/>
+      First note that the area of the ring between radii \(r_1\) and \(r_2\) is:
+      \[
+      A_\circledcirc=\pi\,(r_2)^2-\pi\,(r_1)^2
+      =\pi\,(r_1+r_2)(r_2-r_1)
+      \]
+      Further, the fraction of this ring within the grid cell is
+      \(\dfrac{\Delta\theta}{2\pi}\) where \(\Delta\theta\) is in radians.
+      So the area in the cell is
+      \[\begin{aligned}
+      \Delta A&=\dfrac{\Delta\theta}{2\pi}A_\circledcirc
+      =\dfrac{\Delta\theta}{2\pi}\pi\,(r_1+r_2)(r_2-r_1) \\
+      &=\left(\dfrac{r_1+r_2}{2}\right)(r_2-r_1)\Delta\theta
+      \end{aligned}\]
+      Since \(\dfrac{r_1+r_2}{2}=\bar{r}\) and \(r_2-r_1=\Delta r\), we conclude:
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/polargridcell3.jpg" alt="polargridcell3">
+  </div>
+</div>
+<p class="formula" data-title="Area of a Polar Rectangle">
+  The <span class="defword">area of a polar rectangle</span> is:
+  \[
+  \Delta A=\bar{r}\Delta r\Delta\theta
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  In the limit as \(\Delta r\) and \(\Delta\theta\) get small, \(\Delta r\)
+  becomes \(dr\), \(\Delta\theta\) becomes \(d\theta\) and \(\Delta A\)
+  becomes \(dA\). Consequently:
+</p>
+<p class="def" data-title="Differential of Area in Polar Coordinates">
+  The <span class="defword">polar differential of area</span> is:
+  \[
+  dA=r\,dr\,d\theta
+  \]
+</p>
+<p class="center">
+  <span class="greenbig">Memorize this!</span>
+</p>
+<p>
+  We will see how the differential of area is used in integrals on the
+  <a href="Polar-Int.html">next page</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Derivative along a Vector | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DerCurve.html" title="Previous">&lArr;</a></li>
+      <li><a href="DirecDeriv.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b. Derivative along a Vector</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  When we introduced the <em>limit</em> definition of partial derivatives,
+  we also gave the definition of the derivative of a function \(f(x,y)\)
+  along an
+  <a href="../ParDerTanPlane/ParDerAlg.html#deralongvector"
+  title="Return using the Back button.">arbitrary vector</a> \(\vec v\):
+</p>
+<p class="def" data-title="Derivative along a Vector">
+  Given any vector \(\vec v\), the <span class="defword">derivative of
+  \(f(x,y)\) along \(\vec v\)</span>
+  (or <span class="defword">with respect to \(\vec v\)</span>) is:
+  \[
+  \nabla_{\vec v}f=\lim_{h\rightarrow 0} \dfrac{f((x,y)+h\vec v)-f(x,y)}{h}
+  \]
+</p>
+<p>
+  Now that we have covered the
+  <a href="../Chain/ChContents.html" title="Return using the Back button.">
+  chain rule</a>, we can give a formula for the derivative along a vector
+  that does <em>not</em> involve <em>limits</em>.
+</p>
+<p class="prop" data-title="Derivative along a Vector">
+  Given any vector \(\vec v\), the derivative of \(f(x,y)\) along \(\vec v\)
+  (or with respect to \(\vec v\)) is:
+  \[
+  \nabla_{\vec v}f=\vec v\cdot\vec\nabla f
+  \]
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+  The proof is easy. Try reading it!
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    Given a vector \(\vec v\), consider the parametric curve
+    \(\vec r(t)=(x,y)+t\vec v\). We will compute the derivative of the
+    composition
+    \[
+    f(t)=(f\circ\vec r)(t)=f(\vec r(t))
+    \]
+    at \(t=0\) in two ways. On the one hand, the derivative of the composition
+    is the derivative along the curve as discussed on the previous page:
+    \[
+    \left.\dfrac{df}{dt}\right|_{t=0}
+    =\left.\dfrac{d(f\circ\vec r)}{dt}\right|_{t=0}
+    =\vec v\cdot\left.\vec\nabla f\right|_{\vec r(0)}
+    =\vec v\cdot\left.\vec\nabla f\right|_{(x,y)}
+    \]
+    On the other hand, since the composition is a function of \(1\) variable,
+    we can compute its derivative using the limit definition:
+    \[\begin{aligned}
+    \left.\dfrac{df}{dt}\right|_{t=0}
+    =\left.\dfrac{d(f\circ\vec r)}{dt}\right|_{t=0}
+    &=\lim_{h\rightarrow 0} \dfrac{(f\circ\vec r)(0+h)-(f\circ\vec r)(0)}{h}\\
+    &=\lim_{h\rightarrow 0} \dfrac{(f(\vec r(h))-(f(\vec r(0))}{h}\\
+    &=\lim_{h\rightarrow 0} \dfrac{f((x,y)+h\vec v)-f(x,y)}{h}
+    \end{aligned}\]
+    But this is the limit of \(\nabla_{\vec v}f\). Consequently:
+    \[
+    \nabla_{\vec v}f=\vec v\cdot\vec\nabla f
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  As a simple consequence, we have:
+</p>
+<p class="prop" data-title="Derivative along a Curve">
+  The derivative of \(f(x,y)\) along a curve \(\vec r(t)\) is:
+  \[
+  \dfrac{df}{dt}=\dfrac{d(f\circ\vec r)}{dt}
+  =\vec v\cdot\vec\nabla f=\nabla_{\vec v}f
+  \]
+  In words, the derivative of \(f(x,y)\) along a curve \(\vec r(t)\) is the
+  derivative of \(f(x,y)\) along its velocity (tangent vector) \(\vec v\).
+  Conversely, the derivative of \(f(x,y)\) along a vector \(\vec v\) is the
+  derivative of \(f(x,y)\) along any curve which passes through \((x,y)\)
+  with velocity \(\vec v\).
+</p>
+
+        <div class="rule" id="eg_xy"></div>
+
+<p class="example" data-number="1">
+  Find the derivative of \(f(x,y)=\dfrac{x}{y}\) along
+  \(\vec v=\langle 3,4\rangle\) at the point \(P=(1,2)\).
+</p>
+<p class="sol">
+  The gradient of \(f\) is:
+  \[
+  \vec\nabla f
+  =\left\langle \dfrac{\partial f}{\partial x},
+  \dfrac{\partial f}{\partial y}\right\rangle
+  =\left\langle \dfrac{1}{y},-\,\dfrac{x}{y^2}\right\rangle
+  \]
+  At the point \(P\) this is:
+  \[
+  \left.\vec\nabla f\right|_P
+  =\left\langle \dfrac{1}{2},-\,\dfrac{1}{4}\right\rangle
+  \]
+  So the derivative of \(f\) along \(\vec v\) is:
+  \[
+  \left.\vec\nabla_{\vec v}f\right|_P
+  =\vec v\cdot\left.\vec\nabla_f\right|_P
+  =\langle 3,4\rangle\cdot\left\langle \dfrac{1}{2},-\,\dfrac{1}{4}\right\rangle
+  =\dfrac{3}{2}-1
+  =\dfrac{1}{2}
+  \]
+</p>
+<p class="example" data-number="2">
+  Find the rate of change of \(f=\dfrac{x}{y}\) along the curve
+  \(\vec r(t)=(1+3t,2+4t)\) at \(t=0\). (Note that this is a straight
+  line.)
+</p>
+<p class="sol">
+  Since the point is \(P=\vec r(0)=(1,2)\) and the velocity is
+  \(\vec v=\dfrac{d\vec r}{dt}=\langle 3,4\rangle\),
+  the rate of change is the same as the derivative in the previous example.
+  \[
+  \dfrac{df}{dt}=\left.\vec\nabla_{\vec v}f\right|_P
+  =\dfrac{1}{2}
+  \]
+</p>
+<p class="example" data-number="3">
+  Find the rate of change of \(f=\dfrac{x}{y}\) along the curve
+  \(\vec r(t)=(t^3,2 t^2)\) at \(t=1\). (Note that this is <em>not</em> a
+  straight line.)
+</p>
+<p class="sol">
+  Since the point is \(P=\vec r(1)=(1,2)\) and the velocity is
+  \(\vec v=\left.\dfrac{d\vec r}{dt}\right|_{t=1}
+  =\left.\langle 3t^2,4t\rangle\right|_{t=1}
+  =\langle 3,4\rangle\),
+   the rate of change is the same as in the previous example.
+  \[
+  \dfrac{df}{dt}=\left.\vec\nabla_{\vec v}f\right|_P
+  =\dfrac{1}{2}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the derivative of \(P=z(2-\cos x)(2+\sin y)\) along
+    \(\vec v=\langle 3,2,1\rangle\) at the point
+    \(X=(x,y,z)=(\dfrac{\pi}{2},\pi,2)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\nabla_{\vec v}P=8\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The gradient of \(P\) is
+    \[\begin{aligned}
+    \vec\nabla P
+    &=\left\langle z(\sin x)(2+\sin y),
+    z(2-\cos x)(\cos y),\right. \\
+    &\qquad\left.(2-\cos x)(2+\sin y)\right\rangle
+    \end{aligned}\]
+    At the point \(X\) this is
+    \[\begin{aligned}
+    \left.\vec\nabla P\right|_{(\pi/2,\pi,2)}
+    &=\left\langle 2\left(\sin\dfrac{\pi}{2}\right)(2+\sin\pi),
+        2\left(2-\cos\dfrac{\pi}{2}\right)(\cos\pi),\right. \\
+    &\qquad\left.\left(2-\cos\dfrac{\pi}{2}\right)(2+\sin\pi)\right\rangle \\
+    &=\langle 4,-4,4\rangle
+    \end{aligned}\]
+    So, the derivative of \(P\) along \(\vec v\) is:
+    \[
+    \nabla_{\vec v}P
+    =\vec v\cdot\left.\vec\nabla P\right|_{(\pi/2,\pi,2)}
+    =\langle 3,2,1\rangle\cdot\langle 4,-4,4\rangle
+    =8
+    \]
+  </p>
+</div>
+<p class="remark">
+  Notice that this exercise is essentially the same as the last exercise on the
+  <a href="DerCurve.html#ex_barometric" title="Return using the Back button.">
+  previous page</a> except the first is along a curve and the second is along
+  a vector which happens to be the velocity of that curve.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

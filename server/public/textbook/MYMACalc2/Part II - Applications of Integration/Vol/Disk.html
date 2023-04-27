@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c1. Volume using Thin Disks | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Rev2.html" title="Previous">&lArr;</a></li>
+      <li><a href="Washer.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c1. Volume using Thin Disks</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We first consider the problem of computing the volume of a solid of
+  revolution using thin disks.
+</p>
+<div class="column">
+	<p class="genexample" data-title="Function of \(x\)" data-col-width="40%">
+	  The region below a positive function \(y=f(x)\) above the \(x\)-axis
+		between \(x=a\) and \(x=b\) is rotated about the \(x\)-axis. Find the
+		volume of the solid swept out.
+	</p>
+	<div class="center" data-col-width="60%">
+		<img src="graphics/area1.jpg" alt="picture of a graph to be revolved">
+		<video src="graphics/area1xanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="40%">
+		<p class="sol">
+			Since \(y\) is a function of \(x\), we will do an \(x\) integral. So we
+			chop up the \(x\)-interval into small pieces of length \(\Delta x\).
+			For the small interval located at \(x_i\), the corresponding small
+			piece of the region is a rectangle and the corresponding small piece
+			of the volume is a thin disk.
+		</p>
+		<p>
+			The thickness of each disk is \(\Delta x\) and the radius of the disk at
+      \(x_i\) is \(r=f(x_i)\). So the area of the disk is:
+      \[
+      A=\pi r^2=\pi f(x_i)^2
+      \]
+      and its volume is:
+      \[
+      \Delta V=A\,\Delta x=\pi f(x_i)^2\Delta x
+      \]
+			Adding up the volumes of the disks and taking the limit as the number of
+			disks gets large (\(n\rightarrow \infty\)) and the thickness of each disk
+			gets small (\(\Delta x\rightarrow 0\)) we obtain the volume of the solid of
+			revolution:
+		  \[\begin{aligned}
+		  V&=\lim_{n\rightarrow\infty}\sum_{i=1}^n\Delta V
+      =\lim_{n\rightarrow\infty}\sum_{i=1}^n\pi f(x_i)^2\Delta x \\
+		  &=\int_a^b \pi\,f(x)^2\,dx
+		 \end{aligned}\]
+		</p>
+	</div>
+	<div class="center" data-col-width="60%">
+		<img src="graphics/rect1.jpg" alt="picture of a graph to be revolved">
+		<video src="graphics/rect1xanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Now turn your head sideways:
+	<img src="../../../graphics/happyfaceanim.gif" height="40" alt="">
+</p>
+<div class="column">
+	<p class="genexample" data-title="Function of \(y\)" data-col-width="40%">
+	  The region to the left of a positive function \(x=f(y)\) and to
+	  the right of the \(y\)-axis between \(y=a\) and \(y=b\) is rotated about the
+	  \(y\)-axis. Find the volume of the solid swept out.
+	</p>
+	<div class="center" data-col-width="60%">
+		<img src="graphics/area3.jpg" alt="picture of a graph to be revolved">
+		<video src="graphics/area3yanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="40%">
+		<p class="sol">
+		  This time we chop up the \(y\)-interval into small pieces
+		  of length \(\Delta y\). Then the rectangles and disks are horizontal.
+		</p>
+		<p>
+		  The volume of a disk is \(\Delta V=\pi f(y)^2\Delta y\) and the
+		  volume of the solid of revolution is:
+		  \[
+			V=\int_a^b \pi\,f(y)^2\,dy
+			\]
+		</p>
+	</div>
+	<div class="center" data-col-width="60%">
+		<img src="graphics/rect3.jpg" alt="picture of a graph to be revolved">
+		<video src="graphics/rect3yanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Volume of a Solid of Revolution using Thin Disks">
+  If the region below a positive function \(y=f(x)\) above the \(x\)-axis
+	between \(x=a\) and \(x=b\) is rotated about the \(x\)-axis, the volume
+	swept out is:
+  \[
+	V=\int_a^b \pi f(x)^2\,dx
+  \]
+  If the region to the left of a positive function \(x=f(y)\) and to the
+	right of the \(y\)-axis between \(y=a\) and \(y=b\) is rotated about the
+	\(y\)-axis, the volume swept out is:
+  \[
+	V=\int_a^b \pi f(y)^2\,dy
+	\]
+  Both formulas can be summarized as
+  \[
+	V=\int_a^b \pi(\text{radius})^2\,dv
+  \]
+  where \(dv\) is either \(dx\) or \(dy\).
+</p>
+<p class="remark">
+  Notice that finding the volume of a solid of revolution by disks is really a
+  special case of finding a volume by slicing
+  \[
+  V=\int_a^b A(v)\,dv
+  \]
+  in which each cross-sectional area is the area of a circle,
+  \(A=\pi(\text{radius})^2\).
+</p>
+
+        <div class="rule" id="disk_eg1"></div>
+
+<div>
+	<p class="example" data-number="1">
+	  The region below the parabola \(y=9-x^2\) above the \(x\)-axis is rotated
+	  about the \(x\)-axis. Find the volume swept out.
+	</p>
+</div>
+<div class="center">
+	<figure>
+    <img src="graphics/eg_football_crv.jpg" alt="eg_football_crv">
+		<figcaption>The Curve</figcaption>
+	</figure>
+  <figure>
+    <img src="graphics/eg_football_solid_anim.gif" alt="eg_football_solid_anim">
+    <!-- <video src="graphics/scircanimate.mp4" autoplay controls loop></video> -->
+    <figcaption>The Solid</figcaption>
+  </figure>
+</div>
+<div>
+	<p class="sol">
+    We cut up the \(x\)-axis (because the curve is a function of \(x\), not
+    because we rotate about the \(x\)-axis) and see that the rectangles are
+    vertical and they rotate into thin disks:
+	</p>
+</div>
+<div class="center">
+	<figure>
+    <img src="graphics/eg_football_rect.jpg" alt="eg_football_rect">
+		<figcaption>A Riemann Rectangle</figcaption>
+	</figure>
+  <figure>
+    <img src="graphics/eg_football_disk_anim.gif" alt="eg_football_disk_anim">
+    <!-- <video src="graphics/scircanimate.mp4" autoplay controls loop></video> -->
+    <figcaption>A Rectangle Rotates into a Disk</figcaption>
+  </figure>
+</div>
+<div class="column">
+	<div data-col-width="60%">
+		<p>
+		  So the volume is
+	    \[\begin{aligned}
+	    V&=\int_a^b \pi f(x)^2\,dx
+			=\int_{-3}^3 \pi(9-x^2)^2\,dx \\
+	    &=\pi\int_{-3}^3 (81-18x^2+x^4)\,dx \\
+	    &=\pi\left[81x-6x^3+\dfrac{x^5}{5}\right]_{-3}^3
+			=\dfrac{1296}{5}\pi
+			\end{aligned}\]
+		</p>
+	</div>
+	<div class="center" data-col-width="40%">
+    <figure>
+      <img src="graphics/eg_football_accum_anim.gif" alt="eg_football_accum_anim">
+      <!-- <video src="graphics/scircanimate.mp4" autoplay controls loop></video> -->
+      <figcaption>Accumulating Rectangles</figcaption>
+    </figure>
+	</div>
+</div>
+
+        <div class="rule"  id="disk_egs"></div>
+
+<p>
+  Here are some more examples:
+	<br>
+	<table class="center"> <tbody> <tr>
+		<td><a href="Disk_eg1.html">Example 1</a></td>
+		<td><a href="Disk_eg2.html">Example 2</a></td>
+	</tr> </tbody> </table>
+</p>
+
+        <div class="rule" id="disk_ex1"></div>
+
+<p>
+  Now you try:
+</p>
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise">
+      The region between \(x=y^2\) and the \(y\)-axis for \(0 \le y \le 3\)
+  		is rotated about the \(y\)-axis. Find the volume swept out.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_y^2_about_y_solid_anim.gif" alt="ex_y^2_about_y_solid_anim">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+	<div class="column">
+	  <p>
+      The curve is a function of \(y\); so this is a \(y\)-integral and
+      we cut up the \(y\)-axis. Here is the region and one rotated disk:
+	  </p>
+	  <div class="center">
+	    <img src="graphics/ex_y^2_about_y_disk_anim.gif" alt="ex_y^2_about_y_disk_anim">
+	  </div>
+	</div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle V=\dfrac{243\pi}{5}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<div class="column">
+		<div>
+		  <p>
+        The curve is a function of \(y\); so this is a \(y\)-integral and
+        we cut up the \(y\)-axis. Here is the region and one rotated disk:
+		  </p>
+		  <p>
+		    The radius of the disk is \(r=x=y^2\). So the area is
+				\(A=\pi r^2=\pi y^4\)	and the volume is
+		    \[
+				V=\int_0^3 \pi y^4\,dy
+				=\left[\pi\dfrac{y^5}{5}\right]_0^3
+				=\dfrac{243\pi}{5}
+				\]
+		  </p>
+		</div>
+	  <div class="center">
+	    <img src="graphics/ex_y^2_about_y_disk_anim.gif" alt="ex_y^2_about_y_disk_anim">
+	  </div>
+	</div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

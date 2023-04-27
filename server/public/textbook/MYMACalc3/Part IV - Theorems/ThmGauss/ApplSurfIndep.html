@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Surface Independence | 27. Gauss&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApplVol2Surf.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplFluidFlow.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>27. Gauss&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Gauss' Theorem">
+  Let \(V\) be a nice solid region in \(\mathbb{R}^3\) with a nice
+  properly oriented boundary, \(\partial V\), and let \(\vec F\)
+  be a nice vector field on \(V\). Then
+  \[
+  \iiint_V \vec\nabla\cdot\vec F\,dV
+  =\iint_{\partial V} \vec F\cdot d\vec S
+  \]
+  The outer boundary must be oriented outward while any inner
+  boundaries must be oriented inward. This means that all pieces of the
+  boundary are oriented away from the solid.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>3. Surface Independence</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <div>
+    <p class="def">
+      Suppose \(S_1\) and \(S_2\) are two <em>open</em> surfaces which have the
+      same boundary curve, \(\partial S_1=\partial S_2\). We say that \(S_1\) can
+      be <span class="defword">continuously deformed</span> into \(S_2\)
+      if there is a solid region \(V\) whose outward oriented boundary is
+      \(\partial V=S_1-S_2\). This means that the boundary of \(V\) with
+      outward normal consists of \(S_1\) with its normal unchanged and \(S_2\)
+      with its normal reversed.
+    </p>
+    <p>
+      In the figure, notice that the normal \(\vec N_1\)​ points out of the
+      volume \(V\) while \(\vec N_2\)​ points in. So \(\vec N_2\)​, needs to be
+      reversed to complete the boundary of \(V\) with the outward normal.
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/def_surfindep_open.jpg" alt="def_surfindep_open">
+  </div>
+</div>
+<div class="column">
+  <div>
+  	<p class="greybox">
+      Similarly, suppose \(S_1\) and \(S_2\) are two <em>closed</em>
+      surfaces. We say that \(S_1\) can be
+      <span class="defword">continuously deformed</span> into \(S_2\)
+      if there is a solid region \(V\) whose outward oriented
+      boundary is \(\partial V=S_1-S_2\). This means that the boundary of \(V\)
+      with outward normal (but inward in holes) consists of \(S_1\)
+      with its normal unchanged and \(S_2\) with its normal reversed.
+    </p>
+    <p>
+      In the figure, \(S_1\) is an ellipsoid with radii \(6\), \(5\) and \(4\)
+      and \(S_2\) is a sphere with radius \(2\) inside it. Further, \(V\) is
+      the soild between the ellipse and the sphere. The normals \(\vec N_1\) and
+      \(\vec N_2\)​ both point outward. So \(\vec N_2\) needs to be reversed to
+      complete the boundary of \(V\) with the outward normal (but inward in holes).
+    </p>
+  </div>
+  <div class="center">
+    <video src="graphics/def_surfindep_closed.mp4" autoplay controls loop></video>
+  </div>
+</div>
+<p>
+  In either case, \(\partial V=S_1-S_2\) and so Gauss' Theorem states
+  \[
+  \iiint_V \vec\nabla\cdot\vec F\,dV
+  =\iint_{\partial V} \vec F\cdot d\vec S
+  =\iint_{S_1} \vec F\cdot d\vec S
+  -\iint_{S_2} \vec F\cdot d\vec S
+  \]
+  This may be rewritten as
+  \[
+  \iint_{S_1} \vec F\cdot d\vec S
+  =\iint_{S_2} \vec F\cdot d\vec S
+  +\iiint_V \vec\nabla\cdot\vec F\,dV \qquad (*)
+  \]
+  <!-- +\iiint_V \vec\nabla\cdot\vec F\,dV  \tag{*} -->
+  In other words, to compute
+  \(\displaystyle \iint_{S_1} \vec F\cdot d\vec S\),
+  you may alternatively compute
+  \(\displaystyle \iint_{S_2} \vec F\cdot d\vec S\) and
+  \(\displaystyle \iiint_V \vec\nabla\cdot\vec F\,dV\),
+  if that is easier.
+</p>
+<p class="def">
+  Suppose that \(\vec F\) is a vector field satisfying
+  \[
+  \iint_{S_1} \vec{F}\cdot d\vec S
+  =\iint_{S_2} \vec{F}\cdot d\vec S
+  \]
+  whenever \(S_1\) can be continuously deformed into \(S_2\).
+  Then we say \(\vec F\) has <span class="defword">surface independent
+  surface integrals</span>.
+</p>
+<p>
+  In the special case that \(\vec\nabla\cdot\vec{F}=\vec 0\), then
+  equation (*) says \(\vec F\) has <span class="hl">surface independent
+  surface integrals</span>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Let's compute a surface integral in two different ways: Once directly and
+  once using Gauss' Theorem and the relation \((*)\).
+</p>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Compute the integral
+    \(\displaystyle \iint_P \vec F\cdot d\vec S\)
+    for
+    \[
+    \vec F=\langle 2xy^2,2yx^2,x^2z+y^2z\rangle
+    \]
+    over the paraboloid, \(P\), given by \(z=9-x^2-y^2\),
+    for \(z \ge 0\),  oriented upward, in two different ways:
+    <br>
+    (1) directly and
+    <br>
+    (2) using the relation \((*)\) where \(S_1\) is the
+    paraboloid \(P\) and \(S_2\) is the disk, \(D\), given by
+    \(x^2+y^2 \le 9\) and \(z=0\) also oriented upward.
+  </p>
+  <div class="center">
+    <video src="graphics/eg_surfindep_parab.mp4" autoplay controls loop></video>
+  </div>
+</div>
+
+<div class="sol collapse hide" data-number="1">
+  <strong>Compute the surface integral directly:</strong>
+  <p>
+    The paraboloid \(P\) may be paramterized as
+    \(\vec R=(r\cos\theta,r\sin\theta,9-r^2)\).
+  </p>
+  <p>
+    The normal vector to the paraboloid is:
+    \[\begin{aligned}
+    \vec N
+    &=\vec e_r\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \cos\theta   & \sin\theta   & -2r \\
+    -r\sin\theta & r\cos\theta  & 0
+    \end{vmatrix}
+    \\
+    &=\hat{\imath}(2r^2\cos\theta)
+     -\hat{\jmath}(-2r^2\sin\theta)
+     +\hat{k}(r\cos^2\theta+r\sin^2\theta) \\
+    &=\langle 2r^2\cos\theta,2r^2\sin\theta,r\rangle
+    \end{aligned}\]
+    This correctly points upward. The vector field evaluated on the paraboloid is:
+    \[\begin{aligned}
+    \vec F&=\langle 2xy^2,2yx^2,x^2z+y^2z\rangle \\
+    &=\langle 2r^3\sin^2\theta\cos\theta,2r^3\sin\theta\cos^2\theta,
+    r^2(9-r^2)\rangle
+    \end{aligned}\]
+    And their dot product is:
+    \[\begin{aligned}
+    \vec F\cdot\vec N
+    &=4r^5\sin^2\theta\cos^2\theta+4r^5\sin^2\theta\cos^2\theta+r^3(9-r^2) \\
+    &=8r^5\sin^2\theta\cos^2\theta+9r^3-r^5 \\
+    &=2r^5\sin^2(2\theta)+9r^3-r^5 \\
+    &=r^5[1-\cos(4\theta)]+9r^3-r^5 \\
+    &=9r^3-r^5\cos(4\theta)
+    \end{aligned}\]
+    where we have used the identities:
+    \[
+    2\sin\theta\cos\theta=\sin(2\theta)
+    \quad \text{and} \quad
+    \sin^2(2\theta)=\dfrac{1-\cos(4\theta)}{2}
+    \]
+    Finally, we compute the integral directly:
+    \[\begin{aligned}
+    \iint_P &\vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^3 \vec F\cdot\vec N\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^3 [9r^3-r^5\cos(4\theta)]\,dr\,d\theta \\
+    &=\int_0^{2\pi} \left[\dfrac{9r^4}{4}-\dfrac{r^6}{6}\cos(4\theta)\right]_{r=0}^3\,d\theta \\
+    &=3^6\int_0^{2\pi} \left[\dfrac{1}{4}-\dfrac{1}{6}\cos(4\theta)\right]\,d\theta \\
+    &=3^6\left[\dfrac{1}{4}\theta-\dfrac{1}{6}\dfrac{\sin(4\theta)}{4}\right]_0^{2\pi}
+    =\dfrac{3^6}{2}\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="sol collapse hide" data-number="2">
+  <strong>Recompute the surface integral using Gauss' Theorem and the
+    relation \((*)\):</strong>
+  <p>
+    <strong>Surface integral over the Disk \(D\):</strong>
+    <br>
+    The disk \(D\) is parameterized as:
+    \(\vec R=(r\cos\theta,r\sin\theta,0)\).
+    The normal vector is:
+    \(\vec N=(0,0,r)\).
+    The vector field on the disk is:
+    \[\begin{aligned}
+    \vec F
+    &=\langle 2xy^2,2yx^2,(x^2+y^2)z\rangle \\
+    &=\langle 2r^3\sin^2\theta\cos\theta,2r^3\sin\theta\cos^2\theta,0\rangle
+    \end{aligned}\]
+    So the surface integral over \(D\) is
+    \[
+    \iint_D \vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^3 \vec F\cdot\vec N\,dr\,d\theta
+    =\int_0^{2\pi}\int_0^3 (0)\,dr\,d\theta=0
+    \]
+    That was easy!
+  </p>
+  <p>
+    <strong>Triple integral over the volume \(V\) between the Disk and
+    the Paraboloid:</strong>
+    <br>
+    The divergence in rectangular coordinates is
+    \(\vec\nabla\cdot\vec F
+    =2y^2+2x^2+x^2+y^2=3(x^2+y^2)\).
+    <br>
+    In cylindrical coordinates, \(dV=r\,dr\,d\theta\,dz\) and
+    \(\vec\nabla\cdot\vec F=3r^2\).
+    So the integral over the volume \(V\) is:
+    \[\begin{aligned}
+    \iiint_V &\vec\nabla\cdot\vec F\,dV
+    =\int_0^3\int_0^{2\pi}\int_0^{9-r^2} 3r^2r\,dz\,d\theta\,dr\\
+    &=2\pi\int_0^3 \left[3r^3z\right]_{z=0}^{9-r^2 }\,dr
+    =2\pi\int_0^3 3r^3(9-r^2)\,dr \\
+    &=6\pi\left[9\dfrac{r^4}{4}-\dfrac{r^6}{6}\right]_0^3
+    =6\pi\left(\dfrac{3^6}{4}-\dfrac{3^6}{6}\right)
+    =\dfrac{3^6}{2}\pi
+    \end{aligned}\]
+  Finally we add the two integrals to get our answer:
+  \[\begin{aligned}
+  \iint_P \vec F\cdot d\vec S
+  &=\iint_D \vec F\cdot d\vec S+\iiint_V \vec\nabla\cdot\vec F\,dV \\
+  &=0+\dfrac{3^6 }{2}\pi=\dfrac{3^6 }{2}\pi
+  \end{aligned}\]
+  </p>
+</div>
+<p>
+<strong>Comparison:</strong>
+  Notice the answers are the same. Clearly the integrals over the volume and
+  disk were easier than the surface integral over the paraboloid.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Compute the integral
+      \(\displaystyle \iint_H \vec F\cdot d\vec S\)
+      for
+      \(\displaystyle \vec F=\langle xz^2,yz^2,x^2+y^2\rangle\)
+      over the hemisphere
+      \(z=\sqrt{4-x^2-y^2 }\),
+      oriented upward.
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX2"></button>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+      <button class="toggle has-check" data-toggle="CkX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_surfindep_hemisph_prob.jpg" alt="ex_surfindep_hemisph_prob">
+  </div>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Use the relation \((*)\) where \(S_1\) is the hemisphere \(H\) and
+    \(S_2\) is the disk \(D\) given by \(x^2+y^2 \le 4\) and \(z=0\)
+    also oriented upward.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \iint_H \vec F\cdot d\vec S=\dfrac{248}{15}\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <div class="column" data-col-width="60%">
+  <p>
+    Gauss' Theorem in the form \((*)\) says:
+    \[
+    \iint_{H} \vec F\cdot d\vec S
+    =\iint_{D} \vec F\cdot d\vec S+\iiint_V \vec\nabla\cdot\vec F\,dV
+    \]
+    where \(H\) is the hemisphere surface oriented up, \(D\) is the disk
+    at the bottom also oriented up and \(V\) is the solid hemisphere volume
+    between them.
+  </p data-col-width="40%">
+    <div class="center">
+      <img src="graphics/ex_surfindep_hemisph_sol.jpg" alt="ex_surfindep_hemisph_sol">
+    </div>
+  </div>
+  <p>
+    <strong>Surface integral over the Disk \(D\):</strong>&emsp;
+    The disk \(D\) is parameterized as:
+    \(\vec R=(r\cos\theta,r\sin\theta,0)\).
+    The normal vector is:
+    \(\vec N=(0,0,r)\) which is correctly oriented upward.
+    The vector field on the disk is:
+    \[
+    \vec F
+    =\langle xz^2,yz^2,x^2+y^2\rangle
+    =\langle 0,0,r^2\rangle
+    \]
+    So the surface integral over \(D\) is
+    \[\begin{aligned}
+    \iint_D &\vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^2 \vec F\cdot\vec N\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^2 r^3\,dr\,d\theta=0
+    =2\pi\left[\dfrac{r^4}{4}\right]_0^2
+    =8\pi
+    \end{aligned}\]
+  </p>
+  <p>
+    <strong>Triple integral over the volume \(V\) between the Disk and
+    the Hemisphere:</strong>&emsp;
+    The divergence in rectangular and then spherical coordinates is:
+    \[
+    \vec\nabla\cdot\vec F
+    =z^2+z^2=2z^2=2\rho^2\cos^2\phi
+    \]
+    The spherical volume element is \(dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\).
+    So the integral over the volume \(V\) is:
+    \[\begin{aligned}
+    \iiint_V &\vec\nabla\cdot\vec F\,dV
+    =\int_0^{2\pi}\int_0^{\pi/2}\int_0^2
+    2\rho^2\cos^2\phi\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\\
+    &=2\pi\left[-\,\dfrac{\cos^3\phi}{3}\right]_0^{\pi/2}
+    \left[\dfrac{2\rho^5}{5}\right]_0^2
+    =2\pi\left(\dfrac{1}{3}\right)\dfrac{2^6}{5}
+    =\dfrac{128}{15}\pi
+    \end{aligned}\]
+  </p>
+  <p>
+    <strong>Total:</strong>&emsp;
+    Finally we add the two integrals to get our answer:
+    \[\begin{aligned}
+    \iint_{H} \vec F\cdot d\vec S
+    &=\iint_{D} \vec F\cdot d\vec S+\iiint_V \vec\nabla\cdot\vec F\,dV \\
+    &=8\pi+\dfrac{128}{15}\pi=\dfrac{248}{15}\pi
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by doing the surface integral over the hemisphere directly,
+    which is actually harder.
+    The hemisphere may be parametrized in spherical coordinates as:
+    \[\begin{aligned}
+    \vec R(\phi,&\theta)=(2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi) \\
+    &\text{for} \quad 0 \le \phi \le \dfrac{\pi}{2}
+    \quad \text{and} \quad 0 \le \theta \le 2\pi
+    \end{aligned}\]
+    The normal vector is:
+    \[\begin{aligned}
+    \vec N
+    &=\vec e_\phi\times\vec e_\theta \\
+    &=\langle 4\sin^2\phi\cos\theta,4\sin^2\phi\sin\theta,4\sin\phi\cos\phi\rangle
+    \end{aligned}\]
+    The normal points upward as required.
+    On the surface, the vector field is:
+    \[\begin{aligned}
+    \vec F&=\langle xz^2,yz^2,x^2+y^2\rangle \\
+    &=\langle 8\sin\phi\cos^2\phi\cos\theta,
+              8\sin\phi\cos^2\phi\sin\theta,
+              4\sin^2\phi\rangle \\
+    \end{aligned}\]
+    And its dot product with the normal is:
+    \[\begin{aligned}
+    \vec F\cdot\vec N
+    &=32\sin^3\phi\cos^2\phi\cos^2\theta
+    +32\sin^3\phi\cos^2\phi\sin^2\theta \\
+    &\quad+16\sin^3\phi\cos\phi \\
+    &=32\sin^3\phi\cos^2\phi+16\sin^3\phi\cos\phi
+    \end{aligned}\]
+    So the integral is:
+    \[\begin{aligned}
+    \iint_H &\vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^{\pi/2} \vec F\cdot\vec N\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^{\pi/2}
+    (32\sin^3\phi\cos^2\phi+16\sin^3\phi\cos\phi)\,d\phi\,d\theta \\
+    &=2\pi\int_0^{\pi/2}
+    (32(1-\cos^2\phi)\cos^2\phi\sin\phi+16\sin^3\phi\cos\phi)\,d\phi \\
+    &=2\pi\left[
+    32\left(-\,\dfrac{\cos^3\phi}{3}+\,\dfrac{\cos^5\phi}{5}\right)+16\dfrac{\sin^4\phi}{4}
+    \right]_0^{\pi/2} \\
+    &=2\pi\left[16\cdot\dfrac{1}{4}\right]
+    -2\pi\left[32\left(-\,\dfrac{1}{3}+\,\dfrac{1}{5}\right)\right]
+    =\dfrac{248}{15}\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="3">
+  Consider the surface integral \(\displaystyle \iint_S \vec F\cdot d\vec S\)
+  where \(\displaystyle \vec F=\langle xz^2,-yz^2,x^2+y^2\rangle\) for
+  various surfaces.
+</p>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Verify the vector field \(\vec F\)  has surface independent integrals.
+        In other words, the integral
+        \(\displaystyle \iint_S \vec F\cdot d\vec S\)
+        is the same for any two surfaces \(S\) which have the same boundary
+        \(\partial S\).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX3a"></button>
+        <button class="toggle has-ans" data-toggle="AnsX3a"></button>
+        <button class="toggle has-sol" data-toggle="SolX3a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX3a">
+      <p>
+        Compute the divergence of \(\vec F\).
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX3a">
+      <p>
+        \(\displaystyle \vec\nabla\cdot\vec F=0\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX3a">
+      <p>
+        The vector field has surface independent integrals if it is
+        divergencefree. Here:
+        \[\begin{aligned}
+        \vec\nabla\cdot\vec F
+        &=\partial_x(xz^2)+\partial_y(-yz^2)+\partial_z(x^2+y^2) \\
+        &=z^2-z^2+0
+        =0
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    Compute the integral
+    \(\displaystyle \iint_S \vec F\cdot d\vec S\)
+    for each of the folowing surfaces:
+    <div class="column">
+      <ol style="list-style-type: lower-roman; padding-left: 0;">
+        <li>the paraboloid
+        \(z=4-x^2-y^2 \ge 0\),
+        oriented upward.
+        (shown in <span style="color: cyan">cyan</span>)
+        </li>
+        <li>the hemisphere
+        \(z=\sqrt{4-x^2-y^2}\),
+        oriented upward.
+        (shown in <span style="color: orange">orange</span>)
+        </li>
+        <li>the disk
+        \(x^2+y^2 \le 4\) and \(z=0\),oriented upward.
+        (shown in <span style="color: red">red</span>)
+        </li>
+      </ol>
+      <div class="center">
+        <img src="graphics/ex_surfindep_parab_hemisph_disk.jpg" alt="ex_surfindep_parab_hemisph_disk">
+      </div>
+    </div>
+    <div class="dotfillex">
+      <div>
+      </div>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX3b"></button>
+        <button class="toggle has-ans" data-toggle="AnsX3b"></button>
+        <button class="toggle has-sol" data-toggle="SolX3b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX3b">
+      <p>
+        Check the \(3\) surfaces have the same boundary curve. Then
+        compute the surface integral you think will be easiest.
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX3b">
+      <p>
+        \(\displaystyle \iint_S \vec F\cdot d\vec S=8\pi\)
+        for all \(3\) surfaces.
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX3b">
+      <p>
+        All \(3\) surfaces have the boundary curve \(x^2+y^2=4\) with \(z=0\).
+        Since \(\vec F\) has surface independent integrals, all \(3\)
+        integrals give the same value.
+      </p>
+      <p>
+        The simplest is the disk which may be parametrized as
+        \(\vec R(r,\theta)=(r\cos\theta,r\sin\theta,0)\). Its normal is
+        \(\vec N=(0,0,r)\) which points up as required. On the disk, the
+        vector field is \(\vec F=\langle 0,0,r^2\rangle\). So the integral is:
+        \[\begin{aligned}
+        \iint_S &\vec F\cdot d\vec S
+        =\iint_S \vec F\cdot\vec N\,dr\,d\theta \\
+        &=\int_0^{2\pi}\int_0^2 r^3\,dr\,d\theta
+        =2\pi\left[\dfrac{r^4}{4}\right]_0^2
+        =8\pi
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Verify the vector field
+        \(\vec A=\langle -yx^2,xy^2,xyz^2\rangle\)
+        is a vector potential for
+        \(\vec F=\langle xz^2,-yz^2,x^2+y^2\rangle\).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX3c"></button>
+        <button class="toggle has-ans" data-toggle="AnsX3c"></button>
+        <button class="toggle has-sol" data-toggle="SolX3c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX3c">
+      <p>
+        Compute the curl of \(\vec A\).
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX3c">
+      <p>
+        \(\displaystyle \vec\nabla\times\vec A=\vec F\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX3c">
+      <p>
+        Since:
+        \[\begin{aligned}
+        \vec\nabla\times\vec A
+        &=
+        \begin{vmatrix}
+        \hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \partial_x   & \partial_y   & \partial_z \\
+        -yx^2        & xy^2         & xyz^2
+        \end{vmatrix} \\
+        &=\hat{\imath}(xz^2)
+         -\hat{\jmath}(-yz^2)
+         +\hat{k}(y^2+x^2)
+        =\vec F
+        \end{aligned}\]
+        we conclude \(\vec A\) is a vector potential for \(\vec F\).
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Use Stokes' Theorem and the vector field
+        \(\vec A=\langle -yx^2,xy^2,xyz^2\rangle\)
+        to recompute the surface integrals in part (b).
+      </p>
+      <p>
+        <button class="toggle has-hint" data-toggle="HintX3d"></button>
+        <button class="toggle has-ans" data-toggle="AnsX3d"></button>
+        <button class="toggle has-sol" data-toggle="SolX3d"></button>
+        <button class="toggle has-rem" data-toggle="RemX3d"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX3d">
+      <p>
+        Stokes' Theorem states:
+        \[
+          \iint_S \vec\nabla\times\vec A\cdot d\vec S
+          =\oint_{\partial S} \vec A\cdot d\vec s
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX3d">
+      <p>
+        \(\displaystyle \iint_S \vec F\cdot d\vec S
+        =\oint_{\partial S} \vec A\cdot d\vec s=8\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX3d">
+      <p>
+        By Stokes' Theorem:
+        \[
+        \iint_S \vec F\cdot d\vec S
+        =\iint_S \vec\nabla\times\vec A\cdot d\vec S
+        =\oint_{\partial S} \vec A\cdot d\vec s
+        \]
+        The boundary curve for all \(3\) surfaces is the circle
+        \(x^2+y^2=4\) with \(z=0\) which may be parametrized by
+        \(\vec r(\theta)=(2\cos\theta,2\sin\theta,0)\). On the circle:
+        \[
+        \vec A=\langle -yx^2,xy^2,xyz^2\rangle
+        =\langle -8\cos^2\theta\sin\theta,8\cos\theta\sin^2\theta,0\rangle
+        \]
+        The tangent vector is
+        \[
+        \vec v=\langle -2\sin\theta,2\cos\theta,0\rangle
+        \]
+        So the line integral is
+        \[\begin{aligned}
+        \oint_{\partial S} &\vec A\cdot d\vec s
+        =\int_0^{2\pi} \vec A\cdot\vec v\,d\theta
+        =\int_0^{2\pi} 32\cos^2\theta\sin^2\theta\,d\theta \\
+        &=\int_0^{2\pi} 8\sin^2(2\theta)\,d\theta
+        =\int_0^{2\pi} 4(1-\cos(4\theta))\,d\theta \\
+        &=\left[\rule{0pt}{10pt}4\theta-\sin(4\theta)\right]_0^{2\pi}
+        =8\pi
+        \end{aligned}\]
+      </p>
+    </div>
+    <div class="toBeToggled drop-rem" data-toggle="RemX3d">
+      <p>
+        The answers are the same. This method may be easier, provided you have
+        or can find a vector potential.
+      </p>
+  </li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

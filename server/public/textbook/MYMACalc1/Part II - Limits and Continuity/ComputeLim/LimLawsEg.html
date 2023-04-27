@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Examples | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimLaws.html#Examples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>7. Computing Limits</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>a.2. Limit Laws</h2>
+
+
+      
+      <h2>a. Examples</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  In general, the process of finding the limit of a function is to repeatedly
+  apply the	<a href="LimLaws.html" title="Return using the Back button.">
+	Limit Laws</a> until we get down to the
+  <a href="LimSpec.html" title="Return using the Back button.">
+	Special Limits</a>.  If there is a condition to
+	check, assume it holds and check it at the end.
+</p>
+
+				<div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute
+  \(\lim\limits_{x\to\infty}\dfrac
+  {4+\dfrac{5}{x}-\dfrac{2}{x^2}}{3+\dfrac{4}{x}}\).
+</p>
+<p class="sol">
+  We use two column format to give the reasons:
+</p>
+<table class="no-border" align="center">
+  <tr>
+    <td style="text-align:right">
+      \(\lim\limits_{x\to\infty}\dfrac{4+\dfrac{5}{x}
+        -\dfrac{2}{x^2}}{3+\dfrac{4}{x}}
+      =\dfrac
+        {\lim\limits_{x\to\infty}
+          \left(4+\dfrac{5}{x}-\dfrac{2}{x^2}\right)}
+        {\lim\limits_{x\to\infty}
+          \left(3+\dfrac{4}{x}\right)}\)
+    </td>
+    <td style="text-align:left">
+      The limit of a quotient is the quotient of the limits
+      <br>
+      provided the limit of the denominator is non-zero.</td>
+  </tr>
+  <tr>
+    <td style="text-align:right">
+      \(=\dfrac
+        {\lim\limits_{x\to\infty}4
+        +\lim\limits_{x\to\infty}\dfrac{5}{x}
+        -\lim\limits_{x\to\infty}\dfrac{2}{x^2}}
+        {\lim\limits_{x\to\infty}3
+        +\lim\limits_{x\to\infty}\dfrac{4}{x}}\)
+    </td>
+    <td style="text-align:left">
+      The limit of a sum is the sum of the limits.
+      <br>
+      The limit of a difference is the difference of the limits.</td>
+  </tr>
+  <tr>
+    <td style="text-align:right">
+      \(=\dfrac
+      {4+5\lim\limits_{x\to\infty}\dfrac{1}{x}
+        -2\lim\limits_{x\to\infty}\dfrac{1}{x^2}}
+      {3+4\lim\limits_{x\to\infty}\dfrac{1}{x}}\)
+    </td>
+    <td style="text-align:left">
+      The limit of a constant function is the constant.
+      <br>
+      The limit of a constant times a function is the
+      <br>
+      constant times the limit of the function.
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:right">
+      \(=\dfrac{4+5\cdot0-2\cdot0}{3+4\cdot0}\)
+  </td>
+    <td style="text-align:left">
+      Special Limit: &emsp;
+			\(\lim\limits_{x\to\infty}\dfrac{1}{x^p}=0\,\)
+      for \(p=1,2\)
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:right">
+      \(=\dfrac{4}{3}\)
+    </td>
+    <td style="text-align:left">
+      Simplify
+    </td>
+  </tr>
+</table>
+<p>
+  Notice that the limit of the denominator was \(3\), thereby satisfying the
+  requirement of the quotient rule.
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="2">
+    Compute
+    \(\lim\limits_{x\to\infty}\cos\left(\dfrac{\sqrt{2+x^{-3}}}{x}\right)\).
+	</p>
+  <p>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+	<p>
+	  We use two column format to give the reasons:
+	</p>
+	<table class="no-border" align="center">
+	  <tr>
+	    <td style="text-align:right">
+	      \(\lim\limits_{x\to\infty}\cos\left(\dfrac{\sqrt{2+x^{-3}}}{x}\right)
+	      =\cos\left(\lim\limits_{x\to\infty}\dfrac{\sqrt{2+x^{-3}}}{x}\right)\)
+	    </td>
+	    <td style="text-align:left">
+	      The limit of a continuous function of a function is
+	      <br>
+	      the continuous function of the limit of the function.
+	    </td>
+	  </tr>
+	  <tr>
+	    <td style="text-align:right">
+	      \(=\cos\left(\lim\limits_{x\to\infty}\dfrac{1}{x}
+	      \lim\limits_{x\to\infty}\sqrt{2+x^{-3}}\right)\)
+	    </td>
+	    <td style="text-align:left">
+	      The limit of a product is the product of the limits.
+	    </td>
+	  </tr>
+	  <tr>
+	    <td style="text-align:right">
+	      \(=\cos\left(0 \sqrt{\lim\limits_{x\to\infty}
+	      (2+x^{-3})}\right)\)
+	    </td>
+	    <td style="text-align:left">
+	      Special Limit: &emsp;
+	      \(\lim\limits_{x\to\infty}\dfrac{1}{x^p}=0\) for \(p=1\).
+	      <br>
+	      The limit of a power is the power of the limit.
+	    </td>
+	  </tr>
+	  <tr>
+	    <td style="text-align:left" colspan="2">
+				Note: We cannot yet conclude the limit is \(\cos(0)\) because we have
+				not yet shown that the square root factor is not \(\infty\) which would
+				give an indeterminate form \(0\cdot\infty\) which requires more work.
+			</td>
+	  </tr>
+	  <tr>
+	    <td style="text-align:right">
+	      \(=\cos\left(0 \sqrt{\lim\limits_{x\to\infty}2
+	        +\lim\limits_{x\to\infty}x^{-3}}\right)\)
+	    </td>
+	    <td style="text-align:left">
+	      The limit of a sum is the sum of the limits.
+	    </td>
+	  </tr>
+	  <tr>
+	    <td style="text-align:right">
+	      \(=\cos(0 \sqrt{2+0})\)
+	    </td>
+	    <td style="text-align:left">
+	      The limit of a constant function is the constant.
+	      <br>
+	      Special Limit: &emsp;
+	      \(\lim\limits_{x\to\infty}\dfrac{1}{x^p}=0\) for \(p=3\).
+	    </td>
+	  </tr>
+	  <tr>
+	    <td style="text-align:right">
+	      \(=\cos (0)=1\)
+	    </td>
+	    <td style="text-align:left">
+	      Simplify
+	    </td>
+	  </tr>
+	</table>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

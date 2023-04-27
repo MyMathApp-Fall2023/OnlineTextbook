@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. What my Algebra Teacher Never Told me! | 6. Intuitive Limits and Continuity</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="LRLims.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Intuitive Limits and Continuity</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  We begin our study of Calculus with Limits. In this chapter we want to
+  develop an intuitive understanding of limits. In a
+  <a href="../Precise/ChContents.html"
+  title="Return using the Back button.">later chapter</a>, we will get a
+  more precise definition.
+</p>
+
+
+      
+      <h2>a. What my Algebra Teacher Never Told me!</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We begin with a multiple choice question you might have gotten in a high
+  school algebra class:
+</p>
+<p class="exercise" data-number="1">
+  Simplify the function \(f(x)=\dfrac{x^2-4}{x-2}\).
+</p>
+<p class="center">
+  <button class="toggle has-choiceA" data-toggle="ex1a"></button>\(f(x)=x-2\) &emsp;
+  <button class="toggle has-choiceB" data-toggle="ex1b"></button>\(f(x)=x+2\) &emsp;
+  <button class="toggle has-choiceC" data-toggle="ex1c"></button>Undefined &emsp;
+  <button class="toggle has-choiceD" data-toggle="ex1d"></button>None of these
+</p>
+<div class="toBeToggled drop-ans" data-toggle="ex1a">
+  <p>
+    Incorrect. Sorry that's not correct. Factor the numerator and cancel!
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1b">
+  <p>
+    Incorrect. This is the answer you would have given in a high school algebra class,
+    but it is not correct in a calculus class. If we factor the numerator and
+    cancel we appear to get
+    \[
+    \dfrac{x^2-4}{x-2}=\dfrac{(x+2)(x-2)}{x-2}=x+2
+    \]
+    However, we cannot just cancel.
+    <br>
+    Notice \(f(x)=x+2\) is defined for all \(x\), but,
+    \(f(x)=\dfrac{x^2-4}{x-2}\) is undefined at \(x=2\) because we
+    would be dividing by \(0\). If we cancel, we lose the fact that \(f(x)\)
+    is undefined at \(x=2\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1c">
+  <p>
+    Incorrect. You are on the right track, but \(f(x)\) <em>is</em> defined for
+    most \(x\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="ex1d">
+  <p>
+    Correct!
+    \(f(x)=x+2\) is defined for all all \(x\).
+    However, \(f(x)=\dfrac{x^2-4}{x-2}\) is undefined at \(x=2\) because we
+    would be dividing by \(0\). So a correct simplification would be:
+    \[\begin{aligned}
+    f(x)&=\dfrac{x^2-4}{x-2}=\dfrac{(x+2)(x-2)}{x-2} \\
+    &=\left\{\begin{matrix}
+    x+2 & \text{if} & x\ne2 \\
+    \text{undefined} & \text{if} & x=2
+    \end{matrix}\right.
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  <button class="toggle" data-toggle="Drop1">Further Discussion</button>
+  \(\leftarrow\leftarrow\leftarrow\) Be sure to read this after you do the exercise!
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <div class="column">
+    <p>
+      So a correct simplification in the above exercise is:
+      \[\begin{aligned}
+      f(x)&=\dfrac{x^2-4}{x-2}=\dfrac{(x+2)(x-2)}{x-2} \\
+      &=\left\{\begin{matrix}
+      x+2 & \text{if} & x\ne2 \\
+      \text{undefined} & \text{if} & x=2
+      \end{matrix}\right.
+      \end{aligned}\]
+      A plot of \(f(x)\) is shown at the right.
+    </p>
+    <div class="center">
+      <figure>
+        <img src="graphics/eg_never_told.jpg" alt="eg_never_told">
+        <figcaption>
+          Graph of \(f(x)=\dfrac{x^2-4}{x-2}\).
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="column">
+    <p>
+      The graph of \(y=x+2\) is a straight line with slope \(m=1\) and
+      \(y\)-intercept \(b=2\) as shown at the right.
+      <br>
+      The graph of \(y=\dfrac{x^2-4}{x-2}\) is the
+      same straight line but with a hole at \(x=2\) as shown above.
+    </p>
+    <div class="center">
+      <figure>
+        <img src="graphics/eg_never_told_wrong.jpg" alt="eg_never_told_wrong">
+        <figcaption>
+          Graph of \(y=x+2\).
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <p>
+    If we look at the graph, we see that as \(x\) approaches \(x=2\),
+    the value of \(y\) approaches \(y=4\). (This is the value we get if we plug
+    \(x=2\) into \(y=x+2\).) To capture this idea of approaching \(y=4\) even
+    though we can never actually get there, we define the limit:
+    \[
+    \lim_{x\to2}f(x)
+    =\lim_{x\to2}\dfrac{x^2-4}{x-2}
+    =4
+    \]
+    This (intuitive) definition will be made clearer on the
+    <a href="LRLims.html">next page</a>.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

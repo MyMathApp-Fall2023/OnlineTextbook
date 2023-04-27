@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Arc Length of a Polar Graph | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="AreaBetween.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>e. Arc Length of a Polar Graph</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+	In the chapter on
+	<a href="../ArcSurf/ArcParam.html#arclenparamform" title="Return using the Back button.">
+	Arc Length</a>, we learned that the <span class="hl">arc length</span>
+	of a <span class="hl">parametric curve</span>,
+	\(\vec{r}(t)=(x(t),y(t))\), from \(t=a\) to \(t=b\) is:
+	\[
+	L=\int_a^b \sqrt{\left(\dfrac{dx}{dt}\right)^2+\left(\dfrac{dy}{dt}\right)^2}\,dt
+	\]
+  We also know that any <span class="hl">polar curve</span>,
+	\(r=r(\theta)\), can be regarded as the <span class="hl">parametric curve</span>
+  \[
+	\vec{r}(\theta)=(x(\theta),y(\theta))
+	=(r(\theta)\cos\theta,r(\theta)\sin\theta)
+  \]
+	where the parameter \(t\) has been replaced by a parameter \(\theta\).
+	<button class="toggle" data-toggle="Note1">
+	Note on \(r(\theta)\) vs. \(\vec r(\theta)\)</button>
+</p>
+<div class="toBeToggled note" data-toggle="Note1">
+  <p>
+    \(\vec r(\theta)\) is the position vector (Notice the arrow over the
+		\(\vec r\).) telling us the position in the	plane for each value of the
+		parameter \(\theta\),	whereas \(r(\theta)\)	is simply the function
+		defining the polar curve.	Don't get confused.
+  </p>
+</div>
+<p>
+  Consequently:
+</p>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Arc Length of a Polar Curve">
+  The <span class="hl">arc length</span> of a
+	<span class="hl">polar curve</span>, \(r=r(\theta)\), from \(\theta=\alpha\)
+	to \(\theta=\beta\) is
+	\[
+	L=\int_\alpha^\beta \sqrt{\,r(\theta)^2+\left(\dfrac{dr}{d\theta}\right)^2}\,d\theta
+	\]
+  <button class="toggle" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+		In the arc length formula, we need to replace \(t\) by \(\theta\), \(a\)
+		by \(\alpha\) and \(b\) by \(\beta\):
+		\[
+		L=\int_\alpha^\beta \sqrt{\left(\dfrac{dx}{d\theta}\right)^2
+		                        +\left(\dfrac{dy}{d\theta}\right)^2}\,d\theta
+		\]
+		Then we simply need to transform the quantity inside the square root:
+    \[\begin{aligned}
+		\left(\dfrac{dx}{d\theta}\right)^2+\left(\dfrac{dy}{d\theta }\right)^2
+		&=(r'\cos\theta-r\sin\theta)^2
+		 +(r'\sin\theta+r\cos\theta)^2 \\
+		&=(r')^2\cos^2\theta-2r' r\sin\theta\cos\theta+r^2\sin^2\theta \\
+		&\quad+(r')^2\sin^2\theta+2r' r\sin\theta\cos\theta+r^2\cos^2\theta \\
+		&=(r')^2+r^2
+    \end{aligned}\]
+	</p>
+</div>
+
+				<div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+	  Find the arc length of the cardioid, \(r=1+\cos\theta\).
+	</p>
+	<div class="center">
+	  <img src="graphics/lengthcardioid.jpg" alt="lengthcardioid">
+	</div>
+</div>
+<p class="sol">
+  You may have noticed that the cardioids have been especially easy to work
+	with. Here, however, we encounter some complications. We first set up
+	the integral: Since \(r=1+\cos\theta\) we have
+	\(\dfrac{dr}{d\theta}=-\sin\theta\). Since the cardioid is swept out
+  once between \(\theta=0\) and \(\theta=2\pi\), the arc length is:
+  \[\begin{aligned}
+  L &=\int_0^{2\pi} \sqrt{(1+\cos\theta)^2+\sin^2\theta }\,d\theta \\
+  &=\int_0^{2\pi} \sqrt{1+2\cos\theta+\cos^2\theta+\sin^2\theta}\,d\theta \\
+  &=\int_0^{2\pi} \sqrt{2+2\cos\theta}\,d\theta
+	=\sqrt{2}\int_0^{2\pi} \sqrt{1+\cos\theta}\,d\theta
+  \end{aligned}\]
+  As with all arclength problems, there is some trick which allows us to
+  compute the integral.
+</p>
+<p class="meth" data-number="1">
+	 One trick is to multiply by \(\dfrac{\sqrt{1-\cos\theta}}{\sqrt{1-\cos\theta}}\)
+  \[\begin{aligned}
+  L &=\sqrt{2}\int_0^{2\pi} \sqrt{1+\cos\theta}
+	\dfrac{\sqrt{1-\cos\theta}}{\sqrt{1-\cos\theta}}\,d\theta \\
+	&=\sqrt{2}\int_0^{2\pi} \dfrac{\sqrt{1-\cos^2\theta}}{\sqrt{1-\cos\theta}}\,d\theta
+  =\sqrt{2}\int_0^{2\pi} \dfrac{\sqrt{\sin^2\theta}}{\sqrt{1-\cos\theta}}\,d\theta
+  \end{aligned}\]
+  We now hit a second problem: \(\sqrt{\sin^2\theta}=|\sin\theta|\),
+	not \(\sin\theta\). So either we need to split up the integral according
+	to whether \(\sin\theta \gt 0\) or \(\sin\theta \lt 0\) or we need to take
+  advantage of the symmetry of the cardioid by finding the length of half the
+  cardioid and doubling it. We do the latter: The upper half of the
+  cardioid corresponds to \(0 \le \theta \le \pi\). On this interval,
+	\(\sin\theta \ge 0\), so that \(\sqrt{\sin^2\theta}=\sin\theta\).
+	Consequently, the arc length is:
+  \[
+	L=2\sqrt{2}\int_0^\pi \dfrac{\sin\theta}{\sqrt{1-\cos\theta}}\,d\theta
+	\]
+  Now we can integrate by making the substitution \(u=1-\cos\theta\), so that
+	\(du=\sin\theta\,d\theta\). Consequently;
+  \[\begin{aligned}
+  L &=2\sqrt{2}\int_0^2 \dfrac{du}{\sqrt{u}}
+  =2\sqrt{2}\left[2u^{1/2}\rule{0pt}{10pt}\right]_0^2 \\
+	&=2\sqrt{2}\left[2\sqrt{2}\right]=8
+  \end{aligned}\]
+</p>
+<p class="meth" data-number="2">
+	 A second trick is to apply the identity \(\cos^2A=\dfrac{1+\cos(2A)}{2}\)
+	 with \(A=\dfrac{\theta}{2}\). Then \(2\cos^2\dfrac{\theta}{2}=1+\cos\theta\).
+	 So:
+   \[\begin{aligned}
+  L&=\sqrt{2}\int_0^{2\pi} \sqrt{1+\cos\theta}\,d\theta
+	=\sqrt{2}\int_0^{2\pi} \sqrt{2\cos^2\dfrac{\theta}{2}}\,d\theta \\
+  &=2\int_0^{2\pi} \sqrt{\cos^2\dfrac{\theta}{2}}\,d\theta
+  \end{aligned}\]
+  Again we need to compute the arclength for half of the curve and double it.
+	For \(0 \le \theta \le \pi\), we have
+	\(0 \le \dfrac{\theta}{2} \le \dfrac{\pi}{2}\),
+	and \(\cos\dfrac{\theta}{2} \ge 0\). So
+	\(\sqrt{\cos^2\dfrac{\theta}{2}}=\cos\dfrac{\theta}{2}\).
+	Consequently, the arc length is:
+  \[
+	L=4\int_0^\pi \cos\dfrac{\theta}{2}\,d\theta
+	=4\left[2\sin\dfrac{\theta}{2}\right]_0^\pi
+	=8\sin\dfrac{\pi}{2}=8
+	\]
+</p>
+
+        <div class="rule"></div>
+
+
+<div class="dotfillex">
+	<div class="column">
+	  <p class="exercise" data-number="2">
+	    Find the arc length of the circle given by the polar equation,
+			\(r=\sin\theta\).
+	  </p>
+		<div class="center">
+		  <img src="graphics/lengthcircle.jpg" alt="lengthcircle">
+		</div>
+	</div>
+	<p>
+		<button class="toggle has-hint" data-toggle="HintX1"></button>
+		<button class="toggle has-ans" data-toggle="AnsX1"></button>
+		<button class="toggle has-sol" data-toggle="SolX1"></button>
+		<button class="toggle has-rem" data-toggle="RemX1"></button>
+	</p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    The curve is a circle. It is traced <span class="hl">twice</span> as
+		\(\theta\) increases from \(0\) to \(2\pi\). So you only need to
+		integrate for \(0 \le \theta \le \pi\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(L=\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+		The circle is traced <span class="hl">twice</span> as
+		\(\theta\) increases from \(0\) to \(2\pi\). So we only need to
+		integrate for \(0 \le \theta \le \pi\). Since
+    \(r(\theta)=\sin\theta\), we have \(r'(\theta)=\cos\theta\) and:
+		\[
+		L=\int_0^\pi \sqrt{\sin^2\theta+\cos^2\theta}\,d\theta
+    =\int_0^\pi 1\,d\theta=\left.\theta\rule{0pt}{10pt}\right|_0^\pi=\pi
+		\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX1">
+  <p>
+    You should know the answer since the graph is a circle with radius
+		\(\dfrac{1}{2}\). So its length (circumference) is:
+		\[
+		C=2\pi r=2\pi(1/2)=\pi
+		\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

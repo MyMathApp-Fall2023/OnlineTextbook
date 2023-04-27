@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Statement | 27. Gauss&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Hole.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>27. Gauss&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. The Theorem</h2>
+
+
+      
+      <h2>1. Statement</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="thm" data-title="Gauss' Theorem without Holes">
+  Let \(V\) be a nice solid region in \(\mathbb{R}^3\) with a nice
+  properly oriented boundary, \(\partial V\), and let \(\vec F\)
+  be a nice vector field on \(V\). Then
+  \[
+  \iiint\limits_V \vec\nabla\cdot\vec F\,dV
+  =\iint\limits_{\partial V} \vec F\cdot d\vec S
+  \]
+  If the solid has no holes, then its boundary must be oriented outward.
+</p>
+
+<div class="column">
+  <div>
+    <p class="remark">
+      Notice that the orientation of the boundary is crucial. If you reverse the
+      orientation of the boundary, then the integral on the right will switch
+      signs and the theorem will no longer be true.
+    </p>
+    <p class="remark">
+      The vector field \(\vec F\) is nice if it has continuous
+      first partial derivatives. Similarly, the solid \(V\) and its
+      boundary \(\partial V\) are nice if the boundary is a
+      parametric surface with continuous first partial
+      derivatives.
+    </p>
+  </div>
+  <div class="center">
+    <video src="graphics/thm_Gauss_cone_nohole.mp4" autoplay controls loop></video>
+  </div>
+</div>
+
+<p>
+  In words, Gauss' theorem says the volume integral of the divergence of a
+  vector field \(\vec F\) over a solid \(V\) is equal to the flux (or
+  expansion) of \(\vec F\) out through the boundary surface \(\partial V\).
+  This makes sense in that the divergence is supposed to tell us how much
+  the stuff is expanding at each point while the flux tells us
+  how much stuff is flowing out the surrounding surface.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Notice that on the left hand side (LHS) of the theorem, we are integrating
+  the <strong>divergence</strong> of the vector field,
+  \(\vec\nabla\cdot\vec F\) (and <strong>not</strong> just
+  \(\vec F\)). Since \(\vec\nabla\cdot\vec F\) is a
+  <strong>scalar</strong> field (i.e. a function), the integral on the left
+  is an ordinary triple integral. On the other hand, on the right hand side
+  (RHS) of the theorem, we are integrating \(\vec F\) (and not its
+  divergence). Since \(\vec F\) is
+  a <strong>vector</strong> field and we are integrating it over the boundary
+  <strong>surface</strong>, we need to <strong>dot</strong> it into the
+  <strong>vector</strong> differential of <strong>surface</strong> area,
+  \(d\vec S=\vec N\,du\,dv\).
+</p>
+<p class="remark">
+  It is recommended that you first compute \(\vec\nabla\cdot\vec F\) in
+  rectangular coordinates, and then convert it to the coordinates needed for
+  the volume integral. Computing \(\vec\nabla\cdot\vec F\) in other
+  coordinate systems is beyond the scope of this course.
+</p>
+<p class="remark">
+  Recall that Green's theorem related an integral over a region in the plane
+  to an integral over its boundary curve. In fact, Green's theorem can be
+  regarded as a 2D analogue of Gauss' theorem, by writing the LHS as a 2D
+  divergence and the right side as a 2D normal integral. See the page on the
+  <a href="../ThmGreen/2DGauss.html" title="Return using the Back button.">
+  2D Gauss' Theorem.</a>
+</p>
+<a id="eg_cyl"></a>
+
+        <div class="rule"></div>
+
+<p>
+  Gauss' Theorem is usually applied to regions without holes. So that is
+  where we start:
+</p>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="example" data-number="1">
+      Compute
+      \(\displaystyle \iint_{\partial C} \vec F\cdot d\vec S\)
+      for the vector field
+      \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\)
+      over the complete surface of the cylinder \(x^2+y^2=9\) for
+      \(0 \le z \le 4\) with outward normal. Compute the integral without and
+      with Gauss' Theorem.
+    </p>
+    <p class="remark">
+      When we say the <span class="defword">complete surface</span> of a solid,
+      we mean all the pieces which completely surround the solid. Then we need
+      to integrate over all the pieces and add them up. For the solid
+      cylinder, this means the cylindrical sides and the two disks at the ends.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <video src="graphics/eg_Gauss_cyl_nohole.mp4" autoplay controls loop></video>
+  </div>
+</div>
+<div class="sol collapse hide" data-number="1">
+  <strong>Surface Integral:</strong>
+  <p>
+    We compute the surface integrals over the cylindrical sides and the
+    two disks at the ends and add the results.
+  </p>
+  <p>
+    <strong>Cylindrical Sides:</strong>&emsp;
+    We parameterize the cylinder of radius \(3\) as:
+    \[\begin{aligned}
+    &\vec R(\theta,z)=(3\cos\theta,3\sin\theta,z) \\
+    \text{for} &\quad 0 \le \theta \le 2\pi
+    \quad \text{and} \quad 0 \le z \le 4
+    \end{aligned}\]
+    We compute the normal vector
+    \[\begin{aligned}
+    \vec N
+    &=\vec e_\theta\times\vec e_z=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    -3\sin\theta & 3\cos\theta  & 0 \\
+    0            & 0            & 1
+    \end{vmatrix} \\
+    &=\hat{\imath}(3\cos\theta)
+     -\hat{\jmath}(-3\sin\theta)
+     +\hat{k}(0) \\
+    &=\langle 3\cos\theta,3\sin\theta,0\rangle
+    \end{aligned}\]
+    The normal is horizontal and points outward as needed.
+    On the cylinder the vector field,
+    \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\), is
+    \[
+    \vec F
+    =\langle 3\cos\theta z^2,3\sin\theta z^2,9z\rangle
+    \]
+    So the dot product with the normal is
+    \[
+    \vec F\cdot\vec N
+    =9\cos^2\theta z^2+9\sin^2\theta z^2
+    =9z^2
+    \]
+    We are ready to do the integral:
+    \[\begin{aligned}
+    \iint\limits_\text{cyl} \vec F\cdot d\vec S
+    =\int_0^4\int_0^{2\pi} 9z^2\,d\theta\,dz
+    =2\pi\left[\rule{0pt}{10pt}3z^3\right]_0^4
+    =384\pi
+    \end{aligned}\]
+
+    <strong>Upper Disk:</strong>&emsp;
+    We parameterize the upper disk as:
+    \[\begin{aligned}
+    &\vec R(r,\theta)=(r\cos\theta,r\sin\theta,4) \\
+    \text{for} &\quad 0 \le r \le 3
+    \quad \text{and} \quad 0 \le \theta \le 2\pi
+    \end{aligned}\]
+    We compute the normal vector:
+    \[
+    \vec N=\vec e_r\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \cos\theta   & \sin\theta   & 0 \\
+    -r\sin\theta & r\cos\theta  & 0
+    \end{vmatrix}
+    =\langle 0,0,r\rangle
+    \]
+    which correctly points upward. On the disk the vector field,
+    \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\), is
+    \[
+    \vec F
+    =\langle 16r\cos\theta,16r\sin\theta,4r^2\rangle
+    \]
+    So the dot product with the normal is just
+    \[
+    \vec F\cdot\vec N=4r^3
+    \]
+    We do the integral:
+    \[
+    \iint\limits_\text{upper} \vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^3 4r^3\,dr\,d\theta
+    =2\pi\left[\rule{0pt}{10pt}r^4\right]_0^3
+    =162\pi
+    \]
+
+    <strong>Lower Disk:</strong>&emsp;
+    We parameterize the lower disk as:
+    \[\begin{aligned}
+    &\vec R(r,\theta)=(r\cos\theta,r\sin\theta,0) \\
+    \text{for} &\quad 0 \le r \le 3
+    \quad \text{and} \quad 0 \le \theta \le 2\pi
+    \end{aligned}\]
+    On the lower disk the vector field,
+    \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\), is
+    \[
+    \vec F
+    =\langle 0,0,0\rangle
+    \]
+    So the integral is trivially:
+    \[
+    \iint\limits_\text{lower} \vec F\cdot d\vec S=0
+    \]
+
+    <strong>Total:</strong>&emsp;
+    We complete the computation of the surface integral by adding together the
+    surface integrals from the three pieces of the boundary:
+    \[\begin{aligned}
+    \iint\limits_{\partial C} \vec F\cdot d\vec S
+    &=\iint\limits_\text{cyl} \vec F\cdot d\vec S
+    +\iint\limits_\text{upper} \vec F\cdot d\vec S
+    +\iint\limits_\text{lower} \vec F\cdot d\vec S \\
+    &=384\pi+162\pi+0=546\pi
+    \end{aligned}\]
+  </p>
+</div>
+<div class="sol collapse hide" data-number="2">
+  <strong>Volume Integral:</strong>
+  <p>
+    Gauss' Theorem says that
+    \(\displaystyle \iint_{\partial C} \vec F\cdot d\vec S\)
+    is equal to \(\displaystyle \iiint_C \vec\nabla\cdot\vec F\,dV\).
+    So we now compute this integral over the solid cylinder. We compute the
+    divergence of \(\vec F=\langle xz^2,yz^2,z(x^2+y^2)\rangle\) in
+    rectangular coordinates and convert to cylindrical coordinates:
+    \[
+    \vec\nabla \cdot\vec F=z^2+z^2+x^2+y^2=r^2+2z^2
+    \]
+    We also recall the cylindrical volume element:
+    \[
+    dV=r\,dr\,d\theta\,dz
+    \]
+    Now we integrate:
+    \[\begin{aligned}
+    \iiint_C &\vec\nabla\cdot\vec F\,dV
+    =\int_0^4\int_0^{2\pi}\int_0^3 (r^2+2z^2)r\,dr\,d\theta\,dz \\
+    &=2\pi\left(\left[\dfrac{r^4}{4}\right]_0^3\left[\rule{0pt}{10pt}z\right]_0^4
+              +2\left[\dfrac{r^2}{2}\right]_0^3\left[\dfrac{z^3}{3}\right]_0^4\right) \\
+    &=2\pi(3^4+3\cdot4^3)
+    =546\pi
+    \end{aligned}\]
+  </p>
+</div>
+<p class="remark">
+  Both methods gave the same answer. This checks both computations and
+  also verifies Gauss' Theorem for this vector field and solid. Notice
+  how much easier the volume integral was. This may not always be the case.
+</p>
+<a id="ex_sph"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p class="exercise" data-number="2">
+      Compute
+      \(\displaystyle \iint_{\partial S} \vec F\cdot d\vec S\)
+      for the vector field
+      \(\vec F=\langle x z^2, y z^2, z^3\rangle\)
+      over the surface of the sphere \(x^2+y^2+z^2=16\) with outward normal.
+    </p>
+    <!-- <ol class="list-outside" type="a" styyle="padding-left: 0;"> -->
+    <ol class="list-outside" type="a" style="padding-left: 0;">
+      <li>
+        <div class="dotfillex">
+          <p>
+            <strong>Surface Integral:</strong>&emsp;
+            First solve it directly as a surface integral.
+          </p>
+          <p>
+            <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+            <button class="toggle has-sol" data-toggle="SolX2a"></button>
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="center" data-col-width="40%">
+    <video src="graphics/ex_Gauss_sph_nohole.mp4" autoplay controls loop></video>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+  <p>
+    \(\displaystyle \iint_{\partial S} \vec F\cdot d\vec S
+    =\dfrac{4096\pi}{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2a">
+  <p>
+    We parameterize the sphere of radius \(4\) as:
+    \[\begin{aligned}
+    \vec R(\phi,&\theta)=(4\sin\phi\cos\theta,4\sin\phi\sin\theta,4\cos\phi) \\
+    &\text{for} \quad 0 \le \phi \le \pi
+    \quad \text{and} \quad 0 \le \theta \le 2\pi
+    \end{aligned}\]
+    We compute the normal vector:
+    \[\begin{aligned}
+    \vec N
+    &=\vec e_\phi\times\vec e_\theta=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    4\cos\phi\cos\theta  & 4\cos\phi\sin\theta & -4\sin\phi \\
+    -4\sin\phi\sin\theta & 4\sin\phi\cos\theta & 0
+    \end{vmatrix} \\
+    &=\hat{\imath}(16\sin^2\phi\cos\theta)
+     -\hat{\jmath}(-16\sin^2\phi\sin\theta) \\
+    &\quad+\hat{k}(16\sin\phi\cos\phi\cos^2\theta+16\sin\phi\cos\phi\sin^2\theta) \\
+    &=\langle 16\sin^2\phi\cos\theta,16\sin^2\phi\sin\theta,16\sin\phi\cos\phi\rangle
+    \end{aligned}\]
+    The normal points outward and is, as expected, a multiple of the position vector
+    \[
+    \vec N=4\sin\phi\vec R(\phi,\theta)
+    \]
+    On the surface, the vector field,
+    \(\vec F=\langle x z^2, y z^2, z^3\rangle\) becomes:
+    \[
+    \vec F=\langle 64\sin\phi\cos^2\phi\cos\theta,
+                   64\sin\phi\cos^2\phi\sin\theta,
+                   64\cos^3\phi\rangle
+    \]
+    And its dot product with the normal is:
+    \[\begin{aligned}
+    \vec F\cdot\vec N
+    &=1024\left(\sin^3\phi\cos^2\phi\cos^2\theta
+     +\sin^3\phi\cos^2\phi\sin^2\theta
+     +\sin\phi\cos^4\phi\right) \\
+    &=1024\left(\sin^3\phi\cos^2\phi
+     +\sin\phi\cos^4\phi\right)
+     =\sin\phi\cos^2\phi
+    \end{aligned}\]
+    So the integral is:
+    \[\begin{aligned}
+    \iint_{\partial S} &\vec F\cdot d\vec S
+    =\int_0^{2\pi}\int_0^{\pi} \vec F\cdot\vec N\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^{\pi} 1024\sin\phi\cos^2\phi\,d\phi\,d\theta \\
+    &=2048\pi\left[-\,\dfrac{\cos^3\phi}{3}\right]_0^{\pi}
+    =\dfrac{4096\pi}{3}
+    \end{aligned}\]
+  </p>
+</div>
+<ol class="list-outside" start="2" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        <strong>Volume Integral:</strong>&emsp; Next use Gauss' Theorem to
+        convert the surface integral into a volume integral inside the sphere.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+        <button class="toggle has-sol" data-toggle="SolX2b"></button>
+        <button class="toggle has-rem" data-toggle="RemX2b"></button>
+      </p>
+    </div>
+  </li>
+</ol>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+  <p>
+    \(\displaystyle \iiint_S \vec\nabla\cdot\vec F\,dV
+    =\dfrac{4096\pi}{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2b">
+  <p>
+    Gauss' Theorem says that
+    \(\displaystyle \iint_{\partial S} \vec F\cdot d\vec S\)
+    is equal to \(\displaystyle \iiint_S \vec\nabla\cdot\vec F\,dV\).
+    So we now compute this integral over the solid. We compute the divergence
+    of \(\vec F=\langle xz^2,yz^2,z^3\rangle\) in rectangular
+    coordinates and convert to spherical coordinates:
+    \[
+    \vec\nabla \cdot\vec F=z^2+z^2+3z^2=5z^2=5\rho^2\cos^2\phi
+    \]
+    We also recall the spherical volume element:
+    \[
+    dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+    \]
+    Now we integrate:
+    \[\begin{aligned}
+    \iiint_S &\vec\nabla\cdot\vec F\,dV
+    =\int_0^{2\pi}\int_0^\pi\int_0^4
+    5\rho^2\cos^2\phi\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+    &=2\pi\left[\rule{0pt}{10pt}\rho^5\right]_0^4\left[-\,\dfrac{\cos^3\phi}{3}\right]_0^\pi
+    =2\pi4^5\cdot\dfrac{2}{3}
+    =\dfrac{4096\pi}{3}
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2b">
+  <p>
+    Both methods gave the same answer. This checks both computations and
+    also verifies Gauss' Theorem for this vector field and solid. Notice
+    how much easier the volume integral was. This may not always be the case.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

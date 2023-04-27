@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d. Continuity on an Interval | 6. Intuitive Limits and Continuity</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TutLimCont.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimatInf.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Intuitive Limits and Continuity</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  To review: A function \(f(x)\) is <span class="hl">continuous</span> at \(x=a\) if:
+  \[
+  \lim_{x\to a}f(x)=f(a)
+  \]
+  In more detail, the limit from the left, the limit from the right and
+  the value at \(x=a\) all exist and are all equal. We frequently say
+  &ldquo;You can draw the graph and not pick up your pencil as you pass through
+  \(x=a\).&rdquo; More generally:
+</p>
+
+
+      
+      <h2>d. Continuity on an Interval</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def">
+  We say \(f(x)\) is <span class="defword">continuous on the interval
+  \([a,b]\)</span> if it is continuous at \(x=c\) for all \(c\in[a,b]\).
+  In formulas:
+  \[
+  \lim_{x\to c}f(x)=f(c)
+  \qquad \text{for all} \quad c\in[a,b]
+  \]
+  We frequently say &ldquo;You can draw the graph without picking up your
+  pencil anywhere in the interval \([a,b]\).&rdquo;
+</p>
+<p>
+  The Limit Laws (discussed intuitively in the next chapter on
+  <a href="../ComputeLim/LimLaws.html" title="Return using the Back button.">
+  Computing Limits</a> and precisely in the subsequent chapter on
+  <a href="../PreciseLim/LimLaws.html" title="Return using the Back button.">
+  Precise Limits</a>
+  ) imply that all functions constructed using addition,
+  subtraction, multiplication, division, exponentiation and logarithm are
+  continuous provided all denominators are non-zero and all exponentiations
+  and logarithms are defined. Consequently, all polynomials and rational
+  functions (ratios of polynomials) are continuous  on their domains. Further,
+  all trig and inverse trig functions are continuous on their domains and all
+  compositions of continuous functions are continuous. We will make this
+  rigorous in the chapter on
+  <a href="../PreciseLim/ChContents.html" title="Return using the Back button.">
+  Precise Limits and Continuity</a>.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Determine all points where the function \(g(x)=\dfrac{1}{\sqrt{4-x^2}}\) is
+  continuous.
+</p>
+<p class="sol">
+  The function is continuous wherever the square root is defined and the
+  denominator is non-zero. The square root is defined when \(4-x^2 \ge 0\)
+  or when \(x^2 \le 4\) or \(|x| \le 2\). However, the denominator is zero when
+  \(4-x^2=0\) or \(x=\pm2\). So \(g(x)\) is continuous on the open interval
+  \(|x| \lt 2\) or \((-2,2)\) or \(-2 \lt x \lt 2\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find all points where the function
+    \(f(x)=\dfrac{1}{\sqrt{x-2}}-\sqrt{4-x}\) is
+    continuous.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    The function is continuous when both square roots are defined and the
+    first denominator is non-zero.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle f(x)\) is continuous on the half-open interval \((2,4]\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    To make the square roots well-defined, we need \(x-2 \ge 0\) and
+    \(4-x \ge 0\). This says \(x \ge 2\) and \(4 \ge x\). In other words:
+    \(2 \le x \le 4\). However, if \(x=2\) the denominator will be \(0\).
+    So the function is continuous on the half-open interval \((2,4]\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

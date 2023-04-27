@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a.2. Computing Taylor Series | 23. Taylor Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Def.html" title="Previous">&lArr;</a></li>
+      <li><a href="Spec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>23. Taylor Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall: The Taylor series for \(f(x)\) about \(x=a\) is: (assuming it converges)
+  \[\begin{aligned}
+  f(x)
+  &=\sum_{n=0}^\infty \dfrac{f^{(n)}(a)}{n!}(x-a)^n \\
+  &=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2 \\[2 pt]
+  &\quad+\dfrac{f^{(3)}(a)}{3!}(x-a)^3+\cdots+\dfrac{f^{(n)}(a)}{n!}(x-a)^n+\cdots
+  \end{aligned}\]
+</p>
+
+
+      
+      <h2>a.2. Computing Taylor Series</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In the
+  <a href="../PowSer/NewFromOld.html" title="Return using the Back button.">
+  previous chapter</a>, we found series which converged to functions such
+  as \(\dfrac{1}{1+3x^2}\), \(\ln(1+x)\) and \(\arctan x\) by
+  manipulating the geometric series which converges to \(\dfrac{1}{1-x}\). By
+  the Taylor Series Theorem, these series must be the Taylor series for these
+  functions. We now turn to other functions and construct the Taylor series
+  directly from the definition:
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the Taylor series for \(f(x)=\ln x\) centered at \(x=3\). Then
+  find its radius of convergence and interval of convergence.
+  (Write out the series up to \(4^\text{th}\) degree and then find the
+  summation form with the general term.)
+</p>
+<p class="sol">
+  We make a table of the function and its derivatives up to \(
+  4^\text{th}\) order:
+  \[\begin{aligned}
+  f(x)&=\ln x \\
+  f'(x)&=x^{-1} \\
+  f''(x)&=(-1)x^{-2} \\
+  f'''(x)&=(-1)(-2)x^{-3} \\
+  f^{(4)}(x)&=(-1)(-2)(-3)x^{-4}
+  \end{aligned}\]
+  We evaluate the function and derivatives at \(x=3\):
+  \[\begin{aligned}
+  f(3)&=\ln3&=\ln3 \\
+  f'(3)&=3^{-1}&=\dfrac{1}{3} \\
+  f''(3)&=(-1)3^{-2}&=\dfrac{-1}{9} \\
+  f'''(3)&=(-1)(-2)3^{-3}&=\dfrac{2}{27} \\
+  f^{(4)}(3)&=(-1)(-2)(-3)3^{-4}&=\dfrac{-2}{27}
+  \end{aligned}\]
+  We then plug these into the Taylor series (Don't forget the factorials.):
+  \[\begin{aligned}
+  f(x)&=f(3)+f'(3)(x-3)+\dfrac{f''(3)}{2}(x-3)^2 \\
+  &\quad+\dfrac{f'''(3)}{3!}(x-3)^3+\dfrac{f^{(4)}(3)}{4!}(x-3)^4+\cdots \\
+  \ln x&=\ln3+\dfrac{1}{3}(x-3)-\dfrac{1}{18}(x-3)^2 \\
+  &\quad+\dfrac{1}{81}(x-3)^3-\dfrac{1}{324}(x-3)^4+\cdots
+  \end{aligned}\]
+  To express the series in summation form we need the general term. We
+  generalize the previous derivatives to get the \(n^\text{th}\) derivative:
+  \[\begin{aligned}
+  f^{(n)}(x)&=(-1)^{n-1}(n-1)!\,x^{-n} \\
+  f^{(n)}(3)&=\dfrac{(-1)^{n-1}(n-1)!}{3^n}
+  \end{aligned}\]
+  Notice this formula works for \(n \ge 1\) but does not work for the \(n=0\)
+  term which is just the function. So the Taylor series is
+  \[\begin{aligned}
+  f(x)
+  &=\sum_{n=0}^\infty \dfrac{f^{(n)}(3)}{n!}(x-3)^n \\
+  \ln x
+  &=\ln3+\sum_{n=1}^\infty \dfrac{(-1)^{n-1}(n-1)!}{n!\,3^n}(x-3)^n \\
+  &=\ln3+\sum_{n=1}^\infty \dfrac{(-1)^{n-1}}{n\,3^n
+  }(x-3)^n
+  \end{aligned}\]
+  <button class="toggle btn" data-toggle="Note1">Note on simplifying factorials</button>
+</p>
+<div class="toBeToggled note" data-toggle="Note1">
+  <p>
+    \[
+    \dfrac{(n-1)!}{n!}=\dfrac{(n-1)\cdots1}{n(n-1)\cdots1}=\dfrac{1}{n}
+    \]
+  </p>
+</div>
+<p>
+  To find the radius of convergence, we use the ratio test:
+  \[\begin{aligned}
+  \rho
+  &=\lim_{n\rightarrow\infty}\dfrac{|a_{n+1}|}{|a_n|}
+  =\lim_{n\rightarrow\infty}
+  \dfrac{|x-3|^{n+1}}{(n+1)3^{n+1}}\dfrac{n3^n}{|x-3|^n} \\
+  &=\dfrac{|x-3|}{3}\lim_{n\rightarrow\infty}\dfrac{n+1)}{n}
+  =\dfrac{|x-3|}{3} \lt 1
+  \end{aligned}\]
+  So the series is absolutely convergent if \(|x-3| \lt 3\) and the radius of
+  convergence is \(R=3\). At \(x=0\), the series becomes a harmonic series
+  and so is divergent. At \(x=6\), the series becomes an alternating harmonic
+  series and so is convergent. So the interval of convergence is \((0,6]\).
+</p>
+
+        <div class="rule" id="Ex-x^-2"></div>
+
+<div class="dofillex">
+  <p class="exercise" data-number="2">
+    Find the Taylor series for \(f(x)=\dfrac{1}{x^2}\) about \(x=2\). Then
+    find its radius of convergence and interval of convergence.
+    (Write out the series up to \(4^\text{th}\)
+    degree and then find the summation form with the general term.)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  \[
+  \dfrac{(n+1)!}{n!}=\dfrac{(n+1)n!}{n!}=n+1
+  \]
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\begin{aligned}
+    \dfrac{1}{x^2}&=\dfrac{1}{4}-\dfrac{1}{4}(x-2)+\dfrac{3}{16}(x-2)^2 \\
+    &\quad-\dfrac{1}{8}(x-2)^3+\dfrac{5}{64}(x-2)^4+\cdots \\
+    &=\sum_{n=0}^\infty (-1)^n\dfrac{(n+1)}{2^{n+2}}(x-2)^n
+    \end{aligned}\)
+    <br>
+    \(R=2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The function and \(4\) derivatives and their values at \(x=2\) are:
+    \[\begin{aligned}
+    f(x)&=x^{-2}
+    &f(2)&=2^{-2}=\dfrac{1}{4} \\
+    f'(x)&=(-2)x^{-3}
+    &f'(2)&=(-2)2^{-3}=\dfrac{-1}{4} \\
+    f''(x)&=(-2)(-3)x^{-4}
+    &f''(2)&=(-2)(-3)2^{-4}=\dfrac{3}{8} \\
+    f'''(x)&=(-2)(-3)(-4)x^{-5}
+    &f'''(2)&=(-2)(-3)(-4)2^{-5}=\dfrac{-3}{4}\quad \\
+    f^{(4)}(x)&=(-1)^45!\,x^{-6}
+    &f^{(4)}(2)&=(-1)^4 5!\,2^{-6}=\dfrac{15}{8}
+    \end{aligned}\]
+    So the Taylor series is:
+    \[\begin{aligned}
+    f(x)&=f(2)+f'(2)(x-2)+\dfrac{f''(2)}{2}(x-2)^2 \\
+    &\quad+\dfrac{f'''(2)}{3!}(x-2)^3+\dfrac{f^{(4)}(2)}{4!}(x-2)^4+\cdots \\
+    \dfrac{1}{x^2}&=\dfrac{1}{4}-\dfrac{1}{4}(x-2)+\dfrac{3}{16}(x-2)^2 \\
+    &\quad-\dfrac{1}{8}(x-2)^3+\dfrac{5}{64}(x-2)^4+\cdots
+    \end{aligned}\]
+    To express the series in summation form, we generalize the derivatives to
+    the \(n^\text{th}\) derivative:
+    \[\begin{aligned}
+    f^{(n)}(x)&=(-1)^n(n+1)!\,x^{-(n+2)} \\
+    f^{(n)}(2)&=\dfrac{(-1)^n(n+1)!}{2^{n+2}}
+    \end{aligned}\]
+    So the Taylor series is
+    \[\begin{aligned}
+    f(x)
+    &=\sum_{n=0}^\infty \dfrac{f^{(n)}(2)}{n!}(x-2)^n \\
+    \dfrac{1}{x^2}
+    &=\sum_{n=0}^\infty \dfrac{(-1)^n(n+1)!}{n!\,2^{n+2}}(x-2)^n \\
+    &=\sum_{n=0}^\infty (-1)^n\dfrac{(n+1)}{2^{n+2}}(x-2)^n
+    \end{aligned}\]
+    To find the radius of convergence, use the ratio test:
+    \[\begin{aligned}
+    \lim_{n\rightarrow\infty} \dfrac{|a_{n+1}|}{|a_n|}
+    &=\lim_{n\rightarrow\infty}
+    \dfrac{(n+2)|x-2|^{n+1}}{2^{n+3}}\dfrac{2^{n+2}}{(n+1)|x-2|^n} \\
+    &=\dfrac{|x-2|}{2}\lim_{n\rightarrow\infty} \dfrac{(n+2)}{(n+1)}
+    =\dfrac{|x-2|}{2} \lt 1
+    \end{aligned}\]
+    So the series is absolutely convergent if \(|x-2| \lt 2\) and the radius
+    of convergence is \(R=2\). At \(x=0\), the series becomes
+    \(\displaystyle \sum_{n=0}^\infty \dfrac{(n+1)}{4}\) which diverges by the
+    \(n^\text{th}\)-Term Divergence Test. At \(x=4\), the series becomes
+    \(\displaystyle \sum_{n=0}^\infty (-1)^n\dfrac{(n+1)}{4}\) which also
+    diverges by the \(n^\text{th}\)-Term Divergence Test. So the interval
+    of convergence is \((0,4)\).
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  <span class="redbig">Caution:</span> At this point, we do not yet know whether the
+  Taylor series for each of these functions, \(f(x)\), actually
+  converges to \(f(x)\). That will be shown at the end of this chapter when
+  we discuss
+  <a href="ConvProofs.html" title="Return using the Back button.">
+  Taylor Series Convergence Proofs</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

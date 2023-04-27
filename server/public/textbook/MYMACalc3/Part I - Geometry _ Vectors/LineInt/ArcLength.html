@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Arc Length | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="ScalarInt.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a. Arc Length</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  <a href="../CurveProps/ArcLen.html" title="Return using the Back button.">
+  Recall</a> that the <span class="defword">arc length</span>
+  of a parametric curve \(\vec r(t)=(x(t),y(t),z(t))\) between
+  \(A=\vec r(a)\) and \(B=\vec r(b)\) is given by
+  \[
+  L=\int_A^B\,ds
+  =\int_A^B \sqrt{dx^2+dy^2+dz^2}
+  =\int_a^b |\vec v|\,dt
+  \]
+  where the <span class="defword">(scalar) differential of arclength</span> is
+  \[\begin{aligned}
+  ds&=\sqrt{dx^2+dy^2+dz^2} \\
+  &=\sqrt{\left(\dfrac{dx}{dt}\right)^2
+  +\left(\dfrac{dy}{dt}\right)^2+\left(\dfrac{dz}{dt}\right)^2}\,dt
+  =|\vec v|\,dt
+  \end{aligned}\]
+  and \(\vec v=\left(\dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right)\) is
+  the <span class="hl">velocity</span> of the curve.
+</p>
+
+<p class="remark">
+  Notice that we switch the limits on the integral from the abstract points \(A\)
+  and \(B\) to the values \(a\) and \(b\) of the parameter \(t\) when we switch from
+  the integral with the general differential \(ds\) to the integral with the
+  parameter differential \(dt\). This is because there may be more than one way
+  to parametrize the curve and we don't want to prejudice the choice when we
+  write the general integral.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  If the curve happens to be specified by giving \(2\) of the coordinates as
+  functions of the third (independent) coordinate, then the independent
+  coordinate may be taken as the parameter so that the arclength differential
+  may be taken as
+  \[\begin{aligned}
+  ds&=\sqrt{1+\left(\dfrac{dy}{dx}\right)^2+\left(\dfrac{dz}{dx}\right)^2\,}\,dx
+    &\text{for functions of }x \\
+    &=\sqrt{\left(\dfrac{dx}{dy}\right)^2+1+\left(\dfrac{dz}{dy}\right)^2\,}\,dy
+    &\text{for functions of }y \\
+    &=\sqrt{\left(\dfrac{dx}{dz}\right)^2+\left(\dfrac{dy}{dz}\right)^2+1\,}\,dz
+    &\text{for functions of }z
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Several examples and exercises appear in the
+  <a href="../CurveProps/ArcLen.html" title="Return using the Back button.">
+  previous chapter</a>. Here are a couple more:
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the length of the curve \(\vec r(t)
+    =\left(2\ln t,2\sqrt{2}t,t^2\right)\)
+    from \(t=1\) to \(t=2\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Look for a perfect square inside the square root.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(L=2\ln2+3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We first compute the velocity vector:
+    \[
+    \vec v(t)=\left\langle \dfrac{2}{t},2\sqrt{2},2t\right\rangle
+    \]
+    and its magnitude: (Notice the perfect square inside the square root.)
+    \[\begin{aligned}
+    |\vec v|&=\sqrt{\dfrac{4}{t^2}+8+4t^2}
+    =\sqrt{\left(\dfrac{2}{t}+2t\right)^2} \\
+    &=\dfrac{2}{t}+2t
+    \end{aligned}\]
+    Now we can compute the length of the curve:
+    \[\begin{aligned}
+    L&=\int_1^2 |\vec v|\,dt
+    =\int_1^2 \left(\dfrac{2}{t}+2t\right)\,dt \\
+    &=\left[2\ln t+t^2\rule{0pt}{10pt}\right]_1^2
+    =2\ln2+3
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the length of the curve \(x=\dfrac{1}{\sqrt{2}}z^2\) and
+    \(y=\dfrac{1}{3}z^3\) for \(z\) between \(0\) and \(3\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Look for a perfect square inside the square root.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(L=12\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We first compute the derivatives:
+    \[
+    \dfrac{dx}{dz}=\sqrt{2}z
+    \qquad \text{and} \qquad
+    \dfrac{dy}{dz}=z^2
+    \]
+    So the length of the curve is: (Notice the perfect square inside the square root.)
+    \[\begin{aligned}
+    L&=\int_0^3 \sqrt{\left(\dfrac{dx}{dz}\right)^2+\left(\dfrac{dy}{dz}\right)^2+1\,}\,dz \\
+    &=\int_0^3 \sqrt{2z^2+z^4+1\,}\,dz \\
+    &=\int_0^3 (1+z^2)\,dz
+    =\left[z+\dfrac{z^3}{3}\right]_0^3
+    =12
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing the arc length of curves using the following Maplet
+  (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/ArcLength3D.maplet" download>Arc Length in 3D</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

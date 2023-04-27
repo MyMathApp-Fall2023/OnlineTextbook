@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a1. Definition | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Plot.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a1. Definition</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def" data-title="Sequence">
+  A <span class= "defword">sequence</span>  is simply an
+	<span class= "hl">ordered list of numbers</span>,
+  and the numbers in the list are called the
+	<span class="defword">terms</span> of the sequence.
+	A sequence is <span class="defword">finite</span> or
+	<span class= "defword">infinite</span> if the number of terms is
+  finite or infinite. If we don't say whether it is a finite or infinite
+	sequence, we normally mean an infinite sequence.
+</p>
+
+				<div class="rule"></div>
+
+<p class="example" data-number="1">
+  Each of the following lists is a sequence:
+</p>
+
+<table class="no-border" align="center">
+  <tr>
+    <td style="text-align:left">1.&emsp; \(1,2,3,4,5,\cdots\)</td>
+    <td style="text-align:left">The counting numbers.</td>
+    <td style="text-align:left">An infinite sequence.</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">2.&emsp;  \(10,9,8,7,6,5,4,3,2,1,0\)</td>
+    <td style="text-align:left">Blast Off!</td>
+    <td style="text-align:left">A finite sequence.</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">3.&emsp; \(3,1,4,1,5,9,2,6,5,3,\cdots\)</td>
+    <td style="text-align:left">The digits of \(\pi\).</td>
+    <td style="text-align:left">An infinite sequence.</td>
+  </tr>
+  <tr>
+	  <td style="text-align:left">4.&emsp; \(1,\dfrac{1}{2},\dfrac{1}{4},\dfrac{1}{8},\dfrac{1}{16},\dfrac{1}{32},\cdots\)</td>
+    <td style="text-align:left">Keep halving.</td>
+    <td style="text-align:left">An infinite sequence.</td>
+  </tr>
+</table>
+
+				<div class="rule"></div>
+
+<p>
+  In general, we denote the terms of a sequence as a letter with
+  an integer subscript:
+	<br>
+  &emsp; \(a_1,a_2,a_3,a_4,\cdots\)
+	<br>
+  and we frequently give a formula for the \(n^\text{th}\) term.
+</p>
+<p class="example" data-number="2">
+  Write out the first \(5\) terms of the sequence \(b_n=\dfrac{1}{2n+1}\)
+  for \(n=1,2,3,\cdots\)
+</p>
+<p class="sol">
+\[
+b_1=\dfrac{1}{3},\;b_2=\dfrac{1}{5},\;b_3=\dfrac{1}{7},\;b_4=\dfrac{1}{9},
+\;b_5=\dfrac{1}{11},\;\cdots
+\]
+</p>
+<p>
+Normally the terms are counted starting from \(n=1\), as above, but they can
+start from any number, as in this exercise:
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="3">
+    Write out the first \(5\) terms of the sequence \(a_n=\dfrac{n}{n-1}\)
+		for \(n=2,3,4,\cdots\)
+		<br>
+		<button class="toggle" data-toggle="Drop1">Why did we start from \(n=2\)?</button>
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+  </p>
+</div>
+<div class="toBeToggled note" data-toggle="Drop1">
+	<h4>Why did we start from \(n=2\)?</h4>
+	<p>
+		Because, if we plugged in \(n=1\), we would need to divide by zero.
+	</p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(a_n=\dfrac{n}{n-1}\) for \(n=2,3,4,\cdots\)
+    <br>
+    <br>
+    \(a_2=2,\;a_3=\dfrac{3}{2},\;a_4=\dfrac{4}{3},
+		\;a_5=\dfrac{5}{4},\;a_6=\dfrac{6}{5}\;\cdots\)
+    <br>
+    <br>
+    Why did we start from \(n=2\)?
+  </p>
+</div>
+<p>
+  To indicate an entire sequence, we can enclose the general term in braces:
+  \(\{ a_n \}\)  If necessary, we can also indicate the range of
+  the index: \(\{ a_n\}_{n=1}^\infty\)  For example, the sequence in the preceding exercise
+  would be denoted \(\left\{\dfrac{n}{n-1}\right\}_{n=2}^\infty\).
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

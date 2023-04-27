@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Functions of \(2\) Variables | 16. Max-Min Problems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MinMaxInfl.html" title="Previous">&lArr;</a></li>
+      <li><a href="SecondDerTest1.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>16. Max-Min Problems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Local Minima, Local Maxima and Saddle Points</h2>
+
+
+      
+      <h2>2. Functions of \(2\) Variables</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We now review the
+  <a href="../../Part%20I%20-%20Geometry%20&%20Vectors/Functions/MaxMinSaddle2.html"
+  title="Return using the Back button.">definitions</a>
+  of a <span class="hl">local minimum</span> and a
+  <span class="hl">local maximum</span> for functions of \(2\) variables.
+</p>
+<p class="def">
+  For a function of \(2\) variables, \(f(x,y)\), a
+  <span class="defword">local or relative maximum</span>
+  (resp. <span class="defword">local or relative minimum</span>)
+  occurs at a point, \((x,y)=(a,b)\), where the function value is
+  <em>relatively</em>
+  <span class="hl">larger</span> (resp. <span class="hl">smaller</span>)
+  than those at all
+  <button class="toggle" data-toggle="Drop1">nearby points</button>.
+  Together,
+  <span class="hl">local minima and maxima</span> are called
+  <span class="defword">local or relative extrema</span>.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    When we say <span class="defword">nearby</span>, we actually mean that
+    there is some circle around \((a,b)\) within which \(f(a,b)\) is the
+    largest (resp. smallest) value. We don't care what happens far away
+    from \((a,b)\).
+  </p>
+</div>
+<p>
+  For a function, \(f(x,y)\), of \(2\) variables, extrema occur when the
+  tangent plane is horizontal or the derivatives do not exist. Throughout,
+  we will assume all derivatives exist. So  extrema occur when the
+  tangent plane is horizontal, i.e. when both partial derivatives are \(0\),
+  or equivalently, the gradient is \(\vec0\). So we search for extrema by
+  identifying
+  <span class="defword">critical points</span>, i.e. points, \((a,b)\),
+  at which the partial derivatives are \(0\):
+  \[
+  f_x(a,b)=0 \qquad \text{and} \qquad f_y(a,b)=0
+  \]
+  or equivalently, the gradient is  \(\vec0\):
+  \[
+  \vec\nabla f(a,b)=\vec0
+  \]
+  We then classify each critical point as a
+  <span class="defword">local minimum</span> (at which nearby values are
+  larger), a
+  <span class="defword">local maximum</span> (at which nearby values are
+  smaller) or a
+  <span class="defword">saddle point</span> (at which some nearby values
+  are larger and some are smaller).
+</p>
+<div class="center">
+  <figure>
+    <img src="graphics/EgMM2VarLocMinGr.jpg" alt="EgMM2VarLocMinGr"/>
+    <figcaption>
+      Local Minimum
+    </figcaption>
+  </figure>
+  &emsp;
+  <figure>
+    <img src="graphics/EgMM2VarLocMaxGr.jpg" alt="EgMM2VarLocMaxGr"/>
+    <figcaption>
+      Local Maximum
+    </figcaption>
+  </figure>
+  &emsp;
+  <figure>
+    <img src="graphics/EgMM2VarSadGr.jpg" alt="EgMM2VarSadGr"/>
+    <figcaption>
+      Saddle Point
+    </figcaption>
+  </figure>
+</div>
+
+        <div class="rule" id="2ndDerivTest"></div>
+
+<p>
+  We distinguish between these three possibilities by looking at the
+  second derivatives:
+</p>``
+<div class="greybox">
+  <p class="thm" data-title="Second Derivative Test">
+    Define the <span class="defword">discriminant</span> to be:
+    \[
+    D=f_{xx}f_{yy}-f_{xy}^{\;2}
+    \]
+  </p>
+  <ol>
+    <li>
+      If \(D(a,b) > 0\) and  \(f_{xx}(a,b) > 0\), then the critical point
+      \((a,b)\) is a local minimum.
+    </li>
+    <li>
+      If \(D(a,b) > 0\) and  \(f_{xx}(a,b) \lt 0\), then the critical point
+      \((a,b)\) is a local maximum.
+    </li>
+    <li>
+      If \(D(a,b) \lt 0\) then the critical point \((a,b)\) is a saddle point.
+    </li>
+    <li>
+      Otherwise, the TEST FAILS.
+      <button class="toggle" data-toggle="Drop2">Cases when the test fails</button>
+    </li>
+  </ol>
+  <p>
+    Read the examples below and then read this
+    <button class="toggle" data-toggle="Drop3">Justification</button>.
+    <br>
+    <button class="toggle" data-toggle="Proof1">Proof</button>
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Drop2">
+  <h4>Cases when the test fails</h4>
+  <p>
+    The test fails when \(D(a,b)=0\) or \(D(a,b) > 0\) and \(f_{xx}(a,b)=0\).
+  </p>
+  <p>
+    However, if \(f_{xx}(a,b)=0\), then \(D=-f_{xy}^{\;2} < 0\). So the case
+    \(D(a,b) > 0\) and \(f_{xx}(a,b)=0\) never occurs.
+  </p>
+  <p>
+    So the only case where the test fails is when \(D(a,b)=0\).
+  </p>
+</div>
+<div class="toBeToggled drop-just" data-toggle="Drop3">
+  <p>
+    To justify the second derivative test, we will only look at the case where
+    \(f_{xy}=0\) which is the case in the three examples below. In this case,
+    \(D=f_{xx}f_{yy}\).
+  </p>
+  <p>
+    If \(D(a,b) > 0\) and \(f_{xx}(a,b) > 0\), then \(f_{yy}(a,b) > 0\) also.
+    So the function is concave up in both the \(x\) and \(y\) directions
+    and we expect that \((a,b)\) is a local minimum.
+  </p>
+  <p>
+    If \(D(a,b) \gt 0\) and \(f_{xx}(a,b) \lt 0\), then \(f_{yy}(a,b) \lt 0\)
+    also. So the function is concave down in both the \(x\) and \(y\)
+    directions and we expect that \((a,b)\) is a local maximum.
+  </p>
+  <p>
+    If \(D(a,b) \lt 0\), then \(f_{xx}(a,b)\) and \(f_{yy}(a,b)\) must have
+    opposite signs. So the function is concave up in one direction and
+    concave down in the other direction and so \((a,b)\) is a saddle point.
+  </p>
+  <div class="column">
+    <p>
+      What is not covered in this justification is what happens in directions
+      other than the \(x\) and \(y\) directions. For example, a function could
+      be concave up along both the \(x\) and \(y\) directions but concave down
+      along the \(45^\circ\) directions as in the figure. If we include the
+      \(-f_{xy}^{\;2}\) term in the definition of \(D\) and \(D > 0\), then
+      this cannot happen. The details are given in the proof.
+      <br>
+      <big>PY: Animate the plot to oscillate.</big>
+    </p>
+    <div class="center">
+      <img src="graphics/4saddle.jpg" alt="4saddle">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    Assume the critical point is \((a,b)\) and assume all derivatives
+    are evaluated at \((a,b)\).
+  </p>
+  <h4>Case 1: \(D > 0\) and \(f_{xx} > 0\)</h4>
+  <p>
+    The justification showed that if \(f_{xy}=0\), then the function is
+    concave up in the \(x\) and \(y\) directions. We now show it is concave
+    up in <emph>all</emph> directions, even if \(f_{xy}\ne0\).
+  </p>
+  <p>
+    Pick a (unit vector) direction, \(\hat u=\langle p,q\rangle\). To show
+    \(f\) is concave up in the \(\hat u\) direction, we will show the
+    second  directional derivative of \(f\) along \(\hat u\) is positive.
+    The first directional derivative is
+    \[
+    \nabla_{\hat u}f=\hat u\cdot\vec\nabla f=p f_x+q f_y
+    \]
+    and the second directional derivative is:
+    \[\begin{aligned}
+    \nabla_{\hat u}^{\;2} f
+    &=\hat u\cdot\vec\nabla (p f_x+q f_y) \\
+    &=p (p f_x+q f_y)_x+q (p f_x+q f_y)_y \\
+    &=p^2 f_{xx}+2pq f_{xy}+q^2 f_{yy}
+    \end{aligned}\]
+    To show this is positive, we first factor out the \(f_{xx}\) (which we
+    already know is positive) and then complete the square on \(p\):
+    \[\begin{aligned}
+    \nabla_{\hat u}^{\;2} f
+    &=f_{xx} \left[p^2+2pq \dfrac{f_{xy}}{f_{xx}}
+    +q^2\dfrac{f_{yy}}{f_{xx}}\right] \\
+    &=f_{xx} \left[\left(p+q \dfrac{f_{xy}}{f_{xx}}\right)^2
+    +q^2\left(\dfrac{f_{yy}}{f_{xx}}
+    -\,\dfrac{f_{xy}^{\;2}}{f_{xx}^{\;2}}\right)\right] \\
+    &=f_{xx} \left[\left(p+q \dfrac{f_{xy}}{f_{xx}}\right)^2
+    +q^2\dfrac{f_{xx}f_{yy}-f_{xy}^{\;2}}{f_{xx}^{\;2}}\right] \\
+    &=f_{xx} \left[\left(p+q \dfrac{f_{xy}}{f_{xx}}\right)^2
+    +q^2\dfrac{D}{f_{xx}^{\;2}}\right]
+    \end{aligned}\]
+    Since \(D > 0\), the quantity in square brackets is positive.
+    Since \(f_{xx} > 0\),  we have \(\nabla_{\hat u}^{\;2} f > 0\) and
+    \(f\) is concave up in an arbitrary direction \(\hat u\).
+  </p>
+  <h4>Case 2: \(D > 0\) and \(f_{xx} < 0\)</h4>
+  <p>
+    The above computation still says
+    \[
+    \nabla_{\hat u}^{\;2} f
+    =f_{xx} \left[\left(p+q \dfrac{f_{xy}}{f_{xx}}\right)^2
+    +q^2\dfrac{D}{f_{xx}^{\;2}}\right]
+    \]
+    and the quantity in square brackets is still positive, but now
+    \(f_{xx} \lt 0\). Consequently, \(\nabla_{\hat u}^{\;2} f \lt 0\) and
+    \(f\) is concave down in an arbitrary direction \(\hat u\).
+  </p>
+  <h4>Case 3: \(D < 0\)</h4>
+  <p>
+    The above computation still says
+    \[
+    \nabla_{\hat u}^{\;2} f
+    =f_{xx} \left[\left(p+q \dfrac{f_{xy}}{f_{xx}}\right)^2
+    +q^2\dfrac{D}{f_{xx}^{\;2}}\right]
+    \]
+    However, the quantity in square brackets may not be posiitve.
+  </p>
+  <p>
+    To show this is a saddle point, we will show there are two directions
+    \(\hat u_1\) and \(\hat u_2\) in which \(f\) has opposite concavity, i.e.
+    \(\nabla_{\hat u_1}^{\;2} f\) and \(\nabla_{\hat u_1}^{\;2} f\) have
+    opposite signs.
+  </p>
+  <p>
+    First take \(\hat u_1=\langle p,q\rangle=\langle 1,0\rangle\).
+    Then the above formula says \(\nabla_{\hat u_1}^{\;2} f=f_{xx}\), which
+    should be obvious since \(\hat u_1\) is the \(x\) direction.
+  </p>
+  <p>
+    Second take
+    \(\hat u_2=\langle p,q\rangle
+    =\left\langle -q\dfrac{f_{xy}}{f_{xx}},q \right\rangle\),
+    i.e. \(p=-q\dfrac{f_{xy}}{f_{xx}}\). (Note: \(q\) can be chosen so
+    \(\hat u\) is still a unit vector.) Then the above formula says
+    \[
+    \nabla_{\hat u_2}^{\;2} f
+    =f_{xx} \left[(0)^2+q^2\dfrac{D}{f_{xx}^{\;2}}\right]
+    =q^2\dfrac{D}{f_{xx}}
+    =q^2\dfrac{D}{\nabla_{\hat u_1}^{\;2} f}
+    \]
+    Hence:
+    \[
+    \nabla_{\hat u_1}^{\;2} f\,\nabla_{\hat u_2}^{\;2} f
+    =q^2D
+    \]
+  </p>
+  <p>
+    Since \(D \lt 0\), we conclude \(\nabla_{\hat u_1}^{\;2} f\) and
+    \(\nabla_{\hat u_2}^{\;2} f\) have opposite signs and \(f\) must
+    have a saddle point.
+  </p>
+</div>
+<p class="remark">
+  For better or worse, for functions of two (or more) variables, there is no
+  good generalization of the First Derivative Test. When the Second Derivative
+  Test fails, we just have to say it failed and admit we are unable to
+  easily classify the critical point.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-title="Local Minimum" data-number="1">
+    Consider the elliptic paraboloid
+    \[
+    z=f(x,y)=(x-2)^2+(y-3)^2
+    \]
+    which opens upward and has an obvious minimum at \((x,y)=(2,3)\).
+    Its partial derivatives are:
+    \[
+    f_x=2(x-2) \qquad f_y=2(y-3)
+    \]
+    which are \(0\) at the critical point \((x,y)=(2,3)\).
+    The second derivatives are:
+    \[
+    f_{xx}=2 \qquad f_{yy}=2 \qquad f_{xy}=0
+    \]
+    So the discriminant is \(D=(2)(2)-(0)^2=4\). Normally, we would need
+    to evaluate \(f_{xx}\) and \(D\) at the critical point but that is
+    unnecessary since they are constants. Since \(D > 0\) and \(f_{xx} > 0\),
+    the Second Derivative Test says this is a local minimum, as expected.
+  </p>
+  <div class="center">
+    <img src="graphics/min.jpg" alt="min">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-title="Local Maximum" data-number="2">
+    Consider the elliptic paraboloid
+    \[
+    z=f(x,y)=-(x-2)^2-(y-3)^2
+    \]
+    which opens downward and has an obvious maximum at \((x,y)=(2,3)\).
+    This is the negative of the function in the previous example. So
+    everything changes by a minus sign except \(D\):
+    \[
+    f_x=-2(x-2) \qquad f_y=-2(y-3)
+    \]
+    which are \(0\) at the critical point \((x,y)=(2,3)\).
+    \[
+    f_{xx}=-2 \qquad f_{yy}=-2 \qquad f_{xy}=0
+    \]
+    So \(D=(-2)(-2)-(0)^2=4\). Since \(D \gt 0\) and \(f_{xx} \lt 0\), the
+    Second Derivative Test says this is a local maximum, as expected.
+  </p>
+  <div class="center">
+    <img src="graphics/max.jpg" alt="max">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-title="Saddle Point" data-number="3">
+    Consider the hyperbolic paraboloid
+    \[
+    z=f(x,y)=(x-2)^2-(y-3)^2
+    \]
+    which opens upward in the \(x\) direction and downward in the \(y\)
+    direction and has an obvious saddle point at \((x,y)=(2,3)\).
+    Its partial derivatives are:
+    \[
+    f_x=2(x-2) \qquad f_y=-2(y-3)
+    \]
+    which are \(0\) at the critical point \((x,y)=(2,3)\).
+    The second derivatives are:
+    \[
+    f_{xx}=2 \qquad f_{yy}=-2 \qquad f_{xy}=0
+    \]
+    So the discriminant is \(D=(2)(-2)-(0)^2=-4\). Since \(D \lt 0\), the
+    Second Derivative Test says this is a saddle point, as expected.
+  </p>
+  <div class="center">
+    <img src="graphics/saddle.jpg" alt="saddle">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Now read the
+  <a href="#2ndDerivTest">
+  <button class="toggle" data-toggle="Drop3">
+  Justification</button></a>
+  above for the Second Derivative Test.
+</p>
+<p>
+  On the <a href="SecondDerTest1.html">next page</a> we look at more
+  realistic applications of the Second Derivative Test.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

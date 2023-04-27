@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Statement | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="Hole.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. The Theorem</h2>
+
+
+      
+      <h2>1. Statement</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="thm" data-title="Stokes' Theorem with a Single Boundary Curve">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  If the boundary of the surface is a single closed curve, then the boundary
+  must be traversed counterclockwise as seen from the tip of the normal vector
+  to the surface.
+</p>
+
+<div class="column">
+  <div>
+    <p class="remark">
+      Notice that the relative orientation of the surface and it boundary
+      is crucial. If you reverse the direction of the normal to the surface,
+      or if you reverse the direction the boundary curve is traversed (but
+      not both) then the LHS and RHS of the theorem will not be equal,
+      they will differ by a minus sign.
+    </p>
+    <p class="remark">
+      The vector field \(\vec{F}\) is nice if it has continuous first
+      partial derivatives. Similarly, the surface, \(S,\) and its boundary,
+      \(\partial S,\) are nice if they are defined by parametric functions
+      with continuous first partial derivatives.
+    </p>
+  </div>
+  <div style="text_align: center;">
+    <div class="center">
+      <canvas id="canvas_1"></canvas>
+      <input type="range" min="0" max="90" val="25" step="0.1"
+        id="heightSlider_1" class="slider-vertical" orient="vertical"
+        style="height:200px; position:relative; bottom:20px; visibility:hidden;">
+      </input>
+    </div>
+    <div class="center">
+      <input type="range" min="-95" max="5" val="-45" step="0.1"
+        id="xSlider" style="width:200px; position:relative; left:-10px; visibility:hidden;">
+      </input>
+    </div>
+    <div class="center">
+      <input type="checkbox" id="showHand_1">
+      Show Hand
+    </div>
+  </div>
+</div>
+
+<p>
+  In words, Stokes' theorem says the flux of the curl of a vector field \(\vec{F}\)
+  over a surface \(S\) is equal to the circulation of \(\vec{F}\) around the
+  boundary curve \(\partial S\).
+  This makes sense in that \(\vec{\nabla}\times\vec{F}\cdot \vec{N}\)
+  measures the rotation of the stuff around the \(\vec{N}\)-axis. So the left
+  side is the total rotation on the surface while the right side is the net
+  rotation around the boundary.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  Notice that on the left hand side (LHS) of the theorem, we are integrating
+  the <strong>curl</strong> of the vector field, \(\vec{\nabla}\times\vec{F}\)
+  (and <strong>not</strong> just \(\vec{F}\)). Since
+  \(\vec{\nabla}\times\vec{F}\) is a <strong>vector</strong> field and we are
+  integrating it over a <strong>surface</strong>, we need to
+  <strong>dot</strong> it into the <strong>vector</strong> differential of
+  <strong>surface area</strong>, \(d\vec{S}=\vec{N}\,du\,dv\). Similarly, on
+  the right hand side (RHS) of the theorem, we are integrating \(\vec{F}\)
+  (and <strong>not</strong> its curl). Again, since \(\vec{F}\) is a
+  <strong>vector</strong> field and we are integrating it over the boundary
+  <strong>curve</strong>, we need to <strong>dot</strong> it into the
+  <strong>vector</strong> differential of <strong>arc length</strong>,
+  \(d\vec{s}=\vec{v}\,dt\).
+</p>
+<p class="remark">
+  It is recommended that you first compute \(\vec{\nabla}\times\vec{F}\) in
+  rectangular coordinates, and then convert it to the coordinates needed for
+  the surface integral. Computing \(\vec{\nabla}\times\vec{F}\) in other
+  coordinate systems is beyond the scope of this course.
+</p>
+<p class="remark">
+  Recall that Green's theorem related an integral over a region in the plane
+  to an integral over its boundary curve. Stokes' theorem is a generalization
+  of Green's theorem to \(3\) dimensions in which the region in the plane is
+  deformed into a surface in \(3\)-dimentional space. In fact, Green's theorem
+  is technically a special case of Stoke's theorem, namely for a surface which
+  happens to lie in a plane. See the page on the
+  <a href="../ThmGreen/2DStokes.html" title="Return using the Back button.">
+  2D Stokes' Theorem.</a>
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Stokes' Theorem is usually applied to a surface whose boundary is a single
+  closed curve. So that is where we start:
+</p>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Compute
+    \(\displaystyle \iint_C \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+    for the vector field \(\vec{F}=(-yz,xz,z^2)\) over the
+    cone, \(C\), given by \(z=\sqrt{x^2+y^2}\) for \(z\le 3\) oriented down and out.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_cone_arrows_anim.gif" alt="eg_cone_arrows_anim">
+  </div>
+</div>
+
+<p class="sol">
+  We use Stokes' Theorem to convert the surface integral over the cone into
+  a line integral around the boundary of the cone which is a circle.
+  \[
+  \iint_C \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial C} \vec{F}\cdot d\vec{s}
+  \]
+</p>
+<div class="column">
+  <p>
+    The circle may be parametrized by \(\vec r(\theta)=(3\cos\theta,3\sin\theta,3)\).
+    So its velocity is \(\vec v=\langle -3\sin\theta,3\cos\theta,0\rangle\).
+    If we look at this in the first quadrant where \(\sin\theta \ge 0\) and
+    \(\cos\theta \ge 0\), then \(v_x \le 0\) and \(v_y \ge 0\). So \(\vec v\)
+    points counterclockwise, which is backwards! We need \(\vec v\)
+    clockwise. So we reverse \(\vec v\):
+    \[
+    \text{Reverse:}\qquad\vec v=\langle 3\sin\theta,-3\cos\theta,0\rangle
+    \]
+  </p>
+  <div class="center">
+    <img src="graphics/eg_just_counterclockwise.jpg" alt="eg_just_counterclockwise">
+  </div>
+</div>
+<p>
+  On the curve, the vector field \(\vec{F}=(-yz,xz,z^2)\) becomes:
+  \[
+  \left.\vec{F}\right|_{R(r,\theta)}
+  =\langle -9\sin\theta,9\cos\theta,9\rangle
+  \]
+  So the line integral is:
+  \[\begin{aligned}
+  \oint_{\partial S} \vec{F}\cdot d\vec{s}
+  &=\int_0^{2\pi} \vec{F}\cdot\vec v\,d\theta \\
+  &=\int_0^{2\pi} (-27\sin^2\theta-27\cos^2\theta+0)\,d\theta \\
+  &=-27(2\pi)=-54\pi
+  \end {aligned}\]
+</p>
+
+<div class="check collapse hide">
+  <strong>Check: Surface Integral Directly</strong>
+  <p>
+    To check, we compute the surface integral directly. We start
+    by computing the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec{\nabla}\times\vec{F}
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    -yz        & xz         & z^2
+    \end{vmatrix} \\
+    &=\hat\imath(0-x)-\hat\jmath(0--y)+\hat k(z--z) \\
+    &=\langle -x,-y,2z\rangle
+    \end {aligned}\]
+    In cylindrical coordinates, the surface is \(z=r\). So a parametrization is:
+    \[
+    \vec R(r,\theta)=\langle r\cos\theta,r\sin\theta,r\rangle
+    \]
+    On the surface, the curl of \(\vec F\) is:
+    \[
+    \left.\vec{\nabla}\times\vec{F}\right|_{R(r,\theta)}
+    =\langle -r\cos\theta,-r\sin\theta,2r\rangle
+    \]
+    The normal is:
+    \[\begin{aligned}
+    \vec N&=\vec e_r\times\vec e_\theta
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \cos\theta & \sin\theta & 1 \\
+    -r\sin\theta & r\cos\theta & 0
+    \end{vmatrix} \\
+    &=\hat\imath(0-r\cos\theta)-\hat\jmath(0--r\sin\theta)
+     +\hat k(r\cos^2\theta--r\sin^2\theta) \\
+    &=\langle -r\cos\theta,-r\sin\theta,r \rangle
+    \end {aligned}\]
+    This points up and in. (The \(z\)-component is positive while the \(x\) and
+    \(y\) components are negative in the first quadrant.) So we reverse the normal:
+    \[
+    \text{Reverse:}\qquad\vec N=\langle r\cos\theta,r\sin\theta,-r\rangle
+    \]
+    Finally, we can compute the integral:
+    \[\begin{aligned}
+    \iint_C \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    &=\int_0^{2\pi}\int_0^3 \left.\vec{\nabla}\times\vec{F}\right|_{R(r,\theta)}
+    \cdot \vec N\,dr\,d\theta \\
+    &=\int_0^{2\pi}\int_0^3 (-r^2\cos^2\theta-r^2\sin^2\theta-2r^2)\,dr\,d\theta \\
+    &=-\int_0^3 r^2\,dr \int_0^{2\pi} (1+2)\,d\theta \\
+    &=-\left[\dfrac{r^3}{3}\right]_0^3\left[\rule{0pt}{10pt}3\theta\right]_0^{2\pi} \\
+    &=-9(6\pi)=-54\pi
+    \end {aligned}\]
+  </p>
+</div>
+<p class="remark">
+  Both methods gave the same answer. This checks both computations and also
+  verifies Stokes' Theorem for this function and surface. Notice how much
+  easier the line integral was. This will not always be the case.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="2">
+      Use Stokes' Theorem to compute
+      \(\displaystyle \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}\)
+      for the vector field \(\vec{F}=(y,-x,-x^2-y^2)\) over the
+      hemisphere, \(H\), given by \(z=\sqrt{9-x^2-y^2}\) oriented up and out.
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+      <button class="toggle has-check" data-toggle="CkX2"></button>
+      <button class="toggle has-rem" data-toggle="RemX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/ex_hemisph_arrows_anim.gif" alt="ex_hemisph_arrows_anim">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial H} \vec{F}\cdot d\vec{s}=-18\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    By Stokes' Theorem:
+    \[
+    \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\oint_{\partial H} \vec{F}\cdot d\vec{s}
+    \]
+    The boundary is the circle of radius \(3\) in the \(xy\)-plane
+    traversed counterclockwise, which may be parametrized as:
+    \[
+    \vec r(\theta)=(3\cos\theta,3\sin\theta,0)
+    \]
+    The velocity is:
+    \[
+    \vec v(\theta)=\langle -3\sin\theta,3\cos\theta,0\rangle
+    \]
+    which does point counterclockwise.
+    On the circle, the vector field \(\vec{F}=(y,-x,-x^2-y^2)\) becomes:
+    \[\begin{aligned}
+    \left.\vec{F}\right|_{\vec r(\theta)}
+    &=(3\sin\theta,-3\cos\theta,-9\cos^2\theta-9\sin^2\theta) \\
+    &=(3\sin\theta,-3\cos\theta,-9)
+    \end {aligned}\]
+    So the line integral is:
+    \[\begin{aligned}
+    \oint_{\partial H} \vec{F}\cdot d\vec{s}
+    &=\int_0^{2\pi} \vec{F}\cdot\vec v\,d\theta \\
+    &=\int_0^{2\pi} (-9\sin^2\theta-9\cos^2\theta+0)\,d\theta \\
+    &=-9(2\pi)=-18\pi
+    \end {aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by computing the surface integral directly. We start
+    by computing the curl of \(\vec F\):
+    \[\begin{aligned}
+    \vec{\nabla}\times\vec{F}
+    &=\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    y        & -x         & -x^2-y^2
+    \end{vmatrix} \\
+    &=\hat\imath(-2y)-\hat\jmath(-2x)+\hat k(-1-1) \\
+    &=\langle -2y,2x,-2\rangle
+    \end {aligned}\]
+    Since the surface is a hemisphere of radius \(3\), we parametrize starting
+    with spherical coordinates and setting \(\rho=3\):
+    \[
+    \vec R(\phi,\theta)
+    =\langle 3\sin\phi\cos\theta,3\sin\phi\sin\theta,3\cos\phi\rangle
+    \]
+    On the surface, the curl of \(\vec F\) is:
+    \[
+    \left.\vec{\nabla}\times\vec{F}\right|_{R(\phi,\theta)}
+    =\langle -6\sin\phi\sin\theta,6\sin\phi\cos\theta,-2\rangle
+    \]
+    The normal is:
+    \[\begin{aligned}
+    \vec N&=\vec e_\phi\times\vec e_\theta
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    3\cos\phi\cos\theta & 3\cos\phi\sin\theta & -3\sin\phi \\
+    -3\sin\phi\sin\theta & 3\sin\phi\cos\theta & 0
+    \end{vmatrix} \\
+    &=\hat\imath(--9\sin^2\phi\cos\theta)-\hat\jmath(-9\sin^2\phi\sin\theta) \\
+    &\quad+\hat k(9\sin\phi\cos\phi\cos^2\theta--9\sin\phi\cos\phi\sin^2\theta) \\
+    &=\langle 9\sin^2\phi\cos\theta,9\sin^2\phi\sin\theta,9\sin\phi\cos\phi\rangle
+    \end {aligned}\]
+    This points up and out as desired. Finally, we can compute the integral:
+    \[\begin{aligned}
+    \iint_H \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    &=\int_0^{2\pi}\int_0^{\pi/2} \left.\vec{\nabla}\times\vec{F}\right|_{R(r,\theta)}
+    \cdot\vec N\,d\phi\,d\theta \\
+    &=\int_0^{2\pi}\int_0^{\pi/2}
+    (-54\sin^3\phi\sin\theta\cos\theta+54\sin^3\phi\sin\theta\cos\theta \\
+    &\qquad-18\sin\phi\cos\phi)\,d\phi\,d\theta \\
+    &=-18\int_0^{2\pi}\int_0^{\pi/2}\sin\phi\cos\phi\,d\phi\,d\theta \\
+    &=-18(2\pi)\left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}
+    =-18\pi
+    \end {aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    Both methods gave the same answer. This checks both computations and also
+    verifies Stokes' Theorem for this function and surface. Notice how much
+    easier the line integral was.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  We have now verified Stokes' Theorem for a couple of functions and surfaces.
+  We will verify it more
+  <a href="Verify.html" title="Return using the Back button.">
+  later in this chapter</a> and prove it still
+  <a href="Proof.html" title="Return using the Back button.">
+  later</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+<script src="scripts/three.js"></script>
+<script type="module" src="scripts/three.module.js"></script>
+<script src="scripts/GLTFLoader.js"></script>
+<script src="scripts/OrbitControls.js"></script>
+<script src="../../../scripts/MYMAthree.min.js"></script>
+<script src="scripts/Theorem.js"></script>
+
+<style>
+  canvas{
+    background: #f0f0f0;
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+
+</body>
+</html>

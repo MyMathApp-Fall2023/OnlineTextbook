@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. 3D Rectangular Coordinates | 1. Coordinate Systems</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DRectCoord.html" title="Previous">&lArr;</a></li>
+      <li><a href="nDRectCoord.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Coordinate Systems</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Rectangular Coordinates - 2D, 3D and nD</h2>
+
+
+      
+      <h2>2. 3D Rectangular Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<p class="def">
+    The <span class="defword">Rectangular Coordinate System</span> in space
+    adds a third dimension, \(z\), to the two directions, \(x\) and \(y\),
+    in the two-dimensional Rectangular Coordinate System. It represents the
+    three dimensions of the natural world. There are now three perpendicular
+    <span class="defword">axes</span>, the <span class="defword">\(x\)-axis</span>
+    and the <span class="defword">\(y\)-axis</span> are horizontal while the
+    <span class="defword">\(z\)-axis</span> is vertical. Points are specified
+    by giving an ordered triple \((x,y,z)\).
+  	The \(x\)-coordinate is positive in front of the origin and negative behind.
+    The	\(y\)-coordinate is positive to the right of the origin and negative to the left.
+    The	\(z\)-coordinate is positive above the origin and negative below.
+    This relation between	the positive axes is called a
+    <span class="defword">right handed coordinate system</span> because when
+    you hold the fingers of your right hand along the \(x\)-axis and rotate
+    your fingers toward the \(y\)-axis, your thumb points along the \(z\)-axis.
+    The \(x\)- and	\(y\)-axes span the <span class="defword">\(xy\)-plane</span>.
+    The \(x\)- and	\(z\)-axes span the <span class="defword">\(xz\)-plane</span>.
+    The \(y\)- and	\(z\)-axes span the <span class="defword">\(yz\)-plane</span>.
+    Since it takes \(3\) \(\mathbb{R}\)eal numbers to	specify a point, space is also called
+    \(\mathbb{R}^3\). In the plot at the right, we have marked in the point
+  	\(P=(4,3,2)\). Rotate the plot with your mouse.
+	</p>
+	<div class="center">
+	  <x3d width='400px' height='400px'>
+	    <scene>
+	      <inline url="graphics/def_3DRectCoords.x3d"> </inline>
+	    </scene>
+	  </x3d>
+  </div>
+</div>
+<div class="column">
+	<p class="greybox" data-col-width="50%">
+	  The intersecting coordinate planes create eight
+		<span class="defword">octants</span>, labeled from I,	through VIII.
+		There is no standard ordering of the octants except that octant I is the
+		octant where \(x\), \(y\) and \(z\) are all positive.
+		However, here is the choice that will be used here:
+	</p>
+  <div data-col-width="50%">
+		<table class="center outside-border cell-border" style="font-size: 16pt; font-weight: bold">
+		  <colgroup>
+		    <col span="1" style="border-right:2px solid black">
+		  </colgroup>
+			<thead style="border-bottom: 2px solid black">
+				<tr><th></th><th>I</th><th>II</th><th>III</th><th>IV</th><th>V</th><th>VI</th><th>VII</th><th>VIII</th></tr>
+			</thead>
+			<tbody style="color: red">
+				<tr> <th>\(x\)</th> <td>\(+\)</td> <td>\(-\)</td> <td>\(-\)</td> <td>\(+\)</td> <td>\(+\)</td> <td>\(-\)</td> <td>\(-\)</td> <td>\(+\)</td>  </tr>
+				<tr> <th>\(y\)</th> <td>\(+\)</td> <td>\(+\)</td> <td>\(-\)</td> <td>\(-\)</td> <td>\(+\)</td> <td>\(+\)</td> <td>\(-\)</td> <td>\(-\)</td>  </tr>
+				<tr> <th>\(z\)</th> <td>\(+\)</td> <td>\(+\)</td> <td>\(+\)</td> <td>\(+\)</td> <td>\(-\)</td> <td>\(-\)</td> <td>\(-\)</td> <td>\(-\)</td>  </tr>
+			</tbody>
+		</table>
+  </div>
+</div>
+<p>
+  When working with symbols, the coordinates of a point are frequently written
+  using subscripts. Thus a point \(P\) may be written as \(P=(p_1, p_2, p_3)\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+		<p class="exercise" data-number="1">
+		  Identify the coordinates of each point in the following plot:
+		</p>
+    <p>
+      Rotate the plot with your mouse.
+		</p>
+    <p class="center">
+			<img src="graphics/ex_3DRectCoord.jpg" alt="ex_3DRectCoord"/>
+    </p>
+  </div>
+  <div class="center">
+		<x3d width='300px' height='300px'>
+			<scene>
+				<inline url="graphics/ex_3DRectCoord.x3d"> </inline>
+			</scene>
+		</x3d>
+  </div>
+</div>
+<table class="mcex center">
+  <tbody>
+  <tr>
+    <th>\(P=\)</th>
+    <td>
+			<button class="open-modal bullet-a incorrect"
+			data-modal="A. Incorrect.<br>\(x\) is forward and back.<br>\(y\) is left and right. <br>\(z\) is up and down.">
+			</button>
+      \((1,2,3)\)</td>
+    <td>
+			<button class="open-modal bullet-b incorrect"
+			data-modal="B. Try again.<br>\(x\) is forward and back.<br>\(y\) is left and right.<br>\(z\) is up and down.">
+			</button>
+      \((2,1,3)\)</td>
+    <td>
+			<button class="open-modal bullet-c incorrect"
+			data-modal="C. Sorry.<br>\(x\) is forward and back.<br>\(y\) is left and right.<br>\(z\) is up and down.">
+			</button>
+      \((3,1,2)\)</td>
+    <td>
+			<button class="open-modal bullet-d correct"
+			data-modal="D. Correct! You are on the ball.">
+			</button>
+      \((3,2,1)\)</td>
+  </tr>
+  <tr>
+    <th>\(Q=\)</th>
+    <td>
+			<button class="open-modal bullet-a incorrect"
+			data-modal="A. Sorry.<br>\(y\) is positive on the right and negative on the left.">
+			</button>
+      \((-2,3,3)\)</td>
+	  <td>
+			<button class="open-modal bullet-b correct"
+			data-modal="B. Right. Keep it up.">
+			</button>
+      \((-2,-3,3)\)</td>
+	  <td>
+			<button class="open-modal bullet-c incorrect"
+			data-modal="C. Incorrect.<br>\(x\) is forward and back.<br>\(y\) is left and right.<br>\(z\) is up and down.">
+			</button>
+      \((-3,-2,-3)\)</td>
+	  <td>
+			<button class="open-modal bullet-d incorrect"
+			data-modal="D. Try again.<br>\(x\) is positive in front and negative in back.">
+			</button>
+      \((2,-3,3)\)</td>
+	</tr>
+	<tr>
+    <th>\(R=\)</th>
+    <td>
+			<button class="open-modal bullet-a correct"
+			data-modal="A. Great <br> Keep up the good work.">
+			</button>
+      \((4,-2,-2)\)</td>
+	  <td>
+			<button class="open-modal bullet-b incorrect"
+			data-modal="B. Sorry.<br>\(z\) is positive above and negative below.">
+			</button>
+      \((-4,-2,-2)\)</td>
+	  <td>
+			<button class="open-modal bullet-c incorrect"
+			data-modal="C. Incorrect.<br>\(x\) is forward and back.<br>\(y\) is left and right.<br>\(z\) is up and down.">
+			</button>
+      \((4,-2,2)\)</td>
+	  <td>
+			<button class="open-modal bullet-d incorrect"
+			data-modal="D. Try again. Check your signs.">
+			</button>
+      \((-4,-2,2)\)</td>
+  </tr>
+  </tbody>
+</table>
+
+<big>PY: Make modal buttons work in katex with HTML and Latex.</big>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+  
+</body>
+</html>

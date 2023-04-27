@@ -1,0 +1,3340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercises | Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="AreaFTC.html" title="Previous">&lArr;</a></li>
+      <li><a href="../RiemSum/ChContents.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>Exercises</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<ol class="xlist">
+
+<!--Definition of Antiderivatives-->
+
+  
+  
+  
+  <div class="rule" id="topic1"></div>
+  <div class="heading">
+    <h3><a
+          href="Def.html">a. Definition of Antiderivatives</a></h3>
+    <div class="pgs">
+      
+        <div><a href="Def.html">1</a></div>
+      
+        <div><a href="NonUniq.html">2</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  For each function, find its general antiderivative.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=6x^5\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX1"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX1"></button>
+    	<button class="toggle has-sol" data-toggle="SolX1"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX1">
+    <p>
+      \(6x^5\) is the derivative of what?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  	<p>
+      \(F(x)=x^6+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  	<p>
+      \(6x^5\) is the derivative of \(x^6\). So:
+      \[
+      F(x)=x^6+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=x^{14}\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX2"></button>
+    	<button class="toggle has-sol" data-toggle="SolX2"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  	<p>
+      \(F(x)=\dfrac{x^{15}}{15}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  	<p>
+      We know that the derivative of \(x^{15}\) is \(15x^{14}\).  Further,
+      \(f(x)=x^{14}\) is \(\dfrac{1}{15}\) of this value.  Therefore the
+      ntiderivative of \(f(x)=x^{14}\) is \(F(x)=\dfrac{x^{15}}{15}+C\)
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle f(x)=\dfrac{1}{4}x^4\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX3"></button>
+    	<button class="toggle has-sol" data-toggle="SolX3"></button>
+      <button class="toggle has-check" data-toggle="CkX3"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  	<p>
+      \( \displaystyle F(x)=\dfrac{1}{20}x^5 + C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  	<p>
+      We know that the derivative of \( x^5 \) is \(5x^4\), which is \(20\) times
+      too big, thus we take \( \dfrac{1}{20} \) of it to yield
+      \[
+      F(x)=\dfrac{1}{20}x^5 +C
+      \]
+      adding a constant to obtain the general form.
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX3">
+    <p>
+      We check by differentiating \(F(x)=\dfrac{1}{20}x^5\):
+      \[
+      F'(x)= \dfrac{1}{20}5x^4= \dfrac{1}{4}x^4
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(g(x)=2x+1 \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX4"></button>
+    	<button class="toggle has-sol" data-toggle="SolX4"></button>
+      <button class="toggle has-check" data-toggle="CkX4"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  	<p>
+      \(G(x)=x^2+x + C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  	<p>
+      We know that the derivative of \( x^2 \) is \(2x\) and the derivative of
+      \(x\) is \(1\), yielding our answer
+      \[
+      G(x)=x^2+x+C
+      \]
+      adding a constant to obtain the general form.
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX4">
+    <p>
+      We check by differentiating \(G(x)=x^2+x\):
+      \[
+      G'(x)=2x+1
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(p(x)=e^x + \sin 5x \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX5"></button>
+    	<button class="toggle has-sol" data-toggle="SolX5"></button>
+      <button class="toggle has-check" data-toggle="CkX5"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  	<p>
+      \(P(x)=e^x - \dfrac{1}{5}\cos5x + C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  	<p>
+      We know the derivative of \( e^x \) is \( e^x \) and
+      the derivative of \( \cos 5x \) is
+      \( -5\sin 5x \). So the antiderivative of \( e^x \) is \( e^x \) and
+      the antiderivative of \( \sin 5x \) is
+      \( -\dfrac{1}{5} \cos 5x \). Thus the complete antiderivative of
+      \(p(x)= e^x + \sin 5x \) is
+      \[
+      P(x)= e^x - \dfrac{1}{5}\cos5x + C
+      \]
+      adding a constant of integration for the general antiderivative.
+  	</p>
+     <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX5">
+    <p>
+      We check by differentiating \(P(x)= e^x - \dfrac{1}{5}\cos5x\):
+      \[
+      P'(x)= e^x-\dfrac{1}{5}(-5\sin 5x) = e^x + \sin 5x
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=x^3+x^2+2x+8\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX6"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX6"></button>
+    	<button class="toggle has-sol" data-toggle="SolX6"></button>
+    	<button class="toggle has-check" data-toggle="CkX6"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX6">
+    <p>
+      Each term is a derivative by the Power Rule.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  	<p>
+    \(
+    F(x)=\dfrac{x^4}{4}+\dfrac{x^3}{3}+x^2+8x+C
+    \)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  	<p>
+      Since \(f(x)=x^3+x^2+2x+8\), then by the Sum, Constant Multiple, and Power
+      Rules, the general antiderivative is:
+      \[\begin{aligned}
+      F(x)&=\dfrac{x^4}{4}+\dfrac{x^3}{3}+2\left(\dfrac{x^2}{2}\right)+8x+C \\
+      &=\dfrac{x^4}{4}+\dfrac{x^3}{3}+x^2+8x+C
+      \end{aligned}\]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX6">
+    <p>
+      We check by differentiating:
+      \[\begin{aligned}
+      F'(x)&=\dfrac{1}{4}\left(4x^3\right)+\dfrac{1}{3}\left(3x^2\right)+2x+8 \\
+      &=x^3+x^2+2x+8
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=\cos x+e^{-3x}\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX7"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX7"></button>
+    	<button class="toggle has-sol" data-toggle="SolX7"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX7">
+    <p>
+      The derivative of \(e^{ax}\) is \(ae^{ax}\).
+      <br>
+      So the antiderivative of \(e^{ax}\) is \(\dfrac{1}{a}e^{ax}\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  	<p>
+      \(F(x)=\sin(x)-\dfrac{e^{-3x}}{3}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  	<p>
+      The derivative of \(e^{-3x}\) is \(-3e^{-3x}\).
+      <br>
+      So the derivative of \(-\dfrac{1}{3}e^{ax}\) is \(e^{-3x}\).
+      <br>
+      So
+      \[
+      F(x)=\sin(x)-\dfrac{e^{-3x}}{3}+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+      \(h(x)= \cos3x \)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX8"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX8"></button>
+    	<button class="toggle has-sol" data-toggle="SolX8"></button>
+      <button class="toggle has-check" data-toggle="CkX8"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX8">
+    <p>
+      What is the derivative of \(\sin3x\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX8">
+  	<p>
+      \(H(x)= \dfrac{1}{3}\sin3x + C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX8">
+  	<p>
+      We know that the antiderivative of \( \cos x \) is \( \sin x \).
+      So we guess \( \sin 3x \) for the antiderivative. Deriving, we see that
+      \( \dfrac{d}{dx} \sin 3x = 3\cos 3x \), which is three times too large.
+      Thus we conclude
+      \[
+      H(x)=\dfrac{1}{3}\sin3x + C
+      \]
+      is the antiderivative of \(h(x)= \cos3x \).
+  	</p>
+    <p style="text-align:right">
+      by,cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX8">
+    <p>
+      We check by differentiating \(H(x)= \dfrac{1}{3}\sin3x\):
+      \[
+      H'(x)= \dfrac{1}{3}(\cos3x)3=\cos3x
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=2x\sin(x^2+8)\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX9"></button>
+    	<button class="toggle has-sol" data-toggle="SolX9"></button>
+      <button class="toggle has-check" data-toggle="CkX9"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX9">
+  	<p>
+      \(F(x)=-\cos (x^2+8)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX9">
+  	<p>
+      We see that \(2x\) is the derivative of \(x^2+8\), which is inside the cosine.
+      The derivative of \(-\cos x\) is \(\sin x\). Therefore we try to apply the
+      Chain Rule and test \(F(x)=-\cos (x^2+8)\). The derivative of this is
+      \(f(x)=2x\sin(x^2+8)\).  Therefore the general antiderivative is
+      \[F(x)=-\cos (x^2+8)+C\]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX9">
+    <p>
+      By Chain Rule, the derivative of \(F(x)=-\cos(x^2+8)\) is:
+      \[
+      F'(x)=-\sin(x^2+8)(-2x)=2x\sin(x^2+8)
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=20x^3\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX10"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX10"></button>
+    	<button class="toggle has-sol" data-toggle="SolX10"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX10">
+    <p>
+      The derivative of \(x^4\) is \(4x^3\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX10">
+  	<p>
+      \(F(x)=5x^4+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX10">
+  	<p>
+      Since the derivative of \(x^4\) is \(4x^3\), the derivative of
+      \(5x^4\) is \(20x^3\). So the antiderivative of \(20x^3\) is
+      \[
+      5x^4+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=80x^{39}\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX11"></button>
+    	<button class="toggle has-sol" data-toggle="SolX11"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX11">
+  	<p>
+      \(F(x)=2x^{40}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX11">
+  	<p>
+      The derivative of \(x^{40}\) is \(40x^{39}\). This is half of the value that
+      we desire, so we double \(x^{40}\). The derivative of \(2x^{40}\) is \(80x^{39}
+      \) so this is the antiderivative.
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=(x^2+4)^2\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX12"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX12"></button>
+    	<button class="toggle has-sol" data-toggle="SolX12"></button>
+      <button class="toggle has-check" data-toggle="CkX12"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX12">
+    <p>
+      First multiply it out.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX12">
+  	<p>
+      \(F(x)=\dfrac{x^5}{5}+\dfrac{8}{3}(x^3)+16x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX12">
+  	<p>
+      Expanding this function we get \(f(x)=x^4+8x^2+16\). Using the
+      derivative Power Rules backwards, the general antiderivative of
+      \(f(x)=x^4+8x^2+16\) is:
+      \[
+      F(x)=\dfrac{x^5}{5}+\dfrac{8x^3}{3}+16x+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX12">
+    <p>
+      Differentiating \(F(x)=\dfrac{x^5}{5}+\dfrac{8}{3}x^3+16x\) gives:
+      \[
+      F'(x)=x^4+8x^2+16=(x^2+4)^2
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=3\sqrt x\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX13"></button>
+    	<button class="toggle has-sol" data-toggle="SolX13"></button>
+      <button class="toggle has-check" data-toggle="CkX13"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX13">
+  	<p>
+    \(F(x)=2x^{3/2}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX13">
+  	<p>
+      Differentiating \(x^{3/2}\) gives \(\dfrac{3}{2}x^{1/2}\)
+      We need twice this amount, so the answer is \(F(x)=2x^{3/2}+C\)
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX13">
+    <p>
+      Differentiating \(F(x)=2x^{3/2}\) gives
+      \[
+      F'(x)=2\cdot\dfrac{3}{2}x^{1/2}
+      =3\sqrt x
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=\sec x\tan x\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX14"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX14"></button>
+    	<button class="toggle has-sol" data-toggle="SolX14"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX14">
+    <p>
+      Remember the derivatives of the trig functions.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX14">
+  	<p>
+      \(F(x)=\sec x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX14">
+  	<p>
+      We know that the derivative of \(\sec x\) is \(\sec x\tan x\).
+      Therefore the antiderivative of \(\sec x\tan x\) is \(\sec x\).
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<!--Antiderivative Rules-->
+
+  
+  
+  
+  <div class="rule" id="topic2"></div>
+  <div class="heading">
+    <h3><a
+          href="ADRulesAlg.html">b. Antiderivative Rules</a></h3>
+    <div class="pgs">
+      
+        <div><a href="ADRulesAlg.html">1</a></div>
+      
+        <div><a href="ADRulesExp.html">2</a></div>
+      
+        <div><a href="ADRulesTrig.html">3</a></div>
+      
+        <div><a href="ADRulesHyp.html">4</a></div>
+      
+    </div>
+  </div>
+
+
+<p>
+  For each function, find its general antiderivative.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(s(x)= 10x^9+e^{2x}-\sin x+4 \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX15"></button>
+    	<button class="toggle has-sol" data-toggle="SolX15"></button>
+      <button class="toggle has-check" data-toggle="CkX15"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX15">
+  	<p>
+      \(S(x)= x^{10} + \dfrac{1}{2}e^{2x}+\cos x+4x + C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX15">
+  	<p>
+      Because the antiderivative of a sum is the sum of the antiderivatives,
+      we take each term of the problem and solve it independently.
+      First, reversing Power Rule says the antiderivative of \(10x^9\) is
+      \( x^{10} \). Second, the antiderivative of \( e^{2x} \) is
+      \( \dfrac{1}{2}e^{2x} \). Third, the antiderivative of
+      \( -\sin x \) is \( \cos x\). And finally, the antiderivative of
+      \( 4 \) is \(4x \).  Combining these antiderivatives, we see the
+      general antiderivative of \(s(x)= 10x^9 +e^{2x} - \sin x +4 \) is:
+      \[
+      S(x)=x^{10} + \dfrac{1}{2}e^{2x}+\cos x+4x + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX15">
+    <p>
+      We check by differentiating \(S(x)= x^{10} + \dfrac{1}{2}e^{2x}+\cos x+4x\):
+      \[
+      S'(x)= 10x^9 + 2(\dfrac{1}{2}) e^{2x} - \sin x +4
+      = 10x^9 +e^{2x} - \sin x +4
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=3x^5-2x^3+3x^2+7\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX16"></button>
+    	<button class="toggle has-sol" data-toggle="SolX16"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX16">
+  	<p>
+      \(
+      F(x)=\dfrac{x^6}{2}-\dfrac{x^4}{2}+x^3+7x+C
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX16">
+  	<p>
+      Using the Constant Multiple Rule and Power Rule, the antiderivative of
+      \(
+      f(x)=3x^5-2x^3+3x^2+7
+      \)
+      is
+      \[
+      F(x)=\dfrac{x^6}{2}-\dfrac{x^4}{2}+x^3+7x+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(b(x) = \dfrac{3}{x} \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX17"></button>
+    	<button class="toggle has-sol" data-toggle="SolX17"></button>
+      <button class="toggle has-check" data-toggle="CkX17"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX17">
+  	<p>
+      \(B(x) = 3\ln |x| +C \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX17">
+  	<p>
+      We can separate \( \dfrac{3}{x} \) into \( 3 \dfrac{1}{x} \). The
+      antiderivative of \( \dfrac{1}{x} \) equals \( \ln |x| \), yielding:
+      \[
+      B(x) = 3\ln |x| + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by,cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX17">
+    <p>
+      We check by differentiating \(B(x) = 3\ln|x|\):
+      \[
+      B'(x) = 3\left(\dfrac{1}{x}\right) = \dfrac{3}{x}
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(d(x)=4^x\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX18"></button>
+    	<button class="toggle has-sol" data-toggle="SolX18"></button>
+      <button class="toggle has-check" data-toggle="CkX18"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX18">
+  	<p>
+      \(D(x) = \dfrac{4^x}{\ln |4|} + C \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX18">
+  	<p>
+      We use the antiderivative Exponential Rule:
+      If \(f(x)=b^x\) then its antiderivative is
+      \(F(x)=\dfrac{b^x}{\ln |b|} + C \).
+      In this problem \(b=4\). So:
+      \[
+      D(x) = \dfrac{4^x}{\ln 4} + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX18">
+    <p>
+      We check by differentiating \(D(x) = \dfrac{4^x}{\ln |4|}\):
+      \[
+      D'(x)= \dfrac{1}{\ln|4|}\ln|4|4^x=4^x
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=3e^x-\dfrac{4}{x}\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX19"></button>
+    	<button class="toggle has-sol" data-toggle="SolX19"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX19">
+  	<p>
+      \(
+      F(x)=3e^{x}-4\ln|x|+C
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX19">
+  	<p>
+      Using the Sum, Constant Multiple, Natural Exponential and
+      Natural Logarithm Rules, the antiderivative of
+      \(
+      f(x)=3e^x-\dfrac{4}{x}
+      \)
+      is
+      \[
+      F(x)=3e^x-4\ln|x|+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=12xe^{2x^2}\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX20"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX20"></button>
+    	<button class="toggle has-sol" data-toggle="SolX20"></button>
+      <button class="toggle has-check" data-toggle="CkX20"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX20">
+    <p>
+      What is the derivative of \(e^{2x^2}\)? Remember the Chain Rule.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX20">
+  	<p>
+      \(
+      F(x)=3e^{2x^2}+C
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX20">
+  	<p>
+      \(
+      \dfrac{d}{dx}2x^2=4x
+      \).
+      This means that by Chain Rule, the derivative of \(e^{2x^2}\) is
+      \(e^{2x^2}4x\). So the antiderivative of \(f(x)\) is:
+      \[
+      F(x)=3e^{2x^2}+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX20">
+    <p>
+      We check by differentiating:
+      \[
+      F'(x)=3e^{2x^2}\cdot4x=12xe^{2x^2}
+      \]
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=3\csc x\cot x\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX21"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX21"></button>
+    	<button class="toggle has-sol" data-toggle="SolX21"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX21">
+    <p>
+      \(\csc x\cot x\) is the derivative of what?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX21">
+  	<p>
+    \(
+    F(x)=-3\csc x+C
+    \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX21">
+  	<p>
+      \(\csc x\cot x\) is the derivative of \(-\csc x\).
+      Combining this with the Constant Multiple Rule, the antiderivative of
+      \(
+      f(x)=3\csc x\cot x
+      \)
+      is:
+      \[
+      F(x)=-3\csc x+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(q(x)=\dfrac{5}{1+x^2}\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX22"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX22"></button>
+    	<button class="toggle has-sol" data-toggle="SolX22"></button>
+    	<button class="toggle has-check" data-toggle="CkX22"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX22">
+    <p>
+      \(\dfrac{1}{1+x^2}\) is the derivative of what?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX22">
+  	<p>
+      \(Q(x) = 5\arctan x +C \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX22">
+  	<p>
+      Recognizing that:
+      \[
+      \dfrac{d}{dx}\arctan x= \dfrac{1}{1+x^2}
+      \]
+      we see that the antiderivative of \( 5 \dfrac{1}{1+x^2} \) is:
+      \[
+      Q(x)= 5\arctan x +C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by,cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX22">
+    <p>
+      We check by differentiating \(Q(x) = 5\arctan x\):
+      \[
+      Q'(x)= 5\dfrac{1}{1+x^2}
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=x^2\sec x\tan x+2x\sec x\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX23"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX23"></button>
+    	<button class="toggle has-sol" data-toggle="SolX23"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX23">
+    <p>
+      Think Product Rule. What is the derivative of \(\sec x\)?
+      What is the derivative of \(x^2\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX23">
+  	<p>
+      \(
+      F(x)=x^2\sec x+C
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX23">
+  	<p>
+      Since \(\dfrac{d}{dx}x^2=2x\) and \(\dfrac{d}{dx}\sec x=\sec x\tan x\),
+      the Product Rule gives:
+      \[
+      F(x)=x^2\sec x+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(a(x)=\dfrac{2}{\sqrt{1-x^2}} \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX24"></button>
+    	<button class="toggle has-sol" data-toggle="SolX24"></button>
+      <button class="toggle has-check" data-toggle="CkX24"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX24">
+  	<p>
+      \(A(x) = 2\arcsin x + C \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX24">
+  	<p>
+      Recognizing that:
+      \[
+      \dfrac{d}{dx}\arcsin x= \dfrac{1}{\sqrt{1-x^2}}
+      \]
+      we see that the antiderivative of \( 2\dfrac{1}{\sqrt{1-x^2}} \) is:
+      \[
+      A(x)= 2\arcsin x + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX24">
+  	<p>
+      We check by differentiating \(A(x) = 2\arcsin x\):
+      \[
+      A'(x)= 2\dfrac{1}{\sqrt{1-x^2}}
+      \]
+      which is what we started with.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(q(x)=\dfrac{6}{x\sqrt{x^2-1}}\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX25"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX25"></button>
+    	<button class="toggle has-sol" data-toggle="SolX25"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX25">
+    <p>
+      What are the derivatives of the inverse trig functions?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX25">
+  	<p>
+      \(Q(x)=6\,\mathrm{arcsec}\,x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX25">
+  	<p>
+      Recognizing that:
+      \[
+      \dfrac{d}{dx}\mathrm{arcsec}\, x= \dfrac{1}{x\sqrt{x^2 - 1}}
+      \]
+      we see that
+      the antiderivative of \( \dfrac{6}{x\sqrt{x^2 - 1}} \) is:
+      \[
+      Q(x) = 6\,\mathrm{arcsec}\,x + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by,cj&ensp;
+    </p>
+    <div class="toBeToggled drop-check" data-toggle="CkX25">
+      <p>
+        We check by differentiating \(Q(x)= 6\,\mathrm{arcsec}\, x\):
+        \[
+        Q'(x)= 6\dfrac{1}{x\sqrt{x^2 - 1}}
+        \]
+        which is what we started with.
+      </p>
+    </div>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=3\csc^2 x\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX26"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX26"></button>
+    	<button class="toggle has-sol" data-toggle="SolX26"></button>
+      <button class="toggle has-check" data-toggle="CkX26"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX26">
+    <p>
+      What are the derivatives of the trig functions?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX26">
+  	<p>
+      \(F(x)=-3\cot x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX26">
+  	<p>
+      The antiderivative of \(\csc^2 x\) is \(-\cot x\). Therefore an antiderivative
+      of \(3\csc^2 x\) is \(-3\cot x\).
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX26">
+    <p>
+      Differentiating \(F(x)=-3\cot x\) gives \(F'(x)=-3(-\csc^2 x)=3\csc^2 x\).
+    </p>
+  </div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=\dfrac{1}{7\sqrt{1-x^2}}\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX27"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX27"></button>
+    	<button class="toggle has-sol" data-toggle="SolX27"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX27">
+    <p>
+      What are the derivatives of the inverse trig functions?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX27">
+  	<p>
+      \(F(x)=\dfrac{\arcsin x}{7}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX27">
+  	<p>
+      The antiderivative of \(\dfrac{1}{\sqrt{1-x^2}}\) is \(\arcsin x\).
+      By the Constant Multiple Rule, our desired antiderivative is:
+      \[
+      F(x)=\dfrac{\arcsin x}{7}+C
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(z(x) = \dfrac{-8}{1+4x^2} \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX28"></button>
+    	<button class="toggle has-sol" data-toggle="SolX28"></button>
+      <button class="toggle has-check" data-toggle="CkX28"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX28">
+  	<p>
+      \(Z(x) = -4\arctan 2x + C \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX28">
+  	<p>
+      Recall:
+      \[
+      \dfrac{d}{du}\arctan u= \dfrac{1}{1+u^2}
+      \]
+      So:
+      \[
+      \dfrac{d}{dx}\arctan 2x= \dfrac{1}{1+(2x)^2}2= \dfrac{2}{1+4x^2}
+      \]
+      by the Chain Rule for derivatives. So the antiderivative of:
+      \[
+      z(x) = \dfrac{-8}{1+4x^2}=-4\dfrac{2}{1+4x^2}
+      \]
+      is:
+      \[
+      Z(x) = -4\arctan 2x + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX28">
+    <p>
+      We check by differentiating \(Z(x) = -4\arctan 2x\). By Chain Rule:
+      \[
+      Z'(x)= -4\dfrac{1}{1+(2x)^2}2
+      =\dfrac{-8}{1+4x^2}
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(t(x) = \dfrac{6}{x\sqrt{9x^2-1}} \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX29"></button>
+    	<button class="toggle has-sol" data-toggle="SolX29"></button>
+      <button class="toggle has-check" data-toggle="CkX29"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX29">
+  	<p>
+      \(T(x) = 6\,\mathrm{arcsec}\, 3x + C \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX29">
+  	<p>
+      Recognizing that:
+      \[
+      \dfrac{d}{du}\mathrm{arcsec}\,u= \dfrac{1}{u\sqrt{u^2 - 1}}
+      \]
+      we see that
+      \[
+      \dfrac{d}{dx}\mathrm{arcsec}\,3x= \dfrac{1}{3x\sqrt{(3x)^2 - 1}}3
+      = \dfrac{1}{x\sqrt{9x^2 - 1}}
+      \]
+      by Chain Rule. Thus:
+      \[
+      T(x) = 6\,\mathrm{arcsec}\, 3x + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX29">
+    <p>
+      We check by differentiating \(T(x) = 6\,\mathrm{arcsec}\, 3x\):
+      \[
+      T'(x)= 6\dfrac{1}{3x\sqrt{(3x)^2 - 1}}3=\dfrac{6}{x\sqrt{9x^2-1}}
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=2x\sin (x^2)\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX30"></button>
+    	<button class="toggle has-sol" data-toggle="SolX30"></button>
+      <button class="toggle has-check" data-toggle="CkX30"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX30">
+  	<p>
+      \(F(x)=-\cos (x^2)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX30">
+  	<p>
+      Notice that differentiating the value inside the sine gives the value outside
+      the sine. The Chain Rule for derivatives states that the derivative of
+      \(f(g(x))\) is \(f'(g(x))\cdot g'(x)\). We notice that setting \(2x\)
+      as \(g'(x)\) and \(\sin (x^2)\) as \(f'(g(x))\) gives \(-\cos(x^2)\) as
+      \(f(g(x))\). Therefore the antiderivative of \(f(x)=2x\sin (x^2)\) is:
+      \[F(x)=-\cos (x^2)+C\]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX30">
+    <p>
+      Differentiating \(F(x)=-\cos(x^2)\) gives
+      \(F'(x)=\sin(x^2)\cdot2x=2x\sin(x^2)\).
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=-3x^2\cos(x^3+7)\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX31"></button>
+    	<button class="toggle has-sol" data-toggle="SolX31"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX31">
+  	<p>
+      \(F(x)=-\sin(x^3+7)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX31">
+  	<p>
+      Like the last problem, differentiating the value inside the cosine gives
+      \(3x^2\), which can be found outside the cosine. From the Chain Rule, we know
+      that the derivative of \(\sin(x^3+7)\) is \(3x^2\cos(x^2+7)\). We are looking
+      for the negative of the result, so the antiderivative is:
+      \[F(x)=-\sin(x^3+7)+C\]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=(x+1)^3\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX32"></button>
+    	<button class="toggle has-sol" data-toggle="SolX32"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX32">
+  	<p>
+      \(F(x)=\dfrac{(x+1)^4}{4}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX32">
+  	<p>
+      Here, we notice the derivative of the inside is \(1\). Applying the Chain
+      Rule, we notice that
+      \(\dfrac{d(x+1)^4}{dx}=4(x+1)^3\).
+      So the antiderivative of \(f(x)=(x+1)^3\) is \(F(x)=\dfrac{1}{4}(x+1)^4+C\).
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(z(x)=\dfrac{1}{x\sqrt{1-x^2}}-x^{-2}\arcsin x\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX33"></button>
+    	<button class="toggle has-sol" data-toggle="SolX33"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX33">
+  	<p>
+      \(Z(x)=\dfrac{\arcsin x}{x}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX33">
+  	<p>
+      This looks like a Product Rule:
+      \[
+      \dfrac{d}{dx}(P(x)Q(x))=P(x)q(x)+Q(x)p(x)
+      \]
+      Since \(\dfrac{d}{dx}\dfrac{1}{x}=-x^{-2}\) and
+      \(\dfrac{d}{dx}\arcsin x=\dfrac{1}{\sqrt{1-x^2}}\), we identify:
+      \[\begin{aligned}
+      P(x)=\dfrac{1}{x} \qquad &p(x)=-x^{-2} \\
+      Q(x)=\arcsin x \qquad &q(x)=\dfrac{1}{\sqrt{1-x^2}}
+      \end{aligned}\]
+      So by the Product Rule in reverse:
+      \[
+      Z(x)=\dfrac{\arcsin x}{x}+C
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(r(x)= \dfrac{2xe^x-x^2e^x}{e^{2x}} \)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX34"></button>
+    	<button class="toggle has-sol" data-toggle="SolX34"></button>
+      <button class="toggle has-check" data-toggle="CkX34"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX34">
+  	<p>
+      \(R(x)=\dfrac{x^2}{e^x} +C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX34">
+  	<p>
+      We solve by pattern matching. Looking at the form of the function, it
+      appears to  be a Quotient Rule:
+      \[
+      \dfrac{d}{dx}\dfrac{P(x)}{Q(x)}=\dfrac{Q(x) p(x)- P(x) q(x)}{Q(x)^2}
+      \]
+      We can identify our two functions. Knowing that
+      the denominator of a Quotient Rule is equal to \( Q(x)^2 \). We see that
+      \( Q(x) = e^x \) and that \( P(x) = x^2 \), giving an antiderivative of
+      \[
+      R(x)=\dfrac{x^2}{e^x} + C
+      \]
+  	</p>
+    <p style="text-align:right">
+      cj&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX34">
+    <p>
+      We check by differentiating \(R(x)=\dfrac{x^2}{e^x}\) by Quotient Rule:
+      \[
+      R'(x)= \dfrac{e^x\dfrac{d}{dx}x^2- x^2\dfrac{d}{dx}e^x}{(e^x)^2}
+      = \dfrac{e^x2x- x^2e^x}{e^{2x}}
+      \]
+      which is what we started with.
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(f(x)=e^{2\cos x}\sin x\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX35"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX35"></button>
+    	<button class="toggle has-sol" data-toggle="SolX35"></button>
+      <button class="toggle has-check" data-toggle="CkX35"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX35">
+    <p>
+      What is the derivative of \(e^{2\cos x}\\)?
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX35">
+  	<p>
+      xxx
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX35">
+  	<p>
+      xxx
+  	</p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX35">
+    <p>
+      xxx
+    </p>
+  </div>
+</li>
+
+<li>
+  <p>
+    Derive the logarithmic formulas for:
+  </p>
+	<ol type="a">
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(\mathrm{arccosh}\,x=\ln(x+\sqrt{x^2-1})\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX36a"></button>
+					<button class="toggle has-sol" data-toggle="SolX36a"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX36a">
+				<p>
+          To say \(\mathrm{arccosh}\) is the inverse of \(\cosh\) means:
+          <span class="center">\(b=\mathrm{arccosh}\,a\)&ensp; if and only if
+          &ensp;\(a=\cosh b=\dfrac{e^b+e^{-b}}{2}\)</span>
+          This is the hardest of the three parts of this problem because there
+          are two branches of the \(\cosh\) function. The branches are handled
+          as in the derivation of the formula for \(\mathrm{arcsech}\).
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX36a">
+				<p>
+          To say \(\mathrm{arccosh}\) is the inverse of \(\cosh\) means:
+          <span class="center">\(b=\mathrm{arccosh}\,a\)&ensp; if and only if
+          &ensp;\(a=\cosh b=\dfrac{e^b+e^{-b}}{2}\)</span>
+          Before solving for \(b\), we first note that \(\mathrm{cosh}\,b\) is not 1-1
+          since \(b=u\) and \(b=-u\) give the same value of \(\mathrm{cosh}\,b\).
+          We make the choice to define \(\mathrm{arccosh}\,a\) for the branch of
+          \(\mathrm{cosh}\,b\) with \(b \ge 0\). We now solve the latter equation
+          for \(b\), expecting two solutions from which we want to pick the one with
+          \(b \ge 0\):
+          \[\begin{aligned}
+          2a&=e^b+e^{-b} \\
+          2ae^b&=e^{2b}+1 \\
+          (e^b)^2-2a&(e^b)+1=0
+          \end{aligned}\]
+          This is a quadratic equation for \(e^b\). By the quadratic formula:
+          \[
+          e^b=\dfrac{2a\pm\sqrt{4a^2-4}}{2}=a\pm\sqrt{a^2-1}
+          \]
+          The \(+\) and \(-\) signs give the two solutions and we want the one with
+          \(b \ge 0\). Now if \(b \ge 0\), then \(e^b \ge e^{-b}\). So we need the
+          larger solution which is the one with the \(+\) sign. Then we take the log:
+          \[
+          b=\ln(a+\sqrt{a^2-1})\equiv\mathrm{arccosh}\,a
+          \]
+          So the formula for \(\mathrm{arccosh}\,x\) is:
+          \[
+          \mathrm{arccosh}\,x=\ln(x+\sqrt{x^2-1})
+          \]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(\mathrm{arccoth}\,x=\dfrac{1}{2}\ln\left(\dfrac{x+1}{x-1}\right)\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX36b"></button>
+					<button class="toggle has-sol" data-toggle="SolX36b"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX36b">
+				<p>
+          To say \(\mathrm{arccoth}\) is the inverse of \(\coth\) means:
+          <span class="center">\(b=\mathrm{arccoth}\,a\)&ensp; if and only if
+          &ensp;\(a=\coth b=\dfrac{e^b+e^{-b}}{e^b-e^{-b}}\)</span>
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX36b">
+				<p>
+          To say \(\mathrm{arccoth}\) is the inverse of \(\coth\) means:
+          <span class="center">\(b=\mathrm{arccoth}\,a\)&ensp; if and only if
+          &ensp;\(a=\coth b=\dfrac{e^b+e^{-b}}{e^b-e^{-b}}\)</span>
+          We solve the latter equation for \(b\):
+          \[\begin{aligned}
+          a(e^b-e^{-b})&=e^b+e^{-b} \\
+          a(e^{2b}-1)&=e^{2b}+1 \\
+          (a-1)e^{2b}&=a+1 \\
+          e^{2b}&=\dfrac{a+1}{a-1} \\
+          b&=\dfrac{1}{2}\ln\left(\dfrac{a+1}{a-1}\right)\equiv\mathrm{arccoth}\,a
+          \end{aligned}\]
+          So the formula for \(\mathrm{arccoth}\,x\) is:
+          \[
+          \mathrm{arccoth}\,x=\dfrac{1}{2}\ln\left(\dfrac{x+1}{x-1}\right)
+          \]
+				</p>
+			</div>
+		</li>
+		<li>
+			<div class="dotfillex">
+				<p>
+					\(\mathrm{arccsch}\,x=\ln\left(\dfrac{1+\sqrt{1+x^2}}{x}\right)\)
+				</p>
+				<p>
+					<button class="toggle has-hint" data-toggle="HintX36c"></button>
+					<button class="toggle has-sol" data-toggle="SolX36c"></button>
+				</p>
+			</div>
+			<div class="toBeToggled drop-hint" data-toggle="HintX36c">
+				<p>
+          To say \(\mathrm{arccsch}\) is the inverse of \(\mathrm{csch}\) means:
+          <span class="center">\(b=\mathrm{arccsch}\,a\)&ensp; if and only if
+          &ensp;\(a=\mathrm{csch}\,b=\dfrac{2}{e^b-e^{-b}}\)</span>
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX36c">
+				<p>
+          To say \(\mathrm{arccsch}\) is the inverse of \(\mathrm{csch}\) means:
+          <span class="center">\(b=\mathrm{arccsch}\,a\)&ensp; if and only if
+          &ensp;\(a=\mathrm{csch}\,b=\dfrac{2}{e^b-e^{-b}}\)</span>
+          We solve the latter equation for \(b\):
+          \[\begin{aligned}
+          a(e^b-e^{-b})&=2 \\
+          a(e^{2b}-1)&=2e^b \\
+          a(e^b)^2-2(e^b)-a&=0 \\
+          \end{aligned}\]
+          This is a quadratic equation for \(e^b\). By the quadratic formula:
+          \[
+          e^b=\dfrac{2\pm\sqrt{4+4a^2}}{2a}=\dfrac{1\pm\sqrt{1+a^2}}{a}
+          \]
+          We pick the \(+\) sign (so that \(e^b\) is positive) and take the log:
+          \[
+          b=\ln\left(\dfrac{1+\sqrt{1+a^2}}{a}\right)\equiv\mathrm{arccsch}\,a
+          \]
+          So the formula for \(\mathrm{arccsch}\,x\) is:
+          \[
+          \mathrm{arccsch}\,x=\ln\left(\dfrac{1+\sqrt{1+x^2}}{x}\right)
+          \]
+				</p>
+			</div>
+		</li>
+	</ol>
+</li>
+
+<!--From Acceleration to Velocity and Position-->
+
+  
+  
+  
+  <div class="rule" id="topic3"></div>
+  <div class="heading">
+    <h3><a
+          href="AccVelPos.html">c. From Acceleration to Velocity and Position</a></h3>
+    <div class="pgs">
+      
+        <div><a href="AccVelPos.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      If a car's velocity with respect to time is given by \(v(t)=6t^2+8t+7\),
+      and its position at \(t=0\) is \(x(0)=4\), what is its position at \(t=3\)?
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX37"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX37"></button>
+    	<button class="toggle has-sol" data-toggle="SolX37"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX37">
+    <p>
+      The position is an antiderivative of the velocity.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX37">
+  	<p>
+      \(x(3)=115\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX37">
+  	<p>
+      Since position is an antiderivative of velocity, by the Power
+      Rule, the position of the car is given by
+      \(x(t)=2t^3+4t^2+7t+C\). To find \(C\), we know that \(x(0)=4\). So
+      \(2(0)^3+4(0)^2+7(0)+C=4\) and \(C=4\). So, the position of the car is
+      \(x(t)=2t^3+4t^2+7t+4\). At \(t=3\) this is
+      \(x(3)=2(3)^3+4(3)^2+7(3)+4=115\).
+    </p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+      If a truck's acceleration is \(a(t)=12t^2-10t+12\) and its velocity
+      at time \(t=2\) is \(v(2)=4\),  give its velocity at \(t=4\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX38"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX38"></button>
+    	<button class="toggle has-sol" data-toggle="SolX38"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX38">
+    <p>
+      The velocity is an antiderivative of acceleration.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX38">
+  	<p>
+      \(v(4)=192\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX38">
+  	<p>
+      Since the velocity is an antiderivative of the acceleration, the
+      velocity of the truck is given by:
+      \[
+      v(t)=4t^3-5t^2+12t+C
+      \]
+      To find \(C\), we use the initial condition \(v(2)=4\) to get:
+      \[
+      v(2)=4\cdot2^3-5\cdot2^2+12\cdot 2+C=4
+      \]
+      Solving, this gives \(C=-32\). So the velocity of the truck is
+      \[
+      v(t)=4t^3-5t^2+12t-32
+      \]
+      Plugging in \(t=4\) gives
+      \[
+      v(4)=4\cdot4^3-5\cdot4^2+12\cdot4-72=192
+      \]
+  	</p>
+    <p style="text-align:right">
+      by,cj&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      A rabbit is running with velocity \(v(t)=3t^2+6t+7\). Find the total
+      distance it runs from \(t=1\) to \(t=4\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX39"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX39"></button>
+    	<button class="toggle has-sol" data-toggle="SolX39"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX39">
+    <p>
+      The distance it runs is the difference between its initial and final positions.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX39">
+  	<p>
+      \(x(4)-x(1)=129\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX39">
+  	<p>
+      Since the position is an antiderivative of the velocity, it is
+      \(x(t)=t^3+3t^2+7t+C\). The positions at \(t=1\) and \(t=4\)
+      are:
+      \[\begin{aligned}
+      x(1)&=1^3+3\cdot1^2+7\cdot1+C=11+C \\
+      x(4)&=4^3+3\cdot4^2+7\cdot4+C=140+C
+      \end{aligned}\]
+      Subtracting the two positions gives the displacement:
+      \[
+      \left(140+C\right)-\left(11+C\right)=129
+      \]
+  	</p>
+    <p style="text-align:right">
+      by&ensp;
+    </p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      A butterfly is taking off from a leaf with an acceleration of
+      \(a(t) =3t^2\,\dfrac{\text{m}}{\text{sec}^2}\).
+      If the initial position is \( y(0) = 2\,\text{cm} \) and initial velocity is
+      \( v(0) = 0\,\dfrac{\text{m}}{\text{sec}} \), what is the butterfly's
+      velocity and position at \( t = 4 \) seconds?
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX40"></button>
+    	<button class="toggle has-sol" data-toggle="SolX40"></button>
+    	<button class="toggle has-check" data-toggle="CkX40"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX40">
+  	<p>
+      \( v(4) = 64\,\dfrac{\text{m}}{\text{sec}}\)
+      <br>
+      \( y4) = 66\,\text{cm}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX40">
+  	<p>
+      First, because the antiderivative of acceleration is velocity, we see that
+      \[
+      v(t) = t^3 + C
+      \]
+      Because the initial velocity is \( v(0) = 0\), the constant is \( C = 0\)
+      and \(v(t) = t^3\).  Evaluating at \( t = 4 \), we see that:
+      \[
+      v(4)=4^3 = 64\,\dfrac{\text{m}}{\text{sec}}
+      \]
+      Second, the antiderivative of velocity is position, so we see that:
+      \[
+      y(t) =\dfrac{1}{4}t^4 + K
+      \]
+      Because \( y(0) = 2\), we find \(K = 2 \) and \(y(t)=\dfrac{1}{4}t^4+2\).
+      Evaluating at \( t = 4 \), we see that:
+      \[
+      y(4)=\dfrac{1}{4}4^4 + 2 = 66\,\text{cm}
+      \]
+  	</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX40">
+  	<p>
+      Starting with \(y(t)=\dfrac{1}{4}t^4+2\), we compute:
+      \[
+      y(0)=2 \quad \text{and} \quad y(4)=64+2=66
+      \]
+      Then \(v(t)=t^3\) and we compute:
+      \[
+      V(0)=0 \quad \text{and} \quad v(4)=64
+      \]
+      Finally, \(a(t)=3t^2\).
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      The rate of change of the volume of water in a tank is given by
+      \(R(t)=2t+6\). Find the amount of water in the tank after \(3\) hours
+      if it is initially empty.
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX41"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX41"></button>
+    	<button class="toggle has-sol" data-toggle="SolX41"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX41">
+    <p>
+      The rate of change of the volume of water is the derivative of the volume.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX41">
+  	<p>
+      \(V(3)=27\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX41">
+  	<p>
+      The volume of water in the tank is an antiderivative of the rate
+      at which it is being filled. So the volume is:
+      \[
+      V(t)=t^2+6t+C
+      \]
+      Since the tank is empty at time \(t=0\), the constant is \(C=0\).
+      Therefore the volume is:
+      \[
+      V(t)=t^2+6t
+      \]
+      Plugging in \(t=3\) gives \(V(3)=3^2+6\cdot3=27\).
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      A car travels so that its accelerates at time \(t\) is
+      \(a(t)=(t+4)\,\dfrac{\text{m}}{\text{sec}^2}\).
+      At time \(t=6\,\text{sec}\), the car's velocity is
+      \(v(6)=40\,\dfrac{\text{m}}{\text{sec}}\) and the car's position
+      is \(x(6)=100\,\text{m}\). Where was the car at time \(t=3\,\text{sec}\)?
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX42"></button>
+    	<button class="toggle has-sol" data-toggle="SolX42"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX42">
+  	<p>
+      \(x(3)=\dfrac{97}{2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX42">
+  	<p>
+      Acceleration is the derivative of velocity, so to find velocity we take the
+      antiderivative of acceleration:
+      \[
+      v(t)=\dfrac{t^2}{2}+4t+C
+      \]
+      To find \(C\), we use the provided initial condition and solve for \(C\):
+      \[
+      v(6)=18+24+C=40 \qquad \implies \qquad C=2
+      \]
+      So \(v(t)\) is:
+      \[
+      v(t)=\dfrac{t^2}{2}+4t+2
+      \]
+      Velocity is the derivative of position, so to find position we take the
+      antiderivative of velocity:
+      \[
+      x(t)=\dfrac{t^3}{6}+2t^2+2t+K
+      \]
+      To find \(K\), we use the provided initial condition and solve for \(K\):
+      \[
+      x(6)=36+72+12+K=100 \qquad \implies \qquad K=20
+      \]
+      So \(x(t)\) is:
+      \[
+      x(t)=\dfrac{t^3}{6}+2t^2+2t+20
+      \]
+      and \(x(3)\) is:
+      \[
+      x(3)=\dfrac{3^3}{6}+2\cdot3^2+2\cdot3+20
+      =\dfrac{97}{2}
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+  <div class ="dotfillex">
+ <p>
+   A swimming pool is being filled at a rate of \(R(t)=\dfrac{3}{(2+t)^2}\).
+	 Given that the pool is empty at \(t=0\), how much water is in the pool at time \(t=4\)?
+	</p>
+	<p>
+		<button class="toggle has-ans" data-toggle="AnsX43"></button>
+		<button class="toggle has-sol" data-toggle="SolX43"></button>
+	</p>
+		</div>
+			<div class="toBeToggled drop-ans" data-toggle="AnsX43">
+				<p>
+          \(V(4)=1\)
+				</p>
+			</div>
+			<div class="toBeToggled drop-sol" data-toggle="SolX43">
+				<p>
+          When we say the rate at which the pool is filled we mean the
+          derivative of the volume. So let \(V(t)\) denote volume. Then
+          \(\dfrac{dV}{dt}=R(t)\) and \(V\) is the antiderivative of \(R(t)\).
+					Then, using the Chain Rule,
+          \[
+          V(t)=-\dfrac{3}{2+t}+C
+          \]
+          To solve for \(C\), we use the initial condition for \(V\):
+          \[
+          V(0)=-\dfrac{3}{2}+C=0 \qquad \implies \qquad C=\dfrac{3}{2}
+          \]
+          Substituting back,
+          \[
+          V(t)=\dfrac{3}{2}-\dfrac{3}{2+t}
+          \]
+          and \(V(4)\) is:
+          \[
+          V(4)=\dfrac{3}{2}-\dfrac{3}{6}=\dfrac{3}{2}-\dfrac{1}{2}=1
+          \]
+				</p><p align="right">ad&ensp;</p>
+		</div>
+</li>
+
+<!--Differential Equations and Initial Value Problems-->
+
+  
+  
+  
+  <div class="rule" id="topic4"></div>
+  <div class="heading">
+    <h3><a
+          href="DiffEq.html">d. Differential Equations and Initial Value Problems</a></h3>
+    <div class="pgs">
+      
+        <div><a href="DiffEq.html">1</a></div>
+      
+    </div>
+  </div>
+
+<a id="x^3e^x"></a>
+
+<p>
+  Find the general solution of each differential equation.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\dfrac{dy}{dx}=x^3e^x+3e^xx^2\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX44"></button>
+    	<button class="toggle has-sol" data-toggle="SolX44"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX44">
+  	<p>
+      \(y=x^3e^x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX44">
+  	<p>
+      This looks like a Product Rule,
+      \[
+      \dfrac{d(P(x)Q(x))}{dx}=P(x)q(x)+Q(x)p(x)
+      \]
+      with \(P(x)=x^3\) so that \(p(x)=\dfrac{dP}{dx}=3x^2\), and
+      with \(Q(x)=e^x\) so that \(q(x)=\dfrac{dQ}{dx}=e^x\).
+      So by the Product Rule,
+      \[\begin{aligned}
+      y&=P(x)Q(x)+C \\
+      &=x^3e^x+C
+      \end{aligned}\]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+<a id="sin3t+cos2t"></a>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\dfrac{dp}{dt}=\sin(3t)+\cos(2t)\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX45"></button>
+    	<button class="toggle has-sol" data-toggle="SolX45"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX45">
+  	<p>
+      \(p(t)=-\dfrac{1}{3}\cos(3t)+\dfrac{1}{2}\sin(2t)+C\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX45">
+  	<p>
+      We separately look at each term: \(\sin(3t)\) and \(\cos(2t)\).
+  	</p>
+  	<p>
+      Since \(\dfrac{d}{dx}\cos x=-\sin x\), by the Chain Rule, we know
+      \(\dfrac{d}{dt}\cos(3t)=-3\sin(3t)\). This is off by a factor of \(-3\).
+      So we divide by \(-3\). So the antiderivative of \(\sin(3t)\) is
+      \(-\,\dfrac{1}{3}\cos(3t)\).
+  	</p>
+  	<p>
+      Similarly, since \(\dfrac{d}{dx}\sin x=\cos x\), by the Chain Rule, we
+      know \(\dfrac{d}{dt}\sin(2t)=2\cos(2t)\). This is off by a factor of \(2\).
+      So we divide by \(2\). So the antiderivative of \(\cos(2t)\) is
+      \(\dfrac{1}{2}\sin(2t)\).
+  	</p>
+  	<p>
+      Putting it all together, we find that:
+      \[
+      p(t)=-\dfrac{1}{3}\cos(3t)+\dfrac{1}{2}\sin(2t)+C
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<p>
+  Find the solution of each initial value problem.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\dfrac{dy}{dx}=x^3e^x+3e^xx^2 \qquad y(2)=8\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX46"></button>
+    	<button class="toggle has-sol" data-toggle="SolX46"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX46">
+  	<p>
+      \(y=x^3e^x+8-8e^2\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX46">
+  	<p>
+      In a <a href="#x^3e^x">previous problem</a>, we found that the general
+      antiderivative of \(\dfrac{dy}{dx}=x^3e^x+3e^xx^2\) is \(y=x^3e^x+C\).
+      To determine \(C\) we
+      use the provided initial condition:
+      \[
+      y(2)=2^3e^2+C=8 \implies C=8-8e^2
+      \]
+      So the solution is:
+      \[
+      y=x^3e^x+8-8e^2
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\dfrac{dp}{dt}=\sin(3t)+\cos(2t) \qquad p(0)=\dfrac{2}{3}\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX47"></button>
+    	<button class="toggle has-sol" data-toggle="SolX47"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX47">
+  	<p>
+      \(y=-\dfrac{1}{3}\cos(3t)+\dfrac{1}{2}\sin(2t)+1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX47">
+  	<p>
+      In a <a href="#sin3t+cos2t">previous problem</a>, we found that the general
+      antiderivative of \(\dfrac{dp}{dt}=\sin(3t)+\cos(2t)\) is
+      \(p=-\dfrac{1}{3}\cos(3t)+\dfrac{1}{2}\sin(2t)+C\).
+      To determine \(C\) we use the provided initial condition:
+      \[\begin{aligned}
+      p(0)&=-\dfrac{1}{3}\cos(0)+\dfrac{1}{2}\sin(0)+C=\dfrac{2}{3} \\
+      C&=\dfrac{2}{3}+\dfrac{1}{3}=1
+      \end{aligned}\]
+      So the solution is:
+      \[
+      y=-\dfrac{1}{3}\cos(3t)+\dfrac{1}{2}\sin(2t)+1
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\dfrac{dg}{dt}=e^{-2t} \qquad g(0)=4\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX48"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX48"></button>
+    	<button class="toggle has-sol" data-toggle="SolX48"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX48">
+    <p>
+      To find \(g\), try differentiating \(e^{-2t}\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX48">
+  	<p>
+      \(g=-\dfrac{1}{2}e^{-2t}+\dfrac{9}{2}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX48">
+  	<p>
+      We need \(g\). We suspect it involves \(e^{-2t}\). So we look at the derivative:
+      \[
+      \dfrac{d}{dx}[e^{-2t}]=-2e^{-2t}
+      \]
+      If we multiply this by \(-\dfrac{1}{2}\), we get \(\dfrac{dg}{dx}\). So the
+      general antiderivative of \(\dfrac{dg}{dx}=e^{-2t}\) is \(g=-\dfrac{1}{2}e^{-2t}+C\).<br>
+      To determine \(C\) we use the provided initial condition:
+      \[
+      g(0)=-\dfrac{1}{2}e^{0}+C=4 \implies C=\dfrac{9}{2}
+      \]
+      So \(g\) is:
+      \[
+      g=-\dfrac{1}{2}e^{-2t}+\dfrac{9}{2}
+      \]
+  	</p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+      A rain gage is filling so the rate of change of the volume of water in
+      the gage is \(\dfrac{dV}{dt}=6 e^{-2t}\,\dfrac{\text{cm}^3}{\text{hr}}\).
+      Find the volume in the gauge at time \(t=3\,\text{hr}\) if it starts with
+      \(3\,\text{cm}^3\) at time \(t=0\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX49"></button>
+    	<button class="toggle has-sol" data-toggle="SolX49"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX49">
+  	<p>
+      \(V(3)=-3 e^{-6}+6\approx5.993\,\text{cm}^3\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX49">
+  	<p>
+      We start from the rate of change of the volume of water in the gage, \(\dfrac{dV}{dt}
+      =6 e^{-2t}\).<br>
+      Since the volume of water, \(V\), is an antiderivative of \(\dfrac{dV}{dt}\),
+      \[
+      V(t)=-3 e^{-2t}+C
+      \]
+      To find \(C\), we use the initial condition for \(V\):
+      \[
+      V(0)=-3+C=3 \qquad \implies \qquad C=6
+      \]
+      So \(V(t)\) is:
+      \[
+      V(t)=-3 e^{-2t}+6
+      \]
+      and the volume at \(t=3\,\text{hr}\) is:
+      \[
+      V(3)=-3 e^{-6}+6\approx5.993\,\text{cm}^3
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+<li>
+	<div class="dotfillex">
+		<p>
+      Given that the velocity of an object is \(v(t)=2^x\ln(2)\,\dfrac{\text{m}}{\text{sec}}\)
+      and the initial position is \(s(0)=5\,\text{m}\) find the position \(s(t)\)
+      as a function of \(t\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX50"></button>
+    	<button class="toggle has-sol" data-toggle="SolX50"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX50">
+  	<p>
+      \(s(t)=2^x+4\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX50">
+  	<p>
+      Since velocity is the derivative of position, we take the antiderivative of
+      velocity to find position:
+      \[
+      s(t)=2^x+C
+      \]
+      Using the initial condition,
+      \[
+      s(0)=1+C=5 \qquad \implies \qquad C=4
+      \]
+      Therefore:
+      \[
+      s(t)=2^x+4
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Given the acceleration of an object is \(a(t)=2\sin(2t)\,\dfrac{\text{km}}{\text{sec}^2}\)
+      and \(v(0)=3\,\dfrac{\text{km}}{\text{sec}}\) find \(v(t)\) as a function
+      of \(t\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX51"></button>
+    	<button class="toggle has-sol" data-toggle="SolX51"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX51">
+  	<p>
+      \(v(t)=-\cos(2t)+3\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX51">
+  	<p>
+      Since acceleration is the derivative of velocity, we take the antiderivative
+      of acceleration to find velocity:
+      \[
+      v(t)=-\cos(2t)+C
+      \]
+      Using the initial condition,
+      \[
+      v(0)=-1+C=3 \qquad \implies \qquad C=4
+      \]
+      Therefore:
+      \[
+      v(t)=-\cos(2t)+4
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Given the acceleration of an object is \(a(t)=\cos(t)\,\dfrac{\text{m}}{\text{sec}^2}\)
+      and the initial position is \(s(0)=7\,\text{m}\) and
+      the initial velocity is \(v(0)=1\,\dfrac{\text{m}}{\text{sec}}\),
+      find the position \(s(t)\) and velocity \(v(t)\) as functions of time \(t\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX52"></button>
+    	<button class="toggle has-sol" data-toggle="SolX52"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX52">
+  	<p>
+      \(s(t)=-\cos(t)+t+8\)
+      <br>
+      \(v(t)=\sin(t)+1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX52">
+  	<p>
+      Since acceleration is the derivative of velocity, we take the antiderivative
+      of acceleration to find velocity:
+      \[
+      v(t)=\sin(t)+C
+      \]
+      Using the initial condition,
+      \[
+      v(0)=0+C=1 \quad \implies \quad C=1
+      \]
+      Therefore:
+      \[
+      v(t)=\sin(t)+1
+      \]
+      Since velocity is the derivative of position, we take the antiderivative of
+      velocity to find position:
+      \[
+      s(t)=-\cos(t)+t+K
+      \]
+      Using the initial condition,
+      \[
+      s(0)=-1+K=7 \qquad \implies \qquad K=8
+      \]
+      Therefore:
+      \[
+      s(t)=-\cos(t)+t+8
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      An object has constant velocity \(v\) and initial position \(s(0)=s_0\).
+      Find the position \(s(t)\) as a function of the time \(t\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX53"></button>
+    	<button class="toggle has-sol" data-toggle="SolX53"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX53">
+  	<p>
+      \(s(t)=vt+s_0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX53">
+  	<p>
+      Since velocity is the derivative of position, we write the position as
+      the general antiderivative of the constant velocity:
+      \[
+      s(t)=vt+C
+      \]
+      Using the initial condition,
+      \[
+      s(0)=C=s_0
+      \]
+      we conclude \(C=s_0\). Substituting back, we have:
+      \[
+      s(t)=vt+s_0
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      An object has constant acceleration \(a\) and initial velocity \(v(0)=v_0\).
+      Find the velocity \(v(t)\) as a function of the time \(t\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX54"></button>
+    	<button class="toggle has-sol" data-toggle="SolX54"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX54">
+  	<p>
+      \(v(t)=at+v_0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX54">
+  	<p>
+      Since acceleration is the derivative of velocity, we write the velocity as
+      the general antiderivative of the constant acceleration:
+      \[
+      v(t)=at+C
+      \]
+      Using the initial condition,
+      \[
+      v(0)=C=v_0
+      \]
+      we conclude \(C=v_0\). Substituting back, we have:
+      \[
+      v(t)=at+v_0
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      An object has constant acceleration \(a\), initial position \(s(0)=s_0\)
+      and initial velocity \(v(0)=v_0\). Find the position \(s(t)\) and
+      velocity \(v(t)\) as functions of the time \(t\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX55"></button>
+    	<button class="toggle has-sol" data-toggle="SolX55"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX55">
+  	<p>
+      \(s(t)=\dfrac{1}{2}at^2+v_0t+s_0\)
+      <br>
+      \(v(t)=at+v_0\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX55">
+  	<p>
+      Since acceleration is the derivative of velocity, we write the velocity as
+      the general antiderivative of the constant acceleration:
+      \[
+      v(t)=at+C
+      \]
+      Using the initial condition,
+      \[
+      v(0)=C=v_0
+      \]
+      we conclude \(C=v_0\). Substituting back, we find:
+      \[
+      v(t)=at+v_0
+      \]
+      Since velocity is the derivative of position, we write the position as
+      the general antiderivative of the velocity:
+      \[
+      s(t)=\dfrac{1}{2}at^2+v_0t+K
+      \]
+      Using the initial condition,
+      \[
+      s(0)=K=s_0
+      \]
+      we conclude \(K=s_0\). Substituting back, we find:
+      \[
+      s(t)=\dfrac{1}{2}at^2+v_0t+s_0
+      \]
+  	</p>
+  </div>
+</li>
+
+<!--Area as an Antiderivative-->
+
+  
+  
+  
+  <div class="rule" id="topic5"></div>
+  <div class="heading">
+    <h3><a
+          href="AreaAD.html">e. Area as an Antiderivative</a></h3>
+    <div class="pgs">
+      
+        <div><a href="AreaAD.html">1</a></div>
+      
+    </div>
+  </div>
+
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the area below \(y=2x+\cos(x)\) above the interval
+      \(\left[0,\dfrac{\pi}{2}\right]\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX56"></button>
+    	<button class="toggle has-sol" data-toggle="SolX56"></button>
+      <button class="toggle has-check" data-toggle="CkX56"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX56">
+  	<p>
+      The area below \(y=2x+\cos(x)\) above the interval
+      \(\left[0,\dfrac{\pi}{2}\right]\) is \(A=\dfrac{\pi^2}{4}+1\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX56">
+  	<p>
+      Let \(A(x)\) be the area below \(y=2x+\cos(x)\) above the \(x\)-axis
+      between \(x=0\) and variable point \(x\). Then \(A(x)\) is the
+      antiderivative of \(2x+\cos(x)\) satisfying \(A(0)=0\). The general
+      antiderivative is:
+      \[
+      A(x)=x^2+\sin(x)+C
+      \]
+      The initial condition says:
+      \[
+      A(0)=0^2+\sin(0)+C=0\quad
+      \implies\quad C=0
+      \]
+      So \(A(x)=x^2+\sin(x)\) and the final answer is:
+      \[
+      A\left(\dfrac{\pi}{2}\right)=\dfrac{\pi^2}{4}+\sin\left(\dfrac{\pi}{2}\right)
+      =\dfrac{\pi^2}{4}+1
+      \]
+  	</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX56">
+  	<p>
+      We check by differentiating the area function \(A(x)=x^2+\sin(x)\):
+      \[
+      A'(x)=2x+\cos(x)
+      \]
+      which is the original curve.
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the area below \(y=\dfrac{-2\pi^2 x^3\sin(\pi x^2)-2\pi x\cos(\pi x^2)}{\pi^2 x^4}\)
+      above the interval \([3, 4]\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX57"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX57"></button>
+    	<button class="toggle has-sol" data-toggle="SolX57"></button>
+    	<button class="toggle has-check" data-toggle="CkX57"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX57">
+    <p>
+      Use the Quotient Rule backwards to find the antiderivative.
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX57">
+  	<p>
+      \(A=\dfrac{25}{144\pi}\approx0.05526\).
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX57">
+  	<p>
+      Let \(A(x)\) be the area below \(y=\dfrac{-2\pi^2 x^3\sin(\pi x^2)-2\pi x\cos(\pi x^2)}{\pi^2 x^4}\)
+      above the \(x\)-axis between \(x=3\) and a variable point \(x\). Then
+      \(A(x)\) is the antiderivative of \(y=\dfrac{-2\pi^2 x^3\sin(\pi x^2)-2\pi x\cos(\pi x^2)}{\pi^2 x^4}\)
+      satisfying \(A(3)=0\). The general antiderivative is:
+      \[
+      A(x)=\dfrac{\cos(\pi x^2)}{\pi x^2}+C
+      \]
+      <button class="toggle" data-toggle="Drop1">How?</button>
+  	</p>
+    <div class="toBeToggled" data-toggle="Drop1">
+    <p>
+      The form of the function looks like a Quotient Rule. Knowing that the
+      denominator is \(Q(x)^2\), we find \(Q(x)=\pi x^2\) and then \(P(x)=\cos(\pi x^2)\),
+      giving an antiderivative of:
+      \[
+      A(x)=\dfrac{\cos(\pi x^2)}{\pi x^2}+C
+      \]
+    </p>
+    </div>
+    <p>
+      The initial condition says:
+      \[
+        A(3)=-\dfrac{1}{9\pi}+C=0 \qquad \implies \qquad C=\dfrac{1}{9\pi}
+      \]
+      So \(A(x)=\dfrac{\cos(\pi x^2)}{\pi x^2}+\dfrac{1}{9\pi}\) and the final
+      answer is:
+      \[
+        A(4)=\dfrac{\cos(16\pi)}{16\pi}+\dfrac{1}{9\pi}=\dfrac{1}{16\pi}+\dfrac{1}{9\pi}
+        =\dfrac{25}{144\pi}\approx0.05526
+      \]
+    </p><p align="right">ad&ensp;</p>
+  </div>
+  <div class="toBeToggled drop-check" data-toggle="CkX57">
+		<p>
+			We check by differentiating the area function
+      \(A(x)=\dfrac{\cos(\pi x^2)}{\pi x^2}+\dfrac{1}{9\pi}\):
+      \[\begin{aligned}
+      A'(x)&=\dfrac{d}{dx}\left(\dfrac{\cos(\pi x^2)}{\pi x^2}\right) \\
+      &=\dfrac{\pi x^2\dfrac{d}{dx}(\cos(\pi x^2))-\cos(\pi x^2)\dfrac{d}{dx}(\pi x^2)}{\pi^2 x^4} \\
+      &=\dfrac{\pi x^2(-\sin(\pi x^2)(2\pi x))-\cos(\pi x^2)(2\pi x)}{\pi^2 x^4} \\
+      &=\dfrac{-2\pi^2x^3\sin(\pi x^2))-2\pi x\cos(\pi x^2)}{\pi^2 x^4}
+      \end{aligned}\]
+      which is the original function.
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the area below \(y=x^{-2}\) above the interval \([3, 6]\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX58"></button>
+    	<button class="toggle has-sol" data-toggle="SolX58"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX58">
+  	<p>
+      \(A=\dfrac{1}{6}\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX58">
+  	<p>
+      Let \(A(x)\) be the area below \(y=x^{-2}\) above the \(x\)-axis
+      between \(x=3\) and variable point \(x\). Then \(A(x)\) is the antiderivative
+      of \(y=x^{-2}\) satisfying \(A(3)=0\). Using the Power Rule, the general
+      antiderivative is:
+      \[
+      A(x)=-x^{-1}+C
+      \]
+      The initial condition says:
+      \[
+      A(3)=-\dfrac{1}{3}+C=0 \qquad \implies C=\dfrac{1}{3}
+      \]
+      So \(A(x)=-x^{-1}+\dfrac{1}{3}\) and the final answer is:
+      \[
+      A(6)=-\dfrac{1}{6}+\dfrac{1}{3}=\dfrac{1}{6}
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<!--The Fundamental Theorem of Calculus for Area-->
+
+  
+  
+  
+  <div class="rule" id="topic6"></div>
+  <div class="heading">
+    <h3><a
+          href="AreaFTC.html">f. Fundamental Theorem of Calculus for Area</a></h3>
+    <div class="pgs">
+      
+        <div><a href="AreaFTC.html">1</a></div>
+      
+    </div>
+  </div>
+
+For each function, find the area below it above the specified interval.
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the area below \(f(x)=x\sin(x^2)\)
+      above the interval \([0, \sqrt{\pi}]\).
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX59"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX59"></button>
+    	<button class="toggle has-sol" data-toggle="SolX59"></button>
+    	<button class="toggle has-check" data-toggle="CkX59"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-hint" data-toggle="HintX59">
+    <p>
+      To find the antiderivative, try differentiating \(\cos(x^2)\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX59">
+  	<p>
+      \(A(0, \sqrt{\pi})=1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX59">
+  	<p>
+      We need the antiderivative of \(f(x)=x\sin(x^2)\). We suspect it will
+      involve \(\cos(x^2)\). So we look at the derivative
+      \[
+      \dfrac{d}{dx}[\cos(x^2)]=-\sin(x^2)2x
+      \]
+      If we multiply this by \(-\,\dfrac{1}{2}\), we get \(f\). So an
+      antiderivative of \(f(x)=x\sin(x^2)\) is \(F(x)=-\dfrac{1}{2}\cos(x^2)\).
+      Then, the area is:
+      \[\begin{aligned}
+      A\left(0, \sqrt{\pi}\right)&=\left[-\dfrac{1}{2}\cos(x^2)\right]_{0}^{\sqrt{\pi}} \\
+      &=-\dfrac{1}{2}\cos(\pi)+\dfrac{1}{2}\cos(0) \\
+      &=\dfrac{1}{2}+\dfrac{1}{2}=1
+      \end{aligned}\]
+    </p>
+    <p align="right">ad&ensp;</p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX59">
+  	<p>
+      We check by differentiating \(F(x)=-\dfrac{1}{2}\cos(x^2)\):
+      \[\begin{aligned}
+      F'(x)&=\dfrac{d}{dx}\left(-\dfrac{1}{2}\cos(x^2)\right) \\
+      &=-\dfrac{1}{2}(-\sin(x^2)2x) \\
+      &=x\sin(x^2)
+      \end{aligned}\]
+      which is the original function \(f(x)\).
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the area below \(f(x)=\dfrac{2}{x}\)
+      above the interval \([2,4]\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX60"></button>
+    	<button class="toggle has-sol" data-toggle="SolX60"></button>
+    	<button class="toggle has-check" data-toggle="CkX60"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX60">
+  	<p>
+      \(A(2,4)=2\ln(2)\approx1.386\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX60">
+  	<p>
+      An antiderivative of \(f(x)=\dfrac{2}{x}\) is
+      \(F(x)=2\ln(x)\).
+      So the area is:
+      \[\begin{aligned}
+      A\left(2, 4\right)&=\left[\rule{0pt}{10pt}2\ln(x)\right]_{2}^{4} \\
+      &=2\ln(4)-2\ln(2) \\
+      &=4\ln(2)-2\ln(2) \\
+      &=2\ln(2)\approx1.386
+      \end{aligned}\]
+      In the next-to-last step, we used \(\ln4=\ln2^2=2\ln2\).
+    </p>
+  </div>
+	<div class="toBeToggled drop-check" data-toggle="CkX60">
+  	<p>
+      We check by differentiating \(F(x)=2\ln(x)\):
+      \[\begin{aligned}
+      F'(x)&=\dfrac{d}{dx}\left(2\ln(x)\right) \\
+      &=2\dfrac{d}{dx}(\ln(x)) \\
+      &=\dfrac{2}{x}
+      \end{aligned}\]
+      which is the original function \(f(x)\).
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the area below \(f(x)=e^x\)
+      above the interval \([0,3]\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX61"></button>
+    	<button class="toggle has-sol" data-toggle="SolX61"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX61">
+  	<p>
+      \(A(0,3)=e^3-1\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX61">
+  	<p>
+      An antiderivative of \(e^x\) is \(e^x\).
+      So the area is:
+      \[\begin{aligned}
+      A(0,3)&=\left[\rule{0pt}{10pt}e^x\right]_0^3 \\
+      &=e^3-1
+      \end{aligned}\]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+        <div class="rule" id="rev"></div>
+
+<div class="heading">
+  <h3>Review Exercises</h3>
+</div>
+
+<p>
+  Find the general antiderivatives.
+</p>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle f(x)=e^{3x+1}\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX62"></button>
+    	<button class="toggle has-sol" data-toggle="SolX62"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX62">
+    <p>
+			\(\displaystyle F(x)=\dfrac{1}{3}e^{3x+1}+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX62">
+  	<p>
+      We know that the derivative of \(e^{3x+1}\) is \(3e^{3x+1}\). This is \(3\)
+      times too much. So the antiderivative of \(\displaystyle f(x)=e^{3x+1}\) is:
+      \[
+      F(x)=\dfrac{1}{3}e^{3x+1}+C
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+			\(\displaystyle g(x)=\csc^2 x\)
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX63"></button>
+    	<button class="toggle has-sol" data-toggle="SolX63"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX63">
+    <p>
+			\(\displaystyle G(x)=-\cot x+C\)
+    </p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX63">
+  	<p>
+      We know that the derivative of \(\cot(x)\) is \(-\csc^2 x\). This is exactly
+      \(-g(x)\). So the antiderivative of \(\displaystyle g(x)=\csc^2 x\) is:
+      \[
+      G(x)=-\cot x+C
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(\displaystyle h(x)=e^x+x^e\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX64"></button>
+    	<button class="toggle has-sol" data-toggle="SolX64"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX64">
+  	<p>
+      \(H(x)=e^x+\dfrac{x^{e+1}}{e+1}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX64">
+  	<p>
+      We use the Sum Rule to find that \(H(x)\) is the antiderivative of \(e^x\)
+      plus the antiderivative of \(x^e\). The antiderivative of \(e^x\) is just
+      \(e^x\), and using the Power Rule with the exponent of \(e\), we find that
+      the antiderivative of \(x^e\) is \(\dfrac{x^{e+1}}{e+1}\). So the
+      antiderivative of \(h(x)=e^x+x^e\) is:
+      \[
+      H(x)=e^x+\dfrac{x^{e+1}}{e+1}+C
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(w(x)=\dfrac{2x\sin(x)-x^2\cos(x)}{\sin^2(x)}\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX65"></button>
+    	<button class="toggle has-sol" data-toggle="SolX65"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX65">
+  	<p>
+      \(W(x)=\dfrac{x^2}{\sin(x)}+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX65">
+  	<p>
+      The function looks like a Quotient Rule:
+      \[
+      \dfrac{d}{dx}\left(\dfrac{P(x)}{Q(x)}\right)=\dfrac{Q(x)p(x)-P(x)q(x)}{Q^2(x)}
+      \]
+      The denominator of \(w(x)\) is \(\sin^2(x)\). So \(Q(x)\) must be \(\sin(x)\).
+      Since \(\dfrac{d}{dx}\sin(x)=\cos(x)\) and \(\dfrac{d}{dx}x^2=2x\), we identify:
+      \[\begin{aligned}
+      P(x)=x^2 \qquad &p(x)=2x \\
+      Q(x)=\sin x \qquad &q(x)=\cos x
+      \end{aligned}\]
+      So the antiderivative of \(w(x)\) is:
+      \[
+      W(x)=\dfrac{x^2}{\sin(x)}+C
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(z(x)=\dfrac{\arcsin x}{1+x^2}+\dfrac{\arctan x}{\sqrt{1-x^2}}\)
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX66"></button>
+    	<button class="toggle has-sol" data-toggle="SolX66"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX66">
+  	<p>
+      \(Z(x)=\arcsin x \arctan x+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX66">
+  	<p>
+      This looks like a Product Rule:
+      \[
+      \dfrac{d}{dx}(P(x)Q(x))=P(x)q(x)+Q(x)p(x)
+      \]
+      Since \(\dfrac{d}{dx}\arcsin x=\dfrac{1}{\sqrt{1-x^2}}\) and
+      \(\dfrac{d}{dx}\arctan x=\dfrac{1}{1+x^2}\), we identify:
+      \[\begin{aligned}
+      P(x)=\arcsin x \qquad &p(x)=\dfrac{1}{\sqrt{1-x^2}} \\
+      Q(x)=\arctan x \qquad &q(x)=\dfrac{1}{1+x^2}
+      \end{aligned}\]
+      So by the Product Rule in reverse:
+      \[
+      Z(x)=\arcsin x \arctan x+C
+      \]
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      \(y(x)=\sin(x)\sinh(x)+\cosh(x)\cos(x)\)
+		</p>
+		<p>
+    	<button class="toggle has-hint" data-toggle="HintX67"></button>
+    	<button class="toggle has-ans" data-toggle="AnsX67"></button>
+    	<button class="toggle has-sol" data-toggle="SolX67"></button>
+		</p>
+	</div>
+  <div class="toBeToggled drop-hint" data-toggle="HintX67">
+  	<p>
+      Think Product Rule. What are the derivatives of \(\sin(x)\), \(\cos(x)\),
+      \(\sinh(x)\) and \(\cosh(x)\)?
+  	</p>
+  </div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX67">
+  	<p>
+      \(Y(x)=\sin(x)\cosh(x)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX67">
+  	<p>
+      This looks like a Product Rule:
+      \[
+      \dfrac{d}{dx}(P(x)Q(x))=P(x)q(x)+Q(x)p(x)
+      \]
+      Since \(\dfrac{d}{dx}\sin x=\cos x\) and
+      \(\dfrac{d}{dx}\cosh x=\sinh x\), we identify:
+      \[\begin{aligned}
+      P(x)=\sin(x) \qquad &p(x)=\cos(x) \\
+      Q(x)=\cosh(x) \qquad &q(x)=\sinh(x)
+      \end{aligned}\]
+      So by the Product Rule:
+      \[
+      Y(x)=\sin(x)\cosh(x)+C
+      \]
+      (Note: If we had taken \(Q(x)=\sinh(x)\) and \(P(x)=\cos(x)\) then the
+      sign between the terms would have been wrong.)
+  	</p><p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<hr width="80%">
+
+<li>
+	<div class="dotfillex">
+		<p>
+			Find the area below \(y=x+x^2+x^3+x^4\) above the interval \([0,1]\).
+		</p>
+		<p>
+			<button class="toggle has-ans" data-toggle="AnsX68"></button>
+			<button class="toggle has-sol" data-toggle="SolX68"></button>
+      <button class="toggle has-check" data-toggle="CkX68"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX68">
+		<p>
+			The area below \(y=x+x^2+x^3+x^4\) above the interval \([0,1]\) is
+      \(A=\dfrac{77}{60}\).
+		</p>
+	</div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX68">
+		<p>
+			Let \(A(x)\) be the area below \(y=x+x^2+x^3+x^4\) above the \(x\)-axis
+      between \(x=0\) and a variable point \(x\). Then \(A(x)\) is the
+      antiderivative of \(f(x)=x+x^2+x^3+x^4\) satisfying \(A(0)=0\). The
+      general antiderivative is:
+      \[
+      A(x)=\dfrac{x^2}{2}+\dfrac{x^3}{3}+\dfrac{x^4}{4}+\dfrac{x^5}{5}+C
+      \]
+      The initial condition says:
+      \[
+      A(0)=C=0\quad\implies\quad C=0
+      \]
+      So \(A(x)=\dfrac{x^2}{2}+\dfrac{x^3}{3}+\dfrac{x^4}{4}+\dfrac{x^5}{5}\)
+      and the final answer is:
+      \[\begin{aligned}
+      A(1)&=\dfrac{1}{2}+\dfrac{1}{3}+\dfrac{1}{4}+\dfrac{1}{5} \\
+      &=\dfrac{30}{60}+\dfrac{20}{60}+\dfrac{15}{60}+\dfrac{12}{60}
+      =\dfrac{77}{60}
+      \end{aligned}\]
+		</p>
+    <p style="text-align:right">
+      ad&ensp;
+    </p>
+	</div>
+	<div class="toBeToggled drop-check" data-toggle="CkX68">
+		<p>
+			We check by differentiating the area function
+      \(A(x)=\dfrac{x^2}{2}+\dfrac{x^3}{3}+\dfrac{x^4}{4}+\dfrac{x^5}{5}\):
+      \[
+      A'(x)=x+x^2+x^3+x^4
+      \]
+      which is the original curve.
+		</p>
+	</div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      A ball is thrown at the initial angle \(\theta=\dfrac{\pi}{6}\) radians
+      from the ground with a total initial velocity of
+      \(15\,\dfrac{\text{m}}{\text{sec}}\). Assuming that the
+      acceleration due to gravity is \(10\,\dfrac{\text{m}}{\text{sec}^2}\)
+      downward, what is the ball's position \(1\,\text{sec}\) after it is thrown?
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX69"></button>
+    	<button class="toggle has-sol" data-toggle="SolX69"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX69">
+  	<p>
+      \(
+      x(1)=\dfrac{15\sqrt{3}}{2}\,\text{m} \quad \text{and} \quad
+      y(1)=\dfrac{5}{2}\,\text{m}
+      \)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX69">
+  	<p>
+      Let \(x(t)\) and \(y(t)\) be the ball's position at time \(t\).
+      We will assume the initial position is \(x(0)=0\) and \(y(0)=0\).
+      Let \(v_x(t)\) and \(v_y(t)\) be the ball's velocity at time \(t\).
+      So the ball's initial velocity is
+      \[
+      v_x(0)=15\cos\dfrac{\pi}{6}=\dfrac{15\sqrt{3}}{2} \quad \text{and} \quad
+      v_y(0)=15\sin\dfrac{\pi}{6}=\dfrac{15}{2}
+      \]
+      Let \(a_x(t)\) and \(a_y(t)\) be the ball's acceleration at time \(t\)
+      which is given as
+      \[
+      a_x(0)=0 \quad \text{and} \quad a_y(0)=-10
+      \]
+      Since the velocity is an antiderivative of the acceleration,
+      \[
+      v_x(t)=C_1 \quad \text{and} \quad v_y(t)=-10t+C_2
+      \]
+      To find the constants \(C_1\) and \(C_2\), we use the initial conditions:
+      \[
+      v_x(0)=C_1=\dfrac{15\sqrt{3}}{2} \quad \text{and} \quad
+      v_y(0)=C_2=\dfrac{15}{2}
+      \]
+      So velocity is:
+      \[
+      v_x(t)=\dfrac{15\sqrt{3}}{2} \quad \text{and} \quad
+      v_y(t)=-10t+\dfrac{15}{2}
+      \]
+      Since the position is an antiderivative of velocity,
+      \[
+      x(t)=\dfrac{15\sqrt{3}}{2}t+K_1 \quad \text{and} \quad y(t)=-5t^2+\dfrac{15}{2}t+K_2
+      \]
+      To find the constants \(K_1\) and \(K_2\), we use the initial conditions:
+      \[
+      x(0)=K_1=0 \quad \text{and} \quad y(0)=K_2=0
+      \]
+      So the position is:
+      \[
+      x(t)=\dfrac{15\sqrt{3}}{2}t \quad \text{and} \quad y(t)=-5t^2+\dfrac{15}{2}t
+      \]
+      and the position at \(t=1\) is:
+      \[
+      x(1)=\dfrac{15\sqrt{3}}{2}\text{m} \quad \text{and} \quad
+      y(1)=-5+\dfrac{15}{2}=\dfrac{5}{2}\text{m}
+      \]
+  	</p>
+  </div>
+</li>
+<a id="3t+cost^2/2"></a>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the general solution to the differential equation:
+      \(\dfrac{dp}{dt}=3t+t\cos\left(\dfrac{t^2}{2}\right)\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX70"></button>
+    	<button class="toggle has-sol" data-toggle="SolX70"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX70">
+  	<p>
+      \(p(t)=\dfrac{3}{2}t^2+\sin\left(\dfrac{t^2}{2}\right)+C\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX70">
+    <p>
+    	We look at each term seperately. First, the antiderivative of \(3t\) is
+      \(\dfrac{3}{2}t^2\) by the Power Rule, and, using the Chain Rule, the
+      antiderivative of \(t\cos\left(\dfrac{t^2}{2}\right)\) is
+      \(\sin\left(\dfrac{t^2}{2}\right)\). Putting it all together, we find that:
+      \[
+      p(t)=\dfrac{3}{2}t^2+\sin\left(\dfrac{t^2}{2}\right)+C
+      \]
+    </p>
+    <p align="right">ad&ensp;</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the solution to the initial value problem:
+      \(\dfrac{dp}{dt}=3t+t\cos\left(\dfrac{t^2}{2}\right)\) with
+      \(p(\sqrt{\pi})=2\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX71"></button>
+    	<button class="toggle has-sol" data-toggle="SolX71"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX71">
+  	<p>
+      \(p=\dfrac{3}{2}t^2+\sin\left(\dfrac{t^2}{2}\right)+1-\dfrac{3}{2}\pi\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX71">
+  	<p>
+      In the <a href="#3t+cost^2/2">previous problem</a>, we found that the general
+      antiderivative of \(\dfrac{dp}{dt}=3t+t\cos\left(\dfrac{t^2}{2}\right)\) is
+      \(p=\dfrac{3}{2}t^2+\sin\left(\dfrac{t^2}{2}\right)+C\).
+      To determine \(C\) we use the provided initial condition:
+      \[\begin{aligned}
+      p(\sqrt{\pi})&=\dfrac{3}{2}\pi+\sin\left(\dfrac{\pi}{2}\right)+C=2 \\
+      \dfrac{3}{2}\pi+1+C&=2 \qquad C=1-\dfrac{3}{2}\pi
+      \end{aligned}\]
+      So the solution is:
+      \[
+      p=\dfrac{3}{2}t^2+\sin\left(\dfrac{t^2}{2}\right)+1-\dfrac{3}{2}\pi
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Given the acceleration of an object is \(a(t)=\sec^2(t)\,\dfrac{\text{km}}{\text{sec}^2}\)
+      and \(v(0)=3\,\dfrac{\text{km}}{\text{sec}}\) find \(v(t)\) as a function
+      of \(t\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX72"></button>
+    	<button class="toggle has-sol" data-toggle="SolX72"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX72">
+  	<p>
+      \(v(t)=\tan(t)+3\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX72">
+  	<p>
+      Since acceleration is the derivative of velocity, we take the antiderivative
+      of acceleration to find velocity:
+      \[
+      v(t)=\tan(t)+C
+      \]
+      Using the initial condition,
+      \[
+      v(0)=0+C=3 \qquad \implies \qquad C=3
+      \]
+      Therefore:
+      \[
+      v(t)=\tan(t)+3
+      \]
+  	</p>
+  </div>
+</li>
+
+<li>
+	<div class="dotfillex">
+		<p>
+      Find the area below \(f(x)=x^3+2^x\ln(2)\)
+      above the interval \([0,2]\).
+		</p>
+		<p>
+    	<button class="toggle has-ans" data-toggle="AnsX73"></button>
+    	<button class="toggle has-sol" data-toggle="SolX73"></button>
+		</p>
+	</div>
+	<div class="toBeToggled drop-ans" data-toggle="AnsX73">
+  	<p>
+      \(A(0,2)=7\)
+  	</p>
+  </div>
+	<div class="toBeToggled drop-sol" data-toggle="SolX73">
+  	<p>
+      An antiderivative of \(f(x)=x^3+2^x\ln(2)\) is
+      \(F(x)=\dfrac{x^4}{4}+2^x\).
+      So the area is:
+      \[\begin{aligned}
+      A\left(0,2\right)&=\left[\dfrac{x^4}{4}+2^x\right]_{0}^{2} \\
+      &=\dfrac{2^4}{4}+2^2-\dfrac{0^4}{4}-2^0 \\
+      &=4+4-1=7
+      \end{aligned}\]
+    </p>
+  </div>
+</li>
+
+<big>PY: All Checked.</big>
+<br>
+<big>PY: Merged BY, CJ, AD</big>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

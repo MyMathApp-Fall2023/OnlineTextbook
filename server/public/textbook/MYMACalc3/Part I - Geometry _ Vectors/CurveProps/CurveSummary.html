@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Summary of Curve Computations | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TNAcc.html" title="Previous">&lArr;</a></li>
+      <li><a href="CurveExamples.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic8">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>h. Summary & Examples of Curve Computations</h2>
+
+<p class="center">
+  <span class="greenbig">You may want to print this page as a study sheet.</span>
+</p>
+
+
+      
+      <h2>1. Summary of Curve Computations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  So far, from the position vector, we have calculated the formulas for
+  velocity, acceleration, jerk, speed, arc length, unit tangent vector, unit
+  normal vector, unit binormal vector, curvature, torsion, tangential
+  acceleration, and normal acceleration, all of which are summarized
+  below.
+</p>
+
+<div class="column">
+  <p data-col-width="25%">Position Vector</p>
+  <p>\(\vec{r}(t)=(x(t),y(t),z(t))\)</p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Velocity Vector</p>
+  <p>
+    \(\vec{v}(t)=\dfrac{d\vec{r}}{dt}
+    =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt},\dfrac{dz}{dt}\right\rangle\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Acceleration Vector</p>
+  <p>
+    \(\vec{a}(t)=\dfrac{d\vec{v}}{dt}=\dfrac{d^2\vec{r}}{dt^2}
+    =\left\langle \dfrac{d^2x}{dt^2},\dfrac{d^2y}{dt^2},\dfrac{d^2z}{dt^2}\right\rangle\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Jerk Vector</p>
+  <p>
+    \(\vec{j}(t)=\dfrac{d\vec{a}}{dt}=\dfrac{d^2\vec{v}}{dt^2}=
+      \dfrac{d^{3}\vec{r}}{dt^{3}}
+      =\left\langle \dfrac{d^3x}{dt^3},\dfrac{d^3y}{dt^3},\dfrac{d^3z}{dt^3}\right\rangle\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Speed</p>
+  <p>\(\dfrac{ds}{dt}=|\vec{v}|=\sqrt{\left(\dfrac{dx}{dt}\right)^2+
+    \left(\dfrac{dy}{dt}\right)^2+\left(\dfrac{dz}{dt}\right)^2}\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Arclength (from \(A=\vec{r}(a)\)
+  <br>to \(B=\vec{r}(b)\))</p>
+  <p>
+    \(\displaystyle L=\int_{A}^{B} ds=\int_{a}^{b} |\vec{v}|\,dt\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Unit Tangent Vector</p>
+  <p>
+    \(\hat{T}=\dfrac{\vec{v}}{|\vec{v}|}\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">
+  <br><br>
+  Velocity \(\times\) Acceleration
+  <br><br><br><br>
+  and its length</p>
+  <p>
+    \(\vec{v}\times\vec{a}=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \dfrac{dx}{dt} & \dfrac{dy}{dt} & \dfrac{dz}{dt} \dfrac{\frac{}{}}{\frac{}{}} \\
+    \dfrac{d^2x}{dt^2} & \dfrac{d^2y}{dt^2} & \dfrac{d^2z}{dt^2}
+    \end{vmatrix}\)
+    <br><br>
+    \(|\vec{v}\times\vec{a}|\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Unit Binormal Vector</p>
+  <p>
+    \(\hat{B}=\hat{T}\times\hat{N}
+    =\dfrac{\vec{v}\times\vec{a}}{|\vec{v}\times\vec{a}|}\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Unit Normal Vector
+  <br><br><br><br></p>
+  <p>
+    \(\begin{aligned}
+    \hat{N}
+    &=\dfrac{\text{proj}_{\bot \vec{v}}\vec{a}}{\left|proj_{\bot \vec{v}}\vec{a}\right|}
+    =\dfrac{|\vec{v}|}{|\vec{v}\times\vec{a}|}
+    \left(\vec{a}-\,\dfrac{\vec{a}\cdot\vec{v}}{|\vec{v}|^2}\vec{v}\right) \\
+    &=\hat{B}\times\hat{T}=\dfrac{\hat{T}'(t)}{|\hat{T}'(t)|}
+    \end{aligned}\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Curvature and
+  <br>Radius of Curvature</p>
+  <p>
+    \(\kappa=\dfrac{1}{R}=\dfrac{1}{|\vec{v}|}\left|\dfrac{d\hat{T}}{dt}\right|
+      =\dfrac{|\vec{v}\times\vec{a}|}{|\vec{v}|^{3}}\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Torsion</p>
+  <p>\(\tau=-\,\dfrac{d\hat{B}}{ds}\cdot\hat{N}=
+    \dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Tangential Acceleration</p>
+  <p>
+    \(a_{T}=\vec{a}\cdot\hat{T}=\dfrac{d}{dt}|\vec{v}|\)
+  </p>
+</div>
+<br>
+<div class="column">
+  <p data-col-width="25%">Normal Acceleration</p>
+  <p>
+    \(a_{N}=\vec{a}\cdot\hat{N}=\kappa|\vec{v}|^2=\dfrac{|\vec{v}|^2}{R}\)
+ </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

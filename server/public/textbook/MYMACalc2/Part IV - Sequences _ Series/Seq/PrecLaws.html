@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e3. Precise Limit Laws | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="PrecSpec.html" title="Previous">&lArr;</a></li>
+      <li><a href="PrecBM.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  \(\displaystyle \lim_{n\to\infty}a_n=L\) &emsp; means
+  <span class="center">
+    For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </span>
+  <span class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon\).
+  </span>
+  \(\displaystyle \lim_{n\to\infty}a_n=\infty\) &emsp; means
+  <span class="center">
+    For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </span>
+  <span class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(a_n \gt M\).
+  </span>
+</p>
+
+
+      
+      <h2>e3. Precise Limit Laws</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Many of the proofs will need the following two results:
+</p>
+
+        <div class="rule" id="thm"></div>
+
+<p class="thm" data-title="Triangle Inequality">
+  \[
+  \left|\dfrac{}{}|X|-|Y|\dfrac{}{}\right| \le |X+Y| \le |X|+|Y|
+  \]
+  <button class="toggle" data-toggle="ProofTri">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofTri">
+	<p>
+		<span class="hl">Triangle Inequality:</span><br>
+    If \(X\) and \(Y\) are both positive or both negative, then
+    \(|X+Y|=|X|+|Y|\), which is the equality case of the right side.
+    Further, \(|X+Y|\) is greater than both \(|X|-|Y|\) and
+    \(|Y|-|X|\) which is what the left side says.
+  </p>
+	<p>
+    Suppose \(X\) and \(Y\) have opposite signs. Let \(X\) be positive and
+    \(Y\) be negative. Then \(Y=-Z\) where \(Z\) is positive. Consequently,
+    \(|X+Y|=|X-Z| \le |X|+|Z|=|X|+|Y|\), which is the right inequality.
+    Further,   \(|X+Y|=|X-Z|=||X|-|Y||\), which is the equality case of the
+    left side.
+  </p>
+</div>
+<p class="lemma"  data-title="Equivalent Limit Lemma">
+  \[
+  \lim_{n\to\infty}a_n=L \qquad \text{if and only if} \qquad \lim_{n\to\infty}(a_n-L)=0
+  \]
+  <button class="toggle" data-toggle="ProofEquivLim">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofEquivLim">
+	<p>
+		<span class="hl">Equivalent Limit Lemma:</span><br>
+    On the one hand, \(\displaystyle \lim_{n\to\infty}a_n=L\) &emsp; means
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon\).
+    </span>
+    On the other hand, \(\displaystyle \lim_{n\to\infty}(a_n-L)=0\) &emsp; means
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|(a_n-L)-0| \lt \varepsilon\).
+    </span>
+    They are the same statement.
+  </p>
+</div>
+<p>
+  We can now prove the first two Limit Laws:
+</p>
+
+        <div class="rule" id="add_subt"></div>
+
+<p class="prop" data-title="Addition Law">
+  Let \(a_n\) and \(b_n\) be sequences for
+  which \(\displaystyle \lim_{n\to\infty}a_n=L\) and
+  \(\displaystyle \lim_{n\to\infty}b_n=M\) where \(L\) and \(M\) are finite.
+  Then:
+  \[
+  \lim_{n\to\infty}(a_n+b_n)=L+M
+  \]
+  <button class="toggle" data-toggle="ProofAdd">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofAdd">
+  <p>
+		<span class="hl">Addition Law:</span>&emsp;
+    The conditions \(\displaystyle \lim_{n\to\infty}a_n=L\) and
+    \(\displaystyle \lim_{n\to\infty}b_n=M\) say:
+    <span class="center">
+      For all &ensp; \(\varepsilon_1 \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N_1\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N_1\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon_1\).
+    </span>
+    <br>
+    <span class="center">
+      For all &ensp; \(\varepsilon_2 \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N_2\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N_2\) &ensp; then &ensp; \(|b_n-M| \lt \varepsilon_2\).
+    </span>
+    We need to show \(\displaystyle \lim_{n\to\infty}(a_n+b_n)=L+M\) which
+    means:
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_n+b_n-L-M| \lt \varepsilon\).
+    </span>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let
+    \[
+    \varepsilon_1=\varepsilon_2=\dfrac{\varepsilon}{2}
+    \]
+    and pick \(N_1\) and \(N_2\) to satisfy the definitions of the limits
+    of \(a_n\) and \(b_n\). Then, let \(N=\max(N_1,N_2)\).
+    Then, if &ensp; \(n \gt N\) &ensp; then &ensp; \(n \gt N_1\) &ensp;
+    and &ensp; \(n \gt N_2\). &ensp; Consequently,
+    \[
+    |a_n-L| \lt \varepsilon_1=\dfrac{\varepsilon}{2}
+    \quad \text{and} \quad
+    |b_n-M| \lt \varepsilon_2=\dfrac{\varepsilon}{2}
+    \]
+    Finally, by the Triangle Inequality:
+    \[\begin{aligned}
+    |a_n+b_n-L-M|&=|(a_n-L)+(b_n-M)| \\
+    &\le |a_n-L|+|b_n-M| \lt
+    \dfrac{\varepsilon}{2}+\dfrac{\varepsilon}{2}=\varepsilon
+    \end{aligned}\]
+	</p>
+</div>
+<p class="prop" data-title="Subtraction Law">
+  Let \(a_n\) and \(b_n\) be sequences for
+  which \(\displaystyle \lim_{n\to\infty}a_n=L\) and
+  \(\displaystyle \lim_{n\to\infty}b_n=M\) where \(L\) and \(M\) are finite.
+  Then:
+  \[
+  \lim_{n\to\infty}(a_n-b_n)=L-M
+  \]
+  <button class="toggle" data-toggle="ProofSubt">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofSubt">
+  <p>
+		<span class="hl">Subtraction Law:</span> &emsp;
+    Let \(c_n=-b_n\). Then by the Constant Multiple Law (proved below),
+    \(\displaystyle \lim_{n\to\infty}c_n=-\lim_{n\to\infty}b_n=-M\).
+    And by the addition law,
+    \(\displaystyle \lim_{n\to\infty}(a_n-b_n)
+    =\lim_{n\to\infty}(a_n+c_n)=L-M\).
+  </p>
+</div>
+
+        <div class="rule" id="prod"></div>
+
+<p>
+  Before proving the Product Rule, we prove two special cases which will be
+  helpfiul in its proof:
+</p>
+<p class="lemma" data-title="Constant Multiple Law">
+  Let \(a_n\) be a sequence for
+  which \(\displaystyle \lim_{n\to\infty}a_n=L\) where \(L\) is finite.
+  Then for all constants \(c\), we have:
+  \[
+  \lim_{n\to\infty}c\,a_n=cL
+  \]
+  <button class="toggle" data-toggle="ProofConstMult">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofConstMult">
+  <p>
+		<span class="hl">Constant Multiple Law:</span> &emsp;
+    The condition \(\displaystyle \lim_{n\to\infty}a_n=L\) says:
+    <span class="center">
+      For all &ensp; \(\varepsilon_1 \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N_1\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N_1\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon_1\).
+    </span>
+    We need to show \(\displaystyle \lim_{n\to\infty}(ca_n)=cL\) which
+    means:
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|ca_n-cL| \lt \varepsilon\).
+    </span>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let
+    \[
+    \varepsilon_1=\dfrac{\varepsilon}{|c|}
+    \]
+    and pick \(N_1\) to satisfy the definition of the limit
+    of \(a_n\), and let \(N=N_1\).
+    Then, if &ensp; \(n \gt N\) &ensp; then &ensp; \(n \gt N_1\) also.
+    &ensp; Consequently,
+    \[
+    |ca_n-cL| = |c||a_n-L| \lt |c|\varepsilon_1=\varepsilon
+    \]
+  </p>
+</div>
+<p class="lemma" data-title="Product Law for Zero Limits">
+  Let \(a_n\) and \(b_n\) be sequences for
+  which \(\displaystyle \lim_{n\to\infty}a_n=0\) and
+  \(\displaystyle \lim_{n\to\infty}b_n=0\). Then:
+  \[
+  \lim_{n\to\infty}a_n\,b_n=0
+  \]
+  <button class="toggle" data-toggle="ProofProd0">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofProd0">
+  <p>
+		<span class="hl">Product Law for Zero Limits:</span> &emsp;
+    The conditions \(\displaystyle \lim_{n\to\infty}a_n=0\) and
+    \(\displaystyle \lim_{n\to\infty}b_n=0\) say:
+    <span class="center">
+      For all &ensp; \(\varepsilon_1 \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N_1\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N_1\) &ensp; then &ensp; \(|a_n| \lt \varepsilon_1\).
+    </span>
+    <br>
+    <span class="center">
+      For all &ensp; \(\varepsilon_2 \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N_2\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N_2\) &ensp; then &ensp; \(|b_n| \lt \varepsilon_2\).
+    </span>
+    We need to show \(\displaystyle \lim_{n\to\infty}(a_nb_n)=0\) which
+    means:
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_nb_n| \lt \varepsilon\).
+    </span>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let
+    \[
+    \varepsilon_1=\varepsilon_2=\sqrt{\varepsilon}
+    \]
+    and pick \(N_1\) and \(N_2\) to satisfy the definitions of the limits
+    of \(a_n\) and \(b_n\). Then, let \(N=\max(N_1,N_2)\).
+    Then, if &ensp; \(n \gt N\) &ensp; then &ensp; \(n \gt N_1\) &ensp;
+    and &ensp; \(n \gt N_2\). &ensp; Consequently,
+    \[
+    |a_n| \lt \varepsilon_1=\sqrt{\varepsilon}
+    \quad \text{and} \quad
+    |b_n| \lt \varepsilon_2=\sqrt{\varepsilon}
+    \]
+    Consequently:
+    \[
+    |a_nb_n| \le \varepsilon_1\varepsilon_2=\sqrt{\varepsilon}\sqrt{\varepsilon}
+    =\varepsilon
+    \]
+	</p>
+</div>
+<p>
+  We can now prove the Product Rule:
+</p>
+<p class="prop" data-title="Product Law">
+  Let \(a_n\) and \(b_n\) be sequences for
+  which \(\displaystyle \lim_{n\to\infty}a_n=L\) and
+  \(\displaystyle \lim_{n\to\infty}b_n=M\) where \(L\) and \(M\) are finite.
+  Then:
+  \[
+  \lim_{n\to\infty}(a_n\,b_n)=LM
+  \]
+  <button class="toggle" data-toggle="ProofProd">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofProd">
+	<p>
+		<span class="hl">Product Law:</span> &emsp;
+    By the Equivalent Limit Lemma, the theorem statement is equivalent to:
+    <br>
+    Let \(a_n\) and \(b_n\) be sequences for
+    which \(\displaystyle \lim_{n\to\infty}(a_n-L)=0\) and
+    \(\displaystyle \lim_{n\to\infty}(b_n-M)=0\) where \(L\) and \(M\) are finite.
+    Then:
+    \[
+    \lim_{n\to\infty}(a_n\,b_n-LM)=0
+    \]
+    The proof of this alternate statement is a straightforward computation:
+  </p>
+	<div class="column">
+  	<p data-col-width="70%">
+      \[\begin{aligned}
+      \lim_{n\to\infty}&(a_n\,b_n-LM) \\[5pt]
+      &=\lim_{n\to\infty}([(a_n-L)+L][(b_n-M)+M]-LM) \\[8pt]
+      &=\lim_{n\to\infty}[(a_n-L)(b_n-M)+M(a_n-L)+L(b_n-M)] \\[8pt]
+      &=\lim_{n\to\infty}(a_n-L)(b_n-M)
+      +\lim_{n\to\infty}M(a_n-L)+\lim_{n\to\infty}L(b_n-M) \\[8pt]
+      &=\lim_{n\to\infty}(a_n-L)(b_n-M)
+      +M\lim_{n\to\infty}(a_n-L)+L\lim_{n\to\infty}(b_n-M) \\[8pt]
+      &=0+M0+L0 \\[2pt]
+      &=0
+      \end{aligned}\]
+    </p>
+  	<p data-col-width="30%">
+      <br>
+      Subtract and add \(L\) and \(M\).\(\dfrac{}{\dfrac{}{}}\)
+      <br>
+      Distribute (FOIL).\(\dfrac{}{\dfrac{}{}}\)
+      <br>
+      Sum Law.\(\dfrac{}{\dfrac{}{}}\)
+      <br>
+      Constant Multiple Law.\(\dfrac{}{\dfrac{}{}}\)
+      <br>
+      \(\displaystyle \lim_{n\to\infty}(a_n-L)=0\),
+      \(\displaystyle \lim_{n\to\infty}(b_n-M)=0\)
+      <br>
+      &emsp;and Product Law for Zero Limits
+    </p>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  The following theorems are stated in one order but proved in another order,
+  since we will use the Continuous Function Law to prove the other Laws.
+</p>
+
+        <div class="rule" id="quot"></div>
+
+<p>
+  The Quotient Law follows from the Product Rule and the following special
+  case:
+</p>
+<p class="lemma" data-title="Reciprocal Law">
+  Let \(b_n\) be a sequence for
+  which \(\displaystyle \lim_{n\to\infty}b_n=M\) where \(M\) is finite.
+  Then:
+  \[
+  \lim_{n\to\infty}\dfrac{1}{b_n}=\dfrac{1}{M}
+  \]
+  provided \(b_n\neq 0\) for all \(n\) and \(M\neq 0\).
+</p>
+<p class="prop" data-title="Quotient Law">
+  Let \(a_n\) and \(b_n\) be sequences for
+  which \(\displaystyle \lim_{n\to\infty}a_n=L\) and
+  \(\displaystyle \lim_{n\to\infty}b_n=M\) where \(L\) and \(M\) are finite.
+  Then:
+  \[
+  \lim_{n\to\infty}\dfrac{a_n}{b_n}=\dfrac{L}{M}
+  \]
+  provided \(b_n\neq 0\) for all \(n\) and \(M\neq 0\).
+</p>
+
+        <div class="rule" id="power"></div>
+
+<p class="prop" data-title="Power Law">
+  Let \(a_n\) and \(b_n\) be sequences for
+  which \(\displaystyle \lim_{n\to\infty}a_n=L\) and
+  \(\displaystyle \lim_{n\to\infty}b_n=M\) where \(L\) and \(M\) are finite.
+  Then:
+  \[
+  \lim_{n\to\infty}(b_n)^{a_n}=M^L
+  \]
+  provided \(b_n\gt0\) for all \(n\), \(M\gt0\),
+  \((b_n)^{a_n }\) is defined for all \(n\) and \(M^L\) is defined.
+</p>
+
+        <div class="rule" id="contfn"></div>
+
+<p class="prop" data-title="Continuous Function Law">
+  Let \(a_n\) be a sequence for which \(\displaystyle \lim_{n\to\infty}a_n=L\)
+  where \(L\) is finite and let \(f(x)\) be a function which is continuous at
+  \(L\) and at each of the numbers \(a_n\).
+  Then:
+  \[
+  \lim_{n\to\infty}f(a_n)=f(L)
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  &emsp;&emsp;<button class="toggle" data-toggle="ProofContFn">Proof of the Continuous Function Law</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofContFn">
+	<p>
+		<span class="hl">Continuous Function Law:</span> &emsp;
+    The condition \(\displaystyle \lim_{n\to\infty}a_n=L\) say:
+    <span class="center">
+      For all &ensp; \(\varepsilon_1 \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N_1\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N_1\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon_1\).
+    </span>
+    The fact that \(f(x)\) is continuous at \(x=L\) say:
+    <span class="center">
+      For all &ensp; \(\varepsilon_2 \gt 0\), &ensp; there is a \(\delta_2 \gt 0\),
+      &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(0 \lt |x-L| \lt \delta_2\) &ensp; then &ensp; \(|f(x)-f(L)| \lt \varepsilon_2\).
+    </span>
+    We need to show \(\displaystyle \lim_{n\to\infty}(f(a_n))=f(L)\) which
+    means:
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|f(a_n)-f(L)| \lt \varepsilon\).
+    </span>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let
+    \[
+    \varepsilon_1=\varepsilon_2=\dfrac{\varepsilon}{2}
+    \]
+    and pick \(N_1\) and \(N_2\) to satisfy the definitions of the limits
+    of \(a_n\) and \(b_n\). Then, let \(N=\max(N_1,N_2)\).
+    Then, if &ensp; \(n \gt N\) &ensp; then &ensp; \(n \gt N_1\) &ensp;
+    and &ensp; \(n \gt N_2\). &ensp; Consequently,
+    \[
+    |a_n-L| \lt \varepsilon_1=\dfrac{\varepsilon}{2}
+    \quad \text{and} \quad
+    |b_n-M| \lt \varepsilon_2=\dfrac{\varepsilon}{2}
+    \]
+    Finally, by the Triangle Inequality:
+    \[\begin{aligned}
+    |a_n+b_n-L-M|&=|(a_n-L)+(b_n-M)| \\
+    &\le |a_n-L|+|b_n-M| \lt
+    \dfrac{\varepsilon}{2}+\dfrac{\varepsilon}{2}=\varepsilon
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  &emsp;&emsp;<button class="toggle" data-toggle="ProofRecip">Proof of the Reciprocal Law</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofRecip">
+  <p>
+    <big>PY: Proof needed. This if for the wrong rule.</big>
+    <br>
+		<span class="hl">Reciprocal Law:</span> &emsp;
+    The condition \(\displaystyle \lim_{n\to\infty}a_n=L\) says:
+    <span class="center">
+      For all &ensp; \(\varepsilon_1 \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N_1\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N_1\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon_1\).
+    </span>
+    We need to show \(\displaystyle \lim_{n\to\infty}(ca_n)=cL\) which
+    means:
+    <span class="center">
+      For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+      &ensp; \(N\), &ensp; such that
+    </span>
+    <span class="center">
+      if &ensp; \(n \gt N\) &ensp; then &ensp; \(|ca_n-cL| \lt \varepsilon\).
+    </span>
+		So given an arbitrary number \(\varepsilon \gt 0\), we let
+    \[
+    \varepsilon_1=\dfrac{\varepsilon}{|c|}
+    \]
+    and pick \(N_1\) to satisfy the definition of the limit
+    of \(a_n\), and let \(N=N_1\).
+    Then, if &ensp; \(n \gt N\) &ensp; then &ensp; \(n \gt N_1\) also.
+    &ensp; Consequently,
+    \[
+    |ca_n-cL| = |c||a_n-L| \lt |c|\varepsilon_1=\varepsilon
+    \]
+  </p>
+</div>
+<p>
+  &emsp;&emsp;<button class="toggle" data-toggle="ProofQuot">Proof of the Quotient Law</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofQuot">
+	<p>
+		<span class="hl">Quotient Law:</span> &emsp;
+    <big>PY: Proof needed</big>
+  </p>
+</div>
+<p>
+  &emsp;&emsp;<button class="toggle" data-toggle="ProofPower">Proof of the Power Law</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofPower">
+	<p>
+		<span class="hl">Power Law:</span> &emsp;
+    <big>PY: Proof needed</big>
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

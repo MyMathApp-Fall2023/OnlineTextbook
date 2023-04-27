@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b. Newtonian Heating and Cooling | 17. Applications of Differential Equations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Exp.html" title="Previous">&lArr;</a></li>
+      <li><a href="Mixing.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Applications of Differential Equations</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>b. Newtonian Heating and Cooling</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In addition to discovering the laws of inertia and gravity, Sir Isaac Newton
+  also discovered the law which describes the heating or cooling of an object
+  when its temperature is different from that of its surroundings.
+</p>
+<p class="formula" data-title="Newton's Law of Heating and Cooling">
+  The rate of change of the temperature of an object is proportional to the
+  difference between the temperature of the object \(T\) and the temperature of
+  its surroundings \(T_A\), called the <em>ambient temperature</em>. Thus the
+  temperature satisfies the differential equation
+  \[
+  \dfrac{dT}{dt}=-k(T-T_A)
+  \qquad \text{where} \quad
+  k>0
+  \]
+  The minus sign says that if the temperature is greater than the ambient
+  temperature, \(T \gt T_A\), then the temperature decreases, while if the
+  temperature is less than the ambient temperature, \(T \lt T_A\), then the
+  temperature increases.
+</p>
+
+				<div class="rule"></div>
+
+<p class="genexample" data-title="Newton's Law of Heating and Cooling" data-number="1">
+  Find the general solution of:
+  \[
+  \dfrac{dT}{dt}=-k(T-T_A)
+  \qquad \text{where} \qquad
+  k>0\]
+  and then find the specific solution satisfying the initial condition:
+  \[
+  T(0)=T_o
+  \]
+</p>
+<p class="gensol">
+  Since \(T_A\) is a constant, notice that \(\dfrac{dT_A}{dt}=0\). So the
+  equation can be written as
+  \[
+  \dfrac{d}{dt}(T-T_A)=-k(T-T_A)
+  \]
+  But this is an exponential decay equation for the variable \((T-T_A)\). So,
+  the solution is
+  \[
+  T-T_A=Ae^{-kt} \quad \text{or} \quad T=T_A+Ae^{-kt}
+  \]
+  If the initial temperature is \(T(0)=T_o\), then \(T_o=T_A+Ae^0\) and so
+  \(A=T_o-T_A\). The solution becomes
+  \[
+  T=T_A+(T_o-T_A)e^{-kt}
+  \]
+</p>
+<p>
+  Notice that the general solution has \(3\) constants: \(T_A\), \(T_o\) and \(k\).
+  So in addition to the ambient temperature, \(T_A\), and the initial temperature,
+  \(T_o\), we need the temperature at one later time to find \(k\). If we don't
+  know \(T_o\), then we need the temperature at two later times to find \(k\)
+  and \(T_o\).
+</p>
+
+				<div class="rule"></div>
+
+<p class="example" data-title="CSI: Calculus" data-number="1">
+  A medical examiner arrived at the scene of a murder and determined that the
+  corpse had a body temperature of \(30^{\circ}\text{C}\). One hour later,
+  its temperature was \(27^{\circ}\text{C}\). The temperature in the room
+  was \(12^{\circ}\text{C}\). Assuming that the temperature in the room has
+  been constant, how long was the victim dead before the body was discovered?
+  Normal body temperature is \(37^{\circ}\text{C}\).
+</p>
+<p class="sol">
+  Let \(T(t)\) be the body temperature in \(^{\circ}\text{C}\) at
+  time \(t\) measured in hours. We know \(T(0)=30\) and \(T(1)=27\).
+  Further the ambient temperature is \(T_A=12\). We want to know the time when
+  the temperature was \(37\).
+</p>
+<p>
+  By Newton's law the temperature satisfies the differential equation:
+  \[
+  \dfrac{dT}{dt}=-k(T-12)
+  \]
+  where we do not yet know \(k\). We solve it anyway. This equation is both
+  separable and linear. We choose to separate and integrate:
+  \[
+  \int \dfrac{dT}{T-12}=-\int k\,dt
+  \qquad \Longrightarrow \qquad
+  \ln|T-12|=-kt+C
+  \]
+  We solve for \(T\):
+  \[
+  |T-12|=e^C e^{-kt}
+  \qquad \Longrightarrow \qquad
+  T=12+Ae^{-kt}
+  \]
+  where \(A=\pm e^C\). The initial condition \(T(0)=30\) implies that \(A=18\).
+  The secondary condition \(T(1)=27\) implies \(27=12+18e^{-k}\), so that:
+  \[
+  e^{-k}=\dfrac{15}{18}=\dfrac{5}{6}
+  \qquad \text{and} \qquad
+  k=-\ln\dfrac{5}{6}=\ln\dfrac{6}{5}
+  \]
+  Thus the solution is:
+  \[
+  T=12+18e^{-t\ln(6/5)}
+  \]
+  We want to know the time when the temperature was \(37\).
+  So we solve the equation:
+  \[
+  37=12+18e^{-t\ln(6/5)}
+  \]
+  as follows:
+  \[\begin{aligned}
+  e^{-t\ln(6/5)}=\dfrac{25}{18}
+  &\qquad \Longrightarrow \qquad
+  -t\ln\dfrac{6}{5}=\ln\dfrac{25}{18} \\[5pt]
+  &\qquad \Longrightarrow \qquad
+  t=-\dfrac{\ln(25/18)}{\ln(6/5)}\approx
+  -1.8018
+  \end{aligned}\]
+  So the murder occurred only \(1.8\) hours before the medical examiner arrived.
+</p>
+
+				<div class="rule"></div>
+
+<p class="remark">
+  The equation \(\dfrac{dT}{dt}=-k(T-T_A)\) can also be solved by rewriting it
+  in standard linear form as \(\dfrac{dT}{dt}+kT=kT_A\), in which case the
+  integrating factor is \(I=e^{kt}\) and the equation becomes
+  \(\dfrac{d}{dt}(Te^{kt})=kT_Ae^{kt}\). Integrating, we get:
+  \[
+  Te^{kt}=T_Ae^{kt}+C
+  \]
+  So the solution is:
+  \[
+  T=T_A+Ce^{-kt}
+  \]
+</p>
+<p class="remark">
+  The equation \(\dfrac{dT}{dt}=-k(T-T_A)\) can also be solved by remembering
+  that the derivative of a constant is zero. So \(\dfrac{d(-T_A)}{dt}=0\).
+  Adding this to the left side, the differential equation becomes:
+  \[
+  \dfrac{d(T-T_A)}{dt}=-k(T-T_A)
+  \]
+  This is just the exponential decay equation for \(T-T_A\). So the solution is:
+  \[
+  T-T_A=Ae^{-kt}
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    A turkey has been kept in a refrigerator at \(35^{\circ}\text{F}\). It is
+    put into an oven which has been preheated to \(325^{\circ}\text{F}\) and
+    will be maintained at that temperature. After \(1\) hour the temperature of
+    the turkey has reached \(75^{\circ}\text{F}\). How long will it take for
+    the turkey to heat up to \(185^{\circ}\text{F}\)?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    The turkey takes \(4.9\) hours to cook.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The ambient temperature is \(T_A=325\). So the differential equation is:
+    \[
+    \dfrac{dT}{dt}=-k(T-325)
+    \]
+    By either separating variables or finding an integrating factor or changing
+    the left side to \(\dfrac{d(T-325)}{dt}\), the general solution is:
+    \[
+    T=325+Ae^{-kt}
+    \]
+    Using the initial condition, \(T(0)=35\), we find \(A=-290\), and the
+    solution becomes:
+    \[
+    T=325-290e^{-kt}
+    \]
+    Using the secondary condition, \(T(1)=75\), we compute:
+    \[
+    75=325-290e^{-k}
+    \qquad \Longrightarrow \qquad
+    k=-\ln\dfrac{250}{290}=\ln\dfrac{29}{25}
+    \]
+    So the temperature is:
+    \[
+    T=325-290e^{-t\ln(29/25)}
+    \]
+    We want to know the time when the temperature is \(185\). So we solve:
+    \[
+    185=325-290e^{-t\ln(29/25)}
+    \]
+    to find
+    \[
+    t=-\dfrac{\ln14/29}{\ln29/25}\approx 4.9066
+    \]
+    So the turkey takes \(4.9\) hours to cook.
+  </p>
+</div>
+<p class="remark">
+  This is not a realistic problem because cooking a real turkey depends on the
+  size of the turkey, how quickly the heat can penetrate to the center of the
+  turkey and whether the center of the turkey is still frozen.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

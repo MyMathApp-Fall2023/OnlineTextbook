@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Polar Equations | 1. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="2DPolarConvert.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DPolarPlot.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>1. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Polar Coordinates - 2D</h2>
+
+
+      
+      <h2>3. Polar Equations</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+<p>
+  A <span class="defword">rectangular equation</span> is an equation which
+	involves the rectangular coordinates, \(x\) and \(y\). For example,
+	\(y=x^2\) and \(\left(x^2+y^2\right)^2=2xy\) are rectangular equations.
+  A <span class="defword">solution of a rectangular equation</span> is
+  a point \(P=(x,y)\) for which its coordinates \((x,y)\) satisfy the
+  equation. For example, \((-2,4)\) is a solution of \(y=x^2\) and
+  \((-2,-2)\) is a solution of \(\left(x^2+y^2\right)^2=2xy\).
+</p>
+<p class="def">
+  A <span class="defword">polar equation</span> is an equation which
+	involves the polar coordinates, \(r\) and \(\theta\). For example,
+	\(r^2=1+r\sin 2\theta\) and \(r=-e^\theta\) are polar equations.
+  A <span class="defword">solution of a polar equation</span> is
+  a point \(P=(r,\theta)\) for which <em>some</em> pair of coordinates
+  \((r,\theta)\) satisfy the equation. For example, \(P=(1,\pi)\) is a
+  solution of \(r^2=1+r\sin 2\theta\). In addition, \(P=(1,\pi)\) is a
+  solution of \(r=-e^\theta\) because we can also write \(P\) as
+  \(P=(-1,0)\) and \((-1,0)\) satisfies \(r=-e^\theta\). This is
+  <span style="color: magenta">wierd</span> but true!
+</p>
+<p>
+  On this page, we discuss converting rectangular equations into polar
+  equations and vice versa.
+</p>
+
+				<div class="rule"></div>
+
+<h3>Rectangular to Polar</h3>
+<p>
+  To convert a rectangular equation into a polar equation, simply substitute
+	\(x=r\cos\theta\) and \(y=r\sin\theta\) and simplify. As a shortcut, you
+  may use the identity \(x^2+y^2=r^2\). You may also cancel factors of \(r\)
+	provided the origin remains a solution.
+</p>
+<p class="example" data-number="1">
+  Convert the rectangular equation \(\left(x^2+y^2\right)^2=2xy\) to
+  polar form.
+</p>
+<p class="sol">
+  Substitute \(x=r\cos\theta\) and \(y=r\sin\theta\) and simplify:
+  \[\begin{aligned}
+  \left(x^2+y^2\right)^2&=2xy \\
+  \left(r^2\right)^2&=2(r\cos\theta)(r\sin\theta) \\
+  r^4&=2r^2\sin\theta\cos\theta \\
+  r^2&=2\sin\theta\cos\theta
+  \end{aligned}\]
+  We can cancel the \(r^2\) because \((r,\theta) =(0,0)\) is still a solution.
+	Finally, we use the identity \(\sin(2\theta)=2\sin\theta\cos\theta\) to conclude:
+  \[
+	r^2=\sin(2\theta)
+	\]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Obtain a polar equation for the hyperbola, \(x^2-y^2=1\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(r^2\cos 2\theta =1\)
+    <br>
+    or \(r^2=\sec 2\theta\)
+    <br>
+    or \(r=\pm\sqrt{\sec 2\theta }\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    \[\begin{aligned}
+    x^2-y^2&=1 \\
+    (r\cos\theta)^2-(r\sin\theta)^2&=1 \\
+    r^2\left(\cos^2\theta-\sin^2\theta\right)&=1 \\
+    r^2\cos(2\theta)&=1
+    \end{aligned}\]
+    We have used the identity \(\cos(2\theta)=\cos^2\theta-\sin^2\theta\).
+    We can also rewrite the equation as \(r^2=\sec(2\theta)\) or
+		\(r=\pm\sqrt{\sec(2\theta)}\).
+  </p>
+</div>
+
+  <div class="rule"></div>
+
+<h3>Polar to Rectangular</h3>
+<p>
+  To convert a polar equation into a rectangular equation, substitute
+	\(\cos\theta=\dfrac{x}{r}\) and \(\sin\theta=\dfrac{y}{r}\)
+	or if useful \(\tan\theta=\dfrac{y}{x}\). Then substitute \(r^2=x^2+y^2\).
+</p>
+<p class="example" data-number="3">
+  Convert the polar equation \(r^2=\cos 2\theta\) to rectangular form.
+</p>
+<p class="sol">
+  First use the identity \(\cos(2\theta)=\cos^2\theta-\sin^2\theta\) to
+	express everything in terms of \(\sin\theta\) and \(\cos\theta\):
+  \[\begin{aligned}
+  r^2&=\cos 2\theta \\
+  r^2&=\cos^2\theta-\sin^2\theta \\
+  r^2&=\left(\dfrac{x}{r}\right)^2-\left(\dfrac{y}{r}\right)^2
+  \end{aligned}\]
+  Now clear the denominator:
+    \[\begin{aligned}
+    r^4&=x^2-y^2 \\
+    \left(x^2+y^2\right)^2&=x^2-y^2
+    \end{aligned}\]
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Obtain a Cartesian equation for the polar equation, \(r=2\cos\theta\).
+    Identify the graph by looking at the rectangular equation.
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX4"></button>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+
+<div class="toBeToggled drop-hint" data-toggle="HintX4">
+  <p>
+    To identfy the graph, first complete the square.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <div class="column">
+    <p>
+      \(x^2+y^2=2x\)
+      or \((x-1)^2+y^2=1\)
+      <br>
+      Circle of radius \(1\) centered at \((1,0)\).
+    </p>
+    <div class="center">
+      <img src="graphics/eg_right_circle.jpg" alt="eg_right_circle">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    \[\begin{aligned}
+    r&=2\cos\theta  \\
+    r&=2\dfrac{x}{r} \\
+    r^2&=2x \\
+    x^2+y^2&=2x
+    \end{aligned}\]
+    To identify the graph, we first complete the square by adding \(-2x+1\) to
+    both sides:
+    \[\begin{aligned}
+    x^2-2x+1+y^2&=1 \\
+    (x-1)^2+y^2&=1
+    \end{aligned}\]
+  </p>
+  <div class="column">
+    <p>
+      This is a circle of radius \(1\) centered at \((1,0)\).
+    </p>
+    <div class="center">
+      <img src="graphics/eg_right_circle.jpg" alt="eg_right_circle">
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

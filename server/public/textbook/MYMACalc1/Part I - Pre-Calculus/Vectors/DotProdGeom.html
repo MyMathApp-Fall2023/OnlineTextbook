@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Geometric Formula | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DotProdProp.html" title="Previous">&lArr;</a></li>
+      <li><a href="Angles.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Dot Product</h2>
+
+
+      
+      <h2>3. Geometric Formula</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p>
+  	To understand the meaning of the <span class="hl">dot product</span>,
+    we turn to its geometric description in terms of the lengths of the
+  	vectors \(\vec u\) and \(\vec v\) and the angle \(\theta\) between them.
+	</p>
+  <div class="center">
+	  <img src="graphics/DefDotGeom.jpg" alt="DefDotGeom"/>
+  </div>
+</div>
+<p class="formula" data-title="Geometric Formula for Dot Product">
+  If \(\theta\) is the angle between two vectors \(\vec u\) and \(\vec v\),
+  then their dot product is
+	\[
+	\vec u\cdot\vec v=|\vec u|\,|\vec v|\cos\theta
+	\]
+  <span class="greenbig center"><em>Memorize this!</em></span>
+  <button class="toggle" data-toggle="ProofDotGeom">Proof</button>
+  Read it! It's easy and informative.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="ProofDotGeom">
+  <div class="column">
+    <div>
+      <p>
+      	First recall the <span class="hl">Law of Cosines</span> which gives
+        one side, \(c\), of a triangle in terms of the other two sides,
+        \(a\) and \(b\), and the angle \(\theta\) between them.
+    	</p>
+      <p class="thm" data-title="Law of Cosines">
+      	\[
+        c^2=a^2+b^2-2ab\cos\theta
+        \]
+      </p>
+    </div>
+    <div class="center">
+  	  <img src="graphics/PfDotLawCos.jpg" alt="PfDotLawCos"/>
+    </div>
+  </div>
+  <div class="column">
+    <p>
+    	In order to compare the two diagrams above, we complete the vector
+      picture into a triangle and note that the third	side is
+      \(\vec v-\vec u\) since by the tail to tip formula for vector addition:
+      \[
+      \vec u+(\vec v-\vec u)=\vec v
+      \]
+  	</p>
+    <div class="center">
+  	  <img src="graphics/PfDotGeom.jpg" alt="PfDotGeom"/>
+    </div>
+  </div>
+  <p>
+    Comparing the figures, we have
+  	\[
+  	a=|\vec u| \qquad \quad b=|\vec v| \qquad \quad c=|\vec v-\vec u|
+  	\]
+    So the Law of Cosines says:
+  	\[
+  	|\vec v-\vec u|^2=|\vec u|^2+|\vec v|^2-2|\vec u|\,|\vec v|\cos\theta
+  	\]
+    However, there is another way to compute \(|\vec v-\vec u|^2\)
+    using the properties of the dot product:
+		\[\begin{aligned}
+		|\vec v-\vec u|^2
+		&=(\vec v-\vec u)\cdot(\vec v-\vec u) &\quad&\text{Square Property}\\
+		&=\vec v\cdot\vec v-\vec v\cdot\vec u-\vec u\cdot\vec v+\vec u\cdot\vec u &\quad&\text{Distributive (FOIL)}\\
+		&=\vec v\cdot\vec v-2\vec u\cdot\vec v+\vec u\cdot\vec u &\quad&\text{Commutative}\\
+		&=|\vec u|^2+|\vec v|^2-2\vec u\cdot\vec v &\quad&\text{Square Property}\\
+		\end{aligned}\]
+  </p>
+  <p>
+    We now equate the two formulas for \(|\vec v-\vec u|^2\) and simplify
+  	\[\begin{aligned}
+  	|\vec u|^2+|\vec v|^2-2\vec u\cdot\vec v
+    &=|\vec u|^2+|\vec v|^2-2|\vec u|\,|\vec v|\cos\theta \\
+  	-2\vec u\cdot\vec v
+    &=-2|\vec u|\,|\vec v|\cos\theta \\
+  	\vec u\cdot\vec v
+    &=|\vec u|\,|\vec v|\cos\theta
+  	\end{aligned}\]
+    This is the geometric formula for dot product.
+  </p>
+</div>
+<p class="remark">
+  This formula is regarded as geometical because it does not depend on the choice
+  of coordinate axes. If we rotate the axes, the components of the individual
+  vectors will change, but their lengths and the angle between them will not.
+  It is not obvious that the algebraic formula for the dot product does not
+  change. However, the geometric formula makes it clear that the dot product
+  does not change.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute the dot product \(\vec a\cdot\vec b\) given that
+  \(|\vec a|=3\) and \(|\vec b|=4\) and the angle between the two vectors
+  is \(\theta=\dfrac{\pi}{4}\).
+</p>
+<p class="sol">
+We use the geometric formula for the dot product:
+	\[\begin{aligned}
+	\vec a\cdot\vec b
+  &=|\vec a|\,|\vec b|\cos\theta \\
+  &=3\cdot4\cdot\cos\dfrac{\pi}{4}
+	=6\sqrt{2}
+	\end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+  	Compute the dot product \(\vec c\cdot\vec d\) given that \(|\vec c|=1\) and
+  	\(|\vec d|=6\) and the angle between the two vectors is \(\theta=\dfrac{2\pi}{3}\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\vec c\cdot\vec d=-3\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+  	\[\begin{aligned}
+    \vec c\cdot\vec d&=|\vec c|\,|\vec d|\cos\theta \\
+    &=1\cdot6\cdot\cos\dfrac{2\pi}{3}
+    =1\cdot6\cdot\dfrac{-1}{2}=-3
+  	\end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+	There is one further property of the dot product which follows from the
+  geometric formula.
+</p>
+<div class="greybox">
+  <p class="thm">
+    Let \(\vec u\) and \(\vec v\) be arbitrary non-zero vectors. Then,
+  </p>
+  <ol start="7">
+  	<li>
+    	Sign of the Dot Product: &emsp;
+      <button class="toggle" data-toggle="Proof7">Proof</button>
+      <ol>
+        <li>
+          The vectors \(\vec u\) and \(\vec v\) are
+          <button class="toggle" data-toggle="perp">
+          <span class="defword">perpendicular</span></button> or
+          <button class="toggle" data-toggle="ortho">
+          <span class="defword">orthogonal</span></button>
+          if and only if their dot product is zero:
+          \[
+          \theta=\dfrac{\pi}{2}=90^\circ
+          \quad \Longleftrightarrow \quad
+          \vec u\cdot\vec v=0
+          \]
+        </li>
+        <div class="toBeToggled" data-toggle="perp">
+          <p>
+            Two vectors are perpendicular if the angle between them is
+            \(90^\circ\) or \(\dfrac{\pi}{2}\) rad.
+          </p>
+        </div>
+        <div class="toBeToggled" data-toggle="ortho">
+          <p>
+            Orthogonal is a synonym for perpendicular.
+          </p>
+        </div>
+        <li>
+          The angle between \(\vec u\) and \(\vec v\) is acute if and
+          only if their dot product is positive:
+          \[
+          \theta \lt \dfrac{\pi}{2}=90^\circ
+          \quad \Longleftrightarrow \quad
+          \vec u\cdot\vec v \gt 0
+          \]
+        </li>
+        <li>
+          The angle between \(\vec u\) and \(\vec v\) is obtuse if and
+          only if their dot product is negative:
+          \[
+          \theta \gt \dfrac{\pi}{2}=90^\circ
+          \quad \Longleftrightarrow \quad
+          \vec u\cdot\vec v \lt 0
+          \]
+        </li>
+      </ol>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof7">
+  <p>
+    Recall: &emsp;
+    \(\vec u\cdot\vec v=|\vec u|\,|\vec v|\cos\theta\)
+  </p>
+  <div class="column">
+    <div data-col-width="60%">
+      <p>
+        If the vectors \(\vec u\) and \(\vec v\) are perpendicular, then
+        \(\theta=\dfrac{\pi}{2}=90^\circ\) and \(\cos\theta=0\) so that
+        \(\vec u\cdot\vec v=0\).
+        <br>
+        If the angle between \(\vec u\) and \(\vec v\) is acute, then
+        \(\theta \lt \dfrac{\pi}{2}=90^\circ\) and \(\cos\theta \gt 0\) so that
+        \(\vec u\cdot\vec v \gt 0\).
+        <br>
+        If the angle between \(\vec u\) and \(\vec v\) is obtuse, then
+        \(\theta \gt \dfrac{\pi}{2}=90^\circ\) and \(\cos\theta \lt 0\) so that
+        \(\vec u\cdot\vec v \lt 0\).
+      </p>
+    </div>
+    <div class="center" data-col-width="40%">
+      <figure>
+  	    <img src="graphics/DefProjObtuseCos.jpg" alt="DefProjObtuseCos">
+        <figcaption>
+          \(\cos\theta\)
+        </figcaption>
+      </figure>
+	  </div>
+  </div>
+  <p>
+    Since we assumed \(|\vec u| \ne 0\) and \(|\vec v| \ne 0\), these statements
+    can be reversed, using
+    \(\cos\theta=\dfrac{\vec u\cdot\vec v}{|\vec u|\,|\vec v|}\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

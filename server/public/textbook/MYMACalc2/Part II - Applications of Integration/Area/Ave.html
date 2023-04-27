@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Average Value of a Function | 10. Area and Average Value</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Int_y.html" title="Previous">&lArr;</a></li>
+      <li><a href="AveRect.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Area and Average Value</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Average Value and Mean Value Theorem</h2>
+
+
+      
+      <h2>1. Average Value of a Function</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Recall that to find the average of \(n\) numbers, \(f_1,f_2,\ldots,f_n\)
+  we add the numbers and divide by \(n\):
+  \[
+  f_\text{ave}=\dfrac{f_1+f_2+\cdots+f_n}{n}
+  \]
+</p>
+<div class="column">
+  <div>
+    <p class="genexample" data-number="1">
+		  Find the average value of a function \(f(x)\) on
+		  an interval \([a,b]\).
+    </p>
+    <p class="der">
+		  We first divide the interval into \(n\) subintervals
+		  each of width \(\Delta x=\dfrac{b-a}{n}\) and sample the function at a
+      point \(x_i^*\) in the \(i^\text{th}\) interval giving the \(n\) numbers
+      \(f(x_1^*),f(x_2^*),\ldots,f(x_n^*)\). The average of the function
+      \(f(x)\) can be approximated by the average of these numbers:
+      \[\begin{aligned}
+	    f_\text{ave}
+      &\approx\dfrac{f(x_1^*)+f(x_2^*)+\cdots+f(x_n^*)}{n} \\
+      &\quad=\dfrac{1}{n}\sum_{i=1}^n\,f(x_i^*)
+      \end{aligned}\]
+		  <button class="toggle btn" data-toggle="egx2">For Example</button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_ave1sample.jpg" alt="eg_ave1sample">
+  </div>
+</div>
+<div class="toBeToggled" data-toggle="egx2">
+  <div class="column">
+		<p>
+      We can approximate the average of the function
+      \(f(x)=x^2\) on \([1,4]\) by dividing the interval into \(3\)
+      subintervals and evaluating \(f(x)\) at the \(3\) midpoints:
+      \[\begin{aligned}
+      f(1.5)&=1.5^2=2.25 \\
+  		f(2.5)&=2.5^2=6.25 \\
+  		f(3.5)&=3.5^2=12.25
+      \end{aligned}\]
+  	  and averaging to get
+      \[
+      f_\text{ave}\approx\dfrac{2.25+6.25+12.25}{3}=6.917
+      \]
+    </p>
+    <div class="center">
+      <img src="graphics/eg_ave2sample.jpg" alt="eg_ave2sample">
+    </div>
+  </div>
+  <p>
+    You will see in the next example that the correct average is \(f_\text{ave}=7\).
+  </p>
+</div>
+<p>
+  To get the exact average, we take the limit as \(n\rightarrow\infty\):
+  \[
+  f_\text{ave}
+  =\lim_{n\rightarrow\infty}\dfrac{1}{n}
+  \sum_{i=1}^n f(x_i^*)
+  \]
+  This looks almost like the definition of an integral, except there is a
+  \(\dfrac{1}{n}\) instead of a \(\Delta x\). To fix that, we multiply and
+  divide by \(b-a\) and recall that \(\dfrac{b-a}{n}=\Delta x\):
+  \[\begin{aligned}
+  f_\text{ave}
+  &=\dfrac{1}{b-a}\lim_{n\rightarrow\infty}\dfrac{b-a}{n}
+	\sum_{i=1}^n f(x_i^*) \\
+  &=\dfrac{1}{b-a}\lim_{n\rightarrow\infty}
+	\sum_{i=1}^n f(x_i^*)\Delta x \\
+  &=\dfrac{1}{b-a}\int_a^b f(x)\,dx
+  \end{aligned}\]
+</p>
+<p id="aveval">
+  Thus we conclude:
+</p>
+<p class="formula" data-title="Average Value of a Function">
+  The <span class="defword">average value of a function</span> \(f(x)\) on
+	an interval \([a,b]\) is:
+  \[
+  f_\text{ave}=\dfrac{1}{b-a}\int_a^b f(x)\,dx
+  \]
+</p>
+<a id="eg_x^2"></a>
+
+          <div class="rule"></div>
+
+<div class="column">
+  <div>
+		<p class="example" data-number="2">
+      Find the average value of the function \(y=x^2\) on the interval \([1,4]\).
+		</p>
+    <p class="sol">
+      We have \(a=1\), \(b=4\) and \(b-a=3\). So
+      \[\begin{aligned}
+      f_\text{ave}
+      &=\dfrac{1}{3}\int_1^4 x^2\,dx
+    	=\dfrac{1}{3}\left[\dfrac{x^3}{3}\right]_1^4 \\
+      &=\dfrac{1}{3}\left[\dfrac{64}{3}-\dfrac{1}{3}\right]
+      =\dfrac{63}{9}=7
+      \end{aligned}\]
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/eg_ave_x^2.jpg" alt="eg_ave_x^2">
+  </div>
+</div>
+<a id="ex_(x-2)^2"></a>
+
+        <div class="rule"></div>
+
+<p>
+  Try it yourself:
+</p>
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="3">
+      Find the average value of the function \(y=(x-2)^2\) on the interval
+      \([1,3]\).
+    </p>
+    <div class="center">
+      <img src="graphics/ex_ave_(x-2)^2_prob.jpg" alt="ex_ave_(x-2)^2_prob">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(\displaystyle
+    f_\text{ave}=\dfrac{1}{2}\int_1^3 (x-2)^2\,dx=\dfrac{1}{3}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <div class="column">
+  	<p>
+      We have \(a=1\), \(b=3\) and \(b-a=2\). So
+      \[\begin{aligned}
+      f_\text{ave}
+      &=\dfrac{1}{2}\int_1^3 (x-2)^2\,dx
+  		=\dfrac{1}{2}\left[\dfrac{(x-2)^3}{3}\right]_1^3 \\
+      &=\dfrac{1}{6}[1]-\dfrac{1}{6}[-1]
+  		=\dfrac{2}{6}=\dfrac{1}{3}
+      \end{aligned}\]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_ave_(x-2)^2_sol.jpg" alt="ex_ave_(x-2)^2_sol">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  On the <a href="AveRect.html">next page</a>,
+	we will see a geometric interpretation of the average value in terms of area.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

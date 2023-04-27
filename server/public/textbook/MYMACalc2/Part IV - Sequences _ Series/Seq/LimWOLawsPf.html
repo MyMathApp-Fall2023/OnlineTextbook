@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>b5a. Deriving Indeterminate Forms | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimWOLaws.html#Derive" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>18. Sequences</h1>
+    <div id="pg-wrapper">
+      
+      
+      <h2>b5a. Deriving Indeterminate Forms</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Limits which can be done with the Limit Laws are boring! The real question
+	is "What do we do when the Limit Laws <em>do not</em> apply? The situations
+	when the Limit Laws <em>do not</em> apply are called
+	<span class="defword">indeterminate forms</span>. We start by identifying
+	the situations in which the Limit Laws do not apply:
+</p>
+<ul>
+	<li>
+		First, the Limit Laws start with the assumption that there are sequences
+		\(a_n\) and \(b_n\) for which
+		\(\lim\limits_{n\to\infty}a_n=L\) and
+		\(\lim\limits_{n\to\infty}b_n=M\) where \(L\) and \(M\) are
+		finite. So we need to look at what happens in each law when the limits
+		\(L\) and/or \(M\) are infinite.
+	</li>
+  <br>
+	<li>
+		Second, the Quotient Law assumes
+		\(M=\lim\limits_{n\to\infty}b_n\ne0\). So we need to look
+		at the situation when the the denominator approaches \(0\). If the
+		sequence approaches \(0\) from the positive side, we write \(0^+\)
+		for the limit in intermediate computations and if it approaches \(0\)
+		from the negative side, we write \(0^-\).
+	</li>
+  <br>
+	<li>
+		Third, the Power Law assumes \(M^L\) exists. So we need to look
+		at the situations where \(M^L\) does not exist. This means the limits
+		\(0^0\) or \(1^\infty\) or \(\infty^0\) whose values are ambiguous (See
+		below).
+	</li>
+</ul>
+
+				<div class="rule" id="Examples"></div>
+
+<p>
+	With these points in mind, we look at each of the Limit Laws and identify
+	the indeterminate forms:
+</p>
+<ul>
+	<li>
+		In the Addition (or Subtraction) Law, we have
+		\[
+		\infty+\infty=\infty
+		\qquad \text{and} \qquad
+		-\infty-\infty=-\infty
+		\]
+		However, the expressions
+		\[
+		\infty-\infty
+		\qquad \text{and} \qquad
+		-\infty+\infty
+		\]
+		can have absolutely any limit based on which term grows to \(\infty\)
+		faster. This is the first indeterminate form which we denote by
+		\(\infty-\infty\).
+	</li>
+  <br>
+	<li>
+		In the Quotient Law, we need to look at the situations when \(M\) is
+		\(\infty\), \(-\infty\) or \(0\). We will write \(M=0^+\) to mean
+		the sequence \(b_n\) approaches \(0\) from the positive side, and
+		\(M=0^-\) to mean the sequence \(b_n\) approaches \(0\) from the
+		negative side.  We have:
+		<br>
+		If \(L\) is positive and finite, i.e. \(0 < L < \infty\), then
+		\[
+		\dfrac{L}{\pm\infty}=0 \qquad \dfrac{L}{0^+}=\infty
+		\qquad \text{and} \qquad \dfrac{L}{0^-}=-\infty.
+		\]
+		If \(L\) is negative and finite, i.e. \(-\infty < L < 0\), then
+		\[
+		\dfrac{L}{\pm\infty}=0 \qquad \dfrac{L}{0^+}=-\infty
+		\qquad \text{and} \qquad \dfrac{L}{0^-}=\infty.
+		\]
+		If \(L= 0\), then
+		\[
+		\dfrac{0}{\pm\infty}=0.
+		\]
+		If \(L=\pm\infty\), then
+		\[
+		\dfrac{\infty}{0^+}=\infty \qquad \dfrac{\infty}{0^-}=-\infty
+		\qquad \dfrac{-\infty}{0^+}=-\infty
+		\qquad \text{and} \qquad \dfrac{-\infty}{0^-}=\infty.
+		\]
+		That leaves the cases \(\dfrac{0^\pm}{0^\pm}\) which we call the
+		indeterminate form \(\dfrac{0}{0}\) and the cases
+		\(\dfrac{\pm\infty}{\pm\infty}\) which we call the indeterminate form
+		\(\dfrac{\infty}{\infty}\).
+	</li>
+  <br>
+	<li>
+		The Product Rule is the same as the Quotient Rule except that
+		\(\dfrac{1}{M}\) is replaced by \(M\). So both of the indeterminate forms
+		\(\dfrac{0}{0}\) and \(\dfrac{\infty}{\infty}\) become the indeterminate
+		form \(0\cdot\infty\).
+	</li>
+  <br>
+	<li>
+		Finally, the Power Law leads to three indeterminate forms:
+		<dl>
+      <br>
+		  <dt>
+				\(0^0\): &ensp; Since
+			</dt>
+		  <dd>
+				\[\begin{aligned}
+				&&0^p=0      \qquad &&\text{for} \quad p>0 \\
+				&&0^p=\infty \qquad &&\text{for} \quad p<0 \\
+				\text{but} \qquad \qquad && \\
+				&&b^0=1 \qquad &&\text{for} \quad b>0
+				\end{aligned}\]
+				the value of \(0^0\) is ambiguous and depends on how fast
+				the base and power approach \(0\).
+			</dd>
+      <br>
+		  <dt>
+				\(1^\infty\): &ensp; Since
+			</dt>
+		  <dd>
+				\[\begin{aligned}
+				&&b^\infty=\infty \qquad &&\text{for} \quad b>1 \\
+				&&b^\infty=0      \qquad &&\text{for} \quad b<1 \\
+				\text{but} \qquad \qquad && \\
+				&&1^p=1           \qquad &&\text{for} \quad p\ne\pm\infty
+				\end{aligned}\]
+				the value of \(1^\infty\) is ambiguous and depends on how fast
+				the base approaches \(1\) and the power approaches \(\infty\).
+			</dd>
+      <br>
+		  <dt>
+				\(\infty^0\): &ensp; Since
+			</dt>
+		  <dd>
+				\[\begin{aligned}
+				&&\infty^p=\infty \qquad &&\text{for} \quad p>0 \\
+				&&\infty^p=0      \qquad &&\text{for} \quad p<0 \\
+				\text{but} \qquad \qquad && \\
+				&&b^0=1           \qquad &&\text{for} \quad b\ne\infty
+				\end{aligned}\]
+				the value of \(\infty^0\) is ambiguous and depends on how fast
+				the base approaches \(\infty\) and the power approaches \(0\).
+			</dd>
+		</dl>
+	</li>
+</ul>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

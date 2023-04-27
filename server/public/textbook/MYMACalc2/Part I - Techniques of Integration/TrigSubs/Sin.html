@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a2. Substitutions for \(1-x^2\) (or \(x^2-1\)) - Sine Substitutions | 7. Trigonometric Substitutions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Tan.html" title="Previous">&lArr;</a></li>
+      <li><a href="Sec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Trigonometric Substitutions</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a2. Substitutions for \(1-x^2\) (or \(x^2-1\)) - Sine Substitutions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Recall the derivative and integral formulas for \(\arcsin x\):
+  \[
+	\dfrac{d}{dx}\arcsin x=\dfrac{1}{\sqrt{1-x^2}}
+	\qquad \qquad \qquad
+	\int \dfrac{1}{\sqrt{1-x^2}}\,dx=\arcsin x+C
+	\]
+  and the basic Pythagorean trig identity written as:
+  \[
+	1-\sin^2\theta=\cos^2\theta
+	\]
+  These formulas motivate the following integration technique:
+</p>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="proc" data-title="Sine Substitution">
+    If the integrand involves the quantity \(1-x^2\) (or \(x^2-1\)) and
+  	you know that \(|x| \le 1\), then it may be useful to make the
+  	substitution \(x=\sin\theta\). Then \(dx=\cos\theta\,d\theta\) and
+  	\(1-x^2=1-\sin^2\theta=\cos^2\theta\). So it may be possible to
+  	re-express the integrand in terms of \(\sin\theta\) and \(\cos\theta\) only.
+  	<br>
+    <button class="toggle center" data-toggle="Drop1">
+  		Why do you need to know \(|x| \le 1\)? How do you know if \(|x| \le 1\)?
+    </button>
+  </p>
+</div>
+<div class="toBeToggled" data-toggle="Drop1">
+  <h4>Why do you need to know \(|x| \le 1\)?</h4>
+	<p>
+   Since \(-1 \le \sin\theta \le 1\), if \(|x| \gt 1\) then we
+   cannot set \(x=\sin\theta\).
+	</p>
+  <h4>How do you know if \(|x| \le 1\)?</h4>
+	<p>
+		You look at any quantities inside square roots such as \(\sqrt{1-x^2}\) or
+		at the limits on the integral.
+	</p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Here are some examples:
+</p>
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int \dfrac{1}{(1-x^2)^{3/2}}\,dx\).
+</p>
+<p class="sol">
+  Since \(1-x^2\) is raised to the \(\dfrac{3}{2}\) power, we
+  must have \(1-x^2>0\). So \(x^2<1\) or \(|x|< 1\). So
+  we substitute \(x=\sin\theta\) and \(dx=\cos\theta\,d\theta\) into the integral:
+  \[\begin{aligned}
+  \int \dfrac{1}{(1-x^2)^{3/2}}\,dx
+	&=\int \dfrac{1}{(1-\sin^2\theta)^{3/2}}\cos\theta\,d\theta \\
+  &=\int \dfrac{\cos\theta}{(\cos^2\theta)^{3/2}}\,d\theta
+	=\int \dfrac{\cos\theta}{\cos^3\theta}\,d\theta \\
+  &=\int \dfrac{1}{\cos^2\theta}\,d\theta
+	=\int \sec^2\theta\,d\theta\\
+  &=\tan\theta+C
+  \end{aligned}\]
+  <span class="redbig center">Don't forget to substitute for the differential!</span>
+  <span class="greenbig center">Don't forget to substitute back!</span>
+  We already know that \(\sin\theta=x\) from the
+  definition of the substitution. We need a formula for \(\tan\theta\) in
+  terms of \(x\). There are two ways to find this formula:
+</p>
+<ol class="list-outside">
+  <li>
+		We can use the Pythagorean identity \(\cos^2\theta=1-\sin^2\theta\).
+		So \(\cos\theta=\sqrt{1-\sin^2\theta}=\sqrt{1-x^2}\)
+  	and hence
+	  \[
+	  \tan\theta=\dfrac{\sin\theta}{\cos\theta}=\dfrac{x}{\sqrt{1-x^2}}
+	  \]
+	</li>
+	or
+	<li>
+    <div class="column">
+      <div data-col-width="50%">
+      <p>
+        We can draw a right triangle with an angle \(\theta\)
+        whose opposite side is \(x\) and whose hypotenuse is \(1\).
+        These sides are chosen so that \(\sin\theta=\dfrac{x}{1}=x\).
+        Then the adjacent side is \(\sqrt{1-x^2}\) and so:
+      	\[
+        \tan\theta=\dfrac{x}{\sqrt{1-x^2}}
+        \]
+      </p>
+      </div>
+      <div data-col-width="50%" class="center">
+      	<img src="graphics/trisin.jpg" alt="trisin"	style="width: 200; height: 150;"/>
+      </div>
+    </div>
+	</li>
+</ol>
+<p>
+  In either case the original integral becomes:
+  \[
+  \int \dfrac{1}{(1-x^2)^{3/2}}\,dx
+	=\dfrac{x}{\sqrt{1-x^2}}+C
+  \]
+</p>
+<p class="check">
+  We check by differentiating.
+	If \(f(x)=\dfrac{x}{\sqrt{1-x^2}}\), then
+  \[\begin{aligned}
+  f'(x)
+  &=\dfrac{\sqrt{1-x^2}(1)
+	-x\left(\dfrac{-x}{\sqrt{1-x^2}}\right)}{1-x^2} \\[5pt]
+  &=\dfrac{(1-x^2)+x^2}{(1-x^2)^{3/2}}
+  =\dfrac{1}{(1-x^2)^{3/2}}
+  \end{aligned}\]
+  which is the integrand we started with.
+</p>
+<p class="remark">
+	It is absolutely <span class="wrong">crucial</span> that you write the
+	\(dx\) and \(d\theta\)	and	remember to substitute for the differential.
+	Otherwise, you will get the wrong answer.
+	If you do not substitute for the differential here is what you might get:
+</p>
+<div class="toBeToggled shown uparr" data-toggle="a1">
+	<p class="sol-incorrect">
+	  \[\begin{aligned}
+	  \int &\dfrac{1}{(1-x^2)^{3/2}}\,dx
+		=\int \dfrac{1}{(1-\sin^2\theta)^{3/2}}\,d\theta
+		\qquad\qquad\text{missing}\,\cos\theta \\
+	  &=\int \dfrac{1}{(\cos^2\theta)^{3/2}}\,d\theta
+		=\int \dfrac{1}{\cos^3\theta}\,d\theta
+	  =\int \sec^3\theta\,d\theta \\
+	  &=\dfrac{1}{2}\sec x\tan x+\dfrac{1}{2}\ln|\sec x+\tan x|+C
+	  \end{aligned}\]
+		<!--&=\int \dfrac{1}{(1-\sin^2\theta)^{3/2}}\,d\theta
+		\tag{missing \(\cos\theta\)} \\-->
+		which was much harder to integrate. We still need to substitute back,
+		but we won't because the solution is <span class="wrong">wrong</span> anyway!
+	</p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="2">
+  Compute \(\displaystyle \int_0^{1/2} \dfrac{1}{x^2-1}\,dx\).
+</p>
+<p class="sol">
+  From the limits, we see that \(0 \le x \le \dfrac{1}{2}\)
+  and hence \(|x| \le 1\). So we substitute \(x=\sin\theta\).
+  Then \(dx=\cos\theta\,d\theta\). Rather than substituting back,
+	we change limits. So:
+  \[\begin{aligned}
+  \int_0^{1/2} \dfrac{1}{x^2-1}\,dx
+	&=\int_0^{\pi/6} \dfrac{1}{\sin^2\theta-1}\cos\theta\,d\theta
+	=\int_0^{\pi/6} \dfrac{1}{-\cos^2\theta}\cos\theta\,d\theta \\
+  &=-\int_0^{\pi/6} \dfrac{1}{\cos\theta}\,d\theta
+  =-\int_0^{\pi/6} \sec\theta\,d\theta \\
+  &=-\left[\dfrac{}{}\ln|\sec\theta+\tan\theta|\right]_0^{\pi/6} \\
+  &=-\ln\left|\sec\dfrac{\pi}{6}+\tan\dfrac{\pi}{6}\right|+\ln|\sec0+\tan0| \\
+  &=-\ln\left|\dfrac{2}{\sqrt{3}}+\dfrac{1}{\sqrt{3}}\right|+\ln|1| \\
+  &=-\ln\sqrt{3}
+  \end{aligned}\]
+</p>
+<a id="sinex"></a>
+
+        <div class="rule"></div>
+
+<p>
+  Now it's your turn:
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Compute \(\displaystyle \int_0^1 \sqrt{1-x^2}\,dx\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-rem" data-toggle="RemX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Let \(x=\sin\theta\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle \int_0^1 \sqrt{1-x^2}\,dx
+		=\dfrac{\pi}{4}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We substitute \(x=\sin\theta\) and \(dx=\cos\theta\,d\theta\).
+		\[\begin{aligned}
+		\int_0^1 \sqrt{1-x^2}\,dx
+		&=\int_0^{\pi/2} \sqrt{1-\sin^2\theta}\,\cos\theta\,d\theta
+		=\int_0^{\pi/2} \cos^2\theta\,d\theta \\
+		&=\int_0^{\pi/2} \dfrac{1+\cos2\theta}{2}\,d\theta
+    =\dfrac{1}{2}\left[\theta+\dfrac{\sin 2\theta}{2}\right]_0^{\pi/2} \\
+		&=\dfrac{\pi}{4}
+		\end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX1">
+  <p>
+    It is easier to do this integral if we recognize that it is the area of the
+    region below \(y=\sqrt{1-x^2}\) for \(0 \le x \le 1\), which is a quarter
+    circle of radius \(1\). So:
+    \[
+    \int_0^1 \sqrt{1-x^2}\,dx=\dfrac{1}{4}\pi(1)^2=\dfrac{\pi}{4}
+    \]
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Compute \(\displaystyle \int \dfrac{x}{(1-x^2)^2}\,dx\)
+		assuming \(|x|<1\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Let \(x=\sin\theta\).
+    Or use the ordinary substitution \(u=1-x^2\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \int \dfrac{x}{(1-x^2)^2}\,dx
+		=\dfrac{1}{2(1-x^2)}+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+	<p class="meth" data-number="1">
+	  We substitute \(x=\sin\theta\) and \(dx=\cos\theta\,d\theta\):
+	  \[\begin{aligned}
+		\int \dfrac{x}{(1-x^2)^2}\,dx
+		&=\int \dfrac{\sin\theta}{(1-\sin^2\theta)^2}\cos\theta\,d\theta \\
+		&=\int \dfrac{\sin\theta}{\cos^3\theta}\,d\theta
+	  \end{aligned}\]
+		Now let \(u=\cos\theta\). Then \(du=-\sin\theta\,d\theta\). So:
+		\[
+		\int \dfrac{x}{(1-x^2)^2}\,dx
+		=-\int \dfrac{1}{u^3}\,du
+		=\dfrac{1}{2u^2}+C
+		\]
+		Finally we substitute back:
+	  \[\begin{aligned}
+		\int \dfrac{x}{(1-x^2)^2}\,dx
+		&=\dfrac{1}{2\cos^2\theta}+C
+		=\dfrac{1}{2(1-\sin^2\theta)}+C \\
+		&=\dfrac{1}{2(1-x^2)}+C
+	  \end{aligned}\]
+	  This solution was unnecessarily complicated. Always look for an
+		ordinary substitution first:
+	</p>
+	<p class="meth" data-number="2">
+	  We substitute \(u=1-x^2\). Then \(du=-2x\,dx\) and
+		\(-\,\dfrac{1}{2}\,du=x\,dx\). So,
+	  \[\begin{aligned}
+		\int \dfrac{x}{(1-x^2)^2}\,dx
+		&=-\,\dfrac{1}{2}\int \dfrac{1}{u^2}\,du
+    =\dfrac{1}{2u}+C \\
+		&=\dfrac{1}{2(1-x^2)}+C
+	  \end{aligned}\]
+	</p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by differentiating.
+    If \(f(x)=\dfrac{1}{2(1-x^2)}\) then
+    \[\begin{aligned}
+    f'(x)
+    &=-\,\dfrac{1}{2}\dfrac{-2x}{(1-x^2)^2} \\
+    &=\dfrac{x}{(1-x^2)^2}
+    \end{aligned}\]
+    which is the integrand we started with.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

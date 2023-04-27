@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e1. Precise Definiton of Limits | 18. Sequences</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="RecurLim.html" title="Previous">&lArr;</a></li>
+      <li><a href="PrecSpec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>18. Sequences</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>e1. Precise Definiton of Limits</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We previously said that \(\lim\limits_{n\to\infty}a_n=L\) means
+  that the terms \(a_n\) get arbitrarily close to a finite number \(L\) as \(n\)
+  gets arbitrarily large. We now make this more precise by explaining the
+  use of the word <span class="defword">arbitrarily</span>. The idea we want is:
+</p>
+<div class=greybox>
+<p class="predef" data-title="Limit of a Sequence">
+  If we specify how close to \(L\) the terms \(\{a_n\}\) should be (called an
+  <span class="defword">output tolerance</span>) then for the part of the
+  sequence beyond some point (called a
+  <span class="defword">tail of the sequence</span>),
+  the terms are all within that tolerance. The output tolerance is denoted
+  by epsilon, \(\varepsilon\), and the tail of the sequence begins with
+  some term \(a_n\) whose index is \(n=N\).
+</p>
+</div>
+<p>
+  Here is the precise formulation of this idea:
+</p>
+<div class="greybox">
+  <p class="def" data-title="Limit of a Sequence">
+    We say the <span class="defword">limit</span> of the sequence
+    \(a_n\) <span class="defword">exists</span> and is
+    <span class="defword">equal to</span> a <emph>finite</emph> number \(L\)
+    and we write
+    \[
+    \lim_{n\to\infty}a_n=L
+    \]
+    to mean:
+  </p>
+  <p class="center">
+    For all &ensp; \(\varepsilon \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(|a_n-L| \lt \varepsilon\).
+  </p>
+  <br/>
+  <p>
+    If a sequence has a limit \(L\), we say it is
+    <span class="defword">convergent</span> and that it
+    <span class="defword">converges to</span> \(L\).
+    <br>
+    If a sequence does not have a limit, we say it is
+    <span class="defword">divergent</span> or that it
+    <span class="defword">diverges</span>.
+  </p>
+</div>
+<p class="remark">
+  The quantity \(|a_n-L|\) is the amount \(a_n\) differs from
+  \(L\) and we require it to be less than the output tolerance \(\varepsilon\).
+  The condition \(|a_n-L| \lt \varepsilon\) can also be written as
+  \[
+  L-\varepsilon \lt a_n \lt L+\varepsilon
+  \]
+  which also says \(a_n\) is within \(\varepsilon\) of \(L\).
+  The condition \(n \ge N\) says we require this for terms \(a_n\) beyond
+  \(a_N\) in the sequence.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  We also need a precise definition of an infinite limit. The idea here is
+  that the terms \(a_n\) get larger than any specified number \(M\) and after
+  some point the terms stay larger than \(M\).
+</p>
+<div class="greybox">
+  <p class="def" data-title="Infinite Limit of a Sequence">
+    We say the <span class="defword">limit</span> of the sequence \(a_n\) is
+    <span class="defword">positive infinity</span> and we write
+    \[
+    \lim_{n\to\infty}a_n=\infty
+    \]
+    to mean:
+  </p>
+  <p class="center">
+    For all &ensp; \(M \gt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(a_n \gt M\).
+  </p>
+</div>
+<br>
+<div class="greybox">
+  <p class="def" data-title="Negative Infinite Limit of a Sequence">
+    We say the <span class="defword">limit</span> of the sequence \(a_n\) is
+    <span class="defword">negative infinity</span> and we write
+    \[
+    \lim_{n\to\infty}a_n=-\infty
+    \]
+    to mean:
+  </p>
+  <p class="center">
+    For all &ensp; \(M \lt 0\), &ensp; there is a positive integer,
+    &ensp; \(N\), &ensp; such that
+  </p>
+  <p class="center">
+    if &ensp; \(n \gt N\) &ensp; then &ensp; \(a_n \lt M\).
+  </p>
+</div>
+
+<p class="remark">
+  We emphasize that to say the limit is positive or negative infinity does
+  <emph>not</emph> say that the limit exists! It merely says the
+  <emph>way</emph> in which it does not exist, i.e. the <emph>way</emph>
+  in which it <emph>diverges</emph>.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  On the next few pages, we will use these definitions to prove the
+  propositions and theorems which were left unproven on the previous pages.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

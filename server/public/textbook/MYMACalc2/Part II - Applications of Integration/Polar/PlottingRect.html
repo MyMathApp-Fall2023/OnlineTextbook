@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Converting to Rectangular | 15. Polar Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Plotting.html" title="Previous">&lArr;</a></li>
+      <li><a href="Intersect.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>15. Polar Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Graphs of Polar Equations</h2>
+
+
+      
+      <h2>3. Converting to Rectangular</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  It is sometimes (but rarely) better to convert to rectangular coordinates
+  and then plot the rectangular equation.
+</p>
+<p class="example" data-number="1">
+  Plot \(r=3\sec\theta\) and identify the shape.
+</p>
+<div class="column">
+	<p class="sol">
+    At the right is the rectangular plot of this polar equation.
+  	If you attempt to use this to construct the polar plot by looking at values
+    of \(r\) in each quadrant, it is very unlikely that you would obtain
+    a graph that resembles the actually polar plot.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_r=3sec_rect.jpg" alt="eg_r=3sec_rect">
+  </div>
+</div>
+<div class="column">
+	<p>
+    However, since \(\sec\theta=\dfrac{1}{\cos\theta}\), the equation can
+    be rewritten as \(r\cos\theta=3\) or \(x=3\) (since \(x=r\cos\theta\)).
+    We immediately recognize the graph as a vertical line intersecting the
+    horizontal axis at \(3\) as shown.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_r=3sec_polar.jpg" alt="eg_r=3sec_polar">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+	<p class="exercise" data-number="1">
+    Plot \(r=-6\sin\theta\) and identify the shape.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <div class="column">
+    <p>
+      The polar curve \(r=-6\sin\theta\) is the rectangular curve
+      \(x^2+(y+3)^2=9\) which is  a circle centered at \((x,y)=(0,-3)\)
+      with radius \(R=3\).
+    </p>
+    <div class="center">
+      <img src="graphics/ex_r=-6sintheta_polar.jpg" alt="ex_r=-6sintheta_polar">
+    </div>
+  </div>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+	<p>
+    We substitute \(\sin\theta=\dfrac{y}{r}\), clear the denominator and then
+    substitute \(r^2=x^2+y^2\):
+    \[\begin{aligned}
+    r&=-6\sin\theta \\
+    r&=-6\dfrac{y}{r} \\
+    r^2&=-6y \\
+    x^2+y^2&=-6y
+    \end{aligned}\]
+	</p>
+  <div class="column">
+  	<p>
+      Next we take everything to one side and complete the square:
+      \[\begin{aligned}
+      x^2+y^2+6y&=0 \\
+      x^2+(y+3)^2&=9 \\
+      \end{aligned}\]
+      This is a circle centered at \((x,y)=(0,-3)\) with radius \(R=3\).
+  	</p>
+    <div class="center">
+      <img src="graphics/ex_r=-6sintheta_polar.jpg" alt="ex_r=-6sintheta_polar">
+    </div>
+  </div>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

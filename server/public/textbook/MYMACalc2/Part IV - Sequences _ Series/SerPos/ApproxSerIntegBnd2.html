@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Improved Integral Bounds | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ApproxSerIntegBnd.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApproxSerCompBnd.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic7">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>g. Approximating the Series</h2>
+
+
+      
+      <h2>2. Improved Integral Bounds</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Assume \(a_n=f(n)\) where \(f(x)\) is a continuous, positive, decreasing
+  function on \(\lbrack n_o,\infty)\) and
+  \(\displaystyle \int_{n_o}^\infty f(x)\,dx\) is convergent. When the series
+  \(\displaystyle S=\sum_{n=n_o}^\infty a_n\) is approximated by the partial sum
+  \(\displaystyle S_k=\sum_{n=n_o}^k a_n\), the integral
+  \(\displaystyle \int_k^\infty f(x)\,dx\) is an upper bound on the error
+  \(E_k=S-S_k\).
+  However, the approximation to the series can be improved and the error
+  estimate can be vastly reduced if we also use an integral which is a lower
+  bound on the error.
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  In a <a href="ApproxSerIntegBnd.html#Eg-IntBnd">
+  previous example</a>, we approximated the series
+  \(\displaystyle S=\sum_{n=1}^\infty \dfrac{1}{n^2}\) by the
+  \(10^\text{th}\) partial sum
+  \(\displaystyle S_{10}=\sum_{n=1}^{10} \dfrac{1}{n^2}\approx 1.5498\) and
+  showed the error
+  \(\displaystyle E_{10}=S-S_{10}=\sum_{n=11}^\infty \dfrac{1}{n^2}\) is less
+  than the integral bound \(\displaystyle \int_{10}^\infty \dfrac{1}{n^2}\,dn=.1\).
+  Improve the approximation by using upper and lower integral bounds on the
+  error \(E_{10}\).
+</p>
+<p class="sol">
+  Recall the
+  <a href="IntegPf.html" title="Return using the Back button.">
+  Derivation of the Integral Test</a>.
+  It can be used to produce both upper and lower bounds on the error, as follows:
+</p>
+<div class="column">
+  <p>
+    In the figure at the right, the area under the
+    <span style="color:blue">blue</span> curve is
+    \(\displaystyle \int_{10}^\infty \dfrac{1}{n^2}\,dn\) while
+    the area under the <span style="color:red">red</span> rectangles is
+    \(\displaystyle \sum_{n=11}^\infty \dfrac{1}{n^2}\).
+    Thus the integral,
+  </p>
+  <div class="center">
+    <img src="graphics/eg_integ_err_upper.jpg" alt="eg_integ_err_upper">
+  </div>
+</div>
+<p>
+  \[
+  U=\int_{10}^\infty \dfrac{1}{n^2}\,dn=\left[\dfrac{-1}{n}\right]_{10}^\infty
+  =[0] -\left[-\dfrac{1}{10}\right]=\dfrac{1}{10}
+  \]
+  is an upper bound on the error
+  \(\displaystyle E_{10}=\sum_{n=11}^\infty \dfrac{1}{n^2}\).
+</p>
+<div class="column">
+  <p>
+    Similarly, in the figure at the right, the area under the
+    <span style="color:blue">blue</span> curve is
+    \(\displaystyle \int_{11}^\infty \dfrac{1}{n^2}\,dn\) while
+    the area under the <span style="color:red">red</span> rectangles is
+    \(\displaystyle \sum_{n=11}^\infty \dfrac{1}{n^2}\).
+    Thus the integral,
+  </p>
+  <div class="center">
+    <img src="graphics/eg_integ_err_lower.jpg" alt="eg_integ_err_lower">
+  </div>
+</div>
+<p>
+  \[
+  L=\int_{11}^\infty \dfrac{1}{n^2}\,dn=\left[\dfrac{-1}{n}\right]_{11}^\infty
+  =[0] -\left[-\dfrac{1}{11}\right]=\dfrac{1}{11}
+  \]
+  is an lower bound on the error
+  \(\displaystyle E_{10}=\sum_{n=11}^\infty \dfrac{1}{n^2}\).
+</p>
+<p>
+  Thus the error is bounded by:
+  \[
+  L \lt E_{10} \lt U
+  \]
+  Since the sum of the series is \(S=S_{10}+E_{10}\), we add \(S_{10}\) to
+  this inequality to get lower and upper bounds on the sum:
+  \[
+  S_{10}+L \lt S \lt S_{10}+U
+  \]
+  So a better estimate for the sum is the midpoint of the interval
+  \([S_{10}+L,S_{10}+U]\):
+  \[
+  S\approx\overline{S_{10}}\equiv S_{10}+\dfrac{U+L}{2}
+  \]
+  In this problem
+  \[
+  \sum_{n=1}^\infty \dfrac{1}{n^2}
+  \approx\overline{S_{10}}
+  =1.5498+\dfrac{\dfrac{1}{10}+\dfrac{1}{11}}{2}=1.6452
+  \]
+  The error in this approximation is less than half of the width of the interval
+  \([S_{10}+L,S_{10}+U]\):
+  \[
+  \overline{E_{10}}\equiv S-\overline{S_k} \lt \dfrac{U-L}{2}
+  \]
+  In this problem
+  \[
+  \overline{E_{10}} \lt \dfrac{\dfrac{1}{10}-\dfrac{1}{11}}{2}\approx.0046
+  \]
+  Notice, we have reduced the error from \(U=0.1\) to \(\dfrac{U-L}{2}=.0046\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  To summarize (and generalize) these results, we have
+</p>
+<div class="greybox">
+  <p class="prop" data-title="Improved Integral Bound on the Error in an Approximation">
+    Assume \(a_n=f(n)\) where \(f(x)\) is a continuous, positive, decreasing
+    function on \([n_o,\infty)\) and \(\displaystyle \int_{n_o}^\infty f(x)\,dx\)
+    is convergent.  In other words, \(\displaystyle S=\sum_{n=n_o}^\infty a_n\)
+    converges by the Integral Test.
+  </p>
+  <p>
+    For \(k \gt n_o\), let
+    \(\displaystyle U_k=\int_k^\infty f(x)\,dx\) and
+    \(\displaystyle L_k=\int_{k+1}^\infty f(x)\,dx\).
+  </p>
+  <ol>
+    <li>
+      If the series \(\displaystyle S=\sum_{n=n_o}^\infty a_n\) is
+      approximated by \(\displaystyle S_k=\sum_{n=n_o}^k a_n\), then
+      the error in the approximation,
+      \(\displaystyle E_k=S-S_k=\sum_{n=k+1}^\infty a_n\), is less than
+      \(U_k\).
+    </li>
+    <li>
+      If the series \(\displaystyle S=\sum_{n=n_o}^\infty a_n\) is
+      approximated by \(\overline{S_k}=S_k+\dfrac{U_k+L_k}{2}\), then
+      the error in the approximation,
+      \(\displaystyle \overline{E_k}=S-\overline{S_k}\), is less than
+      \(\begin{aligned}
+      \displaystyle \dfrac{U_k-L_k}{2}=\int_k^{k+1} f(x)\,dx
+      \end{aligned}\).
+    </li>
+  </ol>
+</div>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    In a <a href="ApproxSerIntegBnd.html#Ex-IntBnd">
+    previous exercise</a>, we approximated the series
+    \(\displaystyle S=\sum_{n=1}^\infty \dfrac{1}{n^2+1}\)
+    by the \(100^\text{th}\) partial sum
+    \(\displaystyle S_{100}=\sum_{n=1}^{100} \dfrac{1}{n^2+1}\approx 1.066\,724\)
+    and showed the error
+    \(\displaystyle E_{100}=S-S_{100}
+    =\sum_{n=101}^\infty \dfrac{1}{n^2+1}\)
+    is less than the integral bound
+    \(\displaystyle \int_{100}^\infty \dfrac{1}{n^2+1}\,dn\approx .01\).
+    Improve the approximation by using upper and lower integral bounds on
+    the error \(E_{100}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+  The improved approximation is \(\overline{S_{100}}=1.076\,674\)
+  <br>
+  and the error is \(\overline{E_{100}} \lt 4.95\times10^{-5}\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    The upper bound on the error \(E_{100}\) is
+    \[\begin{aligned}
+    U&=\int_{100}^\infty \dfrac{1}{n^2+1}\,dn=\left.\arctan n\right|_{100}^\infty \\
+    &=\dfrac{\pi}{2}-\arctan 100\approx 9.9997\times10^{-3}
+    \end{aligned}\]
+    The lower bound on the error \(E_{100}\) is
+    \[\begin{aligned}
+    L&=\int_{101}^\infty \dfrac{1}{n^2+1}\,dn=\left.\arctan n\right|_{101}^\infty \\
+    &=\dfrac{\pi}{2}-\arctan 101\approx 9.9007\times10^{-3}
+    \end{aligned}\]
+    The improved approximation is
+    \[\begin{aligned}
+    \overline{S_{100}}&=S_{100}+\dfrac{U+L}{2} \\
+    &=1.066\,724+\dfrac{9.9997\times10^{-3}+9.9007\times10^{-3}}{2} \\
+    &=1.076\,674
+    \end{aligned}\]
+    and the error in the improved approximation is
+    \[\begin{aligned}
+    \overline{E_{100}} &\lt \dfrac{U-L}{2} \\
+    &=\dfrac{9.9997\times10^{-3}-9.9007\times10^{-3}}{2}
+    =4.95\times10^{-5}
+    \end{aligned}\]
+    We have reduced the error from \(U=0.01\) to \(\dfrac{U-L}{2}=4.95\times10^{-5}\).
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

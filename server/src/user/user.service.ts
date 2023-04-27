@@ -30,8 +30,11 @@ export class UserService {
   }
 
   generateActivationCode(username:string) : string {
+    if (process.env.EMAIL_ENABLE === 'test') {
       return 'naomi2049'+ username + '114514'
-      //return 'Naomi2049'+ Date.now().toString()+'ncclovekk'
+    }  else {
+      return 'Naomi2049'+ Date.now().toString()+'ncclovekk'
+    }
   }
 
   async authenticate(loginUser:User):Promise<User> {
@@ -56,8 +59,11 @@ export class UserService {
   async findAll() {
     const users = await this.userRepo.find({
       select:{
+        id:true,
         name: true,
-        email: true
+        email: true,
+        activatedAccount:true,
+        createdAt:true
       }
     })
     return users

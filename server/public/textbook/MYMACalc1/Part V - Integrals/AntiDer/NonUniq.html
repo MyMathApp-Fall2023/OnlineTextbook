@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a2. Non-Uniqueness of Antiderivatives | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Def.html" title="Previous">&lArr;</a></li>
+      <li><a href="ADRulesAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a2. Non-Uniqueness of Antiderivatives</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  In principle, there could be many antiderivatives of a given function.
+  In fact, there is only one, up to the addition of a constant.
+</p>
+<p class="prop" data-title="Non-Uniqueness of Antiderivatives">
+  Any two antiderivatives of a given function must differ by a constant.
+  In formulas, if \(F_1(x)\) and \(F_2(x)\) are both antiderivatives of \(f(x)\),
+  then
+  \[
+  F_1(x)-F_2(x)=C
+  \]
+  where \(C\) is a constant.
+  <br>
+  <button class="toggle btn" data-toggle="Proof1">Proof</button>
+</p>
+<div class="toBeToggled" data-toggle="Proof1">
+  <p class="proof">
+    Since \(F_1(x)\) and \(F_2(x)\) are both antiderivatives of \(f(x)\), we compute:
+    \[
+    \dfrac{d}{dx}\left[F_1(x)-F_2(x)\right]
+    =\dfrac{dF_1}{dx}-\dfrac{dF_2}{dx}
+    =f(x)-f(x)=0
+    \]
+    Since \(F_1(x)-F_2(x)\) has \(0\) derivative, its slope if \(0\) and it
+    must be a constant function:
+    \[
+    F_1(x)-F_2(x)=C
+    \]
+  </p>
+</div>
+<p class="def" data-title="General Antiderivative">
+  The <span class="defword">general antiderivative</span> of a function is
+  any particular antiderivative plus a constant, usually \(C\).
+  Thus, if \(F(x)\) is some antiderivative of \(f(x)\), then the
+  general antiderivative is:
+  \[
+  F(x)+C
+  \]
+</p>
+<p class="example" data-number="1">
+  Find the general antiderivative of \(f(x)=x^3\).
+</p>
+<p class="sol">
+  We previously found that an antiderivative of \(f(x)=x^3\) is
+  \(\dfrac{1}{4}x^4\). So the general antiderivative is
+  \[
+  F(x)=\dfrac{1}{4}x^4+C
+  \]
+</p>
+
+      	<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the general antiderivative of \(g(x)=\sin x+e^{2x}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Since the derivative of a sum is the sum of
+    the derivatives, the same is true for antiderivatives.
+    <br>
+    What function has \(\sin x\) as its derivative?
+    <br>
+    What function has \(e^{2x}\) as its derivative?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(G(x)=-\cos x+\dfrac{1}{2}e^{2x}+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    Since the derivative of \(\cos x\) is \(-\sin x\), the antiderivative of
+    \(\sin x\) is \(-\cos x\). Since the derivative of \(e^{2x}\) is
+    \(2e^{2x}\), which is twice what we need, the antiderivative of \(e^{2x}\)
+    is  \(\dfrac{1}{2}e^{2x}\). Since the derivative of a sum is the sum of
+    the derivatives, the same is true for antiderivatives. So the general
+    antiderivative of \(g(x)=\sin x+e^{2x}\) is:
+    \[
+    G(x)=-\cos x+\dfrac{1}{2}e^{2x}+C
+    \]
+  </p>
+</div>
+
+      	<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Ruby says the antiderivative of \(f(x)=2\sin x\cos x\) is \(\sin^2 x\).
+    Jose says the antiderivative is \(-\cos^2 x\).
+    Who is right and who is wrong?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    They are both right.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    Since \(\sin^2 x+\cos^2 x=1\) we know \(\sin^2 x=-\cos^2 x+1\). So the two
+    answers differ by a constant and both answers are correct.
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

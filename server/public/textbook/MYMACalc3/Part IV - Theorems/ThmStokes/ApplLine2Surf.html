@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Converting Line Integrals to Surface Integrals | 26. Stokes&#39; Theorem</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Proof.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApplSurf2Line.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>26. Stokes&#39; Theorem</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p class="thm" data-title="Stokes' Theorem">
+  Let \(S\) be a nice surface in \(\mathbb{R}^3\) with a nice properly
+  oriented boundary, \(\partial S\), and let \(\vec{F}\) be a nice vector
+  field on \(S\). Then
+  \[
+  \iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\oint_{\partial S} \vec{F}\cdot d\vec{s}
+  \]
+  Each piece of the boundary of the surface must be traversed counterclockwise
+  as seen from the tip of the normal vector to the surface.
+</p>
+
+<h2>d. Applications</h2>
+
+
+      
+      <h2>1. Converting Line Integrals to Surface Integrals</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Problems involving Stokes' Theorem have the potential to be confusing. When
+  a problem asks you to compute the line integral
+  \(\displaystyle \oint \vec{F}\cdot d\vec{s}\) using Stokes' Theorem, you
+  really need to compute the surface integral
+  \(\displaystyle \iint \vec{\nabla}\times\vec{F}\cdot d\vec{S}\). Conversely, when a problem
+  asks you to compute the surface integral
+  \(\displaystyle \iint \vec{\nabla}\times\vec{F}\cdot d\vec{S}\) using Stokes' Theorem,
+  you really need to compute the line integral
+  \(\displaystyle \oint \vec{F}\cdot d\vec{s}\). The good news is that Stokes'
+  Theorem usually turns complicated integrals into relatively simple ones.
+  Almost always you will be given the integral in its complex form, and it can
+  be simplified by using Stokes' Theorem.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Stokes' Theorem is used to convert a line integral into a surface integral
+  when taking the curl gives a simpler vector and/or the surface is easier
+  than the boundary. These problems are discussed here. (Applications which
+  go in the other direction are discussed on the
+  <a href="ApplSurf2Line.html">next page</a>.)
+</p>
+<div class="column">
+  <p class="example" data-number="1">
+    Compute \(\displaystyle \oint_{\partial S} \vec{F}\cdot d\vec{s}\) for
+    \(\vec{F}=\langle y^3,z^2,x^4\rangle\)
+    counterclockwise around the rectangle
+    \(x=4\quad 0 \le y \le 3\quad 0 \le z \le 2\) as seen from the positve
+    \(x\)-axis.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_l2s_rect.jpg" alt="eg_l2s_rect">
+  </div>
+</div>
+<p class="sol">
+  The integral is given to us as a line integral. We can simplify it by
+  converting it into a region integral using Stokes' theorem since
+  \(\vec{\nabla}\times\vec{F}\) is easier than \(\vec{F}\) and it is easier
+  to integrate over a rectangle than four line segments.
+</p>
+<p>
+  We first parametrize the rectangle as:
+  \[
+  \vec{R}(y,z)=(4,y,z)
+  \quad \text{for}\quad
+  0 \le y \le 3 \quad 0 \le z \le 2
+  \]
+  We compute the tangent and normal vectors:
+  \[
+  \begin{array}{c}
+  \\
+  \vec{e}_y= \\
+  \vec{e}_z=
+  \end{array}
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  (0 & 1 & 0) \\
+  (0 & 0 & 1)
+  \end{vmatrix}
+  \]
+  \[
+  \vec{N}=\vec{e}_y\times\vec{e}_z
+  =\hat{\imath}(1)-\hat{\jmath}(0)+\hat{k}(0)
+  =\langle1,0,0\rangle
+  \]
+  Next we compute the curl of \(\vec{F}\), evaluate it on the surface and dot it
+  into the normal:
+  \[
+  \vec{\nabla}\times\vec{F}=
+  \begin{vmatrix}
+  \hat{\imath} & \hat{\jmath} & \hat{k} \\
+  \partial_x & \partial_y & \partial_z \\[2pt]
+  y^3 & z^2 & x^4
+  \end{vmatrix}
+  =\langle-2z,-4x^3,-3y^2\rangle
+  \]
+  \[
+  \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(y,z)}
+  =\langle-2z,-256,-3y^2\rangle
+  \]
+  \[
+  \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(y,z)}\cdot\vec{N}
+  =-2z
+  \]
+  Thus, the integral is
+  \[\begin{aligned}
+  \oint_{\partial S} \vec{F}\cdot d\vec{s}
+  &=\iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+  =\int_0^2\int_0^3 \vec{\nabla}\times\vec{F}\cdot\vec{N}\,dy\,dz \\
+  &=\int_0^2\int_0^3 -2z\,dy\,dz
+  =\left[\rule{0pt}{10pt}y\right]_0^3\left[\rule{0pt}{10pt}-z^2\right]_0^2=-12
+  \end{aligned}\]
+  This was obviously easier than computing four line integrals.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-number="2">
+      Use Stokes' Theorem to compute the line integral
+      \(\displaystyle \oint_{\vec r(\theta)} \vec F\cdot\,d\vec s\) for the
+      vector vector field \(\vec F=\langle -xz,yz,z^2\rangle\) along the curve
+      \(\vec r(\theta)=(2\cos\theta,2\sin\theta,4\sin\theta\cos\theta)\)
+      as shown in the plot, traversed counterclockwise as seen from above.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_l2s_saddle_crv.jpg" alt="ex_l2s_saddle_crv">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-rem" data-toggle="RemX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    The curve lies on the surface \(z=xy\) which may be parametrized
+    starting from cylindrical coordinates.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle \oint_{\vec r(\theta)} \vec F\cdot\,d\vec s
+    =\iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}=8\pi\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <div class="column">
+    <div>
+      <p>
+        We want to use Stokes' Theorem to convert the line integral into a
+        surface integral. So we need to have a surface for which the given
+        curve is the boundary. Notice the curve lies on the surface \(z=xy\)
+        which may be parametrized starting from cylindrical coordinates:
+        \[
+        \vec R(r,\theta)=(r\cos\theta,r\sin\theta,r^2\sin\theta\cos\theta)
+        \]
+        And the given curve is obtained by setting \(r=2\). So the bounds on
+        the parameters are \(0 \le r \le 2\) and \(0 \le \theta \le 2\pi\).
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/ex_l2s_saddle_surf.jpg" alt="ex_l2s_saddle_surf">
+    </div>
+  </div>
+  <p>
+    So the integral is:
+    \[
+    \oint_{\vec r(\theta)} \vec F\cdot\,d\vec s
+    =\iint_S \vec{\nabla}\times\vec{F}\cdot d\vec{S}
+    =\int_0^{2\pi}\int_0^2 \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(r,\theta)}
+    \cdot\vec{N}\,dr\,d\theta
+    \]
+    The normal to the surface is:
+    \[\begin{aligned}
+    \vec{N}&=\vec{e}_r\times\vec{e}_\theta
+    =\begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    (\cos\theta & \sin\theta & 2r\sin\theta\cos\theta) \\
+    (-r\sin\theta & r\cos\theta & r^2(\cos^2\theta-\sin^2\theta))
+    \end{vmatrix} \\
+    &=\hat{\imath}\,[\,r^2(\cos^2\theta\sin\theta-\sin^3\theta)-2r^2\sin\theta\cos^2\theta\,] \\
+    &\quad-\hat{\jmath}\,[\,r^2(\cos^3\theta-\sin^2\theta\cos\theta)+2r^2\sin^2\theta\cos\theta\,] \\
+    &\qquad+\hat{k}\,[\,r\cos^2\theta+r\sin^2\theta\,] \\
+    &=\hat{\imath}\,[\,-r^2(\cos^2\theta\sin\theta+\sin^3\theta)\,] \\
+    &\quad-\hat{\jmath}\,[\,r^2(\cos^3\theta+\sin^2\theta\cos\theta)\,]
+    +\hat{k}\,[\,r\,] \\
+    &=\langle-r^2\sin\theta,-r^2\cos\theta,r\rangle
+    \end{aligned}\]
+    We compute the curl of \(\vec{F}=\langle -xz,yz,z^2\rangle\),
+    evaluate it on the surface and dot it into the normal:
+    \[
+    \vec{\nabla}\times\vec{F}=
+    \begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \partial_x & \partial_y & \partial_z \\
+    -xz & yz & z^2)
+    \end{vmatrix}
+    =\langle -y, -x, 0 \rangle
+    \]
+    \[
+    \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(r,\theta)}
+    =\langle -r\sin\theta, -r\cos\theta, 0 \rangle
+    \]
+    \[\begin{aligned}
+    \left.\vec{\nabla}\times\vec{F}\right|_{\vec{R}(r,\theta)}\cdot\vec{N}
+    =r^3\sin^2\theta+r^3\cos^2\theta
+    =r^3
+    \end{aligned}\]
+    So the integral is:
+    \[\begin{aligned}
+    \oint_{\vec r(\theta)} \vec F\cdot\,d\vec s
+    &=\int_0^{2\pi}\int_0^2
+    r^3\,dr\,d\theta
+    &=2\pi\left[\dfrac{r^4}{4}\right]_0^2
+    =8\pi
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX2">
+  <p>
+    Computing the line integral
+    \(\displaystyle \oint_{\vec r(\theta)} \vec F\cdot\,d\vec s\)
+    directly might be harder. We would need to compute the velocity of
+    the curve
+    \[
+    \vec v=\langle-2\sin\theta,2\cos\theta,4\cos^2\theta-4\sin^2\theta\rangle
+    \]
+    evaluate the vector field on the curve
+    \[
+    \left.\vec{F}\right|_{\vec{R}(r,\theta)}
+    =\langle -8\sin\theta\cos^2\theta,8\sin^2\theta\cos\theta,16\sin^2\theta\cos^2\theta\rangle
+    \]
+    dot it into the velocity
+    \[
+    \left.\vec{F}\right|_{\vec{R}(r,\theta)}\cdot\vec{v}
+    =32\sin^2\theta\cos^2\theta
+    +64\sin^2\theta\cos^2\theta(\cos^2\theta-\sin^2\theta)
+    \]
+    and integrate this, which might be harder.
+  </p>
+  <p>
+    In fact, it's not harder. Try doing it using the identities:
+    \[
+    \sin\theta\cos\theta=\dfrac{1}{2}\sin(2\theta)
+    \qquad
+    \cos^2\theta-\sin^2\theta=\cos(2\theta)
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a.Divide by the Largest Term in the Denominator | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimatInfWOLaws.html#tricks" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>7. Computing Limits</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>d. Limits at Infinity</h2>
+
+<h2>3. When Limit Laws Don't Apply</h2>
+
+<h3>Limit Tricks</h3>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="DivLargeTermatInf.html" class="active">Divide by the Largest Term in the Denominator</a></li>
+    <br>
+    <li><a href="CommDenomatInf.html">Put Terms over a Common Denominator</a></li>
+    <br>
+    <li><a href="MultConjatInf.html">Multiply by the Conjugate</a></li>
+    <br>
+    <li><a href="ReciprocalatInf.html">Replace Variable by its Reciprocal</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>a.Divide by the Largest Term in the Denominator</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  This trick says to identify the largest term in the denominator and then
+  to divide the numerator and the denominator by that term. As we identify
+  the largest term and divide by it, we can ignore any numerical coefficients.
+  It is most appropriate for the indeterminate forms \(\dfrac{0}{0}\)
+  or \(\dfrac{\infty}{\infty}\) when the numerator and denominator are
+  <button class="toggle" data-toggle="Drop1">generalized polynomials</button>
+  or even more general functions.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p data-title="Generalized Polynomials">
+    A <span class="defword">generalized polynomial</span> is a sum of terms
+    each of which is a coefficient times the variable to a numerical power,
+    not necessarily non-negative integers. If all the powers are non-negative
+    integers, then it is a polynomial.
+  </p>
+</div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \lim_{x\to\infty}\dfrac{6x^4-3x^2}{5x^4+7x^2}\).
+</p>
+<p class="sol">
+  If we plug \(x=\infty\) into the numerator and denominator, we see this has
+  the indeterminate form \(\dfrac{\infty}{\infty}\). To simplify this, we
+  first need to identify the largest term in the denominator. We don't
+  need to look at the coefficients \(5\) and \(7\). For large \(x\),
+  \(x^4\) is bigger than \(x^2\).
+  So we divide numerator and denominator by \(x^4\):
+  \[\begin{aligned}
+  \lim_{x\to\infty}\dfrac{6x^4-3x^2}{5x^4+7x^2}
+  &=\lim_{x\to\infty}\dfrac{(6x^4-3x^2)\dfrac{}{}}{(5x^4+7x^2)}
+  \,\dfrac{\dfrac{1}{x^4}}{\dfrac{1}{x^4}} \\
+  &=\lim_{x\to\infty}\dfrac{6-\dfrac{3}{x^2}}{5+\dfrac{7}{x^2}}
+  =\dfrac{6}{5}
+  \end{aligned}\]
+</p>
+<p class="remark">
+  So why do we divide by the largest term in the denominator, rather than
+  the numerator? Because then that largest term becomes a constant and the
+  other terms are smaller. If we divided by the largest term in the numerator,
+  then the denominator might not become non-zero and we might still not be
+  able to compute the limit. In the example above, the \(6x^4\) became \(6\)
+  and the \(5x^4\) became \(5\) which are constants. The \(3x^2\) became
+  \(\dfrac{3}{x^2}\) and the \(7x^2\) became \(\dfrac{7}{x^2}\) which go to
+  \(0\) as \(x\) goes to \(\infty\).
+</p>
+
+        <div class="rule" id="CommDenom"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\displaystyle
+    \lim_{x\to\infty}\dfrac{\dfrac{2}{x^2}+\dfrac{3}{x^3}}{\dfrac{4}{x^2}+\dfrac{2}{x^4}}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-rem" data-toggle="RemX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    For \(x\) close to \(\infty\), which is larger: \(\dfrac{1}{x^2}\) or
+    \(\dfrac{1}{x^4}\)?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle
+  \lim_{x\to\infty}\dfrac{\dfrac{2}{x^2}+\dfrac{3}{x^3}}{\dfrac{4}{x^2}+\dfrac{2}{x^4}}
+  =\dfrac{1}{2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    If we plug \(x=\infty\) into the numerator and denominator, we see this
+    has the indeterminate form \(\dfrac{0}{0}\). To simplify this, we
+    need to identify the largest term in the denominator. If \(x\) is large,
+    \(\dfrac{1}{x^4}\) has more in the denominator than \(\dfrac{1}{x^2}\).
+    So \(\dfrac{1}{x^2}\) is larger. So we divide numerator and denominator by
+    \(\dfrac{1}{x^2}\), which is the same as multiplying by \(x^2\):
+    \[\begin{aligned}
+    \lim_{x\to\infty}\dfrac{\dfrac{2}{x^2}+\dfrac{3}{x^3}}{\dfrac{4}{x^2}+\dfrac{2}{x^4}}
+    &=\lim_{x\to0}\dfrac{\dfrac{2}{x^2}+\dfrac{3}{x^3}}{\dfrac{4}{x^2}+\dfrac{2}{x^4}}
+    \,\dfrac{x^2\dfrac{}{}}{x^2\dfrac{}{}} \\
+    &=\lim_{x\to0}\dfrac{2+\dfrac{3}{x}}{4+\dfrac{2}{x^2}}
+    =\dfrac{1}{2}
+    \end{aligned}\]
+  </p>
+</div>
+<div class="toBeToggled drop-rem" data-toggle="RemX1">
+  <p>
+    If we had multiplied the numerator and denominator by \(x^4\), we would
+    have gotten
+    \(\displaystyle \lim_{x\to0}\dfrac{2x^2+3x}{4x^2+2}\)
+    which would now have been \(\dfrac{\infty}{\infty}\). On the other hand,
+    if we had multiplied the numerator and denominator by \(x^3\), we would
+    have gotten \(\displaystyle \lim_{x\to0}\dfrac{2x+3}{4x+\dfrac{2}{x}}\)
+    which would also have given \(\dfrac{\infty}{\infty}\). Neither gives
+    an obviously finite number.
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

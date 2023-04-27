@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Grid Cells | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Sph-Convert.html" title="Previous">&lArr;</a></li>
+      <li><a href="2DCurv-GridArea.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>d. Integrating in 2D Curvilinear Coordinates</h2>
+
+
+      
+      <h2>1. Grid Cells</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Polar coordinates are the most common curvilinear coordinate system in 2D,
+  but there are others such as bipolar, elliptic and hyperbolic. Several
+  coordinate grids are shown below.
+</p>
+<div class="center">
+  <figure>
+    <figcaption>Polar Coordinates</figcaption>
+      <img src="graphics/coordgrid0-polar.jpg" alt="coordgrid0-polar">
+  </figure>
+  <figure>
+    <figcaption>Elliptic-Hyperbolic Coordinates</figcaption>
+    <img src="graphics/coordgrid0-elliptic.jpg" alt="coordgrid0-elliptic">
+  </figure>
+  <figure>
+    <figcaption>Bipolar Coordinates</figcaption>
+    <img src="graphics/coordgrid0-bipolar.jpg" alt="coordgrid0-bipolar">
+  </figure>
+  <figure>
+    <figcaption>Hyperbolic Coordinates</figcaption>
+    <img src="graphics/coordgrid0-hyperbolic.jpg" alt="coordgrid0-hyperbolic">
+  </figure>
+  <figure>
+    <figcaption>Elliptic Polar Coordinates</figcaption>
+    <img src="graphics/ellipticpolarcoordplot.jpg" alt="ellipticpolarcoordplot">
+  </figure>
+  <figure>
+    <figcaption>Parabolic Coordinates</figcaption>
+    <img src="graphics/expg-int2dcurv-parabolic.jpg" alt="expg-int2dcurv-parabolic">
+  </figure>
+</div>
+
+
+<p>
+  We know how to integrate in polar coordinates. We would like to know how to
+  integrate in other 2D coordinate systems as well. Throughout, we will use
+  polar coordinates as a concrete example.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Coordinate System</h3>
+
+<p>
+  To specify a coordinate system, we need to give the position \((x,y)\) as
+  a function of the curvilinear coordinates.
+</p>
+<p class="example" data-number="1">
+  <span class="hl">Polar coordinates</span> are given in components by
+  \[
+  x=r\cos\theta \qquad y=r\sin\theta
+  \]
+  or as a single vector equation for the position:
+  \[
+  (x,y)=\vec{R}(r,\theta)=\left\langle r\cos\theta,r\sin\theta\right\rangle
+  \]
+  Once we specify the values of \(r\) and \(\theta\), we know the rectangular
+  coordinates \(x\) and \(y\).
+</p>
+<p class="def" data-title="2D Curvilinear Coordinates">
+  General <span class="defword">curvilinear coordinates</span> are given in
+  components by:
+  \[
+  x=x(u,v) \qquad y=y(u,v)
+  \]
+  or as a single vector equation for the position:
+  \[
+  (x,y)=\vec{R}(u,v)=\left\langle x(u,v),y(u,v)\right\rangle
+  \]
+  Once we specify the values of \(u\) and \(v\), we know the rectangular
+  coordinates \(x\) and \(y\).
+</p>
+
+        <div class="rule"></div>
+
+<h3>Coordinate Grid and Coordinate Curves</h3>
+
+<p>
+  Here is the polar coordinate grid (again) and a general curvilinear
+  coordinate grid:
+</p>
+<div class="center">
+  <img src="graphics/coordgrid-polar.jpg" alt="coordgrid-polar">
+  &emsp;
+  <img src="graphics/coordgrid-gen.jpg" alt="coordgrid-gen">
+</div>
+<p>
+  There are two families of coordinate curves that define the edges of a
+  grid cell (or coordinate box) in 2D.
+</p>
+<p class="example" data-number="2">
+  In polar coordinates, the radial lines (<span style="color:blue">blue</span>)
+  are called \(r\)-curves because \(r\) is changing,
+  while the circles (<span style="color:red">red</span>) are called
+  \(\theta\)-curves because \(\theta\) is changing.
+  <br/>
+  &emsp; The \(r\)-curve with \(\theta=\theta_0\) is
+  \(\vec{R}(r,\theta_0)=(r\cos\theta_0,r\sin\theta_0)\) with \(r\) as
+  the parameter.
+  <br/>
+  &emsp; The \(\theta\)-curve with \(r=r_0\) is
+  \(\vec{R}(r_0,\theta)=(r_0\cos\theta,r_0\sin\theta)\) with \(\theta\) as
+  the parameter.
+</p>
+<p class="def">
+  In the general curvilinear coordinates, there are:
+  <span class="defword">\(u\)-curves</span>
+  (<span style="color:blue">blue</span>) on which \(u\) is changing and
+  <span class="defword">\(v\)-curves</span>
+  (<span style="color:red">red</span>) on which \(v\) is changing.
+  <br/>
+  &emsp; The \(u\)-curve with \(v=v_0\) is
+  \(\vec{R}(u,v_0)=(x(u,v_0),y(u,v_0))\) with \(u\) as the parameter.
+  <br/>
+  &emsp; The \(v\)-curve with \(u=u_0\) is
+  \(\vec{R}(u_0,v)=(x(u_0,v),y(u_0,v))\) with \(v\) as the parameter.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Coordinate Tangent Vectors</h3>
+
+<p class="remark">
+  For a parametric curve \(\vec{r}(t)=(x(t),y(t))\), the
+  <span class="hl">velocity</span> or <span class="hl">tangent vector</span>
+  is \(\vec{v}=\dfrac{d\vec{r}}{dt}
+  =\left\langle \dfrac{dx}{dt},\dfrac{dy}{dt}\right\rangle\),
+  i.e. we differentiate the position with respect to the parameter. If we
+  need to specify the choice of parameter, we would write
+  \(\vec{v}_t=\dfrac{d\vec{r}}{dt}\). When dealing with a curvilinear
+  coordinate system, the tangent vectors to the coordinate curves no longer
+  have the interpretation as velocity. Further, for a coordinate system,
+  we no longer want to use the letter \(v\) for the tangent vector, first
+  because it is not a velocity and second because we are using \(v\) as one
+  of the coordinates \((u,v)\). So from now on we write
+  \(\vec{e}_t=\dfrac{d\vec{r}}{dt}\) for the tangent vector to a curve
+  \(\vec{r}(t)\).
+</p>
+<p>
+  When dealing with a curvilinear coordinate system, the
+  tangent vector along each coordinate curve is found by differentiating
+  with respect to its parameter. Since the other coordinate is held fixed,
+  these are partial derivatives.
+</p>
+<p class="example" data-number="3">
+  For polar cordinates,
+  \(\vec{R}(r,\theta)=\left\langle r\cos\theta,r\sin\theta\right\rangle\) the
+  coordinate tangent vectors are:
+  \[
+  \vec{e}_r=\dfrac{\partial\vec{R}}{\partial r}
+  =\left\langle\cos\theta,\sin\theta\right\rangle
+  \quad \text{and} \quad
+  \vec{e}_\theta=\dfrac{\partial\vec{R}}{\partial\theta}
+  =\left\langle-r\sin\theta,r\cos\theta\right\rangle
+  \]
+  Here, \(\vec e_r\) is the tangent vector to an \(r\)-curve found by holding
+  \(\theta\) fixed and \(\vec e_\theta\) is the tangent vector to a
+  \(\theta\)-curve is found by holding \(r\) fixed at \(r=r_0\).
+</p>
+<p class="def">
+  For general curvilinear coordinates, the
+  <span class="defword">coordinate tangent vectors,</span> are:
+  \[
+  \vec{e}_u=\dfrac{\partial \vec{R}}{\partial u}
+  =\left\langle
+  \dfrac{\partial x}{\partial u},\dfrac{\partial y}{\partial u}\right\rangle
+  \quad \text{and} \quad
+  \vec{e}_v=\dfrac{\partial \vec{R}}{\partial v}
+  =\left\langle
+  \dfrac{\partial x}{\partial v},\dfrac{\partial y}{\partial v}\right\rangle
+  \]
+  Here, \(\vec e_u\) is the tangent vector to a \(u\)-curve found by holding
+  \(v\) fixed and \(\vec e_v\) is the tangent vector to a
+  \(v\)-curve is found by holding \(u\) fixed.
+</p>
+<p>
+  The coordinate tangent vectors are added to the coordinate grid plots below
+  at the point \((r_0,\theta_0)\) for the polar plot and at \((u_0,v_0)\) for
+  the general curvilinear plot.
+</p>
+<div class="center">
+  <img src="graphics/coordtanvec-polar.jpg" alt="coordtanvec-polar">
+  &emsp;
+  <img src="graphics/coordtanvec-gen.jpg" alt="coordtanvec-gen">
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

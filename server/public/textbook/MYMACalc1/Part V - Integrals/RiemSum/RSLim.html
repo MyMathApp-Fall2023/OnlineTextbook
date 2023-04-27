@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a3. Limits of Riemann Sums (Optional) | 22. Riemann Sums, Integrals and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="RSGen.html" title="Previous">&lArr;</a></li>
+      <li><a href="IntFTC.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Riemann Sums, Integrals and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall, in general:
+  <span class="center">
+	\(\displaystyle \int_a^bf(x)\,dx
+	=\lim_{\begin{aligned}&\scriptstyle\quad n\to\infty \\
+	                      &\scriptstyle\text{max}\Delta x_i\to0\end{aligned}}
+	\sum_{i=1}^n f(x_i^*)\Delta x_i\)
+	</span>
+  <span class="center">
+	where &ensp; \(\Delta x_i=x_i-x_{i-1}\)
+	&ensp; and &ensp; \(x_i^*\in[x_{i-1},x_i]\).
+	</span>
+  For equal intervals and right endpoints:
+  <span class="center">
+	\(\displaystyle \int_a^bf(x)\,dx
+	=\lim_{n\to\infty} \sum_{i=1}^n f(x_i)\Delta x\)
+	</span>
+  <span class="center">
+	&ensp; where &ensp; \(\Delta x=\dfrac{b-a}{n}\)
+	&ensp; and &ensp; \(x_i=a+i\Delta x\).
+	</span>
+</p>
+
+
+      
+      <h2>a3. Limits of Riemann Sums (Optional)</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+	So far, we have approximated integrals using equal intervals with right
+	endpoints, or left endpoints or midpoints.	We now discuss how to actually
+	compute	the integrals by taking the limits. We will do this by example and
+	restrict to polynomial integrands and use equal intervals and right endpoints.
+</p>
+
+<p>
+	We first recall some basic summation formulas from
+	<a href="../../../MYMACalc1/Part I - Pre-Calculus/Algebra/Sums.html"
+	title="Return using the Back button.">
+	high school algebra or pre-calculus</a>.
+</p>
+<p class="formula" data-title="Basic Summation Formulas">
+	\[\begin{aligned}
+	\sum_{i=1}^n 1 &=n
+	&\sum_{i=1}^n i &=\dfrac{n(n+1)}{2} \\
+	\sum_{i=1}^n i^2 &=\dfrac{n(n+1)(2n+1)}{6} \qquad
+	&\sum_{i=1}^n i^3 &=\dfrac{n^2(n+1)^2}{4}
+	\end{aligned}\]
+	These are
+	<a href="../../../MYMACalc1/Part I - Pre-Calculus/Algebra/Sums.html"
+	title="Return using the Back button.">
+	proved</a> using Mathematical Induction.
+</p>
+<a id="eg_x^3-6x_RS"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+	<p class="example" data-number="1">
+    Compute the integral \(\displaystyle \int_1^3 x^3-6x\,dx\) as a limit of
+    Riemann sums.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_x^3-6x.jpg" alt="eg_x^3-6x">
+  </div>
+</div>
+<p class="sol">
+  We split the interval \([1,3]\) into \(n\) equal parts of width:
+	\[
+	\Delta x=\dfrac{3-1}{n}=\dfrac{2}{n}
+	\]
+  Then the right endpoints are:
+  \[
+  x_i=1+i\Delta x=1+\dfrac{2}{n}i
+  \]
+  Since the integrand is the function \(f(x)=x^3-6x\), its value at a right
+  endpoint is:
+  \[\begin{aligned}
+  f(x_i)&=(x_i)^3=\left(1+\dfrac{2}{n}i\right)^3-6\left(1+\dfrac{2}{n}i\right) \\
+  &=1+3\dfrac{2}{n}i+3\dfrac{2^2}{n^2}i^2+\dfrac{2^3}{n^3}i^3-6-\dfrac{12}{n}i \\
+  &=-5-\dfrac{6}{n}i+\dfrac{12}{n^2}i^2+\dfrac{8}{n^3}i^3
+  \end{aligned}\]
+  We set up the Riemann sum, expand each term, write it as a sum of summations
+  and factor out the coefficients:
+  \[\begin{aligned}
+  \sum_{i=1}^n &f(x_i)\Delta x
+  =\sum_{i=1}^n \left[\left(1+\dfrac{2}{n}i\right)^3-6\left(1+\dfrac{2}{n}i\right)\right]\dfrac{2}{n} \\
+  &=\sum_{i=1}^n \left(-5-\dfrac{6}{n}i+\dfrac{12}{n^2}i^2+\dfrac{8}{n^3}i^3\right)
+  \dfrac{2}{n} \\
+  &=\sum_{i=1}^n \left(-\dfrac{10}{n}-\dfrac{12}{n^2}i
+  +\dfrac{24}{n^3}i^2+\dfrac{16}{n^4}i^3\right) \\
+  &=\sum_{i=1}^n \dfrac{-10}{n}+\sum_{i=1}^n \dfrac{-12}{n^2}i
+  +\sum_{i=1}^n \dfrac{24}{n^3}i^2+\sum_{i=1}^n \dfrac{16}{n^4}i^3 \\
+  &=-\,\dfrac{10}{n}\sum_{i=1}^n 1-\dfrac{12}{n^2}\sum_{i=1}^n i
+  +\dfrac{24}{n^3}\sum_{i=1}^n i^2+\dfrac{16}{n^4}\sum_{i=1}^n i^3
+  \end{aligned}\]
+  We now use the basic summations and simplify:
+  \[\begin{aligned}
+  \sum_{i=1}^n &f(x_i)\Delta x \\
+  &=-\,\dfrac{10}{n}\cdot n-\dfrac{12}{n^2}\cdot\dfrac{n(n+1)}{2}
+  +\dfrac{24}{n^3}\cdot\dfrac{n(n+1)(2n+1)}{6}
+  +\dfrac{16}{n^4}\cdot\dfrac{n^2(n+1)^2}{4} \\
+  &=-10-6\dfrac{(n+1)}{n}
+  +4\dfrac{(n+1)(2n+1)}{n^2}
+  +4\dfrac{(n+1)^2}{n^2} \\
+  \end{aligned}\]
+  Finally, we compute the integral as the limit of this Riemann sum:
+  \[\begin{aligned}
+  \int_1^3 &x^3-6x\,dx
+  =\lim_{n\to\infty}\sum_{i=1}^n f(x_i)\Delta x \\
+  &=\lim_{n\to\infty}\left(-10-6\dfrac{(n+1)}{n}
+  +4\dfrac{(n+1)(2n+1)}{n^2}+4\dfrac{(n+1)^2}{n^2}\right) \\
+  &=-10-6+8+4=-4
+  \end{aligned}\]
+</p>
+<a id="RSLim"></a>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+  	<p class="exercise" data-number="2">
+      Compute the integral
+      \(\displaystyle \int_1^9(x^2+1)\,dx\) as a limit of Riemann sums.
+    </p>
+    <div class="center">
+      <img src="graphics/ex_x^2+1.jpg" alt="ex_x^2+1">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+  \(\displaystyle \int_1^9(x^2+1)\,dx=\dfrac{752}{3}
+  \approx250.67\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We  split the interval \([1,9]\) into \(n\) equal parts of width:
+  	\[
+  	\Delta x=\dfrac{9-1}{n}=\dfrac{8}{n}
+  	\]
+    Then the right endpoints are:
+    \[
+    x_i=1+i\Delta x=1+\dfrac{8}{n}i
+    \]
+    Since the integrand is the function \(f(x)=x^2+1\), its value at each right
+    endpoint is:
+    \[\begin{aligned}
+    f(x_i)&=(x_i)^2+1=\left(1+\dfrac{8}{n}i\right)^2+1 \\
+    &=2+\dfrac{16}{n}i+\dfrac{64}{n^2}i^2
+    \end{aligned}\]
+    We set up the Riemann sum, expand each term, write it as a sum of summations
+    and factor out the coefficients:
+    \[\begin{aligned}
+    \sum_{i=1}^n &f(x_i)\Delta x
+    =\sum_{i=1}^n \left[\left(1+\dfrac{8}{n}i\right)^2+1\right]\dfrac{8}{n} \\
+    &=\sum_{i=1}^n \left(2+\dfrac{16}{n}i+\dfrac{64}{n^2}i^2\right)\dfrac{8}{n} \\
+    &=\sum_{i=1}^n \left(\dfrac{16}{n}+\dfrac{128}{n^2}i+\dfrac{512}{n^3}i^2\right) \\
+    &=\sum_{i=1}^n \dfrac{16}{n}+\sum_{i=1}^n \dfrac{128}{n^2}i
+    +\sum_{i=1}^n \dfrac{512}{n^3}i^2 \\
+    &=\dfrac{16}{n}\sum_{i=1}^n 1+\dfrac{128}{n^2}\sum_{i=1}^n i
+    +\dfrac{512}{n^3}\sum_{i=1}^n i^2 \\
+    \end{aligned}\]
+    We now use the basic summations and simplify:
+    \[\begin{aligned}
+    \sum_{i=1}^n &f(x_i)\Delta x \\
+    &=\dfrac{16}{n}\cdot n+\dfrac{128}{n^2}\cdot\dfrac{n(n+1)}{2}
+    +\dfrac{512}{n^3}\cdot\dfrac{n(n+1)(2n+1)}{6} \\
+    &=16+64\dfrac{(n+1)}{n}
+    +\dfrac{256}{3}\dfrac{(n+1)(2n+1)}{n^2} \\
+    \end{aligned}\]
+    Finally, we compute the integral as the limit of this Riemann sum:
+    \[\begin{aligned}
+    \int_1^9 &x^2=1\,dx
+    =\lim_{n\to\infty}\sum_{i=1}^n f(x_i)\Delta x \\
+    &=\lim_{n\to\infty}\left(16+64\dfrac{(n+1)}{n}
+    +\dfrac{256}{3}\dfrac{(n+1)(2n+1)}{n^2}\right) \\
+    &=16+64+\dfrac{512}{3}=\dfrac{752}{3}
+    \approx250.67
+    \end{aligned}\]
+    This answer should be compared to the left, midpoint and right Riemann sum
+    approximations to the integral found in the exercises on the previous two pages:
+    \[
+    L_8=212 \quad
+    M_8=250 \quad
+    R_8=292
+    \]
+    Since the function is increasing, the left sum is too small, the right sum
+    is too large and the middle sum is just about right. (Papa Bear, Momma Bear
+    and Baby Bear.)
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

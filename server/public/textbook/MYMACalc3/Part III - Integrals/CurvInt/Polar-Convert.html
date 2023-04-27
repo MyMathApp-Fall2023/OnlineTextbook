@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Converting &amp; Mixing, Rectangular &amp; Polar Coordinates | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Polar-Appl.html" title="Previous">&lArr;</a></li>
+      <li><a href="Cyl-Grid.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Integrating in Polar Coordinates</h2>
+
+
+      
+      <h2>5. Converting &amp; Mixing, Rectangular &amp; Polar Coordinates</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Sometimes it is useful to use polar coordinates instead of rectangular
+  coordinates when computing an integral. Other times it is best to use
+  rectangular coordinates for one part of an integral and polar coordinates
+  for another part in the same problem.
+</p>
+
+        <div class="rule"></div>
+
+<h3>Converting Rectangular to Polar Coordinates</h3>
+<p>
+  Sometimes the antiderivative of the integrand is not known, making the
+  integral difficult if not impossible. By converting to polar coordinates, we
+  can simplify the integral greatly.
+</p>
+
+<p class="example" data-number="1">
+  Compute the integral
+  \(\displaystyle I
+  =\int_0^{3/\sqrt{2}}\int_y^{\sqrt{9-y^2}} \cos(x^2+y^2)\,dx\,dy\)
+</p>
+<div class="column">
+	<p class="sol">
+    This integral is very hard to do in rectangular coordinates, since we
+    do not know the antiderivative of \(\cos(x^2+y^2)\). However, converting
+    to polar coordinates drastically simplifies the problem. First, we plot
+    the region. From the integral, we see that the region of integration is
+    \(y \le x \le \sqrt{9-y^2}\). The left and right curves intersect when
+    \[
+    y=\sqrt{9-y^2} \quad \Rightarrow \quad 2y^2=9 \quad \Rightarrow \quad
+    y=\pm\dfrac{3}{\sqrt{2}}
+    \]
+    The upper limit for \(y\) is \(\dfrac{3}{\sqrt{2}}\) which is precisely
+    the intersection point and the lower limit is \(y=0\) as shown in the plot.
+  </p>
+  <div class="center">
+    <img src="graphics/polarapp-convert1.jpg" alt="polarapp-convert1">
+  </div>
+</div>
+<p>
+  We now convert to polar coordinates. Substituting \(r^2=x^2+y^2\), the
+  integrand becomes \(\cos(r^2)\). From the plot, we see the
+  bounds on \(r\) and \(\theta\) are:
+  \[
+  0 \le r \le 3 \qquad
+  0 \le \theta \le \dfrac{\pi}{4}
+  \]
+  Remember that the differentials become \(dA=dx\,dy=r\,dr\,d\theta\) so that
+  the polar integral is computed as
+  \[\begin{aligned}
+  I&=\int_0^{\pi/4}\int_0^3\cos(r^2) r\,dr\,d\theta
+  =\int_0^{\pi/4}\,d\theta\int_0^3 r\,\cos(r^2)\,dr \\
+  &=\dfrac{\pi}{4} \left[\dfrac{1}{2}\sin(r^2)\right]_0^3
+  =\dfrac{\pi}{8} \sin(9)
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  In the following example, algebraic manipulation as well as polar
+  coordinates are used to solve the problem.
+</p>
+
+<p class="example" data-number="2">
+  Compute the improper integral
+  \(\displaystyle I=\int_{-\infty}^\infty e^{-x^2}\,dx
+  =\lim_{R\rightarrow\infty}\int_{-R}^R e^{-x^2}\,dx\)
+  by using polar coordinates
+</p>
+<div class="column">
+  <p class="sol">
+    First, we plot the integrand to observe the
+    shape of the function. Notice how the function asymptotically approaches \(0\)
+    in the limit as \(x\rightarrow\pm\,\infty\). This property will allow us to
+    compute the improper integral.
+  </p>
+  <div class="center">
+    <img src="graphics/polarapp-convert2.jpg" alt="polarapp-convert2">
+  </div>
+</div>
+<p>
+  We start by manipulating the integral algebraically. We first square \(I\),
+  letting the dummy variable in the second \(I\) become \(y\), so that we can
+  easily use polar coordinates to solve the resulting double integral:
+  \[\begin{aligned}
+  I^2=\int_{-\infty}^\infty e^{-x^2}\,dx\int_{-\infty}^\infty e^{-y^2}\,dy
+  =\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-x^2}e^{-y^2}\,dx\,dy
+  =\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-x^2-y^2}\,dx\,dy
+  \end{aligned}\]
+  From here, we switch to polar coordinates by substituting \(r^2=x^2+y^2\)
+  and \(dx\,dy=r\,dr\,d\theta\) in the integral. The integration is performed
+  over the entire \(xy\) plane, so the bounds on \(r\) and \(\theta\) become
+  \[
+  0 \le r \le \infty \qquad
+  0 \le \theta  \le 2\pi
+  \]
+  So \(I^2\) in polar coordinates is
+  \[\begin{aligned}
+  I^2&=\int_0^{2\pi}\int_0^\infty e^{-r^2}r\,dr\,d\theta
+  =\int_0^{2\pi} \,d\theta\int_0^\infty e^{-r^2}r\,dr \\
+  &=2\pi\left[-\,\dfrac{1}{2}e^{-r^2}\right]_0^\infty
+  =-\pi\lim_{R\rightarrow\infty}\left[e^{-r^2}\right]_0^R \\
+  &=-\pi\left[\lim_{R\rightarrow\infty}e^{-R^2}-1\right]
+  =\pi
+  \end{aligned}\]
+  Thus, taking the square root,
+  \[
+  I=\sqrt{\pi}
+  \]
+</p>
+
+<p class="remark">
+  This result is essential in statistics, where the function
+  \(f(x)=\dfrac{1}{\sqrt{\pi}}e^{-x^2}\) is called the
+  <a href="https://en.wikipedia.org/wiki/Normal_distribution" target="_blank">
+  Gaussian or normal probability density function</a>, which gives the
+  <span class="defword">probability density</span> that a continuous random
+  variable takes on the value \(x\).
+  In particular, if you have an interval \([a,b]\), then the integral
+  \(\displaystyle \int_a^b f(x)\,dx\), gives the probability that the
+  random variable lies within the interval. The function \(e^{-x^2}\) is
+  divided by \(I=\sqrt{\pi}\) so that the total probability equals \(1\), i.e.
+  \(\displaystyle \int_{-\infty}^\infty f(x)\,dx=1\).
+</p>
+<big>PY: Add an exercise.</big>
+
+        <div class="rule"></div>
+
+<h3>Mixing Rectangular and Polar Coordinates</h3>
+
+<p>
+  Sometimes it is useful to use polar coordinates on part of the integral and
+  rectangular coordinates on another part, as in the example below.
+</p>
+
+<div class="column">
+  <p class="example" data-number="3">
+    Compute the integral \(\displaystyle \iint xy\,dA\) between the line
+    \(y=3-x\) and the quarter circle \(y=\sqrt{9-x^2}\).
+  </p>
+  <div class="center">
+    <img src="graphics/polarapp-mix.jpg" alt="polarapp-mix">
+  </div>
+</div>
+<p class="sol">
+  This integral can be computed using either rectangular or polar coordinates. However,
+  it is easier to compute the integral over a quarter circle in polar coordinates and
+  subtract the integral over a triangle. Mathematically, we express this as:
+  \[
+  \iint_R xy\,dA=\iint_\text{quarter circle}xy\,dA-\iint_\text{triangle}xy\,dA
+  \]
+  <strong>First,</strong> we use polar coordinates to integrate of \(f=xy\) inside the quarter
+  circle \(y=\sqrt{9-x^2}\) in the first quadrant:
+  \[\begin{aligned}
+  &\iint_\text{quarter circle} xy\,dA
+  =\iint (r\cos\theta)(r\sin\theta)\,r\,dr\,d\theta \\
+  &=\int_0^{\pi/2}\int_0^3 r^3\sin\theta\cos\theta\,dr\,d\theta
+  =\int_0^3 r^3\,dr\int_0^{\pi/2}\sin\theta\cos\theta\,d\theta \\
+  &=\left[\dfrac{1}{4}r^4\right]_{r=0}^3
+  \left[\dfrac{\sin^2\theta}{2}\right]_0^{\pi/2}
+  =\dfrac{3^4}{4}\left(\dfrac{1}{2}-0\right)
+  =\dfrac{81}{8}
+  \end{aligned}\]
+  <strong>Next,</strong> we use rectangular coordinates to integrate the function \(f=xy\) under the line \(y=3-x\)
+  from \(x=0\) to \(x=3\)
+  \[\begin{aligned}
+  &\iint_\text{triangle}xy\,dA
+  =\int_0^3\int_0^{3-x} xy\,dy\,dx
+  =\int_0^3 \left[x\dfrac{y^2}{2}\right]_{y=0}^{3-x}\,dx \\
+  &=\dfrac{1}{2}
+  \int_0^3 x(3-x)^2\,dx
+  =\dfrac{1}{2}\int_0^3 9x-6x^2+x^3\,dx \\
+  &=\dfrac{1}{2}\left[\dfrac{9}{2}x^2-2x^3+\dfrac{1}{4}x^4\right]_0^3
+  =\dfrac{1}{2}\left(\dfrac{9}{2}(3)^2-2(3)^3+\dfrac{1}{4}(3)^4\right)
+  =\dfrac{27}{8}
+  \end{aligned}\]
+  <strong>Thus,</strong> the net integral is
+    \[\begin{aligned}
+    \iint xy\,dA
+    &=\iint_\text{quarter circle}xy\,dA-\iint_\text{triangle}xy\,dA \\
+    &=\dfrac{81}{8}-\,\dfrac{27}{8}
+    =\dfrac{27}{4}
+    \end{aligned}\]
+</p>
+<big>PY: Add an exercise.</big>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

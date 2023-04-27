@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Torsion | 8. Properties of Curves</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Curvature.html" title="Previous">&lArr;</a></li>
+      <li><a href="TNAcc.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic6">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>8. Properties of Curves</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>f. Curvature and Torsion</h2>
+
+
+      
+      <h2>2. Torsion</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+	<p data-col-width="33%">
+    The torsion of a curve, denoted by the Greek letter
+    tau, \(\tau\), is a measure of how quickly the instantaneous
+    plane of a curve is twisting. Unlike the curvature \(\kappa\)
+    (which is always positive), the torsion can be positive
+    or negative to measure the handedness of the curve.
+    For example, the two helices at the right are traversed
+    from bottom to top. However, when looked at from
+    the top (positive \(z\)-axis), the first is traversed
+    clockwise (left handed) while the second is
+    traversed counterclockwise (right handed). If you wrap the
+    fingers of your right hand around the helix with your
+    fingers in the direction the curve is traversed, your
+    thumb will point down for the first helix and up for
+    the second helix. This handedness is reflected in the
+    torsion which is negative for the first helix and positive
+    for the second helix.
+	</p>
+  <div class="center" data-col-width="67%">
+    <figure>
+      <video src="graphics/eg_LH_helix_torsion_anim.mp4" autoplay controls loop></video>
+      <figcaption>Left-handed</figcaption>
+    </figure>
+    <figure>
+      <video src="graphics/eg_RH_helix_torsion_anim.mp4" autoplay controls loop></video>
+      <figcaption >Right-handed</figcaption>
+    </figure>
+  </div>
+</div>
+<div class="column">
+  <p data-col-width="33%">
+    The unit binormal vector, \(\hat{B}\), is the normal vector to the
+    instantaneous plane of the curve. So the rate of change of the orientation
+    of the plane is measured by \(\dfrac{d\hat{B}}{ds}\). However, if we define
+    the torsion as its magnitude \(\left|\dfrac{d\hat{B}}{ds}\right|\)
+    (like we did for the curvature), then it would always be positive and we
+    want its sign to determine the handedness of the twist. So we need a
+    slightly different definition.
+  </p>
+  <div class="center" data-col-width="67%">
+		<figure>
+			<video src="graphics/eg_LH_helix_TNBosc_anim.mp4" autoplay controls loop>
+			</video>
+		</figure>
+		<figure>
+			<video src="graphics/eg_RH_helix_TNBosc_anim.mp4" autoplay controls loop>
+			</video>
+		</figure>
+  </div>
+</div>
+<a id="deftorsion"></a>
+<p class="def">
+  The <span class="defword">torsion</span>, \(\tau\), of a parametric curve is
+  \[
+	\tau=-\,\dfrac{d\hat{B}}{ds}\cdot\hat{N}
+	\]
+  where \(\hat{N}\) is the unit normal vector, \(\hat{B}\) is the unit binormal
+  vector and \(s\) is the arc length parameter on the curve.
+</p>
+<p class="remark"> <br>
+  1) We take the derivative with respect to arc length \(s\) instead of the
+  parameter \(t\) because we want the torsion to be geometrical and not depend
+	on the speed we traverse the curve.
+    <br><br>
+  2) The <span class="hl">minus sign</span> is needed to ensure that the
+	torsion of a right handed helix is positive and that of a left handed helix
+	is negative. The <span class="defword">helicity</span> of a curve is
+	defined to be the sign of the torsion.
+    <br><br>
+  3) We dot with \(\hat{N}\) because, as we will see on the page about
+  <a href="Frenet.html" title="Return using theBack button.">Frenet Frames</a>,
+	\(\dfrac{d\hat{B}}{ds}=-\tau\hat{N}\), and this is the best way to isolate
+	the coefficient \(-\tau\). In fact, if we take the length of this formula, we get
+  \[
+	|\tau|=\left|\dfrac{d\hat{B}}{ds}\right|
+	\]
+  which could be used as the definition of the torsion, except for its sign
+  which is the helicity.
+</p>
+<a id="jerk"></a>
+
+        <div class="rule" id="TorsionFormula"></div>
+
+<p>
+  It is often easier to calculate torsion using the following formula:
+</p>
+<p class="prop">
+  The torsion can be calculated from:
+  \[
+  \tau=\dfrac{\vec{v}\times\vec{a}\cdot\vec j}{|\vec{v}\times\vec{a}|^2}
+  \]
+  <a href="TorsionProof.html"><button>Proof</button></a>
+</p>
+<p class="remark">
+  Note: The \(\vec j\) in this formula is the jerk, <em>not</em> the unit
+	vector \(\hat j\) in the \(y\) direction!
+</p>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the torsion \(\tau\) of the right handed helix
+	\(\vec{r}=(4\cos\theta,4\sin\theta,3\theta)\). See the
+	second figure at the top. Is the torsion positive or negative?
+</p>
+<p class="sol">
+  On a
+	<a href="TNB.html#helix" title="Return using the Back button.">
+	previous page</a>, in the example to find \(\hat{T}\), \(\hat{N}\) and
+	\(\hat{B}\) for this right handed helix, we found:
+  \[
+  \vec{v}=\langle -4\sin\theta,4\cos\theta,3\rangle
+  \qquad
+  \vec{a}=\langle -4\cos\theta,-4\sin\theta,0\rangle
+  \]
+  \[
+  \vec{v}\times\vec{a}=\langle 12\sin\theta,-12\cos\theta,16\rangle
+	\qquad
+  |\vec{v}\times\vec{a}|=20
+  \]
+  So:
+  \[
+  \vec{j}=\langle 4\sin\theta,-4\cos\theta,0\rangle
+	\qquad
+	\vec{v}\times\vec{a}\cdot\vec{j}=48\sin^2\theta+48\cos^2\theta=48
+  \]
+  and:
+  \[
+  \tau=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+  =\dfrac{48}{20^2}=\dfrac{3}{25}
+  \]
+	We see the torsion is positive.
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the torsion \(\tau\) of the left handed helix
+		\(\vec{r}=\langle 4\cos\theta,-4\sin\theta,3\theta\rangle\). See the
+    first figure at the top. Is the torsion positive or negative?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+	\(\tau=\dfrac{-3}{25}\) &ensp;
+	We see the torsion is negative.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+	  We compute:
+	  \[
+	  \vec{v}=\langle -4\sin\theta,-4\cos\theta,3\rangle
+		\qquad
+	  \vec{a}=\langle -4\cos\theta,4\sin\theta,0\rangle
+	  \]
+	  \[\begin{aligned}
+	  \vec{v}\times\vec{a}
+		&=\langle -12\sin\theta,-12\cos\theta,-16\sin^2\theta-16\cos^2\theta\rangle \\
+		&=\langle -12\sin\theta,-12\cos\theta,-16\rangle
+	  \end{aligned}\]
+	  \[
+	  |\vec{v}\times\vec{a}|
+	  =\sqrt{144\sin^2\theta+144\cos^2\theta+256}=20
+	  \]
+	  \[
+	  \vec{j}=\langle 4\sin\theta,4\cos\theta,0\rangle
+	  \]
+	  \[
+	  \vec{v}\times\vec{a}\cdot\vec{j}
+	  =-48\sin^2\theta-48\cos^2\theta=-48
+	  \]
+	  So
+	  \[
+		\tau=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+	  =\dfrac{-48}{20^2}=\dfrac{-3}{25}
+		\]
+		We see the torsion is negative.
+	</p>
+</div>
+
+<p class="remark">
+  From this example and exercise, notice that the torsion of the right
+	handed helix is positive while that of the left handed helix is negative.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+	  Find the torsion \(\tau\) of the twisted cubic
+		\(\vec{r}=(t,t^2,\dfrac{2}{3}t^{3})\).
+		Is it right handed or left handed?
+		See the example on a
+		<a href="TNBFormulas.html#cubic" title="Return using the Back button.">
+		previous page</a>.
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+	\(\tau=\dfrac{2}{(1+2t^2)^2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+	  On a
+		<a href="TNBFormulas.html#cubic" title="Return using the Back button.">
+		previous page</a>, in the example to find \(\hat{T}\), \(\hat{N}\)
+		and \(\hat{B}\) for this twisted cubic, we found:
+	  \[
+	  \vec{v}=\langle 1,2t,2t^2\rangle
+	  \qquad
+	  \vec{a}=\langle 0,2,4t\rangle
+	  \]
+	  \[
+	  \vec{v}\times\vec{a}=\langle 4t^2,-4t,2\rangle
+		\qquad
+	  |\vec{v}\times\vec{a}|=2(1+2t^2)
+	  \]
+	  Then:
+	  \[
+	  \vec{j}=\langle 0,0,4\rangle
+		\qquad
+		\vec{v}\times\vec{a}\cdot\vec{j}=8
+	  \]
+	  and so:
+	  \[
+	  \tau=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}
+	  =\dfrac{8}{4(1+2t^2)^2}=\dfrac{2}{(1+2t^2)^2}
+	  \]
+		Since the torsion is positive the curve is right handed.
+	</p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find the torsion \(\tau\) of the circle
+		\(\vec{r}=\langle R\cos\theta,R\sin\theta,0\rangle\).
+		See the example on a
+		<a href="TNB.html#circle" title="Return using the Back button.">
+		previous page</a>. Why should you have expected this answer?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    The torsion is \(\tau=0\), which should be expected because the plane of a
+    circle does not change
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+	  On a
+		<a href="TNB.html#circle" title="Return using the Back button.">
+		previous page</a>, in the example to find \(\hat{T}\), \(\hat{N}\)
+		and \(\hat{B}\) for this circle, we found:
+	  \[
+	  \vec{v}=\langle -R\sin\theta,R\cos\theta,0\rangle
+	  \qquad
+	  \vec{a}=\langle -R\cos\theta,-R\sin\theta,0\rangle
+	  \]
+	  \[
+	  \vec{v}\times\vec{a}=\langle 0,0,R^2\rangle
+		\qquad
+	  |\vec{v}\times\vec{a}|=R^2
+	  \]
+    Using these,
+    \[
+    \vec{j}=\langle R \sin\theta,-R\cos\theta, 0\rangle
+		\qquad
+		\vec{v}\times\vec{a}\cdot\vec{j}=0
+    \]
+		So
+		\[
+    \tau=\dfrac{\vec{v}\times\vec{a}\cdot\vec{j}}{|\vec{v}\times\vec{a}|^2}=0
+    \]
+    Thus, the torsion is zero, which should be expected because the plane of a
+    circle does not change
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

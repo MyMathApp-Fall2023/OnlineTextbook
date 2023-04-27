@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Proof | 12. Differentials &amp; Linear Approximation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="MVT.html#MVT" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>12. Differentials &amp; Linear Approximation</h1>
+    <div id="pg-wrapper">
+      
+
+<h2>c. Mean Value Theorem</h2>
+
+
+      
+      <h2>1. Proof</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p>
+  Before we can prove the Mean Value Theorem, we need
+  to prove Rolle's Theorem.
+</p>
+
+<p class="thm" data-title="Rolle's Theorem">
+	If \(g(x)\) is a function on the interval \([a,b]\)
+	with a continuous derivative, \(g'(x)\), and \(g(a)=g(b)\) then there is
+	a number \(c\) in \((a,b)\) such that
+	\[
+	g'(c)=0.
+	\]
+</p>
+
+<p class="proof">
+	Look at this plot showing \(4\) continuous functions satisfying \(g(a)=g(b)\):
+</p>
+<div class="column">
+  <p>
+		one which has the constant value \(g(a)\)
+		<span class="center" style="color: red">red &emsp; &emsp; &ensp;
+		\(g(x) =g(a)\)</span>
+		one which is always bigger than \(g(a)\)
+		<span class="center" style="color: blue">blue &emsp; &emsp; &nbsp;
+		\(g(x) \geq g(a)\)</span>
+		one which is always smaller than \(g(a)\),
+		<span class="center" style="color: magenta">magenta &emsp;
+		\(g(x) \leq g(a)\)</span>
+		and one which is sometimes bigger and sometimes smaller than \(g(a)\).
+		<span class="center"><span style="color: green">green</span> &emsp;
+		\(g(x)\ \) sometimes \(\ \gt g(a)\)</span>
+		<span class="center">
+		and  &emsp; &ensp; \(g(x)\ \) sometimes \(\ \lt g(a)\)</span>
+  </p>
+  <div class="center">
+    <img src="graphics/MVTproof.jpg" />
+  </div>
+</div>
+<p>
+  Since \(g(x)\) is continuous, by the
+	<a href="../../Part II - Limits and Continuity/LimAppl/MaxMin.html"
+	title="Return using the Back button.">
+	Extreme Value Theorem</a>	it must have a maximum and a minimum somewhere
+	in \([a,b]\). If \(g\) is constant, then every point is both a
+  maximum and minimum. Since \(g(a)=g(b)\), if \(g\) is not constant, then
+	it must go up or down somewhere (as in the plot) and have a maximum or
+	minimum somewhere	in \((a,b)\). Let \(c\) be a number in \((a,b)\) where
+	\(g(c)\) is a maximum or minimum. Since \(g(x) \) is differentiable, the
+	slope of the tangent line is \(0\) at \(x=c\), in other words,
+  \[
+  g'(c)=0
+  \]
+</p>
+<p class="remark">
+  There may be more than one number \(c\) where \(g'(c)=0\).
+	The theorem only guarantees that there is <em>at least</em> one.
+</p>
+
+        <div class="rule" id="MVT"></div>
+
+<p class="thm" data-title="The Mean Value Theorem">
+	If \(f(x)\) is a function on the interval \([a,b]\)
+	with a continuous derivative, \(f'(x)\), then there is
+	a number \(c\) in \((a,b)\) such that
+	\[
+	f'(c)=\dfrac{f(b)-f(a)}{b-a}
+	\]
+	or equivalently,
+	\[
+	f(b)=f(a)+f'(c)(b-a)
+	\]
+</p>
+<p class="proof">
+	The equation of the line between the endpoints is
+	\[
+	y=f(a)+\dfrac{f(b)-f(a)}{b-a}(x-a)
+	\]
+	<button class="toggle" data-toggle="Hint1">
+	Why is this a line?</button> &ensp;
+	<button class="toggle" data-toggle="Hint2">
+	Why does it go through the endpoints?</button>
+</p>
+ <div class="toBeToggled note" data-toggle="Hint1">
+   <h4>Why is this a line?</h4>
+   <p>
+     It is a line because \(y\) is a linear function of \(x\). Additionally,
+		 it is the point-slope form of the line, \(y=f(a)+m(x-a)\), where
+		 the slope is \(m=\dfrac{f(b)-f(a)}{b-a}\).
+   </p>
+ </div>
+ <div class="toBeToggled note" data-toggle="Hint2">
+   <h4>Why does it go through the endpoints?</h4>
+   <p>
+     When \(x=a\),
+     \[
+     y=f(a)+\dfrac{f(b)-f(a)}{b-a}(a-a)=f(a)
+     \]
+     When \(x=b\),
+     \[
+     y=f(a)+\dfrac{f(b)-f(a)}{b-a}(b-a)=f(b)
+     \]
+   </p>
+ </div>
+ <p>
+   We define a new function \(g(x)\) which is the difference
+   between our original function \(f(x)\) and the straight line
+   between the endpoints:
+   \[
+   g(x)=f(x)-f(a)-\dfrac{f(b)-f(a)}{b-a}(x-a)
+   \]
+   We evaluate \(g(x)\) at the endpoints and also compute its
+   derivative:
+   \[\begin{aligned}
+   g(a)&=f(a)-f(a)-\dfrac{f(b)-f(a)}{b-a}(a-a)=0 \\
+   g(b)&=f(b)-f(a)-\dfrac{f(b)-f(a)}{b-a}(b-a)=0 \\
+   g'(x)&=f'(x)-\dfrac{f(b)-f(a)}{b-a}
+   \end{aligned}\]
+   Since \(g(a)=g(b)\), we can apply Rolle's Theorem to \(g(x)\) to conclude
+	 there is a number \(c\) in \((a,b)\) such that \(g'(c)=0\). But this says:
+   \[
+   f'(c)-\dfrac{f(b)-f(a)}{b-a}=0
+   \]
+   which is the Mean Value Theorem.
+	</p>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

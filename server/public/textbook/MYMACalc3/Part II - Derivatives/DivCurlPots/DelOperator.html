@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. The Del Operator | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="DivAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  The <span class="defword">del operator</span> will be heavily used in our
+  study of <span class="defword">divergence</span> and
+  <span class="defword">curl</span> and will lend further understanding of
+  the <span class="defword">gradient</span>. So that is where we start.
+</p>
+
+
+      
+      <h2>a. The Del Operator</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  <strong>Question:</strong>&emsp;
+  What is the difference between \(\dfrac{df}{dx}\) and \(\dfrac{d}{dx}\)?
+</p>
+<p>
+  <strong>Answer:</strong>&emsp;
+  \(\dfrac{df}{dx}\) is the derivative of the function \(f(x)\). However,
+  \(\dfrac{d}{dx}\) is a differential operator which is ready to differentiate
+  any function but does not yet have a function to differentiate.
+  If we have a formula for \(f(x)\), then we can find a formula for
+  \(\dfrac{df}{dx}\). There is <strong>NO</strong> formula for
+  \(\dfrac{d}{dx}\) by itself.
+</p>
+<p>
+  <strong>Question:</strong>&emsp;
+  Similarly, what is the difference between the gradient, \(\vec\nabla f\)
+  and \(\vec\nabla\)?
+</p>
+<p>
+  <strong>Answer:</strong>&emsp;
+  The gradient, \(\vec\nabla f\), is the vector of the \(3\) partial
+  derivatives of \(f\). However:
+</p>
+<p class="def" data-title="The Del Operator">
+  The <span class="defword">del operator</span>, denoted by the symbol
+  \(\vec\nabla\), is the vector differential operator given in rectangular
+  coordinates as:
+  \[
+  \vec\nabla=\left\langle
+  \dfrac{\partial}{\partial x},
+  \dfrac{\partial}{\partial y},
+  \dfrac{\partial}{\partial z}\right\rangle
+  =\left\langle \partial_x,\partial_y,\partial_z \right\rangle
+  \]
+  (The second formula is simply a more compact way to write the derivatives.)
+  Del is nothing but a symbol which represents a vector of three differential
+  operators which are ready to differentiate a scalar field (ordinary function)
+  or the components of a vector field.
+</p>
+<p class="remark">
+  There are formulas for the del operator in curvilinear coordinates (such
+  as polar, cylindrical or spherical), but
+  they are beyond the scope of this course. In this course, we will always
+  use the del operator in rectangular coordinates, and then convert the
+  results to curvilinear coordinates if needed.
+</p>
+<p class="remark">
+  Note that del is <strong>not</strong> the gradient. However, the gradient
+  is one of the three common operations performed with the del operator.
+  These mimic
+  <br>1. the <span class="hl">scalar product</span> of a scalar and a vector,
+  <br>2. the <span class="hl">dot product</span> of two vectors and
+  <br>3. the <span class="hl">cross product</span> of two vectors.
+  <br>In each case, the del operator plays the roll of one of the vectors.
+</p>
+<div class="greybox">
+  <p class="def" data-title="Gradient, Divergence and Curl">
+  </p>
+  <ol class="list-outside">
+    <li>
+      <p>
+        When the del operator acts on an ordinary function (scalar field),
+        \(f(x,y,z)\), it produces the <span class="defword">gradient</span>:
+        \[
+        \text{grad} f=\vec\nabla f
+        =\left\langle
+        \dfrac{\partial f}{\partial x},
+        \dfrac{\partial f}{\partial y},
+        \dfrac{\partial f}{\partial z}\right\rangle
+        \]
+      </p>
+    </li>
+    <li>
+      <p>
+        When the del operator acts on a vector field, \(\vec F(x,y,z)\),
+        by the dot product, it produces the <span class="defword">divergence</span>:
+        \[\begin{aligned}
+        \text{div} \vec F
+        &=\vec\nabla\cdot\vec F
+        =\left\langle
+        \dfrac{\partial}{\partial x},
+        \dfrac{\partial}{\partial y},
+        \dfrac{\partial}{\partial z}\right\rangle
+        \cdot\left\langle F_1, F_2, F_3 \right\rangle \\[2pt]
+        &=\dfrac{\partial F_1}{\partial x}
+        + \dfrac{\partial F_2}{\partial y}
+        + \dfrac{\partial F_3}{\partial z}
+        =\partial_x F_1+\partial_y F_2+\partial_z F_3
+        \end{aligned}\]
+      </p>
+    </li>
+    <li>
+      <p>
+        When the del operator acts on a vector field, \(\vec F(x,y,z)\),
+        by the cross product, it produces the <span class="defword">curl</span>:
+        \[\begin{aligned}
+        \text{curl} \vec F&=\vec\nabla\times\vec F
+        =\begin{vmatrix}
+    		\hat{\imath} & \hat{\jmath} & \hat{k} \\
+        \partial_x   & \partial_y   & \partial_z \\
+    		F_1          & F_2          & F_3
+    		\end{vmatrix} \\
+        &=\left\langle
+        \partial_y F_3-\partial_z F_2,
+        \partial_z F_1-\partial_x F_3,
+        \partial_x F_2-\partial_y F_1
+        \right\rangle
+        \end{aligned}\]
+      </p>
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  When we compute a usual scalar multiple, dot product or cross produce,
+  we <span class="hl">multiply</span> the function and/or components.
+  When we compute a gradient, divergence or curl, the components of del do not
+  <span class="hl">multiply</span> the function or components, they
+  <span class="hl">differentiate</span> the function or component.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  The gradient was discussed in a
+  <a href="../DirDerivGrad/ChContents.html" title="Return using the Back button.">
+  previous chapter</a>.
+  The divergence and curl are discussed on the
+  <a href="DivAlg.html">next few pages</a>.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

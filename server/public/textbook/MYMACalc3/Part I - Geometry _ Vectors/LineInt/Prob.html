@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Probability &amp; Expected Value | 9. Line Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Ave.html" title="Previous">&lArr;</a></li>
+      <li><a href="VectorInt.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>9. Line Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Applications of Scalar Line Integrals</h2>
+
+
+      
+      <h2>3. Probability &amp; Expected Value</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  There is also a probability interpretation of weighted averages:
+</p>
+<p class="def" data-title="Probability and Expected Value along a Curve">
+  Let \(p(x,y,z)\) be a function defined along the curve
+  \(\vec r(t)=(x(t),y(t),z(t))\) between \(A=\vec r(a)\) and \(B=\vec r(b)\).
+  If \(\displaystyle \int_A^B p\,ds=1\), then \(p(x,y,z)\) is
+  called a <span class="defword">probability distribution</span> along
+  the curve. If \(C\) and \(D\) are points on the curve between \(A\) and
+  \(B\), then \(\displaystyle P(C,D)=\int_C^D p\,ds\) is interpreted as the
+  <span class="defword">probability</span> we have selected a point on the
+  curve between \(C\) and \(D\). Further, the
+  <span class="defword">expected value</span> of a function \(f(x,y,z)\) is
+  \[
+  \langle f\rangle
+  =\int_A^B f\,p\,ds
+  =\int_a^b f(\vec r(t))\,p(\vec r(t))|\vec v|\,dt
+  \]
+</p>
+<p class="remark">
+  An expected value is actually a weighted average with weight \(p\) because
+  \(\displaystyle \int_A^B p\,ds=1\). Specifically,
+  \[
+  f_{p\text{-ave}}
+  =\dfrac{\displaystyle \int_A^B f\,p\,ds}
+         {\displaystyle \int_A^B p\,ds}
+  =\displaystyle \int_A^B f\,p\,ds
+  =\langle f\rangle
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    An oxygen molecule is confined within a
+    <button class="toggle" data-toggle="buckytube">Bucky-tube</button>
+    which lies along the curve \(y=x^2\) between \(x=0\) and \(x=\sqrt{2}\).
+    The probability distribution for finding the molecule at \((x,y)\) is
+    \(p(x,y)=ax\). (Rotate the plot with your mouse.)
+  </p>
+  <div class="center">
+    <x3d width='250px' height='250px'>
+      <scene>
+        <inline url="graphics/eg_O2_Bucky.x3d"> </inline>
+      </scene>
+    </x3d>
+  </div>
+</div>
+<div class="toBeToggled" data-toggle="buckytube">
+  <p>
+    A Bucky-tube is a molecule of carbon in the shape of a tube which is very
+    stable and can contain other atoms or molecules in its interior.
+  </p>
+</div>
+<ol>
+  <li>
+    Find \(a\) so that \(p(x,y)\) is a probability distribution.
+  </li>
+  <li>
+    What is the probability that the oxygen molecule is between \(x=\dfrac{1}{2}\)
+    and \(x=1\)?
+  </li>
+  <li>
+    What is the expected value of \(y\) for the oxygen molecule?
+  </li>
+</ol>
+<p class="sol">
+  The curve may be parametrized by \(\vec r(t)=(t,t^2)\). So its
+  velocity is \(\vec v=(1,2t)\) whose length is \(|\vec v|=\sqrt{1+4t^2}\).
+</p>
+<ol>
+  <li>
+    On the curve \(p=ax=at\). To be a probability distribution, we need
+    \(\displaystyle \int_{(0,0)}^{(\sqrt{2},2)} p\,ds=1\). However,
+    (with \(u=1+4t^2\))
+      \[\begin{aligned}
+      \int_{(0,0)}^{(\sqrt{2},2)} &p\,ds
+      =\int_0^{\sqrt{2}} at\,\sqrt{1+4t^2}\,dt
+      =\dfrac{a}{8}\int_1^9 \sqrt{u}\,du \\
+      &=\left[\dfrac{au^{3/2}}{12}\right]_1^9
+      =\left(\dfrac{a27}{12}\right)-\left(\dfrac{a}{12}\right)
+      =\dfrac{13a}{6}=1
+      \end{aligned}\]
+    So we need \(a=\dfrac{6}{13}\). Then \(p=\dfrac{6}{13}x=\dfrac{6}{13}t\).
+  </li>
+  <li>
+    The probability that the oxygen molecule is between \(x=\dfrac{1}{2}\) and \(x=1\) is:
+    \[\begin{aligned}
+    P\left(\dfrac{1}{2},1\right)&=\int_{(1/2,1/4)}^{(1,1)} p\,ds
+    =\int_{1/2}^1 \dfrac{6}{13}x|\vec v|\,dt \\
+    &=\int_{1/2}^1 \dfrac{6}{13}t\,\sqrt{1+4t^2}\,dt
+    =\dfrac{6}{13}\dfrac{1}{8}\int_2^5 \sqrt{u}\,du \\
+    &=\dfrac{3}{52}\left[\dfrac{2}{3}u^{3/2}\right]_2^5
+    =\dfrac{1}{26}\left(5^{3/2}-2^{3/2}\right)
+    \approx.32
+    \end{aligned}\]
+  </li>
+  <li>
+    The expected value of \(y\) is
+    \[\begin{aligned}
+    \langle y\rangle&=\int_{(0,0)}^{(\sqrt{2},2)} y\,p\,ds
+    =\int_0^{\sqrt{2}} t^2\dfrac{6}{13}t\,\sqrt{1+4t^2}\,dt \\
+    &=\dfrac{6}{13}\dfrac{1}{8}\int_1^9
+    \left(\dfrac{u-1}{4}\right)\sqrt{u}\,du \\
+    &=\dfrac{3}{208}\int_1^9 \left(u^{3/2}-u^{1/2}\right)\,du
+    =\dfrac{3}{208}\left[\dfrac{2u^{5/2}}{5}-\,\dfrac{2u^{3/2}}{3}\right]_1^9 \\
+    &=\dfrac{3}{208}\left(\dfrac{2\cdot243}{5}-\,\dfrac{2\cdot27}{3}\right)
+     -\,\dfrac{3}{208}\left(\dfrac{2}{5}-\,\dfrac{2}{3}\right) \\
+    &=\dfrac{149}{130}
+    \approx1.15
+    \end{aligned}\]
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<p class="exercise" data-number="2">
+  Consider the function \(p(x,y,z)=axy\) along the twisted cubic
+  \(\vec r(t)=\left\langle t,t^2,\dfrac{2}{3}t^3\right\rangle\)
+  between \(t=0\) and \(t=1\).
+</p>
+<ol class="list-outside" type="a">
+  <li>
+		<div class="dotfillex">
+			<p>
+        Find \(a\) so that \(p\) is a probability distribution.
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2a"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2a"></button>
+	    </p>
+		</div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2a">
+	    <p>
+	      \(\displaystyle
+        a=\dfrac{12}{7}\) and \(p=\dfrac{12}{7}xy=\dfrac{12}{7}t^3\).
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2a">
+	    <p>
+        On the curve, \(p=axy=at^3\) and \(|\vec v|=1+2t^2\).
+        To be a probability distribution, we need
+        \(\displaystyle \int_{\vec r(0)}^{\vec r(1)} p\,ds=1\).
+        Specifically:
+        \[\begin{aligned}
+        \int_{\vec r(0)}^{\vec r(1)} p\,ds
+        &=\int_0^1 at^3(1+2t^2)\,dt
+        =a\left[\dfrac{t^4}{4}+\dfrac{t^6}{3}\right]_0^1 \\
+        &=a\left(\dfrac{1}{4}+\dfrac{1}{3}\right)
+        =\dfrac{7}{12}a=1
+        \end{aligned}\]
+        So \(a=\dfrac{12}{7}\) and \(p=\dfrac{12}{7}xy=\dfrac{12}{7}t^3\).
+      </p>
+	  </div>
+	</li>
+  <li>
+		<div class="dotfillex">
+			<p>
+        What is the probability that we select a point on the curve with
+        \(0 \le t \le \dfrac{1}{2}\)?
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2b"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2b"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2b">
+	    <p>
+	      \(\displaystyle
+        P\left(0,\dfrac{1}{2}\right)=\dfrac{1}{28}
+        \approx 0.0357\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2b">
+	    <p>
+        The probability that we select a point on the curve with
+        \(0 \le t \le \dfrac{1}{2}\) is:
+        \[\begin{aligned}
+        P\left(0,\dfrac{1}{2}\right)&=
+        \int_{\vec r(0)}^{\vec r(1/2)} p\,ds
+        =\int_0^{1/2} \dfrac{12}{7}t^3(1+2t^2)\,dt \\
+        &=\dfrac{12}{7}\left[\dfrac{t^4}{4}+\dfrac{2t^6}{6}\right]_0^{1/2}
+        =\dfrac{12}{7}\left(\dfrac{1}{2^4 4}+\dfrac{2}{2^6 6}\right) \\
+        &=\dfrac{12}{2^6 7}\dfrac{4}{3}
+        =\dfrac{1}{28}
+        \approx 0.0357
+        \end{aligned}\]
+      </p>
+	  </div>
+  <li>
+		<div class="dotfillex">
+			<p>
+        What is the expected value of \(z\) for the curve?
+	    </p>
+	    <p>
+	      <button class="toggle has-ans" data-toggle="AnsX2c"></button>
+	      <button class="toggle has-sol" data-toggle="SolX2c"></button>
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-ans" data-toggle="AnsX2c">
+	    <p>
+	      \(\displaystyle
+        \langle z\rangle
+        =\dfrac{184}{441}
+        \approx 0.417\)
+	    </p>
+	  </div>
+	  <div class="toBeToggled drop-sol" data-toggle="SolX2c">
+	    <p>
+	      The expected value of \(z\) is
+        \[\begin{aligned}
+        \langle z\rangle&=
+        \int_{\vec r(0)}^{\vec r(1)} z\,p\,ds
+        =\int_0^1 \dfrac{2}{3}t^3\dfrac{12}{7}t^3(1+2t^2)\,dt \\
+        &=\dfrac{8}{7}\left[\dfrac{t^7}{7}+\dfrac{2t^9}{9}\right]_0^1
+        =\dfrac{8}{7}\left(\dfrac{1}{7}+\dfrac{2}{9}\right) \\
+        &=\dfrac{184}{441}
+        \approx 0.417
+        \end{aligned}\]
+      </p>
+	  </div>
+	</li>
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

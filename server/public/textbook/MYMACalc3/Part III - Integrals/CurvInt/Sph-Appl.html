@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Applications | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Sph-Int.html" title="Previous">&lArr;</a></li>
+      <li><a href="Sph-Convert.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Integrating in Spherical Coordinates</h2>
+
+
+      
+      <h2>3. Applications</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Integrals in spherical coordinates are particularly useful when the
+  integrand and/or the limits of integration are spherically symmetric
+  or involve spheres or cones. We previously did
+  <a href="../RectInt/ChContents.html" title="Return using the Back button.">
+  Applications of Triple Integrals in rectangular coordinates</a> and
+  <a href="Cyl-Appl.html" title="Return using the Back button.">
+  Applications of Triple Integrals in cylindrical coordinates</a>.
+  All of those applications can also be done using spherical coordinates
+  and on the <a href="Sph-Convert.html">next page</a> we will see that
+  it is often useful to convert from rectangular to spherical coordinates.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div data-col-width="60%">
+    <p>
+      All the examples on this page of applications of triple integrals in
+      spherical coordinates will use the apple shape shown in the plot.
+      It surface is given in spherical coordinates by \(\rho=1-\cos\phi\)
+      which is a cardioid in any plane through the \(z\)-axis.
+    </p>
+  </div>
+  <div class="center" data-col-width="40%">
+    <img src="graphics/eg_sph_cardioid_apple.jpg" alt="eg_sph_cardioid_apple">
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Volume</h3>
+<p>
+  To find the <span class="hl">volume</span> of a 3D region \(R\) in
+  spherical coordinates, the differential of volume \(dV\) must be
+  expressed in spherical coordinates:
+  \[
+  \text{Volume}=\iiint_R 1\,dV
+  =\iiint_R \rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the volume of the apple.</span>" data-number="1">
+  <hr width="80%">
+  <p class="sol">
+    We set up the integral as
+    \[
+    V=\int_0^{2\pi}\int_0^\pi\int_{0}^{1-\cos\phi} \,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+    \]
+    We factor off the \(\theta\)-integral, do the \(\rho\) integral and then the
+    \(\phi\)-integral:
+    \[\begin{aligned}
+    V&=\int_0^{2\pi} \,d\theta
+    \int_0^\pi \left[\dfrac{\rho^3}{3}\right]_{\rho=0}^{1-\cos\phi} \sin\phi\,d\phi \\
+    &=\dfrac{2\pi}{3}\int_0^\pi (1-\cos\phi)^3\sin\phi\,d\phi
+    =\dfrac{2\pi}{3}\left[\dfrac{(1-\cos\phi)^4}{4}\right]_0^\pi \\
+    &=\dfrac{\pi}{6}\left[(1--1)^4-(1-1)^4\right]
+    =\dfrac{8}{3}\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Mass</h3>
+
+<p>
+  To find the <span class="hl">mass</span> of a 3D region \(R\) in
+  spherical coordinates, the density \(\delta\) must also be
+  expressed in spherical coordinates:
+  \[
+  M=\iiint_R \delta(x,y,z)\,dV
+  =\iiint_R \delta(\rho,\phi,\theta)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the mass of the apple if its mass density is
+  \(\delta=x^2+y^2\).</span>" data-number="2">
+  <hr width="80%">
+  <p class="sol">
+    In spherical coordinates the density is:
+    \[
+    \delta=x^2+y^2=\rho^2\sin^2\phi
+    \]
+    We set up and evaluate the integral as
+    \[\begin{aligned}
+    M&=\iiint_R \delta\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+    =\int_0^{2\pi}\int_0^\pi\int_0^{1-\cos\phi}
+    (\rho^2\sin^2\phi)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+    &=2\pi\int_0^\pi\int_0^{1-\cos\phi}
+    \rho^4\sin^3\phi\,d\rho\,d\phi
+    =2\pi\int_0^\pi \left[\dfrac{\rho^5}{5}\right]_{\rho=0}^{1-\cos\phi}
+    \sin^3\phi\,d\phi \\
+    &=\dfrac{2\pi}{5}\int_0^\pi (1-\cos\phi)^5
+    (1-\cos^2\phi)\sin\phi\,d\phi
+    \end{aligned}\]
+    We now make the substitution \(u=1-\cos\phi\) with \(du=\sin\phi\,d\phi\).
+    Consequently:
+    \[
+    \cos\phi=1-u \quad \text{and} \quad 1-\cos^2\phi=(1-\cos\phi)(1+\cos\phi)=u(2-u)
+    \]
+    So:
+    \[\begin{aligned}
+    M&=\dfrac{2\pi}{5}\int_0^2 u^5u(2-u)\,du
+    =\dfrac{2\pi}{5}\int_0^2 (2u^6-u^7)\,du \\
+    &=\dfrac{2\pi}{5}\left[2\dfrac{u^7}{7}-\,\dfrac{u^8}{8}\right]_0^2
+    =\dfrac{2\pi}{5}\left(\dfrac{2^8}{7}-2^5\right)
+    =\dfrac{64}{35}\pi
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Center of Mass</h3>
+
+<p>
+  To find the <span class="hl">center of mass</span> of a 3D region \(R\) in
+  spherical coordinates, the coordinates \(x\), \(y\) and \(z\) must also be
+  expressed in spherical coordinates. So the center of mass is:
+  \[
+  \bar{x}=\dfrac{M_x}{M} \quad \text{and} \quad
+  \bar{y}=\dfrac{M_y}{M} \quad \text{and} \quad
+  \bar{z}=\dfrac{M_z}{M}
+  \]
+  where the <span class="hl">mass</span> of the region is
+  \[
+  M=\iiint_R \delta(x,y,z)\,dV
+  =\iiint_R \delta(\rho,\phi,\theta)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+  \]
+  and the <span class="hl">\(x\), \(y\) and \(z\) \(1^\text{st}\)-moments
+  of the mass</span>, respectively, are
+  \[\begin{aligned}
+  M_x&=\iiint_R x\,\delta(x,y,z)\,dV
+  =\iiint_R \rho\sin\phi\cos\theta\,\delta(\rho,\phi,\theta)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  M_y&=\iiint_R y\,\delta(x,y,z)\,dV
+  =\iiint_R \rho\sin\phi\sin\theta\,\delta(\rho,\phi,\theta)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  M_z&=\iiint_R z\,\delta(x,y,z)\,dV
+  =\iiint_R \rho\cos\phi\,\delta(\rho,\phi,\theta)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+  \end{aligned}\]
+</p>
+<p class="remark">
+  It is important to remember that we <span class="redbig">cannot</span>
+  compute \(\bar{\rho}=\dfrac{M_\rho}{M}\), \(\bar{\phi}=\dfrac{M_\phi}{M}\)
+  and \(\bar{\theta}=\dfrac{M_\theta}{M}\) where
+  \[\text{\Large\textcolor{red}Wrong}\qquad
+  \begin{array}{rl}
+  M_\rho&=\displaystyle\iiint_R \rho\,\delta(\rho,\phi,\theta)\,dV \\[8pt]
+  M_\phi&=\displaystyle\iiint_R \phi\,\delta(\rho,\phi,\theta)\,dV \\[8pt]
+  M_\theta&=\displaystyle\iiint_R \theta\,\delta(\rho,\phi,\theta)\,dV
+  \end{array}
+  \qquad \text{\Large\textcolor{red}Wrong}
+  \]
+  because moments are only defined for rectangular coordinates since the
+  balance beam derivation
+  (\(\text{Torque} = \text{Force} \times \text{Lever Arm}\)) does not work
+  for the \(r\) and \(\theta\) directions. If we want the spherical coordinates,
+  \((\bar \rho,\bar\phi,\bar\theta)\) of the center of mass, we must first find
+  the rectangular components and then convert to spherical.
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the center of mass of the apple if its
+  mass density is \(\delta=x^2+y^2\).</span>" data-number="3">
+  <hr width="80%">
+  <p class="sol">
+    Before we begin, we notice that the given density function is symmetric
+    around the \(z\)-axis (i.e. \(\delta(\rho,\phi,\theta)=\rho^2\sin^2\phi\)
+    does not depend on \(\theta\)). So we can conclude that the \(x\) and \(y\)
+    components of the center of mass are \(\bar{x}=\bar{y}=0\). We have already
+    computed the mass of the region as \(M=\dfrac{64}{35}\pi\). Now we compute the
+    \(z\) moment of mass as
+    \[\begin{aligned}
+    M_z&=\iiint_R z\,\delta\,dV
+    =\int_0^{2\pi}\int_0^\pi\int_0^{1-\cos\phi}
+    (\rho\cos\phi)(\rho^2\sin^2\phi)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+    &=2\pi\int_0^\pi\int_0^{1-\cos\phi}
+    \rho^5\cos\phi\sin^3\phi\,d\rho\,d\phi
+    =2\pi\int_0^\pi \left[\dfrac{\rho^6}{6}\right]_{\rho=0}^{1-\cos\phi}
+    \cos\phi\sin^3\phi\,d\phi \\
+    &=\dfrac{\pi}{3}\int_0^\pi (1-\cos\phi)^6
+    \cos\phi(1-\cos^2\phi)\sin\phi\,d\phi
+    \end{aligned}\]
+    We now make the substitution \(u=1-\cos\phi\) with \(du=\sin\phi\,d\phi\).
+    Consequently:
+    \[
+    \cos\phi=1-u \quad \text{and} \quad 1-\cos^2\phi=(1-\cos\phi)(1+\cos\phi)=u(2-u)
+    \]
+    So:
+    \[\begin{aligned}
+    M_z&=\dfrac{\pi}{3}\int_0^2 u^6(1-u)u(2-u)\,du
+    =\dfrac{\pi}{3}\int_0^2 u^7(2-3u+u^2)\,du \\
+    &=\dfrac{\pi}{3}\left[2\dfrac{u^8}{8}-3\dfrac{u^9}{9}+\dfrac{u^{10}}{10}\right]_0^2
+    =\dfrac{\pi}{3}\left(2^6-\,\dfrac{2^9}{3}+\dfrac{2^9}{5}\right)
+    =\dfrac{2^6\pi}{3}\left(1-\,\dfrac{8}{3}+\dfrac{8}{5}\right)
+    =-\,\dfrac{64}{45}\pi
+    \end{aligned}\]
+    Thus, the \(z\) component of the center of mass of the apple is:
+    \[
+    \bar{z}=\dfrac{M_z}{M}
+    =-\,\dfrac{64}{45}\pi\dfrac{35}{64\pi}
+    =-\,\dfrac{7}{9}\approx-.778
+    \]
+  </p>
+  <div class="column">
+    <p>
+      So the center of mass is located at:
+      \[
+      (\bar{x},\bar{y},\bar{z})=(0,0,-\,\dfrac{7}{9})
+      \]
+      The center of mass is plotted as a black dot within the apple.
+      It makes sense that \(\bar{z} \lt 0\) because there is more apple
+      below the \(xy\)-plane than above.
+    </p>
+    <div class="center">
+      <img src="graphics/eg_sph_cardioid_apple_cm.jpg" alt="eg_sph_cardioid_apple_cm">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Centroid</h3>
+
+<p>
+  The centroid of a region \(R\) in 3D is the same as the center of mass
+  but with constant density which we take as \(\delta=1\). Then the mass
+  reduces to the volume and the moments of mass become moments of volume.
+  Thus the centroid is:
+  \[
+  \bar{x}=\dfrac{V_x}{V} \quad \text{and} \quad
+  \bar{y}=\dfrac{V_y}{V} \quad \text{and} \quad
+  \bar{z}=\dfrac{V_z}{V}
+  \]
+  where \(V\) is the <span class="hl">volume</span>
+  and the <span class="hl">\(x\), \(y\) and \(z\) \(1^\text{st}\)-moments
+  of the volume</span>, respectively, are
+  \[\begin{aligned}
+  V_x&=\iiint_R x\,dV
+  =\iiint_R r\cos\theta\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  V_y&=\iiint_R y\,dV
+  =\iiint_R r\sin\theta\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+  V_z&=\iiint_R z\,dV
+  =\iiint_R z\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+  \end{aligned}\]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Find the centroid of the apple.</span>" data-number="4">
+  <hr width="80%">
+  <p class="sol">
+    By symmetry we see that the \(x\) and \(y\) components of the centroid
+    are \(\bar{x}=\bar{y}=0\). we previously computed the volume
+    \(V=\dfrac{8}{3}\pi\). Now we compute the \(z\) moment of the volume:
+    \[\begin{aligned}
+    V_z&=\iiint_R z\,dV
+    =\int_0^{2\pi}\int_0^\pi\int_0^{1-\cos\phi}
+    (\rho\cos\phi)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+    &=2\pi\int_0^\pi\int_0^{1-\cos\phi} \rho^3\cos\phi\sin\phi\,d\rho\,d\phi \\
+    &=2\pi\int_0^\pi \left[\dfrac{\rho^4}{4}\right]_{\rho=0}^{1-\cos\phi}
+    \cos\phi\sin\phi\,d\phi
+    =\dfrac{\pi}{2}\int_0^\pi (1-\cos\phi)^4\cos\phi\sin\phi\,d\phi
+    \end{aligned}\]
+    We now make the substitution \(u=1-\cos\phi\) with \(du=\sin\phi\,d\phi\).
+    Consequently, \(\cos\phi=1-u\) and:
+    \[\begin{aligned}
+    V_z&=\dfrac{\pi}{2}\int_0^2 u^4(1-u)\,du
+    =\dfrac{\pi}{2}\left[\dfrac{u^5}{5}-\dfrac{u^6}{6}\right]_0^2 \\
+    &=\dfrac{\pi}{2}\left(\dfrac{2^5}{5}-\dfrac{2^5}{3}\right)
+    =-\,\dfrac{32}{15}\pi
+    \end{aligned}\]
+    Thus, the \(z\) component of the center of mass of the region is:
+    \[
+    \bar{z}=\dfrac{V_z}{V}
+    =-\,\dfrac{32\pi}{15}\dfrac{3}{8\pi}
+    =-\,\dfrac{4}{5}\approx-.8
+    \]
+  </p>
+  <div class="column">
+    <p>
+      So the centroid is located at:
+      \[
+      (\bar{x},\bar{y},\bar{z})=(0,0,-.8)
+      \]
+      The centroid is plotted as a black dot within the apple.
+      It makes sense that \(\bar{z} \lt 0\) because there is more apple
+      below the \(xy\)-plane than above.
+    </p>
+    <div class="center">
+      <img src="graphics/eg_sph_cardioid_apple_cm.jpg" alt="eg_sph_cardioid_apple_cm">
+    </div>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<h3>Average Value</h3>
+
+<p>
+  To find the <span class="hl">average value</span> of a function over
+  a 3D region in spherical coordinates, the function must be evaluated in
+  spherical coordinates before integrating:
+  \[
+  f_\text{ave}=\dfrac{1}{V}\iiint_R f(x,y,z)\,dV
+  =\dfrac{1}{V}\iiint_R f(\rho,\phi,\theta)\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+  \]
+</p>
+<div class="collapse example hide" data-title="<span style='color:black'>
+  Compute the average of the temperature, \(T=270-z\),
+  within the apple.</span>" data-number="5">
+  <hr width="80%">
+  <p class="sol">
+    The average temperature is:
+    \[\begin{aligned}
+    T_\text{ave}&=\dfrac{1}{V}\iiint_R T\,dV
+    =\dfrac{1}{V}\iiint_R 270-z\,dV \\
+    &=\dfrac{270}{V}\iiint_R 1\,dV-\dfrac{1}{V}\iiint_R z\,dV
+    \end{aligned}\]
+    The first integral is the volume and the second is the
+    \(z\) \(1^\text{st}\) moment of the volume. So:
+    \[
+    T_\text{ave}=270\dfrac{V}{V}-\dfrac{V_z}{V}
+    =270-\bar z=270-(-.8)=270.8
+    \]
+  </p>
+</div>
+
+        <div class="rule" id="8thsphere"></div>
+
+<div class="column">
+  <p class="exercise" data-number="6">
+    The following exercises refer to the \(8^\text{th}\) of a sphere in the first octant
+    of radius \(4\). The volume and centroid were found in a
+    <a href="../RectInt/3DAppsCentroid.html#8thsphere" title="Return using the Back button.">
+    previous example</a> using the rectangular coordinates. These computations
+    are much easier using spherical coordinates.
+  </p>
+  <div class="center">
+    <img src="../RectInt/graphics/3Dapps-centroid-ex2.jpg" alt="3Dapps-centroid-ex2">
+  </div>
+</div>
+<ol class="list-outside" type="a">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the volume of the \(8^\text{th}\) of a sphere.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX6a"></button>
+        <button class="toggle has-sol" data-toggle="SolX6a"></button>
+        <button class="toggle has-check" data-toggle="CkX6a"></button>
+        <button class="toggle has-rem" data-toggle="RemX6a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX6a">
+      <p>
+        \(V=\dfrac{32}{3}\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX6a">
+      <p>
+        The volume is:
+        \[\begin{aligned}
+        V&=\iiint 1\,dV
+        =\int_0^{\pi/2}\int_0^{\pi/2}\int_0^{4} \rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=\left[\theta\dfrac{}{}\right]_0^{\pi/2}\left[-\cos\phi\dfrac{}{}\right]_0^{\pi/2}
+        \left[\dfrac{\rho^3}{3}\right]_0^4 \\
+        &=\dfrac{\pi}{2}(--1)\dfrac{4^3}{3}
+        =\dfrac{32}{3}\pi
+        \end{aligned}\]
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" data-toggle="CkX6a">
+      <p>
+        Since this is an 8th of a sphere of radius \(4\), the high school
+        geometry formula gives:
+        \[
+        V=\dfrac{1}{8}\left(\dfrac{4}{3}\pi r^3\right)
+        =\dfrac{1}{8}\left(\dfrac{4}{3}\pi 4^3\right)
+        =\dfrac{32}{3}\pi
+        \]
+        which agrees with our result.
+      </p>
+    </div>
+    <div class="toBeToggled drop-rem" data-toggle="RemX6a">
+      <p>
+        Notice how much easier this computation was as compared to the
+        rectangular integral done in a
+        <a href="../RectInt/3DAppsCentroid.html#8thsphere" title="Return using the Back button.">
+        previous example</a>.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the mass of the \(8^\text{th}\) of a sphere if the density is
+        \(\delta=x^2+y^2+z^2\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX6b"></button>
+        <button class="toggle has-sol" data-toggle="SolX6b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX6b">
+      <p>
+        \(M=\dfrac{512}{5}\pi\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX6b">
+      <p>
+        In spherical coordinates, the density is \(\delta=x^2+y^2+z^2=\rho^2\).
+        So the mass is:
+        \[\begin{aligned}
+        M&=\iiint \delta\,dV
+        =\int_0^{\pi/2}\int_0^{\pi/2}\int_0^{4} (\rho^2)
+        \rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=\dfrac{\pi}{2}\left[-\cos\phi\dfrac{}{}\right]_0^{\pi/2}
+        \left[\dfrac{\rho^5}{5}\right]_0^4 \\
+        &=\dfrac{\pi}{2}(--1)\dfrac{4^5}{5}
+        =\dfrac{512}{5}\pi
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the center of mass of the \(8^\text{th}\) of a sphere if the density is
+        \(\delta=x^2+y^2+z^2\).
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX6c"></button>
+        <button class="toggle has-sol" data-toggle="SolX6c"></button>
+        <button class="toggle has-check" data-toggle="CkX6c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX6c">
+      <p>
+        \((\bar{x},\bar{y},\bar{z})
+        =\left(\dfrac{5}{3},\dfrac{5}{3},\dfrac{5}{3}\right)\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX6c">
+      <p>
+        We have already found the mass of the region, so now we compute the
+        \(x\),\(y\), and \(z\) moments of mass for the region. By symmetry,
+        they should all yield the same result; therefore, we will simply
+        compute \(\bar{z}\). Recall that \(z=\rho\cos\phi\) and
+        \(\delta=x^2+y^2+z^2=\rho^2\).
+        \[\begin{aligned}
+        M_z&=\iiint\limits_R z\,\delta\,dV
+        =\int_0^{\pi/2}\int_0^{\pi/2}\int_0^4 (\rho\cos\phi)(\rho^2)
+        \rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=\int_0^{\pi/2} \,d\theta
+         \int_0^{\pi/2} \cos\phi\sin\phi
+         \int_0^4 \rho^5\,d\rho \\
+        &=\left[\theta\right]_0^{\pi/2}
+        \left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}
+        \left[\dfrac{\rho^6}{6}\right]_0^4
+        =\dfrac{\pi}{2}\dfrac{1}{2}\dfrac{4^6}{6}
+        =\dfrac{512}{3}\pi
+        \end{aligned}\]
+        We conclude:
+        \[
+        M_z=M_y=M_x=\dfrac{512}{3}\pi
+        \]
+        Finally, we compute the center of mass:
+        \[
+        \bar{x}=\bar{y}=\bar{z}
+        =\dfrac{M_z}{M}=\dfrac{512\pi}{3}\dfrac{5}{512\pi}
+        =\dfrac{5}{3}
+        \]
+        Thus the center of mass for this region with density \(\delta=\rho^2\) is
+        \[
+        (\bar{x},\bar{y},\bar{z})
+        =\left(\dfrac{5}{3},\dfrac{5}{3},\dfrac{5}{3}\right)
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" data-toggle="CkX6c">
+      <p>
+        We know the center of mass is within the region because
+        \[
+        \sqrt{\bar{x}^2+\bar{y}^2+\bar{z}^2}\approx 2.89 \lt 4=\rho
+        \]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Compute the average of the temperature, \(T=z\), over
+        the \(8^\text{th}\) of a sphere.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX6d"></button>
+        <button class="toggle has-sol" data-toggle="SolX6d"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX6d">
+      <p>
+        \(T_\text{ave}=\dfrac{3}{2}\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX6d">
+      <p>
+        We have already computed the volume \(V=\dfrac{32}{3}\pi\).
+        In spherical coordinates, the temperature is \(T=z=\rho\cos\phi\).
+        So the integral of the temperature is:
+        \[\begin{aligned}
+        \iiint T\,dV
+        &=\int_0^{\pi/2}\int_0^{\pi/2}\int_0^{4}
+        (\rho\cos\phi)\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=\dfrac{\pi}{2}\left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}
+        \left[\dfrac{\rho^4}{4}\right]_0^4 \\
+        &=\dfrac{\pi}{2}\dfrac{1}{2}\dfrac{4^4}{4}
+        =16\pi
+        \end{aligned}\]
+        And the average temperature is:
+        \[
+        T_\text{ave}=\dfrac{1}{V}\iiint T\,dV
+        =\dfrac{3}{32\pi}16\pi
+        =\dfrac{3}{2}
+        \]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Find the centroid of the \(8^\text{th}\) of a sphere.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="AnsX6e"></button>
+        <button class="toggle has-sol" data-toggle="SolX6e"></button>
+        <button class="toggle has-check" data-toggle="CkX6e"></button>
+        <button class="toggle has-rem" data-toggle="RemX6e"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="AnsX6e">
+      <p>
+        \((\bar{x},\bar{y},\bar{z})
+        =\left(\dfrac{3}{2},\dfrac{3}{2},\dfrac{3}{2}}\right)\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="SolX6e">
+      <p>
+        The computation is similar to that for the center of mass except
+        that now \(\delta=1\). Again, by symmetry, all components of the
+        centroid will be equal. Thus we only compute the \(z\) component.
+        \[\begin{aligned}
+        V_z&=\iiint\limits_R z\,dV
+        =\int_0^{\pi/2}\int_0^{\pi/2}\int_0^4 (\rho\cos\phi)
+        \rho^2\sin\phi\,d\rho\,d\phi\,d\theta \\
+        &=\int_0^{\pi/2} \,d\theta
+        \int_0^{\pi/2} \cos\phi\sin\phi\,d\phi
+        \int_0^4 \rho^3\,d\rho\\
+        &=\dfrac{\pi}{2}
+        \left[\dfrac{\sin^2\phi}{2}\right]_0^{\pi/2}
+        \left[\dfrac{\rho^4}{4}\right]_0^4
+        =\dfrac{\pi}{2}
+        \dfrac{1}{2}
+        64
+        =16\pi
+        \end{aligned}\]
+        We already know the total volume of the region, thus we compute
+        the centroid as
+        \[
+        \bar{x}=\bar{y}=\bar{z}=\dfrac{V_z}{V}
+        =\dfrac{3}{32\pi}16\pi=\dfrac{3}{2}
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-check" data-toggle="CkX6e">
+      <p>
+        We know the center of mass is within the region because
+        \[
+        \sqrt{\bar{x}^2+\bar{y}^2+\bar{z}^2}\approx 2.6 \lt 4=\rho
+        \]
+      </p>
+    </div>
+    <div class="toBeToggled drop-rem" data-toggle="RemX6e">
+      <p>
+        Notice how much easier this computation was as compared to the
+        rectangular integral done in a
+        <a href="../RectInt/3DAppsCentroid.html#8thsphere" title="Return using the Back button.">
+        previous example</a>.
+      </p>
+    </div>
+  </li>
+</ol>
+
+        <div class="rule"></div>
+
+<h3>4-Volume (Optional)</h3>
+
+<big>PY: Move this to a separate page. Make it similar to exercises on
+  pyramids on RectInt/3DApps4Vol.html.
+</big>
+
+<p>
+  The area of a triangle is
+  \(A=\dfrac{1}{2}(\text{Length of Base})(\text{Height})\).
+    <br>
+  The volume of a cone is
+  \(V=\dfrac{1}{3}(\text{Area of Base})(\text{Height})\).
+    <br>
+  What is the 4-volume of a 4D cone?
+</p>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="7">
+    Find the 4-volume of the 4D cone whose base is the sphere \(x^2+y^2+z^2 \le 9\)
+    and whose upper vertex is at the point \((0,0,0,4)\).
+      <br>
+    HINT: The upper surface is the 4-cone \(w=4-\,\dfrac{4}{3}\sqrt{x^2+y^2+z^2}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX7"></button>
+    <button class="toggle has-sol" data-toggle="SolX7"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX7">
+  <p>
+    <span class="redbig">ANSWER NEEDED</span>
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX7">
+  <p>
+    <span class="redbig">SOLUTION NEEDED</span>
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

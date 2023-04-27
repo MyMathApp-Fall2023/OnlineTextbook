@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Tutorial on Limits and Continuity | 6. Intuitive Limits and Continuity</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="LimCont.html" title="Previous">&lArr;</a></li>
+      <li><a href="IntervalCont.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>6. Intuitive Limits and Continuity</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>c. Tutorial on Limits and Continuity</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<div class="column">
+  <p class="exercise" data-number="1">
+    <button class="has-refresh" id="RefreshX1"></button>
+    For the function plotted, compute each quantity or say Yes or No to
+    each question.
+  </p>
+  <div class="center">
+    <canvas id="graphX1"
+      style="
+        border: 1px solid #888;
+      "
+      width="250px"
+      height="250px">
+    </canvas>
+  </div>
+</div>
+
+<ol type="a" class="list-outside">
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        The limit from the left at <span class="xequaldiscont1"></span>.
+        <br>
+        <span class="limxapproachleft1"></span>
+        <input type="text" id="InputX1a" size="6" />
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1a" data-toggle="HintX1a"></button>
+        <button class="toggle has-check" id="BCheckX1a" data-toggle="CheckX1a"></button>
+        <input size="6" id="ReplyX1a" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX1a" data-toggle="ShowX1a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1a">
+      <p id="HintX1a">
+        Use the curve on the left of <span class="xequaldiscont1"></span>.
+        The limit from the left is the height \(f(x)\) approaches as \(x\)
+        approaches <span class="discontx1"></span> from the left,
+        i.e. \(x\) is less than <span class="discontx1"></span> but getting
+        very close to <span class="discontx1"></span>.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1a">
+      <p id="CorrectX1a" style="display: none;">
+        Perfect!
+        <span class="limxapproachleft1"></span> <span class="limxleftval1"></span>
+        because the curve on the left goes to height <span class="limxleftval1"></span>
+        as \(x\) goes to <span class="discontx1"></span>.
+      </p>
+      <p id="IncorrectX1a" style="display: none;">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1a">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1a" style="display: none;">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1a">
+      <p>
+        <span class="limxapproachleft1"></span> <span class="limxleftval1"></span>
+        because the curve on the left goes to height <span class="limxleftval1"></span>
+        as \(x\) goes to <span class="discontx1"></span>.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        The limit from the right at <span class="xequaldiscont1"></span>.
+        <br>
+        <span class="limxapproachright1"></span>
+        <input type="text" id="InputX1b" size="6" />
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1b" data-toggle="HintX1b"></button>
+        <button class="toggle has-check" id="BCheckX1b" data-toggle="CheckX1b"></button>
+        <input size="6" id="ReplyX1b" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX1b" data-toggle="ShowX1b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1b">
+      <p id="HintX1b">
+        Use the curve on the right of <span class="xequaldiscont1"></span>.
+        The limit from the right is the height \(f(x)\) approaches as \(x\)
+        approaches <span class="discontx1"></span> from the right, i.e.
+        \(x\) is greater than <span class="discontx1"></span> but
+        getting very close to <span class="discontx1"></span>.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1b">
+      <p id="CorrectX1b">
+        Excellent!
+        <span class="limxapproachright1"></span> <span class="limxrightval1"></span>
+        because the curve on the right goes to height <span class="limxrightval1"></span>
+        as \(x\) goes to <span class="discontx1"></span>.
+      </p>
+      <p id="IncorrectX1b">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1b">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1b">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1b">
+      <p>
+        <span class="limxapproachright1"></span> <span class="limxrightval1"></span>
+        because the curve on the right goes to height <span class="limxrightval1"></span>
+        as \(x\) goes to <span class="discontx1"></span>.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        The function value at <span class="xequaldiscont1"></span>.
+        Enter a number or undefined.
+        <br>
+        <span class="fxequals1"></span>
+        <input type="text" id="InputX1c" size="6" />
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1c" data-toggle="HintX1c"></button>
+        <button class="toggle has-check" id="BCheckX1c" data-toggle="CheckX1c"></button>
+        <input size="6" id="ReplyX1c" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX1c" data-toggle="ShowX1c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1c">
+      <p id="HintX1c">
+        <span class="fatdiscontx1"></span> is the value of \(f(x)\) at
+        <span class="xequaldiscont1"></span> if it is defined.
+        This is the solid dot above <span class="xequaldiscont1"></span>
+        if there is one.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1c">
+      <p id="CorrectX1c">
+        Good Job!
+        <span class="fxequals1"></span> <span class="fxval1"></span>
+        because the solid dot above <span class="xequaldiscont1"></span>
+        is at height <span class="fxval1"></span>.
+      </p>
+      <p id="CorrectDNEX1c" style="display: none;">
+        Way to go!
+        <span class="fatdiscontx1"></span> is undefined
+        because there is no solid dot above <span class="xequaldiscont1"></span>.
+      </p>
+      <p id="IncorrectX1c">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1c">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1c">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1c">
+      <p>
+        <span class="fxequals1"></span> <span class="fxval1"></span>
+        because the solid dot above <span class="xequaldiscont1"></span>
+        is at height <span class="fxval1"></span>.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Does the (\(2\)-sided) limit, <span class="limatdiscontx1"></span>, exist?
+        <input style="display: none;" id="InputX1d"></input>
+        <!-- PY Why do we need this Input? -->
+        <br>
+        <input type="radio" name="X1d" id="TrueX1d" value="True" />
+        <label for="TrueX1d">Yes</label>
+        <input type="radio" name="X1d" id="FalseX1d" value="False" />
+        <label for="FalseX1d">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1d" data-toggle="HintX1d"></button>
+        <button class="toggle has-check" id="BCheckX1d" data-toggle="CheckX1d"></button>
+        <input size="6" id="ReplyX1d" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX1d" data-toggle="ShowX1d"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1d">
+      <p id="HintX1d">
+        The (2-sided) limit exists when the limit from the left is equal
+        to the limit from the right.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1d">
+      <p id="CorrectYesX1d">
+        That's right!
+        <span class="limatdiscontx1"></span> exists because
+        <span class="limxapproachleft1"></span>
+        <span class="limxapproachright1"></span>
+        <span class="limxrightval1"></span>.
+      </p>
+      <p id="CorrectNoX1d">
+        Perfect!
+        <span class="limxapproachleft1"></span> <span class="limxleftval1"></span> but
+        <span class="limxapproachright1"></span> <span class="limxrightval1"></span>.
+        They are not equal.
+      </p>
+      <p id="IncorrectX1d">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1d">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1d">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1d">
+      <p id="ShowYesX1d">
+        <span class="limatdiscontx1"></span> exists because
+        <span class="limxapproachleft1"></span>
+        <span class="limxapproachright1"></span>
+        <span class="limxrightval1"></span>.
+      </p>
+      <p id="ShowNoX1d">
+        <span class="limatdiscontx1"></span> does not exist because
+        <span class="limxapproachleft1"></span> <span class="limxleftval1"></span> while
+        <span class="limxapproachright1"></span> <span class="limxrightval1"></span>
+        which are not equal.
+      </p>
+    </div>
+  </li>
+
+  <!-- PY How do I elim this Overlay? -->
+  <li id="OverlayX1e">
+    <div class="dotfillex">
+      <p>
+        If the (\(2\)-sided) limit exists, give its value. If it does not exist,
+        enter infinity, -infinity or undefined.
+        <br>
+        <span class="limatdiscontx1"></span>\(=\,\)
+        <input type="text" id="InputX1e" size="6" />
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1e" data-toggle="HintX1e"></button>
+        <button class="toggle has-check" id="BCheckX1e" data-toggle="CheckX1e"></button>
+        <input size="6" id="ReplyX1e" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX1e" data-toggle="ShowX1e"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1e">
+      <p id="HintX1e">
+        When the (2-sided) limit exists, it is equal to the limit
+        from the left and the limit from the right.
+        <br>
+        When it does not exist, it is \(\infty\) when the graph goes up
+        forever on both sides and it is \(-\infty\) when the graph goes down
+        forever on both sides. Otherwise, it is undefined.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1e">
+      <p id="CorrectX1e">
+        That's right!
+        <span class="limatdiscontx1"></span>\(=\;\)<span class="limxrightval1"></span>
+        because
+        <span class="limxapproachleft1"></span>
+        <span class="limxapproachright1"></span>
+        <span class="limxrightval1"></span>.
+      </p>
+      <p id="CorrectDNEX1e" >
+        Way to go!
+        <span class="limatdiscontx1"></span> does not exist and is neither
+        \(\infty\) nor \(-\infty\).
+      </p>
+      <p id="IncorrectX1e">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1e">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1e">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1e">
+      <p id="ShowX1e">
+        <span class="limatdiscontx1"></span>\(=\)<span class="limxrightval1"></span>
+        because
+        <span class="limxapproachleft1"></span>
+        <span class="limxapproachright1"></span>
+        <span class="limxrightval1"></span>.
+      </p>
+      <p id="ShowDNEX1e">
+        <span class="limatdiscontx1"></span> is undefined
+        because it does not exist and it is neither \(\infty\) nor \(-\infty\).
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the left at
+        <span class="xequaldiscont1"></span>?
+        <input style="display: none;" id="InputX1f"></input>
+        <!-- PY How elim this Input? -->
+        <br>
+        <input type="radio" name="X1f" id="TrueX1f" value="True" />
+        <label for="TrueX1f">Yes</label>
+        <input type="radio" name="X1f" id="FalseX1f" value="False" />
+        <label for="FalseX1f">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1f" data-toggle="HintX1f"></button>
+        <button class="toggle has-check" id="BCheckX1f" data-toggle="CheckX1f"></button>
+        <input size="6" id="ReplyX1f" readonly="readonly" ></input>
+        <button class="toggle has-show" id="BShowX1f" data-toggle="ShowX1f"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1f">
+      <p id="HintX1f">
+        \(f(x)\) is continuous from the left when the limit from the left
+        is equal to the value of the function.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1f">
+      <p id="CorrectYesX1f">
+        Super!
+        \(f(x)\) is continuous from the left because
+        <span class="limxapproachleft1"></span>
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>.
+      </p>
+      <p id="CorrectNoX1f">
+        On the mark!
+        \(f(x)\) is not continuous from the left because
+        <span class="limxapproachleft1"></span> <span class="limxleftval1"></span> but
+        <span class="fxequals1"></span> <span class="fxval1"></span>.
+        They are not equal.
+      </p>
+      <p id="IncorrectX1f">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1f">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1f">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1f">
+      <p id="ShowYesX1f">
+        \(f(x)\) is continuous from the left because
+        <span class="limxapproachleft1"></span>
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>.
+      </p>
+      <p id="ShowNoX1f">
+        \(f(x)\) is not continuous from the left because
+        <span class="limxapproachleft1"></span>
+        <span class="limxleftval1"></span> while
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>
+        which are not equal.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the right at
+        <span class="xequaldiscont1"></span>?
+        <input style="display: none;" id="InputX1g"></input>
+        <br>
+        <input type="radio" name="X1g" id="TrueX1g" value="True" />
+        <label for="TrueX1g">Yes</label>
+        <input type="radio" name="X1g" id="FalseX1g" value="False" />
+        <label for="FalseX1g">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1g" data-toggle="HintX1g"></button>
+        <button class="toggle has-check" id="BCheckX1g" data-toggle="CheckX1g"></button>
+        <input size="6" id="ReplyX1g" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX1g" data-toggle="ShowX1g"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1g">
+      <p id="HintX1g">
+        \(f(x)\) is continuous from the right when the limit from the
+        right is equal to the value of the function.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1g">
+      <p id="CorrectYesX1g">
+        Super!
+        \(f(x)\) is continuous from the right because
+        <span class="limxapproachright1"></span>
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>.
+      </p>
+      <p id="CorrectNoX1g">
+        On the mark!
+        \(f(x)\) is not continuous from the right because
+        <span class="limxapproachright1"></span> <span class="limxrightval1"></span> but
+        <span class="fxequals1"></span> <span class="fxval1"></span>.
+        They are not equal.
+      </p>
+      <p id="IncorrectX1g">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1g">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1g">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1g">
+      <p id="ShowYesX1g">
+        \(f(x)\) is continuous from the right because
+        <span class="limxapproachright1"></span>
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>.
+      </p>
+      <p id="ShowNoX1g">
+        \(f(x)\) is not continuous from the right because
+        <span class="limxapproachright1"></span>
+        <span class="limxrightval1"></span> while
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>
+        which are not equal.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous at <span class="xequaldiscont1"></span>?
+        <input style="display: none;" id="InputX1h"></input>
+        <br>
+        <input type="radio" name="X1h" id="TrueX1h" value="True" />
+        <label for="TrueX1h">Yes</label>
+        <input type="radio" name="X1h" id="FalseX1h" value="False" />
+        <label for="FalseX1h">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX1h" data-toggle="HintX1h"></button>
+        <button class="toggle has-check" id="BCheckX1h" data-toggle="CheckX1h"></button>
+        <input size="6" id="ReplyX1h" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX1h" data-toggle="ShowX1h"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX1h">
+      <p id="HintX1h">
+        \(f(x)\) is continuous when the limit from the left,
+        the limit from the right and
+        the value of the function are all equal.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX1h">
+      <p id="CorrectYesX1h">
+        Super!
+        \(f(x)\) is continuous from the right because
+        <span class="limxapproachright1"></span>
+        <span class="fxequals1">
+        </span><span class="fxval1"></span>.
+      </p>
+      <p id="CorrectNoX1h">
+        On the mark!
+        \(f(x)\) is not continuous from the right because
+        <span class="limxapproachright1"> </span><span class="limxrightval1"></span> but
+        <span class="fxequals1"></span> <span class="fxval1"></span>.
+        They are not equal.
+      </p>
+      <p id="IncorrectX1h">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX1h">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX1h">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX1h">
+      <p id="ShowYesX1h">
+        \(f(x)\) is continuous because
+        <span class="limxapproachleft1"></span>
+        <span class="limxapproachright1"></span>
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>.
+      </p>
+      <p id="ShowNoX1h">
+        \(f(x)\) is not continuous because
+        <span class="limxapproachleft1"></span>
+        <span class="limxleftval1"></span> and
+        <span class="limxapproachright1"></span>
+        <span class="limxrightval1"></span> and
+        <span class="fxequals1"></span>
+        <span class="fxval1"></span>
+        which are not all equal.
+      </p>
+    </div>
+  </li>
+
+</ol>
+
+        <div class="rule"></div>
+
+<br>
+<div class="column">
+  <p class="exercise" data-number="2">
+    <button class="has-refresh" id="RefreshX2"></button>
+    For the piecewise function shown, compute each quantity or say Yes or No to
+    each question.
+  </p>
+  <div class="center">
+    <span class="piecewisefuncX2"></span>
+  </div>
+</div>
+
+<ol type="a" class="list-outside">
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        The limit from the left at <span class="xequaldiscont2"></span>.
+        <br>
+        <span class="limxapproachleft2"></span>
+        <input type="text" id="InputX2a" size="6" />
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2a" data-toggle="HintX2a"></button>
+        <button class="toggle has-check" id="BCheckX2a" data-toggle="CheckX2a"></button>
+        <input size="6" id="ReplyX2a" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2a" data-toggle="ShowX2a"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2a">
+      <p id="HintX2a">
+        The limit from the left is the value \(f(x)\) approaches if
+        \(x \lt\) <span class="discontx2"></span> but getting closer to
+        <span class="discontx2"></span>. So we successively plug
+        <span class="numsapproachleftx2"></span>, into the formula for
+        \(x \lt\) <span class="discontx2"></span>. The limit is what we get
+        by plugging \(x=\)<span class="discontx2"></span> into the
+        formula for \(x \lt\) <span class="discontx2"></span>.
+      </p>
+      <!-- PY Define \(3.9\), \(3.99\),\(3.999\) -->
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2a">
+      <p id="CorrectX2a">
+        Perfect!
+        <span class="limxapproachleft2"></span> <span class="limxleftval2"></span>
+        because this is the result when one plugs
+        <span class="xequaldiscont2"></span> into the formula for
+        \(x \lt\) <span class="discontx2"></span>.
+      </p>
+      <p id="IncorrectX2a">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2a">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2a">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2a">
+      <p>
+        <span class="limxapproachleft2"> </span><span class="limxleftval2"></span>
+        because this is the result when one plugs
+        <span class="xequaldiscont2"></span> into the formula for
+        \(x \lt\) <span class="discontx2"></span>.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        The limit from the right at <span class="xequaldiscont2"></span>.
+        <br>
+        <span class="limxapproachright2"></span>
+        <input type="text" id="InputX2b" size="6" />.
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2b" data-toggle="HintX2b"></button>
+        <button class="toggle has-check" id="BCheckX2b" data-toggle="CheckX2b"></button>
+        <input size="6" id="ReplyX2b" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2b" data-toggle="ShowX2b"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2b">
+      <p id="HintX2b">
+        The limit from the right is the value \(f(x)\) approaches if
+        \(x \gt\) <span class="discontx2"></span> but getting closer to
+        <span class="discontx2"></span>. So we successively plug
+        <span class="numsapproachrightx2"></span>, into the formula for
+        \(x \gt\) <span class="discontx2"></span>. The limit is what we get
+        by plugging <span class="xequaldiscont2"></span> into the
+        formula for \(x \gt\) <span class="discontx2"></span>.
+      </p>
+      <!-- PY Define \(4.1\), \(4.01\),\(4.001\) -->
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2b">
+      <p id="CorrectX2b">
+        Impressive!
+        <span class="limxapproachright2"> </span><span class="limxrightval2"></span>
+        because this is the result when one plugs
+        <span class="xequaldiscont2"></span> into the formula for
+        \(x \gt\) <span class="discontx2"></span>.
+      </p>
+      <p id="IncorrectX2b">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2b">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2b">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2b">
+      <p>
+        <span class="limxapproachright2"></span> <span class="limxrightval2"></span>
+        because this is the result when one plugs
+        <span class="xequaldiscont2"></span> into the formula for
+        \(x \gt\) <span class="discontx2"></span>.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        The function value at <span class="xequaldiscont2"></span>.
+        Enter a number or undefined.
+        <br>
+        <span class="fxequals2"></span>
+        <input type="text" id="InputX2c" size="6" />
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2c" data-toggle="HintX2c"></button>
+        <button class="toggle has-check" id="BCheckX2c" data-toggle="CheckX2c"></button>
+        <input size="6" id="ReplyX2c" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2c" data-toggle="ShowX2c"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2c">
+      <p id="HintX2c">
+        The value of \(f(x)\) at <span class="xequaldiscont2"></span> is
+        <span class="fatdiscontx2"></span> if it is defined.
+        This is the value next to <span class="xequaldiscont2"></span>
+        if there is one.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2c">
+      <p id="CorrectX2c">
+        Good Job!
+        <span class="fxequals2"> </span><span class="fxval2"></span>
+        because this is the value next to <span class="xequaldiscont2"></span>
+        in the formula.
+      </p>
+      <p id="CorrectDNEX2c">
+        Way to go!
+        <span class="fatdiscontx2"></span> is undefined
+        because there is no value for <span class="xequaldiscont2"></span>.
+      </p>
+      <p id="IncorrectX2c">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2c">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2c">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2c">
+      <p>
+        <span class="fxequals2"></span> <span class="fxval2"></span>
+        because this is the value next to <span class="xequaldiscont2"></span>
+        in the formula.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Does the (\(2\)-sided) limit, <span class="limatdiscontx2"></span>, exist?
+        <input style="display: none;" id="InputX2d"></input>
+        <br>
+        <input type="radio" name="X2d" id="TrueX2d" value="True" />
+        <label for="TrueX2d">Yes</label>
+        <input type="radio" name="X2d" id="FalseX2d" value="False" />
+        <label for="FalseX2d">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2d" data-toggle="HintX2d"></button>
+        <button class="toggle has-check" id="BCheckX2d" data-toggle="CheckX2d"></button>
+        <input size="6" id="ReplyX2d" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2d" data-toggle="ShowX2d"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2d">
+      <p id="HintX2d">
+        The (2-sided) limit exists when the limit from the left is equal
+        to the limit from the right.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2d">
+      <p id="CorrectYesX2d">
+        That's right!
+        <span class="limatdiscontx2"></span> exists because
+        <span class="limxapproachleft2"></span>
+        <span class="limxapproachright2"></span>
+        <span class="limxrightval2"></span>.
+      </p>
+      <p id="CorrectNoX2d">
+        Perfect!
+        <span class="limxapproachleft2"></span> <span class="limxleftval2"></span> but
+        <span class="limxapproachright2"></span> <span class="limxrightval2"></span>.
+        They are not equal.
+      </p>
+      <p id="IncorrectX2d">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2d">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2d">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2d">
+      <p id="ShowYesX2d">
+        <span class="limatdiscontx2"></span> exists because
+        <span class="limxapproachleft2"></span>
+        <span class="limxapproachright2"></span>
+        <span class="limxrightval2"></span>.
+      </p>
+      <p id="ShowNoX2d">
+        <span class="limatdiscontx2"></span> does not exist because
+        <span class="limxapproachleft2"></span> <span class="limxleftval2"></span> while
+        <span class="limxapproachright2"></span> <span class="limxrightval2"></span>
+        which are not equal.
+      </p>
+    </div>
+  </li>
+
+  <!-- PY How do I elim this Overlay? -->
+  <li id="OverlayX2e">
+    <div class="dotfillex">
+      <p>
+        If the (\(2\)-sided) limit exists, give its value. If it does not exist,
+        enter infinity, -infinity or undefined.
+        <br>
+        <span class="limatdiscontx2"></span>
+        <input type="text" id="InputX2e" size="6" />
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2e" data-toggle="HintX2e"></button>
+        <button class="toggle has-check" id="BCheckX2e" data-toggle="CheckX2e"></button>
+        <input size="6" id="ReplyX2e" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2e" data-toggle="ShowX2e"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2e">
+      <p id="HintX2e">
+        When the (2-sided) limit exists, it is equal to the limit
+        from the left and the limit from the right.
+        <br>
+        When it does not exist,
+        it is \(\infty\) when the function approaches \(\infty\) on both sides
+        and it is \(-\infty\) when the function approaches \(-\infty\) on
+        both sides. Otherwise, it is undefined.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2e">
+      <p id="CorrectX2e">
+        That's right!
+        <span class="limatdiscontx2"></span>\(=\) <span class="limxrightval2"></span>
+        because
+        <span class="limxapproachleft2"></span>
+        <span class="limxapproachright2"></span>
+        <span class="limxrightval2"></span>.
+      </p>
+      <p id="CorrectDNEX2e">
+        Way to go!
+        <span class="limatdiscontx2"></span> does not exist and is not \(\infty\)
+        nor \(-\infty\).
+      </p>
+      <p id="IncorrectX2e">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2e">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2e">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2e">
+      <p id="ShowYesX2e">
+        <span class="limatdiscontx2"></span>\(=\) <span class="limxrightval2"></span>
+        because
+        <span class="limxapproachleft2"></span>
+        <span class="limxapproachright2"></span>
+        <span class="limxrightval2"></span>.
+      </p>
+      <p id="ShowNoX2e">
+        <span class="limatdiscontx2"></span> is undefined
+        because it does not exist and it is neither \(\infty\) nor \(-\infty\).
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the left at
+        <span class="xequaldiscont2"></span>?
+        <input style="display: none;" id="InputX2f"></input>
+        <br>
+        <input type="radio" name="X2f" id="TrueX2f" value="True" />
+        <label for="TrueX2f">Yes</label>
+        <input type="radio" name="X2f" id="FalseX2f" value="False" />
+        <label for="FalseX2f">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2f" data-toggle="HintX2f"></button>
+        <button class="toggle has-check" id="BCheckX2f" data-toggle="CheckX2f"></button>
+        <input size="6" id="ReplyX2f" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2f" data-toggle="ShowX2f"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2f">
+      <p id="HintX2f">
+        \(f(x)\) is continuous from the left when the limit from the
+        left is equal to the value of the function.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2f">
+      <p id="CorrectYesX2f">
+        Super!
+        \(f(x)\) is continuous from the left because
+        <span class="limxapproachleft2"></span>
+        <span class="fxequals2"></span>
+        <span class="fxval2"></span>.
+      </p>
+      <p id="CorrectNoX2f">
+        On the mark!
+        \(f(x)\) is not continuous from the left because
+        <span class="limxapproachleft2"></span> <span class="limxleftval2"></span> but
+        <span class="fxequals2"></span> <span class="fxval2"></span>.
+        They are not equal.
+      </p>
+      <p id="IncorrectX2f">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2f">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2f">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2f">
+      <p id="ShowYesX2f">
+        \(f(x)\) is continuous from the left because
+        <span class="limxapproachleft2"></span>
+        <span class="fxequals2"></span>
+        <span class="fxval2"></span>.
+      </p>
+      <p id="ShowNoX2f">
+        \(f(x)\) is not continuous from the left because
+        <span class="limxapproachleft2"></span>
+        <span class="limxleftval2"></span> while
+        <span class="fxequals2"></span> <span class="fxval2"></span>
+        which are not equal.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous from the right at
+        <span class="xequaldiscont2"></span>?
+        <span style="display: none;" id="InputX2g"></span>
+        <br>
+        <input type="radio" name="X2g" id="TrueX2g" value="True" />
+        <label for="TrueX2g">Yes</label>
+        <input type="radio" name="X2g" id="FalseX2g" value="False" />
+        <label for="FalseX2g">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2g" data-toggle="HintX2g"></button>
+        <button class="toggle has-check" id="BCheckX2g" data-toggle="CheckX2g"></button>
+        <input size="6" id="ReplyX2g" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2g" data-toggle="ShowX2g"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2g">
+      <p id="HintX2g">
+        \(f(x)\) is continuous from the right when the limit from the
+        right is equal to the value of the function.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2g">
+      <p id="CorrectYesX2g">
+        Super!
+        \(f(x)\) is continuous from the right because
+        <span class="limxapproachright2"></span>
+        <span class="fxequals2"></span> <span class="fxval2"></span>.
+      </p>
+      <p id="CorrectNoX2g">
+        On the mark!
+        \(f(x)\) is not continuous from the right because
+        <span class="limxapproachright2"></span> <span class="limxrightval2"></span> but
+        <span class="fxequals2"></span> <span class="fxval2"></span>.
+        They are not equal.
+      </p>
+      <p id="IncorrectX2g">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2g">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2g">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2g">
+      <p id="ShowYesX2g">
+        \(f(x)\) is continuous from the right because
+        <span class="limxapproachright2"></span>
+        <span class="fxequals2"></span>
+        <span class="fxval2"></span>.
+      </p>
+      <p id="ShowNoX2g">
+        \(f(x)\) is not continuous from the right because
+        <span class="limxapproachright2"></span>
+        <span class="limxrightval2"></span> while
+        <span class="fxequals2"></span> <span class="fxval2"></span>
+        which are not equal.
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <div class="dotfillex">
+      <p>
+        Is \(f(x)\) continuous at <span class="xequaldiscont2"></span>?
+        <input style="display: none;" id="InputX2h"></input>
+        <br>
+        <input type="radio" name="X2h" id="TrueX2h" value="True" />
+        <label for="TrueX2h">Yes</label>
+        <input type="radio" name="X2h" id="FalseX2h" value="False" />
+        <label for="FalseX2h">No</label>
+      </p>
+      <p>
+        <button class="toggle has-hint" id="BHintX2h" data-toggle="HintX2h"></button>
+        <button class="toggle has-check" id="BCheckX2h" data-toggle="CheckX2h"></button>
+        <input size="6" id="ReplyX2h" readonly="readonly"></input>
+        <button class="toggle has-show" id="BShowX2h" data-toggle="ShowX2h"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-hint" data-toggle="HintX2h">
+      <p id="HintX2h">
+        \(f(x)\) is continuous when the limit from the left,
+        the limit from the right and
+        the value of the function are all equal.
+      </p>
+    </div>
+    <div class="toBeToggled drop-check-tut" data-toggle="CheckX2h">
+      <p id="CorrectYesX2h">
+        Super!
+        \(f(x)\) is continuous because
+        <span class="limxapproachleft2"></span>
+        <span class="limxapproachright2"></span>
+        <span class="fxequals2"></span>
+        <span class="fxval2"></span>.
+      </p>
+      <p id="CorrectNoX2h">
+        On the mark!
+        \(f(x)\) is not continuous  because
+        <span class="limxapproachleft2"></span> <span class="limxleftval2"></span> and
+        <span class="limxapproachright2"></span> <span class="limxrightval2"></span> and
+        <span class="fxequals2"></span> <span class="fxval2"></span>.
+        They are not all equal.
+      </p>
+      <p id="IncorrectX2h">
+        Sorry. Read the hint. Try again.
+      </p>
+      <p id="InvalidX2h">
+        I can't understand your answer. It may have been typed wrong.
+        I am expecting an integer, infinity, -infinity or undefined.
+      </p>
+      <p id="MissingX2h">
+        You need to enter an answer before checking.
+      </p>
+    </div>
+    <div class="toBeToggled drop-show" data-toggle="ShowX2h">
+      <p id="ShowYesX2h">
+        \(f(x)\) is continuous because
+        <span class="limxapproachleft2"></span>
+        <span class="limxapproachright2"></span>
+        <span class="fxequals2"></span>
+        <span class="fxval2"></span>.
+      </p>
+      <p id="ShowNoX2h">
+        \(f(x)\) is not continuous because
+        <span class="limxapproachleft2"></span>
+        <span class="limxleftval2"></span> and
+        <span class="limxapproachright2"></span>
+        <span class="limxrightval2"></span> and
+        <span class="fxequals2"></span> <span class="fxval2"></span>
+        which are not all equal.
+      </p>
+    </div>
+  </li>
+
+</ol>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+
+
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+<script type="module" src="scripts/TutLimCont.js"></script>
+
+
+</body>
+</html>

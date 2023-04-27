@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Trig Functions | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ADRulesExp.html" title="Previous">&lArr;</a></li>
+      <li><a href="ADRulesHyp.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Antiderivative Rules</h2>
+
+
+      
+      <h2>3. Trig Functions</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The table on the previous page gave the antiderivatives for exponential and
+  logarithmic functions. The tables on this page give the antiderivatives for
+  the trigonometric functions and their inverses. You can check each line of
+  the table by differentiating the quantity on the right to see you get the
+  quantity on the left.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Trigonometric Functions</caption>
+  <thead class="thead">
+    <th></th>
+    <th><span style="font-weight:normal">If the</span> Function
+      <span style="font-weight:normal">is</span></th>
+    <th><span style="font-weight:normal">then the</span> Antiderivative
+      <span style="font-weight:normal">is</span></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sine</td>
+      <td>\(f(x)=\cos x\)</td>
+      <td>\(F(x)=\sin x+C\)</td>
+    </tr>
+    <tr>
+      <td>Cosine</td>
+      <td>\(f(x)=\sin x\)</td>
+      <td>\(F(x)=-\cos x+C\)</td>
+    </tr>
+    <tr>
+      <td>Tangent\(^\text{1}\)</td>
+      <td>\(f(x)=\sec^2 x\)</td>
+      <td>\(F(x)=\tan x+C\)</td>
+    </tr>
+    <tr>
+      <td>Cotangent\(^\text{1}\)</td>
+      <td>\(f(x)=\csc^2 x\)</td>
+      <td>\(F(x)=-\cot x+C\)</td>
+    </tr>
+    <tr>
+      <td>Secant\(^\text{1}\)</td>
+      <td>\(f(x)=\sec x\tan x\)</td>
+      <td>\(F(x)=\sec x+C\)</td>
+    </tr>
+    <tr>
+      <td>Cosecant\(^\text{1}\)</td>
+      <td>\(f(x)=\csc x\cot x\)</td>
+      <td>\(F(x)=-\csc x+C\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  \(^\text{1}\)
+  These are the functions whose antiderivatives are the trig functions:
+  \(\tan x\), \(\cot x\), \(\sec x\) and \(\csc x\). We will discuss the
+  antiderivatives of these trig functions in Calculus 2 in the chapter on
+  <a href="../../../MYMACalc2/Part I - Techniques of Integration/TrigInt/ChContents.html"
+  title="Return using the Back button.">
+  Trig Integrals</a>.
+</p>
+
+<table class="center left-align lined-rows cell-border">
+  <caption>Inverse Trigonometric Functions</caption>
+  <thead>
+    <th></th>
+    <th><span style="font-weight:normal">If the</span> Function
+      <span style="font-weight:normal">is</span></th>
+    <th><span style="font-weight:normal">then the</span> Antiderivative
+      <span style="font-weight:normal">is</span></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Inverse Sine\(^\text{2}\)</td>
+      <td>\(f(x)=\dfrac{1}{\sqrt{1-x^2}}\)</td>
+      <td>\(F(x)=\arcsin x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Tangent\(^\text{2}\)</td>
+      <td>\(f(x)=\dfrac{1}{1+x^2}\)</td>
+      <td>\(F(x)=\arctan x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Secant\(^\text{2}\)</td>
+      <td>\(f(x)=\dfrac{1}{x\sqrt{x^2-1}}\)</td>
+      <td>\(F(x)=\mathrm{arcsec}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Cosine\(^\text{3}\)</td>
+      <td>\(f(x)=\dfrac{1}{\sqrt{1-x^2}}\)</td>
+      <td>\(F(x)=-\arccos x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Cotangent\(^\text{3}\)</td>
+      <td>\(f(x)=\dfrac{1}{1+x^2}\)</td>
+      <td>\(F(x)=-\,\mathrm{arccot}\,x+C\)</td>
+    </tr>
+    <tr>
+      <td>Inverse Cosecant\(^\text{3}\)</td>
+      <td>\(f(x)=\dfrac{1}{x\sqrt{x^2-1}}\)</td>
+      <td>\(F(x)=-\,\mathrm{arccsc}\,x+C\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  \(^\text{2}\)
+  These are the functions whose antiderivatives are the inverse trig functions:
+  \(\arcsin x\), \(\arctan x\) and \(\mathrm{arcsec}\,x\). We will discuss
+  the antiderivatives of these inverse trig functions in Calculus 2 in
+  the chapter on
+  <a href="../../../MYMACalc2/Part I - Techniques of Integration/IntParts/ChContents.html"
+  title="Return using the Back button.">
+  Integration by Parts</a>.
+</p>
+
+<p>
+  \(^\text{3}\)
+  These antiderivative formulas are not useful, since the formulas using
+  \(\arcsin x\), \(\arctan x\) and \(\mathrm{arcsec}\,x\) are easier.
+  They just differ by a constant.
+</p>
+<a id="ADRules"></a>
+
+        <div class="rule"></div>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    Find the general antiderivative of
+    \(p(\theta)=2\theta\sin(\theta)+\theta^2\cos(\theta)\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(P(\theta)=\theta^2\sin(\theta)+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Since \(\dfrac{d}{d\theta}\theta^2=2\theta\) and
+    \(\dfrac{d}{d\theta}\sin(\theta)=\cos(\theta)\), the function can be
+    rewritten as:
+    \[
+    p(\theta)=\sin(\theta)\dfrac{d}{d\theta}\theta^2
+    +\theta^2\dfrac{d}{d\theta}\sin(\theta)
+    \]
+    This is the derivative of \(\theta^2\sin(\theta)\) by the product rule.
+    So the general antiderivative of \(p(\theta)\) is:
+    \[
+    P(\theta)=\theta^2\sin(\theta)+C
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

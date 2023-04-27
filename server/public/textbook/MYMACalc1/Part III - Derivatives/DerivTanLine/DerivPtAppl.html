@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a.2. Applications of the Derivative at a Point | 10. Derivatives and Tangent Lines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DerivPt.html" title="Previous">&lArr;</a></li>
+      <li><a href="TanLine.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>10. Derivatives and Tangent Lines</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a.2. Applications of the Derivative at a Point</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  All the
+  <a href="../../Part%20II%20-%20Limits%20and%20Continuity/LimAppl/Rates.html"
+    title="Return using the Back button."> Applications of Limits</a> for
+  <span class="hl">rates of change</span>, can now be done using derivatives.
+</p>
+
+<div class="rule" id="ex_vel"></div>
+
+<h3>Velocity</h3>
+<p>
+  If a particle is at position \(x(t)\) as a function of time \(t\), then
+  its velocity at time \(t=a\), is the derivative of the position at \(t=a\),
+  that is \(v(a)=x'(a)\), .
+</p>
+<div class="dotfillex">
+  <p class="exercise" data-number="1">
+    A girl takes a walk from \(x=0\) to \(x=16\) and back. Her position at
+    time \(t\) is \(x(t)=16-(t-2)^4\). What is her velocity at \(t=3\)?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(v(3)=x'(3)=-4\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    The velocity is the derivative of \(x(t)\) at \(t=3\).
+    On the \(3^\text{rd}\) line, we cancel the \(16\)'s and expand
+    the numerator.
+    On the \(4^\text{th}\) line we cancel the \(1\)'s in the numerator.
+    On the \(5^\text{th}\) line we cancel the \(h\) from the denominator.
+    \[\begin{aligned}
+    v(3)&=x'(3)=\lim_{h\rightarrow 0} \dfrac{x(3+h)-x(3)}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{[16-(1+h)^4]-[16-(1)^4]}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-(1+4h+6h^2+4h^3+h^4)+1}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{-(4h+6h^2+4h^3+h^4)}{h} \\
+    &=\lim_{h\rightarrow 0} -(4+6h+4h^2+h^3)=-4 \\
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="rule" id="ex_slope"></div>
+
+<h3>Slope</h3>
+<p>
+  The slope of the tangent line to a function, \(f(x)\), at a point \(x=a\)
+  is the derivative of the function at \(x=a\), that is \(m=f'(a)\).
+</p>
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="2">
+      Find the slope of the tangent line to the function, \(f(x)=6x^2-x^3\),
+      at \(x=3\).
+    </p>
+    <div class="center" data-col-width="40%">
+      <img src="graphics/ex_tan_slope_deriv_pt_appl.jpg" alt="ex_tan_slope_deriv_pt_appl">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(m=f'(3)=9\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    The slope is the derivative of \(f(x)\) at \(x=3\).
+    On the \(3^\text{rd}\) line, we expand \((3+h)^2\) and \((3+h)^3\).
+    On the \(4^\text{th}\) line, we cancel and combine terms in the numerator.
+    On the \(5^\text{th}\) line we cancel the \(h\) from the denominator.
+    \[\begin{aligned}
+    m&=f'(3)=\lim_{h\rightarrow 0} \dfrac{f(3+h)-f(3)}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{[6(3+h)^2-(3+h)^3]-[6\cdot3^2-3^3]}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{[6(9+6h+h^2)-(27+27h+9h^2+h^3)]-[54-27]}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{54 + 36h + 6h^2 -27 - 27h -9h^2 -h^3 - 27}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{9h-3h^2 -h^3}{h} \\
+    &=\lim_{h\rightarrow 0} (9-3h-h^2)=9
+    \end{aligned}\]
+  </p>
+</div>
+
+<div class="rule" id="ex_rates"></div>
+
+<h3>Other Rates of Change</h3>
+<p>
+  The rate of change of any quantity, \(Q(t)\), at time \(t=a\) is the
+  derivative of the quantity at \(t=a\), that is \(Q'(a)\).
+</p>
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="3">
+      The volume of water in a rain gauge at time \(t\) is given by
+      \(V(t)=\sqrt{t}\). What is the rate, \(V'(4)\), at which the gauge is
+      filling at \(t=4\)?
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+      <button class="toggle has-sol" data-toggle="SolX3"></button>
+    </p>
+  </div>
+  <div class="center">
+    <video src="graphics/ex_raingauge.mp4" autoplay loop controls></video>
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    \(V'(4)=\dfrac{1}{4}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    The rate at which the gauge is filling is the derivative \(V'(4)\).
+    On the \(3^\text{rd}\) line, we multiply the numerator and denominator
+    by the conjugate.
+    On the \(4^\text{th}\) line, we expand in the numerator using difference
+    of squares.
+    On the \(5^\text{th}\) line we simplify the numerator and cancel the
+    \(h\) from the denominator.
+    \[\begin{aligned}
+    V'(4)&=\lim_{h\rightarrow 0} \dfrac{R(4+h)-R(4)}{h}
+    =\lim_{h\rightarrow 0} \dfrac{\sqrt{4+h}-\sqrt{4}}{h} \\
+    &=\lim_{h\rightarrow 0} \dfrac{(\sqrt{4+h}-\sqrt{4})}{h}
+    \dfrac{(\sqrt{4+h}+\sqrt{4})}{(\sqrt{4+h}+\sqrt{4})} \\
+    &=\lim_{h\rightarrow 0} \dfrac{(4+h)-(4)}{h(\sqrt{4+h}+\sqrt{4})} \\
+    &=\lim_{h\rightarrow 0} \dfrac{1}{\sqrt{4+h}+\sqrt{4}}=\dfrac{1}{4} \\
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

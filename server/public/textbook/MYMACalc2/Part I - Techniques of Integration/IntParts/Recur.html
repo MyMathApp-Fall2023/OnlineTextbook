@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Solving for the Integral | 4. Integration by Parts</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Def.html" title="Previous">&lArr;</a></li>
+      <li><a href="Reduce.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>4. Integration by Parts</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<p>
+  Recall: &emsp; &emsp; &emsp;
+  \(\displaystyle \int u\,dv=u\,v-\int v\,du\) &emsp; where &emsp;
+  \(du=\dfrac{du}{dx}\,dx\) &emsp; and &emsp; \(dv=\dfrac{dv}{dx}\,dx\)
+</p>
+
+<h2>d. Recurrence of the Integral</h2>
+
+
+      
+      <h2>1. Solving for the Integral</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+Sometimes, no matter what parts are selected, the integral never seems to
+get simpler. However, in special cases, usually involving products of \(e^{ax}\),
+\(\sin ax\) or \(\cos ax\), a repeated integration by parts yields a recurrence
+of the original integral. Such is the case in the following example.
+<span class="hl">Solving such problems usually requires two successive
+integrations by parts, followed by an algebraic solution for the final integral.</span>
+</p>
+<a id="egrecur"></a>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \int e^x\sin x\,dx\).
+</p>
+<div class="toBeToggled uparr shown" data-toggle="examplesol1">
+  <p class="sol">
+    Since it is slightly easier to integrate \(e^x\) than \(\sin x\),
+    first do integration by parts with
+    \[\begin{array}{ll}
+    u=\sin x & dv=e^x\,dx \\
+    du=\cos x\,dx \quad & v=e^x
+    \end{array}\]
+    This is the &ldquo;T&rdquo; in LAPTE. This gives:
+    \[
+    \int e^x\sin x\,dx=e^x\sin x-\int e^x\cos x\,dx
+    \]
+    The resulting integral does not seem any simpler than the original one.
+    (It just has a \(\cos x\) instead of a \(\sin x\).) However, don't get
+    discouraged. Keep plugging away. Now do integration by parts with
+    \[\begin{array}{ll}
+    u=\cos x & dv=e^x\,dx \\
+    du=-\sin x\,dx \quad & v=e^x
+    \end{array}\]
+    Then the second integration gives
+    \[\begin{aligned}
+    \int e^x\sin x\,dx
+    &=e^x\sin x-\left[e^x\cos x+\int e^x\sin x\,dx\right] \\
+    &=e^x\sin x-e^x\cos x-\int e^x\sin x\,dx
+    \end{aligned}\]
+    It might appear that you have gone in circles, since the
+    remaining integral is the same as the one you started with.
+    <br>
+    <span class="greenbig">Not so! Now comes the big trick:</span> &ensp;
+    Add \(\displaystyle \int e^x\sin x\,dx\) to both sides to get:
+    \[
+    2\int e^x\sin x\,dx=e^x\sin x-e^x\cos x+K
+    \]
+    <button class="toggle btn" data-toggle="Drop1">Why the \(+K\)?</button>
+  </p>
+  <div class="toBeToggled" data-toggle="Drop1">
+    <p>
+  		Technically, the indefinite integral,
+      \(\displaystyle \int e^x\sin x\,dx\), on the left and right may not be
+      the same. They may differ by a constant.
+    </p>
+  </div>
+  <p>
+    Finally, divide by \(2\) (and define \(C=\dfrac{1}{2}K\)):
+    \[
+    \int e^x\sin x\,dx=\dfrac{1}{2}e^x\sin x-\dfrac{1}{2}e^x\cos x+C
+    \]
+    This is our answer.
+  </p>
+  <p class="check">
+    We check by differentiating. If
+    \(f(x)=\dfrac{1}{2}e^x\sin x-\dfrac{1}{2}e^x\cos x\), then
+    \[
+    f'(x)
+    =\dfrac{1}{2}e^x\sin x+\dfrac{1}{2}e^x\cos x-\dfrac{1}{2}e^x\cos x+\dfrac{1}{2}e^x\sin x
+    =e^x\sin x
+    \]
+    which is the integrand we started with.
+	</p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  In the above example, notice that in both integrations by parts, we took \(u\)
+  as the trig function and \(dv\) as the exponential. This is crucial. If
+  you reverse them in the second integration by parts, you will undo the first
+  one and you will not be able to solve for the original integral.
+</p>
+<p>
+  <span class="toggle triside sol-incorrect-box" data-toggle="IncSol"></span>
+</p>
+
+<div class="toBeToggled uparr" data-toggle="IncSol">
+  <p class="sol-incorrect">
+    Starting at the second integral in the example above, we have
+    \[
+    \int e^x\sin x\,dx
+    =e^x\sin x-\int e^x\cos x\,dx
+    \]
+    If we choose the parts to be
+    \[\begin{array}{ll}
+    u=e^x & dv=\cos x\,dx \\
+    du=e^x\,dx \quad & v=\sin x
+    \end{array}\]
+    it takes us back to
+    \[\begin{aligned}
+    \int e^x\sin x\,dx
+    &=e^x\sin x-(e^x\sin x-\int e^x\sin x\,dx) \\
+    &=e^x\sin x-e^x\sin x+\int e^x\sin x\,dx \\
+    &=\int e^x\sin x\,dx
+    \end{aligned}\]
+    and there is no way to solve for the integral.
+  </p>
+</div>
+<p class="remark">
+  The same trick will work for integrals of the following general forms:
+  \[
+  \int e^{ax}\sin bx\,dx \qquad \text{and} \qquad \int e^{ax}\cos bx\,dx
+  \]
+  \[
+  \int \sin ax\sin bx\,dx, \quad \int \sin ax\cos bx\,dx
+  \quad \text{and} \quad \int \cos ax\cos bx\,dx
+  \]
+  For the first two, an acceptable selection of parts is to take \(u\)
+  as the trig function for both the first and second applications or to take
+  \(u\) as the exponential function for both the first and second applications.
+  For the last three, we can take \(u\) as the trig function with \(ax\) in
+  both integrations by parts or take \(u\) as the trig function with \(bx\) in
+  both integrations by parts, but we can't mix them. We will learn another
+  method for computing the last three integrals in a later chapter on
+  <span><a href="../TrigInt/Prod.html" title="Return using the Back button.">
+  Trig Integrals</a></span>.
+</p>
+<p>
+  Now you try:
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    What are acceptable choices for \(u\) in each application of integration by
+    parts for the integral \(\displaystyle \int e^{ax}\cos bx\,dx\)?
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    One acceptable choice is \(u=\cos bx\) for the first application and
+    \(u=\sin bx\) for the second application.
+    <br>
+    Another acceptable choice is \(u=e^{ax}\) for both applications.
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+      Compute\(\displaystyle \int e^{3x}\cos x\,dx\)
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX2"></button>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Start with \(u=\cos x\) and \(dv=e^{3x}\,dx\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+   \(\displaystyle \int e^{3x}\cos x\,dx
+   =\dfrac{3}{10}e^{3x}\cos x+\dfrac{1}{10}e^{3x}\sin x+C\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    We first do two integrations by parts:
+    <br><br>
+    \(\begin{array}{ll}
+    u=\cos x & dv=e^{3x}\,dx \\
+    du=-\sin x\,dx \quad & v=\dfrac{1}{3}e^{3x}
+    \end{array}\)
+    \[
+    \int e^{3x}\cos x\,dx
+    =\dfrac{1}{3}e^{3x}\cos x+\dfrac{1}{3}\int e^{3x}\sin x\,dx
+    \]
+    \(\begin{array}{ll}
+    u=\sin x & dv=e^{3x}\,dx \\
+    du=\cos x\,dx \quad & v=\dfrac{1}{3}e^{3x}
+    \end{array}\)
+    \[\begin{aligned}
+    \int e^{3x}\cos x\,dx
+    &=\dfrac{1}{3}e^{3x}\cos x
+    +\dfrac{1}{3}\left(\dfrac{1}{3}e^{3x}\sin x-\dfrac{1}{3}\int e^{3x}\cos x\,dx\right) \\
+    &=\dfrac{1}{3}e^{3x}\cos x
+    +\dfrac{1}{9}e^{3x}\sin x-\dfrac{1}{9}\int e^{3x}\cos x\,dx
+    \end{aligned}\]
+    Once again the original integral recurs on the right. So we add
+    \(\displaystyle \dfrac{1}{9}\int e^{3x}\cos x\,dx\) to both sides to get
+    \[
+    \dfrac{10}{9}\int e^{3x}\cos x\,dx=\dfrac{1}{3}e^{3x}\cos x+\dfrac{1}{9}e^{3x}\sin x+C
+    \]
+    Finally, we multiply by \(\dfrac{9}{10}\) and change the constant of integration:
+    \[
+    \int e^{3x}\cos x\,dx=\dfrac{3}{10}e^{3x}\cos x+\dfrac{1}{10}e^{3x}\sin x+C
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We check by differentiating:
+    \[\begin{aligned}
+    \dfrac{d}{dx}&\left(\dfrac{3}{10}e^{3x}\cos x+\dfrac{1}{10}e^{3x}\sin x\right) \\
+    &=\dfrac{9}{10}e^{3x}\cos x-\dfrac{3}{10}e^{3x}\sin x
+    +\dfrac{3}{10}e^{3x}\sin x+\dfrac{1}{10}e^{3x}\cos x \\
+    &=e^{3x}\cos x
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

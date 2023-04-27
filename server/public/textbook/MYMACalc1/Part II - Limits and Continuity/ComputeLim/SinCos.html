@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Sine and Cosine Limits | 7. Computing Limits</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Sandwich.html" title="Previous">&lArr;</a></li>
+      <li><a href="LimatInfSpec.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>7. Computing Limits</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Sandwich Theorem</h2>
+
+
+      
+      <h2>2. Sine and Cosine Limits</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The most important application of the Sandwich Theorem is to prove the
+  following four limits about \(\sin\) and \(\cos\).
+  \[\begin{aligned}
+  \lim_{\theta\to0}\sin\theta&=0
+  &\qquad&\lim_{\theta\to0}\cos\theta=1\\
+  \lim_{\theta\to0}\dfrac{\sin\theta}{\theta}&=1
+  &\qquad&\lim_{\theta\to0}\dfrac{1-\cos\theta}{\theta}=0
+  \end{aligned}\]
+  The first two seem obvious since
+  \[
+  \sin0=0 \qquad \cos0=1
+  \]
+  However, in principle, the value of a function may or may not be the same as
+  the limit. The formal proofs involve the Sandwich Theorem.
+</p>
+<p class="prop">
+\[
+\lim_{\theta\to0}\sin\theta=0
+\qquad\lim_{\theta\to0}\cos\theta=1
+\]
+<button class="toggle" data-toggle="Pf1" id="sinx/x">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf1">
+  <div class="column">
+    <p data-title="\(\displaystyle \lim_{\theta\to0}\sin\theta\):"><br>
+      The diagram shows a unit circle and a ray at an angle \(\theta\)
+      intersecting the circle at the point \(B=(\cos\theta,\sin\theta)\).
+      The circumference of the full circle is
+      \(\text{Length}_\bigcirc=2\pi r=2\pi\).
+      The fraction of the circumference occupied by the arc \(\stackrel{\frown}{AB}\)
+      is \(\dfrac{\theta}{2\pi}\) (in radians). So the length of the arc is
+      \(\text{Length}_\frown=\dfrac{\theta}{2\pi}2\pi=\theta\). The perpendicular
+      from \(B\) to the \(x\)-axis has length \(y=\sin\theta\) and since the
+      length of a perpendicular is shortest distance, we conclude
+      \[
+      0 \le \sin\theta \le \theta
+      \]
+      So \(\sin\theta\) is squeezed between \(0\) and \(\theta\). Since
+      \[
+      \lim_{\theta\to0}0=\lim_{\theta\to0}\sin\theta=0
+      \]
+      we conclude  \(\displaystyle \lim_{\theta\to0}\sin\theta=0\) also.
+    </p>
+    <div class="center">
+      <img src="graphics/prop_SinLim.jpg" alt="prop_SinLim">
+    </div>
+  </div>
+  <hr width="80%">
+  <p data-title="\(\displaystyle \lim_{\theta\to0}\cos\theta\):"><br>
+    This limit does not need the Sandwich Theorem. We just use a trig identity
+    the Limit Laws and the previous limit.
+    \[\begin{aligned}
+    \lim_{\theta\to0}\cos\theta
+    &=\lim_{\theta\to0}\sqrt{1-\sin^2\theta} \\
+    &=\sqrt{\lim_{\theta\to0}\left(1-\sin^2\theta\right)} \\
+    &=\sqrt{1-\left(\lim_{\theta\to0}\sin\theta\right)^2} \\
+    &=\sqrt{1-(0)^2}=1 \\
+    \end{aligned}\]
+  </p>
+</div>
+
+<p class="prop">
+  \[
+  \lim_{\theta\to0}\dfrac{\sin\theta}{\theta}=1
+  \qquad\lim_{\theta\to0}\dfrac{1-\cos\theta}{\theta}=0
+  \]
+  <button class="toggle" data-toggle="Pf2">Proof</button>
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Pf2">
+  <div class="column">
+    <p data-title="\(\displaystyle \lim_{\theta\to0}\dfrac{\sin\theta}{\theta}\):"><br>
+      The diagram shows a unit circle and a ray at an angle \(\theta\)
+      intersecting the circle at the point \(B=(\cos\theta,\sin\theta)\).
+      The area of the full circle is \(\text{Area}_\bigcirc=\pi r^2=\pi\).
+      The fraction of the area occupied by the sector \(\measuredangle OAB\)
+      is \(\dfrac{\theta}{2\pi}\) (in radians). So the area of the sector is
+      \[
+      \text{Area}_{\measuredangle OAB}=\dfrac{\theta}{2\pi}\pi=\dfrac{\theta}{2}
+      \]
+      This sector is sandwiched between two triangles. The smaller triangle is
+      \(\triangle OAB\) whose area is
+      \[
+      \text{Area}_{\triangle OAB}=\dfrac{1}{2}(1)\sin\theta
+      \]
+      The larger triangle is \(\triangle OAQ\) whose area is
+      \[
+      \text{Area}_{\triangle OAQ}=\dfrac{1}{2}(1)\tan\theta
+      \]
+    </p>
+    <div class="center">
+      <img src="graphics/prop_SinQLim.jpg" alt="prop_SinQLim">
+    </div>
+  </div>
+    <p>
+      The three areas are related by:
+      \[
+      \text{Area}_{\triangle OAB} \le \text{Area}_{\measuredangle OAB}
+      \le \text{Area}_{\triangle OAQ}
+      \]
+      \[
+      \dfrac{1}{2}\sin\theta \le \dfrac{\theta}{2} \le \dfrac{1}{2}\tan\theta
+      \]
+      The first inequality can be rearranged to say:
+      \[
+      \dfrac{\sin\theta}{\theta} \le 1
+      \]
+      The second inequality can be rearranged to say:
+      \[
+      1 \le \dfrac{\tan\theta}{\theta}=\dfrac{\sin\theta}{\theta\cos\theta}
+      \]
+      or
+      \[
+      \cos\theta \le \dfrac{\sin\theta}{\theta}
+      \]
+      Together, they say \(\dfrac{\sin\theta}{\theta}\) is squeezed between
+      \(\cos\theta\) and \(1\). Since
+      \[
+      \lim_{\theta\to0}\cos\theta=\lim_{\theta\to0}1=1
+      \]
+      we conclude \(\displaystyle \lim_{\theta\to0}\dfrac{\sin\theta}{\theta}=1\)
+      also.
+    </p>
+  <hr width="80%">
+  <p data-title="\(\displaystyle \lim_{\theta\to0}\dfrac{1-\cos\theta}{\theta}\):"><br>
+    This limit does not need the Sandwich Theorem. We multiply by the conjugate,
+    use a trig identity and the previous limits.
+    \[\begin{aligned}
+    \lim_{\theta\to0}\dfrac{1-\cos\theta}{\theta}
+    &=\lim_{\theta\to0}\dfrac{(1-\cos\theta)}{\theta}\dfrac{(1+\cos\theta)}{(1+\cos\theta)} \\
+    &=\lim_{\theta\to0}\dfrac{(1-\cos^2\theta)}{\theta^2}\dfrac{\theta}{(1+\cos\theta)} \\
+    &=\lim_{\theta\to0}\dfrac{\sin^2\theta}{\theta^2}\dfrac{\theta}{(1+\cos\theta)} \\
+    &=\left(\lim_{\theta\to0}\dfrac{\sin\theta}{\theta}\right)^2
+    \lim_{\theta\to0}\dfrac{\theta}{1+\cos\theta} \\
+    &=(1)^2\left(\dfrac{0}{1+1}\right)=0
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="example" data-number="1">
+  Compute \(\displaystyle \lim_{x\to0}\dfrac{2x+3x^2}{\sin x}\)
+</p>
+<p class="sol">
+  Divide the numerator and denominator by \(x\). Then use the Quotient Law and
+  the limit \(\displaystyle \lim_{x\to0}\dfrac{\sin x}{x}=1\): (Note the
+  variable does not matter.)
+  \[\begin{aligned}
+  \lim_{x\to0}&\dfrac{2x+3x^2}{\sin x}
+  =\lim_{x\to0}\dfrac{2+3x}{\dfrac{\sin x}{x}} \\
+  &=\dfrac{\displaystyle \lim_{x\to0}(2+3x)}{\displaystyle \lim_{x\to0}\dfrac{\sin x}{x}}
+  =\dfrac{2}{1}=2
+  \end{aligned}\]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(\displaystyle \lim_{\theta\to0}\dfrac{1-\cos\theta}{\theta^2}\).
+  </p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Multiply numerator and denominator by the conjugate and use a trig identity.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+  \(\displaystyle
+  \lim_{\theta\to0}\dfrac{1-\cos\theta}{\theta^2}=\dfrac{1}{2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    We multiply by the conjugate, use a trig identity and the previous limits.
+    \[\begin{aligned}
+    \lim_{\theta\to0}\dfrac{1-\cos\theta}{\theta^2}
+    &=\lim_{\theta\to0}\dfrac{(1-\cos\theta)}{\theta^2}\dfrac{(1+\cos\theta)}{(1+\cos\theta)} \\
+    &=\lim_{\theta\to0}\dfrac{(1-\cos^2\theta)}{\theta^2}\dfrac{1}{(1+\cos\theta)} \\
+    &=\lim_{\theta\to0}\dfrac{\sin^2\theta}{\theta^2}\dfrac{1}{(1+\cos\theta)} \\
+    &=\left(\lim_{\theta\to0}\dfrac{\sin\theta}{\theta}\right)^2
+    \lim_{\theta\to0}\dfrac{1}{1+\cos\theta} \\
+    &=(1)^2\left(\dfrac{1}{1+1}\right)=\dfrac{1}{2}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

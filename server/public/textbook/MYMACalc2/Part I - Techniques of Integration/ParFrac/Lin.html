@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c. Non-Repeated Linear Factors | 9. Partial Fractions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <div id="mySidenav" class="sidenav"></div>
+
+  <!-- Main page -->
+  <main>
+    <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Decomp.html#examples" title="Back">&lArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><a href="../../../indexPage.html" title="Index">
+          <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+        </a></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    <h1>9. Partial Fractions</h1>
+    <div id="pg-wrapper">
+      
+
+<h2 id="eg">a2. General Decompositions</h2>
+
+<div class="example-links">
+  <ul class="no-style">
+    <li><a href="Poly.html">Removing a Polynomial Part</a></li>
+    <br>
+    <li class="active"><a href="Lin.html">Non-Repeated Linear Factors</a></li>
+    <li><a href="Lin2.html">Repeated Linear Factors</a></li>
+    <br>
+    <li><a href="Quad.html">Non-Repeated Quadratic Factors</a></li>
+    <li><a href="Quad2.html">Repeated Quadratic Factors</a></li>
+  </ul>
+</div>
+
+
+      
+      <h2>c. Non-Repeated Linear Factors</h2>
+
+      
+
+      <!-- Page content goes here -->
+      
+
+<p class="example" data-number="1">
+  Find the partial fraction decomposition for
+  \(\dfrac{x^2-11x+12}{x^3-5x^2+6x}\).
+</p>
+<p class="sol">
+  Since the degree of the numerator is less than the degree
+  of the denominator, there is no polynomial part. We first factor the
+  denominator:
+  \[
+  x^3-5x^2+6x=x(x-2)(x-3)
+  \]
+  Then we write the general partial fraction expansion by putting a constant
+  over each linear factor:
+  \[
+  \dfrac{x^2-11x+12}{x(x-2)(x-3)}=\dfrac{A}{x}+\dfrac{B}{x-2}+\dfrac{C}{x-3}
+  \]
+  We must find \(A\), \(B\) and \(C\) so this is true for all \(x\). To do this we
+  multiply through by the denominator:
+  \[
+  x^2-11x+12=A(x-2)(x-3)+Bx(x-3)+Cx(x-2)
+  \]
+</p>
+<p class="remark">
+  The naive, brute force way to solve this is to expand the right hand side,
+  collect terms, equate coefficients of each power of \(x\) and solve the
+  \(3\) equations for \(3\) unknowns.
+  <button class="toggle btn" data-toggle="Drop1">Show me how.</button>
+</p>
+<div class="toBeToggled note" data-toggle="Drop1">
+  <h4>Like This!</h4>
+  <p>
+    Expand the right hand side and collect terms:
+    \[\begin{aligned}
+    x^2-11x+12&=A(x-2)(x-3)+Bx(x-3)+Cx(x-2) \\
+              &=Ax^2-5Ax+6A+Bx^2-3Bx+Cx^2-2Cx \\
+              &=(A+B+C)x^2+(-5A-3B-2C)x+6A
+    \end{aligned}\]
+    Equate coefficients:
+    \[
+    A+B+C=1 \qquad -5A-3B-2C=-11 \qquad 6A=12
+    \]
+    Solve (after some work):
+    \[
+    A=2 \qquad B=3 \qquad C=-4
+    \]
+  </p>
+</div>
+<p>
+  However:
+  <span style="color: magenta">Don't simplify! Don't expand!</span>
+  Since this equation must be true for all \(x\), an easier way to
+  solve is to plug in several values for \(x\). The obvious values are
+  \(x=0,2,3\) which are the zeros of the original denominator
+  \(x^3-5x^2+6x=x(x-2)(x-3)\). These give:
+</p>
+<ul>
+  <li>
+    \(x=0\):
+    \[\begin{aligned}
+    (0)^2-11(0)+12&=A(-2)(-3)+B(0)+C(0) \\
+    &\Longrightarrow \qquad 12=6A \qquad \Longrightarrow \qquad A=2
+    \end{aligned}\]
+  </li>
+  <li>
+    \(x=2\):
+    \[\begin{aligned}
+    (2)^2-11(2)+12&=A(0)+B(2)(2-3)+C(0) \\
+    &\Longrightarrow \qquad -6=-2B \qquad \Longrightarrow \qquad B=3
+    \end{aligned}\]
+  </li>
+  <li>
+    \(x=3\):
+    \[\begin{aligned}
+    (3)^2-11(3)+12&=A(0)+B(0)+C(3)(3-2) \\
+    &\Longrightarrow \qquad -12=3C \qquad \Longrightarrow \qquad C=-4
+    \end{aligned}\]
+  </li>
+</ul>
+<p>
+  This immediately gives the coefficients \(A\), \(B\) and \(C\). However, this
+  trick only works easily for non-repeating linear factors. Plugging the
+  coefficients back into the partial fraction expansion, we conclude
+  \[
+  \dfrac{x^2-11x+12}{x(x-2)(x-3)}=\dfrac{2}{x}+\dfrac{3}{x-2}-\dfrac{4}{x-3}
+  \]
+</p>
+<p class="check">
+  We check this by adding up the right hand side:
+  \[\begin{aligned}
+  \dfrac{2}{x}+\dfrac{3}{x-2}-\dfrac{4}{x-3}
+  &=\dfrac{2(x-2)(x-3)+3x(x-3)-4x(x-2)}{x(x-2)(x-3)} \\
+  &=\dfrac{x^2-11x+12}{x(x-2)(x-3)}
+  \end{aligned}\]
+</p>
+
+        <div class="rule" id="ex"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the partial fraction decomposition for
+    \(\dfrac{x^2+12x-4}{x^3-4x}\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="Ans1"></button>
+    <button class="toggle has-sol" data-toggle="Sol1"></button>
+    <button class="toggle has-check" data-toggle="Ck1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="Ans1">
+  <p>
+    \(\dfrac{x^2+12x-4}{x^3-4x}
+    =\dfrac{1}{x}+\dfrac{3}{x-2}-\dfrac{3}{x+2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="Sol1">
+  <p>
+    To find the partial fraction expansion for \(\dfrac{x^2+12x-4}{x^3-4x}\)
+    we first factor the denominator:
+    \[
+    x^3-4x=x(x-2)(x+2)
+    \]
+    We write out the general expansion and clear the denominator:
+    \[
+    \dfrac{x^2+12x-4}{x(x-2)(x+2)}
+    =\dfrac{A}{x}+\dfrac{B}{x-2}+\dfrac{C}{x+2}
+    \]
+    \[
+    x^2+12x-4=A(x-2)(x+2)+Bx(x+2)+Cx(x-2)
+    \]
+    We plug in the three roots \(x=0,2,-2\):
+  </p>
+  <ul>
+    <li>
+    \(x=0\):
+    \[
+    -4=A(-2)(2) \qquad \Longrightarrow \qquad A=1
+    \]
+    </li>
+    <li>
+    \(x=2\):
+    \[
+    24=B(2)(4) \qquad \Longrightarrow \qquad B=3
+    \]
+    </li>
+    <li>
+    \(x=-2\):
+    \[
+    -24=C(-2)(-4) \qquad \Longrightarrow \qquad C=-3
+    \]
+    </li>
+  </ul>
+  <p>
+    So the partial fraction expansion is
+    \[
+    \dfrac{x^2+12x-4}{x^3-4x}
+    =\dfrac{1}{x}+\dfrac{3}{x-2}-\dfrac{3}{x+2}
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="Ck1">
+  <p>
+    We check by adding up the right hand side:
+    \[\begin{aligned}
+    \dfrac{1}{x}+\dfrac{3}{x-2}-\dfrac{3}{x+2}
+    &=\dfrac{(x-2)(x+2)+3x(x+2)-3x(x-2)}{x(x-2)(x+2)} \\
+    &=\dfrac{x^2+12x-4}{x(x-2)(x+2)}
+    \end{aligned}\]
+  </p>
+</div>
+
+
+
+      <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+    </div><!-- end page wrapper div -->
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

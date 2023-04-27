@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a. Overview | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="ChContents.html" title="Previous">&lArr;</a></li>
+      <li><a href="IntegTest.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>a. Overview</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Given a series \(\displaystyle \sum_{n=n_o}^\infty a_n\), our goal
+  is to find the sum of the series, either exactly (as for the geometric or
+  telescoping series) or approximately (as done at the end of this chapter).
+  To approximate the series, we usually just add up a finite number of terms.
+  Once we do that, we will want to know the error in using a finite number of
+  terms instead of an infinite number of terms. However, before we can even
+  approximate the series, we at least need to know the series has a finite sum,
+  i.e. that it converges. Otherwise, adding up a finite number of terms is
+  a waste of time.
+</p>
+<p>
+  Checking a series for convergence is much like doing an integral. In doing
+  an integral, you must look at the integrand and determine which integration
+  technique to use. In checking a series for convergence, you must look at
+  the terms and decide which convergence test to use. We split the
+  convergence tests into two groups, those for positive series and those for
+  more general series.
+</p>
+<p class="def">
+  <br>
+  A series \(\displaystyle \sum_{n=n_o}^\infty a_n\) is
+  <span class="defword">positive</span> if all
+  of its terms are positive, \(a_n>0\) for all \(n\).
+  <br>
+  A series \(\displaystyle \sum_{n=n_o}^\infty a_n\) is
+  <span class="defword">negative</span> if all
+  of its terms are negative, \(a_n< 0\) for all \(n\).
+  <br>
+  A <span class="defword">general</span> series is an arbitrary series which
+  is <span class="hl"> not necessarily positive</span> and
+  <span class="hl"> not necessarily negative</span>.
+</p>
+<p>
+  Here, we list the Convergence and Divergence Tests for Positive Series along
+  with the necessary definitions. There is no attempt to justify or prove
+  the tests. That will be done later in this chapter. If a series is
+  negative, the tests for positive series will work after an overall minus
+  sign is factored out. At the end of the section, we will come back to
+  approximating the series by a finite number of terms and finding the error
+  in this approximation.
+</p>
+
+        <div class="rule"></div>
+<p>
+  We start with the two tests covered in the
+  <a href="../Ser/ChContents.html" title="Return using the Back button.">
+  previous chapter</a>.
+<p class="def">
+  A <span class="defword">tail</span> of a series
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) is any
+  series of the form \(\displaystyle \sum_{n=N}^\infty a_n\) where \(N>n_o\).
+</p>
+<p class="prop" data-title="The Tail Test">
+  A series \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent if and only
+  if any (and hence every) tail is convergent.
+</p>
+<p class="remark">
+  This proposition says the convergence of a series does not depend on any
+  finite number of terms. Further, if the tail is all positive (or all
+  negative) you can apply the tests for positive series to the tail.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Don't forget to apply the \(n^\text{th}\) Term Divergence Test.
+  Then move on to the other tests.
+</p>
+<p class="prop" data-title="The nth Term Divergence Test">
+  If \(\displaystyle \lim_{n\to\infty}a_n\neq 0\), then
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) is divergent.
+</p>
+<p class="remark">
+  If \(\displaystyle \lim_{n\to\infty}a_n=0\) the \(n^\text{th}\) Term
+  Divergence Test <span class="wrong">FAILS</span> and says nothing about
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\).
+</p>
+
+        <div class="rule"></div>
+
+<p class="prop" data-title="The Integral Test">
+  If \(a_n=f(n)\) where \(f(x)\) is a continuous, positive, decreasing function on
+  \([n_o,\infty)\), then
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent if and
+  only if \(\displaystyle \int_{n_o}^\infty f(x)\,dx\) is convergent.
+</p>
+<p class="remark">
+  In practice, we don't switch from the terms \(a_n\) to the function \(f(x)\).
+  We just regard \(n\) as a continuous variable and \(a_n\) as a continuous
+  function of \(n\) and compute \(\displaystyle \int_{n_o}^\infty a_n\,dn\)
+</p>
+<p>
+  As a special case of the integral test we have:
+</p>
+<p class="corollary" data-title="The \(p\)-Series Test">
+  The \(p\)-series \(\displaystyle \sum_{n=n_o}^\infty \dfrac{1}{n^p}\) is
+  convergent if \(p \gt 1\) and is divergent if \(p \le 1\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="prop" data-title="The Simple Comparison Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) and
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) are positive series.
+  </p>
+  <ol>
+    <li>
+      If \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent and
+      \(a_n \le b_n\) for all \(n\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\)
+      is also convergent.
+    </li>
+    <li>
+      If \(\displaystyle \sum_{n=n_o}^\infty b_n\) is divergent and \(
+      a_n \ge b_n\) for all \(n\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\)
+      is also divergent.
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  In applying the simple comparison test,
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) is the
+  <span class="defword">original series</span> while
+  \(\displaystyle \sum_{n=n_o}^\infty b_n\) is the
+  <span class="defword">comparison series</span> whose convergence is already known.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  Sometimes we want to compare an original series
+  \(\displaystyle \sum_{n=n_o}^\infty a_n\) to a comparison series
+  \(\displaystyle \sum_{n=n_o}^\infty b_n\) but we can't prove the
+  necessary inequality. In that case, we should try the limit comparison test:
+</p>
+<div class="greybox">
+  <p class="prop" data-title="The Limit Comparison Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) and
+    \(\displaystyle \sum_{n=n_o}^\infty b_n\) are positive series and
+    \(\displaystyle \lim_{n\to\infty}\dfrac{a_n}{b_n}=L\).
+  </p>
+  <ol>
+    <li>
+      If \(0< L< \infty\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is
+      convergent if and only if \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      convergent.
+    </li>
+    <li>
+      If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent,
+      then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also convergent.
+    </li>
+    <li>
+      If \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is
+      divergent, then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is also divergent.
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  Cases (2) and (3) are called the <span class="defword">extreme cases</span>,
+  and arise very rarely.
+  <br>
+  If \(L=0\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is divergent, or
+  \(L=\infty\) and \(\displaystyle \sum_{n=n_o}^\infty b_n\) is convergent, the
+  Limit Comparison Test <span class="wrong">FAILS</span>.
+</p>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="prop" data-title="The Ratio Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) is a positive
+    series and the <span class="defword">limit of the ratio of successive
+    terms</span> is
+    \(\displaystyle \rho=\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}\).
+  </p>
+  <ol>
+    <li>
+      If \(\rho<1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent.
+    </li>
+    <li>
+      If \(\rho>1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is divergent.
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  If \(\rho=1\) the Ratio Test <span class="wrong">FAILS</span> and says
+  nothing about \(\displaystyle \sum_{n=n_o}^\infty a_n\).
+</p>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="prop" data-title="The Root Test">
+    Suppose \(\displaystyle \sum_{n=n_o}^\infty a_n\) is a positive
+    series and the <span class="defword">limit of the \(n^\text{th}\) root
+    of the \(n^\text{th}\) term</span> is
+    \(\displaystyle \rho=\lim_{n\to\infty}\sqrt[n]{a_n}\).
+  </p>
+  <ol>
+    <li>
+      If \(\rho<1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is convergent.
+    </li>
+    <li>
+      If \(\rho>1\), then \(\displaystyle \sum_{n=n_o}^\infty a_n\) is divergent.
+    </li>
+  </ol>
+</div>
+<p class="remark">
+  If \(\rho=1\) the Root Test <span class="wrong">FAILS</span> and says
+  nothing about \(\displaystyle \sum_{n=n_o}^\infty a_n\).
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

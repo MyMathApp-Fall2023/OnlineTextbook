@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Non-Existence of a Vector Potential | 17. Divergence, Curl and Potentials</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="VecPots.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic7">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>17. Divergence, Curl and Potentials</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>g. Vector Potentials</h2>
+
+<p class="def">
+  Given a vector field \(\vec F\), a <span class="defword">vector
+  potential</span> for \(\vec F\) is any vector field \(\vec A\) whose curl
+  is \(\vec F\):
+  \[
+  \vec\nabla\times\vec A=\vec F
+  \]
+</p>
+
+
+      
+      <h2>2. Non-Existence of a Vector Potential</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Not every vector field has a vector potential. What can go wrong in the
+  process of finding a vector potential?
+</p>
+<p class="example" data-number="1">
+  Find a vector potential for
+  \(\vec F=\left\langle -x-y,2z,\underline{\large 2}\,z-y\right\rangle\)
+  or show it does not exist.
+</p>
+<p class="remark">
+  Notice that this is almost the same vector field as in the
+  <a href="VecPots.html#vecpoteg">example</a>
+  on the previous page except for the extra factor of \(\underline{\large 2}\).
+  So watch the differences in the solutions, all of which are underlined in a larger font.
+</p>
+
+<p class="sol">
+  We attempt to find a vector field \(\vec A\) satisfying
+  \(\vec\nabla\times\vec A=\vec F\). Assuming \(A_3=0\), the equations reduce to
+  \[\begin{aligned}
+  -\partial_z A_2&=-x-y\quad&&\text{(1)} \\
+  \partial_z A_1&=2z\quad&&\text{(2)} \\
+  \partial_x A_2-\partial_y A_1&=\underline{\large 2}\,z-y\quad&&\text{(3)}
+  \end{aligned}\]
+  <!-- \[\begin{aligned}
+  -\partial_z A_2&=-x-y\tag{1} \\
+  \partial_z A_1&=2z\tag{2} \\
+  \partial_x A_2-\partial_y A_1&=\underline{\large 2}z-y\tag{3}
+  \end{aligned}\] -->
+  We solve these successively.
+</p>
+<ol>
+  <li>
+    Equation (1) says \(\partial_z A_2=x+y\). So
+    \[
+    A_2=xz+yz+f(x,y)
+    \]
+  </li>
+  <li>
+    Equation (2) says \(\partial_z A_1=2z\). So
+    \[
+    A_1=z^2+g(x,y)
+    \]
+  </li>
+  <li>
+    Using what we know about \(A_1\) and \(A_2\), equation (3) becomes
+    \[\begin{aligned}
+    \partial_x A_2-\partial_y A_1&=\underline{\large 2}\,z-y \\
+    (z+\partial_x f)-(\partial_y g)&=\underline{\large 2}\,z-y
+    \end{aligned}\]
+    or
+    \[
+    \partial_x f-\partial_y g=\underline{\large z}-y
+    \]
+    which we need to solve for \(f\) and \(g\).
+    However, this is a <span class="redbig">contradiction</span> because
+    \(f\) and \(g\) are functions of only \(x\) and \(y\). So their derivatives
+    cannot depend on \(z\). Consequently, there is no vector potential.
+  </li>
+</ol>
+<p class="sum" data-title="No Vector Potential">
+  <br>
+  If we try to find a vector potential and derive a contradiction, then no
+  vector potential exists.
+</p>
+<a id="divcurl_nosvecpot"></a>
+
+        <div class="rule"></div>
+
+<h3>Using the Divergence of a Curl Identity</h3>
+
+<p>
+  There is usually an easier way to show a vector potential does not exist
+  using the
+  <a href="OpDivCurl.html#DivCurl" title="Return using the Back button.">
+  <span class="hl">Divergence of a Curl Identity</span></a>:
+  \[
+  \vec\nabla\cdot\vec\nabla\times\vec A=0
+  \]
+  If a vector field \(\vec F\) has a vector potential, so that
+  \(\vec F=\vec\nabla\times\vec A\), then
+  \[
+  \vec\nabla\cdot\vec F=\vec\nabla\cdot\vec\nabla\times\vec A=0
+  \]
+  Turning this around, we have
+</p>
+<p class="prop" data-title="Non-Existence of a Vector Potential">
+  If \(\vec\nabla\cdot F\ne 0\) then \(\vec F\) does not have a vector potential.
+</p>
+<p class="example" data-number="2">
+  Find a vector potential for
+  \(\vec F=\left\langle xy,yz,zx\right\rangle\)
+  or show it does not exist.
+</p>
+<p class="sol">
+  We compute the divergence of \(\vec F\):
+  \[
+  \vec\nabla\cdot F
+  =\partial_x(xy)+\partial_y(yz)+\partial_z(zx)
+  =y+z+x\ne0
+  \]
+  Since this is not \(0\), there is no vector potential.
+  (Finding the divergence is a really easy thing to do before going through
+  the effort of finding a vector potential.)
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  <span class="redbig">Caution:</span> The proposition does
+  <span class="redbig">NOT</span> say that if \(\vec\nabla\cdot\vec F=0\)
+  then \(\vec F\) has a vector potential. However, \(99\%\) of the time, there
+  is a vector potential. In fact, a therorem from higher math says, if
+  \(\vec\nabla\cdot\vec F=0\) in a
+  <button class="toggle" data-toggle="Drop1">contractable</button>
+  region then \(\vec F\) has a vector potential in that region. So for a vector
+  potential not to exist, even though \(\vec\nabla\cdot\vec F=0\), we
+  would have to be looking for a potential on a region with holes, like Swiss
+  cheese. This does happen, but certainly not in this class.
+</p>
+<div class="toBeToggled" data-toggle="Drop1">
+  <p>
+    A region is <span class="defword">contractable</span> if the region can
+    be shrunk to a point while still staying in the region. Thus a ball is
+    contractable while a donut or Swiss cheese is not.
+  </p>
+</div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find a vector potential for the vector field
+    \(\vec F=\left\langle x^2,y^2,z^2\right\rangle\)
+    or show it does not exist.
+    <br> Be sure to check your work by computing \(\vec\nabla\times\vec A\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX3"></button>
+    <button class="toggle has-sol" data-toggle="SolX3"></button>
+    <button class="toggle has-check" data-toggle="CkX3"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    There is no vector potential.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+  <p>
+    We first check if the vector potential exists by computing its divergence:
+    \[
+      \vec\nabla\cdot\vec F=\partial_x(x^2)+\partial_y(y^2)+\partial_z(z^2)
+      =2x+2y+2z\ne0
+    \]
+    Since \(\vec\nabla\cdot\vec F\ne0\), there is no vector potential \(\vec A\).
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX3">
+  <p>
+    There is nothing to check, since there is no vector potential.
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="4">
+    Find a vector potential for the vector field
+    \(\vec F=\left\langle -x,-2x,z-x\right\rangle\)
+    or show it does not exist.
+    <br> Be sure to check your work by computing \(\vec\nabla\times\vec A\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX4"></button>
+    <button class="toggle has-sol" data-toggle="SolX4"></button>
+    <button class="toggle has-check" data-toggle="CkX4"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX4">
+  <p>
+    \(\vec A=\left\langle -2xz+xy,xz,0\right\rangle\)
+    <br>
+    There are many other correct solutions.
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX4">
+  <p>
+    We first check if the vector potential exists by computing its divergence:
+    \[
+      \vec\nabla\cdot\vec F=\partial_x(-x)+\partial_y(-2x)+\partial_z(z-x)=-1+0+1=0
+    \]
+    Since \(\vec\nabla\cdot\vec F=0\) the vector field most likely has a
+    vector potential \(\vec A\). We need to solve the equation
+    \(\vec\nabla\times\vec A=\vec F\). Assuming \(A_3=0\), the equations reduce to
+    \[\begin{aligned}
+    -\partial_z A_2&=-x\quad&&\text{(1)} \\
+    \partial_z A_1&=-2x\quad&&\text{(2)} \\
+    \partial_x A_2-\partial_y A_1&=z-x\quad&&\text{(3)}
+    \end{aligned}\]
+    <!-- \[\begin{aligned}
+    -\partial_z A_2&=-x\tag{1} \\
+    \partial_z A_1&=-2x\tag{2} \\
+    \partial_x A_2-\partial_y A_1&=z-x\tag{3}
+    \end{aligned}\] -->
+    Equation (1) says \(A_2=xz+f(x,y)\).
+    <br>
+    Equation (2) says \(A_1=-2xz+g(x,y)\).
+    <br>
+    Equation (3) reduces to
+    \[
+    (z+\partial_x f)-(\partial_y g)=z-x
+    \]
+    or
+    \[
+    \partial_x f-\partial_y g=-x
+    \]
+    We take \(f=0\) and \(g=xy\).  So a vector potential is
+    \[
+    \vec A=\left\langle A_1,A_2,A_3\right\rangle
+    =\left\langle -2xz+xy,xz,0\right\rangle
+    \]
+    There are many other correct solutions.
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX4">
+  <p>
+    We check our answer by computing the curl of \(\vec A\):
+    \[\begin{aligned}
+    \text{curl}\vec A&=\vec\nabla\times\vec A
+    =\begin{vmatrix}
+    \hat\imath & \hat\jmath & \hat k \\
+    \partial_x & \partial_y & \partial_z \\
+    -2xz+xy    & xz         & \quad0\quad
+    \end{vmatrix} \\
+    &=\hat\imath(0-x)-\hat\jmath(0--2x)+\hat k(z-x)\\
+    &=\left\langle -x,-2x,z-x\right\rangle
+    \end{aligned}\]
+    which is our original vector field \(\vec F\).
+  </p>
+</div>
+
+      	<div class="rule"></div>
+
+<p>
+  There is some terminology to describe this distinction between
+  \(\vec\nabla\cdot\vec F=0\) and \(\vec F=\vec\nabla\times\vec A\).
+</p>
+<div class="greybox">
+  <p class="def">
+    A vector field \(\vec F\) is called <span class="defword">incompressible</span>
+    or <span class="defword">divergence-free</span> if \(\vec\nabla\cdot\vec F=0\).
+  </p>
+  <p>
+    A vector field \(\vec F\) is called <span class="defword">solenoidal</span>
+    or a <span class="defword">curl field</span> if \(\vec F=\vec\nabla\times\vec A\)
+    for some vector potential, \(\vec A\).
+  </p>
+</div>
+<p>
+  Consequently, a <span class="hl">curl field</span> is
+  <span class="hl">divergence-free</span>.
+  Equivalently, a <span class="hl">solenoidal field</span> is
+  <span class="hl">incompressible</span>.
+  But the converse is not necessarily true, except that most often,
+  a divergence-free field is a curl.
+</p>
+<p>
+  In fluid mechanics, a fluid is called incompressible if its fluid velocity
+  is divergence-free. In electromagnetism, the magnetic field is always
+  divergence-free and usually found by writing it as the curl of a vector potential.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

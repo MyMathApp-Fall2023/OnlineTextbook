@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Normal Lines to Level Sets | 14. Directional Derivatives and Gradients</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TanPlane.html" title="Previous">&lArr;</a></li>
+      <li><a href="x.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>14. Directional Derivatives and Gradients</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>e. Tangent and Normal, Lines and Planes to Level Sets</h2>
+
+
+      
+      <h2>3. Normal Lines to Level Sets</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  The gradient is normal to each level set. So not only can it be used to
+  find the tangent line to a level curve in \(\mathbb R^2\) and the tangent
+  plane to a level surface in \(\mathbb R^3\), it can also be used to find a
+  normal line to a level set in \(\mathbb R^2\) or \(\mathbb R^3\).
+</p>
+<p>
+  The parametric equation of a line is \(X=P+t\vec v\) where \(P\) is a
+  particular point, \(\vec v\) is a direction (or tangent) vector and
+  \(X\) is a general point, either \((x,y)\) or \((x,y,z)\). For the
+  normal line to a level set at a point \(P\), the direction vector is the
+  normal to the level set, which in turn is the gradient vector at \(P\):
+  \[\vec v=\vec N=\left.\vec\nabla F\right|_P\]
+</p>
+
+				<div class="rule"></div>
+
+<p class="example" data-number="1">
+  Find the line perpendicular to the ellipse
+  \(\dfrac{x^2}{9}+\dfrac{y^2}{4}=2\)
+  at the point \((3,2)\).
+</p>
+<p class="sol">
+  The ellipse is a level set of the function
+  \(F(x,y)=\dfrac{x^2}{9}+\dfrac{y^2}{4}\)
+  with value \(2\). Its gradient is:
+  \[
+  \vec\nabla F=\left(\dfrac{2x}{9},\dfrac{2y}{4}\right)
+  \]
+  So the direction vector of the normal line is the normal vector at \((3,2)\):
+  \[
+  \vec N=\left.\vec\nabla F\right|_{(3,2)}
+  =\left(\dfrac{6}{9},\dfrac{4}{4}\right)
+  =\left(\dfrac{2}{3},1\right)
+  \]
+  Thus the equation of the line is
+  \[
+  X=P+t\vec N
+  \qquad \text{or} \qquad
+  (x,y)=(3,2)+t\left(\dfrac{2}{3},1\right)
+  \]
+  or
+  \[
+  x=3+\dfrac{2}{3}t
+  \qquad \text{and} \qquad
+  y=2+t
+  \]
+</p>
+
+				<div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Find the line perpendicular to the hyperboloid \(x^2+y^2-z^2=4\)
+    at the point \((1,2,1)\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \((x,y,z)=(1+2t,2+4t,1-2t)\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Let \(f=x^2+y^2-z^2\) and \(P=(1,2,1)\). Then the gradient of \(f\) is
+    \[
+    \vec\nabla f=\langle 2x,2y,-2z\rangle
+    \]
+    and the normal to the hyperboloid at \(P\) is
+    \[
+    \vec N=\left.\vec\nabla f\right|_P=\langle 2,4,-2\rangle
+    \]
+    So the line through \(P\) in the direction \(\vec N\) is
+    \[\begin{aligned}
+    (x,y,z)&=X=P+t\vec N=(1,2,1)+t\langle 2,4,-2\rangle \\
+    &=(1+2t,2+4t,1-2t)
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

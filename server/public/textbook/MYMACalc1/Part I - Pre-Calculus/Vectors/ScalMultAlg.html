@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Algebraic Definition | 5. Vectors</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="BalForces.html" title="Previous">&lArr;</a></li>
+      <li><a href="ScalMultGeom.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic3">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Vectors</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>c. Scalar Multiplication</h2>
+
+
+      
+      <h2>1. Algebraic Definition</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="def" data-title="Algebraic Definition of Scalar Multiplication">
+  The <span class="defword">scalar product</span> of a scalar (real number),
+  \(c\), and a vector, \(\vec v=\left\langle v_1,v_2\right\rangle\), is
+  the vector whose components are the components of the original vector each
+  multiplied by the scalar:
+	\[
+  c\,\vec v=\left\langle c\,v_1,c\,v_2\right\rangle
+  \]
+</p>
+<p class="example" data-number="1">
+  If a particle moves \(2\) units east and \(3\) units north, then the
+  displacement vector to describe this motion is
+  \(\vec u=\left\langle2,3\right\rangle\). If this motion is repeated
+  \(4\) times, then the total motion is
+  \(4\vec u=4\left\langle2,3\right\rangle=\left\langle8,12\right\rangle\).
+  That is \(8\) units east and \(12\) units north.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="2">
+    Compute \(-\dfrac{1}{2}\left\langle4,-5\right\rangle\).
+  </p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(
+  	-\dfrac{1}{2}\left\langle4,-5\right\rangle
+    =\left\langle-2,\dfrac{5}{2}\right\rangle
+  	\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    \[
+  	-\dfrac{1}{2}\left\langle4,-5\right\rangle
+    =\left\langle-\dfrac{1}{2}\cdot4,-\dfrac{1}{2}\cdot(-5)\right\rangle
+  	=\left\langle-2,\dfrac{5}{2}\right\rangle
+  	\]
+  </p>
+</div>
+
+        <div class="rule" id="magdir"></div>
+
+<p class="remark">
+  Recall that we previously defined the direction of a vector
+  \(\vec v=\left\langle v_1,v_2\right\rangle\) to be the unit vector
+	\[
+  \hat v
+  =\left\langle\dfrac{v_1}{|\vec v|},\dfrac{v_2}{|\vec v|}\right\rangle
+	\]
+  and used the shorthand
+	\[
+  \hat v=\dfrac{\vec v}{|\vec v|}
+  \]
+  for this vector. We now recognize that this notation is justified because it
+  is the scalar multiplication of \(\vec v\) by the scalar
+  \(\dfrac{1}{|\vec v|}\). Further, this equation can be solved for \(\vec v\)
+  to give:
+</p>
+<p class="prop">
+  Every vector is the scalar product of its magnitude and its direction:
+	\[
+  \vec v=|\vec v|\,\hat v
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="3">
+    Find the vector \(\vec a\) of length \(4\) in the same direction as
+		\(\vec b=\left\langle3,-4\right\rangle\).
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX2"></button>
+    <button class="toggle has-sol" data-toggle="SolX2"></button>
+    <button class="toggle has-check" data-toggle="CkX2"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\vec a
+    =\left\langle\dfrac{12}{5},\dfrac{-16}{5}\right\rangle\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+  	The magnitude of \(\vec b=\left\langle3,-4\right\rangle\) is:
+    \[
+    |\vec b|=\sqrt{9+16}=5
+    \]
+  	So the direction of \(\vec b\) (and \(\vec a\)) is the unit vector:
+    \[
+    \hat a=\hat b=\dfrac{\vec b}{|\vec b|}
+    =\left\langle\dfrac{3}{5},\dfrac{-4}{5}\right\rangle
+    \]
+    We want \(\vec a\) to have length of \(|\vec a|=4\). So
+    \(\vec a\) is the product of its magnitude and its direction:
+    \[
+    \vec a=|\vec a|\hat a
+    =4\left\langle\dfrac{3}{5},\dfrac{-4}{5}\right\rangle
+    =\left\langle\dfrac{12}{5},\dfrac{-16}{5}\right\rangle
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    We check the length of
+    \(\vec a=\left\langle\dfrac{12}{5},\dfrac{-16}{5}\right\rangle\):
+    \[
+    |\vec a|=\sqrt{\left(\dfrac{12}{5}\right)^2+\left(\dfrac{-16}{5}\right)^2}
+    =\sqrt{\dfrac{144+256}{25}}=4
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

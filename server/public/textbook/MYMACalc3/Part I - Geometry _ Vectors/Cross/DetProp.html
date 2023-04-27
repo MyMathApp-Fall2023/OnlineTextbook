@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Properties of Determinants | 5. Cross Product</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DetExpn.html" title="Previous">&lArr;</a></li>
+      <li><a href="CrossAlg.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>5. Cross Product</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Determinants</h2>
+
+
+      
+      <h2>3. Properties of Determinants</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We here list the properties of determinants. These properties are true
+  for any size determinant, but we will prove them only for \(3\times3\)
+  determinants. An asterisk * appears on the most important
+  properties. The others are not needed for this course. Some of these
+  properties (especially those called
+  <span class="hl">row operations</span>)
+  can be used to greatly simplify the computation of a determinant.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  First a definition:
+</p>
+<p class="def">
+	The <span class="defword">transpose</span> of a matrix is the matrix with the rows and columns
+  interchanged. Alternatively, it is the matrix flipped on the
+	principal diagonal. For a \(3\times3\) matrix:
+	\[
+	\begin{pmatrix}
+	a & d & g \\
+	b & e & h \\
+	c & f & i
+	\end{pmatrix}^{\large\intercal}
+  =\begin{pmatrix}
+	a & b & c \\
+	d & e & f \\
+	g & h & i
+	\end{pmatrix}
+	\]
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Transpose*">
+  </p>
+  <ol>
+  	<li>
+      The determinant of the transpose is the same as the determinant
+      of the matrix:
+    	\[
+      \det M^\intercal=\det M
+      \]
+      &emsp; <button class="toggle" data-toggle="Proof1">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+  <p>
+    \[
+    \begin{vmatrix}
+    a & d & g \\
+    b & e & h \\
+    c & f & i
+    \end{vmatrix}
+    =aei+dhc+gbf-gec-ahf-dbi
+    \]
+    \[
+    \begin{vmatrix}
+    a & b & c \\
+    d & e & f \\
+    g & h & i
+    \end{vmatrix}
+    =aei+bfg+cdh-ceg-afh-bdi
+    \]
+  </p>
+  <p class="center">
+    These are equal.
+  </p>
+</div>
+<p>
+	This theorem implies that any fact we state about the rows of a determinant
+  also holds for the columns of a determinant. So in the remaining theorems,
+  we will only mention the rows, but the theorems also hold with rows
+  replaced by columns.
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  And a couple more definitions:
+</p>
+<p class="def">
+	A <span class="defword">matrix is diagonal</span>, if the only non-zero
+  entries are on the principal diagonal. A matrix is
+  <span class="defword">upper (resp. lower) triangular</span>, if all entries
+  below (resp. above) the principal diagonal are zero.
+</p>
+<p class="example" data-number="1">
+  In the following three matrices, the first is upper triangular, the second
+  is lower triangular and the third is diagonal (as well as both upper and
+  lower triangular).
+	\[
+	\begin{pmatrix}
+	1 & 2 & 3 \\
+	0 & 4 & 5 \\
+	0 & 0 & 6
+	\end{pmatrix}
+	\qquad \qquad
+	\begin{pmatrix}
+	1 & 0 & 0 \\
+	2 & 4 & 0 \\
+	3 & 5 & 6
+	\end{pmatrix}
+	\qquad \qquad
+	\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 4 & 0 \\
+	0 & 0 & 6
+	\end{pmatrix}
+	\]
+</p>
+<div class="greybox">
+  <p class="thm" data-title="Triangular and Diagonal*">
+  </p>
+  <ol start="2">
+  	<li>
+      The determinant of any triangular matrix (upper, lower or diagonal) is
+      the product of the principle diagonal entries:
+      <br>
+      &emsp; <button class="toggle" data-toggle="Proof2">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof2">
+  <p>
+    For a lower triangular matrix, succesively expand on the
+    \(1^\text{st}\) row, then \(2^\text{nd}\) row, then
+    \(3^\text{rd}\) row, etc. You will get the product of the diagonal
+    entries and the off-diagonal entries will	never contribute.
+  	An upper triangular matrix is the transpose of a lower triangular matrix.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="thm" data-title=
+  "Antisymmetry (<strong>Row Operation I</strong>)*">
+  </p>
+  <ol start="3">
+  	<li>
+    	If we interchange two rows of a matrix, its determinant changes by a
+      minus sign.
+  	  <br>
+    	&emsp; If we let \(E_{ij}\) denote the operation of interchanging the
+      \(i^\text{th}\) row with the \(j^\text{th}\) row, then:
+    	\[
+      \det E_{ij}(M)=-\det M
+      \]
+      &emsp; <button class="toggle" data-toggle="Proof3">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof3">
+  <p>
+    \(\det M=
+    \begin{vmatrix}
+    a & d & g \\
+    b & e & h \\
+    c & f & i
+    \end{vmatrix}
+    =aei+dhc+gbf-gec-ahf-dbi\)
+  </p>
+  <p>
+    \(\det E_{12}(M)=
+    \begin{vmatrix}
+    b & e & h \\
+    a & d & g \\
+    c & f & i
+    \end{vmatrix}
+    =bdi+egc+haf-hdc-bgf-eai=-\det M\)
+  </p>
+  <p>
+    \(\det E_{13}(M)=
+    \begin{vmatrix}
+    c & f & i \\
+    b & e & h \\
+    a & d & g
+    \end{vmatrix}
+    =ceg+fha+ibd-iea-chd-fbg=-\det M\)
+  </p>
+  <p>
+    \(\det E_{23}(M)=
+    \begin{vmatrix}
+    a & d & g \\
+    c & f & i \\
+    b & e & h
+    \end{vmatrix}
+    =afh+dib+gce-gfb-aie-dch=-\det M\)
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="thm" data-title="Two Equal Rows*">
+  </p>
+  <ol start="4">
+  	<li>
+    	If two rows of a matrix \(M\) are identical, then:
+      \[
+      \det M=0
+      \]
+    	&emsp; <button class="toggle" data-toggle="Proof4">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof4">
+  <p>
+    Suppose rows \(i\) and \(j\) are identical, then interchanging these rows
+    does nothing, \(E_{ij}(M)=M\). So on the one hand \(\det E_{ij}(M)=\det M\).
+  </p>
+  <p>
+    But by Theorem 3, \(\det E_{ij}(M)=-\det M\). So \(\det M=0\).
+  </p>
+</div>
+<p class="example" data-number="2">
+	\(\begin{vmatrix}
+	3 & 5 & -1 \\
+	-2 & 1 & 4 \\
+	-2 & 1 & 4
+	\end{vmatrix}
+	=0\)
+	&emsp;To check, expand on the first row.
+</p>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="thm" data-title=
+  "Multiple of a Row (<strong>Row Operation II</strong>)*">
+  </p>
+  <ol start="5">
+  	<li>
+    	If we multiply a row of a matrix by a constant \(r\), the determinant
+      changes by a factor of \(r\).
+  	  <br/>
+    	&emsp; If we let \(E_i[r]\) denote the operation of multiplying
+      the \(i^\text{th}\) row by \(r\), then
+    	\[
+      \det E_i[r](M)=r\det M
+      \]
+    	&emsp; <button class="toggle" data-toggle="Proof5">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof5">
+  <p>
+    \(\det M=
+    \begin{vmatrix}
+    a & d & g \\
+    b & e & h \\
+    c & f & i
+    \end{vmatrix}
+    =aei+dhc+gbf-gec-ahf-dbi\)
+  </p>
+  <p>
+    We only check it for row \(2\):
+    \[\begin{aligned}
+    \det E_2[r](M)
+    &=
+    \begin{vmatrix}
+    a & d & g \\
+    rb & re & rh \\
+    c & f & i
+    \end{vmatrix} \\
+    &=arei+drhc+grbf-grec-arhf-drbi \\
+    &=r(aei+dhc+gbf-gec-ahf-dbi) \\
+    &=r\det M
+    \end{aligned}\]
+  </p>
+</div>
+<p>
+  This theorem is used to reduce the size of numbers in a determinant
+  when there is a common factor in a row or column:
+</p>
+<div class="column">
+  <p class="example" data-number="3" data-col-width="60%">
+    \[\begin{aligned}
+      \begin{vmatrix}
+    	2 & 8 & 2 \\
+    	9 & 6 & 15 \\
+    	-2 & -2 & -3
+    	\end{vmatrix}
+    &=(2)(3)(-1)
+    	\begin{vmatrix}
+    	1 & 4 & 1 \\
+    	3 & 2 & 5 \\
+    	2 & 2 & 3
+    	\end{vmatrix} \\[5pt]
+    &=(2)(3)(-1)(2)
+    	\begin{vmatrix}
+    	1 & 2 & 1 \\
+    	3 & 1 & 5 \\
+    	2 & 1 & 3
+    	\end{vmatrix} \\[5pt]
+    &=-12\left(
+    	\begin{vmatrix}
+    	1 & 5 \\
+    	1 & 3
+    	\end{vmatrix}
+      -2\begin{vmatrix}
+    	3 & 5 \\
+    	2 & 3
+    	\end{vmatrix}
+      +\begin{vmatrix}
+    	3 & 1 \\
+    	2 & 1
+    	\end{vmatrix}
+      \right) \\[5pt]
+    &=-12[(-2)-2(-1)+(1)]
+    =-12(1) \\
+    &=-12
+    \end{aligned}\]
+  </p>
+  <p data-col-width="40%">
+    <br><br>
+    Factor \(2\) from the first row, \(3\) from the second row and \(-1\)
+    from the third row.
+	  <br><br><br>
+  	Factor \(2\) from the second column.
+	  <br><br><br>
+  	Expand on the first row.
+    <br><br><br>
+    Try computing this determinant without first factoring.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="thm" data-title="Additive">
+  </p>
+  <ol start="6">
+  	<li>
+    	If three matrices \(A\), \(B\) and \(C\) are identical except for one row,
+      and that row of \(C\) is the sum of the corresponding rows of \(A\) and
+      \(B\), then
+    	\[
+    	\det C=\det A+\det B
+    	\]
+    	&emsp; In more detail for the second row:
+    	\[
+    	\begin{vmatrix}
+    	a & d & g \\
+    	p+s & q+t & r+u \\
+    	c & f & i
+    	\end{vmatrix}
+    	=
+    	\begin{vmatrix}
+    	a & d & g \\
+    	p & q & r \\
+    	c & f & i
+    	\end{vmatrix}
+    	+
+    	\begin{vmatrix}
+    	a & d & g \\
+    	s & t & u \\
+    	c & f & i
+    	\end{vmatrix}
+    	\qquad
+    	\]
+    	&emsp; <button class="toggle" data-toggle="Proof6">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof6">
+  <p>
+    For the second row, expand on the second row:
+    \[
+    \begin{vmatrix}
+    a & d & g \\
+    p+s & q+t & r+u \\
+    c & f & i
+    \end{vmatrix}
+    =-(p+s)\begin{vmatrix}
+    e & h \\
+    f & i
+    \end{vmatrix}
+    +(q+t)\begin{vmatrix}
+    b & h \\
+    c & i
+    \end{vmatrix}
+    -(r+u)\begin{vmatrix}
+    b & e \\
+    c & f
+    \end{vmatrix}
+    \]
+    \[
+    =\left(
+    -p\begin{vmatrix}
+    e & h \\
+    f & i
+    \end{vmatrix}
+    +q\begin{vmatrix}
+    b & h \\
+    c & i
+    \end{vmatrix}
+    -r\begin{vmatrix}
+    b & e \\
+    c & f
+    \end{vmatrix}
+    \right)
+    +\left(
+    -s\begin{vmatrix}
+    e & h \\
+    f & i
+    \end{vmatrix}
+    +t\begin{vmatrix}
+    b & h \\
+    c & i
+    \end{vmatrix}
+    -u\begin{vmatrix}
+    b & e \\
+    c & f
+    \end{vmatrix}
+    \right)
+    \]
+    \[
+    =\begin{vmatrix}
+    a & d & g \\
+    p & q & r \\
+    c & f & i
+    \end{vmatrix}
+    +
+    \begin{vmatrix}
+    a & d & g \\
+    s & t & u \\
+    c & f & i
+    \end{vmatrix}
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<div class="greybox">
+  <p class="thm" data-title=
+  "Add a Multiple of One Row to Another Row (<strong>Row Operation III</strong>)*">
+  </p>
+  <ol start="7">
+  	<li>
+    	If we add a multiple of one row of a matrix to another row, the
+      determinant does not change.
+      <br>
+    	&emsp; If we let \(E_{ij}[r]\) denote the operation of multipling
+      the \(i^\text{th}\) row by \(r\) and adding that to	the
+      \(j^\text{th}\) row, then
+      \[
+      \det E_{ij}[r](M)=\det M
+      \]
+    	&emsp; <button class="toggle" data-toggle="Proof7">Proof</button>
+  	</li>
+  </ol>
+</div>
+<div class="toBeToggled drop-proof" data-toggle="Proof7">
+  <p>
+    We apply Theorem 6 with \(A=M\), \(B=\) the matrix \(M\) with the
+    \(j^\text{th}\) row replaced by \(r\) times the \(i^\text{th}\) row,
+    and \(C=E_{ij}[r](M)\). Then
+    \[\begin{aligned}
+    \det C &=\det A+\det B \\
+    \det E_{ij}[ r](M)&=\det M+\det B
+    \end{aligned}\]
+    To compute \(\det B\) we use Theorem 5 to factor an \(r\) out of the
+    \(j^\text{th}\) row leaving a matrix \(N\) which has the
+    \(j^\text{th}\) row equal to the \(i^\text{th}\) row. By Theorem 4,
+    \(\det N=0\). Putting all this together, we have:
+    \[
+    \det E_{ij}[ r](M)=\det M+\det B=\det M+r\det N=\det M
+    \]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  We emphasize again that everything we have said about rows also applies to
+  columns and also applies to matrices of any size.
+</p>
+
+<h2>Row Operations</h2>
+
+<p>
+  Properties 3, 5 and 7 are often called
+  <span class="defword">Row Operations</span> and are frequently used to
+  simplify the computation of a determinant. Here is an example and some
+  exercises:
+</p>
+<p class="example" data-number="4">
+	Compute
+  \(\begin{vmatrix}
+	4 & 1 & 2 & 3 \\
+	5 & 1 & 5 & 6 \\
+	6 & 1 & 2 & 7 \\
+	5 & 1 & 4 & 4
+	\end{vmatrix}\).
+</p>
+<p class="sol">
+  First use Row Operation III (Theorem 7) to subtract the \(1^\text{st}\) row
+  from the other three rows. Then expand on the \(2^\text{nd}\) column:
+  \[
+  \begin{vmatrix}
+  4 & 1 & 2 & 3 \\
+  5 & 1 & 5 & 6 \\
+  6 & 1 & 2 & 7 \\
+  5 & 1 & 4 & 4
+  \end{vmatrix}
+  =\begin{vmatrix}
+  4 & 1 & 2 & 3 \\
+  1 & 0 & 3 & 3 \\
+  2 & 0 & 0 & 4 \\
+  1 & 0 & 2 & 1
+  \end{vmatrix}
+  =(-1)\begin{vmatrix}
+  1 & 3 & 3 \\
+  2 & 0 & 4 \\
+  1 & 2 & 1
+  \end{vmatrix}
+  \]
+  Now use Row Operation III  to subtract \(2\) times the \(1^\text{st}\)
+  column from the \(3^\text{rd}\) column and expand on the \(2^\text{nd}\) row:
+  \[\begin{aligned}
+  \begin{vmatrix}
+  4 & 1 & 2 & 3 \\
+  5 & 1 & 5 & 6 \\
+  6 & 1 & 2 & 7 \\
+  5 & 1 & 4 & 4
+  \end{vmatrix}
+  &=(-1)\begin{vmatrix}
+  1 & 3 & 1 \\
+  2 & 0 & 0 \\
+  1 & 2 & -1
+  \end{vmatrix}
+  =(-1)(-2)\begin{vmatrix}
+  3 & 1 \\
+  2 & -1
+  \end{vmatrix} \\
+  &=(-1)(-2)(-3-2)=-10
+  \end{aligned}\]
+  Notice that this is much quicker than expanding on a row and computing
+  four \(3\times3\) determinants.
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <p class="exercise" data-number="5">
+    In an exercise on the
+    <a href="DetExpn.html#ex-det0" title="Return usins the Back button.">
+    previous page</a>, we computed
+  	\(\begin{vmatrix}
+  	-3 & 1 & 1 & -6 \\
+  	-1 & 3 & 2 & 2 \\
+  	3 & -2 & 1 & 3 \\
+  	1 & -2 & -4 & 1
+  	\end{vmatrix}\).
+    Recompute it by first adding the first row to the third row and the
+    second row to the fourth row.
+	</p>
+  <p>
+    <button class="toggle has-ans" data-toggle="AnsX5"></button>
+    <button class="toggle has-sol" data-toggle="SolX5"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX5">
+  <p>
+    The determinant is \(0\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX5">
+  <p>
+    We first add the first row to the third row and the second row to the
+    fourth row:
+    \[
+    \begin{vmatrix}
+    -3 & 1 & 1 & -6 \\
+    -1 & 3 & 2 & 2 \\
+    3 & -2 & 1 & 3 \\
+    1 & -2 & -4 & 1
+    \end{vmatrix}
+    =\begin{vmatrix}
+  	-3 & 1 & 1 & -6 \\
+  	-1 & 3 & 2 & 2 \\
+  	0 & -1 & 2 & -3 \\
+  	0 & 1 & -2 & 3
+  	\end{vmatrix}
+    \]
+    We now add the third row to the fourth row:
+    \[
+    \begin{vmatrix}
+    -3 & 1 & 1 & -6 \\
+    -1 & 3 & 2 & 2 \\
+    3 & -2 & 1 & 3 \\
+    1 & -2 & -4 & 1
+    \end{vmatrix}
+    =\begin{vmatrix}
+  	-3 & 1 & 1 & -6 \\
+  	-1 & 3 & 2 & 2 \\
+  	0 & -1 & 2 & -3 \\
+  	0 & 0 & 0 & 0
+  	\end{vmatrix}
+    =0
+    \]
+    The last determinant is \(0\) because it has a row of all \(0\)'s.
+  </p>
+</div>
+<div class="dotfillex">
+  <p class="exercise" data-number="6">
+    Compute
+    \(\begin{vmatrix}
+    1 & 3 & 5 & 1 \\
+    0 & 4 & 2 & 8 \\
+    0 & 0 & 3 & 1 \\
+    0 & 0 & 0 & 2
+    \end{vmatrix}\)
+	</p>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX6"></button>
+    <button class="toggle has-ans" data-toggle="AnsX6"></button>
+    <button class="toggle has-sol" data-toggle="SolX6"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX6">
+  <p>
+    Use one of the theorems above.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX6">
+  <p>
+    The determinant is \(24\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX6">
+  <p>
+    By Theorem 2, the determinant of a triangular matrix is the product
+    of its diagonal entries:
+    \[
+    \begin{vmatrix}
+    1 & 3 & 5 & 1 \\
+    0 & 4 & 2 & 8 \\
+    0 & 0 & 3 & 1 \\
+    0 & 0 & 0 & 2
+    \end{vmatrix}
+    =1\cdot4\cdot3\cdot2=24
+    \]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

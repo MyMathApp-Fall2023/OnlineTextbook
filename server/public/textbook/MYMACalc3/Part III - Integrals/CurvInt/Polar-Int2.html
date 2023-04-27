@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Integral over a Non-Rectangular Polar Region | 21. Multiple Integrals in Curvilinear Coordinates</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Polar-Int.html" title="Previous">&lArr;</a></li>
+      <li><a href="Polar-Appl.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic1">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Multiple Integrals in Curvilinear Coordinates</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>a. Integrating in Polar Coordinates</h2>
+
+
+      
+      <h2>3. Integral over a Non-Rectangular Polar Region</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  On the <a href="Polar-Int.html">previous page</a>, we learned how to
+  integrate over a polar rectangle. Polar coordinates can also be used to
+  compute integrals over some regions which are not polar rectangles,
+  namely those of <span class="hl">Type \(r\)</span> or
+  <span class="hl">Type \(\theta\)</span>.
+</p>
+<div class="greybox">
+  <p class="def" data-title="Regions of Type \(r\) and Type \(\theta\)">
+    A region is of <span class="defword">Type \(r\)</span> if it
+    consists of all points satisfying \(a \le r \le b\) and
+    \(g(r) \le \theta \le h(r)\).
+    A <span class="defword">Type \(r\) integral</span> is an integral
+    over a region of Type \(r\).
+  </p>
+  <p>
+    &nbsp;A region is of <span class="defword">Type \(\theta\)</span> if it
+    consists of all points satisfying \(\alpha \le \theta \le \beta\) and
+    \(g(\theta) \le r \le h(\theta)\).
+    A <span class="defword">Type \(\theta\) integral</span> is an integral
+    over a region of Type \(\theta\).
+  </p>
+</div>
+<p>
+  Samples of these regions are shown below:
+</p>
+<div class="center">
+  <figure>
+    <img src="graphics/2DPolarInt2_typer.jpg" alt="2DPolarInt2_typer">
+    <figcaption>Type \(r\)</figcaption>
+  </figure>
+  <figure>
+    <img src="graphics/2DPolarInt2_typetheta.jpg" alt="2DPolarInt2_typetheta">
+    <figcaption>Type \(\theta\)</figcaption>
+  </figure>
+</div>
+<p class="remark">
+  We most often work with regions of type \(\theta\) because the boundaries
+  \(r=g(\theta)\) and \(r=h(\theta)\) are standard polar curves. In
+  <a href="../../../MYMACalc2/Part II - Applications of Integration/Polar/Area.html#polararea"
+  title="Return using the Back button.">Calculus 2</a>,
+  you may have learned that the area of a region of Type \(\theta\) is
+  \(\displaystyle
+  \dfrac{1}{2}\int_\alpha^\beta (h(\theta)^2-g(\theta)^2)\,d\theta\).
+  If not, we will derive it on the <a href="Polar-Appl.html">next page</a>
+  from the 2D formula.
+</p>
+<p class="remark">
+  To compute double integrals over these types of regions we use the following
+  theorems which say that the double integrals can be written as iterated
+  integrals, with the area differential
+  \[
+  dA=r\,dr\,d\theta
+  \]
+</p>
+<p class="center">
+  <span class="greenbig">Memorize this!</span>
+</p>
+
+        <div class="rule" id="Typertheta"></div>
+
+<p class="thm" data-title="Integral over a Type \(r\) Region">
+  If \(R\) is a Type \(r\) region with \(a \le r \le b\) and
+  \(g(r) \le \theta \le h(r)\), then
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\int_a^b\int_{g(r)}^{h(r)} f(r,\theta)\,r\,d\theta\,dr
+  \]
+  This is just the iterated integral computed by holding \(r\) fixed
+  while doing the \(\theta\) integral and then integrating the resulting
+  function over \(r\).
+  <br>
+  <a href="Polar-Int2Derive.html"><button>Derivation</button></a>
+</p>
+<p class="thm" data-title="Integral over a Type \(\theta\) Region">
+  If \(R\) is a Type \(\theta\) region with \(\alpha \le \theta \le \beta\) and
+  \(g(\theta) \le r \le h(\theta)\), then
+  \[
+  \iint\limits_R f(r,\theta)\,dA
+  =\int_\alpha^\beta\int_{g(\theta)}^{h(\theta)} f(r,\theta)\,r\,dr\,d\theta
+  \]
+  This is just the iterated integral computed by holding \(\theta\) fixed
+  while doing the \(r\) integral and then integrating the resulting
+  function over \(\theta\).
+  <br>
+  <a href="Polar-Int2Derive.html#Typetheta"><button>Derivation</button></a>
+</p>
+<p class="remark">
+  Notice that, in both cases, <em>the inner integral has limits that
+  depend on the variable of the outer integral, but not vice versa.</em> So you
+  cannot, in general, reverse the order of integration. However, it is
+  frequently useful to convert from rectangular coordinates to polar
+  coordinates as done on
+  <a href="Polar-Convert.html" title="Return using the Back button.">
+  another page</a>.
+</p>
+
+        <div class="rule" id="volume"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the volume under the surface \(z=y\) above the region in the
+    \(xy\)-plane inside the cardioid \(r=2-2\cos\theta\) with \(y \ge 0\).
+  </p>
+  <div class="center">
+    <img src="graphics/2Dpolarint2-ex.jpg" alt="2Dpolarint2-ex">
+  </div>
+</div>
+<p class="sol">
+  This is a Type \(\theta\) region since \(0 \le \theta \le \pi\) and
+  \(0 \le r \le 2-2\cos\theta\). (Look at a radial line and see where it
+  crosses the curve.) In the integral for the volume, we express \(x\),
+  \(y\) and \(dA\) in polar coordinates:
+  \[
+  x=r\cos\theta \qquad y=r\sin\theta \qquad \text{and} \qquad dA=r\,dr\,d\theta
+  \]
+  So the volume is:
+  \[\begin{aligned}
+  V&=\iint\limits_R y\,dA
+  =\int_0^\pi\int_0^{2-2\cos\theta} (r\sin\theta)\,r\,dr\,d\theta \\
+  &=\int_0^\pi\sin\theta
+  \left[\dfrac{r^3}{3}\right]_{r=0}^{2-2\cos\theta}\,d\theta
+  =\dfrac{1}{3}\int_0^\pi (2-2\cos\theta)^3\sin\theta\,d\theta
+  \end{aligned}\]
+  To do the integral, we make the substitution \(u=2-2\cos\theta\).
+  Then \(du=2\sin\theta\,d\theta\) and \(\dfrac{1}{2}du=\sin\theta\,d\theta\).
+  So:
+  \[
+  V=\dfrac{1}{6}\int_0^4 u^3\,du
+  =\dfrac{1}{6}\left[\dfrac{u^4}{4}\right]_0^4
+  =\dfrac{1}{6}4^3
+  =\dfrac{32}{3}
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div class="dotfillex">
+    <p class="exercise" data-number="2">
+      Find the area of the region bounded by the curves \(\theta=\dfrac{1}{2}
+      (\pi-r)\) and \(\theta=r\).
+    </p>
+    <p>
+      <button class="toggle has-hint" data-toggle="HintX2"></button>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/2Dpolarint2-exercise.jpg" alt="2Dpolarint2-exercise">
+  </div>
+</div>
+
+<br>
+
+<div class="toBeToggled drop-hint" data-toggle="HintX2">
+  <p>
+    Remember the area of a region, \(R\), is the double integral:
+    \[
+    \text{Area}=\iint\limits_R 1\,dA
+    \]
+    Is this integral Type \(r\) or Type \(\theta\)?
+    <br>
+    Where do the curves \(\theta=\dfrac{1}{2}(\pi-r)\) and
+    \(\theta=r\) intersect?
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    \(\displaystyle
+    \iint\limits_R 1\,dA
+    =\int_0^{\pi/3}\int_r^{(\pi-r)/2} r\,d\theta\,dr
+    =\dfrac{1}{108}\pi^3
+    \)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+  <p>
+    It would be very difficult to do this integral as a Type \(\theta\)
+    integral. It is much easier to do it as a Type \(r\) integral because
+    the \(\theta\) bounds are already given as functions of \(r\).
+    To find the upper bound for \(r\), we compute the point of intersection
+    by setting the curves equal:
+    \[
+    \dfrac{1}{2}\pi-\,\dfrac{1}{2}r=r
+    \quad \Rightarrow \quad
+    \dfrac{\pi}{2}=\dfrac{3}{2}r
+    \quad \Rightarrow \quad
+    r=\dfrac{\pi}{3}
+    \]
+    Thus, the \(r\)-bounds are: \(0 \le r \le \dfrac{\pi}{3}\). The graph
+    confirms that the point of intersection is just past \(r=1\).
+    Travelling counterclockwise (lower values to higher values) in the graph,
+    the \(\theta\)-bounds are \(r \le \theta \le \dfrac{1}{2}(\pi-r)\).
+    So we can compute the area as
+    \[\begin{aligned}
+    \text{Area}
+    &=\iint\limits_R 1\,dA
+    =\int_0^{\pi/3}\int_r^{(\pi-r)/2} r\,d\theta\,dr \\
+    &=\int_0^{\pi/3} \left(\dfrac{\pi-r}{2}-r\right)r\,dr
+    =\int_0^{\pi/3} \left(\dfrac{\pi}{2}r-\,\dfrac{3}{2}r^2\right)\,dr \\
+    &=\left[\dfrac{\pi r^2}{4}-\,\dfrac{r^3}{2}\right]_0^{\pi/3}
+    =\dfrac{\pi}{4}\left(\dfrac{\pi}{3}\right)^2
+    -\,\dfrac{1}{2}\left(\dfrac{\pi}{3}\right)^3 \\
+    &=\pi^3\left(\dfrac{1}{36}-\,\dfrac{1}{54}\right)
+    =\dfrac{1}{108}\pi^3
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  On the <a href="Polar-Appl.html">next page</a> we will use polar integrals
+  in applications.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

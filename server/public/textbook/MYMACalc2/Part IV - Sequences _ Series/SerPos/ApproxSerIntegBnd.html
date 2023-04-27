@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. Integral Bounds | 20. Convergence of Positive Series</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="RootTest.html" title="Previous">&lArr;</a></li>
+      <li><a href="ApproxSerIntegBnd2.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic7">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>20. Convergence of Positive Series</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>g. Approximating the Series</h2>
+
+<p>
+  Once we know that a positive series \(\displaystyle \sum_{n=n_o}^\infty a_n\)
+  converges, we can approximate the sum of the series \(S\) by one of its
+  partial sums \(\displaystyle S_k=\sum_{n=n_o}^k a_n\). This approximation
+  gets better as we include more terms. However, we need to have a bound on
+  the error in the approximation.
+</p>
+<p class="def">
+  If you approximate the convergent series
+  \(\displaystyle S=\sum_{n=n_o}^\infty a_n\) by its \(k^\text{th}\) partial
+  sum \(\displaystyle S_k=\sum_{n=n_o}^k a_n\), then the
+  <span class="defword">error in the approximation</span> is
+  \[\begin{aligned}
+  E_k&=S-S_k \\
+  &=\sum_{n=n_o}^\infty a_n-\sum_{n=n_o}^k a_n
+  =\sum_{n=k+1}^\infty a_n
+  \end{aligned}\]
+  which is the tail of the series beginning with the \((k+1)^\text{st}\) term.
+</p>
+<p id="Eg-IntBnd">
+  Since the error is itself a series, any convergence test which provides a
+  bound on the series can be used to bound the error in the approximation.
+  These are the integral test and the comparison test. We start with the
+  integral test.
+</p>
+
+
+      
+      <h2>1. Integral Bounds</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p class="example" data-number="1">
+  Show that the series \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^2}\)
+  converges. Sum the first \(10\) terms to approximate the sum of the series.
+  Find an upper bound on the error in the approximation.
+</p>
+<p class="sol">
+  We could say that \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^2}\)
+  converges because it is a \(p\)-series with \(p=2 \gt 1\). However, recall
+  that the \(p\)-series are tested by using the integral test. So, in fact,
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^2}\) converges because
+  \(\dfrac{1}{n^2}\) is continuous, positive, decreasing and
+  \[
+  \int_1^\infty \dfrac{1}{n^2}\,dn
+  =\left[\dfrac{-1}{n}\right]_1^\infty
+  =[0]-[-1]=1
+  \]
+  is finite.
+</p>
+<p>
+  We approximate the sum of the series by the \(10^\text{th}\) partial sum
+  \[\begin{aligned}
+  \sum_{n=1}^\infty \dfrac{1}{n^2}
+  &\approx S_{10}=\sum_{n=1}^{10} \dfrac{1}{n^2} \\
+  &=1+\dfrac{1}{4}+\dfrac{1}{9}+\dfrac{1}{16}+\dfrac{1}{25}+\dfrac{1}{36}
+  +\dfrac{1}{49}+\dfrac{1}{64}+\dfrac{1}{81}+\dfrac{1}{100} \\
+  &\approx 1.5498
+  \end{aligned}\]
+  The error in the approximation is
+  \[
+  E_{10}=\sum_{n=1}^\infty \dfrac{1}{n^2}-\sum_{n=1}^{10} \dfrac{1}{n^2}
+  =\sum_{n=11}^\infty \dfrac{1}{n^2}
+  \]
+  Since the terms \(\dfrac{1}{n^2}\) are positive, \(E_{10} \gt 0\). To put an
+  upper bound on the error, we recall the
+  <a href="IntegPf.html" title="Return using the Back button.">
+  Derivation of the Integral Test</a>.
+</p>
+<div class="column">
+  <p>
+    In the figure at the right, the area under the <span style="color:blue">blue</span>
+    curve is
+    \(\begin{aligned}
+    \displaystyle \int_{10}^\infty \dfrac{1}{n^2}\,dn
+    \end{aligned}\)
+    while the area under the <span style="color:red">red</span> rectangles is
+    \(\begin{aligned}
+    \displaystyle \sum_{n=11}^\infty \dfrac{1}{n^2}
+    \end{aligned}\).
+      Thus
+  </p>
+  <div class="center">
+    <img src="graphics/eg_integ_err_upper.jpg" alt="eg_integ_err_upper">
+  </div>
+</div>
+<p>
+  \[
+  E_{10}=\sum_{n=11}^\infty \dfrac{1}{n^2} \lt
+  \int_{10}^\infty \dfrac{1}{n^2}\,dn
+  =\left[\dfrac{-1}{n}\right]_{10}^\infty
+  =[0] -\left[-\dfrac{1}{10}\right]=\dfrac{1}{10}
+  \]
+  Therefore, the error in the approximation
+  \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^2}
+  \approx S_{10}=\sum_{n=1}^{10} \dfrac{1}{n^2}
+  \approx1.5498\) is \(E_{10} \lt 0.1\).
+</p>
+
+        <div class="rule"></div>
+
+<p>
+  To summarize (and generalize) this result, we have
+</p>
+<div class="greybox">
+  <p class="prop" data-title="The Integral Bound on the Error in an Approximation">
+    Assume \(a_n=f(n)\) where \(f(x)\) is a continuous, positive, decreasing
+    function on \([n_o,\infty)\) and \(\displaystyle \int_{n_o}^\infty f(x)\,dx\)
+    is convergent. In other words, \(\displaystyle S=\sum_{n=n_o}^\infty a_n\)
+    converges by the Integral Test.
+  </p>
+  <p>
+    If the series \(\displaystyle S=\sum_{n=n_o}^\infty a_n\) is
+    approximated by
+    \(\displaystyle S_k=\sum_{n=n_o}^k a_n\)
+    for some \(k \gt n_o\), then the error in the approximation
+    \(\displaystyle E_k=S-S_k=\sum_{n=k+1}^\infty a_n\) is less than
+    \(\displaystyle \int_k^\infty f(x)\,dx\) which is called the
+    <span class="defword">integral bound on the error in the approximation</span>.
+  </p>
+</div>
+
+        <div class="rule" id="Ex-IntBnd"></div>
+
+<p class="exercise" data-number="2">
+  Consider the series \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^2+1}\).
+</p>
+<ol class="list-outside">
+  <li>
+    <div class="dotfillex">
+      <p>
+        Show that the series converges.
+        <br/>
+      </p>
+      <p>
+        <button class="toggle has-sol" data-toggle="Sol1"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol1">
+      <p>
+        The function \(\dfrac{1}{n^2+1}\) is continuous, positive, decreasing and
+        \[
+        \int_1^\infty \dfrac{1}{n^2+1}\,dn
+        =\left. \arctan n\right|_1^\infty
+        =\dfrac{\pi}{2}-\dfrac{\pi}{4}=\dfrac{\pi}{4}
+        \]
+        which is finite. So \(\displaystyle \sum_{n=1}^\infty \dfrac{1}{n^2+1}\)
+        converges by the integral test.
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        Approximate the sum of the series by summing \(100\) terms. Find the
+        integral bound on the error in this approximation.
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans2"></button>
+        <button class="toggle has-sol" data-toggle="Sol2"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans2">
+      <p>
+        \(\displaystyle S_{100}=\sum_{n=1}^{100} \dfrac{1}{n^2+1}
+        \approx1.0667\) and
+        \(E_{100}<.01\)
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol2">
+      <p>
+        The series may be approximated by the \(100^\text{th}\) partial sum:
+        \[
+        S_{100}=\sum_{n=1}^{100} \dfrac{1}{n^2+1}
+        \approx1.0667
+        \]
+        (This should probably be done using some type of calculator.)
+        The error in this approximation \(E_{100}\) is bounded by
+        \[\begin{aligned}
+        E_{100}&\lt \int_{100}^\infty \dfrac{1}{n^2+1}\,dn
+        =\left.\arctan n\right|_{100}^\infty \\
+        &=\dfrac{\pi}{2}-\arctan100\approx .01
+        \end{aligned}\]
+      </p>
+    </div>
+  </li>
+  <li>
+    <div class="dotfillex">
+      <p>
+        How many terms would you need to approximate the series to within \(10^{-6}\)?
+      </p>
+      <p>
+        <button class="toggle has-ans" data-toggle="Ans3"></button>
+        <button class="toggle has-sol" data-toggle="Sol3"></button>
+      </p>
+    </div>
+    <div class="toBeToggled drop-ans" data-toggle="Ans3">
+      <p>
+        \(10^6\) terms
+      </p>
+    </div>
+    <div class="toBeToggled drop-sol" data-toggle="Sol3">
+      <p>
+        If the series is approximated by the \(k^\text{th}\) partial sum
+        \(\displaystyle S_k=\sum_{n=1}^k \dfrac{1}{n^2+1}\) then the error
+        \(E_k\) is bounded by
+        \[\int_k^\infty \dfrac{1}{n^2+1}\,dn=\left. \arctan n\right|_k^\infty
+        =\dfrac{\pi}{2}-\arctan k\]
+        We need to solve for \(k\) so that \(\dfrac{\pi}{2}-\arctan k=10^{-6}\). Thus
+        \[
+        \arctan k=\dfrac{\pi}{2}-10^{-6}
+        \]
+        or
+        \(k=\tan \left(\dfrac{\pi}{2}-10^{-6}\right)
+        =\cot(10^{-6})=\dfrac{\cos(10^{-6})}{\sin(10^{-6})}
+        \approx\dfrac{1}{10^{-6}}\approx10^6\) terms.
+      </p>
+    </div>
+  </li>
+</ol>
+
+         <div class="rule"></div>
+
+<p>
+  The answers for the above problems are useful, but the
+  approximation to the series can be improved and the error estimate can be
+  vastly reduced if we go one step further, as done on the
+  <a href="ApproxSerIntegBnd2.html">next page</a>. The problems on the
+  <a href="ApproxSerCompBnd.html" title="Return using the Back button.">
+  subsequent pages</a> use the Simple Comparison Test instead of the Integral Test.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

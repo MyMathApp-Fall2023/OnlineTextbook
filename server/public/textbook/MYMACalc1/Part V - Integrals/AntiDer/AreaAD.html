@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e. Area as an Antiderivative | 21. Antiderivatives, Areas and the FTC</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="DiffEq.html" title="Previous">&lArr;</a></li>
+      <li><a href="AreaFTC.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic5">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>21. Antiderivatives, Areas and the FTC</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>e. Area as an Antiderivative</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  We know that position and velocity are respectively the antiderivatives
+  of the velocity and acceleration. We will see here that "area" can also be
+  expressed as an antiderivative. To do that, we first need to define the
+  "area" function and then we need to compute its derivative.
+</p>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <div>
+  	<p class="def">
+      Given a positive function \(f(x)\) defined on an interval \([a,b]\),
+      the area under the graph of \(y=f(x)\) above the \(x\)-axis between
+      \(x=a\) and \(x=b\) is denoted by \(A(a,b)\) and called the
+      <span class="defword">area under \(f(x)\) above the interval
+      \([a,b]\)</span>. To get the area as a function, we fix the left endpoint,
+      \(a\), and let the right endpoint be a variable, \(x\). Thus the
+      <span class="defword">area function for \(f(x)\)</span> starting at
+			\(x=a\) is:
+			\[A_a(x)=A(a,x)\]
+    </p>
+  </div>
+  <div class="center">
+    <video src="graphics/pf_FTCareafndef_ab_anim.mp4" autoplay loop controls></video>
+    <!-- Graphic made in RiemSum chapter -->
+  </div>
+</div>
+
+<p>
+  We can now compute the derivative of the area function, \(A_a(x)\).
+</p>
+<p class="thm" data-title="Derivative of the Area Function">
+	If \(A_a(x)\) is the area function for \(f(x)\) starting at \(x=a\), then
+	its derivative is \(f(x)\). That is:
+  \[
+	\dfrac{d}{dx}A_a(x)=f(x)
+  \]
+	<button class="toggle btn" data-toggle="Proof1">Proof</button>
+	Either read the proof or do the Maplet below.
+</p>
+<div class="toBeToggled drop-proof" data-toggle="Proof1">
+	<div class="column">
+	  <div>
+	  	<p>
+				Throughout the proof, we will write \(A(x)\) instead of \(A_a(x)\).
+				<br><br>
+	      We wish to find the derivative of the area function, \(A(x)\),
+				shown in magenta.
+				<br><br>
+				By definition, the derivative is
+				\[
+				A'(x)=\lim_{h\to0}\dfrac{A(x+h)-A(x)}{h}
+				\]
+				We start by examining the numerator.
+	    </p>
+	  </div>
+	  <div class="center">
+      <video src="graphics/pf_FTCareafndef_ax_anim.mp4" autoplay loop controls></video>
+      <!-- Graphic made in RiemSum chapter -->
+	  </div>
+	</div>
+	<div class="column">
+	  <div>
+	  	<p>
+	      In this plot, \(A(x)\) is shown in magenta, while \(A(x+h)\) is shown
+				in magenta and green together. So the numerator is the difference,
+				\(A(x+h)-A(x)\), which is shown in green alone. Consequently, the quotient is
+				the green area divided by \(h\) and we need to take the limit as the
+				green area goes to zero.
+	    </p>
+	  </div>
+	  <div class="center">
+      <video src="graphics/pf_FTCareafn_ax+h_anim.mp4" autoplay loop controls></video>
+      <!-- Graphic made in RiemSum chapter -->
+	  </div>
+	</div>
+	<div class="column">
+	  <div>
+	  	<p>
+	      To compute the limit, we approximate the green area, \(A(x+h)-A(x)\), by
+				the blue (and green) rectangle whose height is \(f(x)\) and whose
+				width is \(h\). So the area is approximately:
+				\[
+				A(x+h)-A(x)\approx f(x)\cdot h
+				\]
+				(This approximation gets better as \(h\) approaches \(0\).) So the
+				quotient is approximately:
+				\[
+				\dfrac{A(x+h)-A(x)}{h}\approx f(x)
+				\]
+				Notice that this value is independent of \(h\). So the limit is:
+				\[
+				\lim_{h\to0}\dfrac{A(x+h)-A(x)}{h}
+				=\lim_{h\to0}f(x)=f(x)
+				\]
+				We conclude the derivative of the area function is the original function:
+				\[
+				A'(x)=f(x)
+				\]
+      </p>
+	  </div>
+	  <div class="center">
+      <video src="graphics/pf_FTCareafn_ax+h_rect_anim.mp4" autoplay loop controls></video>
+      <!-- Graphic made in RiemSum chapter -->
+	  </div>
+	</div>
+  <p>
+    We can make the proof more rigorous by approximating the green area
+    by a trapezoid instead of a rectangle, or using the Mean Value Theorem,
+    but the result is the same. Try the trapezoid.
+  </p>
+</div>
+
+<p class="maplet">
+Do the following Maplet (requires Maple on the computer where this is executed).
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/AreaDerivFTC.maplet" download>Area as an Anti-Derivative: Deriving the Fundamental Theorem of Calculus</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+<p class="remark">
+  We conclude that \(A_a(x)\), the area function for \(f(x)\), is an antiderivative of
+  \(f(x)\).
+  \[
+	\dfrac{d}{dx}A_a(x)=f(x)
+  \]
+	This is a differential equation for the area \(A_a(x)\) given the
+  function \(f(x)\) just like \(\dfrac{dx}{dt}=v(t)\) is a differential
+  equation for the position, \(x(t)\), given the velocity, \(v(t)\).
+</p>
+
+<h2>Area as the Solution of an Initial Value Problem</h2>
+<p>
+  Notice that \(A_a(a)=A(a,a)=0\) since this is the area under
+  \(f(x)\) between \(x=a\) and \(x=a\) which is obviously zero. Consequently,
+  the differential equation together with the initial condition
+	\[
+	 \dfrac{d}{dx}A_a(x)=f(x)
+	 \qquad \text{with} \qquad
+	 A_a(a)=0
+	\]
+  is an initial value problem to be solved for \(A_a(x)\). Once we have the
+  solution, \(A_a(x)\), the area under \(f(x)\) above the interval \([a,b]\) is
+  \(A(a,b)=A_a(b)\).
+</p>
+<a id="AreaAD"></a>
+
+        <div class="rule"></div>
+
+<div class="column">
+  <p class="example" data-number="1">
+    Find the area below \(y=x^2\) above the \(x\)-axis between \(x=1\) and \(x=4\).
+  </p>
+  <div class=center>
+    <img src="graphics/eg_AreaIVP_x^2_anim.gif" alt="eg_AreaIVP_x^2_anim">
+    <!-- Graphic made in RiemSum chapter -->
+  </div>
+</div>
+<p class="sol">
+  Let \(A(x)\) be the area below \(y=x^2\) above the \(x\)-axis between
+  \(x=1\) and variable point at \(x\). Then \(A(x)\) satisfies
+  the initial value problem:
+  \[
+   \dfrac{d}{dx}A(x)=f(x)
+   \qquad \text{with} \qquad
+   A(1)=0
+  \]
+  The answer we need is \(A(4)\). An antiderivative of \(f(x)=x^2\) is
+  \(F(x)=\dfrac{x^3}{3}\). So the area function must be
+  \[
+  A(x)=\dfrac{x^3}{3}+C
+  \]
+  To find the constant, we use the initial condition:
+  \[
+  A(1)=\dfrac{1^3}{3}+C=0 \qquad \Longrightarrow \qquad C=-\,\dfrac{1}{3}
+  \]
+  So the area function is
+  \[
+  A(x)=\dfrac{x^3}{3}-\dfrac{1}{3}
+  \]
+  Using this, the area below \(y=x^2\) above the \(x\)-axis between \(x=1\)
+  and \(x=4\) is
+  \[
+  A(4)=\dfrac{4^3}{3}-\dfrac{1}{3}=21
+  \]
+</p>
+
+        <div class="rule"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <p class="exercise" data-number="2">
+      Find the area below \(y=\sin(x)\) above the interval \([0,\pi]\).
+    </p>
+    <div class=center>
+      <img src="graphics/ex_AreaIVP_sinx_anim.gif" alt="ex_AreaIVP_sinx_anim">
+      <!-- Graphic made in RiemSum chapter -->
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+    <button class="toggle has-check" data-toggle="CkX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    Let \(A(x)\) be the area below \(y=\sin(x)\) above the \(x\)-axis between
+    \(x=0\) and a variable point at \(x\).
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    The area below \(y=\sin(x)\) above the interval \([0,\pi]\) is \(2\).
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+  <p>
+    Let \(A(x)\) be the area below \(y=\sin(x)\) above the \(x\)-axis between
+    \(x=0\) and a variable point at \(x\). Then \(A(x)\) is the antiderivative
+    of \(\sin(x)\) satisfying \(A(0)=0\). The general antiderivative is
+    \[
+    A(x)=-\cos(x)+C
+    \]
+    The initial condition says
+    \[
+    A(0)=-\cos(0)+C=0 \qquad \Longrightarrow \qquad C=\cos(0)=1
+    \]
+    So \(A(x)=-\cos(x)+1\) and the final answer is
+    \[
+    A(\pi)=-\cos(\pi)+1=--1+1=2
+    \]
+  </p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX1">
+  <p>
+    We check by differentiating the area function \(A(x)=-\cos(x)+1\):
+    \[
+    A(x)=\sin(x)
+    \]
+    which is the original curve.
+  </p>
+</div>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can also practice computing areas from initial value problems by using
+  the following Maplet (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/AreaAsAntiDerivIVP.maplet" download>Area as an Anti-Derivative: Solve an Initial Value Problem</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

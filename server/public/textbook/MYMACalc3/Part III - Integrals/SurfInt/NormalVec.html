@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. Normal Vector | 22. Parametric Surfaces and Surface Integrals</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="TanVecs.html" title="Previous">&lArr;</a></li>
+      <li><a href="ScalSurfDiff.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic2">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>22. Parametric Surfaces and Surface Integrals</h1>
+    
+
+    <div id="pg-wrapper">
+      
+
+<h2>b. Tangent and Normal Vectors</h2>
+
+
+      
+      <h2>3. Normal Vector</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  For a parametric curve, the <em>important</em> vector is the
+  <span class="hl">tangent vector</span>, \(\vec{v}\).
+</p>
+<p>
+  For a parametric surface, the <em>important</em> vector is the
+  <span class="hl">normal vector</span>, \(\vec{N}\).
+</p>
+<p>
+  Since the tangent vectors \(\vec{e}_u\) and \(\vec{e}_v\) are tangent to a
+  parametric surface, the normal vector \(\vec{N}\) can be computed as the
+  cross product of \(\vec{e}_u\) and \(\vec{e}_v\).
+</p>
+<p class="def" data-title="Normal Vector">
+  The <span class="defword">normal vector</span>, \(\vec{N}\), to a parametric
+  surface is:
+  \[\begin{aligned}
+  \vec{N}&=\vec{e}_u\times\vec{e}_v
+  =\left|
+    \begin{array}{ccc}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\[3pt]
+    \dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} & \dfrac{\partial z}{\partial u} \\[8pt]
+    \dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v} & \dfrac{\partial z}{\partial v}
+    \end{array}
+  \right| \\[5pt]
+  &=\left(\dfrac{\partial y}{\partial u}\dfrac{\partial z}{\partial v}-
+          \dfrac{\partial z}{\partial u}\dfrac{\partial y}{\partial v}\right)
+          \hat{\imath}
+   -\left(\dfrac{\partial x}{\partial u}\dfrac{\partial z}{\partial v}-
+          \dfrac{\partial z}{\partial u}\dfrac{\partial x}{\partial v}\right)
+          \hat{\jmath}
+   +\left(\dfrac{\partial x}{\partial u}\dfrac{\partial y}{\partial v}-
+          \dfrac{\partial y}{\partial u}\dfrac{\partial x}{\partial v}\right)
+          \hat{k} \\[5pt]
+  &=\left\langle \dfrac{\partial(y,z)}{\partial(u,v)},
+              -\,\dfrac{\partial(x,z)}{\partial(u,v)},
+                 \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle
+  \end{aligned}\]
+</p>
+<p class="remark">
+  Notice that the components of the normal vector are \(2\)-dimensional
+  Jacobian determinants. For the \(x\) component the variables are \(y\) and
+  \(z\). For the \(y\) component the variables are \(x\) and \(z\). For the
+  \(z\) component the variables are \(x\) and \(y\). Also notice that in each
+  component the variables \(x,y,z\) occur in
+  <span class="hl">alphabetical order</span>, \(yz\), \(xz\), \(xy\), but
+  there is a minus on the \(y\) component. However, back up a step and
+  distribute the minus sign in the \(y\) component. Then:
+</p>
+<p class="greybox">
+  \[\begin{aligned}
+  \vec{N}
+  &=\left(\dfrac{\partial y}{\partial u}\dfrac{\partial z}{\partial v}-
+          \dfrac{\partial z}{\partial u}\dfrac{\partial y}{\partial v}\right)
+          \hat{\imath}
+   +\left(\dfrac{\partial z}{\partial u}\dfrac{\partial x}{\partial v}-
+          \dfrac{\partial x}{\partial u}\dfrac{\partial z}{\partial v}\right)
+          \hat{\jmath}
+   +\left(\dfrac{\partial x}{\partial u}\dfrac{\partial y}{\partial v}-
+          \dfrac{\partial y}{\partial u}\dfrac{\partial x}{\partial v}\right)
+          \hat{k} \\[5pt]
+  &=\left\langle \dfrac{\partial(y,z)}{\partial(u,v)},
+                 \dfrac{\partial(z,x)}{\partial(u,v)},
+                 \dfrac{\partial(x,y)}{\partial(u,v)}\right\rangle
+  \end{aligned}\]
+</p>
+<p>
+  In this version, there is no minus sign but the variables are now in
+  <span class="hl">cyclic</span> order, \(xyzxyz\cdots\). You can remember
+  \(\vec{N}\) in either version. However, in computing \(\vec{N}\) we rarely
+  use the Jacobian determinants, but rather, go back to the cross product formula.
+</p>
+<p>
+  <span class="redbig">Caution:</span> We previously saw Jacobian determinants
+  in the computation of the differentials of area and volume. In those cases,
+  the sign of the determinant did not matter because we were taking the
+  absolute value to form the Jacobian factor. However, in computing the
+  components of the normal vector, <span class="redbig">the sign of each
+  Jacobian determinant is crucial</span> since if you make a mistake, the
+  vector will no longer be normal! This is particularly true for the sign of
+  the \(y\)-component.
+</p>
+<p class="remark" id="det">
+  In dealing with parametric surfaces, you will have to compute the normal
+  many times and the length of the formulas will keep growing. If you try to
+  copy the components of \(\vec{e}_u\) and \(\vec{e}_v\) to take the cross
+  product, you will invariably make a copying mistake at some time.
+  <span class="redbig">Don't re-copy</span>. It is a waste of time and leads
+  to mistakes. If you carefully calculate \(\vec{e}_u\) and \(\vec{e}_v\)
+  and keep things lined up, you just need to put the row \(\hat{\imath}\),
+  \(\hat{\jmath}\), \(\hat{k}\) on top of the values of \(\vec{e}_u\) and
+  \(\vec{e}_v\) and take the determinant of the resulting matrix. On paper,
+  your work would look like this. First, compute the two tangent vectors:
+  \[
+  \begin{array}{c}
+  \\
+  \vec{e}_u=\dfrac{\partial R}{\partial u}=\, \\[10pt]
+  \vec{e}_v=\dfrac{\partial R}{\partial v}=\,
+  \end{array}
+  \left.
+  \begin{array}{ccc}
+  &  &  \\[3pt]
+  \left\langle \dfrac{\partial x}{\partial u}\right. & \dfrac{\partial y}{\partial u}
+  & \left. \dfrac{\partial z}{\partial u}\right\rangle\\[10pt]
+  \left\langle \dfrac{\partial x}{\partial v}\right. & \dfrac{\partial y}{\partial v}
+  & \left. \dfrac{\partial z}{\partial v}\right\rangle
+  \end{array}
+  \right.
+  \]
+  Now add an \(\hat{\imath}\), \(\hat{\jmath}\) and \(\hat{k}\) and some
+  vertical bars and compute the determinant.
+  <a href="NormalVec2.html#det">Click Here</a> to add the determinant.
+</p>
+
+        <div class="rule"></div>
+
+<p class="remark">
+  On the <a href="GridCellArea">next page</a>, we will see that it is also
+  useful to know the length of the normal vector. So these examples and
+  exercises also ask for the length.
+</p>
+<div class="column">
+	<p class="example" data-number="1">
+    Find the normal vector to the sphere of radius \(\rho=2\), parametrized by
+		\[
+		\vec R(\phi,\theta)
+		=\left\langle 2\sin\phi\cos\theta,2\sin\phi\sin\theta,2\cos\phi\right\rangle
+		\]
+    Then find the magnitude of the normal.
+  </p>
+  <div class="center">
+    <img src="graphics/Sphere.jpg" alt="Sphere">
+  </div>
+</div>
+<p class="sol">
+  We previously found the tangent vectors:
+  \[\begin{aligned}
+  \vec{e}_\phi&=\dfrac{\partial\vec R}{\partial\phi}
+	=\left\langle 2\cos\phi\cos\theta,2\cos\phi\sin\theta,-2\sin\phi\right\rangle \\
+  \vec{e}_\theta&=\dfrac{\partial\vec R}{\partial\theta}
+	=\left\langle -2\sin\phi\sin\theta,2\sin\phi\cos\theta,\quad 0\quad \right\rangle
+  \end{aligned}\]
+  Now add the \(\hat{\imath}\), \(\hat{\jmath}\), \(\hat{k}\) and some
+  vertical bars and complete the computation of the cross product:
+  \[\begin{aligned}
+  \vec{N}&=\vec{e}_\phi\times\vec{e}_\theta
+	=\left|
+    \begin{array}{ccc}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \left\langle 2\cos\phi\cos\theta\right. & 2\cos\phi\sin\theta& \left.
+    -2\sin\phi\right\rangle\\
+    \left\langle -2\sin\phi\sin\theta\right. & 2\sin\phi\cos\theta& \left.
+    \quad 0\quad\right\rangle
+    \end{array}
+  \right| \\
+  &=\hat{\imath}(0+4\sin^2\phi\cos\theta)
+	  -\hat{\jmath}(0-4\sin^2\phi\sin\theta) \\
+	& \qquad+\hat{k}(4\sin\phi\cos\phi\cos^2\theta+4\sin\phi\cos\phi\sin^2\theta) \\
+  &=\left\langle 4\sin^2\phi\cos\theta, 4\sin^2\phi\sin\theta, 4\sin\phi\cos\phi\right\rangle
+  \end{aligned}\]
+</p>
+<p class="remark">
+  Notice that \(\vec{N}\) points in the same direction as the position vector
+  since \(\vec{N}=2\sin\phi\,\vec R(\phi,\theta)\). This should be expected
+  since the position vector from the origin to the sphere is perpendicular
+  to the surface.
+</p>
+<p>
+  This result is the normal <em>vector</em>. Its <em>magnitude</em> will
+  also be useful in doing integrals. So we compute:
+  \[\begin{aligned}
+  |\vec{N}|
+	&=\sqrt{(4\sin^2\phi\cos\theta)^2+(4\sin^2\phi\sin\theta)^2+(4\sin\phi\cos\phi)^2} \\
+  &=\sqrt{16\sin^4\phi\cos^2\theta+16\sin^4\phi\sin^2\theta+16\sin^2\phi\cos^2\phi} \\
+  &=\sqrt{16\sin^4\phi+16\sin^2\phi\cos^2\phi}
+	=\sqrt{16\sin^2\phi(\sin^2\phi+\cos^2\phi)} \\
+  &=\sqrt{16\sin^2\phi}=4\sin\phi
+  \end{aligned}\]
+</p>
+<p class="remark">
+  Notice this result resembles the Jacobian factor for spherical coordinates:
+  \(J=\rho^2\sin\phi\). This is coincidence for the spherical geometry.
+</p>
+
+        <div class="rule" id="hyperparab"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="2">
+      Find the tangent vectors, normal vector, and length of the normal vector
+      for the hyperbolic paraboloid \(z=x^2-y^2\) discussed in a
+      <a href="PosPlots.html#hyperparab" title="Return using the Back button.">
+      previous exercise</a> and parametrized by:
+      \(\vec R(r,\theta)
+      =\left\langle r\cos\theta,r\sin\theta,r^2(\cos^2\theta-\sin^2\theta)\right\rangle\)
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX2"></button>
+      <button class="toggle has-sol" data-toggle="SolX2"></button>
+      <button class="toggle has-check" data-toggle="CkX2"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/Hyperbolic_paraboloid.jpg" alt="Hyperbolic_paraboloid">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX2">
+  <p>
+    The tangent vectors are:
+    <br/>
+    &emsp;\(\begin{aligned}
+    \vec{e}_r
+    &=\left\langle \cos\theta,\sin\theta,2r(\cos^2\theta-\sin^2\theta)\right\rangle \\
+    \vec{e}_\theta
+    &=\left\langle -r\sin\theta,r\cos\theta,r^2(-4\sin\theta\cos\theta)\right\rangle
+    \end{aligned}\)
+    <br/>
+    The normal vector is:
+    <br/>&emsp;
+    \(\vec{N}=\left\langle -2r^2\cos\theta,2r^2\sin\theta,r\right\rangle\)
+    <br/>
+    Its length is:
+    <br/>&emsp;
+    \(|\vec{N}|=\sqrt{4r^4+r^2}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX2">
+	<p>
+    To find the tangent vectors, we take the derivative of the parametrization
+    with respect to the two parameters:
+    \[\begin{aligned}
+    \vec{e}_r
+    &=\dfrac{\partial\vec R}{\partial r}
+    =\left\langle \cos\theta,\sin\theta,2r(\cos^2\theta-\sin^2\theta)\right\rangle \\
+    \vec{e}_\theta
+    &=\dfrac{\partial\vec R}{\partial\theta}
+    =\left\langle -r\sin\theta,r\cos\theta,r^2(-4\sin\theta\cos\theta)\right\rangle
+    \end{aligned}\]
+    To find the normal vector we compute the cross product of the two tangent
+    vectors: (On paper, don't recopy the tangent vectors; just add
+    \(\hat{\imath}\), \(\hat{\jmath}\) and \(\hat{k}\) and vertical bars.)
+    \[\begin{aligned}
+    \vec{N}
+    &=\vec{e}_r\times\vec{e}_\theta
+    =\begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    \cos\theta   & \sin\theta   & 2r(\cos^2\theta-\sin^2\theta) \\
+    -r\sin\theta & r\cos\theta  & r^2(-4\sin\theta\cos\theta)
+    \end{vmatrix} \\
+    &=\hat{\imath}(-4r^2\sin^2\theta\cos\theta-2r^2\cos^3\theta+2r^2\cos\theta\sin^2\theta) \\
+    &\qquad-\hat{\jmath}(-4r^2\sin\theta\cos^2\theta+2r^2\sin\theta\cos^2\theta-2r^2\sin^3\theta) \\
+    &\qquad+\hat{k}(r\cos^2\theta+r\sin^2\theta) \\
+    &=\hat{\imath}(-2r^2\sin^2\theta\cos\theta-2r^2\cos^3\theta) \\
+    &\qquad-\hat{\jmath}(-2r^2\sin\theta\cos^2\theta-2r^2\sin^3\theta)+\hat{k}(r) \\
+    &=\hat{\imath}(-2r^2\cos\theta)-\hat{\jmath}(-2r^2\sin\theta)+\hat{k}(r) \\
+    &=\left\langle -2r^2\cos\theta,2r^2\sin\theta,r\right\rangle
+    \end{aligned}\]
+    Finally, its length is:
+    \[
+    |\vec{N}|
+    =\sqrt{(2r^2\cos\theta)^2+(2r^2\sin\theta)^2+r^2}
+    =\sqrt{4r^4+r^2}
+    \]
+	</p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX2">
+  <p>
+    We can check the normal vector by computing its dot product with each
+    tangent vector:
+    \[\begin{aligned}
+    \vec{N}\cdot\vec{e}_r
+    &=-2r^2\cos^2\theta+2r^2\sin^2\theta+2r^2(\cos^2\theta-\sin^2\theta) \\
+    &=0 \\
+    \vec{N}\cdot\vec{e}_\theta
+    &=2r^3\cos\theta\sin\theta+2r^3\sin\theta\cos\theta+r^3(-4\sin\theta\cos\theta) \\
+    &=0
+    \end{aligned}\]
+  </p>
+</div>
+
+        <div class="rule" id="cylinder"></div>
+
+<div class="column">
+  <div class="dotfillex">
+  	<p class="exercise" data-number="3">
+      Find the normal vector, and length of the normal vector for the cylinder
+      \(x^2+z^2=4\) discussed in two
+      <a href="TanVecs.html#cylinder">previous exercises</a> and parametrized by
+	    \(\vec R(\theta,y)=\left\langle 2\cos\theta,y,2\sin\theta\right\rangle\).
+    </p>
+    <p>
+      <button class="toggle has-ans" data-toggle="AnsX3"></button>
+      <button class="toggle has-sol" data-toggle="SolX3"></button>
+      <button class="toggle has-check" data-toggle="CkX3"></button>
+    </p>
+  </div>
+  <div class="center">
+    <img src="graphics/Cylinder.jpg" alt="Cylinder">
+  </div>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX3">
+  <p>
+    The normal vector is:
+    <br/>&emsp;
+    \(\vec{N}=\left\langle -2\cos\theta,0,-2\sin\theta\right\rangle\)
+    <br/>
+    Its length is:
+    <br/>&emsp;
+    \(|\vec{N}|=2\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX3">
+	<p>
+    We previously found the tangent vectors:
+    \[\begin{aligned}
+    \vec{e}_\theta
+    &=\dfrac{\partial\vec R}{\partial\theta}
+    =\left\langle -2\sin\theta,0,2\cos\theta\right\rangle \\
+    \vec{e}_y
+    &=\dfrac{\partial\vec R}{\partial y}
+    =\left\langle 0,1,0\right\rangle
+    \end{aligned}\]
+    Again, to find the normal vector we compute the cross product of the two
+    tangent vectors:
+    \[\begin{aligned}
+    \vec{N}
+    &=\vec{e}_\theta\times\vec{e}_y
+    =\begin{vmatrix}
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    -2\sin\theta & 0            & 2\cos\theta\\
+    0 & 1 & 0
+    \end{vmatrix} \\
+    &=\hat{\imath}(0-2\cos\theta)
+     -\hat{\jmath}(0-0)
+     +\hat{k}(-2\sin\theta) \\
+    &=\left\langle -2\cos\theta,0,-2\sin\theta\right\rangle
+    \end{aligned}\]
+    Finally, its length is:
+    \[
+    |\vec{N}|=\sqrt{(2\cos\theta)^2+0+(-2\sin\theta)^2}=2
+    \]
+	</p>
+</div>
+<div class="toBeToggled drop-check" data-toggle="CkX3">
+  <p>
+    We can check the normal vector by computing its dot product with each
+    tangent vector:
+    \[\begin{aligned}
+    \vec{N}\cdot\vec{e}_\theta
+    &=4\cos\theta\sin\theta-4\sin\theta\cos\theta \\
+    &=0 \\
+    \vec{N}\cdot\vec{e}_y
+    &=-2\cos\theta\cdot0+0\cdot1-2\sin\theta\cdot0 \\
+    &=0
+    \end{aligned}\]
+  </p>
+</div>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>

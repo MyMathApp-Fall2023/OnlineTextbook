@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d1. Volume using Thin Washers | 13. Volume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" type="text/css" href="../../../styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../styles/main-contents.min.css">
+    
+      
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+              integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei"
+              crossorigin="anonymous">
+      
+    
+
+  
+
+</head>
+
+<body>
+  
+  <!-- Side navigation bar -->
+  <!-- 
+    <div id="mySidenav" class="sidenav"></div>
+  -->
+
+  <!-- Main page -->
+  <main>
+    
+      <header>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../../index.html">
+          <span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+        </a>&emsp;</li>
+      <li><a href="../../MContents.html">Main Contents</a></li>
+      <li><a href="ChContents.html">Chapter Contents</a></li>
+      <li><a href="Disk.html" title="Previous">&lArr;</a></li>
+      <li><a href="Cylin.html" title="Next">&rArr;</a></li>
+      <li><a href="x.html#topic4">Exercises</a></li>
+      <li><a href="https://www.edfinity.com" target="_blank" title="Homework">HW</a></li>
+      <li><span id="open-index-page" title="Index">
+        <img src="../../../graphics/Nuvola_kdict_glass.png" width="16" height="20" alt="icon">
+      </span></li>
+      <li><span id="report-bug" title="Bug Report">🐞</span></li>
+    </ul>
+  </nav>
+</header>
+
+    
+
+    
+      <h1>13. Volume</h1>
+    
+
+    <div id="pg-wrapper">
+      
+      
+      <h2>d1. Volume using Thin Washers</h2>
+
+      
+
+      <!-- Page main content goes here -->
+      
+
+<p>
+  Next we consider the problem of computing the volume of a solid of
+  revolution using thin washers.
+</p>
+<div class="column">
+	<p class="genexample" data-title="Function of \(x\)" data-col-width="40%">
+    The region between the functions \(y=f(x)\) and \(y=g(x)\) between
+    \(x=a\) and \(x=b\) is rotated about the \(x\)-axis. Find the volume
+    of the solid swept out.
+  </p>
+  <div class="center" data-col-width="60%">
+    <img src="graphics/area2.jpg" alt="picture of a graph to be revolved">
+    <video src="graphics/area2xanimate.mp4" autoplay loop controls></video>
+  </div>
+</div>
+<div class="column">
+	<div data-col-width="40%">
+    <p class="sol">
+      This is an \(x\) integral. So we draw a vertical rectangle and rotate
+      it about the \(x\)-axis obtaining a thin washer.
+    </p>
+    <p>
+      The situation is exactly like the case for a disk except that we need to
+      subtract off the volume of the hole. So the volume is:
+      \[
+      V=\int_a^b (\pi f(x)^2-\pi g(x)^2)\,dx
+      \]
+    </p>
+  </div>
+	<div class="center" data-col-width="60%">
+    <img src="graphics/rect2.jpg" alt="picture of a graph to be revolved">
+    <video src="graphics/rect2xanimate.mp4" autoplay loop controls></video>
+  </div>
+</div>
+
+        <div class="rule"></div>
+
+<p>
+  Now turn your head sideways:
+	<img src="../../../graphics/happyfaceanim.gif" height="40" alt="happyfaceanim">
+</p>
+<div class="column">
+	<p class="genexample" data-title="Function of \(y\)" data-col-width="40%">
+    The region between the functions \(x=f(y)\) and \(x=g(y)\) between
+    \(y=a\) and \(y=b\) is rotated about the \(y\)-axis. Find the volume
+    of the solid swept out.
+	</p>
+	<div class="center" data-col-width="60%">
+    <img src="graphics/area4.jpg" alt="picture of a graph to be revolved">
+    <video src="graphics/area4yanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+<div class="column">
+	<div data-col-width="40%">
+    <p class="sol">
+      This is a \(y\) integral. So we draw a horizontal rectangle and rotate
+      it about the \(y\)-axis obtaining a thin washer.
+    </p>
+    <p>
+      Again we subtract off the volume of the hole. So the volume is:
+      \[
+      V=\int_a^b (\pi f(y)^2-\pi g(y)^2)\,dy
+      \]
+    </p>
+	</div>
+	<div class="center" data-col-width="60%">
+    <img src="graphics/rect4.jpg" alt="picture of a graph to be revolved">
+    <video src="graphics/rect4yanimate.mp4" autoplay loop controls></video>
+	</div>
+</div>
+
+        <div class="rule"></div>
+
+<p class="formula" data-title="Volume of a Solid of Revolution using Thin Washers">
+  If the region below the function \(y=f(x)\) above the function \(y=g(x)\)
+  between \(x=a\) and \(x=b\) is rotated about the \(x\)-axis, the volume
+  swept out is:
+  \[
+  V=\int_a^b \pi(f(x)^2-g(x)^2)\,dx
+  \]
+  If the region to the left of the function \(x=f(y)\) and to the right of
+  the function \(x=g(y)\) between \(y=a\) and \(y=b\) is rotated about the
+  \(y\)-axis, the volume swept out is:
+  \[
+  V=\int_a^b \pi(f(y)^2-g(y)^2)\,dy
+  \]
+  Both formulas can be summarized as
+  \[
+	V=\int_a^b \pi(\text{outer radius})^2-\pi(\text{inner radius})^2\,dv
+  \]
+  where \(dv\) is either \(dx\) or \(dy\).
+</p>
+<p class="remark">
+  Notice that finding the volume of a solid of revolution by washers is really
+  a special case of finding a volume by slicing
+  \[
+  V=\int_a^b A(v)\,dv
+  \]
+  in which each cross-sectional area is the area between two circles,
+  \(A=\pi(\text{outer radius})^2-\pi(\text{inner radius})^2\).
+</p>
+
+        <div class="rule" id="washer_eg1"></div>
+
+<div class="column">
+	<p>
+    The area between the curves \(y=x\) and \(y=\sqrt{x}\) can be computed as
+    either an \(x\)-integral or as a \(y\)-integral. It can also be rotated
+    about the \(x\)-axis or about the \(y\)-axis. We will look at all four
+    possibilities on this and the
+    <a href="Cylin.html#cylin_ex1">next page</a>.
+  </p>
+  <div class="center">
+    <img src="graphics/eg_parab_line_area.jpg" alt="eg_parab_line_area">
+  </div>
+</div>
+
+<hr width="80%">
+
+<div class="column">
+	<p class="example" data-number="1">
+    The region between the curves \(x=y\) and \(x=y^2\) is rotated
+    about the \(y\)-axis. Find the volume swept out. (Do the integral as
+    a \(y\) integral.)
+	</p>
+	<div class="center">
+    <img src="graphics/eg_parab_line_yint_about_y_solid_anim.gif"
+    alt="eg_parab_line_yint_about_y_solid_anim">
+	</div>
+</div>
+<div class="column">
+	<p class="sol">
+    Since the curves are given with \(x\) as functions of \(y\), we will
+    compute using a \(y\)-integral. We cut up the \(y\)-axis and see that
+    the rectangles are horizontal and rotate into thin washers.
+	  So the volume is:
+    \[\begin{aligned}
+    V&=\pi\int_a^b (\text{right}^2-\text{left}^2)\,dy
+    =\pi\int_0^1 ((y)^2-(y^2)^2)\,dy \\
+    &=\pi\int_0^1 (y^2-y^4)\,dy
+    =\pi\left[\dfrac{y^3}{3}-\dfrac{y^5}{5}\right]_0^1
+    =\dfrac{2}{15}\pi
+    \end{aligned}\]
+	</p>
+	<div class="center">
+    <img src="graphics/eg_parab_line_yint_about_y_washer_anim.gif"
+    alt="eg_parab_line_yint_about_y_washer_anim">
+	</div>
+</div>
+
+        <div class="rule" id="washer_ex1"></div>
+
+<div class="dotfillex">
+  <div class="column">
+    <div>
+      <p>
+        Now it's your turn:
+      </p>
+      <p class="exercise" data-number="2">
+        The region between the curves \(y=x\) and \(y=\sqrt{x}\) is rotated
+        about the \(x\)-axis. Find the volume swept out. (Do the integral as
+        an \(x\) integral.)
+      </p>
+      <p>
+        Notice this is the same \(2\)-dimensional area as in example 1, but it
+        is rotated about a different axis. So the volume is totally different.
+      </p>
+    </div>
+    <div class="center">
+      <img src="graphics/ex_parab_line_xint_about_x_solid_anim.gif"
+      alt="ex_parab_line_xint_about_x_solid_anim">
+    </div>
+  </div>
+  <p>
+    <button class="toggle has-hint" data-toggle="HintX1"></button>
+    <button class="toggle has-ans" data-toggle="AnsX1"></button>
+    <button class="toggle has-sol" data-toggle="SolX1"></button>
+  </p>
+</div>
+<div class="toBeToggled drop-hint" data-toggle="HintX1">
+  <p>
+    The volume is to be computed as an \(x\)-integral. So cut up the \(x\)-axis.
+  </p>
+</div>
+<div class="toBeToggled drop-ans" data-toggle="AnsX1">
+  <p>
+    \(\displaystyle V=\dfrac{\pi}{6}\)
+  </p>
+</div>
+<div class="toBeToggled drop-sol" data-toggle="SolX1">
+	<div class="column">
+    <p>
+      We cut up the \(x\)-axis and see that the rectangles are vertical
+      and they rotate into thin washers. So the volume is:
+      \[\begin{aligned}
+      V&=\pi\int_a^b (\text{upper}^2-\text{lower}^2)\,dx \\
+      &=\pi\int_0^1 \left((\sqrt{x})^2-(x)^2\right)\,dx \\
+      &=\pi\int_0^1 (x-x^2)\,dx
+      =\pi\left[\dfrac{x^2}{2}-\dfrac{x^3}{3}\right]_0^1=\dfrac{\pi}{6}
+      \end{aligned}\]
+    </p>
+    <div class="center">
+      <img src="graphics/ex_parab_line_xint_about_x_washer_anim.gif"
+      alt="ex_parab_line_xint_about_x_washer_anim">
+    </div>
+  </div>
+</div>
+
+        <div class="rule" id="washer_egs"></div>
+
+<p>
+  Here's another example:
+	<br>
+	<table class="center"> <tbody> <tr>
+		<td><a href="Washer_eg1.html">Example</a></td>
+	</tr> </tbody> </table>
+</p>
+
+        <div class="rule"></div>
+
+<p class="maplet">
+  You can practice
+  computing Volumes of Revolution by Disks and Washers by using the following
+  Maplet (requires Maple on the computer where this is executed):
+</p>
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <p style='margin-left:30px'>
+    <a href="../../../M4C/files/maplets/VolOfRev.maplet" download>Volume of a Solid of Revolution</a>
+    &emsp;
+    <a href="http://custom.komputerwiz.net:8000/~psarin/mrating/web/undefined" target='_blank'>Rate It</a>
+  </p>
+
+<p>
+  For now, when you click on Show in Step 1, only do those problems which are Disks
+  or Washers.
+</p>
+
+
+      <!-- End page main content -->
+
+      
+        <div class="rule"></div>
+
+<footer>
+	<div class="column">
+	  <p>
+			<a href="../../../index.html">&copy; 2009-2020
+			<span style="color:red">MY</span><span style="color:blue">Math</span><span style="color:green">Apps</span>
+			</a>
+		</p>
+		<div>
+			<p>Supported in part by NSF Grant #1123255</p>
+			<img height="32" width="32" src="../../../graphics/nsf.png">
+		</div>
+	</div>
+</footer>
+
+      
+    </div><!-- end page wrapper div -->
+
+    <div id="modal-container">
+  <div class="modal modal-medium">
+    <a class="closebtn">&times;</a>
+    <h2>Heading</h2>
+    <p>
+      Placeholder text:
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+    </p>
+  </div>
+
+  <div class="modal-overlay"></div>
+</div>
+
+  </main>
+
+
+  
+    
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"
+          integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq"
+          crossorigin="anonymous"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js"
+          integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc"
+          crossorigin="anonymous"></script>
+      
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+      <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <script src="../../../scripts/main.min.js"></script>
+    
+      <script>
+        var options = {
+          delimiters: [
+            {left: "$", right: "$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, options);
+        });
+      </script>
+    
+  
+</body>
+</html>
