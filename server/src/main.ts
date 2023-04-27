@@ -10,7 +10,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
 
   await app.listen(configService.get<string>('SERVER_PORT'),()=>{
-    logger.log('Ready Listen' + configService.get<string>('SERVER_PORT'))
+    logger.log('Ready to listen port ' + configService.get<string>('SERVER_PORT'))
     logger.log('MyMathApp Server Application started'); // log a message using the logger instance
     logger.log('MyMathApp Server running at ' + configService.get<string>('ENV_TYPE') + ' Mode')
   });

@@ -20,13 +20,14 @@ export class BookService {
        return fileContent
     }
 
-    async getBookURL() {
-        const ifPurchase = this.recordService.checkOneUser()
-        //const ifEmailSub = this.emailSubscriptionService.checkOneUser()
-        if (ifPurchase) {
-            return 'http://localhost:6324'
-        } else {
-            throw new ForbiddenException()
-        }
+    getBookURL() {
+        // const ifPurchase = this.recordService.checkOneUser()
+        // //const ifEmailSub = this.emailSubscriptionService.checkOneUser()
+        // if (ifPurchase) {
+        //     return 'http://localhost:6324'
+        // } else {
+        //     throw new ForbiddenException()
+        // }
+        return 'http://localhost:6324'
     }
 }

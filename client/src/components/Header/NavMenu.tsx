@@ -55,8 +55,11 @@ const NavMenu: React.FC = (): JSX.Element => {
 				</Menu.Item >
 				)}
 
-
 				<Menu.Item fitted position="right">
+					{ctx.user ? <Menu.Item as={Link} to="/records">
+						{"My Records"}
+					</Menu.Item>: null
+					}
 					{ctx.user?.role === 1 ?
 						<Menu.Item as={Link} to="/admin/user">
 							{"Admin"}

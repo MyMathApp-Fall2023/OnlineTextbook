@@ -170,7 +170,7 @@ const AdminEmailSubscriptionPage: React.FC = (props): JSX.Element => {
                             )}
 
                             <Button icon="add" labelPosition='left' primary onClick={() => setAddModalOpen(true)}>
-                                <Icon name="add circle"/>Add New Purchase Code
+                                <Icon name="add circle"/>Add New Email Subscription
                             </Button>
                         </div>
 
@@ -185,8 +185,8 @@ const AdminEmailSubscriptionPage: React.FC = (props): JSX.Element => {
                                     <Table.Row>
                                         <Table.HeaderCell>ID</Table.HeaderCell>
                                         <Table.HeaderCell>Email Suffix</Table.HeaderCell>
-                                        <Table.HeaderCell>Begin Date</Table.HeaderCell>
-                                        <Table.HeaderCell>End Date</Table.HeaderCell>
+                                        {/*<Table.HeaderCell>Begin Date</Table.HeaderCell>*/}
+                                        {/*<Table.HeaderCell>End Date</Table.HeaderCell>*/}
                                         <Table.HeaderCell>Operation</Table.HeaderCell>
                                     </Table.Row>
                                 </Table.Header>
@@ -195,8 +195,8 @@ const AdminEmailSubscriptionPage: React.FC = (props): JSX.Element => {
                                         <Table.Row key={emailSubscription.email_sub_id}>
                                             <Table.Cell>{emailSubscription.email_sub_id}</Table.Cell>
                                             <Table.Cell>{emailSubscription.suffix}</Table.Cell>
-                                            <Table.Cell></Table.Cell>
-                                            <Table.Cell></Table.Cell>
+                                            {/*<Table.Cell></Table.Cell>*/}
+                                            {/*<Table.Cell></Table.Cell>*/}
                                             <Table.Cell>
                                                 <Button ui primary basic
                                                         onClick={() => handleEditOpen(emailSubscription)}
@@ -250,7 +250,7 @@ const AdminEmailSubscriptionPage: React.FC = (props): JSX.Element => {
                             onOpen={() => setUpdateModalOpen(true)}
                             open={updateModalOpen}
                         >
-                            <Modal.Header>Edit Purchase Code</Modal.Header>
+                            <Modal.Header>Edit Email Subscription</Modal.Header>
                             <Modal.Content>
                                 <Form>
                                     <Form.Input

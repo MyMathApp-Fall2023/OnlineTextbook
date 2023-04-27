@@ -12,7 +12,7 @@ export class BookController {
     @Get("read")
     async read() {
         const bookURL = this.bookService.getBookURL()
-        return {bookURL}
+        return {bookURL:bookURL}
     }
 
 }
