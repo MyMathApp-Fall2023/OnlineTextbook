@@ -28,6 +28,6 @@ export class BookService {
         // } else {
         //     throw new ForbiddenException()
         // }
-        return 'http://localhost:6324'
+        return process.env.TEXT_BOOK_ROOT
     }
 }
