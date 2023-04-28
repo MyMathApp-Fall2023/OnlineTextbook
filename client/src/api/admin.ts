@@ -53,3 +53,11 @@ export function updateCodeApi(data:any):Promise<any> {
         data:data
     })
 }
+
+export function getItem(data:any):Promise<any> {
+    return request ({
+        method : 'get',
+        url: `api/item/id`,
+        data: data
+    })
+}
