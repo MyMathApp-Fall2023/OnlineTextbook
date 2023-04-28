@@ -2,10 +2,8 @@
 
 import React, {useContext,useRef, useEffect, useLayoutEffect, useState, useCallback, useReducer,Reducer} from "react";
 import ReactDOM from "react-dom"
-import { Table, Container, Header, Button,Input, Icon, Item, Message , Form} from "semantic-ui-react";
-import { formatter } from "../../utils";
+import { Table, Container, Header, Button,Input, Icon, Item, Message , Form, ModalActions} from "semantic-ui-react";
 import { ApplicationContext } from "../../context";
-import { title } from "process";
 import {getCurrentItem, checkPurchaseCode, addRecord, addTransaction} from "../../api/checkout"
 
 // @ts-ignore
@@ -37,30 +35,6 @@ interface localUser {
 	id: number;
 }
 
-function updatePurchaseBtn(currentCodeId: number, item_id: string, totalPrice: number) {
-	console.log('call update', totalPrice, "currentCodeId", currentCodeId);
-	const user: localUser = JSON.parse(localStorage.getItem('user') || 'null');
-	if (totalPrice == 0) {
-		return (
-			<div style={{textAlign: 'left'}}>
-				<button className="positive ui button" >Complete</button>
-			</div>
-		);
-	} else {
-		return (
-			<>
-				<script defer src="https://www.paypal.com/sdk/js?client-id=AWuJ4TbTs8TF4PCyNsC3nZo-gJNpUTvebNbns0AvJWuAirsC3BRoTs4lW4_okNlpb0OQNtSZmada8Qtm&currency=USD"></script>
-				<div id="paypal-button-container"></div>
-			</>
-		);
-		// return (
-		// 	<div id="purchase-frame" style={{textAlign: 'center'}}>
-		// 		<PayPalButtons purchaseCode={currentCodeId} sku={String(item_id)} amount={totalPrice} userId={user.id} />
-		// 	</div>
-		// );
-	}
-}
-
 const Checkout: React.FC = (props): JSX.Element => {
 	const ctx = useContext(ApplicationContext);
 
@@ -81,7 +55,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 	const user: localUser = JSON.parse(localStorage.getItem('user') || 'null');
 
     useEffect(() => {
-		console.log("get id from url", id);
+		// console.log("get id from url", id);
 
 		getCurrentItem(item_id)
 		.then(res => {
@@ -102,7 +76,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 
 	// Sets up the transaction when a payment button is clicked
 	const createOrder = function (data: any, cart: any) {
-		console.log('createOrder data', data, 'cart', cart);
+		// console.log('createOrder data', data, 'cart', cart);
 		return fetch("/api/payment/create-paypal-order", {
 			method: "post",
 			headers: {
@@ -137,25 +111,28 @@ const Checkout: React.FC = (props): JSX.Element => {
 			}),
 		})
 			.then((response) => response.json())
-			.then((orderData) => {
-				// Successful capture! For dev/demo purposes:
-				console.log(
-					"Capture result",
-					orderData,
-					JSON.stringify(orderData, null, 2)
-				);
-				const transaction = orderData.purchase_units[0].payments.captures[0];
-				alert(
-					"Transaction " +
-					transaction.status +
-					": " +
-					transaction.id +
-					"\n\nSee console for all available details"
-				);
-				// When ready to go live, remove the alert and show a success message within this page. For example:
-				// var element = document.getElementById('paypal-button-container');
-				// element.innerHTML = '<h3>Thank you for your payment!</h3>';
-				// Or go to another URL:  actions.redirect('thank_you.html');
+			// .then((orderData) => {
+			// 	// Successful capture! For dev/demo purposes:
+			// 	// console.log(
+			// 	// 	"Capture result",
+			// 	// 	orderData,
+			// 	// 	JSON.stringify(orderData, null, 2)
+			// 	// );
+			// 	const transaction = orderData.purchase_units[0].payments.captures[0];
+			// 	alert(
+			// 		"Transaction " +
+			// 		transaction.status +
+			// 		": " +
+			// 		transaction.id +
+			// 		"\n\nSee console for all available details"
+			// 	);
+			// 	// When ready to go live, remove the alert and show a success message within this page. For example:
+			// 	// var element = document.getElementById('paypal-button-container');
+			// 	// element.innerHTML = '<h3>Thank you for your payment!</h3>';
+			// 	// Or go to another URL:  actions.redirect('thank_you.html');
+			// })
+			.then(() => {
+				setPurchaseFinished(true);
 			});
 	};
 
@@ -166,11 +143,11 @@ const Checkout: React.FC = (props): JSX.Element => {
 	}
 	const handleApply = () => {
 		formStateDispatch({ type: "LOADING" });
-		console.log("current input");
-		console.log(currentCode);
+		// console.log("current input");
+		// console.log(currentCode);
 		checkPurchaseCode(currentCode).then(
 			async (res) => {
-				console.log(res);
+				// console.log(res);
 				const discounted = (1 - res.data.priceOff.priceOff * 0.01) * ItemData[0].price;
 				settotalPrice(discounted);
 				setCurrentCodeId(res.data.priceOff.code_id);
@@ -228,7 +205,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 
 	//const ItemData1 = [{item_id: 1, name: 'Calculus 1(5 months)', length: 0, price: 20}]
 
-	console.log('ctx.user', ctx.user, 'totalprice', totalPrice);
+	// console.log('ctx.user', ctx.user, 'totalprice', totalPrice);
 
 	const completePurchasing=(item_id:string, code_id:number) =>{
 		finishPurchasing({
@@ -242,7 +219,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 	if (purchaseFinished) {
 		return (
 			<Container>
-				<Message icon='smile outline' size='huge' success header='Congratulations' content='You have successfully purchased the book. Enjoy reading it.'>
+				<Message icon='smile outline' size='huge' success header='Congratulations' content='You have successfully purchased the book. Click the "Read Book" at the top to start reading.'>
 				</Message>
 			</Container>
 		)
