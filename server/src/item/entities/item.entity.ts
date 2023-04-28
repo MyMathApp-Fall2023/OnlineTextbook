@@ -21,7 +21,7 @@ export class Item {
 
   static findOne: any;
 
-    @OneToMany(() => Record, record => record.item)
+    @OneToMany(() => Record, record => record.item_name)
     records: Record[]
     @OneToMany(() => Transaction, transaction => transaction.item)
     transaction: Transaction[]

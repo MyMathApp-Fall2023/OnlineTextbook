@@ -17,11 +17,11 @@ import {User} from "../../user/entities/user.entity";
 @Entity()
 export class Transaction {
     @PrimaryGeneratedColumn({name: "transaction_id"})
-    public readonly id: number;
+    public id: number;
 
     @Exclude()
     @Column()
-    public readonly item_id: number;
+    public item_id: number;
     //public readonly item_name: string;
 
     @ManyToOne(() => Item, item => item.transaction)
@@ -30,7 +30,7 @@ export class Transaction {
 
     @Exclude()
     @Column()
-    public readonly code_id: number;
+    public code_id: number;
     //public readonly code_name: string;
 
     @ManyToOne(() => PurchaseCode, purchasecode => purchasecode.transaction)
@@ -39,16 +39,16 @@ export class Transaction {
 
     @Exclude()
     @Column()
-    public readonly user_id: number;
+    public user_id: number;
     //public readonly user_name: string;
 
     @ManyToOne(() => User, user => user.transaction)
-    @JoinColumn({name: 'item_id'})
+    @JoinColumn({name: 'user_id'})
     user: User;
 
     @Column()
-    public readonly price: number;
+    public price: number;
 
     @CreateDateColumn({name: "created_at"})
-    public readonly createdAt: Date;
+    public createdAt: Date;
 }
