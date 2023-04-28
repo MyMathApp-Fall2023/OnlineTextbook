@@ -1,0 +1,19 @@
+{
+  "name": "mymath-project-2023-spring",
+  "version": "2.0.0",
+  "description": "my math app ",
+  "main": "server/dist/main.js",
+  "scripts": {
+    "postinstall": "cd client && npm install && npm run build && cp -R build/* ../server/public/ && cd ../server && npm install && npm run build"
+  },
+  "engines": {
+    "node": "18.10.0"
+  },
+  "cacheDirectories": [
+    "client/node_modules",
+    "server/node_modules"
+  ],
+  "dependencies": {
+    "@nestjs/serve-static": "^3.0.1"
+  }
+}
