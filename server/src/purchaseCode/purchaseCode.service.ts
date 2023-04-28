@@ -3,6 +3,7 @@ import {InjectRepository} from "@nestjs/typeorm";
 import {PurchaseCode} from "./purchaseCode.entity";
 import {Repository} from "typeorm";
 import { ConflictException } from '@nestjs/common';
+import {Item} from "../item/entities/item.entity";
 
 @Injectable()
 export class PurchaseCodeService {
@@ -36,8 +37,12 @@ export class PurchaseCodeService {
   }
 
 
-  async findOne(name: string):Promise<PurchaseCode |　undefined> {
-    const purchaseCode = await this.purchaseCodeRepo.findOne({where: {name}});
+  //async findOne(name: string):Promise<PurchaseCode |　undefined> {
+  //  const purchaseCode = await this.purchaseCodeRepo.findOne({where: {name}});
+  //  return purchaseCode;
+  //}
+  async findOne(code_id: number):Promise<PurchaseCode |　undefined> {
+    const purchaseCode = await this.purchaseCodeRepo.findOne({where: {code_id}});
     return purchaseCode || null;
   }
 

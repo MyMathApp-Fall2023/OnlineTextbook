@@ -64,6 +64,10 @@ const UserRecordInfo: React.FC = (props): JSX.Element | null => {
             });
     }, []);
 
+    const readBook = ()=>{
+        history.push('/read')
+    }
+
     return (
         <Container style={{ marginTop: 10,marginBottom: 30 }}>
             <Grid columns={2}>
@@ -89,7 +93,11 @@ const UserRecordInfo: React.FC = (props): JSX.Element | null => {
                                             <Table.Cell>{record.item_name}</Table.Cell>
                                             <Table.Cell>{formatDate(record.expirationDate)}</Table.Cell>
                                             <Table.Cell>
-                                                <Button>Read</Button>
+                                                <Button onClick={readBook} animated='fade'>
+                                                    <Button.Content visible>Read</Button.Content>
+                                                    <Button.Content hidden>  <Icon name='book' />
+                                                    </Button.Content>
+                                                </Button>
                                             </Table.Cell>
                                         </Table.Row>
                                     ))}

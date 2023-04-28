@@ -86,3 +86,19 @@ export function updateEmailSubApi(data:any):Promise<any> {
     })
 }
 
+
+export function getItem(data:any):Promise<any> {
+    return request ({
+        method : 'get',
+        url: `api/item/id`,
+        data: data
+    })
+}
+
+export function getPurchaseCode(data:any):Promise<any> {
+    return request ({
+        method : 'get',
+        url: `api/purchaseCode/id`,
+        data: data
+    })
+}

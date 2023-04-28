@@ -2,6 +2,7 @@
 import {Column, CreateDateColumn, Double, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 import {Exclude} from '@nestjs/class-transformer'
 import { Record } from "src/record/entities/record.entity";
+import { Transaction } from "src/transaction/entities/transaction.entity";
 
 @Entity()
 export class Item {
@@ -20,4 +21,8 @@ export class Item {
 
   static findOne: any;
 
+    @OneToMany(() => Record, record => record.item_name)
+    records: Record[]
+    @OneToMany(() => Transaction, transaction => transaction.item)
+    transaction: Transaction[]
 }
