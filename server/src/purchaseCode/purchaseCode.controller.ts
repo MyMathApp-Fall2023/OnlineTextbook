@@ -10,6 +10,10 @@ export class PurchaseCodeController {
         return this.PurchaseCodeService.findAll();
     }
 
+    @Get('id')
+    findOne(@Param('id') id: number) {
+        return this.PurchaseCodeService.findOne(id);
+    }
 
     @Get(":name")
     async checkValidPurchaseCode(@Param('name') name: string) {

@@ -19,7 +19,7 @@ import Page from "../../../components/Page";
 import PropTypes from 'prop-types';
 import axios from "axios";
 import AdminMenu from "../../../components/AdminMenu";
-import { getTransactionRecordData, getItem } from "../../../api/admin";
+import { getTransactionRecordData, getItem, getPurchaseCode } from "../../../api/admin";
 
 interface TransactionRecord {
     [x: string]: any;
@@ -75,7 +75,7 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                                     <Table.Row key={transactionRecord.id}>
                                         <Table.Cell>{transactionRecord.id}</Table.Cell>
                                         <Table.Cell>{transactionRecord.item.name}</Table.Cell>
-                                        <Table.Cell>{transactionRecord.code_id}</Table.Cell>
+                                        <Table.Cell>{transactionRecord.purchasecode.name}</Table.Cell>
                                         <Table.Cell>{transactionRecord.user_id}</Table.Cell>
                                         <Table.Cell>{transactionRecord.createdAt}</Table.Cell>
                                         <Table.Cell>{transactionRecord.price}</Table.Cell>

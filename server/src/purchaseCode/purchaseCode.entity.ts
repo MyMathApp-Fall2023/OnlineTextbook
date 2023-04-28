@@ -1,5 +1,6 @@
-import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, OneToMany} from "typeorm";
 import {Exclude} from '@nestjs/class-transformer'
+import {Transaction} from "../transaction/entities/transaction.entity";
 
 @Entity()
 export class PurchaseCode {
@@ -13,5 +14,8 @@ export class PurchaseCode {
 
     @Column()
     public priceOff: number;
+
+    @OneToMany(() => Transaction, transaction => transaction.purchasecode)
+    transaction: Transaction[]
 
 }

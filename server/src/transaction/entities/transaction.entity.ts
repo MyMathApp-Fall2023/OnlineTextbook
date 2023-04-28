@@ -11,6 +11,7 @@ import {
 } from "typeorm";
 import {Exclude} from '@nestjs/class-transformer'
 import {Item} from "../../item/entities/item.entity";
+import {PurchaseCode} from "../../purchaseCode/purchaseCode.entity";
 
 @Entity()
 export class Transaction {
@@ -30,6 +31,10 @@ export class Transaction {
     @Column()
     public readonly code_id: number;
     //public readonly code_name: string;
+
+    @ManyToOne(() => PurchaseCode, purchasecode => purchasecode.transaction)
+    @JoinColumn({name: 'code_id'})
+    purchasecode: PurchaseCode;
 
     @Exclude()
     @Column()
