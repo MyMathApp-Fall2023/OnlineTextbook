@@ -239,7 +239,7 @@ const Checkout: React.FC = (props): JSX.Element => {
 				<Table.Header>
 					<Table.Row>
 						<Table.HeaderCell width={4}>Product</Table.HeaderCell>
-						<Table.HeaderCell collapsing width={2}>Length (days)</Table.HeaderCell>
+						<Table.HeaderCell collapsing width={2}>Length (months)</Table.HeaderCell>
 						<Table.HeaderCell collapsing width={2}>Original Price (USD)</Table.HeaderCell>
 						<Table.HeaderCell collapsing width={2}>Purchase Code</Table.HeaderCell>
 						<Table.HeaderCell collapsing width={2}></Table.HeaderCell>
