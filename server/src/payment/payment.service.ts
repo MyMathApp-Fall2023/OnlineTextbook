@@ -31,7 +31,7 @@ export class PaymentService {
         const item_id = req.body['cart'][0]['sku'];
         const purchase_code = req.body['cart'][0]['purchaseCode'];
         const user_id = req.body['cart'][0]['user_id'];
-        console.log('Finish an order:', amount, item_id, purchase_code, user_id);
+        console.log('Record an order:', amount, item_id, purchase_code, user_id);
 
         try {
             const captureData = await paypal.capturePayment(orderID);

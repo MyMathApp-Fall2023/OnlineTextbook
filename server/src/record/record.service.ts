@@ -61,17 +61,12 @@ export class RecordService {
       }
     })
     //return 0;
-<<<<<<< HEAD
-    // const item_info = Item.findOne(item_id);
-    // console.log(item_info);
-=======
     const item_info = this.itemRepo.findOne({
       where: {
         id:item_id
       }
     });
     console.log(item_info);
->>>>>>> 518160a (Update Payment by Yongqing)
 
     if (records == null){//add a new record
       const nowDate =  new Date(Date.now());
