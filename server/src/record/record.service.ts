@@ -61,7 +61,7 @@ export class RecordService {
       }
     })
     //return 0;
-    const item_info = this.itemRepo.findOne({
+    const item_info = await this.itemRepo.findOne({
       where: {
         id:item_id
       }
@@ -84,15 +84,14 @@ export class RecordService {
       const oldDate = records.expirationDate;
       const newDate = this.addMonths(oldDate, length);
       records.expirationDate = newDate;
-      console.log("Update a new record");
+      console.log("Update a exist record");
       console.log(records);
       await this.recordRepo.save(records);
       return records;
     }
-    //return `This action updates a #${id} record`;
   }
 
-  async validate(user_id:number, item_name:string){
+  async checkIfUserPurchaseItem(user_id:number, item_name:string){
     const rec = await this.recordRepo.findOne({
       where:{
         user_id:user_id,
