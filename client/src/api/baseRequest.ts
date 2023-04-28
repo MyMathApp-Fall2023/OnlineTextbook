@@ -1,7 +1,14 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
+let baseURL = ''
+if (process.env.NODE_ENV == 'development')  {
+    baseURL = 'http://localhost:3000'
+} else {
+    baseURL = 'https://mymathapp2023spring.herokuapp.com'
+}
+
 const service = axios.create({
-    baseURL:process.env.REACT_APP_SERVER_DOMAIN,
+    baseURL:baseURL,
     timeout:10000,
 })
 
