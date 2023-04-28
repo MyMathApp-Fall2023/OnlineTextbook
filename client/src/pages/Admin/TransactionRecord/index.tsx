@@ -98,7 +98,8 @@ const AdminTransInfo: React.FC = (props): JSX.Element | null => {
                                         <Table.Row key={transactionRecord.id}>
                                             <Table.Cell>{transactionRecord.id}</Table.Cell>
                                             <Table.Cell>{transactionRecord.item.name} - {transactionRecord.item.length} Months </Table.Cell>
-                                            <Table.Cell>{transactionRecord.purchasecode.name}  (-{transactionRecord.purchasecode.priceOff}%)</Table.Cell>
+                                            {transactionRecord.purchasecode == null ?<Table.Cell></Table.Cell>:<Table.Cell>{transactionRecord.purchasecode.name}  (-{transactionRecord.purchasecode.priceOff}%)</Table.Cell>
+                                            }
                                             <Table.Cell>{transactionRecord.user.name} - {transactionRecord.user.email}</Table.Cell>
                                             <Table.Cell>${transactionRecord.price}</Table.Cell>
                                             <Table.Cell>{formatDate(transactionRecord.createdAt)}</Table.Cell>
