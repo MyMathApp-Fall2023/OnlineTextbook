@@ -18,12 +18,9 @@ import {EmailSubscription} from "./email-subscription/email-subscription.entity"
 import {EmailModule } from './email/email.module';
 import {BookModule } from './book/book.module';
 import {PaymentModule } from './payment/payment.module';
-import {BookModule } from './book/book.module';
-import {join} from 'path';
-
-
-import { PaymentModule } from './payment/payment.module';
 import { EmailSubscriptionModule } from './email-subscription/email-subscription.module';
+import {join} from 'path'
+
 
 let envFilePath = [];
 if (process.env.RUNNING_ENV === 'dev') {

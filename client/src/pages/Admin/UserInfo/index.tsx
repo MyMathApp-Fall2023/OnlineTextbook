@@ -1,22 +1,12 @@
-import React, {useContext, useEffect, useState, useCallback} from "react";
+import React, {useEffect, useState} from "react";
 import {
-    Header,
-    Divider,
-    Form,
     Table,
-    Label,
-    Menu,
     Icon,
     Grid,
     GridColumn,
     Container,
-    Pagination, Loader, Dimmer
+     Loader, Dimmer
 } from "semantic-ui-react";
-import * as libphonenumber from "libphonenumber-js";
-import {ApplicationContext} from "../../../context";
-import Page from "../../../components/Page";
-import PropTypes from 'prop-types';
-import axios from "axios";
 import AdminMenu from "../../../components/AdminMenu";
 import {getAllUserData} from "../../../api/admin";
 import {useHistory} from "react-router-dom";
