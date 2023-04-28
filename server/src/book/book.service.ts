@@ -25,7 +25,7 @@ export class BookService {
         const ifEmailSub = await this.emailSubscriptionService.checkIfUserEmailSubItem(userEmail)
         if (ifPurchase || ifEmailSub) {
             return  {
-                bookURL:process.env.BOOK_ROOT_PATH,
+                bookURL: process.env.BOOK_ROOT_PATH,
                 ifPurchase:ifPurchase,
                 ifEmailSub:ifEmailSub
             }
