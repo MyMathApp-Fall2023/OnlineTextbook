@@ -9,19 +9,19 @@ export class Transaction {
 
     @Exclude()
     @Column()
-    public readonly item_id: number;
+    public item_id: number;
 
     @Exclude()
     @Column()
-    public readonly code_id: number;
+    public code_id: number;
 
     @Exclude()
     @Column()
-    public readonly user_id: number;
+    public user_id: number;
 
     @Column()
-    public readonly price: number;
+    public price: number;
 
     @CreateDateColumn({name: "created_at"})
-    public readonly createdAt: Date;
+    public createdAt: Date;
 }

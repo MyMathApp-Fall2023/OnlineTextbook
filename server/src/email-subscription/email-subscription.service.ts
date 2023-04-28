@@ -58,15 +58,6 @@ export class EmailSubscriptionService {
         }
     }
 
-    // async validateCode(name:string):Promise<number>{
-    //     const findCode = await this.emailSubscriptionRepo.findOne({where: {name}});
-    //     if (findCode != null){ // return price off
-    //         return findCode.priceOff;
-    //     }
-    //     else{ //code doesn't exist
-    //         throw new ConflictException("Purchase code doesn't exist!");
-    //     }
-    // }
 
     async updateEmailSub(email_sub_id: number, suffix:string):Promise<EmailSubscription>{
         const findEmailSub = await this.emailSubscriptionRepo.findOne({where: {email_sub_id: email_sub_id}});
@@ -77,6 +68,17 @@ export class EmailSubscriptionService {
         }
         else{
             throw new ConflictException("Email Subscription doesn't exist!");
+        }
+    }
+
+    async checkIfUserEmailSubItem(userEmail:string):Promise<boolean>{
+        const emailSuffix = userEmail.split('@')[1]
+        const findEmailSub = await this.emailSubscriptionRepo.findOne({where: {suffix:emailSuffix}});
+        if (findEmailSub != null){ // return price off
+            return true
+        }
+        else{
+            return false
         }
     }
 

@@ -17,7 +17,7 @@ export class Item {
     @Column()
     public readonly price: number;
 
-    @OneToMany(() => Record, record => record.item)
-    records: Record[]
+
+  static findOne: any;
 
 }

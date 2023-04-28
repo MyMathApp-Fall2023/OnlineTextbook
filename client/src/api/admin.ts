@@ -35,6 +35,7 @@ export function getAllItemData():Promise<any>{
     })
 }
 
+
 export function addCodeApi(data:any):Promise<any> {
     return request({
         method: 'post',
@@ -84,3 +85,4 @@ export function updateEmailSubApi(data:any):Promise<any> {
         data:data
     })
 }
+
