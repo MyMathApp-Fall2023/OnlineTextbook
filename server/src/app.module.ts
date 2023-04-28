@@ -36,7 +36,7 @@ if (process.env.RUNNING_ENV === 'prod') {
 @Module({
     imports: [
         ServeStaticModule.forRoot({
-            rootPath: join(__dirname, '../', 'public')
+            rootPath: join(__dirname, '../', 'public','textbook')
         }),
         ConfigModule.forRoot({
             isGlobal: true,

@@ -4,6 +4,7 @@
 
 .env.dev
 .env.prod
+.env.heroku
 
 # Logs
 logs
@@ -13,9 +14,6 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-
-src/book/bookContent
-public/
 
 # OS
 .DS_Store
