@@ -64,8 +64,8 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                                 <Table.Row>
                                     <Table.HeaderCell>Transaction ID</Table.HeaderCell>
                                     <Table.HeaderCell>Item name</Table.HeaderCell>
-                                    <Table.HeaderCell>Code ID</Table.HeaderCell>
-                                    <Table.HeaderCell>User ID</Table.HeaderCell>
+                                    <Table.HeaderCell>Purchase Code</Table.HeaderCell>
+                                    <Table.HeaderCell>Username</Table.HeaderCell>
                                     <Table.HeaderCell>Created At</Table.HeaderCell>
                                     <Table.HeaderCell>Price</Table.HeaderCell>
                                 </Table.Row>
@@ -76,7 +76,7 @@ const AdminUserInfo: React.FC = (props): JSX.Element => {
                                         <Table.Cell>{transactionRecord.id}</Table.Cell>
                                         <Table.Cell>{transactionRecord.item.name}</Table.Cell>
                                         <Table.Cell>{transactionRecord.purchasecode.name}</Table.Cell>
-                                        <Table.Cell>{transactionRecord.user_id}</Table.Cell>
+                                        <Table.Cell>{transactionRecord.user.name}</Table.Cell>
                                         <Table.Cell>{transactionRecord.createdAt}</Table.Cell>
                                         <Table.Cell>{transactionRecord.price}</Table.Cell>
                                     </Table.Row>

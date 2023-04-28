@@ -12,6 +12,7 @@ import {
 import {Exclude} from '@nestjs/class-transformer'
 import {Item} from "../../item/entities/item.entity";
 import {PurchaseCode} from "../../purchaseCode/purchaseCode.entity";
+import {User} from "../../user/entities/user.entity";
 
 @Entity()
 export class Transaction {
@@ -40,6 +41,11 @@ export class Transaction {
     @Column()
     public readonly user_id: number;
     //public readonly user_name: string;
+
+    @ManyToOne(() => User, user => user.transaction)
+    @JoinColumn({name: 'item_id'})
+    user: User;
+
     @Column()
     public readonly price: number;
 

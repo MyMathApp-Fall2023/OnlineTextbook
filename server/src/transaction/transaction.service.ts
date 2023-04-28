@@ -30,7 +30,7 @@ export class TransactionService {
     //  }
     //})
     const transactions = await this.transactionRepo.find({
-      relations: ["item", "purchasecode"],
+      relations: ["item", "purchasecode", "user"],
       select:{
         id: true,
         item_id: true,
