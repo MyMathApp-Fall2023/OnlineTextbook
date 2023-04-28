@@ -19,7 +19,18 @@ export class TransactionService {
   }
 
   async findAll() {
+    //const transactions = await this.transactionRepo.find({
+    //  select:{
+    //    id: true,
+    //    item_id: true,
+    //    code_id: true,
+    //    user_id: true,
+    //    createdAt: true,
+    //    price: true
+    //  }
+    //})
     const transactions = await this.transactionRepo.find({
+      relations: ["item", "purchasecode", "user"],
       select:{
         id: true,
         item_id: true,
