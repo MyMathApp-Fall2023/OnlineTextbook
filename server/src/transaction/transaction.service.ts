@@ -10,7 +10,7 @@ export class TransactionService {
 
   constructor(
     @InjectRepository(Transaction)
-    private readonly transactionRepo: Repository<Transaction>,  // 使用泛型注入对应类型的存储库实例
+    private transactionRepo: Repository<Transaction>,  // 使用泛型注入对应类型的存储库实例
 ) {}
 
   create(createTransactionDto: CreateTransactionDto) {
@@ -40,8 +40,18 @@ export class TransactionService {
     //return `This action returns a #${id} transaction`;
   }
 
-  update(id: number, updateTransactionDto: UpdateTransactionDto) {
-    return `This action updates a #${id} transaction`;
+  async update(user_id:number, item_id:number, code_id:number, price:number) {
+    const transaction = new Transaction();
+    transaction.code_id = code_id;
+    transaction.createdAt = new Date(Date.now());
+    transaction.item_id = item_id;
+    transaction.price = price;
+    transaction.user_id = user_id;
+    console.log("Add transaction");
+    console.log(transaction);
+    const newtrans = await this.transactionRepo.save(transaction);
+    return newtrans;
+    //return `This action updates a #${id} transaction`;
   }
 
   remove(id: number) {

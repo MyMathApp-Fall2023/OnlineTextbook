@@ -6,7 +6,7 @@ import { Table, Container, Header, Button,Input, Icon, Item, Message , Form} fro
 import { formatter } from "../../utils";
 import { ApplicationContext } from "../../context";
 import { title } from "process";
-import {getCurrentItem, checkPurchaseCode} from "../../api/checkout"
+import {getCurrentItem, checkPurchaseCode, addRecord, addTransaction} from "../../api/checkout"
 
 // @ts-ignore
 const PayPalButton = paypal.Buttons.driver("react", { React, ReactDOM });
@@ -227,6 +227,12 @@ const Checkout: React.FC = (props): JSX.Element => {
 
 	console.log('ctx.user', ctx.user, 'totalprice', totalPrice);
 
+	const addRecords=(user_id:number, item_id:string, code_id:number) =>{
+		addRecord({user_id:user_id, item_id:item_id})
+		addTransaction({user_id:user_id, item_id:item_id, code_id:code_id, price:0})
+	
+	};
+
 	return (
 		<Container id="123">
 			<Table>
@@ -307,7 +313,9 @@ const Checkout: React.FC = (props): JSX.Element => {
 
 			{ctx.user != undefined && totalPrice == 0 ? (
 				<div style={{textAlign: 'left'}}>
-					<button className="positive ui button" >Complete</button>
+					<button className="positive ui button" 
+					onClick={() => addRecords(user.id, item_id, currentCodeId)}
+					>Complete</button>
 				</div>
 			) : null}
 

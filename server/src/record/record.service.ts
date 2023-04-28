@@ -61,8 +61,8 @@ export class RecordService {
       }
     })
     //return 0;
-    const item_info = Item.findOne(item_id);
-    console.log(item_info);
+    // const item_info = Item.findOne(item_id);
+    // console.log(item_info);
 
     if (records == null){//add a new record
       const nowDate =  new Date(Date.now());
@@ -88,6 +88,28 @@ export class RecordService {
     //return `This action updates a #${id} record`;
   }
   
+  async validate(user_id:number, item_name:string){
+    const rec = await this.recordRepo.findOne({
+      where:{
+        user_id:user_id,
+        item_name:item_name
+      }
+    })
+    if (rec == null){
+      return false;
+    }
+    else{ //rec != null
+      //check expiration date
+      const nowDate = new Date(Date.now());
+      if (nowDate < rec.expirationDate){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+  }
+
 
   remove(id: number) {
     return `This action removes a #${id} record`;

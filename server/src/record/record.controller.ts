@@ -28,7 +28,7 @@ export class RecordController {
     return this.recordService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('record')
   update(@Param('id') id: string, user_id:number, item_id:number) {
     return this.recordService.update(user_id, item_id);
   }
