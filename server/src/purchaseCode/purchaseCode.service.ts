@@ -70,10 +70,10 @@ export class PurchaseCodeService {
     }
   }
 
-  async validateCode(name:string):Promise<number>{
+  async validateCode(name:string):Promise<PurchaseCode>{
     const findCode = await this.purchaseCodeRepo.findOne({where: {name}});
     if (findCode != null){ // return price off
-      return findCode.priceOff;
+      return findCode;
     }
     else{ //code doesn't exist
       throw new ConflictException("Purchase code doesn't exist!");

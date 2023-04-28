@@ -21,7 +21,7 @@ import {useHistory} from "react-router-dom";
 interface Records {
     [x: string]: any;
     record_id: number;
-    item_id: number;
+    item_name: string;
     expirationDate: string;
 }
 
@@ -73,7 +73,7 @@ const AdminUserInfo: React.FC = (props): JSX.Element | null => {
                             <Table.Body>
                                 {Records.map(record => (
                                     <Table.Row key={record.record_id}>
-                                        <Table.Cell>{record.item.name}</Table.Cell>
+                                        <Table.Cell>{record.item_name}</Table.Cell>
                                         <Table.Cell>{record.expirationDate.split("T")[0]}</Table.Cell>
                                     </Table.Row>
                                 ))}

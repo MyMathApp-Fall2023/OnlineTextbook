@@ -35,6 +35,20 @@ export function getAllItemData():Promise<any>{
     })
 }
 
+export function getTransactionRecordData():Promise<any>{
+    return request({
+        method: 'get',
+        url: 'api/admin/transaction',
+    })
+}
+
+export function getAllItemData():Promise<any>{
+    return request({
+        method: 'get',
+        url: 'api/item',
+    })
+}
+
 export function addCodeApi(data:any):Promise<any> {
     return request({
         method: 'post',
@@ -84,3 +98,4 @@ export function updateEmailSubApi(data:any):Promise<any> {
         data:data
     })
 }
+
