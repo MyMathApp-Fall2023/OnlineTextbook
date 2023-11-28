@@ -78,6 +78,7 @@ The application is built using React, Node.js, Express, and MySQL. Both front an
 
 ## To Deploy On Heroku:
 This article is extremely helpful, refer to it, **escpecially if you have no prior experience**:
+
 [Deploying With Git On Heroku](https://devcenter.heroku.com/articles/git)
 Here's the steps we used to deploy to Heroku. We recommend finding a safter way since this is error prone, but this has been our process.
 1. Enter the root folder
