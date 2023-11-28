@@ -13,12 +13,13 @@ The application is built using React, Node.js, Express, and MySQL. Both front an
 
 
 ## Development Environment Setup
-1. Install nodejs (it will automatically install npm)
-2. Install yarn
+1. Install nodejs, the latest should work which at the time is 21.2.0
+2. npm comes with nodejs.
+3. Install yarn
    `npm install -g yarn`
-3. Install nestjs
+4. Install nestjs
    `npm install @nestjs/cli`
-4. Install Docker and set it up. This can be done from the CLI or from Docker Desktop itself (you can run the shell commands in a container's "exec" tab once the container is created).
+5. Install Docker and set it up. This can be done from the CLI or from Docker Desktop itself (you can run the shell commands in a container's "exec" tab once the container is created).
    ```bash
       # Start the MySQL server container
       docker run --name local-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:8.0
@@ -29,7 +30,7 @@ The application is built using React, Node.js, Express, and MySQL. Both front an
       # enter your password from first command
       create database 'mymathapps';
       ```
-5. Prepare different .env configuration files as .env.example in `Server` folder
+6. Prepare different .env configuration files as .env.example in `Server` folder
   The configuration files are as lists:
 
   | Name        | Environment               |
@@ -76,21 +77,29 @@ The application is built using React, Node.js, Express, and MySQL. Both front an
 2. yarn cucumber-test
 
 ## To Deploy On Heroku:
-This article is extremely helpful, refer to it:
+This article is extremely helpful, refer to it, **escpecially if you have no prior experience**:
 [Deploying With Git On Heroku](https://devcenter.heroku.com/articles/git)
-Here's the steps we used to deploy to Heroku. We recommend finding a safer way to do so.
+Here's the steps we used to deploy to Heroku. We recommend finding a safter way since this is error prone, but this has been our process.
 1. Enter the root folder
 2. `heroku login`
-3. This step only has to be done the first time: `heroku git:remote -a example-app`
-4. Create a local branch off of dev
-5. Modify the .gitignore to allow .env.heroku to be permitted
-6. Create a .env.heroku, it's almost the same as the .env.dev but the DB information is replaced with a dburl.
-    - Refer to app.module.ts for more information on the differences. Heroku should also have some information
-7. **Be careful**, your .env.heroku has sensitive information. Do not allow your local repo to go onto github or anywhere public.
-8. Use `git status` and add/commit anything that still needs to be added. Be sure to add your .env.heroku
-10. `git push heroku your_local_branch:main` **Do not** push the local repo to anywhere else.
+3. This step only has to be done the first time: `heroku create -a <your app name here>`, if you have an existing app, use this `heroku git:remote -a <your app name here>`
+   - For more information, I strongly recommend checking the article.
+5. Create a local branch off of dev. This branch should remain local and not be available to the public.
+   - `git checkout -b <branch name>`
+6. On the local branch, naviage to the client directory.
+7. Inside of your .env.client.heroku file, change the two urls to the url of your app.
+8. Navigate to the server directory, then the src directory
+9. Inside of the main.ts on line 11 (just below the `enablecors` section), change the heroku app url to your own url.
+10. Navigate back to the server directory
+11. Modify the .gitignore and remove the line containing `.env.heroku`
+12. Create a .env.heroku file in the same directory, it's almost the same as the .env.dev but the DB information is replaced with a dburl.
+    - Refer to app.module.ts for more information on the differences. The heroku website should also have information on what is needed.
+    - If your db is different from postgres, you'll need to look on the heroku website and modify the .env.heroku
+13. **Be careful**, your .env.heroku has sensitive information. Do not allow your local repo to go onto github or anywhere public.
+14. Use `git status` and add/commit anything that still needs to be added. Be sure to add your .env.heroku
+15. `git push heroku your_local_branch:main` **Do not** push the local repo to anywhere else.
     - Since your heroku branch may be multiple versions off, you may need to add `-f` after the push to overwrite what's there.
-11. That's it!
+16. That's it.
 
 ## Contributors
 Cheng Niu, Shuang Yu, Zhiting Zhao, Yongqing Liang, Shuyu Wang, Yun Du, Andrew Crenwelge, Spencer Banasik, Nikhil Nehra, Nick Robert, Arunim Samudra
