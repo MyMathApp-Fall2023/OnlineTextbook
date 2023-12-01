@@ -76,7 +76,7 @@ The application is built using React, Node.js, Express, and MySQL. Both front an
 3. Ensure the container is running and log in to the mysql on the container
    - This can be done either through the CLI or docker desktop
    - `mysql -u <database root username> -p`
-4. `source init.sql;`
+4. `source ./tmp/init.sql;`
 5. You should now be good to run the tests, note that this must be done each time the cucumber tests are run.
 
 ### Cucumber tests
